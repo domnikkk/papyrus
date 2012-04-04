@@ -10,6 +10,7 @@
  * Contributors:
  *  Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA-LIST) vincent.lorenzo@cea.fr
+ *  Olivier Mélois (ATOS) - Bug 375822 : modified which resources the tables are attached to.
  *****************************************************************************/
 
 package org.eclipse.papyrus.table.common.handlers;
@@ -58,12 +59,11 @@ import org.eclipse.papyrus.resource.AbstractBaseModel;
 import org.eclipse.papyrus.resource.IModel;
 import org.eclipse.papyrus.resource.ModelSet;
 import org.eclipse.papyrus.resource.NotFoundException;
+import org.eclipse.papyrus.resource.sasheditor.DiModel;
 import org.eclipse.papyrus.sasheditor.contentprovider.IPageMngr;
 import org.eclipse.papyrus.table.common.Activator;
 import org.eclipse.papyrus.table.common.dialog.TwoInputDialog;
 import org.eclipse.papyrus.table.common.messages.Messages;
-import org.eclipse.papyrus.table.common.modelresource.EMFFacetNattableModel;
-import org.eclipse.papyrus.table.common.modelresource.PapyrusNattableModel;
 import org.eclipse.papyrus.table.common.util.QueryRepresentation;
 import org.eclipse.papyrus.table.instance.papyrustableinstance.PapyrusTableInstance;
 import org.eclipse.papyrus.table.instance.papyrustableinstance.PapyrustableinstanceFactory;
@@ -189,11 +189,14 @@ public abstract class AbstractCreateNattableEditorCommand extends AbstractHandle
 	public void doExecute(final ServicesRegistry serviceRegistry) throws ServiceException, NotFoundException {
 
 		Object editorModel = createEditorModel(serviceRegistry);
-		// Get the mngr allowing to add/open new editor.
-		IPageMngr pageMngr = ServiceUtils.getInstance().getIPageMngr(serviceRegistry);
-		// add the new editor model to the sash.
-		pageMngr.openPage(editorModel);
-
+		if (editorModel != null){
+			// Get the mngr allowing to add/open new editor.
+			IPageMngr pageMngr = ServiceUtils.getInstance().getIPageMngr(serviceRegistry);
+			// add the new editor model to the sash.
+			pageMngr.openPage(editorModel);
+		} else {
+			throw new NotFoundException("The NatTable editor you requested could not be created."); ////$NON-NLS-1$
+		}
 	}
 
 	/**
@@ -205,36 +208,71 @@ public abstract class AbstractCreateNattableEditorCommand extends AbstractHandle
 	 *         The model where to save the TableInstance is not found.
 	 */
 	protected Object createEditorModel(final ServicesRegistry serviceRegistry) throws ServiceException, NotFoundException {
-		PapyrusTableInstance papyrusTable = PapyrustableinstanceFactory.eINSTANCE.createPapyrusTableInstance();
-		papyrusTable.setName(name);
-		papyrusTable.setType(editorType);
-		PapyrusNattableModel papyrusModel = (PapyrusNattableModel)ServiceUtils.getInstance().getModelSet(serviceRegistry).getModelChecked(PapyrusNattableModel.MODEL_ID);
-		papyrusModel.addPapyrusTableInstance(papyrusTable);
 
-		setFillingQueries(papyrusTable); //should be done before the TableInstance creation
-		setSynchronization(papyrusTable); //should be done before the TableInstance creation
-		EObject context = getTableContext();
-		Assert.isNotNull(context);
-		List<EObject> elements = getInitialElement(papyrusTable, context);
+		//Context is the item the container the table has to be created in.
+		final EObject context = getTableContext();
 
-		TableInstance2 tableInstance = NatTableWidgetUtils.createTableInstance(elements, defaultDescription, getTableConfiguration2(), getTableContext(), null);
-		tableInstance.setDescription(description);
+		//Getting the resource set.
+		final ResourceSet rs = context.eResource().getResourceSet();
+		if (rs instanceof ModelSet){
+			//Getting the model set.
+			final ModelSet diResourceSet = (ModelSet)rs;
+			
+			/*
+			 * Creating the papyrus table.
+			 */
+			PapyrusTableInstance papyrusTable = PapyrustableinstanceFactory.eINSTANCE.createPapyrusTableInstance();
+			papyrusTable.setName(name);
+			papyrusTable.setType(editorType);
+			
+			/*
+			 * Initializing the papyrus table.
+			 */
+			setFillingQueries(papyrusTable); //should be done before the TableInstance creation
+			setSynchronization(papyrusTable); //should be done before the TableInstance creation
+			Assert.isNotNull(context);
+			List<EObject> elements = getInitialElement(papyrusTable, context);
+			
+			/*
+			 * Linking the table2 to the table and finishing the initialization.
+			 */
+			TableConfiguration2 tableConfiguration2 = getTableConfiguration2();
+			TableInstance2 tableInstance = NatTableWidgetUtils.createTableInstance(elements, defaultDescription, tableConfiguration2, context, null);
+			tableInstance.setDescription(description);
+			//Linking the tableInstance with the papyrusTable.
+			papyrusTable.setTable(tableInstance);
+			tableInstance.setContext(context);
+			
+			/*
+			 * Save the table instances in the associated resource.
+			 */
+			Resource diResource = diResourceSet.getAssociatedResource(context, DiModel.DI_FILE_EXTENSION);
+			attachModelToResource(papyrusTable, diResource);
+			attachModelToResource(tableInstance, diResource);
 
-		// Save the model in the associated resource
-		EMFFacetNattableModel model = (EMFFacetNattableModel)ServiceUtils.getInstance().getModelSet(serviceRegistry).getModelChecked(EMFFacetNattableModel.MODEL_ID);
-		model.addTableInstance(tableInstance);
-		papyrusTable.setTable(tableInstance);
-
-		tableInstance.setContext(context);
-
-		setHiddenColumns(papyrusTable);
-		return papyrusTable;
+			/*
+			 * Hiding the columns that need to be hidden. 
+			 */
+			setHiddenColumns(papyrusTable);
+			
+			/*
+			 * The papyrusTable is returned so it can be opened in an editor.
+			 */
+			return papyrusTable;
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Store model element in the resource.
+	 */
+	protected void attachModelToResource(EObject root, Resource resource) {
+		resource.getContents().add(root);
 	}
 
 	/**
-	 * 
 	 * @param papyrusTable
-	 *        the papyrus table
 	 * @param context
 	 * @return the list of the initial element for the table
 	 */
@@ -458,5 +496,30 @@ public abstract class AbstractCreateNattableEditorCommand extends AbstractHandle
 		List<QueryRepresentation> list = new ArrayList<QueryRepresentation>();
 		return list;
 	}
-
+	
+	/**
+	 * Gets the files that are is going to be modified during the process of 
+	 * creating a new table.
+	 * @return a list of IFile containing the *.di file that should be modified
+	 * when creating a table. 
+	 */
+	protected List<IFile> getTargetResourceFile(){
+		List<IFile> result = new ArrayList<IFile>();
+		
+		//Context is the item the container the table has to be created in.
+		final EObject context = getTableContext();
+		if (context != null && context.eResource() != null){
+			//Getting the resource set.
+			final ResourceSet rs = context.eResource().getResourceSet();
+			if (rs instanceof ModelSet){
+				//Getting the model set.
+				final ModelSet diResourceSet = (ModelSet)rs;
+				Resource diResource = diResourceSet.getAssociatedResource(context, DiModel.DI_FILE_EXTENSION);
+				IFile diFile = WorkspaceSynchronizer.getFile(diResource);
+				result.add(diFile);
+			}
+		}
+		
+		return result;
+	}
 }

@@ -9,6 +9,7 @@
  *
  * Contributors:
  * Arthur daussy - arthur.daussy@atos.net - 374607: [model explorer] moving a model element in another model does not move associated diagrams
+ * Olivier Mélois - olivier.melois@atos.net - bug 374916
  *
  **/
 package org.eclipse.papyrus.uml.service.types.helper.advice;
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.facet.widgets.nattable.instance.tableinstance2.TableInstance2;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
@@ -34,33 +36,39 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.core.adaptor.gmf.MoveOpenableCommand;
-import org.eclipse.papyrus.core.utils.DiResourceSet;
 import org.eclipse.papyrus.diagram.common.commands.MoveStereotypeApplicationsCommand;
+import org.eclipse.papyrus.resource.ModelSet;
+import org.eclipse.papyrus.resource.notation.NotationModel;
 import org.eclipse.papyrus.resource.notation.NotationUtils;
+import org.eclipse.papyrus.resource.sasheditor.DiModel;
+import org.eclipse.papyrus.table.instance.papyrustableinstance.PapyrusTableInstance;
 import org.eclipse.papyrus.uml.service.types.Activator;
+import org.eclipse.papyrus.uml.service.types.utils.ElementUtil;
 import org.eclipse.uml2.uml.Element;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.UnmodifiableIterator;
+
 /**
  * The edit helper advice for all uml element
+ * 
  * @author adaussy
- *
+ * 
  */
 public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * This case will handle moving an element from a resource to another (use case : control mode).
 	 * This will move into the new resource :
-	 *  -> The stereotypes linked to this element and its descendant
-	 *  -> The diagrams linked to this element and its descendant
+	 * -> The stereotypes linked to this element and its descendant
+	 * -> The diagrams linked to this element and its descendant
 	 */
 	@Override
 	protected ICommand getAfterMoveCommand(MoveRequest request) {
 		Map<?, ?> elementsToMove = request.getElementsToMove();
-		EObject container = request.getTargetContainer();
-		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(getEditingDomain(container), "Move related elements to new resource");////$NON-NLS-1$
+		EObject targetContainer = request.getTargetContainer();
+		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(getEditingDomain(targetContainer), "Move related elements to new resource");////$NON-NLS-1$
 
 		for(Object o : elementsToMove.keySet()) {
 			EObject sourceEObject = null;
@@ -70,9 +78,9 @@ public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 				sourceEObject = (EObject)((IAdaptable)o).getAdapter(EObject.class);
 			}
 
-			if(sourceEObject != null && container != null && sourceEObject.eResource() != null && container.eResource() != null) {
+			if(sourceEObject != null && targetContainer != null && sourceEObject.eResource() != null && targetContainer.eResource() != null) {
 				final Resource eResource = sourceEObject.eResource();
-				Resource containerEResource = container.eResource();
+				Resource containerEResource = targetContainer.eResource();
 				/*
 				 * Test if the moving element is going to be in a new resource
 				 */
@@ -80,23 +88,85 @@ public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 					/*
 					 * Move related diagrams
 					 */
-					ICommand moveDiagramsCommand = getMoveDiagramsCommand(container, sourceEObject);
+					ICommand moveDiagramsCommand = getMoveDiagramsCommand(targetContainer, sourceEObject);
 					if(moveDiagramsCommand != null && moveDiagramsCommand.canExecute()) {
 						cc.compose(moveDiagramsCommand);
 					}
 					/*
-					 * Move related stereotypes
+					 * Move related stereotypes.
 					 */
-					addAllMoveStereotypeCommand(cc, sourceEObject, container);
+					addAllMoveStereotypeCommand(cc, sourceEObject, targetContainer);
+					/*
+					 * Move tables.
+					 */
+					addAllMoveTableCommand(cc, sourceEObject, targetContainer);
 				}
 			}
 		}
 
-		if (!cc.isEmpty()) {
+		if(!cc.isEmpty()) {
 			return cc;
 		}
 
 		return null;
+	}
+
+	/**
+	 * Adds commands to move all tables that might not
+	 * 
+	 * @param cc
+	 *        the compound command to witch the new move commands have to be added.
+	 * @param sourceEObject
+	 *        the object the user wants to move.
+	 * @param .
+	 */
+	protected void addAllMoveTableCommand(CompositeTransactionalCommand cc, EObject sourceEObject, EObject targetContainer) {
+
+		/*
+		 * All the tables in the tree that comes from sourceEObject.
+		 */
+		Iterable<EObject> allDescendingPapyrusTables = ElementUtil.createDescendantTablesIterable(sourceEObject);
+
+		/*
+		 * Trying to move every table.
+		 */
+		for(EObject descendant : allDescendingPapyrusTables) {
+			if(descendant instanceof PapyrusTableInstance) {
+				PapyrusTableInstance papyrusTable = (PapyrusTableInstance)descendant;
+				this.addMoveTableCommand(cc, papyrusTable, targetContainer);
+			}
+		}
+
+	}
+
+	/**
+	 * Adds a command that moves a table to the composite command.
+	 */
+	protected void addMoveTableCommand(CompositeTransactionalCommand cc, PapyrusTableInstance papyrusTable, EObject targetContainer) {
+		//The command has to move both the table and its table2.
+		TableInstance2 papyrusTable2 = papyrusTable.getTable();
+
+		Resource resource = targetContainer.eResource();
+		TransactionalEditingDomain editingDomain = getEditingDomain(targetContainer);
+		/*
+		 * Has the resource been loaded, and is it in read only mode ?
+		 */
+		if(!resource.isLoaded() || editingDomain.isReadOnly(resource)) {
+			return;
+		}
+
+		//Getting the right resource so that the table is placed at the right location.
+		Resource rightTargetContainerResource = getProperTableContainingResource(targetContainer);
+		if(rightTargetContainerResource != null) {
+			MoveOpenableCommand mvTabCmd = new MoveOpenableCommand(editingDomain, "moving table", papyrusTable, rightTargetContainerResource);//$NON-NLS-1$
+			if(mvTabCmd != null && mvTabCmd.canExecute()) {
+				cc.compose(mvTabCmd);
+			}
+			MoveOpenableCommand mvTab2Cmd = new MoveOpenableCommand(editingDomain, "moving table2", papyrusTable2, rightTargetContainerResource);//$NON-NLS-1$
+			if(mvTab2Cmd != null && mvTab2Cmd.canExecute()) {
+				cc.compose(mvTab2Cmd);
+			}
+		}
 	}
 
 	protected void addAllMoveStereotypeCommand(CompositeTransactionalCommand cc, final EObject sourceEObject, EObject container) {
@@ -117,7 +187,7 @@ public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 		 * unifiedIterator = (elementIterator) U (descendantElementIterator)
 		 */
 		Iterator<EObject> unifiedIterator = Iterators.concat(elementIterator, descendantElementIterator);
-		while (unifiedIterator.hasNext()){
+		while(unifiedIterator.hasNext()) {
 			/*
 			 * Move related diagrams
 			 */
@@ -125,12 +195,13 @@ public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 			ICommand modeStereotypeCommand = getMoveStereotypeCommand(container, next);
 			if(modeStereotypeCommand != null && modeStereotypeCommand.canExecute()) {
 				cc.compose(modeStereotypeCommand);
-			}						
+			}
 		}
 	}
 
 	/**
-	 * Move all the stereotype of an element into a new resource
+	 * Moves all the stereotype of an element into a new resource
+	 * 
 	 * @param container
 	 * @param sourceEObject
 	 * @return
@@ -142,7 +213,7 @@ public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 			if(stereotypeApplications != null && !stereotypeApplications.isEmpty()) {
 				Resource eResource = container.eResource();
 				if(eResource != null) {
-					if(eResource.isLoaded()){
+					if(eResource.isLoaded()) {
 						return new MoveStereotypeApplicationsCommand(getEditingDomain(container), element, eResource);
 					} else {
 						return new UnexecutableCommand(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "The new containing resource is not loaded"));////$NON-NLS-1$
@@ -153,17 +224,20 @@ public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 		return null;
 	}
 
+	/**
+	 * Moves all the diagrams descending from an element into a new resource.
+	 */
 	protected ICommand getMoveDiagramsCommand(EObject container, EObject sourceEObject) {
 		/*
 		 * Get all diagram from source EObject (its diagram and its descendant)
 		 */
-		List<Diagram> initialDiagrams = NotationUtils.getAllDescendantDiagramsInResource(sourceEObject, getDiagramContainer(sourceEObject));
+		List<Diagram> initialDiagrams = NotationUtils.getAllDescendantDiagramsInResource(sourceEObject, getProperDiagramContainingResource(sourceEObject));
 
 		/*
 		 * Get the notation model of the container
 		 * 1. If not loaded unexecutable command
 		 */
-		Resource diagramContainer = getDiagramContainer(container);
+		Resource diagramContainer = getProperDiagramContainingResource(container);
 		if(diagramContainer == null) {
 			return new UnexecutableCommand(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Unable to find a notation model to store diagram elements"));////$NON-NLS-1$
 		}
@@ -181,6 +255,7 @@ public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Get the editing domain from an {@link EObject}
+	 * 
 	 * @param eObject
 	 * @return
 	 */
@@ -193,18 +268,29 @@ public class ElementEditHelperAdvice extends AbstractEditHelperAdvice {
 	}
 
 	/**
-	 * Get the EObject which contains diagram in the new ressource
-	 * 
-	 * @param containerRessourceContentes
-	 * @return
+	 * Gets the right associated resource to seek diagrams.
 	 */
-	protected Resource getDiagramContainer(EObject newEobjectContainer) {
-		ResourceSet rs = newEobjectContainer.eResource().getResourceSet();
-		Resource diagramContainer = null;
-		if(rs instanceof DiResourceSet) {
-			DiResourceSet diResourceSet = (DiResourceSet)rs;
-			diagramContainer = diResourceSet.getAssociatedNotationResource(newEobjectContainer);
+	protected Resource getProperDiagramContainingResource(EObject eObject) {
+		ResourceSet rs = eObject.eResource().getResourceSet();
+		Resource rightResource = null;
+		if(rs instanceof ModelSet) {
+			ModelSet diResourceSet = (ModelSet)rs;
+			rightResource = diResourceSet.getAssociatedResource(eObject, NotationModel.NOTATION_FILE_EXTENSION);
 		}
-		return diagramContainer;
+		return rightResource;
 	}
+
+	/**
+	 * Gets the right associated resource to seek tables.
+	 */
+	protected Resource getProperTableContainingResource(EObject eObject) {
+		ResourceSet rs = eObject.eResource().getResourceSet();
+		Resource rightResource = null;
+		if(rs instanceof ModelSet) {
+			ModelSet diResourceSet = (ModelSet)rs;
+			rightResource = diResourceSet.getAssociatedResource(eObject, DiModel.DI_FILE_EXTENSION);
+		}
+		return rightResource;
+	}
+
 }
