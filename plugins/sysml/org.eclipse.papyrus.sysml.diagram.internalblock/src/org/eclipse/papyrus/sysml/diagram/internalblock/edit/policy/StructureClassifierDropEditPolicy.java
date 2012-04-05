@@ -16,15 +16,18 @@ package org.eclipse.papyrus.sysml.diagram.internalblock.edit.policy;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.gmf.diagram.common.commands.SelectAndExecuteCommand;
 import org.eclipse.papyrus.sysml.diagram.internalblock.utils.BlockDropHelper;
 import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.uml2.uml.Classifier;
 
 /** 
  * <pre>
@@ -87,5 +90,29 @@ public class StructureClassifierDropEditPolicy extends CustomDragDropEditPolicy 
 		}
 
 		return super.getDropObjectsCommand(dropRequest);
+	}
+	
+	@Override
+	protected boolean isVisualDropAllowed(DropObjectsRequest dropRequest, EObject droppedObject, View dropTargetView, EObject dropTargetElement, String droppedNodeType) {
+		if(isInheritedMember(droppedObject,getHostObject())){
+			return true;
+		}
+		return super.isVisualDropAllowed(dropRequest, droppedObject, dropTargetView, dropTargetElement, droppedNodeType);
+	}
+
+
+	/**
+	 * Return true if the EObject belongs to the inherited members
+	 * @param droppedObject
+	 * @param hostObject
+	 * @return
+	 */
+	private boolean isInheritedMember(EObject droppedObject, EObject hostObject) {
+		if(hostObject instanceof Classifier) {
+			Classifier classifier = (Classifier)hostObject;
+			return classifier.getInheritedMembers().contains(droppedObject);
+			
+		}
+		return false;
 	}
 }

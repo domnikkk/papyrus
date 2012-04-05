@@ -31,7 +31,9 @@ import org.eclipse.papyrus.diagram.common.helper.ElementHelper;
 import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
 import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 
@@ -90,11 +92,31 @@ public class PortDropHelper extends ElementHelper {
 				// The dropped object is owned by the target type 
 				if (((Port) object).eContainer() == targetType) {
 					isValid = true;
+				} else if(isInheritedMember(dropTarget, (Port)object)){
+					// Return true if the port in a inherited member of the container
+					isValid = true;
 				}
 			}
 		}
 		
 		return isValid; 
+	}
+	/**
+	 * Return true if the target container is a classifier as this port as inherited member
+	 * @param targetContainer
+	 * @param port
+	 * @return
+	 */
+	protected boolean isInheritedMember(EObject targetContainer, Port port){
+		boolean result = false;
+		if(targetContainer instanceof Property){
+			Property p = (Property)targetContainer;
+			Type type = p.getType();
+			if (type instanceof Classifier){
+				return ((Classifier)type).getInheritedMembers().contains(port);
+			}
+		}
+		return result;
 	}
 	
 	/**

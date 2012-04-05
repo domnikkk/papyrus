@@ -36,6 +36,7 @@ import org.eclipse.papyrus.gmf.diagram.common.edit.policy.CommonDiagramDragDropE
 import org.eclipse.papyrus.sysml.diagram.internalblock.dnd.helper.CustomLinkMappingHelper;
 import org.eclipse.papyrus.sysml.diagram.internalblock.provider.CustomGraphicalTypeRegistry;
 import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.EncapsulatedClassifier;
@@ -164,6 +165,30 @@ public class CustomDragDropEditPolicy extends CommonDiagramDragDropEditPolicy {
 		}
 
 		return views;
+	}
+	
+	@Override
+	protected boolean isVisualDropAllowed(DropObjectsRequest dropRequest, EObject droppedObject, View dropTargetView, EObject dropTargetElement, String droppedNodeType) {
+		if(isInheritedMember(droppedObject,getHostObject())){
+			return true;
+		}
+		return super.isVisualDropAllowed(dropRequest, droppedObject, dropTargetView, dropTargetElement, droppedNodeType);
+	}
+
+
+	/**
+	 * Return true if the EObject belongs to the inherited members
+	 * @param droppedObject
+	 * @param hostObject
+	 * @return
+	 */
+	private boolean isInheritedMember(EObject droppedObject, EObject hostObject) {
+		if(hostObject instanceof Classifier) {
+			Classifier classifier = (Classifier)hostObject;
+			return classifier.getInheritedMembers().contains(droppedObject);
+			
+		}
+		return false;
 	}
 
 }

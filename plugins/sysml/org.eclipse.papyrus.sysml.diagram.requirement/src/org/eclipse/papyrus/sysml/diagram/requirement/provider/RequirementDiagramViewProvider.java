@@ -12,6 +12,7 @@ package org.eclipse.papyrus.sysml.diagram.requirement.provider;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementDiagramEditPart;
 import org.eclipse.papyrus.sysml.diagram.requirement.factory.RequirementDiagramViewFactory;
 
@@ -28,4 +29,18 @@ public class RequirementDiagramViewProvider extends AbstractViewProvider {
 		}
 		return null;
 	}
+
+	@Override
+	protected boolean provides(CreateNodeViewOperation operation) {
+		// TODO Auto-generated method stub
+		return super.provides(operation);
+	}
+
+	@Override
+	protected Class getNodeViewClass(IAdaptable semanticAdapter, View containerView, String semanticHint) {
+		// TODO Auto-generated method stub
+		return super.getNodeViewClass(semanticAdapter, containerView, semanticHint);
+	}
+	
+	
 }
