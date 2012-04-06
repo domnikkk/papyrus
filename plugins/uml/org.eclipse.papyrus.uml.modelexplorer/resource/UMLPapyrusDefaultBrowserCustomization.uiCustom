@@ -514,7 +514,7 @@
     </references>
     <references referenceName="inheritedMember">
       <customizedFeatures>
-        <defaultValue xsi:type="uicustom:StaticFeatureValue" value="true"/>
+        <defaultValue xsi:type="uicustom:StaticFeatureValue" value="false"/>
       </customizedFeatures>
     </references>
     <references referenceName="general">
@@ -1442,7 +1442,7 @@
     </references>
     <references referenceName="inheritedMember">
       <customizedFeatures>
-        <defaultValue xsi:type="uicustom:StaticFeatureValue" value="true"/>
+        <defaultValue xsi:type="uicustom:StaticFeatureValue" value="false"/>
       </customizedFeatures>
     </references>
     <references referenceName="general">
