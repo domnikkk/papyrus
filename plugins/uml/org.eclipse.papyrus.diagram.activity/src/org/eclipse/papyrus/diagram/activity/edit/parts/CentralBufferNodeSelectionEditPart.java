@@ -273,7 +273,7 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 	protected String getLabelText() {
 		// do not edit label if hidden
 		EObject resolveSemanticElement = resolveSemanticElement();
-		if (!(resolveSemanticElement instanceof ObjectNode)){
+		if(!(resolveSemanticElement instanceof ObjectNode)) {
 			return EMPTY_STRING;////$NON-NLS-N$
 		}
 		boolean selectionSet = ((ObjectNode)resolveSemanticElement).getSelection() != null;
@@ -685,7 +685,7 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 	protected void initExtendedEditorConfiguration() {
 		if(configuration == null) {
 			final String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-			if(languagePreferred != null && !languagePreferred.equals(EMPTY_STRING)) {
+			if(languagePreferred != null && !languagePreferred.equals("")) {
 				configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 			} else {
 				configuration = DirectEditorsUtil.findEditorConfiguration(IDirectEditorsIds.UML_LANGUAGE, resolveSemanticElement().eClass().getInstanceClassName());
@@ -700,7 +700,7 @@ public class CentralBufferNodeSelectionEditPart extends LabelEditPart implements
 	 */
 	protected void updateExtendedEditorConfiguration() {
 		String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-		if(languagePreferred != null && !languagePreferred.equals(EMPTY_STRING) && languagePreferred != configuration.getLanguage()) {
+		if(languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) {
 			configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 		} else if(IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
 			configuration = null;
