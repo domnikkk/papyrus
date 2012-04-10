@@ -78,7 +78,9 @@ public class CreateAllocationTableCommand extends AbstractCreateNattableEditorCo
 			Element el = (Element)object;
 			Package pack = el.getNearestPackage();
 			//we can create an Allocation Table only when the profile is applied
-			return pack.getAppliedProfile(SysmlResource.ALLOCATIONS_ID, true) != null;
+			if (pack != null) {
+			    return pack.getAppliedProfile(SysmlResource.ALLOCATIONS_ID, true) != null;
+            }
 		}
 		return false;
 	}

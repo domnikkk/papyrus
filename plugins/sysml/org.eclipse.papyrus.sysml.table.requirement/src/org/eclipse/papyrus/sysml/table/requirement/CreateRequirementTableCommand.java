@@ -82,7 +82,9 @@ public class CreateRequirementTableCommand extends AbstractCreateNattableEditorC
 			Element el = (Element)object;
 			Package pack = el.getNearestPackage();
 			//we can create an Allocation Table only when the profile is applied
-			return pack.getAppliedProfile(SysmlResource.REQUIREMENTS_ID, true) != null;
+			if (pack != null) {
+                return pack.getAppliedProfile(SysmlResource.REQUIREMENTS_ID, true) != null;
+            }
 		}
 		return false;
 	}
