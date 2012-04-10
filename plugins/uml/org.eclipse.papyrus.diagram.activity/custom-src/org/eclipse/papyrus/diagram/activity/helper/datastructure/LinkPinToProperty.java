@@ -8,33 +8,43 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *   Arthur Daussy (Atos) - Initial API and implementation
+ *   Atos - Initial API and implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.activity.helper.datastructure;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Pin;
+import org.eclipse.uml2.uml.Property;
 
 /**
- * Representation of a link between a pin and a element which it represent (parameter)
- * 
- * @author adaussy
- * 
+ * Link a pin a to a property
+ * @author arthur daussy
  */
-public interface ILinkPinToParameter {
+public class LinkPinToProperty implements ILinkPinToTarget {
 
-	/**
-	 * Return the {@link Pin} object
-	 * 
-	 * @return
-	 */
-	public Pin getPin();
+	private Pin pin;
+	
+	private Property property;
+	
+	
+	public LinkPinToProperty(Pin pin, Property property) {
+		super();
+		Assert.isNotNull(pin);
+		this.pin = pin;
+		Assert.isNotNull(property);
+		this.property = property;
+	}
 
-	/**
-	 * Return the element pointed by the link
-	 * 
-	 * @return
-	 */
-	public Element getTarget();
+	@Override
+	public Pin getPin() {
+		return pin;
+	}
+
+	@Override
+	public Element getTarget() {
+		return property;
+	}
+
 }

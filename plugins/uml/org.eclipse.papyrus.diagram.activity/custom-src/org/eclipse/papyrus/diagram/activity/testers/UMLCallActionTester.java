@@ -22,7 +22,7 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.editor.PapyrusMultiDiagramEditor;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.uml2.uml.CallAction;
+import org.eclipse.uml2.uml.InvocationAction;
 
 /**
  * This class is a Property tester used to check if current element
@@ -63,7 +63,7 @@ public class UMLCallActionTester extends PropertyTester {
 						element = ((View)element).getElement();
 					}
 				}
-				currentValue = element instanceof CallAction;
+				currentValue = element instanceof InvocationAction;
 			}
 
 			return (currentValue == expectedValue);

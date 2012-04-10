@@ -17,12 +17,14 @@ package org.eclipse.papyrus.diagram.activity.commands;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.diagram.activity.helper.IPinToParameterLinkCommand;
-import org.eclipse.papyrus.diagram.activity.helper.datastructure.LinkPinToParameter;
+import org.eclipse.papyrus.diagram.activity.helper.datastructure.ILinkPinToTarget;
 import org.eclipse.papyrus.umlutils.ui.command.CreateEAnnotationCommand;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Pin;
 
@@ -37,7 +39,7 @@ public class CreatePinToParameterLinkEAnnotation extends CreateEAnnotationComman
 	/**
 	 * {@link Parameter}
 	 */
-	private Parameter parameter;
+	private Element target;
 
 	/**
 	 * {@link EAnnotation}
@@ -49,15 +51,15 @@ public class CreatePinToParameterLinkEAnnotation extends CreateEAnnotationComman
 	 */
 	protected EModelElement modelOwner;
 
-	public CreatePinToParameterLinkEAnnotation(TransactionalEditingDomain domain, Pin object, Parameter parameter) {
+	public CreatePinToParameterLinkEAnnotation(TransactionalEditingDomain domain, Pin object, Element target) {
 		super(domain, object, PIN_TO_PARAMETER_LINK);
-		this.parameter = parameter;
+		this.target = target;
 		this.modelOwner = object;
 	}
 
-	public CreatePinToParameterLinkEAnnotation(TransactionalEditingDomain domain, LinkPinToParameter link) {
+	public CreatePinToParameterLinkEAnnotation(TransactionalEditingDomain domain, ILinkPinToTarget link) {
 		super(domain, link.getPin(), PIN_TO_PARAMETER_LINK);
-		this.parameter = link.getParameter();
+		this.target = link.getTarget();
 		this.modelOwner = link.getPin();
 	}
 
@@ -76,7 +78,7 @@ public class CreatePinToParameterLinkEAnnotation extends CreateEAnnotationComman
 		}
 		EMap<String, String> details = eAnnotation.getDetails();
 		if(details != null) {
-			details.put(PIN_TO_PARAMETER_LINK, getXmiID(parameter));
+			details.put(PIN_TO_PARAMETER_LINK, getXmiID(target));
 		}
 	}
 
@@ -87,7 +89,7 @@ public class CreatePinToParameterLinkEAnnotation extends CreateEAnnotationComman
 	 *        {@link Parameter} to identify
 	 * @return XMI id og the {@link Parameter}
 	 */
-	protected String getXmiID(Parameter p) {
+	protected String getXmiID(EObject p) {
 		Resource ressource = p.eResource();
 		if(ressource instanceof XMIResource) {
 			return ((XMIResource)ressource).getID(p);
@@ -97,6 +99,6 @@ public class CreatePinToParameterLinkEAnnotation extends CreateEAnnotationComman
 
 	@Override
 	public boolean canExecute() {
-		return super.canExecute() && modelOwner != null && parameter != null;
+		return super.canExecute() && modelOwner != null && target != null;
 	}
 }

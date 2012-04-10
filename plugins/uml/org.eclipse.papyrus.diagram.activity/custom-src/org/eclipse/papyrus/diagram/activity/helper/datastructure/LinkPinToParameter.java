@@ -17,6 +17,7 @@ import org.eclipse.uml2.uml.CallAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Pin;
+import org.eclipse.uml2.uml.TypedElement;
 
 /**
  * Data structure to store link between a Pin and a Parameter in an {@link CallAction}.
@@ -26,7 +27,7 @@ import org.eclipse.uml2.uml.Pin;
  * @author arthur daussy
  * 
  */
-public class LinkPinToParameter implements ILinkPinToParameter {
+public class LinkPinToParameter implements ILinkPinToTarget {
 
 	/**
 	 * When error occur
@@ -41,7 +42,7 @@ public class LinkPinToParameter implements ILinkPinToParameter {
 	/**
 	 * {@link Parameter} which is referenced by the pin of the {@link CallAction}
 	 */
-	private Parameter parameter;
+	private TypedElement parameter;
 
 
 	public LinkPinToParameter() {
@@ -56,7 +57,7 @@ public class LinkPinToParameter implements ILinkPinToParameter {
 	 * @param parameter
 	 *        {@link Parameter} which is referenced by the pin of the {@link CallAction} element
 	 */
-	public LinkPinToParameter(Pin pin, Parameter parameter) {
+	public LinkPinToParameter(Pin pin, TypedElement parameter) {
 		super();
 		this.pin = pin;
 		this.parameter = parameter;
@@ -73,12 +74,12 @@ public class LinkPinToParameter implements ILinkPinToParameter {
 	}
 
 
-	public Parameter getParameter() {
+	public TypedElement getParameter() {
 		return parameter;
 	}
 
 
-	public void setParameter(Parameter parameter) {
+	public void setParameter(TypedElement parameter) {
 		this.parameter = parameter;
 	}
 

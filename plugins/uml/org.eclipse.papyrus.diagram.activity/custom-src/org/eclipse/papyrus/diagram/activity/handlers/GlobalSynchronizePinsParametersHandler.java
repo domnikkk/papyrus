@@ -67,7 +67,7 @@ public class GlobalSynchronizePinsParametersHandler extends AbstractSynchronizeP
 								if(ca instanceof CallAction) {
 									EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(ca);
 									if(!editingDomain.isReadOnly(ca.eResource())) {
-										SynchronizePinsParametersHandler.syncCallAction((CallAction)ca);
+										SynchronizePinsParametersHandler.syncInvocationAction((CallAction)ca);
 									}
 								}
 							}

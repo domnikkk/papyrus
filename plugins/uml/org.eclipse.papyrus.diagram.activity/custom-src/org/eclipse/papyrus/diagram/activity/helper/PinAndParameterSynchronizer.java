@@ -19,7 +19,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -34,7 +33,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -53,6 +51,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.EMFEventType;
 import org.eclipse.emf.validation.IValidationContext;
+import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.gmf.runtime.common.core.util.Log;
 import org.eclipse.gmf.runtime.diagram.ui.internal.DiagramUIPlugin;
 import org.eclipse.gmf.runtime.diagram.ui.internal.DiagramUIStatusCodes;
@@ -74,6 +73,7 @@ import org.eclipse.papyrus.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.common.util.CacheAdapter;
+import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.AddVariableValueAction;
@@ -105,6 +105,7 @@ import org.eclipse.uml2.uml.Signal;
 import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.StructuralFeatureAction;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -248,7 +249,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 				 *********/
 			} else if((EMFEventType.ADD.equals(ctx.getEventType()) || EMFEventType.ADD_MANY.equals(ctx.getEventType())) && ctx.getFeatureNewValue() instanceof BroadcastSignalAction) {
 				// SendObjectAction created
-				CompoundCommand cmd = getResetPinsCmd((BroadcastSignalAction)ctx.getFeatureNewValue());
+				CompoundCommand cmd = getResetPinsCmd((InvocationAction)ctx.getFeatureNewValue());
 				if(!cmd.isEmpty() && cmd.canExecute()) {
 					cmd.execute();
 				}
@@ -479,7 +480,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 */
 	protected void handleParameterCreatedDuringValidation(Parameter parameter, EClass preferredPinClass) {
 		if(parameter != null) {
-			Map<Integer, Parameter> empty = Collections.emptyMap();
+			Map<Integer, TypedElement> empty = Collections.emptyMap();
 			CompoundCommand globalCmd = new CompoundCommand();
 			// explore referencing actions
 			List<InvocationAction> callingActions = getCallingActions(parameter.getOwner());
@@ -488,7 +489,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 				for(InvocationAction action : callingActions) {
 					if(action instanceof CallAction) {
 						int index = action.getArguments().size();
-						CompoundCommand cmd = getAddPinsCmd((CallAction)action, Collections.singletonMap(index, parameter), empty, preferredPinClass);
+						CompoundCommand cmd = getAddPinsCmd((CallAction)action, Collections.singletonMap(index, (TypedElement)parameter), empty, preferredPinClass);
 						globalCmd.append(cmd);
 					}
 				}
@@ -498,7 +499,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 				for(InvocationAction action : callingActions) {
 					if(action instanceof CallAction) {
 						int index = ((CallAction)action).getResults().size();
-						CompoundCommand cmd = getAddPinsCmd((CallAction)action, empty, Collections.singletonMap(index, parameter), preferredPinClass);
+						CompoundCommand cmd = getAddPinsCmd((CallAction)action, empty, Collections.singletonMap(index, (TypedElement)parameter), preferredPinClass);
 						globalCmd.append(cmd);
 					}
 				}
@@ -508,7 +509,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 					if(action instanceof CallAction) {
 						int indexIn = action.getArguments().size();
 						int indexOut = ((CallAction)action).getResults().size();
-						CompoundCommand cmd = getAddPinsCmd((CallAction)action, Collections.singletonMap(indexIn, parameter), Collections.singletonMap(indexOut, parameter), preferredPinClass);
+						CompoundCommand cmd = getAddPinsCmd((CallAction)action, Collections.singletonMap(indexIn, (TypedElement)parameter), Collections.singletonMap(indexOut, (TypedElement)parameter), preferredPinClass);
 						globalCmd.append(cmd);
 					}
 				}
@@ -707,10 +708,10 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 *        validation context
 	 * @return status
 	 */
-	protected IStatus changePinsBecauseOfParameterDirection(Parameter parameter, Notification event, IValidationContext ctx) {
+	protected IStatus changePinsBecauseOfParameterDirection(TypedElement parameter, Notification event, IValidationContext ctx) {
 		// constants used for type safety
 		List<Integer> emptyList = Collections.emptyList();
-		Map<Integer, Parameter> emptyMap = Collections.emptyMap();
+		Map<Integer, TypedElement> emptyMap = Collections.emptyMap();
 		Object oldDir = event.getOldValue();
 		Object newDir = event.getNewValue();
 		int inIndex = getIndex(parameter, true);
@@ -1476,8 +1477,8 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 		} else if(element instanceof Operation) {
 			newParameters = ((Operation)element).getOwnedParameters();
 		}
-		Map<Integer, Parameter> addedInputPinMap = new HashMap<Integer, Parameter>();
-		Map<Integer, Parameter> addedOutputPinMap = new HashMap<Integer, Parameter>();
+		Map<Integer, TypedElement> addedInputPinMap = new HashMap<Integer, TypedElement>();
+		Map<Integer, TypedElement> addedOutputPinMap = new HashMap<Integer, TypedElement>();
 		// iterate on the list of new parameters to deduce pins indexes
 		int correspondingInputPinIndex = 0;
 		int correspondingOutputPinIndex = 0;
@@ -1759,7 +1760,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	/**
 	 * Get the command to add pins linked with parameter at the given indexes
 	 * 
-	 * @param action
+	 * @param invocationAction
 	 *        the CallBehaviorAction or CallOperationAction (no effect
 	 *        otherwise)
 	 * @param addedInputPinMap
@@ -1771,18 +1772,18 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 *        null)
 	 * @return the command to add corresponding Pins
 	 */
-	protected static CompoundCommand getAddPinsCmd(CallAction action, Map<Integer, Parameter> addedInputPinMap, Map<Integer, Parameter> addedOutputPinMap, EClass preferredPinClass) {
+	protected static CompoundCommand getAddPinsCmd(InvocationAction invocationAction, Map<Integer, TypedElement> addedInputPinMap, Map<Integer, TypedElement> addedOutputPinMap, EClass preferredPinClass) {
 		CompoundCommand globalCmd = new CompoundCommand();
 		// Get the editing domain
 		TransactionalEditingDomain editingdomain = EditorUtils.getTransactionalEditingDomain();
-		if(action instanceof CallBehaviorAction || action instanceof CallOperationAction) {
+		if(invocationAction instanceof CallBehaviorAction || invocationAction instanceof CallOperationAction || invocationAction instanceof SendSignalAction || invocationAction instanceof BroadcastSignalAction) {
 			/*
 			 * An element can not be added at an index bigger than the size.
 			 * Hence, add commands must be sorted according to the decreasing
 			 * index and the index must be adapted taking in account elements
 			 * that will be added. We use a bucket sort on indexes of both maps.
 			 */
-			int nextKey = addedInputPinMap.size() + action.getArguments().size();
+			int nextKey = addedInputPinMap.size() + invocationAction.getArguments().size();
 			int numberOfPinsToAdd = addedInputPinMap.size();
 			while(numberOfPinsToAdd > 0) {
 				if(addedInputPinMap.containsKey(nextKey)) {
@@ -1791,7 +1792,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 					// index at which pin is added must take in account other
 					// pins added after
 					int addIndex = nextKey - numberOfPinsToAdd;
-					Command cmd = AddCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getInvocationAction_Argument(), pin, addIndex);
+					Command cmd = AddCommand.create(editingdomain, invocationAction, UMLPackage.eINSTANCE.getInvocationAction_Argument(), pin, addIndex);
 					LinkPinToParameter link = new LinkPinToParameter(pin, addedInputPinMap.get(nextKey));
 					CreatePinToParameterLinkEAnnotation linkCommand = new CreatePinToParameterLinkEAnnotation(EditorUtils.getTransactionalEditingDomain(), link);
 					globalCmd.append(cmd);
@@ -1801,26 +1802,28 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 				}
 				nextKey--;
 			}
-			nextKey = addedOutputPinMap.size() + action.getResults().size();
-			numberOfPinsToAdd = addedOutputPinMap.size();
-			while(numberOfPinsToAdd > 0) {
-				if(addedOutputPinMap.containsKey(nextKey)) {
-					numberOfPinsToAdd--;
-					OutputPin pin = createOutputPin(addedOutputPinMap.get(nextKey));
-					// index at which pin is added must take in account other
-					// pins added after
-					int addIndex = nextKey - numberOfPinsToAdd;
-					Command cmd = AddCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getCallAction_Result(), pin, addIndex);
-					globalCmd.append(cmd);
-					if(action instanceof CallAction) {
+			if(invocationAction instanceof CallAction) {
+				CallAction callAction = (CallAction)invocationAction;
+				nextKey = addedOutputPinMap.size() + callAction.getResults().size();
+				numberOfPinsToAdd = addedOutputPinMap.size();
+				while(numberOfPinsToAdd > 0) {
+					if(addedOutputPinMap.containsKey(nextKey)) {
+						numberOfPinsToAdd--;
+						OutputPin pin = createOutputPin(addedOutputPinMap.get(nextKey));
+						// index at which pin is added must take in account other
+						// pins added after
+						int addIndex = nextKey - numberOfPinsToAdd;
+						Command cmd = AddCommand.create(editingdomain, callAction, UMLPackage.eINSTANCE.getCallAction_Result(), pin, addIndex);
+						globalCmd.append(cmd);
 						LinkPinToParameter link = new LinkPinToParameter(pin, addedOutputPinMap.get(nextKey));
 						CreatePinToParameterLinkEAnnotation linkCommand = new CreatePinToParameterLinkEAnnotation(EditorUtils.getTransactionalEditingDomain(), link);
 						if(linkCommand != null) {
 							globalCmd.append(linkCommand);
 						}
+
 					}
+					nextKey--;
 				}
-				nextKey--;
 			}
 		}
 		return globalCmd;
@@ -1838,7 +1841,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 *        null)
 	 * @return the command to add corresponding Pins
 	 */
-	public static CompoundCommand getAddPinsCmd(SendSignalAction action, Map<Integer, Property> addedInputPinMap, EClass preferredPinClass) {
+	public static CompoundCommand getAddPinsCmd(InvocationAction action, Map<Integer, Property> addedInputPinMap, EClass preferredPinClass) {
 		CompoundCommand globalCmd = new CompoundCommand();
 		// Get the editing domain
 		TransactionalEditingDomain editingdomain = EditorUtils.getTransactionalEditingDomain();
@@ -1859,6 +1862,11 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 				int addIndex = nextKey - numberOfPinsToAdd;
 				Command cmd = AddCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getInvocationAction_Argument(), pin, addIndex);
 				globalCmd.append(cmd);
+				LinkPinToParameter link = new LinkPinToParameter(pin, addedInputPinMap.get(nextKey));
+				CreatePinToParameterLinkEAnnotation linkCommand = new CreatePinToParameterLinkEAnnotation(WorkspaceEditingDomainFactory.INSTANCE.getEditingDomain(action.eResource().getResourceSet()), link);
+				if(linkCommand != null && linkCommand.canExecute()) {
+					globalCmd.append(linkCommand);
+				}
 			}
 			nextKey--;
 		}
@@ -1868,48 +1876,51 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	/**
 	 * Create an output pin with valued copied from the parameter
 	 * 
-	 * @param parameter
+	 * @param typedElement
 	 *        the reference parameter
 	 */
-	protected static OutputPin createOutputPin(Parameter parameter) {
+	protected static OutputPin createOutputPin(TypedElement typedElement) {
 		OutputPin pin = UMLFactory.eINSTANCE.createOutputPin();
 		assignUpperBound(pin);
 		// Initialize name
-		pin.setName(parameter.getName());
+		pin.setName(typedElement.getName());
 		// Synchronize type
-		pin.setType(parameter.getType());
-		// Synchronize is ordered
-		pin.setIsOrdered(parameter.isOrdered());
-		// Synchronize mutliplicity : is unique
-		pin.setIsUnique(parameter.isUnique());
-		// Synchronize mutliplicity : lower value
-		ValueSpecification lowerValue = parameter.getLowerValue();
-		if(lowerValue != null) {
-			// use a copy command for new value
-			Command copy = CopyCommand.create(EditorUtils.getTransactionalEditingDomain(), Collections.singleton(lowerValue));
-			copy.execute();
-			Collection<?> result = copy.getResult();
-			Object valueToAffect = null;
-			if(!result.isEmpty()) {
-				valueToAffect = result.iterator().next();
+		pin.setType(typedElement.getType());
+		if(typedElement instanceof Property) {
+			Property property = (Property)typedElement;
+			// Synchronize is ordered
+			pin.setIsOrdered(property.isOrdered());
+			// Synchronize mutliplicity : is unique
+			pin.setIsUnique(property.isUnique());
+			// Synchronize mutliplicity : lower value
+			ValueSpecification lowerValue = property.getLowerValue();
+			if(lowerValue != null) {
+				// use a copy command for new value
+				Command copy = CopyCommand.create(EditorUtils.getTransactionalEditingDomain(), Collections.singleton(lowerValue));
+				copy.execute();
+				Collection<?> result = copy.getResult();
+				Object valueToAffect = null;
+				if(!result.isEmpty()) {
+					valueToAffect = result.iterator().next();
+				}
+				if(valueToAffect instanceof ValueSpecification) {
+					pin.setLowerValue((ValueSpecification)valueToAffect);
+				}
 			}
-			if(valueToAffect instanceof ValueSpecification) {
-				pin.setLowerValue((ValueSpecification)valueToAffect);
-			}
-		}
-		// Synchronize mutliplicity : upper value
-		ValueSpecification upperValue = parameter.getUpperValue();
-		if(upperValue != null) {
-			// use a copy command for new value
-			Command copy = CopyCommand.create(EditorUtils.getTransactionalEditingDomain(), Collections.singleton(upperValue));
-			copy.execute();
-			Collection<?> result = copy.getResult();
-			Object valueToAffect = null;
-			if(!result.isEmpty()) {
-				valueToAffect = result.iterator().next();
-			}
-			if(valueToAffect instanceof ValueSpecification) {
-				pin.setUpperValue((ValueSpecification)valueToAffect);
+			// Synchronize mutliplicity : upper value
+			ValueSpecification upperValue = property.getUpperValue();
+			if(upperValue != null) {
+				// use a copy command for new value
+				Command copy = CopyCommand.create(EditorUtils.getTransactionalEditingDomain(), Collections.singleton(upperValue));
+				copy.execute();
+				Collection<?> result = copy.getResult();
+				Object valueToAffect = null;
+				if(!result.isEmpty()) {
+					valueToAffect = result.iterator().next();
+				}
+				if(valueToAffect instanceof ValueSpecification) {
+					pin.setUpperValue((ValueSpecification)valueToAffect);
+				}
 			}
 		}
 		return pin;
@@ -1982,13 +1993,13 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	/**
 	 * Create an input pin with valued copied from the property
 	 * 
-	 * @param property
+	 * @param typedElement
 	 *        the reference property
 	 * @param preferredPinClass
 	 *        the EClass to use to create a new pin whenever possible (or
 	 *        null)
 	 */
-	public static InputPin createInputPin(Property property, EClass preferredPinClass) {
+	public static InputPin createInputPin(TypedElement typedElement, EClass preferredPinClass) {
 		InputPin pin;
 		if(UMLPackage.eINSTANCE.getValuePin().equals(preferredPinClass)) {
 			pin = UMLFactory.eINSTANCE.createValuePin();
@@ -1999,41 +2010,44 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 		}
 		assignUpperBound(pin);
 		// Initialize name
-		pin.setName(property.getName());
+		pin.setName(typedElement.getName());
 		// Synchronize type
-		pin.setType(property.getType());
-		// Synchronize is ordered
-		pin.setIsOrdered(property.isOrdered());
-		// Synchronize multiplicity : is unique
-		pin.setIsUnique(property.isUnique());
-		// Synchronize multiplicity : lower value
-		ValueSpecification lowerValue = property.getLowerValue();
-		if(lowerValue != null) {
-			// use a copy command for new value
-			Command copy = CopyCommand.create(EditorUtils.getTransactionalEditingDomain(), Collections.singleton(lowerValue));
-			copy.execute();
-			Collection<?> result = copy.getResult();
-			Object valueToAffect = null;
-			if(!result.isEmpty()) {
-				valueToAffect = result.iterator().next();
+		pin.setType(typedElement.getType());
+		if(pin instanceof Property) {
+			Property property = (Property)pin;
+			// Synchronize is ordered
+			pin.setIsOrdered(property.isOrdered());
+			// Synchronize multiplicity : is unique
+			pin.setIsUnique(property.isUnique());
+			// Synchronize multiplicity : lower value
+			ValueSpecification lowerValue = property.getLowerValue();
+			if(lowerValue != null) {
+				// use a copy command for new value
+				Command copy = CopyCommand.create(EditorUtils.getTransactionalEditingDomain(), Collections.singleton(lowerValue));
+				copy.execute();
+				Collection<?> result = copy.getResult();
+				Object valueToAffect = null;
+				if(!result.isEmpty()) {
+					valueToAffect = result.iterator().next();
+				}
+				if(valueToAffect instanceof ValueSpecification) {
+					pin.setLowerValue((ValueSpecification)valueToAffect);
+				}
 			}
-			if(valueToAffect instanceof ValueSpecification) {
-				pin.setLowerValue((ValueSpecification)valueToAffect);
-			}
-		}
-		// Synchronize multiplicity : upper value
-		ValueSpecification upperValue = property.getUpperValue();
-		if(upperValue != null) {
-			// use a copy command for new value
-			Command copy = CopyCommand.create(EditorUtils.getTransactionalEditingDomain(), Collections.singleton(upperValue));
-			copy.execute();
-			Collection<?> result = copy.getResult();
-			Object valueToAffect = null;
-			if(!result.isEmpty()) {
-				valueToAffect = result.iterator().next();
-			}
-			if(valueToAffect instanceof ValueSpecification) {
-				pin.setUpperValue((ValueSpecification)valueToAffect);
+			// Synchronize multiplicity : upper value
+			ValueSpecification upperValue = property.getUpperValue();
+			if(upperValue != null) {
+				// use a copy command for new value
+				Command copy = CopyCommand.create(EditorUtils.getTransactionalEditingDomain(), Collections.singleton(upperValue));
+				copy.execute();
+				Collection<?> result = copy.getResult();
+				Object valueToAffect = null;
+				if(!result.isEmpty()) {
+					valueToAffect = result.iterator().next();
+				}
+				if(valueToAffect instanceof ValueSpecification) {
+					pin.setUpperValue((ValueSpecification)valueToAffect);
+				}
 			}
 		}
 		return pin;
@@ -2147,32 +2161,32 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 		return globalCmd;
 	}
 
-	/**
-	 * Get the command to reset all pins of the action.
-	 * 
-	 * @param action
-	 *        action to reinitialize pins (BroadcastSignalAction)
-	 * @return command
-	 */
-	protected CompoundCommand getResetPinsCmd(BroadcastSignalAction action) {
-		// Get the editing domain
-		TransactionalEditingDomain editingdomain = EditorUtils.getTransactionalEditingDomain();
-		CompoundCommand globalCmd = new CompoundCommand();
-		if(action.getSignal() != null) {
-			if(action.getArguments().isEmpty()) {
-				EList<Property> properties = action.getSignal().getAllAttributes();
-				for(Property argument : properties) {
-					InputPin argPin = UMLFactory.eINSTANCE.createInputPin();
-					assignUpperBound(argPin);
-					argPin.setName(argument.getName());
-					argPin.setType(argument.getType());
-					Command cmdArg = AddCommand.create(editingdomain, action, UMLPackage.Literals.INVOCATION_ACTION__ARGUMENT, Arrays.asList(argPin));
-					globalCmd.append(cmdArg);
-				}
-			}
-		}
-		return globalCmd;
-	}
+//	/**
+//	 * Get the command to reset all pins of the action.
+//	 * 
+//	 * @param action
+//	 *        action to reinitialize pins (BroadcastSignalAction)
+//	 * @return command
+//	 */
+//	protected CompoundCommand getResetPinsCmd(BroadcastSignalAction action) {
+//		// Get the editing domain
+//		TransactionalEditingDomain editingdomain = EditorUtils.getTransactionalEditingDomain();
+//		CompoundCommand globalCmd = new CompoundCommand();
+//		if(action.getSignal() != null) {
+//			if(action.getArguments().isEmpty()) {
+//				EList<Property> properties = action.getSignal().getAllAttributes();
+//				for(Property argument : properties) {
+//					InputPin argPin = UMLFactory.eINSTANCE.createInputPin();
+//					assignUpperBound(argPin);
+//					argPin.setName(argument.getName());
+//					argPin.setType(argument.getType());
+//					Command cmdArg = AddCommand.create(editingdomain, action, UMLPackage.Literals.INVOCATION_ACTION__ARGUMENT, Arrays.asList(argPin));
+//					globalCmd.append(cmdArg);
+//				}
+//			}
+//		}
+//		return globalCmd;
+//	}
 
 	/**
 	 * Get the command to reset all pins of the action.
@@ -2390,47 +2404,55 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 		return globalCmd;
 	}
 
-	/**
-	 * Get the command to reset all pins of the action.
-	 * 
-	 * @param action
-	 *        action to reinitialize pins (SendSignalAction)
-	 * @return command
-	 */
-	public static CompoundCommand getResetPinsCmd(SendSignalAction action) {
-		// Get the editing domain
-		TransactionalEditingDomain editingdomain = EditorUtils.getTransactionalEditingDomain();
-		CompoundCommand globalCmd = new CompoundCommand();
-		// remove argument pins
-		if(!action.getArguments().isEmpty()) {
-			Command cmd = RemoveCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getInvocationAction_Argument(), action.getArguments());
-			globalCmd.append(cmd);
-		}
-		// recover attributes
-		List<Property> attributes = Collections.emptyList();
-		Signal signal = action.getSignal();
-		if(signal != null) {
-			attributes = signal.getOwnedAttributes();
-		}
-		// add pins corresponding to attributes
-		Map<Integer, Property> inParameters = new HashMap<Integer, Property>();
-		int inIndex = 0;
-		for(Property att : attributes) {
-			inParameters.put(inIndex, att);
-			inIndex++;
-		}
-		if(!inParameters.isEmpty()) {
-			Command cmd = getAddPinsCmd(action, inParameters, null);
-			globalCmd.append(cmd);
-		}
-		// add target pin
-		if(action.getTarget() == null) {
-			InputPin targetPin = createTargetPin(null);
-			Command cmd = SetCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getSendSignalAction_Target(), targetPin);
-			globalCmd.append(cmd);
-		}
-		return globalCmd;
-	}
+
+
+//	/**
+//	 * Get the command to reset all pins of the action.
+//	 * 
+//	 * @param action
+//	 *        action to reinitialize pins (SendSignalAction)
+//	 * @return command
+//	 */
+//	public static CompoundCommand getResetPinsCmd(InvocationAction action) {
+//		if(!(action instanceof SendSignalAction || action instanceof BroadcastSignalAction)) {
+//			return null;
+//		}
+//		// Get the editing domain
+//		TransactionalEditingDomain editingdomain = EditorUtils.getTransactionalEditingDomain();
+//		CompoundCommand globalCmd = new CompoundCommand();
+//		// remove argument pins
+//		if(!action.getArguments().isEmpty()) {
+//			Command cmd = RemoveCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getInvocationAction_Argument(), action.getArguments());
+//			globalCmd.append(cmd);
+//		}
+//		// recover attributes
+//		List<Property> attributes = Collections.emptyList();
+//		Signal signal = action instanceof SendSignalAction ? ((SendSignalAction)action).getSignal() : ((BroadcastSignalAction)action).getSignal();
+//		if(signal != null) {
+//			attributes = signal.getOwnedAttributes();
+//		}
+//		// add pins corresponding to attributes
+//		Map<Integer, Property> inParameters = new HashMap<Integer, Property>();
+//		int inIndex = 0;
+//		for(Property att : attributes) {
+//			inParameters.put(inIndex, att);
+//			inIndex++;
+//		}
+//		if(!inParameters.isEmpty()) {
+//			Command cmd = getAddPinsCmd(action, inParameters, null);
+//			globalCmd.append(cmd);
+//		}
+//		if(action instanceof SendSignalAction) {
+//			SendSignalAction sendSignalAction = (SendSignalAction)action;
+//			// add target pin
+//			if(sendSignalAction.getTarget() == null) {
+//				InputPin targetPin = createTargetPin(null);
+//				Command cmd = SetCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getSendSignalAction_Target(), targetPin);
+//				globalCmd.append(cmd);
+//			}
+//		}
+//		return globalCmd;
+//	}
 
 	/**
 	 * Retrieve the parameter linked
@@ -2440,14 +2462,14 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 * @param xmiResource
 	 * @return
 	 */
-	public static Parameter getLinkedParemeter(Pin p, XMIResource xmiResource) {
+	public static TypedElement getLinkedParemeter(Pin p, XMIResource xmiResource) {
 		if(p != null && xmiResource != null) {
 			EAnnotation eAnnotation = p.getEAnnotation(IPinToParameterLinkCommand.PIN_TO_PARAMETER_LINK);
 			if(eAnnotation != null && !eAnnotation.getDetails().isEmpty()) {
 				String id = eAnnotation.getDetails().get(0).getValue();
 				EObject pa = xmiResource.getEObject(id);
-				if(pa instanceof Parameter) {
-					return (Parameter)pa;
+				if(pa instanceof TypedElement) {
+					return (TypedElement)pa;
 				}
 			}
 		}
@@ -2462,28 +2484,42 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 *        CallBehaviorAction)
 	 * @return command
 	 */
-	public static CompoundCommand getResetPinsCmd(CallAction action) {
+	public static CompoundCommand getResetPinsCmd(InvocationAction action) {
 		// Getting the editing domain
 		TransactionalEditingDomain editingdomain = EditorUtils.getTransactionalEditingDomain();
 		CompoundCommand globalCmd = new CompoundCommand();
 		Element behaviorStructural = null;
-		List<Parameter> parameters = Collections.emptyList();
+		List<? extends TypedElement> parameters = Collections.emptyList();
 		if(action instanceof CallBehaviorAction) {
 			behaviorStructural = ((CallBehaviorAction)action).getBehavior();
 			parameters = ((Behavior)behaviorStructural).getOwnedParameters();
 		} else if(action instanceof CallOperationAction) {
 			behaviorStructural = ((CallOperationAction)action).getOperation();
 			parameters = ((Operation)behaviorStructural).getOwnedParameters();
+		} else if(action instanceof SendSignalAction) {
+			behaviorStructural = ((SendSignalAction)action).getSignal();
+			parameters = ((Signal)behaviorStructural).getOwnedAttributes();
+		} else if(action instanceof BroadcastSignalAction) {
+			Signal signal = ((BroadcastSignalAction)action).getSignal();
+			if(signal != null){
+				behaviorStructural = signal;
+				parameters = ((Signal)behaviorStructural).getOwnedAttributes();				
+			} else {
+				parameters = Collections.emptyList();
+			}
 		}
 		XMIResource xmiResource = getXMIResource(behaviorStructural);
 		// Removing input pins that are not up to date.
-		Collection<Parameter> parameterWhichPinNotDeleted = new ArrayList<Parameter>();
-		Iterable<Pin> allPins = Iterables.concat(action.getArguments(), action.getResults());
+		Collection<TypedElement> parameterWhichPinNotDeleted = new ArrayList<TypedElement>();
+		Iterable<? extends Pin> allPins = Lists.newArrayList(action.getArguments());
+		if(action instanceof CallAction) {
+			allPins = Iterables.concat(allPins, ((CallAction)action).getResults());
+		}
 		List<Command> removesCommand = Lists.newArrayList();
 		for(Pin pin : allPins) {
 			if(SynchronizePinsParametersHandler.isUpToDate(pin, xmiResource)) {
-				Parameter pa = getLinkedParemeter(pin, xmiResource);
-				parameterWhichPinNotDeleted.add((Parameter)pa);
+				TypedElement pa = getLinkedParemeter(pin, xmiResource);
+				parameterWhichPinNotDeleted.add(pa);
 			} else {
 				EReference feature = null;
 				if(pin instanceof InputPin) {
@@ -2499,16 +2535,18 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 			}
 		}
 		//Splitting parameters
-		Map<Integer, Parameter> inParams = new HashMap<Integer, Parameter>();
-		Map<Integer, Parameter> outParams = new HashMap<Integer, Parameter>();
-		splitParameters(parameters, parameterWhichPinNotDeleted, inParams, outParams);
+		Map<Integer, TypedElement> inParams = new HashMap<Integer, TypedElement>();
+		Map<Integer, TypedElement> outParams = new HashMap<Integer, TypedElement>();
+
+		splitParameters(parameters, parameterWhichPinNotDeleted, inParams, outParams, action);
+
 		//Creating new pins.
 		if(!inParams.isEmpty() || !outParams.isEmpty()) {
 			Command cmd = getAddPinsCmd(action, inParams, outParams, null);
 			globalCmd.append(cmd);
 		}
 		/*
-		 * Appen remove command after create command since create command calculate index of new pins before removing those pins 
+		 * Append remove command after create command since create command calculate index of new pins before removing those pins
 		 */
 		for(Command rmComand : removesCommand) {
 			globalCmd.append(rmComand);
@@ -2524,6 +2562,14 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 				Command cmd = SetCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getCallOperationAction_Target(), targetPin);
 				globalCmd.append(cmd);
 			}
+		}else if(action instanceof SendSignalAction) {
+			SendSignalAction sendSignalAction = (SendSignalAction)action;
+			// add target pin
+			if(sendSignalAction.getTarget() == null) {
+				InputPin targetPin = createTargetPin(null);
+				Command cmd = SetCommand.create(editingdomain, action, UMLPackage.eINSTANCE.getSendSignalAction_Target(), targetPin);
+				globalCmd.append(cmd);
+			}
 		}
 		return globalCmd;
 	}
@@ -2532,24 +2578,37 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 * Split a list of parameters in two lists : in and out parameters. If a parameter is to be ignored, then "null" is added to the
 	 * corresponding list instead.
 	 */
-	public static void splitParameters(List<Parameter> allParams, Collection<Parameter> paramsToIgnore, Map<Integer, Parameter> inParams, Map<Integer, Parameter> outParams) {
-		Integer inIndex = 0;
-		Integer outIndex = 0;
-		for(Parameter param : allParams) {
-			ParameterDirectionKind direction = param.getDirection();
-			//In
-			if(direction == ParameterDirectionKind.IN_LITERAL || direction == ParameterDirectionKind.INOUT_LITERAL) {
-				if(!paramsToIgnore.contains(param)) {
-					inParams.put(inIndex, param);
+	public static void splitParameters(List<? extends TypedElement> allParams, Collection<? extends TypedElement> paramsToIgnore, Map<Integer, TypedElement> inParams, Map<Integer, TypedElement> outParams, Action action) {
+		if(action instanceof CallAction) {
+			Integer inIndex = 0;
+			Integer outIndex = 0;
+			for(TypedElement typeElem : allParams) {
+				if(typeElem instanceof Parameter) {
+					Parameter param = (Parameter)typeElem;
+					ParameterDirectionKind direction = param.getDirection();
+					//In
+					if(direction == ParameterDirectionKind.IN_LITERAL || direction == ParameterDirectionKind.INOUT_LITERAL) {
+						if(!paramsToIgnore.contains(param)) {
+							inParams.put(inIndex, (TypedElement)param);
+						}
+						inIndex++;
+					}
+					//Out
+					if(direction == ParameterDirectionKind.OUT_LITERAL || direction == ParameterDirectionKind.INOUT_LITERAL || direction == ParameterDirectionKind.RETURN_LITERAL) {
+						if(!paramsToIgnore.contains(param)) {
+							outParams.put(outIndex, (TypedElement)param);
+						}
+						outIndex++;
+					}
+				}
+			}
+		} else if(action instanceof InvocationAction) {
+			Integer inIndex = 0;
+			for(TypedElement typeElem : allParams) {
+				if(!paramsToIgnore.contains(typeElem)) {
+					inParams.put(inIndex, (TypedElement)typeElem);
 				}
 				inIndex++;
-			}
-			//Out
-			if(direction == ParameterDirectionKind.OUT_LITERAL || direction == ParameterDirectionKind.INOUT_LITERAL || direction == ParameterDirectionKind.RETURN_LITERAL) {
-				if(!paramsToIgnore.contains(param)) {
-					outParams.put(outIndex, param);
-				}
-				outIndex++;
 			}
 		}
 	}
@@ -2833,7 +2892,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 * this method works even if the searched parameter has a different
 	 * direction than the one specified in in (usefull when direction changes).
 	 * 
-	 * @param parameter
+	 * @param typedElement
 	 *        the searched parameter
 	 * @param in
 	 *        if true, compute position in Parameters of direction in, if
@@ -2841,11 +2900,11 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 * @return the position in which the parameter appears (0 based) or -1 if
 	 *         failed
 	 */
-	static protected int getIndex(Parameter parameter, boolean in) {
-		if(parameter == null) {
+	static protected int getIndex(TypedElement typedElement, boolean in) {
+		if(typedElement == null) {
 			return -1;
 		}
-		Element owner = parameter.getOwner();
+		Element owner = typedElement.getOwner();
 		List<Parameter> parametersList = Collections.emptyList();
 		if(owner instanceof Operation) {
 			parametersList = ((Operation)owner).getOwnedParameters();
@@ -2854,7 +2913,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 		}
 		int index = 0;
 		for(Parameter param : parametersList) {
-			if(param.equals(parameter)) {
+			if(param.equals(typedElement)) {
 				return index;
 			}
 			if(in && (ParameterDirectionKind.IN_LITERAL.equals(param.getDirection()) || ParameterDirectionKind.INOUT_LITERAL.equals(param.getDirection()))) {
