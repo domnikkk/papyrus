@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Olivier Mélosi (ATOS) olivier.melois@atos.net - added a constructor.
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.common.figure.node;
@@ -67,6 +68,10 @@ public class ClassifierFigure extends CompartmentFigure {
 	 */
 	public ClassifierFigure(String tagLabel) {
 		super(COMPARTMENT, tagLabel);
+	}
+	
+	protected ClassifierFigure(List<String> compartments, String tagLabel){
+		super(compartments, tagLabel);
 	}
 
 	/**

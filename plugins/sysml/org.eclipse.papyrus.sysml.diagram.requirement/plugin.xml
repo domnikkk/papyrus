@@ -123,6 +123,16 @@
 		  -->              
 		<context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4006, 4022, 4023"/>
 	</viewProvider>
+ <viewProvider
+       class="org.eclipse.papyrus.sysml.diagram.requirement.provider.RequirementViewProvider">
+    <Priority
+          name="Highest">
+    </Priority>
+    <context
+          semanticHints="2008"
+          viewClass="org.eclipse.gmf.runtime.notation.Node">
+    </context>
+ </viewProvider>
 	
 </extension>
 
@@ -161,7 +171,7 @@
 		<object
 			id="Class"
 			class="org.eclipse.gmf.runtime.notation.Node">
-			<method name="getType()" value="2008, 5029, 7017, 7018, 7019, 3010, 5014, 7013, 7012, 7011, 3012, 3013, 3011, 3014"/>
+			<method name="getType()" value="2008, 5029, 7017, 7018, 7019, 3010, 5014, 7013, 7012, 7011, 3012, 3013, 3011, 3014, compartment_sysml_requirement_idinfo_as_list, shape_sysml_requirement_as_classifier, label_sysml_requirement_text, label_sysml_requirement_id"/>
 		</object>
 		<object
 			id="Package"

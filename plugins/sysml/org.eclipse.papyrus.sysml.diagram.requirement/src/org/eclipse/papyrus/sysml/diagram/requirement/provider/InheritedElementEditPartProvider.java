@@ -5,6 +5,8 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Olivier Mélois (AT0S) olivier.melois@atos.net - addition of a compartment for the requirement block
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.requirement.provider;
@@ -15,7 +17,13 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpart.CreateGraphicEditPar
 import org.eclipse.gmf.runtime.diagram.ui.services.editpart.IEditPartOperation;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.diagram.clazz.custom.providers.CUMLEditPartProvider;
+import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
 import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementDiagramEditPart;
+import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementEditPart;
+import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementInformationCompartmentEditPart;
+import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementIdLabelEditPart;
+import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementTextLabelEditPart;
+import org.eclipse.papyrus.sysml.diagram.requirement.factory.RequirementEditPartFactory;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
@@ -24,6 +32,11 @@ import org.eclipse.uml2.uml.NamedElement;
  */
 public class InheritedElementEditPartProvider extends CUMLEditPartProvider {
 
+	public InheritedElementEditPartProvider() {
+		super();
+		this.setFactory(new RequirementEditPartFactory());
+	}
+	
 	@Override
 	public synchronized boolean provides(IOperation operation) {
 		if(operation instanceof CreateGraphicEditPartOperation) {
@@ -97,4 +110,23 @@ public class InheritedElementEditPartProvider extends CUMLEditPartProvider {
 		}
 		return false;
 	}
+	
+	@Override
+	protected Class<?> getNodeEditPartClass(View view) {
+		if(view.getType().equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_REQUIREMENT_IDINFO_AS_LIST_ID)){
+			return RequirementInformationCompartmentEditPart.class;
+		}
+		if(view.getType().equals(SysMLGraphicalTypes.SHAPE_SYSML_REQUIREMENT_AS_CLASSIFER_ID)){
+			return RequirementEditPart.class;
+		} 
+		if(view.getType().equals(SysMLGraphicalTypes.LABEL_SYSML_REQUIREMENT_ID_ID)){
+			return RequirementIdLabelEditPart.class;
+		}
+		if(view.getType().equals(SysMLGraphicalTypes.LABEL_SYSML_REQUIREMENT_TEXT_ID)){
+			return RequirementTextLabelEditPart.class;
+		} 
+		return super.getNodeEditPartClass(view);
+	}
+	
+	
 }
