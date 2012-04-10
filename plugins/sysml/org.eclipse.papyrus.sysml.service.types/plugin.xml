@@ -370,6 +370,40 @@
 		<specializes id="org.eclipse.papyrus.uml.Class" />
 		<matcher class ="org.eclipse.papyrus.sysml.service.types.matcher.ViewPointMatcher" />
 	</specializationType>
+ <specializationType
+       edithelperadvice="org.eclipse.papyrus.sysml.service.types.helper.PartPropertyEditHelperAdvice"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
+       id="org.eclipse.papyrus.sysml.PartProperty.without"
+       kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+       name="SysML::PartProperty">
+    <param
+          name="semanticHint"
+          value="SysML::PartProperty">
+    </param>
+    <specializes
+          id="org.eclipse.papyrus.uml.Property">
+    </specializes>
+    <matcher
+          class="org.eclipse.papyrus.sysml.service.types.matcher.PartPropertyMatcher">
+    </matcher>
+ </specializationType>
+ <specializationType
+       edithelperadvice="org.eclipse.papyrus.sysml.service.types.helper.ReferencePropertyEditHelperAdvice"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
+       id="org.eclipse.papyrus.sysml.ReferenceProperty.without"
+       kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+       name="SysML::ReferenceProperty">
+    <param
+          name="semanticHint"
+          value="SysML::ReferenceProperty">
+    </param>
+    <specializes
+          id="org.eclipse.papyrus.uml.Property">
+    </specializes>
+    <matcher
+          class="org.eclipse.papyrus.sysml.service.types.matcher.ReferencePropertyMatcher">
+    </matcher>
+ </specializationType>
 	
 	</metamodel>
 </extension>
@@ -460,6 +494,12 @@
 		<advice ref="org.eclipse.papyrus.sysml.advice.Property" />
 		<advice ref="org.eclipse.papyrus.sysml.advice.Package" />
 		<advice ref="org.eclipse.papyrus.sysml.advice.Actor" />
+  <elementType
+        ref="org.eclipse.papyrus.sysml.PartProperty.without">
+  </elementType>
+  <elementType
+        ref="org.eclipse.papyrus.sysml.ReferenceProperty.without">
+  </elementType>
 
 	</binding>
 	

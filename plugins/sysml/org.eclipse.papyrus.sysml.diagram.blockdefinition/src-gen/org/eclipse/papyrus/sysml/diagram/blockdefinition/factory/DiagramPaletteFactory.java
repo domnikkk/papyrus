@@ -46,11 +46,13 @@ public class DiagramPaletteFactory extends PaletteFactory.Adapter {
 			put("blockdefinition.tool.interface", new IElementType[]{ UMLElementTypes.INTERFACE });
 			put("blockdefinition.tool.operation", new IElementType[]{ UMLElementTypes.OPERATION });
 			put("blockdefinition.tool.part", new IElementType[]{ SysMLElementTypes.PART_PROPERTY });
+			put("blockdefinition.tool.part.without", new IElementType[]{ SysMLElementTypes.PART_PROPERTY_WITHOUT });
 			put("blockdefinition.tool.port", new IElementType[]{ UMLElementTypes.PORT });
 			put("blockdefinition.tool.primitivetype", new IElementType[]{ UMLElementTypes.PRIMITIVE_TYPE });
 			put("blockdefinition.tool.property", new IElementType[]{ UMLElementTypes.PROPERTY });
 			put("blockdefinition.tool.reception", new IElementType[]{ UMLElementTypes.RECEPTION });
 			put("blockdefinition.tool.reference", new IElementType[]{ SysMLElementTypes.REFERENCE_PROPERTY });
+			put("blockdefinition.tool.reference.without", new IElementType[]{ SysMLElementTypes.REFERENCE_PROPERTY_WITHOUT });
 			put("blockdefinition.tool.signal", new IElementType[]{ UMLElementTypes.SIGNAL });
 			put("blockdefinition.tool.unit", new IElementType[]{ SysMLElementTypes.UNIT });
 			put("blockdefinition.tool.value", new IElementType[]{ SysMLElementTypes.VALUE_PROPERTY });

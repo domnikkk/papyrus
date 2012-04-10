@@ -29,8 +29,14 @@
 			<aspectTool description="Create a new Part" id="blockdefinition_modelelements.tool.part"
 				name="Part" refToolId="blockdefinition.tool.part">
 			</aspectTool>
+			<aspectTool description="Create a new Part (without Association)" id="blockdefinition_modelelements.tool.part.without"
+				name="Part (without Association)" refToolId="blockdefinition.tool.part.without">
+			</aspectTool>
 			<aspectTool description="Create a new Reference" id="blockdefinition_modelelements.tool.reference"
 				name="Reference" refToolId="blockdefinition.tool.reference">
+			</aspectTool>
+			<aspectTool description="Create a new Reference (without Association)" id="blockdefinition_modelelements.tool.reference.without"
+				name="Reference (without Association)" refToolId="blockdefinition.tool.reference.without">
 			</aspectTool>
 			<aspectTool description="Create a new Value" id="blockdefinition_modelelements.tool.value"
 				name="Value" refToolId="blockdefinition.tool.value">

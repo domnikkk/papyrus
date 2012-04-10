@@ -81,6 +81,9 @@ public class SysMLElementTypes extends AbstractElementTypeEnumerator {
 	/** IElementType for SysML Part (Property) */
 	public static final IHintedType PART_PROPERTY = (IHintedType)getElementType("org.eclipse.papyrus.sysml.PartProperty"); //$NON-NLS-1$
 	
+	/** IElementType for SysML Part (Property) */
+	public static final IHintedType PART_PROPERTY_WITHOUT = (IHintedType)getElementType("org.eclipse.papyrus.sysml.PartProperty.without"); //$NON-NLS-1$
+	
 	/** IElementType for SysML Problem */
 	public static final IHintedType PROBLEM = (IHintedType)getElementType("org.eclipse.papyrus.sysml.Problem"); //$NON-NLS-1$
 	
@@ -89,6 +92,9 @@ public class SysMLElementTypes extends AbstractElementTypeEnumerator {
 	
 	/** IElementType for SysML Reference (Property) */
 	public static final IHintedType REFERENCE_PROPERTY = (IHintedType)getElementType("org.eclipse.papyrus.sysml.ReferenceProperty"); //$NON-NLS-1$
+	
+	/** IElementType for SysML Reference (Property) */
+	public static final IHintedType REFERENCE_PROPERTY_WITHOUT = (IHintedType)getElementType("org.eclipse.papyrus.sysml.ReferenceProperty.without"); //$NON-NLS-1$
 	
 	/** IElementType for SysML Requirement */
 	public static final IHintedType REQUIREMENT = (IHintedType)getElementType("org.eclipse.papyrus.sysml.Requirement"); //$NON-NLS-1$

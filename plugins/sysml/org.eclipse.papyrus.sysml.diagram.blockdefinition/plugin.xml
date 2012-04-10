@@ -257,6 +257,15 @@
 			large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
 			small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif">
 		</entry>
+  <entry
+        defineOnly="true"
+        description="Create a Part without Association"
+        id="blockdefinition.tool.part.without"
+        kind="tool"
+        label="Part (without Association)"
+        large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
+        small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif">
+  </entry>
 			
 		<!-- blockdefinition.tool.port -->
 		<entry
@@ -312,6 +321,15 @@
 			large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
 			small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif">
 		</entry>
+  <entry
+        defineOnly="true"
+        description="Create a Reference without Association"
+        id="blockdefinition.tool.reference.without"
+        kind="tool"
+        label="Reference (without Association)"
+        large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
+        small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif">
+  </entry>
 			
 		<!-- blockdefinition.tool.signal -->
 		<entry
