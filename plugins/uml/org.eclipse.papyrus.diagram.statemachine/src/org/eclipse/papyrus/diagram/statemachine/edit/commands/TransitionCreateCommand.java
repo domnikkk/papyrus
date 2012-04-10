@@ -27,13 +27,23 @@ public class TransitionCreateCommand extends EditElementCommand {
 	 * Default approach is to traverse ancestors of the source to find instance
 	 * of container. Modify with appropriate logic.
 	 * 
-	 * @generated
+	 * @author olivier.melois@atos.net
+	 * @generated NOT 
 	 */
 	protected Region deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for(EObject element = source; element != null; element = element.eContainer()) {
+			if(element instanceof Region) {
+				return (Region)element;
+			}
+		}
+		/*
+		 * generated NOT : the region has to be deduced from the target when 
+		 * the source's container is a stateMachine for instance.
+		 */
+		for(EObject element = target; element != null; element = element.eContainer()) {
 			if(element instanceof Region) {
 				return (Region)element;
 			}
@@ -67,7 +77,8 @@ public class TransitionCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @author olivier.melois@atos.net
+	 * @generated NOT
 	 */
 	public boolean canExecute() {
 		if(source == null && target == null) {
@@ -78,6 +89,14 @@ public class TransitionCreateCommand extends EditElementCommand {
 		}
 		if(target != null && false == target instanceof Vertex) {
 			return false;
+		}
+		/*
+		 * generated NOT : if the container of the source is null (i.e 
+		 * the container of the source is not a region, but a statemachine), 
+		 * the action of starting a transition should still be possible 
+		 */
+		if (getSource() != null && getContainer() == null && getTarget() == null){
+			return true; 
 		}
 		if(getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
