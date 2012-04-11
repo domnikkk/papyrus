@@ -37,12 +37,12 @@ public class LinkPinToProperty implements ILinkPinToTarget {
 		this.property = property;
 	}
 
-	@Override
+
 	public Pin getPin() {
 		return pin;
 	}
 
-	@Override
+
 	public Element getTarget() {
 		return property;
 	}

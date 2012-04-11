@@ -510,7 +510,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 	private static Iterable<TypedElement> transformeToTypedElementIterable(Iterable<? extends EObject> input) {
 		Iterable<TypedElement> typedElements = Iterables.transform(input, new Function<EObject, TypedElement>() {
 
-			@Override
 			public TypedElement apply(EObject from) {
 				if(from instanceof TypedElement) {
 					return (TypedElement)from;
