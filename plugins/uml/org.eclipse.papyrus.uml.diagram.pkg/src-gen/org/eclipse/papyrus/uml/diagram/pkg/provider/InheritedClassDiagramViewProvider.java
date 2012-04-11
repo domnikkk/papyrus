@@ -9,6 +9,7 @@
  * Contributors:
  *		
  *		CEA LIST - Initial API and implementation
+ *		Olivier Mélois (ATOS) olivier.melois@atos.net - Bug 376462.
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.pkg.provider;
@@ -169,7 +170,20 @@ public class InheritedClassDiagramViewProvider extends UMLViewProvider {
 				return true;
 			}
 		}
+		if(elementType == ElementTypes.CONSTRAINT) {
+			if(ElementTypes.DIAGRAM_ID.equals(containerGraphicalType)) {
+				return true;
+			}
+		}
 		if(elementType == ElementTypes.COMMENT_CN) {
+			if(ElementTypes.PACKAGE_CN_COMPARTMENT_PACKAGEABLE_ELEMENT_HINT.equals(containerGraphicalType)) {
+				return true;
+			}
+			if(ElementTypes.PACKAGE_COMPARTMENT_PACKAGEABLE_ELEMENT_HINT.equals(containerGraphicalType)) {
+				return true;
+			}
+		}
+		if(elementType == ElementTypes.CONSTRAINT_CN) {
 			if(ElementTypes.PACKAGE_CN_COMPARTMENT_PACKAGEABLE_ELEMENT_HINT.equals(containerGraphicalType)) {
 				return true;
 			}

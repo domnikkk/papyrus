@@ -115,7 +115,7 @@
 			"2012" = COMMENT
 			"3028" = COMMENT_CN
 		  -->
-		<context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2007, 3009, 2012, 3028"/>
+		<context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2007, 3009, 2011, 2012, 3028, 3029"/>
 		
 		<!-- 
 			"4008" = DEPENDENCY
@@ -140,6 +140,14 @@
 		<object id="uml.Dependency" class="org.eclipse.gmf.runtime.emf.core.util.IProxyEObject(org.eclipse.gmf.runtime.emf.core)">
 			<method name="getProxyClassID()" value="uml.Dependency"/>
 		</object>
+  <object
+        class="org.eclipse.gmf.runtime.emf.core.util.IProxyEObject(org.eclipse.gmf.runtime.emf.core)"
+        id="uml.Constraint">
+     <method
+           name="getProxyClassID()"
+           value="uml.Constraint">
+     </method>
+  </object>
 		
 		<!-- "uml.PackageImport" -->
 		<object id="uml.PackageImport" class="org.eclipse.gmf.runtime.emf.core.util.IProxyEObject(org.eclipse.gmf.runtime.emf.core)">
@@ -148,7 +156,7 @@
 		
 		<!-- Additional activation contexts for nodes semantic objects -->
 		<context viewClass="org.eclipse.gmf.runtime.notation.Node"
-			elements="uml.Package, uml.Comment"/>
+			elements="uml.Package, uml.Comment, uml.Constraint"/>
 		
 		<!-- Additional activation contexts for edges semantic objects -->
 		<context viewClass="org.eclipse.gmf.runtime.notation.Edge"

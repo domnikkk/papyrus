@@ -19,7 +19,9 @@
 			<aspectTool description="Create a new PackageImport" id="package.tool.packageimport"
 				name="PackageImport" refToolId="clazz.tool.packageimport">
 			</aspectTool>
-						
+			<aspectTool description="Create a new Constraint" id="package.tool.constraint"
+				name="Constraint" refToolId="clazz.tool.constraint">
+			</aspectTool>
 		</drawer>
 	</content>
 </paletteDefinition>

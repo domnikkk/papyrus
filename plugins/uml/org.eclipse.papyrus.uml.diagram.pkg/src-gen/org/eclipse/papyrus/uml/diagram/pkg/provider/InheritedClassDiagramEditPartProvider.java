@@ -9,6 +9,7 @@
  * Contributors:
  *		
  *		CEA LIST - Initial API and implementation
+ *		Olivier Mélois (ATOS) olivier.melois@atos.net - Bug 376462.
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.pkg.provider;
@@ -40,6 +41,9 @@ public class InheritedClassDiagramEditPartProvider extends UMLEditPartProvider {
 				return true;
 			}
 			if(eobject instanceof org.eclipse.uml2.uml.Comment) {
+				return true;
+			}
+			if(eobject instanceof org.eclipse.uml2.uml.Constraint) {
 				return true;
 			}
 

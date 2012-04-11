@@ -19,7 +19,9 @@
 			<aspectTool description="Create a new CommentLink" id="package.tool.commentlink"
 				name="CommentLink" refToolId="clazz.tool.link">
 			</aspectTool>
-						
+			<aspectTool description="Create a new Constraint" id="package.tool.constraint"
+				name="Constraint" refToolId="clazz.tool.constraint">
+			</aspectTool>
 		</drawer>
 	</content>
 </paletteDefinition>

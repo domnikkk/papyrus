@@ -6,6 +6,8 @@
 			id="requirement.drawer.nodes" name="Nodes">
 			<aspectTool description="Create a new Package" id="requirement.tool.package"
 				name="Package" refToolId="clazz.tool.package"></aspectTool>
+			<aspectTool description="Create a new Constraint" id="requirement.tool.constraint"
+				name="Constraint" refToolId="clazz.tool.constraint"></aspectTool>
 			<aspectTool description="Create a new Requirement" id="requirement.tool.class"
 				name="Requirement" refToolId="clazz.tool.class"
 				iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/requirements/Requirement.gif">

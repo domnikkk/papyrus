@@ -9,7 +9,7 @@
  * Contributors:
  *		
  *		CEA LIST - Initial API and implementation
- *
+ *		Olivier Mélois (ATOS) olivier.melois@atos.net - Bug 376462
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.pkg.provider;
 
@@ -51,12 +51,19 @@ public class ElementTypes extends AbstractElementTypeEnumerator {
 	public static final IHintedType COMMENT = (IHintedType)getElementType("org.eclipse.papyrus.diagram.clazz.Comment_2012"); //$NON-NLS-1$
 
 	public static final String COMMENT_LABEL_BODY_HINT = "5038"; //$NON-NLS-1$
+	
+	/** ClassDiagram :: CONSTRAINT */
+	public static final IHintedType CONSTRAINT = (IHintedType)getElementType("org.eclipse.papyrus.diagram.clazz.Constraint_2011"); //$NON-NLS-1$
+
+	public static final String CONSTRAINT_LABEL_BODY_HINT = "2011"; //$NON-NLS-1$
 
 	/** ClassDiagram :: COMMENT_CN */
 	public static final IHintedType COMMENT_CN = (IHintedType)getElementType("org.eclipse.papyrus.diagram.clazz.Comment_3028"); //$NON-NLS-1$
 
 	public static final String COMMENT_CN_LABEL_BODY_HINT = "5063"; //$NON-NLS-1$
 
+	/** ClassDiagram :: CONSTRAINT_CN */
+	public static final IHintedType CONSTRAINT_CN = (IHintedType)getElementType("org.eclipse.papyrus.diagram.clazz.Constraint_3029"); //$NON-NLS-1$
 
 	/** ClassDiagram :: DEPENDENCY */
 	public static final IHintedType DEPENDENCY = (IHintedType)getElementType("org.eclipse.papyrus.diagram.clazz.Dependency_4008"); //$NON-NLS-1$
