@@ -199,9 +199,15 @@ public class TransitionPropertiesParser implements IParser, ISemanticParser {
 		String result = EMPTY_STRING;
 		Behavior effect = trans.getEffect();
 		if(effect != null) {
+			boolean thereIsABehaviorBody = false;
 			if (effect instanceof OpaqueBehavior){
-				result = ((OpaqueBehavior) effect).getBodies().get(0);
-			} else {
+				OpaqueBehavior behavior = (OpaqueBehavior) effect;
+				if (!behavior.getBodies().isEmpty()){
+					thereIsABehaviorBody = true;
+					result = behavior.getBodies().get(0);
+				}
+			}
+			if (!thereIsABehaviorBody){
 				EClass eClass = effect.eClass();
 				if(eClass != null) {
 					text.append(eClass.getName()).append(" :").append(effect.getName()); //$NON-NLS-1$
