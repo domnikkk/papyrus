@@ -58,7 +58,8 @@ public class CustomGraphicalTypeRegistry extends GraphicalTypeRegistry {
 	public String getNodeGraphicalType(EObject domainElement, String containerType) {
 		// Start of user code getNodeGraphicalType(EObject domainElement, String containerType)	
 		if(((ISpecializationType)SysMLElementTypes.PART_PROPERTY).getMatcher().matches(domainElement) 
-			|| ((ISpecializationType)SysMLElementTypes.REFERENCE_PROPERTY).getMatcher().matches(domainElement)) {
+			|| ((ISpecializationType)SysMLElementTypes.REFERENCE_PROPERTY).getMatcher().matches(domainElement)
+			|| ((ISpecializationType)SysMLElementTypes.VALUE_PROPERTY).getMatcher().matches(domainElement)) {
 
 			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
@@ -139,7 +140,8 @@ public class CustomGraphicalTypeRegistry extends GraphicalTypeRegistry {
 	public String getNodeGraphicalType(String proposedType, String containerType) {
 		// Start of user code getNodeGraphicalType(String proposedType, String containerType)
 		if(SysMLElementTypes.PART_PROPERTY.getSemanticHint().equals(proposedType) 
-			|| SysMLElementTypes.REFERENCE_PROPERTY.getSemanticHint().equals(proposedType)) {
+			|| SysMLElementTypes.REFERENCE_PROPERTY.getSemanticHint().equals(proposedType)
+			|| SysMLElementTypes.VALUE_PROPERTY.getSemanticHint().equals(proposedType)) {
 
 			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;

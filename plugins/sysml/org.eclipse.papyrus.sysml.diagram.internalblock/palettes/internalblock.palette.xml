@@ -25,7 +25,9 @@
 		<aspectTool description="Create a new Reference" id="internalblock_main.tool.reference"
 			name="Reference" refToolId="internalblock.tool.reference">
 		</aspectTool>
-
+		<aspectTool description="Create a new Value" id="internalblock_main.tool.value"
+			name="Value" refToolId="internalblock.tool.value">
+		</aspectTool>
 		<aspectTool name="Comment" id="internalblock_main.tool.comment" refToolId="internalblock.tool.comment" description="Create a new Comment" />
 		<aspectTool name="Constraint" id="internalblock_main.tool.constraint" refToolId="internalblock.tool.constraint" description="Create a new Constraint" />
 		

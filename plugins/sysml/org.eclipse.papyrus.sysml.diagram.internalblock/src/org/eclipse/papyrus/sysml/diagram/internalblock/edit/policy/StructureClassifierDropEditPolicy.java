@@ -68,6 +68,12 @@ public class StructureClassifierDropEditPolicy extends CustomDragDropEditPolicy 
 				commandChoice.add(dropAsTypedReference);
 			}
 			
+			// 2. Try to create a Value typed by the dropped object
+			Command dropAsTypedValue = helper.getDropAsStructureItem(dropRequest, (GraphicalEditPart)getHost(), SysMLElementTypes.VALUE_PROPERTY);
+			if ((dropAsTypedValue != null) && (dropAsTypedValue.canExecute())) {
+				commandChoice.add(dropAsTypedValue);
+			}
+			
 			// 3. Build default drop command (show view of the dropped object)
 			Command defaultDropCommand = super.getDropObjectsCommand(dropRequest);
 			defaultDropCommand.setLabel("Default drop (Show dropped object in diagram)");

@@ -20,6 +20,7 @@ import org.eclipse.papyrus.service.edit.commands.IConfigureCommandFactory;
 import org.eclipse.papyrus.sysml.blocks.Block;
 import org.eclipse.papyrus.sysml.diagram.common.commands.CreatePartWithTypeConfigureCommandFactory;
 import org.eclipse.papyrus.sysml.diagram.common.commands.CreateReferenceWithTypeConfigureCommandFactory;
+import org.eclipse.papyrus.sysml.diagram.common.commands.CreateValueWithTypeConfigureCommandFactory;
 import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 
 /**
@@ -41,6 +42,9 @@ public class StructureCompartmentSemanticEditPolicy extends CompartmentSemanticE
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateReferenceWithTypeConfigureCommandFactory());
 		}
 		
+		if(SysMLElementTypes.VALUE_PROPERTY == req.getElementType()) {
+			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateValueWithTypeConfigureCommandFactory());
+		}
 		return super.getCreateCommand(req);
 	}
 }

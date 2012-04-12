@@ -59,6 +59,9 @@ public class BlockDropHelper extends ElementHelper {
 		if (elementType == SysMLElementTypes.REFERENCE_PROPERTY) {
 			label = "Create a new Reference";
 		}
+		if (elementType == SysMLElementTypes.VALUE_PROPERTY) {
+			label = "Create a new Value";
+		}
 		CompoundCommand cc = new CompoundCommand(label);
 		
 		Object droppedEObject = request.getObjects().get(0);
@@ -99,6 +102,11 @@ public class BlockDropHelper extends ElementHelper {
 			Type type = (Type) object;
 			if ((elementType == SysMLElementTypes.PART_PROPERTY) || (elementType == SysMLElementTypes.REFERENCE_PROPERTY)) {
 				if(((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(type)) {
+					isValid = true;
+				}
+			}
+			if (elementType == SysMLElementTypes.VALUE_PROPERTY){
+				if(((ISpecializationType) SysMLElementTypes.VALUE_TYPE).getMatcher().matches(type)) {
 					isValid = true;
 				}
 			}
