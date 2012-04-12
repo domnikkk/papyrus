@@ -105,7 +105,7 @@ public class NatTableEditor extends EditorPart implements ISelectionProvider, IE
 	private final CommandStackListener commandListener = new CommandStackListener() {
 
 		public void commandStackChanged(final EventObject event) {
-			Display.getCurrent().asyncExec(new Runnable() {
+			Display.getDefault().asyncExec(new Runnable() {
 
 				public void run() {
 					firePropertyChange(PROP_DIRTY);
