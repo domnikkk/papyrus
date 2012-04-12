@@ -337,7 +337,9 @@ public class NatTableEditor extends EditorPart implements ISelectionProvider, IE
 
 	@Override
 	public void setFocus() {
-		this.natTableWidget.getComposite().setFocus();
+		if (!this.natTableWidget.getComposite().isDisposed()){
+			this.natTableWidget.getComposite().setFocus();
+		}
 	}
 
 	@Override
