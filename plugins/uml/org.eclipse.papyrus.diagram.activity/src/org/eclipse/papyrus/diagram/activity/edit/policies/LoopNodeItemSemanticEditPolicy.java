@@ -18,6 +18,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
@@ -32,8 +33,12 @@ import org.eclipse.papyrus.diagram.activity.edit.commands.ControlFlowCreateComma
 import org.eclipse.papyrus.diagram.activity.edit.commands.ControlFlowReorientCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ExceptionHandlerCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.InputPinInLoopNodeAsVariableCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ObjectFlowReorientCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.OutputPinInLoopNodeAsBodyOutputVariableCreateCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.OutputPinInLoopNodeAsLoopVariableCreateCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.OutputPinInLoopNodeAsResultCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.CommentLinkEditPart;
@@ -54,6 +59,25 @@ public class LoopNodeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	 */
 	public LoopNodeItemSemanticEditPolicy() {
 		super(UMLElementTypes.LoopNode_3071);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if(UMLElementTypes.InputPin_3105 == req.getElementType()) {
+			return getGEFWrapper(new InputPinInLoopNodeAsVariableCreateCommand(req));
+		}
+		if(UMLElementTypes.OutputPin_3111 == req.getElementType()) {
+			return getGEFWrapper(new OutputPinInLoopNodeAsResultCreateCommand(req));
+		}
+		if(UMLElementTypes.OutputPin_3109 == req.getElementType()) {
+			return getGEFWrapper(new OutputPinInLoopNodeAsBodyOutputVariableCreateCommand(req));
+		}
+		if(UMLElementTypes.OutputPin_3110 == req.getElementType()) {
+			return getGEFWrapper(new OutputPinInLoopNodeAsLoopVariableCreateCommand(req));
+		}
+		return super.getCreateCommand(req);
 	}
 
 	/**

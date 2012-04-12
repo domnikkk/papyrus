@@ -89,6 +89,7 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInCallBeActEditPa
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInCallOpActAsTargetEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInCallOpActEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInDestroyObjectActionEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInLoopNodeAsVariableEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInOpaqueActEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInReadStructuralFeatureAsObjectEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInSendObjActAsReqEditPart;
@@ -108,6 +109,9 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInAddStructuralF
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInCallBeActEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInCallOpActEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInCreateObjectActionAsResultEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInLoopNodeAsBodyOutputEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInLoopNodeAsLoopVariableEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInLoopNodeAsResultEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInOpaqueActEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInReadStructuralFeatureAsResultEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInReadVariableActionAsResultEditPart;
@@ -916,6 +920,36 @@ public class ActivityDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
+		case OutputPinInLoopNodeAsBodyOutputEditPart.VISUAL_ID:
+		{
+			if(!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getOutputPin_3109ContainedLinks(view));
+			}
+			if(!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case OutputPinInLoopNodeAsLoopVariableEditPart.VISUAL_ID:
+		{
+			if(!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getOutputPin_3110ContainedLinks(view));
+			}
+			if(!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case OutputPinInLoopNodeAsResultEditPart.VISUAL_ID:
+		{
+			if(!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getOutputPin_3111ContainedLinks(view));
+			}
+			if(!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
 		case SequenceNodeEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
@@ -930,6 +964,16 @@ public class ActivityDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getStructuredActivityNode_3065ContainedLinks(view));
+			}
+			if(!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case InputPinInLoopNodeAsVariableEditPart.VISUAL_ID:
+		{
+			if(!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInputPin_3105ContainedLinks(view));
 			}
 			if(!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);

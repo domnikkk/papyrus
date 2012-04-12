@@ -471,10 +471,22 @@ public class CommentEditPartCN extends AbstractCommentEditPart {
 		if(targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
 		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
 		if(targetEditPart instanceof SequenceNodeEditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
 		}
 		if(targetEditPart instanceof StructuredActivityNodeEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
 		}
 		if(targetEditPart instanceof ActivityPartitionEditPart) {
@@ -623,8 +635,12 @@ public class CommentEditPartCN extends AbstractCommentEditPart {
 			types.add(UMLElementTypes.ExpansionNode_3074);
 			types.add(UMLElementTypes.ExpansionNode_3075);
 			types.add(UMLElementTypes.LoopNode_3071);
+			types.add(UMLElementTypes.OutputPin_3109);
+			types.add(UMLElementTypes.OutputPin_3110);
+			types.add(UMLElementTypes.OutputPin_3111);
 			types.add(UMLElementTypes.SequenceNode_3073);
 			types.add(UMLElementTypes.StructuredActivityNode_3065);
+			types.add(UMLElementTypes.InputPin_3105);
 			types.add(UMLElementTypes.ActivityPartition_3067);
 			types.add(UMLElementTypes.InterruptibleActivityRegion_3068);
 			types.add(UMLElementTypes.Comment_3080);

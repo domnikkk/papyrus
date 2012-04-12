@@ -458,10 +458,22 @@ public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart im
 		if(targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
 		if(targetEditPart instanceof SequenceNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
 		if(targetEditPart instanceof StructuredActivityNodeEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
 		if(targetEditPart instanceof ReadSelfActionEditPart) {
@@ -677,10 +689,22 @@ public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart im
 		if(targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
 		if(targetEditPart instanceof SequenceNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
 		if(targetEditPart instanceof StructuredActivityNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
 		if(targetEditPart instanceof ReadSelfActionEditPart) {
@@ -805,8 +829,12 @@ public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart im
 			types.add(UMLElementTypes.ExpansionNode_3074);
 			types.add(UMLElementTypes.ExpansionNode_3075);
 			types.add(UMLElementTypes.LoopNode_3071);
+			types.add(UMLElementTypes.OutputPin_3109);
+			types.add(UMLElementTypes.OutputPin_3110);
+			types.add(UMLElementTypes.OutputPin_3111);
 			types.add(UMLElementTypes.SequenceNode_3073);
 			types.add(UMLElementTypes.StructuredActivityNode_3065);
+			types.add(UMLElementTypes.InputPin_3105);
 			types.add(UMLElementTypes.ReadSelfAction_3081);
 			types.add(UMLElementTypes.OutputPin_3084);
 			types.add(UMLElementTypes.CreateObjectAction_3086);
@@ -879,8 +907,12 @@ public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart im
 			types.add(UMLElementTypes.ExpansionNode_3074);
 			types.add(UMLElementTypes.ExpansionNode_3075);
 			types.add(UMLElementTypes.LoopNode_3071);
+			types.add(UMLElementTypes.OutputPin_3109);
+			types.add(UMLElementTypes.OutputPin_3110);
+			types.add(UMLElementTypes.OutputPin_3111);
 			types.add(UMLElementTypes.SequenceNode_3073);
 			types.add(UMLElementTypes.StructuredActivityNode_3065);
+			types.add(UMLElementTypes.InputPin_3105);
 			types.add(UMLElementTypes.ReadSelfAction_3081);
 			types.add(UMLElementTypes.OutputPin_3084);
 			types.add(UMLElementTypes.CreateObjectAction_3086);
@@ -974,8 +1006,12 @@ public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart im
 			types.add(UMLElementTypes.ExpansionNode_3074);
 			types.add(UMLElementTypes.ExpansionNode_3075);
 			types.add(UMLElementTypes.LoopNode_3071);
+			types.add(UMLElementTypes.OutputPin_3109);
+			types.add(UMLElementTypes.OutputPin_3110);
+			types.add(UMLElementTypes.OutputPin_3111);
 			types.add(UMLElementTypes.SequenceNode_3073);
 			types.add(UMLElementTypes.StructuredActivityNode_3065);
+			types.add(UMLElementTypes.InputPin_3105);
 			types.add(UMLElementTypes.ReadSelfAction_3081);
 			types.add(UMLElementTypes.OutputPin_3084);
 			types.add(UMLElementTypes.CreateObjectAction_3086);
@@ -1048,8 +1084,12 @@ public class ActivityParameterNodeEditPart extends BorderNamedElementEditPart im
 			types.add(UMLElementTypes.ExpansionNode_3074);
 			types.add(UMLElementTypes.ExpansionNode_3075);
 			types.add(UMLElementTypes.LoopNode_3071);
+			types.add(UMLElementTypes.OutputPin_3109);
+			types.add(UMLElementTypes.OutputPin_3110);
+			types.add(UMLElementTypes.OutputPin_3111);
 			types.add(UMLElementTypes.SequenceNode_3073);
 			types.add(UMLElementTypes.StructuredActivityNode_3065);
+			types.add(UMLElementTypes.InputPin_3105);
 			types.add(UMLElementTypes.ReadSelfAction_3081);
 			types.add(UMLElementTypes.OutputPin_3084);
 			types.add(UMLElementTypes.CreateObjectAction_3086);

@@ -43,12 +43,12 @@ public class DiagramSpecificPreferenceInitializer extends AbstractPreferenceInit
 
 		// Specific preferences for groups
 		// Opacity Preferences
-		store.setDefault(IActivityPreferenceConstants.PREF_ACTIVITY_PARTITION_ALPHA, 100);
-		store.setDefault(IActivityPreferenceConstants.PREF_CONDITIONAL_NODE_ALPHA, 100);
-		store.setDefault(IActivityPreferenceConstants.PREF_SEQUENCE_NODE_ALPHA, 100);
-		store.setDefault(IActivityPreferenceConstants.PREF_EXPANSION_REGION_ALPHA, 100);
-		store.setDefault(IActivityPreferenceConstants.PREF_STRUCTURED_NODE_ALPHA, 100); // TODO
-		store.setDefault(IActivityPreferenceConstants.PREF_LOOP_NODE_ALPHA, 100);
+		store.setDefault(IActivityPreferenceConstants.PREF_ACTIVITY_PARTITION_ALPHA, 50);
+		store.setDefault(IActivityPreferenceConstants.PREF_CONDITIONAL_NODE_ALPHA, 50);
+		store.setDefault(IActivityPreferenceConstants.PREF_SEQUENCE_NODE_ALPHA, 50);
+		store.setDefault(IActivityPreferenceConstants.PREF_EXPANSION_REGION_ALPHA, 50);
+		store.setDefault(IActivityPreferenceConstants.PREF_STRUCTURED_NODE_ALPHA, 50); // TODO
+		store.setDefault(IActivityPreferenceConstants.PREF_LOOP_NODE_ALPHA, 50);
 		// Show Specific label preferences
 		store.setDefault(IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_CONDITIONAL_NODE, true);
 		store.setDefault(IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_LOOP_NODE, true);

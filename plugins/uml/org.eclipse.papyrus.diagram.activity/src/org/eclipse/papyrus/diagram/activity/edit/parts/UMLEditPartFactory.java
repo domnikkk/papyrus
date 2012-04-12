@@ -399,6 +399,24 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new LoopNodeEditPart(view);
 			case LoopNodeKeywordEditPart.VISUAL_ID:
 				return new LoopNodeKeywordEditPart(view);
+			case OutputPinInLoopNodeAsBodyOutputEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsBodyOutputEditPart(view);
+			case OutputPinInLoopNodeAsBodyOutputLabelEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsBodyOutputLabelEditPart(view);
+			case OutputPinInLoopNodeAsBodyOutputAppliedStereotypeEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsBodyOutputAppliedStereotypeEditPart(view);
+			case OutputPinInLoopNodeAsLoopVariableEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsLoopVariableEditPart(view);
+			case OutputPinInLoopNodeAsLoopVariableLabelEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsLoopVariableLabelEditPart(view);
+			case OutputPinInLoopNodeAsLoopVariableAppliedStereotypeEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsLoopVariableAppliedStereotypeEditPart(view);
+			case OutputPinInLoopNodeAsResultEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsResultEditPart(view);
+			case OutputPinInLoopNodeAsResultLabelEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsResultLabelEditPart(view);
+			case OutputPinInLoopNodeAsResultAppliedStereotypeEditPart.VISUAL_ID:
+				return new OutputPinInLoopNodeAsResultAppliedStereotypeEditPart(view);
 			case SequenceNodeEditPart.VISUAL_ID:
 				return new SequenceNodeEditPart(view);
 			case SequenceNodeKeywordEditPart.VISUAL_ID:
@@ -407,6 +425,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new StructuredActivityNodeEditPart(view);
 			case StructuredActivityNodeKeywordEditPart.VISUAL_ID:
 				return new StructuredActivityNodeKeywordEditPart(view);
+			case InputPinInLoopNodeAsVariableEditPart.VISUAL_ID:
+				return new InputPinInLoopNodeAsVariableEditPart(view);
+			case InputPinInLoopNodeAsVariableLabelEditPart.VISUAL_ID:
+				return new InputPinInLoopNodeAsVariableLabelEditPart(view);
+			case InputPinInStructuredActivityNodeAppliedStereotypeEditPart.VISUAL_ID:
+				return new InputPinInStructuredActivityNodeAppliedStereotypeEditPart(view);
 			case ActivityPartitionEditPart.VISUAL_ID:
 				return new ActivityPartitionEditPart(view);
 			case ActivityPartitionNameEditPart.VISUAL_ID:
