@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension-point id="propertyCompartmentDescription" name="propertyCompartmentDescription" schema="schema/propertyCompartmentDescriptor.exsd"/>
 
 <!-- Diagram declaration -->
 <extension point="org.eclipse.papyrus.core.papyrusDiagram">
@@ -1454,6 +1455,15 @@
             id="org.eclipse.papyrus.SharedEditingDomainID">
       </editingDomain>
    </listener>
+</extension>
+<extension
+      point="org.eclipse.papyrus.sysml.diagram.blockdefinition.propertyCompartmentDescription">
+   <propertyCompartmentDescription
+         PropertyCompartmentDescriptor="org.eclipse.papyrus.sysml.diagram.blockdefinition.compartment.descriptors.ConstraintPropertyCompartmentDescriptor">
+   </propertyCompartmentDescription>
+   <propertyCompartmentDescription
+         PropertyCompartmentDescriptor="org.eclipse.papyrus.sysml.diagram.blockdefinition.compartment.descriptors.FlowPropertyCompartmentDescriptor">
+   </propertyCompartmentDescription>
 </extension>
 <!-- // End of user code 
   -->

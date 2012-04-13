@@ -15,7 +15,13 @@ package org.eclipse.papyrus.sysml.diagram.blockdefinition.listeners;
 
 import java.util.Collection;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -35,10 +41,8 @@ import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
 import org.eclipse.papyrus.diagram.common.editparts.PapyrusStereotypeListener;
 import org.eclipse.papyrus.diagram.common.listeners.AbstractPapyrusModifcationTriggerListener;
 import org.eclipse.papyrus.gmf.diagram.common.commands.CreateViewCommand;
-import org.eclipse.papyrus.sysml.constraints.ConstraintProperty;
+import org.eclipse.papyrus.sysml.diagram.blockdefinition.compartment.descriptors.IPropertyCompartmentDescriptor;
 import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
-import org.eclipse.papyrus.sysml.portandflows.FlowProperty;
-import org.eclipse.papyrus.uml.service.types.utils.ElementUtil;
 import org.eclipse.uml2.uml.Property;
 
 import com.google.common.base.Function;
@@ -186,35 +190,48 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 	
 	
 	/**
-	 * TODO use an extension point to provide the containingView - property compatibility.
 	 *  Checks whether a property is compatible with a container (thus 
 	 *  can be put inside that container). 
 	 */
 	protected boolean propertyCompatibleWithContainer(Property property, View containingView){
-
 		String containerType = containingView.getType();
 		/*
-		 * Case flow property compartment.
+		 * Checking each compartment using an extension point.
 		 */
-		if (containerType.equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_FLOWPROPERTY_AS_LIST_ID)){
-			return ElementUtil.getStereotypeApplication(property, FlowProperty.class) != null;
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		IExtensionPoint extensionPoint = reg.getExtensionPoint("org.eclipse.papyrus.sysml.diagram.blockdefinition.propertyCompartmentDescription"); //$NON-NLS-1$
+		/*
+		 * Boolean describing if a descriptor compatible with the property was found.
+		 */
+		boolean propertyIsCompatibleWithOneCompartment = false;
+		for (IExtension extension : extensionPoint.getExtensions()){
+			for (IConfigurationElement extensionDescriptor : extension.getConfigurationElements()){
+				try {
+					IPropertyCompartmentDescriptor descriptor = (IPropertyCompartmentDescriptor) extensionDescriptor.createExecutableExtension("PropertyCompartmentDescriptor"); //$NON-NLS-1$					if (containerType.)
+					boolean currentDescriptorCompatibleWithProperty = descriptor.isCompatibleWithProperty(property);
+					/*
+					 * Keeping a score for a possible later use.
+					 */
+					propertyIsCompatibleWithOneCompartment |= currentDescriptorCompatibleWithProperty;
+					if (containerType.equals(descriptor.getType()) && currentDescriptorCompatibleWithProperty){
+						return true;
+					}
+				} catch (CoreException e) {
+					e.printStackTrace();
+				} 
+			}
+		}
+		
+		/*
+		 * If no compartment was compatible with the property, therefore the property can only
+		 * belong the "property" compartment.
+		 */
+		if (!propertyIsCompatibleWithOneCompartment){
+			return containerType.equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_PROPERTY_AS_LIST_ID);
 		}
 		/*
-		 * Case constraint compartment.
+		 * Every other case. 
 		 */
-		if (containerType.equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_CONSTRAINT_AS_LIST_ID)){
-			return ElementUtil.getStereotypeApplication(property, ConstraintProperty.class) != null;
-		}
-		/*
-		 * Case simple property : the property should have none of 
-		 * the previously checked stereotype applications.
-		 */
-		else if (containerType.equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_PROPERTY_AS_LIST_ID)){ 
-			boolean hasNoStereotypeApplication = true; 
-			hasNoStereotypeApplication &= (ElementUtil.getStereotypeApplication(property, FlowProperty.class) == null);
-			hasNoStereotypeApplication &= (ElementUtil.getStereotypeApplication(property, ConstraintProperty.class) == null);
-			return hasNoStereotypeApplication;
-		}
 		return false;
 	}
 	
