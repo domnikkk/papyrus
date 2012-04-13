@@ -107,6 +107,9 @@ public abstract class UMLNodeEditPart extends NodeEditPart implements IUMLEditPa
 		if(NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
 			refreshFontColor();
 		}
+		 if (NotationPackage.eINSTANCE.getFillStyle_Transparency().equals(feature)) {
+			refreshTransparency();			
+		}
 	}
 
 	/**
