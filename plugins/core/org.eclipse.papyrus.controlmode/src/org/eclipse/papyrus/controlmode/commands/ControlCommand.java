@@ -156,6 +156,9 @@ public class ControlCommand extends AbstractTransactionalCommand {
 			return new Status(IStatus.ERROR, ControlModePlugin.PLUGIN_ID, "no ModelSet has been found");
 		}
 
+		if (!getEditingDomain().getResourceSet().getResources().contains(controlledModel)){
+			getEditingDomain().getResourceSet().getResources().add(controlledModel);
+		}
 		// Create the URI from models that will be created
 		final URI newNotationURI = URI.createURI(controlledModel.getURI().trimFileExtension().appendFileExtension(NotationModel.NOTATION_FILE_EXTENSION).toString());
 		this.controlledNotation = getResource(newNotationURI);
@@ -439,7 +442,6 @@ public class ControlCommand extends AbstractTransactionalCommand {
 		for(EObject e : resource.getContents()) {
 			if(e instanceof ControledResource) {
 				return (ControledResource)e;
-
 			}
 		}
 		return null;
