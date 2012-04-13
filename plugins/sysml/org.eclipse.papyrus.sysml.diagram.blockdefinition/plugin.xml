@@ -1464,6 +1464,9 @@
    <propertyCompartmentDescription
          PropertyCompartmentDescriptor="org.eclipse.papyrus.sysml.diagram.blockdefinition.compartment.descriptors.FlowPropertyCompartmentDescriptor">
    </propertyCompartmentDescription>
+   <propertyCompartmentDescription
+         PropertyCompartmentDescriptor="org.eclipse.papyrus.sysml.diagram.blockdefinition.compartment.descriptors.PartCompartmentDescriptor">
+   </propertyCompartmentDescription>
 </extension>
 <!-- // End of user code 
   -->

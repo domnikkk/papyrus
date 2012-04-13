@@ -43,6 +43,7 @@ import org.eclipse.papyrus.diagram.common.listeners.AbstractPapyrusModifcationTr
 import org.eclipse.papyrus.gmf.diagram.common.commands.CreateViewCommand;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.compartment.descriptors.IPropertyCompartmentDescriptor;
 import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
+import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 
 import com.google.common.base.Function;
@@ -53,10 +54,10 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 
 	@Override
 	public NotificationFilter getFilter() {
-		NotificationFilter applyStereotype = NotificationFilter.createEventTypeFilter(PapyrusStereotypeListener.APPLIED_STEREOTYPE);
-		NotificationFilter unapplyStereotype = NotificationFilter.createEventTypeFilter(PapyrusStereotypeListener.UNAPPLIED_STEREOTYPE);
-		NotificationFilter.createNotifierTypeFilter(Property.class);
-		return applyStereotype.or(unapplyStereotype);
+		NotificationFilter applyStereotypeFilter = NotificationFilter.createEventTypeFilter(PapyrusStereotypeListener.APPLIED_STEREOTYPE);
+		NotificationFilter unapplyStereotypeFilter = NotificationFilter.createEventTypeFilter(PapyrusStereotypeListener.UNAPPLIED_STEREOTYPE);
+		NotificationFilter typeFilter = NotificationFilter.createNotifierTypeFilter(Property.class);
+		return applyStereotypeFilter.or(unapplyStereotypeFilter).or(typeFilter);
 	}
 
 	@Override
@@ -148,7 +149,7 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 	protected boolean checkNodeContainment(Node node){
 		boolean result = true;
 		EObject modelEObject = node.getElement();
-		if (modelEObject instanceof Property){
+		if (modelEObject instanceof Property && !(modelEObject instanceof Port)){
 			Property property = (Property) modelEObject;
 			View containingView = (View) node.eContainer();
 			/*
