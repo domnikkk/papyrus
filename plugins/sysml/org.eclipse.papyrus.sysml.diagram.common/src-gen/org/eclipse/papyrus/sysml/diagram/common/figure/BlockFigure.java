@@ -9,6 +9,7 @@
  * Contributors:
  *		
  *		CEA LIST - Initial API and implementation
+ *		Olivier Mélois (ATOS) olivier.melois@atos.net - Bug 376703 
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.common.figure;
@@ -21,6 +22,7 @@ import org.eclipse.papyrus.diagram.common.figure.node.ClassifierFigure;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.BlockConstraintCompartmentEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.BlockPropertyCompartmentEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.FlowPortCompartmentEditPart;
+import org.eclipse.papyrus.sysml.diagram.common.edit.part.FlowPropertyCompartmentEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.PartPropertyCompartmentEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.ReferencePropertyCompartmentEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.ValuePropertyCompartmentEditPart;
@@ -47,6 +49,7 @@ public class BlockFigure extends ClassifierFigure {
 	private List<String> getUpdatedListOfCompartments(List<String> compartments) {
 		compartments = new ArrayList<String>(compartments);
 		compartments.add(BlockPropertyCompartmentEditPart.COMPARTMENT_NAME);
+		compartments.add(FlowPropertyCompartmentEditPart.COMPARTMENT_NAME);
 		compartments.add(PartPropertyCompartmentEditPart.COMPARTMENT_NAME);
 		compartments.add(ReferencePropertyCompartmentEditPart.COMPARTMENT_NAME);
 		compartments.add(PortCompartmentEditPart.COMPARTMENT_NAME);
@@ -59,6 +62,10 @@ public class BlockFigure extends ClassifierFigure {
 
 	public IFigure getBlockPropertyCompartmentFigure() {
 		return getCompartment(BlockPropertyCompartmentEditPart.COMPARTMENT_NAME);
+	}
+	
+	public IFigure getFlowPropertyCompartmentFigure() {
+		return getCompartment(FlowPropertyCompartmentEditPart.COMPARTMENT_NAME);
 	}
 
 	public IFigure getPartPropertyCompartmentFigure() {

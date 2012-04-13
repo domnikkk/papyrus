@@ -1,0 +1,221 @@
+/*****************************************************************************
+ * Copyright (c) 2011 ATOS.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *		
+ *		Olivier Mélois (ATOS) olivier.melois@atos.net - Bug 376703 
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml.diagram.blockdefinition.listeners;
+
+import java.util.Collection;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
+import org.eclipse.emf.transaction.NotificationFilter;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.core.adaptor.gmf.DestroyElementPapyrusCommand;
+import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
+import org.eclipse.papyrus.diagram.common.editparts.PapyrusStereotypeListener;
+import org.eclipse.papyrus.diagram.common.listeners.AbstractPapyrusModifcationTriggerListener;
+import org.eclipse.papyrus.gmf.diagram.common.commands.CreateViewCommand;
+import org.eclipse.papyrus.sysml.constraints.ConstraintProperty;
+import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
+import org.eclipse.papyrus.sysml.portandflows.FlowProperty;
+import org.eclipse.papyrus.uml.service.types.utils.ElementUtil;
+import org.eclipse.uml2.uml.Property;
+
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
+
+public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModifcationTriggerListener {
+
+	@Override
+	public NotificationFilter getFilter() {
+		NotificationFilter applyStereotype = NotificationFilter.createEventTypeFilter(PapyrusStereotypeListener.APPLIED_STEREOTYPE);
+		NotificationFilter unapplyStereotype = NotificationFilter.createEventTypeFilter(PapyrusStereotypeListener.UNAPPLIED_STEREOTYPE);
+		NotificationFilter.createNotifierTypeFilter(Property.class);
+		return applyStereotype.or(unapplyStereotype);
+	}
+
+	@Override
+	protected CompositeCommand getModificationCommand(Notification notif) {
+		Object notifier = notif.getNotifier();
+		CompositeCommand cc = new CompositeCommand("Move properties to their right compartments"); //$NON-NLS-1$
+		if(notifier instanceof EObject) {
+			EObject eObject = (EObject) notifier;
+			/*
+			 * Iterating on all the nodes referring to the notifier (which is a model element)
+			 */
+			Iterable<Node> nodes = getNodes(eObject);
+			for (Node node : nodes){
+				if (!checkNodeContainment(node)){
+					/*
+					 * The command to remove the badly place node.
+					 */
+					ICommand removeBadlyPlacedNodeCommand = getRemoveNodeCommand(node);
+					/*
+					 * The command to make a copy of that node into the right compartment.
+					 */
+					ICommand copyNodeInsideRelevantContainerCommand = getCopyNodeInsideRelevantContainerCommand(node);
+					/*
+					 * Composing the result command with both these commands.
+					 */
+					cc.compose(removeBadlyPlacedNodeCommand);
+					cc.compose(copyNodeInsideRelevantContainerCommand);
+				}
+			}
+		}
+		return cc;
+	}
+
+	/**
+	 * Gets all the nodes pointing to a model object.
+	 */
+	protected Iterable<Node> getNodes(EObject eObject){
+		Collection<Setting> usages = PapyrusEcoreUtils.getUsages(eObject);
+		Predicate<Setting> filterNodes = new Predicate<Setting>(){
+			public boolean apply(Setting setting) {
+				return setting.getEObject() instanceof Node;
+			}
+		};
+		Iterable<Setting> filteredSettings = Iterables.filter(usages, filterNodes);
+		Iterable<Node> nodes = Iterables.transform(filteredSettings, new Function<Setting,Node>(){
+			public Node apply(Setting setting) {
+				return (Node) setting.getEObject();
+			}});
+		return nodes;
+	}
+	
+	/**
+	 * Gets the command to destroy a node. 
+	 */
+	protected ICommand getRemoveNodeCommand(Node node){
+		DestroyElementRequest destroyNodeRequest = new DestroyElementRequest(node, false);
+		DestroyElementPapyrusCommand destroyNode = new DestroyElementPapyrusCommand(destroyNodeRequest);
+		return destroyNode;
+	}
+	
+	/**
+	 * 
+	 */
+	protected ICommand getCopyNodeInsideRelevantContainerCommand(Node node){
+		/*
+		 * Getting the most relevant container the node should be copied into
+		 */
+		View containerView = this.getFirstRelevantCompartmentView(node);
+		if (containerView != null){
+			/*
+			 * eAdapter for the element referenced by the node.
+			 */
+			EObject eObject = node.getElement();
+			IAdaptable adapter =  new EObjectAdapter(eObject);
+			
+			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(containerView);
+			ViewDescriptor viewDescriptor = new ViewDescriptor(adapter, Node.class, node.getType(), org.eclipse.papyrus.diagram.clazz.part.UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+			return new CreateViewCommand(editingDomain, viewDescriptor, containerView);
+		}
+		return null;
+	}
+	
+
+	/**
+	 * Checks whether a node is placed in the right compartment, according to the 
+	 * stereotype applications its model element has. 
+	 */
+	protected boolean checkNodeContainment(Node node){
+		boolean result = true;
+		EObject modelEObject = node.getElement();
+		if (modelEObject instanceof Property){
+			Property property = (Property) modelEObject;
+			View containingView = (View) node.eContainer();
+			/*
+			 * First of all, checking that the node is indeed in a block. 
+			 */
+			if (containingView != null){
+				View containerOfContainingView = (View) containingView.eContainer();
+				result &= containerOfContainingView.getType().equals(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_CLASSIFIER_ID);
+				result &= propertyCompatibleWithContainer(property, containingView);
+			} else {
+				result = false;
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * Gets the first compartment compatible with the node stereotype applications.
+	 */
+	protected View getFirstRelevantCompartmentView(Node node){
+		EObject modelEObject = node.getElement();
+		if (modelEObject instanceof Property){
+			Property property = (Property) modelEObject;
+			if (node.eContainer() != null){
+				/*
+				 * The view of the block containing the property.
+				 */
+				View blockView = (View)node.eContainer().eContainer();
+				EList<View> compartments = blockView.getChildren();
+				for (View compartment : compartments){
+					if (propertyCompatibleWithContainer(property, compartment)){
+						return compartment;
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
+	
+	/**
+	 * TODO use an extension point to provide the containingView - property compatibility.
+	 *  Checks whether a property is compatible with a container (thus 
+	 *  can be put inside that container). 
+	 */
+	protected boolean propertyCompatibleWithContainer(Property property, View containingView){
+
+		String containerType = containingView.getType();
+		/*
+		 * Case flow property compartment.
+		 */
+		if (containerType.equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_FLOWPROPERTY_AS_LIST_ID)){
+			return ElementUtil.getStereotypeApplication(property, FlowProperty.class) != null;
+		}
+		/*
+		 * Case constraint compartment.
+		 */
+		if (containerType.equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_CONSTRAINT_AS_LIST_ID)){
+			return ElementUtil.getStereotypeApplication(property, ConstraintProperty.class) != null;
+		}
+		/*
+		 * Case simple property : the property should have none of 
+		 * the previously checked stereotype applications.
+		 */
+		else if (containerType.equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_PROPERTY_AS_LIST_ID)){ 
+			boolean hasNoStereotypeApplication = true; 
+			hasNoStereotypeApplication &= (ElementUtil.getStereotypeApplication(property, FlowProperty.class) == null);
+			hasNoStereotypeApplication &= (ElementUtil.getStereotypeApplication(property, ConstraintProperty.class) == null);
+			return hasNoStereotypeApplication;
+		}
+		return false;
+	}
+	
+}

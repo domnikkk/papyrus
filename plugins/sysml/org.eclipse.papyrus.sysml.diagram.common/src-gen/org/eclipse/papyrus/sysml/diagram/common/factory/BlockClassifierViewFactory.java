@@ -9,6 +9,7 @@
  * Contributors:
  *		
  *		CEA LIST - Initial API and implementation
+ *		Olivier Mélois (ATOS) olivier.melois@atos.net - Bug 376703 
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.common.factory;
@@ -54,6 +55,7 @@ public class BlockClassifierViewFactory extends ShapeViewFactory {
 		getViewService().createNode(element, view, SysMLGraphicalTypes.COMPARTMENT_SYSML_REFERENCE_AS_LIST_ID, ViewUtil.APPEND, persisted, getPreferencesHint());
 		getViewService().createNode(element, view, UMLGraphicalTypes.COMPARTMENT_UML_PORT_AS_LIST_ID, ViewUtil.APPEND, persisted, getPreferencesHint());
 		getViewService().createNode(element, view, SysMLGraphicalTypes.COMPARTMENT_SYSML_FLOWPORT_AS_LIST_ID, ViewUtil.APPEND, persisted, getPreferencesHint());
+		getViewService().createNode(element, view, SysMLGraphicalTypes.COMPARTMENT_SYSML_FLOWPROPERTY_AS_LIST_ID, ViewUtil.APPEND, persisted, getPreferencesHint());
 		getViewService().createNode(element, view, UMLGraphicalTypes.COMPARTMENT_UML_OPERATION_AS_LIST_ID, ViewUtil.APPEND, persisted, getPreferencesHint());
 		getViewService().createNode(element, view, SysMLGraphicalTypes.COMPARTMENT_SYSML_CONSTRAINT_AS_LIST_ID, ViewUtil.APPEND, persisted, getPreferencesHint());
 		getViewService().createNode(element, view, SysMLGraphicalTypes.COMPARTMENT_SYSML_VALUE_AS_LIST_ID, ViewUtil.APPEND, persisted, getPreferencesHint());

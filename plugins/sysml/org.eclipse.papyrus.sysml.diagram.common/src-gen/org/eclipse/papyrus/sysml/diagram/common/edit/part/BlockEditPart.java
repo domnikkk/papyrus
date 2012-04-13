@@ -9,6 +9,7 @@
  * Contributors:
  *		
  *		CEA LIST - Initial API and implementation
+ *		Olivier Mélois (ATOS) olivier.melois@atos.net - Bug 376703 
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.common.edit.part;
@@ -122,6 +123,12 @@ public class BlockEditPart extends AbstractElementEditPart {
 			pane.add(((BlockPropertyCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
+		if(childEditPart instanceof FlowPropertyCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFlowPropertyCompartmentFigure();
+			setupContentPane(pane);
+			pane.add(((FlowPropertyCompartmentEditPart)childEditPart).getFigure());
+			return true;
+		}
 		if(childEditPart instanceof PartPropertyCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getPartPropertyCompartmentFigure();
 			setupContentPane(pane);
@@ -189,6 +196,12 @@ public class BlockEditPart extends AbstractElementEditPart {
 			pane.remove(((BlockPropertyCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
+		if(childEditPart instanceof FlowPropertyCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFlowPropertyCompartmentFigure();
+			setupContentPane(pane);
+			pane.remove(((FlowPropertyCompartmentEditPart)childEditPart).getFigure());
+			return true;
+		}
 		if(childEditPart instanceof PartPropertyCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getPartPropertyCompartmentFigure();
 			setupContentPane(pane);
@@ -238,6 +251,9 @@ public class BlockEditPart extends AbstractElementEditPart {
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if(editPart instanceof BlockPropertyCompartmentEditPart) {
 			return getPrimaryShape().getBlockPropertyCompartmentFigure();
+		}
+		if(editPart instanceof FlowPropertyCompartmentEditPart) {
+			return getPrimaryShape().getFlowPropertyCompartmentFigure();
 		}
 		if(editPart instanceof PartPropertyCompartmentEditPart) {
 			return getPrimaryShape().getPartPropertyCompartmentFigure();

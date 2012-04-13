@@ -1446,6 +1446,15 @@
 	</binding>
 		
 </extension>
+<extension
+      point="org.eclipse.emf.transaction.listeners">
+   <listener
+         class="org.eclipse.papyrus.sysml.diagram.blockdefinition.listeners.BlockPropertiesStereotypeChangeListener">
+      <editingDomain
+            id="org.eclipse.papyrus.SharedEditingDomainID">
+      </editingDomain>
+   </listener>
+</extension>
 <!-- // End of user code 
   -->
 

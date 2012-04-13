@@ -5,12 +5,16 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * contributors : 
+ * Olivier Mélois (ATOS) olivier.melois@atos.net : added the case of uml.Class elements (Bug 376703).
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.service.types.matcher;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
+import org.eclipse.papyrus.sysml.blocks.Block;
 import org.eclipse.papyrus.sysml.portandflows.FlowSpecification;
 import org.eclipse.papyrus.uml.service.types.utils.ElementUtil;
 import org.eclipse.uml2.uml.Interface;
@@ -27,6 +31,14 @@ public class FlowSpecificationMatcher implements IElementMatcher {
 
 			Interface element = (Interface)eObject;
 			if(ElementUtil.getStereotypeApplication(element, FlowSpecification.class) != null) {
+				isFlowSpec = true;
+			}
+		} else if (eObject instanceof org.eclipse.uml2.uml.Class){
+			/*
+			 * This deals with the case of flow properties being added to a block. 
+			 */
+			org.eclipse.uml2.uml.Class element = (org.eclipse.uml2.uml.Class) eObject;
+			if(ElementUtil.getStereotypeApplication(element, Block.class) != null) {
 				isFlowSpec = true;
 			}
 		}
