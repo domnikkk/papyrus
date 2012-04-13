@@ -35,7 +35,11 @@ public class MultipleStringEditor extends MultipleValueEditor {
 	 *        The List's style
 	 */
 	public MultipleStringEditor(Composite parent, int style) {
-		super(parent, style, new StringSelector());
+		this(parent, style, false);
+	}
+
+	public MultipleStringEditor(Composite parent, int style, boolean multiline) {
+		super(parent, style, new StringSelector(multiline));
 		setFactory(new StringEditionFactory());
 	}
 
