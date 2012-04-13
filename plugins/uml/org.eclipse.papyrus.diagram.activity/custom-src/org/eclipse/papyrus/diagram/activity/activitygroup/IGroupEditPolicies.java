@@ -14,13 +14,20 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.activity.activitygroup;
 
-
+/**
+ * @author arthur daussy
+ */
 public interface IGroupEditPolicies {
 
 	/**
 	 * Role for Edit Policy which notify event to the group framework
 	 */
-	public static String GROUP_FRAMEWORK_NOTIFYING_EDIT_POLICY = "GroupFramework_NotifyingEditPolicy";
+	public static String GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY = "GroupFramework_NotifyingOnMoveEditPolicy";
+	
+	/**
+	 * Role for Edit Policy which notify event to the group framework
+	 */
+	public static String GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY = "GroupFramework_NotifyingOnCreationEditPolicy";
 	/**
 	 * Role for Edit Policy which handle group framework notification
 	 */

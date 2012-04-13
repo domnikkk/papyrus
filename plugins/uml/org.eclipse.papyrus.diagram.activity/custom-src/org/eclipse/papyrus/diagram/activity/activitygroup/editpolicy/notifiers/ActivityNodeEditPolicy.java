@@ -18,11 +18,11 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescript
 import org.eclipse.uml2.uml.ActivityNode;
 
 /**
- * Implementation of {@link GroupNotifyingEditPolicy} for {@link ActivityNode}
+ * Implementation of {@link GroupNotifyingOnMoveEditPolicy} for {@link ActivityNode}
  * @author arthur daussy
  *
  */
-public class ActivityNodeEditPolicy extends GroupNotifyingEditPolicy{
+public class ActivityNodeEditPolicy extends GroupNotifyingOnMoveEditPolicy{
 	/**
 	 * 
 	 * @param groupDescriptor

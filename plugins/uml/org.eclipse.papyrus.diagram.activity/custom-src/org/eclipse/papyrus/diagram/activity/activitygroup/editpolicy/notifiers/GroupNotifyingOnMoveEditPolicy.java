@@ -36,9 +36,9 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.utils.Utils;
  * @author adaussy
  *
  */
-public class GroupNotifyingEditPolicy extends GroupListenerEditPolicy {
+public class GroupNotifyingOnMoveEditPolicy extends GroupListenerEditPolicy {
 
-	public GroupNotifyingEditPolicy(IContainerNodeDescriptor groupDescriptor) {
+	public GroupNotifyingOnMoveEditPolicy(IContainerNodeDescriptor groupDescriptor) {
 		super(groupDescriptor);
 	}
 
@@ -54,7 +54,7 @@ public class GroupNotifyingEditPolicy extends GroupListenerEditPolicy {
 			CompositeCommand cc = new CompositeCommand("GroupNotifyingEditPolicy ");
 
 			for(final EditPart part : Utils.getTargetedEditPart(req)) {
-				ICommand cmd = getGroupRequestAdvisor().notifyGroupFramework(new AbstractGroupRequest((IGraphicalEditPart)getHost(), Utils.getChangeBoundsRequestCopy(req, part), part, getGroupDescriptor()) {
+				ICommand cmd = getGroupRequestAdvisor().notifyGroupFramework(new AbstractGroupRequest((IGraphicalEditPart)getHost(), Utils.getChangeBoundsRequestCopy(req, part), part, getTargetGroupDescriptor(part)) {
 
 					public GroupRequestType getGroupRequestType() {
 						return GroupRequestType.MOVE;
@@ -89,9 +89,9 @@ public class GroupNotifyingEditPolicy extends GroupListenerEditPolicy {
 	protected void stopMovingParts(Iterable<IGraphicalEditPart> targetedEditPart) {
 		if ( targetedEditPart != null){
 			for(EditPart part : targetedEditPart) {
-				EditPolicy editPolicy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_EDIT_POLICY);
-				if (editPolicy instanceof GroupNotifyingEditPolicy){
-					GroupNotifyingEditPolicy editPolicy2 = (GroupNotifyingEditPolicy)editPolicy;
+				EditPolicy editPolicy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY);
+				if (editPolicy instanceof GroupNotifyingOnMoveEditPolicy){
+					GroupNotifyingOnMoveEditPolicy editPolicy2 = (GroupNotifyingOnMoveEditPolicy)editPolicy;
 					if (DebugUtils.isDebugging()){
 						StringBuilder stringBuilder = new StringBuilder();
 						stringBuilder.append(Utils.getCorrectLabel(editPolicy2.getEObject()));
@@ -114,9 +114,9 @@ public class GroupNotifyingEditPolicy extends GroupListenerEditPolicy {
 	protected void startMovingParts(final ChangeBoundsRequest req, Iterable<IGraphicalEditPart> targetedEditPart) {
 		if ( targetedEditPart != null){			
 			for(final EditPart part : targetedEditPart) {
-				EditPolicy editPolicy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_EDIT_POLICY);
-				if (editPolicy instanceof GroupNotifyingEditPolicy){
-					GroupNotifyingEditPolicy editPolicy2 = (GroupNotifyingEditPolicy)editPolicy;
+				EditPolicy editPolicy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY);
+				if (editPolicy instanceof GroupNotifyingOnMoveEditPolicy){
+					GroupNotifyingOnMoveEditPolicy editPolicy2 = (GroupNotifyingOnMoveEditPolicy)editPolicy;
 					if (DebugUtils.isDebugging()){
 						StringBuilder stringBuilder = new StringBuilder();
 						stringBuilder.append(Utils.getCorrectLabel(editPolicy2.getEObject()));
@@ -136,6 +136,19 @@ public class GroupNotifyingEditPolicy extends GroupListenerEditPolicy {
 	protected IGroupRequestAdvisor getGroupRequestAdvisor() {
 		return GroupRequestAdvisor.getInstance();
 	}
+	
+	/**
+	 * Override in order to accept correct request
+	 */
+	@Override
+	public boolean understandsRequest(Request req) {
+		if(req instanceof ChangeBoundsRequest) {
+			return true;
+		}
+		return false;
+	}
+
+	
 
 
 }

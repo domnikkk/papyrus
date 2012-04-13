@@ -23,6 +23,7 @@ import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gmf.runtime.diagram.ui.util.MeasurementUnitHelper;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.GravityConstrainedFlowLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.GravityDirectionType;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
@@ -120,6 +121,7 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 	@Override
 	protected Object getDefaultLabelsConstraint() {
 		GravityConstrainedFlowLayout layoutFFigureCompartmentLabelStructuredActivityNode = new GravityConstrainedFlowLayout();
+		layoutFFigureCompartmentLabelStructuredActivityNode.setGravity(GravityDirectionType.WEST);
 		fFigureCompartmentLabelStructuredActivityNode.setLayoutManager(layoutFFigureCompartmentLabelStructuredActivityNode);
 		return super.getDefaultLabelsConstraint();
 	}
@@ -144,6 +146,8 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 			constraintFFigureCompartmentLabelStructuredActivityNode.setHasMinsize(true);
 			this.add(fFigureCompartmentLabelStructuredActivityNode, constraintFFigureCompartmentLabelStructuredActivityNode);
 			GravityConstrainedFlowLayout layoutFFigureCompartmentLabelStructuredActivityNode = new GravityConstrainedFlowLayout();
+			layoutFFigureCompartmentLabelStructuredActivityNode.setGravity(GravityDirectionType.WEST);
+			layoutFFigureCompartmentLabelStructuredActivityNode.setSpacing(10);
 			fFigureCompartmentLabelStructuredActivityNode.setLayoutManager(layoutFFigureCompartmentLabelStructuredActivityNode);
 		}
 		return fFigureCompartmentLabelStructuredActivityNode;

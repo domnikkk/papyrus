@@ -19,18 +19,19 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import com.google.common.base.Predicate;
 
+
 /**
- * Same as {@link EcoreUtil#filterDescendants(java.util.Collection)}
+ * Filter all ancestors
  * 
  * @author arthur daussy
  * 
  */
-public class DescendantsFilter implements Predicate<EObject> {
+public class AncestorFilter  implements Predicate<EObject> {
 
 	private Iterable<? extends EObject> initialCollection;
 
 
-	public DescendantsFilter(Iterable<? extends EObject> initialCollection) {
+	public AncestorFilter(Iterable<? extends EObject> initialCollection) {
 		super();
 		this.initialCollection = initialCollection;
 	}
@@ -43,7 +44,7 @@ public class DescendantsFilter implements Predicate<EObject> {
 			if (target == input){
 				continue;
 			}
-			if(EcoreUtil.isAncestor(input, target)) {
+			if(EcoreUtil.isAncestor(target,input)) {
 				return false;
 			}
 		}

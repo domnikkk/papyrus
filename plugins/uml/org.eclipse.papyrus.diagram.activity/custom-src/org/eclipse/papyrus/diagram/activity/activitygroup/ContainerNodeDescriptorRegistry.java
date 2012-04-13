@@ -14,6 +14,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.activity.activitygroup;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,67 +30,28 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.groupcontainment.Seque
 import org.eclipse.papyrus.diagram.activity.activitygroup.groupcontainment.StructuredActivityNodeContainment;
 import org.eclipse.uml2.uml.UMLPackage;
 
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
+/**
+ * Registry of all node and group descriptor
+ */
 public final class ContainerNodeDescriptorRegistry {
 
-//	public static class NodeDescriptorSwitch extends UMLSwitch<Iterable<? extends IContainerNodeDescriptor>>{
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseActivityNode(ActivityNode object) {
-//			return Collections.singletonList(new ActivityNodeContainment());
-//		}
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseActivity(Activity object) {
-//			return Collections.singletonList(new ActivityContainment();
-//		}
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseActivityPartition(ActivityPartition object) {
-//			return Collections.singletonList(new ActivityPartitionContainment());
-//		}
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseStructuredActivityNode(StructuredActivityNode object) {
-//			return  new StructuredActivityNodeContainment();
-//		}
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseInterruptibleActivityRegion(InterruptibleActivityRegion object) {
-//			return Collections.singletonList(new InterruptibleActivityRegionContainment());
-//		}
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseSequenceNode(SequenceNode object) {
-//			return Collections.singletonList(new SequenceNodeContainment());
-//		}
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseConditionalNode(ConditionalNode object) {
-//			return Collections.singletonList(new ConditionalNodeContainment());
-//		}
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseLoopNode(LoopNode object) {
-//			return Collections.singletonList(new LoopNodeContainment());
-//		}
-//
-//		@Override
-//		public Iterable<? extends IContainerNodeDescriptor> caseExpansionRegion(ExpansionRegion object) {
-//			return Collections.singletonList(new ExpansionRegionContainment());
-//		}
-//		
-//	}
-	
-	
+	/**
+	 * Constructor
+	 */
 	private ContainerNodeDescriptorRegistry() {
-
 	}
 
-//	private static NodeDescriptorSwitch descriptorSwitch = new NodeDescriptorSwitch();
-	
+	/**
+	 * Registry of all descriptor
+	 */
 	private static Map<EClass, IContainerNodeDescriptor> registry;
-
+	/**
+	 * Initialize
+	 * (May be in the future using extension point
+	 */
 	static {
 		registry = new HashMap<EClass, IContainerNodeDescriptor>();
 		registry.put(UMLPackage.Literals.ACTIVITY_PARTITION, new ActivityPartitionContainment());
@@ -114,7 +76,18 @@ public final class ContainerNodeDescriptorRegistry {
 
 	public IContainerNodeDescriptor getContainerNodeDescriptor(EClass eclass) {
 		try {
-			return registry.get(eclass);
+			IContainerNodeDescriptor result = registry.get(eclass);
+			if (result== null){
+				ArrayList<EClass> superTypes = Lists.newArrayList( eclass.getEAllSuperTypes());
+				for (EClass aux :Iterables.reverse(superTypes)){
+					result =registry.get(aux);
+					if (result != null){
+						return result;
+					}
+				}
+			}
+			
+			return result;
 		} catch (Exception e) {
 			throw new RuntimeException("wrong use of the ContainerNodeDescriptorRegistry");
 		}

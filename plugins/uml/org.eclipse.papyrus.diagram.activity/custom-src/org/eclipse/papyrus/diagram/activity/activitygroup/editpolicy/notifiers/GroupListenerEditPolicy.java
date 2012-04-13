@@ -22,6 +22,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
+import org.eclipse.papyrus.diagram.activity.activitygroup.ContainerNodeDescriptorRegistry;
 import org.eclipse.papyrus.diagram.activity.activitygroup.GroupRequestAdvisor;
 import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescriptor;
 import org.eclipse.papyrus.diagram.activity.activitygroup.IGroupRequestAdvisor;
@@ -97,7 +98,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IGroupNotifier#getGroupDescriptor()}
 	 */
-	public IContainerNodeDescriptor getGroupDescriptor() {
+	public IContainerNodeDescriptor getHostGroupDescriptor() {
 		return groupDescriptor;
 	}
 
@@ -115,16 +116,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 		return (IGraphicalEditPart)getHost();
 	}
 
-	/**
-	 * Override in order to accept correct request
-	 */
-	@Override
-	public boolean understandsRequest(Request req) {
-		if(req instanceof ChangeBoundsRequest) {
-			return true;
-		}
-		return false;
-	}
+	
 
 	/**
 	 * {@inheritDoc IGroupNotifier#isIncludedIn()}
@@ -146,7 +138,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 		if(getHost() == null) {
 			return false;
 		}
-		IGraphicalEditPart compartmentEditPart = getGroupDescriptor().getCompartmentPartFromView(getHostEditPart());
+		IGraphicalEditPart compartmentEditPart = getHostGroupDescriptor().getCompartmentPartFromView(getHostEditPart());
 		if(compartmentEditPart != null) {
 			Rectangle figureBounds = null;
 			if(isMoving()) {
@@ -174,7 +166,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	 * {@inheritDoc Comparable#compareTo(Object)}
 	 */
 	public int compareTo(IGroupNotifier o) {
-		return getGroupDescriptor().compareTo(o.getGroupDescriptor());
+		return getHostGroupDescriptor().compareTo(o.getHostGroupDescriptor());
 	}
 
 	/**
@@ -235,6 +227,15 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	@Override
 	public void showSourceFeedback(Request request) {
 		
+	}
+	
+	public IContainerNodeDescriptor getTargetGroupDescriptor(IAdaptable eObjectAdapter) {
+		Object adapted = eObjectAdapter.getAdapter(EObject.class);
+		if(adapted instanceof EObject) {
+			EObject eObject = (EObject)adapted;
+			return ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(eObject.eClass());
+		}
+		return null;
 	}
 	
 	

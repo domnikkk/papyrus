@@ -37,7 +37,14 @@ public interface IGroupNotifier extends IAdaptable, EditPolicy, Comparable<IGrou
 	 * 
 	 * @return {@link IContainerNodeDescriptor} of the notifier
 	 */
-	public abstract IContainerNodeDescriptor getGroupDescriptor();
+	public abstract IContainerNodeDescriptor getHostGroupDescriptor();
+	
+	/**
+	 * 
+	 * @return {@link IContainerNodeDescriptor} of the target
+	 */
+	public abstract IContainerNodeDescriptor getTargetGroupDescriptor(IAdaptable eObjectAdapter);
+	
 	/**
 	 * Get the view of the notifier
 	 * @return {@link IAdaptable} of the view of the element

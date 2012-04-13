@@ -29,7 +29,7 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.IGroupEditPolicies;
  * @author arthur daussy
  *
  */
-public class ActivityGroupEditPolicy extends GroupNotifyingEditPolicy{
+public class ActivityGroupEditPolicy extends GroupNotifyingOnMoveEditPolicy{
 	/**
 	 * 
 	 * @param groupDescriptor IContainerNodeDescriptor
@@ -52,7 +52,7 @@ public class ActivityGroupEditPolicy extends GroupNotifyingEditPolicy{
 					for (Object p : chRq.getEditParts()){
 						if(p instanceof EditPart) {
 							EditPart part = (EditPart)p;
-							EditPolicy policy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_EDIT_POLICY);
+							EditPolicy policy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY);
 							if (policy instanceof ActivityGroupEditPolicy){
 								compt++;
 							}
