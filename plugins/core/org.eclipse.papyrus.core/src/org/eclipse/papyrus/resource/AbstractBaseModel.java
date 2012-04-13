@@ -198,7 +198,7 @@ public abstract class AbstractBaseModel implements IModel {
 				for (Diagnostic d : resource.getErrors()){
 					if (d instanceof WrappedException) {
 						WrappedException wrapped = (WrappedException) d;
-						if (wrapped.getCause() instanceof ResourceException){
+						if (wrapped.getCause() instanceof ResourceException && resource.getContents().isEmpty()){
 							return ;
 						}
 					}
