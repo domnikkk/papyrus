@@ -5,12 +5,14 @@ package org.eclipse.papyrus.resource;
 
 import java.io.IOException;
 
+import org.eclipse.core.internal.resources.ResourceException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 /**
  * An abstract implmeentation of model. This class should be subclassed to fit
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * @author cedric dumoulin
  * 
  */
+@SuppressWarnings("restriction")
 public abstract class AbstractBaseModel implements IModel {
 
 	/**
@@ -191,6 +194,16 @@ public abstract class AbstractBaseModel implements IModel {
 	 */
 	public void saveModel() throws IOException {
 		if (!getModelManager().getTransactionalEditingDomain().isReadOnly(resource)) {
+			if (resource.getErrors() != null && !resource.getErrors().isEmpty()){
+				for (Diagnostic d : resource.getErrors()){
+					if (d instanceof WrappedException) {
+						WrappedException wrapped = (WrappedException) d;
+						if (wrapped.getCause() instanceof ResourceException){
+							return ;
+						}
+					}
+				}
+			}
 			resource.save(null);
 		}
 	}

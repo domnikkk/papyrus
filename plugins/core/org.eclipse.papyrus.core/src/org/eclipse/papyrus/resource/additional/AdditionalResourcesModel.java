@@ -16,14 +16,18 @@ package org.eclipse.papyrus.resource.additional;
 import java.io.IOException;
 import java.util.Collections;
 
+import org.eclipse.core.internal.resources.ResourceException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.papyrus.resource.IModel;
 import org.eclipse.papyrus.resource.IModelSnippet;
 import org.eclipse.papyrus.resource.ModelSet;
 import org.eclipse.papyrus.resource.ModelSnippetList;
 
+@SuppressWarnings("restriction")
 public class AdditionalResourcesModel implements IModel {
 
 	/**
@@ -72,7 +76,26 @@ public class AdditionalResourcesModel implements IModel {
 				// read-only and either platform or file
 				if(!modelSet.getTransactionalEditingDomain().isReadOnly(r)
 					&& (r.getURI().isPlatformResource() || r.getURI().isFile())) {
-					r.save(Collections.EMPTY_MAP);
+					try{
+						boolean error = false ;
+						if (r.getErrors() != null && !r.getErrors().isEmpty()){
+							for (Diagnostic d : r.getErrors()){
+								if (d instanceof WrappedException) {
+									WrappedException wrapped = (WrappedException) d;
+									if (wrapped.getCause() instanceof ResourceException){
+										error |= r.getContents().isEmpty() ;
+									}
+								}
+							}
+						}
+						if (!error){
+							r.save(Collections.EMPTY_MAP);
+						}
+					}
+					catch (Exception e){
+						e.printStackTrace();
+					}
+						
 				}
 			}
 		}
