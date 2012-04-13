@@ -38,6 +38,7 @@ import org.eclipse.papyrus.diagram.common.util.CommandUtil;
 import org.eclipse.papyrus.diagram.common.util.functions.EObjectToViewFunction;
 import org.eclipse.papyrus.diagram.common.util.functions.SettingToEObjectFunction;
 import org.eclipse.papyrus.diagram.common.util.predicates.ReferencingViewPredicate;
+import org.eclipse.papyrus.sysml.diagram.internalblock.utils.FixPortsLocationOnOpening;
 import org.eclipse.papyrus.sysml.diagram.internalblock.utils.RestoreElementHelper;
 
 import com.google.common.collect.Iterables;
@@ -107,12 +108,33 @@ public class RestoreRelatedLinksAndPortCommand extends AbstractTransactionalComm
 					CommandUtil.executeCommand(arrangeCommand, host);
 					host.addNotify();
 				}
+				/**
+				 * Fix port location
+				 */
+				FixPortsLocationOnOpening fixer = new FixPortsLocationOnOpening();
+				fixer.fix(getHostDiagram(hostDiagram));
 
 			}
 
 		}
 
 		return CommandResult.newOKCommandResult();
+	}
+	
+	/**
+	 * get the {@link Diagram} element from its edit part
+	 * 
+	 * @param hostDiagram
+	 * @return
+	 */
+	protected static Diagram getHostDiagram(DiagramEditPart hostDiagram) {
+		if(hostDiagram != null) {
+			View notationView = hostDiagram.getNotationView();
+			if(notationView instanceof Diagram) {
+				return (Diagram)notationView;
+			}
+		}
+		return null;
 	}
 
 	/**

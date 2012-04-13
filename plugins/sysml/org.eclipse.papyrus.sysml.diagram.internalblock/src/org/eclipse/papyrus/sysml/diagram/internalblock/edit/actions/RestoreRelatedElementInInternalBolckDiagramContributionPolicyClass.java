@@ -45,25 +45,27 @@ public class RestoreRelatedElementInInternalBolckDiagramContributionPolicyClass 
 			if(editorPart instanceof DiagramEditor) {
 				DiagramEditPart host = ((DiagramEditor)editorPart).getDiagramEditPart();
 				boolean correctDiagram = ElementTypes.DIAGRAM_ID.equals(host.getDiagramView().getType());
-				return correctDiagram && isConnectableNode(selection);
+				return correctDiagram && isConnectableNodeOrNodeWithNoectableElement(selection);
 			}
 		}
 		return false;
 	}
 	
-	protected boolean isConnectableNode(ISelection selection){
+	protected boolean isConnectableNodeOrNodeWithNoectableElement(ISelection selection){
 		if(selection instanceof IStructuredSelection) {
 			IStructuredSelection strSelection = (IStructuredSelection)selection;
 			boolean result = true;
 			for (Object o : strSelection.toArray()){
 				if(o instanceof IGraphicalEditPart) {
 					IGraphicalEditPart editPart = (IGraphicalEditPart)o;
-					result &= editPart.resolveSemanticElement() instanceof ConnectableElement;
+					result &= (editPart.resolveSemanticElement() instanceof ConnectableElement  || editPart.resolveSemanticElement() instanceof org.eclipse.uml2.uml.Class);
 				}
 			}
 			return result;
 		}
 		return false;
 	}
+	
+	
 
 }

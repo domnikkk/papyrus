@@ -40,6 +40,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
 import org.eclipse.papyrus.diagram.common.requests.ArrangeAffixedNodeRequest;
 import org.eclipse.papyrus.diagram.common.util.CommandUtil;
+import org.eclipse.papyrus.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.papyrus.diagram.common.util.functions.EObjectToViewFunction;
 import org.eclipse.papyrus.diagram.common.util.functions.SettingToEObjectFunction;
 import org.eclipse.papyrus.diagram.common.util.predicates.ReferencingViewPredicate;
@@ -51,6 +52,7 @@ import org.eclipse.papyrus.sysml.diagram.internalblock.Activator;
 import org.eclipse.papyrus.sysml.diagram.internalblock.provider.CustomGraphicalTypeRegistry;
 import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
@@ -88,7 +90,6 @@ public class RestoreElementHelper {
 		return registry;
 	}
 
-
 	/**
 	 * Retrieve of related link to this elements
 	 * Warning : for now this method only handle {@link ConnectableElement}
@@ -103,14 +104,14 @@ public class RestoreElementHelper {
 		if(getRegistry().isKnownNodeType(input.getType())) {
 			List<SysMLLinkDescriptor> result = Lists.newArrayList();
 			EObject element = input.getElement();
-			if(element instanceof ConnectableElement) {
-				getConnectableElementRelatedLinks(input, diagramEditPart, result, (ConnectableElement)element);
+			if(element instanceof Element) {
+				
+				getConnectableElementRelatedLinks(input, diagramEditPart, result, (Element)element);
 			}
 			return result;
 		}
 		return Collections.emptyList();
 	}
-
 
 	/**
 	 * @param input
@@ -122,63 +123,71 @@ public class RestoreElementHelper {
 	 * @param element
 	 *        Semantic element
 	 */
-	private static void getConnectableElementRelatedLinks(View input, DiagramEditPart diagramEditPart, List<SysMLLinkDescriptor> result, ConnectableElement element) {
-		ConnectableElement connectableElement = (ConnectableElement)element;
-		Collection<Setting> reference = PapyrusEcoreUtils.getUsages(connectableElement);
-		Iterable<Setting> connectorEndSetting = Iterables.filter(reference, new Predicate<Setting>() {
-
-			public boolean apply(Setting input) {
-				if(input.getEObject() instanceof ConnectorEnd) {
-					return true;
+	private static void getConnectableElementRelatedLinks(View input, DiagramEditPart diagramEditPart, List<SysMLLinkDescriptor> result, Element element) {
+		List<? extends Element> connectableElements = null;
+		if (element instanceof ConnectableElement){
+			connectableElements = Collections.singletonList(element);
+		}else if (element instanceof Class){
+			Class clazz = (Class)element;
+			connectableElements =Lists.newArrayList(Iterables.filter(clazz.getOwnedAttributes(), Predicates.instanceOf(ConnectableElement.class)));
+		}
+		for (EObject connectableElement : connectableElements){
+			Collection<Setting> reference = PapyrusEcoreUtils.getUsages(connectableElement);
+			Iterable<Setting> connectorEndSetting = Iterables.filter(reference, new Predicate<Setting>() {
+				
+				public boolean apply(Setting input) {
+					if(input.getEObject() instanceof ConnectorEnd) {
+						return true;
+					}
+					return false;
 				}
-				return false;
-			}
-		});
-		Iterable<Connector> connectors = Iterables.transform(connectorEndSetting, new Function<Setting, Connector>() {
-
-			public Connector apply(Setting from) {
-				EObject eObject = from.getEObject();
-				if(eObject instanceof ConnectorEnd) {
-					Element owner = ((ConnectorEnd)eObject).getOwner();
-					if(owner instanceof Connector) {
-						return (Connector)owner;
+			});
+			Iterable<Connector> connectors = Iterables.transform(connectorEndSetting, new Function<Setting, Connector>() {
+				
+				public Connector apply(Setting from) {
+					EObject eObject = from.getEObject();
+					if(eObject instanceof ConnectorEnd) {
+						Element owner = ((ConnectorEnd)eObject).getOwner();
+						if(owner instanceof Connector) {
+							return (Connector)owner;
+						}
 					}
+					return null;
 				}
-				return null;
-			}
-		});
-
-		for(Connector connector : Sets.newHashSet(connectors)) {
-			EList<ConnectorEnd> ends = connector.getEnds();
-			if(ends.size() == 2) {
-				Object conenctorView = getFirstReferencingViewInPartent(connector, getHostDiagram(diagramEditPart));
-				if(conenctorView == null) {
-					/*
-					 * Get view for source
-					 * IF none create it
-					 */
-					ConnectorEnd source = ends.get(0);
-					View sourceView = getEndView(source, input.getDiagram());
-					if(sourceView == null) {
-						createConnectorTargetViews(source, diagramEditPart);
-						sourceView = getEndView(source, input.getDiagram());
-					}
-					/*
-					 * Get view for target
-					 * IF none create it
-					 */
-					ConnectorEnd target = ends.get(1);
-					View targetView = getEndView(target, input.getDiagram());
-					if(targetView == null) {
-						createConnectorTargetViews(target, diagramEditPart);
-						targetView = getEndView(target, input.getDiagram());
-					}
-					if(sourceView != null && targetView != null) {
-						result.add(new SysMLLinkDescriptor(sourceView, targetView, UMLElementTypes.CONNECTOR, UMLGraphicalTypes.LINK_UML_CONNECTOR_ID, connector));
+			});
+			for(Connector connector : Sets.newHashSet(connectors)) {
+				EList<ConnectorEnd> ends = connector.getEnds();
+				if(ends.size() == 2) {
+					Object conenctorView = getFirstReferencingViewInPartent(connector, getHostDiagram(diagramEditPart));
+					if(conenctorView == null) {
+						/*
+						 * Get view for source
+						 * IF none create it
+						 */
+						ConnectorEnd source = ends.get(0);
+						View sourceView = getEndView(source, input.getDiagram());
+						if(sourceView == null) {
+							createConnectorTargetViews(source, diagramEditPart);
+							sourceView = getEndView(source, input.getDiagram());
+						}
+						/*
+						 * Get view for target
+						 * IF none create it
+						 */
+						ConnectorEnd target = ends.get(1);
+						View targetView = getEndView(target, input.getDiagram());
+						if(targetView == null) {
+							createConnectorTargetViews(target, diagramEditPart);
+							targetView = getEndView(target, input.getDiagram());
+						}
+						if(sourceView != null && targetView != null) {
+							result.add(new SysMLLinkDescriptor(sourceView, targetView, UMLElementTypes.CONNECTOR, UMLGraphicalTypes.LINK_UML_CONNECTOR_ID, connector));
+						}
 					}
 				}
 			}
 		}
+	
 	}
 
 	/**
@@ -201,7 +210,6 @@ public class RestoreElementHelper {
 		}
 		return null;
 	}
-
 
 	/**
 	 * get the {@link Diagram} element from its edit part
@@ -241,6 +249,7 @@ public class RestoreElementHelper {
 					List<SysMLNodeDescriptor> filteredPortToAdd = filterPortWithExistingElement(ownerView, portToAdd);
 					createRelatedChildNode(targetEditPart, filteredPortToAdd, diagramEditPart);
 				}
+				diagramEditPart.refresh();
 				Command arrangeCommand = targetEditPart.getCommand(new ArrangeAffixedNodeRequest());
 				if(arrangeCommand != null && arrangeCommand.canExecute()) {
 					CommandUtil.executeCommand(arrangeCommand, targetEditPart);
@@ -249,9 +258,12 @@ public class RestoreElementHelper {
 			}
 		}
 	}
+
 	/**
 	 * Return the descriptor of all related port to restore
-	 * @param containerView The container view you want to restore port on
+	 * 
+	 * @param containerView
+	 *        The container view you want to restore port on
 	 * @return List<SysMLNodeDescriptor> of all elements t restore
 	 */
 	public static List<SysMLNodeDescriptor> getRelatedPortsToRestore(View containerView) {
@@ -260,20 +272,24 @@ public class RestoreElementHelper {
 			EObject element = containerView.getElement();
 			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerView.getType())) {
 				result.addAll(getPortForBlockPropertyAsComposite(containerView, element));
+			} else if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerView.getType())) {
+				result.addAll(getPortForBlockPropertyAsComposite(containerView, element));
 			}
 			return result;
 		}
 		return Collections.emptyList();
 	}
+
 	/**
 	 * Get the the list of all port to restore for a BlockProperty
+	 * 
 	 * @param v
 	 * @param element
 	 * @return
 	 */
 	private static List<SysMLNodeDescriptor> getPortForBlockPropertyAsComposite(View v, EObject element) {
 		List<SysMLNodeDescriptor> result = null;
-		if(element instanceof Property) {
+		if(element instanceof Property || element instanceof Classifier) {
 			result = getPropertyRelatedPort(element);
 		}
 		return result;
@@ -281,12 +297,21 @@ public class RestoreElementHelper {
 
 	/**
 	 * Get the the list of all port to restore for a Property
+	 * 
 	 * @param element
 	 * @return
 	 */
 	private static List<SysMLNodeDescriptor> getPropertyRelatedPort(EObject element) {
-		Property property = (Property)element;
-		Type type = property.getType();
+		Type type = null;
+		if(element instanceof Property) {
+			Property property = (Property)element;
+			type = property.getType();
+		} else if(element instanceof Classifier) {
+			type = (Classifier)element;
+		}
+		if(type == null) {
+			return Collections.emptyList();
+		}
 		List<SysMLNodeDescriptor> result = Lists.newArrayList();
 		/*
 		 * Add owned port
@@ -325,6 +350,7 @@ public class RestoreElementHelper {
 
 	/**
 	 * Get the first referencing view of the element
+	 * 
 	 * @param element
 	 * @return
 	 */
@@ -346,6 +372,7 @@ public class RestoreElementHelper {
 
 	/**
 	 * Get the first referencing view of the element which match the criteria passed in arguments
+	 * 
 	 * @param element
 	 * @param criterias
 	 * @return
@@ -362,8 +389,10 @@ public class RestoreElementHelper {
 		Iterable<View> initialItererable = getReferencingView(element);
 		return Iterables.filter(initialItererable, globalPredicate);
 	}
+
 	/**
 	 * Get the first referencing view of the element contained in the view parent passed in argument
+	 * 
 	 * @param element
 	 * @param criterias
 	 * @return
@@ -383,7 +412,6 @@ public class RestoreElementHelper {
 			}
 		}
 		return null;
-
 	}
 
 	/**
@@ -395,29 +423,35 @@ public class RestoreElementHelper {
 	 */
 	protected static void createRelatedLinks(Collection<? extends SysMLLinkDescriptor> linkDescriptors, IGraphicalEditPart hostDiagram) {
 		for(SysMLLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			Map editPartRegistry = hostDiagram.getViewer().getEditPartRegistry();
+			/*
+			 * Only one view for each element
+			 */
+			List<View> existingViews = DiagramEditPartsUtil.findViews(nextLinkDescriptor.getModelElement(), hostDiagram.getViewer());
 
-			EditPart sourceEditPart = getEditPart(nextLinkDescriptor.getSource(), editPartRegistry);
-			EditPart targetEditPart = getEditPart(nextLinkDescriptor.getDestination(), editPartRegistry);
-
-			// If the parts are still null...
-			if(sourceEditPart == null || targetEditPart == null) {
-				continue;
-			}
-			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), nextLinkDescriptor.getVisualID(), ViewUtil.APPEND, false, hostDiagram.getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
-			ccr.setType(RequestConstants.REQ_CONNECTION_START);
-			ccr.setSourceEditPart(sourceEditPart);
-			sourceEditPart.getCommand(ccr);
-			ccr.setTargetEditPart(targetEditPart);
-			ccr.setType(RequestConstants.REQ_CONNECTION_END);
-			Command cmd = targetEditPart.getCommand(ccr);
-			if(cmd != null && cmd.canExecute()) {
-				CommandUtil.executeCommand(cmd, hostDiagram);
-				hostDiagram.addNotify();
+			// only allow one view instance of a single element by diagram
+			if(existingViews.isEmpty()) {
+				
+				Map editPartRegistry = hostDiagram.getViewer().getEditPartRegistry();
+				EditPart sourceEditPart = getEditPart(nextLinkDescriptor.getSource(), editPartRegistry);
+				EditPart targetEditPart = getEditPart(nextLinkDescriptor.getDestination(), editPartRegistry);
+				// If the parts are still null...
+				if(sourceEditPart == null || targetEditPart == null) {
+					continue;
+				}
+				CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), nextLinkDescriptor.getVisualID(), ViewUtil.APPEND, false, hostDiagram.getDiagramPreferencesHint());
+				CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
+				ccr.setType(RequestConstants.REQ_CONNECTION_START);
+				ccr.setSourceEditPart(sourceEditPart);
+				sourceEditPart.getCommand(ccr);
+				ccr.setTargetEditPart(targetEditPart);
+				ccr.setType(RequestConstants.REQ_CONNECTION_END);
+				Command cmd = targetEditPart.getCommand(ccr);
+				if(cmd != null && cmd.canExecute()) {
+					CommandUtil.executeCommand(cmd, hostDiagram);
+					hostDiagram.addNotify();
+				}
 			}
 		}
-
 	}
 
 	/**
@@ -430,7 +464,6 @@ public class RestoreElementHelper {
 		Object editpart = editPartRegistry.get(domainModelElement);
 		if(editpart instanceof IGraphicalEditPart) {
 			return (IGraphicalEditPart)editpart;
-
 		}
 		return null;
 	}
@@ -458,7 +491,6 @@ public class RestoreElementHelper {
 	 * @param hostDiagram
 	 */
 	protected static void createRelatedChildNode(IGraphicalEditPart host, List<SysMLNodeDescriptor> filteredChildren, IGraphicalEditPart hostDiagram) {
-
 		/*
 		 * Create element
 		 */
@@ -471,14 +503,17 @@ public class RestoreElementHelper {
 				host.addNotify();
 			}
 		}
-
 	}
 
 	/**
 	 * Restore all related port of the view passed in argument
-	 * @param view View you want to restore port on
-	 * @param host GraphicalEditPart of view
-	 * @param hostDiagram diagram editpart
+	 * 
+	 * @param view
+	 *        View you want to restore port on
+	 * @param host
+	 *        GraphicalEditPart of view
+	 * @param hostDiagram
+	 *        diagram editpart
 	 */
 	public static void restoreRelatedPort(View view, IGraphicalEditPart host, IGraphicalEditPart hostDiagram) {
 		List<SysMLNodeDescriptor> childrenNodes = RestoreElementHelper.getRelatedPortsToRestore(view);
@@ -486,9 +521,9 @@ public class RestoreElementHelper {
 		RestoreElementHelper.createRelatedChildNode(host, filteredChildren, hostDiagram);
 	}
 
-
 	/**
 	 * Filter element to return only element which needs to be restored
+	 * 
 	 * @param v
 	 * @param inputs
 	 * @return
@@ -512,7 +547,6 @@ public class RestoreElementHelper {
 						if(EcoreUtil.isAncestor(v, view)) {
 							return true;
 						}
-
 					}
 					return false;
 				}

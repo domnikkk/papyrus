@@ -223,7 +223,7 @@ public abstract class ArrangeAffixedNodeEditPolicy extends GraphicalEditPolicy {
 	protected Command arrangeChildrenCommand(ArrangeAffixedNodeRequest request) {
 		List<View> affixedNodeView = getViewToArrange(request);
 		Multimap<Integer, View> dispachesViews = getDispatcher().dispatch(affixedNodeView);
-		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(getEditingDomain(), "Ararnge all affixed node");////$NON-NLS-1$
+		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(getEditingDomain(), "Arrange all affixed node");////$NON-NLS-1$
 		for(int side : dispachesViews.keySet()) {
 			BoundaryIterator pointIterator = new BoundaryIterator(getHostFigure().getBounds(), side, dispachesViews.get(side).size());
 			Iterator<View> viewIterator = dispachesViews.get(side).iterator();
@@ -232,7 +232,12 @@ public abstract class ArrangeAffixedNodeEditPolicy extends GraphicalEditPolicy {
 				Rectangle newBounds = new Rectangle(newPoint, new Dimension(20, 20));
 				newBounds = PortPositionLocatorUtils.getBorderLocation(getHostFigure().getBounds().getCopy(), newBounds, 10);
 				View view = viewIterator.next();
-				String label = "Set bounds of " + getCorrectLabel(view) + "at " + newBounds;
+				StringBuilder stringBuilder = new StringBuilder();
+				stringBuilder.append("Set bounds of ");
+				stringBuilder.append(getCorrectLabel(view));
+				stringBuilder.append("at ");
+				stringBuilder.append(newBounds);
+				String label = stringBuilder.toString();
 				SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), label, new EObjectAdapter(view), newBounds.getLocation());////$NON-NLS-1$
 				if(setBoundsCommand.canExecute()) {
 					cc.compose(setBoundsCommand);
