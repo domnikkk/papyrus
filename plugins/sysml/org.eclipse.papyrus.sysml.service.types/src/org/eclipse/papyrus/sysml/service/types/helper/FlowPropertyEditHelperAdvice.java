@@ -70,9 +70,21 @@ public class FlowPropertyEditHelperAdvice extends AbstractStereotypedElementEdit
 				Element contextElement = (Element)editContextRequest.getEditContext();
 
 				IElementMatcher matcher = new FlowSpecificationMatcher();
-				if(!matcher.matches(contextElement)) {
-					isApproved = false;
-				}
+				
+				 if (contextElement instanceof org.eclipse.uml2.uml.Class){
+					/*
+					 * This deals with the case of flow properties being added to a block. 
+					 */
+					org.eclipse.uml2.uml.Class element = (org.eclipse.uml2.uml.Class) contextElement;
+					if(ElementUtil.getStereotypeApplication(element, Block.class) != null) {
+						isApproved = true;
+					}
+				 } else {
+					 
+					 if(!matcher.matches(contextElement)) {
+						 isApproved = false;
+					 }
+				 }
 			}
 		}
 

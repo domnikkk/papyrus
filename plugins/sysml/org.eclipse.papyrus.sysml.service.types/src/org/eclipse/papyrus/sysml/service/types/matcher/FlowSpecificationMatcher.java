@@ -33,15 +33,7 @@ public class FlowSpecificationMatcher implements IElementMatcher {
 			if(ElementUtil.getStereotypeApplication(element, FlowSpecification.class) != null) {
 				isFlowSpec = true;
 			}
-		} else if (eObject instanceof org.eclipse.uml2.uml.Class){
-			/*
-			 * This deals with the case of flow properties being added to a block. 
-			 */
-			org.eclipse.uml2.uml.Class element = (org.eclipse.uml2.uml.Class) eObject;
-			if(ElementUtil.getStereotypeApplication(element, Block.class) != null) {
-				isFlowSpec = true;
-			}
-		}
+		} 
 		return isFlowSpec;
 	}
 

@@ -55,12 +55,15 @@ public class ConnectorLinkLabelSourceMultiplicityEditPart extends AbstractElemen
 	 */
 	@Override
 	public EObject getParserElement() {
-		Connector connector = (Connector)resolveSemanticElement();
-		if((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
-			View owner = ViewUtil.getContainerView(getNotationView());
-
-			if((connector != null) && (connector.getEnds().size() == 2)) {
-				return connector.getEnds().get(0);
+		EObject resolveSemanticElement = resolveSemanticElement();
+		if(resolveSemanticElement instanceof Connector) {
+			Connector connector = (Connector)resolveSemanticElement;
+			if((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
+				View owner = ViewUtil.getContainerView(getNotationView());
+				
+				if((connector != null) && (connector.getEnds().size() == 2)) {
+					return connector.getEnds().get(0);
+				}
 			}
 		}
 
