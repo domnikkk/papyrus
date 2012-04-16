@@ -57,7 +57,7 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 		NotificationFilter applyStereotypeFilter = NotificationFilter.createEventTypeFilter(PapyrusStereotypeListener.APPLIED_STEREOTYPE);
 		NotificationFilter unapplyStereotypeFilter = NotificationFilter.createEventTypeFilter(PapyrusStereotypeListener.UNAPPLIED_STEREOTYPE);
 		NotificationFilter typeFilter = NotificationFilter.createNotifierTypeFilter(Property.class);
-		return applyStereotypeFilter.or(unapplyStereotypeFilter).or(typeFilter);
+		return typeFilter.and(applyStereotypeFilter.or(unapplyStereotypeFilter));
 	}
 
 	@Override
