@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.controlmode.commands.IControlCommand;
 import org.eclipse.papyrus.controlmode.table.helpers.TableMoveHelper;
+import org.eclipse.papyrus.resource.sasheditor.DiModel;
 
 
 /**
@@ -43,7 +44,7 @@ public class PapyrusTableControlCommand implements IControlCommand {
 	 * {@inheritDoc}
 	 */
 	public boolean provides(EObject selection, STATE_CONTROL state, Resource source, Resource target) {
-		return (target.getURI().fileExtension().equals("di")); ////$NON-NLS-1$
+		return DiModel.DI_FILE_EXTENSION.equals(target.getURI().fileExtension());
 	}
 
 

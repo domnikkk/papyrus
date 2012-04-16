@@ -193,6 +193,7 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 		CompoundCommand compoundCommand = new CompoundCommand();
 		uncontrolNotation(compoundCommand);
 		uncontrolModel(compoundCommand);
+		uncontrolDi(compoundCommand);
 
 		// Ensure that all proxies are resolved so that references to the controlled object will be
 		// updated to reference the new resource.
@@ -232,6 +233,20 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 
 		// POST uncontrol operation
 		uncontrol(getEditingDomain(), eObject, controlledModel, resource, compoundCommand, STATE_CONTROL.POST_MODEL);
+	}
+
+	/**
+	 * Uncontrol the di resource
+	 * 
+	 * @param compoundCommand
+	 */
+	private void uncontrolDi(CompoundCommand compoundCommand) {
+		// PRE uncontrol operation
+		Resource diResource = SashModelUtils.getSashModel(modelSet).getResource();
+		uncontrol(getEditingDomain(), eObject, controlledModel, diResource, compoundCommand, STATE_CONTROL.PRE_MODEL);
+
+		// POST uncontrol operation
+		uncontrol(getEditingDomain(), eObject, controlledModel, diResource, compoundCommand, STATE_CONTROL.POST_MODEL);
 	}
 
 	/**
