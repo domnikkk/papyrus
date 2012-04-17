@@ -124,6 +124,7 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 		}
 
 		editingDomain.getCommandStack().execute(compoundCommand);
+		refreshCacheList();
 		commands.clear();
 	}
 
