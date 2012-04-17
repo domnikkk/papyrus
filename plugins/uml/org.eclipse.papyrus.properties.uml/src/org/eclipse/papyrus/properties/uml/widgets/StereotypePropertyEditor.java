@@ -148,7 +148,7 @@ public class StereotypePropertyEditor implements ISelectionChangedListener, IVal
 								setValueEditorProperties(editor, stereotypeApplication, feature, property);
 								currentPage = editor;
 							}
-						} else if("java.lang.Integer".equalsIgnoreCase(instanceClassName) || "integer".equalsIgnoreCase(instanceClassName)) {
+						} else if("java.lang.Integer".equalsIgnoreCase(instanceClassName) || "integer".equalsIgnoreCase(instanceClassName) || "int".equalsIgnoreCase(instanceClassName)) {
 							if(property.isMultivalued()) {
 								MultipleIntegerEditor editor = new MultipleIntegerEditor(pageBook, style);
 								setMultipleValueEditorProperties(editor, (List<?>)pTO.getValue(), stereotypeApplication, feature, property);
@@ -158,7 +158,7 @@ public class StereotypePropertyEditor implements ISelectionChangedListener, IVal
 								setValueEditorProperties(editor, stereotypeApplication, feature, property);
 								currentPage = editor;
 							}
-						} else if("java.lang.Boolean".equals(instanceClassName) || "boolean".equalsIgnoreCase(instanceClassName)) {
+						} else if("java.lang.Boolean".equals(instanceClassName) || "boolean".equalsIgnoreCase(instanceClassName) || "bool".equalsIgnoreCase(instanceClassName)) {
 							if(property.isMultivalued()) {
 								// TODO widget not available
 								currentPage = emptyPage;
