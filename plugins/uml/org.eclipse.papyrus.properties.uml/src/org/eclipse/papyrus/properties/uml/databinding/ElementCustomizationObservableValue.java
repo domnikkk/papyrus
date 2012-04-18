@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.diagram.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.properties.uml.Activator;
 import org.eclipse.papyrus.properties.uml.util.UMLUtil;
+import org.eclipse.papyrus.properties.util.EMFHelper;
 import org.eclipse.papyrus.umlutils.ui.command.AddMaskManagedLabelDisplayCommand;
 import org.eclipse.papyrus.umlutils.ui.command.SetNameLabelIconCommand;
 import org.eclipse.papyrus.umlutils.ui.command.SetQualifiedNameDepthCommand;
@@ -57,12 +58,12 @@ public class ElementCustomizationObservableValue extends AbstractUMLAggregatedOb
 	 *        The Property to edit
 	 */
 	public ElementCustomizationObservableValue(EditPart sourceElement, Property property) {
-		super(UMLUtil.resolveEditingDomain(sourceElement));
+		super(null);
 		this.sourceElement = sourceElement;
 		this.property = property;
 		semanticElement = UMLUtil.resolveUMLElement(sourceElement);
 		notationElement = (View)sourceElement.getModel();
-		domain = (TransactionalEditingDomain)UMLUtil.resolveEditingDomain(semanticElement);
+		domain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(semanticElement);
 	}
 
 	//TODO : The value is not correctly refreshed when someone else edits it

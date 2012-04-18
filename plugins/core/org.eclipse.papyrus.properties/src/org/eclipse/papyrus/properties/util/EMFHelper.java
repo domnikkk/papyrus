@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.core.utils.EditorUtils;
 import org.eclipse.papyrus.properties.Activator;
 
 /**
@@ -376,5 +377,18 @@ public class EMFHelper {
 		return false; //The property if not required
 	}
 
-
+	/**
+	 * Retrieve the EditingDomain for the given source object
+	 * 
+	 * @param source
+	 * @return
+	 *         The source object's editing domain, or null if it couldn't be found
+	 */
+	public static EditingDomain resolveEditingDomain(Object source) {
+		EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(source);
+		if (domain == null) {
+			return EditorUtils.getTransactionalEditingDomain();
+		}
+		return domain;
+	}
 }

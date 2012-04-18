@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.properties.uml.modelelement;
 
 import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.papyrus.properties.Activator;
@@ -20,6 +19,7 @@ import org.eclipse.papyrus.properties.contexts.DataContextElement;
 import org.eclipse.papyrus.properties.modelelement.ModelElement;
 import org.eclipse.papyrus.properties.modelelement.ModelElementFactory;
 import org.eclipse.papyrus.properties.uml.util.UMLUtil;
+import org.eclipse.papyrus.properties.util.EMFHelper;
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -40,7 +40,7 @@ public class StereotypeAppearanceFactory implements ModelElementFactory {
 
 		if(sourceElement instanceof EditPart) {
 			EModelElement modelElement = (EModelElement)((EditPart)sourceElement).getModel();
-			EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(umlSource);
+			EditingDomain domain = EMFHelper.resolveEditingDomain(umlSource);
 			return new StereotypeAppearanceModelElement(umlSource, domain, modelElement);
 		}
 

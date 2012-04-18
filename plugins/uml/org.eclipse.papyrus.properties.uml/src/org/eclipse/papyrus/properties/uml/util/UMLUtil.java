@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
@@ -108,17 +107,6 @@ public class UMLUtil {
 		}
 
 		return null;
-	}
-
-	/**
-	 * Retrieve the EditingDomain for the given source object
-	 * 
-	 * @param source
-	 * @return
-	 *         The source object's editing domain, or null if it couldn't be found
-	 */
-	public static EditingDomain resolveEditingDomain(Object source) {
-		return AdapterFactoryEditingDomain.getEditingDomainFor(resolveUMLElement(source));
 	}
 
 	/**

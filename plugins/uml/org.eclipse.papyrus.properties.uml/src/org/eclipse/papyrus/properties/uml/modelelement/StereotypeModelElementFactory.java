@@ -13,13 +13,13 @@ package org.eclipse.papyrus.properties.uml.modelelement;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.properties.contexts.DataContextElement;
 import org.eclipse.papyrus.properties.modelelement.ModelElement;
 import org.eclipse.papyrus.properties.modelelement.ModelElementFactory;
 import org.eclipse.papyrus.properties.uml.Activator;
 import org.eclipse.papyrus.properties.uml.util.UMLUtil;
+import org.eclipse.papyrus.properties.util.EMFHelper;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -56,7 +56,7 @@ public class StereotypeModelElementFactory implements ModelElementFactory {
 			if(stereotypeApplication == null) {
 				Activator.log.warn("Stereotype " + getQualifiedName(context) + " is not applied on " + umlElement); //$NON-NLS-1$ //$NON-NLS-2$
 			} else {
-				EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(stereotypeApplication);
+				EditingDomain domain = EMFHelper.resolveEditingDomain(stereotypeApplication);
 
 				return new StereotypeModelElement(stereotypeApplication, domain);
 			}
