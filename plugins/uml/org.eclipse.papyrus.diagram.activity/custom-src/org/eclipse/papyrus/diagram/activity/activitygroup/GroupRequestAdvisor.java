@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -42,9 +43,13 @@ import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+import org.eclipse.gmf.runtime.emf.type.core.commands.MoveElementsCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
@@ -74,6 +79,7 @@ import org.eclipse.papyrus.ui.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.uml2.uml.ActivityGroup;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
@@ -106,18 +112,22 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 
 	/**
 	 * Runnable to run command to change parent of selected element
+	 * 
 	 * @author arthur daussy
-	 *
+	 * 
 	 */
 	private final class ChangeGraphicalParentRunnable implements NotificationRunnable {
+
 		/**
 		 * New graphical host
 		 */
 		private final IGraphicalEditPart host;
+
 		/**
 		 * Initial request
 		 */
 		private final IGroupRequest request;
+
 		/**
 		 * List of all modified view
 		 * Used to compute list of modfied files
@@ -126,15 +136,20 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 
 		/**
 		 * Constructor
-		 * @param host  New graphical host
-		 * @param request  Initial request
+		 * 
+		 * @param host
+		 *        New graphical host
+		 * @param request
+		 *        Initial request
 		 */
 		private ChangeGraphicalParentRunnable(IGraphicalEditPart host, IGroupRequest request) {
 			this.host = host;
 			this.request = request;
 		}
 
-		/* (non-Javadoc)
+		/*
+		 * (non-Javadoc)
+		 * 
 		 * @see org.eclipse.papyrus.ui.toolbox.notification.NotificationRunnable#run(org.eclipse.papyrus.ui.toolbox.notification.builders.IContext)
 		 */
 		public void run(IContext context) {
@@ -165,7 +180,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 					EObject semanticElementToDrop = notifierEditPart.resolveSemanticElement();
 					if(semanticElementToDrop != null && hostCompartmentEditPart != null) {
 						/*
-						 * Request to change graphical parent 
+						 * Request to change graphical parent
 						 */
 						ChangeBoundsRequest chdBoundsRequest = new ChangeBoundsRequest(RequestConstants.REQ_ADD);
 						chdBoundsRequest.setEditParts(notifierEditPart);
@@ -190,18 +205,20 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 			notif.delete();
 		}
 
-		/* (non-Javadoc)
+		/*
+		 * (non-Javadoc)
+		 * 
 		 * @see org.eclipse.papyrus.ui.toolbox.notification.NotificationRunnable#getLabel()
 		 */
 		public String getLabel() {
 			return "OK";
 		}
-		
+
 		/**
 		 * @return the list of all EObject modifed
 		 */
-		public List getModifiedObject(){
-			return viewTomodify == null?Collections.emptyList():viewTomodify;
+		public List getModifiedObject() {
+			return viewTomodify == null ? Collections.emptyList() : viewTomodify;
 		}
 	}
 
@@ -210,6 +227,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 	 * or the first access to SingletonHolder.INSTANCE, not before.
 	 */
 	private static class SingletonHolder {
+
 		public static final GroupRequestAdvisor instance = new GroupRequestAdvisor();
 	}
 
@@ -245,7 +263,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 	 * @param editpolicy
 	 */
 	public void addListenner(EObject eObject, IGroupNotifier editpolicy) {
-		listenners.put(eObject, editpolicy);
+		getListenerRegistry().put(eObject, editpolicy);
 	}
 
 	/**
@@ -260,7 +278,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		if(editpolicy == null) {
 			return;
 		}
-		Iterator<Entry<EObject, IGroupNotifier>> iterator = listenners.entries().iterator();
+		Iterator<Entry<EObject, IGroupNotifier>> iterator = getListenerRegistry().entries().iterator();
 		while(iterator.hasNext()) {
 			Entry<EObject, IGroupNotifier> entry = iterator.next();
 			if(editpolicy.equals(entry.getValue())) {
@@ -309,6 +327,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 
 	/**
 	 * Handle all the children of the group (graphical and non graphical children)
+	 * 
 	 * @param request
 	 * @param cc
 	 * @param targetElement
@@ -382,11 +401,16 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 			}
 		}
 	}
+
 	/**
 	 * Create a notification to user to ask him is he want to add its new children as graphical child of its parent group
-	 * @param request {@link InitialContext} {@link IGroupRequest}
-	 * @param cc {@link CompositeCommand} to compose new commands
-	 * @param newChildren List of all new children
+	 * 
+	 * @param request
+	 *        {@link InitialContext} {@link IGroupRequest}
+	 * @param cc
+	 *        {@link CompositeCommand} to compose new commands
+	 * @param newChildren
+	 *        List of all new children
 	 */
 	protected void handleChangeParentNotificationCommand(final IGroupRequest request, CompositeCommand cc, Set<EObject> newChildren) {
 		/*
@@ -395,12 +419,11 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		final IGraphicalEditPart host = request.getHostRequest();
 		/*
 		 * Get editpart of all children
-
 		 */
 		Iterable<IGroupNotifier> listOfChidren = Iterables.transform(newChildren, new Function<EObject, IGroupNotifier>() {
 
 			public IGroupNotifier apply(EObject arg0) {
-				Collection<IGroupNotifier> notifiers = listenners.get(arg0);
+				Collection<IGroupNotifier> notifiers = getListenerRegistry().get(arg0);
 				for(IGroupNotifier notifier : notifiers) {
 					IGraphicalEditPart notifierEditPart = notifier.getHostEditPart();
 					if(notifierEditPart != null) {
@@ -413,26 +436,93 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 			}
 		});
 		final Iterable<IGroupNotifier> listOfFilteredChidren = Iterables.filter(listOfChidren, Predicates.notNull());
+		List<IGroupNotifier> automaticChildren = Lists.newArrayList();
+		List<IGroupNotifier> nonAutomaticChildren = Lists.newArrayList();
+		for(IGroupNotifier notifier : listOfFilteredChidren) {
+			IGraphicalEditPart parentEditPart = getGraphicalParent(notifier.getHostEditPart());
+			if(parentEditPart != null) {
+				if(parentEditPart.resolveSemanticElement() instanceof ActivityGroup) {
+					nonAutomaticChildren.add(notifier);
+				} else {
+					if(!parentEditPart.equals(host)) {
+						automaticChildren.add(notifier);
+					}
+				}
+			} else {
+				DebugUtils.getLog().error("Unable to retreive graphical parent of " + Utils.getCorrectLabel(notifier), null);
+			}
+		}
+		IGraphicalEditPart hostEditPart = request.getHostRequest();
 		/*
-		 * create runnable to run the command
+		 * Command to change graphical parent for element when we can guess graphical parent
 		 */
-		ChangeGraphicalParentRunnable changeGraphicalParentRunnable = new ChangeGraphicalParentRunnable(host, request);
-		final NotificationBuilder notification = createChangeGraphicalParentNotification(listOfFilteredChidren, changeGraphicalParentRunnable);
-		
-		RunNotificationCommand runNotifCmd = new RunNotificationCommand(request.getHostRequest().getEditingDomain(), "Notification command", getWorkspaceFiles(changeGraphicalParentRunnable.getModifiedObject()), notification);////$NON-NLS-1$
-		cc.compose(runNotifCmd);
+		for(IGroupNotifier notifier : automaticChildren) {
+			IGraphicalEditPart notifierEditPart = notifier.getHostEditPart();
+			IGraphicalEditPart hostCompartmentEditPart = request.getNodeDescpitor().getCompartmentPartFromView(hostEditPart);
+			Rectangle hostBounds = Utils.getAbslotueRequestBounds((ChangeBoundsRequest)request.getInitialRequest(), hostCompartmentEditPart);
+			Rectangle childBounds = Utils.getAbsoluteBounds(notifierEditPart);
+			MoveElementsCommand mvCmd = new MoveElementsCommand(new MoveRequest(hostCompartmentEditPart.getNotationView(), notifierEditPart.getNotationView()));
+			/*
+			 * Integrate view into new compartment
+			 */
+			if(mvCmd != null && mvCmd.canExecute()) {
+				cc.compose(mvCmd);
+			}
+			/*
+			 * Set view to the new location
+			 */
+			SetBoundsCommand setBoundCommand = new SetBoundsCommand(WorkspaceEditingDomainFactory.INSTANCE.getEditingDomain(host.getNotationView().eResource().getResourceSet()), "test", new EObjectAdapter(notifierEditPart.getNotationView()), childBounds.translate(hostBounds.getLocation().negate()));
+			if(setBoundCommand != null && setBoundCommand.canExecute()) {
+				cc.compose(setBoundCommand);
+			}
+		}
+		/*
+		 * Create notification for element where we can NOT guess the graphical parent
+		 */
+		if(!nonAutomaticChildren.isEmpty()) {
+			/*
+			 * create runnable to run the command
+			 */
+			ChangeGraphicalParentRunnable changeGraphicalParentRunnable = new ChangeGraphicalParentRunnable(host, request);
+			final NotificationBuilder notification = createChangeGraphicalParentNotification(nonAutomaticChildren, changeGraphicalParentRunnable, hostEditPart);
+			RunNotificationCommand runNotifCmd = new RunNotificationCommand(request.getHostRequest().getEditingDomain(), "Notification command", getWorkspaceFiles(changeGraphicalParentRunnable.getModifiedObject()), notification);////$NON-NLS-1$
+			cc.compose(runNotifCmd);
+		}
 	}
+
+
 	/**
-	 * Create a notification to ask useris he want to change the graphical parent of some elements
+	 * Get the edit which represent the parent (semantically) of the edit part child passed in argument
+	 * @param child
+	 * @return
+	 */
+	private IGraphicalEditPart getGraphicalParent(IGraphicalEditPart child) {
+		IGraphicalEditPart result = child;
+		EObject childElement = child.resolveSemanticElement();
+		if(child != null) {
+			while(childElement == result.resolveSemanticElement()) {
+				try {
+					result = (IGraphicalEditPart)result.getParent();
+				} catch (ClassCastException e) {
+					return result;
+				}
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * Create a notification to ask user if he want to change the graphical parent of some elements
+	 * 
 	 * @param listOfFilteredChidren
 	 * @param changeGraphicalParentRunnable
 	 * @return
 	 */
-	private NotificationBuilder createChangeGraphicalParentNotification(final Iterable<IGroupNotifier> listOfFilteredChidren, ChangeGraphicalParentRunnable changeGraphicalParentRunnable) {
+	private NotificationBuilder createChangeGraphicalParentNotification(final Iterable<IGroupNotifier> listOfFilteredChidren, ChangeGraphicalParentRunnable changeGraphicalParentRunnable, final IGraphicalEditPart host) {
 		return new NotificationBuilder().setType(Type.INFO).setAsynchronous(true).setTemporary(true).setDelay(3000).setTitle("Papyrus graphical modification").setComposite(new ICompositeCreator() {
 
 			public Composite createComposite(Composite parent, FormToolkit toolkit) {
-				return new IntegrateViewToConfigureComposite(parent, SWT.NONE, Lists.newArrayList(Lists.newArrayList(listOfFilteredChidren)),"New elements are visually contained in the current group.\n Please select the elements you want to integrate into this group figure.");
+				return new IntegrateViewToConfigureComposite(parent, SWT.NONE, Lists.newArrayList(Lists.newArrayList(listOfFilteredChidren)), "New elements are visually contained in the current group (" + Utils.getCorrectLabel(host) + ").\n Please select the elements you want to integrate into this group figure.");
 			}
 		}).addAction(changeGraphicalParentRunnable);
 	}
@@ -539,9 +629,8 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		}
 		/*
 		 * Set semantic
-		 *  If the EObject has not been already handle as graphical children
+		 * If the EObject has not been already handle as graphical children
 		 */
-
 		for(Entry<EReference, EObject> entry : request.getParentEReferenceMap().entries()) {
 			EReference ref = entry.getKey();
 			if(ref != null) {
@@ -641,7 +730,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 	 *        true if we are looking for containing references only
 	 */
 	protected void getReferenceElements(IGroupRequest request, final Rectangle newBounds, final List<EReference> references, Multimap<EReference, EObject> eReferenceMapToFillInRequest, Multimap<EReference, IGroupNotifier> result, boolean include, boolean containementOnly) {
-		Iterable<IGroupNotifier> activeListeners = Iterables.filter(listenners.values(), new ActiveListener(getCurrentlyDisplayedDiagram(request)));
+		Iterable<IGroupNotifier> activeListeners = Iterables.filter(getListenerRegistry().values(), new ActiveListener(getCurrentlyDisplayedDiagram(request)));
 		for(IGroupNotifier input : activeListeners) {
 			EObject inputEObject = input.getEObject();
 			if(inputEObject == null) {
@@ -787,34 +876,35 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		}
 		return result;
 	}
-	
-	 /**
-     * Convenience method to get a list of workspaces files associated with
-     * {@link EObject}s in <code>eObject</code>.
-     * 
-     * @param eObjects
-     *            the list of model object
-     * @return the list of {@link IFile}s
-     */
-    protected static List getWorkspaceFiles(List eObjects) {
-        List result = new ArrayList();
 
-        for (Iterator i = eObjects.iterator(); i.hasNext();) {
-            Object next = i.next();
+	/**
+	 * Convenience method to get a list of workspaces files associated with {@link EObject}s in <code>eObject</code>.
+	 * 
+	 * @param eObjects
+	 *        the list of model object
+	 * @return the list of {@link IFile}s
+	 */
+	protected static List getWorkspaceFiles(List eObjects) {
+		List result = new ArrayList();
+		for(Iterator i = eObjects.iterator(); i.hasNext();) {
+			Object next = i.next();
+			if(next instanceof EObject) {
+				Resource resource = ((EObject)next).eResource();
+				if(resource != null) {
+					IFile file = WorkspaceSynchronizer.getFile(resource);
+					if(file != null) {
+						result.add(file);
+					}
+				}
+			}
+		}
+		return result;
+	}
 
-            if (next instanceof EObject) {
-                Resource resource = ((EObject) next).eResource();
-                
-                if (resource != null) {
-                    IFile file = WorkspaceSynchronizer.getFile(resource);
-    
-                    if (file != null) {
-                        result.add(file);
-                    }
-                }
-            }
-        }
-
-        return result;
-    }
+	/**
+	 * @return the listenners
+	 */
+	public Multimap<EObject, IGroupNotifier> getListenerRegistry() {
+		return listenners;
+	}
 }

@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.papyrus.diagram.activity.activitygroup.editpolicy.notifiers.IGroupNotifier;
 import org.eclipse.papyrus.diagram.activity.activitygroup.request.IGroupRequest;
 
+import com.google.common.collect.Multimap;
+
 /**
  * Represent an advisor of Group Request. Should be able to handle group request
  * @author arthur daussy
@@ -31,6 +33,8 @@ public interface IGroupRequestAdvisor {
 	public void addListenner(EObject eObject,IGroupNotifier editpolicy);
 	
 	public ICommand notifyGroupFramework(IGroupRequest request);
+	
+	public Multimap<EObject, IGroupNotifier> getListenerRegistry();
 	
 
 
