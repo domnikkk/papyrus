@@ -6,7 +6,8 @@ Require-Bundle: org.eclipse.papyrus.core,
  org.eclipse.papyrus.controlmode.history,
  org.eclipse.papyrus.ui.toolbox;bundle-version="0.8.0",
  org.eclipse.core.expressions,
- org.eclipse.papyrus.preferences
+ org.eclipse.papyrus.preferences,
+ com.google.collect
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 0.8.2.qualifier

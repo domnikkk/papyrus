@@ -92,7 +92,7 @@ public class ProxyManager implements IProxyManager {
 
 	private ModelSet modelSet;
 
-	private HistoryRoutingManager routeManager = new HistoryRoutingManager(this);
+	private HistoryRoutingManager routeManager = new MapBasedHistoryManager(this);
 
 	public ProxyManager(ModelSet modelSet) {
 		super();
