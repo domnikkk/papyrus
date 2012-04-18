@@ -67,10 +67,10 @@ public class SelectByTypeHandler extends AbstractHandler {
 							IGraphicalEditPart nextPart = (IGraphicalEditPart)values[i];
 							EObject o2 = getEObject(nextPart);
 							if(part instanceof ConnectionEditPart && nextPart instanceof ConnectionEditPart) {
-								if(o1 != o2 && (o1.eClass().equals(o2.eClass()))) {
+								if(o1 != o2 && o1 != null && o2 !=null && (o1.eClass().equals(o2.eClass()))) {
 									add(listElement, nextPart);
 								}
-							} else if(o1 != o2 && (o1.eClass().equals(o2.eClass())) && (isEquivalent(part.getParent(), nextPart.getParent()))) {
+							} else if(o1 != o2 && o1 != null && o2 !=null && (o1.eClass().equals(o2.eClass())) && (isEquivalent(part.getParent(), nextPart.getParent()))) {
 								add(listElement, nextPart);
 							}
 						}
@@ -149,7 +149,7 @@ public class SelectByTypeHandler extends AbstractHandler {
 				selectable |= (part1.isSelectable() && part2.isSelectable()) ;
 				View view1 = (View)part1.getModel();
 				View view2 = (View)part2.getModel();
-				if((view1 != null) && (view2 != null)) {
+				if(view1 != null && view2 != null && view1.getElement() != null && view2.getElement() != null) {
 					if(view1.getElement().eClass() != view2.getElement().eClass()) {
 						return false;
 					}
