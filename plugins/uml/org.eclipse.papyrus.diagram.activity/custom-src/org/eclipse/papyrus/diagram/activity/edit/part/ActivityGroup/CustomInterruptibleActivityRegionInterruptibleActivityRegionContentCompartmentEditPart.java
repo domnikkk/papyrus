@@ -33,7 +33,7 @@ public class CustomInterruptibleActivityRegionInterruptibleActivityRegionContent
 	}
 
 	/**
-	 * remove the top border,hide scrollbar
+	 * remove the top border
 	 */
 	@Override
 	public IFigure createFigure() {
@@ -42,10 +42,6 @@ public class CustomInterruptibleActivityRegionInterruptibleActivityRegionContent
 		// remove the top border
 		result.setBorder(null);
 		// Hide scrollBar
-		result.getScrollPane().setEnabled(false);
-		result.getScrollPane().setHorizontalScrollBar(null);
-		result.getScrollPane().setVerticalScrollBar(null);
-		result.getScrollPane().setScrollBarVisibility(ScrollPane.NEVER);
 		return result;
 	}
 
