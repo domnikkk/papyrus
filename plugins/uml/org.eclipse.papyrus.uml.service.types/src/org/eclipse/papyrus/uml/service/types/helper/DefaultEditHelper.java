@@ -29,6 +29,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
+import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
 import org.eclipse.papyrus.service.edit.commands.FakeMoveCommand;
 
 /**
@@ -249,5 +250,19 @@ public class DefaultEditHelper extends AbstractEditHelper {
 	@Override
 	protected ICommand getMoveCommand(MoveRequest req) {
 		return CompositeCommand.compose(super.getMoveCommand(req), new FakeMoveCommand(req));
+	}
+	
+	protected ICommand getBasicDestroyElementCommand(DestroyElementRequest req) {
+		ICommand result = req.getBasicDestroyCommand();
+
+		if (result == null) {
+			result = new DestroyElementPapyrusCommand(req);
+		} else {
+			// ensure that re-use of this request will not accidentally
+			//    propagate this command, which would destroy the wrong object
+			req.setBasicDestroyCommand(null);
+		}
+
+		return result;
 	}
 }

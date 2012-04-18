@@ -17,6 +17,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -28,7 +29,7 @@ public class UnapplyAllStereotypesCommand extends CompositeCommand {
 		super(label);
 		for(EObject stereotypeApplication : element.getStereotypeApplications()) {
 			DestroyElementRequest stereoReq = new DestroyElementRequest(domain, stereotypeApplication, false);
-			add(new DestroyElementCommand(stereoReq));
+			add(new DestroyElementPapyrusCommand(stereoReq));
 		}
 	}
 }

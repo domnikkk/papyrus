@@ -20,8 +20,8 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.Pin;
 
@@ -58,7 +58,7 @@ public class PinEditHelper extends ElementEditHelper{
 				}
 			}
 			for ( ActivityEdge edgeToDstroy : edgesToDestroy){
-				DestroyElementCommand destroyCommand = new DestroyElementCommand(new DestroyElementRequest(req.getEditingDomain(), edgeToDstroy, false));
+				DestroyElementPapyrusCommand destroyCommand = new DestroyElementPapyrusCommand(new DestroyElementRequest(req.getEditingDomain(), edgeToDstroy, false));
 				if ( destroyCommand != null && destroyCommand.canExecute()){
 					cc.compose(destroyCommand);
 				}

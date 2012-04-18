@@ -141,16 +141,14 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 		Collection<?> affectedObjects = emfCommand.getAffectedObjects();
 		if (affectedObjects != null) {
 			for (Object o : affectedObjects) {
+				if (o instanceof EObject) {
+					o = ((EObject) o).eResource();
+				}
+				if (o instanceof Resource) {
+					o = WorkspaceSynchronizer.getFile((Resource)o);
+				}
 				if (o instanceof IFile) {
 					affectedFiles.add(o);
-				} else if (o instanceof EObject) {
-					Resource res = ((EObject)o).eResource();
-					if (res != null) {
-						IFile file = WorkspaceSynchronizer.getFile(res);
-						if (file != null) {
-							affectedFiles.add(file);
-						}
-					}
 				}
 			}
 		}
