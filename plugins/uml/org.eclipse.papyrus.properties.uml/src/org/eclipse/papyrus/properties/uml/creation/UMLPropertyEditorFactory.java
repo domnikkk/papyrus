@@ -16,7 +16,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -24,6 +23,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.properties.Activator;
 import org.eclipse.papyrus.properties.creation.EcorePropertyEditorFactory;
+import org.eclipse.papyrus.properties.util.EMFHelper;
 import org.eclipse.papyrus.service.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.service.edit.service.IElementEditService;
 
@@ -58,7 +58,7 @@ public class UMLPropertyEditorFactory extends EcorePropertyEditorFactory {
 
 	protected void set(EObject container, EReference reference, Object value) {
 		try {
-			EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(container);
+			EditingDomain domain = EMFHelper.resolveEditingDomain(container);
 			if(domain == null) {
 				container.eSet(reference, value);
 				return;

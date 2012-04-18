@@ -19,7 +19,6 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -29,6 +28,7 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.papyrus.modelexplorer.LinkNode;
 import org.eclipse.papyrus.modelexplorer.MoDiscoLabelProvider;
+import org.eclipse.papyrus.properties.util.EMFHelper;
 import org.eclipse.papyrus.uml.modelexplorer.widgets.UMLElementMEBContentProvider;
 import org.eclipse.papyrus.umlutils.PackageUtil;
 import org.eclipse.papyrus.widgets.editors.TreeSelectorDialog;
@@ -169,8 +169,7 @@ public class UMLMultiEClassifierTreeSelectorDialog extends TreeSelectorDialog {
 			if (checkReadonly) {
 				if (semanticObject != null
 						&& semanticObject.eResource() != null) {
-					EditingDomain domain = AdapterFactoryEditingDomain
-							.getEditingDomainFor(semanticObject);
+					EditingDomain domain = EMFHelper.resolveEditingDomain(semanticObject);
 					if (domain != null
 							&& domain.isReadOnly(semanticObject.eResource())) {
 						return false;
