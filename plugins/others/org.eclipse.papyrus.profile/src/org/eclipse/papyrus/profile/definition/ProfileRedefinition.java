@@ -163,7 +163,6 @@ public class ProfileRedefinition {
 		// 2.1 the type is an EClass
 		if(oldType instanceof EClass) {
 			// redefine type
-			eReference.setContainment(false);
 			if(!isDataTypeDefinition(oldType)) {
 				eReference.setEType(lookForDirectDefinitionFrom((EClass)oldType));
 				// redefine the Opposite
