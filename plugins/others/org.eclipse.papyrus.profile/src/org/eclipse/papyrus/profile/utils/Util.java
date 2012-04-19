@@ -663,40 +663,41 @@ public class Util {
 
 		// Retrieve profile resource
 		URI prof_URI = _profile.eResource().getURI();
-		Resource modelResource = pkge_resourceSet.getResource(prof_URI, true);
-
-		if(modelResource.getContents().get(0) instanceof Profile) {
-
-			// ckeck applied profile application definition vs profile definition referenced in file
-			Profile profileInFile = (Profile)(modelResource.getContents().get(0));
-
-			if(_package.getProfileApplication(_profile) != null) {
-				EPackage appliedProfileDefinition = _package.getProfileApplication(_profile).getAppliedDefinition();
-				EPackage fileProfileDefinition = null;
-
-				// Check profiles qualified names to ensure the correct profiles are compared
-				String appliedProfileName = _profile.getQualifiedName();
-				String fileProfileName = profileInFile.getQualifiedName();
-				if(!appliedProfileName.equals(fileProfileName)) {
-
-					// The profile must be a subprofile
-					Iterator<Profile> it = PackageUtil.getSubProfiles(profileInFile).iterator();
-					while(it.hasNext()) {
-						Profile current = it.next();
-						fileProfileName = current.getQualifiedName();
-						if(fileProfileName.equals(appliedProfileName)) {
-							profileInFile = current;
+		if (pkge_resourceSet != null){
+			Resource modelResource = pkge_resourceSet.getResource(prof_URI, true);
+			
+			if(modelResource != null && modelResource.getContents().get(0) instanceof Profile) {
+				
+				// ckeck applied profile application definition vs profile definition referenced in file
+				Profile profileInFile = (Profile)(modelResource.getContents().get(0));
+				
+				if(_package.getProfileApplication(_profile) != null) {
+					EPackage appliedProfileDefinition = _package.getProfileApplication(_profile).getAppliedDefinition();
+					EPackage fileProfileDefinition = null;
+					
+					// Check profiles qualified names to ensure the correct profiles are compared
+					String appliedProfileName = _profile.getQualifiedName();
+					String fileProfileName = profileInFile.getQualifiedName();
+					if(!appliedProfileName.equals(fileProfileName)) {
+						
+						// The profile must be a subprofile
+						Iterator<Profile> it = PackageUtil.getSubProfiles(profileInFile).iterator();
+						while(it.hasNext()) {
+							Profile current = it.next();
+							fileProfileName = current.getQualifiedName();
+							if(fileProfileName.equals(appliedProfileName)) {
+								profileInFile = current;
+							}
 						}
 					}
-				}
-
-				fileProfileDefinition = profileInFile.getDefinition();
-
-				if(appliedProfileDefinition != fileProfileDefinition) {
-					isDirty = true;
+					
+					fileProfileDefinition = profileInFile.getDefinition();
+					
+					if(appliedProfileDefinition != fileProfileDefinition) {
+						isDirty = true;
+					}
 				}
 			}
-
 		}
 
 		return isDirty;
