@@ -33,7 +33,7 @@ import org.eclipse.papyrus.ui.toolbox.notification.Type;
 import org.eclipse.papyrus.ui.toolbox.notification.builders.IContext;
 import org.eclipse.papyrus.ui.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.eclipse.uml2.uml.CallAction;
+import org.eclipse.uml2.uml.InvocationAction;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -59,15 +59,15 @@ public class GlobalSynchronizePinsParametersHandler extends AbstractSynchronizeP
 				}
 				if(element instanceof Package) {
 					Package pack = (Package)element;
-					final Collection<EObject> objectsOfType = ModelSetQuery.getObjectsOfType(pack, UMLPackage.Literals.CALL_ACTION);
+					final Collection<EObject> objectsOfType = ModelSetQuery.getObjectsOfType(pack, UMLPackage.Literals.INVOCATION_ACTION);
 					new NotificationBuilder().setAsynchronous(false).setType(Type.WARNING).setHTML(true).setMessage(getCallActionToSync(objectsOfType)).addAction(new NotificationRunnable() {
 
 						public void run(IContext context) {
 							for(EObject ca : objectsOfType) {
-								if(ca instanceof CallAction) {
+								if(ca instanceof InvocationAction) {
 									EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(ca);
 									if(!editingDomain.isReadOnly(ca.eResource())) {
-										SynchronizePinsParametersHandler.syncInvocationAction((CallAction)ca);
+										SynchronizePinsParametersHandler.syncInvocationAction((InvocationAction)ca);
 									}
 								}
 							}
