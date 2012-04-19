@@ -20,11 +20,16 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.command.StrictCompoundCommand;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
+import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.widgets.editors.AbstractEditor;
 import org.eclipse.papyrus.widgets.editors.ICommitListener;
 
@@ -278,11 +283,26 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	}
 
 	protected Command getRemoveCommand(Object value) {
-		return RemoveCommand.create(editingDomain, source, feature, value);
+		Command cmd = RemoveCommand.create(editingDomain, source, feature, value);
+		if (value instanceof EObject && feature instanceof EReference && ((EReference)feature).isContainment()) {
+			addDestroyCommand(cmd, (EObject)value);
+		}
+		return cmd;
 	}
 
 	protected Command getRemoveAllCommand(Collection<?> values) {
-		return RemoveCommand.create(editingDomain, source, feature, values);
+		CompoundCommand cc = new CompoundCommand("Edit list");
+
+		if (feature instanceof EReference && ((EReference)feature).isContainment() && values != null) {
+			for (Object o : values) {
+				if (o instanceof EObject) {
+					addDestroyCommand(cc, (EObject)o);
+				}
+			}
+		}
+
+		cc.append(RemoveCommand.create(editingDomain, source, feature, values));
+		return cc;
 	}
 
 	protected List<Command> getMoveCommands(int oldIndex, int newIndex) {
@@ -308,7 +328,22 @@ public class EMFObservableList extends ObservableList implements ICommitListener
 	}
 
 	protected Command getSetCommand(int index, Object value) {
-		return SetCommand.create(editingDomain, source, feature, value, index);
+		Object oldValue = get(index);
+		Command command = SetCommand.create(editingDomain, source, feature, value, index);
+		if (oldValue instanceof EObject && feature instanceof EReference && ((EReference)feature).isContainment()) {
+			addDestroyCommand(command, (EObject)oldValue);
+		}
+		return command;
+	}
+	
+	protected void addDestroyCommand(Command cmd, EObject objToDestroy) {
+		Command destroyCmd = new GMFtoEMFCommandWrapper(new DestroyElementPapyrusCommand(new DestroyElementRequest((TransactionalEditingDomain)editingDomain, (EObject)objToDestroy, false)));
+
+		if (cmd instanceof CompoundCommand) {
+			((CompoundCommand)cmd).append(destroyCmd);
+		} else {
+			cmd.chain(destroyCmd);
+		}
 	}
 
 }
