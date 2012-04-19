@@ -20,9 +20,7 @@ import java.util.List;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * This abstract class describes the required methods to register to the org.eclipse.papyrus.diagram.common.groups.groupcontainment extension point.

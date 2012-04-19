@@ -268,8 +268,8 @@ public class GroupCreationEditPolicy extends CreationEditPolicy {
 					(CreateElementRequest) requestAdapter.getAdapter(
 						CreateElementRequest.class);
 
-			
-					tryToFindModelParentFromGroupFramework(createElementRequest,new AbstractGroupRequest((IGraphicalEditPart)getHost(),request,request.getViewAndElementDescriptor().getElementAdapter(),ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_NODE)) {
+				
+					tryToFindModelParentFromGroupFramework(createElementRequest,new AbstractGroupRequest((IGraphicalEditPart)getHost(),request,request.getViewAndElementDescriptor().getElementAdapter(),ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(createElementRequest.getElementType().getEClass())) {
 						public GroupRequestType getGroupRequestType() {
 							return GroupRequestType.CREATION;
 						}

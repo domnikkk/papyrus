@@ -59,6 +59,7 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.editpolicy.notifiers.I
 import org.eclipse.papyrus.diagram.activity.activitygroup.predicates.AncestorFilter;
 import org.eclipse.papyrus.diagram.activity.activitygroup.predicates.DescendantsFilter;
 import org.eclipse.papyrus.diagram.activity.activitygroup.predicates.DescendantsFilterIGroupNotifier;
+import org.eclipse.papyrus.diagram.activity.activitygroup.predicates.SameContainerFilter;
 import org.eclipse.papyrus.diagram.activity.activitygroup.request.IGroupRequest;
 import org.eclipse.papyrus.diagram.activity.activitygroup.request.SetDeferredRequest;
 import org.eclipse.papyrus.diagram.activity.activitygroup.ui.IntegrateViewToConfigureComposite;
@@ -81,6 +82,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.uml2.uml.ActivityGroup;
+import org.eclipse.uml2.uml.Element;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
@@ -550,7 +552,8 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 						/*
 						 * Is the current moving element containing the old container
 						 */
-						boolean isOldContainerVisuallyIncludeInNewContainer = getIGroupNotifier(host).includes(Utils.getAbsoluteBounds(myGroupNotifier.getHostEditPart()));
+						IGroupNotifier currentElementNotifier = getIGroupNotifier(host);
+						boolean isOldContainerVisuallyIncludeInNewContainer = currentElementNotifier.includes(Utils.getAbsoluteBounds(myGroupNotifier.getHostEditPart()));
 						if (canTheOldContainerBeAModelParentOfTheNewContainer && isNewContainerVisuallyIncludeInOldContainer){
 							/*
 							 * Is going to be a new child of the old container
@@ -565,9 +568,14 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 						else {
 							/*
 							 * There is no containing relation between the groups
-							 * TODO call recursive to test with it's father
 							 */
-							nonAutomaticChildren.add(notifier);
+							
+							if (currentElementNotifier.getHostGroupDescriptor().getContainmentReferenceFor(notifier.getHostEditPart().resolveSemanticElement().eClass()) == null){								
+								nonAutomaticChildren.add(notifier);
+							} else {
+								// If containment link automatically add it to new group
+								automaticChildren.add(notifier);
+							}
 						}
 					} else {
 						/*
@@ -853,11 +861,11 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 	 * @param containementOnly
 	 *        true if we are looking for containing references only
 	 */
-	protected void getReferenceElements(IGroupRequest request, final Rectangle newBounds, final List<EReference> references, Multimap<EReference, EObject> eReferenceMapToFillInRequest, Multimap<EReference, IGroupNotifier> result, boolean include, boolean containementOnly) {
+	protected void getReferenceElements(IGroupRequest request, final Rectangle newBounds, final List<EReference> references, Multimap<EReference, Element> eReferenceMapToFillInRequest, Multimap<EReference, IGroupNotifier> result, boolean include, boolean containementOnly) {
 		Iterable<IGroupNotifier> activeListeners = Iterables.filter(getListenerRegistry().values(), new ActiveListener(getCurrentlyDisplayedDiagram(request)));
 		for(IGroupNotifier input : activeListeners) {
 			EObject inputEObject = input.getEObject();
-			if(inputEObject == null) {
+			if(inputEObject == null || !(inputEObject instanceof Element)) {
 				continue;
 			}
 			Object adapter = request.getTargetElement().getAdapter(EObject.class);
@@ -882,7 +890,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 					if(containementOnly && refenceFounded.getEOpposite() != null && !refenceFounded.getEOpposite().isContainment()) {
 						continue;
 					}
-					eReferenceMapToFillInRequest.put(refenceFounded, inputEObject);
+					eReferenceMapToFillInRequest.put(refenceFounded, (Element)inputEObject);
 					result.put(refenceFounded, input);
 				}
 			}
@@ -932,7 +940,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		}
 		final Multimap<EReference, IGroupNotifier> auxResult = ArrayListMultimap.create();
 		final Multimap<EReference, IGroupNotifier> result = ArrayListMultimap.create();
-		final Multimap<EReference, EObject> eReferenceLookedForMap = ArrayListMultimap.create();
+		final Multimap<EReference, Element> eReferenceLookedForMap = ArrayListMultimap.create();
 		getReferenceElements(request, newBounds, references, eReferenceLookedForMap, auxResult, lookingForParent, onlyContainment);
 		/*
 		 * Filter ancestors
@@ -944,11 +952,16 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 			 * 1 - ActPart1 include in Act1 then Act1 disappear
 			 * 2 - ActPart1 include in ActPart2 then ActPart1 disappear
 			 */
-			Collection<EObject> filteredCollection = Collections2.filter(eReferenceLookedForMap.get(ref), lookingForParent ? new DescendantsFilter(eReferenceLookedForMap.values()) : new AncestorFilter(eReferenceLookedForMap.values()));
-			if(lookingForParent) {
-				request.getParentEReferenceMap().putAll(ref, filteredCollection);
-			} else {
-				request.getChildrenEReferenceMap().putAll(ref, filteredCollection);
+			Object adapter = request.getTargetElement().getAdapter(EObject.class);
+			if(adapter instanceof Element) {
+				Element element = (Element)adapter;	
+				Predicate<Element> composedPredicate = Predicates.and(new SameContainerFilter(element),lookingForParent ? new DescendantsFilter(eReferenceLookedForMap.values()) : new AncestorFilter(eReferenceLookedForMap.values()));
+				Collection<Element> filteredCollection = Collections2.filter(eReferenceLookedForMap.get(ref),composedPredicate );
+				if(lookingForParent) {
+					request.getParentEReferenceMap().putAll(ref, filteredCollection);
+				} else {
+					request.getChildrenEReferenceMap().putAll(ref, filteredCollection);
+				}
 			}
 		}
 		for(EReference ref : auxResult.keySet()) {
