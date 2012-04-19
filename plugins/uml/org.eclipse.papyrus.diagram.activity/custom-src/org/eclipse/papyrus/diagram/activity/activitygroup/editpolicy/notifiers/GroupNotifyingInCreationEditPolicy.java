@@ -17,23 +17,24 @@ package org.eclipse.papyrus.diagram.activity.activitygroup.editpolicy.notifiers;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.internal.commands.RefreshEditPartCommand;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
+import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.diagram.activity.activitygroup.ContainerNodeDescriptorRegistry;
 import org.eclipse.papyrus.diagram.activity.activitygroup.GroupRequestAdvisor;
 import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescriptor;
 import org.eclipse.papyrus.diagram.activity.activitygroup.IGroupRequestAdvisor;
+import org.eclipse.papyrus.diagram.common.command.wrappers.EMFtoGEFCommandWrapper;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Policy which catch creation event in order to integrated it into the group framework
@@ -43,6 +44,8 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.IGroupRequestAdvisor;
  */
 public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy {
 
+	private static String FAKE_MOVE_COMMAND_TYPE = "FAKE_MOVE_COMMAND_TYPE";
+
 	public GroupNotifyingInCreationEditPolicy(IContainerNodeDescriptor groupDescriptor) {
 		super(groupDescriptor);
 	}
@@ -51,7 +54,7 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 	public Command getCommand(Request request) {
 		if(request instanceof CreateViewRequest) {
 			final CreateViewRequest c = (CreateViewRequest)request;
-			return new ICommandProxy(new DeferredFakeMoveCommand(getHostEditPart().getEditingDomain(), "Fake move command to integrate into group framework", c, getHost().getViewer().getEditPartRegistry()));
+			return new EMFtoGEFCommandWrapper(new DeferredFakeMoveCommand(getHostEditPart().getEditingDomain(), "Fake move command to integrate into group framework", c, getHost().getViewer().getEditPartRegistry()));
 		}
 		return null;
 	}
@@ -63,7 +66,7 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 	 * @author arthur daussy
 	 * 
 	 */
-	private static class DeferredFakeMoveCommand extends AbstractTransactionalCommand {
+	private class DeferredFakeMoveCommand extends CompoundCommand {
 
 		/**
 		 * Initial Create View Request
@@ -78,16 +81,19 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 		/**
 		 * Special the for the fake move command
 		 */
-		private static String FAKE_MOVE_COMMAND_TYPE = "FAKE_MOVE_COMMAND_TYPE";
-
 		public DeferredFakeMoveCommand(TransactionalEditingDomain domain, String label, CreateViewRequest request, Map editPartRegistry) {
-			super(domain, label, null);
+			super(label);
 			this.request = request;
 			this.editPartRegistry = editPartRegistry;
 		}
 
 		@Override
-		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		public boolean canExecute() {
+			return true;
+		}
+
+	
+		public void execute() {
 			Object newObject = request.getNewObject();
 			/*
 			 * Try to get the newly created view
@@ -108,18 +114,24 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 							 * Send a fake change bounds request
 							 */
 							IGraphicalEditPart graphEdit = (IGraphicalEditPart)editPart;
+							IGraphicalEditPart compartmentEditPart = ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_PARTITION).getCompartmentPartFromView(graphEdit);
+							if(compartmentEditPart != null) {
+								RefreshEditPartCommand refreshCommand = new RefreshEditPartCommand(compartmentEditPart, true);
+								if (refreshCommand.canExecute()){									
+									appendAndExecute(new GMFtoEMFCommandWrapper(refreshCommand));
+								}
+
+							}
 							ChangeBoundsRequest changeBoundRequest = new ChangeBoundsRequest(FAKE_MOVE_COMMAND_TYPE);
 							changeBoundRequest.setEditParts(graphEdit);
 							Command fakeMoveCommand = graphEdit.getCommand(changeBoundRequest);
 							if(fakeMoveCommand != null && fakeMoveCommand.canExecute()) {
-								getEditingDomain().getCommandStack().execute(new GEFtoEMFCommandWrapper(fakeMoveCommand));
-								return CommandResult.newOKCommandResult();
+								appendAndExecute(new GEFtoEMFCommandWrapper(fakeMoveCommand));
 							}
 						}
 					}
 				}
 			}
-			return CommandResult.newWarningCommandResult("Papyrus was unable to integrate this element into the group framework mechanism", null);////$NON-NLS-1$
 		}
 	}
 

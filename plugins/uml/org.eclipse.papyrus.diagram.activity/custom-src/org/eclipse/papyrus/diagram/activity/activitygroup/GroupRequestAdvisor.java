@@ -40,6 +40,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
+import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
@@ -296,6 +297,32 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		 * Handling parent
 		 ******************/
 		CompositeCommand cc = new CompositeCommand("Global command from GroupRequestAdvisor");
+		
+		Request initialRequest = request.getInitialRequest();
+		if (initialRequest instanceof ChangeBoundsRequest){			
+			handleMove(request, cc);
+		} else if (initialRequest instanceof GroupRequest && RequestConstants.REQ_DELETE.equals(initialRequest.getType())){
+			handleDelete(request, cc);
+		}
+		
+		
+		if(cc != null && !cc.isEmpty()) {
+			return cc;
+		}
+		return null;
+	}
+
+	protected void handleDelete(IGroupRequest request, CompositeCommand cc) {
+//		request.getNodeDescpitor().getChildrenReferences()
+		
+	}
+
+	/**
+	 * Handle move
+	 * @param request
+	 * @param cc
+	 */
+	protected void handleMove(IGroupRequest request, CompositeCommand cc) {
 		/*
 		 * All parent
 		 */
@@ -315,14 +342,14 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		if(DebugUtils.isDebugging()) {
 			log.debug("***********************END : Group Request Advisor***********************************");
 		}
-		/*
-		 * For all new child send request
-		 * For all GrChild create new request from old one and use dispatcher
-		 */
-		if(cc != null && !cc.isEmpty()) {
-			return cc;
-		}
-		return null;
+//		/*
+//		 * For all new child send request
+//		 * For all GrChild create new request from old one and use dispatcher
+//		 */
+//		if(cc != null && !cc.isEmpty()) {
+//			return cc;
+//		}
+//		return null;
 	}
 
 	/**
@@ -395,9 +422,9 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 						}
 					}
 				}
-				if(!newChildren.isEmpty()) {
-					handleChangeParentNotificationCommand(request, cc, newChildren);
-				}
+			}
+			if(!newChildren.isEmpty()) {
+				handleChangeParentNotificationCommand(request, cc, newChildren);
 			}
 		}
 	}
@@ -438,20 +465,11 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		final Iterable<IGroupNotifier> listOfFilteredChidren = Iterables.filter(listOfChidren, Predicates.notNull());
 		List<IGroupNotifier> automaticChildren = Lists.newArrayList();
 		List<IGroupNotifier> nonAutomaticChildren = Lists.newArrayList();
-		for(IGroupNotifier notifier : listOfFilteredChidren) {
-			IGraphicalEditPart parentEditPart = getGraphicalParent(notifier.getHostEditPart());
-			if(parentEditPart != null) {
-				if(parentEditPart.resolveSemanticElement() instanceof ActivityGroup) {
-					nonAutomaticChildren.add(notifier);
-				} else {
-					if(!parentEditPart.equals(host)) {
-						automaticChildren.add(notifier);
-					}
-				}
-			} else {
-				DebugUtils.getLog().error("Unable to retreive graphical parent of " + Utils.getCorrectLabel(notifier), null);
-			}
-		}
+		/*
+		 * Dispatch children
+		 */
+		dispatchChildren(request, host, listOfFilteredChidren, automaticChildren, nonAutomaticChildren);
+		
 		IGraphicalEditPart hostEditPart = request.getHostRequest();
 		/*
 		 * Command to change graphical parent for element when we can guess graphical parent
@@ -459,7 +477,14 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 		for(IGroupNotifier notifier : automaticChildren) {
 			IGraphicalEditPart notifierEditPart = notifier.getHostEditPart();
 			IGraphicalEditPart hostCompartmentEditPart = request.getNodeDescpitor().getCompartmentPartFromView(hostEditPart);
-			Rectangle hostBounds = Utils.getAbslotueRequestBounds((ChangeBoundsRequest)request.getInitialRequest(), hostCompartmentEditPart);
+			
+			Request initialRequest = request.getInitialRequest();
+			Rectangle hostBounds = null;
+			if (initialRequest instanceof ChangeBoundsRequest){
+				hostBounds = Utils.getAbslotueRequestBounds((ChangeBoundsRequest)initialRequest, hostCompartmentEditPart);
+			} else {
+				hostBounds = Utils.getAbsoluteBounds(hostCompartmentEditPart);
+			}
 			Rectangle childBounds = Utils.getAbsoluteBounds(notifierEditPart);
 			MoveElementsCommand mvCmd = new MoveElementsCommand(new MoveRequest(hostCompartmentEditPart.getNotationView(), notifierEditPart.getNotationView()));
 			/*
@@ -488,6 +513,99 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 			RunNotificationCommand runNotifCmd = new RunNotificationCommand(request.getHostRequest().getEditingDomain(), "Notification command", getWorkspaceFiles(changeGraphicalParentRunnable.getModifiedObject()), notification);////$NON-NLS-1$
 			cc.compose(runNotifCmd);
 		}
+	}
+
+	/**
+	 * Dispatch all children in two category.
+	 * 	listOfFilteredChidren will contained all element to automatically add as graphical children
+	 * 	nonAutomaticChildren will contained all element to ask the user what to do with
+	 * @param request
+	 * @param host
+	 * @param listOfFilteredChidren
+	 * @param automaticChildren
+	 * @param nonAutomaticChildren
+	 */
+	private void dispatchChildren(final IGroupRequest request, final IGraphicalEditPart host, final Iterable<IGroupNotifier> listOfFilteredChidren, List<IGroupNotifier> automaticChildren, List<IGroupNotifier> nonAutomaticChildren) {
+		for(IGroupNotifier notifier : listOfFilteredChidren) {
+			IGraphicalEditPart parentEditPart = getGraphicalParent(notifier.getHostEditPart());
+			if(parentEditPart != null) {
+				EObject eObject = parentEditPart.resolveSemanticElement();
+				if(eObject instanceof ActivityGroup) {
+					ActivityGroup group = (ActivityGroup)eObject;
+					Collection<IGroupNotifier> groupNotifiers = listenners.get(group);
+					if (!groupNotifiers.isEmpty()){
+						IGroupNotifier myGroupNotifier = groupNotifiers.iterator().next();
+						/*
+						 * Is the old container (an activity group) continaing the current moving element
+						 */
+						boolean isNewContainerVisuallyIncludeInOldContainer = myGroupNotifier.includes(Utils.getAbslotueRequestBounds((ChangeBoundsRequest)request.getInitialRequest(), host));
+						/*
+						 * Can the old container (an activity group) be a model a the current moving element
+						 */
+						boolean canTheOldContainerBeAModelParentOfTheNewContainer = myGroupNotifier.getHostGroupDescriptor().canIBeModelParentOf(host.resolveSemanticElement().eClass());
+						/*
+						 * 
+						 */
+						boolean canTheNewContainerBeModelParentOfTheOldContianer = request.getNodeDescpitor().canIBeModelParentOf(host.resolveSemanticElement().eClass());
+						/*
+						 * Is the current moving element containing the old container
+						 */
+						boolean isOldContainerVisuallyIncludeInNewContainer = getIGroupNotifier(host).includes(Utils.getAbsoluteBounds(myGroupNotifier.getHostEditPart()));
+						if (canTheOldContainerBeAModelParentOfTheNewContainer && isNewContainerVisuallyIncludeInOldContainer){
+							/*
+							 * Is going to be a new child of the old container
+							 */
+								automaticChildren.add(notifier);
+								
+						} else if(canTheNewContainerBeModelParentOfTheOldContianer && isOldContainerVisuallyIncludeInNewContainer){
+							/*
+							 * Is going to be a new container for the old container
+							 */
+						}
+						else {
+							/*
+							 * There is no containing relation between the groups
+							 * TODO call recursive to test with it's father
+							 */
+							nonAutomaticChildren.add(notifier);
+						}
+					} else {
+						/*
+						 * No notifier where found
+						 */
+						nonAutomaticChildren.add(notifier);
+					}
+				} else {
+					/*
+					 * If there is no container (which is group)
+					 */
+					if(!parentEditPart.equals(host)) {
+						automaticChildren.add(notifier);
+					}
+				}
+			} else {
+				DebugUtils.getLog().error("Unable to retreive graphical parent of " + Utils.getCorrectLabel(notifier), null);
+			}
+		}
+	}
+
+	/**
+	 * Get the IGroupNotifier of the {@link IGraphicalEditPart} passed in argument
+	 * @param host
+	 * @return
+	 */
+	private IGroupNotifier getIGroupNotifier(final IGraphicalEditPart host) {
+		
+		EditPolicy editPolicy = host.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY);
+		if ( editPolicy instanceof IGroupNotifier){			
+			return (IGroupNotifier)editPolicy;
+		} else {
+			 editPolicy = host.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY);
+			 if ( editPolicy instanceof IGroupNotifier){			
+					return (IGroupNotifier)editPolicy;
+			 }
+		}
+		throw new RuntimeException("Unable to retreive the IGroupNofier of the current group");////$NON-NLS-1$
 	}
 
 
@@ -576,11 +694,17 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 						stringBuilder.append(" +++");
 						DebugUtils.getLog().debug(stringBuilder.toString());
 					}
-					ChangeBoundsRequest auxChReq = Utils.getChangeBoundsRequestCopy((ChangeBoundsRequest)request.getInitialRequest(), p.getHostEditPart());
+					Request initialRequest = request.getInitialRequest();
+					Request auxChReq = null;
+					if (initialRequest instanceof ChangeBoundsRequest){
+						 auxChReq = Utils.getChangeBoundsRequestCopy((ChangeBoundsRequest)initialRequest, p.getHostEditPart());
+					} else {
+						auxChReq = initialRequest;
+					}
 					/*
 					 * Save graphical parent
 					 */
-					auxChReq.getExtendedData().put(GROUP_FRAMEWORK_GRAPHICAL_PARENT, compartementEditPart.resolveSemanticElement());
+//					auxChReq.getExtendedData().put(GROUP_FRAMEWORK_GRAPHICAL_PARENT, compartementEditPart.resolveSemanticElement());
 					graphicalChildren.add(p.getEObject());
 					Command childCommand = p.getCommand(auxChReq);
 					if(childCommand != null && childCommand.canExecute()) {

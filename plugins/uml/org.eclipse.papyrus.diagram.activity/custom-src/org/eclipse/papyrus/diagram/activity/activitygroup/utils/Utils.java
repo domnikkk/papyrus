@@ -98,6 +98,9 @@ public class Utils {
 	 */
 	public static Rectangle getAbsoluteBounds(IGraphicalEditPart part) {
 		// take bounds from figure
+		part.refresh();
+		part.getFigure().invalidate();
+		part.getFigure().validate();
 		Rectangle bounds = part.getFigure().getBounds().getCopy();
 		if(part.getNotationView() instanceof Node) {
 			// rather update with up to date model bounds
