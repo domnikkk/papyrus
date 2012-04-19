@@ -13,19 +13,32 @@
  *****************************************************************************/
 package org.eclipse.papyrus.controlmode.umlprofiles.commands;
 
+import java.util.Set;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.controlmode.commands.IControlCondition;
+import org.eclipse.papyrus.controlmode.commands.IControlUncontrolCondition;
+import org.eclipse.papyrus.controlmode.umlprofiles.validation.ProfileApplicationDuplicationChecker;
 import org.eclipse.uml2.uml.Package;
 
 
-public class UMLProfileControlCondition implements IControlCondition {
+public class UMLProfileControlCondition implements IControlUncontrolCondition {
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public boolean enableControl(EObject selection) {
-		// enable Control action on package only
 		return selection instanceof Package;
+	}
+
+	public boolean enableUnControl(EObject selection) {
+		boolean result = false ;
+		if (selection instanceof Package) {
+			Package pack = (Package) selection;
+			ProfileApplicationDuplicationChecker checker = new ProfileApplicationDuplicationChecker();
+			Set<Package> controlledPack = checker.getControlledSubPackages(pack);
+			result = checker.checkControlledPackagesUpdateable(controlledPack,false);
+		}
+		return result ;
 	}
 
 }

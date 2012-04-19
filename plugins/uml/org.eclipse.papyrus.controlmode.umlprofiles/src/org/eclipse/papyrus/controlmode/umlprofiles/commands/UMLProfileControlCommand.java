@@ -22,6 +22,7 @@ import org.eclipse.papyrus.controlmode.umlprofiles.helpers.ProfileApplicationHel
 import org.eclipse.uml2.common.edit.command.ChangeCommand;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
  * The Class UMLProfileControlCommand is custom command to manage UML profiles and stereotypes when control action is performed
@@ -32,7 +33,7 @@ public class UMLProfileControlCommand implements IControlCommand {
 	 * {@inheritDoc}
 	 */
 	public boolean provides(EObject selection, STATE_CONTROL state, Resource source, Resource target) {
-		return true;
+		return source != null && source.getURI() != null && UMLResource.FILE_EXTENSION.equals(source.getURI().fileExtension());
 	}
 
 	/**

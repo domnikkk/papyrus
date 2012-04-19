@@ -22,6 +22,7 @@ import org.eclipse.papyrus.controlmode.umlprofiles.helpers.ProfileApplicationHel
 import org.eclipse.uml2.common.edit.command.ChangeCommand;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.resource.UMLResource;
 
 
 /**
@@ -33,7 +34,7 @@ public class UMLProfileUncontrolCommand implements IUncontrolCommand {
 	 * {@inheritDoc}
 	 */
 	public boolean provides(EObject selection, STATE_CONTROL state, Resource source, Resource target) {
-		return true;
+		return target != null && target.getURI() != null && UMLResource.FILE_EXTENSION.equals(target.getURI().fileExtension());
 	}
 
 	/**

@@ -28,6 +28,8 @@ import org.eclipse.emf.edit.ui.action.CommandActionHandler;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.commands.CheckedOperationHistory;
+import org.eclipse.papyrus.controlmode.commands.IControlCondition;
+import org.eclipse.papyrus.controlmode.commands.IControlUncontrolCondition;
 import org.eclipse.papyrus.controlmode.commands.UncontrolCommand;
 import org.eclipse.papyrus.core.utils.EditorUtils;
 import org.eclipse.papyrus.resource.AbstractBaseModel;
@@ -69,7 +71,15 @@ public class PapyrusUncontrolAction extends CommandActionHandler {
 	 */
 	@Override
 	public boolean isEnabled() {
-		return getEditingDomain().isControllable(eObject) && AdapterFactoryEditingDomain.isControlled(eObject);
+		boolean enableUnControl = true;
+		for(IControlCondition cond : PapyrusControlAction.commands) {
+			if (cond instanceof IControlUncontrolCondition) {
+				IControlUncontrolCondition controlUnControl = (IControlUncontrolCondition) cond;
+				// check if action is disabled by an extension
+				enableUnControl &= controlUnControl.enableUnControl(eObject);
+			}
+		}
+		return enableUnControl && getEditingDomain().isControllable(eObject) && AdapterFactoryEditingDomain.isControlled(eObject);
 	}
 
 	/**

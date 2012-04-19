@@ -239,7 +239,7 @@ public class ProfileApplicationDuplicationChecker extends AbstractModelConstrain
 	 *        the controlled sub-packages (may be updated if contains proxies)
 	 * @return true if can be updated
 	 */
-	private boolean checkControlledPackagesUpdateable(Set<Package> controlledPackages) {
+	public boolean checkControlledPackagesUpdateable(Set<Package> controlledPackages, boolean useUI) {
 		boolean notLoadedPackages = false;
 		StringBuffer notLoadedPackagesList = new StringBuffer();
 		boolean readOnlyPackages = false;
@@ -279,9 +279,11 @@ public class ProfileApplicationDuplicationChecker extends AbstractModelConstrain
 		//Report error if the controlled package is read-only
 		if(readOnlyPackages) {
 			String msg = NLS.bind(Messages.error_readonly, readOnlyPackagesList.toString());
-			NotificationBuilder notifBuild = NotificationBuilder.createErrorPopup(msg);
-			notifBuild.setHTML(true);
-			notifBuild.run();
+			if (useUI){
+				NotificationBuilder notifBuild = NotificationBuilder.createErrorPopup(msg);
+				notifBuild.setHTML(true);
+				notifBuild.run();
+			}
 			return false;
 		}
 		//Change the control strategy if necessary
@@ -301,10 +303,12 @@ public class ProfileApplicationDuplicationChecker extends AbstractModelConstrain
 					stategyChanged.setValue(false);
 				}
 			};
-			NotificationBuilder notifBuild = NotificationBuilder.createYesNo(msg, runStrategySwitch, cancel);
-			notifBuild.setHTML(true);
-			notifBuild.setAsynchronous(false);
-			notifBuild.run();
+			if (useUI){
+				NotificationBuilder notifBuild = NotificationBuilder.createYesNo(msg, runStrategySwitch, cancel);
+				notifBuild.setHTML(true);
+				notifBuild.setAsynchronous(false);
+				notifBuild.run();
+			}
 			if(stategyChanged.getValue()) {
 				// refresh set controlledPackages
 				return checkControlledPackagesUpdateable(controlledPackages);
@@ -314,6 +318,20 @@ public class ProfileApplicationDuplicationChecker extends AbstractModelConstrain
 		}
 		return true;
 	}
+	
+	/**
+	 * Check if controlled sub-packages can be correctly updated :
+	 * - Check if controlled package is loaded
+	 * - Change the control strategy if necessary
+	 * - Report error if the controlled package is read-only
+	 * 
+	 * @param controlledPackages
+	 *        the controlled sub-packages (may be updated if contains proxies)
+	 * @return true if can be updated
+	 */
+	public boolean checkControlledPackagesUpdateable(Set<Package> controlledPackages) {
+		return checkControlledPackagesUpdateable(controlledPackages, true);
+	}
 
 	/**
 	 * Get the controlled children packages
@@ -322,7 +340,7 @@ public class ProfileApplicationDuplicationChecker extends AbstractModelConstrain
 	 *        package to inspect children
 	 * @return set of children packages which are controlled
 	 */
-	private Set<Package> getControlledSubPackages(Package packageElement) {
+	public Set<Package> getControlledSubPackages(Package packageElement) {
 		Set<Package> controlledPackages = new HashSet<Package>();
 		TreeIterator<EObject> iterator = packageElement.eAllContents();
 		while(iterator.hasNext()) {
