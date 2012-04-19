@@ -18,6 +18,7 @@ import org.eclipse.papyrus.widgets.providers.AbstractStaticContentProvider;
 import org.eclipse.papyrus.widgets.providers.EncapsulatedContentProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -54,7 +55,8 @@ public class BooleanCombo extends AbstractValueEditor {
 	 */
 	public BooleanCombo(Composite parent, int style, String label) {
 		super(parent, style, label);
-		CCombo combo = factory.createCCombo(this, style);
+		CCombo combo = factory.createCCombo(this, style | SWT.BORDER);
+		combo.setBackground(new Color(combo.getDisplay(), 255, 255, 255));
 		combo.setLayoutData(getDefaultLayoutData());
 		combo.setEditable(false);
 		viewer = createComboViewer(combo);
