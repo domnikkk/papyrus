@@ -1570,6 +1570,12 @@
             name="Lowest">
       </Priority>
    </editpolicyProvider>
+   <editpolicyProvider
+         class="org.eclipse.papyrus.diagram.clazz.custom.providers.ReorderingChildrenCompartmentEditPolicyProvider">
+      <Priority
+            name="Low">
+      </Priority>
+   </editpolicyProvider>
 </extension>
 <extension
       point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
