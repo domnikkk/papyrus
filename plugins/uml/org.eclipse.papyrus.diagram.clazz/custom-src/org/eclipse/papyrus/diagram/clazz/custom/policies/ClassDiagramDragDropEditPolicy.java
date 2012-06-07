@@ -422,17 +422,18 @@ public class ClassDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdit
 		}
 		else{
 			//normal case
-			ChangeBoundsRequest req = new ChangeBoundsRequest(REQ_ADD);
-			req.setEditParts(request.getEditParts());
-			req.setMoveDelta(request.getMoveDelta());
-			req.setSizeDelta(request.getSizeDelta());
-			req.setLocation(request.getLocation());
-			req.setResizeDirection(request.getResizeDirection());
-			Command cmd = getHost().getCommand(req);
-			if(cmd == null || !cmd.canExecute()) {
-				return getDropObjectsCommand(castToDropObjectsRequest(request));
-			}
-			return cmd;
+			return super.getDropCommand(request);
+//			ChangeBoundsRequest req = new ChangeBoundsRequest(REQ_ADD);
+//			req.setEditParts(request.getEditParts());
+//			req.setMoveDelta(request.getMoveDelta());
+//			req.setSizeDelta(request.getSizeDelta());
+//			req.setLocation(request.getLocation());
+//			req.setResizeDirection(request.getResizeDirection());
+//			Command cmd = getHost().getCommand(req);
+//			if(cmd == null || !cmd.canExecute()) {
+//				return getDropObjectsCommand(castToDropObjectsRequest(request));
+//			}
+//			return cmd;
 		}
 	}
 

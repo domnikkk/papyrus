@@ -77,7 +77,6 @@ public abstract class AbstractPapyrusModifcationTriggerListener extends TriggerL
 	 *        {@link IGraphicalEditPart} root from which the search will start
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	protected IGraphicalEditPart getChildByEObject(final EObject eObject, IGraphicalEditPart rootEditPart, boolean isEdge) {
 		return DiagramEditPartsUtil.getChildByEObject(eObject, rootEditPart, isEdge);
 	}

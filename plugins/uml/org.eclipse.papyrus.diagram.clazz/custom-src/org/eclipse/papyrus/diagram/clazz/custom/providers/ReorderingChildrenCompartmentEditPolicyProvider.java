@@ -21,23 +21,35 @@ import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvider;
-import org.eclipse.papyrus.diagram.clazz.custom.edit.policy.CompartmentEditPolicy;
+import org.eclipse.papyrus.diagram.clazz.custom.edit.policy.ClassCompartmentEditPolicy;
+import org.eclipse.papyrus.diagram.clazz.custom.edit.policy.ComponentCompartmentEditPolicy;
+import org.eclipse.papyrus.diagram.clazz.custom.edit.policy.InterfaceCompartmentEditPolicy;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassAttributeCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassAttributeCompartmentEditPartCN;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassNestedClassifierCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassNestedClassifierCompartmentEditPartCN;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassOperationCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassOperationCompartmentEditPartCN;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ComponentAttributeCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.ComponentAttributeCompartmentEditPartCN;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ComponentNestedClassifierCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.ComponentNestedClassifierCompartmentEditPartCN;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ComponentOperationCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.ComponentOperationCompartmentEditPartCN;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.InterfaceAttributeCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.InterfaceAttributeCompartmentEditPartCN;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.InterfaceNestedClassifierCompartmentEditPart;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.InterfaceOperationCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.InterfaceOperationCompartmentEditPartCN;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ModelEditPart;
 import org.eclipse.uml2.uml.UMLPackage;
 
 
 /**
  * @author adaussy
- * Edit policy to enable ordering children label in Classifiers (Components, Interfaces and Class)
+ *         Edit policy to enable ordering children label in Classifiers (Components, Interfaces and Class)
+ *         
+ *       This should be integrated with generator mechanisme
  */
 public class ReorderingChildrenCompartmentEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
@@ -60,27 +72,39 @@ public class ReorderingChildrenCompartmentEditPolicyProvider extends AbstractPro
 		/*
 		 * Install policy to handle reordering operations
 		 */
-		if(editPart instanceof ComponentOperationCompartmentEditPart || editPart instanceof ClassOperationCompartmentEditPart) {
-			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new CompartmentEditPolicy(UMLPackage.Literals.CLASS__OWNED_OPERATION));
-		} else if(editPart instanceof InterfaceOperationCompartmentEditPart) {
-			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new CompartmentEditPolicy(UMLPackage.Literals.INTERFACE__OWNED_OPERATION));
+		/*
+		 * Component
+		 */
+		if(editPart instanceof ComponentOperationCompartmentEditPart || editPart instanceof ComponentOperationCompartmentEditPartCN) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new ComponentCompartmentEditPolicy(UMLPackage.Literals.CLASS__OWNED_OPERATION));
+		} else if(editPart instanceof ComponentAttributeCompartmentEditPart || editPart instanceof ComponentAttributeCompartmentEditPartCN) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new ComponentCompartmentEditPolicy(UMLPackage.Literals.STRUCTURED_CLASSIFIER__OWNED_ATTRIBUTE));
+		} else if(editPart instanceof ComponentNestedClassifierCompartmentEditPart || editPart instanceof ComponentNestedClassifierCompartmentEditPartCN) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new ComponentCompartmentEditPolicy(UMLPackage.Literals.CLASS__NESTED_CLASSIFIER));
 		}
 		/*
-		 * Install policy to handle reordering attributes
+		 * Class
 		 */
-		else if(editPart instanceof ComponentAttributeCompartmentEditPart || editPart instanceof ClassAttributeCompartmentEditPart) {
-			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new CompartmentEditPolicy(UMLPackage.Literals.STRUCTURED_CLASSIFIER__OWNED_ATTRIBUTE));
-		} else if(editPart instanceof InterfaceAttributeCompartmentEditPart) {
-			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new CompartmentEditPolicy(UMLPackage.Literals.INTERFACE__OWNED_ATTRIBUTE));
+		else if(editPart instanceof ClassOperationCompartmentEditPart || editPart instanceof ClassOperationCompartmentEditPartCN) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new ClassCompartmentEditPolicy(UMLPackage.Literals.CLASS__OWNED_OPERATION));
+		} else if(editPart instanceof ClassAttributeCompartmentEditPart || editPart instanceof ClassAttributeCompartmentEditPartCN) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new ClassCompartmentEditPolicy(UMLPackage.Literals.STRUCTURED_CLASSIFIER__OWNED_ATTRIBUTE));
+		} else if(editPart instanceof ClassNestedClassifierCompartmentEditPart || editPart instanceof ClassNestedClassifierCompartmentEditPartCN) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new ClassCompartmentEditPolicy(UMLPackage.Literals.CLASS__NESTED_CLASSIFIER));
 		}
 		/*
-		 * Install policy to handle reordering nested classifier
+		 * Interface
 		 */
-		else if(editPart instanceof ComponentNestedClassifierCompartmentEditPart || editPart instanceof ClassNestedClassifierCompartmentEditPart) {
-			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new CompartmentEditPolicy(UMLPackage.Literals.CLASS__NESTED_CLASSIFIER));
-		} else if(editPart instanceof InterfaceNestedClassifierCompartmentEditPart) {
-			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new CompartmentEditPolicy(UMLPackage.Literals.INTERFACE__NESTED_CLASSIFIER));
+		else if(editPart instanceof InterfaceOperationCompartmentEditPart || editPart instanceof InterfaceOperationCompartmentEditPartCN) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new InterfaceCompartmentEditPolicy(UMLPackage.Literals.INTERFACE__OWNED_OPERATION));
+		} else if(editPart instanceof InterfaceAttributeCompartmentEditPartCN || editPart instanceof InterfaceAttributeCompartmentEditPart) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new InterfaceCompartmentEditPolicy(UMLPackage.Literals.INTERFACE__OWNED_ATTRIBUTE));
+		} else if(editPart instanceof InterfaceNestedClassifierCompartmentEditPart || editPart instanceof InterfaceNestedClassifierCompartmentEditPart) {
+			editPart.installEditPolicy(EditPolicy.LAYOUT_ROLE, new InterfaceCompartmentEditPolicy(UMLPackage.Literals.INTERFACE__NESTED_CLASSIFIER));
 		}
+
+
 	}
+
 
 }

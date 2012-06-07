@@ -26,6 +26,14 @@ import com.google.common.base.Function;
  */
 public class EObjectToViewFunction implements Function<EObject, View> {
 
+	private static class SingletonHolder {
+		private static EObjectToViewFunction INSTANCE = new EObjectToViewFunction();
+	}
+	
+	public static EObjectToViewFunction getInstance(){
+		return SingletonHolder.INSTANCE;
+	}
+	
 	public View apply(EObject from) {
 		if ( from instanceof View){
 			return (View)from;			
