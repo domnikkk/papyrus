@@ -2131,14 +2131,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser constraintName_5189Parser;
+	private IParser constraintName_5189Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getConstraintName_5189Parser() {
 		if(constraintName_5189Parser == null) {
-			constraintName_5189Parser = new AppliedStereotypeParser();
+			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			constraintName_5189Parser = parser;
 		}
 		return constraintName_5189Parser;
 	}
@@ -2146,14 +2148,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private ActivityEdgeWeightParser constraintSpecification_5190Parser;
+	private ConstraintParser constraintSpecification_5190Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getConstraintSpecification_5190Parser() {
 		if(constraintSpecification_5190Parser == null) {
-			constraintSpecification_5190Parser = new ActivityEdgeWeightParser();
+			constraintSpecification_5190Parser = new ConstraintParser();
 		}
 		return constraintSpecification_5190Parser;
 	}
