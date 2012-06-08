@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy;
+import org.eclipse.papyrus.diagram.activity.edit.policies.CustomExpansionRegionStructuredActivityNodeContentCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.diagram.activity.edit.policies.ExpansionRegionStructuredActivityNodeContentCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.diagram.activity.edit.policies.RemoveOrphanViewPolicy;
 import org.eclipse.papyrus.diagram.activity.part.Messages;
@@ -79,6 +80,7 @@ public class ExpansionRegionStructuredActivityNodeContentCompartmentEditPart ext
 		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.diagram.activity.edit.policies.ExpansionRegionStructuredActivityNodeContentCompartmentCanonicalEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ActivityGroupCustomDragAndDropEditPolicy());
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomExpansionRegionStructuredActivityNodeContentCompartmentItemSemanticEditPolicy());
 	}
 
 	/**

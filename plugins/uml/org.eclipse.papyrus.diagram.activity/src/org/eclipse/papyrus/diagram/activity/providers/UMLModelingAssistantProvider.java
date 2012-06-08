@@ -56,6 +56,7 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.CommentEditPartCN;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintAsLocalPostcondEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintAsLocalPrecondEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintEditPartCN;
 import org.eclipse.papyrus.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.DecisionNodeEditPart;
@@ -315,6 +316,30 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if(sourceEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
 			return ((InputPinInCallOpActAsTargetEditPart)sourceEditPart).getMARelTypesOnSource();
 		}
+		if(sourceEditPart instanceof DurationConstraintAsLocalPrecondEditPart) {
+			return ((DurationConstraintAsLocalPrecondEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof DurationConstraintAsLocalPostcondEditPart) {
+			return ((DurationConstraintAsLocalPostcondEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof TimeConstraintAsLocalPrecondEditPart) {
+			return ((TimeConstraintAsLocalPrecondEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof TimeConstraintAsLocalPostcondEditPart) {
+			return ((TimeConstraintAsLocalPostcondEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof IntervalConstraintAsLocalPrecondEditPart) {
+			return ((IntervalConstraintAsLocalPrecondEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof IntervalConstraintAsLocalPostcondEditPart) {
+			return ((IntervalConstraintAsLocalPostcondEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof ConstraintAsLocalPrecondEditPart) {
+			return ((ConstraintAsLocalPrecondEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof ConstraintAsLocalPostcondEditPart) {
+			return ((ConstraintAsLocalPostcondEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
 		if(sourceEditPart instanceof DecisionNodeEditPart) {
 			return ((DecisionNodeEditPart)sourceEditPart).getMARelTypesOnSource();
 		}
@@ -485,6 +510,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(sourceEditPart instanceof CentralBufferNodeEditPart) {
 			return ((CentralBufferNodeEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof ConstraintEditPartCN) {
+			return ((ConstraintEditPartCN)sourceEditPart).getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -767,6 +795,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if(targetEditPart instanceof CentralBufferNodeEditPart) {
 			return ((CentralBufferNodeEditPart)targetEditPart).getMARelTypesOnTarget();
 		}
+		if(targetEditPart instanceof ConstraintEditPartCN) {
+			return ((ConstraintEditPartCN)targetEditPart).getMARelTypesOnTarget();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -838,6 +869,30 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(sourceEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
 			return ((InputPinInCallOpActAsTargetEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof DurationConstraintAsLocalPrecondEditPart) {
+			return ((DurationConstraintAsLocalPrecondEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof DurationConstraintAsLocalPostcondEditPart) {
+			return ((DurationConstraintAsLocalPostcondEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof TimeConstraintAsLocalPrecondEditPart) {
+			return ((TimeConstraintAsLocalPrecondEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof TimeConstraintAsLocalPostcondEditPart) {
+			return ((TimeConstraintAsLocalPostcondEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof IntervalConstraintAsLocalPrecondEditPart) {
+			return ((IntervalConstraintAsLocalPrecondEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof IntervalConstraintAsLocalPostcondEditPart) {
+			return ((IntervalConstraintAsLocalPostcondEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof ConstraintAsLocalPrecondEditPart) {
+			return ((ConstraintAsLocalPrecondEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof ConstraintAsLocalPostcondEditPart) {
+			return ((ConstraintAsLocalPostcondEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if(sourceEditPart instanceof DecisionNodeEditPart) {
 			return ((DecisionNodeEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1009,6 +1064,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(sourceEditPart instanceof CentralBufferNodeEditPart) {
 			return ((CentralBufferNodeEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof ConstraintEditPartCN) {
+			return ((ConstraintEditPartCN)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -1291,6 +1349,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if(targetEditPart instanceof CentralBufferNodeEditPart) {
 			return ((CentralBufferNodeEditPart)targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if(targetEditPart instanceof ConstraintEditPartCN) {
+			return ((ConstraintEditPartCN)targetEditPart).getMATypesForSource(relationshipType);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -1361,6 +1422,30 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(sourceEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
 			return ((InputPinInCallOpActAsTargetEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof DurationConstraintAsLocalPrecondEditPart) {
+			return ((DurationConstraintAsLocalPrecondEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof DurationConstraintAsLocalPostcondEditPart) {
+			return ((DurationConstraintAsLocalPostcondEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof TimeConstraintAsLocalPrecondEditPart) {
+			return ((TimeConstraintAsLocalPrecondEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof TimeConstraintAsLocalPostcondEditPart) {
+			return ((TimeConstraintAsLocalPostcondEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof IntervalConstraintAsLocalPrecondEditPart) {
+			return ((IntervalConstraintAsLocalPrecondEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof IntervalConstraintAsLocalPostcondEditPart) {
+			return ((IntervalConstraintAsLocalPostcondEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof ConstraintAsLocalPrecondEditPart) {
+			return ((ConstraintAsLocalPrecondEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof ConstraintAsLocalPostcondEditPart) {
+			return ((ConstraintAsLocalPostcondEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if(sourceEditPart instanceof DecisionNodeEditPart) {
 			return ((DecisionNodeEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
@@ -1532,6 +1617,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(sourceEditPart instanceof CentralBufferNodeEditPart) {
 			return ((CentralBufferNodeEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof ConstraintEditPartCN) {
+			return ((ConstraintEditPartCN)sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

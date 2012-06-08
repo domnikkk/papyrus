@@ -35,6 +35,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.EMFtoGMFCommandWrapper;
 import org.eclipse.papyrus.diagram.activity.edit.commands.CommentLinkCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.CommentLinkReorientCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.ConstraintConstrainedElementCreateCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.papyrus.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
@@ -50,6 +52,8 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.CommentLinkEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintAsLocalPostcondEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintAsLocalPrecondEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintEditPartCN;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.DataStoreNodeEditPart;
@@ -135,6 +139,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -167,6 +172,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -199,6 +205,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -231,6 +238,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -270,6 +278,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -309,6 +318,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -348,6 +358,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -380,6 +391,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -412,6 +424,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -444,6 +457,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -476,6 +490,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -509,6 +524,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -548,6 +564,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -587,6 +604,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -626,6 +644,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -665,6 +684,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -704,6 +724,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -743,6 +764,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -782,6 +804,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -821,6 +844,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -860,6 +884,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -901,9 +926,20 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							case ActionLocalPreconditionEditPart.VISUAL_ID:
 							case ActionLocalPostconditionEditPart.VISUAL_ID:
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								break;
 							}
 						}
@@ -918,9 +954,20 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							case ActionLocalPreconditionEditPart.VISUAL_ID:
 							case ActionLocalPostconditionEditPart.VISUAL_ID:
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								break;
 							}
 						}
@@ -935,9 +982,20 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							case ActionLocalPreconditionEditPart.VISUAL_ID:
 							case ActionLocalPostconditionEditPart.VISUAL_ID:
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								break;
 							}
 						}
@@ -952,9 +1010,20 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							case ActionLocalPreconditionEditPart.VISUAL_ID:
 							case ActionLocalPostconditionEditPart.VISUAL_ID:
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								break;
 							}
 						}
@@ -969,9 +1038,20 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							case ActionLocalPreconditionEditPart.VISUAL_ID:
 							case ActionLocalPostconditionEditPart.VISUAL_ID:
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								break;
 							}
 						}
@@ -986,9 +1066,20 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							case ActionLocalPreconditionEditPart.VISUAL_ID:
 							case ActionLocalPostconditionEditPart.VISUAL_ID:
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								break;
 							}
 						}
@@ -1003,9 +1094,20 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							case ActionLocalPreconditionEditPart.VISUAL_ID:
 							case ActionLocalPostconditionEditPart.VISUAL_ID:
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								break;
 							}
 						}
@@ -1020,9 +1122,20 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							case ActionLocalPreconditionEditPart.VISUAL_ID:
 							case ActionLocalPostconditionEditPart.VISUAL_ID:
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								break;
 							}
 						}
@@ -1035,6 +1148,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1074,6 +1188,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1113,6 +1228,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1152,6 +1268,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1191,6 +1308,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1230,6 +1348,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1269,6 +1388,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1308,6 +1428,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1341,6 +1462,7 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							Edge incomingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -1358,6 +1480,34 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 							}
 						}
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
+						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
+						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+						break;
+					case ConstraintEditPartCN.VISUAL_ID:
+						for(Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+							Edge incomingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
+							case ActionLocalPreconditionEditPart.VISUAL_ID:
+							case ActionLocalPostconditionEditPart.VISUAL_ID:
+							case CommentLinkEditPart.VISUAL_ID:
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+								break;
+							}
+						}
+						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+							Edge outgoingLink = (Edge)it.next();
+							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
+							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+								cmd.add(new DestroyReferenceCommand(destroyRefReq));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+								break;
+							}
+						}
+						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: false
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
@@ -1383,6 +1533,9 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 		if(UMLElementTypes.CommentAnnotatedElement_4006 == req.getElementType()) {
 			return null;
 		}
+		if(UMLElementTypes.ConstraintConstrainedElement_4007 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -1392,6 +1545,9 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if(UMLElementTypes.CommentAnnotatedElement_4006 == req.getElementType()) {
 			return getGEFWrapper(new CommentLinkCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if(UMLElementTypes.ConstraintConstrainedElement_4007 == req.getElementType()) {
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -1406,6 +1562,8 @@ public class InterruptibleActivityRegionItemSemanticEditPolicy extends UMLBaseIt
 		switch(getVisualID(req)) {
 		case CommentLinkEditPart.VISUAL_ID:
 			return getGEFWrapper(new CommentLinkReorientCommand(req));
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

@@ -36,6 +36,7 @@ import org.eclipse.uml2.uml.IntervalConstraint;
 import org.eclipse.uml2.uml.JoinNode;
 import org.eclipse.uml2.uml.LiteralBoolean;
 import org.eclipse.uml2.uml.LiteralInteger;
+import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LoopNode;
 import org.eclipse.uml2.uml.MergeNode;
 import org.eclipse.uml2.uml.ObjectFlow;
@@ -55,6 +56,7 @@ import org.eclipse.uml2.uml.TimeInterval;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValuePin;
+import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.ValueSpecificationAction;
 
 /**
@@ -1207,6 +1209,20 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_Constraint_3112(Constraint instance) {
+		try {
+			Object value_0 = name_Constraint_3112(instance);
+			instance.setName((String)value_0);
+			Object value_1 = specification_Constraint_3112(instance);
+			instance.setSpecification((ValueSpecification)value_1);
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_ObjectFlow_4003(ObjectFlow instance) {
 		try {
 			Object value_0 = name_ObjectFlow_4003(instance);
@@ -1934,6 +1950,22 @@ public class ElementInitializers {
 	 */
 	private String name_CentralBufferNode_3104(CentralBufferNode self) {
 		return LabelHelper.INSTANCE.findName(self.eContainer(), self);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String name_Constraint_3112(Constraint self) {
+		return LabelHelper.INSTANCE.findName(self.eContainer(), self);
+	}
+
+	/**
+	 * @generated
+	 */
+	private ValueSpecification specification_Constraint_3112(Constraint self) {
+		LiteralString literalString = UMLFactory.eINSTANCE.createLiteralString();
+		literalString.setValue("");
+		return literalString;
 	}
 
 	/**

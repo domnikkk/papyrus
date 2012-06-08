@@ -29,6 +29,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy;
 import org.eclipse.papyrus.diagram.activity.edit.policies.ActivityPartitionActivityPartitionContentCompartmentItemSemanticEditPolicy;
+import org.eclipse.papyrus.diagram.activity.edit.policies.CustomActivityPartitionActivityPartitionContentCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.diagram.activity.edit.policies.RemoveOrphanViewPolicy;
 import org.eclipse.papyrus.diagram.activity.part.Messages;
 import org.eclipse.papyrus.diagram.common.editpolicies.DuplicatePasteEditPolicy;
@@ -79,6 +80,7 @@ public class ActivityPartitionActivityPartitionContentCompartmentEditPart extend
 		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.diagram.activity.edit.policies.ActivityPartitionActivityPartitionContentCompartmentCanonicalEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ActivityGroupCustomDragAndDropEditPolicy());
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomActivityPartitionActivityPartitionContentCompartmentItemSemanticEditPolicy());
 	}
 
 	/**

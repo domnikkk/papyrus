@@ -399,6 +399,9 @@ public class LoopNodeEditPart extends UMLNodeEditPart {
 		if(targetEditPart instanceof ConstraintAsLocalPostcondEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4001);
 		}
+		if(targetEditPart instanceof ConstraintEditPartCN) {
+			types.add(UMLElementTypes.ActionLocalPrecondition_4001);
+		}
 		if(targetEditPart instanceof DurationConstraintAsLocalPrecondEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4002);
 		}
@@ -421,6 +424,9 @@ public class LoopNodeEditPart extends UMLNodeEditPart {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4002);
 		}
 		if(targetEditPart instanceof ConstraintAsLocalPostcondEditPart) {
+			types.add(UMLElementTypes.ActionLocalPostcondition_4002);
+		}
+		if(targetEditPart instanceof ConstraintEditPartCN) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4002);
 		}
 		if(targetEditPart instanceof InitialNodeEditPart) {
@@ -1052,6 +1058,7 @@ public class LoopNodeEditPart extends UMLNodeEditPart {
 			types.add(UMLElementTypes.IntervalConstraint_3033);
 			types.add(UMLElementTypes.Constraint_3011);
 			types.add(UMLElementTypes.Constraint_3012);
+			types.add(UMLElementTypes.Constraint_3112);
 		} else if(relationshipType == UMLElementTypes.ActionLocalPostcondition_4002) {
 			types.add(UMLElementTypes.DurationConstraint_3034);
 			types.add(UMLElementTypes.DurationConstraint_3035);
@@ -1061,6 +1068,7 @@ public class LoopNodeEditPart extends UMLNodeEditPart {
 			types.add(UMLElementTypes.IntervalConstraint_3033);
 			types.add(UMLElementTypes.Constraint_3011);
 			types.add(UMLElementTypes.Constraint_3012);
+			types.add(UMLElementTypes.Constraint_3112);
 		} else if(relationshipType == UMLElementTypes.ObjectFlow_4003) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
@@ -1276,10 +1284,11 @@ public class LoopNodeEditPart extends UMLNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(UMLElementTypes.ObjectFlow_4003);
 		types.add(UMLElementTypes.ControlFlow_4004);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
 		return types;
 	}
 
@@ -1446,6 +1455,16 @@ public class LoopNodeEditPart extends UMLNodeEditPart {
 			types.add(UMLElementTypes.CentralBufferNode_3104);
 		} else if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
 			types.add(UMLElementTypes.Comment_3080);
+		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
+			types.add(UMLElementTypes.DurationConstraint_3034);
+			types.add(UMLElementTypes.DurationConstraint_3035);
+			types.add(UMLElementTypes.TimeConstraint_3036);
+			types.add(UMLElementTypes.TimeConstraint_3037);
+			types.add(UMLElementTypes.IntervalConstraint_3032);
+			types.add(UMLElementTypes.IntervalConstraint_3033);
+			types.add(UMLElementTypes.Constraint_3011);
+			types.add(UMLElementTypes.Constraint_3012);
+			types.add(UMLElementTypes.Constraint_3112);
 		}
 		return types;
 	}

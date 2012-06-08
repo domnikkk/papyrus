@@ -563,6 +563,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new CentralBufferNodeLabelEditPart(view);
 			case CentralBufferNodeSelectionEditPart.VISUAL_ID:
 				return new CentralBufferNodeSelectionEditPart(view);
+			case ConstraintEditPartCN.VISUAL_ID:
+				return new ConstraintEditPartCN(view);
+			case ConstraintNameEditPartCN.VISUAL_ID:
+				return new ConstraintNameEditPartCN(view);
+			case ConstraintBodyEditPartCN.VISUAL_ID:
+				return new ConstraintBodyEditPartCN(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:
@@ -635,6 +641,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ExceptionHandlerIconEditPart(view);
 			case CommentLinkEditPart.VISUAL_ID:
 				return new CommentLinkEditPart(view);
+			case ConstraintConstrainedElementEditPart.VISUAL_ID:
+				return new ConstraintConstrainedElementEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

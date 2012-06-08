@@ -932,6 +932,12 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 
 	protected Multimap<EReference, IGroupNotifier> fillReqestWithReferendedElement(IGroupRequest request, boolean lookingForParent, boolean onlyContainment) {
 		final Rectangle newBounds = getInitalTargetRequestNewBounds(request);
+		final Multimap<EReference, IGroupNotifier> result = ArrayListMultimap.create();
+		
+		if (request.getNodeDescpitor() == null) {
+			return result;
+		}
+
 		List<EReference> references = null;
 		if(lookingForParent) {
 			references = request.getNodeDescpitor().getParentReferences();
@@ -939,7 +945,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 			references = request.getNodeDescpitor().getChildrenReferences();
 		}
 		final Multimap<EReference, IGroupNotifier> auxResult = ArrayListMultimap.create();
-		final Multimap<EReference, IGroupNotifier> result = ArrayListMultimap.create();
+
 		final Multimap<EReference, Element> eReferenceLookedForMap = ArrayListMultimap.create();
 		getReferenceElements(request, newBounds, references, eReferenceLookedForMap, auxResult, lookingForParent, onlyContainment);
 		/*

@@ -27,7 +27,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.EMFtoGMFCommandWrapper;
 import org.eclipse.papyrus.diagram.activity.edit.commands.CommentLinkCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.CommentLinkReorientCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.ConstraintConstrainedElementCreateCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.papyrus.diagram.activity.edit.parts.CommentLinkEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.papyrus.diagram.activity.providers.UMLElementTypes;
 
 /**
@@ -79,6 +82,9 @@ public class CommentItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		if(UMLElementTypes.CommentAnnotatedElement_4006 == req.getElementType()) {
 			return getGEFWrapper(new CommentLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if(UMLElementTypes.ConstraintConstrainedElement_4007 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -88,6 +94,9 @@ public class CommentItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if(UMLElementTypes.CommentAnnotatedElement_4006 == req.getElementType()) {
 			return getGEFWrapper(new CommentLinkCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if(UMLElementTypes.ConstraintConstrainedElement_4007 == req.getElementType()) {
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -102,6 +111,8 @@ public class CommentItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		switch(getVisualID(req)) {
 		case CommentLinkEditPart.VISUAL_ID:
 			return getGEFWrapper(new CommentLinkReorientCommand(req));
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

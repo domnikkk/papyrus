@@ -58,6 +58,7 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.CommentEditPartCN;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintAsLocalPostcondEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintAsLocalPrecondEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintEditPartCN;
 import org.eclipse.papyrus.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.DecisionNodeEditPart;
@@ -122,6 +123,7 @@ public class ActivityPartitionActivityPartitionContentCompartmentCanonicalEditPo
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getNamespace_OwnedRule());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -192,6 +194,7 @@ public class ActivityPartitionActivityPartitionContentCompartmentCanonicalEditPo
 		case BroadcastSignalActionEditPart.VISUAL_ID:
 		case CentralBufferNodeEditPart.VISUAL_ID:
 		case CommentEditPartCN.VISUAL_ID:
+		case ConstraintEditPartCN.VISUAL_ID:
 			return true;
 		}
 		return false;

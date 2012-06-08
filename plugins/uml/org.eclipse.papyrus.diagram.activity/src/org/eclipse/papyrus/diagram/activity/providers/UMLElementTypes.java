@@ -446,6 +446,11 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Constraint_3112 = getElementType("org.eclipse.papyrus.diagram.activity.Constraint_3112"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -562,6 +567,11 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static final IElementType CommentAnnotatedElement_4006 = getElementType("org.eclipse.papyrus.diagram.activity.CommentAnnotatedElement_4006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConstraintConstrainedElement_4007 = getElementType("org.eclipse.papyrus.diagram.activity.ConstraintConstrainedElement_4007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -763,12 +773,14 @@ public class UMLElementTypes {
 			elements.put(BroadcastSignalAction_3102, UMLPackage.eINSTANCE.getBroadcastSignalAction());
 			elements.put(InputPin_3103, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(CentralBufferNode_3104, UMLPackage.eINSTANCE.getCentralBufferNode());
+			elements.put(Constraint_3112, UMLPackage.eINSTANCE.getConstraint());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
 			elements.put(ControlFlow_4004, UMLPackage.eINSTANCE.getControlFlow());
 			elements.put(ExceptionHandler_4005, UMLPackage.eINSTANCE.getExceptionHandler());
 			elements.put(CommentAnnotatedElement_4006, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
+			elements.put(ConstraintConstrainedElement_4007, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 		}
 		return (ENamedElement)elements.get(type);
 	}
@@ -881,12 +893,14 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(BroadcastSignalAction_3102);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3103);
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3104);
+			KNOWN_ELEMENT_TYPES.add(Constraint_3112);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
 			KNOWN_ELEMENT_TYPES.add(ControlFlow_4004);
 			KNOWN_ELEMENT_TYPES.add(ExceptionHandler_4005);
 			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4006);
+			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_4007);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -1086,6 +1100,8 @@ public class UMLElementTypes {
 			return InputPin_3103;
 		case CentralBufferNodeEditPart.VISUAL_ID:
 			return CentralBufferNode_3104;
+		case ConstraintEditPartCN.VISUAL_ID:
+			return Constraint_3112;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:
@@ -1098,6 +1114,8 @@ public class UMLElementTypes {
 			return ExceptionHandler_4005;
 		case CommentLinkEditPart.VISUAL_ID:
 			return CommentAnnotatedElement_4006;
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return ConstraintConstrainedElement_4007;
 		}
 		return null;
 	}

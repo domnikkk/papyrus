@@ -16,6 +16,8 @@ import org.eclipse.papyrus.diagram.activity.edit.commands.ActionLocalPreconditio
 import org.eclipse.papyrus.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.CommentLinkCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.CommentLinkReorientCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.ConstraintConstrainedElementCreateCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.ConstraintConstrainedElementReorientCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ControlFlowCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ControlFlowReorientCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ExceptionHandlerCreateCommand;
@@ -26,6 +28,7 @@ import org.eclipse.papyrus.diagram.activity.edit.commands.OutputPinInCreateObjec
 import org.eclipse.papyrus.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.CommentLinkEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ExceptionHandlerEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ObjectFlowEditPart;
@@ -101,6 +104,9 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 		if(UMLElementTypes.CommentAnnotatedElement_4006 == req.getElementType()) {
 			return null;
 		}
+		if(UMLElementTypes.ConstraintConstrainedElement_4007 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -125,6 +131,9 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 		}
 		if(UMLElementTypes.CommentAnnotatedElement_4006 == req.getElementType()) {
 			return getGEFWrapper(new CommentLinkCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if(UMLElementTypes.ConstraintConstrainedElement_4007 == req.getElementType()) {
+			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -161,6 +170,8 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 			return getGEFWrapper(new ActionLocalPostconditionReorientCommand(req));
 		case CommentLinkEditPart.VISUAL_ID:
 			return getGEFWrapper(new CommentLinkReorientCommand(req));
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

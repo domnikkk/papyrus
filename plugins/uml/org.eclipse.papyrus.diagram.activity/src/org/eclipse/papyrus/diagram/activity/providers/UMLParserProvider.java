@@ -2131,6 +2131,36 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser constraintName_5189Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintName_5189Parser() {
+		if(constraintName_5189Parser == null) {
+			constraintName_5189Parser = new AppliedStereotypeParser();
+		}
+		return constraintName_5189Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ActivityEdgeWeightParser constraintSpecification_5190Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintSpecification_5190Parser() {
+		if(constraintSpecification_5190Parser == null) {
+			constraintSpecification_5190Parser = new ActivityEdgeWeightParser();
+		}
+		return constraintSpecification_5190Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private CommentParser commentBody_5138Parser;
 
 	/**
@@ -3168,6 +3198,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCentralBufferNodeLabel_5176Parser();
 		case CentralBufferNodeSelectionEditPart.VISUAL_ID:
 			return getCentralBufferNodeLabel_5177Parser();
+		case ConstraintNameEditPartCN.VISUAL_ID:
+			return getConstraintName_5189Parser();
+		case ConstraintBodyEditPartCN.VISUAL_ID:
+			return getConstraintSpecification_5190Parser();
 		case ObjectFlowNameEditPart.VISUAL_ID:
 			return getObjectFlowName_6001Parser();
 		case ObjectFlowWeightEditPart.VISUAL_ID:
