@@ -602,8 +602,7 @@
          <specializationType
                id="org.eclipse.papyrus.diagram.activity.Constraint_3012"
                name="%metatype.name.Constraint_3012"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.papyrus.diagram.activity.edit.helpers.">
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.papyrus.diagram.activity.Constraint_3002"/>
             <param name="semanticHint" value="3012"/>
          </specializationType>
