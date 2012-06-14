@@ -32,6 +32,7 @@ import org.eclipse.papyrus.diagram.clazz.edit.policies.PackagePackageableElement
 import org.eclipse.papyrus.diagram.clazz.part.Messages;
 import org.eclipse.papyrus.diagram.common.editpolicies.CustomContainerEditPolicy;
 import org.eclipse.papyrus.diagram.common.editpolicies.DuplicatePasteEditPolicy;
+import org.eclipse.papyrus.diagram.common.editpolicies.PapyrusXYLayoutEditPolicy;
 
 /**
  * @generated
@@ -72,6 +73,7 @@ public class PackagePackageableElementCompartmentEditPartCN extends AbstractPack
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ClassDiagramDragDropEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new CustomContainerEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CustomContainmentCreationEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new PapyrusXYLayoutEditPolicy());
 	}
 
 	/**
