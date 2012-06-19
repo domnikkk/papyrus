@@ -128,6 +128,11 @@ public interface ICustomAppearence {
 	 * default uml property display in classes edit part.
 	 */
 	public final static int DEFAULT_UML_ROLE = DISP_VISIBILITY | DISP_DERIVE | DISP_NAME | DISP_TYPE;
+	
+	/**
+	 * default uml property display in classes edit part.
+	 */
+	public final static int DEFAULT_UML_CLASSIFIER = DISP_VISIBILITY | DISP_NAME;
 
 	/**
 	 * default uml operation display.
