@@ -1833,7 +1833,7 @@ public class UMLVisualIDRegistry {
 		root.addNode(3024, viewInfo);
 		root.addNode(2008, viewInfo);
 		root.addNode(2002, viewInfo);
-		viewInfo = new BaseViewInfo(3032, ViewInfo.Node, "org.eclipse.emf.ecore.impl.DynamicEObjectImpl@750ebed3 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@1b124aaf (name: OclInvalid_Class) (instanceClassName: null) (abstract: false, interface: false))");
+		viewInfo = new BaseViewInfo(3032, ViewInfo.Node, "org.eclipse.emf.ecore.impl.DynamicEObjectImpl@2039f722 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3d8fe9b5 (name: OclInvalid_Class) (instanceClassName: null) (abstract: false, interface: false))");
 		root.addNode(2008, viewInfo);
 		viewInfo = new BaseViewInfo(3033, ViewInfo.Node, "TemplateSignature");
 		root.addNode(2005, viewInfo);

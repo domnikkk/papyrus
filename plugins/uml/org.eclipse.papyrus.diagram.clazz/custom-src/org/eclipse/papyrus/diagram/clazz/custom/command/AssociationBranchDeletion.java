@@ -16,7 +16,6 @@ package org.eclipse.papyrus.diagram.clazz.custom.command;
 import java.util.ArrayList;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.CompoundCommand;
@@ -28,9 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
-import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.action.IAction;
@@ -45,9 +42,7 @@ import org.eclipse.papyrus.service.edit.service.IElementEditService;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * The Class AssociationBranchDeletion is used delete a branch

@@ -7597,5 +7597,9 @@
         genView="/0/@diagram/@compartments.12 /0/@diagram/@compartments.13 /0/@diagram/@compartments.30 /0/@diagram/@compartments.31"
         name="PackageableElementCompartment"
         superOwnedEditPart="org.eclipse.papyrus.diagram.clazz.custom.policies.AbstractPackageableElementCompartmentEditPart"/>
+    <extensionNodes
+        xsi:type="papyrusgmfgenextension:ConstrainedByReferenceCompartmentItemSemanticEditPolicy"
+        comment="Add a EReference information on Compartments Semantic Edit Policy in order to prevent move in wrong compartment"
+        genView="/0/@diagram/@compartments.0 /0/@diagram/@compartments.1 /0/@diagram/@compartments.2 /0/@diagram/@compartments.3 /0/@diagram/@compartments.4 /0/@diagram/@compartments.5 /0/@diagram/@compartments.7 /0/@diagram/@compartments.8 /0/@diagram/@compartments.9 /0/@diagram/@compartments.16 /0/@diagram/@compartments.17 /0/@diagram/@compartments.18 /0/@diagram/@compartments.19 /0/@diagram/@compartments.20 /0/@diagram/@compartments.21 /0/@diagram/@compartments.22 /0/@diagram/@compartments.23 /0/@diagram/@compartments.24"/>
   </papyrusgmfgenextension:PapyrusExtensionRootNode>
 </xmi:XMI>
