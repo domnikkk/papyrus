@@ -54,18 +54,24 @@ public class InterfaceAttributeCompartmentItemSemanticEditPolicyCN extends UMLBa
 	 * @generated
 	 */
 	private static Set<EReference> compartmentReferences;
+	/**
+	 * @generated
+	 */
+	static {
+		compartmentReferences = new HashSet<EReference>(1);
+		compartmentReferences.add(UMLPackage.eINSTANCE.getInterface_OwnedAttribute());
+	}
 
 	/**
 	 * @generated
 	 */
 	protected Iterable<EReference> getCompartmentReferences() {
-		if(compartmentReferences == null) {
-			compartmentReferences = new HashSet();
-			compartmentReferences.add(UMLPackage.eINSTANCE.getInterface_OwnedAttribute());
-		}
 		return compartmentReferences;
 	}
 
+	/**
+	 * @generated
+	 */
 	protected boolean isMovedIntoCorrectCompartment(MoveRequest req) {
 		for(Object entry : req.getElementsToMove().entrySet()) {
 			if(entry instanceof Map.Entry<?, ?>) {
@@ -78,21 +84,24 @@ public class InterfaceAttributeCompartmentItemSemanticEditPolicyCN extends UMLBa
 					if(semanticHost != null) {
 						for(EReference ref : getCompartmentReferences()) {
 							if(ref.isContainment()) {
-								foundERefrences |= PackageUtil.canContain(semanticHost.eClass(), ref, dropppedObject.eClass(), false);
+								foundERefrences = PackageUtil.canContain(semanticHost.eClass(), ref, dropppedObject.eClass(), false);
 							} else {
-								foundERefrences |= PackageUtil.canReference(semanticHost.eClass(), ref, dropppedObject.eClass());
+								foundERefrences = PackageUtil.canReference(semanticHost.eClass(), ref, dropppedObject.eClass());
 							}
-						}
-						if(!foundERefrences) {
-							return false;
+							if(foundERefrences) {
+								return true;
+							}
 						}
 					}
 				}
 			}
 		}
-		return true;
+		return false;
 	}
 
+	/**
+	 * @generated
+	 */
 	@Override
 	protected Command getMoveCommand(MoveRequest req) {
 		if(isMovedIntoCorrectCompartment(req)) {

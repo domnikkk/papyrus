@@ -58,19 +58,25 @@ public class ClassNestedClassifierCompartmentItemSemanticEditPolicy extends UMLB
 	 * @generated
 	 */
 	private static Set<EReference> compartmentReferences;
+	/**
+	 * @generated
+	 */
+	static {
+		compartmentReferences = new HashSet<EReference>(2);
+		compartmentReferences.add(UMLPackage.eINSTANCE.getClass_NestedClassifier());
+		compartmentReferences.add(UMLPackage.eINSTANCE.getClass_NestedClassifier());
+	}
 
 	/**
 	 * @generated
 	 */
 	protected Iterable<EReference> getCompartmentReferences() {
-		if(compartmentReferences == null) {
-			compartmentReferences = new HashSet();
-			compartmentReferences.add(UMLPackage.eINSTANCE.getClass_NestedClassifier());
-			compartmentReferences.add(UMLPackage.eINSTANCE.getClass_NestedClassifier());
-		}
 		return compartmentReferences;
 	}
 
+	/**
+	 * @generated
+	 */
 	protected boolean isMovedIntoCorrectCompartment(MoveRequest req) {
 		for(Object entry : req.getElementsToMove().entrySet()) {
 			if(entry instanceof Map.Entry<?, ?>) {
@@ -83,21 +89,24 @@ public class ClassNestedClassifierCompartmentItemSemanticEditPolicy extends UMLB
 					if(semanticHost != null) {
 						for(EReference ref : getCompartmentReferences()) {
 							if(ref.isContainment()) {
-								foundERefrences |= PackageUtil.canContain(semanticHost.eClass(), ref, dropppedObject.eClass(), false);
+								foundERefrences = PackageUtil.canContain(semanticHost.eClass(), ref, dropppedObject.eClass(), false);
 							} else {
-								foundERefrences |= PackageUtil.canReference(semanticHost.eClass(), ref, dropppedObject.eClass());
+								foundERefrences = PackageUtil.canReference(semanticHost.eClass(), ref, dropppedObject.eClass());
 							}
-						}
-						if(!foundERefrences) {
-							return false;
+							if(foundERefrences) {
+								return true;
+							}
 						}
 					}
 				}
 			}
 		}
-		return true;
+		return false;
 	}
 
+	/**
+	 * @generated
+	 */
 	@Override
 	protected Command getMoveCommand(MoveRequest req) {
 		if(isMovedIntoCorrectCompartment(req)) {
