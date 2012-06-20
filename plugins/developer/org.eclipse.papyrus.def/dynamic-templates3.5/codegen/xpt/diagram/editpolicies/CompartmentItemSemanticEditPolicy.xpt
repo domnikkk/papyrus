@@ -56,14 +56,17 @@ public class «itemSemanticEditPolicyClassName» extends «getDiagram().getBaseI
 «IF not self->isEmpty()-»
 «EXPAND xpt::Common::generatedMemberComment»
 private static Set<EReference> compartmentReferences;
+
+«EXPAND xpt::Common::generatedMemberComment»
+static {
+	compartmentReferences = new HashSet<EReference>(«self.modelFacet->size()»);
+	
+	«FOREACH self AS n-»
+			«EXPAND childRef(n) FOR n.modelFacet-»
+	«ENDFOREACH-»
+}
 «EXPAND xpt::Common::generatedMemberComment»
 protected Iterable<EReference> getCompartmentReferences() {
-	if(compartmentReferences == null){
-	compartmentReferences = new HashSet();
-		«FOREACH self AS n-»
-			«EXPAND childRef(n) FOR n.modelFacet-»
-		«ENDFOREACH-»
-	}
 	return compartmentReferences;
 }
 «ENDIF-»
@@ -76,6 +79,7 @@ compartmentReferences.add(«EXPAND MEtaModel::MetaFeature FOR node.modelFacet.co
 
 
 «DEFINE isCorrectCompartment FOR gmfgen::GenCompartment-»
+	«EXPAND xpt::Common::generatedMemberComment»
 	protected boolean isMovedIntoCorrectCompartment(MoveRequest req){
 		for(Object entry : req.getElementsToMove().entrySet()) {
 			if(entry instanceof Map.Entry<?, ?>) {
@@ -88,23 +92,24 @@ compartmentReferences.add(«EXPAND MEtaModel::MetaFeature FOR node.modelFacet.co
 					if(semanticHost != null) {
 						for(EReference ref : getCompartmentReferences()) {
 							if(ref.isContainment()) {
-								foundERefrences |= PackageUtil.canContain(semanticHost.eClass(), ref, dropppedObject.eClass(), false);
+								foundERefrences = PackageUtil.canContain(semanticHost.eClass(), ref, dropppedObject.eClass(), false);
 							} else {
-								foundERefrences |= PackageUtil.canReference(semanticHost.eClass(), ref, dropppedObject.eClass());
+								foundERefrences = PackageUtil.canReference(semanticHost.eClass(), ref, dropppedObject.eClass());
 							}
-						}
-						if(!foundERefrences) {
-							return false;
+							if(foundERefrences) {
+								return true;
+							}
 						}
 					}
 				}
 			}
 		}
-		return true;
+		return false;
 	}
 «ENDDEFINE»
 
 «DEFINE constraintedMoveCommand FOR gmfgen::GenCompartment-»
+	«EXPAND xpt::Common::generatedMemberComment»
 	@Override
 	protected Command getMoveCommand(MoveRequest req) {
 		if (isMovedIntoCorrectCompartment(req)){			
