@@ -11,8 +11,13 @@
  *******************************************************************************/
 package org.eclipse.papyrus.documentation.view;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewPart;
@@ -22,6 +27,8 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.IContributedContentsView;
 import org.eclipse.ui.part.IPage;
+import org.eclipse.ui.part.IPageBookViewPage;
+import org.eclipse.ui.part.IPageSite;
 import org.eclipse.ui.part.PageBook;
 import org.eclipse.ui.part.PageBookView;
 import org.eclipse.ui.views.contentoutline.ContentOutline;
@@ -103,6 +110,38 @@ public class DocView extends PageBookView implements ISelectionListener
     	// Use the default page
     	return null;
     }
+    
+    @Override
+    protected void initPage(IPageBookViewPage page) {
+    	super.initPage(page);
+    	IPageSite site = page.getSite();
+    	if (site != null && site.getSelectionProvider() == null){
+    		site.setSelectionProvider(new ISelectionProvider() {
+				
+    			private ISelection currentSelection;
+    			
+    			private Collection<ISelectionChangedListener> listeners = new ArrayList<ISelectionChangedListener>();
+    			
+				public void setSelection(ISelection selection) {
+					currentSelection = selection;
+				}
+				
+				public void removeSelectionChangedListener(ISelectionChangedListener listener) {
+					listeners.remove(listener);
+				}
+				
+				public ISelection getSelection() {
+					return currentSelection;
+				}
+				
+				public void addSelectionChangedListener(ISelectionChangedListener listener) {
+					listeners.add(listener);
+				}
+			});
+    	}
+    }
+    
+    
 
     /**
      * @see org.eclipse.ui.part.PageBookView#doDestroyPage(org.eclipse.ui.IWorkbenchPart,

@@ -39,12 +39,13 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ISelectionStatusValidator;
+import org.eclipse.ui.views.properties.PropertySheet;
 
 
 public class PapyrusDocumentationPartHandler implements IDocumentationPartHandler {
 
 	public boolean canHandlePart(IWorkbenchPart part) {
-		return part instanceof CoreMultiDiagramEditor || part instanceof ModelExplorerPageBookView;
+		return part instanceof CoreMultiDiagramEditor || part instanceof ModelExplorerPageBookView || part instanceof PropertySheet;
 	}
 
 	public IDocumentationManager getDocumentationManager() {
