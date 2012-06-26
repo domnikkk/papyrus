@@ -17,6 +17,7 @@ package org.eclipse.papyrus.diagram.clazz.custom.policies;
 import java.util.Collection;
 import java.util.Map;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
@@ -27,6 +28,8 @@ import org.eclipse.papyrus.diagram.common.editpolicies.AbstractMaskManagedEditPo
 import org.eclipse.papyrus.diagram.common.helper.ClassifierLabelHelper;
 import org.eclipse.papyrus.umlutils.ICustomAppearence;
 import org.eclipse.papyrus.umlutils.ui.VisualInformationPapyrusConstant;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Operation;
 
 
 public class NestedClassifierLabelEditPolicy extends AbstractMaskManagedEditPolicy {
@@ -46,6 +49,25 @@ public class NestedClassifierLabelEditPolicy extends AbstractMaskManagedEditPoli
 
 	public Map<Integer, String> getMasks() {
 		return ClassifierLabelHelper.getInstance().getMasks();
+	}
+	
+	
+	
+	
+
+	@Override
+	public void notifyChanged(Notification notification) {
+		Object object = notification.getNotifier();
+		Element element = getUMLElement();
+
+		if(object == null) {
+			return;
+		}
+
+		if(object.equals(element)) {
+			refreshDisplay();
+		}
+		super.notifyChanged(notification);
 	}
 
 	public int getCurrentDisplayValue() {
@@ -71,6 +93,7 @@ public class NestedClassifierLabelEditPolicy extends AbstractMaskManagedEditPoli
 	public String getPreferencePageID() {
 		return "org.eclipse.papyrus.diagram.clazz.custom.preferences.ClassifierPreferencePage";
 	}
+	
 
 	@Override
 	public void refreshDisplay() {
