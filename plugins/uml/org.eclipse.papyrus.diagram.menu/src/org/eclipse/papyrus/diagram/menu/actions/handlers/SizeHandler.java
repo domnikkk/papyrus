@@ -47,7 +47,7 @@ public class SizeHandler extends ParametricAndListeningHandler {
 	@Override
 	protected Command getCommand() throws ExecutionException {
 		super.getCommand();
-		this.action = new SizeAction(this.parameter, getSelectedElements());
+		SizeAction action = new SizeAction(this.parameter, getSelectedElements());
 		Command cmd = action.getCommand();
 		return (cmd == null) ? UnexecutableCommand.INSTANCE : cmd;
 	}
