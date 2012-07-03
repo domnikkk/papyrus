@@ -523,12 +523,12 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setContext(BehavioralFeature newContext) {
 		// TODO: implement this method to set the 'Context' reference
 		// Ensure that you remove @generated or mark it @generated NOT
-		//throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException();
 	}
 
 	/**

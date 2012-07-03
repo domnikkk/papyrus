@@ -839,9 +839,9 @@ public class HwComputingPackageImpl extends EPackageImpl implements HwComputingP
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(hwProcessorEClass, HwProcessor.class, "HwProcessor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHwProcessor_Architecture(), theBasicNFP_TypesPackage.getNFP_DataSize(), "architecture", null, 0, 1, HwProcessor.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getHwProcessor_Architecture(), theBasicNFP_TypesPackage.getNFP_DataSize(), "architecture", null, 0, 1, HwProcessor.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHwProcessor_Mips(), theBasicNFP_TypesPackage.getNFP_Natural(), "mips", null, 0, 1, HwProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getHwProcessor_Ipc(), theBasicNFP_TypesPackage.getNFP_Real(), "ipc", null, 0, 1, HwProcessor.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getHwProcessor_Ipc(), theBasicNFP_TypesPackage.getNFP_Real(), "ipc", null, 0, 1, HwProcessor.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHwProcessor_NbCores(), theBasicNFP_TypesPackage.getNFP_Natural(), "nbCores", null, 0, 1, HwProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHwProcessor_NbPipelines(), theBasicNFP_TypesPackage.getNFP_Natural(), "nbPipelines", null, 0, 1, HwProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHwProcessor_NbStages(), theBasicNFP_TypesPackage.getNFP_Natural(), "nbStages", null, 0, 1, HwProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

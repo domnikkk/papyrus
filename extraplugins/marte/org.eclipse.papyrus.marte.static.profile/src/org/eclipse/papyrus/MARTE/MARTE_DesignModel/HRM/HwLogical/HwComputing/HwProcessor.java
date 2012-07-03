@@ -58,7 +58,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * @return the value of the '<em>Architecture</em>' attribute.
 	 * @see #setArchitecture(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_Architecture()
-	 * @model unique="false" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_DataSize" volatile="true" derived="true" ordered="false"
+	 * @model unique="false" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_DataSize" transient="true" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
 	String getArchitecture();
@@ -110,7 +110,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * @return the value of the '<em>Ipc</em>' attribute.
 	 * @see #setIpc(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_Ipc()
-	 * @model unique="false" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real" volatile="true" derived="true" ordered="false"
+	 * @model unique="false" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real" transient="true" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
 	String getIpc();

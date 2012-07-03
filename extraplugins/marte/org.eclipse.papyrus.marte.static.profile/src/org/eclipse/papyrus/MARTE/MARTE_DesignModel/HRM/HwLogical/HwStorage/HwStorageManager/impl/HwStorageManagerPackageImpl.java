@@ -574,7 +574,7 @@ public class HwStorageManagerPackageImpl extends EPackageImpl implements HwStora
 		initEAttribute(getHwMMU_VirtualAddrSpace(), theBasicNFP_TypesPackage.getNFP_DataSize(), "virtualAddrSpace", null, 0, 1, HwMMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHwMMU_PhysicalAddrSpace(), theBasicNFP_TypesPackage.getNFP_DataSize(), "physicalAddrSpace", null, 0, 1, HwMMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHwMMU_MemoryProtection(), theBasicNFP_TypesPackage.getNFP_Boolean(), "memoryProtection", null, 0, 1, HwMMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getHwMMU_NbEntries(), theBasicNFP_TypesPackage.getNFP_Natural(), "nbEntries", null, 0, 1, HwMMU.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getHwMMU_NbEntries(), theBasicNFP_TypesPackage.getNFP_Natural(), "nbEntries", null, 0, 1, HwMMU.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getHwMMU_OwnedTLBs(), theHwMemoryPackage.getHwCache(), null, "ownedTLBs", null, 0, -1, HwMMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create annotations

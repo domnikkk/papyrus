@@ -692,12 +692,12 @@
           <eClassifiers xsi:type="ecore:EClass" name="HwProcessor" eSuperTypes="#//MARTE_DesignModel/HRM/HwLogical/HwComputing/HwComputingResource">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="architecture" ordered="false"
                 unique="false" eType="ecore:EDataType MARTE_Library.ecore#//BasicNFP_Types/NFP_DataSize"
-                volatile="true" derived="true"/>
+                volatile="true" transient="true" derived="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="mips" ordered="false"
                 unique="false" eType="ecore:EDataType MARTE_Library.ecore#//BasicNFP_Types/NFP_Natural"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="ipc" ordered="false"
                 unique="false" eType="ecore:EDataType MARTE_Library.ecore#//BasicNFP_Types/NFP_Real"
-                volatile="true" derived="true"/>
+                volatile="true" transient="true" derived="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbCores" ordered="false"
                 unique="false" eType="ecore:EDataType MARTE_Library.ecore#//BasicNFP_Types/NFP_Natural"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbPipelines" ordered="false"
@@ -819,7 +819,7 @@
                   ordered="false" unique="false" eType="ecore:EDataType MARTE_Library.ecore#//BasicNFP_Types/NFP_Boolean"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbEntries" ordered="false"
                   unique="false" eType="ecore:EDataType MARTE_Library.ecore#//BasicNFP_Types/NFP_Natural"
-                  volatile="true" derived="true"/>
+                  volatile="true" transient="true" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTLBs" ordered="false"
                   upperBound="-1" eType="#//MARTE_DesignModel/HRM/HwLogical/HwStorage/HwMemory/HwCache">
                 <eAnnotations source="subsets" references="#//MARTE_DesignModel/HRM/HwGeneral/HwResource/ownedHW"/>
@@ -973,7 +973,7 @@
                 upperBound="3" eType="ecore:EDataType MARTE_Library.ecore#//BasicNFP_Types/NFP_Length"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="area" ordered="false"
                 unique="false" eType="ecore:EDataType MARTE_Library.ecore#//BasicNFP_Types/NFP_Area"
-                volatile="true" derived="true"/>
+                volatile="true" transient="true" derived="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" ordered="false"
                 upperBound="2" eType="ecore:EDataType MARTE_Library.ecore#//MARTE_DataTypes/NFP_NaturalInterval"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="grid" ordered="false"

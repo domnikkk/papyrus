@@ -103,7 +103,7 @@ public interface HwComponent extends HwResource {
 	 * @return the value of the '<em>Area</em>' attribute.
 	 * @see #setArea(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.HwLayoutPackage#getHwComponent_Area()
-	 * @model unique="false" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Area" volatile="true" derived="true" ordered="false"
+	 * @model unique="false" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Area" transient="true" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
 	String getArea();

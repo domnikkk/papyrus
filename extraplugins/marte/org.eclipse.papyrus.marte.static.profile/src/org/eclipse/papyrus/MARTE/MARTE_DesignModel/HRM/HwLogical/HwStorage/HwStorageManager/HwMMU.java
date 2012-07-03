@@ -127,7 +127,7 @@ public interface HwMMU extends HwStorageManager {
 	 * @return the value of the '<em>Nb Entries</em>' attribute.
 	 * @see #setNbEntries(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwMMU_NbEntries()
-	 * @model unique="false" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Natural" volatile="true" derived="true" ordered="false"
+	 * @model unique="false" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Natural" transient="true" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
 	String getNbEntries();
