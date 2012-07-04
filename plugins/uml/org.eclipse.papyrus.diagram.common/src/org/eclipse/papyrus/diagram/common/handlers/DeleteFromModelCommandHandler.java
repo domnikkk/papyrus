@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.papyrus.ui.toolbox.notification.builders.NotificationBuilder;
 
 /**
  * Command handler for delete from diagram
@@ -34,22 +35,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 public class DeleteFromModelCommandHandler extends GraphicalCommandHandler implements IHandler {
 
 	protected Command getCommand() throws ExecutionException {
-
 		// Retrieve currently selected IGraphicalEditPart(s)
 		List<IGraphicalEditPart> editParts = getSelectedElements();
 		if(editParts.isEmpty()) {
 			return UnexecutableCommand.INSTANCE;
 		}
-
 		// Iterate over selection and retrieve the deletion command from each
 		// edit part
 		// Add each returned command to the composite command
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(getEditingDomain(), "Delete From Model");
-
 		Iterator<IGraphicalEditPart> it = editParts.iterator();
 		while(it.hasNext()) {
 			IGraphicalEditPart editPart = it.next();
-
 			if(!(editPart instanceof DiagramEditPart)) {
 				// Look for the GMF deletion command
 				Command curCommand = editPart.getCommand(new EditCommandRequestWrapper(new DestroyElementRequest(false)));
@@ -58,11 +55,15 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 				}
 			}
 		}
-
-		if(command.isEmpty()) {
+		if(command.isEmpty() || !command.canExecute()) {
+			NotificationBuilder.createAsyncPopup("The selected item can not be deleted").run();
 			return UnexecutableCommand.INSTANCE;
 		}
-
 		return new ICommandProxy(command);
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
 	}
 }
