@@ -32,16 +32,20 @@ public class OpaqueExpressionUtil {
 	 */
 	public static String getBodyForLanguage(org.eclipse.uml2.uml.OpaqueExpression opaqueExpression, String language) {
 		String body = "";
-		// retrieve the index of the given language in the opaque Expression
-		if(opaqueExpression.getLanguages() != null) {
-			int index = opaqueExpression.getLanguages().indexOf(language);
-			if(index != -1) {
-				// language found. return the corresponding body in the bodies list.
-				// List should be synchronized, ie having the same size, but be sure...
-				if(index < opaqueExpression.getBodies().size()) {
-					body = opaqueExpression.getBodies().get(index);
-				}
+		if (language == null) {
+			if (!opaqueExpression.getBodies().isEmpty()) {
+				body = opaqueExpression.getBodies().get(0);
 			}
+		} else {
+		// retrieve the index of the given language in the opaque Expression
+		int index = opaqueExpression.getLanguages().indexOf(language);
+		if(index != -1) {
+			// language found. return the corresponding body in the bodies list.
+			// List should be synchronized, ie having the same size, but be sure...
+			if(index < opaqueExpression.getBodies().size()) {
+				body = opaqueExpression.getBodies().get(index);
+			}
+		}
 		}
 		return body;
 	}
@@ -63,7 +67,7 @@ public class OpaqueExpressionUtil {
 	 *        the body to save
 	 */
 	public static void setBodyForLanguage(org.eclipse.uml2.uml.OpaqueExpression opaqueExpression, String language,
-			String body) {
+		String body) {
 		// checks both lists by size
 		checkAndCorrectLists(opaqueExpression);
 
