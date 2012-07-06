@@ -16,6 +16,7 @@ package org.eclipse.papyrus.modelexplorer;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -48,6 +49,11 @@ import org.osgi.framework.BundleContext;
  */
 @SuppressWarnings("restriction")
 public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStartup {
+
+	/**
+	 * Used to sorted customization which needed to be prioritized (@see extention point)
+	 */
+	private static CustomizationPriorityRegistry CUSTOMIZATION_PRIORITY_REGISTRY;
 
 	/** The plug-in ID */
 	public static final String PLUGIN_ID = "org.eclipse.papyrus.modelexplorer"; //$NON-NLS-1$
@@ -131,6 +137,8 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 
 	private void init(final CustomizationManager customizationManager) {
 		// the appearance can be customized here:
+		
+		CUSTOMIZATION_PRIORITY_REGISTRY = new CustomizationPriorityRegistry(customizationManager);
 
 		customizationManager.setShowDerivedLinks(true);
 
@@ -138,7 +146,9 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 
 			// load customizations defined as default through the customization
 			// extension
-			List<MetamodelView> registryDefaultCustomizations = CustomizationsCatalog.getInstance().getRegistryDefaultCustomizations();
+			List<MetamodelView> registryDefaultCustomizations =new ArrayList<MetamodelView>(CustomizationsCatalog.getInstance().getRegistryDefaultCustomizations());
+			//sort metamodelview with papyrus extension point customizationPriority
+			Collections.sort(registryDefaultCustomizations, CUSTOMIZATION_PRIORITY_REGISTRY);
 			for(MetamodelView metamodelView : registryDefaultCustomizations) {
 				customizationManager.registerCustomization(metamodelView);
 			}

@@ -2,6 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="actionHandler" name="actionHandler" schema="schema/org.eclipse.papyrus.modelexplorer.actionHandler.exsd"/>
+   <extension-point id="customizationPriority" name="customizationPriority" schema="schema/customizationPriority.exsd"/>
    <extension
          point="org.eclipse.ui.views">
       <view
