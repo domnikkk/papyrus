@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.commands;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -38,7 +39,12 @@ import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.workspace.EMFCommandOperation;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
+import org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.commands.wrappers.EMFtoGMFCommandWrapper;
+import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 
 public class CheckedOperationHistory implements IOperationHistory {
@@ -111,7 +117,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 * allowed.
 	 */
 	protected IStatus getRedoApproval(IUndoableOperation operation, IAdaptable info) {
-		operation = unwrap(operation);
+		operation = unwrapOperation(operation);
 		for(int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedRedoing(operation, this, info);
 			if(!approval.isOK()) {
@@ -126,7 +132,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 * allowed.
 	 */
 	protected IStatus getUndoApproval(IUndoableOperation operation, IAdaptable info) {
-		operation = unwrap(operation);
+		operation = unwrapOperation(operation);
 		for(int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedUndoing(operation, this, info);
 			if(!approval.isOK()) {
@@ -143,7 +149,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 * @since 3.2
 	 */
 	protected IStatus getExecuteApproval(IUndoableOperation operation, IAdaptable info) {
-		operation = unwrap(operation);
+		operation = unwrapOperation(operation);
 		for(int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedExecuting(operation, this, info);
 			if(!approval.isOK()) {
@@ -153,10 +159,10 @@ public class CheckedOperationHistory implements IOperationHistory {
 		return Status.OK_STATUS;
 	}
 
-	protected ICommand convert(CompoundCommand compoundCommand) {
+	protected ICommand convertEMFCC(CompoundCommand compoundCommand) {
 		CompositeCommand cc = new CompositeCommand(compoundCommand.getLabel());
 		for (Command c : compoundCommand.getCommandList()) {
-			cc.add(convert(c));
+			cc.add(convertFromEMF(c));
 		}
 		return cc.reduce();
 	}
@@ -169,29 +175,88 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 * @param operation
 	 * @return
 	 */
-	protected IUndoableOperation unwrap(IUndoableOperation operation) {
+	protected IUndoableOperation unwrapOperation(IUndoableOperation operation) {
 		if(operation instanceof EMFCommandOperation) {
 			Command emfCommand = ((EMFCommandOperation)operation).getCommand();
-			ICommand gmfCommand = convert(emfCommand);
-			if (gmfCommand != null) {
-				return gmfCommand;
-			}
+			return convertFromEMF(emfCommand);
+		} else if (operation instanceof CommandProxy) {
+			org.eclipse.gef.commands.Command gefCommand = ((CommandProxy) operation).getCommand();
+			return convertFromGEF(gefCommand);
+		} else if (operation instanceof EMFtoGMFCommandWrapper) {
+			Command emfCommand = ((EMFtoGMFCommandWrapper) operation).getEMFCommand();
+			return convertFromEMF(emfCommand);
+		} else if (operation instanceof CompositeTransactionalCommand) {
+			return unwrapInsideCC((CompositeTransactionalCommand)operation);
+		} else if (operation instanceof CompositeCommand) {
+			return unwrapInsideCC((CompositeCommand)operation);
 		}
 
 		return operation;
 	}
 
-	protected ICommand convert(Command emfCommand) {
+	protected IUndoableOperation unwrapInsideCC(CompositeTransactionalCommand cc) {
+		if (cc.size() == 1) {
+			return unwrapOperation((IUndoableOperation) cc.iterator().next());
+		}
+		CompositeTransactionalCommand ccRes = new CompositeTransactionalCommand(cc.getEditingDomain(), cc.getLabel(), cc.getOptions());
+		Iterator<IUndoableOperation> it = cc.iterator();
+		while (it.hasNext()) {
+			IUndoableOperation next = it.next();
+			ccRes.add(unwrapOperation(next));
+		}
+		return ccRes;
+	}
+
+	protected IUndoableOperation unwrapInsideCC(CompositeCommand cc) {
+		if (cc.size() == 1) {
+			return unwrapOperation((IUndoableOperation) cc.iterator().next());
+		}
+		CompositeCommand ccRes = new CompositeCommand(cc.getLabel());
+		Iterator<IUndoableOperation> it = cc.iterator();
+		while (it.hasNext()) {
+			IUndoableOperation next = it.next();
+			ccRes.add(unwrapOperation(next));
+		}
+		return ccRes;
+	}
+
+	protected IUndoableOperation convertFromEMF(Command emfCommand) {
 		if (emfCommand instanceof CompoundCommand) {
-			return convert((CompoundCommand)emfCommand);
+			return convertEMFCC((CompoundCommand)emfCommand);
 		}
 		if(emfCommand instanceof GMFtoEMFCommandWrapper) {
 			ICommand gmfCommand = ((GMFtoEMFCommandWrapper)emfCommand).getGMFCommand();
-			if(gmfCommand != null) {
-				return gmfCommand;
-			}
+			return unwrapOperation(gmfCommand);
+		}
+		if(emfCommand instanceof GEFtoEMFCommandWrapper) {
+			org.eclipse.gef.commands.Command gefCommand = ((GEFtoEMFCommandWrapper)emfCommand).getGEFCommand();
+			return convertFromGEF(gefCommand);
 		}
 		return new EMFtoGMFCommandWrapper(emfCommand);
+	}
+
+	protected IUndoableOperation convertFromGEF(org.eclipse.gef.commands.Command gefCommand) {
+		if (gefCommand instanceof ICommandProxy) {
+			return unwrapOperation(((ICommandProxy) gefCommand).getICommand());
+		}
+		if (gefCommand instanceof EMFtoGEFCommandWrapper) {
+			return convertFromEMF(((EMFtoGEFCommandWrapper) gefCommand).getEMFCommand());
+		}
+		if (gefCommand instanceof org.eclipse.gef.commands.CompoundCommand) {
+			return convertGEFCC((org.eclipse.gef.commands.CompoundCommand)gefCommand);
+		}
+		return new CommandProxy(gefCommand);
+	}
+
+	protected IUndoableOperation convertGEFCC(org.eclipse.gef.commands.CompoundCommand gefCompoundCommand) {
+		if (gefCompoundCommand.size() <= 1) {
+			return convertFromGEF(gefCompoundCommand.unwrap());
+		}
+		CompositeCommand cc = new CompositeCommand(gefCompoundCommand.getLabel());
+		for (Object gefCommand : gefCompoundCommand.getCommands()) {
+			cc.add(convertFromGEF((org.eclipse.gef.commands.Command)gefCommand));
+		}
+		return cc;
 	}
 
 	public IStatus execute(IUndoableOperation operation, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
