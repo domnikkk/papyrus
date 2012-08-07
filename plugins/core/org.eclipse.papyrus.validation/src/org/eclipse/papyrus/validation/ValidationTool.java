@@ -174,7 +174,7 @@ public class ValidationTool {
 					if (eObjectOfMarker == getEObject()) {
 						try {
 							Integer severityI = (Integer) marker.getAttribute(IMarker.SEVERITY);
-							if (severityI.intValue () > severity) {
+							if (severityI != null && severityI.intValue () > severity) {
 								severity = severityI.intValue();
 							}
 						}
