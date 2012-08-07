@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.facet.infra.browser.uicore.internal.model.LinkItem;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.validation.preferences.PreferencePage;
 import org.eclipse.papyrus.validation.preferences.PreferencePage.MarkChildren;
 
@@ -172,13 +171,9 @@ public class ValidationTool {
 				boolean first = true;
 				while (eObjectOfMarker != null) {
 					if (eObjectOfMarker == getEObject()) {
-						try {
-							Integer severityI = (Integer) marker.getAttribute(IMarker.SEVERITY);
-							if (severityI != null && severityI.intValue () > severity) {
-								severity = severityI.intValue();
-							}
-						}
-						catch (CoreException e) {
+						int newSeverity = marker.getAttribute(IMarker.SEVERITY, -1);
+						if (newSeverity > severity) {
+							severity = newSeverity;
 						}
 					}
 					// navigate to parents, since parent folder is contaminated as well
