@@ -171,4 +171,10 @@ public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler imp
 		}
 		return false;
 	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+	    return true;
+	}
 }
