@@ -13,10 +13,15 @@
  *****************************************************************************/
 package org.eclipse.papyrus.svn;
 
+import java.util.HashSet;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.resources.team.FileModificationValidationContext;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.readonly.IReadOnlyHandler;
 import org.eclipse.team.svn.core.IStateFilter;
@@ -28,9 +33,9 @@ public class SVNLockHandler implements IReadOnlyHandler {
 
 	SVNTeamModificationValidator validator = new SVNTeamModificationValidator();
 
-	public boolean isReadOnly(IFile[] files, EditingDomain editingDomain) {
+	public boolean isReadOnly(URI[] uris, EditingDomain editingDomain) {
 
-		IResource[] needsLockResources = FileUtility.filterResources(files, IStateFilter.SF_NEEDS_LOCK, IResource.DEPTH_ZERO);
+		IResource[] needsLockResources = FileUtility.filterResources(getIFiles(uris), IStateFilter.SF_NEEDS_LOCK, IResource.DEPTH_ZERO);
 		for(IResource needsLockResource : needsLockResources) {
 			if(!SVNRemoteStorage.instance().asLocalResource(needsLockResource).isLocked()) {
 				return true;
@@ -40,9 +45,27 @@ public class SVNLockHandler implements IReadOnlyHandler {
 		return false;
 	}
 
-	public boolean enableWrite(IFile[] files, EditingDomain editingDomain) {
+	private IFile[] getIFiles(URI[] uris) {
+		HashSet<IFile> iFilesSet = new HashSet<IFile>();
+		for(URI uri : uris) {
+			IFile iFile = getFile(uri);
+			if (iFile != null) {
+				iFilesSet.add(iFile);
+			}
+		}
+		return iFilesSet.toArray(new IFile[iFilesSet.size()]);
+	}
 
-		IStatus result = validator.validateEdit(files, FileModificationValidationContext.VALIDATE_PROMPT);
+	private static IFile getFile(URI uri) {
+		if(uri.isPlatform()) {
+			return ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true)));
+		}
+		return null;
+	}
+
+	public boolean enableWrite(URI[] uris, EditingDomain editingDomain) {
+
+		IStatus result = validator.validateEdit(getIFiles(uris), FileModificationValidationContext.VALIDATE_PROMPT);
 
 		return result.isOK();
 	}

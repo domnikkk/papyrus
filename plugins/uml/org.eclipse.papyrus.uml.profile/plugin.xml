@@ -8,5 +8,11 @@
             target="platform:/plugin/org.eclipse.papyrus.uml.profile/model/Papyrus.profile.uml">
       </mapping>
    </extension>
-
+   <extension
+         point="org.eclipse.papyrus.readonly.readOnlyHandler">
+      <readOnlyHandler
+            class="org.eclipse.papyrus.uml.profile.AppliedProfileReadOnlyHandler"
+            priority="15">
+      </readOnlyHandler>
+   </extension>
 </plugin>

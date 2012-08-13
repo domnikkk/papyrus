@@ -8,6 +8,10 @@
             class="org.eclipse.papyrus.readonly.FSReadOnlyHandler"
             priority="100">
       </readOnlyHandler>
+      <readOnlyHandler
+            class="org.eclipse.papyrus.readonly.EMFReadOnlyHandler"
+            priority="5">
+      </readOnlyHandler>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
