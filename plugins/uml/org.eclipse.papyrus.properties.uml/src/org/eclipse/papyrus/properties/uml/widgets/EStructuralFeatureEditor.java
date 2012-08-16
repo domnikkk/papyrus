@@ -38,6 +38,7 @@ import org.eclipse.papyrus.widgets.editors.DoubleEditor;
 import org.eclipse.papyrus.widgets.editors.EnumCombo;
 import org.eclipse.papyrus.widgets.editors.FloatEditor;
 import org.eclipse.papyrus.widgets.editors.IntegerEditor;
+import org.eclipse.papyrus.widgets.editors.LongEditor;
 import org.eclipse.papyrus.widgets.editors.MultipleIntegerEditor;
 import org.eclipse.papyrus.widgets.editors.MultipleReferenceEditor;
 import org.eclipse.papyrus.widgets.editors.MultipleStringEditor;
@@ -121,7 +122,12 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 			EClassifier type = feature.getEType();
 			if(type instanceof EEnum) {
 				if(feature.isMany()) {
-					// TODO widget not available
+					MultipleReferenceEditor editor = new MultipleReferenceEditor(pageBook, style);
+					setMultipleValueEditorProperties(editor, (List<?>)element.eGet(feature), element, feature);
+
+					editor.setProviders(contentProvider, labelProvider);
+					editor.setFactory(valueFactory);
+					currentPage = editor;
 				} else {
 					EnumCombo editor = new EnumCombo(pageBook, style);
 					setValueEditorProperties(editor, element, feature);
@@ -171,6 +177,15 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 						// TODO widget not available
 					} else {
 						DoubleEditor editor = new DoubleEditor(pageBook, style);
+						setValueEditorProperties(editor, element, feature);
+						currentPage = editor;
+					}
+				}
+				else if("java.lang.Long".equals(instanceClassName) || "long".equalsIgnoreCase(instanceClassName)) {
+					if(feature.isMany()) {
+						// TODO widget not available
+					} else {
+						LongEditor editor = new LongEditor(pageBook, style);
 						setValueEditorProperties(editor, element, feature);
 						currentPage = editor;
 					}
