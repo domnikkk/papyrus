@@ -16,7 +16,7 @@ package org.eclipse.papyrus.oneinstance;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.eclipse.core.resources.IFile;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.readonly.IReadOnlyHandler;
 import org.eclipse.papyrus.ui.toolbox.notification.NotificationRunnable;
@@ -54,7 +54,7 @@ public class OneInstanceReadOnlyHandler implements IReadOnlyHandler, IPartListen
 		}
 	}
 
-	public boolean isReadOnly(final IFile[] files, final EditingDomain editingDomain) {
+	public boolean isReadOnly(final URI[] uris, final EditingDomain editingDomain) {
 		// don't give the write token to a previously unauthorized editor
 		if (unauthorizedEditingDomains.contains(editingDomain)) {
 			return true;
@@ -74,7 +74,7 @@ public class OneInstanceReadOnlyHandler implements IReadOnlyHandler, IPartListen
 				new NotificationBuilder().setAsynchronous(true).setTemporary(true).setDelay(4000).setType(Type.WARNING).setMessage(msg).addAction(new NotificationRunnable() {
 					
 					public void run(IContext context) {
-						enableWrite(files, editingDomain);
+						enableWrite(uris, editingDomain);
 					}
 					
 					public String getLabel() {
@@ -87,7 +87,7 @@ public class OneInstanceReadOnlyHandler implements IReadOnlyHandler, IPartListen
 		return false;
 	}
 
-	public boolean enableWrite(IFile[] files, EditingDomain editingDomain) {
+	public boolean enableWrite(URI[] uris, EditingDomain editingDomain) {
 		if (authorizedEditingDomain != null && editingDomain != null) {
 			final IEditorPart authorizedEditor = getAssociatedPapyrusEditor(authorizedEditingDomain);
 			final IEditorPart currentEditor = getAssociatedPapyrusEditor(editingDomain);
