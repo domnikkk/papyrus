@@ -21,8 +21,9 @@ import java.util.Set;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.StructuredViewer;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.papyrus.widgets.Activator;
 import org.eclipse.papyrus.widgets.creation.ReferenceValueFactory;
 import org.eclipse.papyrus.widgets.messages.Messages;
@@ -36,8 +37,8 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.dialogs.SelectionDialog;
 
 /**
@@ -48,6 +49,8 @@ import org.eclipse.ui.dialogs.SelectionDialog;
  * 
  */
 public class MultipleValueSelectorDialog extends SelectionDialog implements SelectionListener, IElementSelectionListener {
+
+	public static int MANY = -1;
 
 	/**
 	 * The object selector
@@ -72,12 +75,12 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 	/**
 	 * The listViewer for chosen elements
 	 */
-	protected ListViewer selectedElementsViewer;
+	protected StructuredViewer selectedElementsViewer;
 
 	/**
 	 * The list for chosen elements
 	 */
-	protected List selectedElements;
+	protected Tree selectedElements;
 
 	/**
 	 * The add action button
@@ -149,6 +152,12 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 	 */
 	protected Set<Object> newObjects = new HashSet<Object>();
 
+
+	/**
+	 * The maximum number of values selected.
+	 */
+	protected int upperBound;
+
 	/**
 	 * Constructor.
 	 * 
@@ -204,6 +213,25 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 	 *        True if the values returned by this dialog should be unique
 	 */
 	public MultipleValueSelectorDialog(Shell parentShell, IElementSelector selector, String title, boolean unique, boolean ordered) {
+		this(parentShell, selector, null, unique, false, MANY);
+	}
+
+	/**
+	 * 
+	 * Constructor.
+	 * 
+	 * @param parentShell
+	 *        The shell in which this dialog should be opened
+	 * @param selector
+	 *        The element selector used by this dialog
+	 * @param title
+	 *        The title of this dialog
+	 * @param unique
+	 *        True if the values returned by this dialog should be unique
+	 * @param upperBound
+	 *        The maximum number of values selected.
+	 */
+	public MultipleValueSelectorDialog(Shell parentShell, IElementSelector selector, String title, boolean unique, boolean ordered, int upperBound) {
 		super(parentShell);
 		Assert.isNotNull(selector, "The element selector should be defined"); //$NON-NLS-1$
 		this.selector = selector;
@@ -212,7 +240,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 		setTitle(title);
 		this.unique = unique;
 		this.ordered = ordered;
-
+		this.upperBound = upperBound;
 		selector.addElementSelectionListener(this);
 	}
 
@@ -295,6 +323,12 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 		addAll.addSelectionListener(this);
 		addAll.setToolTipText(Messages.MultipleValueSelectorDialog_AddAllElements);
 
+		/* Disable the bouton 'addAll' if currently chosen elements is greater than the maximum number of values selected */
+		if(this.upperBound != MANY && allElements.size() > this.upperBound) {
+			addAll.setEnabled(false);
+		}
+
+
 		removeAll = new Button(buttonsSection, SWT.PUSH);
 		removeAll.setImage(Activator.getDefault().getImage("/icons/arrow_left_double.gif")); //$NON-NLS-1$
 		removeAll.addSelectionListener(this);
@@ -309,11 +343,11 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 	 */
 	private void createListSection(Composite parent) {
 
-		selectedElements = new List(parent, SWT.MULTI | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
+		selectedElements = new Tree(parent, SWT.MULTI | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
 		selectedElements.addSelectionListener(this);
 		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 		selectedElements.setLayoutData(data);
-		selectedElementsViewer = new ListViewer(selectedElements);
+		selectedElementsViewer = new TreeViewer(selectedElements);
 
 		selectedElementsViewer.setContentProvider(CollectionContentProvider.instance);
 
@@ -390,6 +424,16 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 		} else if(e.widget == create) {
 			createAction();
 		}
+
+		/* Disable the bouton 'add' if the upperBound is reached */
+		if(this.upperBound != MANY) {
+			if(allElements.size() >= this.upperBound) {
+				add.setEnabled(false);
+			} else {
+				add.setEnabled(true);
+			}
+		}
+
 	}
 
 	/**
@@ -628,5 +672,18 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 		if(control != null) {
 			control.setEnabled(enabled);
 		}
+	}
+
+	public void setSelector(IElementSelector selector) {
+		this.selector = selector;
+	}
+
+	/**
+	 * Set the maximum number of values selected.
+	 * 
+	 * @param upperBound
+	 */
+	public void setUpperBound(int upperBound) {
+		this.upperBound = upperBound;
 	}
 }

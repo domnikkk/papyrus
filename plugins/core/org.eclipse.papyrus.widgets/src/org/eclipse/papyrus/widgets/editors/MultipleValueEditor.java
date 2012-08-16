@@ -50,6 +50,8 @@ import org.eclipse.swt.widgets.TreeItem;
  */
 public class MultipleValueEditor extends AbstractListEditor implements SelectionListener, IChangeListener, DisposeListener {
 
+	public static int MANY = -1;
+
 	/**
 	 * The viewer displaying the current values from
 	 * the model
@@ -126,6 +128,12 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	private boolean directCreation;
 
 	/**
+	 * Indicates the maximum number of values selected.
+	 */
+	protected int upperBound;
+
+
+	/**
 	 * 
 	 * Constructor.
 	 * 
@@ -143,6 +151,29 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 *        The label for this editor. If null, the label isn't created.
 	 */
 	public MultipleValueEditor(Composite parent, int style, IElementSelector selector, boolean ordered, boolean unique, String label) {
+		this(parent, style, selector, ordered, unique, label, MANY);
+	}
+
+	/**
+	 * 
+	 * Constructor.
+	 * 
+	 * @param parent
+	 *        The Composite in which this Editor should be displayed
+	 * @param style
+	 *        This editor's tree style
+	 * @param selector
+	 *        The element selector for this editor's dialog
+	 * @param ordered
+	 *        Specify if the observed collection is ordered. If true, Up and Down controls are displayed.
+	 * @param unique
+	 *        Specify if the observed collection values are unique.
+	 * @param label
+	 *        The label for this editor. If null, the label isn't created.
+	 * @param upperBound
+	 *        The maximum number of values that must appear.
+	 */
+	public MultipleValueEditor(Composite parent, int style, IElementSelector selector, boolean ordered, boolean unique, String label, int upperBound) {
 		super(parent, label);
 		Assert.isNotNull(selector, "The Element Selector must be specified for a MultipleValueEditor"); //$NON-NLS-1$
 
@@ -152,7 +183,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		controlsSection.setLayout(new FillLayout());
 		controlsSection.setLayoutData(new GridData(SWT.END, SWT.CENTER, false, false));
 
-		tree = new Tree(this, style | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL | SWT.BORDER);
+		tree = new Tree(this, style | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL | SWT.BORDER | SWT.FULL_SELECTION);
 		GridData treeData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		treeData.horizontalSpan = 2;
 		treeData.minimumHeight = 80;
@@ -197,6 +228,17 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		return new MultipleValueSelectorDialog(parent.getShell(), selector, label, unique, ordered);
 	}
 
+	@Override
+	protected GridData getLabelLayoutData() {
+		GridData data = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		return data;
+	}
+
+	public void setSelector(IElementSelector selector) {
+		this.selector = selector;
+		this.dialog.setSelector(selector);
+	}
+
 	protected void updateControls() {
 
 		boolean enableAddAction = true;
@@ -211,6 +253,14 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		up.setEnabled(ordered && !readOnly);
 		down.setEnabled(ordered && !readOnly);
 		edit.setEnabled(this.referenceFactory != null && referenceFactory.canEdit() && !readOnly);
+
+
+		if(modelProperty != null && this.upperBound != MANY) {
+			if(modelProperty.size() >= this.upperBound) {
+				add.setEnabled(false);
+			}
+		}
+
 	}
 
 	/**
@@ -342,9 +392,10 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		if(e.widget == null) {
 			return;
 		}
-
 		if(e.widget == add) {
-			addAction();
+			if(this.upperBound == MANY || modelProperty.size() < this.upperBound) {
+				addAction();
+			}
 		} else if(e.widget == remove) {
 			removeAction();
 		} else if(e.widget == up) {
@@ -354,6 +405,8 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		} else if(e.widget == edit) {
 			editAction();
 		}
+
+		updateBoutons();
 	}
 
 	/**
@@ -373,11 +426,6 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		}
 
 		if(modelProperty != null) {
-			//			Object[] initialSelection = new Object[modelProperty.size()];
-			//			int i = 0;
-			//			for(Object semanticObject : modelProperty) {
-			//				initialSelection[i++] = containObject(semanticObject);
-			//			}
 			dialog.setInitialSelections(modelProperty.toArray());
 		} else {
 			dialog.setInitialSelections(new Object[0]);
@@ -394,11 +442,6 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		if(result == null) {
 			return;
 		}
-
-		//		List<Object> resultElements = new LinkedList<Object>();
-		//		for(Object r : result) {
-		//			resultElements.add(adaptResult(r));
-		//		}
 
 		modelProperty.addAll(Arrays.asList(result));
 
@@ -621,5 +664,26 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 */
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 		treeViewer.removeSelectionChangedListener(listener);
+	}
+
+	/**
+	 * Set the maximum number of values selected.
+	 * 
+	 * @param upperBound
+	 */
+	public void setUpperBound(int upperBound) {
+		this.upperBound = upperBound;
+		dialog.setUpperBound(upperBound);
+	}
+
+	public void updateBoutons() {
+		/* Disable the bouton 'add' if the upperBound is reached */
+		if(this.upperBound != MANY) {
+			if(modelProperty.size() >= this.upperBound) {
+				add.setEnabled(false);
+			} else {
+				add.setEnabled(true);
+			}
+		}
 	}
 }
