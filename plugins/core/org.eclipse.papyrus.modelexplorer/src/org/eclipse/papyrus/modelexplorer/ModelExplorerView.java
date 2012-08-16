@@ -11,10 +11,13 @@
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) Vincent.lorenzo@cea.fr - 343950: [Model Explorer] [TableEditor] Function "Link with Editor"
  *  Mathieu Velten (Atos) mathieu.velten@atos.net - Rewrite revealSemanticElement to be a lot faster
+ *  Mathieu Velten (Atos) mathieu.velten@atos.net - Rewrite refresh to handle events instead of refreshing the whole tree on each call
  *****************************************************************************/
 package org.eclipse.papyrus.modelexplorer;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -23,6 +26,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -328,7 +332,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 * 
 	 * @param event
 	 */
-	private void handleResourceSetChanged(ResourceSetChangeEvent event) {
+	private void handleResourceSetChanged(final ResourceSetChangeEvent event) {
 		// avoid refreshing N times for the same transaction (called for each
 		// object in resource)
 		Transaction curTrans = event.getTransaction();
@@ -336,19 +340,61 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			return;
 		}
 		lastTrans = curTrans;
-		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+		refresh(event.getNotifications());
+	}
 
-			/**
-			 * {@inheritDoc}
-			 */
-			public void run() {
-				refresh();
+	protected void refresh(Collection<Notification> notifs) {
+		if(getControl().isDisposed())
+			return;
+
+		HashSet<EObject> alreadyRefreshed = new HashSet<EObject>();
+
+		for (Notification n : notifs) {
+			Object obj = n.getNotifier();
+
+			if (obj instanceof EObject) {
+				final EObject eObj = (EObject)obj;
+				// a feature has been modified : refresh this object in the viewer
+				// to update its representation and its children
+				refreshObject(eObj, alreadyRefreshed);
+			} else if (obj instanceof Resource && n.getEventType() == Notification.ADD_MANY && n.getNewValue() instanceof List<?>) {
+				// A resource has been loaded and eObjects has been added.
+				// the container of the objects should be updated to reflect the changes however the eContainer is not valid at this point
+				// => this will be handled by the viewer which maintains a map of URI of unresolved objects and their associated facet item
+				List<?> loadedObjects = (List<?>)n.getNewValue();
+				for (final Object o : loadedObjects) {
+					if (o instanceof EObject) {
+						refreshObject((EObject)o, alreadyRefreshed);
+					}
+				}
+			} else if (obj instanceof Resource && n.getEventType() == Notification.REMOVE_MANY && n.getOldValue() instanceof List<?>) {
+				// A resource has been unloaded and eObjects has been removed.
+				// the container of the objects should be updated in the viewer
+				List<?> unloadedObjects = (List<?>)n.getOldValue();
+				for (final Object o : unloadedObjects) {
+					if (o instanceof EObject) {
+						final EObject container = ((EObject)o).eContainer();
+						refreshObject(container, alreadyRefreshed);
+					}
+				}
 			}
-		});
+		}
+	}
+
+	protected void refreshObject(final EObject obj, Set<EObject> alreadyRefreshed) {
+		if (obj != null && !alreadyRefreshed.contains(obj)) {
+			alreadyRefreshed.add(obj);
+
+			PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+				public void run() {
+					getCommonViewer().refresh(obj);
+				}
+			});
+		}
 	}
 
 	/**
-	 * refresh the view.
+	 * refresh the view entirely.
 	 */
 	public void refresh() {
 		// Need to refresh, even if (temporarily) invisible
@@ -360,8 +406,13 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		// avoid reentrant call
 		// Refresh only of we are not already refreshing.
 		if(isRefreshing.compareAndSet(false, true)) {
-			if(!getCommonViewer().isBusy())
-				getCommonViewer().refresh();
+			if(!getCommonViewer().isBusy()) {
+				PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+					public void run() {
+						getCommonViewer().refresh();
+					}
+				});
+			}
 
 			isRefreshing.set(false);
 		}
@@ -573,12 +624,12 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				// reveal the resource if necessary
 				Resource r = null;
 				if (!parents.isEmpty()) {
-					 r = parents.get(parents.size() - 1).eResource();
+					r = parents.get(parents.size() - 1).eResource();
 				} else {
 					r = currentEObject.eResource();
 				}
 
-				
+
 				if (r != null) {
 					ResourceSet rs = r.getResourceSet();
 					if (rs instanceof ModelSet && AdditionalResourcesModel.isAdditionalResource((ModelSet)rs, r.getURI())) {

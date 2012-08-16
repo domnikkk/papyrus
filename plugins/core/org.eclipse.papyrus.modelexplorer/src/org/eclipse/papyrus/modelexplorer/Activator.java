@@ -129,7 +129,7 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 	 */
 	public CustomizationManager getCustomizationManager() {
 		if(this.fCustomizationManager == null) {
-			this.fCustomizationManager = new CustomizationManager();
+			this.fCustomizationManager = new PapyrusCustomizationManager();
 			init(this.fCustomizationManager);
 		}
 		return this.fCustomizationManager;
