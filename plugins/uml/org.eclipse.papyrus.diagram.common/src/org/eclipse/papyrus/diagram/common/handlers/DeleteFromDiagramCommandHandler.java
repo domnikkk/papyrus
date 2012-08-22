@@ -32,7 +32,6 @@ import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.diagram.ui.actions.internal.DeleteFromDiagramAction;
-import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
@@ -50,6 +49,7 @@ import org.eclipse.uml2.uml.NamedElement;
  */
 public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler implements IHandler {
 
+    public DeleteFromDiagramCommandHandler(){}
 	/**
 	 * 
 	 * @see org.eclipse.papyrus.diagram.common.handlers.GraphicalCommandHandler#getCommand()

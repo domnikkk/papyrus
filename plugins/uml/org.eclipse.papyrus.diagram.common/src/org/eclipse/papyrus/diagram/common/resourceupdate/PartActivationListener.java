@@ -41,6 +41,7 @@ import org.eclipse.papyrus.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.core.resourceloading.util.LoadingUtils;
 import org.eclipse.papyrus.core.utils.EditorUtils;
 import org.eclipse.papyrus.diagram.common.Messages;
+import org.eclipse.papyrus.preferences.utils.PreferenceConstantHelper;
 import org.eclipse.papyrus.resource.ModelSet;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
@@ -292,9 +293,9 @@ public class PartActivationListener implements IPartListener {
 					msg += String.format(Messages.PartActivationListener_ChangedWarning, dirtyList);
 				}
 			}
-
+			
 			if(MessageDialog.openQuestion(new Shell(), Messages.PartActivationListener_ChangedTitle, msg)) {
-				if(mainChanged) {
+				if(mainChanged || alwayUseReloadingWithEditor()) {
 					// unloading and reloading all resources of the main causes
 					// the following problems
 					// - since resources are removed during the modelSets unload
@@ -311,7 +312,7 @@ public class PartActivationListener implements IPartListener {
 							IWorkbench wb = PlatformUI.getWorkbench();
 							IWorkbenchPage page = wb.getActiveWorkbenchWindow().getActivePage();
 							IEditorInput input = editor.getEditorInput();
-							page.closeEditor(editor, false);
+							page.closeEditor(editor, alwayUseReloadingWithEditor()?true:false);
 							try {
 								IEditorDescriptor desc = wb.getEditorRegistry().getDefaultEditor(input.getName());
 								page.openEditor(input, desc.getId(), false);
@@ -332,6 +333,15 @@ public class PartActivationListener implements IPartListener {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Used to force reloading with editor
+	 * Bug correct for 0.8.X
+	 * @return
+	 */
+	private boolean alwayUseReloadingWithEditor() {
+		return org.eclipse.papyrus.preferences.Activator.getDefault().getPreferenceStore().getBoolean(PreferenceConstantHelper.ALWAY_RELOAD_WITH_EDITOR);
 	}
 
 	/**

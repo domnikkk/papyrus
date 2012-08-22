@@ -230,6 +230,12 @@ public class PreferenceConstantHelper {
 	 */
 	public static final int LOCATION_Y = LOCATION_X + 1;
 
+	
+	/**
+	 * Preference use to force alway reload editor and not only model
+	 * @see org.eclipse.papyrus.diagram.common.resourceupdate.PartActivationListener.handleDeltaKinds(int, Set<String>, Set<String>, Map<String, Boolean>, int)
+	 */
+	public static final String ALWAY_RELOAD_WITH_EDITOR = "ALWAY_RELOAD_WITH_EDITOR";
 
 	/**
 	 * Get the preference constant used to store the preference of an element.
