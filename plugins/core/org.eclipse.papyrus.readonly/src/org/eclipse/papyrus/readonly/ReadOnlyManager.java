@@ -21,8 +21,16 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.modelexplorer.ModelExplorerPageBookView;
+import org.eclipse.papyrus.modelexplorer.ModelExplorerView;
+import org.eclipse.ui.IViewReference;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 
 public class ReadOnlyManager {
 
@@ -114,6 +122,38 @@ public class ReadOnlyManager {
 				boolean ok = orderedHandlersArray[i].enableWrite(uris, editingDomain);
 				if(!ok) {
 					return false;
+				}
+			}
+		}
+
+		// retrieve model explorer view to update the tree with
+		// updated read only informations (greyed entries are read only ones)
+		// there is no notification for this kind of event so this needs to be done manually here
+
+		ModelExplorerPageBookView pageBookView = null;
+		for (IWorkbenchWindow window : PlatformUI.getWorkbench().getWorkbenchWindows()) {
+			for (IWorkbenchPage page : window.getPages()) {
+				for (IViewReference viewReference : page.getViewReferences()) {
+					IWorkbenchPart part = viewReference.getPart(false);
+					if (part instanceof ModelExplorerPageBookView) {
+						pageBookView = (ModelExplorerPageBookView)part;
+					}
+				}
+			}
+		}
+
+		if (pageBookView != null && pageBookView.getActiveView() instanceof ModelExplorerView) {
+			ModelExplorerView view = (ModelExplorerView)pageBookView.getActiveView();
+			if (editingDomain == null) {
+				editingDomain = view.getEditingDomain();
+			}
+
+			for (URI uri : uris) {
+				Resource r = editingDomain.getResourceSet().getResource(uri, false);
+				if (r != null) {
+					for (EObject o : r.getContents()) {
+						view.refreshObject(o, null);
+					}
 				}
 			}
 		}

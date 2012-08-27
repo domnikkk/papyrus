@@ -381,7 +381,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		}
 	}
 
-	protected void refreshObject(final EObject obj, Set<EObject> alreadyRefreshed) {
+	public void refreshObject(final EObject obj, Set<EObject> alreadyRefreshed) {
+		if (alreadyRefreshed == null) {
+			alreadyRefreshed = new HashSet<EObject>();
+		}
+
 		if (obj != null && !alreadyRefreshed.contains(obj)) {
 			alreadyRefreshed.add(obj);
 

@@ -37,7 +37,7 @@ public class EnableWriteHandler extends AbstractHandler {
 
 				for(IFile associatedFile : associatedFiles) {
 					URI associatedUri = URI.createPlatformResourceURI(associatedFile.getFullPath().toString(), true);
-					Resource associatedResource = rs.getResource(associatedUri, true);
+					Resource associatedResource = rs.getResource(associatedUri, false);
 					if(associatedResource != null) {
 						associatedResource.setModified(true);
 					}
