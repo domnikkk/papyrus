@@ -25,9 +25,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditP
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.diagram.clazz.custom.policies.AbstractNestedClassifierListenerEditPolicy;
 import org.eclipse.papyrus.diagram.clazz.custom.policies.ClassDiagramDragDropEditPolicy;
-import org.eclipse.papyrus.diagram.clazz.custom.policies.ClassNestedClassifierListenerEditPolicy;
 import org.eclipse.papyrus.diagram.clazz.custom.policies.NestedClazzCompartmentCreationEditPolicy;
 import org.eclipse.papyrus.diagram.clazz.custom.policies.RemoveOrphanViewPolicy;
 import org.eclipse.papyrus.diagram.clazz.edit.policies.ClassNestedClassifierCompartmentItemSemanticEditPolicy;
@@ -81,7 +79,6 @@ public class ClassNestedClassifierCompartmentEditPart extends ResizeableListComp
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ClassDiagramDragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new NestedClazzCompartmentCreationEditPolicy());
-		installEditPolicy(AbstractNestedClassifierListenerEditPolicy.EDIT_POLICY_ID, new ClassNestedClassifierListenerEditPolicy());
 	}
 
 	/**
