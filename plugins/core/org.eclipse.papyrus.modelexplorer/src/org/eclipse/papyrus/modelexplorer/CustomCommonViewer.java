@@ -43,9 +43,11 @@ public class CustomCommonViewer extends CommonViewer {
 
 	protected CommonDropAdapter dropAdapter;
 
-	protected Map<EObject, ModelElementItem> objsMap = new WeakHashMap<EObject, ModelElementItem>();
+	protected Map<EObject, ModelElementItem> eObjsMap = new WeakHashMap<EObject, ModelElementItem>();
+	
+	protected Map<Object, IReferencable> referencableObjsMap = new WeakHashMap<Object, IReferencable>();
 
-	protected Map<URI, ModelElementItem> unresolvedObjsMap = new HashMap<URI, ModelElementItem>();
+	protected Map<URI, ModelElementItem> unresolvedEObjsMap = new HashMap<URI, ModelElementItem>();
 
 	@Override
 	protected void associate(Object element, Item item) {
@@ -54,11 +56,13 @@ public class CustomCommonViewer extends CommonViewer {
 			EObject eObj = modelElem.getEObject();
 			if (eObj != null) {
 				if (eObj instanceof BasicEObjectImpl && eObj.eIsProxy()) {
-					unresolvedObjsMap.put(((BasicEObjectImpl)eObj).eProxyURI(), modelElem);
+					unresolvedEObjsMap.put(((BasicEObjectImpl)eObj).eProxyURI(), modelElem);
 				} else {
-					objsMap.put(eObj, modelElem);
+					eObjsMap.put(eObj, modelElem);
 				}
 			}
+		} else if (element instanceof IReferencable) {
+			referencableObjsMap.put(((IReferencable)element).getElementBehind(), (IReferencable)element);
 		}
 		super.associate(element, item);
 	}
@@ -112,21 +116,25 @@ public class CustomCommonViewer extends CommonViewer {
 	protected Object getAssociatedItem(Object obj) {
 		if (obj instanceof EObject) {
 			EObject eObj = (EObject)obj;
-			ModelElementItem associatedItem = objsMap.get(eObj);
+			ModelElementItem associatedItem = eObjsMap.get(eObj);
 			if (associatedItem != null) {
 				return associatedItem;
 			}
 			if (eObj.eResource() != null) {
 				URI uri = eObj.eResource().getURI().appendFragment(eObj.eResource().getURIFragment(eObj));
-				associatedItem = unresolvedObjsMap.get(uri);
+				associatedItem = unresolvedEObjsMap.get(uri);
 				if (associatedItem != null) {
-					unresolvedObjsMap.remove(uri);
+					unresolvedEObjsMap.remove(uri);
 					// if it is an unresolved eObj its parent needs to be refreshed
 					// because the feature needs to be compute at least one time after the load
 					// to link the loaded item with its parent (eContainer is null after a load)
 					return associatedItem.getTreeParent();
 				}
 			}
+		}
+		IReferencable associatedItem = referencableObjsMap.get(obj);
+		if (associatedItem != null) {
+			return associatedItem;
 		}
 		return obj;
 	}

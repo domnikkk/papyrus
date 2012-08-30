@@ -347,43 +347,54 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		if(getControl().isDisposed())
 			return;
 
-		HashSet<EObject> alreadyRefreshed = new HashSet<EObject>();
+		HashSet<Object> alreadyRefreshed = new HashSet<Object>();
 
 		for (Notification n : notifs) {
 			Object obj = n.getNotifier();
 
-			if (obj instanceof EObject) {
-				final EObject eObj = (EObject)obj;
-				// a feature has been modified : refresh this object in the viewer
-				// to update its representation and its children
-				refreshObject(eObj, alreadyRefreshed);
-			} else if (obj instanceof Resource && n.getEventType() == Notification.ADD_MANY && n.getNewValue() instanceof List<?>) {
-				// A resource has been loaded and eObjects has been added.
-				// the container of the objects should be updated to reflect the changes however the eContainer is not valid at this point
-				// => this will be handled by the viewer which maintains a map of URI of unresolved objects and their associated facet item
-				List<?> loadedObjects = (List<?>)n.getNewValue();
-				for (final Object o : loadedObjects) {
-					if (o instanceof EObject) {
-						refreshObject((EObject)o, alreadyRefreshed);
-					}
+			if (obj instanceof Resource) {
+
+				List objects = null;
+				if (n.getEventType() == Notification.ADD_MANY) {
+					objects = (List<?>)n.getNewValue();
+				} else if(n.getEventType() == Notification.REMOVE_MANY) {
+					objects = (List<?>)n.getOldValue();
+				} else if(n.getEventType() == Notification.ADD) {
+					objects = new ArrayList();
+					objects.add(n.getNewValue());
+				} else if(n.getEventType() == Notification.REMOVE) {
+					objects = new ArrayList();
+					objects.add(n.getOldValue());
 				}
-			} else if (obj instanceof Resource && n.getEventType() == Notification.REMOVE_MANY && n.getOldValue() instanceof List<?>) {
-				// A resource has been unloaded and eObjects has been removed.
-				// the container of the objects should be updated in the viewer
-				List<?> unloadedObjects = (List<?>)n.getOldValue();
-				for (final Object o : unloadedObjects) {
-					if (o instanceof EObject) {
-						final EObject container = ((EObject)o).eContainer();
-						refreshObject(container, alreadyRefreshed);
+
+				if (n.getEventType() == Notification.ADD_MANY || n.getEventType() == Notification.ADD) {
+					// A resource has been loaded and eObjects has been added.
+					// the container of the objects should be updated to reflect the changes however the eContainer is not valid at this point
+					// => this will be handled by the viewer which maintains a map of URI of unresolved objects and their associated facet item
+					for (final Object o : objects) {
+						if (o instanceof EObject) {
+							refreshObject(o, alreadyRefreshed);
+						}
+					}
+				} else if (n.getEventType() == Notification.REMOVE_MANY || n.getEventType() == Notification.REMOVE) {
+					// A resource has been unloaded and eObjects has been removed.
+					// the container of the objects should be updated in the viewer
+					for (final Object o : objects) {
+						if (o instanceof EObject) {
+							final EObject container = ((EObject)o).eContainer();
+							refreshObject(container, alreadyRefreshed);
+						}
 					}
 				}
 			}
+
+			refreshObject(obj, alreadyRefreshed);
 		}
 	}
 
-	public void refreshObject(final EObject obj, Set<EObject> alreadyRefreshed) {
+	public void refreshObject(final Object obj, Set<Object> alreadyRefreshed) {
 		if (alreadyRefreshed == null) {
-			alreadyRefreshed = new HashSet<EObject>();
+			alreadyRefreshed = new HashSet<Object>();
 		}
 
 		if (obj != null && !alreadyRefreshed.contains(obj)) {
