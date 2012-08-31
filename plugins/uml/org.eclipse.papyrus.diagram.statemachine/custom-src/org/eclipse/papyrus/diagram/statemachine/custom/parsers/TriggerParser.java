@@ -59,8 +59,9 @@ public class TriggerParser implements ISemanticParser {
 	private static String EMPTY_STRING = ""; //$NON-NLS-1$
 	private static final String SPACE = " ";
 	private static final String VIRGULE = ",";
+	private static final String DEFER = " / defer";
 
-	
+
 	public String getEditString(IAdaptable element, int flags) {
 		if (element instanceof NamedElement){
 			return ((NamedElement)element).getName();
@@ -112,7 +113,7 @@ public class TriggerParser implements ISemanticParser {
 			} else {
 				result = new StringBuilder(trig.getName());
 			}
-			return result.toString();
+			return result.toString() + DEFER;
 		}
 		return EMPTY_STRING;
 	}
@@ -139,8 +140,8 @@ public class TriggerParser implements ISemanticParser {
 				if ( ports != null && !ports.isEmpty()){
 					result.addAll(ports);
 				}
-				return result;				
 			}
+			return result;
 		}
 		return Collections.emptyList();
 			
