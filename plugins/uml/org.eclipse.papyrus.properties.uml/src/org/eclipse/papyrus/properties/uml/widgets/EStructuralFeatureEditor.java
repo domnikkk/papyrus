@@ -218,6 +218,7 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 		editor.setLabel(feature.getName());
 		editor.setUnique(feature.isUnique());
 		editor.setOrdered(feature.isOrdered());
+		editor.setUpperBound(feature.getUpperBound());
 		if (feature instanceof EReference) {
 			editor.setDirectCreation(((EReference)feature).isContainment());
 		}
