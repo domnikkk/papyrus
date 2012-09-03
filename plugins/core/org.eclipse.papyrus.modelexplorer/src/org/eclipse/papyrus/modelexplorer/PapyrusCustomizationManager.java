@@ -16,6 +16,7 @@ package org.eclipse.papyrus.modelexplorer;
 import java.lang.reflect.Field;
 
 import org.eclipse.emf.facet.infra.browser.uicore.CustomizationManager;
+import org.eclipse.emf.facet.infra.browser.uicore.internal.AppearanceConfiguration;
 
 /**
  * Ugly hack..... It is cool to have made a factory for the items,
@@ -25,12 +26,13 @@ import org.eclipse.emf.facet.infra.browser.uicore.CustomizationManager;
  *
  */
 public class PapyrusCustomizationManager extends CustomizationManager {
-	protected static final Field appearanceConfigurationFiled;
+	
+    protected static final Field appearanceConfigurationField;
 
 	static {
 		try {
-			appearanceConfigurationFiled = CustomizationManager.class.getDeclaredField("appearanceConfiguration");
-			appearanceConfigurationFiled.setAccessible(true);
+			appearanceConfigurationField = CustomizationManager.class.getDeclaredField("appearanceConfiguration");
+			appearanceConfigurationField.setAccessible(true);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -38,9 +40,27 @@ public class PapyrusCustomizationManager extends CustomizationManager {
 
 	public PapyrusCustomizationManager() {
 		try {
-			appearanceConfigurationFiled.set(this, new PapyrusAppearanceConfiguration());
+			appearanceConfigurationField.set(this, new PapyrusAppearanceConfiguration());
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+	}
+	
+	public AppearanceConfiguration getAppearanceConfiguration() {
+	    try
+        {
+            return (AppearanceConfiguration) appearanceConfigurationField.get(this);
+        }
+        catch (IllegalArgumentException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        catch (IllegalAccessException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+	    return null;
 	}
 }
