@@ -39,6 +39,11 @@ public class DestroyElementPapyrusCommand extends DestroyElementCommand {
 
 	public DestroyElementPapyrusCommand(DestroyElementRequest request) {
 		super(request);
+		
+		/*
+		 * Quick fixe : Waiting for the patch to be approved by GMF Runtime team
+		 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=386999
+		 */
 		getAffectedFiles().addAll(fileOfIncomingReferences(request.getElementToDestroy()));
 	}
 	
@@ -53,10 +58,13 @@ public class DestroyElementPapyrusCommand extends DestroyElementCommand {
             List<Object> result =new ArrayList<Object>();
             for(Setting setting : usages) {
                 EReference eRef = (EReference)setting.getEStructuralFeature();
-                if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false)) {
-                    List files = getWorkspaceFiles(setting.getEObject());
-                    if (files != null){
-                        result.addAll(files);
+                if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false) && eRef.isTransient() == false) {
+                    EObject eObject = setting.getEObject();
+                    if (isSerialized(eObject)){
+                    	List files = getWorkspaceFiles(eObject);
+                    	if (files != null){
+                    		result.addAll(files);
+                    	}
                     }
                 }
             }
