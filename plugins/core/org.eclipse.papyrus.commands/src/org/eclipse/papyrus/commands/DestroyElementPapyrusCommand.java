@@ -60,7 +60,7 @@ public class DestroyElementPapyrusCommand extends DestroyElementCommand {
                 EReference eRef = (EReference)setting.getEStructuralFeature();
                 if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false) && eRef.isTransient() == false) {
                     EObject eObject = setting.getEObject();
-                    if (isSerialized(eObject)){
+                    if (isSerializedInFile(eObject)){
                     	List files = getWorkspaceFiles(eObject);
                     	if (files != null){
                     		result.addAll(files);
@@ -84,6 +84,31 @@ public class DestroyElementPapyrusCommand extends DestroyElementCommand {
 			}
 		}
 	}
+	
+	
+	/**
+     * Check that the EObject is serialized in a resource
+     * This will return false if one of the ancestor of the EObject is contained by a transient reference
+     * @param eObject
+     * @return
+     */
+    protected static boolean isSerializedInFile(EObject eObject){
+        EObject auxEObject = eObject;
+        EObject eContainer = auxEObject.eContainer();
+        while (eContainer != null){
+            EReference containingfeature = auxEObject.eContainmentFeature();
+            if(containingfeature == null){
+                return true;
+            }
+            if(containingfeature.isTransient()){
+                return false;
+            }
+            auxEObject = eContainer;
+            eContainer = auxEObject.eContainer();
+        }
+        return true;
+        
+    }
 
 	/**
 	 * Gets the usages.
