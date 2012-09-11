@@ -58,4 +58,12 @@
             priority="50">
       </labelProvider>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="org.eclipse.papyrus.properties.uml.languagepreferences.languagepreferencesPackage"
+            genModel="Model/LanguagePreferences.genmodel"
+            uri="http://www.eclipse.org/papyrus/properties/uml/languagePreferences">
+      </package>
+   </extension>
 </plugin>
