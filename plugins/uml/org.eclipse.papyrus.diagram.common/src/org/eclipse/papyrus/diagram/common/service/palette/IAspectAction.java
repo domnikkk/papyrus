@@ -14,7 +14,6 @@ package org.eclipse.papyrus.diagram.common.service.palette;
 import java.util.List;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.gef.EditPart;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -33,14 +32,6 @@ public interface IAspectAction {
 	 *        the configuration {@link Node} that initialize the action
 	 */
 	public void init(Node configurationNode, IAspectActionProvider factory);
-
-	/**
-	 * action performed by this class
-	 * 
-	 * @param editPart
-	 *        the edit part on which the action occurs
-	 */
-	public void run(EditPart editPart);
 
 	/**
 	 * Runs post condition tests before runnning the action

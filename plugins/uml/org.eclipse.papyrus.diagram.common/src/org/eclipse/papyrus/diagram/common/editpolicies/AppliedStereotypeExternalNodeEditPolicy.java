@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.diagram.common.editpolicies;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.diagram.common.Activator;
 import org.eclipse.papyrus.diagram.common.editparts.IPapyrusEditPart;
@@ -29,6 +30,8 @@ import org.eclipse.papyrus.umlutils.ui.helper.AppliedStereotypeHelper;
  */
 public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLabelDisplayEditPolicy {
 
+	protected View parentView = null;
+
 	public AppliedStereotypeExternalNodeEditPolicy() {
 		super();
 	}
@@ -42,8 +45,11 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 		super.activate();
 		// add a listener for TimeObservationEditPart
 		// eContainer = getParent() , but here it's the ECore model
-		if(view.eContainer() != null)
-			getDiagramEventBroker().addNotificationListener(view.eContainer(), this);
+		EObject parent = view.eContainer();
+		if(parent instanceof View) {
+			parentView = (View)parent;
+			getDiagramEventBroker().addNotificationListener(parentView, this);
+		}
 
 		refreshDisplay();
 
@@ -51,8 +57,8 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 
 	@Override
 	public void deactivate() {
-		if(getView().eContainer() != null)
-			getDiagramEventBroker().removeNotificationListener(getView().eContainer(), this);
+		if(parentView != null)
+			getDiagramEventBroker().removeNotificationListener(parentView, this);
 
 		super.deactivate();
 	}
@@ -75,10 +81,14 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 
 		// retrieve all stereotypes to be displayed
 
+		if (parentView == null) {
+			return "";
+		}
+
 		// try to display stereotype properties
-		String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay((View)((View)getHost().getModel()).eContainer());
-		String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View)((View)getHost().getModel()).eContainer());
-		String stereotypespresentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind((View)((View)getHost().getModel()).eContainer());
+		String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay(parentView);
+		String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay(parentView);
+		String stereotypespresentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(parentView);
 
 		// now check presentation.
 		// if horizontal => equivalent to the inBrace visualization in nodes
@@ -94,7 +104,7 @@ public class AppliedStereotypeExternalNodeEditPolicy extends AppliedStereotypeLa
 			return StereotypeUtil.getPropertiesValuesInBrace(stereotypesPropertiesToDisplay, getUMLElement());
 		}
 
-		String stereotypesToDisplayWithQN = AppliedStereotypeHelper.getStereotypesQNToDisplay((View)((View)getHost().getModel()).eContainer());
+		String stereotypesToDisplayWithQN = AppliedStereotypeHelper.getStereotypesQNToDisplay(parentView);
 		String display = "";
 		if(VisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
 			display += stereotypesAndPropertiesToDisplay("\n", stereotypesToDisplay, stereotypesToDisplayWithQN, stereotypesPropertiesToDisplay);

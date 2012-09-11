@@ -15,20 +15,21 @@ package org.eclipse.papyrus.diagram.common.service.palette;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.palette.PaletteEntry;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.ui.util.DisplayUtils;
-import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.CellEditor;
@@ -52,10 +53,11 @@ import org.eclipse.jface.viewers.TreeViewerColumn;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.jface.viewers.ViewerComparator;
+import org.eclipse.papyrus.commands.wrappers.EMFtoGMFCommandWrapper;
 import org.eclipse.papyrus.diagram.common.Activator;
 import org.eclipse.papyrus.diagram.common.Messages;
-import org.eclipse.papyrus.commands.wrappers.EMFtoGMFCommandWrapper;
-import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.diagram.common.commands.ApplyStereotypeCommand;
+import org.eclipse.papyrus.diagram.common.commands.DefferedAppliedStereotypeToDisplayCommand;
 import org.eclipse.papyrus.diagram.common.part.PaletteUtil;
 import org.eclipse.papyrus.diagram.common.service.ApplyStereotypeRequest;
 import org.eclipse.papyrus.diagram.common.ui.dialogs.PropertyEditors;
@@ -72,19 +74,19 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.CheckedTreeSelectionDialog;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
@@ -257,7 +259,7 @@ public class StereotypePostAction extends ModelPostAction {
 	 * @{inheritDoc
 	 */
 	public void save(Node parentNode) {
-		if(parentNode instanceof Element) {
+		if(parentNode instanceof org.w3c.dom.Element) {
 			config.save(parentNode);
 		} else {
 			Activator.log.error("parent node is not an Element", null); //$NON-NLS-1$
@@ -267,123 +269,87 @@ public class StereotypePostAction extends ModelPostAction {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public void run(final EditPart editPart) {
+	public ICommand getPostCommand(IAdaptable viewAdapter) {
 		// so, we doesn't need to save the default values which can be modified
 		// during the runtime
 		config = new Configuration(config.getConfigurationNode());
 
-		// Apply the required stereotypes
-		ApplyStereotypeRequest request = new ApplyStereotypeRequest(config.getStereotypesToApplyQN());
-		request.getExtendedData().put(ApplyStereotypeRequest.NEW_EDIT_PART_NAME, "NEW"); //$NON-NLS-1$
-		editPart.performRequest(request);
-
-		/*
-		 * Looks like updateValue in ValueTreeObject and CompositeProperty to
-		 * apply the values properties to the elements
-		 */
-
-		// element where are the properties
-		final EObject objectToEdit = ((View)editPart.getModel()).getElement();
-
-		if(!(objectToEdit instanceof org.eclipse.uml2.uml.NamedElement)) {
-			// TODO for the Element which are not NamedElement
-			return;
-		}
-		// we search the container for the object
-		org.eclipse.uml2.uml.Element packageContainerTmp = ((org.eclipse.uml2.uml.Element)objectToEdit);
-		do {
-			packageContainerTmp = packageContainerTmp.getOwner();
-		} while(!(packageContainerTmp instanceof org.eclipse.uml2.uml.Package));
-		final org.eclipse.uml2.uml.Element packageContainer = packageContainerTmp;
-
-		config.setAppliedProfiles(((org.eclipse.uml2.uml.Package)packageContainer).getAllAppliedProfiles());
-
-		if(config.hasRuntimeProperties()) {
-
-			defineRuntimeProperties(config);
-		}
-
 		final TransactionalEditingDomain editingDomain = org.eclipse.papyrus.core.utils.EditorUtils.getTransactionalEditingDomain();
 
-		// -----------------create a composite command
-		CompositeCommand cmd = new CompositeCommand("Apply values for properties");
-		ArrayList<StereotypeRepresentation> stereotypes = config.getStereotypesRepresentations();
-		for(StereotypeRepresentation stereotype : stereotypes) {
-			final Stereotype stereotypeToEdit = stereotype.getUMLStereotype();
-			ArrayList<PropertyRepresentation> properties = stereotype.getPropertiesWithValues();
-			for(PropertyRepresentation property : properties) {
-				if(property.hasValues()) {
-					Type type = property.getType();
-					final String propertyName = property.getUMLProperty().getName();
-					if(type != null && propertyName != null) {
-						final Object newValue;
-						if(type instanceof PrimitiveType) {
-							newValue = Util.getValueFromString(property.getUMLProperty(), property.getStringValue());
-						} else if(Util.isMetaclass(type)) {
-							newValue = Util.retrievesMetaclassElementFromString(property.getUMLProperty(), property.getStringValue(), packageContainer);
-							// property is an Enumeration
-						} else if(type instanceof org.eclipse.uml2.uml.Enumeration) {
-							newValue = Util.retrievesEnumerationLiteralFromString(property.getUMLProperty(), property.getStringValue(), packageContainer);
-							// property is a DataType
-						} else if(type instanceof org.eclipse.uml2.uml.DataType) {
-							newValue = Util.getValueFromString(property.getUMLProperty(), property.getStringValue());
-							// property is a Stereotype
-						} else if(type instanceof Stereotype) {
-							newValue = Util.retrievesStereotypedElementFromString(property.getUMLProperty(), property.getStringValue(), packageContainer);
-							// property is a composite class
-						} else if((type instanceof org.eclipse.uml2.uml.Class) && !(type instanceof Stereotype) && property.getUMLProperty().isMultivalued()) {
-							// TODO
-							newValue = null;
-						} else {
-							Activator.log.error("impossible to find a correct editor for the property" + property, null); //$NON-NLS-1$
-							return;
-						}
-						// we create and execute the recording command
-						RecordingCommand command = null;
-						if(newValue != null) {
-							command = new RecordingCommand(editingDomain) {
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand (editingDomain, "Apply stereotype");
 
-								@Override
-								protected void doExecute() {
-									((org.eclipse.uml2.uml.Element)objectToEdit).setValue(stereotypeToEdit, propertyName, newValue);
+		// Apply the required stereotypes
+		final ApplyStereotypeRequest request = new ApplyStereotypeRequest(viewAdapter, config.getStereotypesToApplyQN(), true);
 
+		cmd.add(new ApplyStereotypeCommand(editingDomain, request));
+		
+		// 2. display stereotypes
+		cmd.add(new EMFtoGMFCommandWrapper(new DefferedAppliedStereotypeToDisplayCommand(editingDomain, viewAdapter, "")));
+
+		AbstractTransactionalCommand setPropertiesCommand = new AbstractTransactionalCommand(editingDomain, "Set stereotype values", null) {
+
+			@Override
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+				// we search the container for the object
+				Element element = request.getElement();
+				Element packageContainer = element;
+				do {
+					packageContainer = packageContainer.getOwner();
+				} while(!(packageContainer instanceof Package));
+
+
+				config.setAppliedProfiles(((Package)packageContainer).getAllAppliedProfiles());
+
+				if(config.hasRuntimeProperties()) {
+					defineRuntimeProperties(config);
+				}
+
+				ArrayList<StereotypeRepresentation> stereotypes = config.getStereotypesRepresentations();
+				for(StereotypeRepresentation stereotype : stereotypes) {
+					final Stereotype stereotypeToEdit = stereotype.getUMLStereotype();
+					ArrayList<PropertyRepresentation> properties = stereotype.getPropertiesWithValues();
+					for(PropertyRepresentation property : properties) {
+						if(property.hasValues()) {
+							Type type = property.getType();
+							final String propertyName = property.getUMLProperty().getName();
+							if(type != null && propertyName != null) {
+								Object newValue = null;
+								if(type instanceof PrimitiveType) {
+									newValue = Util.getValueFromString(property.getUMLProperty(), property.getStringValue());
+								} else if(Util.isMetaclass(type)) {
+									newValue = Util.retrievesMetaclassElementFromString(property.getUMLProperty(), property.getStringValue(), packageContainer);
+									// property is an Enumeration
+								} else if(type instanceof org.eclipse.uml2.uml.Enumeration) {
+									newValue = Util.retrievesEnumerationLiteralFromString(property.getUMLProperty(), property.getStringValue(), packageContainer);
+									// property is a DataType
+								} else if(type instanceof org.eclipse.uml2.uml.DataType) {
+									newValue = Util.getValueFromString(property.getUMLProperty(), property.getStringValue());
+									// property is a Stereotype
+								} else if(type instanceof Stereotype) {
+									newValue = Util.retrievesStereotypedElementFromString(property.getUMLProperty(), property.getStringValue(), packageContainer);
+									// property is a composite class
+								} else if((type instanceof org.eclipse.uml2.uml.Class) && !(type instanceof Stereotype) && property.getUMLProperty().isMultivalued()) {
+									// TODO
+									newValue = null;
+								} else {
+									Activator.log.error("impossible to find a correct editor for the property" + property, null); //$NON-NLS-1$
 								}
-							};
 
-						}
-						if(command != null) {
-							cmd.add(new EMFtoGMFCommandWrapper(command));
+								if (newValue != null) {
+									element.setValue(stereotypeToEdit, propertyName, newValue);
+								}
+
+							}
 						}
 					}
 				}
+				return CommandResult.newOKCommandResult();
 			}
-		}
+		};
 
-		final ICommand iCmd = cmd.reduce();
-		try {
-			if(iCmd.canExecute()) {
-				// execute the command
-				editingDomain.runExclusive(new Runnable() {
+		cmd.add(setPropertiesCommand);
 
-					//
-					public void run() {
-						Display.getCurrent().asyncExec(new Runnable() {
-
-							public void run() {
-								editingDomain.getCommandStack().execute(new GMFtoEMFCommandWrapper(iCmd));
-
-							}
-						});
-					}
-				});
-
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
+		return cmd;
 	}
 
 	private void saveValues() {
@@ -563,8 +529,8 @@ public class StereotypePostAction extends ModelPostAction {
 				} else if(e.character == SWT.DEL) {
 					performRemoveAction(stereotypesViewer);
 				} else if(e.stateMask == SWT.CTRL && e.keyCode == 110) {// e.character=='N'
-																		// doesn't
-																		// work
+					// doesn't
+					// work
 					performCTRL_N_Action(e, stereotypesViewer);
 				}
 				selectionHasChange();
@@ -586,11 +552,11 @@ public class StereotypePostAction extends ModelPostAction {
 			public void mouseDoubleClick(MouseEvent e) {
 				if(stereotypeColumn != null) {
 					if(e.x < stereotypeColumn.getColumn().getWidth()) {// we
-																		// are
-																		// on
-																		// the
-																		// stereotype
-																		// column
+						// are
+						// on
+						// the
+						// stereotype
+						// column
 						performDoubleClickAction(stereotypesViewer);
 					} else {// change the property value
 						ViewerCell cell = runtimeColumn.getViewer().getCell(new Point(e.x, e.y));
@@ -673,8 +639,8 @@ public class StereotypePostAction extends ModelPostAction {
 				if(prop.getUpperMultiplicity() != 1) {
 					editMe(prop, null);// we add a value
 				} else if(!prop.getValues().isEmpty()) { // mono-valued
-															// property and the
-															// valu exists
+					// property and the
+					// valu exists
 					editMe(prop, prop.getValues().get(0));
 				} else {// monovalued property, the value doesn't exist
 					editMe(prop, null);
@@ -896,12 +862,12 @@ public class StereotypePostAction extends ModelPostAction {
 
 	/**
 	 * Set the {@link Button#setEnabled(boolean)} parameter to true or false for
-	 * the buttons following the selected element in the {@link StereotypePostAction#stereotypeViewer}
+	 * the buttons following the selected element in the {@link CopyOfStereotypePostAction#stereotypeViewer}
 	 * <ul>
-	 * <li> {@link StereotypePostAction#addButton}</li>
-	 * <li> {@link StereotypePostAction#removeButton}</li>
-	 * <li> {@link StereotypePostAction#upButton}</li>
-	 * <li> {@link StereotypePostAction#downButton}</li>
+	 * <li> {@link CopyOfStereotypePostAction#addButton}</li>
+	 * <li> {@link CopyOfStereotypePostAction#removeButton}</li>
+	 * <li> {@link CopyOfStereotypePostAction#upButton}</li>
+	 * <li> {@link CopyOfStereotypePostAction#downButton}</li>
 	 * </ul>
 	 * 
 	 * @param event
@@ -1003,12 +969,12 @@ public class StereotypePostAction extends ModelPostAction {
 				addButton.setEnabled(true);
 			} else
 
-			if(selection.getFirstElement() instanceof Value) {
-				removeButton.setEnabled(true);
-				upButton.setEnabled(false);
-				downButton.setEnabled(false);
-				addButton.setEnabled(false);
-			}
+				if(selection.getFirstElement() instanceof Value) {
+					removeButton.setEnabled(true);
+					upButton.setEnabled(false);
+					downButton.setEnabled(false);
+					addButton.setEnabled(false);
+				}
 		}
 	}
 
@@ -1020,8 +986,8 @@ public class StereotypePostAction extends ModelPostAction {
 	 * @param shiftValue
 	 *        shiftValue can take the values :
 	 *        <ul>
-	 *        <li>{@link StereotypePostAction#MOVE_UP}</li>
-	 *        <li>{@link StereotypePostAction#MOVE_DOWN}</li>
+	 *        <li>{@link CopyOfStereotypePostAction#MOVE_UP}</li>
+	 *        <li>{@link CopyOfStereotypePostAction#MOVE_DOWN}</li>
 	 *        </ul>
 	 * @param viewer
 	 *        the TreeViewer in which we move elements
@@ -1059,8 +1025,8 @@ public class StereotypePostAction extends ModelPostAction {
 	 * @param shiftValue
 	 *        shiftValue can take the values :
 	 *        <ul>
-	 *        <li>{@link StereotypePostAction#MOVE_UP}</li>
-	 *        <li>{@link StereotypePostAction#MOVE_DOWN}</li>
+	 *        <li>{@link CopyOfStereotypePostAction#MOVE_UP}</li>
+	 *        <li>{@link CopyOfStereotypePostAction#MOVE_DOWN}</li>
 	 *        </ul>
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -1676,7 +1642,7 @@ public class StereotypePostAction extends ModelPostAction {
 	}
 
 	/**
-	 * This class provides a {@link CheckboxCellEditor} for the {@link StereotypePostAction#runtimeColumn}
+	 * This class provides a {@link CheckboxCellEditor} for the {@link CopyOfStereotypePostAction#runtimeColumn}
 	 * 
 	 * 
 	 */
@@ -2036,11 +2002,11 @@ public class StereotypePostAction extends ModelPostAction {
 					} else if(e.character == SWT.DEL) {
 						performRemoveAction(tree);
 					} else if(e.stateMask == SWT.CTRL && e.keyCode == 110) {// e.character=='N'
-																			// doesn't
-																			// work
-																			// on
-																			// my
-																			// computer
+						// doesn't
+						// work
+						// on
+						// my
+						// computer
 						performCTRL_N_Action(e, tree);
 					}
 					runtimeSelectionHasChange();
@@ -2181,12 +2147,12 @@ public class StereotypePostAction extends ModelPostAction {
 					addButton.setEnabled(true);
 				} else
 
-				if(selection.getFirstElement() instanceof Value) {
-					removeButton.setEnabled(true);
-					upButton.setEnabled(false);
-					downButton.setEnabled(false);
-					addButton.setEnabled(false);
-				}
+					if(selection.getFirstElement() instanceof Value) {
+						removeButton.setEnabled(true);
+						upButton.setEnabled(false);
+						downButton.setEnabled(false);
+						addButton.setEnabled(false);
+					}
 			}
 		}
 	}

@@ -27,11 +27,15 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest.ViewAndElementDescriptor;
@@ -39,6 +43,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.diagram.ui.util.INotationType;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
@@ -51,6 +56,7 @@ import org.eclipse.papyrus.diagram.common.service.palette.AspectToolService;
 import org.eclipse.papyrus.diagram.common.service.palette.IAspectAction;
 import org.eclipse.papyrus.diagram.common.service.palette.IAspectActionProvider;
 import org.eclipse.papyrus.diagram.common.service.palette.IFeatureSetterAspectAction;
+import org.eclipse.papyrus.diagram.common.service.palette.IPostAction;
 import org.w3c.dom.NodeList;
 
 /**
@@ -64,7 +70,7 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 	protected List<IElementType> elementTypes;
 
 	/** post action list */
-	protected List<IAspectAction> postActions = new ArrayList<IAspectAction>();
+	protected List<IPostAction> postActions = new ArrayList<IPostAction>();
 
 	private static String ID_ASPECT_ACTION = "palette_aspect_actions";
 
@@ -86,7 +92,7 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 	@Override
 	protected void performCreation(int button) {
 		antiScroll = true;
-		boolean requiresPostAction = requiresPostAction();
+		boolean requiresPostAction = requiresPostCommitRun();
 		// EObject to listen
 		View eObject = (View)getTargetEditPart().getAdapter(View.class);
 		DiagramEventBroker eventBroker = null;
@@ -113,8 +119,8 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 						if(viewer != null) {
 							EditPart editPart = (EditPart)getCurrentViewer().getEditPartRegistry().get(newValue);
 
-							for(IAspectAction action : postActions) {
-								action.run(editPart);
+							for(IPostAction action : postActions) {
+								action.runInPostCommit(editPart);
 							}
 						} else {
 							Activator.log.error("Impossible to find the current viewer", null);
@@ -127,10 +133,16 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 				Activator.log.error(e);
 			}
 		}
+		
+		Command command = getCurrentCommand();
 
-		EditPartViewer viewer = getCurrentViewer();
-		Command c = getCurrentCommand();
-		executeCurrentCommand();
+		if (command != null) {
+			ICommand completeCommand = getCompleteCommand(command);
+
+			setCurrentCommand(new ICommandProxy(completeCommand));
+
+			executeCurrentCommand();
+		}
 
 		if(requiresPostAction) {
 			if(eventBroker != null) {
@@ -138,9 +150,28 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 			}
 		}
 
-		selectAddedObject(viewer, DiagramCommandStack.getReturnValues(c));
+		selectAddedObject(getCurrentViewer(), DiagramCommandStack.getReturnValues(command));
 
 		antiScroll = false;
+	}
+
+	protected ICommand getCompleteCommand(Command createCommand) {
+		final TransactionalEditingDomain editingDomain = org.eclipse.papyrus.core.utils.EditorUtils.getTransactionalEditingDomain();
+		CompositeTransactionalCommand compositeCmd = new CompositeTransactionalCommand (editingDomain, "Create Element");
+
+		compositeCmd.add(new CommandProxy(createCommand));
+
+		CreateUnspecifiedAdapter viewAdapter = new CreateUnspecifiedAdapter();
+		viewAdapter.add(getCreateRequest());
+
+		for (IPostAction action : postActions) {
+			ICommand cmd = action.getPostCommand(viewAdapter);
+			if (cmd != null) {
+				compositeCmd.add(cmd);
+			}
+		}
+
+		return compositeCmd;
 	}
 
 	/**
@@ -148,8 +179,13 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 	 * 
 	 * @return <code>true</code> if post actions must be executed
 	 */
-	protected boolean requiresPostAction() {
-		return postActions.size() > 0;
+	protected boolean requiresPostCommitRun() {
+		for (IPostAction action : postActions) {
+			if (action.needsPostCommitRun()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -173,7 +209,9 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 						IAspectActionProvider provider = AspectToolService.getInstance().getProvider(AspectToolService.getProviderId(childNode));
 						if(provider != null) {
 							IAspectAction action = provider.createAction(childNode);
-							postActions.add(action);
+							if (action instanceof IPostAction) {
+								postActions.add((IPostAction)action);
+							}
 						} else {
 							Activator.log.error("impossible to find factory with id: " + AspectToolService.getProviderId(childNode), null);
 						}

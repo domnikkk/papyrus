@@ -35,9 +35,6 @@ public class DefferedAppliedStereotypeToDisplayCommand extends CreateEAnnotation
 	/** The qualified names' stereotypes list . */
 	protected String stereotypeList;
 
-	/** the presentation kind of applied stereotypes */
-	protected String appliedStereotypePresentationKind;
-
 	/** adapter on which to apply stereotypes */
 	protected IAdaptable adapter;
 
@@ -51,19 +48,10 @@ public class DefferedAppliedStereotypeToDisplayCommand extends CreateEAnnotation
 	 * @param stereotypeList
 	 *        the stereotype list
 	 */
-	public DefferedAppliedStereotypeToDisplayCommand(TransactionalEditingDomain domain, IAdaptable adapter, String stereotypeList, String appliedStereotypepresentationKind) {
+	public DefferedAppliedStereotypeToDisplayCommand(TransactionalEditingDomain domain, IAdaptable adapter, String stereotypeList) {
 		super(domain, null, VisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION);
 		this.adapter = adapter;
 		this.stereotypeList = stereotypeList;
-		this.appliedStereotypePresentationKind = appliedStereotypepresentationKind;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public boolean canUndo() {
-		return true;
 	}
 
 	/**
@@ -98,7 +86,7 @@ public class DefferedAppliedStereotypeToDisplayCommand extends CreateEAnnotation
 		}
 		replaceEntry(oldAnnotation, VisualInformationPapyrusConstant.STEREOTYPE_WITHQN_LIST, AppliedStereotypeHelper.getStereotypesQNToDisplay(view));
 		replaceEntry(oldAnnotation, VisualInformationPapyrusConstant.STEREOTYPE_LIST, stereoList);
-		replaceEntry(oldAnnotation, VisualInformationPapyrusConstant.STEREOTYPE_PRESENTATION_KIND, appliedStereotypePresentationKind);
+		replaceEntry(oldAnnotation, VisualInformationPapyrusConstant.STEREOTYPE_PRESENTATION_KIND, AppliedStereotypeHelper.getAppliedStereotypePresentationKind(view));
 		replaceEntry(oldAnnotation, VisualInformationPapyrusConstant.PROPERTY_STEREOTYPE_DISPLAY, AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay(view));
 		replaceEntry(oldAnnotation, VisualInformationPapyrusConstant.STEREOTYPE_PROPERTY_LOCATION, AppliedStereotypeHelper.getAppliedStereotypesPropertiesLocalization(view));
 		replaceEannotation(view.getEAnnotation(VisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION), view);

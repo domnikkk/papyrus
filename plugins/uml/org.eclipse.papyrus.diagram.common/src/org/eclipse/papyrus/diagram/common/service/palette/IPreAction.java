@@ -11,9 +11,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.common.service.palette;
 
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+
 /**
  * Interface implemented by pre execution actions
  */
 public interface IPreAction extends IAspectAction {
-
+	public ICommand getPreCommand();
 }
