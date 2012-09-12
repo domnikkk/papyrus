@@ -25,7 +25,6 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.common.core.command.AbstractCommand;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 
-// TODO: Auto-generated Javadoc
 /**
  * A GMF Command that wraps an EMF command. Each method is redirected to the EMF one.
  */
@@ -35,7 +34,13 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 	 * The wrapped EMF Command. Package-level visibility so that the command stack wrapper can
 	 * access the field.
 	 */
-	private final Command emfCommand;
+	protected Command emfCommand;
+
+	/**
+	 * This variable is used to avoid reentrant call in canUndo/undo/redo
+	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=389382
+	 */
+	protected boolean isBusy;
 
 	/**
 	 * Constructor.
@@ -68,9 +73,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-		if(canExecute()) {
-			emfCommand.execute();
-		}
+		emfCommand.execute();
 
 		return CommandResult.newOKCommandResult();
 	}
@@ -84,7 +87,11 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 	@Override
 	protected CommandResult doRedoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-		emfCommand.redo();
+		if (!isBusy) {
+			isBusy = true;
+			emfCommand.redo();
+			isBusy = false;
+		}
 
 		return CommandResult.newOKCommandResult();
 	}
@@ -98,8 +105,10 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 	@Override
 	protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-		if(canUndo()) {
+		if (!isBusy) {
+			isBusy = true;
 			emfCommand.undo();
+			isBusy = false;
 		}
 
 		return CommandResult.newOKCommandResult();
@@ -132,7 +141,14 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 	 */
 	@Override
 	public boolean canUndo() {
-		return emfCommand.canUndo();
+		if (!isBusy) {
+			isBusy = true;
+			boolean res = emfCommand.canUndo();
+			isBusy = false;
+			return res;
+		} else {
+			return true;
+		}
 	}
 
 	@Override
