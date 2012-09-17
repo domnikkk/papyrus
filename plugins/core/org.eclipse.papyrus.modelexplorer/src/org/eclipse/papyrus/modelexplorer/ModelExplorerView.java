@@ -26,6 +26,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -58,6 +59,8 @@ import org.eclipse.papyrus.modelexplorer.matching.ModelElementItemMatchingItem;
 import org.eclipse.papyrus.modelexplorer.matching.ReferencableMatchingItem;
 import org.eclipse.papyrus.resource.ModelSet;
 import org.eclipse.papyrus.resource.additional.AdditionalResourcesModel;
+import org.eclipse.papyrus.sasheditor.contentprovider.di.IOpenable;
+import org.eclipse.papyrus.sasheditor.contentprovider.di.IOpenableWithContainer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -393,6 +396,13 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	}
 
 	public void refreshObject(final Object obj, Set<Object> alreadyRefreshed) {
+
+		// handle linked non hierarchical elements like diagrams and tables
+		IOpenable openable = (IOpenable)Platform.getAdapterManager().getAdapter(obj, IOpenable.class);
+		if (openable instanceof IOpenableWithContainer) {
+			refreshObject(((IOpenableWithContainer)openable).getContainer(), alreadyRefreshed);
+		}
+
 		if (alreadyRefreshed == null) {
 			alreadyRefreshed = new HashSet<Object>();
 		}
