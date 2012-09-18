@@ -24,6 +24,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.commands.operations.IUndoContext;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
@@ -375,19 +376,26 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 					// the container of the objects should be updated to reflect the changes however the eContainer is not valid at this point
 					// => this will be handled by the viewer which maintains a map of URI of unresolved objects and their associated facet item
 					for (final Object o : objects) {
-						if (o instanceof EObject) {
-							refreshObject(o, alreadyRefreshed);
-						}
+						refreshObject(o, alreadyRefreshed);
 					}
 				} else if (n.getEventType() == Notification.REMOVE_MANY || n.getEventType() == Notification.REMOVE) {
 					// A resource has been unloaded and eObjects has been removed.
 					// the container of the objects should be updated in the viewer
 					for (final Object o : objects) {
+						refreshObject(o, alreadyRefreshed);
 						if (o instanceof EObject) {
-							final EObject container = ((EObject)o).eContainer();
-							refreshObject(container, alreadyRefreshed);
+							refreshObject(((EObject)o).eContainer(), alreadyRefreshed);
 						}
 					}
+				}
+			} else if (n.getEventType() == Notification.UNSET || n.getEventType() == Notification.SET) {
+				IOpenableWithContainer res = getOpenableWithContainer(obj);
+				if (res != null) {
+					// a feature of a linked non domain model element has changed, 
+					// update old and new values in case
+					// of the changed feature is the one referencing the domain model
+					refreshObject(n.getOldValue(), alreadyRefreshed);
+					refreshObject(n.getNewValue(), alreadyRefreshed);
 				}
 			}
 
@@ -395,26 +403,39 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		}
 	}
 
+	protected IOpenableWithContainer getOpenableWithContainer(Object obj) {
+		if (obj != null) {
+			IOpenable openable = (IOpenable)Platform.getAdapterManager().getAdapter(obj, IOpenable.class);
+			if (openable instanceof IOpenableWithContainer) {
+				return (IOpenableWithContainer)openable;
+			}
+		}
+		return null;
+	}
+
+	public void refreshObject(final Object obj) {
+		refreshObject(obj, new HashSet<Object>());
+	}
+
 	public void refreshObject(final Object obj, Set<Object> alreadyRefreshed) {
+		Assert.isNotNull(alreadyRefreshed);
 
-		// handle linked non hierarchical elements like diagrams and tables
-		IOpenable openable = (IOpenable)Platform.getAdapterManager().getAdapter(obj, IOpenable.class);
-		if (openable instanceof IOpenableWithContainer) {
-			refreshObject(((IOpenableWithContainer)openable).getContainer(), alreadyRefreshed);
-		}
+		if (obj != null) {
+			if (!alreadyRefreshed.contains(obj)) {
+				alreadyRefreshed.add(obj);
 
-		if (alreadyRefreshed == null) {
-			alreadyRefreshed = new HashSet<Object>();
-		}
+				PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+					public void run() {
+						getCommonViewer().refresh(obj);
+					}
+				});
 
-		if (obj != null && !alreadyRefreshed.contains(obj)) {
-			alreadyRefreshed.add(obj);
-
-			PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
-				public void run() {
-					getCommonViewer().refresh(obj);
+				// handle non domain model elements like diagrams and tables by updating their domain model container
+				IOpenableWithContainer openable = getOpenableWithContainer(obj);
+				if (openable != null) {
+					refreshObject(openable.getContainer(), alreadyRefreshed);
 				}
-			});
+			}
 		}
 	}
 

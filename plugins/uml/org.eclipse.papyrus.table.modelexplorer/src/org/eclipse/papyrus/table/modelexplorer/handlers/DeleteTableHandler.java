@@ -21,8 +21,8 @@ import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
-import org.eclipse.papyrus.core.adaptor.gmf.DestroyElementPapyrusCommand;
 import org.eclipse.papyrus.sasheditor.contentprovider.IPageMngr;
 import org.eclipse.papyrus.table.instance.papyrustableinstance.PapyrusTableInstance;
 
@@ -63,6 +63,7 @@ public class DeleteTableHandler extends AbstractTableModelExplorerHandler {
 				};
 				// the destroy element command is a good way to destroy the cross reference
 				command.append(sashRemoveComd);
+				command.append(new GMFtoEMFCommandWrapper(new DestroyElementPapyrusCommand(new DestroyElementRequest(table.getTable(), false))));
 				command.append(new GMFtoEMFCommandWrapper(new DestroyElementPapyrusCommand(new DestroyElementRequest(table, false))));
 			}
 			return command.isEmpty() ? UnexecutableCommand.INSTANCE : command;

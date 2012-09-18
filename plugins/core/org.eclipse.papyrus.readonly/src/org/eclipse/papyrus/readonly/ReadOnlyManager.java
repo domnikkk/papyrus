@@ -152,7 +152,7 @@ public class ReadOnlyManager {
 				Resource r = editingDomain.getResourceSet().getResource(uri, false);
 				if (r != null) {
 					for (EObject o : r.getContents()) {
-						view.refreshObject(o, null);
+						view.refreshObject(o);
 					}
 				}
 			}
