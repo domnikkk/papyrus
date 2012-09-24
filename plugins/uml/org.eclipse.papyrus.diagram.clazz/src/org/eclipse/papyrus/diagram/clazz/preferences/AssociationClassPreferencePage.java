@@ -53,7 +53,7 @@ public class AssociationClassPreferencePage extends AbstractPapyrusNodePreferenc
 	public static void initDefaults(IPreferenceStore store) {
 		String key = ModelEditPart.MODEL_ID + "_AssociationClass";
 		store.setDefault(PreferenceConstantHelper.getElementConstant(key, PreferenceConstantHelper.WIDTH), 100);
-		store.setDefault(PreferenceConstantHelper.getElementConstant(key, PreferenceConstantHelper.HEIGHT), 100);
+		store.setDefault(PreferenceConstantHelper.getElementConstant(key, PreferenceConstantHelper.HEIGHT), 30);
 		Map<String, Boolean> map = getStaticCompartmentVisibilityPreferences();
 		for(String name : map.keySet()) {
 			String preferenceName = PreferenceConstantHelper.getLabelElementConstant(key, name, PreferenceConstantHelper.COMPARTMENT_VISIBILITY);

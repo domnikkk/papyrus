@@ -48,8 +48,8 @@ public class ShapeNamedElementPreferencePage extends AbstractPapyrusNodePreferen
 	 */
 	public static void initDefaults(IPreferenceStore store) {
 		String key = ModelEditPart.MODEL_ID + "_ShapeNamedElement";
-		store.setDefault(PreferenceConstantHelper.getElementConstant(key, PreferenceConstantHelper.WIDTH), 50);
-		store.setDefault(PreferenceConstantHelper.getElementConstant(key, PreferenceConstantHelper.HEIGHT), 50);
+		store.setDefault(PreferenceConstantHelper.getElementConstant(key, PreferenceConstantHelper.WIDTH), 100);
+		store.setDefault(PreferenceConstantHelper.getElementConstant(key, PreferenceConstantHelper.HEIGHT), 30);
 		Map<String, Boolean> map = getStaticLabelVisibilityPreferences();
 		for(String role : map.keySet()) {
 			String preferenceName = PreferenceConstantHelper.getLabelElementConstant(key, role, PreferenceConstantHelper.LABEL_VISIBILITY);
