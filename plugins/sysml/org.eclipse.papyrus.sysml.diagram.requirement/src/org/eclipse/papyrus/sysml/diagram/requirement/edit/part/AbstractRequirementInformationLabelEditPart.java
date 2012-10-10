@@ -83,9 +83,11 @@ public abstract class AbstractRequirementInformationLabelEditPart extends LabelE
 		//Getting the class out of the edit part.
 		Element clazz =(Element) ((View) classEditPart.getModel()).getElement();
 		//Getting the requirement out of the class.
-		for (EObject appliedStereotype : clazz.getStereotypeApplications()){
-			if (appliedStereotype instanceof Requirement){
-				return ((Requirement) appliedStereotype);
+		if (clazz != null){
+			for (EObject appliedStereotype : clazz.getStereotypeApplications()){
+				if (appliedStereotype instanceof Requirement){
+					return ((Requirement) appliedStereotype);
+				}
 			}
 		}
 		return null;

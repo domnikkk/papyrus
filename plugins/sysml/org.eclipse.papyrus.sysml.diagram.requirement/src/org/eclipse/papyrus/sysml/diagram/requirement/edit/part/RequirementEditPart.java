@@ -21,7 +21,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassEditPart;
 import org.eclipse.papyrus.diagram.common.commands.ShowHideCompartmentRequest;
+import org.eclipse.papyrus.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
+import org.eclipse.papyrus.sysml.diagram.requirement.edit.policy.CustomAppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.requirement.figure.RequirementFigure;
 import org.eclipse.uml2.uml.NamedElement;
 
@@ -35,6 +37,7 @@ public class RequirementEditPart extends ClassEditPart {
 
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new CustomAppliedStereotypeLabelDisplayEditPolicy());
 	}
 	
 	@Override

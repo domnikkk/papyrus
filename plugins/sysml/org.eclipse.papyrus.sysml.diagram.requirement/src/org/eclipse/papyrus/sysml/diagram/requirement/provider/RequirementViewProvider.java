@@ -13,37 +13,28 @@
  ******************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.requirement.provider;
 
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
-import org.eclipse.gmf.runtime.diagram.ui.services.editpart.EditPartService;
-import org.eclipse.gmf.runtime.emf.core.util.PackageUtil;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Shape;
-import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassAttributeCompartmentEditPart;
+import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassNameEditPart;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassNestedClassifierCompartmentEditPart;
 import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassOperationCompartmentEditPart;
 import org.eclipse.papyrus.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.diagram.clazz.providers.UMLViewProvider;
 import org.eclipse.papyrus.diagram.common.helper.PreferenceInitializerForElementHelper;
-import org.eclipse.papyrus.preferences.utils.PreferenceConstantHelper;
 import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
 import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementDiagramEditPart;
-import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementInformationCompartmentEditPart;
+import org.eclipse.papyrus.sysml.util.SysmlResource;
 
 public class RequirementViewProvider extends UMLViewProvider {
 
@@ -56,9 +47,22 @@ public class RequirementViewProvider extends UMLViewProvider {
 		}
 
 		// This provider is registered for class only.
-		IElementType elementType = (IElementType)op.getSemanticAdapter().getAdapter(IElementType.class);
+		IAdaptable semanticAdapter = op.getSemanticAdapter();
+		IElementType elementType = (IElementType)semanticAdapter.getAdapter(IElementType.class);
 		if((elementType == RequirementDiagramElementTypes.CLASS) || (elementType == RequirementDiagramElementTypes.CLASS_CN)) {
 			return true;
+		}
+		
+		/*
+		 * Case when the element is dragged from the model explorer. The semantic adapter will be an EObject adapter, from 
+		 * which it can be determined whether the stereotype "requirement" is applied.
+		 */
+		if (semanticAdapter instanceof EObjectAdapter){
+			Object domainElement = ((EObjectAdapter) semanticAdapter).getRealObject();
+			if((domainElement instanceof org.eclipse.uml2.uml.Class)) {
+				org.eclipse.uml2.uml.Class domainElementClass = (org.eclipse.uml2.uml.Class)domainElement;
+				return domainElementClass.getAppliedStereotype(SysmlResource.REQUIREMENT_ID) != null;
+			}
 		}
 
 		// else : unknown element
@@ -83,6 +87,12 @@ public class RequirementViewProvider extends UMLViewProvider {
 		PreferenceInitializerForElementHelper.initForegroundFromPrefs(node, prefStore, "Class");
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Class");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "Class");
+		
+		/*
+		 * Name of the requirement
+		 */
+		createLabel(node, UMLVisualIDRegistry.getType(ClassNameEditPart.VISUAL_ID));
+		
 		/*
 		 * Addition of the compartment, and the labels it contains.
 		 */
@@ -96,53 +106,9 @@ public class RequirementViewProvider extends UMLViewProvider {
 		createCompartment(node, UMLVisualIDRegistry.getType(ClassOperationCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(ClassNestedClassifierCompartmentEditPart.VISUAL_ID), true, true, true, true);
 
-		initCompartmentsStatusFromPrefs(node, prefStore);
+		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "Class");
+		
 		return node;
 	}
-
-	/**
-	 * Initializes the compartments visibility according to the preferences of the user.
-	 * As there is no page for the Requirement object yet, this relies on the class' one.
-	 */
-	private static void initCompartmentsStatusFromPrefs(View view, final IPreferenceStore store) {
-		EList<?> children = view.getPersistedChildren();
-		if(children != null) {
-			for(Object object : children) {
-
-				// we look for the name of the compartment for this view
-				EditPart dummyEP = EditPartService.getInstance().createGraphicEditPart((View)object);
-				IGraphicalEditPart epp = (IGraphicalEditPart)dummyEP;
-				IFigure fig1 = epp.getFigure();
-
-				if(fig1 instanceof ResizableCompartmentFigure) {
-					String compartmentName = ((ResizableCompartmentFigure)fig1).getCompartmentTitle();
-					if(compartmentName != null) {
-						String diagramKind = view.getDiagram().getType();
-						String preferenceKey = PreferenceConstantHelper.getCompartmentElementConstant(diagramKind + "_" + "Class", compartmentName, PreferenceConstantHelper.COMPARTMENT_VISIBILITY); //$NON-NLS-1$
-						boolean value = store.getBoolean(preferenceKey);
-
-						//The info compartment has to be kept.
-						if(!(epp instanceof RequirementInformationCompartmentEditPart)) {
-							// the default value is true : nothing to
-							if(!value) { 
-								ENamedElement namedElement = PackageUtil.getElement("notation.View.visible"); //$NON-NLS-1$
-								ViewUtil.setStructuralFeatureValue((View)object, (EStructuralFeature)namedElement, value);
-							}
-						}
-						
-						String compartmentNameVisibilityPreference = PreferenceConstantHelper.getCompartmentElementConstant(diagramKind + "_" + "Class", compartmentName, PreferenceConstantHelper.COMPARTMENT_NAME_VISIBILITY); //$NON-NLS-1$
-						boolean showCompartmentName = store.getBoolean(compartmentNameVisibilityPreference);
-						View childView = (View)object;
-						TitleStyle style = (TitleStyle)childView.getStyle(NotationPackage.eINSTANCE.getTitleStyle());
-						if(style != null) {
-							style.setShowTitle(showCompartmentName);
-						}
-					}
-				}
-				dummyEP = null;
-			}
-		}
-	}
-
 
 }

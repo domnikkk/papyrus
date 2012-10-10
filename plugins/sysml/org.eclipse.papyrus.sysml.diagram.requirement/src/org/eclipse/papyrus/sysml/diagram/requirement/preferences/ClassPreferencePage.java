@@ -4,6 +4,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.diagram.clazz.part.Messages;
 import org.eclipse.papyrus.preferences.utils.PreferenceConstantHelper;
 import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementDiagramEditPart;
+import org.eclipse.papyrus.sysml.diagram.requirement.edit.part.RequirementInformationCompartmentEditPart;
 
 /**
  * Preference Page for Class usage in Requirement Diagram
@@ -14,7 +15,10 @@ public class ClassPreferencePage extends RequirementDiagramNodePreferencePage {
 	/**
 	 * the list of the compartments for this node
 	 */
-	public static final String compartments[] = { Messages.ClassAttributeCompartmentEditPartCN_title, Messages.ClassOperationCompartmentEditPartCN_title, Messages.ClassNestedClassifierCompartmentEditPartCN_title};
+	public static final String compartments[] = { Messages.ClassAttributeCompartmentEditPartCN_title, 
+		Messages.ClassOperationCompartmentEditPartCN_title, 
+		Messages.ClassNestedClassifierCompartmentEditPartCN_title,
+		RequirementInformationCompartmentEditPart.COMPARTMENT_NAME};
 
 	/**
 	 * Constructor.

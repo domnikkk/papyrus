@@ -38,6 +38,8 @@ import org.eclipse.papyrus.diagram.common.editpolicies.DuplicatePasteEditPolicy;
 public class RequirementInformationCompartmentEditPart extends
 		ResizeableListCompartmentEditPart {
 
+	public static final String COMPARTMENT_NAME = "InformationCompartment"; //$NON-NLS-1$
+
 	public RequirementInformationCompartmentEditPart(EObject model) {
 		super(model);
 	}
@@ -47,7 +49,7 @@ public class RequirementInformationCompartmentEditPart extends
 	}
 
 	public String getCompartmentName() {
-		return "InformationCompartment"; //$NON-NLS-1$
+		return COMPARTMENT_NAME; 
 	}
 
 
