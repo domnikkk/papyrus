@@ -5,6 +5,7 @@
    <extension-point id="loadingStrategyExtender" name="loadingStrategyExtender" schema="schema/loadingStrategyExtender.exsd"/>
    <extension-point id="currentStrategyChooser" name="Current Strategy Chooser" schema="schema/currentStrategyChooser.exsd"/>
    <extension-point id="loadedAssociatedResource" name="loadedAssociatedResource" schema="schema/loadedAssociatedResource.exsd"/>
+   <extension-point id="loadedAuthorizedResource" name="loadedAuthorizedResource" schema="schema/loadedAuthorizedResource.exsd"/>
    <extension
          point="org.eclipse.papyrus.core.service">
       <serviceFactory
@@ -64,5 +65,4 @@
             fileExtension="di">
       </loadedAssociatedResource>
    </extension>
-
 </plugin>
