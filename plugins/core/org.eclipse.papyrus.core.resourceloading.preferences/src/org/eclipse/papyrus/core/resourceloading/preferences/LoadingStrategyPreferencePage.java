@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 Atos Origin.
+ * Copyright (c) 2012 Atos.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -8,7 +8,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
+ *  Laurent Devernay (Atos) laurent.devernay@atos.net
  *
  *****************************************************************************/
 package org.eclipse.papyrus.core.resourceloading.preferences;
@@ -43,6 +43,8 @@ public class LoadingStrategyPreferencePage extends AbstractPapyrusNodePreference
 		addAbstractGroup(group);
 		group = new LoadedAssociatedResourceGroup(parent, getTitle(), this);
 		addAbstractGroup(group);
+		group = new LoadedAuthorizedResourceGroup(parent, getTitle(), this);
+		addAbstractGroup(group);
 	}
 
 	/**
@@ -54,5 +56,5 @@ public class LoadingStrategyPreferencePage extends AbstractPapyrusNodePreference
 		StrategyChooser.setCurrentStrategy(getPreferenceStore().getInt(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY));
 		return result;
 	}
-
+	
 }

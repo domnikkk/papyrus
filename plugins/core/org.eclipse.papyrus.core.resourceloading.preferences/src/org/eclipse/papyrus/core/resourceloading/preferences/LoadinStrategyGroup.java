@@ -26,9 +26,9 @@ import org.eclipse.swt.widgets.Group;
 
 public class LoadinStrategyGroup extends AbstractGroup {
 
-	private static final String LABEL_LOADING_STRATEGY = "Loading strategy :";
+	private static final String LABEL_LOADING_STRATEGY = Messages.LoadinStrategyGroup_0;
 
-	private static final String SELECT_LOADING_STRATEGY = "Select the loading strategy when model is opened";
+	private static final String SELECT_LOADING_STRATEGY = Messages.LoadinStrategyGroup_1;
 
 	private RadioGroupFieldEditor fStrategyRadio;
 

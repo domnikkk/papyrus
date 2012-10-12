@@ -20,7 +20,7 @@ public class LoadedAssociatedResourceGroup extends AbstractGroup {
 	public void createContent(Composite parent) {
 		Group group = new Group(parent, SWT.SCROLL_PAGE);
 		group.setLayout(new GridLayout());
-		group.setText("Automatically load the following associated resources when loading a submodel");
+		group.setText(Messages.LoadedAssociatedResourceGroup_0);
 
 		LoadedAssociatedResourceManager manager = LoadedAssociatedResourceManager.getInstance();
 		for (LoadedAssociatedResource loadedAssociatedResource : manager.getLoadedAssociatedResources().values()) {
