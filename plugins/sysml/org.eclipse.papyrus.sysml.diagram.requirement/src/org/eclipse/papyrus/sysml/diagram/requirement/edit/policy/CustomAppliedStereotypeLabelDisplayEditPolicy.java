@@ -54,7 +54,7 @@ public class CustomAppliedStereotypeLabelDisplayEditPolicy extends
 		}
 		result = buffer.toString();
 
-		if (! result.isEmpty()){
+		if (result.length() > 0) {
 			String stereotypespresentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(view);
 			
 			// vertical representation
