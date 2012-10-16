@@ -163,7 +163,7 @@ public class MoDiscoLabelProvider extends CustomizableModelLabelProvider {
 			EObject obj = (EObject)((IAdaptable)element).getAdapter(EObject.class);
 			if(obj instanceof InternalEObject && obj.eIsProxy()) {
 				InternalEObject internal = (InternalEObject)obj;
-				text = NLS.bind(Messages.MoDiscoLabelProvider_ProxyLabel, obj.getClass().getSimpleName(), internal.eProxyURI().trimFragment()); 
+				text = NLS.bind(Messages.MoDiscoLabelProvider_ProxyLabel, internal.eProxyURI().lastSegment()); 
 					// Messages.MoDiscoLabelProvider_0 +  + Messages.MoDiscoLabelProvider_1 + ;;
 			} else {
 				text = super.getText(element);
