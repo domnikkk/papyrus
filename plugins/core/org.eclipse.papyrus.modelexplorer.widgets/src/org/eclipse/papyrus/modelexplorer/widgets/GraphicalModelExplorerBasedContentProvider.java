@@ -52,6 +52,7 @@ import org.eclipse.papyrus.widgets.editors.StringEditor;
 import org.eclipse.papyrus.widgets.providers.IDetailLabelProvider;
 import org.eclipse.papyrus.widgets.providers.IGraphicalContentProvider;
 import org.eclipse.papyrus.widgets.providers.IHierarchicContentProvider;
+import org.eclipse.papyrus.widgets.providers.IFilterSelectionOptions;
 import org.eclipse.papyrus.widgets.providers.PatternViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
@@ -62,6 +63,7 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.ui.internal.navigator.NavigatorContentService;
+import org.eclipse.ui.navigator.ICommonFilterDescriptor;
 import org.eclipse.ui.navigator.INavigatorFilterService;
 
 /**
@@ -561,9 +563,23 @@ public class GraphicalModelExplorerBasedContentProvider extends ModelContentProv
 		commonContentProvider = service.createCommonContentProvider();
 		if(viewer != null) {
 			INavigatorFilterService filterService = service.getFilterService();
-			ViewerFilter[] visibleFilters = filterService.getVisibleFilters(true);
-			for(int i = 0; i < visibleFilters.length; i++) {
-				viewer.addFilter(visibleFilters[i]);
+			ICommonFilterDescriptor[] visibleFilterDescriptors = filterService.getVisibleFilterDescriptors();
+
+			for(ICommonFilterDescriptor filterDescriptor : visibleFilterDescriptors) {
+				ViewerFilter filter = filterService.getViewerFilter(filterDescriptor);
+				
+				if (filterService.isActive(filterDescriptor.getId())) {
+					if (filter instanceof IFilterSelectionOptions) {
+						if (((IFilterSelectionOptions)filter).useInSelection()) {
+							viewer.addFilter(filter);
+						}
+					} else {
+						viewer.addFilter(filter);
+					}
+				} else if (filter instanceof IFilterSelectionOptions && ((IFilterSelectionOptions)filter).forceUseInSelection()) {
+					viewer.addFilter(filter);
+				}
+
 			}
 		}
 	}

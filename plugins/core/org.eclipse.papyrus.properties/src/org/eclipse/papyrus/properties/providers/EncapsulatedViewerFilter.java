@@ -13,11 +13,12 @@ package org.eclipse.papyrus.properties.providers;
 
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.papyrus.widgets.providers.IFilterSelectionOptions;
 import org.eclipse.papyrus.widgets.providers.UnchangedObject;
 import org.eclipse.papyrus.widgets.providers.UnsetObject;
 
 
-public class EncapsulatedViewerFilter extends ViewerFilter {
+public class EncapsulatedViewerFilter extends ViewerFilter implements IFilterSelectionOptions {
 
 	private ViewerFilter viewerFilter;
 
@@ -31,6 +32,20 @@ public class EncapsulatedViewerFilter extends ViewerFilter {
 			return true;
 		}
 		return viewerFilter.select(viewer, parentElement, element);
+	}
+
+	public boolean useInSelection() {
+		if (viewerFilter instanceof IFilterSelectionOptions) {
+			return ((IFilterSelectionOptions)viewerFilter).useInSelection();
+		}
+		return IFilterSelectionOptions.USE_IN_SELECTION_DEFAULT;
+	}
+
+	public boolean forceUseInSelection() {
+		if (viewerFilter instanceof IFilterSelectionOptions) {
+			return ((IFilterSelectionOptions)viewerFilter).forceUseInSelection();
+		}
+		return IFilterSelectionOptions.FORCE_USE_IN_SELECTION_DEFAULT;
 	}
 
 }

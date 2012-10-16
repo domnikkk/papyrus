@@ -132,9 +132,7 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 		descriptionLabel.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 
 		treeViewer = new TreeViewer(getDialogArea(), SWT.BORDER);
-		List<ViewerFilter> filters = new LinkedList<ViewerFilter>(Arrays.asList(treeViewer.getFilters()));
-		filters.add(new PatternFilter());
-		treeViewer.setFilters(filters.toArray(new ViewerFilter[filters.size()]));
+		treeViewer.addFilter(new PatternFilter());
 
 		if(labelProvider != null) {
 			treeViewer.setLabelProvider(labelProvider);

@@ -36,7 +36,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
  * 
  * @author Camille Letavernier
  */
-public abstract class AbstractTreeFilter extends ViewerFilter {
+public abstract class AbstractTreeFilter extends ViewerFilter implements IFilterSelectionOptions {
 
 	/**
 	 * If set to true, the results of the filter will be cached, to improve
@@ -172,4 +172,11 @@ public abstract class AbstractTreeFilter extends ViewerFilter {
 		this.showIfHasVisibleParent = showIfHasVisibleParent;
 	}
 
+	public boolean useInSelection() {
+		return IFilterSelectionOptions.USE_IN_SELECTION_DEFAULT;
+	}
+
+	public boolean forceUseInSelection() {
+		return IFilterSelectionOptions.FORCE_USE_IN_SELECTION_DEFAULT;
+	}
 }
