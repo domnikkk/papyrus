@@ -1341,7 +1341,7 @@ public class LifelineEditPart extends NamedElementEditPart {
 		@Override
 		protected void createNameLabel() {
 			super.createNameLabel();
-			nameLabel.setTextWrap(true);
+			nameLabel.setTextWrap(false);
 		}
 
 		/**
