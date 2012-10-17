@@ -438,7 +438,7 @@ public class RestoreElementHelper {
 				if(sourceEditPart == null || targetEditPart == null) {
 					continue;
 				}
-				CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), nextLinkDescriptor.getVisualID(), ViewUtil.APPEND, false, hostDiagram.getDiagramPreferencesHint());
+				CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), nextLinkDescriptor.getVisualID(), ViewUtil.APPEND, true, hostDiagram.getDiagramPreferencesHint());
 				CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 				ccr.setType(RequestConstants.REQ_CONNECTION_START);
 				ccr.setSourceEditPart(sourceEditPart);

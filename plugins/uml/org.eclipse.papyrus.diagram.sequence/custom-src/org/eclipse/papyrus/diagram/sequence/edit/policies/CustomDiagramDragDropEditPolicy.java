@@ -339,7 +339,7 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 	private Command dropNodeOnMessage(PackageableElement durationLabelElement, ConnectionNodeEditPart messageEditPart, int nodeVISUALID) {
 		IAdaptable elementAdapter = new EObjectAdapter(durationLabelElement);
 
-		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)getUMLElementType(nodeVISUALID)).getSemanticHint(), ViewUtil.APPEND, false, getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)getUMLElementType(nodeVISUALID)).getSemanticHint(), ViewUtil.APPEND, true, getDiagramPreferencesHint());
 		return messageEditPart.getCommand(new CreateViewRequest(descriptor));
 	}
 
@@ -356,7 +356,7 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 		CompoundCommand cc = new CompoundCommand("Drop");
 		IAdaptable elementAdapter = new EObjectAdapter(observation);
 
-		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)getUMLElementType(nodeVISUALID)).getSemanticHint(), ViewUtil.APPEND, false, getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)getUMLElementType(nodeVISUALID)).getSemanticHint(), ViewUtil.APPEND, true, getDiagramPreferencesHint());
 		cc.add(getHost().getCommand(new CreateViewRequest(descriptor)));
 
 		LifelineEditPart lifelinePart = SequenceUtil.getParentLifelinePart(getHost());
@@ -396,7 +396,7 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 		CompoundCommand cc = new CompoundCommand("Drop");
 		IAdaptable elementAdapter = new EObjectAdapter(constraint);
 
-		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)getUMLElementType(nodeVISUALID)).getSemanticHint(), ViewUtil.APPEND, false, getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)getUMLElementType(nodeVISUALID)).getSemanticHint(), ViewUtil.APPEND, true, getDiagramPreferencesHint());
 		cc.add(getHost().getCommand(new CreateViewRequest(descriptor)));
 
 		LifelineEditPart lifelinePart = SequenceUtil.getParentLifelinePart(getHost());
@@ -552,7 +552,7 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 
 					IAdaptable elementAdapter = new EObjectAdapter(es);
 
-					ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, semanticHint, ViewUtil.APPEND, false, getDiagramPreferencesHint());
+					ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, semanticHint, ViewUtil.APPEND, true, getDiagramPreferencesHint());
 					CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 					// find best bounds
 					Rectangle bounds = getExecutionSpecificationBounds(es);
