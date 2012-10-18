@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -71,9 +72,11 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.ISaveablePart;
 import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IViewReference;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionFactory;
@@ -734,5 +737,22 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		}
 	}
 
+	public static ModelExplorerView getCurrent() {
+	    ModelExplorerPageBookView pageBookView = null;
+	    for (IWorkbenchWindow window : PlatformUI.getWorkbench().getWorkbenchWindows()) {
+	        for (IWorkbenchPage page : window.getPages()) {
+	            for (IViewReference viewReference : page.getViewReferences()) {
+	                IWorkbenchPart part = viewReference.getPart(false);
+	                if (part instanceof ModelExplorerPageBookView) {
+	                    pageBookView = (ModelExplorerPageBookView)part;
+	                }
+	            }
+	        }
+	    }
 
+	    if (pageBookView != null && pageBookView.getActiveView() instanceof ModelExplorerView) {
+	        return (ModelExplorerView)pageBookView.getActiveView();
+	    }
+	    return null;
+	}
 }

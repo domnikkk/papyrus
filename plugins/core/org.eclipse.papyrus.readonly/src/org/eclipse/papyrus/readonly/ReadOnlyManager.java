@@ -129,21 +129,8 @@ public class ReadOnlyManager {
 		// retrieve model explorer view to update the tree with
 		// updated read only informations (greyed entries are read only ones)
 		// there is no notification for this kind of event so this needs to be done manually here
-
-		ModelExplorerPageBookView pageBookView = null;
-		for (IWorkbenchWindow window : PlatformUI.getWorkbench().getWorkbenchWindows()) {
-			for (IWorkbenchPage page : window.getPages()) {
-				for (IViewReference viewReference : page.getViewReferences()) {
-					IWorkbenchPart part = viewReference.getPart(false);
-					if (part instanceof ModelExplorerPageBookView) {
-						pageBookView = (ModelExplorerPageBookView)part;
-					}
-				}
-			}
-		}
-
-		if (pageBookView != null && pageBookView.getActiveView() instanceof ModelExplorerView) {
-			ModelExplorerView view = (ModelExplorerView)pageBookView.getActiveView();
+		ModelExplorerView view = ModelExplorerView.getCurrent();
+		if (view != null) {
 			if (editingDomain == null) {
 				editingDomain = view.getEditingDomain();
 			}
