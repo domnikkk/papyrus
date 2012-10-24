@@ -16,7 +16,7 @@ package org.eclipse.papyrus.core.resourceloading.preferences;
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.eclipse.papyrus.core.resourceloading.preferences.messages"; //$NON-NLS-1$
 	public static String LoadedAssociatedResourceGroup_0;
 	public static String LoadedAuthorizedResourceGroup_0;
 	public static String LoadedAuthorizedResourceGroup_1;
