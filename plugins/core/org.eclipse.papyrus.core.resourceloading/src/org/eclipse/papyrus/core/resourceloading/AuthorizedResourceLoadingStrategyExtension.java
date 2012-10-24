@@ -11,7 +11,7 @@
  *  Laurent Devernay (Atos) laurent.devernay@atos.net
  *
  *****************************************************************************/
-package org.eclipse.papyrus.core.resourceloading.preferences;
+package org.eclipse.papyrus.core.resourceloading;
 
 import java.util.Set;
 
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.core.resourceloading.ILoadingStrategyExtension;
 import org.eclipse.papyrus.core.resourceloading.LoadedAuthorizedResourceManager;
 import org.eclipse.papyrus.resource.ModelSet;
 
-public class PreferenceLoadingStrategyExtension implements
+public class AuthorizedResourceLoadingStrategyExtension implements
 		ILoadingStrategyExtension {
 
 	public boolean loadResource(ModelSet modelSet, URI uri) {

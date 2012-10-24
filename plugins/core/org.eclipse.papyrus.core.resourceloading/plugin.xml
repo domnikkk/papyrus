@@ -65,4 +65,11 @@
             fileExtension="di">
       </loadedAssociatedResource>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.core.resourceloading.loadingStrategyExtender">
+      <strategyExtender
+            description="org.eclipse.papyrus.core.resourceloading.strategyExtender1"
+            strategyExtension="org.eclipse.papyrus.core.resourceloading.AuthorizedResourceLoadingStrategyExtension">
+      </strategyExtender>
+   </extension>
 </plugin>
