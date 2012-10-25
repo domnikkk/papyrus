@@ -21,11 +21,9 @@ public class Messages extends NLS {
 
 	public static String LoadedAssociatedResourceGroup_0;
 
-	public static String LoadedAuthorizedResourceGroup_0;
+	public static String AuthorizedResourceGroup_0;
 
-	public static String LoadedAuthorizedResourceGroup_1;
-
-	public static String LoadedAuthorizedResourceGroup_2;
+	public static String AuthorizedResourceGroup_1;
 
 	public static String LoadinStrategyGroup_0;
 

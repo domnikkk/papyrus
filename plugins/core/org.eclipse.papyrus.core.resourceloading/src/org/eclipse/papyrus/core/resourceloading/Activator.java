@@ -42,7 +42,7 @@ public class Activator extends Plugin {
 	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		LoadedAuthorizedResourcePreferenceInitializer init = new LoadedAuthorizedResourcePreferenceInitializer();
+		AuthorizedResourcePreferenceInitializer init = new AuthorizedResourcePreferenceInitializer();
 		init.initializeDefaultPreferences();
 		plugin = this;
 	}

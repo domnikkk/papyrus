@@ -15,26 +15,36 @@ package org.eclipse.papyrus.core.resourceloading.preferences;
 
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.jface.preference.PathEditor;
+import org.eclipse.jface.preference.ListEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 
-public class ResourcePreferencePathEditor extends PathEditor {
+public class ResourcePreferencePathEditor extends ListEditor {
 
-	public ResourcePreferencePathEditor(String name, String labelText, String dirChooserLabelText, Composite parent) {
-		super(name, labelText, dirChooserLabelText, parent);
+	public ResourcePreferencePathEditor(String name, String labelText, Composite parent) {
+		super(name, labelText, parent);
 	}
 
 	@Override
 	protected String getNewInputObject() {
 		String labelText = getLabelText();
 		ResourceDialog dialog = new ResourceDialog(getShell(), labelText, SWT.OPEN | SWT.SINGLE);
-		dialog.open();
-		String uriTexte = dialog.getURIText();
-		URI uri = URI.createURI(uriTexte);
-
-		return uri.trimFileExtension().toString();
+		if (dialog.open() == ResourceDialog.OK) {
+			URI uri = URI.createURI(dialog.getURIText());
+			return uri.trimFileExtension().toString();
+		}
+		return null;
 	}
+	
+    protected String createList(String[] items) {
+        StringBuffer path = new StringBuffer("");//$NON-NLS-1$
+
+        for (int i = 0; i < items.length; i++) {
+            path.append(items[i]);
+            path.append(',');
+        }
+        return path.toString();
+    }
 
 	@Override
 	protected void doLoad() {
@@ -51,5 +61,9 @@ public class ResourcePreferencePathEditor extends PathEditor {
 		}
 		super.doLoadDefault();
 	}
+
+    protected String[] parseString(String stringList) {
+        return stringList.split(",");
+    }
 
 }

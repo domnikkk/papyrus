@@ -53,7 +53,7 @@ public class LoadingStrategyPreferencePage extends AbstractPapyrusNodePreference
 		addAbstractGroup(group);
 		group = new LoadedAssociatedResourceGroup(parent, getTitle(), this);
 		addAbstractGroup(group);
-		group = new LoadedAuthorizedResourceGroup(parent, getTitle(), this);
+		group = new AuthorizedResourceGroup(parent, getTitle(), this);
 		addAbstractGroup(group);
 		// TODO : if no value is set for the radio buttons (loading strategy) on
 		// a project, use the workspace loading strategy.

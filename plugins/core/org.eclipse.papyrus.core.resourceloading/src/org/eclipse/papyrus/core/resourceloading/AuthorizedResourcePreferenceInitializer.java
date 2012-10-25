@@ -17,7 +17,7 @@ import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.preferences.Activator;
 
-public class LoadedAuthorizedResourcePreferenceInitializer extends AbstractPreferenceInitializer {
+public class AuthorizedResourcePreferenceInitializer extends AbstractPreferenceInitializer {
 
 	@Override
 	public void initializeDefaultPreferences() {
@@ -26,7 +26,7 @@ public class LoadedAuthorizedResourcePreferenceInitializer extends AbstractPrefe
 
 	public void initializeDefaultPreferences(String loadedAuthorizedResource) {
 		IPreferenceStore store = getPreferenceStore();
-		store.setDefault(LoadedAuthorizedResourceManager.URI_PREF_PREFIX, loadedAuthorizedResource);
+		store.setDefault(AuthorizedResourceLoadingStrategyExtension.AUTHORIZED_RESOURCES_PREF_ID, loadedAuthorizedResource);
 	}
 
 	/**
