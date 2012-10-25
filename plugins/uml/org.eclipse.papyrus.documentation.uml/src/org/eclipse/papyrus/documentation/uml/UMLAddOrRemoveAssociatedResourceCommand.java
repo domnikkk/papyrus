@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.common.command.AbstractCommand;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.documentation.IDocumentationChangedListener;
 import org.eclipse.papyrus.uml.profile.IUMLDocumentationConstants;
@@ -62,15 +61,8 @@ public class UMLAddOrRemoveAssociatedResourceCommand extends AbstractCommand {
 	 * {@inheritDoc}
 	 */
 	public void execute() {
-		EList<Comment> ownedComments = element.getOwnedComments();
-
-		for(Comment comment : ownedComments) {
-			documentationStereotype = comment.getAppliedStereotype(IUMLDocumentationConstants.STEREOTYPE_QUALIFIED_NAME);
-			if(documentationStereotype != null) {
-				documentationComment = comment;
-				break;
-			}
-		}
+		documentationComment = UMLDocumentationUtil.getOrCreateDocumentationComment(element);
+		documentationStereotype = documentationComment.getAppliedStereotype(IUMLDocumentationConstants.STEREOTYPE_QUALIFIED_NAME);
 
 		redo();
 	}
@@ -104,18 +96,14 @@ public class UMLAddOrRemoveAssociatedResourceCommand extends AbstractCommand {
 	}
 
 	private void removeAssociatedResource() {
-		if(documentationStereotype != null && documentationComment != null) {
-			List<String> resourceURIs = (List<String>)documentationComment.getValue(documentationStereotype, IUMLDocumentationConstants.RESOURCE_PROPERTY_NAME);
-			resourceURIs.remove(resourceURIString);
-			notifyListeners();
-		}
+		List<String> resourceURIs = (List<String>)documentationComment.getValue(documentationStereotype, IUMLDocumentationConstants.RESOURCE_PROPERTY_NAME);
+		resourceURIs.remove(resourceURIString);
+		notifyListeners();
 	}
 
 	private void addAssociatedResource() {
-		if(documentationStereotype != null && documentationComment != null) {
-			List<String> resourceURIs = (List<String>)documentationComment.getValue(documentationStereotype, IUMLDocumentationConstants.RESOURCE_PROPERTY_NAME);
-			resourceURIs.add(resourceURIString);
-			notifyListeners();
-		}
+		List<String> resourceURIs = (List<String>)documentationComment.getValue(documentationStereotype, IUMLDocumentationConstants.RESOURCE_PROPERTY_NAME);
+		resourceURIs.add(resourceURIString);
+		notifyListeners();
 	}
 }
