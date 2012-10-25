@@ -1,8 +1,11 @@
 Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.core.resourceloading.preferences
-Require-Bundle: org.eclipse.core.runtime,org.eclipse.jface,org.eclipse
- .ui,org.eclipse.papyrus.preferences,org.eclipse.papyrus.core,org.ecli
- pse.papyrus.core.resourceloading;bundle-version="0.8.0"
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jface,
+ org.eclipse.ui,
+ org.eclipse.papyrus.preferences,
+ org.eclipse.papyrus.core,
+ org.eclipse.papyrus.core.resourceloading;bundle-version="0.8.2"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 0.8.2.qualifier

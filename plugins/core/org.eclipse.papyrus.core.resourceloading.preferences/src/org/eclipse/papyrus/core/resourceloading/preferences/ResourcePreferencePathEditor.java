@@ -21,32 +21,24 @@ import org.eclipse.swt.widgets.Composite;
 
 public class ResourcePreferencePathEditor extends PathEditor {
 
-	public ResourcePreferencePathEditor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public ResourcePreferencePathEditor(String name, String labelText,
-			String dirChooserLabelText, Composite parent) {
+	public ResourcePreferencePathEditor(String name, String labelText, String dirChooserLabelText, Composite parent) {
 		super(name, labelText, dirChooserLabelText, parent);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	protected String getNewInputObject() {
 		String labelText = getLabelText();
-		ResourceDialog dialog = new ResourceDialog(getShell(), labelText,
-				SWT.OPEN | SWT.SINGLE);
+		ResourceDialog dialog = new ResourceDialog(getShell(), labelText, SWT.OPEN | SWT.SINGLE);
 		dialog.open();
 		String uriTexte = dialog.getURIText();
 		URI uri = URI.createURI(uriTexte);
+
 		return uri.trimFileExtension().toString();
 	}
 
 	@Override
 	protected void doLoad() {
-		if (getList() != null)
-		{
+		if(getList() != null) {
 			getList().removeAll();
 		}
 		super.doLoad();
@@ -54,13 +46,10 @@ public class ResourcePreferencePathEditor extends PathEditor {
 
 	@Override
 	protected void doLoadDefault() {
-		if (getList() != null)
-		{
+		if(getList() != null) {
 			getList().removeAll();
 		}
 		super.doLoadDefault();
 	}
-	
-	
 
 }

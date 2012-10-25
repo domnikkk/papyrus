@@ -20,14 +20,12 @@ import org.eclipse.papyrus.core.resourceloading.ILoadingStrategyExtension;
 import org.eclipse.papyrus.core.resourceloading.LoadedAuthorizedResourceManager;
 import org.eclipse.papyrus.resource.ModelSet;
 
-public class AuthorizedResourceLoadingStrategyExtension implements
-		ILoadingStrategyExtension {
+public class AuthorizedResourceLoadingStrategyExtension implements ILoadingStrategyExtension {
 
 	public boolean loadResource(ModelSet modelSet, URI uri) {
-		Set<URI> loadedAuthorizedResourcesSet = LoadedAuthorizedResourceManager
-				.getInstance().getLoadedAuthorizedResourcesSet();
+		Set<URI> loadedAuthorizedResourcesSet = LoadedAuthorizedResourceManager.getInstance().getLoadedAuthorizedResourcesSet(modelSet);
 
-		if (loadedAuthorizedResourcesSet.contains(uri.trimFileExtension())) {
+		if(loadedAuthorizedResourcesSet.contains(uri.trimFileExtension())) {
 			return true;
 		}
 		return false;

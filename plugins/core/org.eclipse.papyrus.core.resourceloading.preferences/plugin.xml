@@ -17,10 +17,31 @@
       </page>
    </extension>
    <extension
+         point="org.eclipse.ui.propertyPages">   
+      <page
+            category="org.eclipse.papyrus.preferences.properties.generalcategory"
+            class="org.eclipse.papyrus.core.resourceloading.preferences.LoadingStrategyPreferencePage"
+            id="org.eclipse.papyrus.core.resourceloading.properties.ModelLoadingPreferencePage"
+            name="Model loading">
+         <enabledWhen>
+            <adapt
+                  type="org.eclipse.core.resources.IProject">
+            </adapt>
+         </enabledWhen>
+      </page>
+   </extension>
+   <extension
          point="org.eclipse.papyrus.core.resourceloading.currentStrategyChooser">
       <CurrentStrategyChooser
             chooser="org.eclipse.papyrus.core.resourceloading.preferences.StrategyChooser">
       </CurrentStrategyChooser>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.core.resourceloading.loadingStrategyExtender">
+      <strategyExtender
+            description="org.eclipse.papyrus.core.resourceloading.preferences.strategyExtender1"
+            strategyExtension="org.eclipse.papyrus.core.resourceloading.AuthorizedResourceLoadingStrategyExtension">
+      </strategyExtender>
    </extension>
 
 </plugin>

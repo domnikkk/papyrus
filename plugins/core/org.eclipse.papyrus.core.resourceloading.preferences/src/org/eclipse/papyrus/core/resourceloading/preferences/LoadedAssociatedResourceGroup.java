@@ -23,11 +23,8 @@ public class LoadedAssociatedResourceGroup extends AbstractGroup {
 		group.setText(Messages.LoadedAssociatedResourceGroup_0);
 
 		LoadedAssociatedResourceManager manager = LoadedAssociatedResourceManager.getInstance();
-		for (LoadedAssociatedResource loadedAssociatedResource : manager.getLoadedAssociatedResources().values()) {
-			CheckBoxFieldEditor fieldEditor = new CheckBoxFieldEditor(
-					LoadedAssociatedResourceManager.AUTOLOAD_PREF_PREFIX + loadedAssociatedResource.getFileExtension(),
-					loadedAssociatedResource.getDescription(),
-					group);
+		for(LoadedAssociatedResource loadedAssociatedResource : manager.getLoadedAssociatedResources().values()) {
+			CheckBoxFieldEditor fieldEditor = new CheckBoxFieldEditor(LoadedAssociatedResourceManager.AUTOLOAD_PREF_PREFIX + loadedAssociatedResource.getFileExtension(), loadedAssociatedResource.getDescription(), group);
 			addFieldEditor(fieldEditor);
 		}
 	}

@@ -13,8 +13,11 @@ import org.eclipse.papyrus.preferences.Activator;
 public class LoadedAssociatedResourceManager implements IPropertyChangeListener {
 
 	public static class LoadedAssociatedResource {
+
 		private String fileExtension;
+
 		private String description;
+
 		private boolean autoLoad;
 
 		public LoadedAssociatedResource(String fileExtension, String description, boolean autoLoad) {
@@ -57,9 +60,9 @@ public class LoadedAssociatedResourceManager implements IPropertyChangeListener 
 	private static final String LOADED_ASSOCIATED_RESOURCE_EXTENSION_POINT_ID = "org.eclipse.papyrus.core.resourceloading." + LOADED_ASSOCIATED_RESOURCE_ELEMENT_ID;
 
 	private static final String AUTOLOAD_ID = "autoLoad";
-	
+
 	private static final String PREFERENCE_PREFIX = LOADED_ASSOCIATED_RESOURCE_ELEMENT_ID + ".";
-	
+
 	public static final String AUTOLOAD_PREF_PREFIX = PREFERENCE_PREFIX + AUTOLOAD_ID + ".";
 
 	private static class Holder {
@@ -91,7 +94,7 @@ public class LoadedAssociatedResourceManager implements IPropertyChangeListener 
 		if(event.getProperty().startsWith(AUTOLOAD_PREF_PREFIX) && newValue instanceof Boolean) {
 			String fileExtension = event.getProperty().replaceFirst(AUTOLOAD_PREF_PREFIX, "");
 			LoadedAssociatedResource loadedAssociatedResource = getLoadedAssociatedResources().get(fileExtension);
-			if (loadedAssociatedResource != null) {
+			if(loadedAssociatedResource != null) {
 				loadedAssociatedResource.autoLoad = (Boolean)newValue;
 			}
 		}

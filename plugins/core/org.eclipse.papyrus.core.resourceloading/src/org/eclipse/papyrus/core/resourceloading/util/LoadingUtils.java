@@ -52,11 +52,12 @@ public class LoadingUtils {
 	 * 
 	 * @param mainURI
 	 * @param modelSet
-	 * @param refresh if true the views (diagrams) will be refreshed to display correctly resolved elements
+	 * @param refresh
+	 *        if true the views (diagrams) will be refreshed to display correctly resolved elements
 	 * @param monitor
 	 */
 	public static void loadWithAssociatedResources(URI mainURI, ModelSet modelSet, boolean refresh, IProgressMonitor monitor) {
-		if (monitor == null) {
+		if(monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
 
@@ -80,11 +81,12 @@ public class LoadingUtils {
 	 * 
 	 * @param mainURI
 	 * @param modelSet
-	 * @param refreshProxies if true the views (diagrams) will be refreshed to display correctly unresolved elements
+	 * @param refreshProxies
+	 *        if true the views (diagrams) will be refreshed to display correctly unresolved elements
 	 * @param monitor
 	 */
 	public static void unloadWithAssociatedResources(URI mainURI, ModelSet modelSet, boolean refresh, IProgressMonitor monitor) {
-		if (monitor == null) {
+		if(monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
 
@@ -92,9 +94,9 @@ public class LoadingUtils {
 
 		monitor.beginTask(Messages.LoadingUtils_UnloadModelsTask, modelSet.getResources().size());
 		Iterator<Resource> resIt = modelSet.getResources().iterator();
-		while (resIt.hasNext()) {
+		while(resIt.hasNext()) {
 			Resource res = resIt.next();
-			if (res.getURI() != null && res.getURI().trimFileExtension().equals(uriWithoutFileExtension)) {
+			if(res.getURI() != null && res.getURI().trimFileExtension().equals(uriWithoutFileExtension)) {
 
 				// unload this resource
 				res.unload();
@@ -108,11 +110,11 @@ public class LoadingUtils {
 
 		CoreMultiDiagramEditor editor = getCoreMultiDiagramEditor();
 
-		if (editor != null) {
+		if(editor != null) {
 			IPageMngr pageMngr;
 			try {
 				pageMngr = editor.getServicesRegistry().getService(IPageMngr.class);
-				if (pageMngr != null) {
+				if(pageMngr != null) {
 					List<Object> allPages = pageMngr.allPages();
 					monitor.beginTask(Messages.LoadingUtils_RefreshPagesTask, allPages.size());
 					for(Object page : allPages) {
@@ -120,9 +122,9 @@ public class LoadingUtils {
 							EObject eobject = (EObject)page;
 							if(eobject.eIsProxy()) {
 								pageMngr.closePage(page);
-							} else if (eobject instanceof Diagram) {
-								Diagram diag = (Diagram) eobject;
-								if (diag.getElement() != null && diag.getElement().eIsProxy()) {
+							} else if(eobject instanceof Diagram) {
+								Diagram diag = (Diagram)eobject;
+								if(diag.getElement() != null && diag.getElement().eIsProxy()) {
 									pageMngr.closePage(page);
 								}
 							}
@@ -130,7 +132,8 @@ public class LoadingUtils {
 						monitor.worked(1);
 					}
 				}
-			} catch (ServiceException e) {}
+			} catch (ServiceException e) {
+			}
 		}
 	}
 
@@ -151,7 +154,7 @@ public class LoadingUtils {
 				}
 			}
 		}
-		if (editor instanceof CoreMultiDiagramEditor) {
+		if(editor instanceof CoreMultiDiagramEditor) {
 			return (CoreMultiDiagramEditor)editor;
 		}
 		return null;

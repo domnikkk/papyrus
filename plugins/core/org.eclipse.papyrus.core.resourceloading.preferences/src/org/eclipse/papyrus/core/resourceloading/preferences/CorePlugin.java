@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.core.resourceloading.preferences;
 
+import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -60,6 +61,17 @@ public class CorePlugin extends AbstractUIPlugin {
 	 */
 	public static CorePlugin getDefault() {
 		return plugin;
+	}
+
+	/**
+	 * Log an error
+	 * 
+	 * @param e
+	 *        error to log
+	 */
+	public static void logError(Exception e) {
+		Status err = new Status(Status.ERROR, PLUGIN_ID, e.getMessage(), e);
+		getDefault().getLog().log(err);
 	}
 
 }

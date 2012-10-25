@@ -107,7 +107,7 @@ public class ProxyManager implements IProxyManager {
 	public boolean loadResource(URI uri) {
 		int currentStrategyId = getCurrentStrategy();
 		ILoadingStrategy currentStrategy = availableStrategies.get(currentStrategyId);
-		if (currentStrategy == null) {
+		if(currentStrategy == null) {
 			currentStrategy = availableStrategies.entrySet().iterator().next().getValue();
 		}
 		boolean result = currentStrategy.loadResource(modelSet, uri);

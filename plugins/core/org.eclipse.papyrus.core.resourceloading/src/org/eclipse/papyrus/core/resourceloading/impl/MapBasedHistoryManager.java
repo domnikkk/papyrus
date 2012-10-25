@@ -32,8 +32,9 @@ import com.google.common.collect.Iterables;
 /**
  * This routing manager does not manage routing it search xmi ids in the different resources.
  * if some double xmi ids are found it is logged to the user
+ * 
  * @author tfaure
- *
+ * 
  */
 public class MapBasedHistoryManager extends HistoryRoutingManager {
 
@@ -43,43 +44,42 @@ public class MapBasedHistoryManager extends HistoryRoutingManager {
 	}
 
 	@Override
-	public EObject getEObject(ModelSet modelSet, String resourceURI,
-			String fragment) {
+	public EObject getEObject(ModelSet modelSet, String resourceURI, String fragment) {
 		// ? and / means computed path => we only manage xmi ids cf ResourceImpl.java
-		if (fragment != null && fragment.charAt(0) == '?' || fragment.charAt(0) == '/'){
-			return null ;
+		if(fragment != null && fragment.charAt(0) == '?' || fragment.charAt(0) == '/') {
+			return null;
 		}
 		Set<EObject> result = new HashSet<EObject>();
-		for (Resource r : modelSet.getResources()){
+		for(Resource r : modelSet.getResources()) {
 			// use directly intrinsic id to avoid nested call in getEOBject
-			addIfNotNull(r.getEObject(fragment),result);
+			addIfNotNull(r.getEObject(fragment), result);
 		}
 		int size = result.size();
-		if (size > 1){
+		if(size > 1) {
 			StringBuilder builder = new StringBuilder();
-			builder.append(String.format("the uri fragment %s is present in several resources : ",fragment));
+			builder.append(String.format("the uri fragment %s is present in several resources : ", fragment));
 			Iterable<String> transformed = Iterables.transform(result, new Function<EObject, String>() {
 
 				public String apply(EObject arg0) {
 					Resource eResource = arg0.eResource();
-					if (eResource != null){
+					if(eResource != null) {
 						return eResource.getURI().toString();
 					}
-					return null ;
+					return null;
 				}
 			});
 			transformed = Iterables.filter(transformed, Predicates.notNull());
 			builder.append(Joiner.on(", ").join(transformed));
 			new LogHelper(Activator.getDefault()).warn(builder.toString());
 		}
-		if (size > 0){
+		if(size > 0) {
 			return result.iterator().next();
 		}
-		return null ;
+		return null;
 	}
 
 	private void addIfNotNull(EObject eObject, Set<EObject> result) {
-		if (eObject != null){
+		if(eObject != null) {
 			result.add(eObject);
 		}
 	}
@@ -89,5 +89,5 @@ public class MapBasedHistoryManager extends HistoryRoutingManager {
 		// do nothing
 	}
 
-	
+
 }

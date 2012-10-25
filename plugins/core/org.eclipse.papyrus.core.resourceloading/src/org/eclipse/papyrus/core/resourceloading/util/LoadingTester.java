@@ -38,7 +38,7 @@ public class LoadingTester extends PropertyTester {
 
 	/** property to test if the selected elements are in not loaded resources */
 	public static final String IS_ALL_NOTLOADED = "isAllNotLoaded"; //$NON-NLS-1$
-	
+
 	public static final String IS_ASSOCIATED_RESOURCE_LOADED = "isAssociatedResourceLoaded"; //$NON-NLS-1$
 
 	/**
@@ -67,7 +67,7 @@ public class LoadingTester extends PropertyTester {
 		}
 		return false;
 	}
-	
+
 	private boolean isAssociatedResourceLoaded(IStructuredSelection selection, String fileExtension) {
 		Iterator<?> iter = selection.iterator();
 		while(iter.hasNext()) {
@@ -81,13 +81,13 @@ public class LoadingTester extends PropertyTester {
 					eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
 					if(eObject != null) {
 						Resource r = eObject.eResource();
-						if (r != null && r.getURI() != null) {
+						if(r != null && r.getURI() != null) {
 							URI associatedResourceURI = r.getURI().trimFragment().trimFileExtension().appendFileExtension(fileExtension);
 							ResourceSet resourceSet = r.getResourceSet();
 
-							if (resourceSet != null) {
+							if(resourceSet != null) {
 								Resource associatedResource = resourceSet.getResource(associatedResourceURI, false);
-								if (associatedResource == null || !associatedResource.isLoaded()) {
+								if(associatedResource == null || !associatedResource.isLoaded()) {
 									return false;
 								}
 							}

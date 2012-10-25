@@ -46,9 +46,9 @@ public class LoadinStrategyGroup extends AbstractGroup {
 	}
 
 	private static RadioGroupFieldEditor createStrategyRadio(Group group) {
-        String[][] values = getValuesFromExtensionPoint();
-        RadioGroupFieldEditor radio = new RadioGroupFieldEditor(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY, LABEL_LOADING_STRATEGY, 1, values, group);
-        return radio;
+		String[][] values = getValuesFromExtensionPoint();
+		RadioGroupFieldEditor radio = new RadioGroupFieldEditor(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY, LABEL_LOADING_STRATEGY, 1, values, group);
+		return radio;
 	}
 
 	/**

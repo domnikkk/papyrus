@@ -102,20 +102,21 @@ public class OnDemandLoadingModelSet extends DiResourceSet {
 	 * It uses the informations from the loadedAssociatedResource extension point
 	 * to know which file extensions to load.
 	 * 
-	 * @param mainURI the URI of the main resource
+	 * @param mainURI
+	 *        the URI of the main resource
 	 */
 	public void loadAssociatedResources(URI mainURI) {
 
 		URI trimmedURI = mainURI.trimFileExtension();
 		Collection<LoadedAssociatedResource> loadedAssociatedResources = LoadedAssociatedResourceManager.getInstance().getLoadedAssociatedResources().values();
 
-		if (trimmedURI.isPlatformResource()) {
-			for (LoadedAssociatedResource loadedAssociatedResource : loadedAssociatedResources) {
-				if (loadedAssociatedResource.isAutoLoad()) {
+		if(trimmedURI.isPlatformResource()) {
+			for(LoadedAssociatedResource loadedAssociatedResource : loadedAssociatedResources) {
+				if(loadedAssociatedResource.isAutoLoad()) {
 					URI loadedAssociatedResourceURI = trimmedURI.appendFileExtension(loadedAssociatedResource.getFileExtension());
 					try {
 						Resource r = super.getResource(loadedAssociatedResourceURI, true);
-						if (r != null && !r.isLoaded()) {
+						if(r != null && !r.isLoaded()) {
 							r.load(null);
 						}
 					} catch (Exception e) {
@@ -129,7 +130,7 @@ public class OnDemandLoadingModelSet extends DiResourceSet {
 	public Resource getResource(URI uri, boolean loadOnDemand) {
 		Resource resource = super.getResource(uri, loadOnDemand);
 
-		if (resource != null && loadOnDemand) {
+		if(resource != null && loadOnDemand) {
 			loadAssociatedResources(uri);
 		}
 

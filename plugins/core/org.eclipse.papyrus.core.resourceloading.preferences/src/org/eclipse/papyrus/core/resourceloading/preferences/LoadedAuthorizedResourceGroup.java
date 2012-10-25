@@ -23,8 +23,7 @@ import org.eclipse.swt.widgets.Group;
 
 public class LoadedAuthorizedResourceGroup extends AbstractGroup {
 
-	public LoadedAuthorizedResourceGroup(Composite parent, String key,
-			DialogPage dialogPage) {
+	public LoadedAuthorizedResourceGroup(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, key, dialogPage);
 		createContent(parent);
 	}
@@ -34,10 +33,7 @@ public class LoadedAuthorizedResourceGroup extends AbstractGroup {
 		group.setLayout(new GridLayout());
 		group.setText(Messages.LoadedAuthorizedResourceGroup_0);
 
-		ResourcePreferencePathEditor pathEditor = new ResourcePreferencePathEditor(
-				LoadedAuthorizedResourceManager.URI_PREF_PREFIX,
-				Messages.LoadedAuthorizedResourceGroup_1, Messages.LoadedAuthorizedResourceGroup_2,
-				group);
+		ResourcePreferencePathEditor pathEditor = new ResourcePreferencePathEditor(LoadedAuthorizedResourceManager.URI_PREF_PREFIX, Messages.LoadedAuthorizedResourceGroup_1, Messages.LoadedAuthorizedResourceGroup_2, group);
 
 		addFieldEditor(pathEditor);
 	}

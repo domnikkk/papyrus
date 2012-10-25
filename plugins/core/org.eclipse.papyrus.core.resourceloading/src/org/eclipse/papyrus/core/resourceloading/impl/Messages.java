@@ -11,25 +11,15 @@
  *  Laurent Devernay (Atos) laurent.devernay@atos.net
  *
  *****************************************************************************/
-package org.eclipse.papyrus.core.resourceloading.preferences;
+package org.eclipse.papyrus.core.resourceloading.impl;
 
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 
-	private static final String BUNDLE_NAME = "org.eclipse.papyrus.core.resourceloading.preferences.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.eclipse.papyrus.core.resourceloading.impl.messages"; //$NON-NLS-1$
 
-	public static String LoadedAssociatedResourceGroup_0;
-
-	public static String LoadedAuthorizedResourceGroup_0;
-
-	public static String LoadedAuthorizedResourceGroup_1;
-
-	public static String LoadedAuthorizedResourceGroup_2;
-
-	public static String LoadinStrategyGroup_0;
-
-	public static String LoadinStrategyGroup_1;
+	public static String MapBasedHistoryManager_0;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
