@@ -23,8 +23,8 @@ import org.eclipse.papyrus.core.extension.ExtensionUtils;
 /**
  * A factory used to create editor descriptor object from Eclipse extensions points elements.
  * 
- *@author Cedric Dumoulin
- *@author Patrick Tessier
+ * @author Cedric Dumoulin
+ * @author Patrick Tessier
  */
 public class EditorDescriptorExtensionFactory extends ExtensionUtils {
 
@@ -69,7 +69,7 @@ public class EditorDescriptorExtensionFactory extends ExtensionUtils {
 		res.setActionBarContributorId(element.getAttribute(ACTIONBARCONTRIBUTORID_ATTRIBUTE));
 		String iconPath = element.getAttribute(ICON_ATTRIBUTE);
 		if(iconPath != null) {
-			/** Implementation which set the icon and register the complete URL of the icon : Bug eclipse 358732*/
+			/** Implementation which set the icon and register the complete URL of the icon : Bug eclipse 358732 */
 			res.setIcon(element, iconPath, org.eclipse.papyrus.core.Activator.PLUGIN_ID);
 
 		}

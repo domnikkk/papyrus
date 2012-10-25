@@ -14,13 +14,14 @@ import org.eclipse.papyrus.core.modelsetquery.IModelSetQueryAdapter;
  * @author tfaure
  */
 public class ModelSetQueryAdapterSimple implements IModelSetQueryAdapter {
+
 	/**
 	 * This cache adapter is only used if the caller don't use correctly
 	 * TypeCacheAdapter. With the simple cache adapter performance are not good
 	 * but a result is still returned
 	 */
-	private static ModelSetQueryAdapterSimple simpleCacheAdapter = new ModelSetQueryAdapterSimple();	
-	
+	private static ModelSetQueryAdapterSimple simpleCacheAdapter = new ModelSetQueryAdapterSimple();
+
 	public static IModelSetQueryAdapter getSimpleTypeCacheAdapter() {
 		return simpleCacheAdapter;
 	}

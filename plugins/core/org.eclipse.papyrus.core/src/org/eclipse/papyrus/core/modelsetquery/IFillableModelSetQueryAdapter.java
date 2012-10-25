@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 
 public interface IFillableModelSetQueryAdapter extends IModelSetQueryAdapter {
+
 	/**
 	 * This method provides a way for user to force first entries in the cache.
 	 * The list of element must be a HashSet to optimize the performances
@@ -27,10 +28,12 @@ public interface IFillableModelSetQueryAdapter extends IModelSetQueryAdapter {
 	 * @param list
 	 */
 	void addEntriesInCache(EClassifier type, HashSet<EObject> list);
-	
+
 	/**
 	 * Determines if the cache already contain this EClassifier
-	 * @param type, the desired type
+	 * 
+	 * @param type
+	 *        , the desired type
 	 * @return true if the cache already compute this entry
 	 */
 	boolean isAlreadyComputed(EClassifier type);

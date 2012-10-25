@@ -573,30 +573,26 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	}
 
 	protected void warnUser(ModelMultiException e) {
-		MessageDialog.openError(getSite().getShell(), "Error", String.format("Your model is corrupted, invalid links have been found :\n"
-					+ "%s" 
-					+ "It is recommended to fix it before editing it", e.getMessage()));
+		MessageDialog.openError(getSite().getShell(), "Error", String.format("Your model is corrupted, invalid links have been found :\n" + "%s" + "It is recommended to fix it before editing it", e.getMessage()));
 	}
 
 	/**
 	 * Analyse if editors are opened
 	 * if yes the user can choose to close the other ones
+	 * 
 	 * @param site
 	 * @throws PartInitException
 	 */
 	protected void assertOneEditorOpen(IEditorSite site) throws PartInitException {
 		IWorkbenchWindow window = site.getWorkbenchWindow();
-		if (OneInstanceUtils.isPapyrusOpen(window,this))
-		{
+		if(OneInstanceUtils.isPapyrusOpen(window, this)) {
 			String errorMessage = Messages.CoreMultiDiagramEditor_only_one;
-			if (MessageDialog.openQuestion(window.getShell(), Messages.CoreMultiDiagramEditor_warning, Messages.CoreMultiDiagramEditor_do_you_want_to_close +
-					Messages.CoreMultiDiagramEditor_if_not_close)){
-				if (!OneInstanceUtils.closeAllPapyrusOpened(window, this)){
-					throw new PartInitException(errorMessage) ;
+			if(MessageDialog.openQuestion(window.getShell(), Messages.CoreMultiDiagramEditor_warning, Messages.CoreMultiDiagramEditor_do_you_want_to_close + Messages.CoreMultiDiagramEditor_if_not_close)) {
+				if(!OneInstanceUtils.closeAllPapyrusOpened(window, this)) {
+					throw new PartInitException(errorMessage);
 				}
-			}
-			else {
-				throw new PartInitException(errorMessage) ;
+			} else {
+				throw new PartInitException(errorMessage);
 			}
 		}
 	}

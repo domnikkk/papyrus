@@ -15,14 +15,16 @@ package org.eclipse.papyrus.resource;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+
 /**
  * Classes implementing this interface can provide a way to create editing domain to Papyrus
  * environment. The provider registered on the transactionalEditingDomainProvider extension point
- *  with the higher priority will be used by Papyrus to create Editing Domain.
+ * with the higher priority will be used by Papyrus to create Editing Domain.
  * 
  * @author mvelten
- *
+ * 
  */
 public interface ITransactionalEditingDomainProvider {
+
 	TransactionalEditingDomain createTransactionalEditingDomain(ResourceSet resourceSet);
 }

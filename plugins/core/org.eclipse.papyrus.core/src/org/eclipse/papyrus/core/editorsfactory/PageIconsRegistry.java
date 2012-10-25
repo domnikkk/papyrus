@@ -97,7 +97,7 @@ public class PageIconsRegistry implements IPageIconsRegistryExtended {
 		for(IEditorIconFactory factory : getPageIcons()) {
 			if(factory.isPageModelFactoryFor(model)) {
 				{
-					if ( factory instanceof IEditorIconFactoryExtended){						
+					if(factory instanceof IEditorIconFactoryExtended) {
 						return ((IEditorIconFactoryExtended)factory).getURLMainIcon(model);
 					}
 				}

@@ -72,8 +72,7 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 
 	private void putObjectInCache(EClassifier eClassifier, EObject newObj) {
 		Collection<EObject> listOfClassifiers = cache.get(eClassifier);
-		if (listOfClassifiers == null)
-		{
+		if(listOfClassifiers == null) {
 			listOfClassifiers = new HashSet<EObject>();
 			cache.put(eClassifier, listOfClassifiers);
 		}
@@ -95,8 +94,7 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 		if(listOfClassifiers != null) {
 			listOfClassifiers.remove(newObj);
 		}
-		if (listOfClassifiers.isEmpty())
-		{
+		if(listOfClassifiers.isEmpty()) {
 			cache.remove(eClassifier);
 		}
 	}
@@ -121,8 +119,7 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 	 * @param list
 	 */
 	public void addEntriesInCache(EClassifier type, HashSet<EObject> list) {
-		for (EObject e : list)
-		{
+		for(EObject e : list) {
 			addObjectInCache(e);
 		}
 	}

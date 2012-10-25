@@ -155,24 +155,23 @@ public abstract class AbstractBaseModel implements IModel {
 	public void loadModel(IPath fullPathWithoutExtension) {
 
 		// Compute model URI
-		RuntimeException error = null ;
+		RuntimeException error = null;
 		resourceURI = getPlatformURI(fullPathWithoutExtension.addFileExtension(getModelFileExtension()));
 
 		// Create Resource of appropriate type
-		try{
+		try {
 			resource = modelSet.getResource(resourceURI, true);
-		}
-		catch (WrappedException e){
-			if (ModelUtils.isDegradedModeAllowed(e.getCause())){
+		} catch (WrappedException e) {
+			if(ModelUtils.isDegradedModeAllowed(e.getCause())) {
 				// only this case is managed in degraded mode
 				resource = modelSet.getResource(resourceURI, false);
 			}
-			error = e ;
+			error = e;
 		}
 		// call registered snippets
 		snippets.performStart(this);
-		if (error != null){
-			throw error ;
+		if(error != null) {
+			throw error;
 		}
 	}
 
@@ -193,13 +192,13 @@ public abstract class AbstractBaseModel implements IModel {
 	 * 
 	 */
 	public void saveModel() throws IOException {
-		if (!getModelManager().getTransactionalEditingDomain().isReadOnly(resource)) {
-			if (resource.getErrors() != null && !resource.getErrors().isEmpty()){
-				for (Diagnostic d : resource.getErrors()){
-					if (d instanceof WrappedException) {
-						WrappedException wrapped = (WrappedException) d;
-						if (wrapped.getCause() instanceof ResourceException && resource.getContents().isEmpty()){
-							return ;
+		if(!getModelManager().getTransactionalEditingDomain().isReadOnly(resource)) {
+			if(resource.getErrors() != null && !resource.getErrors().isEmpty()) {
+				for(Diagnostic d : resource.getErrors()) {
+					if(d instanceof WrappedException) {
+						WrappedException wrapped = (WrappedException)d;
+						if(wrapped.getCause() instanceof ResourceException && resource.getContents().isEmpty()) {
+							return;
 						}
 					}
 				}

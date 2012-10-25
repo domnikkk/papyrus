@@ -26,12 +26,13 @@ import org.eclipse.emf.workspace.IResourceUndoContextPolicy;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.papyrus.commands.CheckedOperationHistory;
 import org.eclipse.papyrus.commands.NotifyingWorkspaceCommandStack;
+
 /**
  * Manager used to read transactionalEditingDomainProvider extension point
  * and providing an helper method to create an Editing Domain.
  * 
  * @author mvelten
- *
+ * 
  */
 public class TransactionalEditingDomainManager {
 
@@ -40,12 +41,13 @@ public class TransactionalEditingDomainManager {
 	protected static class ProviderPriorityPair implements Comparable<ProviderPriorityPair> {
 
 		public ITransactionalEditingDomainProvider provider;
+
 		public int priority;
 
 		public int compareTo(ProviderPriorityPair o) {
-			if (o.priority > priority) {
+			if(o.priority > priority) {
 				return 1;
-			} else if (o.priority < priority) {
+			} else if(o.priority < priority) {
 				return -1;
 			} else {
 				return 0;
@@ -59,10 +61,10 @@ public class TransactionalEditingDomainManager {
 		LinkedList<ProviderPriorityPair> providerPriorityPairs = new LinkedList<ProviderPriorityPair>();
 
 		for(IConfigurationElement elem : configElements) {
-			if ("transactionalEditingDomainProvider".equals(elem.getName())) {
+			if("transactionalEditingDomainProvider".equals(elem.getName())) {
 				try {
 					ProviderPriorityPair providerPriorityPair = new ProviderPriorityPair();
-					providerPriorityPair.provider = (ITransactionalEditingDomainProvider) elem.createExecutableExtension("class");
+					providerPriorityPair.provider = (ITransactionalEditingDomainProvider)elem.createExecutableExtension("class");
 					providerPriorityPair.priority = Integer.parseInt(elem.getAttribute("priority"));
 
 					providerPriorityPairs.add(providerPriorityPair);
@@ -75,7 +77,7 @@ public class TransactionalEditingDomainManager {
 
 		orderedProvidersArray = new ITransactionalEditingDomainProvider[providerPriorityPairs.size()];
 
-		for (int i = 0; i < orderedProvidersArray.length; i++) {
+		for(int i = 0; i < orderedProvidersArray.length; i++) {
 			orderedProvidersArray[i] = providerPriorityPairs.get(i).provider;
 		}
 	}
@@ -87,9 +89,9 @@ public class TransactionalEditingDomainManager {
 	 * @return
 	 */
 	public static TransactionalEditingDomain createTransactionalEditingDomain(ResourceSet resourceSet) {
-		for (ITransactionalEditingDomainProvider provider : orderedProvidersArray) {
+		for(ITransactionalEditingDomainProvider provider : orderedProvidersArray) {
 			TransactionalEditingDomain ed = provider.createTransactionalEditingDomain(resourceSet);
-			if (ed != null) {
+			if(ed != null) {
 				return ed;
 			}
 		}
@@ -100,8 +102,7 @@ public class TransactionalEditingDomainManager {
 		NotifyingWorkspaceCommandStack stack = new NotifyingWorkspaceCommandStack(CheckedOperationHistory.getInstance());
 		stack.setResourceUndoContextPolicy(IResourceUndoContextPolicy.DEFAULT);
 
-		TransactionalEditingDomain result = new TransactionalEditingDomainImpl(
-				new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE), stack,	resourceSet);
+		TransactionalEditingDomain result = new TransactionalEditingDomainImpl(new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE), stack, resourceSet);
 
 		WorkspaceEditingDomainFactory.INSTANCE.mapResourceSet(result);
 

@@ -221,22 +221,22 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 			// Check if commandStack is null (meaning that transactionalEditingDomain 
 			// is disposed
 			CommandStack commandStack = transactionalEditingDomain.getCommandStack();
-			if( commandStack != null) {
+			if(commandStack != null) {
 				transactionalEditingDomain.getCommandStack().removeCommandStackListener(commandStackListener);
 			}
 			transactionalEditingDomain.removeResourceSetListener(resourceSetListener);
-//			resourceSetListener = null;
+			//			resourceSetListener = null;
 		}
-		
+
 		// clean properties in order to help GC
 		inputChangedListeners.clear();
 		inputChangedListeners = null;
 		multiDiagramEditor = null;
-//		servicesRegistry = null;
+		//		servicesRegistry = null;
 		transactionalEditingDomain = null;
 		resourceSet = null;
 		lifeCycleEvent = null;
-		
+
 		postSaveListeners.clear();
 		saveListeners.clear();
 		preSaveListeners.clear();
@@ -347,9 +347,8 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 	 * @param propertyId
 	 */
 	private void fireIsDirtyChanged() {
-		if (inputChangedListeners == null)
-		{
-			return ;
+		if(inputChangedListeners == null) {
+			return;
 		}
 		for(IEditorInputChangedListener listener : inputChangedListeners) {
 			try {

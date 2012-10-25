@@ -20,7 +20,8 @@ import org.eclipse.papyrus.log.LogHelper;
  * Utility class to log errors or debug information either in the plugin'log or
  * in the console.
  * <p>
- * A set of channels is used to separate different traces for different aspects. A short list is displayed at the end of the file to give an example of channels
+ * A set of channels is used to separate different traces for different aspects. A short list is displayed at the end of the file to give an example
+ * of channels
  * 
  * @deprecated Use {@link LogHelper} instead
  **/

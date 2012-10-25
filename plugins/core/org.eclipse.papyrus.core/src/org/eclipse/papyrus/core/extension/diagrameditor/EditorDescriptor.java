@@ -40,6 +40,7 @@ public class EditorDescriptor {
 	 * The icon representing the diagram
 	 */
 	private ImageDescriptor icon;
+
 	/**
 	 * Resource path to the icon
 	 */

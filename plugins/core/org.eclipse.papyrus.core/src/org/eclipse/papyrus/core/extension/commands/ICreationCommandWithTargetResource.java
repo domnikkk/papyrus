@@ -5,8 +5,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.papyrus.core.utils.DiResourceSet;
 
-
 public interface ICreationCommandWithTargetResource extends ICreationCommand {
+
 	/**
 	 * Get a command to create a new diagram in diResourceSet with the given
 	 * name.

@@ -44,13 +44,11 @@ public class ExtendedUmlModel extends UmlModel {
 					if(r.getFullPath().removeFileExtension().lastSegment().equals(fullPath.lastSegment()) && !"di".equalsIgnoreCase(extension) && !"notation".equalsIgnoreCase(extension)) {
 						if(Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().get(extension) != null) {
 							resourceURI = getPlatformURI(r.getFullPath());
-							try
-							{
+							try {
 								resource = getResourceSet().getResource(resourceURI, true);
-							}
-							catch (WrappedException e){
+							} catch (WrappedException e) {
 								resource = getResourceSet().getResource(resourceURI, false);
-								if (resource == null){
+								if(resource == null) {
 									throw e;
 								}
 							}

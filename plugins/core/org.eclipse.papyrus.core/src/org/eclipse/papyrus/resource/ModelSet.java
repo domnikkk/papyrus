@@ -62,9 +62,10 @@ import org.eclipse.papyrus.resource.additional.AdditionalResourcesModel;
  */
 /**
  * @author mvelten
- *
+ * 
  */
 public class ModelSet extends ResourceSetImpl {
+
 	/**
 	 * Id use to register the EditinDomain into the registry
 	 */
@@ -176,14 +177,14 @@ public class ModelSet extends ResourceSetImpl {
 	 */
 	public Resource getAssociatedResource(Resource modelResource, String associatedResourceExtension) {
 		Resource r = null;
-		if (modelResource != null) {
+		if(modelResource != null) {
 			URI trimmedModelURI = modelResource.getURI().trimFileExtension();
 			try {
 				r = getResource(trimmedModelURI.appendFileExtension(associatedResourceExtension), true);
-			} catch (WrappedException e){
-				if (ModelUtils.isDegradedModeAllowed(e.getCause())){
+			} catch (WrappedException e) {
+				if(ModelUtils.isDegradedModeAllowed(e.getCause())) {
 					r = getResource(trimmedModelURI.appendFileExtension(associatedResourceExtension), false);
-					if (r == null){
+					if(r == null) {
 						throw e;
 					}
 				}
@@ -197,7 +198,8 @@ public class ModelSet extends ResourceSetImpl {
 	 * This method is called by getResource and createResource before returning
 	 * the resource to the caller so we can set options on the resource.
 	 * 
-	 * @param r, can be null
+	 * @param r
+	 *        , can be null
 	 * @return the same resource for convenience
 	 */
 	protected Resource setResourceOptions(Resource r) {
@@ -209,7 +211,7 @@ public class ModelSet extends ResourceSetImpl {
 		}
 		return r;
 	}
-	
+
 	/**
 	 * Create the transactional editing domain.
 	 * 
@@ -370,7 +372,7 @@ public class ModelSet extends ResourceSetImpl {
 		snippets.performStart(this);
 
 		// Report exceptions if any
-		if(exceptions != null){
+		if(exceptions != null) {
 			throw exceptions;
 		}
 	}
@@ -508,17 +510,15 @@ public class ModelSet extends ResourceSetImpl {
 			iter.next().unload();
 			iter.remove();
 		}
-		
+
 		// Dispose Editing Domain
 		transactionalEditingDomain.dispose();
 		// Detach associated factories
-		if (adapterFactories!=null)
-		{
+		if(adapterFactories != null) {
 			adapterFactories.clear();
 		}
 		EList<Adapter> adapters = eAdapters();
-		if (adapters!=null)
-		{
+		if(adapters != null) {
 			adapters.clear();
 		}
 	}

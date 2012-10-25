@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.core.modelsetquery;
 
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -42,7 +41,7 @@ public class ModelSetQuery {
 		IModelSetQueryAdapter adapter = getExistingTypeCacheAdapter(eobjectInModelSet);
 		return adapter.getReachableObjectsOfType(eobjectInModelSet, type);
 	}
-	
+
 	/**
 	 * Searches the adapter list of the given Notifier for a TypeCacheAdapter.
 	 * If not found, returns null.
@@ -67,7 +66,7 @@ public class ModelSetQuery {
 			if(typeCacheAdapter instanceof Adapter) {
 				object.eAdapters().add((Adapter)typeCacheAdapter);
 			}
-			if (typeCacheAdapter != null) {
+			if(typeCacheAdapter != null) {
 				return typeCacheAdapter;
 			}
 		} else if(notifier instanceof Resource) {

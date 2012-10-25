@@ -114,6 +114,7 @@ public class NotationUtils {
 	 */
 	public static List<Diagram> getAssociatedDiagrams(EObject eObject) {
 		Predicate<EStructuralFeature.Setting> p = new Predicate<EStructuralFeature.Setting>() {
+
 			public boolean apply(EStructuralFeature.Setting setting) {
 				return setting.getEObject() instanceof Diagram && NotationPackage.Literals.VIEW__ELEMENT.equals(setting.getEStructuralFeature());
 			}
@@ -121,7 +122,7 @@ public class NotationUtils {
 		Function<EStructuralFeature.Setting, Diagram> f = new Function<EStructuralFeature.Setting, Diagram>() {
 
 			public Diagram apply(EStructuralFeature.Setting setting) {
-				return (Diagram) setting.getEObject();
+				return (Diagram)setting.getEObject();
 			}
 
 		};
@@ -140,10 +141,10 @@ public class NotationUtils {
 		List<Diagram> diagrams = new ArrayList<Diagram>();
 		IModelSetQueryAdapter typeCache = ModelSetQuery.getExistingTypeCacheAdapter(eObject);
 
-		if (typeCache != null) {
+		if(typeCache != null) {
 			Collection<EObject> allDiagrams = typeCache.getReachableObjectsOfType(eObject, NotationPackage.Literals.DIAGRAM);
 
-			for (EObject obj : allDiagrams) {
+			for(EObject obj : allDiagrams) {
 				if(obj instanceof Diagram) {
 					Diagram diagram = (Diagram)obj;
 					if(EcoreUtil.isAncestor(eObject, diagram.getElement())) {

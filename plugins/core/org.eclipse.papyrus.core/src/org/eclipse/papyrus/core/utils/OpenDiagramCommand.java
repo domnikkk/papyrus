@@ -73,8 +73,8 @@ public class OpenDiagramCommand extends AbstractTransactionalCommand {
 				final ServicesRegistry serviceRegistry = EditorUtils.getServiceRegistry();
 				if(serviceRegistry != null) {
 					DiResourceSet resourceSet = serviceRegistry.getService(DiResourceSet.class);
-					if (resourceSet == getEditingDomain().getResourceSet()) {
-						pageMngr =serviceRegistry.getService(IPageMngr.class);
+					if(resourceSet == getEditingDomain().getResourceSet()) {
+						pageMngr = serviceRegistry.getService(IPageMngr.class);
 					}
 				}
 				if(pageMngr == null && getEditingDomain().getResourceSet() instanceof DiResourceSet) {
@@ -82,7 +82,7 @@ public class OpenDiagramCommand extends AbstractTransactionalCommand {
 					pageMngr = DiSashModelMngr.createIPageMngr(diResourceSet.getDiResource());
 				}
 
-				if (pageMngr == null) {
+				if(pageMngr == null) {
 					throw new IllegalStateException("Enable to get the page manager");////$NON-NLS-1$
 				}
 

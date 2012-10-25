@@ -834,7 +834,7 @@ public class ServicesRegistry {
 		anonymousServices = null;
 		namedServices.clear();
 		namedServices = null;
-		
+
 		// Report errors if any
 		if(errors.getExceptions().size() > 0)
 			throw errors;

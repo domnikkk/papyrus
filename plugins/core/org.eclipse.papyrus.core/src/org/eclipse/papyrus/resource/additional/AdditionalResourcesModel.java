@@ -74,28 +74,26 @@ public class AdditionalResourcesModel implements IModel {
 			if(isAdditionalResource(getModelManager(), r.getURI())) {
 				// only save referenced models not
 				// read-only and either platform or file
-				if(!modelSet.getTransactionalEditingDomain().isReadOnly(r)
-					&& (r.getURI().isPlatformResource() || r.getURI().isFile())) {
-					try{
-						boolean error = false ;
-						if (r.getErrors() != null && !r.getErrors().isEmpty()){
-							for (Diagnostic d : r.getErrors()){
-								if (d instanceof WrappedException) {
-									WrappedException wrapped = (WrappedException) d;
-									if (wrapped.getCause() instanceof ResourceException){
-										error |= r.getContents().isEmpty() ;
+				if(!modelSet.getTransactionalEditingDomain().isReadOnly(r) && (r.getURI().isPlatformResource() || r.getURI().isFile())) {
+					try {
+						boolean error = false;
+						if(r.getErrors() != null && !r.getErrors().isEmpty()) {
+							for(Diagnostic d : r.getErrors()) {
+								if(d instanceof WrappedException) {
+									WrappedException wrapped = (WrappedException)d;
+									if(wrapped.getCause() instanceof ResourceException) {
+										error |= r.getContents().isEmpty();
 									}
 								}
 							}
 						}
-						if (!error){
+						if(!error) {
 							r.save(Collections.EMPTY_MAP);
 						}
-					}
-					catch (Exception e){
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
-						
+
 				}
 			}
 		}

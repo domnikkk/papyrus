@@ -47,8 +47,8 @@ public class ModelSetQueryInitializer implements IModelSetSnippet {
 		}
 		if(!found) {
 			modelQueryAdapter = createDefaultIModelSetQueryAdapter();
-			if (modelQueryAdapter instanceof Adapter) {
-				eAdapters.add((Adapter) modelQueryAdapter);
+			if(modelQueryAdapter instanceof Adapter) {
+				eAdapters.add((Adapter)modelQueryAdapter);
 			}
 		}
 

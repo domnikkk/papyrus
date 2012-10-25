@@ -224,7 +224,7 @@ public class LifeCycleEventsProvider implements ILifeCycleEventsProvider {
 		protected List<T> getListeners() {
 			return listeners;
 		}
-		
+
 		/**
 		 * Remove all listeners.
 		 */
