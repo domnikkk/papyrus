@@ -44,7 +44,7 @@ public class UMLOCLFactory {
 	 * @generated
 	 */
 	protected UMLOCLFactory() {
-		this.expressions = new UMLAbstractExpression[21];
+		this.expressions = new UMLAbstractExpression[22];
 	}
 
 	/**
@@ -80,6 +80,7 @@ public class UMLOCLFactory {
 			"self.oclIsTypeOf(uml::Abstraction) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))", //$NON-NLS-1$
 			"self.oclIsTypeOf(uml::Usage) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))", //$NON-NLS-1$
 			"self.oclIsTypeOf(uml::Realization) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))", //$NON-NLS-1$
+			"self.oclIsKindOf(uml::Type)", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(exprBodies[index], context, environment == null ? Collections.<String, EClassifier> emptyMap() : environment);
 		}

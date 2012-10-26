@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.diagram.common.commands.DuplicateNamedElementCommand;
 import org.eclipse.papyrus.diagram.usecase.edit.commands.ActorAsRectangleCreateCommandTN;
 import org.eclipse.papyrus.diagram.usecase.edit.commands.ActorCreateCommandTN;
+import org.eclipse.papyrus.diagram.usecase.edit.commands.ClassifierCreateCommand;
 import org.eclipse.papyrus.diagram.usecase.edit.commands.CommentCreateCommandTN;
 import org.eclipse.papyrus.diagram.usecase.edit.commands.ComponentCreateCommandTN;
 import org.eclipse.papyrus.diagram.usecase.edit.commands.ConstraintCreateCommandTN;
@@ -73,6 +74,9 @@ public class UseCaseDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		}
 		if(UMLElementTypes.Diagram_2019 == req.getElementType()) {
 			return getGEFWrapper(new ShortCutDiagramCreateCommand(req));
+		}
+		if(UMLElementTypes.Classifier_2020 == req.getElementType()) {
+			return getGEFWrapper(new ClassifierCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

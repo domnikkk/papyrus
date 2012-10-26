@@ -58,6 +58,8 @@ import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorEditPartTN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorInComponentEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorInPackageEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartCN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartTN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ComponentEditPartTN;
@@ -146,6 +148,7 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ConstraintEditPartTN.VISUAL_ID:
 		case CommentEditPartTN.VISUAL_ID:
 		case ShortCutDiagramEditPart.VISUAL_ID:
+		case ClassifierEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -421,6 +424,16 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
+		case ClassifierEditPart.VISUAL_ID:
+		{
+			if(!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getClassifier_2020ContainedLinks(view));
+			}
+			if(!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
 		case UseCaseInComponentEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
@@ -515,6 +528,16 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPackage_3014ContainedLinks(view));
+			}
+			if(!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case ClassifierInPackageEditPart.VISUAL_ID:
+		{
+			if(!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getClassifier_3019ContainedLinks(view));
 			}
 			if(!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);

@@ -34,6 +34,8 @@ import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorAsRectangleEditPartTN
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorEditPartTN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorInComponentEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorInPackageEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartCN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartTN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ComponentEditPartTN;
@@ -182,6 +184,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if(sourceEditPart instanceof CommentEditPartTN) {
 			return ((CommentEditPartTN)sourceEditPart).getMARelTypesOnSource();
 		}
+		if(sourceEditPart instanceof ClassifierEditPart) {
+			return ((ClassifierEditPart)sourceEditPart).getMARelTypesOnSource();
+		}
 		if(sourceEditPart instanceof UseCaseInComponentEditPart) {
 			return ((UseCaseInComponentEditPart)sourceEditPart).getMARelTypesOnSource();
 		}
@@ -211,6 +216,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(sourceEditPart instanceof PackageEditPartCN) {
 			return ((PackageEditPartCN)sourceEditPart).getMARelTypesOnSource();
+		}
+		if(sourceEditPart instanceof ClassifierInPackageEditPart) {
+			return ((ClassifierInPackageEditPart)sourceEditPart).getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -244,6 +252,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if(targetEditPart instanceof CommentEditPartTN) {
 			return ((CommentEditPartTN)targetEditPart).getMARelTypesOnTarget();
 		}
+		if(targetEditPart instanceof ClassifierEditPart) {
+			return ((ClassifierEditPart)targetEditPart).getMARelTypesOnTarget();
+		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
 			return ((UseCaseInComponentEditPart)targetEditPart).getMARelTypesOnTarget();
 		}
@@ -273,6 +284,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(targetEditPart instanceof PackageEditPartCN) {
 			return ((PackageEditPartCN)targetEditPart).getMARelTypesOnTarget();
+		}
+		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+			return ((ClassifierInPackageEditPart)targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -307,6 +321,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if(sourceEditPart instanceof CommentEditPartTN) {
 			return ((CommentEditPartTN)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if(sourceEditPart instanceof ClassifierEditPart) {
+			return ((ClassifierEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if(sourceEditPart instanceof UseCaseInComponentEditPart) {
 			return ((UseCaseInComponentEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
@@ -336,6 +353,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(sourceEditPart instanceof PackageEditPartCN) {
 			return ((PackageEditPartCN)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if(sourceEditPart instanceof ClassifierInPackageEditPart) {
+			return ((ClassifierInPackageEditPart)sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -369,6 +389,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if(targetEditPart instanceof CommentEditPartTN) {
 			return ((CommentEditPartTN)targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if(targetEditPart instanceof ClassifierEditPart) {
+			return ((ClassifierEditPart)targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
 			return ((UseCaseInComponentEditPart)targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -398,6 +421,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(targetEditPart instanceof PackageEditPartCN) {
 			return ((PackageEditPartCN)targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+			return ((ClassifierInPackageEditPart)targetEditPart).getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -431,6 +457,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if(sourceEditPart instanceof CommentEditPartTN) {
 			return ((CommentEditPartTN)sourceEditPart).getMATypesForTarget(relationshipType);
 		}
+		if(sourceEditPart instanceof ClassifierEditPart) {
+			return ((ClassifierEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
 		if(sourceEditPart instanceof UseCaseInComponentEditPart) {
 			return ((UseCaseInComponentEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
 		}
@@ -460,6 +489,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if(sourceEditPart instanceof PackageEditPartCN) {
 			return ((PackageEditPartCN)sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if(sourceEditPart instanceof ClassifierInPackageEditPart) {
+			return ((ClassifierInPackageEditPart)sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

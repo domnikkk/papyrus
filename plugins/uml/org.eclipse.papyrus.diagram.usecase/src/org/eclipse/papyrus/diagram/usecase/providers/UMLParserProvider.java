@@ -42,6 +42,8 @@ import org.eclipse.papyrus.diagram.usecase.edit.parts.AppliedStereotypePackageMe
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AppliedStereotypeUsageEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationAppliedStereotypeEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationNameEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageNameEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierNameEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentBodyEditPartCN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentBodyEditPartTN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ComponentInComponentNameEditPart;
@@ -241,6 +243,23 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			diagramName_5032Parser = parser;
 		}
 		return diagramName_5032Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser classifierName_6037Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClassifierName_6037Parser() {
+		if(classifierName_6037Parser == null) {
+			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			classifierName_6037Parser = parser;
+		}
+		return classifierName_6037Parser;
 	}
 
 	/**
@@ -473,6 +492,23 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			packageName_5024Parser = parser;
 		}
 		return packageName_5024Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser classifierName_6038Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClassifierName_6038Parser() {
+		if(classifierName_6038Parser == null) {
+			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			classifierName_6038Parser = parser;
+		}
+		return classifierName_6038Parser;
 	}
 
 	/**
@@ -735,6 +771,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCommentBody_5027Parser();
 		case DiagramNameEditPart.VISUAL_ID:
 			return getDiagramName_5032Parser();
+		case ClassifierNameEditPart.VISUAL_ID:
+			return getClassifierName_6037Parser();
 		case ExtensionPointEditPart.VISUAL_ID:
 			return getExtensionPoint_3007Parser();
 		case ExtensionPointInRectangleEditPart.VISUAL_ID:
@@ -763,6 +801,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getComponentName_5023Parser();
 		case PackageNameEditPartCN.VISUAL_ID:
 			return getPackageName_5024Parser();
+		case ClassifierInPackageNameEditPart.VISUAL_ID:
+			return getClassifierName_6038Parser();
 		case IncludeAppliedStereotypeEditPart.VISUAL_ID:
 			return getIncludeLabel_6030Parser();
 		case ExtendAppliedStereotypeEditPart.VISUAL_ID:

@@ -177,13 +177,13 @@
          </propertySection>
       </propertySections>
    </extension>
-
+
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.papyrus.diagram.usecase.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UseCase"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2011,2012,2013,2014,2015,2016,2017,2018,2019,3007,3008,3009,3016,3015,3017,3018,3010,3011,3012,3013,3014"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,3007,3008,3009,3016,3015,3017,3018,3010,3011,3012,3013,3014,3019"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019"/>
       </viewProvider>
    </extension>
@@ -196,13 +196,13 @@
             <method name="getType()" value="UseCase"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2011,2012,2013,2014,2015,2016,2017,2018,2019,3007,3008,3009,3016,3015,3017,3018,3010,3011,3012,3013,3014"/>
+            <method name="getType()" value="2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,3007,3008,3009,3016,3015,3017,3018,3010,3011,3012,3013,3014,3019"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5014,6029,5015,5016,5017,5019,5025,5026,5027,5032,5018,5030,5028,5029,5031,6027,5020,5021,6028,5022,5023,5024"/>
+            <method name="getType()" value="5014,6029,5015,5016,5017,5019,5025,5026,5027,5032,6037,5018,5030,5028,5029,5031,6027,5020,5021,6028,5022,5023,5024,6038"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7009,7010,7011,7012,7017,7014,7015,7016,7013"/>
@@ -225,7 +225,8 @@
          <object class="org.eclipse.papyrus.diagram.usecase.edit.parts.ConstraintEditPartTN" id="Constraint_2017"/>
          <object class="org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartTN" id="Comment_2018"/>
          <object class="org.eclipse.papyrus.diagram.usecase.edit.parts.ShortCutDiagramEditPart" id="Diagram_2019"/>
-         <context elements="Package_1000,Actor_2011,Actor_2012,UseCase_2013,UseCase_2014,Component_2015,Package_2016,Constraint_2017,Comment_2018,Diagram_2019"/>
+         <object class="org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierEditPart" id="Classifier_2020"/>
+         <context elements="Package_1000,Actor_2011,Actor_2012,UseCase_2013,UseCase_2014,Component_2015,Package_2016,Constraint_2017,Comment_2018,Diagram_2019,Classifier_2020"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -342,6 +343,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
+               id="org.eclipse.papyrus.diagram.usecase.Classifier_2020"
+               name="%metatype.name.Classifier_2020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Classifier"
+               edithelper="org.eclipse.papyrus.diagram.usecase.edit.helpers.ClassifierEditHelper">
+            <param name="semanticHint" value="2020"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <metamodelType
                id="org.eclipse.papyrus.diagram.usecase.ExtensionPoint_3007"
                name="%metatype.name.ExtensionPoint_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -449,6 +460,15 @@
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.papyrus.diagram.usecase.Package_1000"/>
             <param name="semanticHint" value="3014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.diagram.usecase.Classifier_3019"
+               name="%metatype.name.Classifier_3019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.diagram.usecase.Classifier_2020"/>
+            <param name="semanticHint" value="3019"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
@@ -591,6 +611,7 @@
          <elementType ref="org.eclipse.papyrus.diagram.usecase.Constraint_2017"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.Comment_2018"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.Diagram_2019"/>
+         <elementType ref="org.eclipse.papyrus.diagram.usecase.Classifier_2020"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.ExtensionPoint_3007"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.ExtensionPoint_3008"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.UseCase_3009"/>
@@ -603,6 +624,7 @@
          <elementType ref="org.eclipse.papyrus.diagram.usecase.UseCase_3012"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.Component_3013"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.Package_3014"/>
+         <elementType ref="org.eclipse.papyrus.diagram.usecase.Classifier_3019"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.Include_4008"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.Extend_4009"/>
          <elementType ref="org.eclipse.papyrus.diagram.usecase.Generalization_4010"/>
@@ -828,6 +850,13 @@
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.UseCase"
+			class="org.eclipse.papyrus.diagram.usecase.preferences.ClassifierPreferencePage"
+            id="org.eclipse.papyrus.diagram.usecase.preferences.ClassifierPreferencePage"
+            name="Classifier Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.UseCase"
 			class="org.eclipse.papyrus.diagram.usecase.preferences.ShortCutDiagramPreferencePage"
             id="org.eclipse.papyrus.diagram.usecase.preferences.ShortCutDiagramPreferencePage"
             name="ShortCutDiagram Node" />
@@ -859,6 +888,13 @@
 			class="org.eclipse.papyrus.diagram.usecase.preferences.ExtensionPointPreferencePage"
             id="org.eclipse.papyrus.diagram.usecase.preferences.ExtensionPointPreferencePage"
             name="ExtensionPoint Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.UseCase"
+			class="org.eclipse.papyrus.diagram.usecase.preferences.ClassifierInPackagePreferencePage"
+            id="org.eclipse.papyrus.diagram.usecase.preferences.ClassifierInPackagePreferencePage"
+            name="ClassifierInPackage Node" />
 	
 		
 	<?gmfgen generated="true"?>

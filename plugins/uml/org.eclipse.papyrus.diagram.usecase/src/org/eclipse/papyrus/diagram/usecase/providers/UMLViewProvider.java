@@ -72,6 +72,10 @@ import org.eclipse.papyrus.diagram.usecase.edit.parts.AppliedStereotypeUsageEdit
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationAppliedStereotypeEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationNameEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageNameEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierNameEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentBodyEditPartCN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentBodyEditPartTN;
@@ -245,6 +249,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 				case UseCaseEditPartTN.VISUAL_ID:
 				case ComponentEditPartTN.VISUAL_ID:
 				case ShortCutDiagramEditPart.VISUAL_ID:
+				case ClassifierEditPart.VISUAL_ID:
 				case ExtensionPointEditPart.VISUAL_ID:
 				case CommentEditPartCN.VISUAL_ID:
 				case ConstraintInComponentEditPart.VISUAL_ID:
@@ -262,6 +267,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 				case UseCaseInPackageEditPart.VISUAL_ID:
 				case ComponentInPackageEditPart.VISUAL_ID:
 				case PackageEditPartCN.VISUAL_ID:
+				case ClassifierInPackageEditPart.VISUAL_ID:
 					if(domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
 					}
@@ -271,7 +277,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 				}
 			}
 		}
-		return ActorEditPartTN.VISUAL_ID == visualID || ActorAsRectangleEditPartTN.VISUAL_ID == visualID || UseCaseEditPartTN.VISUAL_ID == visualID || UseCaseAsRectangleEditPartTN.VISUAL_ID == visualID || ComponentEditPartTN.VISUAL_ID == visualID || PackageEditPartTN.VISUAL_ID == visualID || ConstraintEditPartTN.VISUAL_ID == visualID || CommentEditPartTN.VISUAL_ID == visualID || ShortCutDiagramEditPart.VISUAL_ID == visualID || ExtensionPointEditPart.VISUAL_ID == visualID || ExtensionPointInRectangleEditPart.VISUAL_ID == visualID || UseCaseInComponentEditPart.VISUAL_ID == visualID || ComponentInComponentEditPart.VISUAL_ID == visualID || CommentEditPartCN.VISUAL_ID == visualID || ConstraintInComponentEditPart.VISUAL_ID == visualID || ActorInComponentEditPart.VISUAL_ID == visualID || ConstraintInPackageEditPart.VISUAL_ID == visualID || ActorInPackageEditPart.VISUAL_ID == visualID || UseCaseInPackageEditPart.VISUAL_ID == visualID || ComponentInPackageEditPart.VISUAL_ID == visualID || PackageEditPartCN.VISUAL_ID == visualID;
+		return ActorEditPartTN.VISUAL_ID == visualID || ActorAsRectangleEditPartTN.VISUAL_ID == visualID || UseCaseEditPartTN.VISUAL_ID == visualID || UseCaseAsRectangleEditPartTN.VISUAL_ID == visualID || ComponentEditPartTN.VISUAL_ID == visualID || PackageEditPartTN.VISUAL_ID == visualID || ConstraintEditPartTN.VISUAL_ID == visualID || CommentEditPartTN.VISUAL_ID == visualID || ShortCutDiagramEditPart.VISUAL_ID == visualID || ClassifierEditPart.VISUAL_ID == visualID || ExtensionPointEditPart.VISUAL_ID == visualID || ExtensionPointInRectangleEditPart.VISUAL_ID == visualID || UseCaseInComponentEditPart.VISUAL_ID == visualID || ComponentInComponentEditPart.VISUAL_ID == visualID || CommentEditPartCN.VISUAL_ID == visualID || ConstraintInComponentEditPart.VISUAL_ID == visualID || ActorInComponentEditPart.VISUAL_ID == visualID || ConstraintInPackageEditPart.VISUAL_ID == visualID || ActorInPackageEditPart.VISUAL_ID == visualID || UseCaseInPackageEditPart.VISUAL_ID == visualID || ComponentInPackageEditPart.VISUAL_ID == visualID || PackageEditPartCN.VISUAL_ID == visualID || ClassifierInPackageEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -336,6 +342,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 			return createComment_2018(domainElement, containerView, index, persisted, preferencesHint);
 		case ShortCutDiagramEditPart.VISUAL_ID:
 			return createDiagram_2019(domainElement, containerView, index, persisted, preferencesHint);
+		case ClassifierEditPart.VISUAL_ID:
+			return createClassifier_2020(domainElement, containerView, index, persisted, preferencesHint);
 		case ExtensionPointEditPart.VISUAL_ID:
 			return createExtensionPoint_3007(domainElement, containerView, index, persisted, preferencesHint);
 		case ExtensionPointInRectangleEditPart.VISUAL_ID:
@@ -360,6 +368,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 			return createComponent_3013(domainElement, containerView, index, persisted, preferencesHint);
 		case PackageEditPartCN.VISUAL_ID:
 			return createPackage_3014(domainElement, containerView, index, persisted, preferencesHint);
+		case ClassifierInPackageEditPart.VISUAL_ID:
+			return createClassifier_3019(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -594,6 +604,25 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location5032 = (Location)label5032.getLayoutConstraint();
 		location5032.setX(0);
 		location5032.setY(5);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createClassifier_2020(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(UMLVisualIDRegistry.getType(ClassifierEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
+		PreferenceInitializerForElementHelper.initForegroundFromPrefs(node, prefStore, "Classifier");
+		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Classifier");
+		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "Classifier");
+		Node label6037 = createLabel(node, UMLVisualIDRegistry.getType(ClassifierNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -838,6 +867,24 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5024 = createLabel(node, UMLVisualIDRegistry.getType(PackageNameEditPartCN.VISUAL_ID));
 		createCompartment(node, UMLVisualIDRegistry.getType(PackagePackageableElementCompartment2EditPart.VISUAL_ID), false, false, false, false);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "Package");
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createClassifier_3019(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(UMLVisualIDRegistry.getType(ClassifierInPackageEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
+		PreferenceInitializerForElementHelper.initForegroundFromPrefs(node, prefStore, "ClassifierInPackage");
+		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "ClassifierInPackage");
+		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "ClassifierInPackage");
+		Node label6038 = createLabel(node, UMLVisualIDRegistry.getType(ClassifierInPackageNameEditPart.VISUAL_ID));
 		return node;
 	}
 

@@ -34,6 +34,8 @@ import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorEditPartTN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorInComponentEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.ActorInPackageEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartCN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartTN;
@@ -145,6 +147,11 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Classifier_2020 = getElementType("org.eclipse.papyrus.diagram.usecase.Classifier_2020"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ExtensionPoint_3007 = getElementType("org.eclipse.papyrus.diagram.usecase.ExtensionPoint_3007"); //$NON-NLS-1$
 
 	/**
@@ -201,6 +208,11 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static final IElementType Package_3014 = getElementType("org.eclipse.papyrus.diagram.usecase.Package_3014"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Classifier_3019 = getElementType("org.eclipse.papyrus.diagram.usecase.Classifier_3019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -377,6 +389,7 @@ public class UMLElementTypes {
 			elements.put(Constraint_2017, UMLPackage.eINSTANCE.getConstraint());
 			elements.put(Comment_2018, UMLPackage.eINSTANCE.getComment());
 			elements.put(Diagram_2019, NotationPackage.eINSTANCE.getDiagram());
+			elements.put(Classifier_2020, UMLPackage.eINSTANCE.getClassifier());
 			elements.put(ExtensionPoint_3007, UMLPackage.eINSTANCE.getExtensionPoint());
 			elements.put(ExtensionPoint_3008, UMLPackage.eINSTANCE.getExtensionPoint());
 			elements.put(UseCase_3009, UMLPackage.eINSTANCE.getUseCase());
@@ -389,6 +402,7 @@ public class UMLElementTypes {
 			elements.put(UseCase_3012, UMLPackage.eINSTANCE.getUseCase());
 			elements.put(Component_3013, UMLPackage.eINSTANCE.getComponent());
 			elements.put(Package_3014, UMLPackage.eINSTANCE.getPackage());
+			elements.put(Classifier_3019, UMLPackage.eINSTANCE.getClassifier());
 			elements.put(Include_4008, UMLPackage.eINSTANCE.getInclude());
 			elements.put(Extend_4009, UMLPackage.eINSTANCE.getExtend());
 			elements.put(Generalization_4010, UMLPackage.eINSTANCE.getGeneralization());
@@ -428,6 +442,7 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Constraint_2017);
 			KNOWN_ELEMENT_TYPES.add(Comment_2018);
 			KNOWN_ELEMENT_TYPES.add(Diagram_2019);
+			KNOWN_ELEMENT_TYPES.add(Classifier_2020);
 			KNOWN_ELEMENT_TYPES.add(ExtensionPoint_3007);
 			KNOWN_ELEMENT_TYPES.add(ExtensionPoint_3008);
 			KNOWN_ELEMENT_TYPES.add(UseCase_3009);
@@ -440,6 +455,7 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(UseCase_3012);
 			KNOWN_ELEMENT_TYPES.add(Component_3013);
 			KNOWN_ELEMENT_TYPES.add(Package_3014);
+			KNOWN_ELEMENT_TYPES.add(Classifier_3019);
 			KNOWN_ELEMENT_TYPES.add(Include_4008);
 			KNOWN_ELEMENT_TYPES.add(Extend_4009);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4010);
@@ -481,6 +497,8 @@ public class UMLElementTypes {
 			return Comment_2018;
 		case ShortCutDiagramEditPart.VISUAL_ID:
 			return Diagram_2019;
+		case ClassifierEditPart.VISUAL_ID:
+			return Classifier_2020;
 		case ExtensionPointEditPart.VISUAL_ID:
 			return ExtensionPoint_3007;
 		case ExtensionPointInRectangleEditPart.VISUAL_ID:
@@ -505,6 +523,8 @@ public class UMLElementTypes {
 			return Component_3013;
 		case PackageEditPartCN.VISUAL_ID:
 			return Package_3014;
+		case ClassifierInPackageEditPart.VISUAL_ID:
+			return Classifier_3019;
 		case IncludeEditPart.VISUAL_ID:
 			return Include_4008;
 		case ExtendEditPart.VISUAL_ID:

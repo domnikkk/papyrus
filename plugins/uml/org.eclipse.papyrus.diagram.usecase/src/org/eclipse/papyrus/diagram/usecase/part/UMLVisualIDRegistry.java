@@ -40,6 +40,10 @@ import org.eclipse.papyrus.diagram.usecase.edit.parts.AppliedStereotypeUsageEdit
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationAppliedStereotypeEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.AssociationNameEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageNameEditPart;
+import org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierNameEditPart;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentBodyEditPartCN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentBodyEditPartTN;
 import org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartCN;
@@ -236,6 +240,9 @@ public class UMLVisualIDRegistry {
 			if(NotationPackage.eINSTANCE.getDiagram().isSuperTypeOf(domainElement.eClass())) {
 				return ShortCutDiagramEditPart.VISUAL_ID;
 			}
+			if(UMLPackage.eINSTANCE.getClassifier().isSuperTypeOf(domainElement.eClass())) {
+				return ClassifierEditPart.VISUAL_ID;
+			}
 			break;
 		case UseCasePointsEditPartTN.VISUAL_ID:
 			if(UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
@@ -399,6 +406,9 @@ public class UMLVisualIDRegistry {
 			if(ShortCutDiagramEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if(ClassifierEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ActorEditPartTN.VISUAL_ID:
 			if(ActorNameEditPartTN.VISUAL_ID == nodeVisualID) {
@@ -457,6 +467,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case ShortCutDiagramEditPart.VISUAL_ID:
 			if(DiagramNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ClassifierEditPart.VISUAL_ID:
+			if(ClassifierNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -528,6 +543,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if(PackagePackageableElementCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ClassifierInPackageEditPart.VISUAL_ID:
+			if(ClassifierInPackageNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -848,6 +868,8 @@ public class UMLVisualIDRegistry {
 		root.addNode(1000, viewInfo);
 		viewInfo = new BaseViewInfo(2019, ViewInfo.Node, "Diagram");
 		root.addNode(1000, viewInfo);
+		viewInfo = new BaseViewInfo(2020, ViewInfo.Node, "Classifier");
+		root.addNode(1000, viewInfo);
 		viewInfo = new BaseViewInfo(4008, ViewInfo.Edge, "");
 		root.addNode(1000, viewInfo);
 		labelInfo = new BaseViewInfo(6006, ViewInfo.Label, "", null, viewInfo);
@@ -949,6 +971,7 @@ public class UMLVisualIDRegistry {
 		viewInfo = new BaseViewInfo(3014, ViewInfo.Node, "Package");
 		root.addNode(7016, viewInfo);
 		root.addNode(7013, viewInfo);
+		viewInfo = new BaseViewInfo(3019, ViewInfo.Node, "Classifier");
 		return root;
 	}
 }

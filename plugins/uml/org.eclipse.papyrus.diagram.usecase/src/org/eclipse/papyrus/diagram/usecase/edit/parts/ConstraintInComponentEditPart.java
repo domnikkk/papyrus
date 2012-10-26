@@ -21,6 +21,7 @@ import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -30,7 +31,6 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
@@ -42,6 +42,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
+import org.eclipse.papyrus.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.diagram.common.editpolicies.HyperLinkPopupBarEditPolicy;
 import org.eclipse.papyrus.diagram.common.figure.node.CornerBentFigure;
 import org.eclipse.papyrus.diagram.common.helper.PreferenceInitializerForElementHelper;
@@ -59,7 +60,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
+public class ConstraintInComponentEditPart extends NamedElementEditPart {
 
 	/**
 	 * @generated
@@ -93,6 +94,15 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 		installEditPolicy(EditPolicyRoles.POPUPBAR_ROLE, new HyperLinkPopupBarEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+	}
+
+	/**
+	 * Papyrus codeGen
+	 * 
+	 * @generated
+	 **/
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
 	}
 
 	/**
@@ -314,6 +324,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 		if(targetEditPart instanceof CommentEditPartTN) {
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
 		}
+		if(targetEditPart instanceof ClassifierEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
 		}
@@ -344,6 +357,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
 		}
+		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		}
 		if(targetEditPart instanceof ActorEditPartTN) {
 			types.add(UMLElementTypes.Dependency_4013);
 		}
@@ -363,6 +379,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Dependency_4013);
 		}
 		if(targetEditPart instanceof ConstraintEditPartTN) {
+			types.add(UMLElementTypes.Dependency_4013);
+		}
+		if(targetEditPart instanceof ClassifierEditPart) {
 			types.add(UMLElementTypes.Dependency_4013);
 		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
@@ -392,6 +411,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.Dependency_4013);
 		}
+		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+			types.add(UMLElementTypes.Dependency_4013);
+		}
 		if(targetEditPart instanceof ActorEditPartTN) {
 			types.add(UMLElementTypes.Abstraction_4015);
 		}
@@ -411,6 +433,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Abstraction_4015);
 		}
 		if(targetEditPart instanceof ConstraintEditPartTN) {
+			types.add(UMLElementTypes.Abstraction_4015);
+		}
+		if(targetEditPart instanceof ClassifierEditPart) {
 			types.add(UMLElementTypes.Abstraction_4015);
 		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
@@ -440,6 +465,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.Abstraction_4015);
 		}
+		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+			types.add(UMLElementTypes.Abstraction_4015);
+		}
 		if(targetEditPart instanceof ActorEditPartTN) {
 			types.add(UMLElementTypes.Usage_4016);
 		}
@@ -459,6 +487,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Usage_4016);
 		}
 		if(targetEditPart instanceof ConstraintEditPartTN) {
+			types.add(UMLElementTypes.Usage_4016);
+		}
+		if(targetEditPart instanceof ClassifierEditPart) {
 			types.add(UMLElementTypes.Usage_4016);
 		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
@@ -488,6 +519,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.Usage_4016);
 		}
+		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+			types.add(UMLElementTypes.Usage_4016);
+		}
 		if(targetEditPart instanceof ActorEditPartTN) {
 			types.add(UMLElementTypes.Realization_4017);
 		}
@@ -507,6 +541,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Realization_4017);
 		}
 		if(targetEditPart instanceof ConstraintEditPartTN) {
+			types.add(UMLElementTypes.Realization_4017);
+		}
+		if(targetEditPart instanceof ClassifierEditPart) {
 			types.add(UMLElementTypes.Realization_4017);
 		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
@@ -534,6 +571,9 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Realization_4017);
 		}
 		if(targetEditPart instanceof PackageEditPartCN) {
+			types.add(UMLElementTypes.Realization_4017);
+		}
+		if(targetEditPart instanceof ClassifierInPackageEditPart) {
 			types.add(UMLElementTypes.Realization_4017);
 		}
 		return types;
@@ -553,6 +593,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
 			types.add(UMLElementTypes.Comment_2018);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Comment_3015);
@@ -563,6 +604,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		} else if(relationshipType == UMLElementTypes.Dependency_4013) {
 			types.add(UMLElementTypes.Actor_2011);
 			types.add(UMLElementTypes.Actor_2012);
@@ -571,6 +613,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Component_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Constraint_3017);
@@ -580,6 +623,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		} else if(relationshipType == UMLElementTypes.Abstraction_4015) {
 			types.add(UMLElementTypes.Actor_2011);
 			types.add(UMLElementTypes.Actor_2012);
@@ -588,6 +632,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Component_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Constraint_3017);
@@ -597,6 +642,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		} else if(relationshipType == UMLElementTypes.Usage_4016) {
 			types.add(UMLElementTypes.Actor_2011);
 			types.add(UMLElementTypes.Actor_2012);
@@ -605,6 +651,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Component_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Constraint_3017);
@@ -614,6 +661,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		} else if(relationshipType == UMLElementTypes.Realization_4017) {
 			types.add(UMLElementTypes.Actor_2011);
 			types.add(UMLElementTypes.Actor_2012);
@@ -622,6 +670,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Component_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Constraint_3017);
@@ -631,6 +680,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		}
 		return types;
 	}
@@ -666,6 +716,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Component_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Constraint_3017);
@@ -675,6 +726,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		} else if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4014) {
 			types.add(UMLElementTypes.Comment_2018);
 			types.add(UMLElementTypes.Comment_3015);
@@ -686,6 +738,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Component_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Constraint_3017);
@@ -695,6 +748,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		} else if(relationshipType == UMLElementTypes.Usage_4016) {
 			types.add(UMLElementTypes.Actor_2011);
 			types.add(UMLElementTypes.Actor_2012);
@@ -703,6 +757,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Component_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Constraint_3017);
@@ -712,6 +767,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		} else if(relationshipType == UMLElementTypes.Realization_4017) {
 			types.add(UMLElementTypes.Actor_2011);
 			types.add(UMLElementTypes.Actor_2012);
@@ -720,6 +776,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.Component_2015);
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Constraint_3017);
@@ -729,6 +786,7 @@ public class ConstraintInComponentEditPart extends ShapeNodeEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		}
 		return types;
 	}

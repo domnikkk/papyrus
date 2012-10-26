@@ -320,6 +320,9 @@ public class CommentEditPartTN extends AbstractCommentEditPart {
 		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.CommentEditPartTN) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4014);
 		}
+		if(targetEditPart instanceof ClassifierEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4014);
+		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4014);
 		}
@@ -350,6 +353,9 @@ public class CommentEditPartTN extends AbstractCommentEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4014);
 		}
+		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4014);
+		}
 		return types;
 	}
 
@@ -367,6 +373,7 @@ public class CommentEditPartTN extends AbstractCommentEditPart {
 			types.add(UMLElementTypes.Package_2016);
 			types.add(UMLElementTypes.Constraint_2017);
 			types.add(UMLElementTypes.Comment_2018);
+			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
 			types.add(UMLElementTypes.Comment_3015);
@@ -377,6 +384,7 @@ public class CommentEditPartTN extends AbstractCommentEditPart {
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
 		}
 		return types;
 	}

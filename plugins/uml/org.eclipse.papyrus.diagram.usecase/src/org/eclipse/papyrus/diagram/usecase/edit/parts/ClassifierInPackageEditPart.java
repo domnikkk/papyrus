@@ -1,23 +1,9 @@
-/*****************************************************************************
- * Copyright (c) 2010 Atos Origin.
- *
- *    
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
 package org.eclipse.papyrus.diagram.usecase.edit.parts;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -34,7 +20,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -43,29 +28,29 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.papyrus.diagram.common.editparts.NamedElementEditPart;
+import org.eclipse.papyrus.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
+import org.eclipse.papyrus.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.diagram.common.editpolicies.HyperLinkPopupBarEditPolicy;
-import org.eclipse.papyrus.diagram.common.figure.node.CornerBentFigure;
+import org.eclipse.papyrus.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
+import org.eclipse.papyrus.diagram.common.figure.node.NodeNamedElementFigure;
 import org.eclipse.papyrus.diagram.common.helper.PreferenceInitializerForElementHelper;
-import org.eclipse.papyrus.diagram.usecase.edit.policies.ConstraintInPackageItemSemanticEditPolicy;
+import org.eclipse.papyrus.diagram.usecase.edit.policies.ClassifierInPackageItemSemanticEditPolicy;
 import org.eclipse.papyrus.diagram.usecase.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.papyrus.preferences.utils.GradientPreferenceConverter;
 import org.eclipse.papyrus.preferences.utils.PreferenceConstantHelper;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Font;
-import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
  */
-public class ConstraintInPackageEditPart extends NamedElementEditPart {
+public class ClassifierInPackageEditPart extends NamedElementEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3010;
+	public static final int VISUAL_ID = 3019;
 
 	/**
 	 * @generated
@@ -80,7 +65,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	/**
 	 * @generated
 	 */
-	public ConstraintInPackageEditPart(View view) {
+	public ClassifierInPackageEditPart(View view) {
 		super(view);
 	}
 
@@ -89,9 +74,11 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ConstraintInPackageItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ClassifierInPackageItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.POPUPBAR_ROLE, new HyperLinkPopupBarEditPolicy());
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeNodeLabelDisplayEditPolicy());
+		installEditPolicy(QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY, new QualifiedNameDisplayEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
@@ -134,22 +121,22 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new CornerBentDescriptor();
+		return primaryShape = new NodeNamedElementFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public CornerBentDescriptor getPrimaryShape() {
-		return (CornerBentDescriptor)primaryShape;
+	public NodeNamedElementFigure getPrimaryShape() {
+		return (NodeNamedElementFigure)primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ConstraintInPackageNameEditPart) {
-			((ConstraintInPackageNameEditPart)childEditPart).setLabel(getPrimaryShape().getCornerBentContentLabel());
+		if(childEditPart instanceof ClassifierInPackageNameEditPart) {
+			((ClassifierInPackageNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
 		return false;
@@ -159,7 +146,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ConstraintInPackageNameEditPart) {
+		if(childEditPart instanceof ClassifierInPackageNameEditPart) {
 			return true;
 		}
 		return false;
@@ -196,7 +183,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		String prefElementId = "Constraint";
+		String prefElementId = "ClassifierInPackage";
 		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 		String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferenceConstantHelper.WIDTH);
 		String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferenceConstantHelper.HEIGHT);
@@ -279,19 +266,21 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ConstraintInPackageNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassifierInPackageNameEditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(5);
-		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(7);
+		types.add(UMLElementTypes.Generalization_4010);
+		types.add(UMLElementTypes.Association_4011);
 		types.add(UMLElementTypes.Dependency_4013);
 		types.add(UMLElementTypes.Abstraction_4015);
 		types.add(UMLElementTypes.Usage_4016);
 		types.add(UMLElementTypes.Realization_4017);
+		types.add(UMLElementTypes.PackageImport_4019);
 		return types;
 	}
 
@@ -301,64 +290,82 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if(targetEditPart instanceof ActorEditPartTN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof ActorAsRectangleEditPartTN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof UseCaseEditPartTN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof UseCaseAsRectangleEditPartTN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof ComponentEditPartTN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
-		}
-		if(targetEditPart instanceof PackageEditPartTN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
-		}
-		if(targetEditPart instanceof ConstraintEditPartTN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
-		}
-		if(targetEditPart instanceof CommentEditPartTN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof ClassifierEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof UseCaseInComponentEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof ComponentInComponentEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
-		}
-		if(targetEditPart instanceof CommentEditPartCN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
-		}
-		if(targetEditPart instanceof ConstraintInComponentEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof ActorInComponentEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
-		}
-		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ConstraintInPackageEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof ActorInPackageEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof UseCaseInPackageEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
 		if(targetEditPart instanceof ComponentInPackageEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+			types.add(UMLElementTypes.Generalization_4010);
 		}
-		if(targetEditPart instanceof PackageEditPartCN) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart) {
+			types.add(UMLElementTypes.Generalization_4010);
 		}
-		if(targetEditPart instanceof ClassifierInPackageEditPart) {
-			types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
+		if(targetEditPart instanceof ActorEditPartTN) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof ActorAsRectangleEditPartTN) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof UseCaseEditPartTN) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof UseCaseAsRectangleEditPartTN) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof ComponentEditPartTN) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof ClassifierEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof UseCaseInComponentEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof ComponentInComponentEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof ActorInComponentEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof ActorInPackageEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof UseCaseInPackageEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof ComponentInPackageEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart) {
+			types.add(UMLElementTypes.Association_4011);
 		}
 		if(targetEditPart instanceof ActorEditPartTN) {
 			types.add(UMLElementTypes.Dependency_4013);
@@ -396,7 +403,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(targetEditPart instanceof ActorInComponentEditPart) {
 			types.add(UMLElementTypes.Dependency_4013);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ConstraintInPackageEditPart) {
+		if(targetEditPart instanceof ConstraintInPackageEditPart) {
 			types.add(UMLElementTypes.Dependency_4013);
 		}
 		if(targetEditPart instanceof ActorInPackageEditPart) {
@@ -411,7 +418,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.Dependency_4013);
 		}
-		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart) {
 			types.add(UMLElementTypes.Dependency_4013);
 		}
 		if(targetEditPart instanceof ActorEditPartTN) {
@@ -450,7 +457,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(targetEditPart instanceof ActorInComponentEditPart) {
 			types.add(UMLElementTypes.Abstraction_4015);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ConstraintInPackageEditPart) {
+		if(targetEditPart instanceof ConstraintInPackageEditPart) {
 			types.add(UMLElementTypes.Abstraction_4015);
 		}
 		if(targetEditPart instanceof ActorInPackageEditPart) {
@@ -465,7 +472,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.Abstraction_4015);
 		}
-		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart) {
 			types.add(UMLElementTypes.Abstraction_4015);
 		}
 		if(targetEditPart instanceof ActorEditPartTN) {
@@ -504,7 +511,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(targetEditPart instanceof ActorInComponentEditPart) {
 			types.add(UMLElementTypes.Usage_4016);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ConstraintInPackageEditPart) {
+		if(targetEditPart instanceof ConstraintInPackageEditPart) {
 			types.add(UMLElementTypes.Usage_4016);
 		}
 		if(targetEditPart instanceof ActorInPackageEditPart) {
@@ -519,7 +526,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.Usage_4016);
 		}
-		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart) {
 			types.add(UMLElementTypes.Usage_4016);
 		}
 		if(targetEditPart instanceof ActorEditPartTN) {
@@ -558,7 +565,7 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(targetEditPart instanceof ActorInComponentEditPart) {
 			types.add(UMLElementTypes.Realization_4017);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ConstraintInPackageEditPart) {
+		if(targetEditPart instanceof ConstraintInPackageEditPart) {
 			types.add(UMLElementTypes.Realization_4017);
 		}
 		if(targetEditPart instanceof ActorInPackageEditPart) {
@@ -573,8 +580,14 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(targetEditPart instanceof PackageEditPartCN) {
 			types.add(UMLElementTypes.Realization_4017);
 		}
-		if(targetEditPart instanceof ClassifierInPackageEditPart) {
+		if(targetEditPart instanceof org.eclipse.papyrus.diagram.usecase.edit.parts.ClassifierInPackageEditPart) {
 			types.add(UMLElementTypes.Realization_4017);
+		}
+		if(targetEditPart instanceof PackageEditPartTN) {
+			types.add(UMLElementTypes.PackageImport_4019);
+		}
+		if(targetEditPart instanceof PackageEditPartCN) {
+			types.add(UMLElementTypes.PackageImport_4019);
 		}
 		return types;
 	}
@@ -584,26 +597,33 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
+		if(relationshipType == UMLElementTypes.Generalization_4010) {
 			types.add(UMLElementTypes.Actor_2011);
 			types.add(UMLElementTypes.Actor_2012);
 			types.add(UMLElementTypes.UseCase_2013);
 			types.add(UMLElementTypes.UseCase_2014);
 			types.add(UMLElementTypes.Component_2015);
-			types.add(UMLElementTypes.Package_2016);
-			types.add(UMLElementTypes.Constraint_2017);
-			types.add(UMLElementTypes.Comment_2018);
 			types.add(UMLElementTypes.Classifier_2020);
 			types.add(UMLElementTypes.UseCase_3009);
 			types.add(UMLElementTypes.Component_3016);
-			types.add(UMLElementTypes.Comment_3015);
-			types.add(UMLElementTypes.Constraint_3017);
 			types.add(UMLElementTypes.Actor_3018);
-			types.add(UMLElementTypes.Constraint_3010);
 			types.add(UMLElementTypes.Actor_3011);
 			types.add(UMLElementTypes.UseCase_3012);
 			types.add(UMLElementTypes.Component_3013);
-			types.add(UMLElementTypes.Package_3014);
+			types.add(UMLElementTypes.Classifier_3019);
+		} else if(relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Actor_2011);
+			types.add(UMLElementTypes.Actor_2012);
+			types.add(UMLElementTypes.UseCase_2013);
+			types.add(UMLElementTypes.UseCase_2014);
+			types.add(UMLElementTypes.Component_2015);
+			types.add(UMLElementTypes.Classifier_2020);
+			types.add(UMLElementTypes.UseCase_3009);
+			types.add(UMLElementTypes.Component_3016);
+			types.add(UMLElementTypes.Actor_3018);
+			types.add(UMLElementTypes.Actor_3011);
+			types.add(UMLElementTypes.UseCase_3012);
+			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Classifier_3019);
 		} else if(relationshipType == UMLElementTypes.Dependency_4013) {
 			types.add(UMLElementTypes.Actor_2011);
@@ -681,6 +701,9 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 			types.add(UMLElementTypes.Component_3013);
 			types.add(UMLElementTypes.Package_3014);
 			types.add(UMLElementTypes.Classifier_3019);
+		} else if(relationshipType == UMLElementTypes.PackageImport_4019) {
+			types.add(UMLElementTypes.Package_2016);
+			types.add(UMLElementTypes.Package_3014);
 		}
 		return types;
 	}
@@ -689,7 +712,9 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(6);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(8);
+		types.add(UMLElementTypes.Generalization_4010);
+		types.add(UMLElementTypes.Association_4011);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
 		types.add(UMLElementTypes.Dependency_4013);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4014);
@@ -704,7 +729,35 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
+		if(relationshipType == UMLElementTypes.Generalization_4010) {
+			types.add(UMLElementTypes.Actor_2011);
+			types.add(UMLElementTypes.Actor_2012);
+			types.add(UMLElementTypes.UseCase_2013);
+			types.add(UMLElementTypes.UseCase_2014);
+			types.add(UMLElementTypes.Component_2015);
+			types.add(UMLElementTypes.Classifier_2020);
+			types.add(UMLElementTypes.UseCase_3009);
+			types.add(UMLElementTypes.Component_3016);
+			types.add(UMLElementTypes.Actor_3018);
+			types.add(UMLElementTypes.Actor_3011);
+			types.add(UMLElementTypes.UseCase_3012);
+			types.add(UMLElementTypes.Component_3013);
+			types.add(UMLElementTypes.Classifier_3019);
+		} else if(relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Actor_2011);
+			types.add(UMLElementTypes.Actor_2012);
+			types.add(UMLElementTypes.UseCase_2013);
+			types.add(UMLElementTypes.UseCase_2014);
+			types.add(UMLElementTypes.Component_2015);
+			types.add(UMLElementTypes.Classifier_2020);
+			types.add(UMLElementTypes.UseCase_3009);
+			types.add(UMLElementTypes.Component_3016);
+			types.add(UMLElementTypes.Actor_3018);
+			types.add(UMLElementTypes.Actor_3011);
+			types.add(UMLElementTypes.UseCase_3012);
+			types.add(UMLElementTypes.Component_3013);
+			types.add(UMLElementTypes.Classifier_3019);
+		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
 			types.add(UMLElementTypes.Constraint_2017);
 			types.add(UMLElementTypes.Constraint_3017);
 			types.add(UMLElementTypes.Constraint_3010);
@@ -794,72 +847,6 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 	/**
 	 * @generated
 	 */
-	public class CornerBentDescriptor extends CornerBentFigure {
-
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fCornerBentContentLabel;
-
-		/**
-		 * @generated
-		 */
-		public CornerBentDescriptor() {
-			this.setForegroundColor(ColorConstants.black);
-			this.setBackgroundColor(THIS_BACK);
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-			fCornerBentContentLabel = new WrappingLabel();
-			fCornerBentContentLabel.setText("");
-			fCornerBentContentLabel.setFont(FCORNERBENTCONTENTLABEL_FONT);
-			this.add(fCornerBentContentLabel);
-		}
-
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getCornerBentContentLabel() {
-			return fCornerBentContentLabel;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	static final Color THIS_BACK = new Color(null, 248, 249, 214);
-
-	/**
-	 * @generated
-	 */
-	static final Font FCORNERBENTCONTENTLABEL_FONT = new Font(Display.getCurrent(), "Arial", 8, SWT.NORMAL);
-
-	/**
-	 * @generated
-	 */
 	@Override
 	public Object getPreferredValue(EStructuralFeature feature) {
 		IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
@@ -867,15 +854,15 @@ public class ConstraintInPackageEditPart extends NamedElementEditPart {
 		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 			String prefColor = null;
 			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
-				prefColor = PreferenceConstantHelper.getElementConstant("Constraint", PreferenceConstantHelper.COLOR_LINE);
+				prefColor = PreferenceConstantHelper.getElementConstant("ClassifierInPackage", PreferenceConstantHelper.COLOR_LINE);
 			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
-				prefColor = PreferenceConstantHelper.getElementConstant("Constraint", PreferenceConstantHelper.COLOR_FONT);
+				prefColor = PreferenceConstantHelper.getElementConstant("ClassifierInPackage", PreferenceConstantHelper.COLOR_FONT);
 			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
-				prefColor = PreferenceConstantHelper.getElementConstant("Constraint", PreferenceConstantHelper.COLOR_FILL);
+				prefColor = PreferenceConstantHelper.getElementConstant("ClassifierInPackage", PreferenceConstantHelper.COLOR_FILL);
 			}
 			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor((IPreferenceStore)preferenceStore, prefColor));
 		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
-			String prefGradient = PreferenceConstantHelper.getElementConstant("Constraint", PreferenceConstantHelper.COLOR_GRADIENT);
+			String prefGradient = PreferenceConstantHelper.getElementConstant("ClassifierInPackage", PreferenceConstantHelper.COLOR_GRADIENT);
 			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
 			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
 				result = new Integer(gradientPreferenceConverter.getTransparency());

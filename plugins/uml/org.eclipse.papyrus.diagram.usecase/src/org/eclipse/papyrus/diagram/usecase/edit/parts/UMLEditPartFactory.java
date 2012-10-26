@@ -81,6 +81,10 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ShortCutDiagramEditPart(view);
 			case DiagramNameEditPart.VISUAL_ID:
 				return new DiagramNameEditPart(view);
+			case ClassifierEditPart.VISUAL_ID:
+				return new ClassifierEditPart(view);
+			case ClassifierNameEditPart.VISUAL_ID:
+				return new ClassifierNameEditPart(view);
 			case ExtensionPointEditPart.VISUAL_ID:
 				return new ExtensionPointEditPart(view);
 			case ExtensionPointInRectangleEditPart.VISUAL_ID:
@@ -129,6 +133,10 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new PackageEditPartCN(view);
 			case PackageNameEditPartCN.VISUAL_ID:
 				return new PackageNameEditPartCN(view);
+			case ClassifierInPackageEditPart.VISUAL_ID:
+				return new ClassifierInPackageEditPart(view);
+			case ClassifierInPackageNameEditPart.VISUAL_ID:
+				return new ClassifierInPackageNameEditPart(view);
 			case UseCasePointsEditPartTN.VISUAL_ID:
 				return new UseCasePointsEditPartTN(view);
 			case UseCasePointsInRectangleEditPart.VISUAL_ID:
