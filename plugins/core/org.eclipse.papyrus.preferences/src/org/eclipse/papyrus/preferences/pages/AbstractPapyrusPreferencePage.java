@@ -90,7 +90,7 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 		if(project != null) {
 			store = new ScopedPreferenceStore(new ProjectScope(project), getBundleId());
 		} else {
-			store = new ScopedPreferenceStore(new InstanceScope(), getBundleId());
+			store = new ScopedPreferenceStore(InstanceScope.INSTANCE, getBundleId());
 		}
 		return store;
 	}

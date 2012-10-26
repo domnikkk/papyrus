@@ -61,7 +61,7 @@ public class PapyrusPrintingPreferencePage extends PrintingPreferencePage implem
 		if(project != null) {
 			store = new ScopedPreferenceStore(new ProjectScope(project), getBundleId());
 		} else {
-			store = new ScopedPreferenceStore(new InstanceScope(), getBundleId());
+			store = new ScopedPreferenceStore(InstanceScope.INSTANCE, getBundleId());
 		}
 		return store;
 	}

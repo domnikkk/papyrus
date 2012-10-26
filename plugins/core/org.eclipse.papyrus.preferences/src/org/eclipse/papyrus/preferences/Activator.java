@@ -61,7 +61,7 @@ public class Activator extends AbstractUIPlugin {
 	public IPreferenceStore getPreferenceStore() {
 		// Create the preference store lazily.
 		if(papyrusPreferenceStore == null) {
-			papyrusPreferenceStore = new PapyrusPreferenceStore(new InstanceScope(), getBundle().getSymbolicName());
+			papyrusPreferenceStore = new PapyrusPreferenceStore(InstanceScope.INSTANCE, getBundle().getSymbolicName());
 
 		}
 		return papyrusPreferenceStore;
