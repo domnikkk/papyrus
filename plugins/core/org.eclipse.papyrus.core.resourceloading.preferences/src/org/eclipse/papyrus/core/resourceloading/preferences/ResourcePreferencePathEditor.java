@@ -38,10 +38,14 @@ public class ResourcePreferencePathEditor extends ListEditor {
 	
     protected String createList(String[] items) {
         StringBuffer path = new StringBuffer("");//$NON-NLS-1$
-
-        for (int i = 0; i < items.length; i++) {
-            path.append(items[i]);
-            path.append(',');
+        for (String item : items) {
+        	if (item != null && !"".equals(item)) {
+        		path.append(item);
+        		path.append(',');
+        	}
+        }
+        if (path.length() > 0) {
+        	path.setLength(path.length() - 1);
         }
         return path.toString();
     }

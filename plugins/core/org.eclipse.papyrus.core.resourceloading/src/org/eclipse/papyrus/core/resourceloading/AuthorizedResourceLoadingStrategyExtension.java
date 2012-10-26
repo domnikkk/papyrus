@@ -41,7 +41,7 @@ public class AuthorizedResourceLoadingStrategyExtension implements ILoadingStrat
 
 	protected WeakHashMap<ModelSet, Set<URI>> authorizedResourcesCache = new WeakHashMap<ModelSet, Set<URI>>();
 
-	protected IPreferenceStore workspacePrefStore = Activator.getDefault().getPreferenceStore();;
+	protected IPreferenceStore workspacePrefStore = Activator.getDefault().getPreferenceStore();
 
 	public boolean loadResource(ModelSet modelSet, URI uri) {
 		Set<URI> authorizedResourcesSet = authorizedResourcesCache.get(modelSet);
@@ -72,11 +72,9 @@ public class AuthorizedResourceLoadingStrategyExtension implements ILoadingStrat
 							if(root.node(ProjectScope.SCOPE).node(project.getName()).nodeExists(Activator.PLUGIN_ID)) {
 								ScopedPreferenceStore projectPrefStore = new ScopedPreferenceStore(new ProjectScope(project), Activator.PLUGIN_ID);
 								String s = projectPrefStore.getString(AUTHORIZED_RESOURCES_PREF_ID);
-								String[] array = parseString(s);
-								for(int i = 0; i < array.length; i++) {
-									URI uri = URI.createURI(array[i]);
 
-									loadedAuthorizedResourcesSet.add(uri);
+								for(String uriStr : parseString(s)) {
+									loadedAuthorizedResourcesSet.add(URI.createURI(uriStr));
 								}
 							}
 						} catch (BackingStoreException e) {
@@ -88,11 +86,8 @@ public class AuthorizedResourceLoadingStrategyExtension implements ILoadingStrat
 
 			// For the workspace preferences :
 			String s = workspacePrefStore.getString(AUTHORIZED_RESOURCES_PREF_ID);
-			String[] array = parseString(s);
-			for(int i = 0; i < array.length; i++) {
-				URI uri = URI.createURI(array[i]);
-
-				loadedAuthorizedResourcesSet.add(uri);
+			for(String uriStr : parseString(s)) {
+				loadedAuthorizedResourcesSet.add(URI.createURI(uriStr));
 			}
 		}
 		return loadedAuthorizedResourcesSet;
