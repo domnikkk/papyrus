@@ -244,7 +244,7 @@ public class AllocatedItemProvider extends SysMLItemProviderAdapter implements I
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle NamedElement stereotyped by Allocated
 			 */

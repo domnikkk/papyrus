@@ -196,7 +196,7 @@ public class BindingConnectorItemProvider extends SysMLItemProviderAdapter imple
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Connector stereotyped by BindingConnector
 			 */

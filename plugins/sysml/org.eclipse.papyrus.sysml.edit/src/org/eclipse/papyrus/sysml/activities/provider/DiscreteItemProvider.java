@@ -203,7 +203,7 @@ public class DiscreteItemProvider extends RateItemProvider implements IEditingDo
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Parameter stereotyped by Discrete
 			 */

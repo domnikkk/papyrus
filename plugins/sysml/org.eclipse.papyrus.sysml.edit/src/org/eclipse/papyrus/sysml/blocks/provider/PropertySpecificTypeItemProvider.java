@@ -196,7 +196,7 @@ public class PropertySpecificTypeItemProvider extends SysMLItemProviderAdapter i
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Classifier stereotyped by PropertySpecificType
 			 */

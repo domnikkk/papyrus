@@ -196,7 +196,7 @@ public class FlowSpecificationItemProvider extends SysMLItemProviderAdapter impl
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Interface stereotyped by FlowSpecification
 			 */

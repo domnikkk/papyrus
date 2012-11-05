@@ -220,7 +220,7 @@ public class ViewItemProvider extends SysMLItemProviderAdapter implements IEditi
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Package stereotyped by View
 			 */

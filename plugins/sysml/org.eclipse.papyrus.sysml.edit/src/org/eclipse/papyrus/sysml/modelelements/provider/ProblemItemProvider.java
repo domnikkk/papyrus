@@ -196,7 +196,7 @@ public class ProblemItemProvider extends SysMLItemProviderAdapter implements IEd
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Comment stereotyped by Problem
 			 */

@@ -172,7 +172,7 @@ public class ConstraintBlockItemProvider extends BlockItemProvider implements IE
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Class stereotyped by ConstraintBlock
 			 */

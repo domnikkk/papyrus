@@ -228,7 +228,7 @@ public class BlockItemProvider extends SysMLItemProviderAdapter implements IEdit
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Class stereotyped by Block
 			 */

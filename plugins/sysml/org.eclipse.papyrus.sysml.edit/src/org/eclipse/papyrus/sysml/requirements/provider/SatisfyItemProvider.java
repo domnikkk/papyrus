@@ -171,7 +171,7 @@ public class SatisfyItemProvider extends TraceItemProvider implements IEditingDo
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Abstraction stereotyped by Satisfy
 			 */

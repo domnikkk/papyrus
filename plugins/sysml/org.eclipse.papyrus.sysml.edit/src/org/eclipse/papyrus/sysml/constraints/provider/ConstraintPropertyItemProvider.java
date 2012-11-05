@@ -196,7 +196,7 @@ public class ConstraintPropertyItemProvider extends SysMLItemProviderAdapter imp
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Property stereotyped by ConstraintProperty
 			 */

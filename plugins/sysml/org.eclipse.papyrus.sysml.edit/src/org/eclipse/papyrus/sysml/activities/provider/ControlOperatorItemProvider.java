@@ -283,7 +283,7 @@ public class ControlOperatorItemProvider extends SysMLItemProviderAdapter implem
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Operation stereotyped by ControlOperator
 			 */

@@ -196,7 +196,7 @@ public class OverwriteItemProvider extends SysMLItemProviderAdapter implements I
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle ObjectNode stereotyped by Overwrite
 			 */

@@ -196,7 +196,7 @@ public class DistributedPropertyItemProvider extends SysMLItemProviderAdapter im
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Property stereotyped by DistributedProperty
 			 */

@@ -171,7 +171,7 @@ public class DeriveReqtItemProvider extends TraceItemProvider implements IEditin
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle Abstraction stereotyped by DeriveReqt
 			 */

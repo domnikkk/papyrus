@@ -292,7 +292,7 @@ public class RequirementRelatedItemProvider extends SysMLItemProviderAdapter imp
 		/**
 		 * Notify UML element
 		 */
-		if(((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
+		if((adapterFactory instanceof IComposableAdapterFactory) && ((IComposableAdapterFactory)adapterFactory).getIRootAdapterFactory() != null) {
 			/**
 			 * Handle NamedElement stereotyped by RequirementRelated
 			 */
