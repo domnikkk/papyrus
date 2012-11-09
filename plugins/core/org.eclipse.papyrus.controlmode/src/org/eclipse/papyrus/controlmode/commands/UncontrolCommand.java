@@ -172,24 +172,24 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 	 */
 	@Override
 	protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(eObject != null) {
-			controlledModel = eObject.eResource();
-			final URI newNotationURI = URI.createURI(controlledModel.getURI().trimFileExtension().appendFileExtension(NotationModel.NOTATION_FILE_EXTENSION).toString());
-			this.controlledNotation = getEditingDomain().getResourceSet().getResource(newNotationURI, true);
-
-			final URI newDiURI = URI.createURI(controlledModel.getURI().trimFileExtension().appendFileExtension(DiModel.DI_FILE_EXTENSION).toString());
-			this.controlledDI = getEditingDomain().getResourceSet().getResource(newDiURI, true);
-		}
-
-		if (modelSet == null) {
+		if(modelSet == null) {
 			try {
 				modelSet = EditorUtils.getServiceRegistry().getService(ModelSet.class);
-			} catch (Exception e) {}
+			} catch (Exception e) {
+			}
 		}
-		if (modelSet == null) {
+		if(modelSet == null) {
 			return new Status(IStatus.ERROR, ControlModePlugin.PLUGIN_ID, "no ModelSet has been found");
 		}
-		
+		if(eObject != null) {
+			controlledModel = eObject.eResource();
+			// final URI newNotationURI =
+			// URI.createURI(controlledModel.getURI().trimFileExtension().appendFileExtension(NotationModel.NOTATION_FILE_EXTENSION).toString());
+			this.controlledNotation = modelSet.getAssociatedResource(eObject, NotationModel.NOTATION_FILE_EXTENSION);
+			// final URI newDiURI =
+			// URI.createURI(controlledModel.getURI().trimFileExtension().appendFileExtension(DiModel.DI_FILE_EXTENSION).toString());
+			this.controlledDI = modelSet.getAssociatedResource(eObject, DiModel.MODEL_FILE_EXTENSION);
+		}
 		CompoundCommand compoundCommand = new CompoundCommand();
 		uncontrolNotation(compoundCommand);
 		uncontrolModel(compoundCommand);
@@ -333,7 +333,10 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 					compoundCommand.append(new RemoveCommand(domain, parent.eResource().getContents(), parent));
 				} else {
 					for(ControledResource r : controlledResourceToRemove) {
-						compoundCommand.append(RemoveCommand.create(domain, r.eContainer(), historyPackage.Literals.CONTROLED_RESOURCE__CHILDREN, r));
+						EObject eContainer = r.eContainer();
+						if(r.eContainer() != null) {
+							compoundCommand.append(RemoveCommand.create(domain, eContainer, historyPackage.Literals.CONTROLED_RESOURCE__CHILDREN, r));
+						}
 					}
 				}
 			}
