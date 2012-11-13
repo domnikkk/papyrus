@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -47,6 +48,7 @@ import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.EditingDomainUndoContext;
@@ -425,14 +427,12 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 	 * private method that comes from org.topcased.modeler.internal.actions.ModelerUncontrolAction
 	 */
 	private void addFileResource(Resource emfRes, Collection<IResource> fileResources) {
-		URI uri = (emfRes != null) ? emfRes.getURI() : null;
-		if(uri != null && uri.isPlatformResource()) {
-			IPath path = new Path(uri.toPlatformString(false));
-			IResource r = ResourcesPlugin.getWorkspace().getRoot().findMember(path);
-			if(r != null) {
-				fileResources.add(r);
-			}
-		}
+        if (emfRes != null) {
+            IFile file = WorkspaceSynchronizer.getFile(emfRes);
+            if (file != null) {
+            	fileResources.add(file);
+            }
+        }
 	}
 
 }
