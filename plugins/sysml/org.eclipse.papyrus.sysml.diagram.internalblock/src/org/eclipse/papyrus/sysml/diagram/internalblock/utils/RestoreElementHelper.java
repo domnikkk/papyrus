@@ -37,6 +37,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.core.utils.IDebugChannel;
 import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
 import org.eclipse.papyrus.diagram.common.requests.ArrangeAffixedNodeRequest;
 import org.eclipse.papyrus.diagram.common.util.CommandUtil;
@@ -156,34 +157,39 @@ public class RestoreElementHelper {
 				}
 			});
 			for(Connector connector : Sets.newHashSet(connectors)) {
-				EList<ConnectorEnd> ends = connector.getEnds();
-				if(ends.size() == 2) {
-					Object conenctorView = getFirstReferencingViewInPartent(connector, getHostDiagram(diagramEditPart));
-					if(conenctorView == null) {
-						/*
-						 * Get view for source
-						 * IF none create it
-						 */
-						ConnectorEnd source = ends.get(0);
-						View sourceView = getEndView(source, input.getDiagram());
-						if(sourceView == null) {
-							createConnectorTargetViews(source, diagramEditPart);
-							sourceView = getEndView(source, input.getDiagram());
-						}
-						/*
-						 * Get view for target
-						 * IF none create it
-						 */
-						ConnectorEnd target = ends.get(1);
-						View targetView = getEndView(target, input.getDiagram());
-						if(targetView == null) {
-							createConnectorTargetViews(target, diagramEditPart);
-							targetView = getEndView(target, input.getDiagram());
-						}
-						if(sourceView != null && targetView != null) {
-							result.add(new SysMLLinkDescriptor(sourceView, targetView, UMLElementTypes.CONNECTOR, UMLGraphicalTypes.LINK_UML_CONNECTOR_ID, connector));
+				if (connector != null){
+					
+					EList<ConnectorEnd> ends = connector.getEnds();
+					if(ends.size() == 2) {
+						Object conenctorView = getFirstReferencingViewInPartent(connector, getHostDiagram(diagramEditPart));
+						if(conenctorView == null) {
+							/*
+							 * Get view for source
+							 * IF none create it
+							 */
+							ConnectorEnd source = ends.get(0);
+							View sourceView = getEndView(source, input.getDiagram());
+							if(sourceView == null) {
+								createConnectorTargetViews(source, diagramEditPart);
+								sourceView = getEndView(source, input.getDiagram());
+							}
+							/*
+							 * Get view for target
+							 * IF none create it
+							 */
+							ConnectorEnd target = ends.get(1);
+							View targetView = getEndView(target, input.getDiagram());
+							if(targetView == null) {
+								createConnectorTargetViews(target, diagramEditPart);
+								targetView = getEndView(target, input.getDiagram());
+							}
+							if(sourceView != null && targetView != null) {
+								result.add(new SysMLLinkDescriptor(sourceView, targetView, UMLElementTypes.CONNECTOR, UMLGraphicalTypes.LINK_UML_CONNECTOR_ID, connector));
+							}
 						}
 					}
+				}else {
+					//Error shoul be trace
 				}
 			}
 		}
