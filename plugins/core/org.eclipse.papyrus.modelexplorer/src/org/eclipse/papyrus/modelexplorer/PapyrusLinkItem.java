@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.facet.infra.browser.uicore.internal.AppearanceConfiguration;
 import org.eclipse.emf.facet.infra.browser.uicore.internal.model.ITreeElement;
 import org.eclipse.emf.facet.infra.browser.uicore.internal.model.LinkItem;
@@ -67,5 +68,13 @@ public class PapyrusLinkItem extends LinkItem {
 			throw new RuntimeException(e);
 		}
 		return super.getChildrenElements();
+	}
+	
+	@Override
+	public Object getAdapter(Class adapter) {
+		if (adapter.isAssignableFrom(Setting.class) && !getReference().isMany()) {
+			return new BasicSettingImpl(getParent(), getReference());
+		}
+		return super.getAdapter(adapter);
 	}
 }
