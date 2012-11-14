@@ -235,6 +235,40 @@ public class EditorLabelProvider implements ILabelProvider {
 				element = eObject;
 			}
 		}
+		
+		// Text computed using EMF label providers
+		if(element instanceof EObject) {
+			EObject eObject = (EObject)element;
+			//
+			IItemLabelProvider itemLabelProvider = null;
+			if(eObject != null) {
+				String uri = eObject.eClass().getEPackage().getNsURI();
+				AdapterFactory adapterFactory = null;
+				IConfigurationElement[] extensions = Platform.getExtensionRegistry().getConfigurationElementsFor("org.eclipse.emf.edit.itemProviderAdapterFactories"); //$NON-NLS-1$
+				for(IConfigurationElement e : extensions) {
+					if(uri.equals(e.getAttribute("uri"))) { //$NON-NLS-1$
+						try {
+							adapterFactory = (AdapterFactory)e.createExecutableExtension("class"); //$NON-NLS-1$
+						} catch (CoreException ex) {
+							Activator.log.error(ex);
+						}
+						if(adapterFactory != null) {
+							break;
+						}
+					}
+				}
+				if(adapterFactory != null) {
+					itemLabelProvider = (IItemLabelProvider)adapterFactory.adapt(eObject, IItemLabelProvider.class);
+				}
+			}
+
+			if(itemLabelProvider != null) {
+				return itemLabelProvider.getText(eObject);
+			}
+
+			return null;
+		}
+		
 
 		// if(element instanceof EditPart) {
 		// element = ((View)((EditPart)element).getModel()).getElement();
