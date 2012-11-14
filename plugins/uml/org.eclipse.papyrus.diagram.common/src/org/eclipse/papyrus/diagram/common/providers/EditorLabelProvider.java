@@ -235,7 +235,7 @@ public class EditorLabelProvider implements ILabelProvider {
 				element = eObject;
 			}
 		}
-		
+
 		// Text computed using EMF label providers
 		if(element instanceof EObject) {
 			EObject eObject = (EObject)element;
@@ -268,7 +268,7 @@ public class EditorLabelProvider implements ILabelProvider {
 
 			return null;
 		}
-		
+
 
 		// if(element instanceof EditPart) {
 		// element = ((View)((EditPart)element).getModel()).getElement();
