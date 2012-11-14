@@ -3,6 +3,10 @@
  */
 package org.eclipse.papyrus.resource;
 
+import org.eclipse.core.internal.resources.ResourceException;
+import org.eclipse.emf.common.util.WrappedException;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.xmi.IllegalValueException;
 import org.eclipse.papyrus.core.services.ServiceException;
 import org.eclipse.papyrus.core.services.ServicesRegistry;
@@ -14,6 +18,7 @@ import org.eclipse.papyrus.core.utils.ServiceUtilsForActionHandlers;
  * @author cedric dumoulin
  * 
  */
+@SuppressWarnings("restriction")
 public class ModelUtils {
 
 	/**
@@ -92,4 +97,17 @@ public class ModelUtils {
 		return t instanceof org.eclipse.emf.ecore.xmi.ClassNotFoundException || t instanceof IllegalValueException;
 	}
 
+	public static boolean haveLoadingError(Resource resource) {
+		if(resource.getErrors() != null && !resource.getErrors().isEmpty()) {
+			for(Diagnostic d : resource.getErrors()) {
+				if(d instanceof WrappedException) {
+					WrappedException wrapped = (WrappedException)d;
+					if(wrapped.getCause() instanceof ResourceException && resource.getContents().isEmpty()) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
 }

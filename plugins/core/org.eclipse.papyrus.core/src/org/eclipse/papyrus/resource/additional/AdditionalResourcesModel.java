@@ -16,18 +16,16 @@ package org.eclipse.papyrus.resource.additional;
 import java.io.IOException;
 import java.util.Collections;
 
-import org.eclipse.core.internal.resources.ResourceException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
+import org.eclipse.papyrus.core.Activator;
 import org.eclipse.papyrus.resource.IModel;
 import org.eclipse.papyrus.resource.IModelSnippet;
 import org.eclipse.papyrus.resource.ModelSet;
 import org.eclipse.papyrus.resource.ModelSnippetList;
+import org.eclipse.papyrus.resource.ModelUtils;
 
-@SuppressWarnings("restriction")
 public class AdditionalResourcesModel implements IModel {
 
 	/**
@@ -72,28 +70,13 @@ public class AdditionalResourcesModel implements IModel {
 	public void saveModel() throws IOException {
 		for(Resource r : modelSet.getResources()) {
 			if(isAdditionalResource(getModelManager(), r.getURI())) {
-				// only save referenced models not
-				// read-only and either platform or file
-				if(!modelSet.getTransactionalEditingDomain().isReadOnly(r) && (r.getURI().isPlatformResource() || r.getURI().isFile())) {
+				// only save referenced models not read-only and either platform or file
+				if(!modelSet.getTransactionalEditingDomain().isReadOnly(r) && (r.getURI().isPlatformResource() || r.getURI().isFile()) && !ModelUtils.haveLoadingError(r)) {
 					try {
-						boolean error = false;
-						if(r.getErrors() != null && !r.getErrors().isEmpty()) {
-							for(Diagnostic d : r.getErrors()) {
-								if(d instanceof WrappedException) {
-									WrappedException wrapped = (WrappedException)d;
-									if(wrapped.getCause() instanceof ResourceException) {
-										error |= r.getContents().isEmpty();
-									}
-								}
-							}
-						}
-						if(!error) {
-							r.save(Collections.EMPTY_MAP);
-						}
-					} catch (Exception e) {
-						e.printStackTrace();
+						r.save(Collections.EMPTY_MAP);
+					} catch (IOException e) {
+						Activator.log.error(e);
 					}
-
 				}
 			}
 		}

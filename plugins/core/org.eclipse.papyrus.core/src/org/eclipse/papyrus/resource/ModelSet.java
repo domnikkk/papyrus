@@ -31,7 +31,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -96,7 +95,7 @@ public class ModelSet extends ResourceSetImpl {
 	 */
 	public ModelSet() {
 		registerModel(additional);
-		this.setURIResourceMap(new HashMap<URI, Resource>());
+
 		getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
 		getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
 	}
@@ -149,9 +148,7 @@ public class ModelSet extends ResourceSetImpl {
 
 	@Override
 	public Resource getResource(URI uri, boolean loadOnDemand) {
-		Resource resource = null;
-		resource = super.getResource(uri, loadOnDemand);
-		return setResourceOptions(resource);
+		return setResourceOptions(super.getResource(uri, loadOnDemand));
 	}
 
 	/**
@@ -203,13 +200,17 @@ public class ModelSet extends ResourceSetImpl {
 	 * @return the same resource for convenience
 	 */
 	protected Resource setResourceOptions(Resource r) {
-		if(r instanceof ResourceImpl) {
-			ResourceImpl impl = (ResourceImpl)r;
-			if(impl.getIntrinsicIDToEObjectMap() == null) {
-				impl.setIntrinsicIDToEObjectMap(new HashMap<String, EObject>());
-			}
+		if (r != null) {
+			r.setTrackingModification(true);
 		}
 		return r;
+	}
+
+	@Override
+	protected void demandLoad(Resource resource) throws IOException {
+		// perf optimization : call setResourceOptions before the loading of the resource to avoid
+		// going through the whole objects tree when setting the tracking modification
+		super.demandLoad(setResourceOptions(resource));
 	}
 
 	/**
@@ -240,10 +241,10 @@ public class ModelSet extends ResourceSetImpl {
 	 * @throws BadStateException
 	 */
 	protected IPath getFilenameWithoutExtensionChecked() throws BadStateException {
-		if(filenameWithoutExtension == null)
+		if(getFilenameWithoutExtension() == null)
 			throw new BadStateException("Path should be set prior calling any operations.");
 
-		return filenameWithoutExtension;
+		return getFilenameWithoutExtension();
 	}
 
 	/**
@@ -265,11 +266,11 @@ public class ModelSet extends ResourceSetImpl {
 	public void createsModels(IFile newFile) {
 
 		// Get the file name, without extension.
-		filenameWithoutExtension = newFile.getFullPath().removeFileExtension();
+		setFilenameWithoutExtension(newFile.getFullPath().removeFileExtension());
 
 		// Walk all registered models
 		for(IModel model : models.values()) {
-			model.createModel(filenameWithoutExtension);
+			model.createModel(getFilenameWithoutExtension());
 		}
 
 		// call snippets to allow them to do their stuff
@@ -293,7 +294,7 @@ public class ModelSet extends ResourceSetImpl {
 			IModel model = getModel(modelId);
 
 			// Load models using the default path
-			model.createModel(filenameWithoutExtension);
+			model.createModel(getFilenameWithoutExtension());
 		}
 
 		// call snippets to allow them to do their stuff
@@ -350,7 +351,7 @@ public class ModelSet extends ResourceSetImpl {
 	public void loadModels(IFile file) throws ModelMultiException {
 
 		// Get the file name, without extension.
-		filenameWithoutExtension = file.getFullPath().removeFileExtension();
+		setFilenameWithoutExtension(file.getFullPath().removeFileExtension());
 
 		ModelMultiException exceptions = null;
 
@@ -359,7 +360,7 @@ public class ModelSet extends ResourceSetImpl {
 			// Try to load each model. Catch exceptions in order to load other
 			// models.
 			try {
-				model.loadModel(filenameWithoutExtension);
+				model.loadModel(getFilenameWithoutExtension());
 			} catch (Exception e) {
 				// Record the exception
 				if(exceptions == null) {
@@ -398,8 +399,8 @@ public class ModelSet extends ResourceSetImpl {
 
 			// Load models using the default path
 			model.importModel(path);
-			if(filenameWithoutExtension != null)
-				model.changeModelPath(filenameWithoutExtension);
+			if(getFilenameWithoutExtension() != null)
+				model.changeModelPath(getFilenameWithoutExtension());
 		}
 	}
 
@@ -478,11 +479,11 @@ public class ModelSet extends ResourceSetImpl {
 	public void saveAs(IPath path) throws IOException {
 
 		// Get the file name, without extension.
-		filenameWithoutExtension = path.removeFileExtension();
+		setFilenameWithoutExtension(path.removeFileExtension());
 
 		// Walk all registered models
 		for(IModel model : models.values()) {
-			model.changeModelPath(filenameWithoutExtension);
+			model.changeModelPath(getFilenameWithoutExtension());
 		}
 
 		// Save with new paths
