@@ -68,7 +68,12 @@ public class ModelValidationHelper {
 					if(owner instanceof Classifier) {
 						PropertyLinkedToClassifier link = new PropertyLinkedToClassifier((Classifier)owner, property);
 						if(link.isLinkedWithMultiLevelPath()) {
-							createNestedConnectorEnd(end);
+							/**
+							 * Disable constraints because nothing should be created during validation phase
+							 * Can be cause of DanglingHREFException 
+							 * See bug 
+							 */
+//							createNestedConnectorEnd(end);
 						} else {
 							Stereotype appliedStereotype = end.getAppliedStereotype(NESTED_CONNECTOR_END_STEREOTYPE);
 							if(appliedStereotype != null) {
@@ -138,13 +143,10 @@ public class ModelValidationHelper {
 	 * @return the nested connector end
 	 */
 	private static NestedConnectorEnd createNestedConnectorEnd(ConnectorEnd connectorEnd) {
-		NestedConnectorEnd nested = BlocksFactory.eINSTANCE.createNestedConnectorEnd();
-		Resource res = ResourceUtil.getResource(connectorEnd);
-		if(res != null) {
-			res.getEobjects().add(nested);
-			nested.setBase_ConnectorEnd(connectorEnd);
+		Stereotype stereotype = connectorEnd.getApplicableStereotype("SysML::Blocks::NestedConnectorEnd");
+		if(stereotype != null) {
+			connectorEnd.applyStereotype(stereotype);
 		}
-		return nested;
+		return null;
 	}
-
 }

@@ -671,7 +671,6 @@
                   <constraint id="org.eclipse.uml2.uml.util.UMLValidator.validateConnectorElement_validateConnectorEnd"
             lang="Java" class="org.eclipse.papyrus.sysml.diagram.parametric.providers.SysmlValidationProvider$Adapter3"
             name="validateConnectorEnd"
-            mode="Live"
             severity="WARNING" statusCode="200">
             
             <description><![CDATA[The NestedConnectorEnd stereotype of UML ConnectorEnd extends a UML ConnectorEnd so that the connected property]]></description>
