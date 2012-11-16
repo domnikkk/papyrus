@@ -106,7 +106,9 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 *        the associated figure to the editpart
 	 */
 	protected void refreshQualifiedName(NodeNamedElementFigure nodeNamedElementFigure) {
-		nodeNamedElementFigure.setQualifiedName(hostSemanticNamedElement.getQualifiedName());
+		if (nodeNamedElementFigure != null && hostSemanticNamedElement != null){
+			nodeNamedElementFigure.setQualifiedName(hostSemanticNamedElement.getQualifiedName());
+		}
 	}
 
 	/**
