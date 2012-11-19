@@ -30,6 +30,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.papyrus.core.resourceloading.util.LoadingUtils;
@@ -53,7 +54,14 @@ public class LoadAllHandler extends GraphicalCommandHandler {
 					for(IGraphicalEditPart selPart : selection) {
 						View view = (View)((IAdaptable)selPart).getAdapter(View.class);
 						if(view != null) {
-							exploreViewContents(modelSet, view, handledURI);
+							ProgressMonitorDialog dialog = new ProgressMonitorDialog(Display.getCurrent().getActiveShell());
+							dialog.open();
+							IProgressMonitor monitor = dialog.getProgressMonitor();
+
+							exploreViewContents(modelSet, view.getDiagram(), handledURI, monitor);
+							
+							monitor.done();
+							dialog.close();
 						}
 					}
 				}
@@ -92,39 +100,30 @@ public class LoadAllHandler extends GraphicalCommandHandler {
 		return result;
 	}
 
-	protected void exploreViewContents(final ModelSet modelSet, View view, List<URI> handledURI) {
-		if(view.getDiagram() != null) {
+	protected void exploreViewContents(final ModelSet modelSet, Diagram diag, List<URI> handledURI, IProgressMonitor monitor) {
+		if(diag != null) {
 			Set<EObject> elems = new HashSet<EObject>();
-			TreeIterator<EObject> allContents = view.getDiagram().eAllContents();
+			TreeIterator<EObject> allContents = diag.eAllContents();
 			while(allContents.hasNext()) {
 				EObject eObjectView = allContents.next();
 				if(eObjectView instanceof View) {
 					View v = (View)eObjectView;
 					EObject elem = v.getElement();
-					processElement(elem, elems, modelSet, handledURI);
+					processElement(elem, elems, modelSet, handledURI, monitor);
 				}
 			}
 		}
 	}
 
-	protected void processElement(EObject elem, Set<EObject> elems, final ModelSet modelSet, List<URI> handledURI) {
+	protected void processElement(EObject elem, Set<EObject> elems, final ModelSet modelSet, List<URI> handledURI, IProgressMonitor monitor) {
 		if(elem != null && !elems.contains(elem)) {
 			if(elem.eIsProxy()) {
 				InternalEObject internal = (InternalEObject)elem;
 				final URI proxyURI = internal.eProxyURI().trimFragment();
 				final URI trimmedURI = proxyURI.trimFileExtension();
 				if(!handledURI.contains(trimmedURI)) {
-
 					handledURI.add(trimmedURI);
-
-					ProgressMonitorDialog dialog = new ProgressMonitorDialog(Display.getCurrent().getActiveShell());
-					dialog.open();
-					IProgressMonitor monitor = dialog.getProgressMonitor();
-
 					LoadingUtils.loadWithAssociatedResources(proxyURI, modelSet, true, monitor);
-
-					monitor.done();
-					dialog.close();
 				}
 			}
 
@@ -132,7 +131,7 @@ public class LoadAllHandler extends GraphicalCommandHandler {
 			if(adapter != null && !elems.contains(elem)) {
 				List<EObject> listElem = adapter.getProxyEObjects(elem);
 				for(EObject childElem : listElem) {
-					processElement(childElem, elems, modelSet, handledURI);
+					processElement(childElem, elems, modelSet, handledURI, monitor);
 				}
 			}
 		}
