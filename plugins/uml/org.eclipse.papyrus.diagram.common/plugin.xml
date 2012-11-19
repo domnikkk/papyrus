@@ -423,6 +423,12 @@
      </visibleWhen>
   </command>
   <command
+        commandId="org.eclipse.papyrus.diagram.common.commands.LoadAll"
+        icon="icons/obj16/LoadResource.gif"
+        label="Load all"
+        style="push">
+  </command>
+  <command
         commandId="org.eclipse.papyrus.diagram.common.commands.Unload"
         icon="icons/obj16/UnloadResource.gif"
         label="Unload"
@@ -482,6 +488,13 @@
 		id="org.eclipse.papyrus.diagram.common.commands.Load"
 		name="Load">
 	</command>
+ <command
+       categoryId="org.eclipse.papyrus.editor.category"
+       defaultHandler="org.eclipse.papyrus.diagram.common.handlers.LoadAllHandler"
+       description="Load all the submodels"
+       id="org.eclipse.papyrus.diagram.common.commands.LoadAll"
+       name="Load all">
+ </command>
 	<command
 		categoryId="org.eclipse.papyrus.editor.category"
 		defaultHandler="org.eclipse.papyrus.diagram.common.handlers.UnloadHandler"
@@ -691,6 +704,13 @@
          class="org.eclipse.papyrus.diagram.common.adapters.DiagramAdapterFactory">
       <adapter
             type="org.eclipse.papyrus.sasheditor.contentprovider.di.IOpenable">
+      </adapter>
+   </factory>
+   <factory
+         adaptableType="org.eclipse.uml2.uml.Element"
+         class="org.eclipse.papyrus.diagram.common.load.UMLLoadingProxyAdapterFactory">
+      <adapter
+            type="org.eclipse.papyrus.diagram.common.load.IEObjectLoadingProxy">
       </adapter>
    </factory>
 </extension>
