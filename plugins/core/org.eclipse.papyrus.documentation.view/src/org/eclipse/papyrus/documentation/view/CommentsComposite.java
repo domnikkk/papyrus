@@ -8,6 +8,7 @@
  * 
  * Contributors:
  *    Jacques Lescot (Anyware Technologies) - initial API and implementation
+ *    g TOURMEL (Atos) - Bug 394620 - Bug 394657
  **********************************************************************/
 package org.eclipse.papyrus.documentation.view;
 
@@ -21,6 +22,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.documentation.DocumentationUnsupportedException;
+import org.eclipse.papyrus.preferences.Activator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.SWTError;
 import org.eclipse.swt.browser.Browser;
@@ -75,6 +77,8 @@ public class CommentsComposite extends DocPageComposite
 
     private static boolean isRichTextEnabled = true;
 
+    private static boolean isRichTextDefault = Activator.getDefault().getPreferenceStore().getBoolean(DocViewPrefConstants.DOCUMENTATION_EDITOR_HTML);
+
     /**
      * Constructor.
      * 
@@ -125,9 +129,9 @@ public class CommentsComposite extends DocPageComposite
         plainTextComposite = createPlainCommentsComposite();
 
         useRichTextEditorButton = new Button(parent, SWT.CHECK | SWT.RIGHT);
-        useRichTextEditorButton.setText("Use HTML Editor");
-        useRichTextEditorButton.setImage(DocViewPlugin.getDefault().getImageRegistry().get("HTML_EDITOR"));
-        useRichTextEditorButton.setSelection(false);
+        useRichTextEditorButton.setText(Messages.UseHtmlEditor);
+        useRichTextEditorButton.setImage(DocViewPlugin.getDefault().getImageRegistry().get(Messages.HtmlEditor));
+        useRichTextEditorButton.setSelection(isRichTextEnabled && isRichTextDefault);
         useRichTextEditorButton.addSelectionListener(new SelectionAdapter()
         {
             public void widgetSelected(SelectionEvent e)
@@ -140,8 +144,8 @@ public class CommentsComposite extends DocPageComposite
         emptyLbl.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
         editButton = new Button(parent, SWT.PUSH);
-        editButton.setImage(DocViewPlugin.getDefault().getImageRegistry().get("EDIT"));
-        editButton.setText("Edit");
+        editButton.setImage(DocViewPlugin.getDefault().getImageRegistry().get(Messages.ImgEdit));
+        editButton.setText(Messages.TextEdit);
         editButton.setEnabled(useRichTextEditorButton.getSelection());
         editButton.addSelectionListener(new SelectionAdapter()
         {
@@ -156,6 +160,11 @@ public class CommentsComposite extends DocPageComposite
 
             }
         });
+
+        if (isRichTextEnabled && isRichTextDefault)
+        {
+            changeEditor();
+        }
 
         if (infoText != null)
         {
@@ -172,7 +181,7 @@ public class CommentsComposite extends DocPageComposite
         useRichTextEditorButton.setEnabled(docElement != null);
         if (useRichTextEditorButton.getSelection())
         {
-            richTextComposite.setDocumentationValue("");
+            richTextComposite.setDocumentationValue(""); //$NON-NLS-1$
             if (docElement != null)
             {
                 richTextComposite.setDocumentationValue(getDocumentationValueFromElement());
@@ -180,18 +189,19 @@ public class CommentsComposite extends DocPageComposite
         }
         else
         {
-            plainTextComposite.setDocumentationValue("");
+            plainTextComposite.setDocumentationValue(""); //$NON-NLS-1$
             plainTextComposite.getControl().setEnabled(docElement != null);
             if (docElement != null)
             {
                 plainTextComposite.setDocumentationValue(getDocumentationValueFromElement());
             }
         }
+        editButton.setEnabled(useRichTextEditorButton.getSelection());
         if (infoText != null) {
         	if (docElement != null) {
         		infoText.setText(typeLabel + docElement.eClass().getName());
         	} else {
-        		infoText.setText("");
+        		infoText.setText(""); //$NON-NLS-1$
         	}
         }
     }
@@ -224,9 +234,9 @@ public class CommentsComposite extends DocPageComposite
             plainTextComposite = createPlainCommentsComposite();
             plainTextComposite.setFocus();
             plainTextComposite.setDocumentationValue(comment);
-            useRichTextEditorButton.setToolTipText("Use HTML Editor to edit documentation");
+            useRichTextEditorButton.setToolTipText(Messages.TooptipHtml);
             useRichTextEditorButton.setSelection(false);
-            editButton.setEnabled(false);
+            editButton.setEnabled(useRichTextEditorButton.getSelection());
         }
         else
         {
@@ -237,9 +247,9 @@ public class CommentsComposite extends DocPageComposite
                 plainTextComposite.dispose();
                 richTextComposite = createRichCommentsComposite();
                 richTextComposite.setDocumentationValue(comment);
-                useRichTextEditorButton.setToolTipText("Use Text Editor to edit documentation");
+                useRichTextEditorButton.setToolTipText(Messages.TooptipText);
                 useRichTextEditorButton.setSelection(true);
-                editButton.setEnabled(true);
+                editButton.setEnabled(useRichTextEditorButton.getSelection());
                 editButton.setFocus();
             }
             else
@@ -253,11 +263,8 @@ public class CommentsComposite extends DocPageComposite
 
     private void showMessageDialog()
     {
-        MessageDialog dialog = new MessageDialog(getShell(), "Rich Text Edition unavailable", null,
-                "Your operating system does not support the SWT Browser component, thus you are not able to edit documentation using rich text capabilities.\n"
-                        + "You should try installing XULRunner in your environment so that you can enable Rich Text Edition, and then restart your application.\n"
-                        + "To install XulRunner, have a look at : <a>http://www.eclipse.org/atf/downloads/base_files/manualXulrunner_section.php</a>.", MessageDialog.WARNING,
-                new String[] {IDialogConstants.OK_LABEL}, 0)
+        MessageDialog dialog = new MessageDialog(getShell(), Messages.DialogTitleUnavailable, null, 
+                Messages.DialogTextUnavailable, MessageDialog.WARNING, new String[] {IDialogConstants.OK_LABEL}, 0)
         {
             @Override
             protected Control createMessageArea(Composite composite)
@@ -436,6 +443,10 @@ public class CommentsComposite extends DocPageComposite
         if (useRichTextEditorButton != null)
         {
             useRichTextEditorButton.setEnabled(enabled);
+        }
+        if (editButton != null)
+        {
+            editButton.setEnabled(enabled && useRichTextEditorButton.getSelection());
         }
     }
 

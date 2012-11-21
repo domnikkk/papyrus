@@ -22,7 +22,16 @@ public class Messages extends NLS {
 
 	public static String DeleteTableRowAction_title;
 
+	public static String DialogTextUnavailable;
+
+	public static String DialogTitleUnavailable;
+
 	public static String EmptyDocPage_noDoc;
+
+	public static String HtmlEditor;
+
+	public static String ImgEdit;
+
 	public static String InsertTableColumnAction_text;
 
 	public static String InsertTableColumnAction_title;
@@ -42,6 +51,7 @@ public class Messages extends NLS {
 	public static String ResourcesComposite_resourcesRemoving;
 
 	public static String RichTextEditorDialog_useRichText;
+
 	public static String SpellingTextComposite_copy;
 
 	public static String SpellingTextComposite_cut;
@@ -52,7 +62,16 @@ public class Messages extends NLS {
 
 	public static String TextColorAction_title;
 
+	public static String TextEdit;
+
 	public static String TextHighlightAction_title;
+
+	public static String TooptipHtml;
+
+	public static String TooptipText;
+
+	public static String UseHtmlEditor;
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
