@@ -12,11 +12,18 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.common.figure.node;
 
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
+
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -71,6 +78,16 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 	 * the creation of the comment
 	 */
 	private Set<FontData> cachedFontDatas = new HashSet<FontData>();
+
+	protected static Transformer trans = null;
+
+	static {
+		try {
+			trans = TransformerFactory.newInstance().newTransformer();
+			trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+		} catch (Exception e) {
+		}
+	}
 
 	/**
 	 * Creates a new HTMLCornerBentFigure.
@@ -210,47 +227,62 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 			if(nodeType == Node.TEXT_NODE) {
 				generateTextFromTextNode(node, parentFlow);
 			} else {
-				switch(HTMLTags.valueOf(nodeName)) {
-				case body: // main tag for the comment body
-					// create a block for the body
-					generateBlocksFromBodyNode(node, parentFlow);
-					break;
-				case h3:
-					generateBlocksFromH3Node(node, parentFlow);
-					break;
-				case h4: // sub section heading
-					generateBlocksFromH4Node(node, parentFlow);
-					break;
-				case h5: // sub sub section heading
-					generateBlocksFromH5Node(node, parentFlow);
-					break;
-				case strong: // bold character
-					generateBlocksFromStrongNode(node, parentFlow);
-					break;
-				case em: // italic
-					generateBlocksFromItalicNode(node, parentFlow);
-					break;
-				case u: // underline
-					generateBlocksFromUnderlineNode(node, parentFlow);
-					break;
-				case sub: // subscript
-					break;
-				case sup: // superscript
-					break;
-				case blockquote: // indent left or right
-					break;
-				case table: // table
-					break;
-				case p: // paragraph
-					generateBlocksFromParagraphNode(node, parentFlow);
-					break;
-				case br:
-					generateBlocksFromBRNode(node, parentFlow);
-					break;
-				case font:
-					generateBlocksForFontNode(node, parentFlow);
-				default:
-					break;
+				try {
+					HTMLTags nodeNameEnum = HTMLTags.valueOf(nodeName);
+					switch(nodeNameEnum) {
+					case body: // main tag for the comment body
+						// create a block for the body
+						generateBlocksFromBodyNode(node, parentFlow);
+						break;
+					case h3:
+						generateBlocksFromH3Node(node, parentFlow);
+						break;
+					case h4: // sub section heading
+						generateBlocksFromH4Node(node, parentFlow);
+						break;
+					case h5: // sub sub section heading
+						generateBlocksFromH5Node(node, parentFlow);
+						break;
+					case strong: // bold character
+						generateBlocksFromStrongNode(node, parentFlow);
+						break;
+					case em: // italic
+						generateBlocksFromItalicNode(node, parentFlow);
+						break;
+					case u: // underline
+						generateBlocksFromUnderlineNode(node, parentFlow);
+						break;
+					case sub: // subscript
+						break;
+					case sup: // superscript
+						break;
+					case blockquote: // indent left or right
+						break;
+					case table: // table
+						break;
+					case p: // paragraph
+						generateBlocksFromParagraphNode(node, parentFlow);
+						break;
+					case br:
+						generateBlocksFromBRNode(node, parentFlow);
+						break;
+					case font:
+						generateBlocksForFontNode(node, parentFlow);
+					default:
+						break;
+					}
+				} catch (IllegalArgumentException e) {
+					// invalid or non supported tag
+					// inject the tag and its content as pure text
+					try
+					{
+						StringWriter stringOut = new StringWriter();
+						trans.transform(new DOMSource(node), new StreamResult(stringOut));
+						generateTextFromString(stringOut.toString(), parentFlow);
+					}
+					catch (Exception e2)
+					{
+					}
 				}
 			}
 		}
@@ -273,17 +305,8 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 		textProperties.pop();
 	}
 
-	/**
-	 * Generates code from a node representing a text.
-	 * 
-	 * @param node
-	 *        the node from which to generate belowk flows
-	 * @param parentFlow
-	 *        the parent block flow which will contain the block created
-	 */
-	protected void generateTextFromTextNode(Node node, BlockFlow parentFlow) {
-		// node has type: TEXT_NODE
-		String text = HTMLCleaner.cleanHTMLTags(node.getNodeValue());
+	protected void generateTextFromString(String text, BlockFlow parentFlow) {
+		text = HTMLCleaner.cleanHTMLTags(text);
 		TextFlowEx textFlow = new TextFlowEx(text);
 		textFlow.setTextUnderline(false);
 
@@ -349,6 +372,19 @@ public class HTMLCornerBentFigure extends CornerBentFigure implements ILabelFigu
 		textFlow.setFont(font);
 
 		parentFlow.add(textFlow);
+	}
+
+	/**
+	 * Generates code from a node representing a text.
+	 * 
+	 * @param node
+	 *        the node from which to generate belowk flows
+	 * @param parentFlow
+	 *        the parent block flow which will contain the block created
+	 */
+	protected void generateTextFromTextNode(Node node, BlockFlow parentFlow) {
+		// node has type: TEXT_NODE
+		generateTextFromString(node.getNodeValue(), parentFlow);
 	}
 
 	/**
