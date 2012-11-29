@@ -19,6 +19,7 @@ import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -73,23 +74,28 @@ public class LoadingTester extends PropertyTester {
 		while(iter.hasNext()) {
 			Object obj = iter.next();
 			if(obj instanceof IAdaptable) {
-				View view = (View)((IAdaptable)obj).getAdapter(View.class);
-				EObject eObject;
-				if(view != null) {
-					eObject = view.getElement();
-				} else {
-					eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
-					if(eObject != null) {
-						Resource r = eObject.eResource();
-						if(r != null && r.getURI() != null) {
-							URI associatedResourceURI = r.getURI().trimFragment().trimFileExtension().appendFileExtension(fileExtension);
-							ResourceSet resourceSet = r.getResourceSet();
+				EObject eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
+				if (eObject == null) {
+					Setting setting = (Setting)((IAdaptable)obj).getAdapter(Setting.class);
+					if (setting != null) {
+						eObject = (EObject)setting.get(false);
+					}
+				}
 
-							if(resourceSet != null) {
-								Resource associatedResource = resourceSet.getResource(associatedResourceURI, false);
-								if(associatedResource == null || !associatedResource.isLoaded()) {
-									return false;
-								}
+				if(eObject instanceof View) {
+					eObject = ((View)eObject).getElement();
+				}
+
+				if(eObject != null) {
+					Resource r = eObject.eResource();
+					if (r != null && r.getURI() != null) {
+						URI associatedResourceURI = r.getURI().trimFragment().trimFileExtension().appendFileExtension(fileExtension);
+						ResourceSet resourceSet = r.getResourceSet();
+
+						if (resourceSet != null) {
+							Resource associatedResource = resourceSet.getResource(associatedResourceURI, false);
+							if (associatedResource == null || !associatedResource.isLoaded()) {
+								return false;
 							}
 						}
 					}
@@ -120,6 +126,12 @@ public class LoadingTester extends PropertyTester {
 						eObject = view.getElement();
 					} else {
 						eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
+						if (eObject == null) {
+							Setting setting = (Setting)((IAdaptable)obj).getAdapter(Setting.class);
+							if (setting != null) {
+								eObject = (EObject)setting.get(false);
+							}
+						}
 					}
 					if(eObject != null && !eObject.eIsProxy()) {
 						// test that there is at least one not loaded resource object
@@ -157,21 +169,27 @@ public class LoadingTester extends PropertyTester {
 			while(iter.hasNext()) {
 				Object obj = iter.next();
 				if(obj instanceof IAdaptable) {
-					View view = (View)((IAdaptable)obj).getAdapter(View.class);
-					EObject eObject;
-					if(view != null) {
-						eObject = view.getElement();
-					} else {
-						eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
+					EObject eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
+					if (eObject == null) {
+						Setting setting = (Setting)((IAdaptable)obj).getAdapter(Setting.class);
+						if (setting != null) {
+							eObject = (EObject)setting.get(false);
+						}
 					}
-					if(eObject != null && eObject.eIsProxy()) {
-						continue;
-					} else if(view instanceof Edge) {
-						View target = ((Edge)view).getTarget();
+
+					if(eObject instanceof Edge) {
+						View target = ((Edge)eObject).getTarget();
 						if(target != null && ViewUtil.resolveSemanticElement(target) == null) {
 							// there is a backslash decorator
 							continue;
 						}
+					}
+					if(eObject instanceof View) {
+						eObject = ((View)eObject).getElement();
+					}
+
+					if(eObject != null && eObject.eIsProxy()) {
+						continue;
 					}
 				}
 				// a step failed
