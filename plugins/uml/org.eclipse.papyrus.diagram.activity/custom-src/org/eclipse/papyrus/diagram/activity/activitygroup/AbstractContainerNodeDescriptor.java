@@ -11,7 +11,6 @@
  *   Atos Origin - Initial API and implementation
  *
  *****************************************************************************/
-
 package org.eclipse.papyrus.diagram.activity.activitygroup;
 
 import java.util.ArrayList;
@@ -28,10 +27,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
  * 
  * @author adaussy
  */
+public abstract class AbstractContainerNodeDescriptor implements IContainerNodeDescriptor {
 
-public abstract class AbstractContainerNodeDescriptor implements IContainerNodeDescriptor{
-
-	
 	/**
 	 * Get the eclass of the model eobject represented by the node
 	 * 
@@ -39,7 +36,6 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 	 */
 	public abstract EClass getContainerEClass();
 
-	
 	public List<EClass> getPossibleGraphicalChildren() {
 		List<EReference> refs = this.getChildrenReferences();
 		List<EClass> result = new ArrayList<EClass>(refs.size());
@@ -56,7 +52,6 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 	 *        the part containing children, and representing an element of the getContainerEClass() eclass
 	 * @return the rectangle in which nodes are considered as children of this part (absolute coordinates)
 	 */
-
 	public Rectangle getContentArea(IGraphicalEditPart containerPart) {
 		Rectangle bounds = containerPart.getContentPane().getBounds().getCopy();
 		containerPart.getContentPane().translateToAbsolute(bounds);
@@ -69,9 +64,8 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 	 * 
 	 * @return the references to contained elements
 	 */
-
 	public abstract List<EReference> getChildrenReferences();
-	
+
 	/**
 	 * Get the list of references linking the child to its parent element.
 	 * Note that these may not be direct containment relations in case the element is only a graphical container.
@@ -82,9 +76,9 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 
 	/**
 	 * Get the edit part which is registered to the group framework (compartment) from a view of the corresponding node.
+	 * 
 	 * @return the compartment edit part which is registered to the group framework
 	 */
-
 	public abstract IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart);
 
 	/**
@@ -94,7 +88,6 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 	 *        EClass of the child you want to test
 	 * @return
 	 */
-
 	public boolean canIBeGraphicalParentOf(EClass childType) {
 		for(EReference reference : this.getChildrenReferences()) {
 			if(reference.getEReferenceType().isSuperTypeOf(childType)) {
@@ -111,7 +104,6 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 	 *        EClass of the child you want to test
 	 * @return
 	 */
-
 	public boolean canIBeModelParentOf(EClass childType) {
 		for(EReference reference : this.getChildrenReferences()) {
 			if(reference.getEReferenceType().isSuperTypeOf(childType) && reference.isContainment()) {
@@ -128,7 +120,6 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 	 *        EClass of the child you want to test
 	 * @return null if no reference is found
 	 */
-
 	public List<EReference> getReferenceFor(EClass childType) {
 		List<EReference> result = new ArrayList<EReference>();
 		for(EReference reference : this.getChildrenReferences()) {
@@ -146,7 +137,6 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 	 *        EClass of the child you want to test
 	 * @return null if no reference is found
 	 */
-
 	public EReference getContainmentReferenceFor(EClass childType) {
 		EReference usedReference = null;
 		List<EReference> result = new ArrayList<EReference>();
@@ -164,12 +154,10 @@ public abstract class AbstractContainerNodeDescriptor implements IContainerNodeD
 		}
 		return usedReference;
 	}
-	
-	 public int compareTo(IContainerNodeDescriptor o){
-		 Integer thisInt = new Integer(getGroupPriority());
-		 Integer otherInt = new Integer(o.getGroupPriority());
-		 return thisInt.compareTo(otherInt);
-		
-	 }
 
+	public int compareTo(IContainerNodeDescriptor o) {
+		Integer thisInt = new Integer(getGroupPriority());
+		Integer otherInt = new Integer(o.getGroupPriority());
+		return thisInt.compareTo(otherInt);
+	}
 }

@@ -19,10 +19,12 @@ import org.eclipse.uml2.uml.ActivityNode;
 
 /**
  * Implementation of {@link GroupNotifyingOnMoveEditPolicy} for {@link ActivityNode}
+ * 
  * @author arthur daussy
- *
+ * 
  */
-public class ActivityNodeEditPolicy extends GroupNotifyingOnMoveEditPolicy{
+public class ActivityNodeEditPolicy extends GroupNotifyingOnMoveEditPolicy {
+
 	/**
 	 * 
 	 * @param groupDescriptor
@@ -30,5 +32,4 @@ public class ActivityNodeEditPolicy extends GroupNotifyingOnMoveEditPolicy{
 	public ActivityNodeEditPolicy(IContainerNodeDescriptor groupDescriptor) {
 		super(groupDescriptor);
 	}
-
 }

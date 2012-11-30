@@ -26,7 +26,7 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.LoopNodeStructuredActivit
  * @author arthur daussy
  * 
  */
-public class CustomLoopNodeStructuredActivityNodeContentCompartmentEditPart extends LoopNodeStructuredActivityNodeContentCompartmentEditPart  implements IGroupCompartmentEditPart{
+public class CustomLoopNodeStructuredActivityNodeContentCompartmentEditPart extends LoopNodeStructuredActivityNodeContentCompartmentEditPart implements IGroupCompartmentEditPart {
 
 	public CustomLoopNodeStructuredActivityNodeContentCompartmentEditPart(View view) {
 		super(view);
@@ -56,5 +56,4 @@ public class CustomLoopNodeStructuredActivityNodeContentCompartmentEditPart exte
 	public boolean isSelectable() {
 		return false;
 	}
-
 }

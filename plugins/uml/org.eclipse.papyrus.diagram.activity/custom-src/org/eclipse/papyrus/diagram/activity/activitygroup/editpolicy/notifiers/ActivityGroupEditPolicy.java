@@ -23,46 +23,47 @@ import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescriptor;
 import org.eclipse.papyrus.diagram.activity.activitygroup.IGroupEditPolicies;
 
-
 /**
  * The aim of the edit policy if to notify changes to the Group Framework for Activities Elements
+ * 
  * @author arthur daussy
- *
+ * 
  */
-public class ActivityGroupEditPolicy extends GroupNotifyingOnMoveEditPolicy{
+public class ActivityGroupEditPolicy extends GroupNotifyingOnMoveEditPolicy {
+
 	/**
 	 * 
-	 * @param groupDescriptor IContainerNodeDescriptor
+	 * @param groupDescriptor
+	 *        IContainerNodeDescriptor
 	 */
 	public ActivityGroupEditPolicy(IContainerNodeDescriptor groupDescriptor) {
 		super(groupDescriptor);
 	}
+
 	/**
 	 * Override in order to:
-	 *  - prevent Move of more than one Activity Group
-	 *  - Initial Moving Edit Part State
+	 * - prevent Move of more than one Activity Group
+	 * - Initial Moving Edit Part State
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if (understandsRequest(request)){
+		if(understandsRequest(request)) {
 			if(request instanceof ChangeBoundsRequest) {
 				ChangeBoundsRequest chRq = (ChangeBoundsRequest)request;
 				int compt = 0;
-				if (chRq.getEditParts() != null){
-					for (Object p : chRq.getEditParts()){
+				if(chRq.getEditParts() != null) {
+					for(Object p : chRq.getEditParts()) {
 						if(p instanceof EditPart) {
 							EditPart part = (EditPart)p;
 							EditPolicy policy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY);
-							if (policy instanceof ActivityGroupEditPolicy){
+							if(policy instanceof ActivityGroupEditPolicy) {
 								compt++;
 							}
 						}
 					}
-					if (compt > 1){
-
+					if(compt > 1) {
 						return UnexecutableCommand.INSTANCE;
 					}
-					
 				}
 				initMovingPartState(chRq);
 				Command cmd = super.getCommand(request);
@@ -75,10 +76,9 @@ public class ActivityGroupEditPolicy extends GroupNotifyingOnMoveEditPolicy{
 
 	@Override
 	public boolean understandsRequest(Request req) {
-		if (req instanceof ChangeBoundsRequest){
+		if(req instanceof ChangeBoundsRequest) {
 			return true;
 		}
 		return false;
 	}
-
 }

@@ -138,7 +138,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 		return null;
 	}
 
-
 	/**
 	 * Synchronizes a Call Action
 	 * 
@@ -149,11 +148,9 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 			createNotification(SYNCHRONIZE_PINS_AND_PARAMETERS, "Unable to synchronize pins on " + invocationAction.getQualifiedName() + " : the ressource is unreachable", Type.WARNING);
 			return;
 		}
-
 		//Trying to match pins of the callAction with parameters of same index/direction/type.
 		//The pins that can not be matched will be destroyed by the "syncCallActionWhenOutdated" method.
 		matchPinsAndParams(invocationAction);
-
 		if(isUpToDate(invocationAction)) {
 			createNotification(SYNCHRONIZE_PINS_AND_PARAMETERS, "The call action " + invocationAction.getQualifiedName() + " is up to date", Type.INFO);
 		} else {
@@ -190,7 +187,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 					behaviorStructural = ((BroadcastSignalAction)invocationAction).getSignal();
 				}
 				XMIResource xmiResource = PinAndParameterSynchronizer.getXMIResource(behaviorStructural);
-
 				for(Pin pin : allPins) {
 					TypedElement typedElement = PinAndParameterSynchronizer.getLinkedParemeter(pin, xmiResource);
 					if(typedElement != null) {
@@ -198,7 +194,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 						pin.setName(paramName);
 					}
 				}
-
 				return CommandResult.newOKCommandResult();
 			}
 		};
@@ -221,19 +216,16 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 		} else {
 			outputPins = Collections.emptyList();
 		}
-
 		//The command that is going to be executed.
 		CompoundCommand linkingPinsAndParamsCommand = new CompoundCommand();
 		//		CompositeTransactionalCommand linkingPinsAndParamsCommand = new CompositeTransactionalCommand(EditorUtils.getTransactionalEditingDomain(), "Pin synchronization");////$NON-NLS-1$
-
 		if(invocationAction instanceof CallAction) {
 			CallAction callAction = (CallAction)invocationAction;
 			List<Parameter> callActionParams = getParametersFromCallAction(callAction);
 			Map<Integer, TypedElement> inputParameters = new HashMap<Integer, TypedElement>();
 			Map<Integer, TypedElement> outputParameters = new HashMap<Integer, TypedElement>();
 			//Splitting parameters.
-			PinAndParameterSynchronizer.splitParameters(callActionParams, Lists.<Parameter> newArrayList(), inputParameters, outputParameters,invocationAction);
-
+			PinAndParameterSynchronizer.splitParameters(callActionParams, Lists.<Parameter> newArrayList(), inputParameters, outputParameters, invocationAction);
 			//Matching pins and parameters.
 			matchPinsAndParams(inputPins, inputParameters, linkingPinsAndParamsCommand);
 			matchPinsAndParams(outputPins, outputParameters, linkingPinsAndParamsCommand);
@@ -241,16 +233,9 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 			Map<Integer, TypedElement> invocationActionProperties = getPropertyFromInvocationAction(invocationAction);
 			matchPinsAndParams(inputPins, invocationActionProperties, linkingPinsAndParamsCommand);
 		}
-
 		//Execution of the command
-
 		executeCommand(linkingPinsAndParamsCommand, invocationAction);
-
 	}
-
-
-
-
 
 	/**
 	 * Refinement for the matchPinsAndParams(CallAction) method.
@@ -308,7 +293,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 			if(behavior != null) {
 				result = behavior.getOwnedParameters();
 			}
-
 		} else if(callAction instanceof CallOperationAction) {
 			Operation operation = ((CallOperationAction)callAction).getOperation();
 			if(operation != null) {
@@ -357,7 +341,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 		} else if(invocationAction instanceof BroadcastSignalAction) {
 			cmd = PinAndParameterSynchronizer.getResetPinsCmd((BroadcastSignalAction)invocationAction);
 		}
-
 		Element behaviorStructural = null;
 		if(invocationAction instanceof CallBehaviorAction) {
 			behaviorStructural = ((CallBehaviorAction)invocationAction).getBehavior();
@@ -369,7 +352,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 			behaviorStructural = ((BroadcastSignalAction)invocationAction).getSignal();
 		}
 		XMIResource xmiResource = PinAndParameterSynchronizer.getXMIResource(behaviorStructural);
-
 		if(!cmd.isEmpty() && cmd.canExecute()) {
 			//calculate incoming and outcoming edge
 			Iterable<ActivityEdge> outgoing = Collections.emptyList();
@@ -386,7 +368,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 					incoming = Iterables.concat(incoming, p.getIncomings());
 				}
 			}
-
 			HashSet<ActivityEdge> newHashSet = Sets.newHashSet(Iterables.concat(outgoing, incoming));
 			//Notifify User that Edge will deleted
 			DeleteActivityEdgeDialog dialog = new DeleteActivityEdgeDialog(new Shell(), newHashSet, invocationAction);
@@ -403,7 +384,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 					//Destroy all edge
 					EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(activityEdge);
 					if(editingDomain instanceof TransactionalEditingDomain) {
-
 						DestroyElementCommand detryCmd = new DestroyElementPapyrusCommand(new DestroyElementRequest(activityEdge, false));
 						if(detryCmd != null && detryCmd.canExecute()) {
 							((TransactionalEditingDomain)editingDomain).getCommandStack().execute(new GMFtoEMFCommandWrapper(detryCmd));
@@ -459,19 +439,16 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 				xmiResource = PinAndParameterSynchronizer.getXMIResource(signal);
 				typedElementArgument = Lists.newArrayList(transformeToTypedElementIterable(signal.getOwnedAttributes()));
 			}
-
 		} else if(invocationAction instanceof BroadcastSignalAction) {
 			Signal signal = ((BroadcastSignalAction)invocationAction).getSignal();
 			if(signal != null) {
 				xmiResource = PinAndParameterSynchronizer.getXMIResource(signal);
 				typedElementArgument = Lists.newArrayList(transformeToTypedElementIterable(signal.getOwnedAttributes()));
 			}
-
 		}
 		if(typedElementArgument == null) {
 			return true;
 		}
-
 		//checking if each pin is up to date.
 		final Set<TypedElement> typedElementArgumentFound = new HashSet<TypedElement>();
 		for(InputPin p : invocationActionArguments) {
@@ -490,7 +467,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 				typedElementArgumentFound.add(pa);
 			}
 		}
-
 		// Checking whether new pins should be created (meaning some parameters do not have matching pins)
 		Iterable<TypedElement> intersectionBetweenPinParamsAndAllParams = Iterables.filter(typedElementArgument, new Predicate<TypedElement>() {
 
@@ -513,7 +489,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 			public TypedElement apply(EObject from) {
 				if(from instanceof TypedElement) {
 					return (TypedElement)from;
-
 				}
 				return null;
 			}
@@ -552,7 +527,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 		}
 		return result;
 	}
-
 
 	/**
 	 * Test if the action can be reached (return false if the CallAction is in a controled package which is not loaded).
@@ -600,7 +574,6 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				} catch (RollbackException e) {
-
 					e.printStackTrace();
 				}
 			}

@@ -70,7 +70,6 @@ public class InterruptibleActivityRegionContainment extends AbstractContainerNod
 		return Collections.singletonList(UMLPackage.eINSTANCE.getInterruptibleActivityRegion_Node());
 	}
 
-
 	@Override
 	public List<EReference> getParentReferences() {
 		return Collections.singletonList(UMLPackage.Literals.ACTIVITY_GROUP__IN_ACTIVITY);
@@ -85,5 +84,4 @@ public class InterruptibleActivityRegionContainment extends AbstractContainerNod
 	public int getGroupPriority() {
 		return IGroupPriority.INTERRUPTIBLE_REGION_PRIORITY;
 	}
-
 }

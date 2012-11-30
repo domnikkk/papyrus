@@ -24,11 +24,10 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.MoveElementsCommand;
 import org.eclipse.papyrus.diagram.activity.activitygroup.request.DeferredMoveRequest;
 
-
 public class DeferredMoveElementsCommand extends MoveElementsCommand {
 
 	private DeferredMoveRequest request;
-	
+
 	public DeferredMoveElementsCommand(DeferredMoveRequest request) {
 		super(request);
 		this.request = request;
@@ -51,18 +50,9 @@ public class DeferredMoveElementsCommand extends MoveElementsCommand {
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if (super.canExecute()){			
+		if(super.canExecute()) {
 			return super.doExecuteWithResult(monitor, info);
 		}
 		return null;
 	}
-	
-	
-	
-	
-
-
-
-	
-	
 }

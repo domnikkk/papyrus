@@ -92,7 +92,6 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 			return true;
 		}
 
-	
 		public void execute() {
 			Object newObject = request.getNewObject();
 			/*
@@ -117,10 +116,9 @@ public class GroupNotifyingInCreationEditPolicy extends GroupListenerEditPolicy 
 							IGraphicalEditPart compartmentEditPart = ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_PARTITION).getCompartmentPartFromView(graphEdit);
 							if(compartmentEditPart != null) {
 								RefreshEditPartCommand refreshCommand = new RefreshEditPartCommand(compartmentEditPart, true);
-								if (refreshCommand.canExecute()){									
+								if(refreshCommand.canExecute()) {
 									appendAndExecute(new GMFtoEMFCommandWrapper(refreshCommand));
 								}
-
 							}
 							ChangeBoundsRequest changeBoundRequest = new ChangeBoundsRequest(FAKE_MOVE_COMMAND_TYPE);
 							changeBoundRequest.setEditParts(graphEdit);

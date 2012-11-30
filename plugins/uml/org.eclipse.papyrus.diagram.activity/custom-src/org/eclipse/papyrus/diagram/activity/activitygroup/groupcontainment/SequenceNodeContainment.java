@@ -40,13 +40,9 @@ public class SequenceNodeContainment extends StructuredActivityNodeContainment {
 		return UMLPackage.eINSTANCE.getSequenceNode();
 	}
 
-
-
 	@Override
 	public IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart) {
 		String hint = "" + SequenceNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID;
 		return ((GraphicalEditPart)editpart).getChildBySemanticHintOnPrimaryView(hint);
 	}
-	
-	
 }

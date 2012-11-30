@@ -19,36 +19,30 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import com.google.common.base.Predicate;
 
-
 /**
  * Filter all ancestors
  * 
  * @author arthur daussy
  * 
  */
-public class AncestorFilter  implements Predicate<EObject> {
+public class AncestorFilter implements Predicate<EObject> {
 
 	private Iterable<? extends EObject> initialCollection;
-
 
 	public AncestorFilter(Iterable<? extends EObject> initialCollection) {
 		super();
 		this.initialCollection = initialCollection;
 	}
 
-
-
-
 	public boolean apply(EObject input) {
 		for(EObject target : initialCollection) {
-			if (target == input){
+			if(target == input) {
 				continue;
 			}
-			if(EcoreUtil.isAncestor(target,input)) {
+			if(EcoreUtil.isAncestor(target, input)) {
 				return false;
 			}
 		}
 		return true;
 	}
-
 }

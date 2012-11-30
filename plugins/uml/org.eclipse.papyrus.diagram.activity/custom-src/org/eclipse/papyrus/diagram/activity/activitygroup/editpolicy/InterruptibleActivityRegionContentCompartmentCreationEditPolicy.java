@@ -18,8 +18,9 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescript
 
 /**
  * Handle creation in interruptible activity region content compartment
+ * 
  * @author adaussy
- *
+ * 
  */
 public class InterruptibleActivityRegionContentCompartmentCreationEditPolicy extends GroupCreationEditPolicy {
 
@@ -27,5 +28,4 @@ public class InterruptibleActivityRegionContentCompartmentCreationEditPolicy ext
 		super(groupDescriptor);
 		// TODO Auto-generated constructor stub
 	}
-
 }

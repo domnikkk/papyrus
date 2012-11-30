@@ -6,29 +6,25 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.editpolicy.notifiers.I
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 
+public class FromIGroupNotifierToEObject implements Function<IGroupNotifier, EObject> {
 
-public class FromIGroupNotifierToEObject implements Function<IGroupNotifier, EObject> {	
-	
-	FromIGroupNotifierToEObject(){
-		
+	FromIGroupNotifierToEObject() {
 	}
-	
+
 	private static class SingletonHolder {
+
 		public static final FromIGroupNotifierToEObject INSTANCE = new FromIGroupNotifierToEObject();
 	}
-	
-	public static FromIGroupNotifierToEObject getInstance(){
+
+	public static FromIGroupNotifierToEObject getInstance() {
 		return SingletonHolder.INSTANCE;
 	}
-	
-	public static Iterable<EObject> transform (Iterable<IGroupNotifier> from){
+
+	public static Iterable<EObject> transform(Iterable<IGroupNotifier> from) {
 		return Iterables.transform(from, FromIGroupNotifierToEObject.getInstance());
 	}
-	
-	
-	
+
 	public EObject apply(IGroupNotifier from) {
 		return from.getEObject();
 	}
-
 }

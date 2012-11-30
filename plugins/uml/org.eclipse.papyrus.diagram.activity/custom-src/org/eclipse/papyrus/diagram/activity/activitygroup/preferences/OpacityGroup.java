@@ -55,12 +55,9 @@ public class OpacityGroup extends AbstractGroup {
 		 */
 		visibilityGroup.setLayout(new GridLayout());
 		visibilityGroup.setText("Opacity of the compartment");
-
 		ScaleFieldEditor alphaEditor = new ScaleFieldEditor(preferenceName, "Opacity", visibilityGroup, 0, 255, 5, 20);
 		alphaEditor.setPage(dialogPage);
 		addFieldEditor(alphaEditor);
 		HelpComponentFactory.createHelpComponent(visibilityGroup, new FormToolkit(parent.getDisplay()), "Set to min to make the compartment totally transparent");
 	}
-
-
 }

@@ -24,72 +24,83 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescript
 
 /**
  * This interface represent an element that can notify to the group framework some changes that may impact Activity groups
+ * 
  * @author arthur daussy
- *
+ * 
  */
-public interface IGroupNotifier extends IAdaptable, EditPolicy, Comparable<IGroupNotifier>{
+public interface IGroupNotifier extends IAdaptable, EditPolicy, Comparable<IGroupNotifier> {
+
 	/**
 	 * Get the {@link EObject} which is the notifier
+	 * 
 	 * @return
 	 */
 	public EObject getEObject();
+
 	/**
 	 * 
 	 * @return {@link IContainerNodeDescriptor} of the notifier
 	 */
 	public abstract IContainerNodeDescriptor getHostGroupDescriptor();
-	
+
 	/**
 	 * 
 	 * @return {@link IContainerNodeDescriptor} of the target
 	 */
 	public abstract IContainerNodeDescriptor getTargetGroupDescriptor(IAdaptable eObjectAdapter);
-	
+
 	/**
 	 * Get the view of the notifier
+	 * 
 	 * @return {@link IAdaptable} of the view of the element
 	 */
 	public abstract IAdaptable getAdaptableView();
+
 	/**
 	 * Get the {@link IGraphicalEditPart} host
 	 * (Sam as than getHost() but with GMF)
+	 * 
 	 * @return
 	 */
 	public IGraphicalEditPart getHostEditPart();
+
 	/**
 	 * Return true if the element is included on the specified bounds
 	 * This method should take into account if the node is currently moving or not
-	 * @param bounds {@link Rectangle} in which the element is tested
+	 * 
+	 * @param bounds
+	 *        {@link Rectangle} in which the element is tested
 	 * @return
 	 */
 	public boolean isIncludedIn(Rectangle bounds);
+
 	/**
 	 * Return true if the specified bounds are included in the bounds of the element.
 	 * This method should take into account if the node is currently moving or not
+	 * 
 	 * @param bounds
 	 * @return
 	 */
-	public boolean includes (Rectangle bounds);
-	
+	public boolean includes(Rectangle bounds);
+
 	/**
 	 * Notify edit policy that edit part start to move
 	 * This method represent a state of the edit part
+	 * 
 	 * @param request
 	 */
 	public void startMoving(ChangeBoundsRequest request);
-	
+
 	/**
 	 * Notify edit policy that edit part stop moving
 	 * This method represent a state of the edit part
 	 */
 	public void stopMoving();
+
 	/**
 	 * Return true if the part is moving
+	 * 
 	 * @return
 	 */
 	public boolean isPartMoving();
-	
-	
-	
-
 }

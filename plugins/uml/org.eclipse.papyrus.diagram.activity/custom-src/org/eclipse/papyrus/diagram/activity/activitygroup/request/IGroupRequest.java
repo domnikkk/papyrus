@@ -23,9 +23,8 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescript
 
 import com.google.common.collect.Multimap;
 
-
 public interface IGroupRequest {
-	
+
 	public static enum GroupRequestType {
 		/**
 		 * Refer to an creation event
@@ -40,46 +39,49 @@ public interface IGroupRequest {
 		 */
 		REFRESH
 	}
-	
+
 	public static String INITIAL_TARGET_REQUEST_NEW_BOUNDS = "GroupFramework_InitialTargetRequestNewBounds";////$NON-NLS-1$
-	
+
 	public GroupRequestType getGroupRequestType();
-	
+
 	public IGraphicalEditPart getHostRequest();
-	
+
 	public Request getInitialRequest();
-	
+
 	public IAdaptable getTargetElement();
+
 	/**
 	 * Get the label of the request
+	 * 
 	 * @return
 	 */
 	public String getLabel();
-	
+
 	public IContainerNodeDescriptor getNodeDescpitor();
-//	/**
-//	 * Get the absolute bounds of the initial target.
-//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
-//	 * @return
-//	 */
-//	public Rectangle getIntialTargetAbsoluteBounds();
-//	/**
-//	 * Set the absolute bounds of the initial target.
-//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
-//	 * @return
-//	 */
-//	public void setIntialTargetAbsoluteBounds(Rectangle bounds);
+
+	//	/**
+	//	 * Get the absolute bounds of the initial target.
+	//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
+	//	 * @return
+	//	 */
+	//	public Rectangle getIntialTargetAbsoluteBounds();
+	//	/**
+	//	 * Set the absolute bounds of the initial target.
+	//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
+	//	 * @return
+	//	 */
+	//	public void setIntialTargetAbsoluteBounds(Rectangle bounds);
 	/**
 	 * Map which link an An Reference to it's values
+	 * 
 	 * @return
 	 */
 	public Multimap<EReference, EObject> getParentEReferenceMap();
+
 	/**
 	 * Map which link an EObject to its {@link EReference} of the current target
+	 * 
 	 * @return
 	 */
 	public Multimap<EReference, EObject> getChildrenEReferenceMap();
-
-	
-
 }

@@ -24,20 +24,16 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescriptor;
 import org.eclipse.papyrus.diagram.activity.providers.UMLElementTypes;
 
-
 public class ActivityContentCompartmentCreationEditPolicy extends GroupCreationEditPolicy {
 
-	
 	public ActivityContentCompartmentCreationEditPolicy(IContainerNodeDescriptor groupDescriptor) {
 		super(groupDescriptor);
 	}
 
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-
 		if(request instanceof CreateUnspecifiedTypeRequest) {
 			CreateUnspecifiedTypeRequest createUnspecifiedTypeRequest = (CreateUnspecifiedTypeRequest)request;
-
 			if(understandsRequest(request)) {
 				List<?> elementTypes = createUnspecifiedTypeRequest.getElementTypes();
 				// Treat the case where only one element type is listed
@@ -53,5 +49,4 @@ public class ActivityContentCompartmentCreationEditPolicy extends GroupCreationE
 		}
 		return super.getTargetEditPart(request);
 	}
-
 }

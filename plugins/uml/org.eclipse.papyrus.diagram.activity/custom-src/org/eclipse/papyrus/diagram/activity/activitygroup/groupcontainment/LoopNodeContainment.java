@@ -45,6 +45,4 @@ public class LoopNodeContainment extends StructuredActivityNodeContainment {
 		String hint = "" + LoopNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID;
 		return ((GraphicalEditPart)editpart).getChildBySemanticHintOnPrimaryView(hint);
 	}
-
-
 }

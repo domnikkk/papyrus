@@ -45,6 +45,4 @@ public class ExpansionRegionContainment extends StructuredActivityNodeContainmen
 		String hint = "" + ExpansionRegionStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID;
 		return ((GraphicalEditPart)editpart).getChildBySemanticHintOnPrimaryView(hint);
 	}
-
-
 }

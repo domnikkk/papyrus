@@ -5,7 +5,6 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ActivityActivityContentCompartmentEditPart;
 
-
 public class CustomActivityActivityContentCompartmentEditPart extends ActivityActivityContentCompartmentEditPart {
 
 	public CustomActivityActivityContentCompartmentEditPart(View view) {
@@ -31,10 +30,4 @@ public class CustomActivityActivityContentCompartmentEditPart extends ActivityAc
 	public boolean isSelectable() {
 		return true;
 	}
-
-	
-	
-	
-
-
 }

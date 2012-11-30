@@ -77,16 +77,15 @@ public final class ContainerNodeDescriptorRegistry {
 	public IContainerNodeDescriptor getContainerNodeDescriptor(EClass eclass) {
 		try {
 			IContainerNodeDescriptor result = registry.get(eclass);
-			if (result== null){
-				ArrayList<EClass> superTypes = Lists.newArrayList( eclass.getEAllSuperTypes());
-				for (EClass aux :Iterables.reverse(superTypes)){
-					result =registry.get(aux);
-					if (result != null){
+			if(result == null) {
+				ArrayList<EClass> superTypes = Lists.newArrayList(eclass.getEAllSuperTypes());
+				for(EClass aux : Iterables.reverse(superTypes)) {
+					result = registry.get(aux);
+					if(result != null) {
 						return result;
 					}
 				}
 			}
-			
 			return result;
 		} catch (Exception e) {
 			throw new RuntimeException("wrong use of the ContainerNodeDescriptorRegistry");
@@ -96,5 +95,4 @@ public final class ContainerNodeDescriptorRegistry {
 	public static ContainerNodeDescriptorRegistry getInstance() {
 		return SingletonHolder.instance;
 	}
-
 }

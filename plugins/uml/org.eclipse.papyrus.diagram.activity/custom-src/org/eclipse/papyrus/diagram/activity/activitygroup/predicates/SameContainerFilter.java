@@ -14,22 +14,20 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.activity.activitygroup.predicates;
 
-
-
 import org.eclipse.uml2.uml.Element;
 
 import com.google.common.base.Predicate;
 
-
 /**
  * filter which return true or element which have the same container
+ * 
  * @author arthur
- *
+ * 
  */
 public class SameContainerFilter implements Predicate<Element> {
-	
+
 	private Element parent;
-	
+
 	private Element container;
 
 	public SameContainerFilter(Element parent) {
@@ -40,15 +38,11 @@ public class SameContainerFilter implements Predicate<Element> {
 	public boolean apply(Element arg0) {
 		return getContainer() != null && getContainer().equals(arg0.getOwner());
 	}
-	
-	private Element getContainer(){
-		if (container == null){
+
+	private Element getContainer() {
+		if(container == null) {
 			container = parent.getOwner();
 		}
 		return container;
 	}
-	
-	
-	
-	
 }

@@ -33,31 +33,25 @@ public class DescendantsFilterIGroupNotifier implements Predicate<IGroupNotifier
 
 	private Iterable<? extends IGroupNotifier> initialCollection;
 
-
-	public DescendantsFilterIGroupNotifier(Iterable<? extends IGroupNotifier> initialCollection){
+	public DescendantsFilterIGroupNotifier(Iterable<? extends IGroupNotifier> initialCollection) {
 		super();
 		this.initialCollection = initialCollection;
 	}
-
-
 
 	public boolean apply(IGroupNotifier input) {
 		for(IGroupNotifier target : initialCollection) {
 			EObject targetEObject = target.getEObject();
 			EObject inputEObject = input.getEObject();
-			if (targetEObject == inputEObject){
+			if(targetEObject == inputEObject) {
 				continue;
 			}
-			
-			if (inputEObject == null){				
+			if(inputEObject == null) {
 				return false;
 			}
-			
 			if(EcoreUtil.isAncestor(inputEObject, targetEObject)) {
 				return false;
 			}
 		}
 		return true;
 	}
-
 }

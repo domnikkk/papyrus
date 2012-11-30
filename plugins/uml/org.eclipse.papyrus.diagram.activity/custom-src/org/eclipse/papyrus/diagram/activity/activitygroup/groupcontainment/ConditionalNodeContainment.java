@@ -45,6 +45,4 @@ public class ConditionalNodeContainment extends StructuredActivityNodeContainmen
 		String hint = "" + ConditionalNodeStructuredActivityNodeContentCompartmentEditPart.VISUAL_ID;
 		return ((GraphicalEditPart)editpart).getChildBySemanticHintOnPrimaryView(hint);
 	}
-
-
 }

@@ -29,5 +29,4 @@ public class ActivityDiagramCreationCondition extends PerspectiveContextDependen
 		}
 		return false;
 	}
-
 }

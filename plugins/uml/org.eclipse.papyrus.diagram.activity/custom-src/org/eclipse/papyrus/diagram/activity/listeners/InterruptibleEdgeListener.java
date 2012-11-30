@@ -91,7 +91,6 @@ public class InterruptibleEdgeListener extends AbstractModifcationTriggerListene
 		if(Notification.SET == notif.getEventType()) {
 			CompositeCommand cc = new CompositeCommand("Interruptible Edge Command");////$NON-NLS-0$
 			//Handling views
-
 			final Iterable<IGraphicalEditPart> edgesEditPart = DiagramEditPartsUtil.getChildrenByEObject((EObject)notif.getNotifier(), getDiagramEditPart(), true);
 			InterruptibleEdgeRequest request = new InterruptibleEdgeRequest();
 			Iterable<View> views = getReferencingView(notif);
@@ -138,7 +137,6 @@ public class InterruptibleEdgeListener extends AbstractModifcationTriggerListene
 		return null;
 	}
 
-
 	/**
 	 * Get all the view from Notation Model which represent the notifier.
 	 * Will only return the view of the same type than the notifier view
@@ -174,7 +172,6 @@ public class InterruptibleEdgeListener extends AbstractModifcationTriggerListene
 			return (TransactionalEditingDomain)editingDomain;
 		}
 		return null;
-
 	}
 
 	/**
@@ -254,8 +251,6 @@ public class InterruptibleEdgeListener extends AbstractModifcationTriggerListene
 					getDiagramEditPart().refresh();
 					return status;
 				}
-
-
 			};
 			return cmd;
 		}

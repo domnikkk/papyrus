@@ -73,7 +73,6 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 		return null;
 	}
 
-
 	/**
 	 * Override to unregister this edit part from the group framework
 	 */
@@ -89,7 +88,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	@Override
 	public void activate() {
 		EObject resolveSemanticElement = getHostEditPart().resolveSemanticElement();
-		if (resolveSemanticElement != null){			
+		if(resolveSemanticElement != null) {
 			GroupRequestAdvisor.getInstance().addListenner(resolveSemanticElement, this);
 		}
 		super.activate();
@@ -115,8 +114,6 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	public IGraphicalEditPart getHostEditPart() {
 		return (IGraphicalEditPart)getHost();
 	}
-
-	
 
 	/**
 	 * {@inheritDoc IGroupNotifier#isIncludedIn()}
@@ -183,30 +180,29 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	public void stopMoving() {
 		setMoving(false);
 		setMovingRequest(null);
-
 	}
 
 	/**
 	 * Get the moving parameter
+	 * 
 	 * @return
 	 */
 	protected boolean isMoving() {
 		return isMoving;
 	}
-	
+
 	protected ChangeBoundsRequest getMovingRequest() {
 		return movingRequest;
 	}
-
 
 	protected void setMovingRequest(ChangeBoundsRequest movingRequest) {
 		this.movingRequest = movingRequest;
 	}
 
-
 	protected void setMoving(boolean isMoving) {
 		this.isMoving = isMoving;
 	}
+
 	/**
 	 * {@inheritDoc IGroupNotifier#isPartMoving()}
 	 */
@@ -214,21 +210,18 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 		return isMoving();
 	}
 
-
 	public IAdaptable getAdaptableView() {
 		return getViewAdapter();
 	}
 
 	@Override
 	public void eraseTargetFeedback(Request request) {
-	
 	}
 
 	@Override
 	public void showSourceFeedback(Request request) {
-		
 	}
-	
+
 	public IContainerNodeDescriptor getTargetGroupDescriptor(IAdaptable eObjectAdapter) {
 		Object adapted = eObjectAdapter.getAdapter(EObject.class);
 		if(adapted instanceof EObject) {
@@ -237,8 +230,4 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 		}
 		return null;
 	}
-	
-	
-
-
 }

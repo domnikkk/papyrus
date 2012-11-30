@@ -16,19 +16,19 @@ package org.eclipse.papyrus.diagram.activity.activitygroup.groupcontainment;
 
 /**
  * Define the priority of groups to be a graphicla parent of a child
+ * 
  * @author adaussy
- *
+ * 
  */
 public interface IGroupPriority {
-	
-	public static int STRUCTURED_ACTIVITY_NODE_PRIORITY = 100;
-	
-	public static int ACTIVITY_PARTITION_PRIORITY = 90;
-	
-	public static int INTERRUPTIBLE_REGION_PRIORITY = 80;
-	
-	public static int ACTIVITY_PRIORITY = 50;
-	
-	public static int ACTIVITY_NODE_PRIORITY = -1;
 
+	public static int STRUCTURED_ACTIVITY_NODE_PRIORITY = 100;
+
+	public static int ACTIVITY_PARTITION_PRIORITY = 90;
+
+	public static int INTERRUPTIBLE_REGION_PRIORITY = 80;
+
+	public static int ACTIVITY_PRIORITY = 50;
+
+	public static int ACTIVITY_NODE_PRIORITY = -1;
 }

@@ -78,7 +78,4 @@ public class OpacityFactoryHelper {
 	static public Integer getStoredValueOfOpacity(String preferenceName, IPreferenceStore store) {
 		return new Integer(store.getInt(preferenceName));
 	}
-
-
-
 }

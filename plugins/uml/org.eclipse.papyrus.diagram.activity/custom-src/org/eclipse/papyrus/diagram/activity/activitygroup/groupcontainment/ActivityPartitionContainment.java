@@ -78,11 +78,10 @@ public class ActivityPartitionContainment extends AbstractContainerNodeDescripto
 		return references;
 	}
 
-
 	@Override
 	public List<EReference> getParentReferences() {
-		if (parentReferences == null){
-			parentReferences = new ArrayList<EReference>();		
+		if(parentReferences == null) {
+			parentReferences = new ArrayList<EReference>();
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_PARTITION__SUPER_PARTITION);
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_GROUP__IN_ACTIVITY);
 		}
@@ -98,5 +97,4 @@ public class ActivityPartitionContainment extends AbstractContainerNodeDescripto
 	public int getGroupPriority() {
 		return IGroupPriority.ACTIVITY_PARTITION_PRIORITY;
 	}
-
 }

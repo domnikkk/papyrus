@@ -21,32 +21,32 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 
-
 public interface IContainerNodeDescriptor extends Comparable<IContainerNodeDescriptor> {
 
-	public  EReference getContainmentReferenceFor(EClass childType);
+	public EReference getContainmentReferenceFor(EClass childType);
 
-	public  List<EReference> getReferenceFor(EClass childType);
+	public List<EReference> getReferenceFor(EClass childType);
 
-	public  boolean canIBeModelParentOf(EClass childType);
+	public boolean canIBeModelParentOf(EClass childType);
 
-	public  boolean canIBeGraphicalParentOf(EClass childType);
+	public boolean canIBeGraphicalParentOf(EClass childType);
 
-	public  IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart);
+	public IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart);
 
-	public  List<EReference> getChildrenReferences();
+	public List<EReference> getChildrenReferences();
 
-	public  Rectangle getContentArea(IGraphicalEditPart containerPart);
+	public Rectangle getContentArea(IGraphicalEditPart containerPart);
 
-	public  List<EClass> getPossibleGraphicalChildren();
+	public List<EClass> getPossibleGraphicalChildren();
 
-	public  EClass getContainerEClass();
+	public EClass getContainerEClass();
 
-	public  List<EReference> getParentReferences();
+	public List<EReference> getParentReferences();
+
 	/**
 	 * Return an int which define for a same child the priority of this parent to be its graphical father
+	 * 
 	 * @return
 	 */
 	public int getGroupPriority();
-
 }

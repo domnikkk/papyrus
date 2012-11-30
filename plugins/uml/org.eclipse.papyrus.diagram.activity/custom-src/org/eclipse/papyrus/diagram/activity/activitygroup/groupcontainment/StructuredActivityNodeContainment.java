@@ -38,6 +38,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class StructuredActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	private ArrayList<EReference> childrenReferences;
+
 	private ArrayList<EReference> parentReferences;
 
 	/**
@@ -70,19 +71,18 @@ public class StructuredActivityNodeContainment extends AbstractContainerNodeDesc
 	 * @return the references to contained elements
 	 */
 	public List<EReference> getChildrenReferences() {
-		if (childrenReferences == null){
+		if(childrenReferences == null) {
 			childrenReferences = new ArrayList<EReference>(2);
 			childrenReferences.add(UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
-			childrenReferences.add(UMLPackage.eINSTANCE.getStructuredActivityNode_Edge());			
+			childrenReferences.add(UMLPackage.eINSTANCE.getStructuredActivityNode_Edge());
 		}
 		return childrenReferences;
 	}
 
-
 	@Override
 	public List<EReference> getParentReferences() {
-		if (parentReferences == null){
-			parentReferences = new ArrayList<EReference>();		
+		if(parentReferences == null) {
+			parentReferences = new ArrayList<EReference>();
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_NODE__IN_INTERRUPTIBLE_REGION);
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_NODE__IN_PARTITION);
 			parentReferences.add(UMLPackage.Literals.ACTIVITY_NODE__IN_STRUCTURED_NODE);
@@ -100,6 +100,4 @@ public class StructuredActivityNodeContainment extends AbstractContainerNodeDesc
 	public int getGroupPriority() {
 		return IGroupPriority.STRUCTURED_ACTIVITY_NODE_PRIORITY;
 	}
-	
-	
 }

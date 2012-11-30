@@ -30,6 +30,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+
 /**
  * Composite used to notify user of new visual child
  */

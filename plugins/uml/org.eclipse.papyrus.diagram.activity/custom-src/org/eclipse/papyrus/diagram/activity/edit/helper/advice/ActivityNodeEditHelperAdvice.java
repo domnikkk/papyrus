@@ -31,41 +31,38 @@ import com.google.common.collect.Sets;
 
 /**
  * Delete all incoming and outgoing edges of an activity node when this node is deleted
+ * 
  * @author adaussy
- *
+ * 
  */
 public class ActivityNodeEditHelperAdvice extends AbstractEditHelperAdvice {
-
-
 
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 		EObject eObject = request.getElementToDestroy();
-		if (eObject instanceof ActivityNode){
+		if(eObject instanceof ActivityNode) {
 			ActivityNode activityNode = (ActivityNode)eObject;
 			EList<ActivityEdge> incomings = activityNode.getIncomings();
 			EList<ActivityEdge> outgoings = activityNode.getOutgoings();
 			HashSet<ActivityEdge> edges = Sets.newHashSet();
-			if (incomings != null && !incomings.isEmpty()){
+			if(incomings != null && !incomings.isEmpty()) {
 				edges.addAll(incomings);
 			}
-			if (outgoings != null && !outgoings.isEmpty()){				
+			if(outgoings != null && !outgoings.isEmpty()) {
 				edges.addAll(outgoings);
 			}
-			if (!edges.isEmpty()){
+			if(!edges.isEmpty()) {
 				CompositeCommand cc = new CompositeCommand("Detele Incomings and outgoings edges from activity node");////$NON-NLS-1$
-				for (ActivityEdge e : edges){
-					DestroyElementRequest destroyRequest =  new DestroyElementRequest(e, false);
+				for(ActivityEdge e : edges) {
+					DestroyElementRequest destroyRequest = new DestroyElementRequest(e, false);
 					DestroyElementPapyrusCommand destroyCommand = new DestroyElementPapyrusCommand(destroyRequest);
-					if ( destroyCommand!= null && destroyCommand.canExecute()){
+					if(destroyCommand != null && destroyCommand.canExecute()) {
 						cc.compose(destroyCommand);
 					}
-					
 				}
 				return cc;
 			}
 		}
 		return super.getAfterDestroyDependentsCommand(request);
 	}
-	
 }

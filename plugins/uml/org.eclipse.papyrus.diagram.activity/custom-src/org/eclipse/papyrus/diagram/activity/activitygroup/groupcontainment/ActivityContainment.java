@@ -26,7 +26,6 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.AbstractContainerNodeD
 import org.eclipse.papyrus.diagram.activity.edit.parts.ActivityActivityContentCompartmentEditPart;
 import org.eclipse.uml2.uml.UMLPackage;
 
-
 public class ActivityContainment extends AbstractContainerNodeDescriptor {
 
 	private List<EReference> parentReferences;
@@ -38,8 +37,8 @@ public class ActivityContainment extends AbstractContainerNodeDescriptor {
 
 	@Override
 	public List<EReference> getChildrenReferences() {
-		if (parentReferences == null){
-			parentReferences = new ArrayList<EReference>();		
+		if(parentReferences == null) {
+			parentReferences = new ArrayList<EReference>();
 			parentReferences.add(UMLPackage.Literals.ACTIVITY__NODE);
 			parentReferences.add(UMLPackage.Literals.ACTIVITY__GROUP);
 		}
@@ -59,9 +58,4 @@ public class ActivityContainment extends AbstractContainerNodeDescriptor {
 	public int getGroupPriority() {
 		return IGroupPriority.ACTIVITY_PRIORITY;
 	}
-
-
-	
-
-
 }

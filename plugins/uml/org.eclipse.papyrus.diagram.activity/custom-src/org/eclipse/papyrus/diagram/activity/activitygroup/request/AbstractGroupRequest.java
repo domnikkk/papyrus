@@ -25,10 +25,7 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.utils.Utils;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
-
 public abstract class AbstractGroupRequest extends Request implements IGroupRequest {
-
-
 
 	protected IGraphicalEditPart host;
 
@@ -37,10 +34,12 @@ public abstract class AbstractGroupRequest extends Request implements IGroupRequ
 	protected IAdaptable target;
 
 	protected IContainerNodeDescriptor nodeDescriptor;
+
 	/**
 	 * Map to link to a parent with a EReference
 	 */
 	private Multimap<EReference, EObject> eParentRefenceMap;
+
 	/**
 	 * Map to link to a child with {@link EReference}
 	 */
@@ -66,7 +65,6 @@ public abstract class AbstractGroupRequest extends Request implements IGroupRequ
 		return nodeDescriptor;
 	}
 
-
 	public IAdaptable getTargetElement() {
 		return target;
 	}
@@ -83,61 +81,54 @@ public abstract class AbstractGroupRequest extends Request implements IGroupRequ
 		return builder.toString();
 	}
 
-//	/**
-//	 * Get the absolute bounds of the initial target.
-//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
-//	 * 
-//	 * @return
-//	 */
-//	public Rectangle getIntialTargetAbsoluteBounds() {
-//		@SuppressWarnings("rawtypes")
-//		Map metadata = request.getExtendedData();
-//		if(metadata != null) {
-//			Object bounds_ = metadata.get((Object)INITIAL_TARGET_REQUEST_NEW_BOUNDS);
-//			if(bounds_ instanceof Rectangle) {
-//				Rectangle bounds = (Rectangle)bounds_;
-//				return bounds;
-//			}
-//		}
-//		return null;
-//	}
-
-//	/**
-//	 * Set the absolute bounds of the initial target.
-//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
-//	 * 
-//	 * @return
-//	 */
-//
-//	public void setIntialTargetAbsoluteBounds(Rectangle bounds) {
-//		Map metadata = request.getExtendedData();
-//		if(bounds == null) {
-//			return;
-//		}
-//		if(metadata != null) {
-//			Object oldsBounds = metadata.put((Object)INITIAL_TARGET_REQUEST_NEW_BOUNDS, bounds);
-//			if(DebugUtils.isDebugging()) {
-//				DebugUtils.getLog().debug("The absolute bounds of " + Utils.getCorrectLabel(getTargetElement()) + " went from " + oldsBounds + " to " + bounds);
-//			}
-//		}
-//	}
-	
-	public Multimap<EReference, EObject> getParentEReferenceMap(){
-		if ( eParentRefenceMap == null){
+	//	/**
+	//	 * Get the absolute bounds of the initial target.
+	//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
+	//	 * 
+	//	 * @return
+	//	 */
+	//	public Rectangle getIntialTargetAbsoluteBounds() {
+	//		@SuppressWarnings("rawtypes")
+	//		Map metadata = request.getExtendedData();
+	//		if(metadata != null) {
+	//			Object bounds_ = metadata.get((Object)INITIAL_TARGET_REQUEST_NEW_BOUNDS);
+	//			if(bounds_ instanceof Rectangle) {
+	//				Rectangle bounds = (Rectangle)bounds_;
+	//				return bounds;
+	//			}
+	//		}
+	//		return null;
+	//	}
+	//	/**
+	//	 * Set the absolute bounds of the initial target.
+	//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
+	//	 * 
+	//	 * @return
+	//	 */
+	//
+	//	public void setIntialTargetAbsoluteBounds(Rectangle bounds) {
+	//		Map metadata = request.getExtendedData();
+	//		if(bounds == null) {
+	//			return;
+	//		}
+	//		if(metadata != null) {
+	//			Object oldsBounds = metadata.put((Object)INITIAL_TARGET_REQUEST_NEW_BOUNDS, bounds);
+	//			if(DebugUtils.isDebugging()) {
+	//				DebugUtils.getLog().debug("The absolute bounds of " + Utils.getCorrectLabel(getTargetElement()) + " went from " + oldsBounds + " to " + bounds);
+	//			}
+	//		}
+	//	}
+	public Multimap<EReference, EObject> getParentEReferenceMap() {
+		if(eParentRefenceMap == null) {
 			eParentRefenceMap = ArrayListMultimap.create();
 		}
 		return this.eParentRefenceMap;
 	}
-	
-	public Multimap<EReference, EObject> getChildrenEReferenceMap(){
-		if ( eChildrenRefenceMap == null){
+
+	public Multimap<EReference, EObject> getChildrenEReferenceMap() {
+		if(eChildrenRefenceMap == null) {
 			eChildrenRefenceMap = ArrayListMultimap.create();
 		}
 		return this.eChildrenRefenceMap;
 	}
-
-
-
-
-
 }

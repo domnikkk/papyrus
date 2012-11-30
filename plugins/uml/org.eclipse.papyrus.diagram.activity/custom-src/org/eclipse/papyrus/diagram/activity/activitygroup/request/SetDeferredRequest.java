@@ -21,19 +21,19 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 
-
 public class SetDeferredRequest extends SetRequest {
 
 	protected IAdaptable elementToEdit;
-	
+
 	public SetDeferredRequest(TransactionalEditingDomain editinDomain, IAdaptable elementToEdit, EStructuralFeature feature, Object value) {
-		super(editinDomain,null, feature, value);
+		super(editinDomain, null, feature, value);
 		this.elementToEdit = elementToEdit;
 	}
 
 	public IAdaptable getElementToSet() {
 		return elementToEdit;
 	}
+
 	/**
 	 * @deprecated use {@link SetDeferredRequest#getElementToSet()}
 	 */
@@ -41,9 +41,4 @@ public class SetDeferredRequest extends SetRequest {
 	public List getElementsToEdit() {
 		return super.getElementsToEdit();
 	}
-	
-	
-	
-	
-
 }

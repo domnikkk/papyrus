@@ -29,18 +29,14 @@ public class DescendantsFilter implements Predicate<EObject> {
 
 	private Iterable<? extends EObject> initialCollection;
 
-
 	public DescendantsFilter(Iterable<? extends EObject> initialCollection) {
 		super();
 		this.initialCollection = initialCollection;
 	}
 
-
-
-
 	public boolean apply(EObject input) {
 		for(EObject target : initialCollection) {
-			if (target == input){
+			if(target == input) {
 				continue;
 			}
 			if(EcoreUtil.isAncestor(input, target)) {
@@ -49,5 +45,4 @@ public class DescendantsFilter implements Predicate<EObject> {
 		}
 		return true;
 	}
-
 }

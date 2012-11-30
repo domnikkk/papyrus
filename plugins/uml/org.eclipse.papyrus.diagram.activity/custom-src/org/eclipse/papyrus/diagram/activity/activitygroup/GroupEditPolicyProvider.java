@@ -44,20 +44,24 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class GroupEditPolicyProvider implements IEditPolicyProvider {
 
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#addProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.gmf.runtime.common.core.service.IProvider#addProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener
+	 * )
 	 */
 	public void addProviderChangeListener(IProviderChangeListener listener) {
 	}
 
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#removeProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#removeProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.
+	 * IProviderChangeListener)
 	 */
 	public void removeProviderChangeListener(IProviderChangeListener listener) {
 	}
-
 
 	/**
 	 * 
@@ -75,7 +79,7 @@ public class GroupEditPolicyProvider implements IEditPolicyProvider {
 			//is top edit part of the element
 			IGraphicalEditPart parentEditPart = (IGraphicalEditPart)editPart.getParent();
 			EObject resolveSemanticElement = graphEditpart.resolveSemanticElement();
-			if(resolveSemanticElement!= null && !resolveSemanticElement.equals(parentEditPart.resolveSemanticElement())) {
+			if(resolveSemanticElement != null && !resolveSemanticElement.equals(parentEditPart.resolveSemanticElement())) {
 				if(resolveSemanticElement instanceof ActivityNode) {
 					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY, new ActivityNodeEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_NODE)));
 				}
@@ -85,32 +89,25 @@ public class GroupEditPolicyProvider implements IEditPolicyProvider {
 				/*
 				 * Installation of policy to handle graphicac
 				 */
-
 			}
 			switch(UMLVisualIDRegistry.getVisualID(graphEditpart.getNotationView())) {
 			case ActivityPartitionActivityPartitionContentCompartmentEditPart.VISUAL_ID:
 				graphEditpart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new ActivityPartitionActivityPartitionContentCompartmentCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_PARTITION)));
 				graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY, new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
-
 				break;
 			case InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID:
 				graphEditpart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new InterruptibleActivityRegionContentCompartmentCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.INTERRUPTIBLE_ACTIVITY_REGION)));
 				graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY, new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
-
 				break;
 			case ActivityActivityContentCompartmentEditPart.VISUAL_ID:
 				graphEditpart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new ActivityContentCompartmentCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY)));
 				graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY, new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
-
 				break;
-				
 			default:
 				break;
 			}
 		}
 	}
-
-
 
 	/**
 	 * 
@@ -128,5 +125,4 @@ public class GroupEditPolicyProvider implements IEditPolicyProvider {
 		}
 		return false;
 	}
-
 }

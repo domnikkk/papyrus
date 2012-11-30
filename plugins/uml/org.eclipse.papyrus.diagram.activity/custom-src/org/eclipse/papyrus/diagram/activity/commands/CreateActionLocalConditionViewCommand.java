@@ -180,7 +180,6 @@ public class CreateActionLocalConditionViewCommand extends Command {
 			CreateViewRequest request = new CreateViewRequest(descriptor);
 			Command nodeCreationCommand = compartment.getCommand(request);
 			viewsCreationCommand.add(nodeCreationCommand);
-
 			// try and recover the created edit part, then create the link
 			if(linkedActionEditPart != null && getLinkType() != null) {
 				IAdaptable targetAdapter = extractResult(nodeCreationCommand);
@@ -238,5 +237,4 @@ public class CreateActionLocalConditionViewCommand extends Command {
 			elementCreationCommand.undo();
 		}
 	}
-
 }

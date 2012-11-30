@@ -23,51 +23,52 @@ import org.eclipse.papyrus.log.LogHelper;
 
 import com.google.common.collect.Multimap;
 
-
 public class DebugUtils {
+
 	/**
 	 * Allow user during debug to desactivation debug notficcation
 	 */
 	private static final boolean LOCAL_DESACTIVATOR = true;
-	
+
 	private static LogHelper log = null;
-	
-	
+
 	/**
 	 * Get loger
+	 * 
 	 * @return
 	 */
-	public static LogHelper getLog(){
-		if (log == null){			
+	public static LogHelper getLog() {
+		if(log == null) {
 			log = new LogHelper(UMLDiagramEditorPlugin.getInstance());
 		}
 		return log;
 	}
+
 	/**
 	 * return true if debugging
+	 * 
 	 * @return
 	 */
-	public static boolean isDebugging(){
+	public static boolean isDebugging() {
 		return UMLDiagramEditorPlugin.getInstance().isDebugging() && LOCAL_DESACTIVATOR;
 	}
+
 	/**
 	 * Display a multi map
+	 * 
 	 * @param message
 	 * @param multimap
 	 */
-	public static void displayMultipmapDebug(String message, Multimap<EReference, EObject> multimap){
-		if (DebugUtils.isDebugging()){
+	public static void displayMultipmapDebug(String message, Multimap<EReference, EObject> multimap) {
+		if(DebugUtils.isDebugging()) {
 			DebugUtils.getLog().debug(message);
-			for (Entry<EReference, EObject> e : multimap.entries()){
+			for(Entry<EReference, EObject> e : multimap.entries()) {
 				StringBuilder stringBuilder = new StringBuilder();
 				stringBuilder.append(Utils.getCorrectLabel(e.getValue()));
 				stringBuilder.append(" --> ");
 				stringBuilder.append(e.getKey().getName());
 				DebugUtils.getLog().debug(stringBuilder.toString());
-				
 			}
 		}
 	}
-
-
 }

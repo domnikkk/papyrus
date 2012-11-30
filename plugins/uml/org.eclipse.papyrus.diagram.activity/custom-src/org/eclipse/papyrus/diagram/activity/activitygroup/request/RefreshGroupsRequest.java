@@ -19,19 +19,14 @@ import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescriptor;
 
-
 public class RefreshGroupsRequest extends AbstractGroupRequest {
 
-
-	
 	public RefreshGroupsRequest(IGraphicalEditPart host, IAdaptable target, IContainerNodeDescriptor nodeDescriptor) {
 		super(host, null, target, nodeDescriptor);
 		request = new ChangeBoundsRequest();
-
 	}
 
 	public GroupRequestType getGroupRequestType() {
 		return null;
 	}
-
 }

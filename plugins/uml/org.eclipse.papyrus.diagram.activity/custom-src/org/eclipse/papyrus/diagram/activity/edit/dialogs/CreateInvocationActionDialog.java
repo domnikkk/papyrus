@@ -167,17 +167,14 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		FormToolkit toolkit = pForm.getToolkit();
 		Composite parent = scrolledForm.getBody();
 		parent.setLayout(new GridLayout());
-
 		createInvocationCreationSection(scrolledForm.getBody(), toolkit);
 		createInvocationSelectionSection(scrolledForm.getBody(), toolkit);
 		createExtraSections(scrolledForm.getBody(), toolkit);
-
 		refreshSectionsEnable(isSelectionDefault());
 		hookListeners();
 		// invoked name is set after listeners, since we count on listener to
 		// update it properly
 		setInvokedName(null);
-
 		scrolledForm.reflow(true);
 	}
 
@@ -247,21 +244,17 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		if(lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
-
 		ScrolledForm lInsideScrolledForm = pToolkit.createScrolledForm(lSection);
 		lInsideScrolledForm.setExpandHorizontal(true);
 		lInsideScrolledForm.setExpandVertical(true);
 		Composite lBody = lInsideScrolledForm.getBody();
-
 		GridLayout lLayout = new GridLayout();
 		lLayout.numColumns = 3;
 		lBody.setLayout(lLayout);
-
 		// content of the section
 		selectionRadio = pToolkit.createButton(lBody, getSelectionLabel(), SWT.RADIO);
 		// selectionRadio.setSelection(false);
 		selectionRadio.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 3, 1));
-
 		pToolkit.createLabel(lBody, getInvokedObjectLabel(), SWT.NONE);
 		selectionText = pToolkit.createText(lBody, "", SWT.BORDER | SWT.READ_ONLY);
 		selectionText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
@@ -269,7 +262,6 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		Image image = UMLElementTypes.getImage(getInvocationFeature());
 		selectionButton.setImage(image);
 		selectionButton.setLayoutData(new GridData(SWT.NONE));
-
 		lInsideScrolledForm.reflow(true);
 		lSection.setClient(lInsideScrolledForm);
 	}
@@ -293,21 +285,17 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		}
 		ImageHyperlink componentHelp = HelpComponentFactory.createHelpComponent(lSection, pToolkit, getInvocationCreationSectionHelp(), true);
 		lSection.setTextClient(componentHelp);
-
 		ScrolledForm lInsideScrolledForm = pToolkit.createScrolledForm(lSection);
 		lInsideScrolledForm.setExpandHorizontal(true);
 		lInsideScrolledForm.setExpandVertical(true);
 		Composite lBody = lInsideScrolledForm.getBody();
-
 		GridLayout lLayout = new GridLayout();
 		lLayout.numColumns = 3;
 		lBody.setLayout(lLayout);
-
 		// content of the section
 		creationRadio = pToolkit.createButton(lBody, getCreationLabel(), SWT.RADIO);
 		// creationRadio.setSelection(true);
 		creationRadio.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 3, 1));
-
 		if(getPossibleInvokedTypes().length == 1) {
 			selectedType = getPossibleInvokedTypes()[0];
 		} else {
@@ -324,12 +312,10 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 				selectedType = getPossibleInvokedTypes()[0];
 			}
 		}
-
 		pToolkit.createLabel(lBody, getInvokedNameLabel(), SWT.NONE);
 		creationNameText = pToolkit.createText(lBody, "", SWT.BORDER);
 		creationNameText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 		creationNameText.setFocus();
-
 		pToolkit.createLabel(lBody, getInvokedParentLabel(), SWT.NONE);
 		creationParentText = pToolkit.createText(lBody, labelProvider.getText(selectedParent), SWT.BORDER | SWT.READ_ONLY);
 		creationParentText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
@@ -337,7 +323,6 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		Image image = getParentImage();
 		creationParentButton.setImage(image);
 		creationParentButton.setLayoutData(new GridData(SWT.NONE));
-
 		lInsideScrolledForm.reflow(true);
 		lSection.setClient(lInsideScrolledForm);
 	}
@@ -405,7 +390,6 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 		};
 		selectionRadio.addSelectionListener(selectCreateListener);
 		creationRadio.addSelectionListener(selectCreateListener);
-
 		// listener to select existing element
 		SelectionListener selectBtnListener = new SelectionAdapter() {
 
@@ -419,7 +403,6 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 			}
 		};
 		selectionButton.addSelectionListener(selectBtnListener);
-
 		if(creationTypeCombo != null && typeComboViewer != null) {
 			// listener to select invocation type
 			ModifyListener lTypeListener = new ModifyListener() {
@@ -444,7 +427,6 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 			};
 			creationTypeCombo.addModifyListener(lTypeListener);
 		}
-
 		// listener to invocation element name
 		ModifyListener lNameListener = new ModifyListener() {
 
@@ -456,7 +438,6 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 			}
 		};
 		creationNameText.addModifyListener(lNameListener);
-
 		// listener to select new element parent
 		SelectionListener selectParentBtnListener = new SelectionAdapter() {
 
@@ -535,7 +516,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	 * 
 	 */
 	private void handleChooseParent() {
-		UMLMultiEClassifierTreeSelectorDialog dialog = new UMLMultiEClassifierTreeSelectorDialog(getShell(), actionParent, getPossibleInvokedParents(actionParent),true);
+		UMLMultiEClassifierTreeSelectorDialog dialog = new UMLMultiEClassifierTreeSelectorDialog(getShell(), actionParent, getPossibleInvokedParents(actionParent), true);
 		dialog.setMessage(Messages.UMLModelingAssistantProviderMessage);
 		dialog.setTitle(Messages.UMLModelingAssistantProviderTitle);
 		if(dialog.open() == Window.OK) {
@@ -757,5 +738,4 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	 * @return label
 	 */
 	abstract protected String getCreationLabel();
-
 }

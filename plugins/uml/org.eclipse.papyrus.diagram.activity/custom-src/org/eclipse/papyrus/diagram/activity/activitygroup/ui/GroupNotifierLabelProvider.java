@@ -23,10 +23,10 @@ import org.eclipse.swt.graphics.Image;
 /**
  * {@link LabelProvider} for {@link IGroupNotifier}
  */
-public class GroupNotifierLabelProvider extends LabelProvider{
+public class GroupNotifierLabelProvider extends LabelProvider {
 
 	static AdapterFactoryLabelProvider factory = new AdapterFactoryLabelProvider(new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE));
-	
+
 	@Override
 	public String getText(Object element) {
 		if(element instanceof IGroupNotifier) {
@@ -44,7 +44,4 @@ public class GroupNotifierLabelProvider extends LabelProvider{
 		}
 		return super.getImage(element);
 	}
-	
-	
-
 }

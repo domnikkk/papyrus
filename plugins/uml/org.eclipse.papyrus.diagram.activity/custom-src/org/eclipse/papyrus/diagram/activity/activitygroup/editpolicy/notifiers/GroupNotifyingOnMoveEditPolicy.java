@@ -33,8 +33,9 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.utils.Utils;
 
 /**
  * Implementation of {@link GroupListenerEditPolicy} for Activity Group
+ * 
  * @author adaussy
- *
+ * 
  */
 public class GroupNotifyingOnMoveEditPolicy extends GroupListenerEditPolicy {
 
@@ -44,15 +45,13 @@ public class GroupNotifyingOnMoveEditPolicy extends GroupListenerEditPolicy {
 
 	/**
 	 * Override to :
-	 * 	-> Put in "Movin state" this edit part and all its children which are Group Framework concern
+	 * -> Put in "Movin state" this edit part and all its children which are Group Framework concern
 	 */
 	@Override
 	public Command getCommand(Request request) {
 		if(request instanceof ChangeBoundsRequest) {
 			final ChangeBoundsRequest req = (ChangeBoundsRequest)request;
-
 			CompositeCommand cc = new CompositeCommand("GroupNotifyingEditPolicy ");
-
 			for(final EditPart part : Utils.getTargetedEditPart(req)) {
 				ICommand cmd = getGroupRequestAdvisor().notifyGroupFramework(new AbstractGroupRequest((IGraphicalEditPart)getHost(), Utils.getChangeBoundsRequestCopy(req, part), part, getTargetGroupDescriptor(part)) {
 
@@ -60,39 +59,40 @@ public class GroupNotifyingOnMoveEditPolicy extends GroupListenerEditPolicy {
 						return GroupRequestType.MOVE;
 					}
 				});
-
 				if(cmd != null && cmd.canExecute()) {
 					cc.compose(cmd);
 				}
 			}
-
 			stopMovingPartState(req);
-
 			if(cc != null && cc.canExecute()) {
 				return new ICommandProxy(cc);
 			}
 		}
 		return null;
 	}
+
 	/**
 	 * Set the art concern by the request to "Moving state" {@link IGroupNotifier#isPartMoving()}
+	 * 
 	 * @param req
 	 */
 	public void stopMovingPartState(final ChangeBoundsRequest req) {
 		Iterable<IGraphicalEditPart> targetedEditPart = Utils.getTargetedEditPart(req);
 		stopMovingParts(targetedEditPart);
 	}
+
 	/**
 	 * Set all part specify and its descendant to "Moving State"
+	 * 
 	 * @param targetedEditPart
 	 */
 	protected void stopMovingParts(Iterable<IGraphicalEditPart> targetedEditPart) {
-		if ( targetedEditPart != null){
+		if(targetedEditPart != null) {
 			for(EditPart part : targetedEditPart) {
 				EditPolicy editPolicy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY);
-				if (editPolicy instanceof GroupNotifyingOnMoveEditPolicy){
+				if(editPolicy instanceof GroupNotifyingOnMoveEditPolicy) {
 					GroupNotifyingOnMoveEditPolicy editPolicy2 = (GroupNotifyingOnMoveEditPolicy)editPolicy;
-					if (DebugUtils.isDebugging()){
+					if(DebugUtils.isDebugging()) {
 						StringBuilder stringBuilder = new StringBuilder();
 						stringBuilder.append(Utils.getCorrectLabel(editPolicy2.getEObject()));
 						stringBuilder.append(" is stoping to move");
@@ -101,9 +101,8 @@ public class GroupNotifyingOnMoveEditPolicy extends GroupListenerEditPolicy {
 					editPolicy2.stopMoving();
 				}
 				stopMovingParts(part.getChildren());
-			}			
+			}
 		}
-		
 	}
 
 	public void initMovingPartState(final ChangeBoundsRequest req) {
@@ -112,12 +111,12 @@ public class GroupNotifyingOnMoveEditPolicy extends GroupListenerEditPolicy {
 	}
 
 	protected void startMovingParts(final ChangeBoundsRequest req, Iterable<IGraphicalEditPart> targetedEditPart) {
-		if ( targetedEditPart != null){			
+		if(targetedEditPart != null) {
 			for(final EditPart part : targetedEditPart) {
 				EditPolicy editPolicy = part.getEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY);
-				if (editPolicy instanceof GroupNotifyingOnMoveEditPolicy){
+				if(editPolicy instanceof GroupNotifyingOnMoveEditPolicy) {
 					GroupNotifyingOnMoveEditPolicy editPolicy2 = (GroupNotifyingOnMoveEditPolicy)editPolicy;
-					if (DebugUtils.isDebugging()){
+					if(DebugUtils.isDebugging()) {
 						StringBuilder stringBuilder = new StringBuilder();
 						stringBuilder.append(Utils.getCorrectLabel(editPolicy2.getEObject()));
 						stringBuilder.append(" is start to move");
@@ -130,13 +129,10 @@ public class GroupNotifyingOnMoveEditPolicy extends GroupListenerEditPolicy {
 		}
 	}
 
-
-
-
 	protected IGroupRequestAdvisor getGroupRequestAdvisor() {
 		return GroupRequestAdvisor.getInstance();
 	}
-	
+
 	/**
 	 * Override in order to accept correct request
 	 */
@@ -147,8 +143,4 @@ public class GroupNotifyingOnMoveEditPolicy extends GroupListenerEditPolicy {
 		}
 		return false;
 	}
-
-	
-
-
 }

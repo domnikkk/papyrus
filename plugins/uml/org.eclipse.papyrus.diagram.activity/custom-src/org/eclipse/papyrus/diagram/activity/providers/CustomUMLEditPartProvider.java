@@ -16,7 +16,6 @@ package org.eclipse.papyrus.diagram.activity.providers;
 
 import org.eclipse.papyrus.diagram.activity.edit.part.CustomUMLEditPartFactory;
 
-
 /**
  * This class was introduce to rout the EditPartFactory to our own EditPartFactory {@link CustomUMLEditPartFactory}
  */
@@ -27,7 +26,4 @@ public class CustomUMLEditPartProvider extends UMLEditPartProvider {
 		setFactory(new CustomUMLEditPartFactory());
 		setAllowCaching(true);
 	}
-
-
-
 }
