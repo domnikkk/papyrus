@@ -12,7 +12,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Added graphic contributions for the filters
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial History implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - History integration
- *
+ *  g TOURMEL (ATOS) g.tourmel@atos.net - Bug 395154
  *****************************************************************************/
 package org.eclipse.papyrus.modelexplorer.widgets;
 
@@ -310,15 +310,20 @@ public class GraphicalModelExplorerBasedContentProvider extends ModelContentProv
 			 */
 			public void selectionChanged(SelectionChangedEvent event) {
 				IStructuredSelection selection = (IStructuredSelection)historyViewer.getSelection();
-				Object selectedObject = selection.getFirstElement();
-				if(selectedObject instanceof EObject) {
-					EObject eObject = ((EObject)selectedObject);
+				Object selectObject = selection.getFirstElement();
+				if (selectObject instanceof EObject) {
+					EObject eObject = ((EObject) selectObject);
 					// select the element in the model explorer
 					Object containerValue = getContainerValue(eObject);
-					if(containerValue == null) {
+					if (containerValue == null) {
 						viewer.setSelection(StructuredSelection.EMPTY);
 					} else {
 						viewer.setSelection(new StructuredSelection(containerValue), true);
+					}
+					// When selection don t focus element on tree.
+					if (selectedObject == null) {
+						selectedObject = getAdaptedValue(eObject);
+						updateDetailLabel();
 					}
 
 					// update current selection
