@@ -741,7 +741,7 @@ public class ExtensionPointInRectangleEditPart extends CompartmentEditPart imple
 				}
 			}
 		}
-		if(event.getFeature().equals(UMLPackage.eINSTANCE.getFeature_IsStatic())) {
+		if(UMLPackage.eINSTANCE.getFeature_IsStatic().equals(feature)) {
 			refreshUnderline();
 		}
 		super.handleNotificationEvent(event);

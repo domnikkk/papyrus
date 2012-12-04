@@ -741,7 +741,7 @@ public class InternalTransitionEditPart extends CompartmentEditPart implements I
 				}
 			}
 		}
-		if(event.getFeature().equals(UMLPackage.eINSTANCE.getFeature_IsStatic())) {
+		if(UMLPackage.eINSTANCE.getFeature_IsStatic().equals(feature)) {
 			refreshUnderline();
 		}
 		super.handleNotificationEvent(event);

@@ -762,7 +762,7 @@ public class NestedClassForInterfaceEditPart extends UMLCompartmentEditPart impl
 		if(event.getNewValue() instanceof EAnnotation && VisualInformationPapyrusConstant.DISPLAY_NAMELABELICON.equals(((EAnnotation)event.getNewValue()).getSource())) {
 			refreshLabel();
 		}
-		if(event.getFeature().equals(UMLPackage.eINSTANCE.getFeature_IsStatic())) {
+		if(UMLPackage.eINSTANCE.getFeature_IsStatic().equals(feature)) {
 			refreshUnderline();
 		}
 		super.handleNotificationEvent(event);
