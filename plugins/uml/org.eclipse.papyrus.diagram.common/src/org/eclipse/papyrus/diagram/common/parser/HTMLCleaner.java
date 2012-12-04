@@ -183,7 +183,7 @@ public class HTMLCleaner {
 		for(int i = 0; i < length; i++) {
 			skip = false;
 			char c = htmlString.charAt(i);
-			if(c == '<') { // opening a new tag...
+			if(c == '<' && htmlString.indexOf('>', i) >= i) { // opening a new tag...
 				inTag = true;
 
 				// should do specific check for new lines (<BR>, <P>, <H1>,
@@ -202,7 +202,7 @@ public class HTMLCleaner {
 											// close it...
 				inTag = false;
 				skip = true;
-			} else if(c == '&') {
+			} else if(c == '&' && htmlString.indexOf(';', i) >= i) {
 				inSpecial = true;
 				// this is a special character
 				// look for next ';', which closes the special character
@@ -318,7 +318,8 @@ public class HTMLCleaner {
 		for(int i = 0; i < length; i++) {
 			skip = false;
 			char c = htmlString.charAt(i);
-			if(c == '&') {
+			if(c == '&' && htmlString.indexOf(';', i) >= i) {
+				
 				inSpecial = true;
 				// this is a special character
 				// look for next ';', which closes the special character
