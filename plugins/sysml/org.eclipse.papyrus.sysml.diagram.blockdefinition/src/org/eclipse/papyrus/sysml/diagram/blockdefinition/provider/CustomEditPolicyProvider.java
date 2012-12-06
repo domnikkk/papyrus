@@ -9,6 +9,7 @@
  * Contributors:
  *		
  *		CEA LIST - Initial API and implementation
+ *		Arthur Daussy - arthur.daussy@atos.net - 395920: [Block Diagram Definition] All element contained by a block should be able to be linked to constraint or comment
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.blockdefinition.provider;
@@ -50,6 +51,7 @@ import org.eclipse.papyrus.sysml.diagram.common.edit.part.BlockEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.ConstraintBlockEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.DimensionEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.FlowPortAffixedNodeEditPart;
+import org.eclipse.papyrus.sysml.diagram.common.edit.part.FlowPortChildLabelEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.FlowSpecificationEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.UnitEditPart;
 import org.eclipse.papyrus.sysml.diagram.common.edit.part.ValueTypeEditPart;
@@ -234,12 +236,18 @@ public class CustomEditPolicyProvider extends BlockDefinitionDiagramEditPolicyPr
 			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDefaultSemanticEditPolicy());
 		}
 
+		if(editPart instanceof FlowPortChildLabelEditPart) {
+			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDefaultSemanticEditPolicy());
+		}
+
 		if(editPart instanceof FlowPortAffixedNodeEditPart || editPart instanceof PortAffixedNodeEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.POPUPBAR_ROLE, new HyperLinkPopupBarEditPolicy());
+			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDefaultSemanticEditPolicy());
 		}
 
 		if(editPart instanceof AbstractElementChildLabelEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.POPUPBAR_ROLE, new HyperLinkPopupBarEditPolicy());
+			editPart.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDefaultSemanticEditPolicy());
 		}
 	}
 }
