@@ -67,6 +67,8 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ReadSelfActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ReadStructuralFeatureActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ReadVariableActionEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.RemoveStructuralFeatureValueActionEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.RemoveVariableValueActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.SendObjectActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.SendSignalActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.SequenceNodeEditPart;
@@ -186,6 +188,8 @@ public class ActivityCNContentCompartmentCanonicalEditPolicy extends CanonicalEd
 		case BroadcastSignalActionEditPart.VISUAL_ID:
 		case CentralBufferNodeEditPart.VISUAL_ID:
 		case ActivityParameterNodeEditPart.VISUAL_ID:
+		case RemoveVariableValueActionEditPart.VISUAL_ID:
+		case RemoveStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

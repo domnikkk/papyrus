@@ -44,7 +44,7 @@ public class UMLOCLFactory {
 	 * @generated
 	 */
 	protected UMLOCLFactory() {
-		this.expressions = new UMLAbstractExpression[87];
+		this.expressions = new UMLAbstractExpression[91];
 	}
 
 	/**
@@ -146,6 +146,10 @@ public class UMLOCLFactory {
 			"self.result.type =self.variable.type and self.result.isOrdered = self.variable.isOrdered", //$NON-NLS-1$
 			"(self.result.lowerBound() <= self.variable.lowerBound())  and (self.result.upperBound() >= self.variable.lowerBound())", //$NON-NLS-1$
 			"((not self.handlerBody.oclIsUndefined()) and  (not self.exceptionInput.oclIsUndefined())) implies( let pins : Collection(Element) = self.handlerBody.allOwnedElements()->select(e : Element | e.oclIsKindOf(Pin)) in pins->forAll(e : Element | e.oclIsKindOf(Pin) implies e = self.exceptionInput))", //$NON-NLS-1$
+			"if self.owner.oclIsKindOf(RemoveVariableValueAction)\r\nthen self.owner.oclAsType(RemoveVariableValueAction).removeAt->includes(self)\r\nelse false endif", //$NON-NLS-1$
+			"if self.owner.oclIsKindOf(RemoveVariableValueAction)\r\nthen self.owner.oclAsType(RemoveVariableValueAction).value->includes(self)\r\nelse false endif", //$NON-NLS-1$
+			"if self.owner.oclIsKindOf(RemoveStructuralFeatureValueAction)\r\nthen self.owner.oclAsType(RemoveStructuralFeatureValueAction).object->includes(self)\r\nelse false endif", //$NON-NLS-1$
+			"if self.owner.oclIsKindOf(RemoveStructuralFeatureValueAction)\r\nthen self.owner.oclAsType(RemoveStructuralFeatureValueAction).value->includes(self)\r\nelse false endif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(exprBodies[index], context, environment == null ? Collections.<String, EClassifier> emptyMap() : environment);
 		}

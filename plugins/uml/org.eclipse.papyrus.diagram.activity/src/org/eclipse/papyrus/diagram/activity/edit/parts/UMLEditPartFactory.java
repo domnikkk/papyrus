@@ -569,6 +569,44 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ConstraintNameEditPartCN(view);
 			case ConstraintBodyEditPartCN.VISUAL_ID:
 				return new ConstraintBodyEditPartCN(view);
+			case RemoveVariableValueActionEditPart.VISUAL_ID:
+				return new RemoveVariableValueActionEditPart(view);
+			case RemoveVariableValueActionNameEditPart.VISUAL_ID:
+				return new RemoveVariableValueActionNameEditPart(view);
+			case InputPinInRemoveVariableValueActionAsRemoveAtEditPart.VISUAL_ID:
+				return new InputPinInRemoveVariableValueActionAsRemoveAtEditPart(view);
+			case InputPinInRemoveVariableValueActionAsRemoveAtLabelEditPart.VISUAL_ID:
+				return new InputPinInRemoveVariableValueActionAsRemoveAtLabelEditPart(view);
+			case InputPinInRemoveVariableValueActionAsRemoveAtAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new InputPinInRemoveVariableValueActionAsRemoveAtAppliedStereotypeWrappingLabelEditPart(view);
+			case InputPinInRemoveVariableValueActionAsValueEditPart.VISUAL_ID:
+				return new InputPinInRemoveVariableValueActionAsValueEditPart(view);
+			case InputPinInRemoveVariableValueActionAsValueLabelEditPart.VISUAL_ID:
+				return new InputPinInRemoveVariableValueActionAsValueLabelEditPart(view);
+			case InputPinInRemoveVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new InputPinInRemoveVariableValueActionAsValueAppliedStereotypeWrappingLabelEditPart(view);
+			case RemoveStructuralFeatureValueActionEditPart.VISUAL_ID:
+				return new RemoveStructuralFeatureValueActionEditPart(view);
+			case RemoveStructuralFeatureValueActionNameEditPart.VISUAL_ID:
+				return new RemoveStructuralFeatureValueActionNameEditPart(view);
+			case InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart.VISUAL_ID:
+				return new InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart(view);
+			case InputPinInRemoveStructuralFeatureValueActionAsObjectLabelEditPart.VISUAL_ID:
+				return new InputPinInRemoveStructuralFeatureValueActionAsObjectLabelEditPart(view);
+			case InputPinInRemoveStructuralFeatureValueActionAsObjectAppliedStereotypeWrappingLabelEditPart.VISUAL_ID:
+				return new InputPinInRemoveStructuralFeatureValueActionAsObjectAppliedStereotypeWrappingLabelEditPart(view);
+			case InputPinInRemoveStructuralFeatureValueActionAsValueEditPart.VISUAL_ID:
+				return new InputPinInRemoveStructuralFeatureValueActionAsValueEditPart(view);
+			case InputPinInRemoveStructuralFeatureValueActionAsValueLabel2EditPart.VISUAL_ID:
+				return new InputPinInRemoveStructuralFeatureValueActionAsValueLabel2EditPart(view);
+			case InputPinInRemoveStructuralFeatureValueActionAsValueAppliedStereotypeWrappingLabel2EditPart.VISUAL_ID:
+				return new InputPinInRemoveStructuralFeatureValueActionAsValueAppliedStereotypeWrappingLabel2EditPart(view);
+			case OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart.VISUAL_ID:
+				return new OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart(view);
+			case OutputPinInRemoveStructuralFeatureValueActionAsResultLabel3EditPart.VISUAL_ID:
+				return new OutputPinInRemoveStructuralFeatureValueActionAsResultLabel3EditPart(view);
+			case OutputPinInRemoveStructuralFeatureValueActionAsResultAppliedStereotypeWrappingLabel3EditPart.VISUAL_ID:
+				return new OutputPinInRemoveStructuralFeatureValueActionAsResultAppliedStereotypeWrappingLabel3EditPart(view);
 			case ActivityActivityParametersCompartmentEditPart.VISUAL_ID:
 				return new ActivityActivityParametersCompartmentEditPart(view);
 			case ActivityActivityPreConditionsCompartmentEditPart.VISUAL_ID:

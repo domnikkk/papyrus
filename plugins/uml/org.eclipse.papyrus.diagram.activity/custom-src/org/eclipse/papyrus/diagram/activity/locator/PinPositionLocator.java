@@ -43,6 +43,10 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInCallOpActEditPa
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInDestroyObjectActionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInOpaqueActEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInReadStructuralFeatureAsObjectEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInRemoveStructuralFeatureValueActionAsValueEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInRemoveVariableValueActionAsRemoveAtEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInRemoveVariableValueActionAsValueEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInSendObjActAsReqEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInSendObjActAsTargetEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInSendSigActAsTargetEditPart;
@@ -55,6 +59,7 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInCreateObjectAc
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInOpaqueActEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInReadStructuralFeatureAsResultEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInReadVariableActionAsResultEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInValSpecActEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ReadSelfActionOutputPinEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ValuePinInCallBeActEditPart;
@@ -503,41 +508,28 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 		} else if(child instanceof InputPinInBroadcastSignalActionEditPart.PinDescriptor) {
 			arrowIn = true;
 			arrow = ((InputPinInBroadcastSignalActionEditPart.PinDescriptor)child).getOptionalArrowFigure();
+		} else if(child instanceof InputPinInRemoveVariableValueActionAsRemoveAtEditPart.PinDescriptor) {
+			arrowIn = true;
+			arrow = ((InputPinInRemoveVariableValueActionAsRemoveAtEditPart.PinDescriptor)child).getOptionalArrowFigure();
+		} else if(child instanceof InputPinInRemoveVariableValueActionAsValueEditPart.PinDescriptor) {
+			arrowIn = true;
+			arrow = ((InputPinInRemoveVariableValueActionAsValueEditPart.PinDescriptor)child).getOptionalArrowFigure();
+		} else if(child instanceof InputPinInRemoveStructuralFeatureValueActionAsValueEditPart.PinDescriptor) {
+			arrowIn = true;
+			arrow = ((InputPinInRemoveStructuralFeatureValueActionAsValueEditPart.PinDescriptor)child).getOptionalArrowFigure();
+		} else if(child instanceof InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart.PinDescriptor) {
+			arrowIn = true;
+			arrow = ((InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart.PinDescriptor)child).getOptionalArrowFigure();
+		} else if(child instanceof OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart.PinDescriptor) {
+			arrowIn = false;
+			arrow = ((OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart.PinDescriptor)child).getOptionalArrowFigure();
 		}
 		if(arrow != null && arrow.getPoints().size() > 0) {
-			int arrowDirection;
 			int side = getCurrentSideOfParent();
-			switch(side) {
-			case PositionConstants.NORTH:
-				if(arrowIn) {
-					arrowDirection = PositionConstants.SOUTH;
-				} else {
-					arrowDirection = PositionConstants.NORTH;
-				}
-				break;
-			case PositionConstants.EAST:
-				if(arrowIn) {
-					arrowDirection = PositionConstants.WEST;
-				} else {
-					arrowDirection = PositionConstants.EAST;
-				}
-				break;
-			case PositionConstants.SOUTH:
-				if(arrowIn) {
-					arrowDirection = PositionConstants.NORTH;
-				} else {
-					arrowDirection = PositionConstants.SOUTH;
-				}
-				break;
-			case PositionConstants.WEST:
-			default:
-				if(arrowIn) {
-					arrowDirection = PositionConstants.EAST;
-				} else {
-					arrowDirection = PositionConstants.WEST;
-				}
+			if(arrowIn) {
+				side = ActivityFigureDrawer.getOppositeDirection(side);
 			}
-			ActivityFigureDrawer.redrawPinArrow(arrow, mapMode, size, arrowDirection);
+			ActivityFigureDrawer.redrawPinArrow(arrow, mapMode, size, side);
 		}
 	}
 

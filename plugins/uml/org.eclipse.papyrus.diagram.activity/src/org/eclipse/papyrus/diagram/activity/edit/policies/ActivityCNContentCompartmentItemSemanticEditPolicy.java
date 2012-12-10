@@ -37,6 +37,8 @@ import org.eclipse.papyrus.diagram.activity.edit.commands.OpaqueActionCreateComm
 import org.eclipse.papyrus.diagram.activity.edit.commands.ReadSelfActionCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ReadStructuralFeatureActionCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.ReadVariableActionCreateCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.RemoveStructuralFeatureValueActionCreateCommand;
+import org.eclipse.papyrus.diagram.activity.edit.commands.RemoveVariableValueActionCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.SendObjectActionCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.SendSignalActionCreateCommand;
 import org.eclipse.papyrus.diagram.activity.edit.commands.SequenceNodeCreateCommand;
@@ -187,6 +189,12 @@ public class ActivityCNContentCompartmentItemSemanticEditPolicy extends UMLBaseI
 		}
 		if(UMLElementTypes.ActivityParameterNode_3059 == req.getElementType()) {
 			return getGEFWrapper(new ActivityParameterNodeCreateCommand(req));
+		}
+		if(UMLElementTypes.RemoveVariableValueAction_3113 == req.getElementType()) {
+			return getGEFWrapper(new RemoveVariableValueActionCreateCommand(req));
+		}
+		if(UMLElementTypes.RemoveStructuralFeatureValueAction_3116 == req.getElementType()) {
+			return getGEFWrapper(new RemoveStructuralFeatureValueActionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

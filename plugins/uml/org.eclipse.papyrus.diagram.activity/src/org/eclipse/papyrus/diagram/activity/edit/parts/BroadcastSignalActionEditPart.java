@@ -616,6 +616,27 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 		if(targetEditPart instanceof CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
+		if(targetEditPart instanceof RemoveVariableValueActionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsRemoveAtEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof RemoveStructuralFeatureValueActionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
+		if(targetEditPart instanceof OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4003);
+		}
 		if(targetEditPart instanceof InitialNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
@@ -847,6 +868,27 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 		if(targetEditPart instanceof CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
+		if(targetEditPart instanceof RemoveVariableValueActionEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsRemoveAtEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof RemoveStructuralFeatureValueActionEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
+		if(targetEditPart instanceof OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4004);
+		}
 		if(targetEditPart instanceof ValuePinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
@@ -997,6 +1039,21 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 		if(targetEditPart instanceof CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsRemoveAtEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
+		if(targetEditPart instanceof OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
 		return types;
 	}
 
@@ -1103,6 +1160,13 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
+			types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+			types.add(UMLElementTypes.InputPin_3114);
+			types.add(UMLElementTypes.InputPin_3115);
+			types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
+			types.add(UMLElementTypes.InputPin_3117);
+			types.add(UMLElementTypes.InputPin_3119);
+			types.add(UMLElementTypes.OutputPin_3120);
 		} else if(relationshipType == UMLElementTypes.ControlFlow_4004) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
@@ -1181,6 +1245,13 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
+			types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+			types.add(UMLElementTypes.InputPin_3114);
+			types.add(UMLElementTypes.InputPin_3115);
+			types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
+			types.add(UMLElementTypes.InputPin_3117);
+			types.add(UMLElementTypes.InputPin_3119);
+			types.add(UMLElementTypes.OutputPin_3120);
 		} else if(relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.ValuePin_3015);
 			types.add(UMLElementTypes.ActionInputPin_3016);
@@ -1232,6 +1303,11 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 			types.add(UMLElementTypes.InputPin_3101);
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
+			types.add(UMLElementTypes.InputPin_3114);
+			types.add(UMLElementTypes.InputPin_3115);
+			types.add(UMLElementTypes.InputPin_3117);
+			types.add(UMLElementTypes.InputPin_3119);
+			types.add(UMLElementTypes.OutputPin_3120);
 		}
 		return types;
 	}
@@ -1331,6 +1407,13 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
+			types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+			types.add(UMLElementTypes.InputPin_3114);
+			types.add(UMLElementTypes.InputPin_3115);
+			types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
+			types.add(UMLElementTypes.InputPin_3117);
+			types.add(UMLElementTypes.InputPin_3119);
+			types.add(UMLElementTypes.OutputPin_3120);
 		} else if(relationshipType == UMLElementTypes.ControlFlow_4004) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
@@ -1409,6 +1492,13 @@ public class BroadcastSignalActionEditPart extends AbstractBorderedShapeEditPart
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
+			types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+			types.add(UMLElementTypes.InputPin_3114);
+			types.add(UMLElementTypes.InputPin_3115);
+			types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
+			types.add(UMLElementTypes.InputPin_3117);
+			types.add(UMLElementTypes.InputPin_3119);
+			types.add(UMLElementTypes.OutputPin_3120);
 		} else if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
 			types.add(UMLElementTypes.Comment_3080);
 		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {

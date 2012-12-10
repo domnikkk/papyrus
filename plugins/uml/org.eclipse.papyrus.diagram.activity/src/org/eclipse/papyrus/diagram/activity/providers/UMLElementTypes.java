@@ -451,6 +451,41 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType RemoveVariableValueAction_3113 = getElementType("org.eclipse.papyrus.diagram.activity.RemoveVariableValueAction_3113"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3114 = getElementType("org.eclipse.papyrus.diagram.activity.InputPin_3114"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3115 = getElementType("org.eclipse.papyrus.diagram.activity.InputPin_3115"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType RemoveStructuralFeatureValueAction_3116 = getElementType("org.eclipse.papyrus.diagram.activity.RemoveStructuralFeatureValueAction_3116"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3117 = getElementType("org.eclipse.papyrus.diagram.activity.InputPin_3117"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType InputPin_3119 = getElementType("org.eclipse.papyrus.diagram.activity.InputPin_3119"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType OutputPin_3120 = getElementType("org.eclipse.papyrus.diagram.activity.OutputPin_3120"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ValueSpecificationAction_3076 = getElementType("org.eclipse.papyrus.diagram.activity.ValueSpecificationAction_3076"); //$NON-NLS-1$
 
 	/**
@@ -774,6 +809,13 @@ public class UMLElementTypes {
 			elements.put(InputPin_3103, UMLPackage.eINSTANCE.getInputPin());
 			elements.put(CentralBufferNode_3104, UMLPackage.eINSTANCE.getCentralBufferNode());
 			elements.put(Constraint_3112, UMLPackage.eINSTANCE.getConstraint());
+			elements.put(RemoveVariableValueAction_3113, UMLPackage.eINSTANCE.getRemoveVariableValueAction());
+			elements.put(InputPin_3114, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(InputPin_3115, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(RemoveStructuralFeatureValueAction_3116, UMLPackage.eINSTANCE.getRemoveStructuralFeatureValueAction());
+			elements.put(InputPin_3117, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(InputPin_3119, UMLPackage.eINSTANCE.getInputPin());
+			elements.put(OutputPin_3120, UMLPackage.eINSTANCE.getOutputPin());
 			elements.put(ActionLocalPrecondition_4001, UMLPackage.eINSTANCE.getAction_LocalPrecondition());
 			elements.put(ActionLocalPostcondition_4002, UMLPackage.eINSTANCE.getAction_LocalPostcondition());
 			elements.put(ObjectFlow_4003, UMLPackage.eINSTANCE.getObjectFlow());
@@ -894,6 +936,13 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InputPin_3103);
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3104);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3112);
+			KNOWN_ELEMENT_TYPES.add(RemoveVariableValueAction_3113);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3114);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3115);
+			KNOWN_ELEMENT_TYPES.add(RemoveStructuralFeatureValueAction_3116);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3117);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3119);
+			KNOWN_ELEMENT_TYPES.add(OutputPin_3120);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPrecondition_4001);
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4002);
 			KNOWN_ELEMENT_TYPES.add(ObjectFlow_4003);
@@ -1102,6 +1151,20 @@ public class UMLElementTypes {
 			return CentralBufferNode_3104;
 		case ConstraintEditPartCN.VISUAL_ID:
 			return Constraint_3112;
+		case RemoveVariableValueActionEditPart.VISUAL_ID:
+			return RemoveVariableValueAction_3113;
+		case InputPinInRemoveVariableValueActionAsRemoveAtEditPart.VISUAL_ID:
+			return InputPin_3114;
+		case InputPinInRemoveVariableValueActionAsValueEditPart.VISUAL_ID:
+			return InputPin_3115;
+		case RemoveStructuralFeatureValueActionEditPart.VISUAL_ID:
+			return RemoveStructuralFeatureValueAction_3116;
+		case InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart.VISUAL_ID:
+			return InputPin_3117;
+		case InputPinInRemoveStructuralFeatureValueActionAsValueEditPart.VISUAL_ID:
+			return InputPin_3119;
+		case OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart.VISUAL_ID:
+			return OutputPin_3120;
 		case ActionLocalPreconditionEditPart.VISUAL_ID:
 			return ActionLocalPrecondition_4001;
 		case ActionLocalPostconditionEditPart.VISUAL_ID:

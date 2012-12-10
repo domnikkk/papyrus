@@ -276,6 +276,16 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	private final static String CREATEREMOVEVARIABLEVALUEACTION52CREATIONTOOL = "createRemoveVariableValueAction52CreationTool"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private final static String CREATEREMOVESTRUCTURALFEATUREVALUEACTION53CREATIONTOOL = "createRemoveStructuralFeatureValueAction53CreationTool"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private final static String CREATECONTROLFLOW1CREATIONTOOL = "createControlFlow1CreationTool"; //$NON-NLS-1$
 
 	/**
@@ -449,6 +459,12 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		}
 		if(toolId.equals(CREATECONSTRAINT51CREATIONTOOL)) {
 			return createConstraint51CreationTool();
+		}
+		if(toolId.equals(CREATEREMOVEVARIABLEVALUEACTION52CREATIONTOOL)) {
+			return createRemoveVariableValueAction52CreationTool();
+		}
+		if(toolId.equals(CREATEREMOVESTRUCTURALFEATUREVALUEACTION53CREATIONTOOL)) {
+			return createRemoveStructuralFeatureValueAction53CreationTool();
 		}
 		if(toolId.equals(CREATECONTROLFLOW1CREATIONTOOL)) {
 			return createControlFlow1CreationTool();
@@ -976,6 +992,26 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	private Tool createConstraint51CreationTool() {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Constraint_3112);
+		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createRemoveVariableValueAction52CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
+		return tool;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Tool createRemoveStructuralFeatureValueAction53CreationTool() {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
 		Tool tool = new AspectUnspecifiedTypeCreationTool(types);
 		return tool;
 	}

@@ -1,6 +1,6 @@
 
 1. Make creation of OutPin on Loop Node work:
- See the three reference of outpu pin on loop node
+ See the three reference of output pin on loop node
  
 2. Try to use org.eclipse.papyrus.diagram.activity.edit.policies.PinAndEdgeCreationInCompartmentEditPolicy to 
 redirect pin and activity edge creation on structured activity node

@@ -580,6 +580,27 @@ public class IntervalConstraintAsLocalPostcondEditPart extends AbstractConstrain
 		if(targetEditPart instanceof ConstraintEditPartCN) {
 			types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
 		}
+		if(targetEditPart instanceof RemoveVariableValueActionEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsRemoveAtEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
+		}
+		if(targetEditPart instanceof RemoveStructuralFeatureValueActionEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
+		}
+		if(targetEditPart instanceof OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart) {
+			types.add(UMLElementTypes.ConstraintConstrainedElement_4007);
+		}
 		return types;
 	}
 
@@ -681,6 +702,13 @@ public class IntervalConstraintAsLocalPostcondEditPart extends AbstractConstrain
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
 			types.add(UMLElementTypes.Constraint_3112);
+			types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+			types.add(UMLElementTypes.InputPin_3114);
+			types.add(UMLElementTypes.InputPin_3115);
+			types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
+			types.add(UMLElementTypes.InputPin_3117);
+			types.add(UMLElementTypes.InputPin_3119);
+			types.add(UMLElementTypes.OutputPin_3120);
 		}
 		return types;
 	}
@@ -723,6 +751,8 @@ public class IntervalConstraintAsLocalPostcondEditPart extends AbstractConstrain
 			types.add(UMLElementTypes.ReadVariableAction_3097);
 			types.add(UMLElementTypes.AddVariableValueAction_3099);
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
+			types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+			types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
 		} else if(relationshipType == UMLElementTypes.ActionLocalPostcondition_4002) {
 			types.add(UMLElementTypes.OpaqueAction_3007);
 			types.add(UMLElementTypes.CallBehaviorAction_3008);
@@ -744,6 +774,8 @@ public class IntervalConstraintAsLocalPostcondEditPart extends AbstractConstrain
 			types.add(UMLElementTypes.ReadVariableAction_3097);
 			types.add(UMLElementTypes.AddVariableValueAction_3099);
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
+			types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+			types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
 		} else if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
 			types.add(UMLElementTypes.Comment_3080);
 		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {

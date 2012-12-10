@@ -33,12 +33,17 @@ import org.eclipse.papyrus.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ControlFlowInterruptibleIconEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ExceptionHandlerIconEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ExpansionRegionStructuredActivityNodeContentCompartmentEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInRemoveStructuralFeatureValueActionAsValueEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInRemoveVariableValueActionAsRemoveAtEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.InputPinInRemoveVariableValueActionAsValueEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.LoopNodeStructuredActivityNodeContentCompartmentEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ObjectFlowInterruptibleIconEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ObjectFlowSelectionEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.ObjectFlowTransformationEditPart;
+import org.eclipse.papyrus.diagram.activity.edit.parts.OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.SequenceNodeStructuredActivityNodeContentCompartmentEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityNodeContentCompartmentEditPart;
 import org.eclipse.papyrus.diagram.activity.edit.parts.UMLEditPartFactory;
@@ -51,6 +56,31 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 		if(model instanceof View) {
 			View view = (View)model;
 			switch(UMLVisualIDRegistry.getVisualID(view)) {
+			case InputPinInRemoveStructuralFeatureValueActionAsValueEditPart.VISUAL_ID:
+				/*
+				 * To display arrow on pin
+				 */
+				return new CustomInputPinInRemoveStructuralFeatureValueActionAsValueEditPart(view);
+			case InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart.VISUAL_ID:
+				/*
+				 * To display arrow on pin
+				 */
+				return new CustomInputPinInRemoveStructuralFeatureValueActionAsObjectEditPart(view);
+			case OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart.VISUAL_ID:
+				/*
+				 * To display arrow on pin
+				 */
+				return new CustomOutputPinInRemoveStructuralFeatureValueActionAsResultEditPart(view);
+			case InputPinInRemoveVariableValueActionAsRemoveAtEditPart.VISUAL_ID:
+				/*
+				 * To display arrow on pin
+				 */
+				return new CustomInputPinInRemoveVariableValueActionAsRemoveAtEditPart(view);
+			case InputPinInRemoveVariableValueActionAsValueEditPart.VISUAL_ID:
+				/*
+				 * To display arrow on pin
+				 */
+				return new CustomInputPinInRemoveVariableValueActionAsValueEditPart(view);
 			case ControlFlowEditPart.VISUAL_ID:
 				/*
 				 * To implement InterruptibleEdge interface

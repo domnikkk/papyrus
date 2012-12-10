@@ -230,7 +230,7 @@
       <viewProvider class="org.eclipse.papyrus.diagram.activity.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="PapyrusUMLActivityDiagram"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112,3113,3114,3115,3116,3117,3119,3120"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007"/>
       </viewProvider>
    </extension>
@@ -243,13 +243,13 @@
             <method name="getType()" value="PapyrusUMLActivityDiagram"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112"/>
+            <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3015,3016,3013,3014,3008,3017,3018,3019,3020,3010,3021,3022,3023,3024,3025,3026,3027,3034,3035,3036,3037,3032,3033,3011,3012,3038,3039,3040,3041,3078,3042,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3061,3062,3059,3063,3064,3076,3077,3069,3070,3074,3075,3071,3109,3110,3111,3073,3065,3105,3067,3068,3080,3081,3084,3083,3086,3087,3085,3088,3089,3090,3091,3092,3093,3094,3095,3096,3097,3098,3099,3100,3101,3102,3103,3104,3112,3113,3114,3115,3116,3117,3119,3120"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5080,5081,5082,5003,5011,5024,5083,5012,5025,5084,5009,5085,5010,5086,5004,5013,5026,5087,5014,5027,5088,5015,5089,5016,5090,5006,5017,5028,5091,5018,5029,5092,5019,5093,5020,5094,5021,5030,5095,5022,5031,5096,5023,5097,5038,5130,5039,5131,5040,5132,5041,5133,5036,5134,5037,5135,5007,5136,5008,5137,5043,5098,5099,5100,5042,5101,5127,5128,5059,5049,5050,5102,5051,5052,5103,5053,5104,5054,5055,5105,5056,5057,5106,5058,5107,5060,5061,5062,5108,5063,5064,5109,5065,5110,5072,5073,5111,5074,5075,5112,5076,5113,5071,5078,5079,5115,5077,5114,5126,5124,5125,5119,5120,5121,5184,5185,5186,5183,5187,5188,5123,5117,5178,5179,5118,5138,5139,5144,5145,5142,5143,5148,5146,5147,5129,5153,5149,5150,5151,5152,5160,5154,5155,5156,5157,5158,5159,5163,5161,5162,5166,5164,5165,5171,5167,5168,5169,5170,5175,5172,5173,5174,5176,5177,5189,5190"/>
+            <method name="getType()" value="5001,5002,5080,5081,5082,5003,5011,5024,5083,5012,5025,5084,5009,5085,5010,5086,5004,5013,5026,5087,5014,5027,5088,5015,5089,5016,5090,5006,5017,5028,5091,5018,5029,5092,5019,5093,5020,5094,5021,5030,5095,5022,5031,5096,5023,5097,5038,5130,5039,5131,5040,5132,5041,5133,5036,5134,5037,5135,5007,5136,5008,5137,5043,5098,5099,5100,5042,5101,5127,5128,5059,5049,5050,5102,5051,5052,5103,5053,5104,5054,5055,5105,5056,5057,5106,5058,5107,5060,5061,5062,5108,5063,5064,5109,5065,5110,5072,5073,5111,5074,5075,5112,5076,5113,5071,5078,5079,5115,5077,5114,5126,5124,5125,5119,5120,5121,5184,5185,5186,5183,5187,5188,5123,5117,5178,5179,5118,5138,5139,5144,5145,5142,5143,5148,5146,5147,5129,5153,5149,5150,5151,5152,5160,5154,5155,5156,5157,5158,5159,5163,5161,5162,5166,5164,5165,5171,5167,5168,5169,5170,5175,5172,5173,5174,5176,5177,5189,5190,5191,5192,5193,5194,5195,5196,5198,5197,5199,5200,5201,5202"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7003,7004,7008,7009,7010,7012,7005,7006,7007,7014,7015,7016,7013"/>
@@ -1196,6 +1196,71 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <metamodelType
+               id="org.eclipse.papyrus.diagram.activity.RemoveVariableValueAction_3113"
+               name="%metatype.name.RemoveVariableValueAction_3113"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RemoveVariableValueAction"
+               edithelper="org.eclipse.papyrus.diagram.activity.edit.helpers.RemoveVariableValueActionEditHelper">
+            <param name="semanticHint" value="3113"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.diagram.activity.InputPin_3114"
+               name="%metatype.name.InputPin_3114"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.diagram.activity.InputPin_3013"/>
+            <param name="semanticHint" value="3114"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.diagram.activity.InputPin_3115"
+               name="%metatype.name.InputPin_3115"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.diagram.activity.InputPin_3013"/>
+            <param name="semanticHint" value="3115"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <metamodelType
+               id="org.eclipse.papyrus.diagram.activity.RemoveStructuralFeatureValueAction_3116"
+               name="%metatype.name.RemoveStructuralFeatureValueAction_3116"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RemoveStructuralFeatureValueAction"
+               edithelper="org.eclipse.papyrus.diagram.activity.edit.helpers.RemoveStructuralFeatureValueActionEditHelper">
+            <param name="semanticHint" value="3116"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.diagram.activity.InputPin_3117"
+               name="%metatype.name.InputPin_3117"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.diagram.activity.InputPin_3013"/>
+            <param name="semanticHint" value="3117"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.diagram.activity.InputPin_3119"
+               name="%metatype.name.InputPin_3119"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.diagram.activity.InputPin_3013"/>
+            <param name="semanticHint" value="3119"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.papyrus.diagram.activity.OutputPin_3120"
+               name="%metatype.name.OutputPin_3120"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.papyrus.diagram.activity.OutputPin_3014"/>
+            <param name="semanticHint" value="3120"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <specializationType
                id="org.eclipse.papyrus.diagram.activity.ActionLocalPrecondition_4001"
                name="%metatype.name.ActionLocalPrecondition_4001"
@@ -1369,6 +1434,13 @@
          <elementType ref="org.eclipse.papyrus.diagram.activity.InputPin_3103"/>
          <elementType ref="org.eclipse.papyrus.diagram.activity.CentralBufferNode_3104"/>
          <elementType ref="org.eclipse.papyrus.diagram.activity.Constraint_3112"/>
+         <elementType ref="org.eclipse.papyrus.diagram.activity.RemoveVariableValueAction_3113"/>
+         <elementType ref="org.eclipse.papyrus.diagram.activity.InputPin_3114"/>
+         <elementType ref="org.eclipse.papyrus.diagram.activity.InputPin_3115"/>
+         <elementType ref="org.eclipse.papyrus.diagram.activity.RemoveStructuralFeatureValueAction_3116"/>
+         <elementType ref="org.eclipse.papyrus.diagram.activity.InputPin_3117"/>
+         <elementType ref="org.eclipse.papyrus.diagram.activity.InputPin_3119"/>
+         <elementType ref="org.eclipse.papyrus.diagram.activity.OutputPin_3120"/>
          <elementType ref="org.eclipse.papyrus.diagram.activity.ActionLocalPrecondition_4001"/>
          <elementType ref="org.eclipse.papyrus.diagram.activity.ActionLocalPostcondition_4002"/>
          <elementType ref="org.eclipse.papyrus.diagram.activity.ObjectFlow_4003"/>
@@ -3342,6 +3414,26 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
  	</entry>
 	<entry
        defineOnly="true"
+       description="Create Remove Variable Value Action"
+       id="createRemoveVariableValueAction52CreationTool"
+       kind="tool"
+       label="Remove Variable Value Action"
+       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/RemoveVariableValueAction.gif"
+       path=""
+       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/RemoveVariableValueAction.gif">
+ 	</entry>
+	<entry
+       defineOnly="true"
+       description="Create Remove Structural Feature Value Action"
+       id="createRemoveStructuralFeatureValueAction53CreationTool"
+       kind="tool"
+       label="Remove Structural Feature Value Action"
+       large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/RemoveStructuralFeatureValueAction.gif"
+       path=""
+       small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/RemoveStructuralFeatureValueAction.gif">
+ 	</entry>
+	<entry
+       defineOnly="true"
        description="Create a Control Flow"
        id="createControlFlow1CreationTool"
        kind="tool"
@@ -3616,6 +3708,14 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
           id="createConstraint51CreationTool"
           path="/createNodes1Group">
     </predefinedEntry>
+ 	<predefinedEntry
+          id="createRemoveVariableValueAction52CreationTool"
+          path="/createNodes1Group">
+    </predefinedEntry>
+ 	<predefinedEntry
+          id="createRemoveStructuralFeatureValueAction53CreationTool"
+          path="/createNodes1Group">
+    </predefinedEntry>
 
 	<entry
        description=""
@@ -3667,13 +3767,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.TimeConstraintPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.TimeConstraintPreferencePage"
-            name="TimeConstraint Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
 			class="org.eclipse.papyrus.diagram.activity.preferences.ExpansionNodePreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.ExpansionNodePreferencePage"
             name="ExpansionNode Node" />
@@ -3695,20 +3788,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.ReadStructuralFeatureActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.ReadStructuralFeatureActionPreferencePage"
-            name="ReadStructuralFeatureAction Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.LoopNodePreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.LoopNodePreferencePage"
-            name="LoopNode Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
 			class="org.eclipse.papyrus.diagram.activity.preferences.MergeNodePreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.MergeNodePreferencePage"
             name="MergeNode Node" />
@@ -3716,30 +3795,9 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.ActionInputPinPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.ActionInputPinPreferencePage"
-            name="ActionInputPin Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
 			class="org.eclipse.papyrus.diagram.activity.preferences.CreateObjectActionPreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.CreateObjectActionPreferencePage"
             name="CreateObjectAction Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.CallOperationActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.CallOperationActionPreferencePage"
-            name="CallOperationAction Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.CallBehaviorActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.CallBehaviorActionPreferencePage"
-            name="CallBehaviorAction Node" />
 	
 		
 	<?gmfgen generated="true"?>
@@ -3772,20 +3830,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.InitialNodePreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.InitialNodePreferencePage"
-            name="InitialNode Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.OutputPinPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.OutputPinPreferencePage"
-            name="OutputPin Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
 			class="org.eclipse.papyrus.diagram.activity.preferences.AddVariableValueActionPreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.AddVariableValueActionPreferencePage"
             name="AddVariableValueAction Node" />
@@ -3796,20 +3840,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 			class="org.eclipse.papyrus.diagram.activity.preferences.CommentPreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.CommentPreferencePage"
             name="Comment Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.DurationConstraintPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.DurationConstraintPreferencePage"
-            name="DurationConstraint Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.StructuredActivityNodePreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.StructuredActivityNodePreferencePage"
-            name="StructuredActivityNode Node" />
 	
 		
 	<?gmfgen generated="true"?>
@@ -3835,13 +3865,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.OpaqueActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.OpaqueActionPreferencePage"
-            name="OpaqueAction Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
 			class="org.eclipse.papyrus.diagram.activity.preferences.DecisionNodePreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.DecisionNodePreferencePage"
             name="DecisionNode Node" />
@@ -3856,13 +3879,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.JoinNodePreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.JoinNodePreferencePage"
-            name="JoinNode Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
 			class="org.eclipse.papyrus.diagram.activity.preferences.ConstraintPreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.ConstraintPreferencePage"
             name="Constraint Node" />
@@ -3870,16 +3886,9 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.SendSignalActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.SendSignalActionPreferencePage"
-            name="SendSignalAction Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.FlowFinalNodePreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.FlowFinalNodePreferencePage"
-            name="FlowFinalNode Node" />
+			class="org.eclipse.papyrus.diagram.activity.preferences.RemoveVariableValueActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.RemoveVariableValueActionPreferencePage"
+            name="RemoveVariableValueAction Node" />
 	
 		
 	<?gmfgen generated="true"?>
@@ -3898,13 +3907,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.ReadSelfActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.ReadSelfActionPreferencePage"
-            name="ReadSelfAction Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
 			class="org.eclipse.papyrus.diagram.activity.preferences.DataStoreNodePreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.DataStoreNodePreferencePage"
             name="DataStoreNode Node" />
@@ -3919,20 +3921,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.ReadVariableActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.ReadVariableActionPreferencePage"
-            name="ReadVariableAction Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.ParameterPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.ParameterPreferencePage"
-            name="Parameter Node" />
-	
-		
-	<?gmfgen generated="true"?>
-	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
 			class="org.eclipse.papyrus.diagram.activity.preferences.ExpansionRegionPreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.ExpansionRegionPreferencePage"
             name="ExpansionRegion Node" />
@@ -3940,16 +3928,16 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.AcceptEventActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.AcceptEventActionPreferencePage"
-            name="AcceptEventAction Node" />
+			class="org.eclipse.papyrus.diagram.activity.preferences.RemoveStructuralFeatureValueActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.RemoveStructuralFeatureValueActionPreferencePage"
+            name="RemoveStructuralFeatureValueAction Node" />
 	
 		
 	<?gmfgen generated="true"?>
 	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
-			class="org.eclipse.papyrus.diagram.activity.preferences.DestroyObjectActionPreferencePage"
-            id="org.eclipse.papyrus.diagram.activity.preferences.DestroyObjectActionPreferencePage"
-            name="DestroyObjectAction Node" />
+			class="org.eclipse.papyrus.diagram.activity.preferences.AcceptEventActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.AcceptEventActionPreferencePage"
+            name="AcceptEventAction Node" />
 	
 		
 	<?gmfgen generated="true"?>
@@ -3971,6 +3959,132 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 			class="org.eclipse.papyrus.diagram.activity.preferences.ConditionalNodePreferencePage"
             id="org.eclipse.papyrus.diagram.activity.preferences.ConditionalNodePreferencePage"
             name="ConditionalNode Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.TimeConstraintPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.TimeConstraintPreferencePage"
+            name="TimeConstraint Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.ReadStructuralFeatureActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.ReadStructuralFeatureActionPreferencePage"
+            name="ReadStructuralFeatureAction Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.LoopNodePreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.LoopNodePreferencePage"
+            name="LoopNode Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.ActionInputPinPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.ActionInputPinPreferencePage"
+            name="ActionInputPin Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.CallOperationActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.CallOperationActionPreferencePage"
+            name="CallOperationAction Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.CallBehaviorActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.CallBehaviorActionPreferencePage"
+            name="CallBehaviorAction Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.InitialNodePreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.InitialNodePreferencePage"
+            name="InitialNode Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.OutputPinPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.OutputPinPreferencePage"
+            name="OutputPin Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.DurationConstraintPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.DurationConstraintPreferencePage"
+            name="DurationConstraint Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.StructuredActivityNodePreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.StructuredActivityNodePreferencePage"
+            name="StructuredActivityNode Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.OpaqueActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.OpaqueActionPreferencePage"
+            name="OpaqueAction Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.JoinNodePreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.JoinNodePreferencePage"
+            name="JoinNode Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.SendSignalActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.SendSignalActionPreferencePage"
+            name="SendSignalAction Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.FlowFinalNodePreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.FlowFinalNodePreferencePage"
+            name="FlowFinalNode Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.ReadSelfActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.ReadSelfActionPreferencePage"
+            name="ReadSelfAction Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.ReadVariableActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.ReadVariableActionPreferencePage"
+            name="ReadVariableAction Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.ParameterPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.ParameterPreferencePage"
+            name="Parameter Node" />
+	
+		
+	<?gmfgen generated="true"?>
+	<page  	category="org.eclipse.papyrus.preferences.diagrams.PapyrusUMLActivityDiagram"
+			class="org.eclipse.papyrus.diagram.activity.preferences.DestroyObjectActionPreferencePage"
+            id="org.eclipse.papyrus.diagram.activity.preferences.DestroyObjectActionPreferencePage"
+            name="DestroyObjectAction Node" />
 	
 
 
@@ -4181,9 +4295,57 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
 
 
 
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+	<metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+	<!-- Helper advice for Classifier -->
+	<adviceBinding id="org.eclipse.papyrus.diagram.activity.removeVariableActionEditHelperAdvice"
+		class="org.eclipse.papyrus.diagram.activity.edit.helper.advice.RemoveVariableValueActionEditHelperAdvice"
+		inheritance="all" typeId="org.eclipse.papyrus.diagram.activity.RemoveVariableValueAction_3113">
+	</adviceBinding>
+	</metamodel>
+</extension>
+
+
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+
+	<!-- Bindings declaration -->
+	<binding context="org.eclipse.papyrus.diagram.activity.TypeContext">
+	
+		<elementType pattern="org\.eclipse\.papyrus\.uml\..*" />
+  <advice
+        ref="org.eclipse.papyrus.diagram.activity.removeVariableActionEditHelperAdvice">
+  </advice>
+
+	</binding>
+	
+</extension>
 
 
 
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+	<metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+	<!-- Helper advice for Classifier -->
+	<adviceBinding id="org.eclipse.papyrus.diagram.activity.removeStructuralFeatureValueActionEditHelperAdvice"
+		class="org.eclipse.papyrus.diagram.activity.edit.helper.advice.RemoveStructuralFeatureValueActionEditHelperAdvice"
+		inheritance="all" typeId="org.eclipse.papyrus.diagram.activity.RemoveStructuralFeatureValueAction_3116">
+	</adviceBinding>
+	</metamodel>
+</extension>
+
+
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+
+	<!-- Bindings declaration -->
+	<binding context="org.eclipse.papyrus.diagram.activity.TypeContext">
+	
+		<elementType pattern="org\.eclipse\.papyrus\.uml\..*" />
+  <advice
+        ref="org.eclipse.papyrus.diagram.activity.removeStructuralFeatureValueActionEditHelperAdvice">
+  </advice>
+
+	</binding>
+	
+</extension>
 
 
 

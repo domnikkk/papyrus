@@ -1141,6 +1141,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String createRemoveVariableValueAction52CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String createRemoveVariableValueAction52CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String createRemoveStructuralFeatureValueAction53CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String createRemoveStructuralFeatureValueAction53CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String createControlFlow1CreationTool_title;
 
 	/**

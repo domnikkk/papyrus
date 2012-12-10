@@ -570,6 +570,27 @@ public class CommentEditPartCN extends AbstractCommentEditPart {
 		if(targetEditPart instanceof ConstraintEditPartCN) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
 		}
+		if(targetEditPart instanceof RemoveVariableValueActionEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsRemoveAtEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof InputPinInRemoveVariableValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof RemoveStructuralFeatureValueActionEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsObjectEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof InputPinInRemoveStructuralFeatureValueActionAsValueEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
+		if(targetEditPart instanceof OutputPinInRemoveStructuralFeatureValueActionAsResultEditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4006);
+		}
 		return types;
 	}
 
@@ -671,6 +692,13 @@ public class CommentEditPartCN extends AbstractCommentEditPart {
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
 			types.add(UMLElementTypes.Constraint_3112);
+			types.add(UMLElementTypes.RemoveVariableValueAction_3113);
+			types.add(UMLElementTypes.InputPin_3114);
+			types.add(UMLElementTypes.InputPin_3115);
+			types.add(UMLElementTypes.RemoveStructuralFeatureValueAction_3116);
+			types.add(UMLElementTypes.InputPin_3117);
+			types.add(UMLElementTypes.InputPin_3119);
+			types.add(UMLElementTypes.OutputPin_3120);
 		}
 		return types;
 	}
