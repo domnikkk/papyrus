@@ -18,14 +18,14 @@ import org.eclipse.papyrus.core.editorsfactory.IPageIconsRegistry;
 import org.eclipse.papyrus.core.editorsfactory.IPageIconsRegistryExtended;
 import org.eclipse.papyrus.core.editorsfactory.PageIconsRegistry;
 import org.eclipse.papyrus.core.services.ServiceException;
-import org.eclipse.papyrus.core.utils.EditorUtils;
+import org.eclipse.papyrus.core.utils.ServiceUtilsForActionHandlers;
 
 /**
  * 
  * An abstract class to get the iconRegistery
  *
  */
-public abstract class AbstractGetEditorIconQuery{//we don't need to implements IJavaModelQuery  here
+public abstract class AbstractGetEditorIconQuery {//we don't need to implements IJavaModelQuery  here
 
 	/**
 	 * the icon registry
@@ -59,7 +59,7 @@ public abstract class AbstractGetEditorIconQuery{//we don't need to implements I
 	 */
 	protected IPageIconsRegistry createEditorRegistry() {
 		try {
-			return EditorUtils.getServiceRegistry().getService(IPageIconsRegistry.class);
+			return ServiceUtilsForActionHandlers.getInstance().getServiceRegistry().getService(IPageIconsRegistry.class);
 		} catch (ServiceException e) {
 			// Not found, return an empty one which return null for each
 			// request.
