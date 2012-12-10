@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Mathieu Velten (Atos Origin) mathieu.velten@atosorigin.com - Initial API and implementation
+ *   Matthieu Boivineau (AtoS) - handle updated
  *
  *****************************************************************************/
 package org.eclipse.papyrus.documentation.view.papyrus;
@@ -32,20 +33,19 @@ import org.eclipse.papyrus.documentation.view.IDocumentationPartHandler;
 import org.eclipse.papyrus.documentation.view.SelectResourceDialog;
 import org.eclipse.papyrus.modelexplorer.MoDiscoContentProvider;
 import org.eclipse.papyrus.modelexplorer.MoDiscoLabelProvider;
-import org.eclipse.papyrus.modelexplorer.ModelExplorerPageBookView;
 import org.eclipse.papyrus.resource.notation.NotationUtils;
 import org.eclipse.papyrus.sasheditor.contentprovider.IPageMngr;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ISelectionStatusValidator;
-import org.eclipse.ui.views.properties.PropertySheet;
 
 
 public class PapyrusDocumentationPartHandler implements IDocumentationPartHandler {
 
 	public boolean canHandlePart(IWorkbenchPart part) {
-		return part instanceof CoreMultiDiagramEditor || part instanceof ModelExplorerPageBookView || part instanceof PropertySheet;
+		return part instanceof CoreMultiDiagramEditor || part instanceof IViewPart;
 	}
 
 	public IDocumentationManager getDocumentationManager() {

@@ -10,6 +10,7 @@
  *    Mathieu Garcia (Anyware Technologies) - initial API and implementation
  *    Jacques Lescot (Anyware Technologies) - initial API and implementation
  *    Thomas Friol (Anyware Technologies) - initial API and implementation
+ *    Matthieu Boivineau (AtoS) - refresh added on resource management
  *******************************************************************************/
 package org.eclipse.papyrus.documentation.view;
 
@@ -322,6 +323,7 @@ public class ResourcesComposite extends DocPageComposite
                 	compoundCmd.appendIfCanExecute(getAddAssociatedResourceCommand(uriResource));
                 }
                 executeCommand(compoundCmd);
+                refresh();
             }
         }
     }
@@ -343,6 +345,7 @@ public class ResourcesComposite extends DocPageComposite
                     	compoundCmd.appendIfCanExecute(getRemoveAssociatedResourceCommand(uriResource));
                     }
                     executeCommand(compoundCmd);
+                    refresh();
                 }
             }
         }
@@ -379,8 +382,9 @@ public class ResourcesComposite extends DocPageComposite
     			{
     				CompoundCommand compoundCmd = new CompoundCommand();
     				compoundCmd.appendIfCanExecute(getRemoveAssociatedResourceCommand(uri));
-    				compoundCmd.appendIfCanExecute(getAddAssociatedResourceCommand(uri));
+    				compoundCmd.appendIfCanExecute(getAddAssociatedResourceCommand(newUri));
     				executeCommand(compoundCmd);
+    				refresh();
     			}
     		}
     	}
