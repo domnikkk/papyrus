@@ -23,12 +23,20 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Image;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.PackageImport;
+import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.TemplateBinding;
+import org.eclipse.uml2.uml.TemplateSignature;
+import org.eclipse.uml2.uml.TemplateableElement;
+import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
@@ -402,7 +410,7 @@ public class StereotypeUtil {
 		String out = "";
 
 		if((property.getUpper() == 1) && (umlElement.getValue(stereotype, property.getName()) != null) && (umlElement.getValue(stereotype, property.getName()) instanceof NamedElement)) {
-			out = property.getName() + EQUAL_SEPARATOR + ((NamedElement)(umlElement.getValue(stereotype, property.getName()))).getName() + PROPERTY_VALUE_SEPARATOR;
+			out = property.getName() + EQUAL_SEPARATOR + getLabel(umlElement.getValue(stereotype, property.getName()), true) + PROPERTY_VALUE_SEPARATOR;
 		}
 
 		// multiplicity greater than one
@@ -410,10 +418,8 @@ public class StereotypeUtil {
 			List values = (List)umlElement.getValue(stereotype, property.getName());
 			ArrayList elementNames = new ArrayList();
 			if(values != null) {
-				for(int count = 0; count < values.size(); count++) {
-					if(values.get(count) instanceof NamedElement) {
-						elementNames.add(((NamedElement)values.get(count)).getName());
-					}
+				for(Object val : values) {
+					elementNames.add(getLabel(val, true));
 				}
 			}
 			out = property.getName() + EQUAL_SEPARATOR + elementNames + PROPERTY_VALUE_SEPARATOR;
@@ -527,5 +533,109 @@ public class StereotypeUtil {
 		}
 
 		return shapes;
+	}
+
+	/**
+	 * Return a usable string label for passed object.
+	 * 
+	 * @param object
+	 *        the object
+	 * 
+	 * @return the label
+	 */
+	public static String getLabel(Object object, boolean shortLabel) {
+		String label = "";
+
+		if(object == null) {
+			return "undefined";
+		}
+
+		if(object instanceof ValueSpecification) {
+			label = getLabel((ValueSpecification)object);
+
+		} else if(object instanceof Element) {
+			Element cE = (Element)object;
+			String cName = null;
+			String suffix = "";
+			String cComLabel = "";
+
+			NamedElement cNE = null;
+			if(object instanceof NamedElement) {
+				cNE = (NamedElement)object;
+
+			} else if(object instanceof PackageImport) {
+				PackageImport cPI = (PackageImport)object;
+				suffix = " (PackageImport)";
+				cNE = cPI.getImportedPackage();
+
+			} else if(object instanceof ElementImport) {
+				ElementImport cEI = (ElementImport)object;
+				suffix = " (ElementImport)";
+				cNE = cEI.getImportedElement();
+
+			} else if(object instanceof ProfileApplication) {
+				ProfileApplication cPA = (ProfileApplication)object;
+				suffix = " (ProfileApplication)";
+				cNE = cPA.getAppliedProfile();
+
+			}
+			else if(object instanceof Comment) {
+				Comment cCom = (Comment)object;
+				suffix = " (Comment)";
+				String cComBody = cCom.getBody();
+				if(cComBody != null && cComBody.length() >= 10) {
+					cComLabel = cComBody.substring(0, 9) + "...";
+				} else {
+					cComLabel = cComBody;
+				}
+			}
+			else if (object instanceof TemplateSignature) {
+				TemplateableElement te = ((TemplateSignature) object).getTemplate();
+				suffix = " (TemplateSignature owner)";
+				if (te instanceof NamedElement) {
+					cNE = (NamedElement) te;
+				}
+			}
+			else if (object instanceof TemplateBinding) {
+				TemplateableElement te = ((TemplateBinding) object).getBoundElement();
+				suffix = " (TemplateBinding bound-element)";
+				if (te instanceof NamedElement) {
+					cNE = (NamedElement) te;
+				}
+			}
+			if(shortLabel) {
+				if(object instanceof Comment) {
+					cName = cComLabel;
+				}
+				else if (cNE != null) {
+					cName = cNE.getName();
+				}
+			} else {
+				if(object instanceof Comment) {
+					cName = cComLabel + suffix;
+				}
+				else if (cNE != null) {
+					cName = cNE.getQualifiedName() + suffix;
+				}
+			}
+
+			if(cName != null) {
+				label = cName;
+			} else {
+				label = cE.toString();
+			}
+		}
+
+		return label;
+	}
+
+	/**
+	 * Return the labe for a value specification
+	 * 
+	 * @param object
+	 * @return
+	 */
+	public static String getLabel(ValueSpecification value) {
+		return "<" + value.eClass().getName() + "> " + value.stringValue();
 	}
 }

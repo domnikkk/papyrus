@@ -23,7 +23,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.DynamicEObjectImpl;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
@@ -35,6 +37,7 @@ import org.eclipse.papyrus.diagram.common.editparts.PapyrusStereotypeListener;
 import org.eclipse.papyrus.umlutils.ui.VisualInformationPapyrusConstant;
 import org.eclipse.papyrus.umlutils.ui.helper.AppliedStereotypeHelper;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -249,4 +252,57 @@ public abstract class AbstractAppliedStereotypeDisplayEditPolicy extends Graphic
 		}
 		return null;
 	}
+	
+	/**
+	 * clean stereotype to display in Eannotation this method can be called directly
+	 * at the activation of this class
+	 */
+	protected void cleanStereotypeDisplayInEAnnotation(){
+		String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View)getHost().getModel());
+
+		StringTokenizer strQualifiedName = new StringTokenizer(stereotypesToDisplay, ",");
+		while(strQualifiedName.hasMoreElements()) {
+			String currentStereotype = strQualifiedName.nextToken();
+
+			// check if current stereotype is applied
+			final Element umlElement = getUMLElement();
+			Stereotype stereotype = umlElement.getAppliedStereotype(currentStereotype);
+			if(stereotype == null) {
+				removeEAnnotationAboutStereotype(currentStereotype);
+			}
+		}
+	}
+	
+	protected void removeEAnnotationAboutStereotype(final String stereotypeQN){
+
+		try {
+			if( getView()!=null){
+				final TransactionalEditingDomain editingDomain= TransactionUtil.getEditingDomain(getView());
+				if( editingDomain!=null){
+					editingDomain.runExclusive(new Runnable() {
+
+						public void run() {
+
+							Display.getCurrent().asyncExec(new Runnable() {
+
+								public void run() {
+									if( getView()!=null&& editingDomain!=null){
+										String presentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(getView());
+										RecordingCommand command = AppliedStereotypeHelper.getRemoveAppliedStereotypeCommand(editingDomain, getView(),stereotypeQN, presentationKind);
+										editingDomain.getCommandStack().execute(command);
+									}
+								}
+							});
+						}
+					});
+				}
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+	
 }

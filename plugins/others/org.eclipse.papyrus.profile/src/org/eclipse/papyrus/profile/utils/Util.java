@@ -39,10 +39,6 @@ import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.InstanceSpecification;
-import org.eclipse.uml2.uml.LiteralBoolean;
-import org.eclipse.uml2.uml.LiteralInteger;
-import org.eclipse.uml2.uml.LiteralString;
-import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
@@ -406,24 +402,7 @@ public class Util {
 	 * @return
 	 */
 	public static String getLabel(ValueSpecification value) {
-		String label = "";
-
-		if(value instanceof LiteralBoolean) {
-			label = "<LiteralBoolean> ";
-		} else if(value instanceof LiteralInteger) {
-			label = "<LiteralInteger> ";
-		} else if(value instanceof LiteralString) {
-			label = "<LiteralString> ";
-		} else if(value instanceof LiteralUnlimitedNatural) {
-			label = "<LiteralUnlimitedNatural> ";
-		} else {
-			label = "<ValueSpecification> ";
-		}
-
-		// Add the value
-		label = label + value.stringValue();
-
-		return label;
+		return "<" + value.eClass().getName() + "> " + value.stringValue();
 	}
 
 	/**
