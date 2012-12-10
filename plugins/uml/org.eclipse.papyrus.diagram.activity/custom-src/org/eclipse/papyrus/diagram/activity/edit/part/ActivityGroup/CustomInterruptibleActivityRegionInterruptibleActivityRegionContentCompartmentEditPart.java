@@ -15,7 +15,6 @@
 package org.eclipse.papyrus.diagram.activity.edit.part.ActivityGroup;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.ScrollPane;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.diagram.activity.edit.parts.InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart;

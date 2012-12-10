@@ -17,11 +17,8 @@ package org.eclipse.papyrus.diagram.activity.activitygroup.predicates;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.diagram.activity.activitygroup.editpolicy.notifiers.IGroupNotifier;
-import org.eclipse.papyrus.diagram.activity.activitygroup.functions.FromIGroupNotifierToEObject;
 
-import com.google.common.base.Function;
 import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
 
 /**
  * Same as {@link EcoreUtil#filterDescendants(java.util.Collection)}

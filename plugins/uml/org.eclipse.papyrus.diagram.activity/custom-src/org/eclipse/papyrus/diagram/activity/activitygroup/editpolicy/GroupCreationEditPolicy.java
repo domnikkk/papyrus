@@ -49,7 +49,6 @@ import org.eclipse.papyrus.diagram.activity.activitygroup.IContainerNodeDescript
 import org.eclipse.papyrus.diagram.activity.activitygroup.request.AbstractGroupRequest;
 import org.eclipse.papyrus.diagram.activity.activitygroup.request.IGroupRequest;
 import org.eclipse.papyrus.diagram.activity.activitygroup.utils.Utils;
-import org.eclipse.uml2.uml.UMLPackage;
 
 public class GroupCreationEditPolicy extends CreationEditPolicy {
 
