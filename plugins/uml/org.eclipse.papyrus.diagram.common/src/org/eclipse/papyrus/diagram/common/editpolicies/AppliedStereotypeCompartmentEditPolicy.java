@@ -39,12 +39,12 @@ import org.eclipse.papyrus.diagram.common.editparts.AppliedStereotypeCompartment
 import org.eclipse.papyrus.diagram.common.editparts.IPapyrusEditPart;
 import org.eclipse.papyrus.diagram.common.editparts.PapyrusStereotypeListener;
 import org.eclipse.papyrus.diagram.common.figure.node.IPapyrusNodeUMLElementFigure;
+import org.eclipse.papyrus.umlutils.StereotypeUtil;
 import org.eclipse.papyrus.umlutils.ui.VisualInformationPapyrusConstant;
 import org.eclipse.papyrus.umlutils.ui.helper.AppliedStereotypeHelper;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * this edit policy can be apply only on {@link IPapyrusEditPart} in order to
@@ -363,26 +363,13 @@ public class AppliedStereotypeCompartmentEditPolicy extends AppliedStereotypeNod
 	@Override
 	protected void refreshAppliedStereotypesPropertiesInCompartment(String stereotypesPropertiesToDisplay, IPapyrusNodeUMLElementFigure figure) {
 		final boolean displayInCompartment = AppliedStereotypeHelper.hasAppliedStereotypesPropertiesToDisplay((View)getHost().getModel(), VisualInformationPapyrusConstant.STEREOTYPE_COMPARTMENT_LOCATION);
-		// if the string is not empty, then, the figure has to display it. Else,
-		// it displays nothing
-		final GraphicalEditPart editPart = (GraphicalEditPart)getHost();
-		final View node = editPart.getNotationView();
-		int i = 0;
-		//we go through all sub nodes 
-		while(i < node.getChildren().size()) {
-			if((node.getChildren().get(i)) instanceof Node) {
-				final Node currentNode = (Node)(node.getChildren().get(i));
-				if(currentNode.getType().equals(AppliedStereotypeCompartmentEditPart.ID)) {
-					EObject stereotypeApplication = currentNode.getElement();
-					Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
-					if(stereotype != null && stereotypesPropertiesToDisplay.contains(stereotype.getQualifiedName())) {
-						setVisivility(currentNode, displayInCompartment);
-					} else {
-						setVisivility(currentNode, false);
-					}
-				}
-			}
-			i++;
+		
+		if(displayInCompartment) {
+			String todisplay = StereotypeUtil.getPropertiesValues(stereotypesPropertiesToDisplay, getUMLElement());
+			figure.setStereotypePropertiesInCompartment(todisplay);
+		} else {
+			figure.setStereotypePropertiesInCompartment(null);
 		}
+
 	}
 }
