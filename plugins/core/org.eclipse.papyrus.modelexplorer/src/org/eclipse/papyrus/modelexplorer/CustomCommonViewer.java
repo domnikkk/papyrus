@@ -120,7 +120,7 @@ public class CustomCommonViewer extends CommonViewer {
 			if (associatedItem != null) {
 				return associatedItem;
 			}
-			if (eObj.eResource() != null) {
+			if (eObj.eResource() != null && eObj.eResource().getURI() != null) {
 				URI uri = eObj.eResource().getURI().appendFragment(eObj.eResource().getURIFragment(eObj));
 				associatedItem = unresolvedEObjsMap.get(uri);
 				if (associatedItem != null) {
