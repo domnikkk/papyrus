@@ -1490,7 +1490,7 @@
    <editpartProvider
          class="org.eclipse.papyrus.diagram.clazz.custom.providers.CUMLEditPartProvider">
       <Priority
-            name="Highest">
+            name="High">
       </Priority>
       <object
             class="org.eclipse.gmf.runtime.notation.Diagram"
