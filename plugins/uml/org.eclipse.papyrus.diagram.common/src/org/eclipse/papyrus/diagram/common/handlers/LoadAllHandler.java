@@ -16,6 +16,7 @@ package org.eclipse.papyrus.diagram.common.handlers;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -59,10 +61,12 @@ public class LoadAllHandler extends GraphicalCommandHandler {
 							IProgressMonitor monitor = dialog.getProgressMonitor();
 
 							exploreViewContents(modelSet, view.getDiagram(), handledURI, monitor);
-							
+
 							monitor.done();
 							dialog.close();
 						}
+
+						refreshAll(selPart);
 					}
 				}
 
@@ -132,6 +136,34 @@ public class LoadAllHandler extends GraphicalCommandHandler {
 				List<EObject> listElem = adapter.getProxyEObjects(elem);
 				for(EObject childElem : listElem) {
 					processElement(childElem, elems, modelSet, handledURI, monitor);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Find the diagram edit part and refreshes all its descendants.
+	 * 
+	 * @param part
+	 */
+	private void refreshAll(IGraphicalEditPart part) {
+		View view = (View)((IAdaptable)part).getAdapter(View.class);
+
+		Map<?, ?> editPartRegistry = part.getViewer().getEditPartRegistry();
+		if(editPartRegistry != null) {
+			Object diagramEditPart = editPartRegistry.get(view.getDiagram());
+			if(diagramEditPart instanceof DiagramEditPart) {
+				((DiagramEditPart)diagramEditPart).refresh();
+				Object model = ((DiagramEditPart)diagramEditPart).getModel();
+				if(model instanceof View) {
+					TreeIterator<EObject> eAllContents = ((View)model).eAllContents();
+					while(eAllContents.hasNext()) {
+						EObject current = eAllContents.next();
+						Object editPart = editPartRegistry.get(current);
+						if(editPart instanceof IGraphicalEditPart) {
+							((IGraphicalEditPart)editPart).refresh();
+						}
+					}
 				}
 			}
 		}
