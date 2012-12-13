@@ -54,5 +54,7 @@ public class CallBehaviorActionFigure extends PapyrusRoundedNodeFigure {
 			pt.y = pt.y - image.getBounds().height - margin;
 			graphics.drawImage(image, pt);
 		}
+		//Avoids the expansion of the figure when the name is too long.
+		setPreferredSize(160, 1);
 	}
 }
