@@ -31,4 +31,8 @@ public class LoadAllResources implements ILoadingStrategy {
 		return true;
 	}
 
+	public int getPriority() {
+		return 0;
+	}
+
 }

@@ -49,4 +49,8 @@ public class LoadControlledResources implements ILoadingStrategy {
 		}
 		return result;
 	}
+
+	public int getPriority() {
+		return 0;
+	}
 }

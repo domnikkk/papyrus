@@ -39,4 +39,6 @@ public interface ILoadingStrategy {
 	// strategy 2: only one : AR U currents -> done
 	// strategy 3: bellow : AR U children U currents 
 	// strategy 4: ask the user the needed resources he wants to load (need an UI)
+	
+	public int getPriority();
 }

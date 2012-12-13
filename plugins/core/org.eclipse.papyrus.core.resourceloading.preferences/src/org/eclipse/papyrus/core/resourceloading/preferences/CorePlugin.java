@@ -42,6 +42,10 @@ public class CorePlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		
+		//Initialize preferences (the extension point does not seem to be working).
+		CorePreferenceInitializer corePreferenceInitializer = new CorePreferenceInitializer();
+		corePreferenceInitializer.initializeDefaultPreferences();
 	}
 
 	/*

@@ -836,4 +836,8 @@ public class AskUserStrategy implements ILoadingStrategy {
 		}
 
 	}
+
+	public int getPriority() {
+		return 0;
+	}
 }

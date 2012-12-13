@@ -15,6 +15,7 @@ package org.eclipse.papyrus.core.resourceloading.preferences;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.core.resourceloading.impl.ProxyManager;
 import org.eclipse.papyrus.preferences.Activator;
 
 /**
@@ -28,7 +29,7 @@ public class CorePreferenceInitializer extends AbstractPreferenceInitializer {
 	 */
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
-		store.setDefault(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY, 0);
+		store.setDefault(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY, ProxyManager.getHighestPriorityStrategy());
 	}
 
 	/**

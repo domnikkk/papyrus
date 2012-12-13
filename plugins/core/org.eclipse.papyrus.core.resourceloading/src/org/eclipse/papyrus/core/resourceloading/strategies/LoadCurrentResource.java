@@ -28,4 +28,8 @@ public class LoadCurrentResource implements ILoadingStrategy {
 		return (!uri.isPlatformResource() && !uri.isFile());
 	}
 
+	public int getPriority() {
+		return 5;
+	}
+
 }

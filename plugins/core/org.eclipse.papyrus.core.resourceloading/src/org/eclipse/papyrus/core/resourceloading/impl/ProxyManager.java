@@ -204,7 +204,25 @@ public class ProxyManager implements IProxyManager {
 	public static Map<Integer, String> getAllStrategies() {
 		return strategiesAndDescriptions;
 	}
-
+	
+	/**
+	 * Gets the id of the strategy with the highest priority.
+	 */
+	public static int getHighestPriorityStrategy(){
+		int currentHighestPriority = 0;
+		int currentResult = 0;
+		Map<Integer, ILoadingStrategy> strategies = getLoadingStrategies();
+		for (int i : strategies.keySet()){
+			ILoadingStrategy iLoadingStrategy = strategies.get(i);
+			int priority = iLoadingStrategy.getPriority();
+			if (priority > currentHighestPriority){
+				currentHighestPriority = priority;
+				currentResult = i;
+			}
+		}
+		return currentResult;
+	}
+	
 	/**
 	 * Gets the available strategies from extensions
 	 * 
