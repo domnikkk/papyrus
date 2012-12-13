@@ -50,6 +50,7 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.papyrus.core.editorsfactory.IPageIconsRegistry;
 import org.eclipse.papyrus.core.editorsfactory.PageIconsRegistry;
 import org.eclipse.papyrus.core.services.ServiceException;
+import org.eclipse.papyrus.core.services.ServicesRegistry;
 import org.eclipse.papyrus.core.utils.EditorUtils;
 import org.eclipse.papyrus.diagram.common.editparts.AbstractShortCutDiagramEditPart;
 import org.eclipse.papyrus.diagram.common.editpolicies.ShortCutDiagramEditPolicy;
@@ -296,7 +297,11 @@ public class ShortCutDiagramEditPart extends AbstractShortCutDiagramEditPart {
 	 */
 	protected IPageIconsRegistry createEditorRegistry() {
 		try {
-			return EditorUtils.getServiceRegistry().getService(IPageIconsRegistry.class);
+			ServicesRegistry serviceRegistry = EditorUtils.getServiceRegistry();
+			if (serviceRegistry != null){
+				return serviceRegistry.getService(IPageIconsRegistry.class);
+			}
+			return new PageIconsRegistry();
 		} catch (ServiceException e) {
 			// Not found, return an empty one which return null for each request.
 			return new PageIconsRegistry();
