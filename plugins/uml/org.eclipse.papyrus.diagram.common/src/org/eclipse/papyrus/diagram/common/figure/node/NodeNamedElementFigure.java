@@ -110,7 +110,7 @@ public class NodeNamedElementFigure extends PapyrusNodeFigure implements IPapyru
 	 */
 	protected void createNameLabel() {
 		nameLabel = new WrappingLabel();
-
+		nameLabel.setTextWrap(true);
 		nameLabel.setOpaque(false);
 		nameLabel.setAlignment(PositionConstants.MIDDLE);
 		getNameLabelContainer().add(nameLabel, getNameLabelConstraint(), -1);
