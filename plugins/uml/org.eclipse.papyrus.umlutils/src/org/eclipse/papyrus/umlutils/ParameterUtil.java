@@ -87,15 +87,18 @@ public class ParameterUtil {
 	public static String getLabel(Parameter parameter) {
 		StringBuffer buffer = new StringBuffer();
 		// visibility
-		buffer.append(" ");
 		buffer.append(NamedElementUtil.getVisibilityAsSign(parameter));
 
 		// direction
-		buffer.append(" ");
+		if (!buffer.toString().startsWith(" ")){
+			buffer.append(" ");
+		}
 		buffer.append(parameter.getDirection().getLiteral());
 
 		// name
-		buffer.append(" ");
+		if (!buffer.toString().startsWith(" ")){
+			buffer.append(" ");
+		}
 		if(parameter.getName() != null) {
 			buffer.append(parameter.getName());
 		}
@@ -122,7 +125,7 @@ public class ParameterUtil {
 		// property modifiers
 		buffer.append(ParameterUtil.getModifiersAsString(parameter, false));
 
-		return buffer.toString();
+		return buffer.toString().trim();
 	}
 
 	/**
@@ -136,20 +139,23 @@ public class ParameterUtil {
 	public static String getCustomLabel(Parameter parameter, int style) {
 		StringBuffer buffer = new StringBuffer();
 		// visibility
-		buffer.append(" ");
 		if((style & ICustomAppearence.DISP_VISIBILITY) != 0) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(parameter));
 		}
 
 		// direction property
 		if((style & ICustomAppearence.DISP_PARAMETER_DIRECTION) != 0) {
-			buffer.append(" ");
+			if (!buffer.toString().startsWith(" ")){
+				buffer.append(" ");
+			}
 			buffer.append(parameter.getDirection().getLiteral());
 		}
 
 		// name
 		if((style & ICustomAppearence.DISP_PARAMETER_NAME) != 0) {
-			buffer.append(" ");
+			if (!buffer.toString().startsWith(" ")){
+				buffer.append(" ");
+			}
 			buffer.append(parameter.getName());
 		}
 
@@ -187,7 +193,7 @@ public class ParameterUtil {
 				buffer.append(modifiers);
 			}
 		}
-		return buffer.toString();
+		return buffer.toString().trim();
 	}
 
 	/**

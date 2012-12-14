@@ -68,7 +68,7 @@ public class OperationUtil {
 				buffer.append("}");
 			}
 		}
-		return buffer.toString();
+		return buffer.toString().trim();
 	}
 
 	/**
