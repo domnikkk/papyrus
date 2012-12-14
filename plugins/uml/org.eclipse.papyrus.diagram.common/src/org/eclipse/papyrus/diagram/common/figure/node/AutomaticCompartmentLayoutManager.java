@@ -64,17 +64,14 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 				}
 			}
 		}
-		if(compartmentList.size() != 0) {
-			for(int i = 0; i < container.getChildren().size(); i++) {
-				IFigure child = (IFigure)container.getChildren().get(i);
-				minimumHeight += child.getPreferredSize().height;
-				minimumWith = Math.max(minimumWith, child.getPreferredSize().width);
-			}
-		} else {
-			for(int i = 0; i < notCompartmentList.size(); i++) {
-				minimumHeight += notCompartmentList.get(i).getPreferredSize().height;
-			}
+		for(IFigure child : compartmentList) {
+			minimumHeight += child.getPreferredSize().height;
+			minimumWith = Math.max(minimumWith, child.getPreferredSize().width);
 		}
+		for(IFigure child : notCompartmentList) {
+			minimumHeight += child.getPreferredSize().height;
+		}
+
 		if(addExtraHeight)
 			minimumHeight += 7;
 		return new Dimension(minimumWith, minimumHeight);
@@ -145,14 +142,14 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 				if(visibleCompartments.contains(currentCompartment)) {
 
 					Rectangle bound = new Rectangle(currentCompartment.getBounds());
-					bound.setSize(getPreferedSize(currentCompartment));
+					bound.setSize(new SubCompartmentLayoutManager().getPreferedSize(currentCompartment));
 					if(visibleCompartments.indexOf(currentCompartment) > 0) {
 						bound.y = (visibleCompartments.get(visibleCompartments.indexOf(currentCompartment) - 1)).getBounds().getBottomLeft().y + 1;
 						bound.x = container.getBounds().x + 3;
 						bound.width = container.getBounds().width;
 					} else {
 						bound.x = container.getBounds().x + 3;
-						bound.y = container.getBounds().y + 3;
+						bound.y = container.getBounds().y ;
 						bound.width = container.getBounds().width;
 					}
 					currentCompartment.setBounds(bound);
@@ -201,7 +198,6 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 			bound.x = container.getBounds().x;
 			if(i > 0) {
 				bound.y = (compartmentList.get(i - 1)).getBounds().getBottomLeft().y + 1;
-
 			}
 			(compartmentList.get(i)).setBounds(bound);
 

@@ -14,6 +14,7 @@ package org.eclipse.papyrus.diagram.common.figure.node;
 
 import org.eclipse.draw2d.AbstractLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.ScrollPane;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
@@ -22,27 +23,32 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
  * this is the layout manager in charge to place element in compartment element
  * 
  */
-
 public class SubCompartmentLayoutManager extends AbstractLayout {
 
-	protected final static int MINIMUMCOMPARTMENTSIZE = 15;
+	protected final static int NORMAL_COMPARTMENT_HEIGHT = 13;
+
+	protected final static int MINIMUM_COMPARTMENT_HEIGHT = 5;
 
 	protected final static int MINIMUM_COMPARTMENT_WIDTH = 20;
 
-	protected int preferedHeight = MINIMUMCOMPARTMENTSIZE;
+	protected int preferedHeight = MINIMUM_COMPARTMENT_HEIGHT;
 
 	@Override
 	protected Dimension calculatePreferredSize(IFigure figure, int wHint, int hHint) {
-		Dimension dim = new Dimension(10, preferedHeight);
+		Dimension dim = new Dimension(MINIMUM_COMPARTMENT_WIDTH, NORMAL_COMPARTMENT_HEIGHT);
 		if(!figure.getChildren().isEmpty()) {
 			Object compartment = figure.getChildren().get(0);
 			if(compartment instanceof ResizableCompartmentFigure) {
-				Dimension compartmentPreferredSize = ((ResizableCompartmentFigure)compartment).getPreferredSize();
-				dim.height = compartmentPreferredSize.height + 10;
-				if(dim.height == 0) {
-					dim.height = 20;
+
+				ResizableCompartmentFigure resizableCompartmentFigure = (ResizableCompartmentFigure)compartment;
+				ScrollPane scrollPane = resizableCompartmentFigure.getScrollPane();
+				IFigure contents = scrollPane.getContents();
+				dim.width = Math.max(MINIMUM_COMPARTMENT_WIDTH, resizableCompartmentFigure.getPreferredSize().width);
+				if(!contents.getChildren().isEmpty()) {
+					dim.height = Math.max(MINIMUM_COMPARTMENT_HEIGHT, resizableCompartmentFigure.getPreferredSize().height);
+				} else {
+					dim.height = MINIMUM_COMPARTMENT_HEIGHT;
 				}
-				dim.width = compartmentPreferredSize.width;
 			}
 		}
 		return dim;
@@ -50,7 +56,7 @@ public class SubCompartmentLayoutManager extends AbstractLayout {
 
 	@Override
 	public Dimension getMinimumSize(IFigure container, int wHint, int hHint) {
-		return new Dimension(MINIMUM_COMPARTMENT_WIDTH, MINIMUMCOMPARTMENTSIZE);
+		return new Dimension(MINIMUM_COMPARTMENT_WIDTH, MINIMUM_COMPARTMENT_HEIGHT);
 	}
 
 	public void layout(IFigure container) {
@@ -79,17 +85,7 @@ public class SubCompartmentLayoutManager extends AbstractLayout {
 	}
 
 	public Dimension getPreferedSize(IFigure figure) {
-		Dimension dim = new Dimension(10, preferedHeight);
-		if(figure.getChildren().size() > 0) {
-			if(figure.getChildren().get(0) instanceof ResizableCompartmentFigure) {
-				dim.height = ((ResizableCompartmentFigure)figure.getChildren().get(0)).getPreferredSize().height + 10;
-				if(dim.height == 0) {
-					dim.height = 20;
-				}
-
-			}
-		}
-		return dim;
+		return calculatePreferredSize(figure, -1, -1);
 	}
 
 	/**
@@ -102,10 +98,10 @@ public class SubCompartmentLayoutManager extends AbstractLayout {
 	 */
 	@Override
 	public void setConstraint(IFigure child, Object constraint) {
-		if(constraint instanceof Rectangle && ((Rectangle)constraint).height > MINIMUMCOMPARTMENTSIZE) {
+		if(constraint instanceof Rectangle && ((Rectangle)constraint).height > NORMAL_COMPARTMENT_HEIGHT) {
 			preferedHeight = ((Rectangle)constraint).height;
 		} else {
-			preferedHeight = MINIMUMCOMPARTMENTSIZE;
+			preferedHeight = NORMAL_COMPARTMENT_HEIGHT;
 		}
 		invalidate(child);
 	}
