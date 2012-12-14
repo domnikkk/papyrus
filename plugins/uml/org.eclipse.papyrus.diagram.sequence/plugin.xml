@@ -1371,7 +1371,7 @@
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
       <persistent value="true"/>
    </extension>   
-   <extension point="org.eclipse.emf.validation.constraintProviders">
+  <!-- <extension point="org.eclipse.emf.validation.constraintProviders">
       <?gmfgen generated="false"?>
             <category id="org.eclipse.uml2.uml.util.UMLValidator.validate" mandatory="false" name="validateUMLModel">
          <![CDATA[Validate the UML model]]>
@@ -1419,7 +1419,7 @@
          </constraint>
                   </constraints>
       </constraintProvider>
-   </extension>
+   </extension>-->
 
 <extension point="org.eclipse.emf.validation.constraintBindings">
       <?gmfgen generated="true"?>
