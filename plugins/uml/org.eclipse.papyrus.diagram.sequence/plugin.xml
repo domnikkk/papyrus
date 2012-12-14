@@ -1419,7 +1419,7 @@
          </constraint>
                   </constraints>
       </constraintProvider>
-   </extension>-->
+   </extension>
 
 <extension point="org.eclipse.emf.validation.constraintBindings">
       <?gmfgen generated="true"?>
@@ -1438,7 +1438,7 @@
                   <constraint ref="org.eclipse.papyrus.diagram.sequence.FragmentOrderingKeeper.LifelineFigure"/>
                </binding>
 
-   </extension>
+   </extension>-->
 <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
       <decoratorProvider class="org.eclipse.papyrus.diagram.sequence.providers.UMLValidationDecoratorProvider">
