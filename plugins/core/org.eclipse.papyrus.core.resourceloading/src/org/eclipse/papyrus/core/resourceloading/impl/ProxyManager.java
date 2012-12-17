@@ -82,7 +82,7 @@ public class ProxyManager implements IProxyManager {
 	// ===
 
 	/** The strategies id and descriptions for preferences */
-	private static Map<Integer, String> strategiesAndDescriptions = new HashMap<Integer, String>();
+	private static Map<Integer, String> strategiesAndDescriptions;
 
 	/** custom commands from extensions */
 	private static Map<Integer, ILoadingStrategy> availableStrategies = getLoadingStrategies();
@@ -202,6 +202,8 @@ public class ProxyManager implements IProxyManager {
 	 * @return the all strategies
 	 */
 	public static Map<Integer, String> getAllStrategies() {
+		if (strategiesAndDescriptions == null)
+			strategiesAndDescriptions = new HashMap<Integer, String>();
 		return strategiesAndDescriptions;
 	}
 	
@@ -239,13 +241,11 @@ public class ProxyManager implements IProxyManager {
 					String description = element.getAttribute(LOADING_STRATEGY_DESCRIPTION_ID);
 					ILoadingStrategy strategy = (ILoadingStrategy)element.createExecutableExtension(STRATEGY_ID);
 					strategies.put(id, strategy);
-					strategiesAndDescriptions.put(id, description);
+					getAllStrategies().put(id, description);
 				} catch (CoreException e1) {
 					Activator.log.error(e1.getMessage(), e1);
-					e1.printStackTrace();
 				} catch (NumberFormatException e2) {
 					Activator.log.error(e2.getMessage(), e2);
-					e2.printStackTrace();
 				}
 			}
 		}
@@ -267,7 +267,6 @@ public class ProxyManager implements IProxyManager {
 					strategies.add(strategyExtension);
 				} catch (CoreException e) {
 					Activator.log.error(e.getMessage(), e);
-					e.printStackTrace();
 				}
 			}
 		}
@@ -288,7 +287,6 @@ public class ProxyManager implements IProxyManager {
 				result = (IStrategyChooser)e.createExecutableExtension(STRATEGY_CHOOSER_CHOOSER_ATTRIBUTE);
 			} catch (CoreException e1) {
 				Activator.log.error(e1.getMessage(), e1);
-				e1.printStackTrace();
 			}
 		}
 		return result;
