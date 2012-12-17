@@ -4,7 +4,9 @@
 package org.eclipse.papyrus.resource;
 
 import java.io.IOException;
+import java.util.Set;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 
 /**
@@ -91,4 +93,5 @@ public interface IModel {
 	 */
 	public void addModelSnippet(IModelSnippet snippet);
 
+	public Set<IFile> getModifiedFiles();
 }

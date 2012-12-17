@@ -4,6 +4,8 @@
 package org.eclipse.papyrus.resource;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
@@ -11,6 +13,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 
 /**
  * An abstract implmeentation of model. This class should be subclassed to fit
@@ -189,7 +192,7 @@ public abstract class AbstractBaseModel implements IModel {
 	 * 
 	 */
 	public void saveModel() throws IOException {
-		if(!getModelManager().getTransactionalEditingDomain().isReadOnly(resource) && !ModelUtils.haveLoadingError(resource)) {
+		if(resource.isModified() && !modelSet.getTransactionalEditingDomain().isReadOnly(resource) && !ModelUtils.haveLoadingError(resource)) {
 			resource.save(null);
 		}
 	}
@@ -233,4 +236,12 @@ public abstract class AbstractBaseModel implements IModel {
 		snippets.add(snippet);
 	}
 
+	public Set<IFile> getModifiedFiles() {
+		if (getResource() != null) {
+		if (!getResource().isTrackingModification() || getResource().isModified()) {
+			return Collections.singleton(WorkspaceSynchronizer.getFile(getResource()));
+		}
+		}
+		return Collections.emptySet();
+	}
 }

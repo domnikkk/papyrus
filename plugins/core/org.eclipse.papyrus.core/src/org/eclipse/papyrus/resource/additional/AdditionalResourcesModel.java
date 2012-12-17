@@ -15,10 +15,14 @@ package org.eclipse.papyrus.resource.additional;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.papyrus.core.Activator;
 import org.eclipse.papyrus.resource.IModel;
 import org.eclipse.papyrus.resource.IModelSnippet;
@@ -71,7 +75,7 @@ public class AdditionalResourcesModel implements IModel {
 		for(Resource r : modelSet.getResources()) {
 			if(isAdditionalResource(getModelManager(), r.getURI())) {
 				// only save referenced models not read-only and either platform or file
-				if(!modelSet.getTransactionalEditingDomain().isReadOnly(r) && (r.getURI().isPlatformResource() || r.getURI().isFile()) && !ModelUtils.haveLoadingError(r)) {
+				if(r.isModified() && !modelSet.getTransactionalEditingDomain().isReadOnly(r) && !ModelUtils.haveLoadingError(r)) {
 					try {
 						r.save(Collections.EMPTY_MAP);
 					} catch (IOException e) {
@@ -121,10 +125,25 @@ public class AdditionalResourcesModel implements IModel {
 	 * @return true if it is an additional resource
 	 */
 	public static boolean isAdditionalResource(ModelSet modelSet, URI uri) {
-		if(uri != null) {
+		if(uri != null && (uri.isPlatformResource() || uri.isFile())) {
 			String platformString = uri.trimFileExtension().toPlatformString(false);
 			return ((platformString == null) || !modelSet.getFilenameWithoutExtension().toString().equals(platformString.toString()));
 		}
 		return false;
+	}
+
+	public Set<IFile> getModifiedFiles() {
+		HashSet<IFile> res = new HashSet<IFile>();
+		for(Resource r : modelSet.getResources()) {
+			if(isAdditionalResource(getModelManager(), r.getURI())) {
+				if (!r.isTrackingModification() || r.isModified()) {
+					IFile f = WorkspaceSynchronizer.getFile(r);
+					if (f != null) {
+						res.add(f);
+					}
+				}
+			}
+		}
+		return res;
 	}
 }

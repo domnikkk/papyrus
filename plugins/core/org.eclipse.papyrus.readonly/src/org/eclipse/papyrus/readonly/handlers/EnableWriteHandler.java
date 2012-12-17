@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.papyrus.core.utils.BusinessModelResolver;
 import org.eclipse.papyrus.onefile.model.IPapyrusFile;
 import org.eclipse.papyrus.onefile.model.PapyrusModelHelper;
 import org.eclipse.papyrus.onefile.utils.OneFileUtils;
 import org.eclipse.papyrus.readonly.ReadOnlyManager;
+import org.eclipse.papyrus.readonly.ReadOnlyTester;
 import org.eclipse.ui.PlatformUI;
 
 public class EnableWriteHandler extends AbstractHandler {
@@ -65,10 +65,12 @@ public class EnableWriteHandler extends AbstractHandler {
 	 *         specified object
 	 */
 	protected EObject resolveSemanticObject(Object object) {
-		Object businessObject = BusinessModelResolver.getInstance().getBusinessModel(object);
+		Object businessObject = ReadOnlyTester.getBusinessModel(object);
 		if(businessObject instanceof EObject) {
 			return (EObject)businessObject;
 		}
 		return null;
 	}
+	
+
 }

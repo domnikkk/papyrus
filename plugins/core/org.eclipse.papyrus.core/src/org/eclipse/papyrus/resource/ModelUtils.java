@@ -97,6 +97,12 @@ public class ModelUtils {
 		return t instanceof org.eclipse.emf.ecore.xmi.ClassNotFoundException || t instanceof IllegalValueException;
 	}
 
+	/**
+	 * Determine if a resource have had issues during its loading
+	 * 
+	 * @param resource
+	 * @return
+	 */
 	public static boolean haveLoadingError(Resource resource) {
 		if(resource.getErrors() != null && !resource.getErrors().isEmpty()) {
 			for(Diagnostic d : resource.getErrors()) {

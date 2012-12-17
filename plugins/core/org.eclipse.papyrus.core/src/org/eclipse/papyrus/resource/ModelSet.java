@@ -18,13 +18,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -452,6 +456,30 @@ public class ModelSet extends ResourceSetImpl {
 		// Initialize monitor with the number of models
 		Collection<IModel> modelList = models.values();
 		monitor.beginTask("Saving resources", modelList.size());
+		
+		TransactionalEditingDomain editingDomain = getTransactionalEditingDomain();
+		IReadOnlyManager roManager = getAdapter(editingDomain, IReadOnlyManager.class);
+		
+		boolean authorizeSave = true;
+
+		if (roManager != null) {
+			Set<IFile> roFiles = new HashSet<IFile>();
+			for(IModel model : modelList) {
+				Set<IFile> files = model.getModifiedFiles();
+				for(IFile f : files) {
+					if(roManager.isReadOnly(new IFile[]{f}, editingDomain)) {
+						roFiles.add(f);
+					}
+				}
+			}
+
+			authorizeSave = roManager.enableWrite(roFiles.toArray(new IFile[roFiles.size()]), editingDomain);
+			
+			if (!authorizeSave) {
+				monitor.done();
+				throw new IOException("Some modified resources are read-only : the model can't be saved");
+			}
+		}
 
 		try {
 			// Walk all registered models
@@ -465,6 +493,27 @@ public class ModelSet extends ResourceSetImpl {
 		} finally {
 			monitor.done();
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	protected static <T> T getAdapter(Object o, Class<T> aClass) {
+		if(o == null) {
+			return null;
+		}
+		T result = null;
+		if(aClass.isInstance(o)) {
+			result = (T)o;
+		}
+		if(result == null) {
+			result = (T)Platform.getAdapterManager().getAdapter(o, aClass);
+		}
+		if(result == null) {
+			if(o instanceof IAdaptable) {
+				IAdaptable adaptable = (IAdaptable)o;
+				result = (T)adaptable.getAdapter(aClass);
+			}
+		}
+		return result;
 	}
 
 	/**
