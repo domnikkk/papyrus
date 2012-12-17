@@ -118,35 +118,23 @@ public class LoadingTester extends PropertyTester {
 			URI mainURI = null;
 			Iterator<?> iter = selection.iterator();
 			while(iter.hasNext()) {
-				Object obj = iter.next();
-				if(obj instanceof IAdaptable) {
-					View view = (View)((IAdaptable)obj).getAdapter(View.class);
-					EObject eObject;
-					if(view != null) {
-						eObject = view.getElement();
-					} else {
-						eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
-						if (eObject == null) {
-							Setting setting = (Setting)((IAdaptable)obj).getAdapter(Setting.class);
-							if (setting != null) {
-								eObject = (EObject)setting.get(false);
-							}
+				EObject eObject = getEObject(iter.next());
+				if (eObject instanceof View) {
+					eObject = ((View)eObject).getElement();
+				}
+				if(eObject != null && !eObject.eIsProxy()) {
+					// test that there is at least one not loaded resource object
+					if(!atLeastOneInSubmodel) {
+						Resource containingResource = eObject.eResource();
+						if(mainURI == null && containingResource != null && containingResource.getResourceSet() instanceof ModelSet) {
+							mainURI = NotationUtils.getNotationModel((ModelSet)containingResource.getResourceSet()).getResourceURI().trimFileExtension();
+						}
+						if(mainURI != null) {
+							URI uriTrim = containingResource.getURI().trimFileExtension();
+							atLeastOneInSubmodel = !uriTrim.equals(mainURI);
 						}
 					}
-					if(eObject != null && !eObject.eIsProxy()) {
-						// test that there is at least one not loaded resource object
-						if(!atLeastOneInSubmodel) {
-							Resource containingResource = eObject.eResource();
-							if(mainURI == null && containingResource != null && containingResource.getResourceSet() instanceof ModelSet) {
-								mainURI = NotationUtils.getNotationModel((ModelSet)containingResource.getResourceSet()).getResourceURI().trimFileExtension();
-							}
-							if(mainURI != null) {
-								URI uriTrim = containingResource.getURI().trimFileExtension();
-								atLeastOneInSubmodel = !uriTrim.equals(mainURI);
-							}
-						}
-						continue;
-					}
+					continue;
 				}
 				// a step failed
 				return false;
@@ -154,6 +142,26 @@ public class LoadingTester extends PropertyTester {
 			return atLeastOneInSubmodel;
 		}
 		return false;
+	}
+	
+	protected EObject getEObject(Object obj) {
+		if (obj instanceof EObject) {
+			return (EObject)obj;
+		}
+		if (obj instanceof IAdaptable) {
+			EObject eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
+
+			if (eObject != null) {
+				return eObject;
+			}
+
+			Setting setting = (Setting)((IAdaptable)obj).getAdapter(Setting.class);
+			if (setting != null) {
+				return (EObject)setting.get(false);
+			}
+		}
+
+		return null;
 	}
 
 	/**
@@ -167,30 +175,21 @@ public class LoadingTester extends PropertyTester {
 		if(!selection.isEmpty()) {
 			Iterator<?> iter = selection.iterator();
 			while(iter.hasNext()) {
-				Object obj = iter.next();
-				if(obj instanceof IAdaptable) {
-					EObject eObject = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
-					if (eObject == null) {
-						Setting setting = (Setting)((IAdaptable)obj).getAdapter(Setting.class);
-						if (setting != null) {
-							eObject = (EObject)setting.get(false);
-						}
-					}
+				EObject eObject = getEObject(iter.next());
 
-					if(eObject instanceof Edge) {
-						View target = ((Edge)eObject).getTarget();
-						if(target != null && ViewUtil.resolveSemanticElement(target) == null) {
-							// there is a backslash decorator
-							continue;
-						}
-					}
-					if(eObject instanceof View) {
-						eObject = ((View)eObject).getElement();
-					}
-
-					if(eObject != null && eObject.eIsProxy()) {
+				if(eObject instanceof Edge) {
+					View target = ((Edge)eObject).getTarget();
+					if(target != null && ViewUtil.resolveSemanticElement(target) == null) {
+						// there is a backslash decorator
 						continue;
 					}
+				}
+				if(eObject instanceof View) {
+					eObject = ((View)eObject).getElement();
+				}
+
+				if(eObject != null && eObject.eIsProxy()) {
+					continue;
 				}
 				// a step failed
 				return false;
