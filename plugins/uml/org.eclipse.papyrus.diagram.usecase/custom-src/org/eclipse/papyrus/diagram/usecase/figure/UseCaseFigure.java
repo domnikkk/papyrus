@@ -55,8 +55,6 @@ public class UseCaseFigure extends Ellipse implements IPapyrusNodeUMLElementFigu
 		SplitEllipseLayout layoutThis = new SplitEllipseLayout();
 		this.setLayoutManager(layoutThis);
 		this.setLineWidth(1);
-		//Needed to avoid the label expending this figure when it's too large.
-		this.setPreferredSize(1,1);
 		createContents();
 		// use StereotypeFigureHelper
 		stereotypeHelper = new StereotypeFigureHelper(this) {

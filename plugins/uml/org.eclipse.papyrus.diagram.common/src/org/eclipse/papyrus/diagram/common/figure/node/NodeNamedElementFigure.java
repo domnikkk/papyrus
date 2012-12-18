@@ -109,7 +109,7 @@ public class NodeNamedElementFigure extends PapyrusNodeFigure implements IPapyru
 	 * Create a label that contains the name of the element.
 	 */
 	protected void createNameLabel() {
-		nameLabel = new WrappingLabel();
+		nameLabel = new CenteredWrappedLabel();
 		nameLabel.setTextWrap(true);
 		nameLabel.setOpaque(false);
 		nameLabel.setAlignment(PositionConstants.MIDDLE);
