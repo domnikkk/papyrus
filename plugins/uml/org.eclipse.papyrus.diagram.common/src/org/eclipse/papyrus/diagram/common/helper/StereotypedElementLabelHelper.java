@@ -286,37 +286,39 @@ public abstract class StereotypedElementLabelHelper {
 
 			// check if current stereotype is applied
 			final Element umlElement = getUMLElement(editPart);
-			Stereotype stereotype = umlElement.getAppliedStereotype(currentStereotype);
-			if(stereotype != null) {
-				String name = currentStereotype;
-				if((stereotypeWithQualifiedName.indexOf(currentStereotype)) == -1) {
-					// property value contains qualifiedName ==> extract name
-					// from it
-					StringTokenizer strToken = new StringTokenizer(currentStereotype, "::");
+			if(umlElement != null) {
+				Stereotype stereotype = umlElement.getAppliedStereotype(currentStereotype);
+				if(stereotype != null) {
+					String name = currentStereotype;
+					if((stereotypeWithQualifiedName.indexOf(currentStereotype)) == -1) {
+						// property value contains qualifiedName ==> extract name
+						// from it
+						StringTokenizer strToken = new StringTokenizer(currentStereotype, "::");
 
-					while(strToken.hasMoreTokens()) {
-						name = strToken.nextToken();
+						while(strToken.hasMoreTokens()) {
+							name = strToken.nextToken();
+						}
 					}
-				}
-				// AL Changes Feb. 07 - Beg
-				// Handling STEREOTYPE_NAME_APPEARANCE preference (from
-				// ProfileApplicationPreferencePage)
-				// Previously lowercase forced onto first letter (standard UML)
-				// stereotypesToDisplay = stereotypesToDisplay+name.substring(0,
-				// 1).toLowerCase()+name.substring(1,
-				// name.length())+","+separator;
+					// AL Changes Feb. 07 - Beg
+					// Handling STEREOTYPE_NAME_APPEARANCE preference (from
+					// ProfileApplicationPreferencePage)
+					// Previously lowercase forced onto first letter (standard UML)
+					// stereotypesToDisplay = stereotypesToDisplay+name.substring(0,
+					// 1).toLowerCase()+name.substring(1,
+					// name.length())+","+separator;
 
-				// check that the name has not already been added to the
-				// displayed string
-				if(sNameAppearance.equals(VisualInformationPapyrusConstant.P_STEREOTYPE_NAME_DISPLAY_USER_CONTROLLED)) {
-					if(out.indexOf(name) == -1) {
-						out = out + name + separator;
-					}
-				} else { // VisualInformationPapyrusConstant.P_STEREOTYPE_NAME_DISPLAY_UML_CONFORM))
-					// {
-					name = name.substring(0, 1).toLowerCase() + name.substring(1, name.length());
-					if(out.indexOf(name) == -1) {
-						out = out + name + separator;
+					// check that the name has not already been added to the
+					// displayed string
+					if(sNameAppearance.equals(VisualInformationPapyrusConstant.P_STEREOTYPE_NAME_DISPLAY_USER_CONTROLLED)) {
+						if(out.indexOf(name) == -1) {
+							out = out + name + separator;
+						}
+					} else { // VisualInformationPapyrusConstant.P_STEREOTYPE_NAME_DISPLAY_UML_CONFORM))
+						// {
+						name = name.substring(0, 1).toLowerCase() + name.substring(1, name.length());
+						if(out.indexOf(name) == -1) {
+							out = out + name + separator;
+						}
 					}
 				}
 			}
