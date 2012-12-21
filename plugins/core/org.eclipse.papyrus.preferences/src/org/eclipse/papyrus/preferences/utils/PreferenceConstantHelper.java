@@ -238,6 +238,11 @@ public class PreferenceConstantHelper {
 	public static final String ALWAY_RELOAD_WITH_EDITOR = "ALWAY_RELOAD_WITH_EDITOR";
 
 	/**
+	 * Preference used to enable multi editors
+	 */
+	public static final String MULTI_EDITOR = "MULTI_EDITOR";
+
+	/**
 	 * Get the preference constant used to store the preference of an element.
 	 * 
 	 * @param elementName

@@ -56,6 +56,7 @@ import org.eclipse.papyrus.core.services.ServiceException;
 import org.eclipse.papyrus.core.services.ServiceMultiException;
 import org.eclipse.papyrus.core.services.ServicesRegistry;
 import org.eclipse.papyrus.core.utils.BusinessModelResolver;
+import org.eclipse.papyrus.preferences.utils.PreferenceConstantHelper;
 import org.eclipse.papyrus.resource.ModelMultiException;
 import org.eclipse.papyrus.resource.ModelSet;
 import org.eclipse.papyrus.sasheditor.contentprovider.IContentChangedListener;
@@ -584,15 +585,17 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 * @throws PartInitException
 	 */
 	protected void assertOneEditorOpen(IEditorSite site) throws PartInitException {
-		IWorkbenchWindow window = site.getWorkbenchWindow();
-		if(OneInstanceUtils.isPapyrusOpen(window, this)) {
-			String errorMessage = Messages.CoreMultiDiagramEditor_only_one;
-			if(MessageDialog.openQuestion(window.getShell(), Messages.CoreMultiDiagramEditor_warning, Messages.CoreMultiDiagramEditor_do_you_want_to_close + Messages.CoreMultiDiagramEditor_if_not_close)) {
-				if(!OneInstanceUtils.closeAllPapyrusOpened(window, this)) {
+		if(!org.eclipse.papyrus.preferences.Activator.getDefault().getPreferenceStore().getBoolean(PreferenceConstantHelper.MULTI_EDITOR)) {
+			IWorkbenchWindow window = site.getWorkbenchWindow();
+			if(OneInstanceUtils.isPapyrusOpen(window, this)) {
+				String errorMessage = Messages.CoreMultiDiagramEditor_only_one;
+				if(MessageDialog.openQuestion(window.getShell(), Messages.CoreMultiDiagramEditor_warning, Messages.CoreMultiDiagramEditor_do_you_want_to_close + Messages.CoreMultiDiagramEditor_if_not_close)) {
+					if(!OneInstanceUtils.closeAllPapyrusOpened(window, this)) {
+						throw new PartInitException(errorMessage);
+					}
+				} else {
 					throw new PartInitException(errorMessage);
 				}
-			} else {
-				throw new PartInitException(errorMessage);
 			}
 		}
 	}
