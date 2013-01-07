@@ -74,7 +74,7 @@ protected Iterable<EReference> getCompartmentReferences() {
 «ENDDEFINE»
 
 «DEFINE childRef(node : gmfgen::GenNode) FOR gmfgen::TypeModelFacet-»
-compartmentReferences.add(«EXPAND MEtaModel::MetaFeature FOR node.modelFacet.containmentMetaFeature»);
+compartmentReferences.add(«EXPAND MetaModel::MetaFeature FOR node.modelFacet.containmentMetaFeature»);
 «ENDDEFINE»
 
 
