@@ -75,22 +75,22 @@ public class ModelSet extends ResourceSetImpl {
 	public static final String PAPYRUS_EDITING_DOMAIN_ID = "org.eclipse.papyrus.SharedEditingDomainID";
 
 	/** The associated IModels. */
-	private Map<String, IModel> models = new HashMap<String, IModel>();
+	protected Map<String, IModel> models = new HashMap<String, IModel>();
 
 	/** The snippets. */
-	private ModelSetSnippetList snippets = new ModelSetSnippetList();
+	protected ModelSetSnippetList snippets = new ModelSetSnippetList();
 
-	private AdditionalResourcesModel additional = new AdditionalResourcesModel();
+	protected AdditionalResourcesModel additional = new AdditionalResourcesModel();
 
 	/**
 	 * The associated EditingDomain.
 	 */
-	private TransactionalEditingDomain transactionalEditingDomain;
+	protected TransactionalEditingDomain transactionalEditingDomain;
 
 	/**
 	 * The filename path, without extension, used for action on models.
 	 */
-	private IPath filenameWithoutExtension;
+	protected IPath filenameWithoutExtension;
 
 	/**
 	 * 
