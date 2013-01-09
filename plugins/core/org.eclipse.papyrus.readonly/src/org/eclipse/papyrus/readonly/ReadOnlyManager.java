@@ -14,8 +14,10 @@
 package org.eclipse.papyrus.readonly;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -35,6 +37,7 @@ public class ReadOnlyManager {
 		public IReadOnlyHandler handler;
 
 		public int priority;
+		
 
 		public int compareTo(HandlerPriorityPair o) {
 			if(o.priority > priority) {
@@ -51,14 +54,33 @@ public class ReadOnlyManager {
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor("org.eclipse.papyrus.readonly", "readOnlyHandler");
 
 		List<HandlerPriorityPair> handlerPriorityPairs = new LinkedList<HandlerPriorityPair>();
+		
+		Map<String, HandlerPriorityPair> idMap = new HashMap<String, ReadOnlyManager.HandlerPriorityPair>();
 		for(IConfigurationElement elem : configElements) {
 			if("readOnlyHandler".equals(elem.getName())) {
 				try {
 					HandlerPriorityPair handlerPriorityPair = new HandlerPriorityPair();
 					handlerPriorityPair.handler = (IReadOnlyHandler)elem.createExecutableExtension("class");
 					handlerPriorityPair.priority = Integer.parseInt(elem.getAttribute("priority"));
-
-					handlerPriorityPairs.add(handlerPriorityPair);
+					//Look for an id.
+					String id = elem.getAttribute("id");
+					if (id != null){
+						//if any then the handler could be overrided by another registration
+						HandlerPriorityPair oldHandler = idMap.get(id);
+						if(oldHandler == null){
+							idMap.put(id, handlerPriorityPair);
+							handlerPriorityPairs.add(handlerPriorityPair);
+						}else {
+							if (oldHandler.priority < handlerPriorityPair.priority){
+								handlerPriorityPairs.remove(oldHandler);
+								handlerPriorityPairs.add(handlerPriorityPair);
+							}
+						}
+					}else {
+						//If none the handler can not be overrided
+						handlerPriorityPairs.add(handlerPriorityPair);
+					}
+					
 				} catch (Exception e) {
 				}
 			}

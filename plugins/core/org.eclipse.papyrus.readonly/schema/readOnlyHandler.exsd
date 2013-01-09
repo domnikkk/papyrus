@@ -66,6 +66,13 @@
                </documentation>
             </annotation>
          </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  optional id that can be used if this read only handler can be overriden
+               </documentation>
+            </annotation>
+         </attribute>
       </complexType>
    </element>
 
