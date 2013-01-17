@@ -116,7 +116,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 * Consult the IOperationApprovers to see if the proposed redo should be
 	 * allowed.
 	 */
-	protected IStatus getRedoApproval(IUndoableOperation operation, IAdaptable info) {
+	public IStatus getRedoApproval(IUndoableOperation operation, IAdaptable info) {
 		operation = unwrapOperation(operation);
 		for(int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedRedoing(operation, this, info);
@@ -131,7 +131,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 * Consult the IOperationApprovers to see if the proposed undo should be
 	 * allowed.
 	 */
-	protected IStatus getUndoApproval(IUndoableOperation operation, IAdaptable info) {
+	public IStatus getUndoApproval(IUndoableOperation operation, IAdaptable info) {
 		operation = unwrapOperation(operation);
 		for(int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedUndoing(operation, this, info);
@@ -148,7 +148,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 	 * 
 	 * @since 3.2
 	 */
-	protected IStatus getExecuteApproval(IUndoableOperation operation, IAdaptable info) {
+	public IStatus getExecuteApproval(IUndoableOperation operation, IAdaptable info) {
 		operation = unwrapOperation(operation);
 		for(int i = 0; i < approversArray.length; i++) {
 			IStatus approval = approversArray[i].proceedExecuting(operation, this, info);

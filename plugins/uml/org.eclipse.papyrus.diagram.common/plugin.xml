@@ -22,6 +22,7 @@
  <extension-point id="paletteDefinition" name="PaletteDefinition" schema="schema/paletteDefinition.exsd"/>
  <extension-point id="aspectToolProvider" name="aspectToolProvider" schema="schema/aspectToolProvider.exsd"/>
  <extension-point id="paletteCustomization" name="Palette customization" schema="schema/paletteCustomization.exsd"/>
+ <extension-point id="specialDropProvider" name="specialDropProvider" schema="schema/specialDropProvider.exsd"/>
       
       <extension point="org.eclipse.ui.views">
    <category 
@@ -739,5 +740,24 @@
             name="Lowest">
       </Priority>
    </editpolicyProvider>
+   <editpolicyProvider
+         class="org.eclipse.papyrus.diagram.common.specialdrop.SpecialDropEditPolicyProvider">
+      <Priority
+            name="Low">
+      </Priority>
+   </editpolicyProvider>
+</extension>
+<extension
+      point="org.eclipse.papyrus.diagram.common.specialDropProvider">
+   <specialDropProvider
+         class="org.eclipse.papyrus.diagram.common.specialdrop.GenericFeatureSpecialDropProvider"
+         id="org.eclipse.papyrus.diagram.common.specialdrop.GenericFeatureSpecialDropProvider"
+         priority="0">
+   </specialDropProvider>
+   <specialDropProvider
+         class="org.eclipse.papyrus.diagram.common.specialdrop.UMLSpecialDropProvider"
+         id="org.eclipse.papyrus.diagram.common.specialdrop.UMLSpecialDropProvider"
+         priority="0">
+   </specialDropProvider>
 </extension>
 </plugin>

@@ -43,6 +43,8 @@ import org.eclipse.swt.dnd.DND;
  * 
  */
 public class DeferredCreateCommand extends AbstractTransactionalCommand {
+	
+	public static final String IS_DEFERRED_DROP_REQUEST = "IS_DEFERRED_DROP_REQUEST";
 
 	private IAdaptable adapter;
 
@@ -92,6 +94,7 @@ public class DeferredCreateCommand extends AbstractTransactionalCommand {
 						request.setLocation(new Point(10, 10));
 						if(request.getExtendedData() != null) {
 							request.getExtendedData().put(DropTargetListener.EVENT_DETAIL, DND.DROP_COPY);
+							request.getExtendedData().put(IS_DEFERRED_DROP_REQUEST, Boolean.TRUE);
 						}
 						final Command command = gep.getCommand(request);
 						// If possible do the drop

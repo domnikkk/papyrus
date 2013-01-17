@@ -52,7 +52,6 @@ import org.eclipse.papyrus.diagram.composite.custom.helper.CompositeLinkMappingH
 import org.eclipse.papyrus.diagram.composite.custom.helper.ConnectorHelper;
 import org.eclipse.papyrus.diagram.composite.custom.helper.DurationObservationHelper;
 import org.eclipse.papyrus.diagram.composite.custom.helper.TimeObservationHelper;
-import org.eclipse.papyrus.diagram.composite.custom.helper.TypeHelper;
 import org.eclipse.papyrus.diagram.composite.custom.locators.PortPositionLocator;
 import org.eclipse.papyrus.diagram.composite.custom.log.Log;
 import org.eclipse.papyrus.diagram.composite.edit.parts.ActivityCompositeEditPart;
@@ -802,46 +801,15 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 		// but should not accept drop.
 		while(!(graphicalParentView instanceof Diagram) && (graphicalParentObject != null) && (iter.hasNext())) {
 
-			EObject droppedObject = (EObject)iter.next();
-			if(graphicalParentObject instanceof Collaboration) {
+			Object droppedObject = iter.next();
+			if(graphicalParentObject instanceof StructuredClassifier) {
 
 				if(droppedObject instanceof Collaboration) {
 					CollaborationHelper helper = new CollaborationHelper(getEditingDomain());
 					cc.add(helper.dropCollaborationAsCollaborationUse((GraphicalEditPart)getHost(), (Collaboration)droppedObject, location));
 
-				} else if(droppedObject instanceof Class) {
-					TypeHelper helper = new TypeHelper(getEditingDomain());
-					cc.add(helper.dropTypeAsTypedProperty((GraphicalEditPart)getHost(), (Class)droppedObject, location));
-
 				}
 
-			} else if(graphicalParentObject instanceof StructuredClassifier) {
-
-				if(droppedObject instanceof Collaboration) {
-					CollaborationHelper helper = new CollaborationHelper(getEditingDomain());
-					cc.add(helper.dropCollaborationAsCollaborationUse((GraphicalEditPart)getHost(), (Collaboration)droppedObject, location));
-
-				} else if(droppedObject instanceof Class) {
-					TypeHelper helper = new TypeHelper(getEditingDomain());
-					cc.add(helper.dropTypeAsTypedProperty((GraphicalEditPart)getHost(), (Class)droppedObject, location));
-
-				}
-
-			} else if(graphicalParentObject instanceof TypedElement) {
-
-				if(droppedObject instanceof Type) {
-
-					TypeHelper helper = new TypeHelper(getEditingDomain());
-					cc.add(helper.dropTypeOnTypedElement((GraphicalEditPart)getHost(), (Type)droppedObject, location));
-				}
-
-			} else if(graphicalParentObject instanceof CollaborationUse) {
-
-				if(droppedObject instanceof Collaboration) {
-
-					CollaborationHelper helper = new CollaborationHelper(getEditingDomain());
-					cc.add(helper.dropCollaborationOnCollaborationUse((GraphicalEditPart)getHost(), (Collaboration)droppedObject, location));
-				}
 			}
 		}
 

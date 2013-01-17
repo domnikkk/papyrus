@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
+import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
@@ -82,6 +83,17 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	 */
 	public CommonDiagramDragDropEditPolicy(ILinkMappingHelper mappingHelper) {
 		linkmappingHelper = mappingHelper;
+	}
+
+	@Override
+	public Command getCommand(Request request) {
+		// don't return an unexecutable command to avoid the blocking
+		// of other possible policies
+		Command cmd = super.getCommand(request);
+		if (cmd != null && cmd.canExecute()) {
+			return cmd;
+		}
+		return null;
 	}
 
 	/**
@@ -258,8 +270,10 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		Iterator<?> iter = dropRequest.getObjects().iterator();
 
 		while(iter.hasNext()) {
-			EObject droppedObject = (EObject)iter.next();
-			cc.add(getDropObjectCommand(dropRequest, droppedObject));
+			Object droppedObject = iter.next();
+			if (droppedObject instanceof EObject) {
+				cc.add(getDropObjectCommand(dropRequest, (EObject)droppedObject));
+			}
 		}
 
 		return new ICommandProxy(cc);

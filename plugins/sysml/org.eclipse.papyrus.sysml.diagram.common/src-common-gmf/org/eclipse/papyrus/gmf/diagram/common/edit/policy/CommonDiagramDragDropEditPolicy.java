@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
+import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
@@ -87,6 +88,17 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		this.linkMappingHelper = linkMappingHelper;
 	}
 
+	@Override
+	public Command getCommand(Request request) {
+		// don't return an unexecutable command to avoid the blocking
+		// of other possible policies
+		Command cmd = super.getCommand(request);
+		if (cmd != null && cmd.canExecute()) {
+			return cmd;
+		}
+		return null;
+	}
+
 	private Set<String> getSpecificDropList() {
 		if(specificDropList == null) {
 			specificDropList = getSpecificDropBehaviorTypes();
@@ -134,8 +146,10 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		CompositeCommand gmfDropCommand = new CompositeCommand("DropObjects"); //$NON-NLS-1$
 		Iterator<?> iter = dropRequest.getObjects().iterator();
 		while(iter.hasNext()) {
-			EObject droppedObject = (EObject)iter.next();
-			gmfDropCommand.add(getDropObjectCommand(dropRequest, droppedObject));
+			Object droppedObject = iter.next();
+			if (droppedObject instanceof EObject) {
+				gmfDropCommand.add(getDropObjectCommand(dropRequest, (EObject)droppedObject));
+			}
 		}
 		// Create the complete drop command by adding an arrange command after drop
 		if(!gmfDropCommand.isEmpty()) {

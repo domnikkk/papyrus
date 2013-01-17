@@ -2,5 +2,13 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="documentationManager" name="documentationManager" schema="schema/documentationManager.exsd"/>
+   <extension
+         point="org.eclipse.papyrus.diagram.common.specialDropProvider">
+      <specialDropProvider
+            class="org.eclipse.papyrus.documentation.DocumentationSpecialDropProvider"
+            id="org.eclipse.papyrus.documentation.DocumentationSpecialDropProvider"
+            priority="0">
+      </specialDropProvider>
+   </extension>
 
 </plugin>
