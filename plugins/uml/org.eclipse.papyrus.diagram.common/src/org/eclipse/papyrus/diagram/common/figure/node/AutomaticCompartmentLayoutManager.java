@@ -149,7 +149,7 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 						bound.width = container.getBounds().width;
 					} else {
 						bound.x = container.getBounds().x + 3;
-						bound.y = container.getBounds().y ;
+						bound.y = container.getBounds().y + 3;
 						bound.width = container.getBounds().width;
 					}
 					currentCompartment.setBounds(bound);

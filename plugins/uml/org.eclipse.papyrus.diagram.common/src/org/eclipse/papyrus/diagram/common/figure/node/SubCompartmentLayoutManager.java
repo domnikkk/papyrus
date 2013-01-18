@@ -49,10 +49,34 @@ public class SubCompartmentLayoutManager extends AbstractLayout {
 				} else {
 					dim.height = MINIMUM_COMPARTMENT_HEIGHT;
 				}
+			}else{
+				dim = figure.getPreferredSize();
 			}
 		}
 		return dim;
 	}
+	
+//	/**
+//	 * obtain a prefered size
+//	 * 
+//	 * @param figure
+//	 *        that can contain a GMF compartment figure
+//	 * @return a the size
+//	 */
+//	public Dimension getPreferedSize(IFigure figure) {
+//		Dimension dim = figure.getPreferredSize();
+//		if(figure.getChildren().size() > 0) {
+//			Object compartment = figure.getChildren().get(0);
+//			if(compartment instanceof ResizableCompartmentFigure) {
+//				dim.height = ((ResizableCompartmentFigure)compartment).getPreferredSize().height + 10;
+//				if(dim.height == 0) {
+//					dim.height = MINIMUM_COMPARTMENT_HEIGHT;
+//				}
+//
+//			}
+//		}
+//		return dim;
+//	}
 
 	@Override
 	public Dimension getMinimumSize(IFigure container, int wHint, int hHint) {
