@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.facet.widgets.nattable.instance.tableinstance.TableInstance;
 import org.eclipse.emf.facet.widgets.nattable.instance.tableinstance.TableinstancePackage;
 import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
@@ -163,7 +164,7 @@ public class ElementUtil {
 
 		Set<EObject> result = Sets.newHashSet();
 
-		TreeIterator<EObject> eAllContents = context.eAllContents();
+		TreeIterator<EObject> eAllContents = EcoreUtil.getAllProperContents(context, false);
 		Iterator<EObject> contextAndDescendants = Iterators.concat(eAllContents, Iterators.singletonIterator(context));
 
 		final Predicate<Setting> keepPapyrusTableInstances = new Predicate<Setting>() {
