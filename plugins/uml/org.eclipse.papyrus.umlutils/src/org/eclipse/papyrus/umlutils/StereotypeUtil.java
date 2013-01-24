@@ -499,7 +499,7 @@ public class StereotypeUtil {
 	 */
 	private static String getPropertyValue(Property property, Stereotype stereotype, Element umlElement, final String EQUAL_SEPARATOR, final String PROPERTY_VALUE_SEPARATOR) {
 		String out = "";
-		if((property.getLower() != 0) || umlElement.getValue(stereotype, property.getName()) != null) {
+		if(umlElement != null && ((property.getLower() != 0) || umlElement.getValue(stereotype, property.getName()) != null)) {
 			if(property.isSetDefault() || umlElement.getValue(stereotype, property.getName()) != null) {
 				out = property.getName() + EQUAL_SEPARATOR + umlElement.getValue(stereotype, property.getName()) + PROPERTY_VALUE_SEPARATOR;
 			} else {
