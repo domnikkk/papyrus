@@ -236,8 +236,8 @@ public class EditorLabelProvider implements ILabelProvider {
 			}
 		}
 
-		// Text computed using EMF label providers
-		if(element instanceof EObject) {
+		// In the case of an element, the text is computed by using EMF label providers
+		if(element instanceof Element) {
 			EObject eObject = (EObject)element;
 			//
 			IItemLabelProvider itemLabelProvider = null;
