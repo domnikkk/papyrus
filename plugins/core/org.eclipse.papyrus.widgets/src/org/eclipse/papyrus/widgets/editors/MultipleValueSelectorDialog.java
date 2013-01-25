@@ -325,7 +325,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 		/* Disable the bouton 'addAll' if the total of elements is greater than the upper bound. */
 		if(this.upperBound != MANY && (allElements.size()) > this.upperBound) {
 			addAll.setEnabled(false);
-		}
+		} 
 
 
 		removeAll = new Button(buttonsSection, SWT.PUSH);
