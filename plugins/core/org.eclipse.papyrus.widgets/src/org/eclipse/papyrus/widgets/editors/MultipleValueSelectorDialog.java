@@ -322,8 +322,8 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 		addAll.addSelectionListener(this);
 		addAll.setToolTipText(Messages.MultipleValueSelectorDialog_AddAllElements);
 
-		/* Disable the bouton 'addAll' if currently chosen elements is greater than the maximum number of values selected */
-		if(this.upperBound != MANY && allElements.size() > this.upperBound) {
+		/* Disable the bouton 'addAll' if the total of elements is greater than the upper bound. */
+		if(this.upperBound != MANY && (allElements.size()) > this.upperBound) {
 			addAll.setEnabled(false);
 		}
 
@@ -576,6 +576,16 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 		selector.setSelectedElements(allElements.toArray());
 		selectedElementsViewer.setSelection(null);
 		selectedElementsViewer.refresh();
+
+		/* Disable the bouton 'add' if the upperBound is reached */
+		if(this.upperBound != MANY) {
+			if(allElements.size() >= this.upperBound) {
+				add.setEnabled(false);
+			} else {
+				add.setEnabled(true);
+			}
+		}
+
 	}
 
 	/**
@@ -611,10 +621,25 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 	 *        The elements to be added
 	 */
 	public void addElements(Object[] elements) {
-		if(elements != null) {
+		boolean canAdd = ((elements.length + allElements.size()) <= upperBound);
+		if(canAdd) {
 			allElements.addAll(Arrays.asList(elements));
 			selectedElementsViewer.refresh();
+		} else {
+			selector.setSelectedElements(allElements.toArray());
+			selectedElementsViewer.setSelection(null);
+			selectedElementsViewer.refresh();
 		}
+
+		// Disable the bouton 'add' when necessary 
+		if(this.upperBound != MANY) {
+			if(allElements.size() >= this.upperBound) {
+				add.setEnabled(false);
+			} else {
+				add.setEnabled(true);
+			}
+		}
+
 	}
 
 	@Override
@@ -685,4 +710,5 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 	public void setUpperBound(int upperBound) {
 		this.upperBound = upperBound;
 	}
+
 }
