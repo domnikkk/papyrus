@@ -70,26 +70,26 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 		Object notifier = notif.getNotifier();
 
 		if(notifier instanceof EObject) {
-			EObject eObject = (EObject) notifier;
+			EObject eObject = (EObject)notifier;
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(eObject);
 			CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, "Move properties to their right compartments"); //$NON-NLS-1$
 			/*
 			 * Iterating on all the nodes referring to the notifier (which is a model element)
 			 */
 			Iterable<Node> nodes = getNodes(eObject);
-			for (final Node node : nodes){
-				if (!checkNodeContainment(node)){
+			for(final Node node : nodes) {
+				if(!checkNodeContainment(node)) {
 					final View containerView = getFirstRelevantCompartmentView(node);
-					if (containerView != null && !containerView.equals(node.eContainer())) {
-					cc.compose(new AbstractTransactionalCommand(editingDomain, "Move properties to their right compartments", Lists.newArrayList(containerView)) {
-						
-						@Override
-						protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+					if(containerView != null && !containerView.equals(node.eContainer())) {
+						cc.compose(new AbstractTransactionalCommand(editingDomain, "Move properties to their right compartments", Lists.newArrayList(containerView)) {
 
-							containerView.getPersistedChildren().add(node);
-							return CommandResult.newOKCommandResult();
-						}
-					});
+							@Override
+							protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
+								containerView.getPersistedChildren().add(node);
+								return CommandResult.newOKCommandResult();
+							}
+						});
 					}
 				}
 			}
@@ -101,93 +101,97 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 	/**
 	 * Gets all the nodes pointing to a model object.
 	 */
-	protected Iterable<Node> getNodes(EObject eObject){
+	protected Iterable<Node> getNodes(EObject eObject) {
 		Collection<Setting> usages = PapyrusEcoreUtils.getUsages(eObject);
-		Predicate<Setting> filterNodes = new Predicate<Setting>(){
+		Predicate<Setting> filterNodes = new Predicate<Setting>() {
+
 			public boolean apply(Setting setting) {
 				return setting.getEObject() instanceof Node;
 			}
 		};
 		Iterable<Setting> filteredSettings = Iterables.filter(usages, filterNodes);
-		Iterable<Node> nodes = Iterables.transform(filteredSettings, new Function<Setting,Node>(){
+		Iterable<Node> nodes = Iterables.transform(filteredSettings, new Function<Setting, Node>() {
+
 			public Node apply(Setting setting) {
-				return (Node) setting.getEObject();
-			}});
+				return (Node)setting.getEObject();
+			}
+		});
 		return nodes;
 	}
-	
+
 	/**
-	 * Gets the command to destroy a node. 
+	 * Gets the command to destroy a node.
 	 */
-	protected ICommand getRemoveNodeCommand(Node node){
+	protected ICommand getRemoveNodeCommand(Node node) {
 		DestroyElementRequest destroyNodeRequest = new DestroyElementRequest(node, false);
 		DestroyElementPapyrusCommand destroyNode = new DestroyElementPapyrusCommand(destroyNodeRequest);
 		return destroyNode;
 	}
-	
+
 	/**
 	 * 
 	 */
-	protected ICommand getCopyNodeInsideRelevantContainerCommand(Node node){
+	protected ICommand getCopyNodeInsideRelevantContainerCommand(Node node) {
 		/*
 		 * Getting the most relevant container the node should be copied into
 		 */
 		View containerView = this.getFirstRelevantCompartmentView(node);
-		if (containerView != null){
+		if(containerView != null) {
 			/*
 			 * eAdapter for the element referenced by the node.
 			 */
 			EObject eObject = node.getElement();
-			IAdaptable adapter =  new EObjectAdapter(eObject);
-			
-			
+			IAdaptable adapter = new EObjectAdapter(eObject);
+
+
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(containerView);
 			ViewDescriptor viewDescriptor = new ViewDescriptor(adapter, Node.class, node.getType(), org.eclipse.papyrus.diagram.clazz.part.UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 			return new CreateViewCommand(editingDomain, viewDescriptor, containerView);
 		}
 		return null;
 	}
-	
+
 
 	/**
-	 * Checks whether a node is placed in the right compartment, according to the 
-	 * stereotype applications its model element has. 
+	 * Checks whether a node is placed in the right compartment, according to the
+	 * stereotype applications its model element has.
 	 */
-	protected boolean checkNodeContainment(Node node){
+	protected boolean checkNodeContainment(Node node) {
 		boolean result = true;
 		EObject modelEObject = node.getElement();
-		if (modelEObject instanceof Property && !(modelEObject instanceof Port)){
-			Property property = (Property) modelEObject;
-			View containingView = (View) node.eContainer();
+		if(modelEObject instanceof Property && !(modelEObject instanceof Port)) {
+			Property property = (Property)modelEObject;
+			View containingView = (View)node.eContainer();
 			/*
-			 * First of all, checking that the node is indeed in a block. 
+			 * First of all, if the node is not in a sysml block, it is considered as well located.
 			 */
-			if (containingView != null){
-				View containerOfContainingView = (View) containingView.eContainer();
-				result &= containerOfContainingView.getType().equals(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_CLASSIFIER_ID);
-				result &= propertyCompatibleWithContainer(property, containingView);
+			if(containingView != null) {
+				View containerOfContainingView = (View)containingView.eContainer();
+				if(containerOfContainingView.getType().equals(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_CLASSIFIER_ID)) {
+					result &= propertyCompatibleWithContainer(property, containingView);
+				}
 			} else {
 				result = false;
 			}
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Gets the first compartment compatible with the node stereotype applications.
 	 */
-	protected View getFirstRelevantCompartmentView(Node node){
+	protected View getFirstRelevantCompartmentView(Node node) {
 		EObject modelEObject = node.getElement();
-		if (modelEObject instanceof Property){
-			Property property = (Property) modelEObject;
-			if (node.eContainer() != null){
+		if(modelEObject instanceof Property) {
+			Property property = (Property)modelEObject;
+			if(node.eContainer() != null) {
 				/*
 				 * The view of the block containing the property.
 				 */
 				View blockView = (View)node.eContainer().eContainer();
 				EList<View> compartments = blockView.getChildren();
-				for (View compartment : compartments){
-					if (propertyCompatibleWithContainer(property, compartment)){
+				for(View compartment : compartments) {
+					if(propertyCompatibleWithContainer(property, compartment)) {
 						return compartment;
 					}
 				}
@@ -195,13 +199,13 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 		}
 		return null;
 	}
-	
-	
+
+
 	/**
-	 *  Checks whether a property is compatible with a container (thus 
-	 *  can be put inside that container). 
+	 * Checks whether a property is compatible with a container (thus
+	 * can be put inside that container).
 	 */
-	protected boolean propertyCompatibleWithContainer(Property property, View containingView){
+	protected boolean propertyCompatibleWithContainer(Property property, View containingView) {
 		String containerType = containingView.getType();
 		/*
 		 * Checking each compartment using an extension point.
@@ -212,35 +216,35 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 		 * Boolean describing if a descriptor compatible with the property was found.
 		 */
 		boolean propertyIsCompatibleWithOneCompartment = false;
-		for (IExtension extension : extensionPoint.getExtensions()){
-			for (IConfigurationElement extensionDescriptor : extension.getConfigurationElements()){
+		for(IExtension extension : extensionPoint.getExtensions()) {
+			for(IConfigurationElement extensionDescriptor : extension.getConfigurationElements()) {
 				try {
-					IPropertyCompartmentDescriptor descriptor = (IPropertyCompartmentDescriptor) extensionDescriptor.createExecutableExtension("PropertyCompartmentDescriptor"); //$NON-NLS-1$					if (containerType.)
+					IPropertyCompartmentDescriptor descriptor = (IPropertyCompartmentDescriptor)extensionDescriptor.createExecutableExtension("PropertyCompartmentDescriptor"); //$NON-NLS-1$					if (containerType.)
 					boolean currentDescriptorCompatibleWithProperty = descriptor.isCompatibleWithProperty(property);
 					/*
 					 * Keeping a score for a possible later use.
 					 */
 					propertyIsCompatibleWithOneCompartment |= currentDescriptorCompatibleWithProperty;
-					if (containerType.equals(descriptor.getType()) && currentDescriptorCompatibleWithProperty){
+					if(containerType.equals(descriptor.getType()) && currentDescriptorCompatibleWithProperty) {
 						return true;
 					}
 				} catch (CoreException e) {
 					e.printStackTrace();
-				} 
+				}
 			}
 		}
-		
+
 		/*
 		 * If no compartment was compatible with the property, therefore the property can only
 		 * belong the "property" compartment.
 		 */
-		if (!propertyIsCompatibleWithOneCompartment){
+		if(!propertyIsCompatibleWithOneCompartment) {
 			return containerType.equals(SysMLGraphicalTypes.COMPARTMENT_SYSML_PROPERTY_AS_LIST_ID);
 		}
 		/*
-		 * Every other case. 
+		 * Every other case.
 		 */
 		return false;
 	}
-	
+
 }
