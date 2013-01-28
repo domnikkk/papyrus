@@ -116,7 +116,7 @@ public class ProfileApplicationHelper {
 	 */
 	public static void nestedRelocateStereotypeApplications(Package pack, Resource target) {
 		relocateStereotypeApplications(pack, target);
-		for(Iterator<EObject> i = EcoreUtil.getAllProperContents(pack, false); i.hasNext();) {
+		for(Iterator<EObject> i = EcoreUtil.getAllProperContents(pack, true); i.hasNext();) {
 			EObject current = i.next();
 			if(current instanceof Element) {
 				relocateStereotypeApplications((Element)current, target);

@@ -164,7 +164,7 @@ public class ElementUtil {
 
 		Set<EObject> result = Sets.newHashSet();
 
-		TreeIterator<EObject> eAllContents = EcoreUtil.getAllProperContents(context, false);
+		TreeIterator<EObject> eAllContents = EcoreUtil.getAllProperContents(context, true);
 		Iterator<EObject> contextAndDescendants = Iterators.concat(eAllContents, Iterators.singletonIterator(context));
 
 		final Predicate<Setting> keepPapyrusTableInstances = new Predicate<Setting>() {

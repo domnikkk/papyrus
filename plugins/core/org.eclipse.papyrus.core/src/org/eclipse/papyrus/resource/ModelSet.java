@@ -102,6 +102,8 @@ public class ModelSet extends ResourceSetImpl {
 
 		getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
 		getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
+
+		this.eAdapters().add(new ProxyModificationTrackingAdapter());
 	}
 
 	/**
@@ -204,7 +206,7 @@ public class ModelSet extends ResourceSetImpl {
 	 * @return the same resource for convenience
 	 */
 	protected Resource setResourceOptions(Resource r) {
-		if (r != null) {
+		if (r != null && !r.isTrackingModification()) {
 			r.setTrackingModification(true);
 		}
 		return r;
@@ -456,10 +458,10 @@ public class ModelSet extends ResourceSetImpl {
 		// Initialize monitor with the number of models
 		Collection<IModel> modelList = models.values();
 		monitor.beginTask("Saving resources", modelList.size());
-		
+
 		TransactionalEditingDomain editingDomain = getTransactionalEditingDomain();
 		IReadOnlyManager roManager = getAdapter(editingDomain, IReadOnlyManager.class);
-		
+
 		boolean authorizeSave = true;
 
 		if (roManager != null) {
@@ -474,7 +476,7 @@ public class ModelSet extends ResourceSetImpl {
 			}
 
 			authorizeSave = roManager.enableWrite(roFiles.toArray(new IFile[roFiles.size()]), editingDomain);
-			
+
 			if (!authorizeSave) {
 				monitor.done();
 				throw new IOException("Some modified resources are read-only : the model can't be saved");
