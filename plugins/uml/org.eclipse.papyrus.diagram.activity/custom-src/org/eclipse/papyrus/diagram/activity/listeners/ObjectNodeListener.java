@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.papyrus.commands.wrappers.EMFtoGMFCommandWrapper;
 import org.eclipse.papyrus.diagram.common.listeners.AbstractPapyrusModifcationTriggerListener;
 import org.eclipse.uml2.uml.LiteralInteger;
@@ -40,7 +41,7 @@ public class ObjectNodeListener extends AbstractPapyrusModifcationTriggerListene
 	}
 
 	@Override
-	protected CompositeCommand getModificationCommand(Notification notif) {
+	protected ICommand getModificationCommand(Notification notif) {
 		CompositeCommand cc = null;
 		if(notif.getNewValue() instanceof ObjectNode && notif.getFeature() instanceof EReference && ((EReference)notif.getFeature()).isContainment()) {
 			cc = new CompositeCommand("Modify Pin");
