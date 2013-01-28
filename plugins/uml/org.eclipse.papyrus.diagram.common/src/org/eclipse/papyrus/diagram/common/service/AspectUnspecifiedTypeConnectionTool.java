@@ -8,7 +8,8 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
- *  Vincent Lorenzo (CEA LIST) 
+ *  Vincent Lorenzo (CEA LIST)
+ *  Philippe ROLAND (Atos) philippe.roland@atos.net - Implemented PreActions 
  *****************************************************************************/
 
 package org.eclipse.papyrus.diagram.common.service;
@@ -67,6 +68,7 @@ import org.eclipse.papyrus.diagram.common.service.palette.AspectToolService;
 import org.eclipse.papyrus.diagram.common.service.palette.IAspectAction;
 import org.eclipse.papyrus.diagram.common.service.palette.IAspectActionProvider;
 import org.eclipse.papyrus.diagram.common.service.palette.IPostAction;
+import org.eclipse.papyrus.diagram.common.service.palette.IPreAction;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -85,6 +87,9 @@ public class AspectUnspecifiedTypeConnectionTool extends UnspecifiedTypeConnecti
 	/** post action list */
 	protected List<IPostAction> postActions = new ArrayList<IPostAction>();
 
+	/** preaction list */
+	protected List<IPreAction> preActions = new ArrayList<IPreAction>();
+	
 	/** List of elements to create */
 	private final List<IElementType> elementTypes;
 
@@ -250,6 +255,19 @@ public class AspectUnspecifiedTypeConnectionTool extends UnspecifiedTypeConnecti
 		final TransactionalEditingDomain editingDomain = org.eclipse.papyrus.core.utils.EditorUtils.getTransactionalEditingDomain();
 		CompositeTransactionalCommand compositeCmd = new CompositeTransactionalCommand (editingDomain, "Create Link");
 
+		for(IPreAction preAction : preActions) {
+			if(getTargetRequest() instanceof CreateConnectionRequest) {
+				Object sourceModel = ((CreateConnectionRequest)getTargetRequest()).getSourceEditPart().getModel();
+				Object targetModel = ((CreateConnectionRequest)getTargetRequest()).getTargetEditPart().getModel();
+				if(sourceModel instanceof View && targetModel instanceof View) {
+					ICommand cmd = preAction.getConnectionPreCommand((View)sourceModel, (View)targetModel);
+					if(cmd != null) {
+						compositeCmd.add(cmd);
+					}
+				}
+			}
+		}
+
 		compositeCmd.add(new CommandProxy(createConnectionCommand));
 
 		if (getTargetRequest() instanceof CreateRequest) {
@@ -382,7 +400,13 @@ public class AspectUnspecifiedTypeConnectionTool extends UnspecifiedTypeConnecti
 							Activator.log.error("impossible to find factory with id: " + AspectToolService.getProviderId(childNode), null);
 						}
 					} else if(IPapyrusPaletteConstant.PRE_ACTION.equals(childName)) {
-						// no implementation yet
+						IAspectActionProvider provider = AspectToolService.getInstance().getProvider(AspectToolService.getProviderId(childNode));
+						if(provider != null) {
+							IAspectAction action = provider.createAction(childNode);
+							preActions.add((IPreAction)action);
+						} else {
+							Activator.log.error("impossible to find factory with id: " + AspectToolService.getProviderId(childNode), null);
+						}
 					}
 				}
 			}

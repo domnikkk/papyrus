@@ -145,9 +145,10 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				View view = (View)viewAdapter.getAdapter(View.class);
-
-				String stereotypetoDisplay = AppliedStereotypeHelper.getStereotypesToDisplay(view);
-				AppliedStereotypeHelper.getAppliedStereotypeToDisplayCommand(editingDomain, view, stereotypetoDisplay, displayKind).execute();
+				if(view != null) {
+					String stereotypetoDisplay = AppliedStereotypeHelper.getStereotypesToDisplay(view);
+					AppliedStereotypeHelper.getAppliedStereotypeToDisplayCommand(editingDomain, view, stereotypetoDisplay, displayKind).execute();
+				}
 				return null;
 			}
 		};

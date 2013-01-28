@@ -11,6 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.common.palette.customization.dialog;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -166,6 +167,8 @@ public class AspectActionsInformationComposite {
 					for(Object selected : selection.toList()) {
 						if(selected instanceof IPostAction && selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
 							((PaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().remove(selected);
+						} else if(selected instanceof IPreAction && selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
+							((PaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().remove(selected);
 						}
 					}
 				}
@@ -337,7 +340,7 @@ public class AspectActionsInformationComposite {
 						if(selectedEntryProxy instanceof PaletteAspectToolEntryProxy) {
 							if(action instanceof IPostAction) {
 								((PaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().add((IPostAction)action);
-							} else {
+							} else if(action instanceof IPreAction) {
 								((PaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().add((IPreAction)action);
 							}
 							setSelectedEntryProxy(selectedEntryProxy);
@@ -400,6 +403,10 @@ public class AspectActionsInformationComposite {
 			if(selectedEntryProxy instanceof PaletteAspectToolEntryProxy && ((PaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().size() > 0) {
 				viewer.setSelection(new StructuredSelection(((PaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().get(0)), true);
 			}
+			//select first pre action
+			else if(selectedEntryProxy instanceof PaletteAspectToolEntryProxy && ((PaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().size() > 0) {
+				viewer.setSelection(new StructuredSelection(((PaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().get(0)), true);
+			}
 
 			updateButtons();
 		}
@@ -439,7 +446,10 @@ public class AspectActionsInformationComposite {
 		 */
 		public Object[] getChildren(Object parentElement) {
 			if(parentElement instanceof PaletteAspectToolEntryProxy) {
-				return ((PaletteAspectToolEntryProxy)parentElement).getPostActions().toArray();
+				List<IAspectAction> actions = new ArrayList<IAspectAction>();
+				actions.addAll(((PaletteAspectToolEntryProxy)parentElement).getPostActions());
+				actions.addAll(((PaletteAspectToolEntryProxy)parentElement).getPreActions());
+				return actions.toArray();
 			}
 			return new Object[0];
 		}

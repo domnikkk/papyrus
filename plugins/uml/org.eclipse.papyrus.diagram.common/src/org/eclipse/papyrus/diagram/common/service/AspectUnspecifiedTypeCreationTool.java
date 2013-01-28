@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
- *
+ *  Philippe ROLAND (Atos) philippe.roland@atos.net - Implemented PreActions
  *****************************************************************************/
 
 package org.eclipse.papyrus.diagram.common.service;
@@ -57,6 +57,7 @@ import org.eclipse.papyrus.diagram.common.service.palette.IAspectAction;
 import org.eclipse.papyrus.diagram.common.service.palette.IAspectActionProvider;
 import org.eclipse.papyrus.diagram.common.service.palette.IFeatureSetterAspectAction;
 import org.eclipse.papyrus.diagram.common.service.palette.IPostAction;
+import org.eclipse.papyrus.diagram.common.service.palette.IPreAction;
 import org.w3c.dom.NodeList;
 
 /**
@@ -71,6 +72,9 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 
 	/** post action list */
 	protected List<IPostAction> postActions = new ArrayList<IPostAction>();
+
+	/** preaction list */
+	protected List<IPreAction> preActions = new ArrayList<IPreAction>();
 
 	private static String ID_ASPECT_ACTION = "palette_aspect_actions";
 
@@ -133,10 +137,10 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 				Activator.log.error(e);
 			}
 		}
-		
+
 		Command command = getCurrentCommand();
 
-		if (command != null) {
+		if(command != null) {
 			ICommand completeCommand = getCompleteCommand(command);
 
 			setCurrentCommand(new ICommandProxy(completeCommand));
@@ -157,16 +161,25 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 
 	protected ICommand getCompleteCommand(Command createCommand) {
 		final TransactionalEditingDomain editingDomain = org.eclipse.papyrus.core.utils.EditorUtils.getTransactionalEditingDomain();
-		CompositeTransactionalCommand compositeCmd = new CompositeTransactionalCommand (editingDomain, "Create Element");
+		CompositeTransactionalCommand compositeCmd = new CompositeTransactionalCommand(editingDomain, "Create Element");
 
+		for(IPreAction preAction : preActions) {
+			Object context = getTargetEditPart().getModel();
+			if(context instanceof View) {
+				ICommand cmd = preAction.getNodePreCommand((View)context);
+				if(cmd != null) {
+					compositeCmd.add(cmd);
+				}
+			}
+		}
+		
 		compositeCmd.add(new CommandProxy(createCommand));
-
 		CreateUnspecifiedAdapter viewAdapter = new CreateUnspecifiedAdapter();
 		viewAdapter.add(getCreateRequest());
 
-		for (IPostAction action : postActions) {
+		for(IPostAction action : postActions) {
 			ICommand cmd = action.getPostCommand(viewAdapter);
-			if (cmd != null) {
+			if(cmd != null) {
 				compositeCmd.add(cmd);
 			}
 		}
@@ -180,8 +193,8 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 	 * @return <code>true</code> if post actions must be executed
 	 */
 	protected boolean requiresPostCommitRun() {
-		for (IPostAction action : postActions) {
-			if (action.needsPostCommitRun()) {
+		for(IPostAction action : postActions) {
+			if(action.needsPostCommitRun()) {
 				return true;
 			}
 		}
@@ -204,19 +217,23 @@ public class AspectUnspecifiedTypeCreationTool extends UnspecifiedTypeCreationTo
 					if(IPapyrusPaletteConstant.POST_ACTION.equals(childName)) {
 						// node is a post action => retrieve the id of the
 						// factory in charge of this configuration
-						// node is a post action => retrieve the id of the
-						// provider in charge of this configuration
 						IAspectActionProvider provider = AspectToolService.getInstance().getProvider(AspectToolService.getProviderId(childNode));
 						if(provider != null) {
 							IAspectAction action = provider.createAction(childNode);
-							if (action instanceof IPostAction) {
+							if(action instanceof IPostAction) {
 								postActions.add((IPostAction)action);
 							}
 						} else {
 							Activator.log.error("impossible to find factory with id: " + AspectToolService.getProviderId(childNode), null);
 						}
 					} else if(IPapyrusPaletteConstant.PRE_ACTION.equals(childName)) {
-						// no implementation yet
+						IAspectActionProvider provider = AspectToolService.getInstance().getProvider(AspectToolService.getProviderId(childNode));
+						if(provider != null) {
+							IAspectAction action = provider.createAction(childNode);
+							preActions.add((IPreAction)action);
+						} else {
+							Activator.log.error("impossible to find factory with id: " + AspectToolService.getProviderId(childNode), null);
+						}
 					}
 				}
 			}

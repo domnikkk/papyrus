@@ -129,8 +129,15 @@ public class PaletteAspectToolEntryProxy extends PaletteEntryProxy implements IP
 						Activator.log.error("impossible to find factory with id: " + AspectToolService.getProviderId(childNode), null);
 					}
 				} else if(IPapyrusPaletteConstant.PRE_ACTION.equals(childName)) {
-					// no implementation yet
-				}
+					// node is a pre action => retrieve the id of the factory in charge of this configuration
+					IAspectActionProvider provider = AspectToolService.getInstance().getProvider(AspectToolService.getProviderId(childNode));
+					if(provider != null) {
+						IPreAction preAction = (IPreAction)provider.createAction(childNode);
+						preActions.add(preAction);
+					} else {
+						Activator.log.error("impossible to find factory with id: " + AspectToolService.getProviderId(childNode), null);
+					}
+				} 
 			}
 		}
 
