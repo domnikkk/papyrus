@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.TriggerListener;
-import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.core.util.CrossReferenceAdapter;
@@ -51,9 +51,9 @@ public abstract class AbstractPapyrusModifcationTriggerListener extends TriggerL
 	@Override
 	protected Command trigger(TransactionalEditingDomain domain, Notification notification) {
 		if(notification != null) {
-			CompositeCommand cc = getModificationCommand(notification);
-			if(cc != null) {
-				return new GMFtoEMFCommandWrapper(cc);
+			ICommand c = getModificationCommand(notification);
+			if(c != null) {
+				return new GMFtoEMFCommandWrapper(c);
 			}
 		}
 		return null;
@@ -67,7 +67,7 @@ public abstract class AbstractPapyrusModifcationTriggerListener extends TriggerL
 	 * @param notif
 	 * @return
 	 */
-	protected abstract CompositeCommand getModificationCommand(Notification notif);
+	protected abstract ICommand getModificationCommand(Notification notif);
 
 	/**
 	 * Return the main edipart which correspond to the {@link EObject} passed in argument

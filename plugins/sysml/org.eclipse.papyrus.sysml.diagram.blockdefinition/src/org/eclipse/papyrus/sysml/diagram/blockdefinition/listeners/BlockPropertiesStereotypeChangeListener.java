@@ -15,12 +15,14 @@ package org.eclipse.papyrus.sysml.diagram.blockdefinition.listeners;
 
 import java.util.Collection;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -29,9 +31,11 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
+import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
@@ -49,6 +53,7 @@ import org.eclipse.uml2.uml.Property;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
 public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModifcationTriggerListener {
 
@@ -61,34 +66,36 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 	}
 
 	@Override
-	protected CompositeCommand getModificationCommand(Notification notif) {
+	protected ICommand getModificationCommand(Notification notif) {
 		Object notifier = notif.getNotifier();
-		CompositeCommand cc = new CompositeCommand("Move properties to their right compartments"); //$NON-NLS-1$
+
 		if(notifier instanceof EObject) {
 			EObject eObject = (EObject) notifier;
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(eObject);
+			CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, "Move properties to their right compartments"); //$NON-NLS-1$
 			/*
 			 * Iterating on all the nodes referring to the notifier (which is a model element)
 			 */
 			Iterable<Node> nodes = getNodes(eObject);
-			for (Node node : nodes){
+			for (final Node node : nodes){
 				if (!checkNodeContainment(node)){
-					/*
-					 * The command to remove the badly place node.
-					 */
-					ICommand removeBadlyPlacedNodeCommand = getRemoveNodeCommand(node);
-					/*
-					 * The command to make a copy of that node into the right compartment.
-					 */
-					ICommand copyNodeInsideRelevantContainerCommand = getCopyNodeInsideRelevantContainerCommand(node);
-					/*
-					 * Composing the result command with both these commands.
-					 */
-					cc.compose(removeBadlyPlacedNodeCommand);
-					cc.compose(copyNodeInsideRelevantContainerCommand);
+					final View containerView = getFirstRelevantCompartmentView(node);
+					if (containerView != null && !containerView.equals(node.eContainer())) {
+					cc.compose(new AbstractTransactionalCommand(editingDomain, "Move properties to their right compartments", Lists.newArrayList(containerView)) {
+						
+						@Override
+						protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
+							containerView.getPersistedChildren().add(node);
+							return CommandResult.newOKCommandResult();
+						}
+					});
+					}
 				}
 			}
+			return cc;
 		}
-		return cc;
+		return null;
 	}
 
 	/**
