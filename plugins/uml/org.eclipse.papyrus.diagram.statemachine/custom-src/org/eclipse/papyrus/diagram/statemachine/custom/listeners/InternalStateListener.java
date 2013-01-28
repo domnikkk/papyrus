@@ -74,7 +74,7 @@ public class InternalStateListener extends AbstractPapyrusModifcationTriggerList
 	}
 
 	@Override
-	protected CompositeCommand getModificationCommand(Notification notif) {
+	protected ICommand getModificationCommand(Notification notif) {
 		Object newValue = notif.getNewValue();
 		Object notifier = notif.getNotifier();
 		if(newValue instanceof TransitionKind && notifier instanceof EObject) {

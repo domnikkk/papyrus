@@ -27,6 +27,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
@@ -45,7 +46,7 @@ public class DeferredTriggerStateListener extends AbstractPapyrusModifcationTrig
 	}
 
 	@Override
-	protected CompositeCommand getModificationCommand(Notification notif) {
+	protected ICommand getModificationCommand(Notification notif) {
 		Request dropRequest = null;
 		Request deleteRequest = null;
 		Object object = notif.getNewValue();

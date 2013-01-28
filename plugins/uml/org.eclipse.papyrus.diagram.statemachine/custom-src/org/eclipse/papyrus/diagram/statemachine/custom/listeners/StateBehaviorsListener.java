@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.papyrus.diagram.statemachine.edit.parts.DoActivityStateBehaviorStateEditPart;
 import org.eclipse.papyrus.diagram.statemachine.edit.parts.EntryStateBehaviorEditPart;
 import org.eclipse.papyrus.diagram.statemachine.edit.parts.ExitStateBehaviorEditPart;
@@ -50,7 +51,7 @@ AbstractStateListener {
 	 * @param notif
 	 */
 	@Override
-	protected CompositeCommand getModificationCommand(Notification notif) {
+	protected ICommand getModificationCommand(Notification notif) {
 		if(notif.getEventType() == Notification.SET) {
 			Object object = notif.getNewValue();
 			Object oldObject = notif.getOldValue();
