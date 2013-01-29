@@ -15,7 +15,7 @@ package org.eclipse.papyrus.diagram.common.editparts;
 
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 
@@ -26,7 +26,7 @@ import org.eclipse.gmf.runtime.notation.View;
  *
  */
 
-public class AppliedStereotypesCommentLinkEditPart extends ConnectionEditPart {
+public class AppliedStereotypesCommentLinkEditPart extends ConnectionNodeEditPart {
 
 	public static final String ID = "AppliedStereotypesCommentLink";
 	

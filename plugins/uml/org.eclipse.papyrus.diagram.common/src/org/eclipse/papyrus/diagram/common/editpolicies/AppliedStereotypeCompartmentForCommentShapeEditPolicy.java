@@ -14,6 +14,7 @@
 
 package org.eclipse.papyrus.diagram.common.editpolicies;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.EObjectValueStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.uml2.uml.Element;
@@ -40,5 +41,10 @@ public class AppliedStereotypeCompartmentForCommentShapeEditPolicy extends Appli
 				return (Element)eObjectValueStyle.getEObjectValue();
 		}
 		return null;
+	}
+
+	@Override
+	protected boolean hasToDisplayCompartment(EObject applicationOfStereotype) {
+		return false;
 	}
 }

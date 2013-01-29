@@ -39,6 +39,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.core.listenerservice.IPapyrusListener;
+import org.eclipse.papyrus.core.utils.EditorUtils;
 import org.eclipse.papyrus.diagram.common.Activator;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Element;
@@ -52,7 +53,10 @@ public class CommentShapeForAppliedStereotypeEditPolicy extends GraphicalEditPol
 
 	public void notifyChanged(Notification notification) {
 		View commentNode=getView();
-		final TransactionalEditingDomain domain=	TransactionUtil.getEditingDomain(commentNode);
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(commentNode);
+		if (domain == null) {
+			domain = EditorUtils.getTransactionalEditingDomain();
+		}
 		if(getUMLElement()==null){
 			executeAppliedStereotypeCommentDeletion(domain, commentNode);
 		}
