@@ -14,6 +14,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.statemachine.custom.listeners;
 
+import java.util.Set;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.NotificationFilter;
@@ -26,22 +28,26 @@ import org.eclipse.papyrus.diagram.statemachine.edit.parts.StateBehaviorCompartm
 import org.eclipse.papyrus.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
 
+import com.google.common.collect.Sets;
+
 /**
  * This listener will handle the creation of visual for element for behavior (/do /entry /exit).
  * 
  * @author Arthur Daussy
  * 
  */
-public class StateBehaviorsListener extends 
-AbstractStateListener {
+public class StateBehaviorsListener extends AbstractStateListener {
 
-	protected static NotificationFilter filter;
+	protected final Set<String> viewIds = Sets.newHashSet(
+		getFactoryHint(UMLPackage.Literals.STATE__DO_ACTIVITY),
+		getFactoryHint(UMLPackage.Literals.STATE__EXIT),
+		getFactoryHint(UMLPackage.Literals.STATE__ENTRY)
+	);
+
+	protected static NotificationFilter filter = NotificationFilter.createFeatureFilter(UMLPackage.Literals.STATE__DO_ACTIVITY).or(NotificationFilter.createFeatureFilter(UMLPackage.Literals.STATE__EXIT)).or(NotificationFilter.createFeatureFilter(UMLPackage.Literals.STATE__ENTRY));
 
 	@Override
 	public NotificationFilter getFilter() {
-		if(filter == null) {
-			filter = NotificationFilter.createFeatureFilter(UMLPackage.Literals.STATE__DO_ACTIVITY).or(NotificationFilter.createFeatureFilter(UMLPackage.Literals.STATE__EXIT)).or(NotificationFilter.createFeatureFilter(UMLPackage.Literals.STATE__ENTRY));
-		}
 		return filter;
 	}
 
@@ -59,7 +65,7 @@ AbstractStateListener {
 			/**
 			 * Delete Command
 			 */
-			getDestroyCommand(oldObject, cc);
+			getDestroyCommand(oldObject, cc, viewIds);
 			/**
 			 * Create Command
 			 */

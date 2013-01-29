@@ -14,6 +14,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.statemachine.custom.listeners;
 
+import java.util.Set;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -31,7 +33,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.diagram.common.commands.DestroyElementPapyrusCommand;
+import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
 import org.eclipse.papyrus.diagram.common.listeners.AbstractPapyrusModifcationTriggerListener;
 import org.eclipse.papyrus.diagram.common.util.predicates.ViewTypePredicate;
 import org.eclipse.papyrus.diagram.statemachine.custom.commands.CreateViewCommand;
@@ -47,9 +49,6 @@ import org.eclipse.uml2.uml.State;
  */
 public abstract class AbstractStateListener extends AbstractPapyrusModifcationTriggerListener {
 
-	public AbstractStateListener() {
-		super();
-	}
 	/**
 	 * Get the hint of the new view to create depending on the {@link EStructuralFeature}
 	 */
@@ -80,16 +79,18 @@ public abstract class AbstractStateListener extends AbstractPapyrusModifcationTr
 	 * @param oldObject
 	 * @param cc
 	 */
-	protected void getDestroyCommand(Object oldObject, CompositeCommand cc) {
+	protected void getDestroyCommand(Object oldObject, CompositeCommand cc, Set<String> viewIds) {
 		if(oldObject instanceof EObject) {
 			//destroy element
 			EObject oldEObject = (EObject)oldObject;
 			Iterable<View> referencingView = getReferencingView(oldEObject);
 			for(View v : referencingView) {
-				DestroyElementRequest req = new DestroyElementRequest(v, false);
-				DestroyElementPapyrusCommand destroyReferencingViewCommand = new DestroyElementPapyrusCommand(req);
-				if(destroyReferencingViewCommand != null && destroyReferencingViewCommand.canExecute()) {
-					cc.compose(destroyReferencingViewCommand);
+				if (viewIds.contains(v.getType())) {
+					DestroyElementRequest req = new DestroyElementRequest(v, false);
+					DestroyElementPapyrusCommand destroyReferencingViewCommand = new DestroyElementPapyrusCommand(req);
+					if(destroyReferencingViewCommand != null && destroyReferencingViewCommand.canExecute()) {
+						cc.compose(destroyReferencingViewCommand);
+					}
 				}
 			}
 		}
