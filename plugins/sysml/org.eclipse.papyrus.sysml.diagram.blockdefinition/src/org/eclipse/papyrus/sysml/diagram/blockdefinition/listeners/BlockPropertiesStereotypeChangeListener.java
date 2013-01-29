@@ -68,7 +68,6 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 	@Override
 	protected ICommand getModificationCommand(Notification notif) {
 		Object notifier = notif.getNotifier();
-
 		if(notifier instanceof EObject) {
 			EObject eObject = (EObject)notifier;
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(eObject);
@@ -85,7 +84,6 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 
 							@Override
 							protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-
 								containerView.getPersistedChildren().add(node);
 								return CommandResult.newOKCommandResult();
 							}
@@ -142,15 +140,12 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 			 */
 			EObject eObject = node.getElement();
 			IAdaptable adapter = new EObjectAdapter(eObject);
-
-
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(containerView);
 			ViewDescriptor viewDescriptor = new ViewDescriptor(adapter, Node.class, node.getType(), org.eclipse.papyrus.diagram.clazz.part.UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 			return new CreateViewCommand(editingDomain, viewDescriptor, containerView);
 		}
 		return null;
 	}
-
 
 	/**
 	 * Checks whether a node is placed in the right compartment, according to the
@@ -200,7 +195,6 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 		return null;
 	}
 
-
 	/**
 	 * Checks whether a property is compatible with a container (thus
 	 * can be put inside that container).
@@ -233,7 +227,6 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 				}
 			}
 		}
-
 		/*
 		 * If no compartment was compatible with the property, therefore the property can only
 		 * belong the "property" compartment.
@@ -246,5 +239,4 @@ public class BlockPropertiesStereotypeChangeListener extends AbstractPapyrusModi
 		 */
 		return false;
 	}
-
 }
