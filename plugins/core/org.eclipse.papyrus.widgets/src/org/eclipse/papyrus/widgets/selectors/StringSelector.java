@@ -93,18 +93,16 @@ public class StringSelector implements IElementSelector {
 			}
 
 			public void keyReleased(KeyEvent e) {
-				if((e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR)
-					&& ((e.stateMask == SWT.NONE && !multiline)
-						|| ((e.stateMask & SWT.CTRL) != 0 && multiline))) {
+				if((e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) && ((e.stateMask == SWT.NONE && !multiline) || ((e.stateMask & SWT.CTRL) != 0 && multiline))) {
 					if(!elementSelectionListeners.isEmpty()) {
-						if (getSelectedElements().length > 0){
+						if(getSelectedElements().length > 0) {
 							String str = (String)(getSelectedElements()[0]).toString();
-							if (str.endsWith(LINE_SEPARATOR)) {
-								str = str.substring(0,str.length() - LINE_SEPARATOR.length());
+							if(str.endsWith(LINE_SEPARATOR)) {
+								str = str.substring(0, str.length() - LINE_SEPARATOR.length());
 							}
 							if(!"".equals(str)) { //$NON-NLS-1$
 								for(IElementSelectionListener listener : elementSelectionListeners) {
-									listener.addElements(new Object[] {str});
+									listener.addElements(new Object[]{ str });
 								}
 							}
 						}

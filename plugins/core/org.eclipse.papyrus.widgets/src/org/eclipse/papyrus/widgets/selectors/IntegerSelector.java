@@ -39,11 +39,11 @@ public class IntegerSelector extends StringSelector {
 			String values = text.getText();
 			String[] split = values.split(LINE_SEPARATOR);
 			List<Integer> resultAsList = new ArrayList<Integer>();
-			for (int i = 0; i<split.length; i++){
+			for(int i = 0; i < split.length; i++) {
 				resultAsList.add(Integer.parseInt(split[i]));
 			}
 			result = resultAsList.toArray(new Integer[resultAsList.size()]);
-//			text.setText(""); //$NON-NLS-1$
+			//			text.setText(""); //$NON-NLS-1$
 		} catch (NumberFormatException ex) {
 			result = new Integer[0];
 		}
