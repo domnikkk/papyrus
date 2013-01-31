@@ -15,17 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A Selector for Integer values
+ * A Selector for Boolean values
  * 
- * @author Camille Letavernier
+ * @author Olivier Mélois
  * 
  */
-public class IntegerSelector extends StringSelector {
+public class BooleanSelector extends StringSelector {
 
 	/**
 	 * Constructs a Selector for Integer values
 	 */
-	public IntegerSelector() {
+	public BooleanSelector() {
 		super();
 	}
 
@@ -33,19 +33,18 @@ public class IntegerSelector extends StringSelector {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Integer[] getSelectedElements() {
-		Integer[] result;
+	public Boolean[] getSelectedElements() {
+		Boolean[] result;
 		try {
 			String values = text.getText();
 			String[] split = values.split(LINE_SEPARATOR);
-			List<Integer> resultAsList = new ArrayList<Integer>();
+			List<Boolean> resultAsList = new ArrayList<Boolean>();
 			for (int i = 0; i<split.length; i++){
-				resultAsList.add(Integer.parseInt(split[i]));
+				resultAsList.add(Boolean.parseBoolean(split[i]));
 			}
-			result = resultAsList.toArray(new Integer[resultAsList.size()]);
-//			text.setText(""); //$NON-NLS-1$
+			result = resultAsList.toArray(new Boolean[resultAsList.size()]);
 		} catch (NumberFormatException ex) {
-			result = new Integer[0];
+			result = new Boolean[0];
 		}
 		return result;
 	}

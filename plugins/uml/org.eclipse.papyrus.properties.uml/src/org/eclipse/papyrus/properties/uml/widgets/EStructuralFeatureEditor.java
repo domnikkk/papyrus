@@ -39,6 +39,7 @@ import org.eclipse.papyrus.widgets.editors.EnumCombo;
 import org.eclipse.papyrus.widgets.editors.FloatEditor;
 import org.eclipse.papyrus.widgets.editors.IntegerEditor;
 import org.eclipse.papyrus.widgets.editors.LongEditor;
+import org.eclipse.papyrus.widgets.editors.MultipleBooleanEditor;
 import org.eclipse.papyrus.widgets.editors.MultipleIntegerEditor;
 import org.eclipse.papyrus.widgets.editors.MultipleReferenceEditor;
 import org.eclipse.papyrus.widgets.editors.MultipleStringEditor;
@@ -158,7 +159,9 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 					}
 				} else if("java.lang.Boolean".equals(instanceClassName) || "boolean".equalsIgnoreCase(instanceClassName) || "bool".equalsIgnoreCase(instanceClassName)) {
 					if(feature.isMany()) {
-						// TODO widget not available
+						MultipleBooleanEditor editor = new MultipleBooleanEditor(pageBook, style);
+						setMultipleValueEditorProperties(editor, (List<?>)element.eGet(feature), element, feature);
+						currentPage = editor;
 					} else {
 						BooleanCombo editor = new BooleanCombo(pageBook, style);
 						setValueEditorProperties(editor, element, feature);

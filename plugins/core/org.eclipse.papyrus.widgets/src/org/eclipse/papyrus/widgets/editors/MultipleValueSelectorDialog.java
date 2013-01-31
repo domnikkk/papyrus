@@ -621,8 +621,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 	 *        The elements to be added
 	 */
 	public void addElements(Object[] elements) {
-		boolean canAdd = ((elements.length + allElements.size()) <= upperBound);
-		if(canAdd) {
+		if(this.canAdd(elements)) {
 			allElements.addAll(Arrays.asList(elements));
 			selectedElementsViewer.refresh();
 		} else {
@@ -709,6 +708,18 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements Sele
 	 */
 	public void setUpperBound(int upperBound) {
 		this.upperBound = upperBound;
+	}
+	
+	/**
+	 * Checks whether elements can be added to the feature.
+	 * @param elements
+	 * @return
+	 */
+	protected boolean canAdd(Object[] elements){
+		if (upperBound == MANY){
+			return true ;
+		}
+		return ((elements.length + allElements.size()) <= upperBound);
 	}
 
 }

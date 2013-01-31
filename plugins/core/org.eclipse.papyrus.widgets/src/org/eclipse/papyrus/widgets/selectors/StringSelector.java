@@ -71,7 +71,6 @@ public class StringSelector implements IElementSelector {
 	 */
 	public Object[] getSelectedElements() {
 		String[] result = new String[]{ text.getText() };
-		text.setText(""); //$NON-NLS-1$
 		return result;
 	}
 
@@ -98,16 +97,19 @@ public class StringSelector implements IElementSelector {
 					&& ((e.stateMask == SWT.NONE && !multiline)
 						|| ((e.stateMask & SWT.CTRL) != 0 && multiline))) {
 					if(!elementSelectionListeners.isEmpty()) {
-						String str = (String)getSelectedElements()[0];
-						if (str.endsWith(LINE_SEPARATOR)) {
-							str = str.substring(0,str.length() - LINE_SEPARATOR.length());
-						}
-						if(!"".equals(str)) { //$NON-NLS-1$
-							for(IElementSelectionListener listener : elementSelectionListeners) {
-								listener.addElements(new Object[] {str});
+						if (getSelectedElements().length > 0){
+							String str = (String)(getSelectedElements()[0]).toString();
+							if (str.endsWith(LINE_SEPARATOR)) {
+								str = str.substring(0,str.length() - LINE_SEPARATOR.length());
+							}
+							if(!"".equals(str)) { //$NON-NLS-1$
+								for(IElementSelectionListener listener : elementSelectionListeners) {
+									listener.addElements(new Object[] {str});
+								}
 							}
 						}
 					}
+					text.setText("");
 				}
 			}
 
