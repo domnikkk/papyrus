@@ -13,8 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.common.figure.node;
 
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.preferences.utils.PreferenceConstantHelper;
 
 /**
  * This class is a {@link WrappingLabel}, which default behavior is set
@@ -25,11 +28,6 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 public class CenteredWrappedLabel extends WrappingLabel {
 
 	/**
-	 * Value used to cap the label width to a certain value, to avoid figure expansion.
-	 */
-	public static int MAX_LABEL_WIDTH = 250; 
-	
-	/**
 	 * Construct an empty wrapping label with customized alignment.
 	 */
 	public CenteredWrappedLabel() {
@@ -37,16 +35,25 @@ public class CenteredWrappedLabel extends WrappingLabel {
 		setTextJustification(WrappingLabel.CENTER);
 		setAlignment(WrappingLabel.CENTER);
 		setTextWrap(true);
+		setBorder(new MarginBorder(6));
 	}
 
 	//Capping the size of the label to a certain value. 
 	@Override
 	public Dimension getPreferredSize(int wHint, int hHint) {
 		Dimension preferredSize = super.getPreferredSize(wHint, hHint);
-		if (preferredSize.width > MAX_LABEL_WIDTH){
-			return super.getPreferredSize(MAX_LABEL_WIDTH, -1);
+		int maxWidth = getMaxLabelWidth();
+		if(preferredSize.width > maxWidth) {
+			return super.getPreferredSize(maxWidth, -1);
 		}
 		return preferredSize;
+	}
+
+	public int getMaxLabelWidth() {
+		String nodeWidthConstant = PreferenceConstantHelper.getPapyrusEditorConstant(PreferenceConstantHelper.NODE_LABEL_MAXIMUM_WIDTH);
+		IPreferenceStore preferenceStore = org.eclipse.papyrus.preferences.Activator.getDefault().getPreferenceStore();
+		int maxLabelWidth = preferenceStore.getInt(nodeWidthConstant);
+		return maxLabelWidth;
 	}
 
 }

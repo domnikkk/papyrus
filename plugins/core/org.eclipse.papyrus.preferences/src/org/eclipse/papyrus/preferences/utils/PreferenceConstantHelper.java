@@ -115,6 +115,8 @@ public class PreferenceConstantHelper {
 
 	private final static String LOCATION_Y_CONSTANT = "location_y"; //$NON-NLS-1$
 
+	private final static String NODE_LABEL_MAXIMUM_WIDTH_CONSTANT = "node_name_maximum_length"; //$NON-NLS-1$
+
 	/**
 	 * A preference of type COLOR FILL
 	 */
@@ -230,10 +232,17 @@ public class PreferenceConstantHelper {
 	 */
 	public static final int LOCATION_Y = LOCATION_X + 1;
 
-	
+	/**
+	 * A preference for a node's name maximum size (in pixels)
+	 */
+	public static final int NODE_LABEL_MAXIMUM_WIDTH = LOCATION_Y + 1;
+
+
 	/**
 	 * Preference use to force alway reload editor and not only model
-	 * @see org.eclipse.papyrus.diagram.common.resourceupdate.PartActivationListener.handleDeltaKinds(int, Set<String>, Set<String>, Map<String, Boolean>, int)
+	 * 
+	 * @see org.eclipse.papyrus.diagram.common.resourceupdate.PartActivationListener.handleDeltaKinds(int, Set<String>, Set<String>, Map<String,
+	 *      Boolean>, int)
 	 */
 	public static final String ALWAY_RELOAD_WITH_EDITOR = "ALWAY_RELOAD_WITH_EDITOR";
 
@@ -323,6 +332,8 @@ public class PreferenceConstantHelper {
 			sb.append(LOCATION_X_CONSTANT);
 		case LOCATION_Y:
 			sb.append(LOCATION_Y_CONSTANT);
+		case NODE_LABEL_MAXIMUM_WIDTH:
+			sb.append(NODE_LABEL_MAXIMUM_WIDTH_CONSTANT);
 		default:
 			break;
 		}

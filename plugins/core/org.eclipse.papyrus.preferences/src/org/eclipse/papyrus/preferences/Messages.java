@@ -85,6 +85,9 @@ public class Messages extends NLS {
 
 	public static String DimensionGroupName;
 
+	public static String NodeNameMaximumLengthGroupName;
+
+	public static String NodeNameMaximumLength;
 
 
 	public static String NodeCompartmentGroup_Compartiments;

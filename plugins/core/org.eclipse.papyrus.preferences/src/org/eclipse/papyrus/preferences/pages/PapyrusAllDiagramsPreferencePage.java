@@ -26,6 +26,7 @@ import org.eclipse.papyrus.preferences.ui.DecorationGroup;
 import org.eclipse.papyrus.preferences.ui.DimensionGroup;
 import org.eclipse.papyrus.preferences.ui.FontGroup;
 import org.eclipse.papyrus.preferences.ui.NodeColorGroup;
+import org.eclipse.papyrus.preferences.ui.NodeNameGroup;
 import org.eclipse.papyrus.preferences.ui.editor.EditorBackgroundColor;
 import org.eclipse.papyrus.preferences.ui.editor.EditorConnectionGroup;
 import org.eclipse.papyrus.preferences.ui.editor.EditorDecorationGroup;
@@ -70,6 +71,10 @@ public class PapyrusAllDiagramsPreferencePage extends AbstractPapyrusPreferenceP
 
 		DimensionGroup dimensionGroup = new EditorDimensionGroup(contentGroup, getTitle(), this);
 		addAbstractGroup(dimensionGroup);
+
+		//Node names 
+		NodeNameGroup nodeNameGroup = new NodeNameGroup(contentGroup, getTitle(), this);
+		addAbstractGroup(nodeNameGroup);
 	}
 
 
@@ -112,6 +117,9 @@ public class PapyrusAllDiagramsPreferencePage extends AbstractPapyrusPreferenceP
 		//dimension
 		store.setDefault(PreferenceConstantHelper.getPapyrusEditorConstant(PreferenceConstantHelper.WIDTH), 100);
 		store.setDefault(PreferenceConstantHelper.getPapyrusEditorConstant(PreferenceConstantHelper.HEIGHT), 100);
+
+		//label width
+		store.setDefault(PreferenceConstantHelper.getPapyrusEditorConstant(PreferenceConstantHelper.NODE_LABEL_MAXIMUM_WIDTH), 250);
 
 	}
 
