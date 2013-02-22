@@ -39,76 +39,82 @@ public class DestroyElementPapyrusCommand extends DestroyElementCommand {
 
 	public DestroyElementPapyrusCommand(DestroyElementRequest request) {
 		super(request);
-		
+
 		/*
 		 * Quick fixe : Waiting for the patch to be approved by GMF Runtime team
 		 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=386999
 		 */
 		getAffectedFiles().addAll(fileOfIncomingReferences(request.getElementToDestroy()));
 	}
-	
+
 	/**
 	 * Compute list of affected files affected by the tear donw methods
+	 * 
 	 * @param destructee
 	 * @return
 	 */
 	protected List fileOfIncomingReferences(EObject destructee) {
-        if (destructee != null){
-            Collection<Setting> usages = getUsages(destructee);
-            List<Object> result =new ArrayList<Object>();
-            for(Setting setting : usages) {
-                EReference eRef = (EReference)setting.getEStructuralFeature();
-                if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false) && eRef.isTransient() == false) {
-                    EObject eObject = setting.getEObject();
-                    if (isSerializedInFile(eObject)){
-                    	List files = getWorkspaceFiles(eObject);
-                    	if (files != null){
-                    		result.addAll(files);
-                    	}
-                    }
-                }
-            }
-            return result;
-        }
-        return Collections.emptyList();
-    }
+		if(destructee != null) {
+			Collection<Setting> usages = getUsages(destructee);
+			List<Object> result = new ArrayList<Object>();
+			for(Setting setting : usages) {
+				if(setting.getEStructuralFeature() instanceof EReference) {
+					EReference eRef = (EReference)setting.getEStructuralFeature();
+					if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false) && eRef.isTransient() == false) {
+						EObject eObject = setting.getEObject();
+						if(isSerializedInFile(eObject)) {
+							List files = getWorkspaceFiles(eObject);
+							if(files != null) {
+								result.addAll(files);
+							}
+						}
+					}
+				}
+			}
+			return result;
+		}
+		return Collections.emptyList();
+	}
 
 	@Override
 	protected void tearDownIncomingReferences(EObject destructee) {
 		Collection<Setting> usages = getUsages(destructee);
 
 		for(Setting setting : usages) {
-			EReference eRef = (EReference)setting.getEStructuralFeature();
-			if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false)) {
-				EcoreUtil.remove(setting.getEObject(), eRef, destructee);
+			if(setting.getEStructuralFeature() instanceof EReference) {
+				EReference eRef = (EReference)setting.getEStructuralFeature();
+				if(eRef.isChangeable() && (eRef.isDerived() == false) && (eRef.isContainment() == false) && (eRef.isContainer() == false)) {
+					EcoreUtil.remove(setting.getEObject(), eRef, destructee);
+				}
 			}
 		}
 	}
-	
-	
+
+
 	/**
-     * Check that the EObject is serialized in a resource
-     * This will return false if one of the ancestor of the EObject is contained by a transient reference
-     * @param eObject
-     * @return
-     */
-    protected static boolean isSerializedInFile(EObject eObject){
-        EObject auxEObject = eObject;
-        EObject eContainer = auxEObject.eContainer();
-        while (eContainer != null){
-            EReference containingfeature = auxEObject.eContainmentFeature();
-            if(containingfeature == null){
-                return true;
-            }
-            if(containingfeature.isTransient()){
-                return false;
-            }
-            auxEObject = eContainer;
-            eContainer = auxEObject.eContainer();
-        }
-        return true;
-        
-    }
+	 * Check that the EObject is serialized in a resource
+	 * This will return false if one of the ancestor of the EObject is contained by a transient reference
+	 * 
+	 * @param eObject
+	 * @return
+	 */
+	protected static boolean isSerializedInFile(EObject eObject) {
+		EObject auxEObject = eObject;
+		EObject eContainer = auxEObject.eContainer();
+		while(eContainer != null) {
+			EReference containingfeature = auxEObject.eContainmentFeature();
+			if(containingfeature == null) {
+				return true;
+			}
+			if(containingfeature.isTransient()) {
+				return false;
+			}
+			auxEObject = eContainer;
+			eContainer = auxEObject.eContainer();
+		}
+		return true;
+
+	}
 
 	/**
 	 * Gets the usages.
@@ -124,11 +130,11 @@ public class DestroyElementPapyrusCommand extends DestroyElementCommand {
 		}
 
 		ECrossReferenceAdapter crossReferencer = ECrossReferenceAdapter.getCrossReferenceAdapter(source);
-		if (crossReferencer == null) {
+		if(crossReferencer == null) {
 			// try to register a cross referencer at the highest level
 			crossReferencer = new ECrossReferenceAdapter();
-			if (source.eResource() != null) {
-				if (source.eResource().getResourceSet() != null) {
+			if(source.eResource() != null) {
+				if(source.eResource().getResourceSet() != null) {
 					crossReferencer.setTarget(source.eResource().getResourceSet());
 				} else {
 					crossReferencer.setTarget(source.eResource());
