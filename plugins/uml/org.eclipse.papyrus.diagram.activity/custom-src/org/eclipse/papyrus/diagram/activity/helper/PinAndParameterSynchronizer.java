@@ -56,6 +56,7 @@ import org.eclipse.gmf.runtime.common.core.util.Log;
 import org.eclipse.gmf.runtime.diagram.ui.internal.DiagramUIPlugin;
 import org.eclipse.gmf.runtime.diagram.ui.internal.DiagramUIStatusCodes;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.osgi.util.NLS;
@@ -70,6 +71,7 @@ import org.eclipse.papyrus.diagram.activity.handlers.SynchronizePinsParametersHa
 import org.eclipse.papyrus.diagram.activity.helper.datastructure.LinkPinToParameter;
 import org.eclipse.papyrus.diagram.activity.part.Messages;
 import org.eclipse.papyrus.diagram.activity.part.UMLDiagramEditorPlugin;
+import org.eclipse.papyrus.diagram.activity.preferences.IActivityPreferenceConstants;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.common.util.CacheAdapter;
@@ -148,6 +150,10 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	/** The constant to initialize result pin name */
 	private static final String RESULT_PIN_INITIALIZATION_NAME = "result";
 
+	protected IPreferenceStore getPreferenceStore() {
+		return UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
+	}
+	
 	/**
 	 * Validate modification and update associated elements if necessary
 	 * 
@@ -159,6 +165,10 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 */
 	@Override
 	public IStatus validate(IValidationContext ctx) {
+		//Use pref to use this validator
+		if (!getPreferenceStore().getBoolean(IActivityPreferenceConstants.PREF_USE_PIN_SYNCHRONIZATION)){
+			return ctx.createSuccessStatus();
+		}
 		try {
 			EObject eObject = ctx.getTarget();
 			// handle action creation separately not to confuse with case when

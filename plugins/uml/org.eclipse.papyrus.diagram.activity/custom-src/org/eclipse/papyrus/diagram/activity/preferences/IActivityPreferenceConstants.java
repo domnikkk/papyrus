@@ -131,4 +131,12 @@ public interface IActivityPreferenceConstants {
 	 * a given resource.
 	 */
 	public static final String PREF_NEW_SEND_SIGNAL_ACTION_CREATION_OWNER = "org.eclipse.papyrus.diagram.activity.SendSignalAction.CreateDialog.owner"; //$NON-NLS-1$
+
+	/**
+	 * the preference for keeping user's choice of which is the default owner's
+	 * URI of the new created Signal in the SendSignalAction creation dialog in
+	 * a given resource.
+	 */
+	public static final String PREF_USE_PIN_SYNCHRONIZATION = "org.eclipse.papyrus.diagram.activity.PinSynchrnizer.enable"; //$NON-NLS-1$
+
 }

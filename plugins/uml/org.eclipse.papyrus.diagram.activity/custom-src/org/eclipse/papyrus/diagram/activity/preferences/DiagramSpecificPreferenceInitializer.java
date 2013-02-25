@@ -51,6 +51,8 @@ public class DiagramSpecificPreferenceInitializer extends AbstractPreferenceInit
 		store.setDefault(IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_LOOP_NODE, true);
 		store.setDefault(IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_SEQUENCE_NODE, true);
 		store.setDefault(IActivityPreferenceConstants.PREF_STRUCTURED_SPECIFIC_KEYWORD_DISPLAY_STRUCTURED_NODE, true);
+		//Enable Pin and Parameter synchronize
+		store.setDefault(IActivityPreferenceConstants.PREF_USE_PIN_SYNCHRONIZATION, true);
 	}
 
 	/**
