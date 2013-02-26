@@ -409,7 +409,7 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 	 * @param invocationAction
 	 * @return
 	 */
-	private static boolean isUpToDate(InvocationAction invocationAction) {
+	public static boolean isUpToDate(InvocationAction invocationAction) {
 		ArrayList<TypedElement> typedElementArgument = null;
 		ArrayList<InputPin> invocationActionArguments = Lists.newArrayList(invocationAction.getArguments());
 		ArrayList<OutputPin> callActionResult = Lists.newArrayList();

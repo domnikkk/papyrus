@@ -1819,7 +1819,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 					TypedElement parameter = addedInputPinMap.get(nextKey);
 					// index at which pin is added must take in account other
 					int addIndex = nextKey - numberOfPinsToAdd;
-					ICommand createCommand = createInputPin(parameter, getPinPreferedType(parameter), invocationAction,addIndex);
+					ICommand createCommand = createInputPin(parameter, getPinPreferedType(parameter), invocationAction, addIndex);
 					globalCmd.append(new GMFtoEMFCommandWrapper(createCommand));
 				}
 				nextKey--;
@@ -1893,7 +1893,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 				// index at which pin is added must take in account other pins
 				// added after
 				int addIndex = nextKey - numberOfPinsToAdd;
-				ICommand createCommand = createInputPin(addedInputPinMap.get(nextKey), preferredPinClass, action,addIndex);
+				ICommand createCommand = createInputPin(addedInputPinMap.get(nextKey), preferredPinClass, action, addIndex);
 				globalCmd.append(new GMFtoEMFCommandWrapper(createCommand));
 			}
 			nextKey--;
@@ -2026,7 +2026,7 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 	 * @param preferredPinType
 	 *        the EClass to use to create a new pin whenever possible (or
 	 *        null)
-	 * @param addIndex 
+	 * @param addIndex
 	 */
 	public static ICommand createInputPin(TypedElement typedElement, Object preferredPinType, InvocationAction container, int addIndex) {
 		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(typedElement);
@@ -2058,9 +2058,10 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 		}
 		return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
 	}
-	
-	private static ICommand movePinToCorrectIndex(TransactionalEditingDomain editingDomain, final ICommand createPinFromEditServiceCommand,final int index){
-		return new AbstractTransactionalCommand(editingDomain,"Move pin to correct index",createPinFromEditServiceCommand.getAffectedFiles()) {
+
+	private static ICommand movePinToCorrectIndex(TransactionalEditingDomain editingDomain, final ICommand createPinFromEditServiceCommand, final int index) {
+		return new AbstractTransactionalCommand(editingDomain, "Move pin to correct index", createPinFromEditServiceCommand.getAffectedFiles()) {
+
 			private Pin pin;
 
 			private Pin getPin() {
@@ -2078,20 +2079,19 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 				}
 				return pin;
 			}
-			
+
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				Pin currentPin = getPin();
 				EObject container = currentPin.eContainer();
 				EStructuralFeature containingFeature = currentPin.eContainingFeature();
-				if (container != null && containingFeature != null && containingFeature.isMany()){
+				if(container != null && containingFeature != null && containingFeature.isMany()) {
 					EList<Object> list = (EList<Object>)container.eGet(containingFeature);
-					if (list.contains(currentPin)){
+					if(list.contains(currentPin)) {
 						list.move(index, list.indexOf(currentPin));
 						return CommandResult.newOKCommandResult();
 					}
 				}
-				
 				return CommandResult.newErrorCommandResult("Something went wrong moving pin to correct index");
 			}
 		};
@@ -2679,11 +2679,11 @@ public class PinAndParameterSynchronizer extends AbstractModelConstraint {
 					feature = UMLPackage.eINSTANCE.getCallAction_Result();
 				}
 				//Removing the pin.
-//				DestroyElementPapyrusCommand destroyCmd = new DestroyElementPapyrusCommand(new DestroyElementRequest(pin, false));
-//				Command cmd = RemoveCommand.create(editingdomain, action, feature, pin);
-//				if(cmd.canExecute()) {
-					removesCommand.add( new DestroyElementPapyrusCommand(new DestroyElementRequest(pin, false)));
-//				}
+				//				DestroyElementPapyrusCommand destroyCmd = new DestroyElementPapyrusCommand(new DestroyElementRequest(pin, false));
+				//				Command cmd = RemoveCommand.create(editingdomain, action, feature, pin);
+				//				if(cmd.canExecute()) {
+				removesCommand.add(new DestroyElementPapyrusCommand(new DestroyElementRequest(pin, false)));
+				//				}
 			}
 		}
 		//Splitting parameters
