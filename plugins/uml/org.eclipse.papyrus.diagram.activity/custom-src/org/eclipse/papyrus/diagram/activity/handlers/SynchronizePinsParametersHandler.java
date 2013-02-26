@@ -60,7 +60,6 @@ import org.eclipse.papyrus.diagram.activity.helper.IPinToParameterLinkCommand;
 import org.eclipse.papyrus.diagram.activity.helper.PinAndParameterSynchronizer;
 import org.eclipse.papyrus.diagram.activity.helper.datastructure.LinkPinToParameter;
 import org.eclipse.papyrus.diagram.activity.providers.UMLMarkerNavigationProvider;
-import org.eclipse.papyrus.diagram.common.commands.DestroyElementPapyrusCommand;
 import org.eclipse.papyrus.ui.toolbox.notification.Type;
 import org.eclipse.papyrus.ui.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.papyrus.ui.toolbox.notification.view.PapyrusNotificationView;
@@ -383,7 +382,7 @@ public class SynchronizePinsParametersHandler extends AbstractSynchronizePinsAnd
 					//Destroy all edge
 					EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(activityEdge);
 					if(editingDomain instanceof TransactionalEditingDomain) {
-						DestroyElementCommand detryCmd = new DestroyElementPapyrusCommand(new DestroyElementRequest(activityEdge, false));
+						DestroyElementCommand detryCmd = new org.eclipse.papyrus.commands.DestroyElementPapyrusCommand(new DestroyElementRequest(activityEdge, false));
 						if(detryCmd != null && detryCmd.canExecute()) {
 							((TransactionalEditingDomain)editingDomain).getCommandStack().execute(new GMFtoEMFCommandWrapper(detryCmd));
 						}

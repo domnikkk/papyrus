@@ -34,4 +34,14 @@ public interface IPinToParameterLinkCommand {
 	 * ID use to inform the user that no link exist between a {@link Pin} and a {@link Parameter}
 	 */
 	public static final String NO_PARAMETER_ID = "NO_PARAMETER_ID";
+	
+	/**
+	 * ID use to create eannoation to store preferred EClass of a parameter
+	 */
+	public static final String PREFERED_PIN_TYPE ="PREFERED_PIN_TYPE";
+	/**
+	 * Request parameter used to specify during creation that a pin already have a matcing parameter
+	 */
+	public static final String PIN_TO_PARAMETER_LINK_PARAMETER_REQUEST = "PinToParameterLinkParameterRequest";
+	
 }
