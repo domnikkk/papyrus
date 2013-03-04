@@ -46,6 +46,7 @@ import org.eclipse.papyrus.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.diagram.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.diagram.common.figure.node.ConstraintFigure;
 import org.eclipse.papyrus.diagram.common.figure.node.ILabelFigure;
+import org.eclipse.papyrus.diagram.common.parser.ConstraintParser;
 import org.eclipse.papyrus.extensionpoints.editors.Activator;
 import org.eclipse.papyrus.extensionpoints.editors.configuration.IAdvancedEditorConfiguration;
 import org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration;
@@ -312,7 +313,7 @@ public class ConstraintBodyEditPartCN extends CompartmentEditPart implements ITe
 	 */
 	public IParser getParser() {
 		if(parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Constraint_3112, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.diagram.activity.edit.parts.ConstraintBodyEditPartCN.VISUAL_ID));
+			parser = new ConstraintParser();
 		}
 		return parser;
 	}

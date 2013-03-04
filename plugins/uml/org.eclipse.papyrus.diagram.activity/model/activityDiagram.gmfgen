@@ -8706,7 +8706,7 @@
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
-              parser="/0/@labelParsers/@implementations.8"
+              parser="/0/@labelParsers/@implementations.22"
               viewPattern="">
             <metaFeatures
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Constraint/specification"/>
@@ -17855,7 +17855,7 @@
           qualifiedName="org.eclipse.papyrus.diagram.activity.parser.custom.PinValueParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@links.3/@labels.1/@modelFacet /0/@diagram/@links.2/@labels.1/@modelFacet /0/@diagram/@childNodes.93/@labels.1/@modelFacet"
+          uses="/0/@diagram/@links.3/@labels.1/@modelFacet /0/@diagram/@links.2/@labels.1/@modelFacet"
           qualifiedName="org.eclipse.papyrus.diagram.activity.parser.custom.ActivityEdgeWeightParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
@@ -17911,7 +17911,7 @@
           qualifiedName="org.eclipse.papyrus.diagram.activity.parser.custom.ObjectNodeSelectionParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
-          uses="/0/@diagram/@childNodes.26/@labels.1/@modelFacet /0/@diagram/@childNodes.25/@labels.1/@modelFacet /0/@diagram/@childNodes.28/@labels.1/@modelFacet /0/@diagram/@childNodes.24/@labels.1/@modelFacet /0/@diagram/@childNodes.31/@labels.1/@modelFacet /0/@diagram/@childNodes.30/@labels.1/@modelFacet /0/@diagram/@childNodes.27/@labels.1/@modelFacet /0/@diagram/@childNodes.29/@labels.1/@modelFacet"
+          uses="/0/@diagram/@childNodes.26/@labels.1/@modelFacet /0/@diagram/@childNodes.25/@labels.1/@modelFacet /0/@diagram/@childNodes.28/@labels.1/@modelFacet /0/@diagram/@childNodes.24/@labels.1/@modelFacet /0/@diagram/@childNodes.31/@labels.1/@modelFacet /0/@diagram/@childNodes.30/@labels.1/@modelFacet /0/@diagram/@childNodes.27/@labels.1/@modelFacet /0/@diagram/@childNodes.29/@labels.1/@modelFacet /0/@diagram/@childNodes.93/@labels.1/@modelFacet"
           qualifiedName="org.eclipse.papyrus.diagram.common.parser.ConstraintParser"/>
       <implementations
           xsi:type="gmfgen:CustomParser"
