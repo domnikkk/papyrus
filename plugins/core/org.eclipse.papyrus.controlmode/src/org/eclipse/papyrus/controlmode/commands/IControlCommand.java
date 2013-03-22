@@ -17,9 +17,13 @@ import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.controlmode.interfaces.IControlModeManager;
 
 /**
  * The Interface IControlCommand that defines custom control action executed with the default Papyrus control action.
+ * Use {@link IControlModeManager}
+ * 
+ * @deprecated Use {@link IControlModeManager}
  */
 public interface IControlCommand {
 

@@ -48,5 +48,18 @@
    <extension point="org.eclipse.emf.validation.ui.UIRegisteredClientContext">
       <clientContext id="org.eclipse.papyrus.controlmodeDefaultCtx"/>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.controlmode.controlmodeparticipant">
+      <participant
+            class="org.eclipse.papyrus.controlmode.umlprofiles.participants.UMLProfileParticipant">
+      </participant>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.readonly.readOnlyHandler">
+      <readOnlyHandler
+            class="org.eclipse.papyrus.controlmode.umlprofiles.readonlyhandler.ControlElementReadOnlyHandler"
+            priority="500">
+      </readOnlyHandler>
+   </extension>
 
 </plugin>

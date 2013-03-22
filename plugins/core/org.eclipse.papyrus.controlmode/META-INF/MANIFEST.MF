@@ -2,11 +2,16 @@ Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.controlmode,
  org.eclipse.papyrus.controlmode.action,
  org.eclipse.papyrus.controlmode.commands,
+ org.eclipse.papyrus.controlmode.interfaces,
+ org.eclipse.papyrus.controlmode.request,
  org.eclipse.papyrus.controlmode.ui
 Require-Bundle: org.eclipse.ui.navigator,
  org.eclipse.papyrus.modelexplorer,
  org.eclipse.papyrus.controlmode.history,
- org.eclipse.papyrus.ui.toolbox
+ org.eclipse.papyrus.ui.toolbox,
+ org.eclipse.core.filesystem,
+ org.eclipse.core.expressions,
+ com.google.collect;bundle-version="1.0.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 0.8.2.qualifier

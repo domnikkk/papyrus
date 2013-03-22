@@ -131,7 +131,7 @@ public class PackageUtil {
 	/**
 	 * Returns the top package of the specified element, i.e. the model or profile that is the root element
 	 * 
-	 * @return the top {@link Package} for the specified element
+	 * @return the top {@link Package} for the specified element (Warning can be null in case of part model loadingà
 	 */
 	public static Package getRootPackage(Element element) {
 		return getRootPackage(element.getNearestPackage());
@@ -140,9 +140,12 @@ public class PackageUtil {
 	/**
 	 * Returns the top package of the specified package, i.e. the model or profile that is the root element
 	 * 
-	 * @return the top {@link Package} for the specified element
+	 * @return the top {@link Package} for the specified element (Warning can be null in case of part model loading)
 	 */
 	public static Package getRootPackage(Package package_) {
+		if(package_ == null) {
+			return null;
+		}
 		Element owner = package_.getOwner();
 		
 		//Bug 370412: The package might not be contained in a Package 

@@ -24,15 +24,12 @@ import java.util.Set;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.command.CompoundCommand;
@@ -58,6 +55,7 @@ import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.controlmode.ControlModePlugin;
 import org.eclipse.papyrus.controlmode.commands.IUncontrolCommand.STATE_CONTROL;
 import org.eclipse.papyrus.controlmode.history.utils.HistoryUtils;
+import org.eclipse.papyrus.controlmode.interfaces.IControlModeManager;
 import org.eclipse.papyrus.controlmode.mm.history.ControledResource;
 import org.eclipse.papyrus.controlmode.mm.history.historyPackage;
 import org.eclipse.papyrus.core.utils.EditorUtils;
@@ -72,6 +70,7 @@ import org.eclipse.ui.PlatformUI;
 /**
  * The Class UncontrolCommand in charge of uncontrolling all papyrus resources
  * 
+ * @deprecated Use {@link IControlModeManager}
  */
 public class UncontrolCommand extends AbstractTransactionalCommand {
 
@@ -121,7 +120,8 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 	 * @param label
 	 * @param affectedFiles
 	 * @param selectedObject
-	 * @param deleteUncontrolledResources whether to delete uncontrolled resources
+	 * @param deleteUncontrolledResources
+	 *        whether to delete uncontrolled resources
 	 */
 	public UncontrolCommand(TransactionalEditingDomain domain, EObject selectedObject, String label, List<?> affectedFiles, boolean deleteUncontrolledResources) {
 		super(domain, label, affectedFiles);
@@ -131,10 +131,9 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 		controlledResourceToRemove = new LinkedList<ControledResource>();
 		addedControlledResource = new LinkedList<ControledResource>();
 		deleteResources = deleteUncontrolledResources;
-		
 		ResourceSet set = domain.getResourceSet();
-		if (set instanceof ModelSet) {
-			modelSet = (ModelSet) set;
+		if(set instanceof ModelSet) {
+			modelSet = (ModelSet)set;
 		}
 	}
 
@@ -146,13 +145,11 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 		commands = getCommandExtensions();
 		IStatus status = doRedo(monitor, info);
 		CommandResult result;
-		if (status.equals(Status.OK_STATUS)) {
-			result = CommandResult.newOKCommandResult();			
-		}
-		else if (status.equals(Status.CANCEL_STATUS)) {
+		if(status.equals(Status.OK_STATUS)) {
+			result = CommandResult.newOKCommandResult();
+		} else if(status.equals(Status.CANCEL_STATUS)) {
 			result = CommandResult.newErrorCommandResult("Unable to execute uncontrol command");
-		}
-		else {
+		} else {
 			result = CommandResult.newCancelledCommandResult();
 		}
 		return result;
@@ -196,11 +193,9 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 		uncontrolNotation(compoundCommand);
 		uncontrolModel(compoundCommand);
 		uncontrolDi(compoundCommand);
-
 		// Ensure that all proxies are resolved so that references to the controlled object will be
 		// updated to reference the new resource.
 		EcoreUtil.resolveAll(getEditingDomain().getResourceSet());
-
 		if(compoundCommand.canExecute()) {
 			compoundCommand.execute();
 			// TODO save resources, check if it is useful
@@ -227,12 +222,9 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 		// PRE uncontrol operation
 		Resource resource = UmlUtils.getUmlModel(modelSet).getResource();
 		uncontrol(getEditingDomain(), eObject, controlledModel, resource, compoundCommand, STATE_CONTROL.PRE_MODEL);
-
 		// Create the Command to Uncontrol the model object
 		compoundCommand.append(new RemoveCommand(getEditingDomain(), eObject.eResource().getContents(), eObject));
-
 		unassignControlledResourceOfCurrentElement(getEditingDomain(), compoundCommand, getDIResource(eObject), eObject.eResource().getURI().toString(), resource.getURI().toString());
-
 		// POST uncontrol operation
 		uncontrol(getEditingDomain(), eObject, controlledModel, resource, compoundCommand, STATE_CONTROL.POST_MODEL);
 	}
@@ -246,7 +238,6 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 		// PRE uncontrol operation
 		Resource diResource = SashModelUtils.getSashModel(modelSet).getResource();
 		uncontrol(getEditingDomain(), eObject, controlledModel, diResource, compoundCommand, STATE_CONTROL.PRE_MODEL);
-
 		// POST uncontrol operation
 		uncontrol(getEditingDomain(), eObject, controlledModel, diResource, compoundCommand, STATE_CONTROL.POST_MODEL);
 	}
@@ -259,15 +250,12 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 	private void uncontrolNotation(CompoundCommand compoundCommand) {
 		// First retrieve the Diagrams that match with the model object to Uncontrol
 		final List<Diagram> controlledDiagrams = NotationUtils.getAllDescendantDiagramsInResource(eObject, modelSet.getAssociatedResource(eObject, NotationModel.NOTATION_FILE_EXTENSION));
-
 		if(!controlledDiagrams.isEmpty()) {
 			// PRE uncontrol operation
 			Resource notationResource = NotationUtils.getNotationModel(modelSet).getResource();
-
 			for(Diagram diag : controlledDiagrams) {
 				uncontrol(getEditingDomain(), diag, controlledNotation, notationResource, compoundCommand, STATE_CONTROL.PRE_NOTATION);
 			}
-
 			// uncontrol the Notation model
 			compoundCommand.append(new AddCommand(getEditingDomain(), notationResource.getContents(), controlledDiagrams));
 			Set<Resource> resources = new HashSet<Resource>(controlledDiagrams.size());
@@ -277,7 +265,6 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 			for(Resource r : resources) {
 				unassignControlledResourceOfCurrentElement(getEditingDomain(), compoundCommand, getDIResource(eObject), r.getURI().toString(), notationResource.getURI().toString());
 			}
-
 			// POST uncontrol operation
 			for(Diagram diag : controlledDiagrams) {
 				uncontrol(getEditingDomain(), diag, controlledNotation, notationResource, compoundCommand, STATE_CONTROL.POST_NOTATION);
@@ -302,7 +289,7 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 			newURL = HistoryUtils.resolve(uriPath, newURL);
 			oldURL = HistoryUtils.resolve(uriPath, oldURL);
 			Set<ControledResource> controledOldURL = new HashSet<ControledResource>(HistoryUtils.getControledResourcesForURL(modelSet, oldURL));
-			controledOldURL.addAll(HistoryUtils.getControledResourcesForURL(modelSet, oldURL.substring(oldURL.lastIndexOf("/")+1,oldURL.length())));
+			controledOldURL.addAll(HistoryUtils.getControledResourcesForURL(modelSet, oldURL.substring(oldURL.lastIndexOf("/") + 1, oldURL.length())));
 			List<ControledResource> controledNewURL = HistoryUtils.getControledResourcesForURL(modelSet, newURL);
 			for(ControledResource resourceOldURL : controledOldURL) {
 				if(resourceOldURL.getChildren().isEmpty()) {
@@ -316,7 +303,6 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 							// add children of the old controlled resource to the controlled resource with the new URL
 							compoundCommand.append(AddCommand.create(domain, resourceNewURL, historyPackage.Literals.CONTROLED_RESOURCE__CHILDREN, resourceOldURL.getChildren()));
 							addedControlledResource.addAll(resourceOldURL.getChildren());
-
 							// resolve url to be relative to the new resource
 							for(ControledResource c : resourceOldURL.getChildren()) {
 								String childRelativeUrl = c.getResourceURL();
@@ -404,12 +390,10 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 		resources.remove(controlledModel);
 		resources.remove(controlledNotation);
 		resources.remove(controlledDI);
-
 		Collection<IResource> todelete = new ArrayList<IResource>();
 		addFileResource(controlledModel, todelete);
 		addFileResource(controlledNotation, todelete);
 		addFileResource(controlledDI, todelete);
-
 		// if confirmed delete is false, uncontrol is done and old controlled resource is a single
 		// resource
 		if(deleteResources) {
@@ -427,12 +411,11 @@ public class UncontrolCommand extends AbstractTransactionalCommand {
 	 * private method that comes from org.topcased.modeler.internal.actions.ModelerUncontrolAction
 	 */
 	private void addFileResource(Resource emfRes, Collection<IResource> fileResources) {
-        if (emfRes != null) {
-            IFile file = WorkspaceSynchronizer.getFile(emfRes);
-            if (file != null) {
-            	fileResources.add(file);
-            }
-        }
+		if(emfRes != null) {
+			IFile file = WorkspaceSynchronizer.getFile(emfRes);
+			if(file != null) {
+				fileResources.add(file);
+			}
+		}
 	}
-
 }

@@ -10,5 +10,11 @@
             uncontrolCommand="org.eclipse.papyrus.controlmode.table.handlers.PapyrusTableUncontrolCommand">
       </customUncontrolCommand>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.controlmode.controlmodeparticipant">
+      <participant
+            class="org.eclipse.papyrus.controlmode.table.participants.TableParticipant">
+      </participant>
+   </extension>
 
 </plugin>

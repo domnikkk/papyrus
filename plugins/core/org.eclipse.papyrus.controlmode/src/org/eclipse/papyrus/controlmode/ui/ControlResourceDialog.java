@@ -29,6 +29,7 @@ import org.eclipse.swt.widgets.Shell;
  * A save-type {@link ResourceDialog resource dialog} that attempts to create the specified resource
  * and load it, if it already exists.
  * 
+ * @deprecated use {@link CreateModelFragmentDialog}
  */
 public class ControlResourceDialog extends ResourceDialog {
 

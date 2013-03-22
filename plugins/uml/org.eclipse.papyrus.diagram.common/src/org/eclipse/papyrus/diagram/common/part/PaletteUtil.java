@@ -406,6 +406,9 @@ public class PaletteUtil {
 			EObject element = diagram.getElement();
 			if(element instanceof Element) {
 				org.eclipse.uml2.uml.Package package_ = ((Element)element).getNearestPackage();
+				if(package_ == null) {
+					return false;
+				}
 				List<Profile> appliedProfiles = package_.getAllAppliedProfiles();
 				List<String> appliedProfilesNames = new ArrayList<String>();
 				for(Profile profile : appliedProfiles) {
@@ -435,6 +438,9 @@ public class PaletteUtil {
 				EObject element = diagram.getElement();
 				if(element instanceof Element) {
 					org.eclipse.uml2.uml.Package package_ = ((Element)element).getNearestPackage();
+					if(package_ == null) {
+						return false;
+					}
 					List<Profile> appliedProfiles = package_.getAllAppliedProfiles();
 					List<String> appliedProfilesNames = new ArrayList<String>();
 					for(Profile profile : appliedProfiles) {

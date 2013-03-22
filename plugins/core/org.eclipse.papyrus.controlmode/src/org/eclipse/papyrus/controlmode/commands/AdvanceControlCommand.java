@@ -46,6 +46,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.emf.commands.core.command.EditingDomainUndoContext;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.controlmode.ControlModeManager;
 import org.eclipse.papyrus.controlmode.ControlModePlugin;
 import org.eclipse.papyrus.controlmode.commands.IControlCommand.STATE_CONTROL;
 import org.eclipse.papyrus.controlmode.history.HistoryModel;
@@ -69,8 +70,9 @@ import org.eclipse.papyrus.sashwindows.di.util.DiUtils;
 /**
  * Version 2 of the command to control a part of a model
  * This one is able to use an IAdatable to locate the target resource.
+ * 
  * @author adaussy
- *
+ * @deprecated {@link ControlModeManager}
  */
 public class AdvanceControlCommand extends AbstractTransactionalCommand
 {

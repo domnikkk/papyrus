@@ -77,7 +77,11 @@ public class AdditionalResourcesModel implements IModel {
 				// only save referenced models not read-only and either platform or file
 				if(r.isModified() && !modelSet.getTransactionalEditingDomain().isReadOnly(r) && !ModelUtils.haveLoadingError(r)) {
 					try {
-						r.save(Collections.EMPTY_MAP);
+						//						if ( !r.getContents().isEmpty()){
+						//							
+						//						}else {
+							r.save(Collections.EMPTY_MAP);
+						//						}
 					} catch (IOException e) {
 						Activator.log.error(e);
 					}
@@ -136,9 +140,9 @@ public class AdditionalResourcesModel implements IModel {
 		HashSet<IFile> res = new HashSet<IFile>();
 		for(Resource r : modelSet.getResources()) {
 			if(isAdditionalResource(getModelManager(), r.getURI())) {
-				if (!r.isTrackingModification() || r.isModified()) {
+				if(!r.isTrackingModification() || r.isModified()) {
 					IFile f = WorkspaceSynchronizer.getFile(r);
-					if (f != null) {
+					if(f != null) {
 						res.add(f);
 					}
 				}

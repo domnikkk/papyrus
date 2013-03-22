@@ -51,6 +51,9 @@ public class CBARule implements INavigationRule {
 				public void linkToModel(EObject toLink) {
 					// TODO ask for container ?
 					org.eclipse.uml2.uml.Package owner = cba.getActivity().getNearestPackage();
+					if(owner == null) {
+						return;
+					}
 					owner.getPackagedElements().add((PackageableElement)toLink);
 					cba.setBehavior((Behavior)toLink);
 				}

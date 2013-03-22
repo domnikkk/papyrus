@@ -17,10 +17,13 @@ import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.controlmode.ControlModeManager;
 
 
 /**
  * The Interface IUncontrolCommand that defines custom uncontrol action executed with the default Papyrus uncontrol action.
+ * 
+ * @deprecated use {@link ControlModeManager}
  */
 public interface IUncontrolCommand {
 

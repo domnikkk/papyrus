@@ -14,9 +14,12 @@
 package org.eclipse.papyrus.controlmode.commands;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.controlmode.interfaces.IControlModeManager;
 
 /**
  * The Interface IControlCondition to enable/disable contolrol and uncontrol actions if needed
+ * 
+ * @deprecated Use {@link IControlModeManager}
  */
 public interface IControlUncontrolCondition extends IControlCondition {
 

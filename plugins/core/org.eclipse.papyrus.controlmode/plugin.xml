@@ -2,6 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="org.eclipse.papyrus.controlmode.customControlCommand" name="customControlCommand" schema="schema/customControlCommand.exsd"/>
+   <extension-point id="org.eclipse.papyrus.controlmode.controlmodeparticipant" name="controlmodeparticipant" schema="schema/controlmodeparticipant.exsd"/>
    <extension
          point="org.eclipse.papyrus.modelexplorer.actionHandler">
       <customAction
@@ -11,5 +12,96 @@
             needSeparator="false">
       </customAction>
    </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.eclipse.papyrus.controlmode.handlers.ControlCommandHandler"
+            description="Use this element as root for a model framgnet"
+            id="org.eclipse.papyrus.controlmode.createmodelfragment"
+            name="Create model fragment">
+      </command>
+      <command
+            defaultHandler="org.eclipse.papyrus.controlmode.handlers.UncontrolCommandHandler"
+            description="Reintegrate fragment in the container framgnent"
+            id="org.eclipse.papyrus.controlmode.reintegratemodelfragment"
+            name="Reintegrate model fragment">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.papyrus.modelexplorer.modelexplorer.popup">
+         <command
+               commandId="org.eclipse.papyrus.controlmode.createmodelfragment"
+               icon="icons/CreateModelFragment_16.png"
+               label="Create model fragment"
+               style="push"
+               tooltip="Use this element as root for a model framgnet">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.papyrus.controlmode.isFragmentModel"
+                        value="false">
+                  </test>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.controlmode.reintegratemodelfragment"
+               icon="icons/ReintegrateModelFragment_16.png"
+               label="Reintegrate model fragment"
+               style="push"
+               tooltip="Reintegrate fragment in the container framgnent">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <and>
+                     <test
+                           forcePluginActivation="true"
+                           property="org.eclipse.papyrus.controlmode.isFragmentModel"
+                           value="true">
+                     </test>
+                     <test
+                           forcePluginActivation="true"
+                           property="org.eclipse.papyrus.controlmode.isParentLoaded"
+                           value="true">
+                     </test>
+                  </and>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.controlmode.controlmodeparticipant">
+      <participant
+            class="org.eclipse.papyrus.controlmode.participants.NotationControlModeParticipant">
+      </participant>
+      <participant
+            class="org.eclipse.papyrus.controlmode.participants.DiModelControlParticipant">
+      </participant>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel
+            nsURI="http://www.eclipse.org/emf/2002/Ecore">
+      </metamodel>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipse.papyrus.controlmode.tester.IsControledFragmentTester"
+            id="org.eclipse.papyrus.controlmode"
+            namespace="org.eclipse.papyrus.controlmode"
+            properties="isFragmentModel,isParentLoaded"
+            type="java.lang.Object">
+      </propertyTester>
+   </extension>
+  
 
 </plugin>

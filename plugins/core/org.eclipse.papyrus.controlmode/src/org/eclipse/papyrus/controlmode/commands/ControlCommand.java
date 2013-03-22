@@ -45,6 +45,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.emf.commands.core.command.EditingDomainUndoContext;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.controlmode.ControlModeManager;
 import org.eclipse.papyrus.controlmode.ControlModePlugin;
 import org.eclipse.papyrus.controlmode.commands.IControlCommand.STATE_CONTROL;
 import org.eclipse.papyrus.controlmode.history.HistoryModel;
@@ -67,6 +68,8 @@ import org.eclipse.papyrus.sashwindows.di.util.DiUtils;
 
 /**
  * The Class ControlCommand in charge of controlling all papyrus resources
+ * 
+ * @deprecated use {@link ControlModeManager}
  */
 public class ControlCommand extends AbstractTransactionalCommand {
 

@@ -15,7 +15,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.papyrus.uml.service.types;bundle-version="0.8.2",
  org.eclipse.papyrus.table.instance;bundle-version="0.8.2",
  org.eclipse.emf.facet.widgets.nattable.instance;bundle-version="0.1.2",
- org.eclipse.papyrus.core.adaptor.gmf;bundle-version="0.8.2"
+ org.eclipse.papyrus.core.adaptor.gmf;bundle-version="0.8.2",
+ com.google.collect;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-Vendor: %providerName
+Export-Package: org.eclipse.papyrus.controlmode.table.commands
