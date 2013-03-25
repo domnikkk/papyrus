@@ -66,9 +66,6 @@ public class InitializeDIModel extends AbstractControlCommandRequest {
 		 */
 		Collection<Diagram> diags = getMovedDiagramToRequest();
 		Collection<EObject> tabs = getMovedTabToRequest();
-		if(diags.isEmpty() && tabs.isEmpty()) {
-			return CommandResult.newOKCommandResult();
-		}
 		try {
 			Iterables.addAll(tabs, diags);
 			SashWindowsMngr sashMng = createSashWindowsMngr(tabs);
@@ -129,11 +126,6 @@ public class InitializeDIModel extends AbstractControlCommandRequest {
 		// add pages to the page list
 		for(EObject openable : openables) {
 			PageRef pageRef = DiUtils.getPageRef(diResource, openable);
-			/*
-			 * TODO Investigate why the di resource is not track for modification
-			 * Hack to force old di be serialized
-			 */
-			pageRef.eResource().setModified(true);
 			if(pageRef != null) {
 				windowsMngr.getPageList().addPage(pageRef.getPageIdentifier());
 				DiUtils.addPageToTabFolder(windowsMngr, pageRef);

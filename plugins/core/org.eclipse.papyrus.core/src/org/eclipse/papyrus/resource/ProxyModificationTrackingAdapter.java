@@ -33,6 +33,9 @@ import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
  * - when there is a change in an URI all the resources containing a proxy
  * 	 to the modified resource should be marked as modified
  * 
+ * - when adding/removing objects from resources they should be marked as modified,
+ *   and all the resources containing a proxy too
+ * 
  * - when doing control/uncontrol operations the resource of the parent object
  * 	 should be marked as modified
  * 
@@ -40,21 +43,21 @@ import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
  *
  */
 public class ProxyModificationTrackingAdapter extends EContentAdapter {
-	
+
 	@Override
 	protected void setTarget(Resource target) {
 		basicSetTarget(target);
 	}
-	
+
 	@Override
 	protected void unsetTarget(Resource target) {
 		basicUnsetTarget(target);
 	}
-	
+
 	@Override
 	protected void setTarget(EObject target) {
 	}
-	
+
 	@Override
 	protected void unsetTarget(EObject target) {
 	}
@@ -69,47 +72,57 @@ public class ProxyModificationTrackingAdapter extends EContentAdapter {
 			if (n.getEventType() == Notification.SET && n.getFeatureID(Resource.class) == Resource.RESOURCE__URI) {
 				r.setModified(true);
 
-				TreeIterator<Object> properContents = EcoreUtil.getAllProperContents(r, true);
+				TreeIterator<Object> properContents = EcoreUtil.getAllProperContents(r, false);
 				while(properContents.hasNext()) {
 					Object obj = properContents.next();
 					if (obj instanceof EObject) {
-						EObject eObj = (EObject) obj;
-						Collection<Setting> references = PapyrusEcoreUtils.getUsages(eObj);
-						for (Setting setting : references) {
-							EStructuralFeature f = setting.getEStructuralFeature();
-							if(setting.getEObject() != null && !f.isDerived() && !f.isTransient()) {
-								Resource refResource = setting.getEObject().eResource();
-								if(refResource != null) {
-									refResource.setModified(true);
-								}
-							}
-						}
+						setReferencingResourcesAsModified((EObject)obj);
 					}
 				}
 
 			} else {
 				List objects = new ArrayList();
-				if (n.getEventType() == Notification.ADD_MANY) {
+
+				switch(n.getEventType()) {
+				case Notification.ADD_MANY:
 					objects = (List<?>)n.getNewValue();
-				} else if(n.getEventType() == Notification.REMOVE_MANY) {
+					break;
+				case Notification.REMOVE_MANY:
 					objects = (List<?>)n.getOldValue();
-				} else if(n.getEventType() == Notification.ADD) {
+					break;
+				case Notification.ADD:
 					objects.add(n.getNewValue());
-				} else if(n.getEventType() == Notification.REMOVE) {
+					break;
+				case Notification.REMOVE:
 					objects.add(n.getOldValue());
+					break;
+				}
+
+				if (!objects.isEmpty()) {
+					r.setModified(true);
 				}
 
 				for (Object o : objects) {
 					if (o instanceof EObject) {
-						EObject parentEObj = ((EObject)o).eContainer();
-						if (parentEObj != null && parentEObj.eResource() != null) {
-							parentEObj.eResource().setModified(true);
-						}
+						setReferencingResourcesAsModified((EObject)o);
 					}
 				}
 			}
 		}
-		
+
 		super.notifyChanged(n);
+	}
+
+	protected void setReferencingResourcesAsModified(EObject eObj) {
+		Collection<Setting> references = PapyrusEcoreUtils.getUsages(eObj);
+		for (Setting setting : references) {
+			EStructuralFeature f = setting.getEStructuralFeature();
+			if(setting.getEObject() != null && !f.isDerived() && !f.isTransient()) {
+				Resource refResource = setting.getEObject().eResource();
+				if(refResource != null) {
+					refResource.setModified(true);
+				}
+			}
+		}
 	}
 }

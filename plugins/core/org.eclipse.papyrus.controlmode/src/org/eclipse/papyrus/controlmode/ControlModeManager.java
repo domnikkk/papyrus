@@ -175,7 +175,7 @@ public class ControlModeManager implements IControlModeManager {
 	 *        new command will be composoed in it
 	 */
 	private void getPostControlCommand(ControlModeRequest request, CompositeTransactionalCommand cc) {
-		ListIterator<IControlCommandParticipant> participantIterator = getControlCommandParticipants().listIterator();
+		ListIterator<IControlCommandParticipant> participantIterator = getControlCommandParticipants().listIterator(getControlCommandParticipants().size());
 		while(participantIterator.hasPrevious()) {
 			IControlCommandParticipant iControlCommandParticipant = (IControlCommandParticipant)participantIterator.previous();
 			if(iControlCommandParticipant.provideControlCommand(request)) {
@@ -195,9 +195,9 @@ public class ControlModeManager implements IControlModeManager {
 	 *        new command will be composoed in it
 	 */
 	private void getPostUncontrolMethod(ControlModeRequest request, CompositeTransactionalCommand cc) {
-		Iterator<IUncontrolCommandParticipant> participantIterator = getUncontrolCommandParticipants().iterator();
-		while(participantIterator.hasNext()) {
-			IUncontrolCommandParticipant iControlCommandParticipant = (IUncontrolCommandParticipant)participantIterator.next();
+		ListIterator<IUncontrolCommandParticipant> participantIterator = getUncontrolCommandParticipants().listIterator(getUncontrolCommandParticipants().size());
+		while(participantIterator.hasPrevious()) {
+			IUncontrolCommandParticipant iControlCommandParticipant = (IUncontrolCommandParticipant)participantIterator.previous();
 			if(iControlCommandParticipant.provideUnControlCommand(request)) {
 				ICommand cmd = iControlCommandParticipant.getPostUncontrolCommand(request);
 				if(cmd != null) {

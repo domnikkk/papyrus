@@ -52,7 +52,7 @@ public class DiModelControlParticipant implements IControlCommandParticipant, IU
 	 * @see org.eclipse.papyrus.controlmode.interfaces.IControlModeParticipant#getID()
 	 */
 	public String getID() {
-		return "org.eclipse.papyrus.controlmode.umlprofiles.readonlyhandler.DiModelControlParticipant";////$NON-NLS-0$
+		return "org.eclipse.papyrus.controlmode.participants.DiModelControlParticipant";////$NON-NLS-0$
 	}
 
 	/*
