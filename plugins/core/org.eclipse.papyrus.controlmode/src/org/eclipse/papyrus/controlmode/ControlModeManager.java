@@ -10,9 +10,12 @@
  ******************************************************************************/
 package org.eclipse.papyrus.controlmode;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.TreeSet;
+import java.util.List;
+import java.util.ListIterator;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -47,7 +50,9 @@ public class ControlModeManager implements IControlModeManager {
 	protected final class PartipantComparator implements Comparator<IControlModeParticipant> {
 
 		public int compare(IControlModeParticipant arg0, IControlModeParticipant arg1) {
-			return Integer.compare(arg1.getPriority(), arg0.getPriority());
+			int i = arg1.getPriority();
+			int j = arg0.getPriority();
+			return i >= j ? ((int) (i != j ? 1 : 0)) : -1;
 		}
 	}
 
@@ -82,12 +87,12 @@ public class ControlModeManager implements IControlModeManager {
 	/**
 	 * Hold all the {@link IControlCommandParticipant}
 	 */
-	private TreeSet<IControlCommandParticipant> controlCommandParticipants = new TreeSet<IControlCommandParticipant>(new PartipantComparator());
+	private ArrayList<IControlCommandParticipant> controlCommandParticipants = new ArrayList<IControlCommandParticipant>();
 
 	/**
 	 * Hold all the {@link IUncontrolCommandParticipant}
 	 */
-	private TreeSet<IUncontrolCommandParticipant> uncontrolCommandParticipants = new TreeSet<IUncontrolCommandParticipant>(new PartipantComparator());
+	private ArrayList<IUncontrolCommandParticipant> uncontrolCommandParticipants = new ArrayList<IUncontrolCommandParticipant>();
 
 	/**
 	 * 
@@ -141,7 +146,7 @@ public class ControlModeManager implements IControlModeManager {
 	/**
 	 * @return {@link ControlModeManager#controlCommandParticipants}
 	 */
-	protected TreeSet<IControlCommandParticipant> getControlCommandParticipants() {
+	protected List<IControlCommandParticipant> getControlCommandParticipants() {
 		return controlCommandParticipants;
 	}
 
@@ -170,9 +175,9 @@ public class ControlModeManager implements IControlModeManager {
 	 *        new command will be composoed in it
 	 */
 	private void getPostControlCommand(ControlModeRequest request, CompositeTransactionalCommand cc) {
-		Iterator<IControlCommandParticipant> participantIterator = getControlCommandParticipants().descendingIterator();
-		while(participantIterator.hasNext()) {
-			IControlCommandParticipant iControlCommandParticipant = (IControlCommandParticipant)participantIterator.next();
+		ListIterator<IControlCommandParticipant> participantIterator = getControlCommandParticipants().listIterator();
+		while(participantIterator.hasPrevious()) {
+			IControlCommandParticipant iControlCommandParticipant = (IControlCommandParticipant)participantIterator.previous();
 			if(iControlCommandParticipant.provideControlCommand(request)) {
 				ICommand cmd = iControlCommandParticipant.getPostControlCommand(request);
 				if(cmd != null) {
@@ -287,7 +292,7 @@ public class ControlModeManager implements IControlModeManager {
 	/**
 	 * @return {@link ControlModeManager#uncontrolCommandParticipants}
 	 */
-	protected TreeSet<IUncontrolCommandParticipant> getUncontrolCommandParticipants() {
+	protected List<IUncontrolCommandParticipant> getUncontrolCommandParticipants() {
 		return uncontrolCommandParticipants;
 	}
 
@@ -309,5 +314,8 @@ public class ControlModeManager implements IControlModeManager {
 				exception.printStackTrace();
 			}
 		}
+		PartipantComparator comparator = new PartipantComparator();
+		Collections.sort(uncontrolCommandParticipants,comparator);
+		Collections.sort(controlCommandParticipants,comparator);
 	}
 }
