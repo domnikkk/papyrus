@@ -29,7 +29,7 @@ public class LoadCurrentResource implements ILoadingStrategy {
 	}
 
 	public int getPriority() {
-		return 5;
+		return 50;
 	}
 
 }

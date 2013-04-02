@@ -32,7 +32,7 @@ public class LoadAllResources implements ILoadingStrategy {
 	}
 
 	public int getPriority() {
-		return 0;
+		return 100;
 	}
 
 }
