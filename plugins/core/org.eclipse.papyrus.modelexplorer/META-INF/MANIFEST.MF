@@ -10,7 +10,8 @@ Export-Package: org.eclipse.papyrus.core.ui.pagebookview,
  org.eclipse.papyrus.modelexplorer.handler,
  org.eclipse.papyrus.modelexplorer.matching,
  org.eclipse.papyrus.modelexplorer.preferences,
- org.eclipse.papyrus.modelexplorer.queries
+ org.eclipse.papyrus.modelexplorer.queries,
+ org.eclipse.papyrus.modelexplorer.revealer
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.navigator;bundle-version="3.4.0",

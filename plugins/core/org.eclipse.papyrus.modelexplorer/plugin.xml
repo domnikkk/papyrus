@@ -3,6 +3,7 @@
 <plugin>
    <extension-point id="actionHandler" name="actionHandler" schema="schema/org.eclipse.papyrus.modelexplorer.actionHandler.exsd"/>
    <extension-point id="customizationPriority" name="customizationPriority" schema="schema/customizationPriority.exsd"/>
+   <extension-point id="modelExplorerRevealer" name="modelExplorerRevealer" schema="schema/modelExplorerRevealer.exsd"/>
    <extension
          point="org.eclipse.ui.views">
       <view
@@ -886,6 +887,22 @@
             type="org.eclipse.papyrus.modelexplorer.LinkNode">
       </adapter>
    </factory>
+</extension>
+<extension
+      point="org.eclipse.papyrus.modelexplorer.modelExplorerRevealer">
+   <Participant
+          id="org.eclipse.papyrus.modelexplorer.containementrevealer"
+         impl="org.eclipse.papyrus.modelexplorer.revealer.ContainmentRevealer"
+         overridablePriority="0"
+         priority="1">
+   </Participant>
+    <Participant
+         id="org.eclipse.papyrus.modelexplorer.revealer.ResourceRevealerRevealer"
+         impl="org.eclipse.papyrus.modelexplorer.revealer.ResourceRevealerRevealer"
+         overridablePriority="0"
+         priority="0">
+   </Participant>
+  
 </extension>
 
 </plugin>

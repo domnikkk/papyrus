@@ -27,7 +27,14 @@ public class LinkItemMatchingItem implements IMatchingItem {
 
 	private EObject parent;
 
-	private EReference ref;
+	private EReference ref = null;
+
+	private String refName = null;
+
+	public LinkItemMatchingItem(EObject parent, String refName) {
+		this.parent = parent;
+		this.refName = refName;
+	}
 
 	public LinkItemMatchingItem(EObject parent, EReference ref) {
 		this.parent = parent;
@@ -37,10 +44,18 @@ public class LinkItemMatchingItem implements IMatchingItem {
 	public boolean matchingItemEquals(Object obj) {
 		if(obj instanceof LinkItem) {
 			if(ref != null && parent != null) {
-				return parent.equals(((LinkItem)obj).getParent()) && ref.equals(((LinkItem)obj).getReference());
+				return parent.equals(((LinkItem)obj).getParent()) && (compareRef(obj) || compareRefName(obj));
 			}
 		}
 		return super.equals(obj);
+	}
+
+	protected boolean compareRefName(Object obj) {
+		return refName != null && refName.equals(((LinkItem)obj).getReference().getName());
+	}
+
+	protected boolean compareRef(Object obj) {
+		return ref != null && ref.equals(((LinkItem)obj).getReference());
 	}
 
 	public int matchingItemHashcode() {
@@ -51,5 +66,4 @@ public class LinkItemMatchingItem implements IMatchingItem {
 		}
 		return 0;
 	}
-
 }

@@ -72,7 +72,7 @@ public class PapyrusLinkItem extends LinkItem {
 	
 	@Override
 	public Object getAdapter(Class adapter) {
-		if (adapter.isAssignableFrom(Setting.class) && !getReference().isMany()) {
+		if (adapter.isAssignableFrom(Setting.class)) {
 			return new BasicSettingImpl(getParent(), getReference());
 		}
 		return super.getAdapter(adapter);

@@ -29,10 +29,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
@@ -56,11 +54,7 @@ import org.eclipse.papyrus.core.utils.EditorUtils;
 import org.eclipse.papyrus.core.utils.ServiceUtils;
 import org.eclipse.papyrus.modelexplorer.listener.DoubleClickListener;
 import org.eclipse.papyrus.modelexplorer.matching.IMatchingItem;
-import org.eclipse.papyrus.modelexplorer.matching.LinkItemMatchingItem;
 import org.eclipse.papyrus.modelexplorer.matching.ModelElementItemMatchingItem;
-import org.eclipse.papyrus.modelexplorer.matching.ReferencableMatchingItem;
-import org.eclipse.papyrus.resource.ModelSet;
-import org.eclipse.papyrus.resource.additional.AdditionalResourcesModel;
 import org.eclipse.papyrus.sasheditor.contentprovider.di.IOpenable;
 import org.eclipse.papyrus.sasheditor.contentprovider.di.IOpenableWithContainer;
 import org.eclipse.swt.SWT;
@@ -659,33 +653,6 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 			// the content provider exist?
 			if(commonViewer.getContentProvider() != null) {
-				// retrieve the ancestors to reveal them
-				// and allow the selection of the object
-				ArrayList<EObject> parents = new ArrayList<EObject>();
-				EObject tmp = currentEObject.eContainer();
-				while(tmp != null) {
-					parents.add(tmp);
-					tmp = tmp.eContainer();
-				}
-
-				Iterable<EObject> reverseParents = Iterables.reverse(parents);
-
-				// reveal the resource if necessary
-				Resource r = null;
-				if (!parents.isEmpty()) {
-					r = parents.get(parents.size() - 1).eResource();
-				} else {
-					r = currentEObject.eResource();
-				}
-
-
-				if (r != null) {
-					ResourceSet rs = r.getResourceSet();
-					if (rs instanceof ModelSet && AdditionalResourcesModel.isAdditionalResource((ModelSet)rs, r.getURI())) {
-						commonViewer.expandToLevel(new ReferencableMatchingItem(rs), 1);
-						commonViewer.expandToLevel(new ReferencableMatchingItem(r), 1);
-					}
-				}
 
 				/*
 				 * reveal the ancestors tree using expandToLevel on each of them
@@ -699,15 +666,9 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				 * 
 				 * Please refer to MatchingItem for more infos.
 				 */
-				EObject previousParent = null;
-				for(EObject parent : reverseParents) {
-					if(parent.eContainingFeature() != null && previousParent != null) {
-						commonViewer.expandToLevel(new LinkItemMatchingItem(previousParent, parent.eContainmentFeature()), 1);
-					}
-					commonViewer.expandToLevel(new ModelElementItemMatchingItem(parent), 1);
-					previousParent = parent;
+				for(IMatchingItem item : ModelExplorerRevealerManager.getChainToReveal(currentEObject)) {
+					commonViewer.expandToLevel(item, 1);
 				}
-				commonViewer.expandToLevel(new LinkItemMatchingItem(currentEObject.eContainer(), currentEObject.eContainmentFeature()), 1);
 			}
 		}
 
