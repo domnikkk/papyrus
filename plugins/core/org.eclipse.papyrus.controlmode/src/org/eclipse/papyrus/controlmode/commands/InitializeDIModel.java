@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.controlmode.commands;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -100,20 +101,20 @@ public class InitializeDIModel extends AbstractControlCommandRequest {
 	protected Collection<EObject> getMovedTabToRequest() {
 		Collection<EObject> tabs = (Collection<EObject>)getRequest().getParameter(ControlModeRequestParameters.MOVED_TAB);
 		if(tabs == null) {
-			return Collections.emptyList();
+			return new ArrayList<EObject>();
 		}
 		return tabs;
 	}
 
 	/**
-	 * @return retreive the di resource from the request
+	 * @return retrieve the di resource from the request
 	 */
 	protected Resource getDiResource() {
 		return getRequest().getTargetResource(DiModel.MODEL_FILE_EXTENSION);
 	}
 
 	/**
-	 * Create a new {@link SashModel} and add page ref for each diagrams and tables being controled
+	 * Create a new {@link SashModel} and add page ref for each diagrams and tables being controlled
 	 * 
 	 * @param openables
 	 * @return
