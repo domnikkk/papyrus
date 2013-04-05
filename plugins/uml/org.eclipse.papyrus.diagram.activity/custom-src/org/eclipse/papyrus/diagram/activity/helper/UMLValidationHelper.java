@@ -821,7 +821,7 @@ public class UMLValidationHelper {
 		} else if(target instanceof ControlNode) {
 			List<ObjectNode> result = new LinkedList<ObjectNode>();
 			for(ActivityEdge outgoingEdge : target.getOutgoings()) {
-				if(outgoingEdge instanceof ObjectFlow) {
+				if(outgoingEdge instanceof ObjectFlow && !outgoingEdge.equals(objectFlow)) {
 					result.addAll(getDownStreamObjectNodes((ObjectFlow)outgoingEdge));
 				}
 			}
