@@ -39,6 +39,7 @@ import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
+import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -55,6 +56,7 @@ import org.eclipse.papyrus.core.utils.ServiceUtils;
 import org.eclipse.papyrus.modelexplorer.listener.DoubleClickListener;
 import org.eclipse.papyrus.modelexplorer.matching.IMatchingItem;
 import org.eclipse.papyrus.modelexplorer.matching.ModelElementItemMatchingItem;
+import org.eclipse.papyrus.modelexplorer.preferences.INavigatorPreferenceConstants;
 import org.eclipse.papyrus.sasheditor.contentprovider.di.IOpenable;
 import org.eclipse.papyrus.sasheditor.contentprovider.di.IOpenableWithContainer;
 import org.eclipse.swt.SWT;
@@ -167,6 +169,13 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			this.saveAndDirtyService = editorPart.getServicesRegistry().getService(ISaveAndDirtyService.class);
 		} catch (ServiceException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	protected void handleDoubleClick(DoubleClickEvent anEvent) {
+		if(!Activator.getDefault().getPreferenceStore().getBoolean(INavigatorPreferenceConstants.PREF_NOT_EXPAND_NODE_ON_DOUBLE_CLICK)) {
+			super.handleDoubleClick(anEvent);
 		}
 	}
 

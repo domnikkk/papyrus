@@ -78,7 +78,10 @@ public class LoadingTester extends PropertyTester {
 				if (eObject == null) {
 					Setting setting = (Setting)((IAdaptable)obj).getAdapter(Setting.class);
 					if (setting != null) {
-						eObject = (EObject)setting.get(false);
+						Object object = setting.get(false);
+						if (object instanceof EObject){
+							eObject = (EObject)object;
+						}
 					}
 				}
 
