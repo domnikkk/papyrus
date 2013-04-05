@@ -1371,7 +1371,7 @@
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
       <persistent value="true"/>
    </extension>   
-  <!-- <extension point="org.eclipse.emf.validation.constraintProviders">
+<extension point="org.eclipse.emf.validation.constraintProviders">
       <?gmfgen generated="false"?>
             <category id="org.eclipse.uml2.uml.util.UMLValidator.validate" mandatory="false" name="validateUMLModel">
          <![CDATA[Validate the UML model]]>
@@ -1438,7 +1438,7 @@
                   <constraint ref="org.eclipse.papyrus.diagram.sequence.FragmentOrderingKeeper.LifelineFigure"/>
                </binding>
 
-   </extension>-->
+   </extension>
 <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
       <decoratorProvider class="org.eclipse.papyrus.diagram.sequence.providers.UMLValidationDecoratorProvider">
