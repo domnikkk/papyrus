@@ -159,7 +159,7 @@ public class LoadingTester extends PropertyTester {
 			}
 
 			Setting setting = (Setting)((IAdaptable)obj).getAdapter(Setting.class);
-			if (setting != null) {
+			if (setting != null && setting.getEStructuralFeature() != null && !setting.getEStructuralFeature().isMany()) {
 				return (EObject)setting.get(false);
 			}
 		}
