@@ -38,10 +38,31 @@ public class ExpressionLanguageEditor extends MultipleValueEditor {
 	 *        The style for this editor's list
 	 */
 	public ExpressionLanguageEditor(Composite parent, int style) {
-		super(parent, style, new LanguageSelector(), true, true, null);
-		this.selector = super.selector;
+		this(parent, style, new LanguageSelector(), true, true, null);
 	}
 
+	/**
+     * 
+     * Constructor.
+     * 
+     * @param parent
+     *        The composite in which this editor is created
+     * @param style
+     *        The style for this editor's list
+     * @param selector
+     *        The editor's selector
+     * @param ordered
+     *        True if the values should be ordered
+     * @param unique
+     *        True if the values should be unique
+     * @param label
+     *        The editor's label
+     */
+    public ExpressionLanguageEditor(Composite parent, int style, LanguageSelector selector, boolean ordered, boolean unique, String label) {
+        super(parent, style, selector, ordered, unique, label);
+        this.selector = super.selector;
+    }
+	
 	@Override
 	public void setReadOnly(boolean readOnly) {
 		super.setReadOnly(readOnly);
