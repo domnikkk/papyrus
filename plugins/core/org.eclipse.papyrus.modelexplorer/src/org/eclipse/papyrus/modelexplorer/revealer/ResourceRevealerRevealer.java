@@ -47,4 +47,8 @@ public class ResourceRevealerRevealer implements IModelExplorerRevealerParticipa
 		return null;
 	}
 
+	public EObject getItemMatchingToSelect(EObject targetEObject) {
+		return null;
+	}
+
 }

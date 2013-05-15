@@ -46,5 +46,9 @@ public class ContainmentRevealer implements IModelExplorerRevealerParticipant {
 		return null;
 	}
 
+	public EObject getItemMatchingToSelect(EObject targetEObject) {
+		return null;
+	}
+
 
 }

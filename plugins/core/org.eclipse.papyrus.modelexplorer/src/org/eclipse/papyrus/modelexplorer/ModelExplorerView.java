@@ -658,7 +658,8 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		});
 
 		for(EObject currentEObject : list) {
-			matchingItemsToSelect.add(new ModelElementItemMatchingItem(currentEObject));
+			EObject itemToSelect = ModelExplorerRevealerManager.getTargetObjectToRegveal(currentEObject);
+			matchingItemsToSelect.add(new ModelElementItemMatchingItem(itemToSelect));
 
 			// the content provider exist?
 			if(commonViewer.getContentProvider() != null) {
@@ -675,7 +676,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				 * 
 				 * Please refer to MatchingItem for more infos.
 				 */
-				for(IMatchingItem item : ModelExplorerRevealerManager.getChainToReveal(currentEObject)) {
+				for(IMatchingItem item : ModelExplorerRevealerManager.getChainToReveal(itemToSelect)) {
 					commonViewer.expandToLevel(item, 1);
 				}
 			}

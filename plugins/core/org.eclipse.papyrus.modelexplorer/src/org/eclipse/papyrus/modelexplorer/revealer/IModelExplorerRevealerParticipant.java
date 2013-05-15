@@ -32,4 +32,13 @@ public interface IModelExplorerRevealerParticipant {
 	public IChainLink getRevealerChain(EObject targetObject);
 	
 	
+	/**
+	 * Override the target element to select at the end of the chain on the model explorer view.
+	 * If no specific behavior this method should return null
+	 * @param targetEObject
+	 * @return
+	 */
+	public EObject getItemMatchingToSelect(EObject targetEObject);
+	
+	
 }

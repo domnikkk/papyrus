@@ -158,4 +158,22 @@ public class ModelExplorerRevealerManager {
 		Iterable<IMatchingItem> reverseParents = Iterables.reverse(matchinELements);
 		return reverseParents;
 	}
+	
+	/**
+	 * Get the object to select at the end of the chain
+	 * @param targetEObject
+	 * @return
+	 */
+	public static EObject getTargetObjectToRegveal(EObject targetEObject){
+		//The default element is the selected element. If no participant select another this one will be the target
+		EObject result = targetEObject;
+		for(int i = 0; i < orderedMERevealer.length; i++) {
+			IModelExplorerRevealerParticipant revealer = orderedMERevealer[i];
+			EObject toSelect = revealer.getItemMatchingToSelect(targetEObject);
+			if(toSelect != null) {
+				return toSelect;
+			}
+		}
+		return result;
+	}
 }
