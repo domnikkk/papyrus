@@ -15,6 +15,9 @@ package org.eclipse.papyrus.modelexplorer.handler;
 
 import java.util.List;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.command.UnexecutableCommand;
@@ -24,6 +27,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.modelexplorer.IGreeter;
 import org.eclipse.papyrus.sasheditor.contentprovider.IPageMngr;
 
 /**
@@ -34,6 +38,8 @@ import org.eclipse.papyrus.sasheditor.contentprovider.IPageMngr;
  */
 public class DeleteDiagramHandler extends AbstractCommandHandler {
 
+
+	private static final String IDELETEDIAGRAM_ID = "org.eclipse.papyrus.modelexplorer.deleteDiagram";
 
 	/**
 	 * 
@@ -63,10 +69,29 @@ public class DeleteDiagramHandler extends AbstractCommandHandler {
 				};
 				// the destroy element command is a good way to destroy the cross reference
 				command.append(sashRemoveComd);
-				command.append(new GMFtoEMFCommandWrapper(new DestroyElementPapyrusCommand(new DestroyElementRequest(diagram, false))));
+				command.append(getDeleteCommand(diagram));
 			}
 			return command.isEmpty() ? UnexecutableCommand.INSTANCE : command;
 		}
 		return UnexecutableCommand.INSTANCE;
+	}
+
+	protected GMFtoEMFCommandWrapper getDeleteCommand(final Diagram diagram) {
+		
+		  IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(IDELETEDIAGRAM_ID);
+		    try {
+		      for (IConfigurationElement e : config) {
+		        System.out.println("Evaluating extension");
+		        final Object o =
+		            e.createExecutableExtension("class");
+		        if (o instanceof IGreeter) {
+		        	return new GMFtoEMFCommandWrapper(((IGreeter) o).getCommand(diagram));
+		        }
+		      }
+		    } catch (CoreException ex) {
+		      System.out.println(ex.getMessage());
+		    }
+		//Take all extension
+		return new GMFtoEMFCommandWrapper(new DestroyElementPapyrusCommand(new DestroyElementRequest(diagram, false)));
 	}
 }

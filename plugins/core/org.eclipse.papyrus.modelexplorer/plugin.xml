@@ -4,6 +4,7 @@
    <extension-point id="actionHandler" name="actionHandler" schema="schema/org.eclipse.papyrus.modelexplorer.actionHandler.exsd"/>
    <extension-point id="customizationPriority" name="customizationPriority" schema="schema/customizationPriority.exsd"/>
    <extension-point id="modelExplorerRevealer" name="modelExplorerRevealer" schema="schema/modelExplorerRevealer.exsd"/>
+   <extension-point id="deleteDiagram" name="Delete Diagram" schema="schema/deleteDiagram.exsd"/>
    <extension
          point="org.eclipse.ui.views">
       <view
