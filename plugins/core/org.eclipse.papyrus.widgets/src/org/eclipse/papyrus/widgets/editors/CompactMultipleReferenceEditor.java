@@ -61,9 +61,28 @@ public class CompactMultipleReferenceEditor extends CompactMultipleValueEditor {
 	 *        True if the multivalued property needs unique values
 	 */
 	public CompactMultipleReferenceEditor(Composite parent, int style, boolean ordered, boolean unique) {
-		super(parent, style, new ReferenceSelector(unique), ordered, unique);
-		this.selector = (ReferenceSelector)super.selector;
+		this(parent, style, new ReferenceSelector(unique), ordered, unique);
 	}
+
+	/**
+     * 
+     * Constructor.
+     * 
+     * @param parent
+     *        The widget in which this editor is created
+     * @param style
+     *        The style for this editor's control
+     * @param selector
+     *        The editor's selector
+     * @param ordered
+     *        True if the multivalued property is ordered
+     * @param unique
+     *        True if the multivalued property needs unique values
+     */
+    public CompactMultipleReferenceEditor(Composite parent, int style, ReferenceSelector selector, boolean ordered, boolean unique) {
+        super(parent, style, new ReferenceSelector(unique), ordered, unique);
+        this.selector = (ReferenceSelector)super.selector;
+    }
 
 	/**
 	 * Sets the Content and Label providers for this widget.

@@ -67,7 +67,29 @@ public class CompactMultipleIntegerEditor extends CompactMultipleValueEditor {
 	 *        The editor's label
 	 */
 	public CompactMultipleIntegerEditor(Composite parent, int style, boolean ordered, boolean unique, String separator, String label) {
-		super(parent, style, new IntegerSelector(), ordered, unique, separator, label);
+		this(parent, style, new IntegerSelector(), ordered, unique, separator, label);
 	}
+
+	/**
+     * Constructor.
+     * 
+     * @param parent
+     *        The Composite widget in which this editor will be displayed
+     * @param style
+     *        The value label's style
+     * @param selector
+     *        The editor's selector
+     * @param ordered
+     *        True if the values should be ordered
+     * @param unique
+     *        True if the values should be unique
+     * @param separator
+     *        The String used to separate the different values in the value label
+     * @param label
+     *        The editor's label
+     */
+    public CompactMultipleIntegerEditor(Composite parent, int style, IntegerSelector selector, boolean ordered, boolean unique, String separator, String label) {
+        super(parent, style, selector, ordered, unique, separator, label);
+    }
 
 }

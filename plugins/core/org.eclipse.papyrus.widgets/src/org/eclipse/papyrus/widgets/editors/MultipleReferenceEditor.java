@@ -44,6 +44,30 @@ public class MultipleReferenceEditor extends MultipleValueEditor {
 	 *        The composite in which this editor is created
 	 * @param style
 	 *        The style for this editor's list
+     * @param selector
+     *        The editor's selector
+	 * @param ordered
+	 *        True if the list should be ordered
+	 * @param unique
+	 *        True if the list values should be unique
+	 * @param label
+	 *        The label for this editor
+	 */
+	public MultipleReferenceEditor(Composite parent, int style, ReferenceSelector selector, boolean ordered, boolean unique, String label) {
+	    super(parent, style, selector, ordered, unique, label);
+	    this.selector = (ReferenceSelector)super.selector;
+	    //Default providers
+	    setProviders(EmptyContentProvider.instance, new WrappedLabelProvider());
+	}
+
+	/**
+	 * 
+	 * Constructor. uses default ReferenceSelector selector
+	 * 
+	 * @param parent
+	 *        The composite in which this editor is created
+	 * @param style
+	 *        The style for this editor's list
 	 * @param ordered
 	 *        True if the list should be ordered
 	 * @param unique
@@ -52,11 +76,9 @@ public class MultipleReferenceEditor extends MultipleValueEditor {
 	 *        The label for this editor
 	 */
 	public MultipleReferenceEditor(Composite parent, int style, boolean ordered, boolean unique, String label) {
-		super(parent, style, new ReferenceSelector(unique), ordered, unique, label);
-		this.selector = (ReferenceSelector)super.selector;
-		//Default providers
-		setProviders(EmptyContentProvider.instance, new WrappedLabelProvider());
+		this(parent, style, new ReferenceSelector(unique), ordered, unique, label);
 	}
+	
 
 	/**
 	 * 
