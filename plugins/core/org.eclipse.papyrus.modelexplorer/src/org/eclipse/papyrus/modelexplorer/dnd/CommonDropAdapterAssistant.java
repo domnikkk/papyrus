@@ -197,29 +197,47 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 			return null;
 		}
 
-		//find the feature between childreen and owner
-		Iterator<EStructuralFeature> iterator= featureList.iterator();
-		while (iterator.hasNext()) {
-			EStructuralFeature eStructuralFeature = (EStructuralFeature) iterator.next();
-
-			if( eStructuralFeature instanceof EReference){
-				EReference ref= (EReference)eStructuralFeature;
-
-				if( ref.isContainment()){
-
-					if( isSubClass(ref.getEType(),newElement.eClass() )){
-						possibleEFeatures.add(eStructuralFeature);
+		//find the feature between children and owner
+		//Get the containing feature of the target location is possible
+		if (objectLocation != null){
+			
+			EStructuralFeature targetContainingFeature = objectLocation.eContainingFeature();
+			if(targetContainingFeature instanceof EReference) {
+				EReference ref = (EReference)targetContainingFeature;
+				if( isSubClass(ref.getEType(),newElement.eClass() )){
+					possibleEFeatures.add(0, ref);
+				}
+			}
+		}
+		//or try to find another one
+		if (possibleEFeatures.isEmpty()){
+			Iterator<EStructuralFeature> iterator= featureList.iterator();
+			while (iterator.hasNext()) {
+				EStructuralFeature eStructuralFeature = (EStructuralFeature) iterator.next();
+				
+				if( eStructuralFeature instanceof EReference){
+					EReference ref= (EReference)eStructuralFeature;
+					
+					if( ref.isContainment()){
+						
+						if( isSubClass(ref.getEType(),newElement.eClass() )){
+							//If the feature is the actual containing feature then this feature is more likely to be used to
+							if(newElement.eContainingFeature().equals(ref)){
+								possibleEFeatures.add(0, eStructuralFeature);
+								break;
+							}else {
+								possibleEFeatures.add(eStructuralFeature);
+							}
+						}
+						
 					}
-
 				}
 			}
 		}
 
 		//create the command
-		Iterator<EStructuralFeature> iteratorFeature= possibleEFeatures.iterator();
-		while (iteratorFeature.hasNext()) {
-			EStructuralFeature eStructuralFeature = (EStructuralFeature) iteratorFeature
-				.next();
+		if(!possibleEFeatures.isEmpty()){
+			EStructuralFeature eStructuralFeature = possibleEFeatures.get(0);
 			ArrayList<EObject> tmp=new ArrayList<EObject>();
 
 			tmp.add(newElement);
@@ -234,6 +252,7 @@ public class CommonDropAdapterAssistant extends org.eclipse.ui.navigator.CommonD
 				}
 			}
 		}
+		
 		return setRequest;
 	}
 
