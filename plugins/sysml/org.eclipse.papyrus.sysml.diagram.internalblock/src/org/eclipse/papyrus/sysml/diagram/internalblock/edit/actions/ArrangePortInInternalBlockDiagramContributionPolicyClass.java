@@ -22,7 +22,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.core.editor.IMultiDiagramEditor;
-import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
+import org.eclipse.papyrus.diagram.common.requests.ArrangeAffixedNodeRequest;
 import org.eclipse.papyrus.sysml.diagram.internalblock.provider.ElementTypes;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
@@ -62,7 +62,7 @@ public class ArrangePortInInternalBlockDiagramContributionPolicyClass implements
 					if (notationView == null){
 						return false;
 					}
-					result &= SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(notationView.getType());
+					result &= editPart.getEditPolicy(ArrangeAffixedNodeRequest.ARRANGE_AFFIXED_NODE_ROLE) != null;
 				}
 			}
 			return result;
