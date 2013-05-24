@@ -23,6 +23,7 @@
  <extension-point id="aspectToolProvider" name="aspectToolProvider" schema="schema/aspectToolProvider.exsd"/>
  <extension-point id="paletteCustomization" name="Palette customization" schema="schema/paletteCustomization.exsd"/>
  <extension-point id="specialDropProvider" name="specialDropProvider" schema="schema/specialDropProvider.exsd"/>
+ <extension-point id="deleteFromDiagramProvider" name="deleteFromDiagramProvider" schema="schema/deleteFromDiagramProvider.exsd"/>
       
       <extension point="org.eclipse.ui.views">
    <category 
