@@ -98,7 +98,7 @@ public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler imp
 		Collections.sort(extension, new Comparator<DeleteFromDiagramProviderWrapper>() {
 
 			public int compare(DeleteFromDiagramProviderWrapper o1, DeleteFromDiagramProviderWrapper o2) {
-				return Integer.compare(o1.priority, o2.priority) * -1;
+				return  Integer.valueOf(o1.priority).compareTo(Integer.valueOf(o2.priority)) * -1;
 			}
 		});
 		deleteProvider = Lists.transform(extension, new Function<DeleteFromDiagramProviderWrapper, IDeleteFromDiagramProvider>() {
