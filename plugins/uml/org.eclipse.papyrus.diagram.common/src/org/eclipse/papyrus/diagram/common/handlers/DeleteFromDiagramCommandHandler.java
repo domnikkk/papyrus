@@ -13,33 +13,25 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.common.handlers;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
-import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.actions.internal.DeleteFromDiagramAction;
-import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
@@ -47,86 +39,17 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.diagram.common.IDeleteFromDiagramProvider;
 import org.eclipse.papyrus.ui.toolbox.notification.Type;
 import org.eclipse.papyrus.ui.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.uml2.uml.NamedElement;
-
-import com.google.common.base.Function;
-import com.google.common.collect.Lists;
 
 /**
  * Command handler for delete from diagram
  */
 public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler implements IHandler {
 
-	/**
-	 * ID of extension point used to override the delete from diagram command
-	 */
-	private static final String DELETE_FROM_DIAGRAM_EXT_POINT = "org.eclipse.papyrus.diagram.common.deleteFromDiagramProvider";
-
-	public DeleteFromDiagramCommandHandler() {
-	}
-
-	/**
-	 * Store all provider used to override this command
-	 */
-	private static List<IDeleteFromDiagramProvider> deleteProvider = new ArrayList<IDeleteFromDiagramProvider>();
-	
-	static {
-		IConfigurationElement[] confs = Platform.getExtensionRegistry().getConfigurationElementsFor(DELETE_FROM_DIAGRAM_EXT_POINT);
-		List<DeleteFromDiagramProviderWrapper> extension = new ArrayList<DeleteFromDiagramCommandHandler.DeleteFromDiagramProviderWrapper>();
-		for(IConfigurationElement conf : confs) {
-			try {
-				Object impl = conf.createExecutableExtension("impl");
-				String priority = conf.getAttribute("priority");
-				int p = 0;
-				try {
-					p = Integer.valueOf(priority);
-				} catch (NumberFormatException e) {
-					p = -1;
-				}
-				if(impl instanceof IDeleteFromDiagramProvider) {
-					extension.add(new DeleteFromDiagramProviderWrapper((IDeleteFromDiagramProvider)impl, p));
-				}
-			} catch (CoreException e) {
-				e.printStackTrace();
-			}
-		}
-		Collections.sort(extension, new Comparator<DeleteFromDiagramProviderWrapper>() {
-
-			public int compare(DeleteFromDiagramProviderWrapper o1, DeleteFromDiagramProviderWrapper o2) {
-				return  Integer.valueOf(o1.priority).compareTo(Integer.valueOf(o2.priority)) * -1;
-			}
-		});
-		deleteProvider = Lists.transform(extension, new Function<DeleteFromDiagramProviderWrapper, IDeleteFromDiagramProvider>() {
-
-			public IDeleteFromDiagramProvider apply(DeleteFromDiagramProviderWrapper from) {
-				return from.provider;
-			}
-		});
-	}
-
-	/**
-	 * Wrapper used to sort {@link IDeleteFromDiagramProvider}
-	 * @author adaussy
-	 *
-	 */
-	private static class DeleteFromDiagramProviderWrapper {
-
-		public IDeleteFromDiagramProvider provider;
-
-		public int priority;
-
-		public DeleteFromDiagramProviderWrapper(IDeleteFromDiagramProvider provider, int priority) {
-			super();
-			this.provider = provider;
-			this.priority = priority;
-		}
-	}
-
+    public DeleteFromDiagramCommandHandler(){}
 	/**
 	 * 
 	 * @see org.eclipse.papyrus.diagram.common.handlers.GraphicalCommandHandler#getCommand()
@@ -144,18 +67,24 @@ public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler imp
 			//notify user that Deletion is impossible
 			CompositeCommand cc = new CompositeCommand("Deletation impossible command");////$NON-NLS-1$
 			for(final IGraphicalEditPart c : editParts) {
-				ListIterator<IDeleteFromDiagramProvider> providerIterator = deleteProvider.listIterator();
-				ICommand cmd = new AbstractTransactionalCommand((TransactionalEditingDomain)AdapterFactoryEditingDomain.getEditingDomainFor(c.resolveSemanticElement()), "test", null) {
-
+				AbstractTransactionalCommand cmd = new AbstractTransactionalCommand((TransactionalEditingDomain)AdapterFactoryEditingDomain.getEditingDomainFor(c.resolveSemanticElement()),"test",null) {				
 					@Override
 					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-						EObject element = ((IGraphicalEditPart)c).resolveSemanticElement();
+						EObject element = ((IGraphicalEditPart)c)
+							.resolveSemanticElement();
 						EObject owner = element.eContainer();
-						if(element != null && owner != null && owner instanceof NamedElement) {
+						if (element != null
+							&& owner != null && owner instanceof NamedElement) {
 							String elementLabel = getNameForElement(element);
 							String ownerName = getNameForElement(owner);
 							StringBuilder label = new StringBuilder("The element ");
-							NotificationBuilder popup = new NotificationBuilder().setAsynchronous(true).setTemporary(true).setMessage(label.append(elementLabel).append(" can be deleted because it synchronized with the element ").append(ownerName).toString()).setType(Type.INFO);
+							NotificationBuilder popup = new NotificationBuilder()
+							.setAsynchronous(true)
+							.setTemporary(true)
+							.setMessage(
+								label.append(elementLabel)
+								.append(" can be deleted because it synchronized with the element ")
+								.append(ownerName).toString()).setType(Type.INFO);
 							popup.run();
 							return CommandResult.newCancelledCommandResult();
 						}
@@ -168,7 +97,7 @@ public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler imp
 					 */
 					protected String getNameForElement(EObject element) {
 						String elementLabel;
-						if(element instanceof NamedElement) {
+						if ( element instanceof NamedElement){
 							elementLabel = ((NamedElement)element).getName();
 						} else {
 							elementLabel = "of type" + element.eClass().getName();
@@ -180,26 +109,13 @@ public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler imp
 			}
 			return new ICommandProxy(cc);
 		}
-		CompositeTransactionalCommand cc  = null;
+		CompoundCommand command = new CompoundCommand("Delete From Diagram");
 		for(Iterator<IGraphicalEditPart> iter = editParts.iterator(); iter.hasNext();) {
-			
 			IGraphicalEditPart editPart = iter.next();
-			ICommand cmd = null;
-			ListIterator<IDeleteFromDiagramProvider> providerIterator = deleteProvider.listIterator();
-			while(cmd == null && providerIterator.hasNext()){
-				IDeleteFromDiagramProvider next = providerIterator.next();
-				cmd = next.getCommand(editPart);
-			}
-			if (cmd == null){
-				cmd = new CommandProxy(editPart.getCommand(new GroupRequest(RequestConstants.REQ_DELETE)));
-			}
-			if (cc == null){
-				cc = new CompositeTransactionalCommand(editPart.getEditingDomain(), "Delete from diagram handler");
-			}
 			/* Send the request to the edit part */
-			cc.compose(cmd);
+			command.add(editPart.getCommand(new GroupRequest(RequestConstants.REQ_DELETE)));
 		}
-		return new ICommandProxy(cc);
+		return command;
 	}
 
 	/**
@@ -255,9 +171,10 @@ public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler imp
 		}
 		return false;
 	}
-
+	
 	@Override
-	public boolean isEnabled() {
-		return true;
+	public boolean isEnabled()
+	{
+	    return true;
 	}
 }
