@@ -193,6 +193,12 @@ public class DocView extends PageBookView implements ISelectionListener
      */
     public void partActivated(IWorkbenchPart part)
     {
+        IDocumentationPartHandler documentationPartHandler = DocumentionPartHandlerRegistry.getInstance().getDocumentationPartHandler(part);
+        if (documentationPartHandler != null) {
+            if(!documentationPartHandler.isCompatibleEditor(part)) {
+                return;
+            }
+        }
         IContributedContentsView view = (IContributedContentsView) part.getAdapter(IContributedContentsView.class);
         IWorkbenchPart source = null;
         if (view != null)

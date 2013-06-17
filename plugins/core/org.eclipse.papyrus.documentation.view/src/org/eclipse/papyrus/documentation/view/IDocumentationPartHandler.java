@@ -20,6 +20,13 @@ public interface IDocumentationPartHandler {
 	public boolean canHandlePart(IWorkbenchPart part);
 
 	/**
+     * Test if the part belongs to an editor that can be handled by the implementation
+     * @param part
+     * @return
+     */
+    public boolean isCompatibleEditor(IWorkbenchPart part);
+    
+	/**
 	 * @return the documentation manager
 	 */
 	public IDocumentationManager getDocumentationManager();

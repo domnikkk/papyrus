@@ -40,6 +40,7 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ISelectionStatusValidator;
+import org.eclipse.ui.views.contentoutline.ContentOutline;
 
 
 public class PapyrusDocumentationPartHandler implements IDocumentationPartHandler {
@@ -47,6 +48,11 @@ public class PapyrusDocumentationPartHandler implements IDocumentationPartHandle
 	public boolean canHandlePart(IWorkbenchPart part) {
 		return part instanceof CoreMultiDiagramEditor || part instanceof IViewPart;
 	}
+	
+	public boolean isCompatibleEditor(IWorkbenchPart part)
+    {
+        return part instanceof IEditorPart || part instanceof ContentOutline;
+    }
 
 	public IDocumentationManager getDocumentationManager() {
 		return DocumentationManager.getInstance();

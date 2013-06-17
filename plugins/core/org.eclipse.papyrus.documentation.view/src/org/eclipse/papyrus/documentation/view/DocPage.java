@@ -137,7 +137,7 @@ public class DocPage extends Page implements IDocPage
     protected void manageDocumentatedElement(IWorkbenchPart part, ISelection selection, boolean checkResources)
     {
         EObject elt = getSelectedModelElement(selection);
-        if (elt == null || elt != documentedElement)
+        if (elt != null && elt != documentedElement)
         {
             documentedElement = elt;
             if (commentsComposite != null && !commentsComposite.isDisposed())
