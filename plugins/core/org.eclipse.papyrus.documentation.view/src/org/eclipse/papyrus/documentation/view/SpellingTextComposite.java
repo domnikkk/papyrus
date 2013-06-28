@@ -364,6 +364,12 @@ public class SpellingTextComposite extends Composite implements IText, Observer
         return new ActionHandler(quickFixAction);
     }
 
+    @Override
+    public boolean isEnabled()
+    {
+        return fTextField.getEditable();
+    }
+
     public void setEnabled(boolean enabled)
     {
         fTextField.setEditable(enabled);

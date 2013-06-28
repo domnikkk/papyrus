@@ -187,13 +187,25 @@ public class RichTextComposite extends Composite
     @Override
     public void setEnabled(boolean enabled)
     {
-    	if (!isDisposed())
-    	{
-    		super.setEnabled(enabled);
-    		if (commentsText != null && commentsText.getControl() != null)
-    		{
-    			commentsText.getControl().setEnabled(enabled);
-    		}
-    	}
+        if (!isDisposed())
+        {
+            if (commentsText != null)
+            {
+                commentsText.setEditable(enabled);
+            }
+        }
+    }
+
+    @Override
+    public boolean isEnabled()
+    {
+        if (!isDisposed())
+        {
+            if (commentsText != null)
+            {
+                return commentsText.getEditable();
+            }
+        }
+        return false;
     }
 }

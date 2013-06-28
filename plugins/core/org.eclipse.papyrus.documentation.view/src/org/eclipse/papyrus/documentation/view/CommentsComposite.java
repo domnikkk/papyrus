@@ -190,7 +190,7 @@ public class CommentsComposite extends DocPageComposite
         else
         {
             plainTextComposite.setDocumentationValue(""); //$NON-NLS-1$
-            plainTextComposite.getControl().setEnabled(docElement != null);
+            plainTextComposite.getControl().setEnabled(plainTextComposite.getControl().isEnabled() && docElement != null);
             if (docElement != null)
             {
                 plainTextComposite.setDocumentationValue(getDocumentationValueFromElement());
@@ -229,14 +229,16 @@ public class CommentsComposite extends DocPageComposite
     {
         if (!useRichTextEditorButton.getSelection())
         {
-            String comment = richTextComposite.getDocumentationValue();
+            String comment = richTextComposite.getDocumentationValue(); 
+            boolean isEnabled = richTextComposite.isEnabled();
             richTextComposite.dispose();
             plainTextComposite = createPlainCommentsComposite();
             plainTextComposite.setFocus();
             plainTextComposite.setDocumentationValue(comment);
+            plainTextComposite.setEnabled(isEnabled);
             useRichTextEditorButton.setToolTipText(Messages.TooptipHtml);
             useRichTextEditorButton.setSelection(false);
-            editButton.setEnabled(useRichTextEditorButton.getSelection());
+            editButton.setEnabled(false);
         }
         else
         {
@@ -244,12 +246,14 @@ public class CommentsComposite extends DocPageComposite
             {
                 String comment = plainTextComposite.getDocumentationValue();
                 plainTextComposite.getControl().removeFocusListener(focusListener);
+                boolean isEnabled = plainTextComposite.isEnabled();
                 plainTextComposite.dispose();
                 richTextComposite = createRichCommentsComposite();
                 richTextComposite.setDocumentationValue(comment);
+                richTextComposite.setEnabled(isEnabled);
                 useRichTextEditorButton.setToolTipText(Messages.TooptipText);
                 useRichTextEditorButton.setSelection(true);
-                editButton.setEnabled(useRichTextEditorButton.getSelection());
+                editButton.setEnabled(useRichTextEditorButton.getSelection() && isEnabled);
                 editButton.setFocus();
             }
             else
@@ -439,10 +443,6 @@ public class CommentsComposite extends DocPageComposite
         if (richTextComposite != null)
         {
             richTextComposite.setEnabled(enabled);
-        }
-        if (useRichTextEditorButton != null)
-        {
-            useRichTextEditorButton.setEnabled(enabled);
         }
         if (editButton != null)
         {
