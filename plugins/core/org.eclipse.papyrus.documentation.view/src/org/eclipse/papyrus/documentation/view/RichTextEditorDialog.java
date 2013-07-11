@@ -12,21 +12,6 @@
 package org.eclipse.papyrus.documentation.view;
 
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.dialogs.IDialogConstants;
-import org.eclipse.papyrus.documentation.view.actions.AddElementLinkAction;
-import org.eclipse.papyrus.documentation.view.actions.DeleteTableColumnAction;
-import org.eclipse.papyrus.documentation.view.actions.DeleteTableRowAction;
-import org.eclipse.papyrus.documentation.view.actions.InsertTableColumnAction;
-import org.eclipse.papyrus.documentation.view.actions.InsertTableRowAction;
-import org.eclipse.papyrus.documentation.view.actions.TextColorAction;
-import org.eclipse.papyrus.documentation.view.actions.TextHighlightAction;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.epf.richtext.IRichText;
 import org.eclipse.epf.richtext.IRichTextToolBar;
 import org.eclipse.epf.richtext.RichText;
@@ -47,6 +32,7 @@ import org.eclipse.epf.richtext.actions.FontStyleAction;
 import org.eclipse.epf.richtext.actions.IndentAction;
 import org.eclipse.epf.richtext.actions.ItalicAction;
 import org.eclipse.epf.richtext.actions.JustifyCenterAction;
+import org.eclipse.epf.richtext.actions.JustifyFullAction;
 import org.eclipse.epf.richtext.actions.JustifyLeftAction;
 import org.eclipse.epf.richtext.actions.JustifyRightAction;
 import org.eclipse.epf.richtext.actions.OutdentAction;
@@ -55,6 +41,29 @@ import org.eclipse.epf.richtext.actions.SubscriptAction;
 import org.eclipse.epf.richtext.actions.SuperscriptAction;
 import org.eclipse.epf.richtext.actions.TidyActionGroup;
 import org.eclipse.epf.richtext.actions.UnderlineAction;
+import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.IDialogConstants;
+import org.eclipse.papyrus.documentation.view.actions.AddElementLinkAction;
+import org.eclipse.papyrus.documentation.view.actions.DeleteTableColumnAction;
+import org.eclipse.papyrus.documentation.view.actions.DeleteTableRowAction;
+import org.eclipse.papyrus.documentation.view.actions.InsertTableColumnAction;
+import org.eclipse.papyrus.documentation.view.actions.InsertTableRowAction;
+import org.eclipse.papyrus.documentation.view.actions.TextColorAction;
+import org.eclipse.papyrus.documentation.view.actions.TextHighlightAction;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.swt.widgets.ToolItem;
 
 /**
  * A dialog using a RichText and its Toolbar to change a documentation
@@ -64,10 +73,13 @@ import org.eclipse.epf.richtext.actions.UnderlineAction;
 public class RichTextEditorDialog extends Dialog
 {
     /** The minimum width of the dialog */
-    private static final int MINIMUM_DIALOG_WIDTH = 600;
+    private static final int MINIMUM_DIALOG_WIDTH = 50;
 
     /** The minimum height of the dialog */
     private static final int MINIMUM_DIALOG_HEIGHT = 300;
+    
+    /** The minimum height of the dialog */
+    private static final int MARGIN = 80;
 
     private RichText commentsText;
 
@@ -97,7 +109,7 @@ public class RichTextEditorDialog extends Dialog
     protected void configureShell(Shell newShell)
     {
         newShell.setText(Messages.RichTextEditorDialog_useRichText);
-        newShell.setMinimumSize(MINIMUM_DIALOG_WIDTH, MINIMUM_DIALOG_HEIGHT);
+//        newShell.setMinimumSize(MINIMUM_DIALOG_WIDTH, MINIMUM_DIALOG_HEIGHT);
 
         super.configureShell(newShell);
     }
@@ -109,23 +121,26 @@ public class RichTextEditorDialog extends Dialog
     protected Control createDialogArea(Composite parent)
     {
         Composite dialogComposite = (Composite) super.createDialogArea(parent);
+        dialogComposite.setLayout(new GridLayout());
 
-        RichTextToolBar toolBar = new RichTextToolBar(dialogComposite, SWT.NONE, commentsText);
+        Composite toolbarComposite = new Composite(dialogComposite, SWT.NONE);
+        toolbarComposite.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
+        toolbarComposite.setLayout(new GridLayout());
+        final RichTextToolBar toolBar = new RichTextToolBar(toolbarComposite, SWT.WRAP, commentsText);
+        
         Composite container = new Composite(dialogComposite, SWT.BORDER);
-        GridLayout richTextLayout = new GridLayout();
-        richTextLayout.marginWidth = 0;
-        richTextLayout.marginHeight = 0;
-        container.setLayout(richTextLayout);
-        container.setLayoutData(new GridData(GridData.FILL_BOTH));
+        container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+        container.setLayout(new GridLayout());
+        getShell();
         commentsText = new RichText(container, SWT.NONE);
-        commentsText.setLayoutData(new GridData(GridData.FILL_BOTH));
+        commentsText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
         commentsText.setText(initialValue);
         commentsText.setFocus();
         fillToolBar(toolBar, commentsText);
-
+        getShell().setMinimumSize(toolBar.getToolbarMgr().getControl().getBounds().width + MARGIN, MINIMUM_DIALOG_HEIGHT);
         return dialogComposite;
     }
-
+    
     /**
      * Populate actions in the Toolbar to link with the RichText
      * 
@@ -165,6 +180,7 @@ public class RichTextEditorDialog extends Dialog
         toolBar.addAction(new JustifyLeftAction(richText));
         toolBar.addAction(new JustifyCenterAction(richText));
         toolBar.addAction(new JustifyRightAction(richText));
+        toolBar.addAction(new JustifyFullAction(richText));
         toolBar.addSeparator();
         toolBar.addAction(new FindReplaceAction(richText)
         {
