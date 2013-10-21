@@ -7,6 +7,7 @@
    <extension-point id="service" name="Service" schema="schema/service.exsd"/>
    <extension-point id="model" name="plugin.xml.ModelName" schema="schema/model.exsd"/>
    <extension-point id="transactionalEditingDomainProvider" name="transactionalEditingDomainProvider" schema="schema/transactionalEditingDomainProvider.exsd"/>
+   <extension-point id="manageTab" name="ManageTab" schema="schema/manageTab.exsd" />
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution

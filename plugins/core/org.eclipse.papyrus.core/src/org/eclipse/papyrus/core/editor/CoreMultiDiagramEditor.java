@@ -16,6 +16,7 @@ package org.eclipse.papyrus.core.editor;
 
 import static org.eclipse.papyrus.core.Activator.log;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +50,7 @@ import org.eclipse.papyrus.core.contentoutline.ContentOutlineRegistry;
 import org.eclipse.papyrus.core.lifecycleevents.DoSaveEvent;
 import org.eclipse.papyrus.core.lifecycleevents.IEditorInputChangedListener;
 import org.eclipse.papyrus.core.lifecycleevents.ISaveAndDirtyService;
+import org.eclipse.papyrus.core.managetab.PropertyTabProviderService;
 import org.eclipse.papyrus.core.multidiagram.actionbarcontributor.ActionBarContributorRegistry;
 import org.eclipse.papyrus.core.multidiagram.actionbarcontributor.CoreComposedActionBarContributor;
 import org.eclipse.papyrus.core.services.ExtensionServicesRegistry;
@@ -182,7 +184,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	/**
 	 * 
 	 */
-	private TabbedPropertySheetPage tabbedPropertySheetPage = null;
+	private IPropertySheetPage tabbedPropertySheetPage = null;
 
 	/**
 	 * My editing domain provider.
@@ -364,6 +366,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			// Do not test if tabbedPropertySheetPage is null before calling new
 			// this is managed by Eclipse which only call current method when
 			// necessary
+
 			return getPropertySheetPage();
 		}
 
@@ -658,7 +661,14 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
 		if(this.tabbedPropertySheetPage == null) {
-			this.tabbedPropertySheetPage = new TabbedPropertySheetPage(this);
+			IPropertySheetPage psp = PropertyTabProviderService.getInstance().getPropertySheetPageDescriptor(this);
+			
+			if(psp != null){
+				this.tabbedPropertySheetPage = psp;
+			}else {
+				
+				this.tabbedPropertySheetPage = new TabbedPropertySheetPage(this);
+			}
 		}
 		return tabbedPropertySheetPage;
 	}
