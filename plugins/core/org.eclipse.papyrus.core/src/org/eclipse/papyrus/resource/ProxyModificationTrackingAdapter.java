@@ -31,16 +31,16 @@ import org.eclipse.papyrus.core.utils.PapyrusEcoreUtils;
  * This adapter handles "modified" flag of resources for tricky cases :
  * 
  * - when there is a change in an URI all the resources containing a proxy
- * 	 to the modified resource should be marked as modified
+ * to the modified resource should be marked as modified
  * 
  * - when adding/removing objects from resources they should be marked as modified,
- *   and all the resources containing a proxy too
+ * and all the resources containing a proxy too
  * 
  * - when doing control/uncontrol operations the resource of the parent object
- * 	 should be marked as modified
+ * should be marked as modified
  * 
  * @author mvelten
- *
+ * 
  */
 public class ProxyModificationTrackingAdapter extends EContentAdapter {
 
@@ -66,16 +66,16 @@ public class ProxyModificationTrackingAdapter extends EContentAdapter {
 	public void notifyChanged(Notification n) {
 		Object notifier = n.getNotifier();
 
-		if (notifier instanceof Resource) {
-			Resource r = (Resource)notifier;
+		if(notifier instanceof Resource.Internal) {
+			Resource.Internal r = (Resource.Internal)notifier;
 
-			if (n.getEventType() == Notification.SET && n.getFeatureID(Resource.class) == Resource.RESOURCE__URI) {
+			if(n.getEventType() == Notification.SET && n.getFeatureID(Resource.class) == Resource.RESOURCE__URI) {
 				r.setModified(true);
 
 				TreeIterator<Object> properContents = EcoreUtil.getAllProperContents(r, false);
 				while(properContents.hasNext()) {
 					Object obj = properContents.next();
-					if (obj instanceof EObject) {
+					if(obj instanceof EObject) {
 						setReferencingResourcesAsModified((EObject)obj);
 					}
 				}
@@ -98,13 +98,21 @@ public class ProxyModificationTrackingAdapter extends EContentAdapter {
 					break;
 				}
 
-				if (!objects.isEmpty()) {
-					r.setModified(true);
-				}
+				if(!r.isLoading()) {
+					if(!objects.isEmpty()) {
+						r.setModified(true);
+					}
 
-				for (Object o : objects) {
-					if (o instanceof EObject) {
-						setReferencingResourcesAsModified((EObject)o);
+					for(Object o : objects) {
+						if(o instanceof EObject) {
+							TreeIterator<Object> properContents = EcoreUtil.getAllProperContents((EObject)o, false);
+							while(properContents.hasNext()) {
+								Object obj = properContents.next();
+								if(obj instanceof EObject) {
+									setReferencingResourcesAsModified((EObject)obj);
+								}
+							}
+						}
 					}
 				}
 			}
@@ -115,11 +123,11 @@ public class ProxyModificationTrackingAdapter extends EContentAdapter {
 
 	protected void setReferencingResourcesAsModified(EObject eObj) {
 		Collection<Setting> references = PapyrusEcoreUtils.getUsages(eObj);
-		for (Setting setting : references) {
+		for(Setting setting : references) {
 			EStructuralFeature f = setting.getEStructuralFeature();
 			if(setting.getEObject() != null && !f.isDerived() && !f.isTransient()) {
-				Resource refResource = setting.getEObject().eResource();
-				if(refResource != null) {
+				Resource.Internal refResource = (org.eclipse.emf.ecore.resource.Resource.Internal)setting.getEObject().eResource();
+				if(refResource != null && !refResource.isLoading()) {
 					refResource.setModified(true);
 				}
 			}
