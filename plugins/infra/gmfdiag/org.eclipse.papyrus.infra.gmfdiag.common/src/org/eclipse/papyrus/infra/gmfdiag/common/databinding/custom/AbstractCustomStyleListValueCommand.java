@@ -48,7 +48,6 @@ public abstract class AbstractCustomStyleListValueCommand extends AbstractComman
 		this.domain = domain;
 	}
 
-	@Override
 	public void execute() {
 		//FIXME: Related to CompoundCommand vs StrictCompoundCommand.
 		//Sometimes, canExecute() is not called, and the command is not prepared
@@ -63,7 +62,6 @@ public abstract class AbstractCustomStyleListValueCommand extends AbstractComman
 		command.execute();
 	}
 
-	@Override
 	public void redo() {
 		execute();
 	}

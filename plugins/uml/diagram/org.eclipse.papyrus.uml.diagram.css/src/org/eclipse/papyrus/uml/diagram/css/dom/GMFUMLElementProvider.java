@@ -19,15 +19,15 @@ import org.w3c.dom.Element;
 
 /**
  * An IElementProvider for UML-specific CSS concepts
- *
+ * 
  * Provides a specialization of GMFElementAdapter for UML Elements
- *
+ * 
  * @author Camille Letavernier
  */
-@SuppressWarnings("restriction") //e4 CSS
+@SuppressWarnings("restriction")
+//e4 CSS
 public class GMFUMLElementProvider implements IElementProvider {
 
-	@Override
 	public Element getElement(Object element, CSSEngine engine) {
 
 		if(!(element instanceof View)) {

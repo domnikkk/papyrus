@@ -45,7 +45,7 @@ import org.junit.Test;
 /**
  * Test case for Compartment-related styles and properties
  * See resources/model/compartmentsTest/model.di for details
- *
+ * 
  * @author Camille Letavernier
  * 
  */
@@ -110,7 +110,7 @@ public class CSSCompartmentsTests {
 
 	/* Test Enumeration1 */
 	@Test
-	//Currently fails. The EnumerationLiteral compartment is not defined in the NotationTypesMap
+	//Currently fails. The CSS Attributes are still case-sensitive
 	public void testCaseInsensitiveForEnumeration() {
 		Shape enumeration = findShape("Enumeration1");
 		BasicCompartment compartment = findCompartment(enumeration, ENUMERATION_LITERAL_COMPARTMENT_TYPE);
