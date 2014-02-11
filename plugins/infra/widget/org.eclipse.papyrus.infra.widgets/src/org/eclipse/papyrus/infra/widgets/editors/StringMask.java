@@ -30,10 +30,10 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * A Widget to manipulate a list of values.
- *
+ * 
  * The widget is configured with a Map of (String, String) entries (Key -> Label).
  * It returns the list of selected keys.
- *
+ * 
  * @author Camille Letavernier
  */
 public class StringMask extends AbstractListEditor implements SelectionListener, IChangeListener, DisposeListener {
@@ -106,14 +106,11 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 		if(checkboxes != null) {
 			disposeCheckboxes();
 		}
-
 		checkboxes = new Button[values.size()];
-
 		int i = 0;
 		for(Entry<String, String> mask : values.entrySet()) {
 			String stringValue = mask.getKey();
 			String label = mask.getValue();
-
 			checkboxes[i] = new Button(checkboxContainer, SWT.CHECK);
 			checkboxes[i].setText(label);
 			checkboxes[i].setData(DATA_KEY, stringValue);
@@ -140,7 +137,6 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 	public void doBinding() {
 		// We don't do a real databinding here
 		modelProperty.addChangeListener(this);
-
 		refreshCheckboxes();
 	}
 
@@ -148,7 +144,6 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 		if(!refreshCheckboxes) {
 			return;
 		}
-
 		Collection<String> values = getCurrentValue();
 		for(Button button : checkboxes) {
 			String value = (String)button.getData(DATA_KEY);
@@ -161,7 +156,6 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 		super.setLabelToolTipText(text);
 	}
 
-	@Override
 	public void widgetSelected(final SelectionEvent e) {
 		Button button = (Button)e.widget;
 		String value = (String)button.getData(DATA_KEY);
@@ -182,7 +176,6 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 			refreshCheckboxes = true;
 		}
 		currentValue = values;
-
 		commit();
 	}
 
@@ -194,7 +187,6 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 		}
 	}
 
-	@Override
 	public void widgetDefaultSelected(final SelectionEvent e) {
 		// Nothing
 	}
@@ -203,9 +195,7 @@ public class StringMask extends AbstractListEditor implements SelectionListener,
 		return ((GridLayout)checkboxContainer.getLayout()).numColumns;
 	}
 
-	@Override
 	public void handleChange(final ChangeEvent event) {
 		refreshCheckboxes();
 	}
-
 }
