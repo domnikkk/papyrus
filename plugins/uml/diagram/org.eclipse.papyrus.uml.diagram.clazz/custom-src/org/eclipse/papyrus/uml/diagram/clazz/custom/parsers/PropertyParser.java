@@ -33,8 +33,6 @@ import org.eclipse.jface.util.SafeRunnable;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramEditorPlugin;
-import org.eclipse.papyrus.uml.tools.utils.ICustomAppearence;
-import org.eclipse.papyrus.uml.tools.utils.PropertyUtil;
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -60,7 +58,7 @@ public class PropertyParser implements IParser {
 	public String getEditString(final IAdaptable element, int flags) {
 		if(element instanceof EObjectAdapter) {
 			final Property property = ((Property)((EObjectAdapter)element).getRealObject());
-			return PropertyUtil.getCustomLabel(property, ICustomAppearence.DISP_NAME);
+			return property.getName();
 		}
 		return "";
 	}
@@ -81,7 +79,7 @@ public class PropertyParser implements IParser {
 			return null;
 		}
 
-		AbstractTransactionalCommand tc = new AbstractTransactionalCommand(editingDomain, "Edit Property", (List)null) {
+		AbstractTransactionalCommand tc = new AbstractTransactionalCommand(editingDomain, "Edit Property", (List<?>)null) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gmf.runtime.notation.NamedStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.impl.ShapeImpl;
 import org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngine;
@@ -67,6 +69,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	//////////////////////////////////////////
 
 
+	@Override
 	public int getCSSFontColor() {
 		int value = super.getFontColor();
 
@@ -77,6 +80,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public java.lang.String getCSSFontName() {
 		java.lang.String value = super.getFontName();
 
@@ -87,6 +91,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public int getCSSFontHeight() {
 		int value = super.getFontHeight();
 
@@ -97,6 +102,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public boolean isCSSBold() {
 		boolean value = super.isBold();
 
@@ -107,6 +113,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public boolean isCSSItalic() {
 		boolean value = super.isItalic();
 
@@ -117,6 +124,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public boolean isCSSUnderline() {
 		boolean value = super.isUnderline();
 
@@ -127,6 +135,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public boolean isCSSStrikeThrough() {
 		boolean value = super.isStrikeThrough();
 
@@ -137,6 +146,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public boolean isCSSVisible() {
 		boolean value = super.isVisible();
 
@@ -147,6 +157,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public java.lang.String getCSSDescription() {
 		java.lang.String value = super.getDescription();
 
@@ -157,6 +168,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public int getCSSFillColor() {
 		int value = super.getFillColor();
 
@@ -167,6 +179,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public int getCSSTransparency() {
 		int value = super.getTransparency();
 
@@ -177,6 +190,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public org.eclipse.gmf.runtime.notation.datatype.GradientData getCSSGradient() {
 		org.eclipse.gmf.runtime.notation.datatype.GradientData value = super.getGradient();
 
@@ -187,6 +201,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public int getCSSLineColor() {
 		int value = super.getLineColor();
 
@@ -197,6 +212,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public int getCSSLineWidth() {
 		int value = super.getLineWidth();
 
@@ -207,6 +223,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	@Override
 	public int getCSSRoundedBendpointsRadius() {
 		int value = super.getRoundedBendpointsRadius();
 
@@ -310,7 +327,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 
 	////////////////////////////////////////////////
 	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	////////////////////////////////////////////////
 
 	@Override
 	public void setVisible(boolean value) {
@@ -462,17 +479,42 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		}
 	}
 
+	///////////////////////////////////
+	//	Implements the custom styles //
+	///////////////////////////////////
+
+	@Override
 	public boolean showElementIcon() {
 		return getCustomStyle().showElementIcon();
 	}
 
+	@Override
 	public int getQualifiedNameDepth() {
 		return getCustomStyle().getQualifiedNameDepth();
 	}
 
+	@Override
 	public boolean showShadow() {
 		return getCustomStyle().showShadow();
 	}
 
+	//////////////////////////////////
+	//	Implements the getNamedStyle //
+	//////////////////////////////////
+
+	@Override
+	public NamedStyle getNamedStyle(EClass eClass, String name) {
+		return getCSSNamedStyle(eClass, name);
+	}
+
+	@Override
+	public NamedStyle getCSSNamedStyle(EClass eClass, String name) {
+		NamedStyle userStyle = super.getNamedStyle(eClass, name);
+		if(userStyle != null) {
+			return userStyle;
+		}
+
+		return getCSSView().getCSSNamedStyle(eClass, name);
+	}
 
 }

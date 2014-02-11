@@ -34,6 +34,5 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 		StateMachinePreferencePage.initDefaults(store);
 		InternalTransitionPreferencePage.initDefaults(store);
 		GeneralizationPreferencePage.initDefaults(store);
-		TransitionPreferencePage.initDefaults(store);
 	}
 }

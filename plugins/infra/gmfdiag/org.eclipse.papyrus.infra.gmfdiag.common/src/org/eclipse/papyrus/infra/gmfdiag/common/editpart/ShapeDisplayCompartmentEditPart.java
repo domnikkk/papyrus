@@ -30,7 +30,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.render.RenderedImage;
 import org.eclipse.gmf.runtime.gef.ui.internal.editpolicies.GraphicalEditPolicyEx;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.commands.Activator;
+import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.BorderedScalableImageFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.ScalableCompartmentFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.ShapeFlowLayout;
@@ -44,7 +44,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.service.shape.ShapeService;
 public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPart {
 
 	/** Title of this compartment */
-	public final static String COMPARTMENT_NAME = "shape"; // $NON-NLS-1$
+	public final static String COMPARTMENT_NAME = "symbol"; // $NON-NLS-1$
 
 	/**
 	 * Creates a new ShapeDisplayCompartmentEditPart
@@ -62,9 +62,9 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	@Override
 	public void activate() {
 		super.activate();
-		
+
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -104,10 +104,10 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		ShapeCompartmentLayoutManager layoutManager = new ShapeCompartmentLayoutManager();
 		result.setLayoutManager(layoutManager);
 		ShapeFlowLayout layout = new ShapeFlowLayout();
-//		layout.setHorizontal(true);
-//		layout.setStretchMinorAxis(true);
-//		layout.setStretchMajorAxis(true);
-//		layout.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
+		//		layout.setHorizontal(true);
+		//		layout.setStretchMinorAxis(true);
+		//		layout.setStretchMajorAxis(true);
+		//		layout.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
 
 		result.getContentPane().setLayoutManager(layout);
 
@@ -115,9 +115,14 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	}
 
 	/**
-	 * Refreshes the displayed shapes on the figure. 
-	 * <P>To be sure everything is clean, it removes all the current displayed shapes and then redraw all of the demanded shapes. This could be probably improved in case of performance issues.</P> 
-	 * @param contentPane the figure where to add the new shapes
+	 * Refreshes the displayed shapes on the figure.
+	 * <P>
+	 * To be sure everything is clean, it removes all the current displayed shapes and then redraw all of the demanded shapes. This could be probably
+	 * improved in case of performance issues.
+	 * </P>
+	 * 
+	 * @param contentPane
+	 *        the figure where to add the new shapes
 	 */
 	protected void refreshShapes(IFigure contentPane) {
 		List<Object> children = new ArrayList<Object>(contentPane.getChildren());
@@ -130,7 +135,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		List<RenderedImage> shapesToDisplay = ShapeService.getInstance().getShapesToDisplay(getNotationView().eContainer());
 		if(shapesToDisplay != null && !shapesToDisplay.isEmpty()) {
 			for(RenderedImage image : shapesToDisplay) {
-				if(image !=null) {
+				if(image != null) {
 					IFigure imageFigure = new BorderedScalableImageFigure(image, false, false, true);
 					imageFigure.setOpaque(false);
 					imageFigure.setVisible(true);
@@ -167,8 +172,8 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 	 */
 	public class ShapeCompartmentLayoutManager extends SubCompartmentLayoutManager {
 
-		public static final int MIN_PREFERRED_SIZE = 40; 
-		
+		public static final int MIN_PREFERRED_SIZE = 40;
+
 		/**
 		 * {@inheritDoc}
 		 */
@@ -176,33 +181,33 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		public void layout(IFigure container) {
 			super.layout(container);
 		}
-		
+
 		/**
 		 * {@inheritDoc}
 		 */
 		@Override
 		protected Dimension calculatePreferredSize(IFigure figure, int wHint, int hHint) {
-			Dimension dim =  super.calculatePreferredSize(figure, wHint, hHint);
-			
+			Dimension dim = super.calculatePreferredSize(figure, wHint, hHint);
+
 			dim.height = Math.max(MIN_PREFERRED_SIZE, dim.height);
-			
+
 			return dim;
 		}
-		
+
 	}
 
 	/**
-	 * Edit Policy in charge of the graphical update of the compartment 
+	 * Edit Policy in charge of the graphical update of the compartment
 	 */
 	@SuppressWarnings("restriction")
 	public class ShapeRefreshEditPolicy extends GraphicalEditPolicyEx implements NotificationListener {
 
 		/** role for this edit policy */
 		public static final String SHAPE_REFRESH_EDIT_POLICY_ROLE = "shape_refresh_edit_policy"; ////$NON-NLS-1$
-		
+
 		/** manager for notifications */
 		protected NotificationManager notificationManager;
-		
+
 		/**
 		 * {@inheritDoc}
 		 */
@@ -236,7 +241,6 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		/**
 		 * {@inheritDoc}
 		 */
-		@SuppressWarnings("restriction")
 		@Override
 		public void refresh() {
 			super.refresh();
@@ -249,7 +253,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		public void notifyChanged(Notification notification) {
 			refresh();
 		}
-		
+
 		/**
 		 * Gets the diagram event broker from the editing domain.
 		 * 
@@ -262,7 +266,7 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 			}
 			return null;
 		}
-		
+
 		/**
 		 * Returns the view controlled by the host edit part
 		 * 
@@ -271,5 +275,10 @@ public class ShapeDisplayCompartmentEditPart extends ResizableCompartmentEditPar
 		protected View getView() {
 			return (View)getHost().getModel();
 		}
+	}
+
+	@Override
+	public boolean isSelectable() {
+		return false;
 	}
 }

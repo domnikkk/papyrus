@@ -68,7 +68,7 @@ public class AllTests {
 		 * Constructor.
 		 * 
 		 * @param clazz
-		 *        the suite class – AllTests2
+		 *        the suite class ï¿½ AllTests2
 		 * @throws InitializationError
 		 *         if there's a problem
 		 * @throws org.junit.runners.model.InitializationError

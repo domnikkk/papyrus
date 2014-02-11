@@ -8,13 +8,6 @@
    <extension-point id="notationTypesMapping" name="notationTypesMapping" schema="schema/notationTypesMapping.exsd"/>
 
 <extension
-      point="org.eclipse.papyrus.infra.core.papyrusDiagram">
-   <editorContext
-         contextClass="org.eclipse.papyrus.infra.gmfdiag.common.GmfEditorContext"
-         id="com.cea.papyrus.gmf.editor.context">
-   </editorContext>
-   </extension>
-<extension
       point="org.eclipse.ui.handlers">
    <handler
          class="org.eclipse.papyrus.infra.gmfdiag.common.handler.RefreshHandler"
@@ -167,5 +160,12 @@
          properties="isGmfDiagramContextActive"
          type="java.util.Collection">
    </propertyTester>
+</extension>
+<extension
+      point="org.eclipse.papyrus.infra.gmfdiag.common.notationTypesMapping">
+   <mapping
+         humanReadableType="symbol"
+         type="compartment_shape_display">
+   </mapping>
 </extension>
 </plugin>

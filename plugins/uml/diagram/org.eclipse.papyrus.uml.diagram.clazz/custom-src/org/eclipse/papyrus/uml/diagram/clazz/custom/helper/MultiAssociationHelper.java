@@ -50,7 +50,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
@@ -63,7 +62,8 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.commands.DeleteLinkDuringCreationCommand;
 import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
-import org.eclipse.papyrus.uml.diagram.common.helper.ElementHelper;
+import org.eclipse.papyrus.uml.diagram.common.helper.AssociationEndSourceLabelHelper;
+import org.eclipse.papyrus.uml.diagram.common.helper.AssociationEndTargetLabelHelper;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.NamedElement;
@@ -74,9 +74,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * The Class MultiAssociationHelper to manage the creation of branches or transformation of binary
  * to n-ary association
  */
-public class MultiAssociationHelper extends ElementHelper {
-
-	private static final String SEMANTIC_BRANCH = "Semantic_Branch_Style";
+public class MultiAssociationHelper extends org.eclipse.papyrus.uml.diagram.common.helper.MultiAssociationHelper {
 
 	/**
 	 * get the member end that will be managed by the branch of the association.
@@ -115,17 +113,6 @@ public class MultiAssociationHelper extends ElementHelper {
 		semanticbranchStyle.setName(MultiAssociationHelper.SEMANTIC_BRANCH);
 		view.getStyles().add(semanticbranchStyle);
 	}
-
-	public static Property getSemanticBranchEnd(View view) {
-		org.eclipse.gmf.runtime.notation.EObjectValueStyle semanticStyle = (org.eclipse.gmf.runtime.notation.EObjectValueStyle)view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_BRANCH);
-		return semanticStyle == null ? null : (Property)semanticStyle.getEObjectValue();
-	}
-
-	public static void setSemanticBranchEnd(View view, Property end) {
-		org.eclipse.gmf.runtime.notation.EObjectValueStyle semanticStyle = (org.eclipse.gmf.runtime.notation.EObjectValueStyle)view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_BRANCH);
-		semanticStyle.setEObjectValue(end);
-	}
-
 
 	/**
 	 * constructor.
