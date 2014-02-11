@@ -15,9 +15,7 @@ package org.eclipse.papyrus.uml.diagram.component.edit.parts;
 /**
  * @generated
  */
-public class DependencyNodeEditPart extends
-
-org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
+public class DependencyNodeEditPart extends org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -44,6 +42,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.SEMANTIC_ROLE, new org.eclipse.papyrus.uml.diagram.component.edit.policies.DependencyNodeItemSemanticEditPolicy());
@@ -60,12 +59,14 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	protected org.eclipse.gef.editpolicies.LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected org.eclipse.gef.EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
 				org.eclipse.gmf.runtime.notation.View childView = (org.eclipse.gmf.runtime.notation.View)child.getModel();
 				switch(org.eclipse.papyrus.uml.diagram.component.part.UMLVisualIDRegistry.getVisualID(childView)) {
 				case org.eclipse.papyrus.uml.diagram.component.edit.parts.MultiDependencyLabelEditPart.VISUAL_ID:
 					return new org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy() {
 
+						@Override
 						protected java.util.List createSelectionHandles() {
 							org.eclipse.gef.handles.MoveHandle mh = new org.eclipse.gef.handles.MoveHandle((org.eclipse.gef.GraphicalEditPart)getHost());
 							mh.setBorder(null);
@@ -80,10 +81,12 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 				return result;
 			}
 
+			@Override
 			protected org.eclipse.gef.commands.Command getMoveChildrenCommand(org.eclipse.gef.Request request) {
 				return null;
 			}
 
+			@Override
 			protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gef.requests.CreateRequest request) {
 				return null;
 			}
@@ -108,6 +111,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addBorderItem(org.eclipse.draw2d.IFigure borderItemContainer, org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart borderItemEditPart) {
 		if(borderItemEditPart instanceof org.eclipse.papyrus.uml.diagram.component.edit.parts.MultiDependencyLabelEditPart) {
 			org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator locator = new org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator(getMainFigure());
@@ -126,7 +130,6 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 		String preferenceConstantWitdh = org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper.WIDTH);
 		String preferenceConstantHeight = org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper.HEIGHT);
 		org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure result = new org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
-
 		return result;
 	}
 
@@ -138,6 +141,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	 * 
 	 * @generated
 	 */
+	@Override
 	protected org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure createMainFigure() {
 		org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new org.eclipse.draw2d.StackLayout());
@@ -162,6 +166,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.draw2d.IFigure getContentPane() {
 		if(contentPane != null) {
 			return contentPane;
@@ -172,6 +177,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setForegroundColor(org.eclipse.swt.graphics.Color color) {
 		if(primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -181,6 +187,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineWidth(int width) {
 		if(primaryShape instanceof org.eclipse.draw2d.Shape) {
 			((org.eclipse.draw2d.Shape)primaryShape).setLineWidth(width);
@@ -190,6 +197,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineType(int style) {
 		if(primaryShape instanceof org.eclipse.draw2d.Shape) {
 			((org.eclipse.draw2d.Shape)primaryShape).setLineStyle(style);
@@ -199,6 +207,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.gef.EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(org.eclipse.papyrus.uml.diagram.component.part.UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.component.edit.parts.MultiDependencyLabelEditPart.VISUAL_ID));
 	}
@@ -804,6 +813,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		@Override
 		protected boolean useLocalCoordinates() {
 			return myUseLocalCoordinates;
 		}
@@ -814,7 +824,6 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
 		}
-
 	}
 
 	/**
@@ -824,7 +833,6 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 	public Object getPreferredValue(org.eclipse.emf.ecore.EStructuralFeature feature) {
 		org.eclipse.jface.preference.IPreferenceStore preferenceStore = (org.eclipse.jface.preference.IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
 		Object result = null;
-
 		if(feature == org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 			String prefColor = null;
 			if(feature == org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
@@ -834,7 +842,7 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 			} else if(feature == org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 				prefColor = org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper.getElementConstant("DependencyNode", org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper.COLOR_FILL);
 			}
-			result = org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(org.eclipse.jface.preference.PreferenceConverter.getColor((org.eclipse.jface.preference.IPreferenceStore)preferenceStore, prefColor));
+			result = org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(org.eclipse.jface.preference.PreferenceConverter.getColor(preferenceStore, prefColor));
 		} else if(feature == org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 			String prefGradient = org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper.getElementConstant("DependencyNode", org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper.COLOR_GRADIENT);
 			org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter gradientPreferenceConverter = new org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter(preferenceStore.getString(prefGradient));
@@ -844,7 +852,6 @@ org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart {
 				result = gradientPreferenceConverter.getGradientData();
 			}
 		}
-
 		if(result == null) {
 			result = getStructuralFeatureValue(feature);
 		}

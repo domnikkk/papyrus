@@ -16,8 +16,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.papyrus.infra.gmfdiag.preferences.pages.AbstractPapyrusNodePreferencePage;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
+import org.eclipse.papyrus.infra.gmfdiag.preferences.pages.AbstractPapyrusNodePreferencePage;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ComponentDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLDiagramEditorPlugin;
 
@@ -29,7 +29,7 @@ public class ModelPreferencePage extends AbstractPapyrusNodePreferencePage {
 	/**
 	 * @generated
 	 */
-	public static final String compartments[] = { "ModelElementCompartment" };
+	public static final String compartments[] = { "packaged elements" };
 
 	/**
 	 * @generated
@@ -89,7 +89,7 @@ public class ModelPreferencePage extends AbstractPapyrusNodePreferencePage {
 	 */
 	private static TreeMap<String, Boolean> getStaticCompartmentVisibilityPreferences() {
 		TreeMap<String, Boolean> map = new TreeMap<String, Boolean>();
-		map.put("ModelElementCompartment", Boolean.TRUE);
+		map.put("packaged elements", Boolean.TRUE);
 		return map;
 	}
 
@@ -98,7 +98,7 @@ public class ModelPreferencePage extends AbstractPapyrusNodePreferencePage {
 	 */
 	private static TreeMap<String, Boolean> getStaticCompartmentTitleVisibilityPreferences() {
 		TreeMap<String, Boolean> map = new TreeMap<String, Boolean>();
-		map.put("ModelElementCompartment", Boolean.FALSE);
+		map.put("packaged elements", Boolean.FALSE);
 		return map;
 	}
 

@@ -102,19 +102,19 @@ public class UMLDiagramUpdater {
 		case ComponentEditPartPCN.VISUAL_ID:
 			return getComponent_3071SemanticChildren(view);
 		case ComponentCompositeCompartmentEditPart.VISUAL_ID:
-			return getComponentCompositeCompartment_7001SemanticChildren(view);
+			return getComponentPackagedelements_7001SemanticChildren(view);
 		case ModelPackageableElementCompartmentEditPart.VISUAL_ID:
-			return getModelModelElementCompartment_7006SemanticChildren(view);
+			return getModelPackagedelements_7006SemanticChildren(view);
 		case PackagePackageableElementCompartmentEditPart.VISUAL_ID:
-			return getPackagePackageableElementCompartment_7002SemanticChildren(view);
+			return getPackagePackagedelements_7002SemanticChildren(view);
 		case ModelPackageableElementCompartmentEditPartCN.VISUAL_ID:
-			return getModelModelElementCompartment_7007SemanticChildren(view);
+			return getModelPackagedelements_7007SemanticChildren(view);
 		case PackagePackageableElementCompartmentEditPartCN.VISUAL_ID:
-			return getPackagePackageableElementCompartment_7005SemanticChildren(view);
+			return getPackagePackagedelements_7005SemanticChildren(view);
 		case ComponentCompositeCompartmentEditPartCN.VISUAL_ID:
-			return getComponentCompositeCompartmentCN_7003SemanticChildren(view);
+			return getComponentPackagedelements_7003SemanticChildren(view);
 		case ComponentCompositeCompartmentEditPartPCN.VISUAL_ID:
-			return getComponentCompositeCompartmentPCN_7004SemanticChildren(view);
+			return getComponentPackagedelements_7004SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -242,7 +242,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getComponentCompositeCompartment_7001SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getComponentPackagedelements_7001SemanticChildren(View view) {
 		if(false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -266,7 +266,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getModelModelElementCompartment_7006SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getModelPackagedelements_7006SemanticChildren(View view) {
 		if(false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -318,7 +318,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getPackagePackageableElementCompartment_7002SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPackagePackagedelements_7002SemanticChildren(View view) {
 		if(false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -370,7 +370,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getModelModelElementCompartment_7007SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getModelPackagedelements_7007SemanticChildren(View view) {
 		if(false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -422,7 +422,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getPackagePackageableElementCompartment_7005SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPackagePackagedelements_7005SemanticChildren(View view) {
 		if(false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -474,7 +474,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getComponentCompositeCompartmentCN_7003SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getComponentPackagedelements_7003SemanticChildren(View view) {
 		if(false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -498,7 +498,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getComponentCompositeCompartmentPCN_7004SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getComponentPackagedelements_7004SemanticChildren(View view) {
 		if(false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
