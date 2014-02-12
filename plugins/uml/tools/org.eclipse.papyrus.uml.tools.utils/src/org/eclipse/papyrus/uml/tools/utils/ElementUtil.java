@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Image;
+import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.Stereotype;
@@ -302,28 +303,58 @@ public class ElementUtil {
 	}
 
 	/**
-	 * Retrieve an list of all instances in the model that are instances of
-	 * the java.lang.Class metaType or with a stereotype applied
+	 * Retrieve an list of all instances in the Package that are instances of
+	 * the java.lang.Class metaType OR with a stereotype applied
 	 * 
-	 * @param <T>
-	 * 
+	 * @param topPackage
+	 * 		
 	 * @param metaType
-	 *        selected classes
-	 * @param model
-	 *        to check
+	 * 			selected classes
 	 * @param appliedStereotype
-	 *        may be null, metatype is ignored if not null
+	 * 			may be null, metatype is ignored if not null
 	 * @return a list containing the selected instances
 	 */
-	//duplicated code from /org.eclipse.papyrus.uml.diagram.common/src/org/eclipse/papyrus/uml/diagram/common/util/Util.java
-	//+add template to this method
-	@SuppressWarnings("unchecked")
+
 	public static final <T extends EObject> List<T> getInstancesFilteredByType(final Package topPackage, final java.lang.Class<T> metaType, final Stereotype appliedStereotype) {
 		// retrieve parent element
 		// Package topPackage = Util.topPackage(element);
 		// Assert.isNotNull(topPackage,
 		// "Top package should not be null for element " + element);
-		Iterator<EObject> iter = topPackage.eAllContents();
+		return getInstancesFilteredByType(topPackage.eAllContents(), metaType, appliedStereotype );
+	}
+	
+	/**
+	 * Retrieve an list of all instances in the Model that are instances of
+	 * the java.lang.Class metaType OR with a stereotype applied
+	 * 
+	 * @param topPackage
+	 * 		
+	 * @param metaType
+	 * 			selected classes
+	 * @param appliedStereotype
+	 * 			may be null, metatype is ignored if not null
+	 * @return a list containing the selected instances
+	 */	
+	public static final <T extends EObject> List<T> getInstancesFilteredByType(final Model model, final java.lang.Class<T> metaType, final Stereotype appliedStereotype) {
+		return getInstancesFilteredByType(model.eAllContents(), metaType, appliedStereotype );
+	}
+
+	/**
+	 * Retrieve an list of all instances that are instances of
+	 * the java.lang.Class metaType OR with a stereotype applied
+	 * 
+	 * @param iter
+	 * 		iterator on all the instances
+	 * @param metaType
+	 * 			selected classes
+	 * @param appliedStereotype
+	 * 			may be null, metatype is ignored if not null
+	 * @return a list containing the selected instances
+	 */		
+	//duplicated code from /org.eclipse.papyrus.uml.diagram.common/src/org/eclipse/papyrus/uml/diagram/common/util/Util.java
+	//+add template to this method		
+	@SuppressWarnings("unchecked")	
+	private static <T extends EObject> List<T> getInstancesFilteredByType(Iterator<EObject> iter, final java.lang.Class<T> metaType, final Stereotype appliedStereotype ) {
 		List<T> filteredElements = new ArrayList<T>();
 
 		while(iter.hasNext()) {
@@ -406,6 +437,6 @@ public class ElementUtil {
 		}
 
 		return filteredElements;
-	}
+	}	
 
 }
