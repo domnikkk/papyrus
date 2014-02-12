@@ -206,7 +206,7 @@ public class ApplyStereotypeActionEditHelperAdvice extends AbstractEditHelperAdv
 				Object stereotypeApplication = element.applyStereotype(stereotype);
 				if(rename && element instanceof NamedElement) {
 					if(((NamedElement)element).getNamespace()!=null) {
-						String newName = NamedElementUtil.getDefaultNameWithIncrement(stereotype.getName(), element, ((NamedElement)element).getNamespace().getMembers());
+						String newName = NamedElementUtil.getDefaultNameWithIncrementFromBase(stereotype.getName(), ((NamedElement)element).getNamespace().getMembers());
 						((NamedElement)element).setName(newName);
 					}
 				}

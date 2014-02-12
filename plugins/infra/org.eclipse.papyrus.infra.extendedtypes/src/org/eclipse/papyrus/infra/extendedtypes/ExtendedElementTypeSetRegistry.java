@@ -117,7 +117,7 @@ public class ExtendedElementTypeSetRegistry {
 	 * Loads a given extended type set from a given identifier
 	 */
 	public void loadExtendedElementTypeSet(String identifier) {
-		if(extendedTypeSets==null) {
+		if(getExtendedTypeSets()==null) {
 			return;
 		}
 		
@@ -133,7 +133,7 @@ public class ExtendedElementTypeSetRegistry {
 			resource.load(null);
 			EObject content = resource.getContents().get(0);
 			if(content instanceof ExtendedElementTypeSet) {
-				extendedTypeSets.put(identifier, (ExtendedElementTypeSet)content);
+				getExtendedTypeSets().put(identifier, (ExtendedElementTypeSet)content);
 				loadExtendedElementTypeSet((ExtendedElementTypeSet)content);
 			}
 		} catch (IOException e) {
