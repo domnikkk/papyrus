@@ -53,8 +53,14 @@
             type="applystereotypeactionconfiguration"
             class="org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.util.ApplyStereotypeActionConfigurationResourceFactoryImpl"/>
    </extension>
-   
-   
+    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SetTypeActionConfiguration -->
+      <package
+            uri="http://www.eclipse.org/papyrus/infra/extendedtypes/uml/settypeaction/1.0"
+            class="org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationPackage"
+            genModel="model/SetTypeActionConfiguration.genmodel"/>
+   </extension> 
+
    <!-- CUSTOM EXTENSIONS -->
    <extension
          point="org.eclipse.papyrus.infra.extendedtypes.aspectActionConfiguration">
