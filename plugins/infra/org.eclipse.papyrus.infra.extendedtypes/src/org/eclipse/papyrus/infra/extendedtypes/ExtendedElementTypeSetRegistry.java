@@ -110,6 +110,7 @@ public class ExtendedElementTypeSetRegistry {
 		configurationTypeToElementTypeFactory = new HashMap<String, IExtendedElementTypeFactory<ElementTypeConfiguration>>();
 		// 1. creates the resource set
 		extendedTypesResourceSet = null;
+		registry = null;
 	}
 
 	
