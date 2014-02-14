@@ -116,7 +116,6 @@ public class LifelineLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<String, String> getMasks() {
 		return LifelineLabelHelper.getInstance().getMasks();
 	}

@@ -78,12 +78,10 @@ public class MessageCustomParser extends MessageFormatParser implements ISemanti
 		return result;
 	}
 
-	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}
 
-	@Override
 	public List<Element> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
 		if(element instanceof Message) {

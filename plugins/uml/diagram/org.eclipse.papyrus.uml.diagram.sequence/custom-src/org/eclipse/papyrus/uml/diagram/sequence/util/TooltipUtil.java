@@ -64,7 +64,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * Display type name as tooltip of each node element
  * https://bugs.eclipse.org/bugs/show_bug.cgi?id=402964
- *
+ * 
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class TooltipUtil {
@@ -161,7 +161,7 @@ public class TooltipUtil {
 
 		/**
 		 * Constructor.
-		 *
+		 * 
 		 */
 		public TooltipEditPolicy(TooltipUpdater updater) {
 			this.updater = updater;
@@ -216,9 +216,9 @@ public class TooltipUtil {
 
 		/**
 		 * Constructor.
-		 *
+		 * 
 		 * @param updater
-		 *
+		 * 
 		 */
 		public TooltipFigure(TooltipUpdater updater) {
 			this.updater = updater;
@@ -239,7 +239,7 @@ public class TooltipUtil {
 
 		/**
 		 * @see org.eclipse.draw2d.Figure#getPreferredSize(int, int)
-		 *
+		 * 
 		 * @param wHint
 		 * @param hHint
 		 * @return
@@ -298,7 +298,7 @@ public class TooltipUtil {
 
 		/**
 		 * Constructor.
-		 *
+		 * 
 		 */
 		public EditPartTooltipUpdater(GraphicalEditPart editPart) {
 			Assert.isNotNull(editPart);
@@ -307,10 +307,9 @@ public class TooltipUtil {
 
 		/**
 		 * @see org.eclipse.papyrus.uml.diagram.sequence.util.TooltipUtil.TooltipUpdater#getTooltipName()
-		 *
+		 * 
 		 * @return
 		 */
-		@Override
 		public String getTooltipName() {
 			if(editPart instanceof CombinedFragment2EditPart) {
 				return "Co Region";
@@ -362,10 +361,9 @@ public class TooltipUtil {
 
 		/**
 		 * @see org.eclipse.papyrus.uml.diagram.sequence.util.TooltipUtil.TooltipUpdater#getTooltipDescription()
-		 *
+		 * 
 		 * @return
 		 */
-		@Override
 		public String getTooltipDescription() {
 			//CoRegion
 			//			if(editPart instanceof CombinedFragment2EditPart) {

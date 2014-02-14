@@ -83,7 +83,6 @@ public class CollaborationUseLabelEditPolicy extends AbstractMaskManagedEditPoli
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<String, String> getMasks() {
 		return CollaborationUseLabelHelper.getInstance().getMasks();
 	}

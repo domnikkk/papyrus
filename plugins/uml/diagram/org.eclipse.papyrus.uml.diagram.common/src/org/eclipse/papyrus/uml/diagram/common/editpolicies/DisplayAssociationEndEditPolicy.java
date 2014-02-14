@@ -74,7 +74,6 @@ public class DisplayAssociationEndEditPolicy extends AbstractMaskManagedEditPoli
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<String, String> getMasks() {
 		return propertyLabelHelper.getMasks();
 	}
@@ -134,7 +133,7 @@ public class DisplayAssociationEndEditPolicy extends AbstractMaskManagedEditPoli
 
 	/**
 	 * notifies that the the property has changed.
-	 *
+	 * 
 	 * @param property
 	 *        the property that has changed
 	 * @param notification
@@ -213,7 +212,7 @@ public class DisplayAssociationEndEditPolicy extends AbstractMaskManagedEditPoli
 
 	/**
 	 * notifies that the type of the property has changed.
-	 *
+	 * 
 	 * @param type
 	 *        the type of the property that has changed
 	 * @param notification

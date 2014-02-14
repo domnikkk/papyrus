@@ -76,10 +76,9 @@ public class InstanceSpecificationNameLabelEditPolicy extends AbstractMaskManage
 
 	/**
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy#getMasks()
-	 *
+	 * 
 	 * @return
 	 */
-	@Override
 	public Map<String, String> getMasks() {
 		return masks;
 	}
@@ -127,7 +126,7 @@ public class InstanceSpecificationNameLabelEditPolicy extends AbstractMaskManage
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.AbstractMaskManagedEditPolicy#refreshDisplay()
-	 *
+	 * 
 	 */
 	@Override
 	public void refreshDisplay() {

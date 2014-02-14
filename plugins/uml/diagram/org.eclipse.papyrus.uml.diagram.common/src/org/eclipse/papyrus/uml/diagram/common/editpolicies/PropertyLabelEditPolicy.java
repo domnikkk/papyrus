@@ -71,7 +71,6 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<String, String> getMasks() {
 		return PropertyLabelHelper.getInstance().getMasks();
 	}
@@ -124,7 +123,7 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that the the property has changed.
-	 *
+	 * 
 	 * @param property
 	 *        the property that has changed
 	 * @param notification
@@ -203,7 +202,7 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that the type of the property has changed.
-	 *
+	 * 
 	 * @param type
 	 *        the type of the property that has changed
 	 * @param notification

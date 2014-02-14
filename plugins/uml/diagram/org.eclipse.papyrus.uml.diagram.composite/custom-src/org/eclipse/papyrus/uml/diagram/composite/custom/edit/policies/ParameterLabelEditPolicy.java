@@ -61,7 +61,6 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<String, String> getMasks() {
 		return ParameterLabelHelper.getInstance().getMasks();
 	}
@@ -110,7 +109,7 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that the the parameter has changed.
-	 *
+	 * 
 	 * @param parameter
 	 *        the parameter that has changed
 	 * @param notification
@@ -193,7 +192,7 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	/**
 	 * notifies that the type of the parameter has changed.
-	 *
+	 * 
 	 * @param type
 	 *        the type of the parameter that has changed
 	 * @param notification

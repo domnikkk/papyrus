@@ -50,7 +50,6 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		return MessageLabelHelper.getInstance().getDefaultValue();
 	}
 
-	@Override
 	public Map<String, String> getMasks() {
 		return MessageLabelHelper.getInstance().getMasks();
 	}
@@ -213,7 +212,6 @@ public class MessageLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 
 	class DefaultValueListener implements NotificationListener {
 
-		@Override
 		public void notifyChanged(Notification notification) {
 			refreshDisplay();
 		}

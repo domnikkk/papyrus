@@ -72,7 +72,6 @@ public class OperationLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<String, String> getMasks() {
 		return OperationLabelHelper.getInstance().getMasks();
 	}
