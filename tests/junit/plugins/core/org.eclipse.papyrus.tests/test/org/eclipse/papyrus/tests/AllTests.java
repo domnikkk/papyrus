@@ -44,7 +44,7 @@ public class AllTests {
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.services.edit.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.services.edit.tests.suites.AllTests"));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.labelprovider.tests.AllTests.class));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.emf.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceTest"));
-		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.extendedtypes.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.extendedtypes.AllTests"));
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.extendedtypes.tests.AllTests.class));
 		//		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.openelement.tests.AllTests.class));
 		/* views */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.views.modelexplorer.tests.AllTests.class));
