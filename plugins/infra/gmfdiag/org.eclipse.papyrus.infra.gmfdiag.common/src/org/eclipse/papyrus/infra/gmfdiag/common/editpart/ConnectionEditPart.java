@@ -13,6 +13,7 @@ package org.eclipse.papyrus.infra.gmfdiag.common.editpart;
 
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.PapyrusConnectionEndEditPolicy;
 
@@ -35,6 +36,24 @@ public abstract class ConnectionEditPart extends ConnectionNodeEditPart implemen
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE, new PapyrusConnectionEndEditPolicy());
+	}
+
+	@Override
+	protected void setLineWidth(int width) {
+		if(width < 0) {
+			width = 1;
+		}
+
+		if(getFigure() instanceof PolylineConnectionEx) {
+			PolylineConnectionEx conn = (PolylineConnectionEx)getFigure();
+			conn.setLineWidth(getMapMode().DPtoLP(width));
+		}
+	}
+
+	@Override
+	protected void refreshVisuals() {
+		super.refreshVisuals();
+		refreshLineWidth();
 	}
 
 }
