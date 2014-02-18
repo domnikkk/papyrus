@@ -8,18 +8,15 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
 
-import java.util.Locale;
 
 import org.eclipse.core.databinding.conversion.IConverter;
-import org.eclipse.core.databinding.conversion.NumberToStringConverter;
-import org.eclipse.core.databinding.conversion.StringToNumberConverter;
 import org.eclipse.papyrus.infra.widgets.Activator;
 import org.eclipse.swt.widgets.Composite;
 
-import com.ibm.icu.text.NumberFormat;
 
 /**
  * An editor representing a float value as a text box
@@ -42,8 +39,50 @@ public class DoubleEditor extends StringEditor {
 	public DoubleEditor(Composite parent, int style) {
 		super(parent, style);
 
-		targetToModelConverter = StringToNumberConverter.toDouble(NumberFormat.getInstance(Locale.ENGLISH), true);
-		setConverters(targetToModelConverter, NumberToStringConverter.fromDouble(NumberFormat.getInstance(Locale.ENGLISH), true));
+		targetToModelConverter = new IConverter() {
+
+			public Object getFromType() {
+				return String.class;
+			}
+
+			public Object getToType() {
+				return Double.class;
+			}
+
+			public Double convert(Object fromObject) {
+				if(fromObject instanceof String) {
+					String newString = ((String)fromObject).replaceAll(" ", ""); //$NON-NLS-1$ //$NON-NLS-2$
+					try {
+						return Double.parseDouble(newString);
+					} catch (NumberFormatException ex) {
+						Activator.log.error(ex);
+						return null;
+					}
+				}
+				return null;
+			}
+
+		};
+
+		IConverter doubleToString = new IConverter() {
+
+			public Object getFromType() {
+				return Double.class;
+			}
+
+			public Object getToType() {
+				return String.class;
+			}
+
+			public Object convert(Object fromObject) {
+				if(fromObject instanceof Double) {
+					return Double.toString((Double)fromObject);
+				}
+				return ""; //$NON-NLS-1$
+			}
+		};
+		setValidateOnDelay(true);
+		setConverters(targetToModelConverter, doubleToString);
 	}
 
 	/**
@@ -66,4 +105,6 @@ public class DoubleEditor extends StringEditor {
 			return null;
 		}
 	}
+
+
 }

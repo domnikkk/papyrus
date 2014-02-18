@@ -168,7 +168,6 @@ public class CreateContextWizard extends Wizard implements INewWizard {
 
 						try {
 							currentContext.eResource().save(saveOptions);
-
 							monitor.worked(1);
 							for(Tab tab : currentContext.getTabs()) {
 								for(Section section : tab.getSections()) {
@@ -305,6 +304,7 @@ public class CreateContextWizard extends Wizard implements INewWizard {
 	protected void setGenerator(IGenerator generator) {
 		this.generator = generator;
 		generatorPage.setGenerator(generator);
+		generatorPage.doBinding();
 	}
 
 	protected void setContexts(List<Context> contexts) {

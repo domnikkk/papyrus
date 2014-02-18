@@ -74,7 +74,7 @@ public class UnlimitedNaturalValidator extends AbstractValidator {
 			String newText = (String)newValue;
 
 			if(INFINITE_STAR.equals(newText) || INFINITE_MINUS_ONE.equals(newText)) {
-				return null;
+				return Status.OK_STATUS;
 			}
 
 			boolean isValid = true;

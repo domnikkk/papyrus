@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,10 +8,22 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Thibault Le Ouay t.leouay@sherpa-eng.com - Strategy improvement of generated files
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.wizard;
 
+import java.util.Collections;
+
+import org.eclipse.core.databinding.Binding;
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.UpdateValueStrategy;
+import org.eclipse.core.databinding.conversion.IConverter;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.core.databinding.observable.value.IValueChangeListener;
+import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.databinding.wizard.WizardPageSupport;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.papyrus.customization.properties.generation.generators.IGenerator;
 import org.eclipse.papyrus.customization.properties.generation.layout.ILayoutGenerator;
@@ -30,26 +42,45 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 
 /**
- * A WizardPage to display the selected generator's options, as well as the context's
- * target file. The options depend on the selected generator.
+ * A WizardPage to display the selected generator's options, as well as the
+ * context's target file. The options depend on the selected generator.
  * 
  * @author Camille Letavernier
  */
 public class GeneratorPage extends AbstractCreateContextPage implements Listener {
 
-	private IGenerator generator;
+	protected IGenerator generator;
 
 	private Composite root, generatorControl;
 
-	private FileChooser targetFileChooser;
+	protected FileChooser targetFileChooser;
 
 	private CCombo layoutCombo;
+
+	protected IObservableValue srcTextObservable;
+
+	protected IObservableValue targetTextObservable;
+
+	protected UpdateValueStrategy srcFieldStrategy;
+
+	protected UpdateValueStrategy targetFieldStrategy;
+
+	protected Binding binding;
+
+	protected DataBindingContext ctx;
+
+	protected boolean next = false;
+
+	protected URI oldURI;
 
 	/**
 	 * Constructor.
 	 */
 	public GeneratorPage() {
 		super(Messages.GeneratorPage_title);
+		ctx = new DataBindingContext();
+		srcFieldStrategy = new UpdateValueStrategy();
+		targetFieldStrategy = new UpdateValueStrategy();
 	}
 
 	/**
@@ -66,6 +97,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		this.generator = generator;
 		generator.createControls(generatorControl);
 		generatorControl.layout();
+		srcTextObservable = this.generator.getObservableValue();
 		root.layout();
 	}
 
@@ -94,7 +126,6 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		generatorControl.setLayout(new FillLayout());
 		generatorControl.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false, 2, 1));
 
-
 		Label layoutGeneratorLabel = new Label(root, SWT.NONE);
 		layoutGeneratorLabel.setText(Messages.GeneratorPage_layoutGenerator);
 		GridData data = new GridData();
@@ -119,6 +150,81 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		targetFileChooser = new FileChooser(root, true);
 		targetFileChooser.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		targetFileChooser.addListener(this);
+		targetTextObservable = targetFileChooser.getObservableValue();
+		targetFileChooser.setFilterExtensions(new String[]{ "ctx" });
+		if(targetFieldStrategy != null) {
+			targetFieldStrategy.setConverter(new IConverter() {
+
+				public Object getToType() {
+
+					return String.class;
+				}
+
+				public Object getFromType() {
+					return String.class;
+				}
+
+				public String convert(Object fromObject) {
+					if(srcTextObservable != null) {
+						return (String)srcTextObservable.getValue();
+					} else if(targetFileChooser.getFilePath() != null) {
+						return targetFileChooser.getFilePath();
+
+					}
+					return "";
+				}
+			});
+		}
+		if(srcFieldStrategy != null) {
+			srcFieldStrategy.setConverter(new IConverter() {
+
+				public Object getToType() {
+					return String.class;
+				}
+
+				public Object getFromType() {
+					return String.class;
+				}
+
+				public String convert(Object fromObject) {
+
+					if(fromObject instanceof String) {
+						String stringObject = (String)fromObject;
+						if(stringObject.equals("")) {
+							return "";
+						}
+						String[] result = stringObject.split("/");
+						String filename = result[result.length - 1];
+						String[] ext = filename.split("\\.");
+						StringBuilder builder = new StringBuilder();
+
+						if(targetTextObservable != null) {
+							String s = (String)targetTextObservable.getValue();
+							if(!s.equals("")) {
+								String original[] = s.split("/");
+								builder.append("/");
+								for(int i = 1; i < original.length - 1; i++) {
+									builder.append(original[i]);
+									builder.append("/");
+
+								}
+							} else {
+								builder.append("/");
+								builder.append(result[1]);
+								builder.append("/properties/");
+							}
+						}
+
+						builder.append(ext[0]);
+						builder.append(".ctx");
+						return builder.toString();
+					}
+					return "";
+				}
+			});
+		}
+		WizardPageSupport.create(this, ctx);
+
 
 		setControl(root);
 	}
@@ -126,15 +232,59 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 	public void handleEvent(Event event) {
 		String filePath = targetFileChooser.getFilePath();
 		if(filePath != null) {
-			getWizard().selectFieldsPage.setTargetURI(URI.createPlatformResourceURI(targetFileChooser.getFilePath(), true));
+			getWizard().selectFieldsPage.setTargetURI(Collections.singletonList(URI.createPlatformResourceURI(filePath, true)));
+			super.getContainer().updateButtons();
 		}
-		super.getContainer().updateButtons();
 	}
 
 	@Override
 	public IWizardPage getNextPage() {
 		int selection = layoutCombo.getSelectionIndex();
 		getWizard().layoutGenerator = CreateContextWizard.layoutGenerators.get(selection);
+		URI targetURI = URI.createPlatformResourceURI(targetFileChooser.getFilePath(), true);
+
+		getWizard().selectFieldsPage.setTargetURI(Collections.singletonList(targetURI));
+		getWizard().generatorPage.setStrategy(0);
 		return super.getNextPage();
 	}
+
+	public void doBinding() {
+		if(srcTextObservable != null || targetTextObservable != null) {
+			if(binding != null) {
+				binding.dispose();
+			}
+
+			binding = ctx.bindValue(srcTextObservable, targetTextObservable, srcFieldStrategy, targetFieldStrategy);
+
+			binding.getValidationStatus().addValueChangeListener(new IValueChangeListener() {
+
+				public void handleValueChange(ValueChangeEvent event) {
+					IStatus status = (IStatus)event.diff.getNewValue();
+					if(status.isOK()) {
+						setNext(true);
+					} else {
+						setNext(false);
+					}
+				}
+
+			});
+		}
+	}
+
+	@Override
+	public boolean canFlipToNextPage() {
+		return this.next;
+	}
+
+	public void setNext(boolean next) {
+		this.next = next;
+		super.getContainer().updateButtons();
+	}
+
+
+	public void setStrategy(int strategy) {
+		this.generator.setStrategy(strategy);
+
+	}
+
 }
