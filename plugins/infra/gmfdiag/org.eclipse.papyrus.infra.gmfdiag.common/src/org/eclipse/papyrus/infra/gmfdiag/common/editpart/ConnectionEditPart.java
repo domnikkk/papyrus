@@ -54,6 +54,7 @@ public abstract class ConnectionEditPart extends ConnectionNodeEditPart implemen
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshLineWidth();
+		installRouter();
 	}
 
 }
