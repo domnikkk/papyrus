@@ -35,10 +35,10 @@ public class InstanceSpecificationPreferencePage extends BlockDefinitionDiagramN
 	/** Static attribute initialization */
 	static {
 		compartmentDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
-		compartmentDefaultVisibilityMap.put("SlotCompartment", Boolean.TRUE); //$NON-NLS-1$	
+		compartmentDefaultVisibilityMap.put("slots", Boolean.TRUE); //$NON-NLS-1$	
 
 		compartmentTitleDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
-		compartmentTitleDefaultVisibilityMap.put("SlotCompartment", Boolean.TRUE); //$NON-NLS-1$
+		compartmentTitleDefaultVisibilityMap.put("slots", Boolean.TRUE); //$NON-NLS-1$
 
 
 		// Start of user code custom static initializations
