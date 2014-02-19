@@ -539,14 +539,14 @@
     <!-- WST -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("WebTools",0) -->
-      <rm:uri format="{0}/webtools/downloads/drops/R3.5.2/M-3.5.2RC3-20140210204322/repository/">
+      <rm:uri format="{0}/webtools/downloads/drops/R3.5.2/M-3.5.2RC4-20140217150812/repository/">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
     <!-- Eclipse Platform Milestones -->
 	<rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
 		<!-- updateFrom("Eclipse",0) -->
-		<rm:uri format="{0}/eclipse/updates/4.3-M-builds/M-4.3.2RC3-201402061000/">
+		<rm:uri format="{0}/eclipse/updates/4.3-M-builds/M-4.3.2RC4-201402120800/">
 			<bc:propertyRef key="eclipse.downloads"/>
 		</rm:uri>
 	</rm:provider>
