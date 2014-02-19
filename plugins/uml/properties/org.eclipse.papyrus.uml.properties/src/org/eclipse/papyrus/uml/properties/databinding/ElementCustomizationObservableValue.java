@@ -8,11 +8,19 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Esterel Technologies - Implements adapter for listening to eAnnotation life cycle (add and remove operations) 
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.databinding;
 
+import org.eclipse.core.databinding.observable.Diffs;
+import org.eclipse.core.databinding.observable.value.ValueDiff;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.UnexecutableCommand;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
@@ -34,13 +42,13 @@ import org.eclipse.papyrus.uml.tools.databinding.CommandBasedObservableValue;
  */
 public class ElementCustomizationObservableValue extends AbstractUMLAggregatedObservableValue implements CommandBasedObservableValue, AggregatedObservable {
 
-	private EditPart sourceElement;
-
 	private Property property;
 
 	private TransactionalEditingDomain transactionalDomain;
 
 	private View notationElement;
+
+	private Adapter eAnnotationAdapter;
 
 	/**
 	 * 
@@ -53,16 +61,24 @@ public class ElementCustomizationObservableValue extends AbstractUMLAggregatedOb
 	 */
 	public ElementCustomizationObservableValue(EditPart sourceElement, Property property) {
 		super(EMFHelper.resolveEditingDomain(sourceElement));
-		this.sourceElement = sourceElement;
 		this.property = property;
 		notationElement = (View)sourceElement.getModel();
+		notationElement.eAdapters().add(eAnnotationAdapter = new EAnnotationAdapter());
 		if(domain instanceof TransactionalEditingDomain) {
 			transactionalDomain = (TransactionalEditingDomain)domain;
 		}
 	}
 
-	//TODO : The value is not correctly refreshed when someone else edits it
-	//Some listeners need to be added
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public synchronized void dispose() {
+		super.dispose();
+		// remove the eAnnotation adapter when the observable is disposed
+		notationElement.eAdapters().remove(eAnnotationAdapter);
+	}
+
 	public Object getValueType() {
 		switch(property) {
 		case QUALIFIED_NAME:
@@ -154,6 +170,41 @@ public class ElementCustomizationObservableValue extends AbstractUMLAggregatedOb
 		 * Whether and how the qualified name should be displayed
 		 */
 		QUALIFIED_NAME
+	}
+
+	/**
+	 * Internal class for listening to add/remove operations of {@link EAnnotation} objects.
+	 */
+	private class EAnnotationAdapter extends AdapterImpl {
+
+		/**
+		 * {@inheritDoc}
+		 */
+		@Override
+		public void notifyChanged(Notification notification) {
+			if(notification.getFeature() == EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS) {
+				switch(notification.getEventType()) {
+				case Notification.ADD:
+					fireValueChange(notification);
+					break;
+				case Notification.REMOVE:
+					fireValueChange(notification);
+				default:
+					break;
+				}
+			}
+		}
+
+		/**
+		 * Fires the value changes to the observable.
+		 * 
+		 * @param notification
+		 *        The EMF notification to propagate
+		 */
+		private void fireValueChange(final Notification notification) {
+			ValueDiff diff = Diffs.createValueDiff(notification.getOldValue(), notification.getNewValue());
+			ElementCustomizationObservableValue.this.fireValueChange(diff);
+		}
 	}
 
 }
