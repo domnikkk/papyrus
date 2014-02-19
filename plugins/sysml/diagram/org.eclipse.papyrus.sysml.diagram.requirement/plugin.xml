@@ -675,6 +675,19 @@
       </object>
    </editpartProvider>
 </extension>
+  <extension
+        point="org.eclipse.papyrus.infra.gmfdiag.common.notationTypesMapping">
+     <diagramMappings diagramID="RequirementDiagram">
+    	<mapping
+			humanReadableType="packaged elements"
+			type="7010">
+		</mapping>
+		<mapping
+			humanReadableType="packaged elements"
+			type="7016">
+		</mapping>
+     </diagramMappings>
+  </extension>
 <!-- // End of user code 
   -->
 
