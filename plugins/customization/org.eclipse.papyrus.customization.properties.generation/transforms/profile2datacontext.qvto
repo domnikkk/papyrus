@@ -170,7 +170,8 @@ query UML::Type::getType() : PropertyEnvironment::Type {
 			case (self.name = "String") type := PropertyEnvironment::Type::String; 
 			case (self.name = "Integer") type := PropertyEnvironment::Type::Integer;
 			case (self.name = "Boolean") type := PropertyEnvironment::Type::Boolean;
-			case (self.name = "Real") type := PropertyEnvironment::Type::String;
+			case (self.name = "Real") type := PropertyEnvironment::Type::Double;
+			case (self.name = "Double") type := PropertyEnvironment::Type::Double;
 		};
 		case (self.oclIsTypeOf(DataType)) type := PropertyEnvironment::Type::Reference;
 	};
