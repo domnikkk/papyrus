@@ -172,7 +172,7 @@
     <!-- M2T Acceleo -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("M2T ACCELEO",0) -->
-      <rm:uri format="{0}/modeling/m2t/acceleo/updates/milestones/3.4/S201401221203">
+      <rm:uri format="{0}/acceleo/updates/milestones/3.4/S201401221203">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -288,7 +288,7 @@
     <!-- GMF Tooling -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("GMF Tooling",0) -->
-      <rm:uri format="{0}/modeling/gmp/gmf-tooling/updates/milestones-3.1.1">
+      <rm:uri format="{0}/modeling/gmp/gmf-tooling/updates/milestones-3.1.2">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
