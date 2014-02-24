@@ -49,10 +49,12 @@ import org.eclipse.papyrus.sysml.service.types.utils.ConnectorUtils;
 import org.eclipse.papyrus.uml.diagram.common.util.CrossReferencerUtil;
 import org.eclipse.papyrus.uml.service.types.utils.ElementUtil;
 import org.eclipse.papyrus.uml.service.types.utils.NamedElementHelper;
+import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
@@ -191,11 +193,15 @@ public class PropertyEditHelperAdvice extends AbstractEditHelperAdvice {
 	 * @return
 	 */
 	private ICommand getDestroyAssociatedNestedConnectorCommand(Property property, ICommand command) {
-		List<Connector> instancesFilteredByType = org.eclipse.papyrus.uml.tools.utils.ElementUtil.getInstancesFilteredByType(property.getModel(), Connector.class, null);
-		List<Connector> connectorToDestroy = ConnectorUtils.filterConnectorByPropertyInNestedConnectorEnd(instancesFilteredByType, (Property)property);
-		for(Connector connector : connectorToDestroy) {
-			ICommand destroyConnectorCommand = getDestroyConnectorCommand(connector);
-			command = CompositeCommand.compose(command, destroyConnectorCommand);
+		Package rootPackage = PackageUtil.getRootPackage(property);
+		// When creating a property in a new-element dialog, it is not attached to the model, yet.  So, there will be no need to worry about connectors
+		if(rootPackage != null) {
+			List<Connector> instancesFilteredByType = org.eclipse.papyrus.uml.tools.utils.ElementUtil.getInstancesFilteredByType(rootPackage, Connector.class, null);
+			List<Connector> connectorToDestroy = ConnectorUtils.filterConnectorByPropertyInNestedConnectorEnd(instancesFilteredByType, property);
+			for(Connector connector : connectorToDestroy) {
+				ICommand destroyConnectorCommand = getDestroyConnectorCommand(connector);
+				command = CompositeCommand.compose(command, destroyConnectorCommand);
+			}
 		}
 		return command;
 	}
