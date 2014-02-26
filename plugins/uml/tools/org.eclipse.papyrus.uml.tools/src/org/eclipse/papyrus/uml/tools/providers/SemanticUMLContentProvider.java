@@ -14,6 +14,8 @@ package org.eclipse.papyrus.uml.tools.providers;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
@@ -26,6 +28,7 @@ import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.infra.emf.providers.strategy.SemanticEMFContentProvider;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.widgets.Activator;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
@@ -131,7 +134,52 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 				}
 			}
 			return res;
+		} else if(metaclass instanceof EClass) {
+			EAnnotation eAnnotation = ((EClass)metaclass).getEAnnotation(org.eclipse.uml2.uml.util.UMLUtil.UML2_UML_PACKAGE_2_0_NS_URI);
+			if(eAnnotation != null) {
+				if(eAnnotation != null) {
+					EList<EObject> references = eAnnotation.getReferences();
+
+					if(!references.isEmpty()) {
+						EObject reference = references.get(0);
+
+						if((reference instanceof Stereotype) && !reference.eIsProxy()) {
+							Stereotype newStereotype = (Stereotype)reference;
+							boolean res = semanticElement.getAppliedStereotype(newStereotype.getQualifiedName()) != null;
+							if(!res) {
+								EClass definition = newStereotype.getDefinition();
+								for(EObject e : semanticElement.getStereotypeApplications()) {
+									EClass c = e.eClass();
+									if(definition != null && definition.isSuperTypeOf(c)) {
+										res = true;
+										break;
+									}
+								}
+							}
+							return res;
+						}
+					}
+				}
+			}
+
+			else {
+				EList<Stereotype> stereotypes = semanticElement.getAppliedStereotypes();
+				List<EClass> eClasses = EMFHelper.getSubclassesOf((EClass)metaclass, false, true);
+				for(Stereotype stereotype : stereotypes) {
+					if(stereotype.getName().equals(((EClass)metaclass).getName())) {
+						return true;
+					} else {
+						for(EClass eClass : eClasses) {
+							if(stereotype.getName().equals(eClass.getName())) {
+								return true;
+							}
+						}
+					}
+				}
+			}
+
 		}
+
 
 		//TODO : We should use super.isCompatibleMetaclass(), but the super-implementation 
 		//may not be compatible with our implementation of getAdaptedValue()
@@ -177,6 +225,54 @@ public class SemanticUMLContentProvider extends SemanticEMFContentProvider {
 
 					if(stereotypeApplication != null) {
 						return stereotypeApplication;
+					}
+				}
+				// stereotype property typed with a datatype having properties typed with Stereotype
+				else if(metaclassWanted instanceof EClass) {
+					EAnnotation eAnnotation = ((EClass)metaclassWanted).getEAnnotation(org.eclipse.uml2.uml.util.UMLUtil.UML2_UML_PACKAGE_2_0_NS_URI);
+					if(eAnnotation != null) {
+						if(eAnnotation != null) {
+							EList<EObject> references = eAnnotation.getReferences();
+
+							if(!references.isEmpty()) {
+								EObject reference = references.get(0);
+
+								if((reference instanceof Stereotype) && !reference.eIsProxy()) {
+									Stereotype newStereotype = (Stereotype)reference;
+									EObject stereotypeApplication = null;
+
+									stereotypeApplication = element.getStereotypeApplication(newStereotype);
+									if(stereotypeApplication == null) {
+										List<Stereotype> subStereotypes = element.getAppliedSubstereotypes(newStereotype);
+										for(Stereotype subSteretoype : subStereotypes) {
+											stereotypeApplication = element.getStereotypeApplication(subSteretoype);
+											if(stereotypeApplication != null) {
+												break;
+											}
+										}
+									}
+									if(stereotypeApplication != null) {
+										return stereotypeApplication;
+									}
+								}
+							}
+						}
+					}
+
+					else {
+						EList<Stereotype> stereotypes = ((Element)semanticElement).getAppliedStereotypes();
+						List<EClass> eClasses = EMFHelper.getSubclassesOf((EClass)metaclassWanted, false, true);
+						for(Stereotype stereotype : stereotypes) {
+							if(stereotype.getName().equals(((EClass)metaclassWanted).getName())) {
+								return ((Element)semanticElement).getStereotypeApplication(stereotype);
+							} else {
+								for(EClass eClass : eClasses) {
+									if(stereotype.getName().equals(eClass.getName())) {
+										return ((Element)semanticElement).getStereotypeApplication(stereotype);
+									}
+								}
+							}
+						}
 					}
 				}
 			}
