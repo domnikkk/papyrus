@@ -307,11 +307,11 @@ public class ElementUtil {
 	 * the java.lang.Class metaType OR with a stereotype applied
 	 * 
 	 * @param topPackage
-	 * 		
+	 * 
 	 * @param metaType
-	 * 			selected classes
+	 *        selected classes
 	 * @param appliedStereotype
-	 * 			may be null, metatype is ignored if not null
+	 *        may be null, metatype is ignored if not null
 	 * @return a list containing the selected instances
 	 */
 
@@ -320,23 +320,23 @@ public class ElementUtil {
 		// Package topPackage = Util.topPackage(element);
 		// Assert.isNotNull(topPackage,
 		// "Top package should not be null for element " + element);
-		return getInstancesFilteredByType(topPackage.eAllContents(), metaType, appliedStereotype );
+		return getInstancesFilteredByType(topPackage.eAllContents(), metaType, appliedStereotype);
 	}
-	
+
 	/**
 	 * Retrieve an list of all instances in the Model that are instances of
 	 * the java.lang.Class metaType OR with a stereotype applied
 	 * 
 	 * @param topPackage
-	 * 		
+	 * 
 	 * @param metaType
-	 * 			selected classes
+	 *        selected classes
 	 * @param appliedStereotype
-	 * 			may be null, metatype is ignored if not null
+	 *        may be null, metatype is ignored if not null
 	 * @return a list containing the selected instances
-	 */	
+	 */
 	public static final <T extends EObject> List<T> getInstancesFilteredByType(final Model model, final java.lang.Class<T> metaType, final Stereotype appliedStereotype) {
-		return getInstancesFilteredByType(model.eAllContents(), metaType, appliedStereotype );
+		return getInstancesFilteredByType(model.eAllContents(), metaType, appliedStereotype);
 	}
 
 	/**
@@ -344,17 +344,17 @@ public class ElementUtil {
 	 * the java.lang.Class metaType OR with a stereotype applied
 	 * 
 	 * @param iter
-	 * 		iterator on all the instances
+	 *        iterator on all the instances
 	 * @param metaType
-	 * 			selected classes
+	 *        selected classes
 	 * @param appliedStereotype
-	 * 			may be null, metatype is ignored if not null
+	 *        may be null, metatype is ignored if not null
 	 * @return a list containing the selected instances
-	 */		
+	 */
 	//duplicated code from /org.eclipse.papyrus.uml.diagram.common/src/org/eclipse/papyrus/uml/diagram/common/util/Util.java
 	//+add template to this method		
-	@SuppressWarnings("unchecked")	
-	private static <T extends EObject> List<T> getInstancesFilteredByType(Iterator<EObject> iter, final java.lang.Class<T> metaType, final Stereotype appliedStereotype ) {
+	@SuppressWarnings("unchecked")
+	private static <T extends EObject> List<T> getInstancesFilteredByType(Iterator<EObject> iter, final java.lang.Class<T> metaType, final Stereotype appliedStereotype) {
 		List<T> filteredElements = new ArrayList<T>();
 
 		while(iter.hasNext()) {
@@ -369,38 +369,41 @@ public class ElementUtil {
 
 			/* package imports treatment */
 			else if(currentElt instanceof PackageImport) {
-				Iterator<EObject> piIter = ((PackageImport)currentElt).getImportedPackage().eAllContents();
-				while(piIter.hasNext()) {
-					EObject piCurrentElt = piIter.next();
-					if(piCurrentElt instanceof Element) {
-						if(appliedStereotype != null) {
+				Package importedPackage = ((PackageImport)currentElt).getImportedPackage();
+				if(importedPackage != null) {
+					Iterator<EObject> piIter = importedPackage.eAllContents();
+					while(piIter.hasNext()) {
+						EObject piCurrentElt = piIter.next();
+						if(piCurrentElt instanceof Element) {
+							if(appliedStereotype != null) {
 
-							Iterator<Stereotype> appStIter = ((Element)piCurrentElt).getAppliedStereotypes().iterator();
-							while(appStIter.hasNext()) {
-								Stereotype currentSt = (Stereotype)appStIter.next();
+								Iterator<Stereotype> appStIter = ((Element)piCurrentElt).getAppliedStereotypes().iterator();
+								while(appStIter.hasNext()) {
+									Stereotype currentSt = appStIter.next();
 
-								if(currentSt.conformsTo(appliedStereotype)) {
+									if(currentSt.conformsTo(appliedStereotype)) {
+										filteredElements.add((T)piCurrentElt);
+									}
+								}
+
+							} else { // if (appliedStereotype == null)
+								if(metaType.isInstance(piCurrentElt)) {
 									filteredElements.add((T)piCurrentElt);
 								}
-							}
 
-						} else { // if (appliedStereotype == null)
-							if(metaType.isInstance(piCurrentElt)) {
-								filteredElements.add((T)piCurrentElt);
-							}
-
-							/** add imported meta elements */
-							else if(piCurrentElt instanceof ElementImport) {
-								Iterator<EObject> eIter = ((ElementImport)piCurrentElt).getImportedElement().eAllContents();
-								while(eIter.hasNext()) {
-									EObject currentEIelt = eIter.next();
-									if(metaType.isInstance(currentEIelt))
-										filteredElements.add((T)currentEIelt);
+								/** add imported meta elements */
+								else if(piCurrentElt instanceof ElementImport) {
+									Iterator<EObject> eIter = ((ElementImport)piCurrentElt).getImportedElement().eAllContents();
+									while(eIter.hasNext()) {
+										EObject currentEIelt = eIter.next();
+										if(metaType.isInstance(currentEIelt)) {
+											filteredElements.add((T)currentEIelt);
+										}
+									}
 								}
 							}
 						}
 					}
-
 				}
 			}
 
@@ -411,7 +414,7 @@ public class ElementUtil {
 
 					Iterator<Stereotype> appStIter = ((Element)currentElt).getAppliedStereotypes().iterator();
 					while(appStIter.hasNext()) {
-						Stereotype currentSt = (Stereotype)appStIter.next();
+						Stereotype currentSt = appStIter.next();
 
 						if(currentSt.conformsTo(appliedStereotype)) {
 							filteredElements.add((T)currentElt);
@@ -425,11 +428,15 @@ public class ElementUtil {
 
 					/** add imported meta elements */
 					else if(currentElt instanceof ElementImport) {
-						Iterator<EObject> eIter = ((ElementImport)currentElt).getImportedElement().eAllContents();
-						while(eIter.hasNext()) {
-							EObject currentEIelt = eIter.next();
-							if(metaType.isInstance(currentEIelt))
-								filteredElements.add((T)currentEIelt);
+						Element importedElement = ((ElementImport)currentElt).getImportedElement();
+						if(importedElement != null) {
+							Iterator<EObject> eIter = importedElement.eAllContents();
+							while(eIter.hasNext()) {
+								EObject currentEIelt = eIter.next();
+								if(metaType.isInstance(currentEIelt)) {
+									filteredElements.add((T)currentEIelt);
+								}
+							}
 						}
 					}
 				}
@@ -437,6 +444,6 @@ public class ElementUtil {
 		}
 
 		return filteredElements;
-	}	
+	}
 
 }
