@@ -116,7 +116,7 @@ public class AnnotatedLinkEditCommand extends AbstractTransactionalCommand {
 		}
 		if(oldSourceElement != null) {
 			if(oldSourceElement instanceof Comment) {
-				((Comment)oldSourceElement).getAnnotatedElements().remove(targetElement);
+				((Comment)oldSourceElement).getAnnotatedElements().remove(oldTargetElement);
 			} else if(oldSourceElement instanceof DurationObservation) {
 				((DurationObservation)oldSourceElement).getEvents().remove(targetElement);
 			} else if(oldSourceElement instanceof TimeObservation) {
