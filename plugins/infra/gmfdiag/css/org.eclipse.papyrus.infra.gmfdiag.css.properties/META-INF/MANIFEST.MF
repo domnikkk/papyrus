@@ -23,7 +23,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.0",
  org.eclipse.papyrus.emf.facet.custom.core;bundle-version="1.0.0",
- org.eclipse.papyrus.emf.facet.custom.ui;bundle-version="1.0.0"
+ org.eclipse.papyrus.emf.facet.custom.ui;bundle-version="1.0.0",
+ com.google.guava
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
