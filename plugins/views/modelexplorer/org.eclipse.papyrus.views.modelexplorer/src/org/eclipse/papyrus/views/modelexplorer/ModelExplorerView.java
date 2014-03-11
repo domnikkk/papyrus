@@ -101,7 +101,6 @@ import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.navigator.NavigatorContentService;
 import org.eclipse.ui.internal.navigator.extensions.NavigatorContentDescriptor;
 import org.eclipse.ui.navigator.CommonNavigator;
@@ -111,7 +110,6 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
-import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
@@ -242,10 +240,10 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 					ArrayList<Object> semanticElementList = new ArrayList<Object>();
 					while(selectionIterator.hasNext()) {
 						Object currentSelection = selectionIterator.next();
-							Object semanticElement =EMFHelper.getEObject(currentSelection);
-							if(semanticElement != null) {
-								semanticElementList.add(semanticElement);
-							}
+						Object semanticElement = EMFHelper.getEObject(currentSelection);
+						if(semanticElement != null) {
+							semanticElementList.add(semanticElement);
+						}
 
 					}
 					revealSemanticElement(semanticElementList);
@@ -316,11 +314,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 				// if tmppath contains the wrapped eobject we have find the good path
 				if(tmppath.size() > 0) {
-						if(eobject.equals((EMFHelper.getEObject((tmppath.get(tmppath.size() - 1)))))) {
-							path.add(o);
-							path.addAll(tmppath);
-							return path;
-						}
+					if(eobject.equals((EMFHelper.getEObject((tmppath.get(tmppath.size() - 1)))))) {
+						path.add(o);
+						path.addAll(tmppath);
+						return path;
+					}
 				}
 			}
 		}
@@ -341,7 +339,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		// as a wrapper for the LabelProvider provided by the application. The NavigatorDecoratingLabelProvider
 		// does not delegate tooltip related functions but defines them as empty.
 		NavigatorContentService contentService = new NavigatorContentService(getViewSite().getId());
-		@SuppressWarnings("unchecked")
+
 		// get label provider from content service (which in turn evaluates extension points in
 		// function of the input)
 		Object input = getInitialInput();
@@ -653,11 +651,21 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		}
 		lastTrans = curTrans;
 
+		scheduleRefresh();
+	}
+
+	private boolean needsRefresh = false;
+
+	/**
+	 * Thread-safe
+	 * Schedule a runnable which will refresh the view if necessary
+	 */
+	protected void scheduleRefresh() {
 		synchronized(this) {
 			needsRefresh = true;
 		}
 
-		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+		getControl().getDisplay().asyncExec(new Runnable() {
 
 			/**
 			 * {@inheritDoc}
@@ -669,17 +677,27 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 					}
 					needsRefresh = false;
 				}
-				refresh();
+				refreshInUIThread();
 			}
 		});
 	}
 
-	private boolean needsRefresh = false;
+	/**
+	 * Thread-safe method to refresh the ModelExplorer view, synchronously
+	 */
+	protected void syncRefresh() {
+		getControl().getDisplay().syncExec(new Runnable() {
+
+			public void run() {
+				refreshInUIThread();
+			}
+		});
+	}
 
 	/**
 	 * refresh the view.
 	 */
-	public void refresh() {
+	protected void refreshInUIThread() {
 		// Need to refresh, even if (temporarily) invisible
 		// (Better alternative?: store refresh event and execute once visible again)
 		if(getControl().isDisposed()) {
@@ -695,7 +713,6 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 			isRefreshing.set(false);
 		}
-
 	}
 
 	/**
@@ -727,7 +744,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			}
 			editingDomain.addResourceSetListener(resourceSetListener);
 			IReadOnlyHandler2 readOnlyHandler = AdapterUtils.adapt(editingDomain, IReadOnlyHandler2.class, null);
-			if (readOnlyHandler != null) {
+			if(readOnlyHandler != null) {
 				readOnlyHandler.addReadOnlyListener(createReadOnlyListener());
 			}
 		} catch (ServiceException e) {
@@ -738,7 +755,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		saveAndDirtyService.addInputChangedListener(editorInputChangedListener);
 
 		if(this.getCommonViewer() != null) {
-			refresh();
+			syncRefresh();
 		}
 	}
 
@@ -884,12 +901,17 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 */
 	@Override
 	public void selectReveal(ISelection selection) {
+		syncRefresh();
 		if(getCommonViewer() != null) {
 			getCommonViewer().setSelection(selection, true);
 		}
 	}
 
 	public void revealSemanticElement(List<?> elementList) {
+		//Ensure that the ModelExplorer is refreshed before
+		//trying to display an element. Useful if the element has just been created,
+		//and the model explorer has not yet been refreshed
+		syncRefresh();
 		reveal(elementList, getCommonViewer());
 	}
 
@@ -1069,17 +1091,15 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 	private IReadOnlyListener createReadOnlyListener() {
 		return new IReadOnlyListener() {
-			
+
 			public void readOnlyStateChanged(ReadOnlyEvent event) {
-				switch (event.getEventType()) {
+				switch(event.getEventType()) {
 				case ReadOnlyEvent.RESOURCE_READ_ONLY_STATE_CHANGED:
-					if (!isRefreshing.get()) {
-						refresh();
-					}
+					scheduleRefresh();
 					break;
 				case ReadOnlyEvent.OBJECT_READ_ONLY_STATE_CHANGED:
 					CommonViewer viewer = getCommonViewer();
-					if ((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
+					if((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
 						viewer.refresh(event.getObject());
 					}
 					break;
