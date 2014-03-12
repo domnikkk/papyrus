@@ -27,11 +27,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.commands.wrappers.EMFtoGMFCommandWrapper;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.Problem;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem;
 import org.eclipse.papyrus.infra.nattable.utils.AxisUtils;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.infra.tools.converter.AbstractStringValueConverter;
 import org.eclipse.papyrus.infra.tools.converter.ConvertedValueContainer;
 import org.eclipse.papyrus.infra.tools.converter.MultiConvertedValueContainer;
@@ -195,7 +201,7 @@ public class StereotypePropertyCellManager extends UMLFeatureCellManager {
 			if(stereotypes.size() == 1) {
 				final EObject stereotypeApplication = el.getStereotypeApplication(stereotypes.get(0));
 				final EStructuralFeature steApFeature = stereotypeApplication.eClass().getEStructuralFeature(prop.getName());
-				return getSetValueCommand(domain, stereotypeApplication, steApFeature, newValue);
+				return getSetValueCommand(domain, stereotypeApplication, steApFeature, newValue, columnElement, rowElement, tableManager);
 			} else {
 				//TODO : not yet managed
 			}
@@ -276,7 +282,7 @@ public class StereotypePropertyCellManager extends UMLFeatureCellManager {
 			Object value = solvedValue.getConvertedValue();
 			if((value != null) || (value == null && !(prop.getType() instanceof PrimitiveType))) {
 				//we want avoid set null on element which doesn't allow it (FlowPort#direction) when the enum has not been properly resolved
-				final Command setValueCommand = getSetValueCommand(domain, stereotypeApplication, steApFeature, value);
+				final Command setValueCommand = getSetValueCommand(domain, stereotypeApplication, steApFeature, value, columnElement, rowElement, tableManager);
 				if(setValueCommand != null) {
 					cmd.add(new EMFtoGMFCommandWrapper(setValueCommand));
 				}
@@ -285,6 +291,23 @@ public class StereotypePropertyCellManager extends UMLFeatureCellManager {
 		final Command createProblemCommand = getCreateStringResolutionProblemCommand(domain, tableManager, columnElement, rowElement, newValue, solvedValue);
 		if(createProblemCommand != null) {
 			cmd.add(new EMFtoGMFCommandWrapper(createProblemCommand));
+		} else {
+			//we need to destroy associated cell problem 
+			final Cell cell = tableManager.getCell(columnElement, rowElement);
+			StringResolutionProblem stringPb = null;//we assume that there is only one string resolution problem for a cell
+			if(cell != null && cell.getProblems().size() > 0) {
+				for(final Problem current : cell.getProblems()) {
+					if(current instanceof StringResolutionProblem) {
+						stringPb = (StringResolutionProblem)current;
+						break;
+					}
+				}
+			}
+			if(stringPb != null) {
+				final DestroyElementRequest destroyRequest = new DestroyElementRequest(domain, stringPb, false);
+				final IElementEditService commandProvider2 = ElementEditServiceUtils.getCommandProvider(stringPb);
+				cmd.add(commandProvider2.getEditCommand(destroyRequest));
+			}
 		}
 		if(cmd.isEmpty()) {
 			return null;
