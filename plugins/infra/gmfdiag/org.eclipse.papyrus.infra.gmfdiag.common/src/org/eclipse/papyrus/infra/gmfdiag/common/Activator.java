@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008 CEA LIST.
+ * Copyright (c) 2008, 2014 LIFL, CEA LIST, and others.
  *
  * 
  * All rights reserved. This program and the accompanying materials
@@ -9,12 +9,10 @@
  *
  * Contributors:
  *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 410346
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
@@ -22,11 +20,8 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -75,26 +70,8 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	protected ComposedAdapterFactory createAdapterFactory() {
-		List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-		// fillItemProviderFactories(factories);
-		return new ComposedAdapterFactory(factories);
+		return new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 	}
-
-	protected void fillItemProviderFactoriesGen(List<AdapterFactory> factories) {
-		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new ResourceItemProviderAdapterFactory());
-		factories.add(new ReflectiveItemProviderAdapterFactory());
-	}
-
-	/**
-	 * Use alternative UMLItemProviderAdapterFactory insteadof UMLItemProviderAdapterFactory
-	 * 
-	 * @see org.eclipse.emf.edit.provider.ComposedAdapterFactory#getFactoryForTypes(java.util.Collection)
-	 */
-	// protected void fillItemProviderFactories(List factories) {
-	// factories.add(new AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
-	// fillItemProviderFactoriesGen(factories);
-	// }
 
 	public AdapterFactory getItemProvidersAdapterFactory() {
 		return adapterFactory;

@@ -8,21 +8,15 @@
  * 
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 410346
  */
 package org.eclipse.papyrus.uml.diagram.timing.part;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -35,7 +29,6 @@ import org.eclipse.papyrus.uml.diagram.timing.preferences.DiagramPreferenceIniti
 import org.eclipse.papyrus.uml.diagram.timing.providers.ElementInitializers;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -66,7 +59,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private ComposedAdapterFactory adapterFactory;
+	private AdapterFactory adapterFactory;
 
 	/**
 	 * @generated
@@ -102,7 +95,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 		instance = this;
 		myLogHelper = new LogHelper(this);
 		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
-		adapterFactory = createAdapterFactory();
+		this.adapterFactory = org.eclipse.papyrus.infra.gmfdiag.common.Activator.getInstance().getItemProvidersAdapterFactory();
 		DiagramPreferenceInitializer diagramPreferenceInitializer = new DiagramPreferenceInitializer();
 		diagramPreferenceInitializer.initializeDefaultPreferences();
 	}
@@ -111,7 +104,6 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void stop(BundleContext context) throws Exception {
-		adapterFactory.dispose();
 		adapterFactory = null;
 		linkConstraints = null;
 		initializers = null;
@@ -133,25 +125,6 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	public IPreferenceStore getPreferenceStore() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		return store;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected ComposedAdapterFactory createAdapterFactory() {
-		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-		fillItemProviderFactories(factories);
-		return new ComposedAdapterFactory(factories);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		factories.add(new UMLItemProviderAdapterFactory());
-		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new ResourceItemProviderAdapterFactory());
-		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
 
 	/**

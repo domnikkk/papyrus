@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 Atos Origin.
+ * Copyright (c) 2009, 2014 Atos Origin, CEA, and others.
  *
  * 
  * All rights reserved. This program and the accompanying materials
@@ -9,12 +9,10 @@
  *
  * Contributors:
  *   Atos Origin - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 410346
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.part;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
@@ -22,11 +20,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -39,7 +33,6 @@ import org.eclipse.papyrus.uml.diagram.sequence.preferences.CustomDiagramPrefere
 import org.eclipse.papyrus.uml.diagram.sequence.providers.ElementInitializers;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -68,7 +61,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private ComposedAdapterFactory adapterFactory;
+	private AdapterFactory adapterFactory;
 
 	/**
 	 * @generated
@@ -106,7 +99,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 		super.start(context);
 		instance = this;
 		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
-		adapterFactory = createAdapterFactory();
+		adapterFactory = org.eclipse.papyrus.infra.gmfdiag.common.Activator.getInstance().getItemProvidersAdapterFactory();
 		log = new LogHelper(instance);
 		CustomDiagramPreferenceInitializer diagramPreferenceInitializer = new CustomDiagramPreferenceInitializer();
 		diagramPreferenceInitializer.initializeDefaultPreferences();
@@ -117,7 +110,6 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		adapterFactory.dispose();
 		adapterFactory = null;
 		linkConstraints = null;
 		initializers = null;
@@ -140,25 +132,6 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	public IPreferenceStore getPreferenceStore() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		return store;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected ComposedAdapterFactory createAdapterFactory() {
-		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-		fillItemProviderFactories(factories);
-		return new ComposedAdapterFactory(factories);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		factories.add(new UMLItemProviderAdapterFactory());
-		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new ResourceItemProviderAdapterFactory());
-		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
 
 	/**
