@@ -52,7 +52,7 @@ Bug 422373: The default initializer should not be generated if there are any use
             CppClassOperationsDeclaration.
 /]
 [if getOwnedOperations()->any(hasStereotype(standard::Create)) = null]
-    [let attributeList : Set(Property) = attribute->select(	
+    [let attributeList : OrderedSet(Property) = attribute->select(	
     	(isStatic = false) and
     	(defaultValue <> null) and
     	(defaultValue.stringValue() <> null))]
@@ -72,9 +72,13 @@ Bug 422373: The default initializer should not be generated if there are any use
               [class.name/] class header
  ************************************************************/
 
-[_package.CppOwnerPackageIncludeDeclaration()/]
-
-[CppClassAllIncludesDeclaration()/]
+[for (path : String |
+	Sequence{ _package.cppOwnerPackageIncludePath() }
+		->addAll( CppClassAllIncludes() )
+		->flatten()
+		->asOrderedSet())]
+[path.IncludeDirective()/]
+[/for]
 
 [CppIncludeHeader()/]
 

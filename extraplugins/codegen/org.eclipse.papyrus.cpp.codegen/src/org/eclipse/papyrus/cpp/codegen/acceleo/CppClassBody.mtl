@@ -20,12 +20,14 @@
 [CppIncludePreBody()/]
 
 [constIncludeHFile()/]
-#include <[getNearestPackage().getFullPath()/]/[class.name/].[getHeaderSuffix()/]>
+[IncludeDirective( getNearestPackage().getFullPath() + '/' + class.name + '.' + getHeaderSuffix() )/]
 
 [CppIncludeBody()/]
 
 [constDerivedIncludes()/]
-[CppClassAllIncludesDeclarationBody()/]
+[for (path : String | CppClassAllIncludesDeclarationBody()->flatten()->asOrderedSet())]
+[path.IncludeDirective()/]
+[/for]
 
 [openNS(class)/]
 [CppStaticAttributes(class)/]

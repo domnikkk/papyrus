@@ -45,39 +45,59 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </argument>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;#include &lt;"/>
-      <body xsi:type="mtl:QueryInvocation">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/getFullPath"/>
-        <argument xsi:type="ocl.ecore:PropertyCallExp">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/10">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        <definition href="CppIncludeUtils.emtl#/0/IncludeDirective"/>
+        <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/getFullPath"/>
+                  <argument xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/10">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Type/package"/>
+                  </argument>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/CppBindBody/class">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+              </argument>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
           </source>
-          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Type/package"/>
+          <argument xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../preferences/CppCodeGenUtils.emtl#/0/getHeaderSuffix"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/10">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </argument>
+          </argument>
         </argument>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/"/>
-      <body xsi:type="ocl.ecore:PropertyCallExp">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/CppBindBody/class">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-        </source>
-        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-      </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="."/>
-      <body xsi:type="mtl:QueryInvocation">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../preferences/CppCodeGenUtils.emtl#/0/getHeaderSuffix"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/12">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-        </argument>
-      </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">&#xA;&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <definition href="CppIncludeUtils.emtl#/0/CppIncludeBody"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/13">
+        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/11">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </argument>
       </body>
@@ -85,7 +105,7 @@
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <definition href="../utils/CppGenUtils.emtl#/0/openNS"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/14">
+        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/12">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </argument>
       </body>
@@ -93,19 +113,37 @@
       <body xsi:type="mtl:TemplateInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <definition href="Constants.emtl#/0/constDerivedIncludes"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/15">
+        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/13">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </argument>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
-      <body xsi:type="mtl:TemplateInvocation">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="util/clazz/CppClassIncludeClassDeclaration.emtl#/0/CppClassAllIncludesDeclaration"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/16">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-        </argument>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="CppIncludeUtils.emtl#/0/IncludeDirective"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/CppBindBody/%.17/path">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/14/OrderedSet(String)">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/14/Sequence(String)">
+            <source xsi:type="mtl:QueryInvocation" eType="/14/Sequence(String)">
+              <definition href="util/clazz/CppClassIncludeClassDeclaration.emtl#/0/CppClassAllIncludes"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/15">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              </argument>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/flatten"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet"/>
+        </iterSet>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;/************************************************************/&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;/************************************************************/&#xA;"/>
       <body xsi:type="mtl:LetBlock">
         <body xsi:type="mtl:LetBlock">
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="template class "/>
@@ -115,12 +153,12 @@
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="templateElement" referredVariable="/0/CppBindBody/%.23/%/templateElement">
+                <source xsi:type="ocl.ecore:VariableExp" name="templateElement" referredVariable="/0/CppBindBody/%.19/%/templateElement">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
                 </source>
                 <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
               </source>
-              <argument xsi:type="ocl.ecore:TypeExp" eType="/20/NamedElement">
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/22/NamedElement">
                 <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
               </argument>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
@@ -132,12 +170,12 @@
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <definition href="util/CppTemplates.emtl#/0/CppTemplateBindingParameter"/>
-              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/24">
+              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/26">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateParameterSubstitution"/>
               </argument>
             </body>
-            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/18/Set(TemplateParameterSubstitution)">
-              <source xsi:type="ocl.ecore:VariableExp" name="tb" referredVariable="/0/CppBindBody/%.23/tb">
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/14/Set(TemplateParameterSubstitution)">
+              <source xsi:type="ocl.ecore:VariableExp" name="tb" referredVariable="/0/CppBindBody/%.19/tb">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateBinding"/>
               </source>
               <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateBinding/parameterSubstitution"/>
@@ -148,9 +186,9 @@
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
             <initExpression xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
-              <source xsi:type="ocl.ecore:OperationCallExp" eType="/18/Sequence(Element)">
-                <source xsi:type="ocl.ecore:PropertyCallExp" eType="/18/Set(Element)">
-                  <source xsi:type="ocl.ecore:VariableExp" name="tb" referredVariable="/0/CppBindBody/%.23/tb">
+              <source xsi:type="ocl.ecore:OperationCallExp" eType="/14/Sequence(Element)">
+                <source xsi:type="ocl.ecore:PropertyCallExp" eType="/14/Set(Element)">
+                  <source xsi:type="ocl.ecore:VariableExp" name="tb" referredVariable="/0/CppBindBody/%.19/tb">
                     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateBinding"/>
                   </source>
                   <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship/target"/>
@@ -166,7 +204,7 @@
           <initExpression xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateBinding"/>
             <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/getTemplateBindings"/>
-            <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/17">
+            <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/20">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </argument>
           </initExpression>
@@ -176,7 +214,7 @@
       <body xsi:type="mtl:QueryInvocation">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <definition href="../utils/CppGenUtils.emtl#/0/closeNS"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/27">
+        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/29">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </argument>
       </body>
@@ -199,6 +237,13 @@
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
       </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -308,6 +353,18 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
         </eParameters>
       </eOperations>
+      <eOperations name="IncludeDirective">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="CppIncludeUtils.emtl#/0/IncludeDirective"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
       <eOperations name="getHeaderSuffix">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
@@ -353,14 +410,14 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateParameterSubstitution"/>
         </eParameters>
       </eOperations>
-      <eOperations name="CppClassAllIncludesDeclaration">
+      <eOperations name="CppClassAllIncludes">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="util/clazz/CppClassIncludeClassDeclaration.emtl#/0/CppClassAllIncludesDeclaration"/>
+          <references href="util/clazz/CppClassIncludeClassDeclaration.emtl#/0/CppClassAllIncludes"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="util/clazz/CppClassIncludeClassDeclaration.emtl#/3/Sequence(String)"/>
         <eParameters name="class">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
         </eParameters>
@@ -483,19 +540,13 @@
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
   <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(String)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(String)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Element)" instanceClassName="java.util.Set">
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
     </eClassifiers>
@@ -506,6 +557,24 @@
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateParameterSubstitution"/>
     </eClassifiers>
   </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
@@ -544,7 +613,7 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/CppBindBody">
       <details key="start" value="637"/>
-      <details key="end" value="1652"/>
+      <details key="end" value="1743"/>
       <details key="line" value="12"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/CppBindBody/%">
@@ -609,270 +678,330 @@
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/CppBindBody/%.8">
       <details key="start" value="937"/>
-      <details key="end" value="948"/>
+      <details key="end" value="938"/>
       <details key="line" value="22"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/CppBindBody/%.9">
-      <details key="start" value="949"/>
-      <details key="end" value="971"/>
+      <details key="start" value="939"/>
+      <details key="end" value="1026"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/CppBindBody/%.9/%">
-      <details key="start" value="949"/>
-      <details key="end" value="957"/>
+      <details key="start" value="957"/>
+      <details key="end" value="1024"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/CppBindBody/%.9/%/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.16" references="/0/CppBindBody/%.9/%/%">
+      <details key="start" value="957"/>
+      <details key="end" value="1004"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.17" references="/0/CppBindBody/%.10">
-      <details key="start" value="973"/>
-      <details key="end" value="974"/>
-      <details key="line" value="22"/>
+    <eAnnotations source="positions.17" references="/0/CppBindBody/%.9/%/%/%">
+      <details key="start" value="957"/>
+      <details key="end" value="998"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/CppBindBody/%.11">
-      <details key="start" value="975"/>
+    <eAnnotations source="positions.18" references="/0/CppBindBody/%.9/%/%/%/%">
+      <details key="start" value="957"/>
       <details key="end" value="985"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/CppBindBody/%.11/class">
-      <details key="start" value="975"/>
-      <details key="end" value="980"/>
+    <eAnnotations source="positions.19" references="/0/CppBindBody/%.9/%/%/%/%/%">
+      <details key="start" value="957"/>
+      <details key="end" value="979"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/CppBindBody/%.12">
-      <details key="start" value="987"/>
-      <details key="end" value="988"/>
-      <details key="line" value="22"/>
-    </eAnnotations>
-    <eAnnotations source="positions.21" references="/0/CppBindBody/%.13">
-      <details key="start" value="989"/>
-      <details key="end" value="1006"/>
+    <eAnnotations source="positions.20" references="/0/CppBindBody/%.9/%/%/%/%/%/%">
+      <details key="start" value="957"/>
+      <details key="end" value="965"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.22" references="/0/CppBindBody/%.13/self">
+    <eAnnotations source="positions.21" references="/0/CppBindBody/%.9/%/%/%/%/%/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.23" references="/0/CppBindBody/%.14">
-      <details key="start" value="1008"/>
-      <details key="end" value="1011"/>
-      <details key="line" value="22"/>
-    </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/CppBindBody/%.15">
-      <details key="start" value="1012"/>
-      <details key="end" value="1028"/>
+    <eAnnotations source="positions.22" references="/0/CppBindBody/%.9/%/%/%/%/%.1">
+      <details key="start" value="982"/>
+      <details key="end" value="985"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/CppBindBody/%.15/self">
+    <eAnnotations source="positions.23" references="/0/CppBindBody/%.9/%/%/%/%.1">
+      <details key="start" value="988"/>
+      <details key="end" value="998"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/CppBindBody/%.9/%/%/%/%.1/class">
+      <details key="start" value="988"/>
+      <details key="end" value="993"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/CppBindBody/%.9/%/%/%.1">
+      <details key="start" value="1001"/>
+      <details key="end" value="1004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/CppBindBody/%.9/%/%.1">
+      <details key="start" value="1007"/>
+      <details key="end" value="1024"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/CppBindBody/%.9/%/%.1/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/CppBindBody/%.16">
-      <details key="start" value="1030"/>
-      <details key="end" value="1032"/>
+    <eAnnotations source="positions.28" references="/0/CppBindBody/%.10">
+      <details key="start" value="1028"/>
+      <details key="end" value="1030"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/CppBindBody/%.11">
+      <details key="start" value="1031"/>
+      <details key="end" value="1047"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/CppBindBody/%.11/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/CppBindBody/%.12">
+      <details key="start" value="1049"/>
+      <details key="end" value="1051"/>
       <details key="line" value="25"/>
     </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/CppBindBody/%.17">
-      <details key="start" value="1033"/>
-      <details key="end" value="1041"/>
+    <eAnnotations source="positions.32" references="/0/CppBindBody/%.13">
+      <details key="start" value="1052"/>
+      <details key="end" value="1060"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/CppBindBody/%.17/self">
+    <eAnnotations source="positions.33" references="/0/CppBindBody/%.13/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/CppBindBody/%.18">
-      <details key="start" value="1043"/>
-      <details key="end" value="1045"/>
+    <eAnnotations source="positions.34" references="/0/CppBindBody/%.14">
+      <details key="start" value="1062"/>
+      <details key="end" value="1064"/>
       <details key="line" value="27"/>
     </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/CppBindBody/%.19">
-      <details key="start" value="1046"/>
-      <details key="end" value="1068"/>
+    <eAnnotations source="positions.35" references="/0/CppBindBody/%.15">
+      <details key="start" value="1065"/>
+      <details key="end" value="1087"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/CppBindBody/%.19/self">
+    <eAnnotations source="positions.36" references="/0/CppBindBody/%.15/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/CppBindBody/%.20">
-      <details key="start" value="1070"/>
-      <details key="end" value="1071"/>
+    <eAnnotations source="positions.37" references="/0/CppBindBody/%.16">
+      <details key="start" value="1089"/>
+      <details key="end" value="1091"/>
       <details key="line" value="29"/>
     </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/CppBindBody/%.21">
-      <details key="start" value="1072"/>
-      <details key="end" value="1104"/>
+    <eAnnotations source="positions.38" references="/0/CppBindBody/%.17">
+      <details key="start" value="1091"/>
+      <details key="end" value="1197"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/CppBindBody/%.17/%">
+      <details key="start" value="1165"/>
+      <details key="end" value="1188"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/CppBindBody/%.21/self">
+    <eAnnotations source="positions.40" references="/0/CppBindBody/%.17/%/path">
+      <details key="start" value="1165"/>
+      <details key="end" value="1169"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/CppBindBody/%.17/%.1">
+      <details key="start" value="1190"/>
+      <details key="end" value="1191"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/CppBindBody/%.17/path">
+      <details key="start" value="1097"/>
+      <details key="end" value="1110"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/CppBindBody/%.17/%.2">
+      <details key="start" value="1113"/>
+      <details key="end" value="1161"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/CppBindBody/%.17/%.2/%">
+      <details key="start" value="1113"/>
+      <details key="end" value="1145"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/CppBindBody/%.17/%.2/%/%">
+      <details key="start" value="1113"/>
+      <details key="end" value="1134"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/CppBindBody/%.17/%.2/%/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/CppBindBody/%.22">
-      <details key="start" value="1106"/>
-      <details key="end" value="1171"/>
-      <details key="line" value="30"/>
-    </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/CppBindBody/%.23">
-      <details key="start" value="1171"/>
-      <details key="end" value="1443"/>
-      <details key="line" value="32"/>
-    </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/CppBindBody/%.23/%">
-      <details key="start" value="1222"/>
-      <details key="end" value="1437"/>
+    <eAnnotations source="positions.47" references="/0/CppBindBody/%.18">
+      <details key="start" value="1198"/>
+      <details key="end" value="1262"/>
       <details key="line" value="33"/>
     </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/CppBindBody/%.23/%/%">
-      <details key="start" value="1289"/>
-      <details key="end" value="1304"/>
-      <details key="line" value="34"/>
+    <eAnnotations source="positions.48" references="/0/CppBindBody/%.19">
+      <details key="start" value="1262"/>
+      <details key="end" value="1534"/>
+      <details key="line" value="35"/>
     </eAnnotations>
-    <eAnnotations source="positions.39" references="/0/CppBindBody/%.23/%/%.1">
-      <details key="start" value="1305"/>
-      <details key="end" value="1355"/>
+    <eAnnotations source="positions.49" references="/0/CppBindBody/%.19/%">
+      <details key="start" value="1313"/>
+      <details key="end" value="1528"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/CppBindBody/%.19/%/%">
+      <details key="start" value="1380"/>
+      <details key="end" value="1395"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/CppBindBody/%.19/%/%.1">
+      <details key="start" value="1396"/>
+      <details key="end" value="1446"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.40" references="/0/CppBindBody/%.23/%/%.1/%">
-      <details key="start" value="1305"/>
-      <details key="end" value="1350"/>
+    <eAnnotations source="positions.52" references="/0/CppBindBody/%.19/%/%.1/%">
+      <details key="start" value="1396"/>
+      <details key="end" value="1441"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.41" references="/0/CppBindBody/%.23/%/%.1/%/%">
-      <details key="start" value="1305"/>
-      <details key="end" value="1326"/>
+    <eAnnotations source="positions.53" references="/0/CppBindBody/%.19/%/%.1/%/%">
+      <details key="start" value="1396"/>
+      <details key="end" value="1417"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.42" references="/0/CppBindBody/%.23/%/%.1/%/%/templateElement">
-      <details key="start" value="1305"/>
-      <details key="end" value="1320"/>
+    <eAnnotations source="positions.54" references="/0/CppBindBody/%.19/%/%.1/%/%/templateElement">
+      <details key="start" value="1396"/>
+      <details key="end" value="1411"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.43" references="/0/CppBindBody/%.23/%/%.1/%/%.1">
-      <details key="start" value="1337"/>
+    <eAnnotations source="positions.55" references="/0/CppBindBody/%.19/%/%.1/%/%.1">
+      <details key="start" value="1428"/>
+      <details key="end" value="1440"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/CppBindBody/%.19/%/%.2">
+      <details key="start" value="1448"/>
+      <details key="end" value="1449"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/CppBindBody/%.19/%/%.3">
+      <details key="start" value="1449"/>
+      <details key="end" value="1519"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/CppBindBody/%.19/%/%.3/%">
+      <details key="start" value="1482"/>
+      <details key="end" value="1511"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/CppBindBody/%.19/%/%.3/%/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/CppBindBody/%.19/%/%.3/%.1">
+      <details key="start" value="1455"/>
+      <details key="end" value="1479"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/CppBindBody/%.19/%/%.3/%.1/tb">
+      <details key="start" value="1455"/>
+      <details key="end" value="1457"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/CppBindBody/%.19/%/%.4">
+      <details key="start" value="1519"/>
+      <details key="end" value="1522"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/CppBindBody/%.19/%/templateElement">
+      <details key="start" value="1318"/>
+      <details key="end" value="1378"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/CppBindBody/%.19/%/templateElement/%">
+      <details key="start" value="1347"/>
+      <details key="end" value="1379"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/CppBindBody/%.19/%/templateElement/%/%">
+      <details key="start" value="1347"/>
+      <details key="end" value="1370"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/CppBindBody/%.19/%/templateElement/%/%/%">
+      <details key="start" value="1347"/>
+      <details key="end" value="1356"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/CppBindBody/%.19/%/templateElement/%/%/%/tb">
+      <details key="start" value="1347"/>
       <details key="end" value="1349"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.44" references="/0/CppBindBody/%.23/%/%.2">
-      <details key="start" value="1357"/>
-      <details key="end" value="1358"/>
-      <details key="line" value="34"/>
+    <eAnnotations source="positions.68" references="/0/CppBindBody/%.19/tb">
+      <details key="start" value="1267"/>
+      <details key="end" value="1311"/>
+      <details key="line" value="35"/>
     </eAnnotations>
-    <eAnnotations source="positions.45" references="/0/CppBindBody/%.23/%/%.3">
-      <details key="start" value="1358"/>
-      <details key="end" value="1428"/>
-      <details key="line" value="34"/>
-    </eAnnotations>
-    <eAnnotations source="positions.46" references="/0/CppBindBody/%.23/%/%.3/%">
-      <details key="start" value="1391"/>
-      <details key="end" value="1420"/>
+    <eAnnotations source="positions.69" references="/0/CppBindBody/%.19/tb/%">
+      <details key="start" value="1291"/>
+      <details key="end" value="1312"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.47" references="/0/CppBindBody/%.23/%/%.3/%/self">
+    <eAnnotations source="positions.70" references="/0/CppBindBody/%.19/tb/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.48" references="/0/CppBindBody/%.23/%/%.3/%.1">
-      <details key="start" value="1364"/>
-      <details key="end" value="1388"/>
+    <eAnnotations source="positions.71" references="/0/CppBindBody/%.20">
+      <details key="start" value="1535"/>
+      <details key="end" value="1536"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/CppBindBody/%.21">
+      <details key="start" value="1537"/>
+      <details key="end" value="1546"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.49" references="/0/CppBindBody/%.23/%/%.3/%.1/tb">
-      <details key="start" value="1364"/>
-      <details key="end" value="1366"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.50" references="/0/CppBindBody/%.23/%/%.4">
-      <details key="start" value="1428"/>
-      <details key="end" value="1431"/>
-      <details key="line" value="34"/>
-    </eAnnotations>
-    <eAnnotations source="positions.51" references="/0/CppBindBody/%.23/%/templateElement">
-      <details key="start" value="1227"/>
-      <details key="end" value="1287"/>
-      <details key="line" value="33"/>
-    </eAnnotations>
-    <eAnnotations source="positions.52" references="/0/CppBindBody/%.23/%/templateElement/%">
-      <details key="start" value="1256"/>
-      <details key="end" value="1288"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.53" references="/0/CppBindBody/%.23/%/templateElement/%/%">
-      <details key="start" value="1256"/>
-      <details key="end" value="1279"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.54" references="/0/CppBindBody/%.23/%/templateElement/%/%/%">
-      <details key="start" value="1256"/>
-      <details key="end" value="1265"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.55" references="/0/CppBindBody/%.23/%/templateElement/%/%/%/tb">
-      <details key="start" value="1256"/>
-      <details key="end" value="1258"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.56" references="/0/CppBindBody/%.23/tb">
-      <details key="start" value="1176"/>
-      <details key="end" value="1220"/>
-      <details key="line" value="32"/>
-    </eAnnotations>
-    <eAnnotations source="positions.57" references="/0/CppBindBody/%.23/tb/%">
-      <details key="start" value="1200"/>
-      <details key="end" value="1221"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.58" references="/0/CppBindBody/%.23/tb/%/self">
+    <eAnnotations source="positions.73" references="/0/CppBindBody/%.21/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.59" references="/0/CppBindBody/%.24">
-      <details key="start" value="1444"/>
-      <details key="end" value="1445"/>
-      <details key="line" value="36"/>
+    <eAnnotations source="positions.74" references="/0/CppBindBody/%.22">
+      <details key="start" value="1548"/>
+      <details key="end" value="1633"/>
+      <details key="line" value="41"/>
     </eAnnotations>
-    <eAnnotations source="positions.60" references="/0/CppBindBody/%.25">
-      <details key="start" value="1446"/>
-      <details key="end" value="1455"/>
+    <eAnnotations source="positions.75" references="/0/CppBindBody/%.23">
+      <details key="start" value="1634"/>
+      <details key="end" value="1644"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.61" references="/0/CppBindBody/%.25/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.76" references="/0/CppBindBody/%.23/class">
+      <details key="start" value="1634"/>
+      <details key="end" value="1639"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.62" references="/0/CppBindBody/%.26">
-      <details key="start" value="1457"/>
-      <details key="end" value="1542"/>
-      <details key="line" value="38"/>
+    <eAnnotations source="positions.77" references="/0/CppBindBody/%.24">
+      <details key="start" value="1646"/>
+      <details key="end" value="1731"/>
+      <details key="line" value="43"/>
     </eAnnotations>
-    <eAnnotations source="positions.63" references="/0/CppBindBody/%.27">
-      <details key="start" value="1543"/>
-      <details key="end" value="1553"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.64" references="/0/CppBindBody/%.27/class">
-      <details key="start" value="1543"/>
-      <details key="end" value="1548"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.65" references="/0/CppBindBody/%.28">
-      <details key="start" value="1555"/>
-      <details key="end" value="1640"/>
-      <details key="line" value="40"/>
-    </eAnnotations>
-    <eAnnotations source="positions.66" references="/0/CppBindBody/class">
+    <eAnnotations source="positions.78" references="/0/CppBindBody/class">
       <details key="start" value="666"/>
       <details key="end" value="679"/>
       <details key="line" value="12"/>
