@@ -1039,7 +1039,7 @@ public class MDTUtil {
 			// some <Diagram>s were found
 			return diagrams;
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	// // Filter Views and Labels
