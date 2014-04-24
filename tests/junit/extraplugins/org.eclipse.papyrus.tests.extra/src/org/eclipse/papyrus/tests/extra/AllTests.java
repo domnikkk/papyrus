@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.papyrus.cpp.codegen.tests.AllPapyrusCPPCodegenTests;
 import org.eclipse.papyrus.tests.extra.launcher.ITestSuiteClass;
 import org.eclipse.papyrus.tests.extra.launcher.PluginTestSuiteClass;
 import org.junit.runner.RunWith;
@@ -35,6 +36,9 @@ public class AllTests {
 		/* CDO tests */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.cdo.tests.AllTests.class));
 
+		/* CPP Codegen tests */
+		suiteClasses.add(new PluginTestSuiteClass(AllPapyrusCPPCodegenTests.class));
+
 		/* UML Compare tests */
 		/**
 		 * UML Compare tests have been temporarily disabled. See:
@@ -47,7 +51,6 @@ public class AllTests {
 		//		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.compare.diff.tests.AllTests.class));
 
 		/* **************** plugins *********************** */
-
 	}
 
 	/**
@@ -59,7 +62,7 @@ public class AllTests {
 		 * Constructor.
 		 *
 		 * @param clazz
-		 *        the suite class – AllTests2
+		 *        the suite class ï¿½ AllTests2
 		 * @throws InitializationError
 		 *         if there's a problem
 		 * @throws org.junit.runners.model.InitializationError
