@@ -1,68 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.eclipse.papyrus</groupId>
-  <artifactId>org.eclipse.papyrus</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <modules>
-    <module>../tests/junit/plugins/core/org.eclipse.papyrus.editor.integration.tests</module>
-    <module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.di.tests</module>
-    <module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.tests</module>
-    <module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.tests</module>
-    <module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.extendedtypes.tests</module>
-    <module>../tests/junit/plugins/core/org.eclipse.papyrus.paletteconfiguration.tests</module>
-    <module>../tests/junit/plugins/core/org.eclipse.papyrus.tests</module>
-    <module>../tests/junit/plugins/customization/org.eclipse.papyrus.customization.properties.tests</module>
-    <module>../tests/junit/plugins/developer/org.eclipse.papyrus.bundles.tests</module>
-    <module>../tests/junit/plugins/infra/emf/org.eclipse.papyrus.infra.emf.readonly.tests</module>
-    <module>../tests/junit/plugins/infra/emf/org.eclipse.papyrus.infra.emf.tests</module>
-    <module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.commands.tests</module>
-    <module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common.tests</module>
-    <module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.css.tests</module>
-    <module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.model.editor.tests</module>
-    <module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.editor.tests</module>
-    <module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.edit.tests</module>
-    <module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.labelprovider.tests</module>
-    <module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.resourceloading.tests</module>
-    <module>../tests/junit/plugins/junit/org.eclipse.papyrus.junit.utils</module>
-    <module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.blockdefinition.tests</module>
-    <module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.internalblock.tests</module>
-    <module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.parametric.tests</module>
-    <module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.requirement.tests</module>
-    <module>../tests/junit/plugins/sysml/nattable/org.eclipse.papyrus.sysml.nattable.requirement.tests</module>
-    <module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.modelexplorer.tests</module>
-    <module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.service.types.tests</module>
-    <module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.activity.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.clazz.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.common.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.component.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.composite.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.deployment.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.dnd.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.interactionoverview.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.profile.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.sequence.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.stereotypeproperty.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.timing.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.usecase.tests</module>
-    <module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.wizards.tests</module>
-    <module>../tests/junit/plugins/uml/modelexplorer/org.eclipse.papyrus.uml.modelexplorer.tests</module>
-    <module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.tests</module>
-    <module>../tests/junit/plugins/uml/org.eclipse.papyrus.search.tests</module>
-    <module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.modelrepair.tests</module>
-    <module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.service.types.tests</module>
-    <module>../tests/junit/plugins/uml/tools/org.eclipse.papyrus.uml.tools.tests</module>
-    <module>../tests/junit/plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.tests</module>
-  </modules>
-  <properties>
-	<tycho-version>0.20.0</tycho-version>
-	<tychoExtrasVersion>0.20.0</tychoExtrasVersion>
-  </properties>
-  <repositories>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.papyrus</groupId>
+	<artifactId>org.eclipse.papyrus</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>../tests/junit/plugins/core/org.eclipse.papyrus.tests</module>
+		<module>../tests/junit/plugins/core/org.eclipse.papyrus.editor.integration.tests</module>
+		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.di.tests</module>
+		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.tests</module>
+		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.tests</module>
+		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.extendedtypes.tests</module>
+		<module>../tests/junit/plugins/core/org.eclipse.papyrus.paletteconfiguration.tests</module>
+		<module>../tests/junit/plugins/customization/org.eclipse.papyrus.customization.properties.tests</module>
+		<module>../tests/junit/plugins/developer/org.eclipse.papyrus.bundles.tests</module>
+		<module>../tests/junit/plugins/infra/emf/org.eclipse.papyrus.infra.emf.readonly.tests</module>
+		<module>../tests/junit/plugins/infra/emf/org.eclipse.papyrus.infra.emf.tests</module>
+		<module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.commands.tests</module>
+		<module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common.tests</module>
+		<module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.css.tests</module>
+		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.model.editor.tests</module>
+		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.editor.tests</module>
+		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.edit.tests</module>
+		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.labelprovider.tests</module>
+		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.resourceloading.tests</module>
+		<module>../tests/junit/plugins/junit/org.eclipse.papyrus.junit.utils</module>
+		<module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.blockdefinition.tests</module>
+		<module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.internalblock.tests</module>
+		<module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.parametric.tests</module>
+		<module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.requirement.tests</module>
+		<module>../tests/junit/plugins/sysml/nattable/org.eclipse.papyrus.sysml.nattable.requirement.tests</module>
+		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.modelexplorer.tests</module>
+		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.service.types.tests</module>
+		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.activity.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.clazz.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.common.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.component.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.composite.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.deployment.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.dnd.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.interactionoverview.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.profile.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.sequence.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.stereotypeproperty.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.timing.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.usecase.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.wizards.tests</module>
+		<module>../tests/junit/plugins/uml/modelexplorer/org.eclipse.papyrus.uml.modelexplorer.tests</module>
+		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.tests</module>
+		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.search.tests</module>
+		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.modelrepair.tests</module>
+		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.service.types.tests</module>
+		<module>../tests/junit/plugins/uml/tools/org.eclipse.papyrus.uml.tools.tests</module>
+		<module>../tests/junit/plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.tests</module>
+	</modules>
+	<properties>
+		<tycho-version>0.20.0</tycho-version>
+		<tychoExtrasVersion>0.20.0</tychoExtrasVersion>
+	</properties>
+	<repositories>
 		<repository>
 			<id>papyrus-main</id>
 			<layout>p2</layout>
@@ -204,7 +205,7 @@
 			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/S-3.6.0M6-20140310170306/repository/</url>
 		</repository>
 	</repositories>
-  <build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -252,44 +253,28 @@
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-source-plugin</artifactId>
+				<artifactId>tycho-surefire-plugin</artifactId>
 				<version>${tycho-version}</version>
-				<executions>
-					<execution>
-						<id>plugin-source</id>
-						<goals>
-							<goal>plugin-source</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-source-feature-plugin</artifactId>
-				<version>${tychoExtrasVersion}</version>
-				<executions>
-					<execution>
-						<id>source-feature</id>
-						<phase>package</phase>
-						<goals>
-							<goal>source-feature</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-p2-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<executions>
-					<execution>
-						<id>attach-p2-metadata</id>
-						<phase>package</phase>
-						<goals>
-							<goal>p2-metadata</goal>
-						</goals>
-					</execution>
-				</executions>
+				<configuration>
+					<testSuite>org.eclipse.papyrus.tests</testSuite>
+					<testClass>org.eclipse.papyrus.tests.AllTests</testClass>
+					<useUIHarness>true</useUIHarness>
+					<!-- testRuntime>p2Installed</testRuntime-->
+					<argLine>-Xms512m -Xmx4096m -XX:MaxPermSize=512M</argLine>
+					<product>org.eclipse.platform.ide</product>
+					<dependencies>
+			            <dependency>
+			              <type>p2-installable-unit</type>
+			              <artifactId>org.eclipse.sdk.feature.group</artifactId>
+			              <version>${platform-version}</version>
+			            </dependency>
+			            <dependency>
+			              <type>p2-installable-unit</type>
+			              <artifactId>org.eclipse.papyrus.sdk.feature.feature.group</artifactId>
+			              <version>0.0.0</version>
+			            </dependency>
+			          </dependencies>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

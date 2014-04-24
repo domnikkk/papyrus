@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ public class FragmentTestSuiteClass implements ITestSuiteClass {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param hostBundleId
 	 *        unique identifier of the bundle host
 	 * @param classQualifiedName
@@ -55,6 +55,11 @@ public class FragmentTestSuiteClass implements ITestSuiteClass {
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("FragmentTestSuite %s/%s", hostBundleId, classQualifiedName);
 	}
 
 }
