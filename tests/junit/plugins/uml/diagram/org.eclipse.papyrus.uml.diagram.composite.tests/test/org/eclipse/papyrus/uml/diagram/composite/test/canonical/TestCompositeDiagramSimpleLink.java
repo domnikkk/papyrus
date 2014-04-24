@@ -15,7 +15,7 @@ package org.eclipse.papyrus.uml.diagram.composite.test.canonical;
 
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
 import org.eclipse.papyrus.junit.utils.classification.InteractiveTest;
 import org.eclipse.papyrus.uml.diagram.composite.CreateCompositeDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramUpdater;
@@ -34,7 +34,7 @@ public class TestCompositeDiagramSimpleLink extends TestLink {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getDiagramCommandCreation()
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#getDiagramCommandCreation()
 	 *
 	 * @return
 	 */
@@ -45,7 +45,7 @@ public class TestCompositeDiagramSimpleLink extends TestLink {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getProjectName()
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#getProjectName()
 	 *
 	 * @return
 	 */
@@ -56,7 +56,7 @@ public class TestCompositeDiagramSimpleLink extends TestLink {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getFileName()
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#getFileName()
 	 *
 	 * @return
 	 */

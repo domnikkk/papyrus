@@ -22,17 +22,17 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.tooling.runtime,
  org.eclipse.papyrus.infra.emf.appearance;bundle-version="1.0.0",
  org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.0"
-Export-Package: org.eclipse.papyrus.diagram.tests.appearance,
- org.eclipse.papyrus.diagram.tests.canonical,
- org.eclipse.papyrus.diagram.tests.createFromPalette,
- org.eclipse.papyrus.diagram.tests.edition
+Export-Package: org.eclipse.papyrus.uml.diagram.tests.appearance,
+ org.eclipse.papyrus.uml.diagram.tests.canonical,
+ org.eclipse.papyrus.uml.diagram.tests.createFromPalette,
+ org.eclipse.papyrus.uml.diagram.tests.edition
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
-Bundle-Activator: org.eclipse.papyrus.diagram.tests.Activator
-Bundle-SymbolicName: org.eclipse.papyrus.diagram.tests;singleton:=true
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.tests.Activator
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.tests;singleton:=true
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

@@ -11,6 +11,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Name: %fragmentName
 Bundle-Localization: fragment
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.core.resourceloading.tests
+Bundle-SymbolicName: org.eclipse.papyrus.infra.services.resourceloading.tests
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

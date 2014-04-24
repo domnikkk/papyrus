@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Profile Diagram Tests
-Bundle-SymbolicName: org.eclipse.papyrus.diagram.profile.tests
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.profile.tests
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.eclipse.papyrus.diagram.profile.tests.Activator
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.profile.tests.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
  org.eclipse.papyrus.editor;bundle-version="1.0.0",
@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
  org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.0",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.5.0",
  org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.0.0",
- org.eclipse.papyrus.diagram.tests;bundle-version="1.0.0",
+ org.eclipse.papyrus.uml.diagram.tests;bundle-version="1.0.0",
  org.eclipse.uml2.uml;bundle-version="4.0.0",
  org.eclipse.papyrus.infra.gmfdiag.commands;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.core.sasheditor;bundle-version="1.0.0",
@@ -21,4 +21,4 @@ Require-Bundle: org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
  org.eclipse.gmf.tooling.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipse.papyrus.diagram.profile.tests
+Export-Package: org.eclipse.papyrus.uml.diagram.profile.tests

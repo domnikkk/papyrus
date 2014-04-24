@@ -15,12 +15,12 @@ package org.eclipse.papyrus.uml.diagram.communication.tests.canonical;
 
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
 import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.communication.CreateCommunicationDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.communication.tests.ICommunicationDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
 import org.junit.Test;
 
 /**

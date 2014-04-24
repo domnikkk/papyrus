@@ -6,7 +6,7 @@
  
       <mapping
             source="pathmap://Test_PROFILES/"
-            target="platform:/plugin/org.eclipse.papyrus.diagram.stereotypeproperty.tests/resource/">
+            target="platform:/plugin/org.eclipse.papyrus.uml.diagram.stereotypeproperty.tests/resource/">
       </mapping>
    </extension>
    

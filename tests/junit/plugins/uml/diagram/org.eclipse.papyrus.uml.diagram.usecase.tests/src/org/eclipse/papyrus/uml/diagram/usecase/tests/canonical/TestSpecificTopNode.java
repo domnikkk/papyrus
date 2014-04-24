@@ -51,7 +51,7 @@ import org.eclipse.uml2.uml.Element;
 /**
  * The Class TestTopNode.
  */
-public abstract class TestSpecificTopNode extends org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase {
+public abstract class TestSpecificTopNode extends org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase {
 
 
 	/**

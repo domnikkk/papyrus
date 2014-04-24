@@ -28,8 +28,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
 import org.eclipse.papyrus.uml.diagram.activity.CreateActivityDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestChildNode;
 import org.eclipse.swt.widgets.Display;
 
 public abstract class AbstractTestActivityChildNode extends TestChildNode {

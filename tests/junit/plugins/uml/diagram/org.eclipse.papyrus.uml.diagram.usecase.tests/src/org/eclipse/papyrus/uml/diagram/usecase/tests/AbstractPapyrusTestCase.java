@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.usecase.CreateUseCaseDiagramCommand;
 /**
  * The Class AbstractPapyrusTestCase.
  */
-public abstract class AbstractPapyrusTestCase extends org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase {
+public abstract class AbstractPapyrusTestCase extends org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase {
 
 
 	@Override

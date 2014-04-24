@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:utp="http://utp_1-2.profile.uml" xsi:schemaLocation="http://www.eclipse.org/uml2/5.0.0/UML java://org.eclipse.uml2.uml.UMLPackage http://utp_1-2.profile.uml ../../org.eclipse.papyrus.utp/model/utp_1-2.profile.uml#_IQolULBCEeOl6J7RoEE5qw">
-  <uml:Model name="org.eclipse.papyrus.diagram.clazz.test.createFromPalette">
+  <uml:Model name="org.eclipse.papyrus.uml.diagram.clazz.test.createFromPalette">
     <packagedElement xsi:type="uml:Class" name="TestClassDiagramChildNodeInConstraintEditPartGen">
       <elementImport alias="DataTypeEditPartCN"/>
       <elementImport alias="InformationItemEditPartCN"/>

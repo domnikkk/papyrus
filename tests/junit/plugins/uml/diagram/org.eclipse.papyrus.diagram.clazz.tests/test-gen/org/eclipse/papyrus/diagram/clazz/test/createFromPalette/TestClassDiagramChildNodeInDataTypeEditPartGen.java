@@ -17,10 +17,9 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
-import org.eclipse.papyrus.diagram.clazz.test.IClassDiagramTestsConstants;
-import org.eclipse.papyrus.diagram.tests.createFromPalette.CreateNodeFromPaletteTest;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.papyrus.uml.diagram.clazz.test.IClassDiagramTestsConstants;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InformationItemEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPartCN;
@@ -34,6 +33,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InstanceSpecificationEdi
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPartCN;
+import org.eclipse.papyrus.uml.diagram.tests.createFromPalette.CreateNodeFromPaletteTest;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Test;
 

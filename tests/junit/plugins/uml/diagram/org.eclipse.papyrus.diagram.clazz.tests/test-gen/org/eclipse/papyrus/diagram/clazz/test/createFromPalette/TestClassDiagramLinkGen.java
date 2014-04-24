@@ -14,8 +14,6 @@ package org.eclipse.papyrus.diagram.clazz.test.createFromPalette;
 
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.clazz.test.IClassDiagramTestsConstants;
-import org.eclipse.papyrus.diagram.tests.createFromPalette.CreateLinkFromPaletteTest;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationEditPart;
@@ -35,6 +33,8 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.papyrus.uml.diagram.clazz.test.IClassDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.tests.createFromPalette.CreateLinkFromPaletteTest;
 import org.junit.Test;
 
 // TODO: Auto-generated Javadoc

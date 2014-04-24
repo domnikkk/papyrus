@@ -24,11 +24,11 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestLinkWithParent;
 import org.eclipse.papyrus.uml.diagram.composite.CreateCompositeDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.composite.test.ICompositeDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLinkWithParent;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -50,7 +50,7 @@ public DiagramUpdater getDiagramUpdater() {
 	 * Gets the diagram command creation.
 	 *
 	 * @return the diagram command creation
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getDiagramCommandCreation()
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#getDiagramCommandCreation()
 	 */
 
 	@Override
@@ -62,7 +62,7 @@ public DiagramUpdater getDiagramUpdater() {
 	 * Gets the project name.
 	 *
 	 * @return the project name
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getProjectName()
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#getProjectName()
 	 */
 
 	@Override
@@ -74,7 +74,7 @@ public DiagramUpdater getDiagramUpdater() {
 	 * Gets the file name.
 	 *
 	 * @return the file name
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getFileName()
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#getFileName()
 	 */
 
 	@Override
@@ -88,7 +88,7 @@ public DiagramUpdater getDiagramUpdater() {
 	 *
 	 * @throws Exception
 	 *         the exception
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#setUp()
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase#setUp()
 	 */
 	@Before
 	@Override
@@ -124,7 +124,7 @@ public DiagramUpdater getDiagramUpdater() {
 	 *        the source type
 	 * @param targetType
 	 *        the target type
-	 * @see org.eclipse.papyrus.diagram.tests.canonical.TestLinkWithParent#installEnvironment(org.eclipse.gmf.runtime.emf.type.core.IElementType,
+	 * @see org.eclipse.papyrus.uml.diagram.tests.canonical.TestLinkWithParent#installEnvironment(org.eclipse.gmf.runtime.emf.type.core.IElementType,
 	 *      org.eclipse.gmf.runtime.emf.type.core.IElementType)
 	 */
 
