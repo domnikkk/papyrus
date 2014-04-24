@@ -40,7 +40,7 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLPackage;
 
-import com.google.common.base.Supplier;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 
@@ -52,7 +52,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 
 	private final UMLResourceLoadAdapter adapter = new UMLResourceLoadAdapter();
 
-	private final Supplier<Profile> dynamicProfileSupplier;
+	private final Function<? super EPackage, Profile> dynamicProfileSupplier;
 
 	private ZombieStereotypeDialogPresenter presenter;
 
@@ -60,7 +60,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		this(null);
 	}
 
-	protected StereotypeApplicationRepairSnippet(Supplier<Profile> dynamicProfileSupplier) {
+	protected StereotypeApplicationRepairSnippet(Function<? super EPackage, Profile> dynamicProfileSupplier) {
 		super();
 
 		this.dynamicProfileSupplier = dynamicProfileSupplier;
@@ -133,7 +133,12 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		if(contextPackage != null) {
 			Collection<ProfileApplication> profileApplications = contextPackage.getAllProfileApplications();
 			Set<EPackage> appliedDefinitions = getAppliedDefinitions(profileApplications);
-			Supplier<Profile> profileSupplier = (dynamicProfileSupplier != null) ? dynamicProfileSupplier : presenter.getDynamicProfileSupplier();
+
+			Function<? super EPackage, Profile> profileSupplier = dynamicProfileSupplier;
+			if(profileSupplier == null) {
+				profileSupplier = presenter.getDynamicProfileSupplier();
+			}
+
 			ZombieStereotypesDescriptor zombies = new ZombieStereotypesDescriptor(resource, root, appliedDefinitions, profileSupplier);
 
 			for(EObject next : resource.getContents()) {

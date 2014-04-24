@@ -19,19 +19,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.papyrus.infra.core.services.ServiceException;
-import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
-import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
-import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
-import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.internal.participants.StereotypeApplicationRepairParticipant;
-import org.eclipse.papyrus.uml.modelrepair.ui.BrowseProfilesDialog;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.UMLPackage;
 
 import com.google.common.base.Supplier;
 
@@ -75,42 +66,5 @@ public class ApplyProfileAction extends AbstractRepairAction {
 		}
 
 		return true;
-	}
-
-	protected Profile promptForProfile(Shell parentShell) {
-		Profile result = null;
-
-		LabelProviderService labelProvider = null;
-		boolean localProvider = false;
-		try {
-			labelProvider = ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, root);
-		} catch (ServiceException e) {
-			labelProvider = new LabelProviderServiceImpl();
-			localProvider = true;
-		}
-
-		final BrowseProfilesDialog dlg = new BrowseProfilesDialog(parentShell, labelProvider);
-
-		parentShell.getDisplay().syncExec(new Runnable() {
-
-			public void run() {
-				dlg.setBlockOnOpen(true);
-				dlg.open();
-			}
-		});
-
-		if(localProvider) {
-			try {
-				labelProvider.disposeService();
-			} catch (ServiceException e) {
-				Activator.log.error(e);
-			}
-		}
-
-		if(dlg.getSelectedProfileURI() != null) {
-			result = UML2Util.load(root.eResource().getResourceSet(), dlg.getSelectedProfileURI(), UMLPackage.Literals.PROFILE);
-		}
-
-		return result;
 	}
 }

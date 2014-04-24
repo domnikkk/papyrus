@@ -28,6 +28,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
+import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ArrayListMultimap;
@@ -52,11 +53,11 @@ public class ZombieStereotypesDescriptor {
 
 	private final Map<EPackage, IRepairAction> suggestedActions = Maps.newHashMap();
 
-	private final Supplier<Profile> dynamicProfileSupplier;
+	private final Function<? super EPackage, Profile> dynamicProfileSupplier;
 
 	private Map<EPackage, Map<IRepairAction.Kind, IRepairAction>> repairActions = Maps.newHashMap();
 
-	public ZombieStereotypesDescriptor(Resource resource, Element root, Set<EPackage> appliedProfileDefinitions, Supplier<Profile> dynamicProfileSupplier) {
+	public ZombieStereotypesDescriptor(Resource resource, Element root, Set<EPackage> appliedProfileDefinitions, Function<? super EPackage, Profile> dynamicProfileSupplier) {
 		this.resource = resource;
 		this.root = root;
 		this.appliedProfileDefinitions = appliedProfileDefinitions;
@@ -120,11 +121,15 @@ public class ZombieStereotypesDescriptor {
 		result.put(CreateMarkersAction.INSTANCE.kind(), CreateMarkersAction.INSTANCE);
 
 		Profile profile = findProfile(schema);
-		Supplier<Profile> supplier = (profile == null) ? dynamicProfileSupplier : Suppliers.ofInstance(profile);
+		Supplier<Profile> supplier = (profile == null) ? curry(schema, dynamicProfileSupplier) : Suppliers.ofInstance(profile);
 		IRepairAction applyProfile = new ApplyProfileAction(root, supplier);
 		result.put(applyProfile.kind(), applyProfile);
 
 		return result;
+	}
+
+	static <F, T> Supplier<T> curry(F input, Function<? super F, T> function) {
+		return Suppliers.compose(function, Suppliers.ofInstance(input));
 	}
 
 	public IRepairAction getSuggestedRepairAction(EPackage schema) {

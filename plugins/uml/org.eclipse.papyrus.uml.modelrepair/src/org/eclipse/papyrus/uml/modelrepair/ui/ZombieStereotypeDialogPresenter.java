@@ -19,6 +19,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -33,7 +34,7 @@ import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 
-import com.google.common.base.Supplier;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
@@ -76,7 +77,7 @@ public class ZombieStereotypeDialogPresenter {
 		}
 	}
 
-	public BrowseProfileSupplier getDynamicProfileSupplier() {
+	public Function<EPackage, Profile> getDynamicProfileSupplier() {
 		return dynamicProfileSupplier;
 	}
 
@@ -160,7 +161,7 @@ public class ZombieStereotypeDialogPresenter {
 	// Nested types
 	//
 
-	private class BrowseProfileSupplier implements Supplier<Profile> {
+	private class BrowseProfileSupplier implements Function<EPackage, Profile> {
 
 		private Window parentWindow;
 
@@ -168,7 +169,7 @@ public class ZombieStereotypeDialogPresenter {
 			this.parentWindow = parentWindow;
 		}
 
-		public Profile get() {
+		public Profile apply(EPackage schema) {
 			Profile result = null;
 
 			LabelProviderService labelProvider = null;
@@ -180,7 +181,7 @@ public class ZombieStereotypeDialogPresenter {
 				localProvider = true;
 			}
 
-			final BrowseProfilesDialog dlg = new BrowseProfilesDialog(parentWindow.getShell(), labelProvider);
+			final BrowseProfilesDialog dlg = new BrowseProfilesDialog(parentWindow.getShell(), schema, labelProvider);
 
 			parentShell.getDisplay().syncExec(new Runnable() {
 

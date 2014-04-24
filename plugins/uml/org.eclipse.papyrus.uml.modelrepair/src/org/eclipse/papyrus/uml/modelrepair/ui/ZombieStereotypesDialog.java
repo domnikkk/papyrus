@@ -363,8 +363,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		void updateSchema(ViewerCell cell) {
 			EPackage schema = ((MissingSchema)cell.getElement()).getSchema();
 
-			// If it's an unrecognized schema, then we're not going to have an EPackage name
-			cell.setText((schema.getName() == null) ? String.format("(%s)", schema.getNsPrefix()) : labelProviderService.getLabelProvider().getText(schema));
+			cell.setText(labelProviderService.getLabelProvider().getText(schema));
 			cell.setImage(labelProviderService.getLabelProvider().getImage(schema));
 		}
 
