@@ -9,29 +9,29 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.junit.utils.classification;
+package org.eclipse.papyrus.junit.framework.classification;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-
 /**
- * Indicates that a test currently fails. It can be used to sort new (unidentified) regressions
- * from known (reported) issues.
+ * Indicates that a test may fail because the tested feature
+ * is not yet implemented (Test-driven development)
  *
  * This annotation must be used with the {@link ClassificationRule}
- * 
+ *
  * @author Camille Letavernier
  *
  */
 @Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface FailingTest {
+public @interface NotImplemented {
 
 	/**
-	 * A specific message explaining why this test is failing
+	 * A specific message explaining what needs to be implemented
+	 * for this test to run
 	 *
 	 * @return
 	 */

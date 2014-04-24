@@ -9,14 +9,14 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.junit.utils.classification;
+package org.eclipse.papyrus.junit.framework.classification;
 
-import static org.eclipse.papyrus.junit.utils.classification.TestCategory.ExpensiveTest;
-import static org.eclipse.papyrus.junit.utils.classification.TestCategory.FailingTest;
-import static org.eclipse.papyrus.junit.utils.classification.TestCategory.InteractiveTest;
-import static org.eclipse.papyrus.junit.utils.classification.TestCategory.InvalidTest;
-import static org.eclipse.papyrus.junit.utils.classification.TestCategory.NotImplemented;
-import static org.eclipse.papyrus.junit.utils.classification.TestCategory.Standard;
+import static org.eclipse.papyrus.junit.framework.classification.TestCategory.ExpensiveTest;
+import static org.eclipse.papyrus.junit.framework.classification.TestCategory.FailingTest;
+import static org.eclipse.papyrus.junit.framework.classification.TestCategory.InteractiveTest;
+import static org.eclipse.papyrus.junit.framework.classification.TestCategory.InvalidTest;
+import static org.eclipse.papyrus.junit.framework.classification.TestCategory.NotImplemented;
+import static org.eclipse.papyrus.junit.framework.classification.TestCategory.Standard;
 
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
@@ -52,44 +52,36 @@ import com.google.common.collect.ImmutableSet;
 public class ClassificationConfig {
 
 	public static final Set<TestCategory> excludedTestCategories = new HashSet<TestCategory>();
-	
+
 	/**
-	 * Default tests configuration for Continuous Integration (Hudson): Excludes the tests which are 
+	 * Default tests configuration for Continuous Integration (Hudson): Excludes the tests which are
 	 * identified as failing, as well as the interactive tests
-	 * 
+	 *
 	 * This configuration may require a couple of hours to run
 	 */
-	public static final Set<TestCategory> CI_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{
-		NotImplemented, InvalidTest, FailingTest, InteractiveTest
-	});
-	
+	public static final Set<TestCategory> CI_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{ NotImplemented, InvalidTest, FailingTest, InteractiveTest });
+
 	/**
-	 * This tests configuration runs all tests which are already identified as failing. 
+	 * This tests configuration runs all tests which are already identified as failing.
 	 * If one test from this configuration passes, this might mean that the annotation should be removed
-	 * 
+	 *
 	 * InteractiveTests are excluded as well, as this configuration is supposed to be executed on Hudson
 	 */
-	public static final Set<TestCategory> FAILING_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{
-		Standard, InteractiveTest
-	});
-	
+	public static final Set<TestCategory> FAILING_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{ Standard, InteractiveTest });
+
 	/**
-	 * This tests configuration is expected to run in ~15 minutes. This is useful for quick testing, 
+	 * This tests configuration is expected to run in ~15 minutes. This is useful for quick testing,
 	 * and validation through Gerrit
 	 */
-	public static final Set<TestCategory> LIGTHWEIGHT_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{
-		InteractiveTest, NotImplemented, FailingTest, InvalidTest, ExpensiveTest
-	});
-	
+	public static final Set<TestCategory> LIGTHWEIGHT_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{ InteractiveTest, NotImplemented, FailingTest, InvalidTest, ExpensiveTest });
+
 	/**
 	 * This tests configuration is meant to execute all tests in an automated environment
 	 * It includes all tests which are known to be failing, but excludes tests which
 	 * require a user interaction
 	 */
-	public static final Set<TestCategory> FULL_CI_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{
-		InteractiveTest
-	});
-	
+	public static final Set<TestCategory> FULL_CI_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{ InteractiveTest });
+
 	/**
 	 * Executes all tests
 	 */
@@ -102,9 +94,9 @@ public class ClassificationConfig {
 		//Check whether identified regressions are still failing
 		//setIncludedTestCategories(FailingTest);
 	}
-	
+
 	//Same as setExcludedTestsCategories, but renamed for clarity (To be used with predefined configurations)
-	public static void setTestsConfiguration(Set<TestCategory> predefinedConfiguration){
+	public static void setTestsConfiguration(Set<TestCategory> predefinedConfiguration) {
 		setExcludedTestCategories(predefinedConfiguration);
 	}
 

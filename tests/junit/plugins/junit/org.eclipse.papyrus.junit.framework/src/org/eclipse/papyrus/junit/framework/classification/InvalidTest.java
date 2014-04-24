@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.junit.utils.classification;
+package org.eclipse.papyrus.junit.framework.classification;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -17,8 +17,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Indicates that a test may fail because the tested feature
- * is not yet implemented (Test-driven development)
+ * Indicates that a test may fail because it is not properly implemented
+ * (e.g. not compatible with Hudson, because it opens some blocking dialogs)
  *
  * This annotation must be used with the {@link ClassificationRule}
  *
@@ -27,11 +27,10 @@ import java.lang.annotation.Target;
  */
 @Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface NotImplemented {
+public @interface InvalidTest {
 
 	/**
-	 * A specific message explaining what needs to be implemented
-	 * for this test to run
+	 * A specific message explaining why this test may be invalid
 	 *
 	 * @return
 	 */

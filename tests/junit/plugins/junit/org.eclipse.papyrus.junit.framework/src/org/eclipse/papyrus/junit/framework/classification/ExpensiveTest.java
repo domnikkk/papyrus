@@ -9,16 +9,17 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.junit.utils.classification;
+package org.eclipse.papyrus.junit.framework.classification;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+
 /**
- * Indicates that a test may fail because it is not properly implemented
- * (e.g. not compatible with Hudson, because it opens some blocking dialogs)
+ * Indicates that a test is expensive, and should be excluded from a Lightweight test job (e.g. Gerrit)
+ *
  *
  * This annotation must be used with the {@link ClassificationRule}
  *
@@ -27,10 +28,10 @@ import java.lang.annotation.Target;
  */
 @Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface InvalidTest {
+public @interface ExpensiveTest {
 
 	/**
-	 * A specific message explaining why this test may be invalid
+	 * A description
 	 *
 	 * @return
 	 */

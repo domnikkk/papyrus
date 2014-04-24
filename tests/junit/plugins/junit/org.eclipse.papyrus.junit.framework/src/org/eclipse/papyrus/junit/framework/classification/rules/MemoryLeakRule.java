@@ -10,7 +10,7 @@
  *   Christian W. Damus (CEA) - Initial API and implementation
  *
  */
-package org.eclipse.papyrus.junit.utils.rules;
+package org.eclipse.papyrus.junit.framework.classification.rules;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;

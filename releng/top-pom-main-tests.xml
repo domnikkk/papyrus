@@ -42,6 +42,7 @@
 		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.edit.tests</module>
 		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.labelprovider.tests</module>
 		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.resourceloading.tests</module>
+		<module>../tests/junit/plugins/junit/org.eclipse.papyrus.junit.framework</module>
 		<module>../tests/junit/plugins/junit/org.eclipse.papyrus.junit.utils</module>
 		<module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.blockdefinition.tests</module>
 		<module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.internalblock.tests</module>

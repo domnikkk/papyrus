@@ -9,9 +9,9 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.junit.utils.tests;
+package org.eclipse.papyrus.junit.framework.classification.tests;
 
-import org.eclipse.papyrus.junit.utils.classification.ClassificationRunner;
+import org.eclipse.papyrus.junit.framework.classification.ClassificationRunner;
 import org.junit.runner.RunWith;
 
 /**

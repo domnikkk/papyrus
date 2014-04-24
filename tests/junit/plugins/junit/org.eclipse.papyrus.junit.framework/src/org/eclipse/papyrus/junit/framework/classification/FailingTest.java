@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.junit.utils.classification;
+package org.eclipse.papyrus.junit.framework.classification;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -18,20 +18,20 @@ import java.lang.annotation.Target;
 
 
 /**
- * Indicates that a test is expensive, and should be excluded from a Lightweight test job (e.g. Gerrit)
- *
+ * Indicates that a test currently fails. It can be used to sort new (unidentified) regressions
+ * from known (reported) issues.
  *
  * This annotation must be used with the {@link ClassificationRule}
- *
+ * 
  * @author Camille Letavernier
  *
  */
 @Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ExpensiveTest {
+public @interface FailingTest {
 
 	/**
-	 * A description
+	 * A specific message explaining why this test is failing
 	 *
 	 * @return
 	 */

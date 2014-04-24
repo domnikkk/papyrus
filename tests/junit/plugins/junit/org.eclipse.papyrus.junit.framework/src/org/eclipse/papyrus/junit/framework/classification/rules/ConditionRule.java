@@ -10,7 +10,7 @@
  *   Christian W. Damus (CEA) - Initial API and implementation
  *
  */
-package org.eclipse.papyrus.junit.utils.rules;
+package org.eclipse.papyrus.junit.framework.classification.rules;
 
 import static org.junit.Assert.fail;
 
@@ -19,7 +19,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Member;
 import java.lang.reflect.Method;
 
-import org.eclipse.papyrus.junit.utils.classification.ClassificationRunner;
+import org.eclipse.papyrus.junit.framework.classification.ClassificationRunner;
 import org.junit.Assume;
 import org.junit.Rule;
 import org.junit.rules.MethodRule;

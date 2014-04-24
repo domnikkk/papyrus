@@ -14,7 +14,7 @@
  *  Christian W. Damus (CEA) - bug 436047
  *
  *****************************************************************************/
-package org.eclipse.papyrus.junit.utils.classification;
+package org.eclipse.papyrus.junit.framework.classification;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -30,9 +30,9 @@ import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.papyrus.infra.tools.util.ListHelper;
-import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
-import org.eclipse.papyrus.junit.utils.rules.Conditional;
-import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule;
+import org.eclipse.papyrus.junit.framework.classification.rules.ConditionRule;
+import org.eclipse.papyrus.junit.framework.classification.rules.Conditional;
+import org.eclipse.papyrus.junit.framework.classification.rules.MemoryLeakRule;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -192,6 +192,7 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 			if(PlatformUI.isWorkbenchRunning()) {
 				result = Suppliers.memoize(new Supplier<TestRule>() {
 
+					@Override
 					public TestRule get() {
 						if(Display.getCurrent() != null) {
 							return new TestWatcher() {

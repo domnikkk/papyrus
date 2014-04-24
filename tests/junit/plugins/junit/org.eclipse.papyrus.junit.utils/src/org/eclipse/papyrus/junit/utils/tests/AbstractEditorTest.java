@@ -25,6 +25,7 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.Activator;
 import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
@@ -45,6 +46,7 @@ import org.osgi.framework.Bundle;
 
 
 public abstract class AbstractEditorTest extends AbstractPapyrusTest {
+
 	/** the id of the model explorer */
 	public static final String MODELEXPLORER_VIEW_ID = "org.eclipse.papyrus.views.modelexplorer.modelexplorer"; //$NON-NLS-1$
 
@@ -69,9 +71,12 @@ public abstract class AbstractEditorTest extends AbstractPapyrusTest {
 	 * Inits this.editor
 	 * Fails or throws an exception if an error occurs
 	 *
-	 * @param bundle the source bundle where the model is store
-	 * @param projectName the project that will created at runtime to execute test
-	 * @param modelName the model that will be copied and test executed on.
+	 * @param bundle
+	 *        the source bundle where the model is store
+	 * @param projectName
+	 *        the project that will created at runtime to execute test
+	 * @param modelName
+	 *        the model that will be copied and test executed on.
 	 */
 	protected void initModel(String projectName, String modelName, Bundle bundle) throws Exception {
 		project = ProjectUtils.createProject(projectName);
@@ -111,9 +116,9 @@ public abstract class AbstractEditorTest extends AbstractPapyrusTest {
 	}
 
 
-	public ModelExplorerView getModelExplorerView(){
+	public ModelExplorerView getModelExplorerView() {
 
-		Display.getDefault().syncExec( new Runnable() {
+		Display.getDefault().syncExec(new Runnable() {
 
 			public void run() {
 				IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
@@ -138,10 +143,10 @@ public abstract class AbstractEditorTest extends AbstractPapyrusTest {
 	}
 
 	/**
-	 * 
-	 * @return the current UML model 
+	 *
+	 * @return the current UML model
 	 */
-	protected org.eclipse.uml2.uml.Package getRootUMLModel(){
+	protected org.eclipse.uml2.uml.Package getRootUMLModel() {
 
 		IModel umlIModel;
 		try {
@@ -154,16 +159,17 @@ public abstract class AbstractEditorTest extends AbstractPapyrusTest {
 
 
 			Assert.assertFalse("umlRessource contains nothing", umlModel.getResource().getContents().isEmpty());
-			Object root =umlModel.getResource().getContents().get(0);
+			Object root = umlModel.getResource().getContents().get(0);
 			Assert.assertFalse("the root of UML model is not a package", root instanceof Package);
 
-			return  (org.eclipse.uml2.uml.Package)root;
+			return (org.eclipse.uml2.uml.Package)root;
 		} catch (ServiceException e) {
 			Assert.fail(e.getMessage());
 		}
 		return null;
 
 	}
+
 	protected IPageManager getPageManager() throws ServiceException {
 		return getServicesRegistry().getService(IPageManager.class);
 	}
