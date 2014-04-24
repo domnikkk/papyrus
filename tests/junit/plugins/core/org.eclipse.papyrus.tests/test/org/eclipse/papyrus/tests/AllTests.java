@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
- *  Christian W. Damus (CEA) - bugs 402525, 323802, 431953, 433310
+ *  Christian W. Damus (CEA) - bugs 402525, 323802, 431953
  *
  *****************************************************************************/
 package org.eclipse.papyrus.tests;
@@ -47,7 +47,6 @@ public class AllTests {
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.services.resourceloading.Activator.PLUGIN_ID, "org.eclipse.papyrus.core.resourceloading.tests.AllTests"));
 
 		/* infra */
-		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.tools.tests.AllTests.class));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.services.edit.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.services.edit.tests.suites.AllTests"));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.labelprovider.tests.AllTests.class));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.emf.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.emf.tests.AllTests"));
@@ -70,6 +69,9 @@ public class AllTests {
 		/* css */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.gmfdiag.css.tests.tests.AllTests.class));
 
+		/* control mode */
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.controlmode.tests.AllTests.class));
+		
 		//
 		/* sysml moved to a separate launcher */
 		//
@@ -92,7 +94,6 @@ public class AllTests {
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.diagram.timing.tests.AllTests.class));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.diagram.usecase.tests.AllTests.class));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.diagram.composite.test.AllTests.class));
-		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.diagram.profile.tests.AllTests.class));
 		//suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.diagram.sequence.tests.AllTests.class)); //Disabled. They currently do not run on Hudson
 		//		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.diagram.interactionoverview.tests.AllTests.class)); //Disabled. They currently do not run on Hudson
 		//

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_JOBikLpyEeOiIqA0Y8pjRA" name="profile" metaclassReference="_P1j3QLpyEeOiIqA0Y8pjRA">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RtebILpyEeOiIqA0Y8pjRA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_RtfCMLpyEeOiIqA0Y8pjRA" name="profile" nsURI="http:///schemas/profile/_Rtcl8LpyEeOiIqA0Y8pjRA/0" nsPrefix="profile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RtiFgLpyEeOiIqA0Y8pjRA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RtiFgbpyEeOiIqA0Y8pjRA" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RtiFgrpyEeOiIqA0Y8pjRA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RtiFg7pyEeOiIqA0Y8pjRA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RtiFhLpyEeOiIqA0Y8pjRA" key="Date" value="2014-04-02"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RtiFhbpyEeOiIqA0Y8pjRA" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_RtfCMbpyEeOiIqA0Y8pjRA" name="Stereotype1">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RtfCMrpyEeOiIqA0Y8pjRA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_MTPnELpyEeOiIqA0Y8pjRA"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_RtfCM7pyEeOiIqA0Y8pjRA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_P1j3QLpyEeOiIqA0Y8pjRA" alias="Class">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_MTPnELpyEeOiIqA0Y8pjRA" name="Stereotype1">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Qoo6ALpyEeOiIqA0Y8pjRA" name="base_Class" association="_QoqIILpyEeOiIqA0Y8pjRA">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_QoqIILpyEeOiIqA0Y8pjRA" name="E_Stereotype1_Class1" memberEnd="_QoqIIbpyEeOiIqA0Y8pjRA _Qoo6ALpyEeOiIqA0Y8pjRA">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_QoqIIbpyEeOiIqA0Y8pjRA" name="extension_Stereotype1" type="_MTPnELpyEeOiIqA0Y8pjRA" aggregation="composite" association="_QoqIILpyEeOiIqA0Y8pjRA"/>
+  </packagedElement>
+</uml:Profile>

@@ -11,6 +11,7 @@
  *  Arthur Daussy (Atos) arthur.daussy@atos.net - Initial API and implementation
  *  Christian W. Damus (CEA LIST) - pluggable providers of fragment-resource selection dialogs
  *  Christian W. Damus (CEA) - bug 410346
+ *  Juan Cadavid <juan.cadavid@cea.fr> - bug 399877
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.controlmode.handlers;
@@ -18,10 +19,17 @@ package org.eclipse.papyrus.infra.services.controlmode.handlers;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import org.eclipse.core.commands.AbstractParameterValueConverter;
+import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.ParameterValueConversionException;
+import org.eclipse.core.commands.ParameterValuesException;
+import org.eclipse.core.commands.common.NotDefinedException;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
@@ -33,6 +41,7 @@ import org.eclipse.papyrus.infra.services.controlmode.ControlModeManager;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModePlugin;
 import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 import org.eclipse.papyrus.infra.services.controlmode.IControlModeManager;
+import org.eclipse.papyrus.infra.services.controlmode.commands.ControlModeCommandParameterValues;
 import org.eclipse.papyrus.infra.services.controlmode.ui.IControlModeFragmentDialogProvider;
 import org.eclipse.papyrus.infra.services.controlmode.util.LabelHelper;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.NotificationBuilder;
@@ -43,9 +52,10 @@ import org.eclipse.swt.widgets.Display;
  * Handler used to control an element
  * 
  * @author adaussy
- * 
  */
 public class ControlCommandHandler extends AbstractModelExplorerHandler {
+
+	public static final String CONTROLMODE_USE_DIALOG_PARAMETER = "org.eclipse.papyrus.infra.services.controlmode.useDialogParameter";
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		List<EObject> selection = getCurrentSelectionAdaptedToType(event, EObject.class);
@@ -54,17 +64,57 @@ public class ControlCommandHandler extends AbstractModelExplorerHandler {
 			return null;
 		}
 		EObject eObjectToControl = selection.get(0);
-		IControlModeFragmentDialogProvider provider = getDialogProvider(eObjectToControl);
-		Dialog dialog = provider.createDialog(Display.getCurrent().getActiveShell(), eObjectToControl.eResource(), getDefaultLabelResource(eObjectToControl));
-		if(dialog.open() == Dialog.OK) {
-			ControlModeRequest controlRequest = ControlModeRequest.createUIControlModelRequest(getEditingDomain(), eObjectToControl, provider.getSelectedURI(dialog));
+
+		if(getShowDialogParameterValue(event)) {
+			IControlModeFragmentDialogProvider provider = getDialogProvider(eObjectToControl);
+			Dialog dialog = provider.createDialog(Display.getCurrent().getActiveShell(), eObjectToControl.eResource(), getDefaultLabelResource(eObjectToControl));
+			if(dialog.open() == Dialog.OK) {
+				ControlModeRequest controlRequest = ControlModeRequest.createUIControlModelRequest(getEditingDomain(), eObjectToControl, provider.getSelectedURI(dialog));
+				IControlModeManager controlMng = ControlModeManager.getInstance();
+				ICommand controlCommand = controlMng.getControlCommand(controlRequest);
+				getEditingDomain().getCommandStack().execute(new GMFtoEMFCommandWrapper(controlCommand));
+			}
+		} else {
+			URI defaultURI = computeDefaultURI(eObjectToControl.eResource(), getDefaultLabelResource(eObjectToControl));
+			ControlModeRequest controlRequest = ControlModeRequest.createUIControlModelRequest(getEditingDomain(), eObjectToControl, defaultURI);
 			IControlModeManager controlMng = ControlModeManager.getInstance();
 			ICommand controlCommand = controlMng.getControlCommand(controlRequest);
 			getEditingDomain().getCommandStack().execute(new GMFtoEMFCommandWrapper(controlCommand));
 		}
 		return null;
 	}
-	
+
+	public URI computeDefaultURI(Resource currentResource, String defaultName) {
+		String ext = currentResource.getURI().fileExtension();
+		URI uri = currentResource.getURI().trimSegments(1);
+		uri = uri.appendSegment(defaultName).appendFileExtension(ext);
+		return uri;
+	}
+
+	/**
+	 * 
+	 * @param event
+	 * @return true if the dialog will be displayed to the user, false if it will be bypassed and the default values will be used
+	 */
+	protected Boolean getShowDialogParameterValue(ExecutionEvent event) {
+		Boolean showDialogValue = null;
+
+		ControlModeCommandParameterValues parameterValues = null;
+		try {
+			Command command = event.getCommand();
+			parameterValues = (ControlModeCommandParameterValues)command.getParameter(CONTROLMODE_USE_DIALOG_PARAMETER).getValues();
+			showDialogValue = parameterValues.get("showDialog");
+			if(showDialogValue == null) {
+				showDialogValue = true; //By default, the dialog is always displayed to the user
+			}
+		} catch (ParameterValuesException e) {
+			ControlModePlugin.log.error("Parameter values exception in control mode command.", e);
+		} catch (NotDefinedException e) {
+			ControlModePlugin.log.error("Parameter not defined for control mode command.", e);
+		}
+		return showDialogValue;
+	}
+
 	IControlModeFragmentDialogProvider getDialogProvider(EObject context) {
 		try {
 			ModelSet modelSet = ServiceUtilsForEObject.getInstance().getModelSet(context);
@@ -107,4 +157,5 @@ public class ControlCommandHandler extends AbstractModelExplorerHandler {
 		}
 		return b.toString();
 	}
+
 }
