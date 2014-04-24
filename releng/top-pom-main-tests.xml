@@ -8,6 +8,21 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
+		<module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.build.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.core.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.nattable.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.queries.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.services.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.sysml.diagram.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.sysml.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.sysml.nattable.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.diagram.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.nattable.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.tools.feature</module>
+	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.views.feature</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.tests</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.editor.integration.tests</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.di.tests</module>
