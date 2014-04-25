@@ -34,7 +34,7 @@ public class DeleteAction extends AbstractRepairAction {
 	}
 
 	public boolean repair(Resource resource, EPackage profileDefinition, Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor) {
-		monitor = SubMonitor.convert(monitor, stereotypeApplications.size());
+		monitor = SubMonitor.convert(monitor, "Deleting stereotype applications...", stereotypeApplications.size());
 
 		for(EObject next : stereotypeApplications) {
 			destroy(next);

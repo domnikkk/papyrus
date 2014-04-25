@@ -34,6 +34,7 @@ import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TrayDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.jface.operation.ModalContext;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
@@ -48,6 +49,7 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.jface.window.IShellProvider;
 import org.eclipse.jface.window.SameShellProvider;
+import org.eclipse.jface.wizard.ProgressMonitorPart;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
@@ -58,6 +60,7 @@ import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.IRepairAction;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.ZombieStereotypesDescriptor;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -66,7 +69,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.statushandlers.StatusManager;
 
 import com.google.common.base.Predicate;
@@ -93,6 +95,8 @@ public class ZombieStereotypesDialog extends TrayDialog {
 	private List<MissingSchema> missingSchemas;
 
 	private final Collection<MissingSchema> actionsToApply;
+
+	private ProgressMonitorPart progress;
 
 	/**
 	 * @param shell
@@ -185,6 +189,10 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		table.setLabelProvider(new ZombiesLabelProvider());
 		table.setInput(getMissingSchemas());
 
+		progress = new ProgressMonitorPart(self, null);
+		progress.setLayoutData(new GridData(SWT.FILL, SWT.LEAD, true, false));
+		progress.setVisible(false);
+
 		return contents;
 	}
 
@@ -232,7 +240,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 						SubMonitor subMonitor = SubMonitor.convert(monitor, actionsToApply.size());
 
 						for(Iterator<MissingSchema> iter = repairActions.iterator(); iter.hasNext();) {
-							if(!iter.next().apply(diagnostics, subMonitor.newChild(1))) {
+							if(!iter.next().apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
 								// Leave this one to try it again
 								iter.remove();
 							}
@@ -242,14 +250,22 @@ public class ZombieStereotypesDialog extends TrayDialog {
 					}
 				});
 
+				Cursor waitCursor = new Cursor(getShell().getDisplay(), SWT.CURSOR_WAIT);
 				try {
-					PlatformUI.getWorkbench().getProgressService().busyCursorWhile(runnable);
+					getShell().setCursor(waitCursor);
+					progress.setVisible(true);
+					ModalContext.run(runnable, true, progress, getShell().getDisplay());
 				} catch (Exception e) {
+					getShell().setCursor(null);
 					Throwable t = e;
 					if(e instanceof InvocationTargetException) {
 						t = ((InvocationTargetException)e).getTargetException();
 					}
 					StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to repair stereotypes.", t), StatusManager.BLOCK | StatusManager.LOG);
+				} finally {
+					getShell().setCursor(null);
+					waitCursor.dispose();
+					progress.setVisible(false);
 				}
 
 				if(diagnostics.getSeverity() > Diagnostic.OK) {

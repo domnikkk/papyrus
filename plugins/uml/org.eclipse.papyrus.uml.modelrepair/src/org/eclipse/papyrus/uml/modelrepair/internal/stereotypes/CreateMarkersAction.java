@@ -17,6 +17,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -56,7 +57,7 @@ public class CreateMarkersAction extends AbstractRepairAction {
 			}
 
 			try {
-				provider.createMarkers(resource, diagnostics, monitor);
+				provider.createMarkers(resource, diagnostics, SubMonitor.convert(monitor, "Creating problem markers...", stereotypeApplications.size()));
 			} catch (CoreException e) {
 				if(problems == null) {
 					Activator.log.error(e);

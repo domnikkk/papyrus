@@ -13,12 +13,17 @@
 package org.eclipse.papyrus.uml.modelrepair.ui;
 
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
@@ -26,6 +31,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
+import org.eclipse.papyrus.infra.tools.util.UIUtil;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.ZombieStereotypesDescriptor;
 import org.eclipse.swt.widgets.Shell;
@@ -60,14 +66,23 @@ public class ZombieStereotypeDialogPresenter {
 
 	private volatile boolean pending = false;
 
+	private final ExecutorService uiExecutor;
+
 	public ZombieStereotypeDialogPresenter(Shell parentShell, ModelSet modelSet) {
 		super();
 
 		this.parentShell = parentShell;
 		this.modelSet = modelSet;
+
+		uiExecutor = UIUtil.createUIExecutor(parentShell.getDisplay());
 	}
 
 	public void dispose() {
+		detachPresentation();
+		uiExecutor.shutdown();
+	}
+
+	void detachPresentation() {
 		lock.lock();
 		try {
 			zombieDescriptors.clear();
@@ -101,7 +116,7 @@ public class ZombieStereotypeDialogPresenter {
 								return;
 							}
 							zombies = ImmutableList.copyOf(zombieDescriptors);
-							dispose();
+							detachPresentation();
 						} finally {
 							lock.unlock();
 						}
@@ -125,7 +140,7 @@ public class ZombieStereotypeDialogPresenter {
 					}
 				};
 
-				parentShell.getDisplay().asyncExec(presentation);
+				uiExecutor.submit(presentation);
 			}
 		} finally {
 			lock.unlock();
@@ -182,25 +197,32 @@ public class ZombieStereotypeDialogPresenter {
 			}
 
 			final BrowseProfilesDialog dlg = new BrowseProfilesDialog(parentWindow.getShell(), schema, labelProvider);
+			Future<URI> task = uiExecutor.submit(new Callable<URI>() {
 
-			parentShell.getDisplay().syncExec(new Runnable() {
-
-				public void run() {
+				public URI call() {
 					dlg.setBlockOnOpen(true);
 					dlg.open();
+					return dlg.getSelectedProfileURI();
 				}
 			});
 
-			if(localProvider) {
-				try {
-					labelProvider.disposeService();
-				} catch (ServiceException e) {
-					Activator.log.error(e);
+			try {
+				URI selectedProfileURI = task.get();
+				if(selectedProfileURI != null) {
+					result = UML2Util.load(modelSet, selectedProfileURI, UMLPackage.Literals.PROFILE);
 				}
-			}
-
-			if(dlg.getSelectedProfileURI() != null) {
-				result = UML2Util.load(modelSet, dlg.getSelectedProfileURI(), UMLPackage.Literals.PROFILE);
+			} catch (ExecutionException e) {
+				Activator.log.error("Profile selection dialog presentation failed.", e); //$NON-NLS-1$
+			} catch (InterruptedException e) {
+				Activator.log.error("Profile selection dialog presentation interrupted.", e); //$NON-NLS-1$
+			} finally {
+				if(localProvider) {
+					try {
+						labelProvider.disposeService();
+					} catch (ServiceException e) {
+						Activator.log.error(e);
+					}
+				}
 			}
 
 			return result;

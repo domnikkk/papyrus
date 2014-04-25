@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
 import java.util.Collection;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -62,27 +63,35 @@ public class ApplyProfileAction extends AbstractRepairAction {
 	}
 
 	public boolean repair(Resource resource, EPackage profileDefinition, Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor) {
+		// We can be assured that there is at least one stereotype application, otherwise we wouldn't be here
+		boolean result = false;
+
 		Profile profile = profileSupplier.get();
-		if(profile == null) {
-			return false;
-		}
+		if(profile != null) {
+			String taskName = NLS.bind("Migrating stereotypes to current version of profile \"{0}\"...", profile.getName());
+			SubMonitor sub = SubMonitor.convert(monitor, taskName, stereotypeApplications.size() * 3 / 2);
 
-		// Get the topmost package
-		Package topPackage = root.getNearestPackage();
-		for(Element higher = topPackage; higher != null; higher = higher.getOwner()) {
-			Package next = higher.getNearestPackage();
-			if(next != null) {
-				topPackage = next;
+			// Get the topmost package
+			Package topPackage = root.getNearestPackage();
+			for(Element higher = topPackage; higher != null; higher = higher.getOwner()) {
+				Package next = higher.getNearestPackage();
+				if(next != null) {
+					topPackage = next;
+				}
+				higher = next;
 			}
-			higher = next;
+
+			// Apply the profile
+			if(topPackage != null) {
+				StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
+				topPackage.applyProfile(profile);
+			}
+
+			result = true;
+
+			sub.done();
 		}
 
-		// Apply the profile
-		if(topPackage != null) {
-			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications);
-			topPackage.applyProfile(profile);
-		}
-
-		return true;
+		return result;
 	}
 }
