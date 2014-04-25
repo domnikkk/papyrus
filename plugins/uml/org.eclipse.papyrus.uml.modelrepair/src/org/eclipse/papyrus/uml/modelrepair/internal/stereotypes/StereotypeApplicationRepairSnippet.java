@@ -31,6 +31,8 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
+import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.ui.ZombieStereotypeDialogPresenter;
 import org.eclipse.ui.IEditorPart;
@@ -55,6 +57,10 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	private final Function<? super EPackage, Profile> dynamicProfileSupplier;
 
 	private ZombieStereotypeDialogPresenter presenter;
+
+	private LabelProviderService labelProviderService;
+
+	private boolean localLabelProvider;
 
 	public StereotypeApplicationRepairSnippet() {
 		this(null);
@@ -139,7 +145,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 				profileSupplier = presenter.getDynamicProfileSupplier();
 			}
 
-			ZombieStereotypesDescriptor zombies = new ZombieStereotypesDescriptor(resource, root, appliedDefinitions, profileSupplier);
+			ZombieStereotypesDescriptor zombies = new ZombieStereotypesDescriptor(resource, root, appliedDefinitions, profileSupplier, getLabelProvider());
 
 			for(EObject next : resource.getContents()) {
 				if(!(next instanceof Element)) {
@@ -168,6 +174,20 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		return result;
 	}
 
+	private LabelProviderService getLabelProvider() {
+		if(labelProviderService == null) {
+			try {
+				labelProviderService = ServiceUtilsForResourceSet.getInstance().getService(LabelProviderService.class, adapter.getResourceSet());
+			} catch (Exception e) {
+				// Fine.  Create a local instance
+				labelProviderService = new LabelProviderServiceImpl();
+				localLabelProvider = true;
+			}
+		}
+
+		return labelProviderService;
+	}
+
 	//
 	// Snippet lifecycle
 	//
@@ -190,6 +210,17 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		if(presenter != null) {
 			presenter.dispose();
 			presenter = null;
+		}
+
+		if(localLabelProvider) {
+			try {
+				labelProviderService.disposeService();
+			} catch (ServiceException e) {
+				Activator.log.error(e);
+			} finally {
+				labelProviderService = null;
+				localLabelProvider = false;
+			}
 		}
 
 		adapter.unadapt(modelsManager);

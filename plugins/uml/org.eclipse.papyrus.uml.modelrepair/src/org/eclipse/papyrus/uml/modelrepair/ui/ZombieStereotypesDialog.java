@@ -162,19 +162,23 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 		TableColumn nameColumn = new TableColumn(tableControl, SWT.NONE);
 		nameColumn.setText("Resource");
+		nameColumn.setToolTipText("Resource in which problems with stereotype applications were found");
 		layout.addColumnData(new ColumnWeightData(25, 250, true));
 
 		TableColumn affectedColumn = new TableColumn(tableControl, SWT.NONE);
-		affectedColumn.setText("Affected");
+		affectedColumn.setText("Count");
+		affectedColumn.setToolTipText("Number of stereotype applications in the resource from the wrong or missing profile definition");
 		layout.addColumnData(new ColumnWeightData(5, 50, true));
 
 		TableColumn schemaColumn = new TableColumn(tableControl, SWT.NONE);
 		schemaColumn.setText("Profile");
-		layout.addColumnData(new ColumnWeightData(15, 150, true));
+		schemaColumn.setToolTipText("A profile definition that is missing or is not the applied version");
+		layout.addColumnData(new ColumnWeightData(10, 150, true));
 
 		TableViewerColumn actionColumn = new TableViewerColumn(table, SWT.NONE);
 		actionColumn.getColumn().setText("Action");
-		layout.addColumnData(new ColumnWeightData(10, 100, true));
+		actionColumn.getColumn().setToolTipText("Corrective action to apply to this resource for this profile");
+		layout.addColumnData(new ColumnWeightData(15, 100, true));
 		actionColumn.setEditingSupport(new ActionEditingSupport(table));
 
 		table.setContentProvider(ArrayContentProvider.getInstance());
@@ -369,7 +373,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 		void updateAction(ViewerCell cell) {
 			IRepairAction action = ((MissingSchema)cell.getElement()).getSelectedRepairAction();
-			cell.setText(action.kind().displayName());
+			cell.setText(action.getLabel());
 		}
 	}
 
@@ -433,7 +437,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 					@Override
 					public String getText(Object element) {
-						return ((IRepairAction)element).kind().displayName();
+						return ((IRepairAction)element).getLabel();
 					}
 				});
 			}
