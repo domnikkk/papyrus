@@ -34,9 +34,17 @@
                   style="push">
             </command>
             <command
-                  commandId="org.eclipse.ui.edit.paste.diagram"
+                  commandId="org.eclipse.papyrus.paste.diagram" label="Graphical Paste"
                   style="push">
             </command>            
+            <command
+                  commandId="org.eclipse.papyrus.copy.diagram"  label="Graphical Copy" 
+                  style="push">
+            </command>       
+            <command 
+                  commandId="org.eclipse.papyrus.cut.diagram" label="Graphical Cut" 
+                  style="push">
+            </command>                          
             <separator
                   name="edit_actions_separator"
                   visible="true">
@@ -52,7 +60,7 @@
          point="org.eclipse.ui.handlers">
       <handler
             class="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.GraphicalCutInDiagramHandler"
-            commandId="org.eclipse.ui.edit.cut">
+            commandId="org.eclipse.papyrus.cut.diagram">
          <activeWhen>
             <and>
                <with
@@ -75,7 +83,7 @@
       </handler>
       <handler
             class="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.GraphicalCopyInDiagramHandler"
-            commandId="org.eclipse.ui.edit.copy">
+            commandId="org.eclipse.papyrus.copy.diagram">
          <activeWhen>
             <and>
                <with
@@ -96,9 +104,9 @@
             </and>
          </activeWhen>
       </handler>
-      <handler
+     <handler
             class="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.GraphicalPasteInDiagramHandler"
-            commandId="org.eclipse.ui.edit.paste">
+            commandId="org.eclipse.papyrus.paste.diagram">
          <activeWhen>
             <and>
                <with
@@ -121,7 +129,7 @@
       </handler>
       <handler
             class="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.PasteInDiagramHandler"
-            commandId="org.eclipse.ui.edit.paste.diagram">
+            commandId="org.eclipse.ui.edit.paste">
          <activeWhen>
             <and>
                <with
@@ -138,21 +146,52 @@
                         property="org.eclipse.papyrus.infra.gmfdiag.common.diagram.tester.isDiagramEditor"
                         value="true">
                   </test>
-               </with>
-               <with
+               </with> 
+               <!--<with
                      variable="activeShell">
                   <test
                         forcePluginActivation="true"
                         property="org.eclipse.papyrus.infra.gmfdiag.common.diagram.tester.isTextZone"
                         value="false">
                   </test>
-               </with>                 
+               </with> -->                                   
             </and>
          </activeWhen>
       </handler>
       <handler
             class="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.CopyInDiagramHandler"
-            commandId="org.eclipse.papyrus.copy.diagram">
+            commandId="org.eclipse.ui.edit.copy">
+         <activeWhen>
+            <and>
+               <with
+                     variable="activeContexts">
+                  <test
+                        property="org.eclipse.papyrus.infra.gmfdiag.common.diagram.context.tester.isGmfDiagramContextActive"
+                        value="true">
+                  </test>
+               </with>
+               <with
+                     variable="selection" >
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.papyrus.infra.gmfdiag.common.diagram.tester.isDiagramEditor"
+                        value="true">
+                  </test>
+               </with>
+               <!--<with
+                     variable="activeShell">
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.papyrus.infra.gmfdiag.common.diagram.tester.isTextZone"
+                        value="false">
+                  </test>
+               </with> -->                       
+            </and>
+         </activeWhen>
+      </handler>    
+      <handler
+            class="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.CutInDiagramHandler"
+            commandId="org.eclipse.ui.edit.cut">
          <activeWhen>
             <and>
                <with
@@ -170,17 +209,17 @@
                         value="true">
                   </test>
                </with>
-               <with
+               <!--<with
                      variable="activeShell">
                   <test
                         forcePluginActivation="true"
                         property="org.eclipse.papyrus.infra.gmfdiag.common.diagram.tester.isTextZone"
                         value="false">
                   </test>
-               </with>                 
+               </with> -->                
             </and>
          </activeWhen>
-      </handler>             
+      </handler>                 
    </extension>
    <extension
          point="org.eclipse.ui.commands">
@@ -193,18 +232,25 @@
       </command>
       <command
             categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.PasteInDiagramHandler"
+            defaultHandler="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.GraphicalPasteInDiagramHandler" 
             description="Paste the elements in the current diagram"
-            id="org.eclipse.ui.edit.paste.diagram"
-            name="Paste Elements">
+            id="org.eclipse.papyrus.paste.diagram"
+            name="Graphical Paste ">
       </command>      
       <command
             categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.CopyInDiagramHandler"
+            defaultHandler="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.GraphicalCopyInDiagramHandler"
             description="Copy the elements in the current diagram"
             id="org.eclipse.papyrus.copy.diagram"
-            name="Copy Elements">
-      </command>          
+            name="Graphical Copy">
+      </command> 
+      <command 
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="org.eclipse.papyrus.infra.gmfdiag.menu.handlers.GraphicalCopyInDiagramHandler"
+            description="Cut the elements in the current diagram"
+            id="org.eclipse.papyrus.cut.diagram"
+            name="Graphical Cut">
+      </command>                      
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
@@ -218,32 +264,38 @@
             commandId="org.eclipse.ui.edit.copy"
             contextId="org.eclipse.gmf.runtime.diagram.ui.diagramContext"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+M2+C">
+            sequence="M1+C">
       </key>
       <key
             commandId="org.eclipse.ui.edit.cut"
             contextId="org.eclipse.gmf.runtime.diagram.ui.diagramContext"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+M2+X">
+            sequence="M1+X">
       </key>
       <key
             commandId="org.eclipse.ui.edit.paste"
             contextId="org.eclipse.gmf.runtime.diagram.ui.diagramContext"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+M2+V">
+            sequence="M1+V">
       </key>
        <key
-            commandId="org.eclipse.ui.edit.paste.diagram"
+            commandId="org.eclipse.papyrus.paste.diagram"
             contextId="org.eclipse.gmf.runtime.diagram.ui.diagramContext"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+V">
+            sequence="M1+M2+V">
       </key>
       <key
             commandId="org.eclipse.papyrus.copy.diagram"
             contextId="org.eclipse.gmf.runtime.diagram.ui.diagramContext"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+C">
-      </key>             
+            sequence="M1+M2+C">
+      </key> 
+      <key
+            commandId="org.eclipse.papyrus.cut.diagram"
+            contextId="org.eclipse.gmf.runtime.diagram.ui.diagramContext"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+M2+X">
+      </key>                   
    </extension>
 
 </plugin>
