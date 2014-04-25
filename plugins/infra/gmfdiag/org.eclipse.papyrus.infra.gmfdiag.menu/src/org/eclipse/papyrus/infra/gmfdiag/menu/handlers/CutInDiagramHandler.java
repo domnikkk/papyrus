@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -26,21 +25,10 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.papyrus.commands.util.NonDirtyingUtils;
-import org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper;
-import org.eclipse.papyrus.commands.wrappers.GMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
-import org.eclipse.papyrus.infra.gmfdiag.common.commands.DefaultDiagramCopyCommand;
-import org.eclipse.papyrus.infra.gmfdiag.common.strategy.IStrategy;
-import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy;
-import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.PasteStrategyManager;
-import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramEditPartsUtil;
-import org.eclipse.papyrus.infra.gmfdiag.menu.handlers.CopyInDiagramHandler.MyCopyImageCommand;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
@@ -58,46 +46,11 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 	@Override
 	protected Command getCommand() {
 		CompoundCommand cutInDiagramCommand = new CompoundCommand("Cut in Diagram Command"); //$NON-NLS-1$
-		Command buildCopy = buildCopyCommand();
+		Command buildCopy = CopyInDiagramHandler.buildCopyCommand(getEditingDomain(), getSelectedElements());
 		cutInDiagramCommand.add(buildCopy);
 		Command buildDelete = buildDeleteCommand();
 		cutInDiagramCommand.add(buildDelete);
 		return cutInDiagramCommand;
-	}
-
-	/**
-	 * Construct a copy command with the cut selection
-	 * @return the copy command
-	 */
-	protected Command buildCopyCommand() {
-		PapyrusClipboard<Object> papyrusClipboard = PapyrusClipboard.getNewInstance();
-		List<IGraphicalEditPart> selectedElements = getSelectedElements();
-		TransactionalEditingDomain editingDomain = getEditingDomain();
-		Command copyCommand;
-		DefaultDiagramCopyCommand defaultDiagramCopyCommand = new DefaultDiagramCopyCommand(editingDomain, papyrusClipboard, selectedElements);
-		copyCommand = EMFtoGEFCommandWrapper.wrap(defaultDiagramCopyCommand);
-		IDiagramWorkbenchPart activeDiagramWorkbenchPart = DiagramEditPartsUtil.getActiveDiagramWorkbenchPart();
-		Diagram diagram = activeDiagramWorkbenchPart.getDiagram();
-		DiagramEditPart diagramEditPart = activeDiagramWorkbenchPart.getDiagramEditPart();
-		List<Object> selectedElementModels = new ArrayList<Object>();
-		for(IGraphicalEditPart iGraphicalEditPart : selectedElements) {
-			selectedElementModels.add(iGraphicalEditPart.getModel());
-		}
-		MyCopyImageCommand copyImageCommand = new MyCopyImageCommand("Create image to allow paste on system", diagram, selectedElementModels, diagramEditPart); //$NON-NLS-1$
-		if(copyImageCommand.canExecute()) {
-			Command gmFtoGEFCommandWrapper = GMFtoGEFCommandWrapper.wrap(copyImageCommand);
-			copyCommand = NonDirtyingUtils.chain(copyCommand, gmFtoGEFCommandWrapper);
-		} else {
-			copyImageCommand.dispose();
-		}
-
-		List<IStrategy> allStrategies = PasteStrategyManager.getInstance().getAllStrategies();
-		for(IStrategy iStrategy : allStrategies) {
-			IPasteStrategy iIPasteStrategy = (IPasteStrategy)iStrategy;
-			iIPasteStrategy.prepare(papyrusClipboard);
-		}
-
-		return copyCommand;
 	}
 
 	/**

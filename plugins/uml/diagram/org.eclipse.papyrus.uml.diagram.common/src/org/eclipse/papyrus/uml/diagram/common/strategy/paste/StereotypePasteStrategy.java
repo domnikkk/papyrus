@@ -25,20 +25,18 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.infra.core.clipboard.IClipboardAdditionalData;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.AbstractPasteStrategy;
+import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.DefaultPasteStrategy;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.preferences.IStereotypePasteStrategyPreferenceConstant;
 import org.eclipse.papyrus.uml.tools.commands.ApplyProfileCommand;
 import org.eclipse.papyrus.uml.tools.commands.ApplyStereotypeCommand;
 import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
@@ -49,7 +47,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 /**
  * Offer a strategy for copying stereotypes.
  */
-public class StereotypePasteStrategy implements IPasteStrategy {
+public class StereotypePasteStrategy extends AbstractPasteStrategy implements IPasteStrategy {
 
 	/** The instance. */
 	private static IPasteStrategy instance = new StereotypePasteStrategy();
@@ -91,54 +89,16 @@ public class StereotypePasteStrategy implements IPasteStrategy {
 		return "Paste stereotype elements"; //$NON-NLS-1$
 	}
 
-	/**
-	 * Gets the category id.
-	 *
-	 * @return the category id
-	 */
-	public String getCategoryID() {
-		return "org.eclipse.papyrus.strategy.paste"; //$NON-NLS-1$
-	}
-
-	/**
-	 * Gets the category label.
-	 *
-	 * @return the category label
-	 */
-	public String getCategoryLabel() {
-		return "Paste all copied elements"; //$NON-NLS-1$
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getImage()
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
-	@Deprecated
-	public Image getImage() {
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getPriority()
-	 */
-	@Deprecated
-	public int getPriority() {
-		return 1;
-	}
-
-	/**
-	 * Sets the options.
-	 *
-	 * @param options
-	 *        the options
-	 */
-	public void setOptions(Map<String, Object> options) {
-		//Nothing
-	}
-
+	@Override
+	public IPasteStrategy dependsOn() {
+		return DefaultPasteStrategy.getInstance();
+	}	
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -222,88 +182,6 @@ public class StereotypePasteStrategy implements IPasteStrategy {
 
 	}
 
-
-
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain,
-	 * org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
-	 */
-	@Override
-	public Command getGraphicalCommand(EditingDomain domain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart targetEditPart, PapyrusClipboard<Object> papyrusClipboard) {
-		org.eclipse.gef.commands.CompoundCommand compoundCommand = new org.eclipse.gef.commands.CompoundCommand("Stereotype Semantic And Graphical paste"); //$NON-NLS-1$
-		Map<Profile,List<ApplyStereotypeCommand>> missingProfiles = new HashMap<Profile,List<ApplyStereotypeCommand>>();
-		View view = (View)targetEditPart.getModel();
-		EObject modelTargetOwner = (EObject)view.getElement();
-		Package targetPackage = ((Element)modelTargetOwner).getNearestPackage();
-		// apply stereotypes 
-		for(Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
-			Object object = (Object)iterator.next();
-			// get target Element
-			EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);
-			if(target != null && target instanceof Element) {
-				// get affiliate StereotypeClipboard
-				Map<Object, ?> additionalDataMap = papyrusClipboard.getAdditionalDataForStrategy(getID());
-				Object additionnalData = additionalDataMap.get(object);
-				if(additionnalData instanceof StereotypeClipboard) {
-					StereotypeClipboard stereotypeClipboard = (StereotypeClipboard)additionnalData;
-					Collection<Stereotype> stereotypes = stereotypeClipboard.getStereotypes();
-					for(Stereotype stereotype : stereotypes) {
-						// reload the stereotype in the new Contex-ResourceSet (Required because in org.eclipse.uml2.uml.internal.operations.PackageOperations
-						// L960 in getProfileApplication the test is using == instead of equals)
-						Stereotype stereotypeInTargetContext = EMFHelper.reloadIntoContext(stereotype, modelTargetOwner);
-						ApplyStereotypeCommand applyStereotypeCommand = new ApplyStereotypeCommand((Element)target, stereotypeInTargetContext, (TransactionalEditingDomain)domain);
-						
-						Profile profile = stereotypeInTargetContext.getProfile();
-						if (isProfileAppliedRecursive(targetPackage, profile)){
-							EMFtoGEFCommandWrapper emFtoGEFCommandWrapper = new EMFtoGEFCommandWrapper(applyStereotypeCommand);
-							compoundCommand.add(emFtoGEFCommandWrapper);
-						} else { // Profile is missing
-							List<ApplyStereotypeCommand> stereotypeListMissingProfiles = missingProfiles.get(profile);
-							if (stereotypeListMissingProfiles!= null && !stereotypeListMissingProfiles.isEmpty()){
-								stereotypeListMissingProfiles.add(applyStereotypeCommand);
-							} else {
-								stereotypeListMissingProfiles = new ArrayList<ApplyStereotypeCommand>();
-								stereotypeListMissingProfiles.add(applyStereotypeCommand);
-								missingProfiles.put(profile, stereotypeListMissingProfiles);
-							}	
-						}	
-					}
-
-				}
-			}
-		}
-
-		// 2. user preferences (Apply profiles, data...)
-		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
-		String preferenceProfileStrategy = preferenceStore.getString(IStereotypePasteStrategyPreferenceConstant.PROFILE_STRATEGY);	
-	
-		if (IStereotypePasteStrategyPreferenceConstant.ASK_POPUP.equals(preferenceProfileStrategy)){// Ask user for instruction
-			// TODO:  2. user choices (Apply profiles, data...)
-		} else if (IStereotypePasteStrategyPreferenceConstant.IMPORT_MISSING_PROFILE.equals(preferenceProfileStrategy)){ // apply profile
-			Set<Profile> keySet = missingProfiles.keySet();
-			Package rootPackage = PackageUtil.getRootPackage((Element)modelTargetOwner);
-			ApplyProfileCommand applyProfileCommand = new ApplyProfileCommand(rootPackage, keySet, (TransactionalEditingDomain)domain);
-			EMFtoGEFCommandWrapper emFtoGEFCommandWrapper = new EMFtoGEFCommandWrapper(applyProfileCommand);
-			compoundCommand.add(emFtoGEFCommandWrapper);
-			for(Profile profile : keySet) {
-				List<ApplyStereotypeCommand> list = missingProfiles.get(profile);
-				for(ApplyStereotypeCommand applyStereotypeCommand : list) {
-					compoundCommand.add(new EMFtoGEFCommandWrapper(applyStereotypeCommand));
-				}
-			}
-		}		
-		
-		
-		if(compoundCommand.size() == 0) {// TODO : use unwrap if no use of UnexecutableCommand.INSTANCE
-			return null;
-		}
-		return compoundCommand;
-	}
-
-
 	/**
 	 * Checks recursively if a profile is applied .
 	 *
@@ -313,7 +191,7 @@ public class StereotypePasteStrategy implements IPasteStrategy {
 	 *        the profile
 	 * @return true, if is profile applied recursive
 	 */
-	private boolean isProfileAppliedRecursive(Element element, Profile profile) {
+	protected boolean isProfileAppliedRecursive(Element element, Profile profile) {
 		if(element instanceof Package) {
 			Package pkg = (Package)element;
 			boolean profileApplied = pkg.isProfileApplied(profile);
@@ -332,15 +210,7 @@ public class StereotypePasteStrategy implements IPasteStrategy {
 	}
 
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
-	 */
-	@Override
-	public IPasteStrategy dependsOn() {
-		return DefaultPasteStrategy.getInstance();
-	}
+
 
 
 	/*
@@ -349,7 +219,7 @@ public class StereotypePasteStrategy implements IPasteStrategy {
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
-	public void prepare(PapyrusClipboard<Object> papyrusClipboard) {
+	public void prepare(PapyrusClipboard<Object> papyrusClipboard, Collection<EObject> selection) {
 		Map<Object, IClipboardAdditionalData> mapCopyToStereotypeData = new HashMap<Object, IClipboardAdditionalData>();
 		for(Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
 			EObject eObjectSource = (EObject)iterator.next();
@@ -396,15 +266,13 @@ public class StereotypePasteStrategy implements IPasteStrategy {
 	//	}
 
 
-
-	// TODO : remove no internal class
 	/**
-	 * The Class StereotypeClipboard.
+	 * This Class store the stereotypes to be reapplied.
 	 */
-	private class StereotypeClipboard implements IClipboardAdditionalData {
+	protected class StereotypeClipboard implements IClipboardAdditionalData {
 
 		/** The stereotype. */
-		private Collection<Stereotype> stereotypes;
+		protected  Collection<Stereotype> stereotypes;
 
 		/**
 		 * @param stereotypes
@@ -421,9 +289,5 @@ public class StereotypePasteStrategy implements IPasteStrategy {
 		}
 
 	}
-
-
-
-
 
 }

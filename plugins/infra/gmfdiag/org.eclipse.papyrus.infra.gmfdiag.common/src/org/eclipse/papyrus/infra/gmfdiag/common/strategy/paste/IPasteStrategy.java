@@ -11,6 +11,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste;
 
+import java.util.Collection;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gef.commands.Command;
@@ -107,7 +109,8 @@ public interface IPasteStrategy extends IStrategy {
 	 * Prepare in the clipboard the data required for the pasting strategy
 	 * 
 	 * @param papyrusClipboard
+	 * @param list 
 	 */
-	public void prepare(PapyrusClipboard<Object> papyrusClipboard);
+	public void prepare(PapyrusClipboard<Object> papyrusClipboard, Collection<EObject> selection);
 
 }
