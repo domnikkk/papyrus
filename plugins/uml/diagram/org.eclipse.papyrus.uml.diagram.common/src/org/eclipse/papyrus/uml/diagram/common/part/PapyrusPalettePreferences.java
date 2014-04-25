@@ -20,11 +20,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.gmf.runtime.common.core.service.ProviderPriority;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditorWithFlyOutPalette;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.papyrus.infra.core.utils.PapyrusTrace;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.service.IPapyrusPaletteConstant;
 import org.eclipse.papyrus.uml.diagram.common.service.PapyrusPaletteService.ExtendedProviderDescriptor;
@@ -104,7 +102,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 				return XMLMemento.createWriteRoot(PALETTE_CUSTOMIZATIONS_ID);
 			}
 		} catch (WorkbenchException e) {
-			Activator.getDefault().logError("Impossible to read preferences", e);
+			Activator.getDefault().logError("Impossible to read preferences", e); //$NON-NLS-1$
 		}
 		return null;
 	}
@@ -126,7 +124,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 				return XMLMemento.createWriteRoot(PALETTE_REDEFINITIONS);
 			}
 		} catch (WorkbenchException e) {
-			Activator.getDefault().logError("Impossible to read preferences for palette local redefinitions", e);
+			Activator.getDefault().logError("Impossible to read preferences for palette local redefinitions", e);  //$NON-NLS-1$
 		}
 		return null;
 	}
@@ -195,7 +193,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 				getPreferenceStore().setValue(key, writer.toString());
 			}
 		} catch (IOException e) {
-			Activator.getDefault().logError("input/ouput exception", e);
+			Activator.getDefault().logError("input/ouput exception", e); //$NON-NLS-1$
 		}
 	}
 
@@ -299,7 +297,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 	 */
 	public static String getPaletteRedefinition(String paletteID) {
 		if(paletteID == null) {
-			Activator.log.debug("Trying to find preferences for a null palette identifier");
+			Activator.log.debug("Trying to find preferences for a null palette identifier"); //$NON-NLS-1$
 		}
 		IMemento memento = getPaletteRedefinitionNode(paletteID);
 		if(memento != null) {
@@ -452,7 +450,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 				return XMLMemento.createWriteRoot(PALETTE_LOCAL_DEFINITIONS);
 			}
 		} catch (WorkbenchException e) {
-			Activator.getDefault().logError("Impossible to read preferences", e);
+			Activator.getDefault().logError("Impossible to read preferences", e); //$NON-NLS-1$
 		}
 		return null;
 	}
@@ -474,7 +472,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 				return XMLMemento.createWriteRoot(PALETTE_WORKSPACE_DEFINITIONS);
 			}
 		} catch (WorkbenchException e) {
-			Activator.getDefault().logError("Impossible to read preferences", e);
+			Activator.getDefault().logError("Impossible to read preferences", e); //$NON-NLS-1$
 		}
 		return null;
 	}
@@ -691,7 +689,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 		// search existing customization
 		IMemento paletteMemento = searchPaletteMemento(rootMemento, id);
 		if(paletteMemento == null) {
-			Activator.log.warn("impossible to find the palette with id: " + id);
+			Activator.log.warn("impossible to find the palette with id: " + id); //$NON-NLS-1$
 			return;
 		}
 		// no remove method...
@@ -718,7 +716,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 		// search existing customization
 		IMemento paletteMemento = searchPaletteMemento(rootMemento, id);
 		if(paletteMemento == null) {
-			Activator.log.warn("impossible to find the palette in workspace with id: " + id);
+			Activator.log.warn("impossible to find the palette in workspace with id: " + id); //$NON-NLS-1$
 			return;
 		}
 		// no remove method...
@@ -795,7 +793,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 		// retrieve the file in the descriptor
 		path = descriptor.createLocalRedefinition();
 		if(path == null) {
-			Activator.log.error("There was an error during creation of the local file", null);
+			Activator.log.error("There was an error during creation of the local file", null); //$NON-NLS-1$
 			return;
 		}
 		// finally, register the new redefinition
