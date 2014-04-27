@@ -27,16 +27,14 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * DevelopmentCategoryKind in an enumeration with enumeration literals indicating whether the item is a modification of an existing item or if it is a
- * new development.
+ * DevelopmentCategoryKind in an enumeration with enumeration literals indicating whether the item is a modification of an existing item or if it is a new development.
  * 
  * Semantics:
  * The semantics is defined at each enumeration literal and fully defined in the ISO26262 standard.
  * 
- * Extension:
+ * Extension: 
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDevelopmentCategoryKind()
  * @model
  * @generated
@@ -46,7 +44,6 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * The '<em><b>Modification Of Existing Item</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #MODIFICATION_OF_EXISTING_ITEM_VALUE
 	 * @generated
 	 * @ordered
@@ -57,7 +54,6 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * The '<em><b>New Item Development</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #NEW_ITEM_DEVELOPMENT_VALUE
 	 * @generated
 	 * @ordered
@@ -71,7 +67,6 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * In case of a modification the relevant lifecycle sub-phases and activities shall be determined.
 	 * <!-- end-model-doc -->
-	 * 
 	 * @see #MODIFICATION_OF_EXISTING_ITEM
 	 * @model name="modificationOfExistingItem"
 	 * @generated
@@ -86,7 +81,6 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * In case of a new development, the entire lifecycle shall be passed through.
 	 * <!-- end-model-doc -->
-	 * 
 	 * @see #NEW_ITEM_DEVELOPMENT
 	 * @model name="newItemDevelopment"
 	 * @generated
@@ -98,16 +92,18 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * An array of all the '<em><b>Development Category Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	private static final DevelopmentCategoryKind[] VALUES_ARRAY = new DevelopmentCategoryKind[]{ MODIFICATION_OF_EXISTING_ITEM, NEW_ITEM_DEVELOPMENT, };
+	private static final DevelopmentCategoryKind[] VALUES_ARRAY =
+		new DevelopmentCategoryKind[] {
+			MODIFICATION_OF_EXISTING_ITEM,
+			NEW_ITEM_DEVELOPMENT,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Development Category Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final List<DevelopmentCategoryKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -116,15 +112,12 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Returns the '<em><b>Development Category Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static DevelopmentCategoryKind get(int value) {
-		switch(value) {
-		case MODIFICATION_OF_EXISTING_ITEM_VALUE:
-			return MODIFICATION_OF_EXISTING_ITEM;
-		case NEW_ITEM_DEVELOPMENT_VALUE:
-			return NEW_ITEM_DEVELOPMENT;
+		switch (value) {
+			case MODIFICATION_OF_EXISTING_ITEM_VALUE: return MODIFICATION_OF_EXISTING_ITEM;
+			case NEW_ITEM_DEVELOPMENT_VALUE: return NEW_ITEM_DEVELOPMENT;
 		}
 		return null;
 	}
@@ -133,13 +126,12 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Returns the '<em><b>Development Category Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static DevelopmentCategoryKind get(String literal) {
-		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			DevelopmentCategoryKind result = VALUES_ARRAY[i];
-			if(result.toString().equals(literal)) {
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -150,13 +142,12 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Returns the '<em><b>Development Category Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static DevelopmentCategoryKind getByName(String name) {
-		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			DevelopmentCategoryKind result = VALUES_ARRAY[i];
-			if(result.getName().equals(name)) {
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -166,7 +157,6 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -174,7 +164,6 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -182,7 +171,6 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -191,7 +179,6 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private DevelopmentCategoryKind(int value, String name, String literal) {
@@ -203,43 +190,39 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-
+	
 } //DevelopmentCategoryKind

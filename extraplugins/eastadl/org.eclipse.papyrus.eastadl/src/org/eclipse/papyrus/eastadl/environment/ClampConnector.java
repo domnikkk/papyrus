@@ -16,9 +16,8 @@
 package org.eclipse.papyrus.eastadl.environment;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.papyrus.eastadl.infrastructure.ClampConnectorInstanceRef;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
-import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort;
-import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
 import org.eclipse.uml2.uml.Connector;
 
 
@@ -26,13 +25,9 @@ import org.eclipse.uml2.uml.Connector;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Clamp Connector</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
- * The clamp connector connects ports across function boundaries and containment hierarchies. It is used to connect from an EnvironmentModel to the
- * FunctionalAnalysisArchitecture, the FunctionalDesignArchitecture, the autosarSystem or another EnvironmentModel. Typically, the EnvironmentModel
- * contains physical ports, which restrict the valid ports in the FunctionalAnalysisArchitecture to those on FunctionalDevices and in the
- * FunctionalDesignArchitecture to those on HardwareFunctions. In case the connection concerns logical interaction, this restriction does not apply.
- * The ClampConnector is always an assembly connector, never a delegation connector.
+ * The clamp connector connects ports across function boundaries and containment hierarchies. It is used to connect from an EnvironmentModel to the FunctionalAnalysisArchitecture, the FunctionalDesignArchitecture, the autosarSystem or another EnvironmentModel. Typically, the EnvironmentModel contains physical ports, which restrict the valid ports in the FunctionalAnalysisArchitecture to those on FunctionalDevices and in the FunctionalDesignArchitecture to those on HardwareFunctions. In case the connection concerns logical interaction, this restriction does not apply. The ClampConnector is always an assembly connector, never a delegation connector.
  * 
  * Constraints:
  * [1] Can connect two FunctionFlowPorts of different direction.
@@ -40,47 +35,44 @@ import org.eclipse.uml2.uml.Connector;
  * [3] Can connect two FunctionFlowPorts with direction inout.
  * [4] Cannot connect ports in the same SystemModel.
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getPort <em>Port</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getBase_Connector <em>Base Connector</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getPort1_path <em>Port1 path</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getPort2_path <em>Port2 path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getBase_Connector <em>Base Connector</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.environment.EnvironmentPackage#getClampConnector()
  * @model
  * @generated
  */
 public interface ClampConnector extends EAElement {
-
 	/**
-	 * Returns the value of the '<em><b>Port</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort}.
+	 * Returns the value of the '<em><b>Port</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.ClampConnectorInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Port</em>' reference list isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Port</em>' reference list isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Port</em>' reference list.
+	 * @return the value of the '<em>Port</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.environment.EnvironmentPackage#getClampConnector_Port()
-	 * @model lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model containment="true" lower="2" upper="2" ordered="false"
 	 * @generated
 	 */
-	EList<FunctionPort> getPort();
+	EList<ClampConnectorInstanceRef> getPort();
 
 	/**
 	 * Returns the value of the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Connector</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Base Connector</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Connector</em>' reference.
 	 * @see #setBase_Connector(Connector)
 	 * @see org.eclipse.papyrus.eastadl.environment.EnvironmentPackage#getClampConnector_Base_Connector()
@@ -93,44 +85,10 @@ public interface ClampConnector extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getBase_Connector <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *        the new value of the '<em>Base Connector</em>' reference.
+	 * @param value the new value of the '<em>Base Connector</em>' reference.
 	 * @see #getBase_Connector()
 	 * @generated
 	 */
 	void setBase_Connector(Connector value);
-
-	/**
-	 * Returns the value of the '<em><b>Port1 path</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Port1 path</em>' reference list isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Port1 path</em>' reference list.
-	 * @see org.eclipse.papyrus.eastadl.environment.EnvironmentPackage#getClampConnector_Port1_path()
-	 * @model
-	 * @generated
-	 */
-	EList<FunctionPrototype> getPort1_path();
-
-	/**
-	 * Returns the value of the '<em><b>Port2 path</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Port2 path</em>' reference list isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Port2 path</em>' reference list.
-	 * @see org.eclipse.papyrus.eastadl.environment.EnvironmentPackage#getClampConnector_Port2_path()
-	 * @model
-	 * @generated
-	 */
-	EList<FunctionPrototype> getPort2_path();
 
 } // ClampConnector

@@ -22,9 +22,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.papyrus.eastadl.timing.*;
 import org.eclipse.papyrus.eastadl.timing.EventChain;
-import org.eclipse.papyrus.eastadl.timing.ExecutionTimeConstraint;
 import org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint;
-import org.eclipse.papyrus.eastadl.timing.TimeDuration;
 import org.eclipse.papyrus.eastadl.timing.Timing;
 import org.eclipse.papyrus.eastadl.timing.TimingFactory;
 import org.eclipse.papyrus.eastadl.timing.TimingPackage;
@@ -32,14 +30,12 @@ import org.eclipse.papyrus.eastadl.timing.TimingPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -51,16 +47,16 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static TimingFactory init() {
 		try {
 			TimingFactory theTimingFactory = (TimingFactory)EPackage.Registry.INSTANCE.getEFactory(TimingPackage.eNS_URI);
-			if(theTimingFactory != null) {
+			if (theTimingFactory != null) {
 				return theTimingFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new TimingFactoryImpl();
@@ -69,7 +65,6 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public TimingFactoryImpl() {
@@ -78,30 +73,22 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
-		case TimingPackage.TIME_DURATION:
-			return createTimeDuration();
-		case TimingPackage.TIMING:
-			return createTiming();
-		case TimingPackage.EVENT_CHAIN:
-			return createEventChain();
-		case TimingPackage.EXECUTION_TIME_CONSTRAINT:
-			return createExecutionTimeConstraint();
-		case TimingPackage.PRECEDENCE_CONSTRAINT:
-			return createPrecedenceConstraint();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case TimingPackage.TIMING: return createTiming();
+			case TimingPackage.EVENT_CHAIN: return createEventChain();
+			case TimingPackage.TIMING_EXPRESSION: return createTimingExpression();
+			case TimingPackage.PRECEDENCE_CONSTRAINT: return createPrecedenceConstraint();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EventChain createEventChain() {
@@ -112,18 +99,16 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public ExecutionTimeConstraint createExecutionTimeConstraint() {
-		ExecutionTimeConstraintImpl executionTimeConstraint = new ExecutionTimeConstraintImpl();
-		return executionTimeConstraint;
+	public TimingExpression createTimingExpression() {
+		TimingExpressionImpl timingExpression = new TimingExpressionImpl();
+		return timingExpression;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public PrecedenceConstraint createPrecedenceConstraint() {
@@ -132,19 +117,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public TimeDuration createTimeDuration() {
-		TimeDurationImpl timeDuration = new TimeDurationImpl();
-		return timeDuration;
-	}
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Timing createTiming() {
@@ -154,7 +127,6 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public TimingPackage getTimingPackage() {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.eastadl.service.types.eastadlElementCreationCommands"
+            description="Create a new FunctionAllocation"
+            id="org.eclipse.papyrus.eastadl.service.types.AllocateCreateCommand"
+            name="Create a new FunctionAllocation">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="org.eclipse.papyrus.eastadl.service.types.AllocateCreateCommand"
+            icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Abstraction.gif">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.eclipse.papyrus.eastadl.service.types.eastadlElementCreationCommands"
+            name="Commands for the creation of Eastadl elements">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel
+            nsURI="http://www.eclipse.org/uml2/4.0.0/UML">
+         <specializationType
+               edithelperadvice="org.eclipse.papyrus.eastadl.service.types.helper.AllocateEditHelperAdvice"
+               id="org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               name="EAST-ADL2::Structure::FunctionModeling::FunctionAllocation">
+            <specializes
+                  id="org.eclipse.papyrus.uml.Abstraction">
+            </specializes>
+            <param
+                  name="semanticHint"
+                  value="EAST-ADL2::Structure::FunctionModeling::FunctionAllocation">
+            </param>
+            <matcher
+                  class="org.eclipse.papyrus.eastadl.service.types.matcher.AllocateMatcher">
+            </matcher>
+         </specializationType>
+      </metamodel>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding
+            context="org.eclipse.papyrus.infra.services.edit.TypeContext">
+         <elementType
+               ref="org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation">
+         </elementType>
+      </binding>
+   </extension>
+
+</plugin>

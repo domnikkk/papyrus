@@ -26,15 +26,13 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Sensor;
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class SensorImpl extends HardwareComponentTypeImpl implements Sensor {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected SensorImpl() {
@@ -44,7 +42,6 @@ public class SensorImpl extends HardwareComponentTypeImpl implements Sensor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

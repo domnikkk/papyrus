@@ -26,15 +26,13 @@ import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAString;
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class EAStringImpl extends EADatatypeImpl implements EAString {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EAStringImpl() {
@@ -44,7 +42,6 @@ public class EAStringImpl extends EADatatypeImpl implements EAString {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

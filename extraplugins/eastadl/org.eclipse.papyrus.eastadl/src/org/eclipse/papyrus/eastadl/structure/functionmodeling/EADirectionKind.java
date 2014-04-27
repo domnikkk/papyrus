@@ -32,10 +32,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * Semantics:
  * The EADirectionKind is an enumeration with the three literals "in", "out", and "inout".
  * 
- * Extension:
+ * Extension: 
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getEADirectionKind()
  * @model
  * @generated
@@ -45,7 +44,6 @@ public enum EADirectionKind implements Enumerator {
 	 * The '<em><b>In</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #IN_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +54,6 @@ public enum EADirectionKind implements Enumerator {
 	 * The '<em><b>Out</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #OUT_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +64,6 @@ public enum EADirectionKind implements Enumerator {
 	 * The '<em><b>Inout</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #INOUT_VALUE
 	 * @generated
 	 * @ordered
@@ -78,10 +74,10 @@ public enum EADirectionKind implements Enumerator {
 	 * The '<em><b>In</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>In</b></em>' literal object isn't clear, there really should be more of a description here...
+	 * If the meaning of '<em><b>In</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #IN
 	 * @model name="in"
 	 * @generated
@@ -93,10 +89,10 @@ public enum EADirectionKind implements Enumerator {
 	 * The '<em><b>Out</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Out</b></em>' literal object isn't clear, there really should be more of a description here...
+	 * If the meaning of '<em><b>Out</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #OUT
 	 * @model name="out"
 	 * @generated
@@ -108,10 +104,10 @@ public enum EADirectionKind implements Enumerator {
 	 * The '<em><b>Inout</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Inout</b></em>' literal object isn't clear, there really should be more of a description here...
+	 * If the meaning of '<em><b>Inout</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #INOUT
 	 * @model name="inout"
 	 * @generated
@@ -123,16 +119,19 @@ public enum EADirectionKind implements Enumerator {
 	 * An array of all the '<em><b>EA Direction Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	private static final EADirectionKind[] VALUES_ARRAY = new EADirectionKind[]{ IN, OUT, INOUT, };
+	private static final EADirectionKind[] VALUES_ARRAY =
+		new EADirectionKind[] {
+			IN,
+			OUT,
+			INOUT,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>EA Direction Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final List<EADirectionKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -141,17 +140,13 @@ public enum EADirectionKind implements Enumerator {
 	 * Returns the '<em><b>EA Direction Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static EADirectionKind get(int value) {
-		switch(value) {
-		case IN_VALUE:
-			return IN;
-		case OUT_VALUE:
-			return OUT;
-		case INOUT_VALUE:
-			return INOUT;
+		switch (value) {
+			case IN_VALUE: return IN;
+			case OUT_VALUE: return OUT;
+			case INOUT_VALUE: return INOUT;
 		}
 		return null;
 	}
@@ -160,13 +155,12 @@ public enum EADirectionKind implements Enumerator {
 	 * Returns the '<em><b>EA Direction Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static EADirectionKind get(String literal) {
-		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			EADirectionKind result = VALUES_ARRAY[i];
-			if(result.toString().equals(literal)) {
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -177,13 +171,12 @@ public enum EADirectionKind implements Enumerator {
 	 * Returns the '<em><b>EA Direction Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static EADirectionKind getByName(String name) {
-		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			EADirectionKind result = VALUES_ARRAY[i];
-			if(result.getName().equals(name)) {
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -193,7 +186,6 @@ public enum EADirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -201,7 +193,6 @@ public enum EADirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -209,7 +200,6 @@ public enum EADirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -218,7 +208,6 @@ public enum EADirectionKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EADirectionKind(int value, String name, String literal) {
@@ -230,43 +219,39 @@ public enum EADirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-
+	
 } //EADirectionKind

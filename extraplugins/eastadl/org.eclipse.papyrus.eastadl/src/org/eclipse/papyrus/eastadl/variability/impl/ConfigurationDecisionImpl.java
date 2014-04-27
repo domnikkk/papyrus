@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.variability.impl;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -26,7 +27,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.papyrus.eastadl.variability.ConfigurationDecision;
 import org.eclipse.papyrus.eastadl.variability.SelectionCriterion;
 import org.eclipse.papyrus.eastadl.variability.VariabilityPackage;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 /**
@@ -36,23 +39,21 @@ import org.eclipse.uml2.uml.NamedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#getEffect <em>Effect</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#getCriterion <em>Criterion</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#isIsEquivalence <em>Is Equivalence</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#getTarget <em>Target</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#getSelectionCriterion <em>Selection Criterion</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#getEffect <em>Effect</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#getCriterion <em>Criterion</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#isIsEquivalence <em>Is Equivalence</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.variability.impl.ConfigurationDecisionImpl#getSelectionCriterion <em>Selection Criterion</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryImpl implements ConfigurationDecision {
-
 	/**
 	 * The default value of the '{@link #getEffect() <em>Effect</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -63,7 +64,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The default value of the '{@link #getCriterion() <em>Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getCriterion()
 	 * @generated
 	 * @ordered
@@ -85,7 +84,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The cached value of the '{@link #getCriterion() <em>Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getCriterion()
 	 * @generated
 	 * @ordered
@@ -96,7 +94,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The default value of the '{@link #isIsEquivalence() <em>Is Equivalence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #isIsEquivalence()
 	 * @generated
 	 * @ordered
@@ -107,7 +104,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The cached value of the '{@link #isIsEquivalence() <em>Is Equivalence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #isIsEquivalence()
 	 * @generated
 	 * @ordered
@@ -118,7 +114,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -126,20 +121,8 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	protected EList<NamedElement> target;
 
 	/**
-	 * The cached value of the '{@link #getSelectionCriterion() <em>Selection Criterion</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getSelectionCriterion()
-	 * @generated
-	 * @ordered
-	 */
-	protected SelectionCriterion selectionCriterion;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ConfigurationDecisionImpl() {
@@ -149,34 +132,43 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public SelectionCriterion basicGetSelectionCriterion() {
-		return selectionCriterion;
+		SelectionCriterion adlSelectionCriterion = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlSelectionCriterion = (SelectionCriterion )UMLUtil.getStereotypeApplication(element, SelectionCriterion.class);
+				if (adlSelectionCriterion != null)
+					return adlSelectionCriterion;
+			}
+		}
+		
+		return adlSelectionCriterion;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case VariabilityPackage.CONFIGURATION_DECISION__EFFECT:
-			return getEffect();
-		case VariabilityPackage.CONFIGURATION_DECISION__CRITERION:
-			return getCriterion();
-		case VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE:
-			return isIsEquivalence();
-		case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
-			return getTarget();
-		case VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION:
-			if(resolve)
-				return getSelectionCriterion();
-			return basicGetSelectionCriterion();
+		switch (featureID) {
+			case VariabilityPackage.CONFIGURATION_DECISION__EFFECT:
+				return getEffect();
+			case VariabilityPackage.CONFIGURATION_DECISION__CRITERION:
+				return getCriterion();
+			case VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE:
+				return isIsEquivalence();
+			case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
+				return getTarget();
+			case VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION:
+				if (resolve) return getSelectionCriterion();
+				return basicGetSelectionCriterion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,22 +176,21 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case VariabilityPackage.CONFIGURATION_DECISION__EFFECT:
-			return EFFECT_EDEFAULT == null ? effect != null : !EFFECT_EDEFAULT.equals(effect);
-		case VariabilityPackage.CONFIGURATION_DECISION__CRITERION:
-			return CRITERION_EDEFAULT == null ? criterion != null : !CRITERION_EDEFAULT.equals(criterion);
-		case VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE:
-			return isEquivalence != IS_EQUIVALENCE_EDEFAULT;
-		case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
-			return target != null && !target.isEmpty();
-		case VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION:
-			return selectionCriterion != null;
+		switch (featureID) {
+			case VariabilityPackage.CONFIGURATION_DECISION__EFFECT:
+				return EFFECT_EDEFAULT == null ? effect != null : !EFFECT_EDEFAULT.equals(effect);
+			case VariabilityPackage.CONFIGURATION_DECISION__CRITERION:
+				return CRITERION_EDEFAULT == null ? criterion != null : !CRITERION_EDEFAULT.equals(criterion);
+			case VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE:
+				return isEquivalence != IS_EQUIVALENCE_EDEFAULT;
+			case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
+				return target != null && !target.isEmpty();
+			case VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION:
+				return basicGetSelectionCriterion() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,29 +198,25 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case VariabilityPackage.CONFIGURATION_DECISION__EFFECT:
-			setEffect((String)newValue);
-			return;
-		case VariabilityPackage.CONFIGURATION_DECISION__CRITERION:
-			setCriterion((String)newValue);
-			return;
-		case VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE:
-			setIsEquivalence((Boolean)newValue);
-			return;
-		case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
-			getTarget().clear();
-			getTarget().addAll((Collection<? extends NamedElement>)newValue);
-			return;
-		case VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION:
-			setSelectionCriterion((SelectionCriterion)newValue);
-			return;
+		switch (featureID) {
+			case VariabilityPackage.CONFIGURATION_DECISION__EFFECT:
+				setEffect((String)newValue);
+				return;
+			case VariabilityPackage.CONFIGURATION_DECISION__CRITERION:
+				setCriterion((String)newValue);
+				return;
+			case VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE:
+				setIsEquivalence((Boolean)newValue);
+				return;
+			case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
+				getTarget().clear();
+				getTarget().addAll((Collection<? extends NamedElement>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -237,7 +224,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -248,27 +234,23 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case VariabilityPackage.CONFIGURATION_DECISION__EFFECT:
-			setEffect(EFFECT_EDEFAULT);
-			return;
-		case VariabilityPackage.CONFIGURATION_DECISION__CRITERION:
-			setCriterion(CRITERION_EDEFAULT);
-			return;
-		case VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE:
-			setIsEquivalence(IS_EQUIVALENCE_EDEFAULT);
-			return;
-		case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
-			getTarget().clear();
-			return;
-		case VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION:
-			setSelectionCriterion((SelectionCriterion)null);
-			return;
+		switch (featureID) {
+			case VariabilityPackage.CONFIGURATION_DECISION__EFFECT:
+				setEffect(EFFECT_EDEFAULT);
+				return;
+			case VariabilityPackage.CONFIGURATION_DECISION__CRITERION:
+				setCriterion(CRITERION_EDEFAULT);
+				return;
+			case VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE:
+				setIsEquivalence(IS_EQUIVALENCE_EDEFAULT);
+				return;
+			case VariabilityPackage.CONFIGURATION_DECISION__TARGET:
+				getTarget().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -276,7 +258,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getCriterion() {
@@ -286,7 +267,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getEffect() {
@@ -296,29 +276,20 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SelectionCriterion getSelectionCriterion() {
-		if(selectionCriterion != null && selectionCriterion.eIsProxy()) {
-			InternalEObject oldSelectionCriterion = (InternalEObject)selectionCriterion;
-			selectionCriterion = (SelectionCriterion)eResolveProxy(oldSelectionCriterion);
-			if(selectionCriterion != oldSelectionCriterion) {
-				if(eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION, oldSelectionCriterion, selectionCriterion));
-			}
-		}
-		return selectionCriterion;
+		SelectionCriterion selectionCriterion = basicGetSelectionCriterion();
+		return selectionCriterion != null && selectionCriterion.eIsProxy() ? (SelectionCriterion)eResolveProxy((InternalEObject)selectionCriterion) : selectionCriterion;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<NamedElement> getTarget() {
-		if(target == null) {
+		if (target == null) {
 			target = new EObjectResolvingEList<NamedElement>(NamedElement.class, this, VariabilityPackage.CONFIGURATION_DECISION__TARGET);
 		}
 		return target;
@@ -327,7 +298,6 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean isIsEquivalence() {
@@ -337,65 +307,47 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setCriterion(String newCriterion) {
 		String oldCriterion = criterion;
 		criterion = newCriterion;
-		if(eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURATION_DECISION__CRITERION, oldCriterion, criterion));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setEffect(String newEffect) {
 		String oldEffect = effect;
 		effect = newEffect;
-		if(eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURATION_DECISION__EFFECT, oldEffect, effect));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setIsEquivalence(boolean newIsEquivalence) {
 		boolean oldIsEquivalence = isEquivalence;
 		isEquivalence = newIsEquivalence;
-		if(eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURATION_DECISION__IS_EQUIVALENCE, oldIsEquivalence, isEquivalence));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setSelectionCriterion(SelectionCriterion newSelectionCriterion) {
-		SelectionCriterion oldSelectionCriterion = selectionCriterion;
-		selectionCriterion = newSelectionCriterion;
-		if(eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VariabilityPackage.CONFIGURATION_DECISION__SELECTION_CRITERION, oldSelectionCriterion, selectionCriterion));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (effect: ");

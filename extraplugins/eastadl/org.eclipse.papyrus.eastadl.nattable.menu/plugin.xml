@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <menu
+               id="org.eclipse.papyrus.eastadl.nattable.create.eastadl.menu"
+               label="Create EAST-ADL element">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.papyrus.infra.nattable.tester.isNattableWidget"
+                        value="true">
+                  </test>
+               </with>
+            </visibleWhen>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            class="org.eclipse.papyrus.eastadl.nattable.menu.handlers.EastAdlNattableCreateMenu"
+            locationURI="popup:org.eclipse.papyrus.eastadl.nattable.create.eastadl.menu">
+      </menuContribution>
+   </extension>
+
+</plugin>

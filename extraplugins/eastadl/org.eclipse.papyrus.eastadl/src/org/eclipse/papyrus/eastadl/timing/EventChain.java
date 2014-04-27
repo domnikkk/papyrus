@@ -20,37 +20,28 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Event Chain</b></em>'. <!--
  * end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
- * The purpose of event chains is to describe the temporal behavior of a number of steps to be taken to respond to one or more events accordingly. [An
- * event chain is also used to express that a temporal requirement/constraint is imposed on a number of steps to respond to one or more events
- * accordingly (-> requirement).] Such events could be observed in a given system and are categorized into stimuli and responses.
+ * The purpose of event chains is to describe the temporal behavior of a number of steps to be taken to respond to one or more events accordingly. [An event chain is also used to express that a temporal requirement/constraint is imposed on a number of steps to respond to one or more events accordingly (-> requirement).] Such events could be observed in a given system and are categorized into stimuli and responses.
  * 
- * Event chains can refer to other event chains which are then called event chain segments or strands. Segments are sequential event chains refining
- * an EventChain, while strands define parallel event chains that refine an EventChain. An EventChain can be both a segment and a strand at the same
- * time. An event chain respectively event chain segment can be atomic which means it is not refined to other event chains.
+ * Event chains can refer to other event chains which are then called event chain segments or strands. Segments are sequential event chains refining an EventChain, while strands define parallel event chains that refine an EventChain. An EventChain can be both a segment and a strand at the same time. An event chain respectively event chain segment can be atomic which means it is not refined to other event chains.
  * 
  * Constraints:
  * [1] The cardinality of strand shall be either 0 or greater than 1. Rationale: Only values > 1 express true parallelism.
  * 
  * Semantics:
- * An EventChain references two groups of events: stimulus and response. The semantics is that each event in the stimulus group somehow causes, or at
- * least affects the value of all events in the response group. However, since questions about causality and value influence clearly involve the
- * semantics of the underlying structural model, this aspect of an EventChain is semantically outside its scope. Instead, delay constraint semantics
- * are defined solely in terms of the times at which the stimulus and response events occur, independently of whether there actually exists a causal
- * connection between these events in the structural model.
+ * An EventChain references two groups of events: stimulus and response. The semantics is that each event in the stimulus group somehow causes, or at least affects the value of all events in the response group. However, since questions about causality and value influence clearly involve the semantics of the underlying structural model, this aspect of an EventChain is semantically outside its scope. Instead, delay constraint semantics are defined solely in terms of the times at which the stimulus and response events occur, independently of whether there actually exists a causal connection between these events in the structural model.
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.EventChain#getSegment <em>Segment</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.EventChain#getStrand <em>Strand</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.EventChain#getResponse <em>Response</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.EventChain#getStimulus <em>Stimulus</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.EventChain#getSegment <em>Segment</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.EventChain#getResponse <em>Response</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.EventChain#getStimulus <em>Stimulus</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getEventChain()
  * @model
  * @generated
@@ -68,7 +59,17 @@ public interface EventChain extends TimingDescription {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Event> getResponse();
+	Event getResponse();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.EventChain#getResponse <em>Response</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Response</em>' reference.
+	 * @see #getResponse()
+	 * @generated
+	 */
+	void setResponse(Event value);
 
 	/**
 	 * Returns the value of the '<em><b>Segment</b></em>' reference list. The list contents are of
@@ -94,19 +95,16 @@ public interface EventChain extends TimingDescription {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Event> getStimulus();
+	Event getStimulus();
 
 	/**
-	 * Returns the value of the '<em><b>Strand</b></em>' reference list. The list contents are of
-	 * type {@link org.eclipse.papyrus.eastadl.timing.EventChain}. <!-- begin-user-doc -->
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> Parallel EventChains refining this EventChain.
-	 * <!-- end-model-doc -->
-	 * 
-	 * @return the value of the '<em>Strand</em>' reference list.
-	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getEventChain_Strand()
-	 * @model ordered="false"
+	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.EventChain#getStimulus <em>Stimulus</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Stimulus</em>' reference.
+	 * @see #getStimulus()
 	 * @generated
 	 */
-	EList<EventChain> getStrand();
+	void setStimulus(Event value);
 
 } // EventChain

@@ -33,20 +33,18 @@ import org.eclipse.papyrus.eastadl.annex.needs.Stakeholder;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalDescriptionImpl#getAggregates <em>Aggregates</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalDescriptionImpl#getIdentifies <em>Identifies</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalDescriptionImpl#getAggregates <em>Aggregates</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalDescriptionImpl#getIdentifies <em>Identifies</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ArchitecturalDescriptionImpl extends ConceptImpl implements ArchitecturalDescription {
-
 	/**
 	 * The cached value of the '{@link #getAggregates() <em>Aggregates</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getAggregates()
 	 * @generated
 	 * @ordered
@@ -57,7 +55,6 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	 * The cached value of the '{@link #getIdentifies() <em>Identifies</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getIdentifies()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,6 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ArchitecturalDescriptionImpl() {
@@ -77,16 +73,15 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES:
-			return getAggregates();
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES:
-			return getIdentifies();
+		switch (featureID) {
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES:
+				return getAggregates();
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES:
+				return getIdentifies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -94,16 +89,15 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES:
-			return aggregates != null && !aggregates.isEmpty();
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES:
-			return identifies != null && !identifies.isEmpty();
+		switch (featureID) {
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES:
+				return aggregates != null && !aggregates.isEmpty();
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES:
+				return identifies != null && !identifies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -111,21 +105,20 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES:
-			getAggregates().clear();
-			getAggregates().addAll((Collection<? extends ArchitecturalModel>)newValue);
-			return;
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES:
-			getIdentifies().clear();
-			getIdentifies().addAll((Collection<? extends Stakeholder>)newValue);
-			return;
+		switch (featureID) {
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES:
+				getAggregates().clear();
+				getAggregates().addAll((Collection<? extends ArchitecturalModel>)newValue);
+				return;
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES:
+				getIdentifies().clear();
+				getIdentifies().addAll((Collection<? extends Stakeholder>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -133,7 +126,6 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,18 +136,17 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES:
-			getAggregates().clear();
-			return;
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES:
-			getIdentifies().clear();
-			return;
+		switch (featureID) {
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES:
+				getAggregates().clear();
+				return;
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES:
+				getIdentifies().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -163,11 +154,10 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<ArchitecturalModel> getAggregates() {
-		if(aggregates == null) {
+		if (aggregates == null) {
 			aggregates = new EObjectResolvingEList<ArchitecturalModel>(ArchitecturalModel.class, this, NeedsPackage.ARCHITECTURAL_DESCRIPTION__AGGREGATES);
 		}
 		return aggregates;
@@ -176,11 +166,10 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<Stakeholder> getIdentifies() {
-		if(identifies == null) {
+		if (identifies == null) {
 			identifies = new EObjectResolvingEList<Stakeholder>(Stakeholder.class, this, NeedsPackage.ARCHITECTURAL_DESCRIPTION__IDENTIFIES);
 		}
 		return identifies;

@@ -15,17 +15,19 @@
  *****************************************************************************/
 package org.eclipse.papyrus.eastadl.dependability.impl;
 
-import java.util.Collection;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import org.eclipse.papyrus.eastadl.dependability.Dependability;
 import org.eclipse.papyrus.eastadl.dependability.DependabilityPackage;
 import org.eclipse.papyrus.eastadl.dependability.FeatureFlaw;
+import org.eclipse.papyrus.eastadl.dependability.Hazard;
 import org.eclipse.papyrus.eastadl.dependability.HazardousEvent;
 import org.eclipse.papyrus.eastadl.dependability.Item;
 import org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType;
@@ -38,6 +40,8 @@ import org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal;
 import org.eclipse.papyrus.eastadl.dependability.safetyrequirement.TechnicalSafetyConcept;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatype;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ContextImpl;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 /**
@@ -47,33 +51,31 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ContextImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getBase_Class <em>Base Class</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getBase_Package <em>Base Package</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getFunctionalSafetyConcept <em>Functional Safety Concept</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getSafetyGoal <em>Safety Goal</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getTechnicalSafetyConcept <em>Technical Safety Concept</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getHazardousEvent <em>Hazardous Event</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getFeatureFlaw <em>Feature Flaw</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getItem <em>Item</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getEADatatype <em>EA Datatype</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getFaultFailure <em>Fault Failure</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getQuantitativeSafetyConstraint <em>Quantitative Safety Constraint
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getSafetyConstraint <em>Safety Constraint</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getSafetyCase <em>Safety Case</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getErrorModelType <em>Error Model Type</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getBase_Package <em>Base Package</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getFunctionalSafetyConcept <em>Functional Safety Concept</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getSafetyGoal <em>Safety Goal</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getTechnicalSafetyConcept <em>Technical Safety Concept</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getHazardousEvent <em>Hazardous Event</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getFeatureFlaw <em>Feature Flaw</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getItem <em>Item</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getEADatatype <em>EA Datatype</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getFaultFailure <em>Fault Failure</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getQuantitativeSafetyConstraint <em>Quantitative Safety Constraint</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getSafetyConstraint <em>Safety Constraint</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getSafetyCase <em>Safety Case</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getErrorModelType <em>Error Model Type</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.impl.DependabilityImpl#getHazard <em>Hazard</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class DependabilityImpl extends ContextImpl implements Dependability {
-
 	/**
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -84,7 +86,6 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -92,141 +93,8 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	protected org.eclipse.uml2.uml.Package base_Package;
 
 	/**
-	 * The cached value of the '{@link #getFunctionalSafetyConcept() <em>Functional Safety Concept</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getFunctionalSafetyConcept()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FunctionalSafetyConcept> functionalSafetyConcept;
-
-	/**
-	 * The cached value of the '{@link #getSafetyGoal() <em>Safety Goal</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getSafetyGoal()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SafetyGoal> safetyGoal;
-
-	/**
-	 * The cached value of the '{@link #getTechnicalSafetyConcept() <em>Technical Safety Concept</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getTechnicalSafetyConcept()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TechnicalSafetyConcept> technicalSafetyConcept;
-
-	/**
-	 * The cached value of the '{@link #getHazardousEvent() <em>Hazardous Event</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getHazardousEvent()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<HazardousEvent> hazardousEvent;
-
-	/**
-	 * The cached value of the '{@link #getFeatureFlaw() <em>Feature Flaw</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getFeatureFlaw()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FeatureFlaw> featureFlaw;
-
-	/**
-	 * The cached value of the '{@link #getItem() <em>Item</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getItem()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Item> item;
-
-	/**
-	 * The cached value of the '{@link #getEADatatype() <em>EA Datatype</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getEADatatype()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EADatatype> eADatatype;
-
-	/**
-	 * The cached value of the '{@link #getFaultFailure() <em>Fault Failure</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getFaultFailure()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FaultFailure> faultFailure;
-
-	/**
-	 * The cached value of the '{@link #getQuantitativeSafetyConstraint() <em>Quantitative Safety Constraint</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getQuantitativeSafetyConstraint()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<QuantitativeSafetyConstraint> quantitativeSafetyConstraint;
-
-	/**
-	 * The cached value of the '{@link #getSafetyConstraint() <em>Safety Constraint</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getSafetyConstraint()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SafetyConstraint> safetyConstraint;
-
-	/**
-	 * The cached value of the '{@link #getSafetyCase() <em>Safety Case</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getSafetyCase()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SafetyCase> safetyCase;
-
-	/**
-	 * The cached value of the '{@link #getErrorModelType() <em>Error Model Type</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getErrorModelType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ErrorModelType> errorModelType;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected DependabilityImpl() {
@@ -236,44 +104,43 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case DependabilityPackage.DEPENDABILITY__BASE_CLASS:
-			if(resolve)
-				return getBase_Class();
-			return basicGetBase_Class();
-		case DependabilityPackage.DEPENDABILITY__BASE_PACKAGE:
-			if(resolve)
-				return getBase_Package();
-			return basicGetBase_Package();
-		case DependabilityPackage.DEPENDABILITY__FUNCTIONAL_SAFETY_CONCEPT:
-			return getFunctionalSafetyConcept();
-		case DependabilityPackage.DEPENDABILITY__SAFETY_GOAL:
-			return getSafetyGoal();
-		case DependabilityPackage.DEPENDABILITY__TECHNICAL_SAFETY_CONCEPT:
-			return getTechnicalSafetyConcept();
-		case DependabilityPackage.DEPENDABILITY__HAZARDOUS_EVENT:
-			return getHazardousEvent();
-		case DependabilityPackage.DEPENDABILITY__FEATURE_FLAW:
-			return getFeatureFlaw();
-		case DependabilityPackage.DEPENDABILITY__ITEM:
-			return getItem();
-		case DependabilityPackage.DEPENDABILITY__EA_DATATYPE:
-			return getEADatatype();
-		case DependabilityPackage.DEPENDABILITY__FAULT_FAILURE:
-			return getFaultFailure();
-		case DependabilityPackage.DEPENDABILITY__QUANTITATIVE_SAFETY_CONSTRAINT:
-			return getQuantitativeSafetyConstraint();
-		case DependabilityPackage.DEPENDABILITY__SAFETY_CONSTRAINT:
-			return getSafetyConstraint();
-		case DependabilityPackage.DEPENDABILITY__SAFETY_CASE:
-			return getSafetyCase();
-		case DependabilityPackage.DEPENDABILITY__ERROR_MODEL_TYPE:
-			return getErrorModelType();
+		switch (featureID) {
+			case DependabilityPackage.DEPENDABILITY__BASE_CLASS:
+				if (resolve) return getBase_Class();
+				return basicGetBase_Class();
+			case DependabilityPackage.DEPENDABILITY__BASE_PACKAGE:
+				if (resolve) return getBase_Package();
+				return basicGetBase_Package();
+			case DependabilityPackage.DEPENDABILITY__FUNCTIONAL_SAFETY_CONCEPT:
+				return getFunctionalSafetyConcept();
+			case DependabilityPackage.DEPENDABILITY__SAFETY_GOAL:
+				return getSafetyGoal();
+			case DependabilityPackage.DEPENDABILITY__TECHNICAL_SAFETY_CONCEPT:
+				return getTechnicalSafetyConcept();
+			case DependabilityPackage.DEPENDABILITY__HAZARDOUS_EVENT:
+				return getHazardousEvent();
+			case DependabilityPackage.DEPENDABILITY__FEATURE_FLAW:
+				return getFeatureFlaw();
+			case DependabilityPackage.DEPENDABILITY__ITEM:
+				return getItem();
+			case DependabilityPackage.DEPENDABILITY__EA_DATATYPE:
+				return getEADatatype();
+			case DependabilityPackage.DEPENDABILITY__FAULT_FAILURE:
+				return getFaultFailure();
+			case DependabilityPackage.DEPENDABILITY__QUANTITATIVE_SAFETY_CONSTRAINT:
+				return getQuantitativeSafetyConstraint();
+			case DependabilityPackage.DEPENDABILITY__SAFETY_CONSTRAINT:
+				return getSafetyConstraint();
+			case DependabilityPackage.DEPENDABILITY__SAFETY_CASE:
+				return getSafetyCase();
+			case DependabilityPackage.DEPENDABILITY__ERROR_MODEL_TYPE:
+				return getErrorModelType();
+			case DependabilityPackage.DEPENDABILITY__HAZARD:
+				return getHazard();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,40 +148,41 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case DependabilityPackage.DEPENDABILITY__BASE_CLASS:
-			return base_Class != null;
-		case DependabilityPackage.DEPENDABILITY__BASE_PACKAGE:
-			return base_Package != null;
-		case DependabilityPackage.DEPENDABILITY__FUNCTIONAL_SAFETY_CONCEPT:
-			return functionalSafetyConcept != null && !functionalSafetyConcept.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__SAFETY_GOAL:
-			return safetyGoal != null && !safetyGoal.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__TECHNICAL_SAFETY_CONCEPT:
-			return technicalSafetyConcept != null && !technicalSafetyConcept.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__HAZARDOUS_EVENT:
-			return hazardousEvent != null && !hazardousEvent.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__FEATURE_FLAW:
-			return featureFlaw != null && !featureFlaw.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__ITEM:
-			return item != null && !item.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__EA_DATATYPE:
-			return eADatatype != null && !eADatatype.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__FAULT_FAILURE:
-			return faultFailure != null && !faultFailure.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__QUANTITATIVE_SAFETY_CONSTRAINT:
-			return quantitativeSafetyConstraint != null && !quantitativeSafetyConstraint.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__SAFETY_CONSTRAINT:
-			return safetyConstraint != null && !safetyConstraint.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__SAFETY_CASE:
-			return safetyCase != null && !safetyCase.isEmpty();
-		case DependabilityPackage.DEPENDABILITY__ERROR_MODEL_TYPE:
-			return errorModelType != null && !errorModelType.isEmpty();
+		switch (featureID) {
+			case DependabilityPackage.DEPENDABILITY__BASE_CLASS:
+				return base_Class != null;
+			case DependabilityPackage.DEPENDABILITY__BASE_PACKAGE:
+				return base_Package != null;
+			case DependabilityPackage.DEPENDABILITY__FUNCTIONAL_SAFETY_CONCEPT:
+				return !getFunctionalSafetyConcept().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__SAFETY_GOAL:
+				return !getSafetyGoal().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__TECHNICAL_SAFETY_CONCEPT:
+				return !getTechnicalSafetyConcept().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__HAZARDOUS_EVENT:
+				return !getHazardousEvent().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__FEATURE_FLAW:
+				return !getFeatureFlaw().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__ITEM:
+				return !getItem().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__EA_DATATYPE:
+				return !getEADatatype().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__FAULT_FAILURE:
+				return !getFaultFailure().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__QUANTITATIVE_SAFETY_CONSTRAINT:
+				return !getQuantitativeSafetyConstraint().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__SAFETY_CONSTRAINT:
+				return !getSafetyConstraint().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__SAFETY_CASE:
+				return !getSafetyCase().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__ERROR_MODEL_TYPE:
+				return !getErrorModelType().isEmpty();
+			case DependabilityPackage.DEPENDABILITY__HAZARD:
+				return !getHazard().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -322,67 +190,17 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case DependabilityPackage.DEPENDABILITY__BASE_CLASS:
-			setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__BASE_PACKAGE:
-			setBase_Package((org.eclipse.uml2.uml.Package)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__FUNCTIONAL_SAFETY_CONCEPT:
-			getFunctionalSafetyConcept().clear();
-			getFunctionalSafetyConcept().addAll((Collection<? extends FunctionalSafetyConcept>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__SAFETY_GOAL:
-			getSafetyGoal().clear();
-			getSafetyGoal().addAll((Collection<? extends SafetyGoal>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__TECHNICAL_SAFETY_CONCEPT:
-			getTechnicalSafetyConcept().clear();
-			getTechnicalSafetyConcept().addAll((Collection<? extends TechnicalSafetyConcept>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__HAZARDOUS_EVENT:
-			getHazardousEvent().clear();
-			getHazardousEvent().addAll((Collection<? extends HazardousEvent>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__FEATURE_FLAW:
-			getFeatureFlaw().clear();
-			getFeatureFlaw().addAll((Collection<? extends FeatureFlaw>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__ITEM:
-			getItem().clear();
-			getItem().addAll((Collection<? extends Item>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__EA_DATATYPE:
-			getEADatatype().clear();
-			getEADatatype().addAll((Collection<? extends EADatatype>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__FAULT_FAILURE:
-			getFaultFailure().clear();
-			getFaultFailure().addAll((Collection<? extends FaultFailure>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__QUANTITATIVE_SAFETY_CONSTRAINT:
-			getQuantitativeSafetyConstraint().clear();
-			getQuantitativeSafetyConstraint().addAll((Collection<? extends QuantitativeSafetyConstraint>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__SAFETY_CONSTRAINT:
-			getSafetyConstraint().clear();
-			getSafetyConstraint().addAll((Collection<? extends SafetyConstraint>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__SAFETY_CASE:
-			getSafetyCase().clear();
-			getSafetyCase().addAll((Collection<? extends SafetyCase>)newValue);
-			return;
-		case DependabilityPackage.DEPENDABILITY__ERROR_MODEL_TYPE:
-			getErrorModelType().clear();
-			getErrorModelType().addAll((Collection<? extends ErrorModelType>)newValue);
-			return;
+		switch (featureID) {
+			case DependabilityPackage.DEPENDABILITY__BASE_CLASS:
+				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
+				return;
+			case DependabilityPackage.DEPENDABILITY__BASE_PACKAGE:
+				setBase_Package((org.eclipse.uml2.uml.Package)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -390,7 +208,6 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -401,15 +218,14 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if(base_Class != null && base_Class.eIsProxy()) {
+		if (base_Class != null && base_Class.eIsProxy()) {
 			InternalEObject oldBase_Class = (InternalEObject)base_Class;
 			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
-			if(base_Class != oldBase_Class) {
-				if(eNotificationRequired())
+			if (base_Class != oldBase_Class) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependabilityPackage.DEPENDABILITY__BASE_CLASS, oldBase_Class, base_Class));
 			}
 		}
@@ -419,7 +235,6 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -429,28 +244,26 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if(eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependabilityPackage.DEPENDABILITY__BASE_CLASS, oldBase_Class, base_Class));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package getBase_Package() {
-		if(base_Package != null && base_Package.eIsProxy()) {
+		if (base_Package != null && base_Package.eIsProxy()) {
 			InternalEObject oldBase_Package = (InternalEObject)base_Package;
 			base_Package = (org.eclipse.uml2.uml.Package)eResolveProxy(oldBase_Package);
-			if(base_Package != oldBase_Package) {
-				if(eNotificationRequired())
+			if (base_Package != oldBase_Package) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependabilityPackage.DEPENDABILITY__BASE_PACKAGE, oldBase_Package, base_Package));
 			}
 		}
@@ -460,7 +273,6 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -470,67 +282,29 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if(eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DependabilityPackage.DEPENDABILITY__BASE_PACKAGE, oldBase_Package, base_Package));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case DependabilityPackage.DEPENDABILITY__BASE_CLASS:
-			setBase_Class((org.eclipse.uml2.uml.Class)null);
-			return;
-		case DependabilityPackage.DEPENDABILITY__BASE_PACKAGE:
-			setBase_Package((org.eclipse.uml2.uml.Package)null);
-			return;
-		case DependabilityPackage.DEPENDABILITY__FUNCTIONAL_SAFETY_CONCEPT:
-			getFunctionalSafetyConcept().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__SAFETY_GOAL:
-			getSafetyGoal().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__TECHNICAL_SAFETY_CONCEPT:
-			getTechnicalSafetyConcept().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__HAZARDOUS_EVENT:
-			getHazardousEvent().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__FEATURE_FLAW:
-			getFeatureFlaw().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__ITEM:
-			getItem().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__EA_DATATYPE:
-			getEADatatype().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__FAULT_FAILURE:
-			getFaultFailure().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__QUANTITATIVE_SAFETY_CONSTRAINT:
-			getQuantitativeSafetyConstraint().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__SAFETY_CONSTRAINT:
-			getSafetyConstraint().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__SAFETY_CASE:
-			getSafetyCase().clear();
-			return;
-		case DependabilityPackage.DEPENDABILITY__ERROR_MODEL_TYPE:
-			getErrorModelType().clear();
-			return;
+		switch (featureID) {
+			case DependabilityPackage.DEPENDABILITY__BASE_CLASS:
+				setBase_Class((org.eclipse.uml2.uml.Class)null);
+				return;
+			case DependabilityPackage.DEPENDABILITY__BASE_PACKAGE:
+				setBase_Package((org.eclipse.uml2.uml.Package)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -538,157 +312,287 @@ public class DependabilityImpl extends ContextImpl implements Dependability {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<ErrorModelType> getErrorModelType() {
-		if(errorModelType == null) {
-			errorModelType = new EObjectResolvingEList<ErrorModelType>(ErrorModelType.class, this, DependabilityPackage.DEPENDABILITY__ERROR_MODEL_TYPE);
+		EList<ErrorModelType> results = new BasicEList<ErrorModelType>();
+		ErrorModelType adlErrorModelType = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlErrorModelType = (ErrorModelType )UMLUtil.getStereotypeApplication(element, ErrorModelType.class);
+				if (adlErrorModelType != null)
+					results.add(adlErrorModelType);
+			}
 		}
-		return errorModelType;
+		
+		return new BasicInternalEList<ErrorModelType>(ErrorModelType.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
+	 */
+	public EList<Hazard> getHazard() {
+		EList<Hazard> results = new BasicEList<Hazard>();
+		Hazard adlHazard = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlHazard = (Hazard )UMLUtil.getStereotypeApplication(element, Hazard.class);
+				if (adlHazard != null)
+					results.add(adlHazard);
+			}
+		}
+		
+		return new BasicInternalEList<Hazard>(Hazard.class, results.size(), results.toArray());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public EList<FaultFailure> getFaultFailure() {
-		if(faultFailure == null) {
-			faultFailure = new EObjectResolvingEList<FaultFailure>(FaultFailure.class, this, DependabilityPackage.DEPENDABILITY__FAULT_FAILURE);
+		EList<FaultFailure> results = new BasicEList<FaultFailure>();
+		FaultFailure adlFaultFailure = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlFaultFailure = (FaultFailure )UMLUtil.getStereotypeApplication(element, FaultFailure.class);
+				if (adlFaultFailure != null)
+					results.add(adlFaultFailure);
+			}
 		}
-		return faultFailure;
+		
+		return new BasicInternalEList<FaultFailure>(FaultFailure.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<FeatureFlaw> getFeatureFlaw() {
-		if(featureFlaw == null) {
-			featureFlaw = new EObjectResolvingEList<FeatureFlaw>(FeatureFlaw.class, this, DependabilityPackage.DEPENDABILITY__FEATURE_FLAW);
+		EList<FeatureFlaw> results = new BasicEList<FeatureFlaw>();
+		FeatureFlaw adlFeatureFlaw = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlFeatureFlaw = (FeatureFlaw )UMLUtil.getStereotypeApplication(element, FeatureFlaw.class);
+				if (adlFeatureFlaw != null)
+					results.add(adlFeatureFlaw);
+			}
 		}
-		return featureFlaw;
+		
+		return new BasicInternalEList<FeatureFlaw>(FeatureFlaw.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<FunctionalSafetyConcept> getFunctionalSafetyConcept() {
-		if(functionalSafetyConcept == null) {
-			functionalSafetyConcept = new EObjectResolvingEList<FunctionalSafetyConcept>(FunctionalSafetyConcept.class, this, DependabilityPackage.DEPENDABILITY__FUNCTIONAL_SAFETY_CONCEPT);
+		EList<FunctionalSafetyConcept> results = new BasicEList<FunctionalSafetyConcept>();
+		FunctionalSafetyConcept adlFunctionalSafetyConcept = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlFunctionalSafetyConcept = (FunctionalSafetyConcept )UMLUtil.getStereotypeApplication(element, FunctionalSafetyConcept.class);
+				if (adlFunctionalSafetyConcept != null)
+					results.add(adlFunctionalSafetyConcept);
+			}
 		}
-		return functionalSafetyConcept;
+		
+		return new BasicInternalEList<FunctionalSafetyConcept>(FunctionalSafetyConcept.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<HazardousEvent> getHazardousEvent() {
-		if(hazardousEvent == null) {
-			hazardousEvent = new EObjectResolvingEList<HazardousEvent>(HazardousEvent.class, this, DependabilityPackage.DEPENDABILITY__HAZARDOUS_EVENT);
+		EList<HazardousEvent> results = new BasicEList<HazardousEvent>();
+		HazardousEvent adlHazardousEvent = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlHazardousEvent = (HazardousEvent )UMLUtil.getStereotypeApplication(element, HazardousEvent.class);
+				if (adlHazardousEvent != null)
+					results.add(adlHazardousEvent);
+			}
 		}
-		return hazardousEvent;
+		
+		return new BasicInternalEList<HazardousEvent>(HazardousEvent.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Item> getItem() {
-		if(item == null) {
-			item = new EObjectResolvingEList<Item>(Item.class, this, DependabilityPackage.DEPENDABILITY__ITEM);
+		EList<Item> results = new BasicEList<Item>();
+		Item adlItem = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlItem = (Item )UMLUtil.getStereotypeApplication(element, Item.class);
+				if (adlItem != null)
+					results.add(adlItem);
+			}
 		}
-		return item;
+		
+		return new BasicInternalEList<Item>(Item.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<EADatatype> getEADatatype() {
-		if(eADatatype == null) {
-			eADatatype = new EObjectResolvingEList<EADatatype>(EADatatype.class, this, DependabilityPackage.DEPENDABILITY__EA_DATATYPE);
+		EList<EADatatype> results = new BasicEList<EADatatype>();
+		EADatatype adlEADatatype = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlEADatatype = (EADatatype )UMLUtil.getStereotypeApplication(element, EADatatype.class);
+				if (adlEADatatype != null)
+					results.add(adlEADatatype);
+			}
 		}
-		return eADatatype;
+		
+		return new BasicInternalEList<EADatatype>(EADatatype.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<QuantitativeSafetyConstraint> getQuantitativeSafetyConstraint() {
-		if(quantitativeSafetyConstraint == null) {
-			quantitativeSafetyConstraint = new EObjectResolvingEList<QuantitativeSafetyConstraint>(QuantitativeSafetyConstraint.class, this, DependabilityPackage.DEPENDABILITY__QUANTITATIVE_SAFETY_CONSTRAINT);
+		EList<QuantitativeSafetyConstraint> results = new BasicEList<QuantitativeSafetyConstraint>();
+		QuantitativeSafetyConstraint adlQuantitativeSafetyConstraint = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlQuantitativeSafetyConstraint = (QuantitativeSafetyConstraint )UMLUtil.getStereotypeApplication(element, QuantitativeSafetyConstraint.class);
+				if (adlQuantitativeSafetyConstraint != null)
+					results.add(adlQuantitativeSafetyConstraint);
+			}
 		}
-		return quantitativeSafetyConstraint;
+		
+		return new BasicInternalEList<QuantitativeSafetyConstraint>(QuantitativeSafetyConstraint.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<SafetyCase> getSafetyCase() {
-		if(safetyCase == null) {
-			safetyCase = new EObjectResolvingEList<SafetyCase>(SafetyCase.class, this, DependabilityPackage.DEPENDABILITY__SAFETY_CASE);
+		EList<SafetyCase> results = new BasicEList<SafetyCase>();
+		SafetyCase adlSafetyCase = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlSafetyCase = (SafetyCase )UMLUtil.getStereotypeApplication(element, SafetyCase.class);
+				if (adlSafetyCase != null)
+					results.add(adlSafetyCase);
+			}
 		}
-		return safetyCase;
+		
+		return new BasicInternalEList<SafetyCase>(SafetyCase.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<SafetyConstraint> getSafetyConstraint() {
-		if(safetyConstraint == null) {
-			safetyConstraint = new EObjectResolvingEList<SafetyConstraint>(SafetyConstraint.class, this, DependabilityPackage.DEPENDABILITY__SAFETY_CONSTRAINT);
+		EList<SafetyConstraint> results = new BasicEList<SafetyConstraint>();
+		SafetyConstraint adlSafetyConstraint = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlSafetyConstraint = (SafetyConstraint )UMLUtil.getStereotypeApplication(element, SafetyConstraint.class);
+				if (adlSafetyConstraint != null)
+					results.add(adlSafetyConstraint);
+			}
 		}
-		return safetyConstraint;
+		
+		return new BasicInternalEList<SafetyConstraint>(SafetyConstraint.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<SafetyGoal> getSafetyGoal() {
-		if(safetyGoal == null) {
-			safetyGoal = new EObjectResolvingEList<SafetyGoal>(SafetyGoal.class, this, DependabilityPackage.DEPENDABILITY__SAFETY_GOAL);
+		EList<SafetyGoal> results = new BasicEList<SafetyGoal>();
+		SafetyGoal adlSafetyGoal = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlSafetyGoal = (SafetyGoal )UMLUtil.getStereotypeApplication(element, SafetyGoal.class);
+				if (adlSafetyGoal != null)
+					results.add(adlSafetyGoal);
+			}
 		}
-		return safetyGoal;
+		
+		return new BasicInternalEList<SafetyGoal>(SafetyGoal.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<TechnicalSafetyConcept> getTechnicalSafetyConcept() {
-		if(technicalSafetyConcept == null) {
-			technicalSafetyConcept = new EObjectResolvingEList<TechnicalSafetyConcept>(TechnicalSafetyConcept.class, this, DependabilityPackage.DEPENDABILITY__TECHNICAL_SAFETY_CONCEPT);
+		EList<TechnicalSafetyConcept> results = new BasicEList<TechnicalSafetyConcept>();
+		TechnicalSafetyConcept adlTechnicalSafetyConcept = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlTechnicalSafetyConcept = (TechnicalSafetyConcept )UMLUtil.getStereotypeApplication(element, TechnicalSafetyConcept.class);
+				if (adlTechnicalSafetyConcept != null)
+					results.add(adlTechnicalSafetyConcept);
+			}
 		}
-		return technicalSafetyConcept;
+		
+		return new BasicInternalEList<TechnicalSafetyConcept>(TechnicalSafetyConcept.class, results.size(), results.toArray());
 	}
 
 } //DependabilityImpl

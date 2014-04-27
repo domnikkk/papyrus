@@ -28,183 +28,145 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- * <li>each class,</li>
- * <li>each feature of each class,</li>
- * <li>each enum,</li>
- * <li>and each data type</li>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsFactory
  * @model kind="package"
  * @generated
  */
 public interface SafetyconstraintsPackage extends EPackage {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 * <li>each class,</li>
-	 * <li>each feature of each class,</li>
-	 * <li>each enum,</li>
-	 * <li>and each data type</li>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
-
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyConstraintImpl
-		 * <em>Safety Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyConstraintImpl <em>Safety Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyConstraintImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl#getSafetyConstraint()
 		 * @generated
 		 */
 		EClass SAFETY_CONSTRAINT = eINSTANCE.getSafetyConstraint();
-
 		/**
 		 * The meta object literal for the '<em><b>Asil Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute SAFETY_CONSTRAINT__ASIL_VALUE = eINSTANCE.getSafetyConstraint_AsilValue();
-
 		/**
 		 * The meta object literal for the '<em><b>Constrained Fault Failure</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference SAFETY_CONSTRAINT__CONSTRAINED_FAULT_FAILURE = eINSTANCE.getSafetyConstraint_ConstrainedFaultFailure();
-
 		/**
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference SAFETY_CONSTRAINT__BASE_CLASS = eINSTANCE.getSafetyConstraint_Base_Class();
-
 		/**
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference SAFETY_CONSTRAINT__BASE_CONSTRAINT = eINSTANCE.getSafetyConstraint_Base_Constraint();
-
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.QuantitativeSafetyConstraintImpl
-		 * <em>Quantitative Safety Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.QuantitativeSafetyConstraintImpl <em>Quantitative Safety Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.QuantitativeSafetyConstraintImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl#getQuantitativeSafetyConstraint()
 		 * @generated
 		 */
 		EClass QUANTITATIVE_SAFETY_CONSTRAINT = eINSTANCE.getQuantitativeSafetyConstraint();
-
 		/**
 		 * The meta object literal for the '<em><b>Constrained Fault Failure</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference QUANTITATIVE_SAFETY_CONSTRAINT__CONSTRAINED_FAULT_FAILURE = eINSTANCE.getQuantitativeSafetyConstraint_ConstrainedFaultFailure();
-
 		/**
 		 * The meta object literal for the '<em><b>Failure Rate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute QUANTITATIVE_SAFETY_CONSTRAINT__FAILURE_RATE = eINSTANCE.getQuantitativeSafetyConstraint_FailureRate();
-
 		/**
 		 * The meta object literal for the '<em><b>Repair Rate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute QUANTITATIVE_SAFETY_CONSTRAINT__REPAIR_RATE = eINSTANCE.getQuantitativeSafetyConstraint_RepairRate();
-
 		/**
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference QUANTITATIVE_SAFETY_CONSTRAINT__BASE_CLASS = eINSTANCE.getQuantitativeSafetyConstraint_Base_Class();
-
 		/**
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference QUANTITATIVE_SAFETY_CONSTRAINT__BASE_CONSTRAINT = eINSTANCE.getQuantitativeSafetyConstraint_Base_Constraint();
-
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.FaultFailureImpl
-		 * <em>Fault Failure</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.FaultFailureImpl <em>Fault Failure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.FaultFailureImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl#getFaultFailure()
 		 * @generated
 		 */
 		EClass FAULT_FAILURE = eINSTANCE.getFaultFailure();
-
 		/**
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FAULT_FAILURE__BASE_CLASS = eINSTANCE.getFaultFailure_Base_Class();
-
 		/**
-		 * The meta object literal for the '<em><b>Fault Failure Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Fault Failure Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EAttribute FAULT_FAILURE__FAULT_FAILURE_VALUE = eINSTANCE.getFaultFailure_FaultFailureValue();
-
+		EReference FAULT_FAILURE__FAULT_FAILURE_VALUE = eINSTANCE.getFaultFailure_FaultFailureValue();
 		/**
-		 * The meta object literal for the '<em><b>Anomaly</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Anomaly</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FAULT_FAILURE__ANOMALY = eINSTANCE.getFaultFailure_Anomaly();
-
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind <em>ASIL Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl#getASILKind()
 		 * @generated
@@ -217,7 +179,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNAME = "safetyconstraints";
@@ -226,7 +187,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Dependability/SafetyConstraints/1";
@@ -235,7 +195,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "SafetyConstraints";
@@ -244,18 +203,15 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	SafetyconstraintsPackage eINSTANCE = org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl.init();
 
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyConstraintImpl
-	 * <em>Safety Constraint</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyConstraintImpl <em>Safety Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyConstraintImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl#getSafetyConstraint()
 	 * @generated
@@ -263,11 +219,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	int SAFETY_CONSTRAINT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.QuantitativeSafetyConstraintImpl
-	 * <em>Quantitative Safety Constraint</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.QuantitativeSafetyConstraintImpl <em>Quantitative Safety Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.QuantitativeSafetyConstraintImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl#getQuantitativeSafetyConstraint()
 	 * @generated
@@ -275,11 +229,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	int QUANTITATIVE_SAFETY_CONSTRAINT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.FaultFailureImpl <em>Fault Failure</em>}'
-	 * class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.FaultFailureImpl <em>Fault Failure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.FaultFailureImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl#getFaultFailure()
 	 * @generated
@@ -287,30 +239,27 @@ public interface SafetyconstraintsPackage extends EPackage {
 	int FAULT_FAILURE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FAULT_FAILURE__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FAULT_FAILURE__BASE_NAMED_ELEMENT = ElementsPackage.TRACEABLE_SPECIFICATION__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAULT_FAILURE__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -320,7 +269,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -330,7 +278,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -340,27 +287,24 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FAULT_FAILURE__BASE_CLASS = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fault Failure Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Fault Failure Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FAULT_FAILURE__FAULT_FAILURE_VALUE = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Anomaly</b></em>' reference.
+	 * The feature id for the '<em><b>Anomaly</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -370,37 +314,42 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The number of structural features of the '<em>Fault Failure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FAULT_FAILURE_FEATURE_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Fault Failure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_CONSTRAINT__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
+	int FAULT_FAILURE_OPERATION_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int SAFETY_CONSTRAINT__BASE_NAMED_ELEMENT = ElementsPackage.TRACEABLE_SPECIFICATION__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY_CONSTRAINT__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -410,7 +359,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -420,7 +368,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +377,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Asil Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +386,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Constrained Fault Failure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -450,7 +395,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -460,7 +404,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -470,37 +413,42 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The number of structural features of the '<em>Safety Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int SAFETY_CONSTRAINT_FEATURE_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Safety Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int QUANTITATIVE_SAFETY_CONSTRAINT__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
+	int SAFETY_CONSTRAINT_OPERATION_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int QUANTITATIVE_SAFETY_CONSTRAINT__BASE_NAMED_ELEMENT = ElementsPackage.TRACEABLE_SPECIFICATION__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUANTITATIVE_SAFETY_CONSTRAINT__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -510,7 +458,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -520,7 +467,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -530,7 +476,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Constrained Fault Failure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -540,7 +485,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Failure Rate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -550,7 +494,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Repair Rate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -560,7 +503,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -570,7 +512,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -580,17 +521,24 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * The number of structural features of the '<em>Quantitative Safety Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int QUANTITATIVE_SAFETY_CONSTRAINT_FEATURE_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 5;
 
 	/**
+	 * The number of operations of the '<em>Quantitative Safety Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUANTITATIVE_SAFETY_CONSTRAINT_OPERATION_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind <em>ASIL Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl#getASILKind()
 	 * @generated
@@ -601,7 +549,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure <em>Fault Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Fault Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure
 	 * @generated
@@ -609,11 +556,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EClass getFaultFailure();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getBase_Class
-	 * <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getBase_Class()
 	 * @see #getFaultFailure()
@@ -622,12 +567,10 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EReference getFaultFailure_Base_Class();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getAnomaly
-	 * <em>Anomaly</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getAnomaly <em>Anomaly</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Anomaly</em>'.
+	 * @return the meta object for the containment reference list '<em>Anomaly</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getAnomaly()
 	 * @see #getFaultFailure()
 	 * @generated
@@ -635,24 +578,20 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EReference getFaultFailure_Anomaly();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getFaultFailureValue <em>Fault Failure Value</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getFaultFailureValue <em>Fault Failure Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Fault Failure Value</em>'.
+	 * @return the meta object for the reference '<em>Fault Failure Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getFaultFailureValue()
 	 * @see #getFaultFailure()
 	 * @generated
 	 */
-	EAttribute getFaultFailure_FaultFailureValue();
+	EReference getFaultFailure_FaultFailureValue();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint
-	 * <em>Quantitative Safety Constraint</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint <em>Quantitative Safety Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Quantitative Safety Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint
 	 * @generated
@@ -660,12 +599,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EClass getQuantitativeSafetyConstraint();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getConstrainedFaultFailure
-	 * <em>Constrained Fault Failure</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getConstrainedFaultFailure <em>Constrained Fault Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Constrained Fault Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getConstrainedFaultFailure()
 	 * @see #getQuantitativeSafetyConstraint()
@@ -674,11 +610,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EReference getQuantitativeSafetyConstraint_ConstrainedFaultFailure();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getFailureRate <em>Failure Rate</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getFailureRate <em>Failure Rate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Failure Rate</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getFailureRate()
 	 * @see #getQuantitativeSafetyConstraint()
@@ -687,11 +621,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EAttribute getQuantitativeSafetyConstraint_FailureRate();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getRepairRate <em>Repair Rate</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getRepairRate <em>Repair Rate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Repair Rate</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getRepairRate()
 	 * @see #getQuantitativeSafetyConstraint()
@@ -700,11 +632,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EAttribute getQuantitativeSafetyConstraint_RepairRate();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getBase_Class <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getBase_Class()
 	 * @see #getQuantitativeSafetyConstraint()
@@ -713,11 +643,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EReference getQuantitativeSafetyConstraint_Base_Class();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getBase_Constraint <em>Base Constraint</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getBase_Constraint <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getBase_Constraint()
 	 * @see #getQuantitativeSafetyConstraint()
@@ -729,7 +657,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind <em>ASIL Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for enum '<em>ASIL Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
 	 * @generated
@@ -737,11 +664,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EEnum getASILKind();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint
-	 * <em>Safety Constraint</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint <em>Safety Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Safety Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint
 	 * @generated
@@ -749,11 +674,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EClass getSafetyConstraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getAsilValue
-	 * <em>Asil Value</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getAsilValue <em>Asil Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Asil Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getAsilValue()
 	 * @see #getSafetyConstraint()
@@ -762,12 +685,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EAttribute getSafetyConstraint_AsilValue();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getConstrainedFaultFailure
-	 * <em>Constrained Fault Failure</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getConstrainedFaultFailure <em>Constrained Fault Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Constrained Fault Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getConstrainedFaultFailure()
 	 * @see #getSafetyConstraint()
@@ -776,11 +696,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EReference getSafetyConstraint_ConstrainedFaultFailure();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getBase_Class
-	 * <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getBase_Class()
 	 * @see #getSafetyConstraint()
@@ -789,11 +707,9 @@ public interface SafetyconstraintsPackage extends EPackage {
 	EReference getSafetyConstraint_Base_Class();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getBase_Constraint <em>Base Constraint</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getBase_Constraint <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getBase_Constraint()
 	 * @see #getSafetyConstraint()
@@ -805,7 +721,6 @@ public interface SafetyconstraintsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */

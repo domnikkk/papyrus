@@ -15,7 +15,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.eastadl;
 
-import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -28,9 +28,9 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.EastadlFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='EAST-ADL2'"
  * @generated
  */
 public interface EastadlPackage extends EPackage {
@@ -44,28 +44,25 @@ public interface EastadlPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dummy <em>dummy</em>}' enum.
+		 * The meta object literal for the '<em>Dummy</em>' data type.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
-		 * @see org.eclipse.papyrus.eastadl.dummy
-		 * @see org.eclipse.papyrus.eastadl.impl.EastadlPackageImpl#getdummy()
+		 * @see java.lang.String
+		 * @see org.eclipse.papyrus.eastadl.impl.EastadlPackageImpl#getDummy()
 		 * @generated
 		 */
-		EEnum DUMMY = eINSTANCE.getdummy();
+		EDataType DUMMY = eINSTANCE.getDummy();
 
 	}
 
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNAME = "eastadl";
@@ -73,7 +70,6 @@ public interface EastadlPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/1";
@@ -81,7 +77,6 @@ public interface EastadlPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "EAST-ADL2";
@@ -89,38 +84,35 @@ public interface EastadlPackage extends EPackage {
 	/**
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	EastadlPackage eINSTANCE = org.eclipse.papyrus.eastadl.impl.EastadlPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dummy <em>dummy</em>}' enum.
+	 * The meta object id for the '<em>Dummy</em>' data type.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @see org.eclipse.papyrus.eastadl.dummy
-	 * @see org.eclipse.papyrus.eastadl.impl.EastadlPackageImpl#getdummy()
+	 * @see java.lang.String
+	 * @see org.eclipse.papyrus.eastadl.impl.EastadlPackageImpl#getDummy()
 	 * @generated
 	 */
 	int DUMMY = 0;
 
 	/**
-	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.dummy <em>dummy</em>}'.
+	 * Returns the meta object for data type '{@link java.lang.String <em>Dummy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for enum '<em>dummy</em>'.
-	 * @see org.eclipse.papyrus.eastadl.dummy
+	 * @return the meta object for data type '<em>Dummy</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
 	 * @generated
 	 */
-	EEnum getdummy();
+	EDataType getDummy();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */

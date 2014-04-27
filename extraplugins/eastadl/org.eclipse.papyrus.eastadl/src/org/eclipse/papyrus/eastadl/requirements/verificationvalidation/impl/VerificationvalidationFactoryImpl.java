@@ -1,18 +1,5 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *  Sara TUCCI (CEA LIST) sara.tucci@cea.fr - Initial API and implementation
- *  Chokri MRAIDHA (CEA LIST) chokri.mraidha@cea.fr - Initial API and implementation
- *  David SERVAT (CEA LIST) david.servat@cea.fr - Initial API and implementation
- *
- *****************************************************************************/
+/**
+ */
 package org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -32,42 +19,27 @@ import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verificat
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify;
 
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class VerificationvalidationFactoryImpl extends EFactoryImpl implements VerificationvalidationFactory {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @deprecated
-	 * @generated
-	 */
-	@Deprecated
-	public static VerificationvalidationPackage getPackage() {
-		return VerificationvalidationPackage.eINSTANCE;
-	}
-
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static VerificationvalidationFactory init() {
 		try {
 			VerificationvalidationFactory theVerificationvalidationFactory = (VerificationvalidationFactory)EPackage.Registry.INSTANCE.getEFactory(VerificationvalidationPackage.eNS_URI);
-			if(theVerificationvalidationFactory != null) {
+			if (theVerificationvalidationFactory != null) {
 				return theVerificationvalidationFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new VerificationvalidationFactoryImpl();
@@ -77,7 +49,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VerificationvalidationFactoryImpl() {
@@ -87,39 +58,28 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
-		case VerificationvalidationPackage.VV_STIMULI:
-			return createVVStimuli();
-		case VerificationvalidationPackage.VV_INTENDED_OUTCOME:
-			return createVVIntendedOutcome();
-		case VerificationvalidationPackage.VV_ACTUAL_OUTCOME:
-			return createVVActualOutcome();
-		case VerificationvalidationPackage.VV_CASE:
-			return createVVCase();
-		case VerificationvalidationPackage.VV_TARGET:
-			return createVVTarget();
-		case VerificationvalidationPackage.VV_LOG:
-			return createVVLog();
-		case VerificationvalidationPackage.VV_PROCEDURE:
-			return createVVProcedure();
-		case VerificationvalidationPackage.VERIFICATION_VALIDATION:
-			return createVerificationValidation();
-		case VerificationvalidationPackage.VERIFY:
-			return createVerify();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case VerificationvalidationPackage.VV_STIMULI: return createVVStimuli();
+			case VerificationvalidationPackage.VV_INTENDED_OUTCOME: return createVVIntendedOutcome();
+			case VerificationvalidationPackage.VV_ACTUAL_OUTCOME: return createVVActualOutcome();
+			case VerificationvalidationPackage.VV_CASE: return createVVCase();
+			case VerificationvalidationPackage.VV_TARGET: return createVVTarget();
+			case VerificationvalidationPackage.VV_LOG: return createVVLog();
+			case VerificationvalidationPackage.VV_PROCEDURE: return createVVProcedure();
+			case VerificationvalidationPackage.VERIFICATION_VALIDATION: return createVerificationValidation();
+			case VerificationvalidationPackage.VERIFY: return createVerify();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VVStimuli createVVStimuli() {
@@ -130,7 +90,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VVIntendedOutcome createVVIntendedOutcome() {
@@ -141,7 +100,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VVActualOutcome createVVActualOutcome() {
@@ -152,7 +110,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VVCase createVVCase() {
@@ -163,7 +120,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VVTarget createVVTarget() {
@@ -174,7 +130,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VVLog createVVLog() {
@@ -185,7 +140,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VVProcedure createVVProcedure() {
@@ -196,7 +150,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VerificationValidation createVerificationValidation() {
@@ -207,7 +160,6 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Verify createVerify() {
@@ -218,11 +170,21 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VerificationvalidationPackage getVerificationvalidationPackage() {
 		return (VerificationvalidationPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static VerificationvalidationPackage getPackage() {
+		return VerificationvalidationPackage.eINSTANCE;
 	}
 
 } //VerificationvalidationFactoryImpl

@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.papyrus.eastadl.dependability.safetyrequirement.FunctionalSafetyConcept;
 import org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage;
-import org.eclipse.papyrus.eastadl.requirements.Requirement;
-import org.eclipse.papyrus.eastadl.requirements.impl.RequirementsContainerImpl;
+import org.eclipse.papyrus.eastadl.requirements.requirements.Requirement;
+import org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsHierarchyImpl;
 
 
 /**
@@ -33,30 +33,25 @@ import org.eclipse.papyrus.eastadl.requirements.impl.RequirementsContainerImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.FunctionalSafetyConceptImpl#getFunctionalSafetyRequirement <em>
- * Functional Safety Requirement</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.FunctionalSafetyConceptImpl#getFunctionalSafetyRequirement <em>Functional Safety Requirement</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
-public class FunctionalSafetyConceptImpl extends RequirementsContainerImpl implements FunctionalSafetyConcept {
-
+public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl implements FunctionalSafetyConcept {
 	/**
 	 * The cached value of the '{@link #getFunctionalSafetyRequirement() <em>Functional Safety Requirement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getFunctionalSafetyRequirement()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<Requirement> functionalSafetyRequirement;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected FunctionalSafetyConceptImpl() {
@@ -66,14 +61,13 @@ public class FunctionalSafetyConceptImpl extends RequirementsContainerImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT:
-			return getFunctionalSafetyRequirement();
+		switch (featureID) {
+			case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT:
+				return getFunctionalSafetyRequirement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -81,14 +75,13 @@ public class FunctionalSafetyConceptImpl extends RequirementsContainerImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT:
-			return functionalSafetyRequirement != null && !functionalSafetyRequirement.isEmpty();
+		switch (featureID) {
+			case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT:
+				return functionalSafetyRequirement != null && !functionalSafetyRequirement.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -96,17 +89,16 @@ public class FunctionalSafetyConceptImpl extends RequirementsContainerImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT:
-			getFunctionalSafetyRequirement().clear();
-			getFunctionalSafetyRequirement().addAll((Collection<? extends Requirement>)newValue);
-			return;
+		switch (featureID) {
+			case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT:
+				getFunctionalSafetyRequirement().clear();
+				getFunctionalSafetyRequirement().addAll((Collection<? extends Requirement>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -114,7 +106,6 @@ public class FunctionalSafetyConceptImpl extends RequirementsContainerImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,15 +116,14 @@ public class FunctionalSafetyConceptImpl extends RequirementsContainerImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT:
-			getFunctionalSafetyRequirement().clear();
-			return;
+		switch (featureID) {
+			case SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT:
+				getFunctionalSafetyRequirement().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -141,11 +131,10 @@ public class FunctionalSafetyConceptImpl extends RequirementsContainerImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<Requirement> getFunctionalSafetyRequirement() {
-		if(functionalSafetyRequirement == null) {
+		if (functionalSafetyRequirement == null) {
 			functionalSafetyRequirement = new EObjectResolvingEList<Requirement>(Requirement.class, this, SafetyrequirementPackage.FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT);
 		}
 		return functionalSafetyRequirement;

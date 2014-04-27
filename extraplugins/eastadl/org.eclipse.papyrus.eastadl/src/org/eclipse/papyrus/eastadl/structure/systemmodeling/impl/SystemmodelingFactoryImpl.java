@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.structure.systemmodeling.*;
 import org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel;
 import org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel;
 import org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel;
@@ -34,15 +33,12 @@ import org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class SystemmodelingFactoryImpl extends EFactoryImpl implements SystemmodelingFactory {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -55,16 +51,16 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static SystemmodelingFactory init() {
 		try {
 			SystemmodelingFactory theSystemmodelingFactory = (SystemmodelingFactory)EPackage.Registry.INSTANCE.getEFactory(SystemmodelingPackage.eNS_URI);
-			if(theSystemmodelingFactory != null) {
+			if (theSystemmodelingFactory != null) {
 				return theSystemmodelingFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new SystemmodelingFactoryImpl();
@@ -74,7 +70,6 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SystemmodelingFactoryImpl() {
@@ -84,31 +79,24 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
-		case SystemmodelingPackage.SYSTEM_MODEL:
-			return createSystemModel();
-		case SystemmodelingPackage.IMPLEMENTATION_LEVEL:
-			return createImplementationLevel();
-		case SystemmodelingPackage.ANALYSIS_LEVEL:
-			return createAnalysisLevel();
-		case SystemmodelingPackage.DESIGN_LEVEL:
-			return createDesignLevel();
-		case SystemmodelingPackage.VEHICLE_LEVEL:
-			return createVehicleLevel();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case SystemmodelingPackage.SYSTEM_MODEL: return createSystemModel();
+			case SystemmodelingPackage.IMPLEMENTATION_LEVEL: return createImplementationLevel();
+			case SystemmodelingPackage.ANALYSIS_LEVEL: return createAnalysisLevel();
+			case SystemmodelingPackage.DESIGN_LEVEL: return createDesignLevel();
+			case SystemmodelingPackage.VEHICLE_LEVEL: return createVehicleLevel();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public AnalysisLevel createAnalysisLevel() {
@@ -119,7 +107,6 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DesignLevel createDesignLevel() {
@@ -130,7 +117,6 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ImplementationLevel createImplementationLevel() {
@@ -141,7 +127,6 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SystemModel createSystemModel() {
@@ -152,7 +137,6 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VehicleLevel createVehicleLevel() {
@@ -163,7 +147,6 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SystemmodelingPackage getSystemmodelingPackage() {

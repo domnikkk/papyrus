@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 /**
  * <!-- begin-user-doc --> The <b>Resource Factory</b> associated with the package. <!--
  * end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.util.VehiclefeaturemodelingResourceImpl
  * @generated
  */
@@ -32,7 +31,6 @@ public class VehiclefeaturemodelingResourceFactoryImpl extends ResourceFactoryIm
 	/**
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VehiclefeaturemodelingResourceFactoryImpl() {
@@ -42,7 +40,6 @@ public class VehiclefeaturemodelingResourceFactoryImpl extends ResourceFactoryIm
 	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

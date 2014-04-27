@@ -26,15 +26,13 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPa
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class ActuatorImpl extends HardwareComponentTypeImpl implements Actuator {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ActuatorImpl() {
@@ -44,7 +42,6 @@ public class ActuatorImpl extends HardwareComponentTypeImpl implements Actuator 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
