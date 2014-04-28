@@ -26,6 +26,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.commands.operations.IOperationHistory;
+import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -49,6 +51,8 @@ import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalCommandStack;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.workspace.IWorkspaceCommandStack;
+import org.eclipse.emf.workspace.ResourceUndoContext;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.ClientContextManager;
@@ -67,6 +71,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+import org.eclipse.papyrus.infra.core.resource.ResourceAdapter;
 import org.eclipse.papyrus.junit.utils.rules.Condition;
 import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
 import org.eclipse.papyrus.junit.utils.rules.Conditional;
@@ -107,13 +112,13 @@ public class ReadOnlyObjectEditAdviceTest {
 	private static final IClientContext PAPYRUS_CONTEXT = ClientContextManager.getInstance().getClientContext("org.eclipse.papyrus.infra.services.edit.TypeContext"); //$NON-NLS-1$
 
 	private static IAdapterFactory readOnlyHandlerAdapterFactory;
-	
+
 	@Parameter
 	public ResourceMode resourceMode;
 
 	@Rule
 	public final ConditionRule condition = new ConditionRule();
-	
+
 	@Rule
 	public final TemporaryFolder tmp = new TemporaryFolder();
 
@@ -454,7 +459,7 @@ public class ReadOnlyObjectEditAdviceTest {
 		Platform.getAdapterManager().unregisterAdapters(readOnlyHandlerAdapterFactory, EditingDomain.class);
 		readOnlyHandlerAdapterFactory = null;
 	}
-	
+
 	@Before
 	public void createFixture() throws Exception {
 		project = ResourcesPlugin.getWorkspace().getRoot().getProject(String.format("%s_%d", getClass().getSimpleName(), resourceMode.ordinal())); //$NON-NLS-1$
@@ -509,6 +514,29 @@ public class ReadOnlyObjectEditAdviceTest {
 			// to interfere with the advice's read-only check
 			domain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain(new ResourceSetImpl());
 			((AdapterFactoryEditingDomain)domain).setResourceToReadOnlyMap(null);
+
+			// Make sure that we flush undo contexts in a timely fashion so that our commands and the
+			// resources they retain may be reclaimed
+			if(domain.getCommandStack() instanceof IWorkspaceCommandStack) {
+				domain.getResourceSet().eAdapters().add(new ResourceAdapter() {
+
+					private final TransactionalEditingDomain domain;
+
+					private final IOperationHistory history;
+
+					{
+						domain = ReadOnlyObjectEditAdviceTest.this.domain;
+						history = ((IWorkspaceCommandStack)domain.getCommandStack()).getOperationHistory();
+					}
+
+					@Override
+					protected void handleResourceUnloaded(Resource resource) {
+						// Purge the resource undo context
+						IUndoContext resourceContext = new ResourceUndoContext(domain, resource);
+						history.dispose(resourceContext, true, true, true);
+					}
+				});
+			}
 		}
 
 		Resource res = domain.getResourceSet().createResource(uri);
@@ -534,6 +562,12 @@ public class ReadOnlyObjectEditAdviceTest {
 
 	@After
 	public void destroyFixture() {
+		// Purge the default undo context
+		if(domain.getCommandStack() instanceof IWorkspaceCommandStack) {
+			IWorkspaceCommandStack stack = (IWorkspaceCommandStack)domain.getCommandStack();
+			stack.getOperationHistory().dispose(stack.getDefaultUndoContext(), true, true, true);
+		}
+
 		ResourceSet rset = domain.getResourceSet();
 		domain.dispose();
 		domain = null;

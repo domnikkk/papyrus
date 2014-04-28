@@ -10,76 +10,19 @@
     <imports href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0"/>
     <imports href="../../../utils/CppGenUtils.emtl#/0"/>
     <imports href="../../../utils/ClassUtils.emtl#/0"/>
+    <imports href="../../CppIncludeUtils.emtl#/0"/>
     <imports href="CppClassIncludeDeclaration.emtl#/0"/>
-    <ownedModuleElement xsi:type="mtl:Comment">
-      <body startPosition="412" endPosition="421" value=" USED??? "/>
-    </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Template" name="CppClassIncludeClassDeclarationTemplate" visibility="Public">
-      <body xsi:type="mtl:QueryInvocation">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../../../utils/CppGenUtils.emtl#/0/openNS"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/7">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-        </argument>
-      </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
-      <body xsi:type="mtl:IfBlock">
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="template "/>
-        <ifExpr xsi:type="mtl:QueryInvocation">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/hasStereotype.1"/>
-          <argument xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/CppClassIncludeClassDeclarationTemplate/class">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-          </argument>
-          <argument xsi:type="ocl.ecore:TypeExp" eType="/8/Template">
-            <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/papyrus/C_Cpp/1#//Template"/>
-          </argument>
-        </ifExpr>
-      </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="class "/>
-      <body xsi:type="ocl.ecore:PropertyCallExp">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/CppClassIncludeClassDeclarationTemplate/class">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-        </source>
-        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-      </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
-      <body xsi:type="mtl:QueryInvocation">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../../../utils/CppGenUtils.emtl#/0/closeNS"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/11">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-        </argument>
-      </body>
-      <parameter name="class">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+    <ownedModuleElement xsi:type="mtl:Query" name="cppOwnerPackageIncludePath" visibility="Public">
+      <parameter name="pkg">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </parameter>
-    </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Template" name="CppOwnerPackageIncludeDeclaration" visibility="Public">
-      <body xsi:type="mtl:IfBlock">
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/* Owner package header include                             */&#xA;#include &lt;"/>
-        <body xsi:type="mtl:QueryInvocation">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/getFullPath"/>
-          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/17">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-          </argument>
-        </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/Pkg_"/>
-        <body xsi:type="ocl.ecore:PropertyCallExp">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="pkg" referredVariable="/0/CppOwnerPackageIncludeDeclaration/pkg">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-          </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-        </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".h>&#xA;"/>
-        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-            <source xsi:type="ocl.ecore:VariableExp" name="pkg" referredVariable="/0/CppOwnerPackageIncludeDeclaration/pkg">
+            <source xsi:type="ocl.ecore:VariableExp" name="pkg" referredVariable="/0/cppOwnerPackageIncludePath/pkg">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
             </source>
             <argument xsi:type="ocl.ecore:NullLiteralExp">
@@ -92,199 +35,249 @@
             <source xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
               <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/hasStereotype.1"/>
-              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/16">
+              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/6">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
               </argument>
-              <argument xsi:type="ocl.ecore:TypeExp" eType="/8/CppRoot">
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/5/CppRoot">
                 <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/papyrus/C_Cpp/1#//CppRoot"/>
               </argument>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
           </argument>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
-        </ifExpr>
-      </body>
-      <parameter name="pkg">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      </parameter>
+        </condition>
+        <thenExpression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="mtl:QueryInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/getFullPath"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/6">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/Pkg_">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </source>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="pkg" referredVariable="/0/cppOwnerPackageIncludePath/pkg">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+            </argument>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".h">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:NullLiteralExp">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Template" name="CppClassAllIncludesDeclaration" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/CppClassAllIncludesDeclaration.1">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/23">
+    <ownedModuleElement xsi:type="mtl:Query" name="CppClassAllIncludes" visibility="Public" type="/3/Sequence(String)">
+      <parameter name="class">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+      </parameter>
+      <expression xsi:type="mtl:QueryInvocation" eType="/3/Sequence(String)" definition="/0/cppClassAllIncludes">
+        <argument xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/CppClassAllIncludes/class">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
         </argument>
         <argument xsi:type="mtl:QueryInvocation" eType="/3/Sequence(Classifier)">
           <definition href="../../../utils/ClassUtils.emtl#/0/includedClassifiers"/>
-          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/23">
+          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/9">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
           </argument>
         </argument>
-      </body>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="CppClassAllIncludesDeclarationBody" visibility="Public" type="/3/Sequence(String)">
       <parameter name="class">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
       </parameter>
-    </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Template" name="CppClassAllIncludesDeclarationBody" visibility="Public">
-      <body xsi:type="mtl:TemplateInvocation" definition="/0/CppClassAllIncludesDeclaration.1">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/28">
+      <expression xsi:type="mtl:QueryInvocation" eType="/3/Sequence(String)" definition="/0/cppClassAllIncludes">
+        <argument xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/CppClassAllIncludesDeclarationBody/class">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
         </argument>
         <argument xsi:type="mtl:QueryInvocation" eType="/3/Sequence(Classifier)">
           <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/getTypesViaDependencies"/>
-          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/28">
+          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/12">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
           </argument>
         </argument>
-      </body>
-      <parameter name="class">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-      </parameter>
+      </expression>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Template" name="CppClassAllIncludesDeclaration" visibility="Public">
-      <body xsi:type="mtl:ForBlock">
-        <body xsi:type="mtl:IfBlock">
-          <body xsi:type="mtl:IfBlock">
-            <body xsi:type="mtl:IfBlock">
-              <body xsi:type="mtl:TemplateInvocation" definition="/0/CppOwnerPackageIncludeDeclaration">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <argument xsi:type="ocl.ecore:OperationCallExp">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-                  <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
-                    <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/CppClassAllIncludesDeclaration.1/%/cl">
-                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                    </source>
-                    <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
-                  </source>
-                  <argument xsi:type="ocl.ecore:TypeExp" eType="/8/Package">
-                    <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-                  </argument>
-                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
-                </argument>
-              </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
-              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                <source xsi:type="ocl.ecore:OperationCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                  <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
-                    <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/CppClassAllIncludesDeclaration.1/%/cl">
-                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                    </source>
-                    <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
-                  </source>
-                  <argument xsi:type="ocl.ecore:NullLiteralExp">
-                    <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
-                  </argument>
-                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/%3C%3E"/>
-                </source>
-                <argument xsi:type="ocl.ecore:OperationCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                  <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
-                    <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/CppClassAllIncludesDeclaration.1/%/cl">
-                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                    </source>
-                    <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
-                  </source>
-                  <argument xsi:type="ocl.ecore:TypeExp" eType="/8/Package">
-                    <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-                  </argument>
-                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
-                </argument>
-                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
-              </ifExpr>
-            </body>
-            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <source xsi:type="ocl.ecore:OperationCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/36">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                </source>
-                <argument xsi:type="ocl.ecore:TypeExp" eType="/8/Enumeration">
-                  <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
-                </argument>
-                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
-              </source>
-              <argument xsi:type="ocl.ecore:OperationCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/36">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                </source>
-                <argument xsi:type="ocl.ecore:TypeExp" eType="/8/PrimitiveType">
-                  <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
-                </argument>
-                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
-              </argument>
-              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
-            </ifExpr>
-            <else>
-              <body xsi:type="mtl:TemplateInvocation">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="CppClassIncludeDeclaration.emtl#/0/CppClassIncludeDeclaration"/>
-                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/39">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                </argument>
-              </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
-            </else>
-          </body>
-          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-            <source xsi:type="ocl.ecore:OperationCallExp">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <source xsi:type="ocl.ecore:OperationCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/CppClassAllIncludesDeclaration.1/%/cl">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                </source>
-                <argument xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/CppClassAllIncludesDeclaration.1/class">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                </argument>
-                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/%3C%3E"/>
-              </source>
-              <argument xsi:type="ocl.ecore:OperationCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                <source xsi:type="mtl:QueryInvocation">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-                  <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/hasStereotype.1"/>
-                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/35">
-                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-                  </argument>
-                  <argument xsi:type="ocl.ecore:TypeExp" eType="/8/NoCodeGen">
-                    <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/papyrus/C_Cpp/1#//NoCodeGen"/>
-                  </argument>
-                </source>
-                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
-              </argument>
-              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
-            </source>
-            <argument xsi:type="mtl:QueryInvocation">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/hasStereotype.1"/>
-              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/35">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-              </argument>
-              <argument xsi:type="ocl.ecore:TypeExp" eType="/8/External">
-                <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/papyrus/C_Cpp/1#//External"/>
-              </argument>
-            </argument>
-            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
-          </ifExpr>
-        </body>
-        <loopVariable name="cl">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-        </loopVariable>
-        <iterSet xsi:type="ocl.ecore:VariableExp" name="list" eType="/3/Sequence(Classifier)" referredVariable="/0/CppClassAllIncludesDeclaration.1/list"/>
-      </body>
+    <ownedModuleElement xsi:type="mtl:Query" name="cppClassAllIncludes" type="/3/Sequence(String)">
       <parameter name="class">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
       </parameter>
       <parameter name="list" eType="/3/Sequence(Classifier)"/>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="reject" eType="/3/Sequence(OclAny)">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Sequence(OclAny)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(OclAny)">
+            <source xsi:type="ocl.ecore:VariableExp" name="list" eType="/3/Sequence(Classifier)" referredVariable="/0/cppClassAllIncludes/list"/>
+            <body xsi:type="ocl.ecore:IfExp">
+              <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+              <condition xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/cppClassAllIncludes/reject/%/collect/cl">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/cppClassAllIncludes/class">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/%3C%3E"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="mtl:QueryInvocation">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/hasStereotype.1"/>
+                      <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/15">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                      </argument>
+                      <argument xsi:type="ocl.ecore:TypeExp" eType="/5/NoCodeGen">
+                        <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/papyrus/C_Cpp/1#//NoCodeGen"/>
+                      </argument>
+                    </source>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+                </source>
+                <argument xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <definition href="platform:/plugin/org.eclipse.papyrus.acceleo/org/eclipse/papyrus/acceleo/GenUtils.emtl#/0/hasStereotype.1"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/15">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                  </argument>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/5/External">
+                    <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/papyrus/C_Cpp/1#//External"/>
+                  </argument>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+              </condition>
+              <thenExpression xsi:type="ocl.ecore:IfExp">
+                <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+                <condition xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/cppClassAllIncludes/reject/%/collect/cl">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/5/Enumeration">
+                      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/cppClassAllIncludes/reject/%/collect/cl">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/5/PrimitiveType">
+                      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                </condition>
+                <thenExpression xsi:type="ocl.ecore:IfExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <condition xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/cppClassAllIncludes/reject/%/collect/cl">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:NullLiteralExp">
+                        <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/%3C%3E"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/cppClassAllIncludes/reject/%/collect/cl">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:TypeExp" eType="/5/Package">
+                        <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+                  </condition>
+                  <thenExpression xsi:type="mtl:QueryInvocation" definition="/0/cppOwnerPackageIncludePath">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <argument xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/cppClassAllIncludes/reject/%/collect/cl">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/owner"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:TypeExp" eType="/5/Package">
+                        <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                    </argument>
+                  </thenExpression>
+                  <elseExpression xsi:type="ocl.ecore:NullLiteralExp">
+                    <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+                  </elseExpression>
+                </thenExpression>
+                <elseExpression xsi:type="mtl:QueryInvocation" eType="/3/Sequence(String)">
+                  <definition href="CppClassIncludeDeclaration.emtl#/0/cppClassIncludes"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="cl" referredVariable="/0/cppClassAllIncludes/reject/%/collect/cl">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                  </argument>
+                </elseExpression>
+              </thenExpression>
+              <elseExpression xsi:type="ocl.ecore:NullLiteralExp">
+                <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+              </elseExpression>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="cl">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+            </iterator>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/flatten"/>
+        </source>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="str" referredVariable="/0/cppClassAllIncludes/reject/str">
+            <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+          </source>
+          <argument xsi:type="ocl.ecore:NullLiteralExp">
+            <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="str">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </iterator>
+      </expression>
     </ownedModuleElement>
   </mtl:Module>
   <ecore:EPackage name="additions">
@@ -292,6 +285,13 @@
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
       </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -307,52 +307,39 @@
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
       </eAnnotations>
-      <eOperations name="CppClassIncludeClassDeclarationTemplate">
+      <eOperations name="cppOwnerPackageIncludePath">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/CppClassIncludeClassDeclarationTemplate"/>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="class">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-        </eParameters>
-      </eOperations>
-      <eOperations name="CppOwnerPackageIncludeDeclaration">
-        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-          <contents xsi:type="ocl.ecore:Constraint"/>
-        </eAnnotations>
-        <eAnnotations source="MTL" references="/0/CppOwnerPackageIncludeDeclaration"/>
+        <eAnnotations source="MTL" references="/0/cppOwnerPackageIncludePath"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="pkg">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
         </eParameters>
       </eOperations>
-      <eOperations name="CppClassAllIncludesDeclaration">
+      <eOperations name="CppClassAllIncludes" eType="/3/Sequence(String)">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/CppClassAllIncludesDeclaration"/>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eAnnotations source="MTL" references="/0/CppClassAllIncludes"/>
         <eParameters name="class">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
         </eParameters>
       </eOperations>
-      <eOperations name="CppClassAllIncludesDeclarationBody">
+      <eOperations name="CppClassAllIncludesDeclarationBody" eType="/3/Sequence(String)">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL" references="/0/CppClassAllIncludesDeclarationBody"/>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="class">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
         </eParameters>
       </eOperations>
-      <eOperations name="CppClassAllIncludesDeclaration">
+      <eOperations name="cppClassAllIncludes" eType="/3/Sequence(String)">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/CppClassAllIncludesDeclaration.1"/>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eAnnotations source="MTL" references="/0/cppClassAllIncludes"/>
         <eParameters name="class">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
         </eParameters>
@@ -397,30 +384,6 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </eParameters>
       </eOperations>
-      <eOperations name="openNS">
-        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-          <contents xsi:type="ocl.ecore:Constraint"/>
-        </eAnnotations>
-        <eAnnotations source="MTL">
-          <references href="../../../utils/CppGenUtils.emtl#/0/openNS"/>
-        </eAnnotations>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="arg0">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
-        </eParameters>
-      </eOperations>
-      <eOperations name="closeNS">
-        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-          <contents xsi:type="ocl.ecore:Constraint"/>
-        </eAnnotations>
-        <eAnnotations source="MTL">
-          <references href="../../../utils/CppGenUtils.emtl#/0/closeNS"/>
-        </eAnnotations>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="arg0">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
-        </eParameters>
-      </eOperations>
       <eOperations name="includedClassifiers">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
@@ -433,14 +396,14 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
         </eParameters>
       </eOperations>
-      <eOperations name="CppClassIncludeDeclaration">
+      <eOperations name="cppClassIncludes">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="CppClassIncludeDeclaration.emtl#/0/CppClassIncludeDeclaration"/>
+          <references href="CppClassIncludeDeclaration.emtl#/0/cppClassIncludes"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="CppClassIncludeDeclaration.emtl#/3/Sequence(String)"/>
         <eParameters name="ne">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
         </eParameters>
@@ -466,11 +429,6 @@
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Class_Class">
-      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      </eAnnotations>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Package_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
@@ -479,6 +437,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Class_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TemplateParameter_Class">
@@ -526,26 +489,20 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(String)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Classifier)" instanceClassName="java.util.List">
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(OclAny)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+    </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
   </ocl.ecore:Variable>
   <ecore:EPackage name="types">
-    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Template">
-      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/papyrus/C_Cpp/1#//Template"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="CppRoot">
       <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/papyrus/C_Cpp/1#//CppRoot"/>
     </eClassifiers>
@@ -566,43 +523,10 @@
     </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
@@ -617,12 +541,6 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
@@ -632,511 +550,436 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="i">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
-    <eAnnotations source="positions.0" references="/0/%">
-      <details key="start" value="404"/>
-      <details key="end" value="423"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.1" references="/0/CppClassIncludeClassDeclarationTemplate">
-      <details key="start" value="424"/>
-      <details key="end" value="605"/>
+    <eAnnotations source="positions.0" references="/0/cppOwnerPackageIncludePath">
+      <details key="start" value="476"/>
+      <details key="end" value="662"/>
       <details key="line" value="8"/>
     </eAnnotations>
-    <eAnnotations source="positions.2" references="/0/CppClassIncludeClassDeclarationTemplate/%">
-      <details key="start" value="498"/>
-      <details key="end" value="506"/>
+    <eAnnotations source="positions.1" references="/0/cppOwnerPackageIncludePath/pkg">
+      <details key="start" value="517"/>
+      <details key="end" value="530"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/cppOwnerPackageIncludePath/%">
+      <details key="start" value="543"/>
+      <details key="end" value="659"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.3" references="/0/CppClassIncludeClassDeclarationTemplate/%/self">
+    <eAnnotations source="positions.3" references="/0/cppOwnerPackageIncludePath/%/%">
+      <details key="start" value="546"/>
+      <details key="end" value="594"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/cppOwnerPackageIncludePath/%/%/%">
+      <details key="start" value="547"/>
+      <details key="end" value="560"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/cppOwnerPackageIncludePath/%/%/%/pkg">
+      <details key="start" value="548"/>
+      <details key="end" value="551"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/cppOwnerPackageIncludePath/%/%/%/%">
+      <details key="start" value="555"/>
+      <details key="end" value="559"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/cppOwnerPackageIncludePath/%/%/%.1">
+      <details key="start" value="565"/>
+      <details key="end" value="593"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/cppOwnerPackageIncludePath/%/%/%.1/%">
+      <details key="start" value="570"/>
+      <details key="end" value="592"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/cppOwnerPackageIncludePath/%/%/%.1/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.4" references="/0/CppClassIncludeClassDeclarationTemplate/%.1">
-      <details key="start" value="508"/>
-      <details key="end" value="509"/>
-      <details key="line" value="10"/>
-    </eAnnotations>
-    <eAnnotations source="positions.5" references="/0/CppClassIncludeClassDeclarationTemplate/%.2">
-      <details key="start" value="509"/>
-      <details key="end" value="560"/>
-      <details key="line" value="10"/>
-    </eAnnotations>
-    <eAnnotations source="positions.6" references="/0/CppClassIncludeClassDeclarationTemplate/%.2/%">
-      <details key="start" value="546"/>
-      <details key="end" value="555"/>
-      <details key="line" value="10"/>
-    </eAnnotations>
-    <eAnnotations source="positions.7" references="/0/CppClassIncludeClassDeclarationTemplate/%.2/%.1">
-      <details key="start" value="513"/>
-      <details key="end" value="545"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.8" references="/0/CppClassIncludeClassDeclarationTemplate/%.2/%.1/class">
-      <details key="start" value="528"/>
-      <details key="end" value="533"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.9" references="/0/CppClassIncludeClassDeclarationTemplate/%.2/%.1/%">
-      <details key="start" value="535"/>
-      <details key="end" value="543"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.10" references="/0/CppClassIncludeClassDeclarationTemplate/%.3">
-      <details key="start" value="560"/>
-      <details key="end" value="566"/>
-      <details key="line" value="10"/>
-    </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/CppClassIncludeClassDeclarationTemplate/%.4">
-      <details key="start" value="567"/>
-      <details key="end" value="577"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/CppClassIncludeClassDeclarationTemplate/%.4/class">
-      <details key="start" value="567"/>
-      <details key="end" value="572"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/CppClassIncludeClassDeclarationTemplate/%.5">
-      <details key="start" value="579"/>
-      <details key="end" value="581"/>
-      <details key="line" value="10"/>
-    </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/CppClassIncludeClassDeclarationTemplate/%.6">
-      <details key="start" value="582"/>
+    <eAnnotations source="positions.10" references="/0/cppOwnerPackageIncludePath/%/%/%.1/%/%">
+      <details key="start" value="584"/>
       <details key="end" value="591"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.15" references="/0/CppClassIncludeClassDeclarationTemplate/%.6/self">
+    <eAnnotations source="positions.11" references="/0/cppOwnerPackageIncludePath/%/%.1">
+      <details key="start" value="601"/>
+      <details key="end" value="642"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/cppOwnerPackageIncludePath/%/%.1/%">
+      <details key="start" value="601"/>
+      <details key="end" value="635"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/cppOwnerPackageIncludePath/%/%.1/%/%">
+      <details key="start" value="601"/>
+      <details key="end" value="624"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/cppOwnerPackageIncludePath/%/%.1/%/%/%">
+      <details key="start" value="601"/>
+      <details key="end" value="614"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/cppOwnerPackageIncludePath/%/%.1/%/%/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/CppClassIncludeClassDeclarationTemplate/class">
-      <details key="start" value="481"/>
-      <details key="end" value="494"/>
-      <details key="line" value="8"/>
-    </eAnnotations>
-    <eAnnotations source="positions.17" references="/0/CppOwnerPackageIncludeDeclaration">
-      <details key="start" value="608"/>
-      <details key="end" value="915"/>
-      <details key="line" value="15"/>
-    </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/CppOwnerPackageIncludeDeclaration/%">
-      <details key="start" value="734"/>
-      <details key="end" value="902"/>
-      <details key="line" value="17"/>
-    </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/CppOwnerPackageIncludeDeclaration/%/%">
-      <details key="start" value="788"/>
-      <details key="end" value="861"/>
-      <details key="line" value="18"/>
-    </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/CppOwnerPackageIncludeDeclaration/%/%.1">
-      <details key="start" value="862"/>
-      <details key="end" value="875"/>
+    <eAnnotations source="positions.16" references="/0/cppOwnerPackageIncludePath/%/%.1/%/%/%.1">
+      <details key="start" value="617"/>
+      <details key="end" value="624"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.21" references="/0/CppOwnerPackageIncludeDeclaration/%/%.1/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.17" references="/0/cppOwnerPackageIncludePath/%/%.1/%/%.1">
+      <details key="start" value="627"/>
+      <details key="end" value="635"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.22" references="/0/CppOwnerPackageIncludeDeclaration/%/%.2">
-      <details key="start" value="877"/>
-      <details key="end" value="882"/>
-      <details key="line" value="19"/>
-    </eAnnotations>
-    <eAnnotations source="positions.23" references="/0/CppOwnerPackageIncludeDeclaration/%/%.3">
-      <details key="start" value="883"/>
-      <details key="end" value="891"/>
+    <eAnnotations source="positions.18" references="/0/cppOwnerPackageIncludePath/%/%.1/%/%.1/pkg">
+      <details key="start" value="627"/>
+      <details key="end" value="630"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/CppOwnerPackageIncludeDeclaration/%/%.3/pkg">
-      <details key="start" value="883"/>
-      <details key="end" value="886"/>
+    <eAnnotations source="positions.19" references="/0/cppOwnerPackageIncludePath/%/%.1/%.1">
+      <details key="start" value="638"/>
+      <details key="end" value="642"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/CppOwnerPackageIncludeDeclaration/%/%.4">
-      <details key="start" value="893"/>
-      <details key="end" value="897"/>
-      <details key="line" value="19"/>
-    </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/CppOwnerPackageIncludeDeclaration/%/%.5">
-      <details key="start" value="738"/>
-      <details key="end" value="786"/>
+    <eAnnotations source="positions.20" references="/0/cppOwnerPackageIncludePath/%/%.2">
+      <details key="start" value="649"/>
+      <details key="end" value="653"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/CppOwnerPackageIncludeDeclaration/%/%.5/%">
-      <details key="start" value="739"/>
-      <details key="end" value="752"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.21" references="/0/CppClassAllIncludes">
+      <details key="start" value="664"/>
+      <details key="end" value="794"/>
+      <details key="line" value="16"/>
     </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/CppOwnerPackageIncludeDeclaration/%/%.5/%/pkg">
+    <eAnnotations source="positions.22" references="/0/CppClassAllIncludes/class">
+      <details key="start" value="698"/>
+      <details key="end" value="716"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/CppClassAllIncludes/%">
       <details key="start" value="740"/>
-      <details key="end" value="743"/>
+      <details key="end" value="791"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/CppOwnerPackageIncludeDeclaration/%/%.5/%/%">
-      <details key="start" value="747"/>
-      <details key="end" value="751"/>
+    <eAnnotations source="positions.24" references="/0/CppClassAllIncludes/%/class">
+      <details key="start" value="761"/>
+      <details key="end" value="766"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/CppOwnerPackageIncludeDeclaration/%/%.5/%.1">
-      <details key="start" value="757"/>
-      <details key="end" value="785"/>
+    <eAnnotations source="positions.25" references="/0/CppClassAllIncludes/%/%">
+      <details key="start" value="768"/>
+      <details key="end" value="789"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/CppOwnerPackageIncludeDeclaration/%/%.5/%.1/%">
-      <details key="start" value="762"/>
-      <details key="end" value="784"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/CppOwnerPackageIncludeDeclaration/%/%.5/%.1/%/self">
+    <eAnnotations source="positions.26" references="/0/CppClassAllIncludes/%/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/CppOwnerPackageIncludeDeclaration/%/%.5/%.1/%/%">
-      <details key="start" value="776"/>
-      <details key="end" value="783"/>
+    <eAnnotations source="positions.27" references="/0/CppClassAllIncludesDeclarationBody">
+      <details key="start" value="796"/>
+      <details key="end" value="945"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/CppClassAllIncludesDeclarationBody/class">
+      <details key="start" value="845"/>
+      <details key="end" value="863"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/CppClassAllIncludesDeclarationBody/%">
+      <details key="start" value="887"/>
+      <details key="end" value="942"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/CppOwnerPackageIncludeDeclaration/pkg">
-      <details key="start" value="659"/>
-      <details key="end" value="672"/>
-      <details key="line" value="15"/>
+    <eAnnotations source="positions.30" references="/0/CppClassAllIncludesDeclarationBody/%/class">
+      <details key="start" value="908"/>
+      <details key="end" value="913"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/CppClassAllIncludesDeclaration">
-      <details key="start" value="918"/>
-      <details key="end" value="1055"/>
+    <eAnnotations source="positions.31" references="/0/CppClassAllIncludesDeclarationBody/%/%">
+      <details key="start" value="915"/>
+      <details key="end" value="940"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/CppClassAllIncludesDeclarationBody/%/%/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/cppClassAllIncludes">
+      <details key="start" value="947"/>
+      <details key="end" value="1484"/>
       <details key="line" value="24"/>
     </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/CppClassAllIncludesDeclaration/%">
-      <details key="start" value="988"/>
-      <details key="end" value="1041"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/CppClassAllIncludesDeclaration/%/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/CppClassAllIncludesDeclaration/%/%">
-      <details key="start" value="1019"/>
-      <details key="end" value="1040"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.39" references="/0/CppClassAllIncludesDeclaration/%/%/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.40" references="/0/CppClassAllIncludesDeclaration/class">
-      <details key="start" value="966"/>
-      <details key="end" value="984"/>
+    <eAnnotations source="positions.34" references="/0/cppClassAllIncludes/class">
+      <details key="start" value="982"/>
+      <details key="end" value="1000"/>
       <details key="line" value="24"/>
     </eAnnotations>
-    <eAnnotations source="positions.41" references="/0/CppClassAllIncludesDeclarationBody">
-      <details key="start" value="1057"/>
-      <details key="end" value="1202"/>
-      <details key="line" value="28"/>
+    <eAnnotations source="positions.35" references="/0/cppClassAllIncludes/list">
+      <details key="start" value="1002"/>
+      <details key="end" value="1029"/>
+      <details key="line" value="24"/>
     </eAnnotations>
-    <eAnnotations source="positions.42" references="/0/CppClassAllIncludesDeclarationBody/%">
-      <details key="start" value="1131"/>
-      <details key="end" value="1188"/>
+    <eAnnotations source="positions.36" references="/0/cppClassAllIncludes/reject">
+      <details key="start" value="1052"/>
+      <details key="end" value="1481"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.43" references="/0/CppClassAllIncludesDeclarationBody/%/self">
+    <eAnnotations source="positions.37" references="/0/cppClassAllIncludes/reject/%">
+      <details key="start" value="1052"/>
+      <details key="end" value="1453"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/cppClassAllIncludes/reject/%/collect">
+      <details key="start" value="1052"/>
+      <details key="end" value="1442"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/cppClassAllIncludes/reject/%/collect/list">
+      <details key="start" value="1052"/>
+      <details key="end" value="1056"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/cppClassAllIncludes/reject/%/collect/%">
+      <details key="start" value="1073"/>
+      <details key="end" value="1440"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/cppClassAllIncludes/reject/%/collect/%/%">
+      <details key="start" value="1075"/>
+      <details key="end" value="1152"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%">
+      <details key="start" value="1076"/>
+      <details key="end" value="1124"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%/%">
+      <details key="start" value="1076"/>
+      <details key="end" value="1089"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%/%/cl">
+      <details key="start" value="1077"/>
+      <details key="end" value="1079"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%/%/class">
+      <details key="start" value="1083"/>
+      <details key="end" value="1088"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%/%.1">
+      <details key="start" value="1094"/>
+      <details key="end" value="1124"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%/%.1/%">
+      <details key="start" value="1099"/>
+      <details key="end" value="1123"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%/%.1/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.44" references="/0/CppClassAllIncludesDeclarationBody/%/%">
+    <eAnnotations source="positions.49" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%/%.1/%/%">
+      <details key="start" value="1113"/>
+      <details key="end" value="1122"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%.1">
+      <details key="start" value="1128"/>
+      <details key="end" value="1151"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%.1/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/cppClassAllIncludes/reject/%/collect/%/%/%.1/%">
+      <details key="start" value="1142"/>
+      <details key="end" value="1150"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1">
+      <details key="start" value="1160"/>
+      <details key="end" value="1420"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%">
       <details key="start" value="1162"/>
-      <details key="end" value="1187"/>
+      <details key="end" value="1224"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.45" references="/0/CppClassAllIncludesDeclarationBody/%/%/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.55" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%/%">
+      <details key="start" value="1163"/>
+      <details key="end" value="1190"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.46" references="/0/CppClassAllIncludesDeclarationBody/class">
-      <details key="start" value="1109"/>
-      <details key="end" value="1127"/>
-      <details key="line" value="28"/>
-    </eAnnotations>
-    <eAnnotations source="positions.47" references="/0/CppClassAllIncludesDeclaration.1">
-      <details key="start" value="1204"/>
-      <details key="end" value="2122"/>
-      <details key="line" value="32"/>
-    </eAnnotations>
-    <eAnnotations source="positions.48" references="/0/CppClassAllIncludesDeclaration.1/%">
-      <details key="start" value="1303"/>
-      <details key="end" value="2110"/>
-      <details key="line" value="33"/>
-    </eAnnotations>
-    <eAnnotations source="positions.49" references="/0/CppClassAllIncludesDeclaration.1/%/%">
-      <details key="start" value="1498"/>
-      <details key="end" value="2103"/>
-      <details key="line" value="36"/>
-    </eAnnotations>
-    <eAnnotations source="positions.50" references="/0/CppClassAllIncludesDeclaration.1/%/%/%">
-      <details key="start" value="1582"/>
-      <details key="end" value="2096"/>
-      <details key="line" value="37"/>
-    </eAnnotations>
-    <eAnnotations source="positions.51" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%">
-      <details key="start" value="1855"/>
-      <details key="end" value="1988"/>
-      <details key="line" value="40"/>
-    </eAnnotations>
-    <eAnnotations source="positions.52" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%">
-      <details key="start" value="1914"/>
-      <details key="end" value="1977"/>
+    <eAnnotations source="positions.56" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%/%/cl">
+      <details key="start" value="1163"/>
+      <details key="end" value="1165"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.53" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%/%">
-      <details key="start" value="1914"/>
-      <details key="end" value="1941"/>
+    <eAnnotations source="positions.57" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%/%/%">
+      <details key="start" value="1178"/>
+      <details key="end" value="1189"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.54" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%/%/%">
-      <details key="start" value="1914"/>
-      <details key="end" value="1922"/>
+    <eAnnotations source="positions.58" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%/%.1">
+      <details key="start" value="1194"/>
+      <details key="end" value="1223"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.55" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%/%/%/cl">
-      <details key="start" value="1914"/>
-      <details key="end" value="1916"/>
+    <eAnnotations source="positions.59" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%/%.1/cl">
+      <details key="start" value="1194"/>
+      <details key="end" value="1196"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.56" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%/%/%.1">
-      <details key="start" value="1933"/>
-      <details key="end" value="1940"/>
+    <eAnnotations source="positions.60" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%/%.1/%">
+      <details key="start" value="1209"/>
+      <details key="end" value="1222"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.57" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.1">
-      <details key="start" value="1979"/>
-      <details key="end" value="1980"/>
-      <details key="line" value="42"/>
-    </eAnnotations>
-    <eAnnotations source="positions.58" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2">
-      <details key="start" value="1859"/>
-      <details key="end" value="1911"/>
+    <eAnnotations source="positions.61" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1">
+      <details key="start" value="1233"/>
+      <details key="end" value="1380"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.59" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2/%">
-      <details key="start" value="1860"/>
-      <details key="end" value="1876"/>
+    <eAnnotations source="positions.62" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%">
+      <details key="start" value="1236"/>
+      <details key="end" value="1288"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.60" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2/%/%">
-      <details key="start" value="1860"/>
-      <details key="end" value="1868"/>
+    <eAnnotations source="positions.63" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%/%">
+      <details key="start" value="1237"/>
+      <details key="end" value="1253"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.61" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2/%/%/cl">
-      <details key="start" value="1860"/>
-      <details key="end" value="1862"/>
+    <eAnnotations source="positions.64" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%/%/%">
+      <details key="start" value="1237"/>
+      <details key="end" value="1245"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.62" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2/%/%.1">
-      <details key="start" value="1872"/>
-      <details key="end" value="1876"/>
+    <eAnnotations source="positions.65" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%/%/%/cl">
+      <details key="start" value="1237"/>
+      <details key="end" value="1239"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.63" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2/%.1">
-      <details key="start" value="1881"/>
-      <details key="end" value="1910"/>
+    <eAnnotations source="positions.66" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%/%/%.1">
+      <details key="start" value="1249"/>
+      <details key="end" value="1253"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.64" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2/%.1/%">
-      <details key="start" value="1881"/>
-      <details key="end" value="1889"/>
+    <eAnnotations source="positions.67" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%/%.1">
+      <details key="start" value="1258"/>
+      <details key="end" value="1287"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.65" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2/%.1/%/cl">
-      <details key="start" value="1881"/>
-      <details key="end" value="1883"/>
+    <eAnnotations source="positions.68" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%/%.1/%">
+      <details key="start" value="1258"/>
+      <details key="end" value="1266"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.66" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%/%.2/%.1/%.1">
-      <details key="start" value="1902"/>
-      <details key="end" value="1909"/>
+    <eAnnotations source="positions.69" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%/%.1/%/cl">
+      <details key="start" value="1258"/>
+      <details key="end" value="1260"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.67" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.1">
-      <details key="start" value="1585"/>
-      <details key="end" value="1641"/>
+    <eAnnotations source="positions.70" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%/%.1/%.1">
+      <details key="start" value="1279"/>
+      <details key="end" value="1286"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.68" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.1/%">
-      <details key="start" value="1586"/>
-      <details key="end" value="1610"/>
+    <eAnnotations source="positions.71" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%.1">
+      <details key="start" value="1298"/>
+      <details key="end" value="1354"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.69" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.1/%/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.72" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%.1/%">
+      <details key="start" value="1298"/>
+      <details key="end" value="1325"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.70" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.1/%/%">
-      <details key="start" value="1598"/>
-      <details key="end" value="1609"/>
+    <eAnnotations source="positions.73" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%.1/%/%">
+      <details key="start" value="1298"/>
+      <details key="end" value="1306"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.71" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.1/%.1">
-      <details key="start" value="1614"/>
-      <details key="end" value="1640"/>
+    <eAnnotations source="positions.74" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%.1/%/%/cl">
+      <details key="start" value="1298"/>
+      <details key="end" value="1300"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.72" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.1/%.1/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.73" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.1/%.1/%">
-      <details key="start" value="1626"/>
-      <details key="end" value="1639"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.74" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.2">
-      <details key="start" value="1991"/>
-      <details key="end" value="2091"/>
-      <details key="line" value="43"/>
-    </eAnnotations>
-    <eAnnotations source="positions.75" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.2/%">
-      <details key="start" value="2058"/>
-      <details key="end" value="2086"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.76" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.2/%/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.77" references="/0/CppClassAllIncludesDeclaration.1/%/%/%/%.2/%.1">
-      <details key="start" value="2088"/>
-      <details key="end" value="2089"/>
-      <details key="line" value="46"/>
-    </eAnnotations>
-    <eAnnotations source="positions.78" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1">
-      <details key="start" value="1501"/>
-      <details key="end" value="1578"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.79" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%">
-      <details key="start" value="1502"/>
-      <details key="end" value="1550"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.80" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%/%">
-      <details key="start" value="1502"/>
-      <details key="end" value="1515"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.81" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%/%/cl">
-      <details key="start" value="1503"/>
-      <details key="end" value="1505"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.82" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%/%/class">
-      <details key="start" value="1509"/>
-      <details key="end" value="1514"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.83" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%/%.1">
-      <details key="start" value="1520"/>
-      <details key="end" value="1550"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.84" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%/%.1/%">
-      <details key="start" value="1525"/>
-      <details key="end" value="1549"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.85" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%/%.1/%/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.86" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%/%.1/%/%">
-      <details key="start" value="1539"/>
-      <details key="end" value="1548"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.87" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%.1">
-      <details key="start" value="1554"/>
-      <details key="end" value="1577"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.88" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%.1/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.89" references="/0/CppClassAllIncludesDeclaration.1/%/%/%.1/%.1/%">
-      <details key="start" value="1568"/>
-      <details key="end" value="1576"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.90" references="/0/CppClassAllIncludesDeclaration.1/%/cl">
-      <details key="start" value="1309"/>
+    <eAnnotations source="positions.75" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%.1/%/%.1">
+      <details key="start" value="1317"/>
       <details key="end" value="1324"/>
-      <details key="line" value="33"/>
-    </eAnnotations>
-    <eAnnotations source="positions.91" references="/0/CppClassAllIncludesDeclaration.1/%/list">
-      <details key="start" value="1327"/>
-      <details key="end" value="1331"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.92" references="/0/CppClassAllIncludesDeclaration.1/class">
-      <details key="start" value="1252"/>
-      <details key="end" value="1270"/>
-      <details key="line" value="32"/>
+    <eAnnotations source="positions.76" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.1/%.2">
+      <details key="start" value="1367"/>
+      <details key="end" value="1371"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.93" references="/0/CppClassAllIncludesDeclaration.1/list">
-      <details key="start" value="1272"/>
-      <details key="end" value="1299"/>
-      <details key="line" value="32"/>
+    <eAnnotations source="positions.77" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.2">
+      <details key="start" value="1391"/>
+      <details key="end" value="1412"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/cppClassAllIncludes/reject/%/collect/%/%.1/%.2/cl">
+      <details key="start" value="1391"/>
+      <details key="end" value="1393"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/cppClassAllIncludes/reject/%/collect/%/%.2">
+      <details key="start" value="1429"/>
+      <details key="end" value="1433"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/cppClassAllIncludes/reject/%/collect/cl">
+      <details key="start" value="1067"/>
+      <details key="end" value="1069"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/cppClassAllIncludes/reject/%.1">
+      <details key="start" value="1469"/>
+      <details key="end" value="1479"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/cppClassAllIncludes/reject/%.1/str">
+      <details key="start" value="1469"/>
+      <details key="end" value="1472"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/cppClassAllIncludes/reject/%.1/%">
+      <details key="start" value="1475"/>
+      <details key="end" value="1479"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/cppClassAllIncludes/reject/str">
+      <details key="start" value="1463"/>
+      <details key="end" value="1466"/>
+      <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>
