@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,10 +9,15 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add SelectOutputPage
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.wizard;
 
+import java.util.List;
+
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.papyrus.customization.properties.generation.extensionpoint.GeneratorExtensionPoint;
 import org.eclipse.papyrus.customization.properties.generation.generators.IGenerator;
 import org.eclipse.papyrus.customization.properties.generation.messages.Messages;
 import org.eclipse.swt.SWT;
@@ -35,11 +40,26 @@ public class CreateContextMainPage extends AbstractCreateContextPage implements 
 
 	private CCombo combo;
 
+	private final List<IGenerator> generators;
+
 	/**
 	 * Constructor
 	 */
 	public CreateContextMainPage() {
 		super(Messages.CreateContextMainPage_title);
+
+		generators = new GeneratorExtensionPoint().getGenerators();
+	}
+
+	@Override
+	public void dispose() {
+		try {
+			for(IGenerator next : generators) {
+				next.dispose();
+			}
+		} finally {
+			super.dispose();
+		}
 	}
 
 	public void createControl(Composite parent) {
@@ -47,7 +67,7 @@ public class CreateContextMainPage extends AbstractCreateContextPage implements 
 		root.setLayout(new GridLayout(1, false));
 
 		combo = new CCombo(root, SWT.BORDER);
-		for(IGenerator generator : CreateContextWizard.contextGenerators) {
+		for(IGenerator generator : generators) {
 			combo.add(generator.getName());
 		}
 		combo.setEditable(false);
@@ -63,8 +83,8 @@ public class CreateContextMainPage extends AbstractCreateContextPage implements 
 	@Override
 	public IWizardPage getNextPage() {
 		int selection = combo.getSelectionIndex();
-		getWizard().setGenerator(CreateContextWizard.contextGenerators.get(selection));
-//		getWizard().generatorPage.clearTarget();
+		getWizard().setGenerator(generators.get(selection));
+		//		getWizard().generatorPage.clearTarget();
 		return getWizard().generatorPage;
 	}
 

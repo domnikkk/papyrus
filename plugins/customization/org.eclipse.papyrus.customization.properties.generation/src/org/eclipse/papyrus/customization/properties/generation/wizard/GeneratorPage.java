@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,8 +9,12 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Strategy improvement of generated files
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.wizard;
+
+import java.util.List;
 
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.DataBindingContext;
@@ -23,6 +27,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.databinding.wizard.WizardPageSupport;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.papyrus.customization.properties.generation.extensionpoint.LayoutExtensionPoint;
 import org.eclipse.papyrus.customization.properties.generation.generators.IGenerator;
 import org.eclipse.papyrus.customization.properties.generation.layout.ILayoutGenerator;
 import org.eclipse.papyrus.customization.properties.generation.messages.Messages;
@@ -49,6 +54,8 @@ import org.eclipse.swt.widgets.Listener;
  */
 public class GeneratorPage extends AbstractCreateContextPage implements Listener {
 
+	private final List<ILayoutGenerator> layoutGenerators;
+	
 	protected IGenerator generator;
 
 	private Composite root, generatorControl;
@@ -85,6 +92,8 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		ctx = new DataBindingContext();
 		srcFieldStrategy = new UpdateValueStrategy();
 		targetFieldStrategy = new UpdateValueStrategy();
+		
+		layoutGenerators = new LayoutExtensionPoint().getGenerators();
 	}
 
 	/**
@@ -140,7 +149,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 		layoutCombo.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		layoutCombo.setEditable(false);
 		layoutCombo.setBackground(new Color(layoutCombo.getDisplay(), 255, 255, 255));
-		for(ILayoutGenerator layoutGenerator : CreateContextWizard.layoutGenerators) {
+		for(ILayoutGenerator layoutGenerator : layoutGenerators) {
 			layoutCombo.add(layoutGenerator.getName());
 		}
 		layoutCombo.select(0);
@@ -248,7 +257,7 @@ public class GeneratorPage extends AbstractCreateContextPage implements Listener
 	@Override
 	public IWizardPage getNextPage() {
 		int selection = layoutCombo.getSelectionIndex();
-		getWizard().layoutGenerator = CreateContextWizard.layoutGenerators.get(selection);
+		getWizard().layoutGenerator = layoutGenerators.get(selection);
 		oldURI = URI.createPlatformResourceURI(targetFileChooser.getFilePath(), true);
 
 		return super.getNextPage();

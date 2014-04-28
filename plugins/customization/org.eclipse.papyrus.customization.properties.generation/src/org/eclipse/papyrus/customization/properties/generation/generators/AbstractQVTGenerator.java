@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,11 +9,15 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Strategy improvement of generated files
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.generators;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -35,6 +39,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.papyrus.customization.properties.generation.Activator;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.views.properties.contexts.Context;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
@@ -61,6 +66,8 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	private Set<Listener> listeners = new HashSet<Listener>();
 
 	private int strategy;
+	
+	private Collection<ResourceSet> scratchResourceSets;
 
 	public List<Context> generate(List<URI> targetURI) {
 
@@ -80,7 +87,14 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 		return generatedContexts;
 	}
 
-
+	public void dispose() {
+		if(scratchResourceSets != null) {
+			for(ResourceSet next : scratchResourceSets) {
+				EMFHelper.unload(next);
+			}
+			scratchResourceSets = null;
+		}
+	}
 
 
 
@@ -118,6 +132,11 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	 */
 	protected EObject loadEMFModel(URI uri) throws IOException {
 		ResourceSet resourceSet = new ResourceSetImpl();
+		if(scratchResourceSets == null) {
+			scratchResourceSets = new ArrayList<ResourceSet>();
+		}
+		scratchResourceSets.add(resourceSet);
+
 		try {
 			Resource resource = resourceSet.getResource(uri, true);
 			if(resource != null) {

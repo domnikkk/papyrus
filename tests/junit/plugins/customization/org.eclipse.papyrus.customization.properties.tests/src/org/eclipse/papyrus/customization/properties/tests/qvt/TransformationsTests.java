@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.tests.qvt;
 
@@ -40,6 +42,7 @@ import org.eclipse.papyrus.views.properties.root.PropertiesRoot;
 import org.eclipse.papyrus.views.properties.runtime.ConfigurationManager;
 import org.eclipse.papyrus.views.properties.ui.CompositeWidget;
 import org.eclipse.uml2.uml.Profile;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -59,6 +62,8 @@ public class TransformationsTests extends AbstractPapyrusTest {
 
 	private static IProject targetProject;
 
+	private IGenerator generator;
+	
 	@BeforeClass
 	public static void init() throws CoreException {
 		targetProject = ProjectUtils.createProject(Activator.PLUGIN_ID + ".testProject");
@@ -70,6 +75,14 @@ public class TransformationsTests extends AbstractPapyrusTest {
 		targetProject.delete(true, new NullProgressMonitor());
 	}
 
+	@After
+	public void disposeFixture() {
+		if(generator != null) {
+			generator.dispose();
+			generator = null;
+		}
+	}
+	
 	@Test
 	public void handleXWTFileFromResource() {
 		//From an XWT Resource
@@ -113,7 +126,7 @@ public class TransformationsTests extends AbstractPapyrusTest {
 	public void generateEcoreContext() {
 		final URI packageURI = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/Sample.ecore", false);
 
-		IGenerator generator = new EcoreGenerator() {
+		generator = new EcoreGenerator() {
 
 			//FIXME: The EcoreGenerator is currently not built to be used programmatically; we need to override it to test it.
 
@@ -174,7 +187,7 @@ public class TransformationsTests extends AbstractPapyrusTest {
 
 		//FIXME: The ProfileGenerator is currently not built to be used programmatically; we need to override it to test it.
 
-		IGenerator generator = new ProfileGenerator() {
+		generator = new ProfileGenerator() {
 
 			@Override
 			protected List<ModelExtent> getModelExtents() {

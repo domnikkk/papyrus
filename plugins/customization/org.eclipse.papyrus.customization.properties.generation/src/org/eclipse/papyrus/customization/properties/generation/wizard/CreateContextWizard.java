@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.wizard;
 
@@ -64,16 +66,6 @@ public class CreateContextWizard extends Wizard implements INewWizard {
 	//protected LayoutPage layout;
 
 	protected SelectFieldsPage selectFieldsPage;
-
-	/**
-	 * All available context generators
-	 */
-	protected static List<IGenerator> contextGenerators = new LinkedList<IGenerator>();
-
-	/**
-	 * All available layout generators
-	 */
-	protected static List<ILayoutGenerator> layoutGenerators = new LinkedList<ILayoutGenerator>();
 
 	/**
 	 * The generated contexts
@@ -314,26 +306,6 @@ public class CreateContextWizard extends Wizard implements INewWizard {
 		if(!contexts.isEmpty()) {
 			this.contexts = contexts;
 		}
-	}
-
-	/**
-	 * Registers a new context Generator for the CreateContextWizard
-	 * 
-	 * @param generator
-	 *        The IGenerator to register
-	 */
-	public static void addGenerator(IGenerator generator) {
-		contextGenerators.add(generator);
-	}
-
-	/**
-	 * Registers a new Layout Generator for the CreateContextWizard
-	 * 
-	 * @param generator
-	 *        The ILayoutGenerator to register
-	 */
-	public static void addLayoutGenerator(ILayoutGenerator generator) {
-		layoutGenerators.add(generator);
 	}
 
 }

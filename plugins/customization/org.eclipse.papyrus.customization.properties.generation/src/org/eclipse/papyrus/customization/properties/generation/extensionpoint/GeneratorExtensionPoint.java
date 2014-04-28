@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,14 +8,19 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.extensionpoint;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.papyrus.customization.properties.generation.Activator;
 import org.eclipse.papyrus.customization.properties.generation.generators.IGenerator;
-import org.eclipse.papyrus.customization.properties.generation.wizard.CreateContextWizard;
 import org.eclipse.papyrus.infra.tools.util.ClassLoaderHelper;
 
 /**
@@ -28,6 +33,8 @@ public class GeneratorExtensionPoint {
 
 	private final String EXTENSION_ID = "org.eclipse.papyrus.customization.properties.generation.generator"; //$NON-NLS-1$
 
+	private final List<IGenerator> generators;
+
 	/**
 	 * Constructor.
 	 */
@@ -35,6 +42,7 @@ public class GeneratorExtensionPoint {
 
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
+		List<IGenerator> generators = new ArrayList<IGenerator>(2);
 		for(IConfigurationElement e : config) {
 			String generatorClassName = e.getAttribute("generator"); //$NON-NLS-1$
 			IGenerator generator = ClassLoaderHelper.newInstance(generatorClassName, IGenerator.class);
@@ -42,7 +50,13 @@ public class GeneratorExtensionPoint {
 				Activator.log.warn("Cannot instantiate the generator : " + generatorClassName); //$NON-NLS-1$
 				continue;
 			}
-			CreateContextWizard.addGenerator(generator);
+			generators.add(generator);
 		}
+
+		this.generators = Collections.unmodifiableList(generators);
+	}
+
+	public List<IGenerator> getGenerators() {
+		return generators;
 	}
 }

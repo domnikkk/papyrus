@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.generators;
 
@@ -34,6 +36,11 @@ import org.eclipse.swt.widgets.Listener;
  */
 public class EditContextGenerator implements IGenerator {
 
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	public List<Context> generate(List<URI> targetURI) {
 		// TODO Auto-generated method stub
 		return null;
