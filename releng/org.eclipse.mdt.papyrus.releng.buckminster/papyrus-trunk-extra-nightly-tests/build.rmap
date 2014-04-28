@@ -134,7 +134,7 @@
     <!-- Birt -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("BIRT",0) -->
-      <rm:uri format="{0}/birt/update-site/kepler-interim/">
+      <rm:uri format="{0}/birt/update-site/luna-interim/">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -158,7 +158,7 @@
     <!-- EMFT MWE -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("EMFT MWE",0) -->
-      <rm:uri format="{0}/modeling/emft/mwe/updates/milestones/S201403111231/mwe">
+      <rm:uri format="{0}/modeling/emft/mwe/updates/milestones/S201404280517/mwe">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -206,7 +206,7 @@
     <!-- Mylyn -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("Mylyn",0) -->
-      <rm:uri format="{0}/mylyn/snapshots/3.11">
+      <rm:uri format="{0}/mylyn/snapshots/3.12">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -214,7 +214,7 @@
     <!-- M2T Xpand -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("M2T XPAND",0) -->
-      <rm:uri format="{0}/modeling/m2t/xpand/updates/milestones/S201403111353/">
+      <rm:uri format="{0}/modeling/m2t/xpand/updates/milestones/S201404280756/">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -282,7 +282,7 @@
     <!-- GMF Tooling -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("GMF Tooling",0) -->
-      <rm:uri format="{0}/modeling/gmp/gmf-tooling/updates/milestones">
+      <rm:uri format="{0}/modeling/gmp/gmf-tooling/updates/milestones-3.2.M6a">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -314,7 +314,7 @@
     <!-- Eclipse Platform Milestones -->
 	<rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
 		<!-- updateFrom("Eclipse",0) -->
-		<rm:uri format="{0}/eclipse/updates/4.4milestones/S-4.4M6-201403061200/">
+		<rm:uri format="{0}/eclipse/updates/4.4-I-builds/I20140422-0800/">
 			<bc:propertyRef key="eclipse.downloads"/>
 		</rm:uri>
 	</rm:provider>
