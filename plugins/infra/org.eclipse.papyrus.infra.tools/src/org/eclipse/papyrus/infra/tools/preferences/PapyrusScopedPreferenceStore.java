@@ -97,7 +97,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * The default context is the context where getDefault and setDefault
 	 * methods will search. This context is also used in the search.
 	 */
-	protected IScopeContext defaultContext = new DefaultScope();
+	protected IScopeContext defaultContext = DefaultScope.INSTANCE;
 
 	/**
 	 * The nodeQualifer is the string used to look up the node in the contexts.
