@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild" name="org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild" schema="schema/org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild.exsd"/>
+<extension
+      point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+   <editpolicyProvider
+         class="org.eclipse.papyrus.uml.diagram.synchronizeview.provider.SynchronizeEditPolicyProvider">
+      <Priority
+            name="Low">
+      </Priority>
+   </editpolicyProvider>
+</extension>
+
+</plugin>

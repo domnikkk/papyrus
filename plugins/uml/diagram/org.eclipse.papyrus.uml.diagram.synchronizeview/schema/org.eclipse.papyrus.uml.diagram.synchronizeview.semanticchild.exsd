@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.eclipse.papyrus.uml.diagram.synchronizeview" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.eclipse.papyrus.uml.diagram.synchronizeview" id="org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild" name="org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild"/>
+      </appinfo>
+      <documentation>
+         The goal of this extension point is to describe semantic elements that plays children of greaphical element.
+
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="semanticChild"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="semanticChild">
+      <annotation>
+         <documentation>
+            This is couple &lt;EditPart, ISynchroSemanticChild&gt; used to describes the list of semantic element that will represented as son of the current EditPart
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="editPart" type="string" use="required">
+            <annotation>
+               <documentation>
+                  EditPart that will be synchronized
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.gef.EditPart"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="getSemanticChildren" type="string" use="required">
+            <annotation>
+               <documentation>
+                  this class describes the list of semantic element that will represented ass son of the current EditPart
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.papyrus.uml.diagram.synchronizeview.customization.ISynchroSemanticChild"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="priority" type="string">
+            <annotation>
+               <documentation>
+                  the priority of the semantic childreen more this number is important, more the priority is high
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         1.0.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         &lt;extension
+      point=&quot;org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild&quot;&gt;
+   &lt;semanticChild
+         editPart=&quot;org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartCompartmentEditPartCN&quot;
+         getSemanticChildren=&quot;org.eclipse.papyrus.uml.diagram.composite.SynchroSemanticForPopertyPartCompartment&quot;&gt;
+   &lt;/semanticChild&gt;
+&lt;/extension&gt;
+
+here we describe by using SynchroSemanticForPopertyPartCompartment instance the list of semantic childreen fir the the editpart PropertyPartCompartmentEditPartCN
+      </documentation>
+   </annotation>
+
+
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+          Copyright (c) 2014 CEA LIST.
+
+    
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

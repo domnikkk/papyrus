@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw">
+  <uml:Model xmi:id="_lNLnYMbvEeO9CYUoXDRplw" name="SynchronizeView">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_gP184MofEeO3DsHezUU9Sg">
+      <body>The goal is to enable a strong synchronization between visual elements displayed in the diagram with elements contained in the model. &#xD;
+This mechanism can be added locally for each element by using CSS. &#xD;
+For example, you would like to see: &#xD;
+- synchronize compartment of enumeration literal for all enumeration. &#xD;
+- synchronize compartment of attributes and operation for all class stereotyped ….&#xD;
+This fucntionality is associated to the task 433206.&#xD;
+</body>
+    </ownedComment>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_lNLnYcbvEeO9CYUoXDRplw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Model" xmi:id="_lNLnYsbvEeO9CYUoXDRplw" name="Requirements">
+      <packagedElement xmi:type="uml:Class" xmi:id="_W7DF0MohEeO3DsHezUU9Sg" name="LocalSynchronization"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_9DAe4MoiEeO3DsHezUU9Sg" name="CSSIntegration"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_WWPdsMojEeO3DsHezUU9Sg" name="CustomSynchronization"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_lNLnY8bvEeO9CYUoXDRplw" name="UseCases">
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_lNLnZMbvEeO9CYUoXDRplw" name="useCasesAbstraction" client="_lNLnY8bvEeO9CYUoXDRplw" supplier="_lNLnYsbvEeO9CYUoXDRplw"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_lNLnZcbvEeO9CYUoXDRplw" name="Synchronization" useCase="_O8koEMcbEeOenbI5XqwJvQ _zqMFoMozEeO3DsHezUU9Sg _l5cVwMo3EeOzTpunJ7qmNw">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_O8koEMcbEeOenbI5XqwJvQ" name="Add an element in the model" subject="_lNLnZcbvEeO9CYUoXDRplw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XBXZIMo1EeO3DsHezUU9Sg">
+            <body>When an user adds an element in the model, the synchronization mechanism try to add in the current diagram the view that correspond to the semantic element&#xD;
+The difficulty of this mechanism is to parameter the synchronization.&#xD;
+By default, the synchronizatiopn is based on ' owned element'role. When you add an element, the  graphical element that correponds to the owner try to display it in the diagram. &#xD;
+But some cases are not interesting. For example in the composite diagram, displaying parts in part correspond to part of the type, not directly part of part.</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_zqMFoMozEeO3DsHezUU9Sg" name="Move an element" subject="_lNLnZcbvEeO9CYUoXDRplw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_a-G7gMo1EeO3DsHezUU9Sg">
+            <body>When a element is moved, the synchronization mechanism must to create graphically the element to each diagram.&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_l5cVwMo3EeOzTpunJ7qmNw" name="Set synchronization enable" subject="_lNLnZcbvEeO9CYUoXDRplw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_vxFwUMo3EeOzTpunJ7qmNw">
+            <body>The user can set enable  the synchronization for a set of graphical elements.&#xD;
+</body>
+          </ownedComment>
+        </ownedUseCase>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_QqgwkMcbEeOenbI5XqwJvQ" name="Remove an element from the model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_bGhQoMo1EeO3DsHezUU9Sg">
+            <body>When the element is removed,  the corresponding graphical element must be removed.</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_g2Kl8MozEeO3DsHezUU9Sg" name="User"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_1pkjcMozEeO3DsHezUU9Sg" name="A_user_add an element in the model" memberEnd="_1pkjccozEeO3DsHezUU9Sg _1pkjdMozEeO3DsHezUU9Sg">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_1pkjccozEeO3DsHezUU9Sg" name="user" type="_g2Kl8MozEeO3DsHezUU9Sg" association="_1pkjcMozEeO3DsHezUU9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1pkjcsozEeO3DsHezUU9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1pkjc8ozEeO3DsHezUU9Sg" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_1pkjdMozEeO3DsHezUU9Sg" name="add an element in the model" type="_O8koEMcbEeOenbI5XqwJvQ" association="_1pkjcMozEeO3DsHezUU9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1pkjdcozEeO3DsHezUU9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1pkjdsozEeO3DsHezUU9Sg" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_2PwZsMozEeO3DsHezUU9Sg" name="A_user_remove an element from the model" memberEnd="_2PwZscozEeO3DsHezUU9Sg _2PwZtMozEeO3DsHezUU9Sg">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_2PwZscozEeO3DsHezUU9Sg" name="user" type="_g2Kl8MozEeO3DsHezUU9Sg" association="_2PwZsMozEeO3DsHezUU9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2PwZssozEeO3DsHezUU9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2PwZs8ozEeO3DsHezUU9Sg" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_2PwZtMozEeO3DsHezUU9Sg" name="remove an element from the model" type="_QqgwkMcbEeOenbI5XqwJvQ" association="_2PwZsMozEeO3DsHezUU9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2PwZtcozEeO3DsHezUU9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2PwZtsozEeO3DsHezUU9Sg" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_2zHlcMozEeO3DsHezUU9Sg" name="A_user_move an element" memberEnd="_2zHlccozEeO3DsHezUU9Sg _2zHldMozEeO3DsHezUU9Sg">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_2zHlccozEeO3DsHezUU9Sg" name="user" type="_g2Kl8MozEeO3DsHezUU9Sg" association="_2zHlcMozEeO3DsHezUU9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2zHlcsozEeO3DsHezUU9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2zHlc8ozEeO3DsHezUU9Sg" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_2zHldMozEeO3DsHezUU9Sg" name="move an element" type="_zqMFoMozEeO3DsHezUU9Sg" association="_2zHlcMozEeO3DsHezUU9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2zHldcozEeO3DsHezUU9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2zHldsozEeO3DsHezUU9Sg" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_rvVLEMo3EeOzTpunJ7qmNw" name="A_user_set synchronization enable" memberEnd="_rvVLEco3EeOzTpunJ7qmNw _rvVLFMo3EeOzTpunJ7qmNw">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_rvVLEco3EeOzTpunJ7qmNw" name="user" type="_g2Kl8MozEeO3DsHezUU9Sg" association="_rvVLEMo3EeOzTpunJ7qmNw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rvVLEso3EeOzTpunJ7qmNw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rvVLE8o3EeOzTpunJ7qmNw" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_rvVLFMo3EeOzTpunJ7qmNw" name="set synchronization enable" type="_l5cVwMo3EeOzTpunJ7qmNw" association="_rvVLEMo3EeOzTpunJ7qmNw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rvVLFco3EeOzTpunJ7qmNw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rvVLFso3EeOzTpunJ7qmNw" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_lNLnZsbvEeO9CYUoXDRplw" name="Design">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_X4kYwMr3EeOxaZrLLxAqiw">
+        <body>In order to install synchronization on element, views must have canonical style. So a migration is needed.&#xD;
+BasicCompartment becomes Compartment&#xD;
+Diagram and Shape mst have a style: so we need to add :&#xD;
+	CanonicalStyle canonicalStyle=(CanonicalStyle)diagram.createStyle(NotationPackage.eINSTANCE.getCanonicalStyle());&#xD;
+	canonicalStyle.setCanonical(false);</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_lNLnZ8bvEeO9CYUoXDRplw" name="DesignAbstraction" client="_lNLnZsbvEeO9CYUoXDRplw" supplier="_lNLnY8bvEeO9CYUoXDRplw"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_p8iWgMrhEeOada-BlHQh_Q" name="org.eclipse.papyrus.uml.diagram.synchronizeview"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_lNLnaMbvEeO9CYUoXDRplw" name="Test">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_lNLnacbvEeO9CYUoXDRplw" name="Dependency1" client="_lNLnaMbvEeO9CYUoXDRplw" supplier="_lNLnY8bvEeO9CYUoXDRplw"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_lNLnasbvEeO9CYUoXDRplw" name="Dependency2" client="_lNLnaMbvEeO9CYUoXDRplw" supplier="_lNLnZsbvEeO9CYUoXDRplw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_C5Nq8MrsEeOxaZrLLxAqiw" name="Synchronize automatically between graphical element and element in the model">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_C5QuQMrsEeOxaZrLLxAqiw">
+        <body>The goal is to enable a strong synchronization between visual elements displayed in the diagram with elements contained in the model. &#xD;
+This mechanism can be added locally for each element by using CSS. &#xD;
+For example, you would like to see: &#xD;
+- synchronize compartment of enumeration literal for all enumeration. &#xD;
+- synchronize compartment of attributes and operation for all class stereotyped ….&#xD;
+This fucntionality is associated to the task 433206.&#xD;
+</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Package" xmi:id="_C5TKgMrsEeOxaZrLLxAqiw" name="Requirements">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_C5Xb8MrsEeOxaZrLLxAqiw">
+          <body>- LocalSynchronization (id=Req001): 
+ The synchronization shall be local for each graphical element for example: package compartment, attribute compartment...</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_C5bGUMrsEeOxaZrLLxAqiw">
+          <body>- CSSIntegration (id=Req002): 
+ The synchronization shall be  parameterized by CSS, by using a keyword and a value.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_C5ewsMrsEeOxaZrLLxAqiw">
+          <body>- CustomSynchronization (id=Req003): 
+ For an graphical element, it shall be possible to custom the synchonization</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_C5hM8MrsEeOxaZrLLxAqiw" name="Use Cases">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_C64e4MrsEeOxaZrLLxAqiw">
+          <body>UseCaseDiagram</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Package" xmi:id="_C66UEMrsEeOxaZrLLxAqiw" name="Add an element in the model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_C68JQMrsEeOxaZrLLxAqiw">
+            <body>When an user adds an element in the model, the synchronization mechanism try to add in the current diagram the view that correspond to the semantic element&#xD;
+The difficulty of this mechanism is to parameter the synchronization.&#xD;
+By default, the synchronizatiopn is based on ' owned element'role. When you add an element, the  graphical element that correponds to the owner try to display it in the diagram. &#xD;
+But some cases are not interesting. For example in the composite diagram, displaying parts in part correspond to part of the type, not directly part of part.</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_C69-cMrsEeOxaZrLLxAqiw" name="Move an element">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_C6_zoMrsEeOxaZrLLxAqiw">
+            <body>When a element is moved, the synchronization mechanism must to create graphically the element to each diagram.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_C7Bo0MrsEeOxaZrLLxAqiw" name="Set synchronization enable">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_C7C28MrsEeOxaZrLLxAqiw">
+            <body>The user can set enable  the synchronization for a set of graphical elements.&#xD;
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_C7EsIMrsEeOxaZrLLxAqiw" name="Remove an element from the model">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_C7GhUMrsEeOxaZrLLxAqiw">
+            <body>When the element is removed,  the corresponding graphical element must be removed.</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_C7IWgMrsEeOxaZrLLxAqiw" name="Design">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_C7aqYMrsEeOxaZrLLxAqiw">
+          <body>ArchitectureOverview</body>
+        </ownedComment>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lNLna8bvEeO9CYUoXDRplw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lNLnbMbvEeO9CYUoXDRplw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA6mkMcPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_kWqjAMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lNLnbcbvEeO9CYUoXDRplw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lNLnbsbvEeO9CYUoXDRplw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_qCT3MMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lNLnb8bvEeO9CYUoXDRplw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lNLncMbvEeO9CYUoXDRplw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VBAtMccPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_2LNtQMbYEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zqiBwMbvEeO9CYUoXDRplw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zq7DUMbvEeO9CYUoXDRplw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FGuXIMn2EeOU_InmtzG_ow">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FJEggMn2EeOU_InmtzG_ow" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_D0JcUMnzEeO9CYUoXDRplw"/>
+    </profileApplication>
+  </uml:Model>
+  <structure:Project xmi:id="_lNODoMbvEeO9CYUoXDRplw" author="P. Tessier (CEA LIST)" version="0.1" base_Model="_lNLnYMbvEeO9CYUoXDRplw" title="Synchronize automatically between views element with related model element in the model"/>
+  <structure:Requirements xmi:id="_lNOqsMbvEeO9CYUoXDRplw" base_Model="_lNLnYsbvEeO9CYUoXDRplw"/>
+  <structure:UseCases xmi:id="_lNOqscbvEeO9CYUoXDRplw" base_Model="_lNLnY8bvEeO9CYUoXDRplw"/>
+  <structure:Design xmi:id="_lNOqssbvEeO9CYUoXDRplw" base_Model="_lNLnZsbvEeO9CYUoXDRplw"/>
+  <structure:Tests xmi:id="_lNOqs8bvEeO9CYUoXDRplw" base_Model="_lNLnaMbvEeO9CYUoXDRplw"/>
+  <structure:UserDoc xmi:id="_uqNUsMofEeO3DsHezUU9Sg" base_Comment="_gP184MofEeO3DsHezUU9Sg"/>
+  <Requirements:Requirement xmi:id="_W7IlYMohEeO3DsHezUU9Sg" text="The synchronization shall be local for each graphical element for example: package compartment, attribute compartment..." id="Req001" base_Class="_W7DF0MohEeO3DsHezUU9Sg"/>
+  <Requirements:Requirement xmi:id="_9DBtAMoiEeO3DsHezUU9Sg" text="The synchronization shall be  parameterized by CSS, by using a keyword and a value." id="Req002" base_Class="_9DAe4MoiEeO3DsHezUU9Sg"/>
+  <Requirements:Requirement xmi:id="_WWQr0MojEeO3DsHezUU9Sg" text="For an graphical element, it shall be possible to custom the synchonization" id="Req003" base_Class="_WWPdsMojEeO3DsHezUU9Sg"/>
+  <structure:DeveloperDoc xmi:id="_aDgUcMo1EeO3DsHezUU9Sg" base_Comment="_XBXZIMo1EeO3DsHezUU9Sg"/>
+  <structure:DeveloperDoc xmi:id="_c407wMo1EeO3DsHezUU9Sg" base_Comment="_a-G7gMo1EeO3DsHezUU9Sg"/>
+  <structure:DeveloperDoc xmi:id="_d06JgMo1EeO3DsHezUU9Sg" base_Comment="_bGhQoMo1EeO3DsHezUU9Sg"/>
+  <structure:DeveloperDoc xmi:id="_ym9xQMo3EeOzTpunJ7qmNw" base_Comment="_vxFwUMo3EeOzTpunJ7qmNw"/>
+  <Document:Document xmi:id="_C5PgIMrsEeOxaZrLLxAqiw" base_Model="_C5Nq8MrsEeOxaZrLLxAqiw" author="P. Tessier (CEA LIST)" version="0.1"/>
+  <Document:Content xmi:id="_C5SjcMrsEeOxaZrLLxAqiw" base_Comment="_C5QuQMrsEeOxaZrLLxAqiw"/>
+  <Document:Section xmi:id="_C5U_sMrsEeOxaZrLLxAqiw" base_Package="_C5TKgMrsEeOxaZrLLxAqiw"/>
+  <Document:Content xmi:id="_C5YqEMrsEeOxaZrLLxAqiw" base_Comment="_C5Xb8MrsEeOxaZrLLxAqiw"/>
+  <Document:Content xmi:id="_C5cUcMrsEeOxaZrLLxAqiw" base_Comment="_C5bGUMrsEeOxaZrLLxAqiw"/>
+  <Document:Content xmi:id="_C5f-0MrsEeOxaZrLLxAqiw" base_Comment="_C5ewsMrsEeOxaZrLLxAqiw"/>
+  <Document:Section xmi:id="_C5ibEMrsEeOxaZrLLxAqiw" base_Package="_C5hM8MrsEeOxaZrLLxAqiw"/>
+  <Document:ImageRef xmi:id="_C65tAMrsEeOxaZrLLxAqiw" base_Comment="_C64e4MrsEeOxaZrLLxAqiw" ref="C:/Workspaces/head/org.eclipse.papyrus.uml.diagram.synchronizeview/imgDOC/UseCaseDiagram.png"/>
+  <Document:Section xmi:id="_C67iMMrsEeOxaZrLLxAqiw" base_Package="_C66UEMrsEeOxaZrLLxAqiw"/>
+  <Document:Content xmi:id="_C69XYMrsEeOxaZrLLxAqiw" base_Comment="_C68JQMrsEeOxaZrLLxAqiw"/>
+  <Document:Section xmi:id="_C6_MkMrsEeOxaZrLLxAqiw" base_Package="_C69-cMrsEeOxaZrLLxAqiw"/>
+  <Document:Content xmi:id="_C7BBwMrsEeOxaZrLLxAqiw" base_Comment="_C6_zoMrsEeOxaZrLLxAqiw"/>
+  <Document:Section xmi:id="_C7CP4MrsEeOxaZrLLxAqiw" base_Package="_C7Bo0MrsEeOxaZrLLxAqiw"/>
+  <Document:Content xmi:id="_C7EFEMrsEeOxaZrLLxAqiw" base_Comment="_C7C28MrsEeOxaZrLLxAqiw"/>
+  <Document:Section xmi:id="_C7F6QMrsEeOxaZrLLxAqiw" base_Package="_C7EsIMrsEeOxaZrLLxAqiw"/>
+  <Document:Content xmi:id="_C7HvcMrsEeOxaZrLLxAqiw" base_Comment="_C7GhUMrsEeOxaZrLLxAqiw"/>
+  <Document:Section xmi:id="_C7JkoMrsEeOxaZrLLxAqiw" base_Package="_C7IWgMrsEeOxaZrLLxAqiw"/>
+  <Document:ImageRef xmi:id="_C7b4gMrsEeOxaZrLLxAqiw" base_Comment="_C7aqYMrsEeOxaZrLLxAqiw" ref="C:/Workspaces/head/org.eclipse.papyrus.uml.diagram.synchronizeview/imgDOC/ArchitectureOverview.png"/>
+  <structure:DeveloperDoc xmi:id="_ZWAAEMr3EeOxaZrLLxAqiw" base_Comment="_X4kYwMr3EeOxaZrLLxAqiw"/>
+</xmi:XMI>

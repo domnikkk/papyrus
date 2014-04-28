@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc:Documentation
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:doc="http://www.eclipse.org/papyrus/documentation/plugin/documentation"
+    description="The goal of this plugin is add the fucntionality to synchronize elements in diagram. &#xD;&#xA;More details (models and .html) has been store in the docs directory.&#xD;&#xA;">
+  <referent
+      firstName="Patrick"
+      lastName="Tessier"
+      eMail="patrick.tessier@cea.fr"
+      currentCompany="CEA LIST"/>
+</doc:Documentation>
