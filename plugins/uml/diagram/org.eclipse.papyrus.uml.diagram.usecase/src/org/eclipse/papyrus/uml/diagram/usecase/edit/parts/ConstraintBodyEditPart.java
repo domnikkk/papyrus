@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
  *  CEA LIST - Initial API and implementation
- *
- *****************************************************************************/
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.parts;
 
 import java.util.Collections;
@@ -65,7 +63,6 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusCompartmentEditP
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.ConstraintFigure;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry;
@@ -113,14 +110,12 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
-	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
-	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -197,7 +192,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	/**
 	 * @generated
 	 */
-	public void setLabel(ConstraintFigure figure) {
+	public void setLabel(IFigure figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -208,7 +203,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	/**
 	 * @generated
 	 */
-	protected List getModelChildren() {
+	protected List<?> getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -217,6 +212,13 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	 */
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setParser(IParser parser) {
+		this.parser = parser;
 	}
 
 	/**
@@ -291,7 +293,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus)getEditingDomain().runExclusive(new RunnableWithResult.Impl<java.lang.Object>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String)value));
@@ -356,8 +358,8 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	 * @generated
 	 */
 	protected void performDirectEdit() {
-		BusyIndicator.showWhile(Display.getDefault(), new Runnable() {
-			
+		BusyIndicator.showWhile(Display.getDefault(), new java.lang.Runnable() {
+
 			public void run() {
 				getManager().show();
 			}
@@ -399,6 +401,8 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 		case IDirectEdition.EXTENDED_DIRECT_EDITOR:
 			updateExtendedEditorConfiguration();
 			if(configuration == null || configuration.getLanguage() == null) {
+				// Create default edit manager
+				setManager(new MultilineLabelDirectEditManager(this, MultilineLabelDirectEditManager.getTextCellEditorClass(this), UMLEditPartFactory.getTextCellEditorLocator(this)));
 				performDefaultDirectEditorEdit(theRequest);
 			} else {
 				configuration.preEditAction(resolveSemanticElement());
@@ -433,38 +437,11 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 			}
 			break;
 		case IDirectEdition.DEFAULT_DIRECT_EDITOR:
-			// initialize the direct edit manager
-			try {
-				getEditingDomain().runExclusive(new Runnable() {
-
-					public void run() {
-						if(isActive() && isEditable()) {
-							if(theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-								Character initialChar = (Character)theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
-								performDirectEdit(initialChar.charValue());
-							} else if((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
-								DirectEditRequest editRequest = (DirectEditRequest)theRequest;
-								performDirectEdit(editRequest.getLocation());
-							} else {
-								performDirectEdit();
-							}
-						}
-					}
-				});
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			initializeDirectEditManager(theRequest);
 			break;
 		default:
 			break;
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setParser(IParser parser) {
-		this.parser = parser;
 	}
 
 	/**
@@ -490,7 +467,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * @generated
 	 */
@@ -660,7 +637,6 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 
 	/**
 	 * Initializes the extended editor configuration
-	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -676,12 +652,11 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 
 	/**
 	 * Updates the preference configuration
-	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
 		String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-		if(languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) {
+		if(languagePreferred != null && !languagePreferred.equals("") && !languagePreferred.equals(configuration.getLanguage())) {
 			configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 		} else if(IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
 			configuration = null;
@@ -690,9 +665,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * 
-	 * @param theRequest
-	 *        the direct edit request that starts the direct edit system
+	 * @param theRequest the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {

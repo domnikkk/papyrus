@@ -12,21 +12,16 @@ package org.eclipse.papyrus.uml.diagram.usecase.draw2d;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Image;
 
 /**
  * The Class StickMan. This class comes from org.eclipse.uml2.diagram.usecase.draw2d provided by
  * Eclipse.org
  */
-public class StickMan extends ShadowShape implements IPapyrusNodeNamedElementFigure, IPapyrusNodeFigure {
+public class StickMan extends AbstractProportionalShape {
 
 	private static final float BASE_W = 31 - 1;
 
@@ -45,21 +40,20 @@ public class StickMan extends ShadowShape implements IPapyrusNodeNamedElementFig
 	private int ovalD;
 
 	public StickMan() {
-		this(false, ColorConstants.white, ColorConstants.black);
+		this(false, null, ColorConstants.black);
 	}
 
 	public StickMan(boolean is3D, Color backgroundColor, Color foregroundColor) {
-		super(is3D, backgroundColor, foregroundColor);
+		super();
+		setForegroundColor(foregroundColor);
+		setBackgroundColor(backgroundColor);
 		setKeepingProportions(true);
 		setW2HRatio(BASE_W / BASE_H);
 	}
 
-	/**
-	 * Outlines the ellipse.
-	 */
 	@Override
-	protected void outlineShape(Graphics graphics, Rectangle bounds) {
-		PointList pl = setupPoints(bounds);
+	public void paint(Graphics graphics) {
+		PointList pl = setupPoints(getProportionalBounds());
 		int oldLW = graphics.getLineWidth();
 		if (graphics.getLineWidth() < 1) {
 			// fix for bug 425182 - [Use Case Diagram] Actor invisible in use case diagram
@@ -77,34 +71,20 @@ public class StickMan extends ShadowShape implements IPapyrusNodeNamedElementFig
 	@Override
 	public Dimension getPreferredSize(int wHint, int hHint) {
 		Dimension size = new Dimension(-1, -1);
-		if(wHint < BASE_W) {
-			size.width = (int)BASE_W;
+		if (wHint < BASE_W) {
+			size.width = (int) BASE_W;
 		}
-		if(hHint < BASE_H) {
-			size.height = (int)BASE_H;
-		}
-		if(is3D()) {
-			size.expand(SHADOW_SIZE, SHADOW_SIZE);
+		if (hHint < BASE_H) {
+			size.height = (int) BASE_H;
 		}
 		return size;
-	}
-
-	/**
-	 * Fills the ellipse.
-	 */
-	@Override
-	protected void fillShape(Graphics graphics, Rectangle bounds) {
-		PointList pl = setupPoints(bounds);
-		graphics.fillPolygon(pl);
-		int add = graphics.getLineWidth() / 2;
-		graphics.fillOval(new Rectangle(ovalX, ovalY, ovalD + add, ovalD + add));
 	}
 
 	/**
 	 * Setup the points to draw the stickMan figure.
 	 * 
 	 * @param rectangle
-	 *        the specified rectangle
+	 *            the specified rectangle
 	 * 
 	 * @return the point list
 	 */
@@ -119,7 +99,7 @@ public class StickMan extends ShadowShape implements IPapyrusNodeNamedElementFig
 		int Y2 = Math.round(H * FACTOR2);
 		int Y3 = H - (X1 - 1);
 		int STEP = Math.round(W / BASE_W);
-		if(STEP < 1) {
+		if (STEP < 1) {
 			STEP = 1;
 		}
 		// set positive points. (0...9)
@@ -144,7 +124,7 @@ public class StickMan extends ShadowShape implements IPapyrusNodeNamedElementFig
 		xPoints[9] = 0;
 		yPoints[9] = Y3 + STEP;
 		// reflect points 0..8
-		for(int i = 0; i <= 8; i++) {
+		for (int i = 0; i <= 8; i++) {
 			xPoints[18 - i] = -xPoints[i];
 			yPoints[18 - i] = yPoints[i];
 		}
@@ -152,12 +132,12 @@ public class StickMan extends ShadowShape implements IPapyrusNodeNamedElementFig
 		xPoints[19] = xPoints[0];
 		yPoints[19] = yPoints[0];
 		// shift all points and copy to integer.
-		for(int i = 0; i < P_NUM; i++) {
+		for (int i = 0; i < P_NUM; i++) {
 			xPoints[i] += X1;
 			xPoints[i] += rectangle.x;
 			yPoints[i] += rectangle.y;
 		}
-		for(int i = 0; i < xPoints.length; i++) {
+		for (int i = 0; i < xPoints.length; i++) {
 			pl.addPoint(xPoints[i], yPoints[i]);
 		}
 		// head-oval
@@ -165,105 +145,5 @@ public class StickMan extends ShadowShape implements IPapyrusNodeNamedElementFig
 		ovalX = X1 - ovalD / 2 + rectangle.x;
 		ovalY = rectangle.y;
 		return pl;
-	}
-
-	@Override
-	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-	}
-
-	@Override
-	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
-	}
-
-	@Override
-	public Label getStereotypesLabel() {
-		return null;
-	}
-
-	@Override
-	public void setStereotypeDisplay(String stereotypes, Image image) {
-	}
-
-	@Override
-	public void setQualifiedName(String qualifiedName) {
-	}
-
-	@Override
-	public Label getQualifiedNameLabel() {
-		return null;
-	}
-
-	@Override
-	public Label getTaggedLabel() {
-		return null;
-	}
-
-	@Override
-	public void setDepth(int depth) {
-	}
-
-	@Override
-	public WrappingLabel getNameLabel() {
-		return null;
-	}
-
-	@Override
-	public void setNameLabelIcon(boolean displayNameLabelIcon) {
-	}
-
-	@Override
-	public Color getBorderColor() {
-		return null;
-	}
-
-	@Override
-	public boolean isShadow() {
-		return false;
-	}
-
-	@Override
-	public void setBorderColor(Color borderColor) {
-	}
-
-	@Override
-	public void setShadow(boolean shadow) {
-	}
-
-	@Override
-	public void setTransparency(int transparency) {
-	}
-
-	@Override
-	public void setGradientData(int gradientColor1, int gradientColor2, int gradientStyle) {
-	}
-
-	@Override
-	public void setIsUsingGradient(boolean b) {
-	}
-
-	@Override
-	public void restoreNameLabel() {
-		//Nothing. StickMan uses a floating label and should not implement this method
-	}
-
-	@Override
-	public void removeNameLabel() {
-		//Nothing. StickMan uses a floating label and should not implement this method
-	}
-
-	@Override
-	public void removeStereotypeLabel() {
-	}
-
-	@Override
-	public void restoreStereotypeLabel() {
-	}
-
-	@Override
-	public void restoreTaggedLabel() {
-	}
-
-	@Override
-	public void removeTaggedLabel() {
 	}
 }

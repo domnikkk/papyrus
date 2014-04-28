@@ -25,7 +25,6 @@ public abstract class AbstractSubjectFigure extends RectangleFigure implements I
 
 	static final Color THIS_BACK = new Color(null, 245, 245, 245);
 
-	/** @generated */
 	private boolean myUseLocalCoordinates = false;
 
 	/** The helper which handles stereotype aspects */
@@ -102,16 +101,10 @@ public abstract class AbstractSubjectFigure extends RectangleFigure implements I
 		refreshLayout();
 	}
 
-	/**
-	 * @generated
-	 */
 	protected boolean useLocalCoordinates() {
 		return myUseLocalCoordinates;
 	}
 
-	/**
-	 * @generated
-	 */
 	protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 		myUseLocalCoordinates = useLocalCoordinates;
 	}

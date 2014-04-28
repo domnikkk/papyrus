@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.uml.diagram.usecase.handler;
 
 import org.eclipse.core.commands.IHandler;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.papyrus.uml.diagram.usecase.command.ChangeUseCasetoClassifierShapeCommand;
@@ -28,14 +27,10 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInPackageEditPa
  */
 public class UseCaseToClassiferHandler extends ChangeShapeHandler implements IHandler {
 
-	protected TransactionalEditingDomain transactionalEditingDomain = null;
-
-	protected org.eclipse.uml2.uml.Element selectedElement = null;
-
 	@Override
 	public boolean isEnabled() {
 		GraphicalEditPart editPart = getSelectedGraphicalEditpart();
-		if((editPart instanceof UseCaseEditPartTN) || (editPart instanceof UseCaseInComponentEditPart) || (editPart instanceof UseCaseInPackageEditPart)) {
+		if ((editPart instanceof UseCaseEditPartTN) || (editPart instanceof UseCaseInComponentEditPart) || (editPart instanceof UseCaseInPackageEditPart)) {
 			return true;
 		}
 		return false;

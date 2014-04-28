@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2010 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.parts;
 
 import org.eclipse.draw2d.Connection;
@@ -56,7 +54,6 @@ public class PackageMergeEditPart extends UMLConnectionNodeEditPart implements I
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if(childEditPart instanceof AppliedStereotypePackageMergeEditPart) {
 			((AppliedStereotypePackageMergeEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
-			return true;
 		}
 		return false;
 	}
@@ -94,8 +91,8 @@ public class PackageMergeEditPart extends UMLConnectionNodeEditPart implements I
 	/**
 	 * Creates figure for this edit part.
 	 * 
-	 * Body of this method does not depend on settings in generation model so you may safely remove
-	 * <i>generated</i> tag and modify it.
+	 * Body of this method does not depend on settings in generation model
+	 * so you may safely remove <i>generated</i> tag and modify it.
 	 * 
 	 * @generated
 	 */

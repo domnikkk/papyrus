@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2009 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.part;
 
 import org.eclipse.core.runtime.Platform;
@@ -89,8 +87,6 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackagePackageableElem
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.RealizationAppliedStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.RealizationEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.RealizationNameEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShapeNamedElementEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShapeNamedElementNameEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShortCutDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierNameEditPartTN;
@@ -120,8 +116,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.Usage;
 
 /**
- * This registry is used to determine which type of visual object should be created for the
- * corresponding Diagram, Node, ChildNode or Link represented by a domain model object.
+ * This registry is used to determine which type of visual object should be
+ * created for the corresponding Diagram, Node, ChildNode or Link represented
+ * by a domain model object.
  * 
  * @generated
  */
@@ -182,8 +179,14 @@ public class UMLVisualIDRegistry {
 		return Integer.toString(visualID);
 	}
 
+	/**
+	 * @generated
+	 */
 	public static int getDiagramVisualID(EObject domainElement) {
-		return UseCaseDiagramEditPart.VISUAL_ID;
+		if(domainElement == null) {
+			return -1;
+		}
+		return 1000;
 	}
 
 	/**
@@ -235,9 +238,6 @@ public class UMLVisualIDRegistry {
 			}
 			if(UMLPackage.eINSTANCE.getNamedElement().isSuperTypeOf(domainElement.eClass())) {
 				return DefaultNamedElementEditPartTN.VISUAL_ID;
-			}
-			if(UMLPackage.eINSTANCE.getNamedElement().isSuperTypeOf(domainElement.eClass())) {
-				return ShapeNamedElementEditPart.VISUAL_ID;
 			}
 			if(NotationPackage.eINSTANCE.getDiagram().isSuperTypeOf(domainElement.eClass())) {
 				return ShortCutDiagramEditPart.VISUAL_ID;
@@ -399,9 +399,6 @@ public class UMLVisualIDRegistry {
 			if(DefaultNamedElementEditPartTN.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if(ShapeNamedElementEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if(ShortCutDiagramEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -469,11 +466,6 @@ public class UMLVisualIDRegistry {
 			break;
 		case DefaultNamedElementEditPartTN.VISUAL_ID:
 			if(DefaultNamedElementNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ShapeNamedElementEditPart.VISUAL_ID:
-			if(ShapeNamedElementNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -786,8 +778,8 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific situations not covered
-	 * by default logic.
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
 	 * 
 	 * @generated
 	 */
@@ -799,7 +791,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAssociation_4011(Association domainElement) {
-		Object result = UMLOCLFactory.getExpression(12, UMLPackage.eINSTANCE.getAssociation(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(2, UMLPackage.eINSTANCE.getAssociation(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean)result).booleanValue();
 	}
 
@@ -807,7 +799,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDependency_4013(Dependency domainElement) {
-		Object result = UMLOCLFactory.getExpression(16, UMLPackage.eINSTANCE.getDependency(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(6, UMLPackage.eINSTANCE.getDependency(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean)result).booleanValue();
 	}
 
@@ -815,7 +807,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAbstraction_4015(Abstraction domainElement) {
-		Object result = UMLOCLFactory.getExpression(18, UMLPackage.eINSTANCE.getAbstraction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(8, UMLPackage.eINSTANCE.getAbstraction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean)result).booleanValue();
 	}
 
@@ -823,7 +815,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isUsage_4016(Usage domainElement) {
-		Object result = UMLOCLFactory.getExpression(19, UMLPackage.eINSTANCE.getUsage(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(9, UMLPackage.eINSTANCE.getUsage(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean)result).booleanValue();
 	}
 
@@ -831,7 +823,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isRealization_4017(Realization domainElement) {
-		Object result = UMLOCLFactory.getExpression(20, UMLPackage.eINSTANCE.getRealization(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(10, UMLPackage.eINSTANCE.getRealization(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean)result).booleanValue();
 	}
 
@@ -881,7 +873,6 @@ public class UMLVisualIDRegistry {
 		case CommentEditPartTN.VISUAL_ID:
 		case ShortCutDiagramEditPart.VISUAL_ID:
 		case DefaultNamedElementEditPartTN.VISUAL_ID:
-		case ShapeNamedElementEditPart.VISUAL_ID:
 		case ExtensionPointEditPart.VISUAL_ID:
 		case ExtensionPointInRectangleEditPart.VISUAL_ID:
 		case ConstraintInPackageEditPart.VISUAL_ID:
@@ -904,6 +895,7 @@ public class UMLVisualIDRegistry {
 		/**
 		 * @generated
 		 */
+		@Override
 		public int getVisualID(View view) {
 			return org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry.getVisualID(view);
 		}
@@ -911,6 +903,7 @@ public class UMLVisualIDRegistry {
 		/**
 		 * @generated
 		 */
+		@Override
 		public String getModelID(View view) {
 			return org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry.getModelID(view);
 		}
@@ -918,6 +911,7 @@ public class UMLVisualIDRegistry {
 		/**
 		 * @generated
 		 */
+		@Override
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		}
@@ -925,6 +919,7 @@ public class UMLVisualIDRegistry {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
 		}
@@ -932,6 +927,7 @@ public class UMLVisualIDRegistry {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean isCompartmentVisualID(int visualID) {
 			return org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
@@ -939,6 +935,7 @@ public class UMLVisualIDRegistry {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}

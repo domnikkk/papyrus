@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.uml.diagram.usecase.figure;
 
 import org.eclipse.draw2d.Border;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
@@ -54,8 +55,8 @@ public class UseCaseFigure extends NodeNamedElementFigure implements IPapyrusNod
 	 * @return the gmf container
 	 */
 	public ShapeCompartmentFigure getGMFExtensionPointContainer() {
-		if(shapeCompartment.getChildren().size() > 0) {
-			return (ShapeCompartmentFigure)shapeCompartment.getChildren().get(0);
+		if (shapeCompartment.getChildren().size() > 0) {
+			return (ShapeCompartmentFigure) shapeCompartment.getChildren().get(0);
 		}
 		return null;
 	}
@@ -71,10 +72,13 @@ public class UseCaseFigure extends NodeNamedElementFigure implements IPapyrusNod
 	@Override
 	public void paintFigure(Graphics graphics) {
 		shapeCompartment.setForegroundColor(getBackgroundColor());
-		// TODO Auto-generated method stub
 		graphics.fillOval(getBounds());
 		paintBackground(graphics, getBounds());
-		//shadowborder.setColor(getForegroundColor());
+		for (Object iterable_element : shapeCompartment.getChildren()) {
+			((IFigure) iterable_element).setForegroundColor(ColorConstants.black);
+
+		}
+		// shadowborder.setColor(getForegroundColor());
 	}
 
 	@Override

@@ -1,31 +1,24 @@
-/*****************************************************************************
- * Copyright (c) 2009 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.parts;
 
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.PolylineDecoration;
-import org.eclipse.draw2d.RotatableDecoration;
-import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLConnectionNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.edge.DashedEdgeFigure;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.ExtendItemSemanticEditPolicy;
 
 /**
@@ -60,7 +53,6 @@ public class ExtendEditPart extends UMLConnectionNodeEditPart implements ITreeBr
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if(childEditPart instanceof ExtendAppliedStereotypeEditPart) {
 			((ExtendAppliedStereotypeEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
-			return true;
 		}
 		return false;
 	}
@@ -98,56 +90,19 @@ public class ExtendEditPart extends UMLConnectionNodeEditPart implements ITreeBr
 	/**
 	 * Creates figure for this edit part.
 	 * 
-	 * Body of this method does not depend on settings in generation model so you may safely remove
-	 * <i>generated</i> tag and modify it.
+	 * Body of this method does not depend on settings in generation model
+	 * so you may safely remove <i>generated</i> tag and modify it.
 	 * 
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
-		return new UseCases_WithArrow_Polyline();
+		return new DashedEdgeFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public UseCases_WithArrow_Polyline getPrimaryShape() {
-		return (UseCases_WithArrow_Polyline)getFigure();
-	}
-
-	/**
-	 * @generated NOT extends UMLEdgeFifure
-	 */
-	public class UseCases_WithArrow_Polyline extends UMLEdgeFigure {
-
-		/**
-		 * @generated
-		 */
-		public UseCases_WithArrow_Polyline() {
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_DASH);
-			this.setForegroundColor(ColorConstants.black);
-			setTargetDecoration(createTargetDecoration());
-		}
-
-		@Override
-		public void resetStyle() {
-			super.resetStyle();
-			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private RotatableDecoration createTargetDecoration() {
-			PolylineDecoration df = new PolylineDecoration();
-			df.setLineWidth(1);
-			PointList pl = new PointList();
-			pl.addPoint(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1));
-			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));
-			pl.addPoint(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(-1));
-			df.setTemplate(pl);
-			df.setScale(getMapMode().DPtoLP(7), getMapMode().DPtoLP(3));
-			return df;
-		}
+	public DashedEdgeFigure getPrimaryShape() {
+		return (DashedEdgeFigure)getFigure();
 	}
 }

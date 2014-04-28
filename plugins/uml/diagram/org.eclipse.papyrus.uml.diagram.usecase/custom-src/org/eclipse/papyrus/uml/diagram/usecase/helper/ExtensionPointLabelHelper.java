@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.uml.diagram.usecase.helper;
 
 import java.util.Collection;
-import java.util.jar.Attributes.Name;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.ecore.EObject;
@@ -22,7 +21,6 @@ import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.helper.StereotypedElementLabelHelper;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
@@ -80,7 +78,7 @@ public class ExtensionPointLabelHelper extends StereotypedElementLabelHelper {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -91,6 +89,5 @@ public class ExtensionPointLabelHelper extends StereotypedElementLabelHelper {
 			return getUMLElement(editPart).getName();
 		}
 		return null;
-		
 	}
 }

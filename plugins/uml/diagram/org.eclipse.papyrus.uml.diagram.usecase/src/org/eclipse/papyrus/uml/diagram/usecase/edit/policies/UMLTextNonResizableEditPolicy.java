@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2009 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.policies;
 
 import java.util.Collections;
@@ -228,7 +226,7 @@ public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx impl
 	/**
 	 * @generated
 	 */
-	protected List createSelectionHandles() {
+	protected List<?> createSelectionHandles() {
 		MoveHandle moveHandle = new MoveHandle((GraphicalEditPart)getHost());
 		moveHandle.setBorder(null);
 		moveHandle.setDragTracker(new DragEditPartsTrackerEx(getHost()));

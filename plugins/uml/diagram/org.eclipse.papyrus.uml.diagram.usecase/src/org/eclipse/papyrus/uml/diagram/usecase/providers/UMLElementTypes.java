@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2009 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.providers;
 
 import java.util.HashSet;
@@ -53,7 +51,6 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackageEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackageImportEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackageMergeEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.RealizationEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShapeNamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShortCutDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UsageEditPart;
@@ -140,17 +137,12 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Diagram_2019 = getElementType("org.eclipse.papyrus.uml.diagram.usecase.Diagram_2019"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	public static final IElementType NamedElement_2022 = getElementType("org.eclipse.papyrus.uml.diagram.usecase.DefaultNamedElement_2022"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType NamedElement_2023 = getElementType("org.eclipse.papyrus.uml.diagram.usecase.NamedElement_2023"); //$NON-NLS-1$
+	public static final IElementType Diagram_2019 = getElementType("org.eclipse.papyrus.uml.diagram.usecase.Diagram_2019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -305,7 +297,7 @@ public class UMLElementTypes {
 	 * 
 	 * @generated
 	 */
-	public static ENamedElement getElement(IAdaptable hint) {
+	public static synchronized ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
 		if(elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
@@ -319,7 +311,6 @@ public class UMLElementTypes {
 			elements.put(Constraint_2017, UMLPackage.eINSTANCE.getConstraint());
 			elements.put(Comment_2018, UMLPackage.eINSTANCE.getComment());
 			elements.put(NamedElement_2022, UMLPackage.eINSTANCE.getNamedElement());
-			elements.put(NamedElement_2023, UMLPackage.eINSTANCE.getNamedElement());
 			elements.put(Diagram_2019, NotationPackage.eINSTANCE.getDiagram());
 			elements.put(ExtensionPoint_3007, UMLPackage.eINSTANCE.getExtensionPoint());
 			elements.put(ExtensionPoint_3008, UMLPackage.eINSTANCE.getExtensionPoint());
@@ -359,7 +350,7 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
-	public static boolean isKnownElementType(IElementType elementType) {
+	public static synchronized boolean isKnownElementType(IElementType elementType) {
 		if(KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Package_1000);
@@ -372,7 +363,6 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Constraint_2017);
 			KNOWN_ELEMENT_TYPES.add(Comment_2018);
 			KNOWN_ELEMENT_TYPES.add(NamedElement_2022);
-			KNOWN_ELEMENT_TYPES.add(NamedElement_2023);
 			KNOWN_ELEMENT_TYPES.add(Diagram_2019);
 			KNOWN_ELEMENT_TYPES.add(ExtensionPoint_3007);
 			KNOWN_ELEMENT_TYPES.add(ExtensionPoint_3008);
@@ -427,8 +417,6 @@ public class UMLElementTypes {
 			return Comment_2018;
 		case DefaultNamedElementEditPartTN.VISUAL_ID:
 			return NamedElement_2022;
-		case ShapeNamedElementEditPart.VISUAL_ID:
-			return NamedElement_2023;
 		case ShortCutDiagramEditPart.VISUAL_ID:
 			return Diagram_2019;
 		case ExtensionPointEditPart.VISUAL_ID:
@@ -491,6 +479,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean isKnownElementType(IElementType elementType) {
 			return org.eclipse.papyrus.uml.diagram.usecase.providers.UMLElementTypes.isKnownElementType(elementType);
 		}
@@ -498,6 +487,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
+		@Override
 		public IElementType getElementTypeForVisualId(int visualID) {
 			return org.eclipse.papyrus.uml.diagram.usecase.providers.UMLElementTypes.getElementType(visualID);
 		}
@@ -505,6 +495,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
+		@Override
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
 			return org.eclipse.papyrus.uml.diagram.usecase.providers.UMLElementTypes.getElement(elementTypeAdapter);
 		}

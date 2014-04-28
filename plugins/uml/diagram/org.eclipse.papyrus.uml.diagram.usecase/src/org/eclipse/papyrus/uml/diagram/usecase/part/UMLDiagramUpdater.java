@@ -1,17 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2009, 2014 Atos Origin, CEA, and others.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *  Christian W. Damus (CEA) - bug 410909
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.part;
 
 import java.util.Collection;
@@ -22,7 +19,6 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.emf.core.util.CrossReferenceAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
@@ -57,7 +53,6 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackageMergeEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackagePackageableElementCompartment2EditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackagePackageableElementCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.RealizationEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShapeNamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShortCutDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectComponentUsecasesEditPart;
@@ -129,6 +124,66 @@ public class UMLDiagramUpdater {
 			return getPackagePackageableElementCompartment_7013SemanticChildren(view);
 		}
 		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<UMLNodeDescriptor> getPackage_1000SemanticChildren(View view) {
+		if(!view.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Package modelElement = (Package)view.getElement();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for(Iterator<?> it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
+			Type childElement = (Type)it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if(visualID == ActorEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if(visualID == ActorAsRectangleEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if(visualID == UseCaseEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if(visualID == UseCaseAsRectangleEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if(visualID == SubjectClassifierEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for(Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
+			PackageableElement childElement = (PackageableElement)it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if(visualID == PackageEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if(visualID == ConstraintEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if(visualID == DefaultNamedElementEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for(Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
+			Comment childElement = (Comment)it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if(visualID == CommentEditPartTN.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
 	}
 
 	/**
@@ -302,62 +357,6 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getPackagePackageableElementCompartment_7013SemanticChildren(View view) {
-		if(false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View)view.eContainer();
-		if(!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		Package modelElement = (Package)containerView.getElement();
-		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
-		for(Iterator<?> it = modelElement.getOwnedRules().iterator(); it.hasNext();) {
-			Constraint childElement = (Constraint)it.next();
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == ConstraintInPackageEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		for(Iterator<?> it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
-			Type childElement = (Type)it.next();
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == ActorInPackageEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if(visualID == UseCaseInPackageEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if(visualID == ComponentInPackageEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		for(Iterator<?> it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
-			Package childElement = (Package)it.next();
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == PackageEditPartCN.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		for(Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
-			Comment childElement = (Comment)it.next();
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == CommentEditPartCN.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<UMLNodeDescriptor> getUseCasePoints_7014SemanticChildren(View view) {
 		if(false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -494,52 +493,44 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getPackage_1000SemanticChildren(View view) {
-		if(!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+	public static List<UMLNodeDescriptor> getPackagePackageableElementCompartment_7013SemanticChildren(View view) {
+		if(false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
 		}
-		Package modelElement = (Package)view.getElement();
+		View containerView = (View)view.eContainer();
+		if(!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Package modelElement = (Package)containerView.getElement();
 		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for(Iterator<?> it = modelElement.getOwnedRules().iterator(); it.hasNext();) {
+			Constraint childElement = (Constraint)it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if(visualID == ConstraintInPackageEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		for(Iterator<?> it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
 			Type childElement = (Type)it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == ActorEditPartTN.VISUAL_ID) {
+			if(visualID == ActorInPackageEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if(visualID == ActorAsRectangleEditPartTN.VISUAL_ID) {
+			if(visualID == UseCaseInPackageEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if(visualID == UseCaseEditPartTN.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if(visualID == UseCaseAsRectangleEditPartTN.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if(visualID == SubjectClassifierEditPartTN.VISUAL_ID) {
+			if(visualID == ComponentInPackageEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for(Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
-			PackageableElement childElement = (PackageableElement)it.next();
+		for(Iterator<?> it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
+			Package childElement = (Package)it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == PackageEditPartTN.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if(visualID == ConstraintEditPartTN.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if(visualID == DefaultNamedElementEditPartTN.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if(visualID == ShapeNamedElementEditPart.VISUAL_ID) {
+			if(visualID == PackageEditPartCN.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -547,30 +538,12 @@ public class UMLDiagramUpdater {
 		for(Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
 			Comment childElement = (Comment)it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if(visualID == CommentEditPartTN.VISUAL_ID) {
+			if(visualID == CommentEditPartCN.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		Resource resource = modelElement.eResource();
-		for(Iterator semanticIterator = getPhantomNodesIterator(resource); semanticIterator.hasNext();) {
-			EObject childElement = (EObject)semanticIterator.next();
-			if(childElement == modelElement) {
-				continue;
-			}
-			if(UMLVisualIDRegistry.getNodeVisualID(view, childElement) == ShortCutDiagramEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, ShortCutDiagramEditPart.VISUAL_ID));
-				continue;
-			}
-		}
 		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static Iterator<EObject> getPhantomNodesIterator(Resource resource) {
-		return resource.getAllContents();
 	}
 
 	/**
@@ -598,8 +571,6 @@ public class UMLDiagramUpdater {
 			return getComment_2018ContainedLinks(view);
 		case DefaultNamedElementEditPartTN.VISUAL_ID:
 			return getNamedElement_2022ContainedLinks(view);
-		case ShapeNamedElementEditPart.VISUAL_ID:
-			return getNamedElement_2023ContainedLinks(view);
 		case ShortCutDiagramEditPart.VISUAL_ID:
 			return getDiagram_2019ContainedLinks(view);
 		case ExtensionPointEditPart.VISUAL_ID:
@@ -673,8 +644,6 @@ public class UMLDiagramUpdater {
 			return getComment_2018IncomingLinks(view);
 		case DefaultNamedElementEditPartTN.VISUAL_ID:
 			return getNamedElement_2022IncomingLinks(view);
-		case ShapeNamedElementEditPart.VISUAL_ID:
-			return getNamedElement_2023IncomingLinks(view);
 		case ShortCutDiagramEditPart.VISUAL_ID:
 			return getDiagram_2019IncomingLinks(view);
 		case ExtensionPointEditPart.VISUAL_ID:
@@ -748,8 +717,6 @@ public class UMLDiagramUpdater {
 			return getComment_2018OutgoingLinks(view);
 		case DefaultNamedElementEditPartTN.VISUAL_ID:
 			return getNamedElement_2022OutgoingLinks(view);
-		case ShapeNamedElementEditPart.VISUAL_ID:
-			return getNamedElement_2023OutgoingLinks(view);
 		case ShortCutDiagramEditPart.VISUAL_ID:
 			return getDiagram_2019OutgoingLinks(view);
 		case ExtensionPointEditPart.VISUAL_ID:
@@ -914,13 +881,6 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getDiagram_2019ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<UMLLinkDescriptor> getNamedElement_2022ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -928,7 +888,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getNamedElement_2023ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getDiagram_2019ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -1279,13 +1239,6 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getDiagram_2019IncomingLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<UMLLinkDescriptor> getNamedElement_2022IncomingLinks(View view) {
 		NamedElement modelElement = (NamedElement)view.getElement();
 		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
@@ -1302,17 +1255,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getNamedElement_2023IncomingLinks(View view) {
-		NamedElement modelElement = (NamedElement)view.getElement();
-		CrossReferenceAdapter crossReferencer = CrossReferenceAdapter.getCrossReferenceAdapter(view.eResource().getResourceSet());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4012(modelElement, crossReferencer));
-		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4013(modelElement, crossReferencer));
-		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4014(modelElement, crossReferencer));
-		result.addAll(getIncomingTypeModelFacetLinks_Abstraction_4015(modelElement, crossReferencer));
-		result.addAll(getIncomingTypeModelFacetLinks_Usage_4016(modelElement, crossReferencer));
-		result.addAll(getIncomingTypeModelFacetLinks_Realization_4017(modelElement, crossReferencer));
-		return result;
+	public static List<UMLLinkDescriptor> getDiagram_2019IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
@@ -1779,13 +1723,6 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getDiagram_2019OutgoingLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<UMLLinkDescriptor> getNamedElement_2022OutgoingLinks(View view) {
 		NamedElement modelElement = (NamedElement)view.getElement();
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
@@ -1799,14 +1736,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getNamedElement_2023OutgoingLinks(View view) {
-		NamedElement modelElement = (NamedElement)view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4013(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Abstraction_4015(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4016(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4017(modelElement));
-		return result;
+	public static List<UMLLinkDescriptor> getDiagram_2019OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
@@ -2095,8 +2026,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Include_4008(UseCase container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getIncludes().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getIncludes().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Include) {
 				continue;
@@ -2116,8 +2047,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Extend_4009(UseCase container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getExtends().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getExtends().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Extend) {
 				continue;
@@ -2137,8 +2068,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Generalization_4010(Classifier container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getGeneralizations().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getGeneralizations().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Generalization) {
 				continue;
@@ -2158,8 +2089,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Association_4011(Package container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Association) {
 				continue;
@@ -2168,15 +2099,14 @@ public class UMLDiagramUpdater {
 			if(AssociationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			//Papyrus GenCode 
-			List targets = link.getEndTypes();
-			Object theTarget = targets.size() >= 2 ? targets.get(1) : null;
+			List<?> targets = link.getEndTypes();
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof Type) {
 				continue;
 			}
 			Type dst = (Type)theTarget;
-			List sources = link.getEndTypes();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getEndTypes();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof Type) {
 				continue;
 			}
@@ -2190,8 +2120,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Dependency_4013(Package container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Dependency) {
 				continue;
@@ -2200,14 +2130,14 @@ public class UMLDiagramUpdater {
 			if(DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getSuppliers();
+			List<?> targets = link.getSuppliers();
 			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof NamedElement) {
 				continue;
 			}
 			NamedElement dst = (NamedElement)theTarget;
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2221,8 +2151,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Abstraction_4015(Package container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Abstraction) {
 				continue;
@@ -2231,14 +2161,14 @@ public class UMLDiagramUpdater {
 			if(AbstractionEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getSuppliers();
+			List<?> targets = link.getSuppliers();
 			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof NamedElement) {
 				continue;
 			}
 			NamedElement dst = (NamedElement)theTarget;
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2252,8 +2182,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Usage_4016(Package container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Usage) {
 				continue;
@@ -2262,14 +2192,14 @@ public class UMLDiagramUpdater {
 			if(UsageEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getSuppliers();
+			List<?> targets = link.getSuppliers();
 			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof NamedElement) {
 				continue;
 			}
 			NamedElement dst = (NamedElement)theTarget;
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2283,8 +2213,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Realization_4017(Package container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Realization) {
 				continue;
@@ -2293,14 +2223,14 @@ public class UMLDiagramUpdater {
 			if(RealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getSuppliers();
+			List<?> targets = link.getSuppliers();
 			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof NamedElement) {
 				continue;
 			}
 			NamedElement dst = (NamedElement)theTarget;
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2314,8 +2244,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_PackageMerge_4018(Package container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackageMerges().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackageMerges().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof PackageMerge) {
 				continue;
@@ -2335,8 +2265,8 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_PackageImport_4019(Namespace container) {
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackageImports().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackageImports().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof PackageImport) {
 				continue;
@@ -2425,8 +2355,8 @@ public class UMLDiagramUpdater {
 			if(AssociationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List sources = link.getEndTypes();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getEndTypes();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof Type) {
 				continue;
 			}
@@ -2464,8 +2394,8 @@ public class UMLDiagramUpdater {
 			if(DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2503,8 +2433,8 @@ public class UMLDiagramUpdater {
 			if(AbstractionEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2528,8 +2458,8 @@ public class UMLDiagramUpdater {
 			if(UsageEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2553,8 +2483,8 @@ public class UMLDiagramUpdater {
 			if(RealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2623,8 +2553,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getIncludes().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getIncludes().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Include) {
 				continue;
@@ -2659,8 +2589,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getExtends().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getExtends().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Extend) {
 				continue;
@@ -2695,8 +2625,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getGeneralizations().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getGeneralizations().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Generalization) {
 				continue;
@@ -2731,8 +2661,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Association) {
 				continue;
@@ -2741,15 +2671,14 @@ public class UMLDiagramUpdater {
 			if(AssociationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			//Papyrus GenCode 
-			List targets = link.getEndTypes();
-			Object theTarget = targets.size() >= 2 ? targets.get(1) : null;
+			List<?> targets = link.getEndTypes();
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof Type) {
 				continue;
 			}
 			Type dst = (Type)theTarget;
-			List sources = link.getEndTypes();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getEndTypes();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof Type) {
 				continue;
 			}
@@ -2790,8 +2719,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Dependency) {
 				continue;
@@ -2800,14 +2729,14 @@ public class UMLDiagramUpdater {
 			if(DependencyEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getSuppliers();
+			List<?> targets = link.getSuppliers();
 			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof NamedElement) {
 				continue;
 			}
 			NamedElement dst = (NamedElement)theTarget;
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2848,8 +2777,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Abstraction) {
 				continue;
@@ -2858,14 +2787,14 @@ public class UMLDiagramUpdater {
 			if(AbstractionEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getSuppliers();
+			List<?> targets = link.getSuppliers();
 			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof NamedElement) {
 				continue;
 			}
 			NamedElement dst = (NamedElement)theTarget;
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2894,8 +2823,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Usage) {
 				continue;
@@ -2904,14 +2833,14 @@ public class UMLDiagramUpdater {
 			if(UsageEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getSuppliers();
+			List<?> targets = link.getSuppliers();
 			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof NamedElement) {
 				continue;
 			}
 			NamedElement dst = (NamedElement)theTarget;
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2940,8 +2869,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof Realization) {
 				continue;
@@ -2950,14 +2879,14 @@ public class UMLDiagramUpdater {
 			if(RealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getSuppliers();
+			List<?> targets = link.getSuppliers();
 			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if(false == theTarget instanceof NamedElement) {
 				continue;
 			}
 			NamedElement dst = (NamedElement)theTarget;
-			List sources = link.getClients();
-			Object theSource = sources.size() >= 1 ? sources.get(0) : null;
+			List<?> sources = link.getClients();
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if(false == theSource instanceof NamedElement) {
 				continue;
 			}
@@ -2986,8 +2915,8 @@ public class UMLDiagramUpdater {
 		if(container == null) {
 			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for(Iterator links = container.getPackageMerges().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for(Iterator<?> links = container.getPackageMerges().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject)links.next();
 			if(false == linkObject instanceof PackageMerge) {
 				continue;

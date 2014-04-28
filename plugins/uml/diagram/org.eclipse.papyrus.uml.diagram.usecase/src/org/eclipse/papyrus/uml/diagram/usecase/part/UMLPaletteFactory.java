@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2010 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.part;
 
 import java.util.ArrayList;
@@ -28,100 +26,103 @@ import org.eclipse.papyrus.uml.diagram.usecase.providers.UMLElementTypes;
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
+	//RS: New Palette generation
+	//Generates the ID for the tool elements
+	//Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_PACKAGE = "usecase.tool.package"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_PACKAGE = "usecase.tool.package";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_SUBJECT = "usecase.tool.subject"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_SUBJECT = "usecase.tool.subject";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_ACTOR = "usecase.tool.actor"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_ACTOR = "usecase.tool.actor";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_USECASE = "usecase.tool.usecase"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_USECASE = "usecase.tool.usecase";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_CONSTRAINT = "usecase.tool.constraint"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_CONSTRAINT = "usecase.tool.constraint";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_COMMENT = "usecase.tool.comment"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_COMMENT = "usecase.tool.comment";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_EXTENSIONPOINT = "usecase.tool.extensionpoint"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_EXTENSIONPOINT = "usecase.tool.extensionpoint";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_ASSOCIATION = "usecase.tool.association"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_ASSOCIATION = "usecase.tool.association";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_GENERALIZATION = "usecase.tool.generalization"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_GENERALIZATION = "usecase.tool.generalization";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_DEPENDENCY = "usecase.tool.dependency"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_DEPENDENCY = "usecase.tool.dependency";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_ABSTRACTION = "usecase.tool.abstraction"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_ABSTRACTION = "usecase.tool.abstraction";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_REALIZATION = "usecase.tool.realization"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_REALIZATION = "usecase.tool.realization";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_USAGE = "usecase.tool.usage"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_USAGE = "usecase.tool.usage";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_PACKAGEMERGE = "usecase.tool.packagemerge"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_PACKAGEMERGE = "usecase.tool.packagemerge";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_PACKAGEIMPORT = "usecase.tool.packageimport"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_PACKAGEIMPORT = "usecase.tool.packageimport";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_INCLUDE = "usecase.tool.include"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_INCLUDE = "usecase.tool.include";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_EXTEND = "usecase.tool.extend"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_EXTEND = "usecase.tool.extend";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_CONSTRAINTLINK = "usecase.tool.constraintlink"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_CONSTRAINTLINK = "usecase.tool.constraintlink";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String USECASE_TOOL_COMMENTLINK = "usecase.tool.commentlink"; //$NON-NLS-1$
+	private final static String USECASE_TOOL_COMMENTLINK = "usecase.tool.commentlink";//$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -194,6 +195,9 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 		return null;
 	}
 
+	/**
+	 * @generated
+	 */
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;
