@@ -10,6 +10,7 @@
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA LIST) - add test for AdapterUtils
  *  Christian W. Damus (CEA) - bug 402525
+ *  Christian W. Damus (CEA) - bug 422257
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.tests;
 
@@ -18,6 +19,7 @@ import org.eclipse.papyrus.infra.core.lifecycleevents.LifeCycleEventsProviderTes
 import org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResourceTest;
 import org.eclipse.papyrus.infra.core.resource.ModelSetTest;
 import org.eclipse.papyrus.infra.core.resource.NestingTransactionalCommandStackTest;
+import org.eclipse.papyrus.infra.core.resource.ResourceAdapterTest;
 import org.eclipse.papyrus.infra.core.services.ComposedServiceTest;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistryTest;
 import org.eclipse.papyrus.infra.core.utils.AdapterUtilsTest;
@@ -30,7 +32,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({
 // {oep.resource}
-ModelSetTest.class, AbstractModelWithSharedResourceTest.class, NestingTransactionalCommandStackTest.class,
+ModelSetTest.class, AbstractModelWithSharedResourceTest.class, NestingTransactionalCommandStackTest.class, ResourceAdapterTest.class,
 // {oep}.core.services
 ComposedServiceTest.class, ServicesRegistryTest.class,
 // {oep}.core.lifecycleevents
