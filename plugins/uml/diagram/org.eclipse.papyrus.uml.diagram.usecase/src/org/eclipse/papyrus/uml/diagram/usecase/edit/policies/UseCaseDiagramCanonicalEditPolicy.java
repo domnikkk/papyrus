@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2009 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.policies;
 
 import java.util.ArrayList;
@@ -75,7 +73,6 @@ import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackageEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackageImportEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.PackageMergeEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.RealizationEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShapeNamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ShortCutDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.SubjectClassifierEditPartTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UsageEditPart;
@@ -115,8 +112,19 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	@SuppressWarnings("rawtypes")
-	protected List getSemanticChildrenList() {
+	protected Set<EStructuralFeature> getFeaturesToSynchronize() {
+		if(myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
+		}
+		return myFeaturesToSynchronize;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View)getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getPackage_1000SemanticChildren(viewObject);
@@ -148,23 +156,10 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ConstraintEditPartTN.VISUAL_ID:
 		case CommentEditPartTN.VISUAL_ID:
 		case DefaultNamedElementEditPartTN.VISUAL_ID:
-		case ShapeNamedElementEditPart.VISUAL_ID:
 		case ShortCutDiagramEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Set getFeaturesToSynchronize() {
-		if(myFeaturesToSynchronize == null) {
-			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
-		}
-		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -280,73 +275,17 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Diagram getDiagram() {
-		return ((View)getHost().getModel()).getDiagram();
-	}
-
-	/**
-	 * @generated
-	 */
-	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
-		return getEditPart(descriptor.getSource(), domain2NotationMap);
-	}
-
-	/**
-	 * @generated
-	 */
-	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
-		return getEditPart(descriptor.getDestination(), domain2NotationMap);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) {
-		View view = (View)domain2NotationMap.getHinted(domainModelElement, UMLVisualIDRegistry.getType(hintVisualId));
-		if(view != null) {
-			return (EditPart)getHost().getViewer().getEditPartRegistry().get(view);
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	@SuppressWarnings("serial")
-	protected static class Domain2Notation extends HashMap<EObject, View> {
-
-		/**
-		 * @generated
-		 */
-		public boolean containsDomainElement(EObject domainElement) {
-			return this.containsKey(domainElement);
-		}
-
-		/**
-		 * @generated
-		 */
-		public View getHinted(EObject domainEObject, String hint) {
-			return this.get(domainEObject);
-		}
-
-		/**
-		 * @generated
-		 */
-		public void putView(EObject domainElement, View view) {
-			if(!containsKey(view.getElement())) {
-				this.put(domainElement, view);
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<UMLLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
-		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for(Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+		List<View> edges = new ArrayList<View>();
+		for(Object edge : getDiagram().getEdges()) {
+			if(edge instanceof View) {
+				edges.add((View)edge);
+			}
+		}
+		Collection<View> existingLinks = new LinkedList<View>(edges);
+		for(Iterator<View> linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge)linksIterator.next();
 			int diagramLinkVisualID = UMLVisualIDRegistry.getVisualID(nextDiagramLink);
 			if(diagramLinkVisualID == -1) {
@@ -456,14 +395,6 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getNamedElement_2022ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ShapeNamedElementEditPart.VISUAL_ID:
-		{
-			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getNamedElement_2023ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -637,10 +568,10 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		}
-		for(Iterator children = view.getChildren().iterator(); children.hasNext();) {
+		for(Iterator<?> children = view.getChildren().iterator(); children.hasNext();) {
 			result.addAll(collectAllLinks((View)children.next(), domain2NotationMap));
 		}
-		for(Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+		for(Iterator<?> edges = view.getSourceEdges().iterator(); edges.hasNext();) {
 			result.addAll(collectAllLinks((View)edges.next(), domain2NotationMap));
 		}
 		return result;
@@ -685,5 +616,67 @@ public class UseCaseDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			return (EditPart)getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private Diagram getDiagram() {
+		return ((View)getHost().getModel()).getDiagram();
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getSource(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getDestination(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View)domain2NotationMap.getHinted(domainModelElement, UMLVisualIDRegistry.getType(hintVisualId));
+		if(view != null) {
+			return (EditPart)getHost().getViewer().getEditPartRegistry().get(view);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("serial")
+	protected static class Domain2Notation extends HashMap<EObject, View> {
+
+		/**
+		 * @generated
+		 */
+		public boolean containsDomainElement(EObject domainElement) {
+			return this.containsKey(domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public View getHinted(EObject domainEObject, String hint) {
+			return this.get(domainEObject);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void putView(EObject domainElement, View view) {
+			if(!containsKey(view.getElement())) {
+				this.put(domainElement, view);
+			}
+		}
 	}
 }

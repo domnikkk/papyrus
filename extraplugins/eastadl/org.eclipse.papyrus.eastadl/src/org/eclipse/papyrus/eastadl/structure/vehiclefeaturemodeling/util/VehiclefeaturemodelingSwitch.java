@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.Context;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
+import org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement;
 import org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature;
 import org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureTreeNode;
-import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.*;
 import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet;
 import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehicleFeature;
 import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehiclefeaturemodelingPackage;
@@ -34,7 +34,6 @@ import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.Vehiclefeatu
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehiclefeaturemodelingPackage
  * @generated
  */
@@ -43,7 +42,6 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected static VehiclefeaturemodelingPackage modelPackage;
@@ -51,11 +49,10 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VehiclefeaturemodelingSwitch() {
-		if(modelPackage == null) {
+		if (modelPackage == null) {
 			modelPackage = VehiclefeaturemodelingPackage.eINSTANCE;
 		}
 	}
@@ -64,7 +61,6 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -80,9 +76,7 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *        the target of the switch.
+	 * @param object the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -95,9 +89,7 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Deviation Attribute Set</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *        the target of the switch.
+	 * @param object the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Deviation Attribute Set</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -112,7 +104,7 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	 * terminate the switch. <!-- end-user-doc -->
 	 * 
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -125,9 +117,7 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Feature Tree Node</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *        the target of the switch.
+	 * @param object the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature Tree Node</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -140,9 +130,7 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Vehicle Feature</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *        the target of the switch.
+	 * @param object the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Vehicle Feature</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -157,9 +145,7 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *        the target of the switch.
+	 * @param object the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -169,12 +155,27 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EA Packageable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EA Packageable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEAPackageableElement(EAPackageableElement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
 	 * 
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -187,41 +188,31 @@ public class VehiclefeaturemodelingSwitch<T> extends Switch<T> {
 	/**
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch(classifierID) {
-		case VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET:
-		{
-			DeviationAttributeSet deviationAttributeSet = (DeviationAttributeSet)theEObject;
-			T result = caseDeviationAttributeSet(deviationAttributeSet);
-			if(result == null)
-				result = caseEAElement(deviationAttributeSet);
-			if(result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case VehiclefeaturemodelingPackage.VEHICLE_FEATURE:
-		{
-			VehicleFeature vehicleFeature = (VehicleFeature)theEObject;
-			T result = caseVehicleFeature(vehicleFeature);
-			if(result == null)
-				result = caseFeature(vehicleFeature);
-			if(result == null)
-				result = caseFeatureTreeNode(vehicleFeature);
-			if(result == null)
-				result = caseContext(vehicleFeature);
-			if(result == null)
-				result = caseEAElement(vehicleFeature);
-			if(result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		default:
-			return defaultCase(theEObject);
+		switch (classifierID) {
+			case VehiclefeaturemodelingPackage.DEVIATION_ATTRIBUTE_SET: {
+				DeviationAttributeSet deviationAttributeSet = (DeviationAttributeSet)theEObject;
+				T result = caseDeviationAttributeSet(deviationAttributeSet);
+				if (result == null) result = caseEAElement(deviationAttributeSet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VehiclefeaturemodelingPackage.VEHICLE_FEATURE: {
+				VehicleFeature vehicleFeature = (VehicleFeature)theEObject;
+				T result = caseVehicleFeature(vehicleFeature);
+				if (result == null) result = caseFeature(vehicleFeature);
+				if (result == null) result = caseFeatureTreeNode(vehicleFeature);
+				if (result == null) result = caseContext(vehicleFeature);
+				if (result == null) result = caseEAPackageableElement(vehicleFeature);
+				if (result == null) result = caseEAElement(vehicleFeature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			default: return defaultCase(theEObject);
 		}
 	}
 

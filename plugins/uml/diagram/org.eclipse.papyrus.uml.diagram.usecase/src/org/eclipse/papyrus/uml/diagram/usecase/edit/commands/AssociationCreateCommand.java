@@ -52,6 +52,16 @@ public class AssociationCreateCommand extends EditElementCommand {
 	protected Package container;
 
 	/**
+	 * @generated
+	 */
+	public AssociationCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
+		super(request.getLabel(), null, request);
+		this.source = source;
+		this.target = target;
+		container = deduceContainer(source, target);
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	protected Diagram diagram;

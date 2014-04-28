@@ -17,15 +17,15 @@ package org.eclipse.papyrus.eastadl.structure.functionmodeling;
 
 
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
+import org.eclipse.papyrus.eastadl.infrastructure.elements.EAPrototype;
 import org.eclipse.uml2.uml.Image;
-import org.eclipse.uml2.uml.Property;
 
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Function Prototype</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * FunctionPrototype represents a reference to the occurrence of a FunctionType when it acts as a part.
  * 
@@ -44,56 +44,19 @@ import org.eclipse.uml2.uml.Property;
  * Changes:
  * Renamed from ADLFunctionPart
  * 
- * Extension:
+ * Extension: 
  * To specialize SysML::BlockProperty, which extends Property
  * <!-- end-model-doc -->
- * 
- * <p>
- * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype#getBase_Property <em>Base Property</em>}</li>
- * </ul>
- * </p>
- * 
+ *
+ *
  * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionPrototype()
  * @model abstract="true"
  * @generated
  */
-public interface FunctionPrototype extends EAElement {
-
-	/**
-	 * Returns the value of the '<em><b>Base Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Base Property</em>' reference.
-	 * @see #setBase_Property(Property)
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionPrototype_Base_Property()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	Property getBase_Property();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype#getBase_Property <em>Base Property</em>}
-	 * ' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *        the new value of the '<em>Base Property</em>' reference.
-	 * @see #getBase_Property()
-	 * @generated
-	 */
-	void setBase_Property(Property value);
-
+public interface FunctionPrototype extends EAElement, EAPrototype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */

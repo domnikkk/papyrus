@@ -23,9 +23,17 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.eastadl.EastadlPackage;
 import org.eclipse.papyrus.eastadl.annex.AnnexPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributequantificationconstraintPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.ComputationconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.impl.AnnexPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage;
 import org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.behavior.BehaviorPackage;
 import org.eclipse.papyrus.eastadl.behavior.impl.BehaviorPackageImpl;
 import org.eclipse.papyrus.eastadl.dependability.DependabilityPackage;
@@ -51,10 +59,12 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ElementsPackageI
 import org.eclipse.papyrus.eastadl.infrastructure.impl.InfrastructurePackageImpl;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl;
-import org.eclipse.papyrus.eastadl.interchange.InterchangePackage;
-import org.eclipse.papyrus.eastadl.interchange.impl.InterchangePackageImpl;
+import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
+import org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.RequirementsPackage;
 import org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl;
+import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
+import org.eclipse.papyrus.eastadl.requirements.usecases.impl.UsecasesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl;
 import org.eclipse.papyrus.eastadl.structure.StructurePackage;
@@ -70,24 +80,29 @@ import org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingP
 import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehiclefeaturemodelingPackage;
 import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.impl.VehiclefeaturemodelingPackageImpl;
 import org.eclipse.papyrus.eastadl.timing.TimingPackage;
+import org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent;
+import org.eclipse.papyrus.eastadl.timing.events.EventFaultFailure;
+import org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw;
 import org.eclipse.papyrus.eastadl.timing.events.EventFunction;
 import org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPort;
 import org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPortKind;
 import org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort;
 import org.eclipse.papyrus.eastadl.timing.events.EventsFactory;
 import org.eclipse.papyrus.eastadl.timing.events.EventsPackage;
+import org.eclipse.papyrus.eastadl.timing.events.ExternalEvent;
+import org.eclipse.papyrus.eastadl.timing.events.ModeEvent;
 import org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl;
 import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage;
 import org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.TimingconstraintsPackageImpl;
 import org.eclipse.papyrus.eastadl.variability.VariabilityPackage;
 import org.eclipse.papyrus.eastadl.variability.impl.VariabilityPackageImpl;
 import org.eclipse.papyrus.sysml.SysmlPackage;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
@@ -95,7 +110,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass eventFunctionFlowPortEClass = null;
@@ -103,7 +117,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass eventFunctionClientServerPortEClass = null;
@@ -111,7 +124,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass eventFunctionEClass = null;
@@ -119,7 +131,41 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	private EClass autosarEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eventFaultFailureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eventFeatureFlawEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass externalEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modeEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EEnum eventFunctionClientServerPortKindEEnum = null;
@@ -127,7 +173,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -135,18 +180,16 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>
-	 * This method is used to initialize {@link EventsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead,
-	 * they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>This method is used to initialize {@link EventsPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static EventsPackage init() {
-		if(isInited)
-			return (EventsPackage)EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI);
+		if (isInited) return (EventsPackage)EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI);
 
 		// Obtain or create and register package
 		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EventsPackageImpl());
@@ -162,27 +205,33 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
+		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) : ElementsPackage.eINSTANCE);
 		StructurePackageImpl theStructurePackage = (StructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) : StructurePackage.eINSTANCE);
 		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
-		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
+		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
-		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
-		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
-		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
-		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
-		InterchangePackageImpl theInterchangePackage = (InterchangePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) instanceof InterchangePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) : InterchangePackage.eINSTANCE);
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
+		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
-		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
 		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
 		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
 		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) : SafetycasePackage.eINSTANCE);
+		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
+		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
+		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) : UsecasesPackage.eINSTANCE);
+		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
+		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
+		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
 		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
+		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
+		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
+		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -192,27 +241,33 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 		theInfrastructurePackage.createPackageContents();
 		theDatatypesPackage.createPackageContents();
 		theUserattributesPackage.createPackageContents();
+		theValuesPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theStructurePackage.createPackageContents();
 		theFunctionmodelingPackage.createPackageContents();
-		theHardwaremodelingPackage.createPackageContents();
+		theFeaturemodelingPackage.createPackageContents();
 		theSystemmodelingPackage.createPackageContents();
 		theVehiclefeaturemodelingPackage.createPackageContents();
-		theFeaturemodelingPackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
-		theRequirementsPackage.createPackageContents();
-		theVerificationvalidationPackage.createPackageContents();
-		theTimingPackage.createPackageContents();
-		theTimingconstraintsPackage.createPackageContents();
-		theInterchangePackage.createPackageContents();
-		theEnvironmentPackage.createPackageContents();
+		theHardwaremodelingPackage.createPackageContents();
 		theDependabilityPackage.createPackageContents();
-		theErrormodelPackage.createPackageContents();
 		theSafetyrequirementPackage.createPackageContents();
 		theSafetyconstraintsPackage.createPackageContents();
 		theSafetycasePackage.createPackageContents();
+		theErrormodelPackage.createPackageContents();
+		theRequirementsPackage.createPackageContents();
+		theUsecasesPackage.createPackageContents();
+		theVerificationvalidationPackage.createPackageContents();
+		theRequirementsPackage_1.createPackageContents();
+		theBehaviorPackage.createPackageContents();
+		theTimingPackage.createPackageContents();
+		theTimingconstraintsPackage.createPackageContents();
+		theEnvironmentPackage.createPackageContents();
 		theAnnexPackage.createPackageContents();
 		theNeedsPackage.createPackageContents();
+		theBehaviordescriptionPackage.createPackageContents();
+		theAttributequantificationconstraintPackage.createPackageContents();
+		theTemporalconstraintPackage.createPackageContents();
+		theComputationconstraintPackage.createPackageContents();
 		theGenericconstraintsPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -222,33 +277,39 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 		theInfrastructurePackage.initializePackageContents();
 		theDatatypesPackage.initializePackageContents();
 		theUserattributesPackage.initializePackageContents();
+		theValuesPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theStructurePackage.initializePackageContents();
 		theFunctionmodelingPackage.initializePackageContents();
-		theHardwaremodelingPackage.initializePackageContents();
+		theFeaturemodelingPackage.initializePackageContents();
 		theSystemmodelingPackage.initializePackageContents();
 		theVehiclefeaturemodelingPackage.initializePackageContents();
-		theFeaturemodelingPackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
-		theRequirementsPackage.initializePackageContents();
-		theVerificationvalidationPackage.initializePackageContents();
-		theTimingPackage.initializePackageContents();
-		theTimingconstraintsPackage.initializePackageContents();
-		theInterchangePackage.initializePackageContents();
-		theEnvironmentPackage.initializePackageContents();
+		theHardwaremodelingPackage.initializePackageContents();
 		theDependabilityPackage.initializePackageContents();
-		theErrormodelPackage.initializePackageContents();
 		theSafetyrequirementPackage.initializePackageContents();
 		theSafetyconstraintsPackage.initializePackageContents();
 		theSafetycasePackage.initializePackageContents();
+		theErrormodelPackage.initializePackageContents();
+		theRequirementsPackage.initializePackageContents();
+		theUsecasesPackage.initializePackageContents();
+		theVerificationvalidationPackage.initializePackageContents();
+		theRequirementsPackage_1.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
+		theTimingPackage.initializePackageContents();
+		theTimingconstraintsPackage.initializePackageContents();
+		theEnvironmentPackage.initializePackageContents();
 		theAnnexPackage.initializePackageContents();
 		theNeedsPackage.initializePackageContents();
+		theBehaviordescriptionPackage.initializePackageContents();
+		theAttributequantificationconstraintPackage.initializePackageContents();
+		theTemporalconstraintPackage.initializePackageContents();
+		theComputationconstraintPackage.initializePackageContents();
 		theGenericconstraintsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theEventsPackage.freeze();
 
-
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(EventsPackage.eNS_URI, theEventsPackage);
 		return theEventsPackage;
@@ -257,7 +318,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -265,19 +325,19 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#eNS_URI
 	 * @see #init()
@@ -288,32 +348,42 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	}
 
 	/**
-	 * Creates the meta-model objects for the package. This method is
+	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated)
-			return;
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
 		eventFunctionFlowPortEClass = createEClass(EVENT_FUNCTION_FLOW_PORT);
 		createEReference(eventFunctionFlowPortEClass, EVENT_FUNCTION_FLOW_PORT__PORT);
-		createEReference(eventFunctionFlowPortEClass, EVENT_FUNCTION_FLOW_PORT__PORT_PATH);
 
 		eventFunctionClientServerPortEClass = createEClass(EVENT_FUNCTION_CLIENT_SERVER_PORT);
 		createEAttribute(eventFunctionClientServerPortEClass, EVENT_FUNCTION_CLIENT_SERVER_PORT__EVENT_KIND);
 		createEReference(eventFunctionClientServerPortEClass, EVENT_FUNCTION_CLIENT_SERVER_PORT__PORT);
-		createEReference(eventFunctionClientServerPortEClass, EVENT_FUNCTION_CLIENT_SERVER_PORT__PORT_PATH);
 
 		eventFunctionEClass = createEClass(EVENT_FUNCTION);
 		createEReference(eventFunctionEClass, EVENT_FUNCTION__FUNCTION);
 		createEReference(eventFunctionEClass, EVENT_FUNCTION__FUNCTION_TYPE);
-		createEReference(eventFunctionEClass, EVENT_FUNCTION__FUNCTION_PATH);
+
+		autosarEventEClass = createEClass(AUTOSAR_EVENT);
+		createEReference(autosarEventEClass, AUTOSAR_EVENT__REF);
+
+		eventFaultFailureEClass = createEClass(EVENT_FAULT_FAILURE);
+		createEReference(eventFaultFailureEClass, EVENT_FAULT_FAILURE__FAULT_FAILURE);
+
+		eventFeatureFlawEClass = createEClass(EVENT_FEATURE_FLAW);
+		createEReference(eventFeatureFlawEClass, EVENT_FEATURE_FLAW__FEATURE_FLAW);
+
+		externalEventEClass = createEClass(EXTERNAL_EVENT);
+
+		modeEventEClass = createEClass(MODE_EVENT);
+		createEReference(modeEventEClass, MODE_EVENT__START);
+		createEReference(modeEventEClass, MODE_EVENT__END);
 
 		// Create enums
 		eventFunctionClientServerPortKindEEnum = createEEnum(EVENT_FUNCTION_CLIENT_SERVER_PORT_KIND);
@@ -322,7 +392,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getEventFunction() {
@@ -332,7 +401,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEventFunction_Function() {
@@ -342,7 +410,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEventFunction_FunctionType() {
@@ -352,17 +419,96 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getEventFunction_Function_path() {
-		return (EReference)eventFunctionEClass.getEStructuralFeatures().get(2);
+	public EClass getAUTOSAREvent() {
+		return autosarEventEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EReference getAUTOSAREvent_Ref() {
+		return (EReference)autosarEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEventFaultFailure() {
+		return eventFaultFailureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEventFaultFailure_FaultFailure() {
+		return (EReference)eventFaultFailureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEventFeatureFlaw() {
+		return eventFeatureFlawEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEventFeatureFlaw_FeatureFlaw() {
+		return (EReference)eventFeatureFlawEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExternalEvent() {
+		return externalEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModeEvent() {
+		return modeEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModeEvent_Start() {
+		return (EReference)modeEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModeEvent_End() {
+		return (EReference)modeEventEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getEventFunctionClientServerPort() {
@@ -372,7 +518,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getEventFunctionClientServerPort_EventKind() {
@@ -382,7 +527,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEventFunctionClientServerPort_Port() {
@@ -392,17 +536,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getEventFunctionClientServerPort_Port_path() {
-		return (EReference)eventFunctionClientServerPortEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EEnum getEventFunctionClientServerPortKind() {
@@ -412,7 +545,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getEventFunctionFlowPort() {
@@ -422,7 +554,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEventFunctionFlowPort_Port() {
@@ -432,17 +563,6 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getEventFunctionFlowPort_Port_path() {
-		return (EReference)eventFunctionFlowPortEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EventsFactory getEventsFactory() {
@@ -450,16 +570,14 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 	}
 
 	/**
-	 * Complete the initialization of the package and its meta-model. This
+	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized)
-			return;
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -469,7 +587,13 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 
 		// Obtain other dependent packages
 		TimingPackage theTimingPackage = (TimingPackage)EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI);
+		ValuesPackage theValuesPackage = (ValuesPackage)EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI);
+		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		FunctionmodelingPackage theFunctionmodelingPackage = (FunctionmodelingPackage)EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		SafetyconstraintsPackage theSafetyconstraintsPackage = (SafetyconstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI);
+		DependabilityPackage theDependabilityPackage = (DependabilityPackage)EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -477,23 +601,42 @@ public class EventsPackageImpl extends EPackageImpl implements EventsPackage {
 
 		// Add supertypes to classes
 		eventFunctionFlowPortEClass.getESuperTypes().add(theTimingPackage.getEvent());
+		eventFunctionFlowPortEClass.getESuperTypes().add(theValuesPackage.getEAExpression());
 		eventFunctionClientServerPortEClass.getESuperTypes().add(theTimingPackage.getEvent());
+		eventFunctionClientServerPortEClass.getESuperTypes().add(theValuesPackage.getEAExpression());
 		eventFunctionEClass.getESuperTypes().add(theTimingPackage.getEvent());
+		autosarEventEClass.getESuperTypes().add(theTimingPackage.getEvent());
+		eventFaultFailureEClass.getESuperTypes().add(theTimingPackage.getEvent());
+		eventFeatureFlawEClass.getESuperTypes().add(theTimingPackage.getEvent());
+		externalEventEClass.getESuperTypes().add(theTimingPackage.getEvent());
+		modeEventEClass.getESuperTypes().add(theTimingPackage.getEvent());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(eventFunctionFlowPortEClass, EventFunctionFlowPort.class, "EventFunctionFlowPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventFunctionFlowPort_Port(), theFunctionmodelingPackage.getFunctionPort(), null, "port", null, 1, 1, EventFunctionFlowPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionFlowPort_Port_path(), theFunctionmodelingPackage.getFunctionPrototype(), null, "port_path", null, 0, -1, EventFunctionFlowPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventFunctionFlowPort_Port(), theInfrastructurePackage.getEventFunctionFlowPortInstanceRef(), null, "port", null, 1, 1, EventFunctionFlowPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(eventFunctionClientServerPortEClass, EventFunctionClientServerPort.class, "EventFunctionClientServerPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEventFunctionClientServerPort_EventKind(), this.getEventFunctionClientServerPortKind(), "eventKind", null, 1, 1, EventFunctionClientServerPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionClientServerPort_Port(), theFunctionmodelingPackage.getFunctionClientServerPort(), null, "port", null, 1, 1, EventFunctionClientServerPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunctionClientServerPort_Port_path(), theFunctionmodelingPackage.getFunctionPrototype(), null, "port_path", null, 0, -1, EventFunctionClientServerPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventFunctionClientServerPort_Port(), theInfrastructurePackage.getEventFunctionClientServerPortInstanceRef(), null, "port", null, 1, 1, EventFunctionClientServerPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(eventFunctionEClass, EventFunction.class, "EventFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEventFunction_Function(), theFunctionmodelingPackage.getFunctionPrototype(), null, "function", null, 0, 1, EventFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEventFunction_Function(), theInfrastructurePackage.getEventFunctionInstanceRef(), null, "function", null, 1, 1, EventFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEventFunction_FunctionType(), theFunctionmodelingPackage.getFunctionType(), null, "functionType", null, 0, 1, EventFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEventFunction_Function_path(), theFunctionmodelingPackage.getFunctionPrototype(), null, "function_path", null, 0, -1, EventFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(autosarEventEClass, AUTOSAREvent.class, "AUTOSAREvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAUTOSAREvent_Ref(), theUMLPackage.getTimeEvent(), null, "ref", null, 1, 1, AUTOSAREvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(eventFaultFailureEClass, EventFaultFailure.class, "EventFaultFailure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEventFaultFailure_FaultFailure(), theSafetyconstraintsPackage.getFaultFailure(), null, "faultFailure", null, 1, 1, EventFaultFailure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(eventFeatureFlawEClass, EventFeatureFlaw.class, "EventFeatureFlaw", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEventFeatureFlaw_FeatureFlaw(), theDependabilityPackage.getFeatureFlaw(), null, "featureFlaw", null, 1, 1, EventFeatureFlaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(externalEventEClass, ExternalEvent.class, "ExternalEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(modeEventEClass, ModeEvent.class, "ModeEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModeEvent_Start(), theBehaviorPackage.getMode(), null, "start", null, 0, -1, ModeEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getModeEvent_End(), theBehaviorPackage.getMode(), null, "end", null, 0, -1, ModeEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eventFunctionClientServerPortKindEEnum, EventFunctionClientServerPortKind.class, "EventFunctionClientServerPortKind");

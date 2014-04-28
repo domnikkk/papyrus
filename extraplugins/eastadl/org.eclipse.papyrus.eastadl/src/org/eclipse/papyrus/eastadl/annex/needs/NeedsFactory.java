@@ -22,17 +22,14 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage
  * @generated
  */
 public interface NeedsFactory extends EFactory {
-
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	NeedsFactory eINSTANCE = org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsFactoryImpl.init();
@@ -41,7 +38,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Business Opportunity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Business Opportunity</em>'.
 	 * @generated
 	 */
@@ -51,7 +47,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Mission</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Mission</em>'.
 	 * @generated
 	 */
@@ -61,7 +56,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Vehicle System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Vehicle System</em>'.
 	 * @generated
 	 */
@@ -71,7 +65,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Architecture</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Architecture</em>'.
 	 * @generated
 	 */
@@ -81,7 +74,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Architectural Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Architectural Description</em>'.
 	 * @generated
 	 */
@@ -91,7 +83,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Architectural Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Architectural Model</em>'.
 	 * @generated
 	 */
@@ -101,7 +92,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Problem Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Problem Statement</em>'.
 	 * @generated
 	 */
@@ -111,7 +101,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Product Positioning</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Product Positioning</em>'.
 	 * @generated
 	 */
@@ -121,7 +110,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Stakeholder</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Stakeholder</em>'.
 	 * @generated
 	 */
@@ -131,7 +119,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns a new object of class '<em>Stakeholder Need</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Stakeholder Need</em>'.
 	 * @generated
 	 */
@@ -141,7 +128,6 @@ public interface NeedsFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.structure.functionmodeling.*;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionPrototype;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionType;
@@ -47,14 +46,12 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class FunctionmodelingFactoryImpl extends EFactoryImpl implements FunctionmodelingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -66,16 +63,16 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static FunctionmodelingFactory init() {
 		try {
 			FunctionmodelingFactory theFunctionmodelingFactory = (FunctionmodelingFactory)EPackage.Registry.INSTANCE.getEFactory(FunctionmodelingPackage.eNS_URI);
-			if(theFunctionmodelingFactory != null) {
+			if (theFunctionmodelingFactory != null) {
 				return theFunctionmodelingFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new FunctionmodelingFactoryImpl();
@@ -84,7 +81,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionmodelingFactoryImpl() {
@@ -94,7 +90,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertClientServerKindToString(EDataType eDataType, Object instanceValue) {
@@ -104,20 +99,17 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EADirectionKind createEADirectionKindFromString(EDataType eDataType, String initialValue) {
 		EADirectionKind result = EADirectionKind.get(initialValue);
-		if(result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertEADirectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -127,72 +119,52 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
-		case FunctionmodelingPackage.CLIENT_SERVER_KIND:
-			return convertClientServerKindToString(eDataType, instanceValue);
-		case FunctionmodelingPackage.EA_DIRECTION_KIND:
-			return convertEADirectionKindToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+			case FunctionmodelingPackage.EA_DIRECTION_KIND:
+				return convertEADirectionKindToString(eDataType, instanceValue);
+			case FunctionmodelingPackage.CLIENT_SERVER_KIND:
+				return convertClientServerKindToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
-		case FunctionmodelingPackage.LOCAL_DEVICE_MANAGER:
-			return createLocalDeviceManager();
-		case FunctionmodelingPackage.DESIGN_FUNCTION_TYPE:
-			return createDesignFunctionType();
-		case FunctionmodelingPackage.PORT_GROUP:
-			return createPortGroup();
-		case FunctionmodelingPackage.FUNCTION_CONNECTOR:
-			return createFunctionConnector();
-		case FunctionmodelingPackage.DESIGN_FUNCTION_PROTOTYPE:
-			return createDesignFunctionPrototype();
-		case FunctionmodelingPackage.FUNCTIONAL_DEVICE:
-			return createFunctionalDevice();
-		case FunctionmodelingPackage.ANALYSIS_FUNCTION_TYPE:
-			return createAnalysisFunctionType();
-		case FunctionmodelingPackage.ANALYSIS_FUNCTION_PROTOTYPE:
-			return createAnalysisFunctionPrototype();
-		case FunctionmodelingPackage.FUNCTION_FLOW_PORT:
-			return createFunctionFlowPort();
-		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_PORT:
-			return createFunctionClientServerPort();
-		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE:
-			return createFunctionClientServerInterface();
-		case FunctionmodelingPackage.OPERATION:
-			return createOperation();
-		case FunctionmodelingPackage.BASIC_SOFTWARE_FUNCTION_TYPE:
-			return createBasicSoftwareFunctionType();
-		case FunctionmodelingPackage.HARDWARE_FUNCTION_TYPE:
-			return createHardwareFunctionType();
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION:
-			return createFunctionAllocation();
-		case FunctionmodelingPackage.ALLOCATION:
-			return createAllocation();
-		case FunctionmodelingPackage.FUNCTION_POWER_PORT:
-			return createFunctionPowerPort();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case FunctionmodelingPackage.LOCAL_DEVICE_MANAGER: return createLocalDeviceManager();
+			case FunctionmodelingPackage.DESIGN_FUNCTION_TYPE: return createDesignFunctionType();
+			case FunctionmodelingPackage.PORT_GROUP: return createPortGroup();
+			case FunctionmodelingPackage.FUNCTION_CONNECTOR: return createFunctionConnector();
+			case FunctionmodelingPackage.DESIGN_FUNCTION_PROTOTYPE: return createDesignFunctionPrototype();
+			case FunctionmodelingPackage.FUNCTIONAL_DEVICE: return createFunctionalDevice();
+			case FunctionmodelingPackage.ANALYSIS_FUNCTION_TYPE: return createAnalysisFunctionType();
+			case FunctionmodelingPackage.ANALYSIS_FUNCTION_PROTOTYPE: return createAnalysisFunctionPrototype();
+			case FunctionmodelingPackage.FUNCTION_FLOW_PORT: return createFunctionFlowPort();
+			case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_PORT: return createFunctionClientServerPort();
+			case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE: return createFunctionClientServerInterface();
+			case FunctionmodelingPackage.OPERATION: return createOperation();
+			case FunctionmodelingPackage.BASIC_SOFTWARE_FUNCTION_TYPE: return createBasicSoftwareFunctionType();
+			case FunctionmodelingPackage.HARDWARE_FUNCTION_TYPE: return createHardwareFunctionType();
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION: return createFunctionAllocation();
+			case FunctionmodelingPackage.ALLOCATION: return createAllocation();
+			case FunctionmodelingPackage.FUNCTION_POWER_PORT: return createFunctionPowerPort();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Allocation createAllocation() {
@@ -203,7 +175,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public AnalysisFunctionPrototype createAnalysisFunctionPrototype() {
@@ -214,7 +185,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public AnalysisFunctionType createAnalysisFunctionType() {
@@ -225,7 +195,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public BasicSoftwareFunctionType createBasicSoftwareFunctionType() {
@@ -236,20 +205,17 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ClientServerKind createClientServerKindFromString(EDataType eDataType, String initialValue) {
 		ClientServerKind result = ClientServerKind.get(initialValue);
-		if(result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DesignFunctionPrototype createDesignFunctionPrototype() {
@@ -260,7 +226,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DesignFunctionType createDesignFunctionType() {
@@ -271,24 +236,22 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
-		case FunctionmodelingPackage.CLIENT_SERVER_KIND:
-			return createClientServerKindFromString(eDataType, initialValue);
-		case FunctionmodelingPackage.EA_DIRECTION_KIND:
-			return createEADirectionKindFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+			case FunctionmodelingPackage.EA_DIRECTION_KIND:
+				return createEADirectionKindFromString(eDataType, initialValue);
+			case FunctionmodelingPackage.CLIENT_SERVER_KIND:
+				return createClientServerKindFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionalDevice createFunctionalDevice() {
@@ -299,7 +262,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionAllocation createFunctionAllocation() {
@@ -310,7 +272,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionClientServerInterface createFunctionClientServerInterface() {
@@ -321,7 +282,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionClientServerPort createFunctionClientServerPort() {
@@ -332,7 +292,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionConnector createFunctionConnector() {
@@ -343,7 +302,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionFlowPort createFunctionFlowPort() {
@@ -354,7 +312,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionPowerPort createFunctionPowerPort() {
@@ -365,7 +322,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public HardwareFunctionType createHardwareFunctionType() {
@@ -375,7 +331,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public LocalDeviceManager createLocalDeviceManager() {
@@ -386,7 +341,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Operation createOperation() {
@@ -397,7 +351,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public PortGroup createPortGroup() {
@@ -407,7 +360,6 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FunctionmodelingPackage getFunctionmodelingPackage() {

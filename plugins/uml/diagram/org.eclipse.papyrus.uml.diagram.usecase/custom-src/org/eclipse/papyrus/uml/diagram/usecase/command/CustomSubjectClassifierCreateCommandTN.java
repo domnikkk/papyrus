@@ -19,7 +19,6 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -44,45 +43,22 @@ public class CustomSubjectClassifierCreateCommandTN extends EditElementCommand {
 
 	ArrayList<IHintedType> possibleSubject = new ArrayList<IHintedType>();
 
-	/**
-	 * @generated
-	 */
-	private EClass eClass = null;
-
-	/**
-	 * @generated
-	 */
 	private EObject eObject = null;
 
-	/**
-	 * @generated
-	 */
 	public CustomSubjectClassifierCreateCommandTN(CreateElementRequest req, EObject eObject, ArrayList<IHintedType> possibleSubject) {
 		super(req.getLabel(), null, req);
 		this.eObject = eObject;
-		this.eClass = eObject != null ? eObject.eClass() : null;
 		this.possibleSubject = possibleSubject;
 	}
 
-	/**
-	 * @generated
-	 */
 	public static CustomSubjectClassifierCreateCommandTN create(CreateElementRequest req, EObject eObject, ArrayList<IHintedType> possibleSubject) {
 		return new CustomSubjectClassifierCreateCommandTN(req, eObject, possibleSubject);
 	}
 
-	/**
-	 * @generated
-	 */
 	public CustomSubjectClassifierCreateCommandTN(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
-	/**
-	 * FIXME: replace with setElementToEdit()
-	 * 
-	 * @generated
-	 */
 	protected EObject getElementToEdit() {
 		EObject container = ((CreateElementRequest)getRequest()).getContainer();
 		if(container instanceof View) {
@@ -94,16 +70,10 @@ public class CustomSubjectClassifierCreateCommandTN extends EditElementCommand {
 		return eObject;
 	}
 
-	/**
-	 * @generated
-	 */
 	public boolean canExecute() {
 		return true;
 	}
 
-	/**
-	 * @generated
-	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		SubjectSelectionDialog dialog = new SubjectSelectionDialog(new Shell(), possibleSubject, SWT.NATIVE);
 		dialog.open();
@@ -122,9 +92,6 @@ public class CustomSubjectClassifierCreateCommandTN extends EditElementCommand {
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
-	/**
-	 * @generated
-	 */
 	protected void doConfigure(Classifier newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);

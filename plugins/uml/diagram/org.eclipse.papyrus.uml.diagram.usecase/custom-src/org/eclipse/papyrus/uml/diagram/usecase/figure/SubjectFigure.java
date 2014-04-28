@@ -70,7 +70,7 @@ public class SubjectFigure extends NodeNamedElementFigure {
 		 * {@inheritDoc}
 		 */
 		public void layout(IFigure container) {
-			List childrenList = container.getChildren();
+			List<?> childrenList = container.getChildren();
 			for(int i = 0; i < container.getChildren().size(); i++) {
 				Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
 				IFigure fig = ((IFigure)childrenList.get(i));

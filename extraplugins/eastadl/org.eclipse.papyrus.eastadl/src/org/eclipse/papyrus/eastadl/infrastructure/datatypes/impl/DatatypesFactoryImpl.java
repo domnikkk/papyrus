@@ -21,34 +21,31 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.*;
+import org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.CompositeDatatype;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesFactory;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EABoolean;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAFloat;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAInteger;
+import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAString;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EnumerationLiteral;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EnumerationValueType;
+import org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType;
+import org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit;
 
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFactory {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -61,16 +58,16 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static DatatypesFactory init() {
 		try {
 			DatatypesFactory theDatatypesFactory = (DatatypesFactory)EPackage.Registry.INSTANCE.getEFactory(DatatypesPackage.eNS_URI);
-			if(theDatatypesFactory != null) {
+			if (theDatatypesFactory != null) {
 				return theDatatypesFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DatatypesFactoryImpl();
@@ -80,7 +77,6 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DatatypesFactoryImpl() {
@@ -90,7 +86,6 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertjavalangFloatToString(EDataType eDataType, Object instanceValue) {
@@ -100,23 +95,23 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
-		case DatatypesPackage.JAVALANG_FLOAT:
-			return convertjavalangFloatToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+			case DatatypesPackage.NUMERICAL:
+				return convertNumericalToString(eDataType, instanceValue);
+			case DatatypesPackage.JAVALANG_FLOAT:
+				return convertjavalangFloatToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EADatatypePrototype createEADatatypePrototype() {
@@ -127,41 +122,60 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EANumerical createEANumerical() {
+		EANumericalImpl eaNumerical = new EANumericalImpl();
+		return eaNumerical;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Unit createUnit() {
+		UnitImpl unit = new UnitImpl();
+		return unit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quantity createQuantity() {
+		QuantityImpl quantity = new QuantityImpl();
+		return quantity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
-		case DatatypesPackage.EA_DATATYPE_PROTOTYPE:
-			return createEADatatypePrototype();
-		case DatatypesPackage.RANGEABLE_VALUE_TYPE:
-			return createRangeableValueType();
-		case DatatypesPackage.ENUMERATION_VALUE_TYPE:
-			return createEnumerationValueType();
-		case DatatypesPackage.COMPOSITE_DATATYPE:
-			return createCompositeDatatype();
-		case DatatypesPackage.EA_STRING:
-			return createEAString();
-		case DatatypesPackage.EA_BOOLEAN:
-			return createEABoolean();
-		case DatatypesPackage.EA_FLOAT:
-			return createEAFloat();
-		case DatatypesPackage.EA_INTEGER:
-			return createEAInteger();
-		case DatatypesPackage.ENUMERATION_LITERAL:
-			return createEnumerationLiteral();
-		case DatatypesPackage.ENUMERATION:
-			return createEnumeration();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case DatatypesPackage.EA_DATATYPE_PROTOTYPE: return createEADatatypePrototype();
+			case DatatypesPackage.EA_NUMERICAL: return createEANumerical();
+			case DatatypesPackage.UNIT: return createUnit();
+			case DatatypesPackage.QUANTITY: return createQuantity();
+			case DatatypesPackage.RANGEABLE_VALUE_TYPE: return createRangeableValueType();
+			case DatatypesPackage.COMPOSITE_DATATYPE: return createCompositeDatatype();
+			case DatatypesPackage.EA_STRING: return createEAString();
+			case DatatypesPackage.EA_BOOLEAN: return createEABoolean();
+			case DatatypesPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
+			case DatatypesPackage.ENUMERATION: return createEnumeration();
+			case DatatypesPackage.ARRAY_DATA_TYPE: return createArrayDataType();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CompositeDatatype createCompositeDatatype() {
@@ -172,7 +186,6 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAString createEAString() {
@@ -183,7 +196,6 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EABoolean createEABoolean() {
@@ -194,29 +206,6 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAFloat createEAFloat() {
-		EAFloatImpl eaFloat = new EAFloatImpl();
-		return eaFloat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAInteger createEAInteger() {
-		EAIntegerImpl eaInteger = new EAIntegerImpl();
-		return eaInteger;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EnumerationLiteral createEnumerationLiteral() {
@@ -227,7 +216,6 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Enumeration createEnumeration() {
@@ -238,34 +226,51 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EnumerationValueType createEnumerationValueType() {
-		EnumerationValueTypeImpl enumerationValueType = new EnumerationValueTypeImpl();
-		return enumerationValueType;
+	public ArrayDataType createArrayDataType() {
+		ArrayDataTypeImpl arrayDataType = new ArrayDataTypeImpl();
+		return arrayDataType;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public Float createNumericalFromString(EDataType eDataType, String initialValue) {
+		return (Float)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNumericalToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
-		case DatatypesPackage.JAVALANG_FLOAT:
-			return createjavalangFloatFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+			case DatatypesPackage.NUMERICAL:
+				return createNumericalFromString(eDataType, initialValue);
+			case DatatypesPackage.JAVALANG_FLOAT:
+				return createjavalangFloatFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Float createjavalangFloatFromString(EDataType eDataType, String initialValue) {
@@ -275,7 +280,6 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public RangeableValueType createRangeableValueType() {
@@ -286,7 +290,6 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DatatypesPackage getDatatypesPackage() {

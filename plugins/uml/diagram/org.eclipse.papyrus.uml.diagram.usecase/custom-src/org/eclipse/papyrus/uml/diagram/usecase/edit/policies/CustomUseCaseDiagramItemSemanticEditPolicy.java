@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
@@ -27,8 +26,6 @@ import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.uml.diagram.usecase.command.CustomSubjectClassifierCreateCommandTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.commands.SubjectClassifierCreateCommandTN;
-import org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramEditorPlugin;
-import org.eclipse.papyrus.uml.diagram.usecase.preferences.SubjectPreferencePage;
 import org.eclipse.papyrus.uml.diagram.usecase.providers.UMLElementTypes;
 
 /**
@@ -55,30 +52,21 @@ public class CustomUseCaseDiagramItemSemanticEditPolicy extends UseCaseDiagramIt
 
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-	//this creation of the command has been modified  in order to be able to take in account
-	//the pref about the kind of the subject
+		//this creation of the command has been modified  in order to be able to take in account
+		//the pref about the kind of the subject
 		EObject containerElement = req.getContainer();
 		//test if we want create a subject
 		if(UMLElementTypes.Classifier_2015 == req.getElementType()) {
 			ArrayList<ICommand> executableCommandCreation = new ArrayList<ICommand>();
 			ArrayList<IHintedType> executableHTypeCreation = new ArrayList<IHintedType>();
 			//look for the kind of metaclass for the subject
-			String preferenceSemanticHint=UMLDiagramEditorPlugin.getInstance().getPreferenceStore().getString(SubjectPreferencePage.USE_CASE_SUBJECT_SEMANTIC_HINT);
-			IHintedType semanticHint=null;
-
-			
+			IHintedType semanticHint = null;
 			// test if the semantic is preciced or try to get the semantichint from the preference
-			if(req.getParameter(SUBJECT_SEMANTIC_HINT) != null||preferenceSemanticHint!=null) {
-				
-				if(req.getParameter(SUBJECT_SEMANTIC_HINT) != null){
-					semanticHint = (IHintedType)req.getParameter(SUBJECT_SEMANTIC_HINT);
-				}
-				else{
-					semanticHint =  (IHintedType)ElementTypeRegistry.getInstance().getType(preferenceSemanticHint);
-				}
+			if(req.getParameter(SUBJECT_SEMANTIC_HINT) != null) {
+				semanticHint = (IHintedType)req.getParameter(SUBJECT_SEMANTIC_HINT);
 			}
 			//the semantic hint is precised, so it is possible to create only this element
-			if(semanticHint!=null){
+			if(semanticHint != null) {
 				CreateElementRequest createElementRequest = new CreateElementRequest(containerElement, semanticHint);
 				IElementEditService provider = ElementEditServiceUtils.getCommandProvider(containerElement);
 				ICommand createCommand = provider.getEditCommand(createElementRequest);

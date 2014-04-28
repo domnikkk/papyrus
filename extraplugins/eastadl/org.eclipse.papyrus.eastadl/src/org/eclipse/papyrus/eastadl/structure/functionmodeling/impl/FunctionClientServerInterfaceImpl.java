@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.BasicInternalEList;
-import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
+import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.TraceableSpecificationImpl;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation;
@@ -37,30 +37,26 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl#getBase_Interface <em>Base Interface</em>}
- * </li>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl#getBase_Interface <em>Base Interface</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
-public class FunctionClientServerInterfaceImpl extends EAElementImpl implements FunctionClientServerInterface {
+public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImpl implements FunctionClientServerInterface {
 
 	/**
 	 * The cached value of the '{@link #getBase_Interface() <em>Base Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getBase_Interface()
 	 * @generated
 	 * @ordered
 	 */
 	protected Interface base_Interface;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected FunctionClientServerInterfaceImpl() {
@@ -69,56 +65,51 @@ public class FunctionClientServerInterfaceImpl extends EAElementImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
-			if(resolve)
-				return getBase_Interface();
-			return basicGetBase_Interface();
-		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__OPERATION:
-			return getOperation();
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
+				if (resolve) return getBase_Interface();
+				return basicGetBase_Interface();
+			case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__OPERATION:
+				return getOperation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
-			return base_Interface != null;
-		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__OPERATION:
-			return !getOperation().isEmpty();
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
+				return base_Interface != null;
+			case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__OPERATION:
+				return !getOperation().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
-			setBase_Interface((Interface)newValue);
-			return;
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
+				setBase_Interface((Interface)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -129,15 +120,14 @@ public class FunctionClientServerInterfaceImpl extends EAElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Interface getBase_Interface() {
-		if(base_Interface != null && base_Interface.eIsProxy()) {
+		if (base_Interface != null && base_Interface.eIsProxy()) {
 			InternalEObject oldBase_Interface = (InternalEObject)base_Interface;
 			base_Interface = (Interface)eResolveProxy(oldBase_Interface);
-			if(base_Interface != oldBase_Interface) {
-				if(eNotificationRequired())
+			if (base_Interface != oldBase_Interface) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE, oldBase_Interface, base_Interface));
 			}
 		}
@@ -147,7 +137,6 @@ public class FunctionClientServerInterfaceImpl extends EAElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Interface basicGetBase_Interface() {
@@ -157,27 +146,25 @@ public class FunctionClientServerInterfaceImpl extends EAElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setBase_Interface(Interface newBase_Interface) {
 		Interface oldBase_Interface = base_Interface;
 		base_Interface = newBase_Interface;
-		if(eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE, oldBase_Interface, base_Interface));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
-			setBase_Interface((Interface)null);
-			return;
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE:
+				setBase_Interface((Interface)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,8 +184,9 @@ public class FunctionClientServerInterfaceImpl extends EAElementImpl implements 
 			while(itDep.hasNext()) {
 				org.eclipse.uml2.uml.Operation currentOp = itDep.next();
 
-
-				currentOperation = (Operation)UMLUtil.getStereotypeApplication(currentOp, Operation.class);
+				
+				currentOperation = (Operation)UMLUtil.getStereotypeApplication(currentOp,
+						Operation.class);
 
 				if(currentOperation != null) {
 					parts.add(currentOperation);

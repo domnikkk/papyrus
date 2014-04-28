@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.structure.StructureFactory
  * @model kind="package"
  * @generated
@@ -44,7 +43,6 @@ public interface StructurePackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -53,7 +51,6 @@ public interface StructurePackage extends EPackage {
 		 * The meta object literal for the '<em>Dummy</em>' data type.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.eastadl.structure.impl.StructurePackageImpl#getDummy()
 		 * @generated
@@ -65,7 +62,6 @@ public interface StructurePackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNAME = "structure";
@@ -73,7 +69,6 @@ public interface StructurePackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Structure/1";
@@ -81,7 +76,6 @@ public interface StructurePackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "Structure";
@@ -89,7 +83,6 @@ public interface StructurePackage extends EPackage {
 	/**
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	StructurePackage eINSTANCE = org.eclipse.papyrus.eastadl.structure.impl.StructurePackageImpl.init();
@@ -98,7 +91,6 @@ public interface StructurePackage extends EPackage {
 	 * The meta object id for the '<em>Dummy</em>' data type.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.eastadl.structure.impl.StructurePackageImpl#getDummy()
 	 * @generated
@@ -120,7 +112,6 @@ public interface StructurePackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */

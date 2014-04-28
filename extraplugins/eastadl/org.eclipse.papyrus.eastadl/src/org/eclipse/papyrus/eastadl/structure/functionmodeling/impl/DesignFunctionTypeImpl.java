@@ -36,17 +36,16 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionTypeImpl#getPart <em>Part</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionTypeImpl#getPart <em>Part</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class DesignFunctionTypeImpl extends FunctionTypeImpl implements DesignFunctionType {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected DesignFunctionTypeImpl() {
@@ -55,35 +54,32 @@ public class DesignFunctionTypeImpl extends FunctionTypeImpl implements DesignFu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case FunctionmodelingPackage.DESIGN_FUNCTION_TYPE__PART:
-			return getPart();
+		switch (featureID) {
+			case FunctionmodelingPackage.DESIGN_FUNCTION_TYPE__PART:
+				return getPart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case FunctionmodelingPackage.DESIGN_FUNCTION_TYPE__PART:
-			return !getPart().isEmpty();
+		switch (featureID) {
+			case FunctionmodelingPackage.DESIGN_FUNCTION_TYPE__PART:
+				return !getPart().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -127,8 +123,9 @@ public class DesignFunctionTypeImpl extends FunctionTypeImpl implements DesignFu
 			while(itDep.hasNext()) {
 				Property currentProperty = itDep.next();
 
-				currentFunctionPrototype = (DesignFunctionPrototype)UMLUtil.getStereotypeApplication(currentProperty, DesignFunctionPrototype.class);
-
+				currentFunctionPrototype = (DesignFunctionPrototype)UMLUtil.getStereotypeApplication(currentProperty,
+						DesignFunctionPrototype.class);
+				
 				if(currentFunctionPrototype != null) {
 					parts.add(currentFunctionPrototype);
 				}
@@ -136,7 +133,8 @@ public class DesignFunctionTypeImpl extends FunctionTypeImpl implements DesignFu
 		}
 
 		// Convert to InternalEList<?>
-		return new BasicInternalEList<DesignFunctionPrototype>(DesignFunctionPrototype.class, parts.size(), parts.toArray());
+		return new BasicInternalEList<DesignFunctionPrototype>(DesignFunctionPrototype.class, parts.size(), parts
+			.toArray());
 	}
 
 	/**

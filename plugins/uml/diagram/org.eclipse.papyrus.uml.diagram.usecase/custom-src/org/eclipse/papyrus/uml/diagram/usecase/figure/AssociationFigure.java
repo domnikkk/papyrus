@@ -154,37 +154,22 @@ public class AssociationFigure extends UMLEdgeFigure {
 		setTargetDecoration(getDecoration(targetType));
 	}
 
-	/**
-	 * @generated
-	 */
 	public WrappingLabel getAssociationNameLabel() {
 		return fAssociationNameLabel;
 	}
 
-	/**
-	 * @generated
-	 */
 	public WrappingLabel getMultiplicitySourceLabel() {
 		return fMultiplicitySourceLabel;
 	}
 
-	/**
-	 * @generated
-	 */
 	public WrappingLabel getMultiplicityTargetLabel() {
 		return fMultiplicityTargetLabel;
 	}
 
-	/**
-	 * @generated
-	 */
 	public WrappingLabel getRoleSourceLabel() {
 		return fRoleSourceLabel;
 	}
 
-	/**
-	 * @generated
-	 */
 	public WrappingLabel getRoleTargetLabel() {
 		return fRoleTargetLabel;
 	}

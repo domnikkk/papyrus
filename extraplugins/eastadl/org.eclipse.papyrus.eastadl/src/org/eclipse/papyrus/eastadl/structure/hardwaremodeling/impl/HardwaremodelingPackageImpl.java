@@ -18,14 +18,23 @@ package org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.eastadl.EastadlPackage;
 import org.eclipse.papyrus.eastadl.annex.AnnexPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributequantificationconstraintPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.ComputationconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.impl.AnnexPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage;
 import org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.behavior.BehaviorPackage;
 import org.eclipse.papyrus.eastadl.behavior.impl.BehaviorPackageImpl;
 import org.eclipse.papyrus.eastadl.dependability.DependabilityPackage;
@@ -51,10 +60,12 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ElementsPackageI
 import org.eclipse.papyrus.eastadl.infrastructure.impl.InfrastructurePackageImpl;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl;
-import org.eclipse.papyrus.eastadl.interchange.InterchangePackage;
-import org.eclipse.papyrus.eastadl.interchange.impl.InterchangePackageImpl;
+import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
+import org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.RequirementsPackage;
 import org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl;
+import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
+import org.eclipse.papyrus.eastadl.requirements.usecases.impl.UsecasesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl;
 import org.eclipse.papyrus.eastadl.structure.StructurePackage;
@@ -65,20 +76,20 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.Functionmodel
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Actuator;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.AllocationTarget;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.CommunicationHardwarePin;
+import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent;
+import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareConnector;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePinGroup;
+import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort;
+import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingFactory;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePin;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePinKind;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.LogicalBus;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.LogicalBusKind;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Node;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.PowerHardwarePin;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.PowerSupply;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Sensor;
 import org.eclipse.papyrus.eastadl.structure.impl.StructurePackageImpl;
 import org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage;
@@ -102,7 +113,6 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class HardwaremodelingPackageImpl extends EPackageImpl implements HardwaremodelingPackage {
@@ -110,7 +120,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass hardwareComponentTypeEClass = null;
@@ -118,7 +127,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EEnum ioHardwarePinKindEEnum = null;
@@ -126,15 +134,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EEnum logicalBusKindEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass hardwareConnectorEClass = null;
@@ -142,7 +141,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass hardwarePinEClass = null;
@@ -150,7 +148,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass hardwareComponentPrototypeEClass = null;
@@ -158,7 +155,20 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	private EClass hardwarePortConnectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hardwarePortEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass allocationTargetEClass = null;
@@ -166,23 +176,13 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	private EClass logicalBusEClass = null;
+	private EEnum hardwareBusKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass hardwarePinGroupEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass powerHardwarePinEClass = null;
@@ -190,7 +190,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass ioHardwarePinEClass = null;
@@ -198,7 +197,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass communicationHardwarePinEClass = null;
@@ -206,7 +204,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
@@ -214,15 +211,13 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	private EClass powerSupplyEClass = null;
+	private EClass electricalComponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass sensorEClass = null;
@@ -230,7 +225,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass actuatorEClass = null;
@@ -238,7 +232,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -246,18 +239,16 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>
-	 * This method is used to initialize {@link HardwaremodelingPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly.
-	 * Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>This method is used to initialize {@link HardwaremodelingPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static HardwaremodelingPackage init() {
-		if(isInited)
-			return (HardwaremodelingPackage)EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI);
+		if (isInited) return (HardwaremodelingPackage)EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI);
 
 		// Obtain or create and register package
 		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new HardwaremodelingPackageImpl());
@@ -273,27 +264,33 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
+		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) : ElementsPackage.eINSTANCE);
 		StructurePackageImpl theStructurePackage = (StructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) : StructurePackage.eINSTANCE);
 		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
+		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
-		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
-		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
-		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
-		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
-		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
-		InterchangePackageImpl theInterchangePackage = (InterchangePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) instanceof InterchangePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) : InterchangePackage.eINSTANCE);
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
-		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
 		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
 		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
 		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) : SafetycasePackage.eINSTANCE);
+		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
+		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
+		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) : UsecasesPackage.eINSTANCE);
+		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
+		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
+		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
+		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
 		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
+		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
+		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
+		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -303,27 +300,33 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 		theInfrastructurePackage.createPackageContents();
 		theDatatypesPackage.createPackageContents();
 		theUserattributesPackage.createPackageContents();
+		theValuesPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theStructurePackage.createPackageContents();
 		theFunctionmodelingPackage.createPackageContents();
+		theFeaturemodelingPackage.createPackageContents();
 		theSystemmodelingPackage.createPackageContents();
 		theVehiclefeaturemodelingPackage.createPackageContents();
-		theFeaturemodelingPackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
-		theRequirementsPackage.createPackageContents();
-		theVerificationvalidationPackage.createPackageContents();
-		theTimingPackage.createPackageContents();
-		theTimingconstraintsPackage.createPackageContents();
-		theEventsPackage.createPackageContents();
-		theInterchangePackage.createPackageContents();
-		theEnvironmentPackage.createPackageContents();
 		theDependabilityPackage.createPackageContents();
-		theErrormodelPackage.createPackageContents();
 		theSafetyrequirementPackage.createPackageContents();
 		theSafetyconstraintsPackage.createPackageContents();
 		theSafetycasePackage.createPackageContents();
+		theErrormodelPackage.createPackageContents();
+		theRequirementsPackage.createPackageContents();
+		theUsecasesPackage.createPackageContents();
+		theVerificationvalidationPackage.createPackageContents();
+		theRequirementsPackage_1.createPackageContents();
+		theBehaviorPackage.createPackageContents();
+		theTimingPackage.createPackageContents();
+		theTimingconstraintsPackage.createPackageContents();
+		theEventsPackage.createPackageContents();
+		theEnvironmentPackage.createPackageContents();
 		theAnnexPackage.createPackageContents();
 		theNeedsPackage.createPackageContents();
+		theBehaviordescriptionPackage.createPackageContents();
+		theAttributequantificationconstraintPackage.createPackageContents();
+		theTemporalconstraintPackage.createPackageContents();
+		theComputationconstraintPackage.createPackageContents();
 		theGenericconstraintsPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -333,33 +336,39 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 		theInfrastructurePackage.initializePackageContents();
 		theDatatypesPackage.initializePackageContents();
 		theUserattributesPackage.initializePackageContents();
+		theValuesPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theStructurePackage.initializePackageContents();
 		theFunctionmodelingPackage.initializePackageContents();
+		theFeaturemodelingPackage.initializePackageContents();
 		theSystemmodelingPackage.initializePackageContents();
 		theVehiclefeaturemodelingPackage.initializePackageContents();
-		theFeaturemodelingPackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
-		theRequirementsPackage.initializePackageContents();
-		theVerificationvalidationPackage.initializePackageContents();
-		theTimingPackage.initializePackageContents();
-		theTimingconstraintsPackage.initializePackageContents();
-		theEventsPackage.initializePackageContents();
-		theInterchangePackage.initializePackageContents();
-		theEnvironmentPackage.initializePackageContents();
 		theDependabilityPackage.initializePackageContents();
-		theErrormodelPackage.initializePackageContents();
 		theSafetyrequirementPackage.initializePackageContents();
 		theSafetyconstraintsPackage.initializePackageContents();
 		theSafetycasePackage.initializePackageContents();
+		theErrormodelPackage.initializePackageContents();
+		theRequirementsPackage.initializePackageContents();
+		theUsecasesPackage.initializePackageContents();
+		theVerificationvalidationPackage.initializePackageContents();
+		theRequirementsPackage_1.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
+		theTimingPackage.initializePackageContents();
+		theTimingconstraintsPackage.initializePackageContents();
+		theEventsPackage.initializePackageContents();
+		theEnvironmentPackage.initializePackageContents();
 		theAnnexPackage.initializePackageContents();
 		theNeedsPackage.initializePackageContents();
+		theBehaviordescriptionPackage.initializePackageContents();
+		theAttributequantificationconstraintPackage.initializePackageContents();
+		theTemporalconstraintPackage.initializePackageContents();
+		theComputationconstraintPackage.initializePackageContents();
 		theGenericconstraintsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theHardwaremodelingPackage.freeze();
 
-
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(HardwaremodelingPackage.eNS_URI, theHardwaremodelingPackage);
 		return theHardwaremodelingPackage;
@@ -368,7 +377,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -376,19 +384,19 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#eNS_URI
 	 * @see #init()
@@ -399,38 +407,48 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	}
 
 	/**
-	 * Creates the meta-model objects for the package. This method is
+	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated)
-			return;
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
+		hardwareComponentTypeEClass = createEClass(HARDWARE_COMPONENT_TYPE);
+		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__CONNECTOR);
+		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__PIN);
+		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__PART);
+		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__PORT_CONNECTOR);
+		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__PORT);
+
 		hardwareConnectorEClass = createEClass(HARDWARE_CONNECTOR);
-		createEReference(hardwareConnectorEClass, HARDWARE_CONNECTOR__BASE_CONNECTOR);
-		createEReference(hardwareConnectorEClass, HARDWARE_CONNECTOR__PORT);
-		createEReference(hardwareConnectorEClass, HARDWARE_CONNECTOR__PORT1_PATH);
-		createEReference(hardwareConnectorEClass, HARDWARE_CONNECTOR__PORT2_PATH);
+		createEReference(hardwareConnectorEClass, HARDWARE_CONNECTOR__PIN);
 
 		hardwarePinEClass = createEClass(HARDWARE_PIN);
-		createEReference(hardwarePinEClass, HARDWARE_PIN__BASE_PORT);
 		createEAttribute(hardwarePinEClass, HARDWARE_PIN__IS_GROUND);
-		createEAttribute(hardwarePinEClass, HARDWARE_PIN__VOLTAGE);
 		createEAttribute(hardwarePinEClass, HARDWARE_PIN__DIRECTION);
-		createEAttribute(hardwarePinEClass, HARDWARE_PIN__IMPEDANCE);
-		createEAttribute(hardwarePinEClass, HARDWARE_PIN__POWER);
 
 		hardwareComponentPrototypeEClass = createEClass(HARDWARE_COMPONENT_PROTOTYPE);
 		createEReference(hardwareComponentPrototypeEClass, HARDWARE_COMPONENT_PROTOTYPE__TYPE);
-		createEReference(hardwareComponentPrototypeEClass, HARDWARE_COMPONENT_PROTOTYPE__BASE_PROPERTY);
+		createEOperation(hardwareComponentPrototypeEClass, HARDWARE_COMPONENT_PROTOTYPE___GET_ICON);
 
-		allocationTargetEClass = createEClass(ALLOCATION_TARGET);
+		hardwarePortConnectorEClass = createEClass(HARDWARE_PORT_CONNECTOR);
+		createEReference(hardwarePortConnectorEClass, HARDWARE_PORT_CONNECTOR__BASE_CLASS);
+		createEAttribute(hardwarePortConnectorEClass, HARDWARE_PORT_CONNECTOR__BUS_SPEED);
+		createEAttribute(hardwarePortConnectorEClass, HARDWARE_PORT_CONNECTOR__BUS_TYPE);
+		createEReference(hardwarePortConnectorEClass, HARDWARE_PORT_CONNECTOR__CONNECTOR);
+		createEReference(hardwarePortConnectorEClass, HARDWARE_PORT_CONNECTOR__PORT);
+
+		hardwarePortEClass = createEClass(HARDWARE_PORT);
+		createEReference(hardwarePortEClass, HARDWARE_PORT__BASE_CLASS);
+		createEAttribute(hardwarePortEClass, HARDWARE_PORT__IS_SHIELD);
+		createEReference(hardwarePortEClass, HARDWARE_PORT__CONTAINED_PIN);
+		createEReference(hardwarePortEClass, HARDWARE_PORT__REFERENCED_PIN);
+		createEReference(hardwarePortEClass, HARDWARE_PORT__CONTAINED_PORT);
 
 		ioHardwarePinEClass = createEClass(IO_HARDWARE_PIN);
 		createEAttribute(ioHardwarePinEClass, IO_HARDWARE_PIN__TYPE);
@@ -441,46 +459,24 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 
 		nodeEClass = createEClass(NODE);
 		createEAttribute(nodeEClass, NODE__EXECUTION_RATE);
-		createEAttribute(nodeEClass, NODE__NON_VOLATILE_MEMORY);
-		createEAttribute(nodeEClass, NODE__VOLATILE_MEMORY);
 
-		powerSupplyEClass = createEClass(POWER_SUPPLY);
-		createEAttribute(powerSupplyEClass, POWER_SUPPLY__IS_ACTIVE);
+		electricalComponentEClass = createEClass(ELECTRICAL_COMPONENT);
+		createEAttribute(electricalComponentEClass, ELECTRICAL_COMPONENT__IS_ACTIVE);
 
 		sensorEClass = createEClass(SENSOR);
 
 		actuatorEClass = createEClass(ACTUATOR);
 
-		logicalBusEClass = createEClass(LOGICAL_BUS);
-		createEReference(logicalBusEClass, LOGICAL_BUS__BASE_CLASS);
-		createEAttribute(logicalBusEClass, LOGICAL_BUS__BUS_SPEED);
-		createEAttribute(logicalBusEClass, LOGICAL_BUS__BUS_TYPE);
-		createEReference(logicalBusEClass, LOGICAL_BUS__WIRE);
-		createEReference(logicalBusEClass, LOGICAL_BUS__WIRE_PATH);
-
-		hardwarePinGroupEClass = createEClass(HARDWARE_PIN_GROUP);
-		createEReference(hardwarePinGroupEClass, HARDWARE_PIN_GROUP__BASE_PORT);
-		createEReference(hardwarePinGroupEClass, HARDWARE_PIN_GROUP__BASE_CLASS);
-		createEReference(hardwarePinGroupEClass, HARDWARE_PIN_GROUP__PORT_GROUP);
-		createEReference(hardwarePinGroupEClass, HARDWARE_PIN_GROUP__PORT);
-
-		hardwareComponentTypeEClass = createEClass(HARDWARE_COMPONENT_TYPE);
-		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__CONNECTOR);
-		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__PORT);
-		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__PART);
-		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__BASE_CLASS);
-		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__BUS);
-		createEReference(hardwareComponentTypeEClass, HARDWARE_COMPONENT_TYPE__PORT_GROUP);
+		allocationTargetEClass = createEClass(ALLOCATION_TARGET);
 
 		// Create enums
+		hardwareBusKindEEnum = createEEnum(HARDWARE_BUS_KIND);
 		ioHardwarePinKindEEnum = createEEnum(IO_HARDWARE_PIN_KIND);
-		logicalBusKindEEnum = createEEnum(LOGICAL_BUS_KIND);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getActuator() {
@@ -490,7 +486,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getAllocationTarget() {
@@ -500,7 +495,15 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EEnum getHardwareBusKind() {
+		return hardwareBusKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getIOHardwarePin() {
@@ -510,7 +513,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getIOHardwarePin_Type() {
@@ -520,7 +522,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getCommunicationHardwarePin() {
@@ -530,7 +531,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getHardwareComponentPrototype() {
@@ -540,7 +540,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getHardwareComponentPrototype_Type() {
@@ -550,17 +549,123 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getHardwareComponentPrototype_Base_Property() {
-		return (EReference)hardwareComponentPrototypeEClass.getEStructuralFeatures().get(1);
+	public EOperation getHardwareComponentPrototype__GetIcon() {
+		return hardwareComponentPrototypeEClass.getEOperations().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EClass getHardwarePortConnector() {
+		return hardwarePortConnectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardwarePortConnector_Base_Class() {
+		return (EReference)hardwarePortConnectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHardwarePortConnector_BusSpeed() {
+		return (EAttribute)hardwarePortConnectorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHardwarePortConnector_BusType() {
+		return (EAttribute)hardwarePortConnectorEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardwarePortConnector_Connector() {
+		return (EReference)hardwarePortConnectorEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardwarePortConnector_Port() {
+		return (EReference)hardwarePortConnectorEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHardwarePort() {
+		return hardwarePortEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardwarePort_Base_Class() {
+		return (EReference)hardwarePortEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHardwarePort_IsShield() {
+		return (EAttribute)hardwarePortEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardwarePort_ContainedPin() {
+		return (EReference)hardwarePortEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardwarePort_ReferencedPin() {
+		return (EReference)hardwarePortEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardwarePort_ContainedPort() {
+		return (EReference)hardwarePortEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getHardwareComponentType() {
@@ -570,17 +675,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwareComponentType_Bus() {
-		return (EReference)hardwareComponentTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getHardwareComponentType_Connector() {
@@ -590,7 +684,15 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EReference getHardwareComponentType_Pin() {
+		return (EReference)hardwareComponentTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EReference getHardwareComponentType_Part() {
@@ -600,37 +702,24 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getHardwareComponentType_Base_Class() {
+	public EReference getHardwareComponentType_PortConnector() {
 		return (EReference)hardwareComponentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getHardwareComponentType_Port() {
-		return (EReference)hardwareComponentTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference)hardwareComponentTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwareComponentType_PortGroup() {
-		return (EReference)hardwareComponentTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EEnum getIOHardwarePinKind() {
@@ -640,7 +729,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getHardwareConnector() {
@@ -650,47 +738,15 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getHardwareConnector_Base_Connector() {
+	public EReference getHardwareConnector_Pin() {
 		return (EReference)hardwareConnectorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwareConnector_Port() {
-		return (EReference)hardwareConnectorEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwareConnector_Port1_path() {
-		return (EReference)hardwareConnectorEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwareConnector_Port2_path() {
-		return (EReference)hardwareConnectorEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public HardwaremodelingFactory getHardwaremodelingFactory() {
@@ -700,7 +756,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getHardwarePin() {
@@ -710,187 +765,24 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwarePin_Base_Port() {
-		return (EReference)hardwarePinEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getHardwarePin_Direction() {
-		return (EAttribute)hardwarePinEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getHardwarePin_Impedance() {
-		return (EAttribute)hardwarePinEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getHardwarePin_IsGround() {
 		return (EAttribute)hardwarePinEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EAttribute getHardwarePin_Power() {
-		return (EAttribute)hardwarePinEClass.getEStructuralFeatures().get(5);
+	public EAttribute getHardwarePin_IsGround() {
+		return (EAttribute)hardwarePinEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getHardwarePin_Voltage() {
-		return (EAttribute)hardwarePinEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getHardwarePinGroup() {
-		return hardwarePinGroupEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwarePinGroup_Base_Port() {
-		return (EReference)hardwarePinGroupEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwarePinGroup_Base_Class() {
-		return (EReference)hardwarePinGroupEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwarePinGroup_Port() {
-		return (EReference)hardwarePinGroupEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getHardwarePinGroup_PortGroup() {
-		return (EReference)hardwarePinGroupEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getLogicalBus() {
-		return logicalBusEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getLogicalBus_Base_Class() {
-		return (EReference)logicalBusEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getLogicalBus_BusSpeed() {
-		return (EAttribute)logicalBusEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getLogicalBus_BusType() {
-		return (EAttribute)logicalBusEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getLogicalBus_Wire() {
-		return (EReference)logicalBusEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getLogicalBus_Wire_path() {
-		return (EReference)logicalBusEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EEnum getLogicalBusKind() {
-		return logicalBusKindEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getNode() {
@@ -900,7 +792,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getNode_ExecutionRate() {
@@ -910,27 +801,24 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EAttribute getNode_NonVolatileMemory() {
-		return (EAttribute)nodeEClass.getEStructuralFeatures().get(1);
+	public EClass getElectricalComponent() {
+		return electricalComponentEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EAttribute getNode_VolatileMemory() {
-		return (EAttribute)nodeEClass.getEStructuralFeatures().get(2);
+	public EAttribute getElectricalComponent_IsActive() {
+		return (EAttribute)electricalComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getPowerHardwarePin() {
@@ -940,27 +828,6 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getPowerSupply() {
-		return powerSupplyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getPowerSupply_IsActive() {
-		return (EAttribute)powerSupplyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getSensor() {
@@ -968,16 +835,14 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	}
 
 	/**
-	 * Complete the initialization of the package and its meta-model. This
+	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized)
-			return;
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -987,53 +852,71 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 
 		// Obtain other dependent packages
 		ElementsPackage theElementsPackage = (ElementsPackage)EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
-		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
 		FunctionmodelingPackage theFunctionmodelingPackage = (FunctionmodelingPackage)EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		hardwareComponentTypeEClass.getESuperTypes().add(theElementsPackage.getContext());
+		hardwareComponentTypeEClass.getESuperTypes().add(theElementsPackage.getEAType());
 		hardwareConnectorEClass.getESuperTypes().add(theElementsPackage.getEAElement());
+		hardwareConnectorEClass.getESuperTypes().add(theElementsPackage.getEAConnector());
 		hardwarePinEClass.getESuperTypes().add(theElementsPackage.getEAElement());
+		hardwarePinEClass.getESuperTypes().add(theElementsPackage.getEAPort());
 		hardwareComponentPrototypeEClass.getESuperTypes().add(this.getAllocationTarget());
-		allocationTargetEClass.getESuperTypes().add(theElementsPackage.getEAElement());
+		hardwareComponentPrototypeEClass.getESuperTypes().add(theElementsPackage.getEAPrototype());
+		hardwarePortConnectorEClass.getESuperTypes().add(this.getAllocationTarget());
+		hardwarePortConnectorEClass.getESuperTypes().add(theElementsPackage.getEAConnector());
+		hardwarePortEClass.getESuperTypes().add(this.getAllocationTarget());
+		hardwarePortEClass.getESuperTypes().add(theElementsPackage.getEAPort());
 		ioHardwarePinEClass.getESuperTypes().add(this.getHardwarePin());
 		powerHardwarePinEClass.getESuperTypes().add(this.getHardwarePin());
 		communicationHardwarePinEClass.getESuperTypes().add(this.getHardwarePin());
 		nodeEClass.getESuperTypes().add(this.getHardwareComponentType());
-		powerSupplyEClass.getESuperTypes().add(this.getHardwareComponentType());
+		electricalComponentEClass.getESuperTypes().add(this.getHardwareComponentType());
 		sensorEClass.getESuperTypes().add(this.getHardwareComponentType());
 		actuatorEClass.getESuperTypes().add(this.getHardwareComponentType());
-		logicalBusEClass.getESuperTypes().add(this.getAllocationTarget());
-		hardwarePinGroupEClass.getESuperTypes().add(theElementsPackage.getEAElement());
-		hardwareComponentTypeEClass.getESuperTypes().add(theElementsPackage.getContext());
+		allocationTargetEClass.getESuperTypes().add(theElementsPackage.getEAElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
+		initEClass(hardwareComponentTypeEClass, HardwareComponentType.class, "HardwareComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHardwareComponentType_Connector(), this.getHardwareConnector(), null, "connector", null, 0, -1, HardwareComponentType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwareComponentType_Pin(), this.getHardwarePin(), null, "pin", null, 0, -1, HardwareComponentType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwareComponentType_Part(), this.getHardwareComponentPrototype(), null, "part", null, 0, -1, HardwareComponentType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwareComponentType_PortConnector(), this.getHardwarePortConnector(), null, "portConnector", null, 0, -1, HardwareComponentType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwareComponentType_Port(), this.getHardwarePort(), null, "port", null, 0, -1, HardwareComponentType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+
 		initEClass(hardwareConnectorEClass, HardwareConnector.class, "HardwareConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwareConnector_Base_Connector(), theUMLPackage.getConnector(), null, "base_Connector", null, 1, 1, HardwareConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareConnector_Port(), this.getHardwarePin(), null, "port", null, 2, 2, HardwareConnector.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareConnector_Port1_path(), this.getHardwareComponentPrototype(), null, "port1_path", null, 0, -1, HardwareConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHardwareConnector_Port2_path(), this.getHardwareComponentPrototype(), null, "port2_path", null, 0, -1, HardwareConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHardwareConnector_Pin(), theInfrastructurePackage.getHardwareConnectorInstanceRef(), null, "pin", null, 2, 2, HardwareConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(hardwarePinEClass, HardwarePin.class, "HardwarePin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwarePin_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 1, 1, HardwarePin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHardwarePin_IsGround(), theTypesPackage.getBoolean(), "isGround", null, 0, 1, HardwarePin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getHardwarePin_Voltage(), theDatatypesPackage.getjavalangFloat(), "voltage", null, 0, 1, HardwarePin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getHardwarePin_Direction(), theFunctionmodelingPackage.getEADirectionKind(), "direction", null, 1, 1, HardwarePin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getHardwarePin_Impedance(), theDatatypesPackage.getjavalangFloat(), "impedance", null, 0, 1, HardwarePin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getHardwarePin_Power(), theDatatypesPackage.getjavalangFloat(), "power", null, 0, 1, HardwarePin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(hardwareComponentPrototypeEClass, HardwareComponentPrototype.class, "HardwareComponentPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwareComponentPrototype_Type(), this.getHardwareComponentType(), null, "type", null, 1, 1, HardwareComponentPrototype.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareComponentPrototype_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, HardwareComponentPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwareComponentPrototype_Type(), this.getHardwareComponentType(), null, "type", null, 1, 1, HardwareComponentPrototype.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
-		addEOperation(hardwareComponentPrototypeEClass, theUMLPackage.getImage(), "getIcon", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getHardwareComponentPrototype__GetIcon(), theUMLPackage.getImage(), "getIcon", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(allocationTargetEClass, AllocationTarget.class, "AllocationTarget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(hardwarePortConnectorEClass, HardwarePortConnector.class, "HardwarePortConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHardwarePortConnector_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, HardwarePortConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getHardwarePortConnector_BusSpeed(), theDatatypesPackage.getjavalangFloat(), "busSpeed", null, 1, 1, HardwarePortConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getHardwarePortConnector_BusType(), this.getHardwareBusKind(), "busType", null, 1, 1, HardwarePortConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwarePortConnector_Connector(), this.getHardwareConnector(), null, "connector", null, 0, -1, HardwarePortConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwarePortConnector_Port(), theInfrastructurePackage.getHardwarePortConnectorInstanceRef(), null, "port", null, 2, 2, HardwarePortConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(hardwarePortEClass, HardwarePort.class, "HardwarePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHardwarePort_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getHardwarePort_IsShield(), theTypesPackage.getBoolean(), "isShield", null, 1, 1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwarePort_ContainedPin(), this.getHardwarePin(), null, "containedPin", null, 0, -1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwarePort_ReferencedPin(), this.getHardwarePin(), null, "referencedPin", null, 0, -1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHardwarePort_ContainedPort(), this.getHardwarePort(), null, "containedPort", null, 0, -1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(ioHardwarePinEClass, IOHardwarePin.class, "IOHardwarePin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIOHardwarePin_Type(), this.getIOHardwarePinKind(), "type", null, 1, 1, IOHardwarePin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1044,48 +927,27 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 
 		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNode_ExecutionRate(), theDatatypesPackage.getjavalangFloat(), "executionRate", "1", 1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNode_NonVolatileMemory(), theTypesPackage.getInteger(), "nonVolatileMemory", null, 1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNode_VolatileMemory(), theTypesPackage.getInteger(), "volatileMemory", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(powerSupplyEClass, PowerSupply.class, "PowerSupply", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPowerSupply_IsActive(), theTypesPackage.getBoolean(), "isActive", null, 1, 1, PowerSupply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(electricalComponentEClass, ElectricalComponent.class, "ElectricalComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getElectricalComponent_IsActive(), theTypesPackage.getBoolean(), "isActive", null, 1, 1, ElectricalComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(logicalBusEClass, LogicalBus.class, "LogicalBus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLogicalBus_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, LogicalBus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getLogicalBus_BusSpeed(), theDatatypesPackage.getjavalangFloat(), "busSpeed", null, 1, 1, LogicalBus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getLogicalBus_BusType(), this.getLogicalBusKind(), "busType", null, 1, 1, LogicalBus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLogicalBus_Wire(), this.getHardwareConnector(), null, "wire", null, 0, -1, LogicalBus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLogicalBus_Wire_path(), this.getHardwareComponentPrototype(), null, "wire_path", null, 0, -1, LogicalBus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(hardwarePinGroupEClass, HardwarePinGroup.class, "HardwarePinGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwarePinGroup_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, HardwarePinGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwarePinGroup_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, HardwarePinGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwarePinGroup_PortGroup(), this.getHardwarePinGroup(), null, "portGroup", null, 0, -1, HardwarePinGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwarePinGroup_Port(), this.getHardwarePin(), null, "port", null, 0, -1, HardwarePinGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(hardwareComponentTypeEClass, HardwareComponentType.class, "HardwareComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHardwareComponentType_Connector(), this.getHardwareConnector(), null, "connector", null, 0, -1, HardwareComponentType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareComponentType_Port(), this.getHardwarePin(), null, "port", null, 0, -1, HardwareComponentType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareComponentType_Part(), this.getHardwareComponentPrototype(), null, "part", null, 0, -1, HardwareComponentType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareComponentType_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, HardwareComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareComponentType_Bus(), this.getLogicalBus(), null, "bus", null, 0, -1, HardwareComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHardwareComponentType_PortGroup(), this.getHardwarePinGroup(), null, "portGroup", null, 0, -1, HardwareComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(allocationTargetEClass, AllocationTarget.class, "AllocationTarget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
+		initEEnum(hardwareBusKindEEnum, HardwareBusKind.class, "HardwareBusKind");
+		addEEnumLiteral(hardwareBusKindEEnum, HardwareBusKind.TIME_TRIGGERED);
+		addEEnumLiteral(hardwareBusKindEEnum, HardwareBusKind.EVENT_TRIGGERED);
+		addEEnumLiteral(hardwareBusKindEEnum, HardwareBusKind.TIMEAND_EVENT_TRIGGERED);
+		addEEnumLiteral(hardwareBusKindEEnum, HardwareBusKind.OTHER);
+
 		initEEnum(ioHardwarePinKindEEnum, IOHardwarePinKind.class, "IOHardwarePinKind");
 		addEEnumLiteral(ioHardwarePinKindEEnum, IOHardwarePinKind.DIGITAL);
 		addEEnumLiteral(ioHardwarePinKindEEnum, IOHardwarePinKind.ANALOG);
 		addEEnumLiteral(ioHardwarePinKindEEnum, IOHardwarePinKind.PWM);
 		addEEnumLiteral(ioHardwarePinKindEEnum, IOHardwarePinKind.OTHER);
-
-		initEEnum(logicalBusKindEEnum, LogicalBusKind.class, "LogicalBusKind");
-		addEEnumLiteral(logicalBusKindEEnum, LogicalBusKind.TIME_TRIGGERED);
-		addEEnumLiteral(logicalBusKindEEnum, LogicalBusKind.EVENT_TRIGGERED);
-		addEEnumLiteral(logicalBusKindEEnum, LogicalBusKind.TIMEAND_EVENT_TRIGGERED);
-		addEEnumLiteral(logicalBusKindEEnum, LogicalBusKind.OTHER);
 	}
 } //HardwaremodelingPackageImpl

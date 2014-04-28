@@ -31,21 +31,18 @@ import org.eclipse.papyrus.eastadl.variability.VehicleLevelBinding;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.variability.impl.VehicleLevelBindingImpl#getSourceVehicleFeatureModel <em>Source Vehicle Feature Model</em>}
- * </li>
- * <li>{@link org.eclipse.papyrus.eastadl.variability.impl.VehicleLevelBindingImpl#getTargetFeatureModel <em>Target Feature Model</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.variability.impl.VehicleLevelBindingImpl#getSourceVehicleFeatureModel <em>Source Vehicle Feature Model</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.variability.impl.VehicleLevelBindingImpl#getTargetFeatureModel <em>Target Feature Model</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl implements VehicleLevelBinding {
-
 	/**
 	 * The cached value of the '{@link #getSourceVehicleFeatureModel() <em>Source Vehicle Feature Model</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSourceVehicleFeatureModel()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,6 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	 * The cached value of the '{@link #getTargetFeatureModel() <em>Target Feature Model</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getTargetFeatureModel()
 	 * @generated
 	 * @ordered
@@ -66,7 +62,6 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected VehicleLevelBindingImpl() {
@@ -76,7 +71,6 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -87,11 +81,10 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<FeatureModel> getSourceVehicleFeatureModel() {
-		if(sourceVehicleFeatureModel == null) {
+		if (sourceVehicleFeatureModel == null) {
 			sourceVehicleFeatureModel = new EObjectResolvingEList<FeatureModel>(FeatureModel.class, this, VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL);
 		}
 		return sourceVehicleFeatureModel;
@@ -100,11 +93,10 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<FeatureModel> getTargetFeatureModel() {
-		if(targetFeatureModel == null) {
+		if (targetFeatureModel == null) {
 			targetFeatureModel = new EObjectResolvingEList<FeatureModel>(FeatureModel.class, this, VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL);
 		}
 		return targetFeatureModel;
@@ -113,16 +105,15 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL:
-			return getSourceVehicleFeatureModel();
-		case VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL:
-			return getTargetFeatureModel();
+		switch (featureID) {
+			case VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL:
+				return getSourceVehicleFeatureModel();
+			case VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL:
+				return getTargetFeatureModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -130,21 +121,20 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL:
-			getSourceVehicleFeatureModel().clear();
-			getSourceVehicleFeatureModel().addAll((Collection<? extends FeatureModel>)newValue);
-			return;
-		case VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL:
-			getTargetFeatureModel().clear();
-			getTargetFeatureModel().addAll((Collection<? extends FeatureModel>)newValue);
-			return;
+		switch (featureID) {
+			case VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL:
+				getSourceVehicleFeatureModel().clear();
+				getSourceVehicleFeatureModel().addAll((Collection<? extends FeatureModel>)newValue);
+				return;
+			case VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL:
+				getTargetFeatureModel().clear();
+				getTargetFeatureModel().addAll((Collection<? extends FeatureModel>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -152,18 +142,17 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL:
-			getSourceVehicleFeatureModel().clear();
-			return;
-		case VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL:
-			getTargetFeatureModel().clear();
-			return;
+		switch (featureID) {
+			case VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL:
+				getSourceVehicleFeatureModel().clear();
+				return;
+			case VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL:
+				getTargetFeatureModel().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -171,16 +160,15 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL:
-			return sourceVehicleFeatureModel != null && !sourceVehicleFeatureModel.isEmpty();
-		case VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL:
-			return targetFeatureModel != null && !targetFeatureModel.isEmpty();
+		switch (featureID) {
+			case VariabilityPackage.VEHICLE_LEVEL_BINDING__SOURCE_VEHICLE_FEATURE_MODEL:
+				return sourceVehicleFeatureModel != null && !sourceVehicleFeatureModel.isEmpty();
+			case VariabilityPackage.VEHICLE_LEVEL_BINDING__TARGET_FEATURE_MODEL:
+				return targetFeatureModel != null && !targetFeatureModel.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -23,9 +23,17 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.eastadl.EastadlPackage;
 import org.eclipse.papyrus.eastadl.annex.AnnexPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributequantificationconstraintPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.ComputationconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.impl.AnnexPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage;
 import org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.behavior.BehaviorPackage;
 import org.eclipse.papyrus.eastadl.behavior.impl.BehaviorPackageImpl;
 import org.eclipse.papyrus.eastadl.dependability.DependabilityPackage;
@@ -55,10 +63,12 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ElementsPackageI
 import org.eclipse.papyrus.eastadl.infrastructure.impl.InfrastructurePackageImpl;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl;
-import org.eclipse.papyrus.eastadl.interchange.InterchangePackage;
-import org.eclipse.papyrus.eastadl.interchange.impl.InterchangePackageImpl;
+import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
+import org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.RequirementsPackage;
 import org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl;
+import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
+import org.eclipse.papyrus.eastadl.requirements.usecases.impl.UsecasesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl;
 import org.eclipse.papyrus.eastadl.structure.StructurePackage;
@@ -82,7 +92,6 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.Timingconstrain
 import org.eclipse.papyrus.eastadl.variability.VariabilityPackage;
 import org.eclipse.papyrus.eastadl.variability.impl.VariabilityPackageImpl;
 import org.eclipse.papyrus.sysml.SysmlPackage;
-import org.eclipse.uml2.types.TypesPackage;
 import org.eclipse.uml2.uml.UMLPackage;
 
 
@@ -90,7 +99,6 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class GenericconstraintsPackageImpl extends EPackageImpl implements GenericconstraintsPackage {
@@ -98,7 +106,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass genericConstraintSetEClass = null;
@@ -106,7 +113,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass takeRateConstraintEClass = null;
@@ -114,7 +120,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass genericConstraintEClass = null;
@@ -122,7 +127,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EEnum genericConstraintKindEEnum = null;
@@ -130,7 +134,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -138,18 +141,16 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>
-	 * This method is used to initialize {@link GenericconstraintsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it
-	 * directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>This method is used to initialize {@link GenericconstraintsPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static GenericconstraintsPackage init() {
-		if(isInited)
-			return (GenericconstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI);
+		if (isInited) return (GenericconstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI);
 
 		// Obtain or create and register package
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new GenericconstraintsPackageImpl());
@@ -165,28 +166,34 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
+		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) : ElementsPackage.eINSTANCE);
 		StructurePackageImpl theStructurePackage = (StructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) : StructurePackage.eINSTANCE);
 		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
-		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
+		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
-		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
-		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
-		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
-		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
-		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
-		InterchangePackageImpl theInterchangePackage = (InterchangePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) instanceof InterchangePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) : InterchangePackage.eINSTANCE);
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
+		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
-		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
 		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
 		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
 		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) : SafetycasePackage.eINSTANCE);
+		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
+		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
+		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) : UsecasesPackage.eINSTANCE);
+		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
+		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
+		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
+		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
 		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
+		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
+		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
+		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theGenericconstraintsPackage.createPackageContents();
@@ -195,28 +202,34 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 		theInfrastructurePackage.createPackageContents();
 		theDatatypesPackage.createPackageContents();
 		theUserattributesPackage.createPackageContents();
+		theValuesPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theStructurePackage.createPackageContents();
 		theFunctionmodelingPackage.createPackageContents();
-		theHardwaremodelingPackage.createPackageContents();
+		theFeaturemodelingPackage.createPackageContents();
 		theSystemmodelingPackage.createPackageContents();
 		theVehiclefeaturemodelingPackage.createPackageContents();
-		theFeaturemodelingPackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
-		theRequirementsPackage.createPackageContents();
-		theVerificationvalidationPackage.createPackageContents();
-		theTimingPackage.createPackageContents();
-		theTimingconstraintsPackage.createPackageContents();
-		theEventsPackage.createPackageContents();
-		theInterchangePackage.createPackageContents();
-		theEnvironmentPackage.createPackageContents();
+		theHardwaremodelingPackage.createPackageContents();
 		theDependabilityPackage.createPackageContents();
-		theErrormodelPackage.createPackageContents();
 		theSafetyrequirementPackage.createPackageContents();
 		theSafetyconstraintsPackage.createPackageContents();
 		theSafetycasePackage.createPackageContents();
+		theErrormodelPackage.createPackageContents();
+		theRequirementsPackage.createPackageContents();
+		theUsecasesPackage.createPackageContents();
+		theVerificationvalidationPackage.createPackageContents();
+		theRequirementsPackage_1.createPackageContents();
+		theBehaviorPackage.createPackageContents();
+		theTimingPackage.createPackageContents();
+		theTimingconstraintsPackage.createPackageContents();
+		theEventsPackage.createPackageContents();
+		theEnvironmentPackage.createPackageContents();
 		theAnnexPackage.createPackageContents();
 		theNeedsPackage.createPackageContents();
+		theBehaviordescriptionPackage.createPackageContents();
+		theAttributequantificationconstraintPackage.createPackageContents();
+		theTemporalconstraintPackage.createPackageContents();
+		theComputationconstraintPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theGenericconstraintsPackage.initializePackageContents();
@@ -225,33 +238,39 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 		theInfrastructurePackage.initializePackageContents();
 		theDatatypesPackage.initializePackageContents();
 		theUserattributesPackage.initializePackageContents();
+		theValuesPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theStructurePackage.initializePackageContents();
 		theFunctionmodelingPackage.initializePackageContents();
-		theHardwaremodelingPackage.initializePackageContents();
+		theFeaturemodelingPackage.initializePackageContents();
 		theSystemmodelingPackage.initializePackageContents();
 		theVehiclefeaturemodelingPackage.initializePackageContents();
-		theFeaturemodelingPackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
-		theRequirementsPackage.initializePackageContents();
-		theVerificationvalidationPackage.initializePackageContents();
-		theTimingPackage.initializePackageContents();
-		theTimingconstraintsPackage.initializePackageContents();
-		theEventsPackage.initializePackageContents();
-		theInterchangePackage.initializePackageContents();
-		theEnvironmentPackage.initializePackageContents();
+		theHardwaremodelingPackage.initializePackageContents();
 		theDependabilityPackage.initializePackageContents();
-		theErrormodelPackage.initializePackageContents();
 		theSafetyrequirementPackage.initializePackageContents();
 		theSafetyconstraintsPackage.initializePackageContents();
 		theSafetycasePackage.initializePackageContents();
+		theErrormodelPackage.initializePackageContents();
+		theRequirementsPackage.initializePackageContents();
+		theUsecasesPackage.initializePackageContents();
+		theVerificationvalidationPackage.initializePackageContents();
+		theRequirementsPackage_1.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
+		theTimingPackage.initializePackageContents();
+		theTimingconstraintsPackage.initializePackageContents();
+		theEventsPackage.initializePackageContents();
+		theEnvironmentPackage.initializePackageContents();
 		theAnnexPackage.initializePackageContents();
 		theNeedsPackage.initializePackageContents();
+		theBehaviordescriptionPackage.initializePackageContents();
+		theAttributequantificationconstraintPackage.initializePackageContents();
+		theTemporalconstraintPackage.initializePackageContents();
+		theComputationconstraintPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theGenericconstraintsPackage.freeze();
 
-
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(GenericconstraintsPackage.eNS_URI, theGenericconstraintsPackage);
 		return theGenericconstraintsPackage;
@@ -260,7 +279,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -268,19 +286,19 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#eNS_URI
 	 * @see #init()
@@ -291,26 +309,24 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	}
 
 	/**
-	 * Creates the meta-model objects for the package. This method is
+	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated)
-			return;
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
 		genericConstraintEClass = createEClass(GENERIC_CONSTRAINT);
-		createEAttribute(genericConstraintEClass, GENERIC_CONSTRAINT__DESIGN_CONSTRAINT_TYPE);
+		createEAttribute(genericConstraintEClass, GENERIC_CONSTRAINT__KIND);
 		createEReference(genericConstraintEClass, GENERIC_CONSTRAINT__BASE_CONSTRAINT);
-		createEAttribute(genericConstraintEClass, GENERIC_CONSTRAINT__GENERIC_CONSTRAINT_VALUE);
 		createEReference(genericConstraintEClass, GENERIC_CONSTRAINT__BASE_CLASS);
 		createEReference(genericConstraintEClass, GENERIC_CONSTRAINT__TARGET);
 		createEReference(genericConstraintEClass, GENERIC_CONSTRAINT__MODE);
+		createEReference(genericConstraintEClass, GENERIC_CONSTRAINT__VALUE);
 
 		genericConstraintSetEClass = createEClass(GENERIC_CONSTRAINT_SET);
 		createEReference(genericConstraintSetEClass, GENERIC_CONSTRAINT_SET__GENERIC_CONSTRAINT);
@@ -328,7 +344,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getGenericConstraint() {
@@ -338,17 +353,15 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EAttribute getGenericConstraint_DesignConstraintType() {
+	public EAttribute getGenericConstraint_Kind() {
 		return (EAttribute)genericConstraintEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getGenericConstraint_Base_Constraint() {
@@ -358,47 +371,42 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getGenericConstraint_GenericConstraintValue() {
-		return (EAttribute)genericConstraintEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getGenericConstraint_Base_Class() {
-		return (EReference)genericConstraintEClass.getEStructuralFeatures().get(3);
+		return (EReference)genericConstraintEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getGenericConstraint_Mode() {
-		return (EReference)genericConstraintEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getGenericConstraint_Target() {
 		return (EReference)genericConstraintEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EReference getGenericConstraint_Value() {
+		return (EReference)genericConstraintEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenericConstraint_Target() {
+		return (EReference)genericConstraintEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEnum getGenericConstraintKind() {
@@ -408,7 +416,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getGenericConstraintSet() {
@@ -418,7 +425,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getGenericConstraintSet_GenericConstraint() {
@@ -428,7 +434,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getGenericConstraintSet_Base_Package() {
@@ -438,7 +443,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getGenericConstraintSet_Base_Class() {
@@ -448,7 +452,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GenericconstraintsFactory getGenericconstraintsFactory() {
@@ -458,7 +461,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getTakeRateConstraint() {
@@ -468,7 +470,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getTakeRateConstraint_Source() {
@@ -478,7 +479,6 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getTakeRateConstraint_TakeRate() {
@@ -486,16 +486,14 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 	}
 
 	/**
-	 * Complete the initialization of the package and its meta-model. This
+	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized)
-			return;
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -506,8 +504,8 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 		// Obtain other dependent packages
 		ElementsPackage theElementsPackage = (ElementsPackage)EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
+		ValuesPackage theValuesPackage = (ValuesPackage)EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI);
 		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
 
 		// Create type parameters
@@ -519,17 +517,17 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 		genericConstraintSetEClass.getESuperTypes().add(theElementsPackage.getContext());
 		takeRateConstraintEClass.getESuperTypes().add(this.getGenericConstraint());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(genericConstraintEClass, GenericConstraint.class, "GenericConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGenericConstraint_DesignConstraintType(), this.getGenericConstraintKind(), "designConstraintType", null, 0, 1, GenericConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getGenericConstraint_Kind(), this.getGenericConstraintKind(), "kind", null, 0, 1, GenericConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getGenericConstraint_Base_Constraint(), theUMLPackage.getConstraint(), null, "base_Constraint", null, 0, 1, GenericConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getGenericConstraint_GenericConstraintValue(), theTypesPackage.getString(), "genericConstraintValue", null, 1, 1, GenericConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getGenericConstraint_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, GenericConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getGenericConstraint_Target(), theUMLPackage.getNamedElement(), null, "target", null, 0, -1, GenericConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getGenericConstraint_Mode(), theBehaviorPackage.getMode(), null, "mode", null, 0, -1, GenericConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGenericConstraint_Value(), theValuesPackage.getEAValue(), null, "value", null, 0, 1, GenericConstraint.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(genericConstraintSetEClass, GenericConstraintSet.class, "GenericConstraintSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGenericConstraintSet_GenericConstraint(), this.getGenericConstraint(), null, "genericConstraint", null, 0, -1, GenericConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGenericConstraintSet_GenericConstraint(), this.getGenericConstraint(), null, "genericConstraint", null, 0, -1, GenericConstraintSet.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getGenericConstraintSet_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, GenericConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getGenericConstraintSet_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, GenericConstraintSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -539,16 +537,28 @@ public class GenericconstraintsPackageImpl extends EPackageImpl implements Gener
 
 		// Initialize enums and add enum literals
 		initEEnum(genericConstraintKindEEnum, GenericConstraintKind.class, "GenericConstraintKind");
-		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.POWER_CONSUMPTION);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.CABLE_LENGTH);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.CURRENT);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.DEVELOPMENT_COST);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.FUNCTION_ALLOCATION_DIFFERENT_HW);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.FUNCTION_ALLOCATION_SAME_HW);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.IMPEDANCE);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.INSULATION);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.MEMORY);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.NON_VOLATILE_MEMORY);
 		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.OTHER);
 		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.PIECE_COST);
-		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.WEIGHT);
-		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.STANDARD);
-		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.CABLE_LENGTH);
-		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.DEVELOPMENT_COST);
-		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.FUNCTION_ALLOCATION_DIFFERENT_NODES);
-		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.FUNCTION_ALLOCATION_SAME_NODE);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.POWER_CONSUMPTION);
 		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.POWER_SUPPLY_INDEPENDENT);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.REALIZATION_DIFFERENT);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.REALIZATION_SAME);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.SPACE_REDUNDANCY);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.STANDARD);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.TIME_REDUNDANCY);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.UTILIZATION);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.VOLTAGE);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.VOLATILE_MEMORY);
+		addEEnumLiteral(genericConstraintKindEEnum, GenericConstraintKind.WEIGHT);
 	}
 
 } //GenericconstraintsPackageImpl

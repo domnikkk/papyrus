@@ -17,20 +17,21 @@ package org.eclipse.papyrus.eastadl.structure.functionmodeling;
 
 
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
+import org.eclipse.papyrus.eastadl.infrastructure.elements.EAPort;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Function Port</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * The ports conserve variables for component interaction.
  * <!-- end-model-doc -->
- * 
- * 
+ *
+ *
  * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionPort()
  * @model abstract="true"
  * @generated
  */
-public interface FunctionPort extends EAElement {
+public interface FunctionPort extends EAElement, EAPort {
 } // FunctionPort

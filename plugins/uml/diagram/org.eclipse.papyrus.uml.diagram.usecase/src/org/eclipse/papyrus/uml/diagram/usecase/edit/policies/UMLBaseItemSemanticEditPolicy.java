@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
  *  CEA LIST - Initial API and implementation
- *
- *****************************************************************************/
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.policies;
 
 import java.util.Collections;
@@ -87,14 +85,12 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
 	 * Extended request data key to hold editpart visual id.
-	 * 
 	 * @generated
 	 */
 	public static final String VISUAL_ID_KEY = "visual_id"; //$NON-NLS-1$
 
 	/**
 	 * Extended request data key to hold the edge view during a reconnect request.
-	 * 
 	 * @generated
 	 */
 	public static final String GRAPHICAL_RECONNECTED_EDGE = "graphical_edge"; //$NON-NLS-1$
@@ -118,8 +114,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * It is done in those cases when it's not possible to deduce diagram
 	 * element kind from domain element.
 	 * Add the reoriented view to the request extended data so that the view
-	 * currently edited can be distinguished from other views of the same element
-	 * and these latter possibly removed if they become inconsistent after reconnect
+	 *  currently edited can be distinguished from other views of the same element
+	 *  and these latter possibly removed if they become inconsistent after reconnect
 	 * 
 	 * @generated
 	 */
@@ -138,7 +134,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
 	 * Returns visual id from request parameters.
-	 * 
 	 * @generated
 	 */
 	protected int getVisualID(IEditCommandRequest request) {
@@ -246,10 +241,21 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		// no more usage of the extended types here. 
+		IElementType requestElementType = req.getElementType();
+		if(requestElementType instanceof IExtendedHintedElementType) {
+			// try to get a semantic create command from the extended type
+			IElementEditService commandProvider = ElementEditServiceUtils.getCommandProvider(req.getContainer());
+			if(commandProvider != null) {
+				ICommand command = commandProvider.getEditCommand(req);
+				if(command != null && command.canExecute()) {
+					return new ICommandProxy(command);
+				}
+			}
+		}
 		return null;
 	}
 
+	// RS: add code for extended types
 	/**
 	 * @generated
 	 */
@@ -289,6 +295,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		return getGEFWrapper(createGMFCommand);
 	}
 
+	// RS: End of add code for extended types
 	/**
 	 * @generated
 	 */
@@ -366,7 +373,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
 	 * Returns editing domain from the host edit part.
-	 * 
 	 * @generated
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
@@ -375,12 +381,11 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
 	 * Clean all shortcuts to the host element from the same diagram
-	 * 
 	 * @generated
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for(Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
+		for(Iterator<?> it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
 			View nextView = (View)it.next();
 			if(nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
 				continue;
@@ -408,8 +413,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public LinkConstraints() {
-			// use static method #getLinkConstraints() to access instance
+		public LinkConstraints() { // use static method #getLinkConstraints() to access instance
 		}
 
 		/**
@@ -529,7 +533,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return true;
 				} else {
 					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getClassifier()); //$NON-NLS-1$
-					Object sourceVal = UMLOCLFactory.getExpression(10, UMLPackage.eINSTANCE.getClassifier(), env).evaluate(source, Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+					Object sourceVal = UMLOCLFactory.getExpression(0, UMLPackage.eINSTANCE.getClassifier(), env).evaluate(source, Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
 					if(false == sourceVal instanceof Boolean || !((Boolean)sourceVal).booleanValue()) {
 						return false;
 					} // else fall-through
@@ -538,7 +542,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return true;
 				} else {
 					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getClassifier()); //$NON-NLS-1$
-					Object targetVal = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getClassifier(), env).evaluate(target, Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+					Object targetVal = UMLOCLFactory.getExpression(1, UMLPackage.eINSTANCE.getClassifier(), env).evaluate(target, Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
 					if(false == targetVal instanceof Boolean || !((Boolean)targetVal).booleanValue()) {
 						return false;
 					} // else fall-through
@@ -598,7 +602,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return true;
 				} else {
 					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getNamedElement()); //$NON-NLS-1$
-					Object targetVal = UMLOCLFactory.getExpression(17, UMLPackage.eINSTANCE.getNamedElement(), env).evaluate(target, Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+					Object targetVal = UMLOCLFactory.getExpression(7, UMLPackage.eINSTANCE.getNamedElement(), env).evaluate(target, Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
 					if(false == targetVal instanceof Boolean || !((Boolean)targetVal).booleanValue()) {
 						return false;
 					} // else fall-through

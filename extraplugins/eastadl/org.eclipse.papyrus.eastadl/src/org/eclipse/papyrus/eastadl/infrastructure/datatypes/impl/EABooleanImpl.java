@@ -26,15 +26,13 @@ import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EABoolean;
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class EABooleanImpl extends EADatatypeImpl implements EABoolean {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EABooleanImpl() {
@@ -44,7 +42,6 @@ public class EABooleanImpl extends EADatatypeImpl implements EABoolean {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

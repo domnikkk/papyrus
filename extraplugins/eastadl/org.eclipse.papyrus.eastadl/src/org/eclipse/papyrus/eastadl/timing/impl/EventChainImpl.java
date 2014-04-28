@@ -17,8 +17,11 @@ package org.eclipse.papyrus.eastadl.timing.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.papyrus.eastadl.timing.Event;
 import org.eclipse.papyrus.eastadl.timing.EventChain;
@@ -31,13 +34,12 @@ import org.eclipse.papyrus.eastadl.timing.TimingPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl#getSegment <em>Segment</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl#getStrand <em>Strand</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl#getResponse <em>Response</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl#getStimulus <em>Stimulus</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl#getSegment <em>Segment</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl#getResponse <em>Response</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl#getStimulus <em>Stimulus</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class EventChainImpl extends TimingDescriptionImpl implements EventChain {
@@ -53,16 +55,6 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	protected EList<EventChain> segment;
 
 	/**
-	 * The cached value of the '{@link #getStrand() <em>Strand</em>}' reference list. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getStrand()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EventChain> strand;
-
-	/**
 	 * The cached value of the '{@link #getResponse() <em>Response</em>}' reference list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -70,7 +62,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Event> response;
+	protected Event response;
 
 	/**
 	 * The cached value of the '{@link #getStimulus() <em>Stimulus</em>}' reference list. <!--
@@ -80,11 +72,10 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Event> stimulus;
+	protected Event stimulus;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EventChainImpl() {
@@ -93,76 +84,64 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case TimingPackage.EVENT_CHAIN__SEGMENT:
-			return getSegment();
-		case TimingPackage.EVENT_CHAIN__STRAND:
-			return getStrand();
-		case TimingPackage.EVENT_CHAIN__RESPONSE:
-			return getResponse();
-		case TimingPackage.EVENT_CHAIN__STIMULUS:
-			return getStimulus();
+		switch (featureID) {
+			case TimingPackage.EVENT_CHAIN__SEGMENT:
+				return getSegment();
+			case TimingPackage.EVENT_CHAIN__RESPONSE:
+				if (resolve) return getResponse();
+				return basicGetResponse();
+			case TimingPackage.EVENT_CHAIN__STIMULUS:
+				if (resolve) return getStimulus();
+				return basicGetStimulus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case TimingPackage.EVENT_CHAIN__SEGMENT:
-			return segment != null && !segment.isEmpty();
-		case TimingPackage.EVENT_CHAIN__STRAND:
-			return strand != null && !strand.isEmpty();
-		case TimingPackage.EVENT_CHAIN__RESPONSE:
-			return response != null && !response.isEmpty();
-		case TimingPackage.EVENT_CHAIN__STIMULUS:
-			return stimulus != null && !stimulus.isEmpty();
+		switch (featureID) {
+			case TimingPackage.EVENT_CHAIN__SEGMENT:
+				return segment != null && !segment.isEmpty();
+			case TimingPackage.EVENT_CHAIN__RESPONSE:
+				return response != null;
+			case TimingPackage.EVENT_CHAIN__STIMULUS:
+				return stimulus != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case TimingPackage.EVENT_CHAIN__SEGMENT:
-			getSegment().clear();
-			getSegment().addAll((Collection<? extends EventChain>)newValue);
-			return;
-		case TimingPackage.EVENT_CHAIN__STRAND:
-			getStrand().clear();
-			getStrand().addAll((Collection<? extends EventChain>)newValue);
-			return;
-		case TimingPackage.EVENT_CHAIN__RESPONSE:
-			getResponse().clear();
-			getResponse().addAll((Collection<? extends Event>)newValue);
-			return;
-		case TimingPackage.EVENT_CHAIN__STIMULUS:
-			getStimulus().clear();
-			getStimulus().addAll((Collection<? extends Event>)newValue);
-			return;
+		switch (featureID) {
+			case TimingPackage.EVENT_CHAIN__SEGMENT:
+				getSegment().clear();
+				getSegment().addAll((Collection<? extends EventChain>)newValue);
+				return;
+			case TimingPackage.EVENT_CHAIN__RESPONSE:
+				setResponse((Event)newValue);
+				return;
+			case TimingPackage.EVENT_CHAIN__STIMULUS:
+				setStimulus((Event)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -172,47 +151,67 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case TimingPackage.EVENT_CHAIN__SEGMENT:
-			getSegment().clear();
-			return;
-		case TimingPackage.EVENT_CHAIN__STRAND:
-			getStrand().clear();
-			return;
-		case TimingPackage.EVENT_CHAIN__RESPONSE:
-			getResponse().clear();
-			return;
-		case TimingPackage.EVENT_CHAIN__STIMULUS:
-			getStimulus().clear();
-			return;
+		switch (featureID) {
+			case TimingPackage.EVENT_CHAIN__SEGMENT:
+				getSegment().clear();
+				return;
+			case TimingPackage.EVENT_CHAIN__RESPONSE:
+				setResponse((Event)null);
+				return;
+			case TimingPackage.EVENT_CHAIN__STIMULUS:
+				setStimulus((Event)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EList<Event> getResponse() {
-		if(response == null) {
-			response = new EObjectResolvingEList<Event>(Event.class, this, TimingPackage.EVENT_CHAIN__RESPONSE);
+	public Event getResponse() {
+		if (response != null && response.eIsProxy()) {
+			InternalEObject oldResponse = (InternalEObject)response;
+			response = (Event)eResolveProxy(oldResponse);
+			if (response != oldResponse) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.EVENT_CHAIN__RESPONSE, oldResponse, response));
+			}
 		}
 		return response;
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event basicGetResponse() {
+		return response;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResponse(Event newResponse) {
+		Event oldResponse = response;
+		response = newResponse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.EVENT_CHAIN__RESPONSE, oldResponse, response));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<EventChain> getSegment() {
-		if(segment == null) {
+		if (segment == null) {
 			segment = new EObjectResolvingEList<EventChain>(EventChain.class, this, TimingPackage.EVENT_CHAIN__SEGMENT);
 		}
 		return segment;
@@ -220,26 +219,39 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EList<Event> getStimulus() {
-		if(stimulus == null) {
-			stimulus = new EObjectResolvingEList<Event>(Event.class, this, TimingPackage.EVENT_CHAIN__STIMULUS);
+	public Event getStimulus() {
+		if (stimulus != null && stimulus.eIsProxy()) {
+			InternalEObject oldStimulus = (InternalEObject)stimulus;
+			stimulus = (Event)eResolveProxy(oldStimulus);
+			if (stimulus != oldStimulus) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.EVENT_CHAIN__STIMULUS, oldStimulus, stimulus));
+			}
 		}
 		return stimulus;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EventChain> getStrand() {
-		if(strand == null) {
-			strand = new EObjectResolvingEList<EventChain>(EventChain.class, this, TimingPackage.EVENT_CHAIN__STRAND);
-		}
-		return strand;
+	public Event basicGetStimulus() {
+		return stimulus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStimulus(Event newStimulus) {
+		Event oldStimulus = stimulus;
+		stimulus = newStimulus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.EVENT_CHAIN__STIMULUS, oldStimulus, stimulus));
 	}
 
 } // EventChainImpl

@@ -163,6 +163,10 @@
             priority="45"
             provider="org.eclipse.papyrus.uml.profile.providers.ProfileDefinitionLabelProvider">
       </labelProvider>
+      <labelProvider
+            priority="45"
+            provider="org.eclipse.papyrus.uml.profile.providers.UnknownSchemaEPackageLabelProvider">
+      </labelProvider>
    </extension>
    <extension
          point="org.eclipse.papyrus.infra.viewpoints.policy.profilehelper">

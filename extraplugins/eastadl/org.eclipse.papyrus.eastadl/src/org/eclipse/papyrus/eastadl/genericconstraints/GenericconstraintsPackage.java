@@ -28,40 +28,34 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- * <li>each class,</li>
- * <li>each feature of each class,</li>
- * <li>each enum,</li>
- * <li>and each data type</li>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsFactory
  * @model kind="package"
  * @generated
  */
 public interface GenericconstraintsPackage extends EPackage {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 * <li>each class,</li>
-	 * <li>each feature of each class,</li>
-	 * <li>each enum,</li>
-	 * <li>and each data type</li>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
-
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintSetImpl
-		 * <em>Generic Constraint Set</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintSetImpl <em>Generic Constraint Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintSetImpl
 		 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl#getGenericConstraintSet()
 		 * @generated
@@ -72,7 +66,6 @@ public interface GenericconstraintsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Generic Constraint</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference GENERIC_CONSTRAINT_SET__GENERIC_CONSTRAINT = eINSTANCE.getGenericConstraintSet_GenericConstraint();
@@ -81,7 +74,6 @@ public interface GenericconstraintsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference GENERIC_CONSTRAINT_SET__BASE_PACKAGE = eINSTANCE.getGenericConstraintSet_Base_Package();
@@ -90,17 +82,14 @@ public interface GenericconstraintsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference GENERIC_CONSTRAINT_SET__BASE_CLASS = eINSTANCE.getGenericConstraintSet_Base_Class();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.TakeRateConstraintImpl
-		 * <em>Take Rate Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.TakeRateConstraintImpl <em>Take Rate Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.TakeRateConstraintImpl
 		 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl#getTakeRateConstraint()
 		 * @generated
@@ -111,7 +100,6 @@ public interface GenericconstraintsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference TAKE_RATE_CONSTRAINT__SOURCE = eINSTANCE.getTakeRateConstraint_Source();
@@ -120,17 +108,14 @@ public interface GenericconstraintsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Take Rate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute TAKE_RATE_CONSTRAINT__TAKE_RATE = eINSTANCE.getTakeRateConstraint_TakeRate();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintImpl
-		 * <em>Generic Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintImpl <em>Generic Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintImpl
 		 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl#getGenericConstraint()
 		 * @generated
@@ -138,37 +123,25 @@ public interface GenericconstraintsPackage extends EPackage {
 		EClass GENERIC_CONSTRAINT = eINSTANCE.getGenericConstraint();
 
 		/**
-		 * The meta object literal for the '<em><b>Design Constraint Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EAttribute GENERIC_CONSTRAINT__DESIGN_CONSTRAINT_TYPE = eINSTANCE.getGenericConstraint_DesignConstraintType();
+		EAttribute GENERIC_CONSTRAINT__KIND = eINSTANCE.getGenericConstraint_Kind();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference GENERIC_CONSTRAINT__BASE_CONSTRAINT = eINSTANCE.getGenericConstraint_Base_Constraint();
 
 		/**
-		 * The meta object literal for the '<em><b>Generic Constraint Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EAttribute GENERIC_CONSTRAINT__GENERIC_CONSTRAINT_VALUE = eINSTANCE.getGenericConstraint_GenericConstraintValue();
-
-		/**
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference GENERIC_CONSTRAINT__BASE_CLASS = eINSTANCE.getGenericConstraint_Base_Class();
@@ -177,7 +150,6 @@ public interface GenericconstraintsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference GENERIC_CONSTRAINT__TARGET = eINSTANCE.getGenericConstraint_Target();
@@ -186,17 +158,22 @@ public interface GenericconstraintsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mode</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference GENERIC_CONSTRAINT__MODE = eINSTANCE.getGenericConstraint_Mode();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind
-		 * <em>Generic Constraint Kind</em>}' enum.
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 * @generated
+		 */
+		EReference GENERIC_CONSTRAINT__VALUE = eINSTANCE.getGenericConstraint_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind <em>Generic Constraint Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind
 		 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl#getGenericConstraintKind()
 		 * @generated
@@ -209,7 +186,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNAME = "genericconstraints";
@@ -218,7 +194,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/GenericConstraints/1";
@@ -227,7 +202,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "GenericConstraints";
@@ -236,17 +210,14 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	GenericconstraintsPackage eINSTANCE = org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintSetImpl
-	 * <em>Generic Constraint Set</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintSetImpl <em>Generic Constraint Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintSetImpl
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl#getGenericConstraintSet()
 	 * @generated
@@ -254,11 +225,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	int GENERIC_CONSTRAINT_SET = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintImpl <em>Generic Constraint</em>}'
-	 * class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintImpl <em>Generic Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericConstraintImpl
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl#getGenericConstraint()
 	 * @generated
@@ -266,30 +235,27 @@ public interface GenericconstraintsPackage extends EPackage {
 	int GENERIC_CONSTRAINT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_CONSTRAINT__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int GENERIC_CONSTRAINT__BASE_NAMED_ELEMENT = ElementsPackage.TRACEABLE_SPECIFICATION__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_CONSTRAINT__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +265,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -309,117 +274,123 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int GENERIC_CONSTRAINT__NOTE = ElementsPackage.TRACEABLE_SPECIFICATION__NOTE;
 
 	/**
-	 * The feature id for the '<em><b>Design Constraint Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_CONSTRAINT__DESIGN_CONSTRAINT_TYPE = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 0;
+	int GENERIC_CONSTRAINT__KIND = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int GENERIC_CONSTRAINT__BASE_CONSTRAINT = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Generic Constraint Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_CONSTRAINT__GENERIC_CONSTRAINT_VALUE = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_CONSTRAINT__BASE_CLASS = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 3;
+	int GENERIC_CONSTRAINT__BASE_CLASS = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_CONSTRAINT__TARGET = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 4;
+	int GENERIC_CONSTRAINT__TARGET = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_CONSTRAINT__MODE = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 5;
+	int GENERIC_CONSTRAINT__MODE = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_CONSTRAINT__VALUE = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Generic Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int GENERIC_CONSTRAINT_FEATURE_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Generic Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_CONSTRAINT_SET__NAME = ElementsPackage.CONTEXT__NAME;
+	int GENERIC_CONSTRAINT_OPERATION_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int GENERIC_CONSTRAINT_SET__BASE_NAMED_ELEMENT = ElementsPackage.CONTEXT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_CONSTRAINT_SET__NAME = ElementsPackage.CONTEXT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int GENERIC_CONSTRAINT_SET__OWNED_COMMENT = ElementsPackage.CONTEXT__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_CONSTRAINT_SET__BASE_PACKAGEABLE_ELEMENT = ElementsPackage.CONTEXT__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -429,7 +400,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -439,7 +409,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Generic Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -449,7 +418,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -459,7 +427,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -469,7 +436,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The number of structural features of the '<em>Generic Constraint Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -477,11 +443,18 @@ public interface GenericconstraintsPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.TakeRateConstraintImpl <em>Take Rate Constraint</em>}'
-	 * class.
+	 * The number of operations of the '<em>Generic Constraint Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_CONSTRAINT_SET_OPERATION_COUNT = ElementsPackage.CONTEXT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.impl.TakeRateConstraintImpl <em>Take Rate Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.TakeRateConstraintImpl
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl#getTakeRateConstraint()
 	 * @generated
@@ -489,30 +462,27 @@ public interface GenericconstraintsPackage extends EPackage {
 	int TAKE_RATE_CONSTRAINT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TAKE_RATE_CONSTRAINT__NAME = GENERIC_CONSTRAINT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int TAKE_RATE_CONSTRAINT__BASE_NAMED_ELEMENT = GENERIC_CONSTRAINT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAKE_RATE_CONSTRAINT__NAME = GENERIC_CONSTRAINT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -522,7 +492,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -532,47 +501,33 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int TAKE_RATE_CONSTRAINT__NOTE = GENERIC_CONSTRAINT__NOTE;
 
 	/**
-	 * The feature id for the '<em><b>Design Constraint Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int TAKE_RATE_CONSTRAINT__DESIGN_CONSTRAINT_TYPE = GENERIC_CONSTRAINT__DESIGN_CONSTRAINT_TYPE;
+	int TAKE_RATE_CONSTRAINT__KIND = GENERIC_CONSTRAINT__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int TAKE_RATE_CONSTRAINT__BASE_CONSTRAINT = GENERIC_CONSTRAINT__BASE_CONSTRAINT;
 
 	/**
-	 * The feature id for the '<em><b>Generic Constraint Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TAKE_RATE_CONSTRAINT__GENERIC_CONSTRAINT_VALUE = GENERIC_CONSTRAINT__GENERIC_CONSTRAINT_VALUE;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -582,7 +537,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Target</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -592,17 +546,24 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int TAKE_RATE_CONSTRAINT__MODE = GENERIC_CONSTRAINT__MODE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAKE_RATE_CONSTRAINT__VALUE = GENERIC_CONSTRAINT__VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -612,7 +573,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The feature id for the '<em><b>Take Rate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -622,18 +582,24 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * The number of structural features of the '<em>Take Rate Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int TAKE_RATE_CONSTRAINT_FEATURE_COUNT = GENERIC_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind <em>Generic Constraint Kind</em>}'
-	 * enum.
+	 * The number of operations of the '<em>Take Rate Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TAKE_RATE_CONSTRAINT_OPERATION_COUNT = GENERIC_CONSTRAINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind <em>Generic Constraint Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl#getGenericConstraintKind()
 	 * @generated
@@ -644,7 +610,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint <em>Generic Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Generic Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint
 	 * @generated
@@ -652,24 +617,20 @@ public interface GenericconstraintsPackage extends EPackage {
 	EClass getGenericConstraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getDesignConstraintType
-	 * <em>Design Constraint Type</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Design Constraint Type</em>'.
-	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getDesignConstraintType()
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getKind()
 	 * @see #getGenericConstraint()
 	 * @generated
 	 */
-	EAttribute getGenericConstraint_DesignConstraintType();
+	EAttribute getGenericConstraint_Kind();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Constraint
-	 * <em>Base Constraint</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Constraint <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Constraint()
 	 * @see #getGenericConstraint()
@@ -678,24 +639,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EReference getGenericConstraint_Base_Constraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getGenericConstraintValue
-	 * <em>Generic Constraint Value</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Generic Constraint Value</em>'.
-	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getGenericConstraintValue()
-	 * @see #getGenericConstraint()
-	 * @generated
-	 */
-	EAttribute getGenericConstraint_GenericConstraintValue();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Class
-	 * <em>Base Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Class()
 	 * @see #getGenericConstraint()
@@ -704,11 +650,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EReference getGenericConstraint_Base_Class();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getMode <em>Mode</em>}
-	 * '.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getMode <em>Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Mode</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getMode()
 	 * @see #getGenericConstraint()
@@ -717,11 +661,20 @@ public interface GenericconstraintsPackage extends EPackage {
 	EReference getGenericConstraint_Mode();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getTarget
-	 * <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getValue()
+	 * @see #getGenericConstraint()
+	 * @generated
+	 */
+	EReference getGenericConstraint_Value();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getTarget()
 	 * @see #getGenericConstraint()
@@ -730,11 +683,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EReference getGenericConstraint_Target();
 
 	/**
-	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind <em>Generic Constraint Kind</em>}
-	 * '.
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind <em>Generic Constraint Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for enum '<em>Generic Constraint Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind
 	 * @generated
@@ -742,11 +693,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EEnum getGenericConstraintKind();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet <em>Generic Constraint Set</em>}
-	 * '.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet <em>Generic Constraint Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Generic Constraint Set</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet
 	 * @generated
@@ -754,11 +703,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EClass getGenericConstraintSet();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getGenericConstraint <em>Generic Constraint</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getGenericConstraint <em>Generic Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Generic Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getGenericConstraint()
 	 * @see #getGenericConstraintSet()
@@ -767,11 +714,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EReference getGenericConstraintSet_GenericConstraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getBase_Package
-	 * <em>Base Package</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getBase_Package()
 	 * @see #getGenericConstraintSet()
@@ -780,11 +725,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EReference getGenericConstraintSet_Base_Package();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getBase_Class
-	 * <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintSet#getBase_Class()
 	 * @see #getGenericConstraintSet()
@@ -796,7 +739,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -806,7 +748,6 @@ public interface GenericconstraintsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint <em>Take Rate Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Take Rate Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint
 	 * @generated
@@ -814,11 +755,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EClass getTakeRateConstraint();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getSource
-	 * <em>Source</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Source</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getSource()
 	 * @see #getTakeRateConstraint()
@@ -827,11 +766,9 @@ public interface GenericconstraintsPackage extends EPackage {
 	EReference getTakeRateConstraint_Source();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getTakeRate
-	 * <em>Take Rate</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getTakeRate <em>Take Rate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Take Rate</em>'.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getTakeRate()
 	 * @see #getTakeRateConstraint()

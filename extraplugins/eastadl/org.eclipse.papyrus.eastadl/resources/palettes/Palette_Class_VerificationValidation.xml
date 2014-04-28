@@ -1,1 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><paletteDefinition><content><drawer iconpath="/icons/drawer.gif" id="Drawer__1281003663473" name="VerificationValidation"><aspectTool description="VVCase" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVCase.gif" id="clazz.tool.class_1281003690012" name="VVCase" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVCase"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="VVProcedure" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVProcedure.gif" id="clazz.tool.class_1281003695174" name="VVProcedure" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVProcedure"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool></drawer></content></paletteDefinition>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><paletteDefinition><content><drawer iconpath="/icons/drawer.gif" id="Drawer__1281003663473" name="VerificationValidation"><aspectTool description="VVCase" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVCase.gif" id="clazz.tool.class_1281003690012" name="VVCase" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVCase"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="VVProcedure" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVProcedure.gif" id="clazz.tool.class_1281003695174" name="VVProcedure" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVProcedure"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool>
+	<aspectTool description="VVActualOutcome"
+		id='clazz.tool.class_1281003690013' name="VVActualOutcome"
+		refToolId="clazz.tool.class" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVCase.gif">
+		<postAction
+			id="org.eclipse.papyrus.applystereotypeactionprovider">
+			<stereotypesToApply>
+				<stereotype
+					stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVActualOutcome">
+				</stereotype>
+			</stereotypesToApply>
+		</postAction>
+		<postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"></postAction>
+	</aspectTool>
+	
+	
+	
+	
+	<aspectTool description="VVIntendedOutcome"
+		id='clazz.tool.class_1281003690014' name="VVIntendedOutcome"
+		refToolId="clazz.tool.class" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVCase.gif">
+		<postAction
+			id="org.eclipse.papyrus.applystereotypeactionprovider">
+			<stereotypesToApply>
+				<stereotype
+					stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVIntendedOutcome">
+				</stereotype>
+			</stereotypesToApply>
+		</postAction>
+		<postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"></postAction>
+	</aspectTool>
+	<aspectTool description="VVLog"
+		id='clazz.tool.class_1281003690015' name="VVLog"
+		refToolId="clazz.tool.class" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVCase.gif">
+		<postAction
+			id="org.eclipse.papyrus.applystereotypeactionprovider">
+			<stereotypesToApply>
+				<stereotype
+					stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVLog">
+				</stereotype>
+			</stereotypesToApply>
+		</postAction>
+		<postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"></postAction>
+	</aspectTool>
+	<aspectTool description="VVStimuli"
+		id='clazz.tool.class_1281003690016' name="VVStimuli"
+		refToolId="clazz.tool.class" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVCase.gif">
+		<postAction
+			id="org.eclipse.papyrus.applystereotypeactionprovider">
+			<stereotypesToApply>
+				<stereotype
+					stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVStimuli">
+				</stereotype>
+			</stereotypesToApply>
+		</postAction>
+		<postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"></postAction>
+	</aspectTool>
+	<aspectTool description="VVTarget"
+		id='clazz.tool.class_1281003690017' name="VVTarget"
+		refToolId="clazz.tool.class" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/requirements/verificationvalidation/VVCase.gif">
+		<postAction
+			id="org.eclipse.papyrus.applystereotypeactionprovider">
+			<stereotypesToApply>
+				<stereotype
+					stereotypeName="EAST-ADL2::Requirements::VerificationValidation::VVTarget">
+				</stereotype>
+			</stereotypesToApply>
+		</postAction>
+		<postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"></postAction>
+	</aspectTool>
+	</drawer></content></paletteDefinition>

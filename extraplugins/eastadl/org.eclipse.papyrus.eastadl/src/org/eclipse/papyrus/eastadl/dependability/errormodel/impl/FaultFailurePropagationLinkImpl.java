@@ -15,18 +15,18 @@
  *****************************************************************************/
 package org.eclipse.papyrus.eastadl.dependability.errormodel.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype;
 import org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage;
 import org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort;
 import org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePropagationLink_fromPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePropagationLink_toPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.elements.EAConnector;
+import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
@@ -39,16 +39,13 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#getBase_Connector <em>Base Connector</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#isImmediatePropagation <em>Immediate
- * Propagation</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#getToPort <em>To Port</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#getFromPort <em>From Port</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#getFromPort_path <em>From Port path</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#getToPort_path <em>To Port path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#getBase_Connector <em>Base Connector</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#isImmediatePropagation <em>Immediate Propagation</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#getToPort <em>To Port</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl#getFromPort <em>From Port</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class FaultFailurePropagationLinkImpl extends EAElementImpl implements FaultFailurePropagationLink {
@@ -57,7 +54,6 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -67,7 +63,6 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * The default value of the '{@link #isImmediatePropagation() <em>Immediate Propagation</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #isImmediatePropagation()
 	 * @generated
 	 * @ordered
@@ -77,7 +72,6 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * The cached value of the '{@link #isImmediatePropagation() <em>Immediate Propagation</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #isImmediatePropagation()
 	 * @generated
 	 * @ordered
@@ -85,30 +79,27 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	protected boolean immediatePropagation = IMMEDIATE_PROPAGATION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFromPort_path() <em>From Port path</em>}' reference list.
+	 * The cached value of the '{@link #getToPort() <em>To Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getFromPort_path()
+	 * @see #getToPort()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ErrorModelPrototype> fromPort_path;
+	protected FaultFailurePropagationLink_toPortInstanceRef toPort;
 
 	/**
-	 * The cached value of the '{@link #getToPort_path() <em>To Port path</em>}' reference list.
+	 * The cached value of the '{@link #getFromPort() <em>From Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getToPort_path()
+	 * @see #getFromPort()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ErrorModelPrototype> toPort_path;
+	protected FaultFailurePropagationLink_fromPortInstanceRef fromPort;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected FaultFailurePropagationLinkImpl() {
@@ -131,37 +122,12 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 				if((ce != null) && (ce instanceof Port)) {
 					// Test if ConnectableElement ce is FaultFailurePort
-					currentFlowPort = (FaultFailurePort)UMLUtil.getStereotypeApplication(ce, FaultFailurePort.class);
+					currentFlowPort = (FaultFailurePort)UMLUtil.getStereotypeApplication(ce, 
+						FaultFailurePort.class);
 				}
 			}
 		}
 		return currentFlowPort;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<ErrorModelPrototype> getFromPort_path() {
-		if(fromPort_path == null) {
-			fromPort_path = new EObjectResolvingEList<ErrorModelPrototype>(ErrorModelPrototype.class, this, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT_PATH);
-		}
-		return fromPort_path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<ErrorModelPrototype> getToPort_path() {
-		if(toPort_path == null) {
-			toPort_path = new EObjectResolvingEList<ErrorModelPrototype>(ErrorModelPrototype.class, this, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT_PATH);
-		}
-		return toPort_path;
 	}
 
 	/**
@@ -189,88 +155,100 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
-			if(resolve)
-				return getBase_Connector();
-			return basicGetBase_Connector();
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
-			return isImmediatePropagation();
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT:
-			if(resolve)
+		switch (featureID) {
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
+				if (resolve) return getBase_Connector();
+				return basicGetBase_Connector();
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
+				return isImmediatePropagation();
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT:
 				return getToPort();
-			return basicGetToPort();
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT:
-			if(resolve)
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT:
 				return getFromPort();
-			return basicGetFromPort();
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT_PATH:
-			return getFromPort_path();
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT_PATH:
-			return getToPort_path();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
-			return base_Connector != null;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
-			return immediatePropagation != IMMEDIATE_PROPAGATION_EDEFAULT;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT:
-			return basicGetToPort() != null;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT:
-			return basicGetFromPort() != null;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT_PATH:
-			return fromPort_path != null && !fromPort_path.isEmpty();
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT_PATH:
-			return toPort_path != null && !toPort_path.isEmpty();
+		switch (featureID) {
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
+				return base_Connector != null;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
+				return immediatePropagation != IMMEDIATE_PROPAGATION_EDEFAULT;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT:
+				return toPort != null;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT:
+				return fromPort != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EAConnector.class) {
+			switch (derivedFeatureID) {
+				case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR: return ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EAConnector.class) {
+			switch (baseFeatureID) {
+				case ElementsPackage.EA_CONNECTOR__BASE_CONNECTOR: return ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
-			setBase_Connector((Connector)newValue);
-			return;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
-			setImmediatePropagation((Boolean)newValue);
-			return;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT_PATH:
-			getFromPort_path().clear();
-			getFromPort_path().addAll((Collection<? extends ErrorModelPrototype>)newValue);
-			return;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT_PATH:
-			getToPort_path().clear();
-			getToPort_path().addAll((Collection<? extends ErrorModelPrototype>)newValue);
-			return;
+		switch (featureID) {
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
+				setBase_Connector((Connector)newValue);
+				return;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
+				setImmediatePropagation((Boolean)newValue);
+				return;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT:
+				setToPort((FaultFailurePropagationLink_toPortInstanceRef)newValue);
+				return;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT:
+				setFromPort((FaultFailurePropagationLink_fromPortInstanceRef)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -281,15 +259,14 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Connector getBase_Connector() {
-		if(base_Connector != null && base_Connector.eIsProxy()) {
+		if (base_Connector != null && base_Connector.eIsProxy()) {
 			InternalEObject oldBase_Connector = (InternalEObject)base_Connector;
 			base_Connector = (Connector)eResolveProxy(oldBase_Connector);
-			if(base_Connector != oldBase_Connector) {
-				if(eNotificationRequired())
+			if (base_Connector != oldBase_Connector) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR, oldBase_Connector, base_Connector));
 			}
 		}
@@ -299,7 +276,6 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -309,63 +285,140 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setBase_Connector(Connector newBase_Connector) {
 		Connector oldBase_Connector = base_Connector;
 		base_Connector = newBase_Connector;
-		if(eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR, oldBase_Connector, base_Connector));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
-			setBase_Connector((Connector)null);
-			return;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
-			setImmediatePropagation(IMMEDIATE_PROPAGATION_EDEFAULT);
-			return;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT_PATH:
-			getFromPort_path().clear();
-			return;
-		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT_PATH:
-			getToPort_path().clear();
-			return;
+		switch (featureID) {
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR:
+				setBase_Connector((Connector)null);
+				return;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION:
+				setImmediatePropagation(IMMEDIATE_PROPAGATION_EDEFAULT);
+				return;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT:
+				setToPort((FaultFailurePropagationLink_toPortInstanceRef)null);
+				return;
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT:
+				setFromPort((FaultFailurePropagationLink_fromPortInstanceRef)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public FaultFailurePort getFromPort() {
-		FaultFailurePort fromPort = basicGetFromPort();
-		return fromPort != null && fromPort.eIsProxy() ? (FaultFailurePort)eResolveProxy((InternalEObject)fromPort) : fromPort;
+	public FaultFailurePropagationLink_fromPortInstanceRef getFromPort() {
+		return fromPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFromPort(FaultFailurePropagationLink_fromPortInstanceRef newFromPort, NotificationChain msgs) {
+		FaultFailurePropagationLink_fromPortInstanceRef oldFromPort = fromPort;
+		fromPort = newFromPort;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT, oldFromPort, newFromPort);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFromPort(FaultFailurePropagationLink_fromPortInstanceRef newFromPort) {
+		if (newFromPort != fromPort) {
+			NotificationChain msgs = null;
+			if (fromPort != null)
+				msgs = ((InternalEObject)fromPort).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT, null, msgs);
+			if (newFromPort != null)
+				msgs = ((InternalEObject)newFromPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT, null, msgs);
+			msgs = basicSetFromPort(newFromPort, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT, newFromPort, newFromPort));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT:
+				return basicSetToPort(null, msgs);
+			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT:
+				return basicSetFromPort(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public FaultFailurePort getToPort() {
-		FaultFailurePort toPort = basicGetToPort();
-		return toPort != null && toPort.eIsProxy() ? (FaultFailurePort)eResolveProxy((InternalEObject)toPort) : toPort;
+	public FaultFailurePropagationLink_toPortInstanceRef getToPort() {
+		return toPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetToPort(FaultFailurePropagationLink_toPortInstanceRef newToPort, NotificationChain msgs) {
+		FaultFailurePropagationLink_toPortInstanceRef oldToPort = toPort;
+		toPort = newToPort;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT, oldToPort, newToPort);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setToPort(FaultFailurePropagationLink_toPortInstanceRef newToPort) {
+		if (newToPort != toPort) {
+			NotificationChain msgs = null;
+			if (toPort != null)
+				msgs = ((InternalEObject)toPort).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT, null, msgs);
+			if (newToPort != null)
+				msgs = ((InternalEObject)newToPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT, null, msgs);
+			msgs = basicSetToPort(newToPort, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__TO_PORT, newToPort, newToPort));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean isImmediatePropagation() {
@@ -374,25 +427,22 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setImmediatePropagation(boolean newImmediatePropagation) {
 		boolean oldImmediatePropagation = immediatePropagation;
 		immediatePropagation = newImmediatePropagation;
-		if(eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION, oldImmediatePropagation, immediatePropagation));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (immediatePropagation: ");

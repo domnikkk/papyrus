@@ -26,7 +26,6 @@ import org.eclipse.papyrus.eastadl.dependability.safetyconstraints.Safetyconstra
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class SafetyconstraintsXMLProcessor extends XMLProcessor {
@@ -35,24 +34,22 @@ public class SafetyconstraintsXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SafetyconstraintsXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		SafetyconstraintsPackage.eINSTANCE.eClass();
 	}
-
+	
 	/**
 	 * Register for "*" and "xml" file extensions the SafetyconstraintsResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected Map<String, Resource.Factory> getRegistrations() {
-		if(registrations == null) {
+		if (registrations == null) {
 			super.getRegistrations();
 			registrations.put(XML_EXTENSION, new SafetyconstraintsResourceFactoryImpl());
 			registrations.put(STAR_EXTENSION, new SafetyconstraintsResourceFactoryImpl());

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<paletteDefinition>
+	<content>
+		<drawer iconpath="/icons/drawer.gif" id="Drawer__1378500241687"
+			name="DataTypes">
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
+				id="clazz.tool.datatype_1378499776750_1378500286281" name="ArrayDataType"
+				refToolId="clazz.tool.datatype">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Infrastructure::Datatypes::ArrayDataType" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
+				id="clazz.tool.datatype_1378499776750_1378500311140" name="CompositeDatatype"
+				refToolId="clazz.tool.datatype">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Infrastructure::Datatypes::CompositeDatatype" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
+				id="clazz.tool.datatype_1378499776750_1378500389468" name="EABoolean"
+				refToolId="clazz.tool.datatype">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Infrastructure::Datatypes::EABoolean" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
+				id="clazz.tool.datatype_1378499776750_1378500473046" name="EANumerical (DataType)"
+				refToolId="clazz.tool.datatype">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Infrastructure::Datatypes::EANumerical" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
+				id="clazz.tool.datatype_1378499776750_1378500485343" name="EAString (DataType)"
+				refToolId="clazz.tool.datatype">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Infrastructure::Datatypes::EAString" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
+				id="clazz.tool.datatype_1378500778031" name="RangeableValueType (DataType)"
+				refToolId="clazz.tool.datatype">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Infrastructure::Datatypes::RangeableValueType" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378500965546" name="Unit (Class)" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Infrastructure::Datatypes::Unit" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378501003765" name="Quantity (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Infrastructure::Datatypes::Quantity" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Enumeration.gif"
+				id="clazz.tool.enumeration_1378501127078" name="Enumeration (Enumeration)"
+				refToolId="clazz.tool.enumeration">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Infrastructure::Datatypes::Enumeration" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/EnumerationLiteral.gif"
+				id="clazz.tool.enumerationliteral_1378501151859" name="EnumerationLiteral (Enumeration literal)"
+				refToolId="clazz.tool.enumerationliteral">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Infrastructure::Datatypes::EnumerationLiteral" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+		</drawer>
+	</content>
+</paletteDefinition>

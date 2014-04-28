@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2009 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.policies;
 
 import java.util.ArrayList;
@@ -71,8 +69,19 @@ public class PackagePackageableElementCompartmentCanonicalEditPolicy extends Can
 	/**
 	 * @generated
 	 */
-	@SuppressWarnings("rawtypes")
-	protected List getSemanticChildrenList() {
+	protected Set<EStructuralFeature> getFeaturesToSynchronize() {
+		if(myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
+		}
+		return myFeaturesToSynchronize;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View)getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getPackagePackageableElementCompartment_7013SemanticChildren(viewObject);
@@ -180,17 +189,5 @@ public class PackagePackageableElementCompartmentCanonicalEditPolicy extends Can
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 		makeViewsImmutable(createdViews);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Set getFeaturesToSynchronize() {
-		if(myFeaturesToSynchronize == null) {
-			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
-		}
-		return myFeaturesToSynchronize;
 	}
 }

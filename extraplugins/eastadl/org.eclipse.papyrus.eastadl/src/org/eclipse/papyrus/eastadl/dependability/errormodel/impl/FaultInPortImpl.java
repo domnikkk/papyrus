@@ -26,15 +26,13 @@ import org.eclipse.papyrus.eastadl.dependability.errormodel.FaultInPort;
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class FaultInPortImpl extends FaultFailurePortImpl implements FaultInPort {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected FaultInPortImpl() {
@@ -44,7 +42,6 @@ public class FaultInPortImpl extends FaultFailurePortImpl implements FaultInPort
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

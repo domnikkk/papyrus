@@ -69,12 +69,10 @@ public class UseCaseClassifierFigure extends NodeNamedElementFigure {
 		 * {@inheritDoc}
 		 */
 		public void layout(IFigure container) {
-			List childrenList = container.getChildren();
+			List<?> childrenList = container.getChildren();
 			for(int i = 0; i < container.getChildren().size(); i++) {
 				Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
 				IFigure fig = ((IFigure)childrenList.get(i));
-				fig.invalidate();
-				Dimension pref = ((IFigure)childrenList.get(i)).getPreferredSize();
 				fig.invalidate();
 				Dimension prefConstraint = ((IFigure)childrenList.get(i)).getPreferredSize(container.getBounds().width, -1);
 				bound.setSize(prefConstraint);

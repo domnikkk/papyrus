@@ -15,22 +15,17 @@
  *****************************************************************************/
 package org.eclipse.papyrus.eastadl.structure.functionmodeling.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.papyrus.eastadl.infrastructure.AllocatedElementInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.TargetInstanceRef;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
-import org.eclipse.papyrus.eastadl.structure.functionmodeling.AllocateableElement;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.AllocationTarget;
-import org.eclipse.uml2.uml.Dependency;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.util.UMLUtil;
+import org.eclipse.uml2.uml.Abstraction;
 
 
 /**
@@ -38,55 +33,46 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl#getTarget <em>Target</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl#getAllocatedElement <em>Allocated Element</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl#getBase_Dependency <em>Base Dependency</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl#getAllocatedElement_path <em>Allocated Element path
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl#getTarget_path <em>Target path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl#getAllocatedElement <em>Allocated Element</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl#getBase_Abstraction <em>Base Abstraction</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class FunctionAllocationImpl extends EAElementImpl implements FunctionAllocation {
 
 	/**
-	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getBase_Dependency()
+	 * @see #getTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected Dependency base_Dependency;
+	protected TargetInstanceRef target;
+	/**
+	 * The cached value of the '{@link #getAllocatedElement() <em>Allocated Element</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatedElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected AllocatedElementInstanceRef allocatedElement;
 
 	/**
-	 * The cached value of the '{@link #getAllocatedElement_path() <em>Allocated Element path</em>}' reference list.
+	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getAllocatedElement_path()
+	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AllocateableElement> allocatedElement_path;
-
-	/**
-	 * The cached value of the '{@link #getTarget_path() <em>Target path</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getTarget_path()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AllocationTarget> target_path;
-
+	protected Abstraction base_Abstraction;
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected FunctionAllocationImpl() {
@@ -95,182 +81,61 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public AllocateableElement basicGetAllocatedElement() {
-		AllocateableElement result = null;
-
-		if(getBase_Dependency() != null) {
-			Element elt = getBase_Dependency().getSources().get(0);
-
-			if(elt != null)
-				result = (AllocateableElement)UMLUtil.getStereotypeApplication(elt, AllocateableElement.class);
-		}
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public Dependency getBase_Dependency() {
-		if(base_Dependency != null && base_Dependency.eIsProxy()) {
-			InternalEObject oldBase_Dependency = (InternalEObject)base_Dependency;
-			base_Dependency = (Dependency)eResolveProxy(oldBase_Dependency);
-			if(base_Dependency != oldBase_Dependency) {
-				if(eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-			}
-		}
-		return base_Dependency;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public Dependency basicGetBase_Dependency() {
-		return base_Dependency;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setBase_Dependency(Dependency newBase_Dependency) {
-		Dependency oldBase_Dependency = base_Dependency;
-		base_Dependency = newBase_Dependency;
-		if(eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<AllocateableElement> getAllocatedElement_path() {
-		if(allocatedElement_path == null) {
-			allocatedElement_path = new EObjectResolvingEList<AllocateableElement>(AllocateableElement.class, this, FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT_PATH);
-		}
-		return allocatedElement_path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<AllocationTarget> getTarget_path() {
-		if(target_path == null) {
-			target_path = new EObjectResolvingEList<AllocationTarget>(AllocationTarget.class, this, FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET_PATH);
-		}
-		return target_path;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public AllocationTarget basicGetTarget() {
-		AllocationTarget result = null;
-
-		if(getBase_Dependency() != null) {
-			Element elt = getBase_Dependency().getTargets().get(0);
-
-			if(elt != null)
-				result = (AllocationTarget)UMLUtil.getStereotypeApplication(elt, AllocationTarget.class);
-		}
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET:
-			if(resolve)
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET:
 				return getTarget();
-			return basicGetTarget();
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT:
-			if(resolve)
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT:
 				return getAllocatedElement();
-			return basicGetAllocatedElement();
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_DEPENDENCY:
-			if(resolve)
-				return getBase_Dependency();
-			return basicGetBase_Dependency();
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT_PATH:
-			return getAllocatedElement_path();
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET_PATH:
-			return getTarget_path();
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION:
+				if (resolve) return getBase_Abstraction();
+				return basicGetBase_Abstraction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET:
-			return basicGetTarget() != null;
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT:
-			return basicGetAllocatedElement() != null;
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_DEPENDENCY:
-			return base_Dependency != null;
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT_PATH:
-			return allocatedElement_path != null && !allocatedElement_path.isEmpty();
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET_PATH:
-			return target_path != null && !target_path.isEmpty();
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET:
+				return target != null;
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT:
+				return allocatedElement != null;
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION:
+				return base_Abstraction != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_DEPENDENCY:
-			setBase_Dependency((Dependency)newValue);
-			return;
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT_PATH:
-			getAllocatedElement_path().clear();
-			getAllocatedElement_path().addAll((Collection<? extends AllocateableElement>)newValue);
-			return;
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET_PATH:
-			getTarget_path().clear();
-			getTarget_path().addAll((Collection<? extends AllocationTarget>)newValue);
-			return;
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET:
+				setTarget((TargetInstanceRef)newValue);
+				return;
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT:
+				setAllocatedElement((AllocatedElementInstanceRef)newValue);
+				return;
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION:
+				setBase_Abstraction((Abstraction)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -280,43 +145,160 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_DEPENDENCY:
-			setBase_Dependency((Dependency)null);
-			return;
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT_PATH:
-			getAllocatedElement_path().clear();
-			return;
-		case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET_PATH:
-			getTarget_path().clear();
-			return;
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET:
+				setTarget((TargetInstanceRef)null);
+				return;
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT:
+				setAllocatedElement((AllocatedElementInstanceRef)null);
+				return;
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION:
+				setBase_Abstraction((Abstraction)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public AllocateableElement getAllocatedElement() {
-		AllocateableElement allocatedElement = basicGetAllocatedElement();
-		return allocatedElement != null && allocatedElement.eIsProxy() ? (AllocateableElement)eResolveProxy((InternalEObject)allocatedElement) : allocatedElement;
+	public AllocatedElementInstanceRef getAllocatedElement() {
+		return allocatedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAllocatedElement(AllocatedElementInstanceRef newAllocatedElement, NotificationChain msgs) {
+		AllocatedElementInstanceRef oldAllocatedElement = allocatedElement;
+		allocatedElement = newAllocatedElement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT, oldAllocatedElement, newAllocatedElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAllocatedElement(AllocatedElementInstanceRef newAllocatedElement) {
+		if (newAllocatedElement != allocatedElement) {
+			NotificationChain msgs = null;
+			if (allocatedElement != null)
+				msgs = ((InternalEObject)allocatedElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT, null, msgs);
+			if (newAllocatedElement != null)
+				msgs = ((InternalEObject)newAllocatedElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT, null, msgs);
+			msgs = basicSetAllocatedElement(newAllocatedElement, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT, newAllocatedElement, newAllocatedElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Abstraction getBase_Abstraction() {
+		if (base_Abstraction != null && base_Abstraction.eIsProxy()) {
+			InternalEObject oldBase_Abstraction = (InternalEObject)base_Abstraction;
+			base_Abstraction = (Abstraction)eResolveProxy(oldBase_Abstraction);
+			if (base_Abstraction != oldBase_Abstraction) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
+			}
+		}
+		return base_Abstraction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Abstraction basicGetBase_Abstraction() {
+		return base_Abstraction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBase_Abstraction(Abstraction newBase_Abstraction) {
+		Abstraction oldBase_Abstraction = base_Abstraction;
+		base_Abstraction = newBase_Abstraction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET:
+				return basicSetTarget(null, msgs);
+			case FunctionmodelingPackage.FUNCTION_ALLOCATION__ALLOCATED_ELEMENT:
+				return basicSetAllocatedElement(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public AllocationTarget getTarget() {
-		AllocationTarget target = basicGetTarget();
-		return target != null && target.eIsProxy() ? (AllocationTarget)eResolveProxy((InternalEObject)target) : target;
+	public TargetInstanceRef getTarget() {
+		return target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTarget(TargetInstanceRef newTarget, NotificationChain msgs) {
+		TargetInstanceRef oldTarget = target;
+		target = newTarget;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET, oldTarget, newTarget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTarget(TargetInstanceRef newTarget) {
+		if (newTarget != target) {
+			NotificationChain msgs = null;
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET, null, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET, null, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_ALLOCATION__TARGET, newTarget, newTarget));
 	}
 
 } // FunctionAllocationImpl

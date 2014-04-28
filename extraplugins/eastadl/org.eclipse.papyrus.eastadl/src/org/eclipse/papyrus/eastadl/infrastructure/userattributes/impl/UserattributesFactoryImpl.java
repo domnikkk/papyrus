@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.infrastructure.userattributes.*;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue;
@@ -33,15 +32,12 @@ import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesP
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class UserattributesFactoryImpl extends EFactoryImpl implements UserattributesFactory {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -54,16 +50,16 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static UserattributesFactory init() {
 		try {
 			UserattributesFactory theUserattributesFactory = (UserattributesFactory)EPackage.Registry.INSTANCE.getEFactory(UserattributesPackage.eNS_URI);
-			if(theUserattributesFactory != null) {
+			if (theUserattributesFactory != null) {
 				return theUserattributesFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new UserattributesFactoryImpl();
@@ -73,7 +69,6 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public UserattributesFactoryImpl() {
@@ -83,29 +78,23 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
-		case UserattributesPackage.USER_ATTRIBUTE_ELEMENT_TYPE:
-			return createUserAttributeElementType();
-		case UserattributesPackage.USER_ATTRIBUTE_DEFINITION:
-			return createUserAttributeDefinition();
-		case UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT:
-			return createUserAttributeableElement();
-		case UserattributesPackage.USER_ATTRIBUTE_VALUE:
-			return createUserAttributeValue();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case UserattributesPackage.USER_ATTRIBUTE_ELEMENT_TYPE: return createUserAttributeElementType();
+			case UserattributesPackage.USER_ATTRIBUTE_DEFINITION: return createUserAttributeDefinition();
+			case UserattributesPackage.USER_ATTRIBUTEABLE_ELEMENT: return createUserAttributeableElement();
+			case UserattributesPackage.USER_ATTRIBUTE_VALUE: return createUserAttributeValue();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public UserAttributeDefinition createUserAttributeDefinition() {
@@ -116,7 +105,6 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public UserAttributeableElement createUserAttributeableElement() {
@@ -127,7 +115,6 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public UserAttributeElementType createUserAttributeElementType() {
@@ -138,7 +125,6 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public UserAttributeValue createUserAttributeValue() {
@@ -149,7 +135,6 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public UserattributesPackage getUserattributesPackage() {

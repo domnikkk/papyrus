@@ -1,23 +1,19 @@
-/*****************************************************************************
- * Copyright (c) 2010 Atos Origin.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.usecase.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.papyrus.infra.extendedtypes.types.IExtendedHintedElementType;
-import org.eclipse.papyrus.infra.extendedtypes.util.ElementTypeUtils;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.commands.ActorInPackageCreateCommand;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.commands.CommentCreateCommandCN;
@@ -47,52 +43,22 @@ public class PackagePackageableElementCompartment2ItemSemanticEditPolicy extends
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		IElementType baseElementType = requestElementType;
-		boolean isExtendedType = false;
-		if(requestElementType instanceof IExtendedHintedElementType) {
-			baseElementType = ElementTypeUtils.getClosestDiagramType(requestElementType);
-			if(baseElementType != null) {
-				isExtendedType = true;
-			} else {
-				// no reference element type ID. using the closest super element type to give more opportunities, but can lead to bugs.
-				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType)requestElementType);
-				isExtendedType = true;
-			}
-		}
-		if(UMLElementTypes.Constraint_3010 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
-			}
+		if(UMLElementTypes.Constraint_3010 == requestElementType) {
 			return getGEFWrapper(new ConstraintInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Actor_3011 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
-			}
+		if(UMLElementTypes.Actor_3011 == requestElementType) {
 			return getGEFWrapper(new ActorInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.UseCase_3012 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
-			}
+		if(UMLElementTypes.UseCase_3012 == requestElementType) {
 			return getGEFWrapper(new UseCaseInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Component_3013 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
-			}
+		if(UMLElementTypes.Component_3013 == requestElementType) {
 			return getGEFWrapper(new ComponentInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Package_3014 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
-			}
+		if(UMLElementTypes.Package_3014 == requestElementType) {
 			return getGEFWrapper(new PackageCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Comment_3015 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
-			}
+		if(UMLElementTypes.Comment_3015 == requestElementType) {
 			return getGEFWrapper(new CommentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

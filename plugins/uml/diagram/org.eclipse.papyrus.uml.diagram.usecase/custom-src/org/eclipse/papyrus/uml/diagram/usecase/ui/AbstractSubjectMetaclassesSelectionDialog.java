@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 
 /**
- * code generated to create this chooser of metaclasses to create a subject
+ * Created this chooser of metaclasses to create a subject
  */
 public class AbstractSubjectMetaclassesSelectionDialog extends Dialog {
 

@@ -20,11 +20,9 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Feature Group</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
- * FeatureGroup is a specialization of the FeatureTreeNode, enabling grouping of several Features. It specifies with its cardinality how these grouped
- * features can be combined. For example, a FeatureGroup owning the two Features A and B, with a cardinality of [1] means that A and B are
- * alternative.
+ * FeatureGroup is a specialization of the FeatureTreeNode, enabling grouping of several Features. It specifies with its cardinality how these grouped features can be combined. For example, a FeatureGroup owning the two Features A and B, with a cardinality of [1] means that A and B are alternative.
  * 
  * 
  * Semantics:
@@ -34,16 +32,16 @@ import org.eclipse.emf.common.util.EList;
  * Extension:
  * Class
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getBase_Class <em>Base Class</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getCardinality <em>Cardinality</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getChildFeature <em>Child Feature</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getChildFeature <em>Child Feature</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureGroup()
  * @model
  * @generated
@@ -54,10 +52,10 @@ public interface FeatureGroup extends FeatureTreeNode {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureGroup_Base_Class()
@@ -70,9 +68,7 @@ public interface FeatureGroup extends FeatureTreeNode {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *        the new value of the '<em>Base Class</em>' reference.
+	 * @param value the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -81,7 +77,8 @@ public interface FeatureGroup extends FeatureTreeNode {
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cardinality</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Cardinality</em>' attribute isn't clear, there really should be
+	 * more of a description here...
 	 * </p>
 	 * <!-- end-user-doc --> <!-- begin-model-doc --> The Cardinality describes for a feature group
 	 * its cardinality. It describes the variability behavior of the group (e.g. a cardinality of 1
@@ -101,25 +98,22 @@ public interface FeatureGroup extends FeatureTreeNode {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Child Feature</em>' containment reference list isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Child Feature</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Child Feature</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureGroup_ChildFeature()
-	 * @model lower="2" ordered="false"
+	 * @model lower="2" transient="true" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
 	EList<Feature> getChildFeature();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getCardinality <em>Cardinality</em>}'
-	 * attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getCardinality <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *        the new value of the '<em>Cardinality</em>' attribute.
+	 * @param value the new value of the '<em>Cardinality</em>' attribute.
 	 * @see #getCardinality()
 	 * @generated
 	 */

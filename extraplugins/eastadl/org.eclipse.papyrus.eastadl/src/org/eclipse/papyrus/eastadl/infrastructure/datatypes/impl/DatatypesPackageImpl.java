@@ -23,9 +23,17 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.eastadl.EastadlPackage;
 import org.eclipse.papyrus.eastadl.annex.AnnexPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributequantificationconstraintPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.ComputationconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.impl.AnnexPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage;
 import org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.behavior.BehaviorPackage;
 import org.eclipse.papyrus.eastadl.behavior.impl.BehaviorPackageImpl;
 import org.eclipse.papyrus.eastadl.dependability.DependabilityPackage;
@@ -44,30 +52,31 @@ import org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage;
 import org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl;
 import org.eclipse.papyrus.eastadl.impl.EastadlPackageImpl;
 import org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage;
+import org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.CompositeDatatype;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesFactory;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EABoolean;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatype;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAFloat;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAInteger;
+import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EAString;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EnumerationLiteral;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EnumerationValueType;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableDatatype;
+import org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity;
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType;
-import org.eclipse.papyrus.eastadl.infrastructure.datatypes.ValueType;
+import org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ElementsPackageImpl;
 import org.eclipse.papyrus.eastadl.infrastructure.impl.InfrastructurePackageImpl;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl;
-import org.eclipse.papyrus.eastadl.interchange.InterchangePackage;
-import org.eclipse.papyrus.eastadl.interchange.impl.InterchangePackageImpl;
+import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
+import org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.RequirementsPackage;
 import org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl;
+import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
+import org.eclipse.papyrus.eastadl.requirements.usecases.impl.UsecasesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl;
 import org.eclipse.papyrus.eastadl.structure.StructurePackage;
@@ -99,7 +108,6 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPackage {
@@ -107,7 +115,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass eaDatatypeEClass = null;
@@ -115,15 +122,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass rangeableDatatypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass eaDatatypePrototypeEClass = null;
@@ -131,15 +129,27 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	private EClass valueTypeEClass = null;
+	private EClass eaNumericalEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	private EClass unitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass quantityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass rangeableValueTypeEClass = null;
@@ -147,15 +157,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass enumerationValueTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass compositeDatatypeEClass = null;
@@ -163,7 +164,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass eaStringEClass = null;
@@ -171,7 +171,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass eaBooleanEClass = null;
@@ -179,23 +178,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass eaFloatEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass eaIntegerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass enumerationLiteralEClass = null;
@@ -203,7 +185,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass enumerationEClass = null;
@@ -211,7 +192,20 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	private EClass arrayDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType numericalEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EDataType javalangFloatEDataType = null;
@@ -219,7 +213,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -227,18 +220,16 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>
-	 * This method is used to initialize {@link DatatypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly.
-	 * Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>This method is used to initialize {@link DatatypesPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static DatatypesPackage init() {
-		if(isInited)
-			return (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
+		if (isInited) return (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
 
 		// Obtain or create and register package
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DatatypesPackageImpl());
@@ -253,28 +244,34 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		VariabilityPackageImpl theVariabilityPackage = (VariabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI) instanceof VariabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI) : VariabilityPackage.eINSTANCE);
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
 		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
+		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) : ElementsPackage.eINSTANCE);
 		StructurePackageImpl theStructurePackage = (StructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) : StructurePackage.eINSTANCE);
 		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
-		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
+		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
-		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
-		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
-		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
-		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
-		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
-		InterchangePackageImpl theInterchangePackage = (InterchangePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) instanceof InterchangePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) : InterchangePackage.eINSTANCE);
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
+		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
-		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
 		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
 		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
 		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) : SafetycasePackage.eINSTANCE);
+		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
+		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
+		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) : UsecasesPackage.eINSTANCE);
+		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
+		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
+		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
+		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
 		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
+		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
+		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
+		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -283,28 +280,34 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		theVariabilityPackage.createPackageContents();
 		theInfrastructurePackage.createPackageContents();
 		theUserattributesPackage.createPackageContents();
+		theValuesPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theStructurePackage.createPackageContents();
 		theFunctionmodelingPackage.createPackageContents();
-		theHardwaremodelingPackage.createPackageContents();
+		theFeaturemodelingPackage.createPackageContents();
 		theSystemmodelingPackage.createPackageContents();
 		theVehiclefeaturemodelingPackage.createPackageContents();
-		theFeaturemodelingPackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
-		theRequirementsPackage.createPackageContents();
-		theVerificationvalidationPackage.createPackageContents();
-		theTimingPackage.createPackageContents();
-		theTimingconstraintsPackage.createPackageContents();
-		theEventsPackage.createPackageContents();
-		theInterchangePackage.createPackageContents();
-		theEnvironmentPackage.createPackageContents();
+		theHardwaremodelingPackage.createPackageContents();
 		theDependabilityPackage.createPackageContents();
-		theErrormodelPackage.createPackageContents();
 		theSafetyrequirementPackage.createPackageContents();
 		theSafetyconstraintsPackage.createPackageContents();
 		theSafetycasePackage.createPackageContents();
+		theErrormodelPackage.createPackageContents();
+		theRequirementsPackage.createPackageContents();
+		theUsecasesPackage.createPackageContents();
+		theVerificationvalidationPackage.createPackageContents();
+		theRequirementsPackage_1.createPackageContents();
+		theBehaviorPackage.createPackageContents();
+		theTimingPackage.createPackageContents();
+		theTimingconstraintsPackage.createPackageContents();
+		theEventsPackage.createPackageContents();
+		theEnvironmentPackage.createPackageContents();
 		theAnnexPackage.createPackageContents();
 		theNeedsPackage.createPackageContents();
+		theBehaviordescriptionPackage.createPackageContents();
+		theAttributequantificationconstraintPackage.createPackageContents();
+		theTemporalconstraintPackage.createPackageContents();
+		theComputationconstraintPackage.createPackageContents();
 		theGenericconstraintsPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -313,34 +316,40 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		theVariabilityPackage.initializePackageContents();
 		theInfrastructurePackage.initializePackageContents();
 		theUserattributesPackage.initializePackageContents();
+		theValuesPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theStructurePackage.initializePackageContents();
 		theFunctionmodelingPackage.initializePackageContents();
-		theHardwaremodelingPackage.initializePackageContents();
+		theFeaturemodelingPackage.initializePackageContents();
 		theSystemmodelingPackage.initializePackageContents();
 		theVehiclefeaturemodelingPackage.initializePackageContents();
-		theFeaturemodelingPackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
-		theRequirementsPackage.initializePackageContents();
-		theVerificationvalidationPackage.initializePackageContents();
-		theTimingPackage.initializePackageContents();
-		theTimingconstraintsPackage.initializePackageContents();
-		theEventsPackage.initializePackageContents();
-		theInterchangePackage.initializePackageContents();
-		theEnvironmentPackage.initializePackageContents();
+		theHardwaremodelingPackage.initializePackageContents();
 		theDependabilityPackage.initializePackageContents();
-		theErrormodelPackage.initializePackageContents();
 		theSafetyrequirementPackage.initializePackageContents();
 		theSafetyconstraintsPackage.initializePackageContents();
 		theSafetycasePackage.initializePackageContents();
+		theErrormodelPackage.initializePackageContents();
+		theRequirementsPackage.initializePackageContents();
+		theUsecasesPackage.initializePackageContents();
+		theVerificationvalidationPackage.initializePackageContents();
+		theRequirementsPackage_1.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
+		theTimingPackage.initializePackageContents();
+		theTimingconstraintsPackage.initializePackageContents();
+		theEventsPackage.initializePackageContents();
+		theEnvironmentPackage.initializePackageContents();
 		theAnnexPackage.initializePackageContents();
 		theNeedsPackage.initializePackageContents();
+		theBehaviordescriptionPackage.initializePackageContents();
+		theAttributequantificationconstraintPackage.initializePackageContents();
+		theTemporalconstraintPackage.initializePackageContents();
+		theComputationconstraintPackage.initializePackageContents();
 		theGenericconstraintsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theDatatypesPackage.freeze();
 
-
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DatatypesPackage.eNS_URI, theDatatypesPackage);
 		return theDatatypesPackage;
@@ -349,7 +358,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getEADatatype() {
@@ -359,7 +367,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEADatatype_Base_DataType() {
@@ -369,7 +376,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getEADatatypePrototype() {
@@ -379,7 +385,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEADatatypePrototype_Type() {
@@ -389,7 +394,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEADatatypePrototype_Base_Property() {
@@ -399,7 +403,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEADatatypePrototype_Base_Parameter() {
@@ -409,7 +412,168 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EClass getEANumerical() {
+		return eaNumericalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEANumerical_Max() {
+		return (EAttribute)eaNumericalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEANumerical_Min() {
+		return (EAttribute)eaNumericalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEANumerical_Unit() {
+		return (EReference)eaNumericalEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUnit() {
+		return unitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnit_Factor() {
+		return (EAttribute)unitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnit_Offset() {
+		return (EAttribute)unitEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnit_Symbol() {
+		return (EAttribute)unitEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnit_Quantity() {
+		return (EReference)unitEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnit_Reference() {
+		return (EReference)unitEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getQuantity() {
+		return quantityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQuantity_AmountOfSubstanceExp() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQuantity_ElectricCurrentExp() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQuantity_LenghtExp() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQuantity_LuminousIntensityExp() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQuantity_MassExp() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQuantity_ThermodynamicTemperatureExp() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQuantity_TimeExp() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -417,19 +581,19 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#eNS_URI
 	 * @see #init()
@@ -440,16 +604,14 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	}
 
 	/**
-	 * Creates the meta-model objects for the package. This method is
+	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated)
-			return;
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -461,22 +623,32 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		createEReference(eaDatatypePrototypeEClass, EA_DATATYPE_PROTOTYPE__BASE_PROPERTY);
 		createEReference(eaDatatypePrototypeEClass, EA_DATATYPE_PROTOTYPE__BASE_PARAMETER);
 
-		valueTypeEClass = createEClass(VALUE_TYPE);
-		createEAttribute(valueTypeEClass, VALUE_TYPE__SEMANTICS);
-		createEAttribute(valueTypeEClass, VALUE_TYPE__DIMENSION);
-		createEAttribute(valueTypeEClass, VALUE_TYPE__UNIT);
+		eaNumericalEClass = createEClass(EA_NUMERICAL);
+		createEAttribute(eaNumericalEClass, EA_NUMERICAL__MAX);
+		createEAttribute(eaNumericalEClass, EA_NUMERICAL__MIN);
+		createEReference(eaNumericalEClass, EA_NUMERICAL__UNIT);
 
-		rangeableDatatypeEClass = createEClass(RANGEABLE_DATATYPE);
+		unitEClass = createEClass(UNIT);
+		createEAttribute(unitEClass, UNIT__FACTOR);
+		createEAttribute(unitEClass, UNIT__OFFSET);
+		createEAttribute(unitEClass, UNIT__SYMBOL);
+		createEReference(unitEClass, UNIT__QUANTITY);
+		createEReference(unitEClass, UNIT__REFERENCE);
+
+		quantityEClass = createEClass(QUANTITY);
+		createEAttribute(quantityEClass, QUANTITY__AMOUNT_OF_SUBSTANCE_EXP);
+		createEAttribute(quantityEClass, QUANTITY__ELECTRIC_CURRENT_EXP);
+		createEAttribute(quantityEClass, QUANTITY__LENGHT_EXP);
+		createEAttribute(quantityEClass, QUANTITY__LUMINOUS_INTENSITY_EXP);
+		createEAttribute(quantityEClass, QUANTITY__MASS_EXP);
+		createEAttribute(quantityEClass, QUANTITY__THERMODYNAMIC_TEMPERATURE_EXP);
+		createEAttribute(quantityEClass, QUANTITY__TIME_EXP);
 
 		rangeableValueTypeEClass = createEClass(RANGEABLE_VALUE_TYPE);
 		createEAttribute(rangeableValueTypeEClass, RANGEABLE_VALUE_TYPE__ACCURACY);
 		createEAttribute(rangeableValueTypeEClass, RANGEABLE_VALUE_TYPE__RESOLUTION);
 		createEAttribute(rangeableValueTypeEClass, RANGEABLE_VALUE_TYPE__SIGNIFICANT_DIGITS);
-
-		enumerationValueTypeEClass = createEClass(ENUMERATION_VALUE_TYPE);
-		createEAttribute(enumerationValueTypeEClass, ENUMERATION_VALUE_TYPE__IS_MULTI_VALUED);
-		createEAttribute(enumerationValueTypeEClass, ENUMERATION_VALUE_TYPE__LITERAL_SEMANTICS);
-		createEReference(enumerationValueTypeEClass, ENUMERATION_VALUE_TYPE__BASE_ENUMERATION);
+		createEReference(rangeableValueTypeEClass, RANGEABLE_VALUE_TYPE__BASE_RANGEABLE);
 
 		compositeDatatypeEClass = createEClass(COMPOSITE_DATATYPE);
 		createEReference(compositeDatatypeEClass, COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE);
@@ -485,27 +657,25 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		eaBooleanEClass = createEClass(EA_BOOLEAN);
 
-		eaFloatEClass = createEClass(EA_FLOAT);
-		createEAttribute(eaFloatEClass, EA_FLOAT__MIN);
-		createEAttribute(eaFloatEClass, EA_FLOAT__MAX);
-
-		eaIntegerEClass = createEClass(EA_INTEGER);
-		createEAttribute(eaIntegerEClass, EA_INTEGER__MIN);
-		createEAttribute(eaIntegerEClass, EA_INTEGER__MAX);
-
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
 
 		enumerationEClass = createEClass(ENUMERATION);
 		createEReference(enumerationEClass, ENUMERATION__LITERAL);
+		createEAttribute(enumerationEClass, ENUMERATION__IS_MULTI_VALUED);
+
+		arrayDataTypeEClass = createEClass(ARRAY_DATA_TYPE);
+		createEAttribute(arrayDataTypeEClass, ARRAY_DATA_TYPE__MAX_LENGHT);
+		createEAttribute(arrayDataTypeEClass, ARRAY_DATA_TYPE__MIN_LENGHT);
+		createEReference(arrayDataTypeEClass, ARRAY_DATA_TYPE__ELEMENT_TYPE);
 
 		// Create data types
+		numericalEDataType = createEDataType(NUMERICAL);
 		javalangFloatEDataType = createEDataType(JAVALANG_FLOAT);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getCompositeDatatype() {
@@ -515,7 +685,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getCompositeDatatype_DatatypePrototype() {
@@ -525,7 +694,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getEAString() {
@@ -535,7 +703,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getEABoolean() {
@@ -545,67 +712,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getEAFloat() {
-		return eaFloatEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getEAFloat_Min() {
-		return (EAttribute)eaFloatEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getEAFloat_Max() {
-		return (EAttribute)eaFloatEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getEAInteger() {
-		return eaIntegerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getEAInteger_Min() {
-		return (EAttribute)eaIntegerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getEAInteger_Max() {
-		return (EAttribute)eaIntegerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DatatypesFactory getDatatypesFactory() {
@@ -615,7 +721,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getEnumerationLiteral() {
@@ -625,7 +730,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getEnumeration() {
@@ -635,7 +739,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getEnumeration_Literal() {
@@ -645,47 +748,60 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EClass getEnumerationValueType() {
-		return enumerationValueTypeEClass;
+	public EAttribute getEnumeration_IsMultiValued() {
+		return (EAttribute)enumerationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EAttribute getEnumerationValueType_IsMultiValued() {
-		return (EAttribute)enumerationValueTypeEClass.getEStructuralFeatures().get(0);
+	public EClass getArrayDataType() {
+		return arrayDataTypeEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EAttribute getEnumerationValueType_LiteralSemantics() {
-		return (EAttribute)enumerationValueTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getArrayDataType_MaxLenght() {
+		return (EAttribute)arrayDataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getEnumerationValueType_Base_Enumeration() {
-		return (EReference)enumerationValueTypeEClass.getEStructuralFeatures().get(2);
+	public EAttribute getArrayDataType_MinLenght() {
+		return (EAttribute)arrayDataTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EReference getArrayDataType_ElementType() {
+		return (EReference)arrayDataTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getNumerical() {
+		return numericalEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EDataType getjavalangFloat() {
@@ -695,17 +811,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getRangeableDatatype() {
-		return rangeableDatatypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getRangeableValueType() {
@@ -715,7 +820,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getRangeableValueType_Accuracy() {
@@ -725,7 +829,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getRangeableValueType_Resolution() {
@@ -735,7 +838,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getRangeableValueType_SignificantDigits() {
@@ -745,54 +847,21 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EClass getValueType() {
-		return valueTypeEClass;
+	public EReference getRangeableValueType_BaseRangeable() {
+		return (EReference)rangeableValueTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getValueType_Semantics() {
-		return (EAttribute)valueTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getValueType_Dimension() {
-		return (EAttribute)valueTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getValueType_Unit() {
-		return (EAttribute)valueTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * Complete the initialization of the package and its meta-model. This
+	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized)
-			return;
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -812,19 +881,18 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		// Add supertypes to classes
 		eaDatatypeEClass.getESuperTypes().add(theElementsPackage.getTraceableSpecification());
 		eaDatatypePrototypeEClass.getESuperTypes().add(theElementsPackage.getEAElement());
-		valueTypeEClass.getESuperTypes().add(this.getEADatatype());
-		rangeableDatatypeEClass.getESuperTypes().add(this.getEADatatype());
-		rangeableValueTypeEClass.getESuperTypes().add(this.getValueType());
-		enumerationValueTypeEClass.getESuperTypes().add(this.getValueType());
+		eaNumericalEClass.getESuperTypes().add(this.getEADatatype());
+		unitEClass.getESuperTypes().add(theElementsPackage.getEAPackageableElement());
+		quantityEClass.getESuperTypes().add(theElementsPackage.getEAPackageableElement());
+		rangeableValueTypeEClass.getESuperTypes().add(this.getEADatatype());
 		compositeDatatypeEClass.getESuperTypes().add(this.getEADatatype());
 		eaStringEClass.getESuperTypes().add(this.getEADatatype());
 		eaBooleanEClass.getESuperTypes().add(this.getEADatatype());
-		eaFloatEClass.getESuperTypes().add(this.getRangeableDatatype());
-		eaIntegerEClass.getESuperTypes().add(this.getRangeableDatatype());
 		enumerationLiteralEClass.getESuperTypes().add(theElementsPackage.getEAElement());
 		enumerationEClass.getESuperTypes().add(this.getEADatatype());
+		arrayDataTypeEClass.getESuperTypes().add(this.getEADatatype());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(eaDatatypeEClass, EADatatype.class, "EADatatype", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEADatatype_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, EADatatype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -833,44 +901,53 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEReference(getEADatatypePrototype_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 0, 1, EADatatypePrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEADatatypePrototype_Base_Parameter(), theUMLPackage.getParameter(), null, "base_Parameter", null, 0, 1, EADatatypePrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(valueTypeEClass, ValueType.class, "ValueType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValueType_Semantics(), theTypesPackage.getString(), "semantics", null, 0, 1, ValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueType_Dimension(), theTypesPackage.getString(), "dimension", null, 0, 1, ValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueType_Unit(), theTypesPackage.getString(), "unit", null, 0, 1, ValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(eaNumericalEClass, EANumerical.class, "EANumerical", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEANumerical_Max(), this.getNumerical(), "max", null, 0, 1, EANumerical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEANumerical_Min(), this.getNumerical(), "min", null, 0, 1, EANumerical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEANumerical_Unit(), this.getUnit(), null, "unit", null, 0, 1, EANumerical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(rangeableDatatypeEClass, RangeableDatatype.class, "RangeableDatatype", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(unitEClass, Unit.class, "Unit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUnit_Factor(), this.getjavalangFloat(), "factor", null, 1, 1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUnit_Offset(), this.getjavalangFloat(), "offset", null, 1, 1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUnit_Symbol(), theTypesPackage.getString(), "symbol", null, 1, 1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUnit_Quantity(), this.getQuantity(), null, "quantity", null, 0, 1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUnit_Reference(), this.getUnit(), null, "reference", null, 0, 1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(quantityEClass, Quantity.class, "Quantity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getQuantity_AmountOfSubstanceExp(), theTypesPackage.getInteger(), "amountOfSubstanceExp", "0", 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getQuantity_ElectricCurrentExp(), theTypesPackage.getInteger(), "electricCurrentExp", "0", 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getQuantity_LenghtExp(), theTypesPackage.getInteger(), "lenghtExp", "0", 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getQuantity_LuminousIntensityExp(), theTypesPackage.getInteger(), "luminousIntensityExp", "0", 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getQuantity_MassExp(), theTypesPackage.getInteger(), "massExp", "0", 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getQuantity_ThermodynamicTemperatureExp(), theTypesPackage.getInteger(), "thermodynamicTemperatureExp", "0", 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getQuantity_TimeExp(), theTypesPackage.getInteger(), "timeExp", "0", 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(rangeableValueTypeEClass, RangeableValueType.class, "RangeableValueType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRangeableValueType_Accuracy(), this.getjavalangFloat(), "accuracy", null, 1, 1, RangeableValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRangeableValueType_Resolution(), this.getjavalangFloat(), "resolution", null, 1, 1, RangeableValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRangeableValueType_SignificantDigits(), theTypesPackage.getInteger(), "significantDigits", null, 0, 1, RangeableValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(enumerationValueTypeEClass, EnumerationValueType.class, "EnumerationValueType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEnumerationValueType_IsMultiValued(), theTypesPackage.getBoolean(), "isMultiValued", null, 1, 1, EnumerationValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getEnumerationValueType_LiteralSemantics(), theTypesPackage.getString(), "literalSemantics", null, 2, -1, EnumerationValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnumerationValueType_Base_Enumeration(), theUMLPackage.getEnumeration(), null, "base_Enumeration", null, 1, 1, EnumerationValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRangeableValueType_BaseRangeable(), this.getEANumerical(), null, "baseRangeable", null, 1, 1, RangeableValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(compositeDatatypeEClass, CompositeDatatype.class, "CompositeDatatype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCompositeDatatype_DatatypePrototype(), this.getEADatatypePrototype(), null, "datatypePrototype", null, 1, -1, CompositeDatatype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompositeDatatype_DatatypePrototype(), this.getEADatatypePrototype(), null, "datatypePrototype", null, 1, -1, CompositeDatatype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eaStringEClass, EAString.class, "EAString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(eaBooleanEClass, EABoolean.class, "EABoolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(eaFloatEClass, EAFloat.class, "EAFloat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEAFloat_Min(), this.getjavalangFloat(), "min", null, 0, 1, EAFloat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getEAFloat_Max(), this.getjavalangFloat(), "max", null, 0, 1, EAFloat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(eaIntegerEClass, EAInteger.class, "EAInteger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEAInteger_Min(), theTypesPackage.getInteger(), "min", null, 0, 1, EAInteger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getEAInteger_Max(), theTypesPackage.getInteger(), "max", null, 0, 1, EAInteger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnumeration_Literal(), this.getEnumerationLiteral(), null, "literal", null, 2, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEnumeration_IsMultiValued(), theTypesPackage.getBoolean(), "isMultiValued", null, 1, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArrayDataType_MaxLenght(), theTypesPackage.getInteger(), "maxLenght", null, 0, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getArrayDataType_MinLenght(), theTypesPackage.getInteger(), "minLenght", null, 0, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getArrayDataType_ElementType(), this.getEADatatype(), null, "elementType", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize data types
+		initEDataType(numericalEDataType, Float.class, "Numerical", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(javalangFloatEDataType, Float.class, "javalangFloat", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 

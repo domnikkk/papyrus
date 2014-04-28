@@ -23,9 +23,17 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.eastadl.EastadlPackage;
 import org.eclipse.papyrus.eastadl.annex.AnnexPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributequantificationconstraintPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage;
+import org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.ComputationconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.impl.AnnexPackageImpl;
 import org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage;
 import org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl;
 import org.eclipse.papyrus.eastadl.behavior.BehaviorPackage;
 import org.eclipse.papyrus.eastadl.behavior.impl.BehaviorPackageImpl;
 import org.eclipse.papyrus.eastadl.dependability.DependabilityPackage;
@@ -62,10 +70,12 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ElementsPackageI
 import org.eclipse.papyrus.eastadl.infrastructure.impl.InfrastructurePackageImpl;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage;
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl;
-import org.eclipse.papyrus.eastadl.interchange.InterchangePackage;
-import org.eclipse.papyrus.eastadl.interchange.impl.InterchangePackageImpl;
+import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
+import org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.RequirementsPackage;
 import org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl;
+import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
+import org.eclipse.papyrus.eastadl.requirements.usecases.impl.UsecasesPackageImpl;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage;
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl;
 import org.eclipse.papyrus.eastadl.structure.StructurePackage;
@@ -97,7 +107,6 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPackage {
@@ -105,7 +114,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass errorBehaviorEClass = null;
@@ -113,7 +121,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass anomalyEClass = null;
@@ -121,7 +128,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass internalFaultPrototypeEClass = null;
@@ -129,7 +135,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass errorModelTypeEClass = null;
@@ -137,7 +142,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass faultFailurePropagationLinkEClass = null;
@@ -145,7 +149,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass faultFailurePortEClass = null;
@@ -153,7 +156,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass errorModelPrototypeEClass = null;
@@ -161,7 +163,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass processFaultPrototypeEClass = null;
@@ -169,7 +170,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass failureOutPortEClass = null;
@@ -177,7 +177,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EClass faultInPortEClass = null;
@@ -185,7 +184,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private EEnum errorBehaviorKindEEnum = null;
@@ -193,7 +191,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -201,18 +198,16 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>
-	 * This method is used to initialize {@link ErrormodelPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly.
-	 * Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>This method is used to initialize {@link ErrormodelPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ErrormodelPackage init() {
-		if(isInited)
-			return (ErrormodelPackage)EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI);
+		if (isInited) return (ErrormodelPackage)EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI);
 
 		// Obtain or create and register package
 		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ErrormodelPackageImpl());
@@ -228,27 +223,33 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
+		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) : ElementsPackage.eINSTANCE);
 		StructurePackageImpl theStructurePackage = (StructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) : StructurePackage.eINSTANCE);
 		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
-		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
+		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
-		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
-		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
-		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
-		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
-		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
-		InterchangePackageImpl theInterchangePackage = (InterchangePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) instanceof InterchangePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterchangePackage.eNS_URI) : InterchangePackage.eINSTANCE);
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
+		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
 		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
 		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
 		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) : SafetycasePackage.eINSTANCE);
+		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
+		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) : UsecasesPackage.eINSTANCE);
+		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
+		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
+		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
+		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
 		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
+		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
+		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
+		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -258,27 +259,33 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 		theInfrastructurePackage.createPackageContents();
 		theDatatypesPackage.createPackageContents();
 		theUserattributesPackage.createPackageContents();
+		theValuesPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theStructurePackage.createPackageContents();
 		theFunctionmodelingPackage.createPackageContents();
-		theHardwaremodelingPackage.createPackageContents();
+		theFeaturemodelingPackage.createPackageContents();
 		theSystemmodelingPackage.createPackageContents();
 		theVehiclefeaturemodelingPackage.createPackageContents();
-		theFeaturemodelingPackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
-		theRequirementsPackage.createPackageContents();
-		theVerificationvalidationPackage.createPackageContents();
-		theTimingPackage.createPackageContents();
-		theTimingconstraintsPackage.createPackageContents();
-		theEventsPackage.createPackageContents();
-		theInterchangePackage.createPackageContents();
-		theEnvironmentPackage.createPackageContents();
+		theHardwaremodelingPackage.createPackageContents();
 		theDependabilityPackage.createPackageContents();
 		theSafetyrequirementPackage.createPackageContents();
 		theSafetyconstraintsPackage.createPackageContents();
 		theSafetycasePackage.createPackageContents();
+		theRequirementsPackage.createPackageContents();
+		theUsecasesPackage.createPackageContents();
+		theVerificationvalidationPackage.createPackageContents();
+		theRequirementsPackage_1.createPackageContents();
+		theBehaviorPackage.createPackageContents();
+		theTimingPackage.createPackageContents();
+		theTimingconstraintsPackage.createPackageContents();
+		theEventsPackage.createPackageContents();
+		theEnvironmentPackage.createPackageContents();
 		theAnnexPackage.createPackageContents();
 		theNeedsPackage.createPackageContents();
+		theBehaviordescriptionPackage.createPackageContents();
+		theAttributequantificationconstraintPackage.createPackageContents();
+		theTemporalconstraintPackage.createPackageContents();
+		theComputationconstraintPackage.createPackageContents();
 		theGenericconstraintsPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -288,33 +295,39 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 		theInfrastructurePackage.initializePackageContents();
 		theDatatypesPackage.initializePackageContents();
 		theUserattributesPackage.initializePackageContents();
+		theValuesPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theStructurePackage.initializePackageContents();
 		theFunctionmodelingPackage.initializePackageContents();
-		theHardwaremodelingPackage.initializePackageContents();
+		theFeaturemodelingPackage.initializePackageContents();
 		theSystemmodelingPackage.initializePackageContents();
 		theVehiclefeaturemodelingPackage.initializePackageContents();
-		theFeaturemodelingPackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
-		theRequirementsPackage.initializePackageContents();
-		theVerificationvalidationPackage.initializePackageContents();
-		theTimingPackage.initializePackageContents();
-		theTimingconstraintsPackage.initializePackageContents();
-		theEventsPackage.initializePackageContents();
-		theInterchangePackage.initializePackageContents();
-		theEnvironmentPackage.initializePackageContents();
+		theHardwaremodelingPackage.initializePackageContents();
 		theDependabilityPackage.initializePackageContents();
 		theSafetyrequirementPackage.initializePackageContents();
 		theSafetyconstraintsPackage.initializePackageContents();
 		theSafetycasePackage.initializePackageContents();
+		theRequirementsPackage.initializePackageContents();
+		theUsecasesPackage.initializePackageContents();
+		theVerificationvalidationPackage.initializePackageContents();
+		theRequirementsPackage_1.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
+		theTimingPackage.initializePackageContents();
+		theTimingconstraintsPackage.initializePackageContents();
+		theEventsPackage.initializePackageContents();
+		theEnvironmentPackage.initializePackageContents();
 		theAnnexPackage.initializePackageContents();
 		theNeedsPackage.initializePackageContents();
+		theBehaviordescriptionPackage.initializePackageContents();
+		theAttributequantificationconstraintPackage.initializePackageContents();
+		theTemporalconstraintPackage.initializePackageContents();
+		theComputationconstraintPackage.initializePackageContents();
 		theGenericconstraintsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theErrormodelPackage.freeze();
 
-
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ErrormodelPackage.eNS_URI, theErrormodelPackage);
 		return theErrormodelPackage;
@@ -323,7 +336,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -331,19 +343,19 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
-	 * package
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#eNS_URI
 	 * @see #init()
@@ -354,74 +366,56 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	}
 
 	/**
-	 * Creates the meta-model objects for the package. This method is
+	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated)
-			return;
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
-		errorBehaviorEClass = createEClass(ERROR_BEHAVIOR);
-		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__BASE_BEHAVIOR);
-		createEAttribute(errorBehaviorEClass, ERROR_BEHAVIOR__FAILURE_LOGIC);
-		createEAttribute(errorBehaviorEClass, ERROR_BEHAVIOR__TYPE);
-		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__INTERNAL_FAULT);
-		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__OWNER);
-		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__EXTERNAL_FAILURE);
-		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__EXTERNAL_FAULT);
-		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__PROCESS_FAULT);
-
-		internalFaultPrototypeEClass = createEClass(INTERNAL_FAULT_PROTOTYPE);
-		createEReference(internalFaultPrototypeEClass, INTERNAL_FAULT_PROTOTYPE__BASE_CLASS);
-		createEReference(internalFaultPrototypeEClass, INTERNAL_FAULT_PROTOTYPE__BASE_EVENT);
-
 		anomalyEClass = createEClass(ANOMALY);
-		createEAttribute(anomalyEClass, ANOMALY__GENERIC_DESCRIPTION);
 		createEReference(anomalyEClass, ANOMALY__BASE_PROPERTY);
 		createEReference(anomalyEClass, ANOMALY__TYPE);
 
+		errorModelPrototypeEClass = createEClass(ERROR_MODEL_PROTOTYPE);
+		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__TYPE);
+		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__TARGET);
+		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__FUNCTION_TARGET);
+		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__HW_TARGET);
+
 		errorModelTypeEClass = createEClass(ERROR_MODEL_TYPE);
-		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__BASE_CLASS);
-		createEAttribute(errorModelTypeEClass, ERROR_MODEL_TYPE__GENERIC_DESCRIPTION);
 		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__FAULT_FAILURE_CONNECTOR);
 		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__PART);
+		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__ERROR_BEHAVIOR_DESCRIPTION);
 		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__FAILURE);
 		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__EXTERNAL_FAULT);
 		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__INTERNAL_FAULT);
 		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__PROCESS_FAULT);
 		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__TARGET);
 		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__HW_TARGET);
-		createEReference(errorModelTypeEClass, ERROR_MODEL_TYPE__ERROR_BEHAVIOR_DESCRIPTION);
 
 		faultFailurePropagationLinkEClass = createEClass(FAULT_FAILURE_PROPAGATION_LINK);
-		createEReference(faultFailurePropagationLinkEClass, FAULT_FAILURE_PROPAGATION_LINK__BASE_CONNECTOR);
 		createEAttribute(faultFailurePropagationLinkEClass, FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION);
 		createEReference(faultFailurePropagationLinkEClass, FAULT_FAILURE_PROPAGATION_LINK__TO_PORT);
 		createEReference(faultFailurePropagationLinkEClass, FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT);
-		createEReference(faultFailurePropagationLinkEClass, FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT_PATH);
-		createEReference(faultFailurePropagationLinkEClass, FAULT_FAILURE_PROPAGATION_LINK__TO_PORT_PATH);
 
-		faultFailurePortEClass = createEClass(FAULT_FAILURE_PORT);
-		createEReference(faultFailurePortEClass, FAULT_FAILURE_PORT__BASE_PORT);
-		createEReference(faultFailurePortEClass, FAULT_FAILURE_PORT__FUNCTION_TARGET);
-		createEReference(faultFailurePortEClass, FAULT_FAILURE_PORT__HW_TARGET);
-		createEReference(faultFailurePortEClass, FAULT_FAILURE_PORT__FUNCTION_TARGET_PATH);
-		createEReference(faultFailurePortEClass, FAULT_FAILURE_PORT__HW_TARGET_PATH);
+		errorBehaviorEClass = createEClass(ERROR_BEHAVIOR);
+		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__BASE_BEHAVIOR);
+		createEAttribute(errorBehaviorEClass, ERROR_BEHAVIOR__FAILURE_LOGIC);
+		createEAttribute(errorBehaviorEClass, ERROR_BEHAVIOR__TYPE);
+		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__INTERNAL_FAULT);
+		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__EXTERNAL_FAILURE);
+		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__EXTERNAL_FAULT);
+		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__PROCESS_FAULT);
+		createEReference(errorBehaviorEClass, ERROR_BEHAVIOR__INTERNAL_FAILURE);
 
-		errorModelPrototypeEClass = createEClass(ERROR_MODEL_PROTOTYPE);
-		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__BASE_PROPERTY);
-		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__TYPE);
-		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__TARGET);
-		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__FUNCTION_TARGET);
-		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__HW_TARGET);
-		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__FUNCTION_TARGET_PATH);
-		createEReference(errorModelPrototypeEClass, ERROR_MODEL_PROTOTYPE__HW_TARGET_PATH);
+		internalFaultPrototypeEClass = createEClass(INTERNAL_FAULT_PROTOTYPE);
+		createEReference(internalFaultPrototypeEClass, INTERNAL_FAULT_PROTOTYPE__BASE_CLASS);
+		createEReference(internalFaultPrototypeEClass, INTERNAL_FAULT_PROTOTYPE__BASE_EVENT);
 
 		failureOutPortEClass = createEClass(FAILURE_OUT_PORT);
 
@@ -430,6 +424,10 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 		processFaultPrototypeEClass = createEClass(PROCESS_FAULT_PROTOTYPE);
 		createEReference(processFaultPrototypeEClass, PROCESS_FAULT_PROTOTYPE__BASE_EVENT);
 
+		faultFailurePortEClass = createEClass(FAULT_FAILURE_PORT);
+		createEReference(faultFailurePortEClass, FAULT_FAILURE_PORT__FUNCTION_TARGET);
+		createEReference(faultFailurePortEClass, FAULT_FAILURE_PORT__HW_TARGET);
+
 		// Create enums
 		errorBehaviorKindEEnum = createEEnum(ERROR_BEHAVIOR_KIND);
 	}
@@ -437,7 +435,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getAnomaly() {
@@ -447,37 +444,24 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EAttribute getAnomaly_GenericDescription() {
-		return (EAttribute)anomalyEClass.getEStructuralFeatures().get(0);
+	public EReference getAnomaly_Base_Property() {
+		return (EReference)anomalyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getAnomaly_Base_Property() {
+	public EReference getAnomaly_Type() {
 		return (EReference)anomalyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getAnomaly_Type() {
-		return (EReference)anomalyEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getErrorBehavior() {
@@ -487,7 +471,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getErrorBehavior_Base_Behavior() {
@@ -497,27 +480,24 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getErrorBehavior_ExternalFailure() {
+		return (EReference)errorBehaviorEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getErrorBehavior_ExternalFault() {
 		return (EReference)errorBehaviorEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorBehavior_ExternalFault() {
-		return (EReference)errorBehaviorEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getErrorBehavior_FailureLogic() {
@@ -527,7 +507,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getErrorBehavior_InternalFault() {
@@ -537,27 +516,24 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getErrorBehavior_Owner() {
-		return (EReference)errorBehaviorEClass.getEStructuralFeatures().get(4);
+	public EReference getErrorBehavior_ProcessFault() {
+		return (EReference)errorBehaviorEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getErrorBehavior_ProcessFault() {
+	public EReference getErrorBehavior_InternalFailure() {
 		return (EReference)errorBehaviorEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EAttribute getErrorBehavior_Type() {
@@ -567,7 +543,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EEnum getErrorBehaviorKind() {
@@ -577,7 +552,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ErrormodelFactory getErrormodelFactory() {
@@ -587,7 +561,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getErrorModelPrototype() {
@@ -597,77 +570,42 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelPrototype_Base_Property() {
-		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getErrorModelPrototype_FunctionTarget() {
-		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelPrototype_HwTarget() {
-		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelPrototype_FunctionTarget_path() {
-		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelPrototype_HwTarget_path() {
-		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelPrototype_Target() {
 		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getErrorModelPrototype_Type() {
+	public EReference getErrorModelPrototype_HwTarget() {
+		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getErrorModelPrototype_Target() {
 		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EReference getErrorModelPrototype_Type() {
+		return (EReference)errorModelPrototypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getErrorModelType() {
@@ -677,117 +615,87 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelType_Base_Class() {
-		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getErrorModelType_ErrorBehaviorDescription() {
-		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelType_ExternalFault() {
-		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelType_Failure() {
-		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelType_FaultFailureConnector() {
 		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EAttribute getErrorModelType_GenericDescription() {
-		return (EAttribute)errorModelTypeEClass.getEStructuralFeatures().get(1);
+	public EReference getErrorModelType_ExternalFault() {
+		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getErrorModelType_HwTarget() {
-		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelType_InternalFault() {
-		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getErrorModelType_Part() {
+	public EReference getErrorModelType_Failure() {
 		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getErrorModelType_ProcessFault() {
-		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(7);
+	public EReference getErrorModelType_FaultFailureConnector() {
+		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getErrorModelType_Target() {
+	public EReference getErrorModelType_HwTarget() {
 		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EReference getErrorModelType_InternalFault() {
+		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getErrorModelType_Part() {
+		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getErrorModelType_ProcessFault() {
+		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getErrorModelType_Target() {
+		return (EReference)errorModelTypeEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getFailureOutPort() {
@@ -797,7 +705,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getFaultFailurePort() {
@@ -807,57 +714,24 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getFaultFailurePort_Base_Port() {
+	public EReference getFaultFailurePort_FunctionTarget() {
 		return (EReference)faultFailurePortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public EReference getFaultFailurePort_FunctionTarget() {
+	public EReference getFaultFailurePort_HwTarget() {
 		return (EReference)faultFailurePortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getFaultFailurePort_HwTarget() {
-		return (EReference)faultFailurePortEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getFaultFailurePort_FunctionTarget_path() {
-		return (EReference)faultFailurePortEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getFaultFailurePort_HwTarget_path() {
-		return (EReference)faultFailurePortEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getFaultFailurePropagationLink() {
@@ -867,67 +741,33 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getFaultFailurePropagationLink_Base_Connector() {
-		return (EReference)faultFailurePropagationLinkEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getFaultFailurePropagationLink_FromPort() {
-		return (EReference)faultFailurePropagationLinkEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getFaultFailurePropagationLink_FromPort_path() {
-		return (EReference)faultFailurePropagationLinkEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getFaultFailurePropagationLink_ToPort_path() {
-		return (EReference)faultFailurePropagationLinkEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getFaultFailurePropagationLink_ImmediatePropagation() {
-		return (EAttribute)faultFailurePropagationLinkEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getFaultFailurePropagationLink_ToPort() {
 		return (EReference)faultFailurePropagationLinkEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public EAttribute getFaultFailurePropagationLink_ImmediatePropagation() {
+		return (EAttribute)faultFailurePropagationLinkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFaultFailurePropagationLink_ToPort() {
+		return (EReference)faultFailurePropagationLinkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EClass getFaultInPort() {
@@ -937,7 +777,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getInternalFaultPrototype() {
@@ -947,7 +786,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getInternalFaultPrototype_Base_Class() {
@@ -957,7 +795,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getInternalFaultPrototype_Base_Event() {
@@ -967,7 +804,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EClass getProcessFaultPrototype() {
@@ -977,7 +813,6 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EReference getProcessFaultPrototype_Base_Event() {
@@ -985,16 +820,14 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 	}
 
 	/**
-	 * Complete the initialization of the package and its meta-model. This
+	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized)
-			return;
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -1005,83 +838,72 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 		// Obtain other dependent packages
 		ElementsPackage theElementsPackage = (ElementsPackage)EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
+		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		FunctionmodelingPackage theFunctionmodelingPackage = (FunctionmodelingPackage)EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI);
 		HardwaremodelingPackage theHardwaremodelingPackage = (HardwaremodelingPackage)EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		anomalyEClass.getESuperTypes().add(theElementsPackage.getEAElement());
+		errorModelPrototypeEClass.getESuperTypes().add(theElementsPackage.getEAElement());
+		errorModelPrototypeEClass.getESuperTypes().add(theElementsPackage.getEAPrototype());
+		errorModelTypeEClass.getESuperTypes().add(theElementsPackage.getTraceableSpecification());
+		errorModelTypeEClass.getESuperTypes().add(theElementsPackage.getEAType());
+		faultFailurePropagationLinkEClass.getESuperTypes().add(theElementsPackage.getEAElement());
+		faultFailurePropagationLinkEClass.getESuperTypes().add(theElementsPackage.getEAConnector());
 		errorBehaviorEClass.getESuperTypes().add(theElementsPackage.getEAElement());
 		internalFaultPrototypeEClass.getESuperTypes().add(this.getAnomaly());
-		anomalyEClass.getESuperTypes().add(theElementsPackage.getEAElement());
-		errorModelTypeEClass.getESuperTypes().add(theElementsPackage.getTraceableSpecification());
-		faultFailurePropagationLinkEClass.getESuperTypes().add(theElementsPackage.getEAElement());
-		faultFailurePortEClass.getESuperTypes().add(this.getAnomaly());
-		errorModelPrototypeEClass.getESuperTypes().add(theElementsPackage.getEAElement());
 		failureOutPortEClass.getESuperTypes().add(this.getFaultFailurePort());
 		faultInPortEClass.getESuperTypes().add(this.getFaultFailurePort());
 		processFaultPrototypeEClass.getESuperTypes().add(this.getAnomaly());
+		faultFailurePortEClass.getESuperTypes().add(this.getAnomaly());
+		faultFailurePortEClass.getESuperTypes().add(theElementsPackage.getEAPort());
 
-		// Initialize classes and features; add operations and parameters
-		initEClass(errorBehaviorEClass, ErrorBehavior.class, "ErrorBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getErrorBehavior_Base_Behavior(), theUMLPackage.getBehavior(), null, "base_Behavior", null, 1, 1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getErrorBehavior_FailureLogic(), theTypesPackage.getString(), "failureLogic", null, 0, 1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getErrorBehavior_Type(), this.getErrorBehaviorKind(), "type", null, 1, 1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorBehavior_InternalFault(), this.getInternalFaultPrototype(), null, "internalFault", null, 0, -1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorBehavior_Owner(), this.getErrorModelType(), this.getErrorModelType_ErrorBehaviorDescription(), "owner", null, 0, 1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorBehavior_ExternalFailure(), this.getFailureOutPort(), null, "externalFailure", null, 1, -1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorBehavior_ExternalFault(), this.getFaultInPort(), null, "externalFault", null, 0, -1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorBehavior_ProcessFault(), this.getProcessFaultPrototype(), null, "processFault", null, 0, -1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(internalFaultPrototypeEClass, InternalFaultPrototype.class, "InternalFaultPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInternalFaultPrototype_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, InternalFaultPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getInternalFaultPrototype_Base_Event(), theUMLPackage.getEvent(), null, "base_Event", null, 0, 1, InternalFaultPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
+		// Initialize classes, features, and operations; add parameters
 		initEClass(anomalyEClass, Anomaly.class, "Anomaly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAnomaly_GenericDescription(), theTypesPackage.getString(), "genericDescription", null, 1, 1, Anomaly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAnomaly_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, Anomaly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAnomaly_Type(), theDatatypesPackage.getEADatatype(), null, "type", null, 1, 1, Anomaly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(errorModelPrototypeEClass, ErrorModelPrototype.class, "ErrorModelPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getErrorModelPrototype_Type(), this.getErrorModelType(), null, "type", null, 1, 1, ErrorModelPrototype.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorModelPrototype_Target(), theUMLPackage.getNamedElement(), null, "target", null, 1, 1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorModelPrototype_FunctionTarget(), theInfrastructurePackage.getErrorModelPrototype_functionTargetInstanceRef(), null, "functionTarget", null, 0, -1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorModelPrototype_HwTarget(), theInfrastructurePackage.getErrorModelPrototype_hwTargetInstanceRef(), null, "hwTarget", null, 0, -1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(errorModelTypeEClass, ErrorModelType.class, "ErrorModelType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getErrorModelType_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, ErrorModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getErrorModelType_GenericDescription(), theTypesPackage.getString(), "genericDescription", "NA", 1, 1, ErrorModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getErrorModelType_FaultFailureConnector(), this.getFaultFailurePropagationLink(), null, "faultFailureConnector", null, 0, -1, ErrorModelType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getErrorModelType_Part(), this.getErrorModelPrototype(), null, "part", null, 0, -1, ErrorModelType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorModelType_ErrorBehaviorDescription(), this.getErrorBehavior(), null, "errorBehaviorDescription", null, 1, -1, ErrorModelType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getErrorModelType_Failure(), this.getFailureOutPort(), null, "failure", null, 0, -1, ErrorModelType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getErrorModelType_ExternalFault(), this.getFaultInPort(), null, "externalFault", null, 0, -1, ErrorModelType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getErrorModelType_InternalFault(), this.getInternalFaultPrototype(), null, "internalFault", null, 0, -1, ErrorModelType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getErrorModelType_ProcessFault(), this.getProcessFaultPrototype(), null, "processFault", null, 0, -1, ErrorModelType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getErrorModelType_Target(), theFunctionmodelingPackage.getFunctionType(), null, "target", null, 0, -1, ErrorModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getErrorModelType_HwTarget(), theHardwaremodelingPackage.getHardwareComponentType(), null, "hwTarget", null, 0, -1, ErrorModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelType_ErrorBehaviorDescription(), this.getErrorBehavior(), this.getErrorBehavior_Owner(), "errorBehaviorDescription", null, 1, -1, ErrorModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(faultFailurePropagationLinkEClass, FaultFailurePropagationLink.class, "FaultFailurePropagationLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePropagationLink_Base_Connector(), theUMLPackage.getConnector(), null, "base_Connector", null, 1, 1, FaultFailurePropagationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getFaultFailurePropagationLink_ImmediatePropagation(), theTypesPackage.getBoolean(), "immediatePropagation", "true", 1, 1, FaultFailurePropagationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePropagationLink_ToPort(), this.getFaultFailurePort(), null, "toPort", null, 1, 1, FaultFailurePropagationLink.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePropagationLink_FromPort(), this.getFaultFailurePort(), null, "fromPort", null, 1, 1, FaultFailurePropagationLink.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePropagationLink_FromPort_path(), this.getErrorModelPrototype(), null, "fromPort_path", null, 0, -1, FaultFailurePropagationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFaultFailurePropagationLink_ToPort_path(), this.getErrorModelPrototype(), null, "toPort_path", null, 0, -1, FaultFailurePropagationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFaultFailurePropagationLink_ToPort(), theInfrastructurePackage.getFaultFailurePropagationLink_toPortInstanceRef(), null, "toPort", null, 1, 1, FaultFailurePropagationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePropagationLink_FromPort(), theInfrastructurePackage.getFaultFailurePropagationLink_fromPortInstanceRef(), null, "fromPort", null, 1, 1, FaultFailurePropagationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(faultFailurePortEClass, FaultFailurePort.class, "FaultFailurePort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFaultFailurePort_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 1, 1, FaultFailurePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePort_FunctionTarget(), theFunctionmodelingPackage.getFunctionPort(), null, "functionTarget", null, 0, -1, FaultFailurePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePort_HwTarget(), theHardwaremodelingPackage.getHardwarePin(), null, "hwTarget", null, 0, -1, FaultFailurePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFaultFailurePort_FunctionTarget_path(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionTarget_path", null, 0, -1, FaultFailurePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFaultFailurePort_HwTarget_path(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hwTarget_path", null, 0, -1, FaultFailurePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(errorBehaviorEClass, ErrorBehavior.class, "ErrorBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getErrorBehavior_Base_Behavior(), theUMLPackage.getBehavior(), null, "base_Behavior", null, 1, 1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getErrorBehavior_FailureLogic(), theTypesPackage.getString(), "failureLogic", null, 0, 1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getErrorBehavior_Type(), this.getErrorBehaviorKind(), "type", null, 1, 1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorBehavior_InternalFault(), this.getInternalFaultPrototype(), null, "internalFault", null, 0, -1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorBehavior_ExternalFailure(), this.getFailureOutPort(), null, "externalFailure", null, 1, -1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorBehavior_ExternalFault(), this.getFaultInPort(), null, "externalFault", null, 0, -1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorBehavior_ProcessFault(), this.getProcessFaultPrototype(), null, "processFault", null, 0, -1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getErrorBehavior_InternalFailure(), this.getFailureOutPort(), null, "internalFailure", null, 1, 1, ErrorBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(errorModelPrototypeEClass, ErrorModelPrototype.class, "ErrorModelPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getErrorModelPrototype_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_Type(), this.getErrorModelType(), null, "type", null, 1, 1, ErrorModelPrototype.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_Target(), theUMLPackage.getNamedElement(), null, "target", null, 1, 1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_FunctionTarget(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionTarget", null, 0, -1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_HwTarget(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hwTarget", null, 0, -1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getErrorModelPrototype_FunctionTarget_path(), theFunctionmodelingPackage.getFunctionPrototype(), null, "functionTarget_path", null, 0, -1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getErrorModelPrototype_HwTarget_path(), theHardwaremodelingPackage.getHardwareComponentPrototype(), null, "hwTarget_path", null, 0, -1, ErrorModelPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(internalFaultPrototypeEClass, InternalFaultPrototype.class, "InternalFaultPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInternalFaultPrototype_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 0, 1, InternalFaultPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getInternalFaultPrototype_Base_Event(), theUMLPackage.getEvent(), null, "base_Event", null, 0, 1, InternalFaultPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(failureOutPortEClass, FailureOutPort.class, "FailureOutPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1089,6 +911,10 @@ public class ErrormodelPackageImpl extends EPackageImpl implements ErrormodelPac
 
 		initEClass(processFaultPrototypeEClass, ProcessFaultPrototype.class, "ProcessFaultPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProcessFaultPrototype_Base_Event(), theUMLPackage.getEvent(), null, "base_Event", null, 0, 1, ProcessFaultPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(faultFailurePortEClass, FaultFailurePort.class, "FaultFailurePort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFaultFailurePort_FunctionTarget(), theInfrastructurePackage.getFaultFailurePort_functionTargetInstanceRef(), null, "functionTarget", null, 0, -1, FaultFailurePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFaultFailurePort_HwTarget(), theInfrastructurePackage.getFaultFailurePort_hwTargetInstanceRef(), null, "hwTarget", null, 0, -1, FaultFailurePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(errorBehaviorKindEEnum, ErrorBehaviorKind.class, "ErrorBehaviorKind");
