@@ -1,5 +1,6 @@
 [module CppClassIncludeDeclaration('http://www.eclipse.org/uml2/5.0.0/UML', 'http://www.eclipse.org/papyrus/C_Cpp/1')/]
 [import org::eclipse::papyrus::acceleo::GenUtils/]
+[import org::eclipse::papyrus::cpp::codegen::acceleo::CppIncludeUtils/]
 [import org::eclipse::papyrus::cpp::codegen::preferences::CppCodeGenUtils/]
 
 
@@ -16,12 +17,14 @@ endif
 /]
 
 [comment TODO: original code did not use nearest package, if stereotype CppRoot was applied/]
+[query public cppClassIncludes(ne : NamedElement) : Sequence(String) =
+if (hasStereotypeTree(ExternLibrary)) then
+	getApplicationTree(ExternLibrary).oclAsType(ExternLibrary).includes
+else
+	ne.includeName()
+endif
+/]
+
 [template public CppClassIncludeDeclaration(ne : NamedElement)]
-[if (hasStereotypeTree(ExternLibrary))]
-	[for (include : String | getApplicationTree(ExternLibrary).oclAsType(ExternLibrary).includes)] 
-#include <[include/]>
-	[/for]
-[else]
-#include <[ne.includeName()/]>
-[/if]
+[ne.cppClassIncludes().IncludeDirective()/]
 [/template]

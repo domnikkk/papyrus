@@ -15,15 +15,19 @@
               [class.name/] template binding header
  ************************************************************/
 
-[_package.CppOwnerPackageIncludeDeclaration()/]
-
-[CppClassAllIncludesDeclaration()/]
+[for (path : String |
+	Sequence{ _package.cppOwnerPackageIncludePath() }
+		->addAll( CppClassAllIncludes() )
+		->flatten()
+		->asOrderedSet())]
+[path.IncludeDirective()/]
+[/for]
 
 [CppIncludeHeader()/]
 
 [let tb : TemplateBinding = getTemplateBindings()]
 [let templateElement : Element = tb.target->asSequence()->first()]
-#include <[_package.getFullPath()/]/[templateElement.owner.oclAsType(NamedElement).name/].[getHeaderSuffix()/]>
+[IncludeDirective( _package.getFullPath() + '/' + templateElement.owner.oclAsType(NamedElement).name + '.' + getHeaderSuffix() )/]
 
 [openNS()/] 
 /************************************************************/

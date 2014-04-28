@@ -20,7 +20,7 @@
               Pkg_[name/] package header
  ************************************************************/
 
-[nestingPackage.CppOwnerPackageIncludeDeclaration()/]
+[nestingPackage.cppOwnerPackageIncludePath().IncludeDirective()/]
 
 #ifndef _IN_
 #define _IN_
@@ -35,7 +35,7 @@
 	
 /* Package dependency header include                        */
 [for (getUsedPackages())]
-#include <[getFullPath()/]/Pkg_[name/].[getHeaderSuffix()/]>
+[IncludeDirective( getFullPath() + '/Pkg_' + name + '.' + getHeaderSuffix() )/]
 [/for]
 
 [CppIncludeHeader()/]

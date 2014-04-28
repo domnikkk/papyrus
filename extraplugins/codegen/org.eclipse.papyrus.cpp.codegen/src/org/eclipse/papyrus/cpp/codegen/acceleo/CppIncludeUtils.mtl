@@ -32,3 +32,9 @@
 [constIncludePreBodyEnd()/]
 [/if][/let][/if]
 [/template]
+
+[template public IncludeDirective(path : String)]
+[if (path <> null) and (path.size() > 0)]
+#include "[path/]"
+[/if]
+[/template]

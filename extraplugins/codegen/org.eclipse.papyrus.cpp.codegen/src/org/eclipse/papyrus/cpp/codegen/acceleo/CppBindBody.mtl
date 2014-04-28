@@ -19,14 +19,17 @@
 [CppIncludePreBody()/]
 
 [constIncludeHFile()/]
-#include <[_package.getFullPath()/]/[class.name/].[getHeaderSuffix()/]>
+[IncludeDirective( _package.getFullPath() + '/' + class.name + '.' + getHeaderSuffix() )/]
 
 [CppIncludeBody()/]
 
 [openNS()/]
 
 [constDerivedIncludes()/]
-[CppClassAllIncludesDeclaration()/]
+
+[for (path : String | CppClassAllIncludes()->flatten()->asOrderedSet())]
+[path.IncludeDirective()/]
+[/for]
 
 /************************************************************/
 [let tb : TemplateBinding = getTemplateBindings()]
