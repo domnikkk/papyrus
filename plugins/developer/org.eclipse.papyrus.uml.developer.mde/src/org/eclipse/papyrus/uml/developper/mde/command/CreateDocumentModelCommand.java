@@ -16,6 +16,7 @@ package org.eclipse.papyrus.uml.developper.mde.command;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -28,7 +29,13 @@ import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat;
 import org.eclipse.gmf.runtime.diagram.ui.render.util.CopyToImageUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
+import org.eclipse.papyrus.infra.hyperlink.helper.AbstractHyperLinkHelper;
+import org.eclipse.papyrus.infra.hyperlink.helper.HyperLinkHelperFactory;
+import org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject;
+import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkException;
+import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkHelpersRegistrationUtil;
 import org.eclipse.papyrus.uml.developper.mde.I_DeveloperIDMStereotype;
 import org.eclipse.papyrus.uml.developper.mde.I_DocumentStereotype;
 import org.eclipse.papyrus.views.modelexplorer.NavigatorUtils;
@@ -49,11 +56,16 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 	protected org.eclipse.uml2.uml.Package topModel;
 	protected String directoryPath=null;
+	protected HyperLinkHelperFactory hyperlinkHelperFactory;
 
 	public CreateDocumentModelCommand(TransactionalEditingDomain domain, org.eclipse.uml2.uml.Package topModel, String directoryPath) {
 		super(domain);
 		this.topModel=topModel;
 		this.directoryPath=directoryPath;
+		ArrayList<AbstractHyperLinkHelper> hyperLinkHelpers = new ArrayList<AbstractHyperLinkHelper>();
+
+		hyperLinkHelpers.addAll(HyperLinkHelpersRegistrationUtil.INSTANCE.getAllRegisteredHyperLinkHelper());
+		hyperlinkHelperFactory = new HyperLinkHelperFactory(hyperLinkHelpers);
 	}
 
 	@Override
@@ -83,7 +95,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		generateUseCases(copyImageUtil, documentModel);
 		//getDesing package
 		generateDesign(copyImageUtil, documentModel);
-		
+
 	}
 
 	protected void generateRequirements(Model documentModel) {
@@ -130,7 +142,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 		if (useCaseIN!= null){
 			Package useCaseModelOUT = createSection(documentModel, "Use Cases");
-			
+
 			//createRef diagram
 			Diagram currentDiagram= containedDiagrams(useCaseIN).get(0);
 			generateImg(copyImageUtil, useCaseModelOUT, currentDiagram);
@@ -152,7 +164,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 					}
 				}
 			}
-			
+
 		}
 		return useCaseIN;
 	}
@@ -171,6 +183,40 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			//createRef diagram
 			Diagram currentDiagram= containedDiagrams(designPackageIn).get(0);
 			generateImg(copyImageUtil, designPackageOUT, currentDiagram);
+
+			for(Iterator<Comment> iteComment = (designPackageIn).getOwnedComments().iterator(); iteComment.hasNext();) {
+				Comment currentComment = (Comment)iteComment.next();
+				createImageFromHyperLink(copyImageUtil, designPackageOUT, currentComment);
+				transformToContentComment(designPackageOUT, currentComment);
+			}
+		}
+
+
+
+	}
+
+	protected void createImageFromHyperLink(CopyToImageUtil copyImageUtil, Package designPackageOUT, Comment currentComment) {
+		List<Object>referedViews=NavigatorUtils.getEObjectViews(currentComment);
+		if(referedViews.size()!=0){
+			for(Iterator<?> iterator = referedViews.iterator(); iterator.hasNext();) {
+				Object currentView = (Object)iterator.next();
+				if( currentView instanceof View){
+					ArrayList<HyperLinkObject> result=null;
+					try {
+						result = (ArrayList<HyperLinkObject>)hyperlinkHelperFactory.getAllreferenced((View)referedViews.get(0));
+					} catch (HyperLinkException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					for(Iterator<HyperLinkObject> iteratorhyperlink = result.iterator(); iteratorhyperlink.hasNext();) {
+						HyperLinkObject hyperLinkObject = (HyperLinkObject)iteratorhyperlink.next();
+						System.err.println(hyperLinkObject.getObject());
+						if(hyperLinkObject.getObject() instanceof Diagram){
+							generateImg(copyImageUtil, designPackageOUT, ((Diagram)hyperLinkObject.getObject()));
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -195,7 +241,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 	 * @param currentComment
 	 */
 	protected void transformToContentComment(Package documentModel, Comment currentComment) {
-		
+
 		Comment comment=documentModel.createOwnedComment();
 		Stereotype contentStereotype= comment.getApplicableStereotype(I_DocumentStereotype.CONTENT_STEREOTYPE);
 		comment.applyStereotype(contentStereotype);
@@ -210,24 +256,24 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 	 */
 	protected void generateImg(CopyToImageUtil copyImageUtil, Package currentModel, Diagram currentDiagram) {
 		Path imagePath= new Path(""+directoryPath+ File.separator +"imgDOC"+File.separator+ currentDiagram.getName().replaceAll(" ", "_")+".png");
-			try {
-				
-				copyImageUtil.copyToImage(currentDiagram,
-					                      imagePath,
-					                      ImageFileFormat.PNG,
-					                      new NullProgressMonitor(),
-					                      PreferencesHint.USE_DEFAULTS);
-			} catch (CoreException e) {
-				e.printStackTrace();
-			}
-		
-			Comment commentImg=currentModel.createOwnedComment();
-			Stereotype refStereotype= commentImg.getApplicableStereotype(I_DocumentStereotype.IMAGEREF_STEREOTYPE);
-			commentImg.applyStereotype(refStereotype);
-			commentImg.setValue(refStereotype, I_DocumentStereotype.IMAGEREF_REF_ATT, imagePath.toString());
-			commentImg.setBody(currentDiagram.getName());
+		try {
+
+			copyImageUtil.copyToImage(currentDiagram,
+				imagePath,
+				ImageFileFormat.PNG,
+				new NullProgressMonitor(),
+				PreferencesHint.USE_DEFAULTS);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+
+		Comment commentImg=currentModel.createOwnedComment();
+		Stereotype refStereotype= commentImg.getApplicableStereotype(I_DocumentStereotype.IMAGEREF_STEREOTYPE);
+		commentImg.applyStereotype(refStereotype);
+		commentImg.setValue(refStereotype, I_DocumentStereotype.IMAGEREF_REF_ATT, imagePath.toString());
+		commentImg.setBody(currentDiagram.getName());
 	}
-	
+
 	/**
 	 * 
 	 * @param source

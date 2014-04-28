@@ -6,7 +6,7 @@
  
       <mapping
             source="pathmap://DEVELOPER_PROFILES/"
-            target="platform:/plugin/org.eclipse.papyrus.uml.developer.idm/resource/">
+            target="platform:/plugin/org.eclipse.papyrus.uml.developer.mde/resource/">
       </mapping>
    </extension>
    
@@ -54,8 +54,8 @@
                </with>
             </visibleWhen>
             <command
-                  commandId="org.eclipse.papyrus.uml.developper.idm.handler.GetBrutTextHandler"
-                  id="org.eclipse.papyrus.uml.developper.idm.handler.GetBrutTextMenu"
+                  commandId="org.eclipse.papyrus.uml.developper.mde.handler.GetHTMLTextHandler"
+                  id="org.eclipse.papyrus.uml.developper.mde.handler.GetHTMLTextMenu"
                   label="generate HTML page"
                   style="push">
                <visibleWhen
@@ -69,7 +69,7 @@
          point="org.eclipse.ui.commands">
       <command
             defaultHandler="org.eclipse.papyrus.uml.developper.mde.handler.GetHTMLTextHandler"
-            id="org.eclipse.papyrus.uml.developper.idm.handler.GetBrutTextHandler"
+            id="org.eclipse.papyrus.uml.developper.mde.handler.GetHTMLTextHandler"
             name="generate HTML page">
       </command>
    </extension>

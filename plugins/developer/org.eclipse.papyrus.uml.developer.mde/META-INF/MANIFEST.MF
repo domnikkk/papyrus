@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui.render,
  org.eclipse.papyrus.views.modelexplorer,
  org.eclipse.papyrus.infra.gmfdiag.common,
- org.eclipse.core.resources
+ org.eclipse.core.resources,
+ org.eclipse.papyrus.infra.hyperlink
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
