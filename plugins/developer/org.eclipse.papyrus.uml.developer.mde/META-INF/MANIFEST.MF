@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.papyrus.uml.developer.mde;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.uml.developper.mde.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.0",
+ org.eclipse.emf;bundle-version="2.6.0",
+ org.eclipse.papyrus.uml.diagram.wizards;bundle-version="1.0.0",
+ org.eclipse.uml2.uml,
+ org.eclipse.papyrus.infra.emf,
+ org.eclipse.papyrus.infra.core,
+ org.eclipse.papyrus.editor,
+ org.eclipse.gmf.runtime.notation.edit,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.gmf.runtime.diagram.ui.render,
+ org.eclipse.papyrus.views.modelexplorer,
+ org.eclipse.papyrus.infra.gmfdiag.common,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-Description: The goal of this plugin is to bring a template and profile to document plugins development, transromation to generate document model, and  a very simple of document generator.
+

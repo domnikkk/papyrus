@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+ 
+      <mapping
+            source="pathmap://DEVELOPER_PROFILES/"
+            target="platform:/plugin/org.eclipse.papyrus.uml.developer.idm/resource/">
+      </mapping>
+   </extension>
+   
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="Developer Process Profile"
+            name="Developer Process Profil"
+            path="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml"
+            provider="Eclipse.org">
+      </profile>
+      <profile
+            description="Document Profile"
+            name="Document  Profil"
+            path="pathmap://DEVELOPER_PROFILES/Document.profile.uml"
+            provider="Eclipse.org">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.wizards.templates">
+      <template
+            di_file="resource/developermodel.di"
+            file="resource/developermodel.uml"
+            id="org.eclipse.papyrus.uml.developer.idm.template"
+            language="uml"
+            name="An empty developer model"
+            notation_file="resource/developermodel.notation">
+      </template>
+      </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup">
+         <menu
+               id="developer.idm"
+               label="Developer">
+            <visibleWhen
+                  checkEnabled="true">
+               <with
+                     variable="activeEditorId">
+                  <equals
+                        value="org.eclipse.papyrus.infra.core.papyrusEditor">
+                  </equals>
+               </with>
+            </visibleWhen>
+            <command
+                  commandId="org.eclipse.papyrus.uml.developper.idm.handler.GetBrutTextHandler"
+                  id="org.eclipse.papyrus.uml.developper.idm.handler.GetBrutTextMenu"
+                  label="generate HTML page"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="true">
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.eclipse.papyrus.uml.developper.mde.handler.GetHTMLTextHandler"
+            id="org.eclipse.papyrus.uml.developper.idm.handler.GetBrutTextHandler"
+            name="generate HTML page">
+      </command>
+   </extension>
+</plugin>
