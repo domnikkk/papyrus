@@ -27,15 +27,13 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPa
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class AllocationTargetImpl extends EAElementImpl implements AllocationTarget {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected AllocationTargetImpl() {
@@ -45,7 +43,6 @@ public abstract class AllocationTargetImpl extends EAElementImpl implements Allo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

@@ -22,17 +22,14 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage
  * @generated
  */
 public interface EventsFactory extends EFactory {
-
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	EventsFactory eINSTANCE = org.eclipse.papyrus.eastadl.timing.events.impl.EventsFactoryImpl.init();
@@ -41,17 +38,60 @@ public interface EventsFactory extends EFactory {
 	 * Returns a new object of class '<em>Event Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Event Function</em>'.
 	 * @generated
 	 */
 	EventFunction createEventFunction();
 
 	/**
+	 * Returns a new object of class '<em>AUTOSAR Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>AUTOSAR Event</em>'.
+	 * @generated
+	 */
+	AUTOSAREvent createAUTOSAREvent();
+
+	/**
+	 * Returns a new object of class '<em>Event Fault Failure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Event Fault Failure</em>'.
+	 * @generated
+	 */
+	EventFaultFailure createEventFaultFailure();
+
+	/**
+	 * Returns a new object of class '<em>Event Feature Flaw</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Event Feature Flaw</em>'.
+	 * @generated
+	 */
+	EventFeatureFlaw createEventFeatureFlaw();
+
+	/**
+	 * Returns a new object of class '<em>External Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>External Event</em>'.
+	 * @generated
+	 */
+	ExternalEvent createExternalEvent();
+
+	/**
+	 * Returns a new object of class '<em>Mode Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mode Event</em>'.
+	 * @generated
+	 */
+	ModeEvent createModeEvent();
+
+	/**
 	 * Returns a new object of class '<em>Event Function Client Server Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Event Function Client Server Port</em>'.
 	 * @generated
 	 */
@@ -61,7 +101,6 @@ public interface EventsFactory extends EFactory {
 	 * Returns a new object of class '<em>Event Function Flow Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Event Function Flow Port</em>'.
 	 * @generated
 	 */
@@ -71,7 +110,6 @@ public interface EventsFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

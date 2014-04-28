@@ -34,5 +34,9 @@ abstract class AbstractRepairAction extends UMLUtil implements IRepairAction {
 	public boolean isNull() {
 		return kind() == null;
 	}
+	
+	public String getLabel() {
+		return kind().displayName();
+	}
 
 }

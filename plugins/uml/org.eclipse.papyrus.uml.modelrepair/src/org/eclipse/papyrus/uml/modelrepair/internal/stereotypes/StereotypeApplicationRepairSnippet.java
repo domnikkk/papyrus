@@ -31,6 +31,8 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
+import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.ui.ZombieStereotypeDialogPresenter;
 import org.eclipse.ui.IEditorPart;
@@ -40,7 +42,7 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLPackage;
 
-import com.google.common.base.Supplier;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 
@@ -52,15 +54,19 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 
 	private final UMLResourceLoadAdapter adapter = new UMLResourceLoadAdapter();
 
-	private final Supplier<Profile> dynamicProfileSupplier;
+	private final Function<? super EPackage, Profile> dynamicProfileSupplier;
 
 	private ZombieStereotypeDialogPresenter presenter;
+
+	private LabelProviderService labelProviderService;
+
+	private boolean localLabelProvider;
 
 	public StereotypeApplicationRepairSnippet() {
 		this(null);
 	}
 
-	protected StereotypeApplicationRepairSnippet(Supplier<Profile> dynamicProfileSupplier) {
+	protected StereotypeApplicationRepairSnippet(Function<? super EPackage, Profile> dynamicProfileSupplier) {
 		super();
 
 		this.dynamicProfileSupplier = dynamicProfileSupplier;
@@ -133,8 +139,13 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		if(contextPackage != null) {
 			Collection<ProfileApplication> profileApplications = contextPackage.getAllProfileApplications();
 			Set<EPackage> appliedDefinitions = getAppliedDefinitions(profileApplications);
-			Supplier<Profile> profileSupplier = (dynamicProfileSupplier != null) ? dynamicProfileSupplier : presenter.getDynamicProfileSupplier();
-			ZombieStereotypesDescriptor zombies = new ZombieStereotypesDescriptor(resource, root, appliedDefinitions, profileSupplier);
+
+			Function<? super EPackage, Profile> profileSupplier = dynamicProfileSupplier;
+			if(profileSupplier == null) {
+				profileSupplier = presenter.getDynamicProfileSupplier();
+			}
+
+			ZombieStereotypesDescriptor zombies = new ZombieStereotypesDescriptor(resource, root, appliedDefinitions, profileSupplier, getLabelProvider());
 
 			for(EObject next : resource.getContents()) {
 				if(!(next instanceof Element)) {
@@ -163,6 +174,20 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		return result;
 	}
 
+	private LabelProviderService getLabelProvider() {
+		if(labelProviderService == null) {
+			try {
+				labelProviderService = ServiceUtilsForResourceSet.getInstance().getService(LabelProviderService.class, adapter.getResourceSet());
+			} catch (Exception e) {
+				// Fine.  Create a local instance
+				labelProviderService = new LabelProviderServiceImpl();
+				localLabelProvider = true;
+			}
+		}
+
+		return labelProviderService;
+	}
+
 	//
 	// Snippet lifecycle
 	//
@@ -185,6 +210,17 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		if(presenter != null) {
 			presenter.dispose();
 			presenter = null;
+		}
+
+		if(localLabelProvider) {
+			try {
+				labelProviderService.disposeService();
+			} catch (ServiceException e) {
+				Activator.log.error(e);
+			} finally {
+				labelProviderService = null;
+				localLabelProvider = false;
+			}
 		}
 
 		adapter.unadapt(modelsManager);

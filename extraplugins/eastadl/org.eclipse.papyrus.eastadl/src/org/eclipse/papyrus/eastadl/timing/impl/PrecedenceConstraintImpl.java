@@ -16,22 +16,18 @@
 package org.eclipse.papyrus.eastadl.timing.impl;
 
 import java.util.Collection;
-import java.util.Iterator;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.BasicInternalEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_precedingInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_successiveInstanceRef;
 import org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint;
 import org.eclipse.papyrus.eastadl.timing.TimingPackage;
-import org.eclipse.uml2.uml.Dependency;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 /**
@@ -39,54 +35,37 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl#getSuccessive <em>Successive</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl#getPreceding <em>Preceding</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl#getBase_Dependency <em>Base Dependency</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl#getSuccessive_path <em>Successive path</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl#getPreceding_path <em>Preceding path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl#getPreceding <em>Preceding</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl#getSuccessive <em>Successive</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PrecedenceConstraintImpl extends TimingConstraintImpl implements PrecedenceConstraint {
 
 	/**
-	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
+	 * The cached value of the '{@link #getPreceding() <em>Preceding</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getBase_Dependency()
+	 * @see #getPreceding()
 	 * @generated
 	 * @ordered
 	 */
-	protected Dependency base_Dependency;
+	protected PrecedenceConstraint_precedingInstanceRef preceding;
 
 	/**
-	 * The cached value of the '{@link #getSuccessive_path() <em>Successive path</em>}' reference list.
+	 * The cached value of the '{@link #getSuccessive() <em>Successive</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getSuccessive_path()
+	 * @see #getSuccessive()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FunctionPrototype> successive_path;
-
-	/**
-	 * The cached value of the '{@link #getPreceding_path() <em>Preceding path</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getPreceding_path()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FunctionPrototype> preceding_path;
+	protected EList<PrecedenceConstraint_successiveInstanceRef> successive;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected PrecedenceConstraintImpl() {
@@ -95,172 +74,55 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public FunctionPrototype basicGetPreceding() {
-
-		FunctionPrototype preceding = null;
-
-		if(getBase_Dependency() != null) {
-
-			EList<Element> sources = getBase_Dependency().getSources();
-			if(!sources.isEmpty()) {
-				Element current = sources.get(0);
-
-				FunctionPrototype currentFProto = (FunctionPrototype)UMLUtil.getStereotypeApplication(current, FunctionPrototype.class);
-
-				if(currentFProto != null) {
-					preceding = currentFProto;
-				}
-			}
-		}
-
-		return preceding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public Dependency getBase_Dependency() {
-		if(base_Dependency != null && base_Dependency.eIsProxy()) {
-			InternalEObject oldBase_Dependency = (InternalEObject)base_Dependency;
-			base_Dependency = (Dependency)eResolveProxy(oldBase_Dependency);
-			if(base_Dependency != oldBase_Dependency) {
-				if(eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.PRECEDENCE_CONSTRAINT__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-			}
-		}
-		return base_Dependency;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public Dependency basicGetBase_Dependency() {
-		return base_Dependency;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setBase_Dependency(Dependency newBase_Dependency) {
-		Dependency oldBase_Dependency = base_Dependency;
-		base_Dependency = newBase_Dependency;
-		if(eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.PRECEDENCE_CONSTRAINT__BASE_DEPENDENCY, oldBase_Dependency, base_Dependency));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<FunctionPrototype> getSuccessive_path() {
-		if(successive_path == null) {
-			successive_path = new EObjectResolvingEList<FunctionPrototype>(FunctionPrototype.class, this, TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE_PATH);
-		}
-		return successive_path;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<FunctionPrototype> getPreceding_path() {
-		if(preceding_path == null) {
-			preceding_path = new EObjectResolvingEList<FunctionPrototype>(FunctionPrototype.class, this, TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING_PATH);
-		}
-		return preceding_path;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE:
-			return getSuccessive();
-		case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING:
-			if(resolve)
+		switch (featureID) {
+			case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING:
 				return getPreceding();
-			return basicGetPreceding();
-		case TimingPackage.PRECEDENCE_CONSTRAINT__BASE_DEPENDENCY:
-			if(resolve)
-				return getBase_Dependency();
-			return basicGetBase_Dependency();
-		case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE_PATH:
-			return getSuccessive_path();
-		case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING_PATH:
-			return getPreceding_path();
+			case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE:
+				return getSuccessive();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE:
-			return !getSuccessive().isEmpty();
-		case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING:
-			return basicGetPreceding() != null;
-		case TimingPackage.PRECEDENCE_CONSTRAINT__BASE_DEPENDENCY:
-			return base_Dependency != null;
-		case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE_PATH:
-			return successive_path != null && !successive_path.isEmpty();
-		case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING_PATH:
-			return preceding_path != null && !preceding_path.isEmpty();
+		switch (featureID) {
+			case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING:
+				return preceding != null;
+			case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE:
+				return successive != null && !successive.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case TimingPackage.PRECEDENCE_CONSTRAINT__BASE_DEPENDENCY:
-			setBase_Dependency((Dependency)newValue);
-			return;
-		case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE_PATH:
-			getSuccessive_path().clear();
-			getSuccessive_path().addAll((Collection<? extends FunctionPrototype>)newValue);
-			return;
-		case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING_PATH:
-			getPreceding_path().clear();
-			getPreceding_path().addAll((Collection<? extends FunctionPrototype>)newValue);
-			return;
+		switch (featureID) {
+			case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING:
+				setPreceding((PrecedenceConstraint_precedingInstanceRef)newValue);
+				return;
+			case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE:
+				getSuccessive().clear();
+				getSuccessive().addAll((Collection<? extends PrecedenceConstraint_successiveInstanceRef>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -270,60 +132,88 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case TimingPackage.PRECEDENCE_CONSTRAINT__BASE_DEPENDENCY:
-			setBase_Dependency((Dependency)null);
-			return;
-		case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE_PATH:
-			getSuccessive_path().clear();
-			return;
-		case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING_PATH:
-			getPreceding_path().clear();
-			return;
+		switch (featureID) {
+			case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING:
+				setPreceding((PrecedenceConstraint_precedingInstanceRef)null);
+				return;
+			case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE:
+				getSuccessive().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public FunctionPrototype getPreceding() {
-		FunctionPrototype preceding = basicGetPreceding();
-		return preceding != null && preceding.eIsProxy() ? (FunctionPrototype)eResolveProxy((InternalEObject)preceding) : preceding;
+	public PrecedenceConstraint_precedingInstanceRef getPreceding() {
+		return preceding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPreceding(PrecedenceConstraint_precedingInstanceRef newPreceding, NotificationChain msgs) {
+		PrecedenceConstraint_precedingInstanceRef oldPreceding = preceding;
+		preceding = newPreceding;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING, oldPreceding, newPreceding);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPreceding(PrecedenceConstraint_precedingInstanceRef newPreceding) {
+		if (newPreceding != preceding) {
+			NotificationChain msgs = null;
+			if (preceding != null)
+				msgs = ((InternalEObject)preceding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING, null, msgs);
+			if (newPreceding != null)
+				msgs = ((InternalEObject)newPreceding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING, null, msgs);
+			msgs = basicSetPreceding(newPreceding, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING, newPreceding, newPreceding));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
+	 * @generated
 	 */
-	public EList<FunctionPrototype> getSuccessive() {
-
-		EList<FunctionPrototype> successives = new BasicEList<FunctionPrototype>();
-		FunctionPrototype currentFProto = null;
-
-		if(getBase_Dependency() != null) {
-			Iterator<Element> it = getBase_Dependency().getTargets().iterator();
-
-			// RequirementDescriptions in owned comments
-			while(it.hasNext()) {
-				Element current = it.next();
-				currentFProto = (FunctionPrototype)UMLUtil.getStereotypeApplication(current, FunctionPrototype.class);
-
-				if(currentFProto != null) {
-					successives.add(currentFProto);
-				}
-			}
+	public EList<PrecedenceConstraint_successiveInstanceRef> getSuccessive() {
+		if (successive == null) {
+			successive = new EObjectContainmentEList<PrecedenceConstraint_successiveInstanceRef>(PrecedenceConstraint_successiveInstanceRef.class, this, TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE);
 		}
-		// Convert to InternalEList<?>
-		return new BasicInternalEList<FunctionPrototype>(FunctionPrototype.class, successives.size(), successives.toArray());
+		return successive;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case TimingPackage.PRECEDENCE_CONSTRAINT__PRECEDING:
+				return basicSetPreceding(null, msgs);
+			case TimingPackage.PRECEDENCE_CONSTRAINT__SUCCESSIVE:
+				return ((InternalEList<?>)getSuccessive()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 } // PrecedenceConstraintImpl

@@ -15,13 +15,20 @@
  *****************************************************************************/
 package org.eclipse.papyrus.eastadl.timing.timingconstraints.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+import java.util.Iterator;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.papyrus.eastadl.timing.TimeDuration;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.papyrus.eastadl.timing.EventChain;
+import org.eclipse.papyrus.eastadl.timing.TimingExpression;
+import org.eclipse.papyrus.eastadl.timing.impl.TimingConstraintImpl;
 import org.eclipse.papyrus.eastadl.timing.timingconstraints.InputSynchronizationConstraint;
 import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 /**
@@ -31,29 +38,26 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.InputSynchronizationConstraintImpl#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.InputSynchronizationConstraintImpl#getTolerance <em>Tolerance</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.InputSynchronizationConstraintImpl#getScope <em>Scope</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
-public class InputSynchronizationConstraintImpl extends AgeTimingConstraintImpl implements InputSynchronizationConstraint {
-
+public class InputSynchronizationConstraintImpl extends TimingConstraintImpl implements InputSynchronizationConstraint {
 	/**
-	 * The cached value of the '{@link #getWidth() <em>Width</em>}' reference.
+	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see #getWidth()
+	 * @see #getScope()
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeDuration width;
-
+	protected EList<EventChain> scope;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected InputSynchronizationConstraintImpl() {
@@ -63,26 +67,16 @@ public class InputSynchronizationConstraintImpl extends AgeTimingConstraintImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public TimeDuration basicGetWidth() {
-		return width;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
-		case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__WIDTH:
-			if(resolve)
-				return getWidth();
-			return basicGetWidth();
+		switch (featureID) {
+			case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
+				if (resolve) return getTolerance();
+				return basicGetTolerance();
+			case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
+				return getScope();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -90,14 +84,15 @@ public class InputSynchronizationConstraintImpl extends AgeTimingConstraintImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
-		case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__WIDTH:
-			return width != null;
+		switch (featureID) {
+			case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__TOLERANCE:
+				return basicGetTolerance() != null;
+			case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
+				return scope != null && !scope.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -105,15 +100,16 @@ public class InputSynchronizationConstraintImpl extends AgeTimingConstraintImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
-		case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__WIDTH:
-			setWidth((TimeDuration)newValue);
-			return;
+		switch (featureID) {
+			case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
+				getScope().clear();
+				getScope().addAll((Collection<? extends EventChain>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -121,7 +117,6 @@ public class InputSynchronizationConstraintImpl extends AgeTimingConstraintImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,48 +127,59 @@ public class InputSynchronizationConstraintImpl extends AgeTimingConstraintImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public TimingExpression getTolerance() {
+		TimingExpression tolerance = basicGetTolerance();
+		return tolerance != null && tolerance.eIsProxy() ? (TimingExpression)eResolveProxy((InternalEObject)tolerance) : tolerance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public TimingExpression basicGetTolerance() {
+		TimingExpression adlBehavior = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+			
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlBehavior = (TimingExpression )UMLUtil.getStereotypeApplication(element, TimingExpression.class);
+				if (adlBehavior != null)
+					return adlBehavior;
+			}
+		}
+		
+		return adlBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EventChain> getScope() {
+		if (scope == null) {
+			scope = new EObjectResolvingEList<EventChain>(EventChain.class, this, TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE);
+		}
+		return scope;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
-		case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__WIDTH:
-			setWidth((TimeDuration)null);
-			return;
+		switch (featureID) {
+			case TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__SCOPE:
+				getScope().clear();
+				return;
 		}
 		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public TimeDuration getWidth() {
-		if(width != null && width.eIsProxy()) {
-			InternalEObject oldWidth = (InternalEObject)width;
-			width = (TimeDuration)eResolveProxy(oldWidth);
-			if(width != oldWidth) {
-				if(eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__WIDTH, oldWidth, width));
-			}
-		}
-		return width;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setWidth(TimeDuration newWidth) {
-		TimeDuration oldWidth = width;
-		width = newWidth;
-		if(eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.INPUT_SYNCHRONIZATION_CONSTRAINT__WIDTH, oldWidth, width));
 	}
 
 } //InputSynchronizationConstraintImpl

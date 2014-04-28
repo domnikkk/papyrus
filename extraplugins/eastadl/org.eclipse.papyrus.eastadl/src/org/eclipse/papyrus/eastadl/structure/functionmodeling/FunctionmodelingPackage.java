@@ -18,10 +18,10 @@ package org.eclipse.papyrus.eastadl.structure.functionmodeling;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
-import org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage;
 
 
 /**
@@ -62,17 +62,14 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl
-		 * <em>Function Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl <em>Function Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionType()
 		 * @generated
@@ -83,7 +80,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Elementary</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EAttribute FUNCTION_TYPE__IS_ELEMENTARY = eINSTANCE.getFunctionType_IsElementary();
@@ -92,7 +88,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_TYPE__PORT = eINSTANCE.getFunctionType_Port();
@@ -101,7 +96,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port Group</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_TYPE__PORT_GROUP = eINSTANCE.getFunctionType_PortGroup();
@@ -110,17 +104,22 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_TYPE__CONNECTOR = eINSTANCE.getFunctionType_Connector();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPortImpl
-		 * <em>Function Port</em>}' class.
+		 * The meta object literal for the '<em><b>Get Icon</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 * @generated
+		 */
+		EOperation FUNCTION_TYPE___GET_ICON = eINSTANCE.getFunctionType__GetIcon();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPortImpl <em>Function Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPortImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionPort()
 		 * @generated
@@ -128,11 +127,9 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass FUNCTION_PORT = eINSTANCE.getFunctionPort();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionConnectorImpl
-		 * <em>Function Connector</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionConnectorImpl <em>Function Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionConnectorImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionConnector()
 		 * @generated
@@ -140,47 +137,17 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass FUNCTION_CONNECTOR = eINSTANCE.getFunctionConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Port</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Port</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_CONNECTOR__PORT = eINSTANCE.getFunctionConnector_Port();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Connector</b></em>' reference feature.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionPrototypeImpl <em>Analysis Function Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference FUNCTION_CONNECTOR__BASE_CONNECTOR = eINSTANCE.getFunctionConnector_Base_Connector();
-
-		/**
-		 * The meta object literal for the '<em><b>Port1 path</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference FUNCTION_CONNECTOR__PORT1_PATH = eINSTANCE.getFunctionConnector_Port1_path();
-
-		/**
-		 * The meta object literal for the '<em><b>Port2 path</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference FUNCTION_CONNECTOR__PORT2_PATH = eINSTANCE.getFunctionConnector_Port2_path();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionPrototypeImpl
-		 * <em>Analysis Function Prototype</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionPrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAnalysisFunctionPrototype()
 		 * @generated
@@ -191,17 +158,14 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference ANALYSIS_FUNCTION_PROTOTYPE__TYPE = eINSTANCE.getAnalysisFunctionPrototype_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl
-		 * <em>Function Flow Port</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl <em>Function Flow Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionFlowPort()
 		 * @generated
@@ -212,17 +176,30 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_FLOW_PORT__TYPE = eINSTANCE.getFunctionFlowPort_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerPortImpl
-		 * <em>Function Client Server Port</em>}' class.
+		 * The meta object literal for the '<em><b>Default Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 * @generated
+		 */
+		EReference FUNCTION_FLOW_PORT__DEFAULT_VALUE = eINSTANCE.getFunctionFlowPort_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUNCTION_FLOW_PORT__DIRECTION = eINSTANCE.getFunctionFlowPort_Direction();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerPortImpl <em>Function Client Server Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerPortImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionClientServerPort()
 		 * @generated
@@ -233,35 +210,22 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_CLIENT_SERVER_PORT__TYPE = eINSTANCE.getFunctionClientServerPort_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Client Server Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference FUNCTION_CLIENT_SERVER_PORT__BASE_PORT = eINSTANCE.getFunctionClientServerPort_Base_Port();
+		EAttribute FUNCTION_CLIENT_SERVER_PORT__CLIENT_SERVER_KIND = eINSTANCE.getFunctionClientServerPort_ClientServerKind();
 
 		/**
-		 * The meta object literal for the '<em><b>Client Server Type</b></em>' attribute feature.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl <em>Function Client Server Interface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EAttribute FUNCTION_CLIENT_SERVER_PORT__CLIENT_SERVER_TYPE = eINSTANCE.getFunctionClientServerPort_ClientServerType();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl
-		 * <em>Function Client Server Interface</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionClientServerInterface()
 		 * @generated
@@ -272,7 +236,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE = eINSTANCE.getFunctionClientServerInterface_Base_Interface();
@@ -281,17 +244,14 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Operation</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_CLIENT_SERVER_INTERFACE__OPERATION = eINSTANCE.getFunctionClientServerInterface_Operation();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.OperationImpl <em>Operation</em>}'
-		 * class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.OperationImpl <em>Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.OperationImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getOperation()
 		 * @generated
@@ -302,7 +262,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference OPERATION__BASE_OPERATION = eINSTANCE.getOperation_Base_Operation();
@@ -311,7 +270,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Argument</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference OPERATION__ARGUMENT = eINSTANCE.getOperation_Argument();
@@ -320,17 +278,14 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Return</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference OPERATION__RETURN = eINSTANCE.getOperation_Return();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.PortGroupImpl <em>Port Group</em>}'
-		 * class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.PortGroupImpl <em>Port Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.PortGroupImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getPortGroup()
 		 * @generated
@@ -341,7 +296,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference PORT_GROUP__PORT = eINSTANCE.getPortGroup_Port();
@@ -350,7 +304,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference PORT_GROUP__BASE_CLASS = eINSTANCE.getPortGroup_Base_Class();
@@ -359,7 +312,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference PORT_GROUP__BASE_PORT = eINSTANCE.getPortGroup_Base_Port();
@@ -368,17 +320,14 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port Group</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference PORT_GROUP__PORT_GROUP = eINSTANCE.getPortGroup_PortGroup();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.BasicSoftwareFunctionTypeImpl
-		 * <em>Basic Software Function Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.BasicSoftwareFunctionTypeImpl <em>Basic Software Function Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.BasicSoftwareFunctionTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getBasicSoftwareFunctionType()
 		 * @generated
@@ -386,11 +335,9 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass BASIC_SOFTWARE_FUNCTION_TYPE = eINSTANCE.getBasicSoftwareFunctionType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.HardwareFunctionTypeImpl
-		 * <em>Hardware Function Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.HardwareFunctionTypeImpl <em>Hardware Function Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.HardwareFunctionTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getHardwareFunctionType()
 		 * @generated
@@ -401,17 +348,14 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hardware Component</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference HARDWARE_FUNCTION_TYPE__HARDWARE_COMPONENT = eINSTANCE.getHardwareFunctionType_HardwareComponent();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl
-		 * <em>Function Allocation</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl <em>Function Allocation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionAllocation()
 		 * @generated
@@ -419,56 +363,33 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass FUNCTION_ALLOCATION = eINSTANCE.getFunctionAllocation();
 
 		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_ALLOCATION__TARGET = eINSTANCE.getFunctionAllocation_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>Allocated Element</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Allocated Element</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_ALLOCATION__ALLOCATED_ELEMENT = eINSTANCE.getFunctionAllocation_AllocatedElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Base Abstraction</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference FUNCTION_ALLOCATION__BASE_DEPENDENCY = eINSTANCE.getFunctionAllocation_Base_Dependency();
+		EReference FUNCTION_ALLOCATION__BASE_ABSTRACTION = eINSTANCE.getFunctionAllocation_Base_Abstraction();
 
 		/**
-		 * The meta object literal for the '<em><b>Allocated Element path</b></em>' reference list feature.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocationImpl <em>Allocation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference FUNCTION_ALLOCATION__ALLOCATED_ELEMENT_PATH = eINSTANCE.getFunctionAllocation_AllocatedElement_path();
-
-		/**
-		 * The meta object literal for the '<em><b>Target path</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference FUNCTION_ALLOCATION__TARGET_PATH = eINSTANCE.getFunctionAllocation_Target_path();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocationImpl <em>Allocation</em>}'
-		 * class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocationImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAllocation()
 		 * @generated
@@ -479,35 +400,22 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference ALLOCATION__BASE_CLASS = eINSTANCE.getAllocation_Base_Class();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference ALLOCATION__BASE_PACKAGE = eINSTANCE.getAllocation_Base_Package();
-
-		/**
 		 * The meta object literal for the '<em><b>Function Allocation</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference ALLOCATION__FUNCTION_ALLOCATION = eINSTANCE.getAllocation_FunctionAllocation();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl
-		 * <em>Function Power Port</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl <em>Function Power Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionPowerPort()
 		 * @generated
@@ -515,29 +423,17 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass FUNCTION_POWER_PORT = eINSTANCE.getFunctionPowerPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference FUNCTION_POWER_PORT__BASE_PORT = eINSTANCE.getFunctionPowerPort_Base_Port();
-
-		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference FUNCTION_POWER_PORT__TYPE = eINSTANCE.getFunctionPowerPort_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind <em>EA Direction Kind</em>}'
-		 * enum.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind <em>EA Direction Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getEADirectionKind()
 		 * @generated
@@ -545,11 +441,9 @@ public interface FunctionmodelingPackage extends EPackage {
 		EEnum EA_DIRECTION_KIND = eINSTANCE.getEADirectionKind();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind
-		 * <em>Client Server Kind</em>}' enum.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind <em>Client Server Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getClientServerKind()
 		 * @generated
@@ -557,11 +451,9 @@ public interface FunctionmodelingPackage extends EPackage {
 		EEnum CLIENT_SERVER_KIND = eINSTANCE.getClientServerKind();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPrototypeImpl
-		 * <em>Function Prototype</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPrototypeImpl <em>Function Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionPrototype()
 		 * @generated
@@ -569,20 +461,17 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass FUNCTION_PROTOTYPE = eINSTANCE.getFunctionPrototype();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Icon</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference FUNCTION_PROTOTYPE__BASE_PROPERTY = eINSTANCE.getFunctionPrototype_Base_Property();
+		EOperation FUNCTION_PROTOTYPE___GET_ICON = eINSTANCE.getFunctionPrototype__GetIcon();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocateableElementImpl
-		 * <em>Allocateable Element</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocateableElementImpl <em>Allocateable Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocateableElementImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAllocateableElement()
 		 * @generated
@@ -590,10 +479,8 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass ALLOCATEABLE_ELEMENT = eINSTANCE.getAllocateableElement();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.LocalDeviceManagerImpl
-		 * <em>Local Device Manager</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.LocalDeviceManagerImpl <em>Local Device Manager</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.LocalDeviceManagerImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getLocalDeviceManager()
 		 * @generated
@@ -601,11 +488,9 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass LOCAL_DEVICE_MANAGER = eINSTANCE.getLocalDeviceManager();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionTypeImpl
-		 * <em>Design Function Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionTypeImpl <em>Design Function Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getDesignFunctionType()
 		 * @generated
@@ -616,17 +501,14 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Part</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference DESIGN_FUNCTION_TYPE__PART = eINSTANCE.getDesignFunctionType_Part();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionPrototypeImpl
-		 * <em>Design Function Prototype</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionPrototypeImpl <em>Design Function Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionPrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getDesignFunctionPrototype()
 		 * @generated
@@ -637,16 +519,13 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference DESIGN_FUNCTION_PROTOTYPE__TYPE = eINSTANCE.getDesignFunctionPrototype_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionalDeviceImpl
-		 * <em>Functional Device</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionalDeviceImpl <em>Functional Device</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionalDeviceImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionalDevice()
 		 * @generated
@@ -654,11 +533,9 @@ public interface FunctionmodelingPackage extends EPackage {
 		EClass FUNCTIONAL_DEVICE = eINSTANCE.getFunctionalDevice();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionTypeImpl
-		 * <em>Analysis Function Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionTypeImpl <em>Analysis Function Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAnalysisFunctionType()
 		 * @generated
@@ -669,7 +546,6 @@ public interface FunctionmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Part</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference ANALYSIS_FUNCTION_TYPE__PART = eINSTANCE.getAnalysisFunctionType_Part();
@@ -679,7 +555,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNAME = "functionmodeling";
@@ -687,7 +562,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Structure/FunctionModeling/1";
@@ -695,7 +569,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "FunctionModeling";
@@ -703,17 +576,14 @@ public interface FunctionmodelingPackage extends EPackage {
 	/**
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	FunctionmodelingPackage eINSTANCE = org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionTypeImpl
-	 * <em>Design Function Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionTypeImpl <em>Design Function Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getDesignFunctionType()
 	 * @generated
@@ -724,7 +594,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl <em>Function Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionType()
 	 * @generated
@@ -732,40 +601,45 @@ public interface FunctionmodelingPackage extends EPackage {
 	int FUNCTION_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_TYPE__NAME = ElementsPackage.CONTEXT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_TYPE__BASE_NAMED_ELEMENT = ElementsPackage.CONTEXT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_TYPE__NAME = ElementsPackage.CONTEXT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_TYPE__OWNED_COMMENT = ElementsPackage.CONTEXT__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT = ElementsPackage.CONTEXT__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -775,18 +649,15 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_TYPE__OWNED_RELATIONSHIP = ElementsPackage.CONTEXT__OWNED_RELATIONSHIP;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionConnectorImpl
-	 * <em>Function Connector</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionConnectorImpl <em>Function Connector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionConnectorImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionConnector()
 	 * @generated
@@ -794,11 +665,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	int FUNCTION_CONNECTOR = 5;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl
-	 * <em>Function Flow Port</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl <em>Function Flow Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionFlowPortImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionFlowPort()
 	 * @generated
@@ -806,11 +675,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	int FUNCTION_FLOW_PORT = 12;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerPortImpl
-	 * <em>Function Client Server Port</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerPortImpl <em>Function Client Server Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerPortImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionClientServerPort()
 	 * @generated
@@ -818,11 +685,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	int FUNCTION_CLIENT_SERVER_PORT = 13;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl
-	 * <em>Function Client Server Interface</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl <em>Function Client Server Interface</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionClientServerInterfaceImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionClientServerInterface()
 	 * @generated
@@ -833,7 +698,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.PortGroupImpl <em>Port Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.PortGroupImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getPortGroup()
 	 * @generated
@@ -841,10 +705,8 @@ public interface FunctionmodelingPackage extends EPackage {
 	int PORT_GROUP = 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.LocalDeviceManagerImpl
-	 * <em>Local Device Manager</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.LocalDeviceManagerImpl <em>Local Device Manager</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.LocalDeviceManagerImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getLocalDeviceManager()
 	 * @generated
@@ -852,10 +714,8 @@ public interface FunctionmodelingPackage extends EPackage {
 	int LOCAL_DEVICE_MANAGER = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionalDeviceImpl <em>Functional Device</em>}
-	 * ' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionalDeviceImpl <em>Functional Device</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionalDeviceImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionalDevice()
 	 * @generated
@@ -863,11 +723,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	int FUNCTIONAL_DEVICE = 9;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionTypeImpl
-	 * <em>Analysis Function Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionTypeImpl <em>Analysis Function Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAnalysisFunctionType()
 	 * @generated
@@ -875,11 +733,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	int ANALYSIS_FUNCTION_TYPE = 10;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionPrototypeImpl
-	 * <em>Analysis Function Prototype</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionPrototypeImpl <em>Analysis Function Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionPrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAnalysisFunctionPrototype()
 	 * @generated
@@ -887,11 +743,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	int ANALYSIS_FUNCTION_PROTOTYPE = 11;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPrototypeImpl
-	 * <em>Function Prototype</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPrototypeImpl <em>Function Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionPrototype()
 	 * @generated
@@ -902,7 +756,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.OperationImpl <em>Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.OperationImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getOperation()
 	 * @generated
@@ -910,11 +763,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	int OPERATION = 15;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionPrototypeImpl
-	 * <em>Design Function Prototype</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionPrototypeImpl <em>Design Function Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionPrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getDesignFunctionPrototype()
 	 * @generated
@@ -922,11 +773,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	int DESIGN_FUNCTION_PROTOTYPE = 8;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocateableElementImpl
-	 * <em>Allocateable Element</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocateableElementImpl <em>Allocateable Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocateableElementImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAllocateableElement()
 	 * @generated
@@ -934,110 +783,117 @@ public interface FunctionmodelingPackage extends EPackage {
 	int ALLOCATEABLE_ELEMENT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_TYPE__IS_ENCAPSULATED = ElementsPackage.CONTEXT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_TYPE__BASE_CLASS = ElementsPackage.CONTEXT_FEATURE_COUNT + 1;
+	int FUNCTION_TYPE__BASE_CLASS = ElementsPackage.CONTEXT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_TYPE__IS_ELEMENTARY = ElementsPackage.CONTEXT_FEATURE_COUNT + 2;
+	int FUNCTION_TYPE__IS_ELEMENTARY = ElementsPackage.CONTEXT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_TYPE__PORT = ElementsPackage.CONTEXT_FEATURE_COUNT + 3;
+	int FUNCTION_TYPE__PORT = ElementsPackage.CONTEXT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Port Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_TYPE__PORT_GROUP = ElementsPackage.CONTEXT_FEATURE_COUNT + 4;
+	int FUNCTION_TYPE__PORT_GROUP = ElementsPackage.CONTEXT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_TYPE__CONNECTOR = ElementsPackage.CONTEXT_FEATURE_COUNT + 5;
+	int FUNCTION_TYPE__CONNECTOR = ElementsPackage.CONTEXT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Function Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_TYPE_FEATURE_COUNT = ElementsPackage.CONTEXT_FEATURE_COUNT + 6;
+	int FUNCTION_TYPE_FEATURE_COUNT = ElementsPackage.CONTEXT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_FUNCTION_TYPE__NAME = FUNCTION_TYPE__NAME;
+	int FUNCTION_TYPE___GET_ICON = ElementsPackage.CONTEXT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Function Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_TYPE_OPERATION_COUNT = ElementsPackage.CONTEXT_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int DESIGN_FUNCTION_TYPE__BASE_NAMED_ELEMENT = FUNCTION_TYPE__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_FUNCTION_TYPE__NAME = FUNCTION_TYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int DESIGN_FUNCTION_TYPE__OWNED_COMMENT = FUNCTION_TYPE__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT = FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1047,27 +903,15 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int DESIGN_FUNCTION_TYPE__OWNED_RELATIONSHIP = FUNCTION_TYPE__OWNED_RELATIONSHIP;
 
 	/**
-	 * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DESIGN_FUNCTION_TYPE__IS_ENCAPSULATED = FUNCTION_TYPE__IS_ENCAPSULATED;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1077,7 +921,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1087,7 +930,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1097,7 +939,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1107,7 +948,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1117,7 +957,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1127,47 +966,69 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Design Function Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int DESIGN_FUNCTION_TYPE_FEATURE_COUNT = FUNCTION_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_DEVICE_MANAGER__NAME = DESIGN_FUNCTION_TYPE__NAME;
+	int DESIGN_FUNCTION_TYPE___GET_ICON = FUNCTION_TYPE___GET_ICON;
+
+	/**
+	 * The number of operations of the '<em>Design Function Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_FUNCTION_TYPE_OPERATION_COUNT = FUNCTION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int LOCAL_DEVICE_MANAGER__BASE_NAMED_ELEMENT = DESIGN_FUNCTION_TYPE__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_DEVICE_MANAGER__NAME = DESIGN_FUNCTION_TYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int LOCAL_DEVICE_MANAGER__OWNED_COMMENT = DESIGN_FUNCTION_TYPE__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_DEVICE_MANAGER__BASE_PACKAGEABLE_ELEMENT = DESIGN_FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1177,27 +1038,15 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int LOCAL_DEVICE_MANAGER__OWNED_RELATIONSHIP = DESIGN_FUNCTION_TYPE__OWNED_RELATIONSHIP;
 
 	/**
-	 * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_DEVICE_MANAGER__IS_ENCAPSULATED = DESIGN_FUNCTION_TYPE__IS_ENCAPSULATED;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1207,7 +1056,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1217,7 +1065,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1227,7 +1074,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1237,7 +1083,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1247,7 +1092,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1263,10 +1107,27 @@ public interface FunctionmodelingPackage extends EPackage {
 	int LOCAL_DEVICE_MANAGER_FEATURE_COUNT = DESIGN_FUNCTION_TYPE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Icon</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_DEVICE_MANAGER___GET_ICON = DESIGN_FUNCTION_TYPE___GET_ICON;
+
+	/**
+	 * The number of operations of the '<em>Local Device Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_DEVICE_MANAGER_OPERATION_COUNT = DESIGN_FUNCTION_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPortImpl <em>Function Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPortImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionPort()
 	 * @generated
@@ -1274,70 +1135,81 @@ public interface FunctionmodelingPackage extends EPackage {
 	int FUNCTION_PORT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PORT__NAME = ElementsPackage.EA_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_PORT__BASE_NAMED_ELEMENT = ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PORT__NAME = ElementsPackage.EA_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_PORT__OWNED_COMMENT = ElementsPackage.EA_ELEMENT__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PORT__BASE_PORT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Function Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_PORT_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 0;
+	int FUNCTION_PORT_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Function Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_GROUP__NAME = ElementsPackage.EA_ELEMENT__NAME;
+	int FUNCTION_PORT_OPERATION_COUNT = ElementsPackage.EA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int PORT_GROUP__BASE_NAMED_ELEMENT = ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_GROUP__NAME = ElementsPackage.EA_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1347,7 +1219,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1357,7 +1228,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1367,7 +1237,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1377,7 +1246,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1387,127 +1255,123 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Port Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int PORT_GROUP_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Port Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CONNECTOR__NAME = ElementsPackage.EA_ELEMENT__NAME;
+	int PORT_GROUP_OPERATION_COUNT = ElementsPackage.EA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_CONNECTOR__BASE_NAMED_ELEMENT = ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CONNECTOR__NAME = ElementsPackage.EA_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_CONNECTOR__OWNED_COMMENT = ElementsPackage.EA_ELEMENT__OWNED_COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Port</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CONNECTOR__PORT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CONNECTOR__BASE_CONNECTOR = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 1;
+	int FUNCTION_CONNECTOR__BASE_CONNECTOR = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Port1 path</b></em>' reference list.
+	 * The feature id for the '<em><b>Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CONNECTOR__PORT1_PATH = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Port2 path</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CONNECTOR__PORT2_PATH = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 3;
+	int FUNCTION_CONNECTOR__PORT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Function Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CONNECTOR_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 4;
+	int FUNCTION_CONNECTOR_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Function Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CONNECTOR_OPERATION_COUNT = ElementsPackage.EA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Allocateable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ALLOCATEABLE_ELEMENT_FEATURE_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Allocateable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_PROTOTYPE__NAME = ElementsPackage.EA_ELEMENT__NAME;
+	int ALLOCATEABLE_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_PROTOTYPE__BASE_NAMED_ELEMENT = ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE__NAME = ElementsPackage.EA_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1517,7 +1381,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1527,37 +1390,51 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Function Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_PROTOTYPE_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_FUNCTION_PROTOTYPE__NAME = FUNCTION_PROTOTYPE__NAME;
+	int FUNCTION_PROTOTYPE___GET_ICON = ElementsPackage.EA_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Function Prototype</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE_OPERATION_COUNT = ElementsPackage.EA_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int DESIGN_FUNCTION_PROTOTYPE__BASE_NAMED_ELEMENT = FUNCTION_PROTOTYPE__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_FUNCTION_PROTOTYPE__NAME = FUNCTION_PROTOTYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1567,7 +1444,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1577,7 +1453,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1587,47 +1462,69 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Design Function Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int DESIGN_FUNCTION_PROTOTYPE_FEATURE_COUNT = FUNCTION_PROTOTYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FUNCTION_TYPE__NAME = FUNCTION_TYPE__NAME;
+	int DESIGN_FUNCTION_PROTOTYPE___GET_ICON = FUNCTION_PROTOTYPE___GET_ICON;
+
+	/**
+	 * The number of operations of the '<em>Design Function Prototype</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_FUNCTION_PROTOTYPE_OPERATION_COUNT = FUNCTION_PROTOTYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ANALYSIS_FUNCTION_TYPE__BASE_NAMED_ELEMENT = FUNCTION_TYPE__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__NAME = FUNCTION_TYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ANALYSIS_FUNCTION_TYPE__OWNED_COMMENT = FUNCTION_TYPE__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT = FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1637,27 +1534,15 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ANALYSIS_FUNCTION_TYPE__OWNED_RELATIONSHIP = FUNCTION_TYPE__OWNED_RELATIONSHIP;
 
 	/**
-	 * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_FUNCTION_TYPE__IS_ENCAPSULATED = FUNCTION_TYPE__IS_ENCAPSULATED;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1667,7 +1552,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1677,7 +1561,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1687,7 +1570,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1697,7 +1579,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1707,7 +1588,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1717,47 +1597,69 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Analysis Function Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ANALYSIS_FUNCTION_TYPE_FEATURE_COUNT = FUNCTION_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL_DEVICE__NAME = ANALYSIS_FUNCTION_TYPE__NAME;
+	int ANALYSIS_FUNCTION_TYPE___GET_ICON = FUNCTION_TYPE___GET_ICON;
+
+	/**
+	 * The number of operations of the '<em>Analysis Function Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE_OPERATION_COUNT = FUNCTION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTIONAL_DEVICE__BASE_NAMED_ELEMENT = ANALYSIS_FUNCTION_TYPE__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__NAME = ANALYSIS_FUNCTION_TYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTIONAL_DEVICE__OWNED_COMMENT = ANALYSIS_FUNCTION_TYPE__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__BASE_PACKAGEABLE_ELEMENT = ANALYSIS_FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1767,27 +1669,15 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTIONAL_DEVICE__OWNED_RELATIONSHIP = ANALYSIS_FUNCTION_TYPE__OWNED_RELATIONSHIP;
 
 	/**
-	 * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTIONAL_DEVICE__IS_ENCAPSULATED = ANALYSIS_FUNCTION_TYPE__IS_ENCAPSULATED;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1797,7 +1687,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1807,7 +1696,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1817,7 +1705,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1827,7 +1714,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1837,7 +1723,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1853,30 +1738,45 @@ public interface FunctionmodelingPackage extends EPackage {
 	int FUNCTIONAL_DEVICE_FEATURE_COUNT = ANALYSIS_FUNCTION_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FUNCTION_PROTOTYPE__NAME = FUNCTION_PROTOTYPE__NAME;
+	int FUNCTIONAL_DEVICE___GET_ICON = ANALYSIS_FUNCTION_TYPE___GET_ICON;
+
+	/**
+	 * The number of operations of the '<em>Functional Device</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE_OPERATION_COUNT = ANALYSIS_FUNCTION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ANALYSIS_FUNCTION_PROTOTYPE__BASE_NAMED_ELEMENT = FUNCTION_PROTOTYPE__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE__NAME = FUNCTION_PROTOTYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1886,7 +1786,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1896,7 +1795,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1906,257 +1804,335 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Analysis Function Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ANALYSIS_FUNCTION_PROTOTYPE_FEATURE_COUNT = FUNCTION_PROTOTYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Base Port</b></em>' reference.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FLOW_PORT__BASE_PORT = PortandflowsPackage.FLOW_PORT__BASE_PORT;
+	int ANALYSIS_FUNCTION_PROTOTYPE___GET_ICON = FUNCTION_PROTOTYPE___GET_ICON;
 
 	/**
-	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
+	 * The number of operations of the '<em>Analysis Function Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FLOW_PORT__IS_ATOMIC = PortandflowsPackage.FLOW_PORT__IS_ATOMIC;
-
-	/**
-	 * The feature id for the '<em><b>Is Conjugated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_FLOW_PORT__IS_CONJUGATED = PortandflowsPackage.FLOW_PORT__IS_CONJUGATED;
-
-	/**
-	 * The feature id for the '<em><b>Direction</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_FLOW_PORT__DIRECTION = PortandflowsPackage.FLOW_PORT__DIRECTION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_FLOW_PORT__NAME = PortandflowsPackage.FLOW_PORT_FEATURE_COUNT + 0;
+	int ANALYSIS_FUNCTION_PROTOTYPE_OPERATION_COUNT = FUNCTION_PROTOTYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FLOW_PORT__BASE_NAMED_ELEMENT = PortandflowsPackage.FLOW_PORT_FEATURE_COUNT + 1;
+	int FUNCTION_FLOW_PORT__BASE_NAMED_ELEMENT = FUNCTION_PORT__BASE_NAMED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_FLOW_PORT__NAME = FUNCTION_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FLOW_PORT__OWNED_COMMENT = PortandflowsPackage.FLOW_PORT_FEATURE_COUNT + 2;
+	int FUNCTION_FLOW_PORT__OWNED_COMMENT = FUNCTION_PORT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Base Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_FLOW_PORT__BASE_PORT = FUNCTION_PORT__BASE_PORT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FLOW_PORT__TYPE = PortandflowsPackage.FLOW_PORT_FEATURE_COUNT + 3;
+	int FUNCTION_FLOW_PORT__TYPE = FUNCTION_PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_FLOW_PORT__DEFAULT_VALUE = FUNCTION_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_FLOW_PORT__DIRECTION = FUNCTION_PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Function Flow Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FLOW_PORT_FEATURE_COUNT = PortandflowsPackage.FLOW_PORT_FEATURE_COUNT + 4;
+	int FUNCTION_FLOW_PORT_FEATURE_COUNT = FUNCTION_PORT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Function Flow Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_PORT__NAME = FUNCTION_PORT__NAME;
+	int FUNCTION_FLOW_PORT_OPERATION_COUNT = FUNCTION_PORT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_CLIENT_SERVER_PORT__BASE_NAMED_ELEMENT = FUNCTION_PORT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CLIENT_SERVER_PORT__NAME = FUNCTION_PORT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_CLIENT_SERVER_PORT__OWNED_COMMENT = FUNCTION_PORT__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CLIENT_SERVER_PORT__BASE_PORT = FUNCTION_PORT__BASE_PORT;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_CLIENT_SERVER_PORT__TYPE = FUNCTION_PORT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Base Port</b></em>' reference.
+	 * The feature id for the '<em><b>Client Server Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_PORT__BASE_PORT = FUNCTION_PORT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Client Server Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CLIENT_SERVER_PORT__CLIENT_SERVER_TYPE = FUNCTION_PORT_FEATURE_COUNT + 2;
+	int FUNCTION_CLIENT_SERVER_PORT__CLIENT_SERVER_KIND = FUNCTION_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Function Client Server Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_PORT_FEATURE_COUNT = FUNCTION_PORT_FEATURE_COUNT + 3;
+	int FUNCTION_CLIENT_SERVER_PORT_FEATURE_COUNT = FUNCTION_PORT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Function Client Server Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_INTERFACE__NAME = ElementsPackage.EA_ELEMENT__NAME;
+	int FUNCTION_CLIENT_SERVER_PORT_OPERATION_COUNT = FUNCTION_PORT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_INTERFACE__BASE_NAMED_ELEMENT = ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
+	int FUNCTION_CLIENT_SERVER_INTERFACE__BASE_NAMED_ELEMENT = ElementsPackage.TRACEABLE_SPECIFICATION__BASE_NAMED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CLIENT_SERVER_INTERFACE__NAME = ElementsPackage.TRACEABLE_SPECIFICATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_INTERFACE__OWNED_COMMENT = ElementsPackage.EA_ELEMENT__OWNED_COMMENT;
+	int FUNCTION_CLIENT_SERVER_INTERFACE__OWNED_COMMENT = ElementsPackage.TRACEABLE_SPECIFICATION__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CLIENT_SERVER_INTERFACE__BASE_PACKAGEABLE_ELEMENT = ElementsPackage.TRACEABLE_SPECIFICATION__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CLIENT_SERVER_INTERFACE__NOTE = ElementsPackage.TRACEABLE_SPECIFICATION__NOTE;
 
 	/**
 	 * The feature id for the '<em><b>Base Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 0;
+	int FUNCTION_CLIENT_SERVER_INTERFACE__BASE_INTERFACE = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_INTERFACE__OPERATION = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 1;
+	int FUNCTION_CLIENT_SERVER_INTERFACE__OPERATION = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Function Client Server Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CLIENT_SERVER_INTERFACE_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 2;
+	int FUNCTION_CLIENT_SERVER_INTERFACE_FEATURE_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Function Client Server Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__NAME = ElementsPackage.EA_ELEMENT__NAME;
+	int FUNCTION_CLIENT_SERVER_INTERFACE_OPERATION_COUNT = ElementsPackage.TRACEABLE_SPECIFICATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.BasicSoftwareFunctionTypeImpl <em>Basic Software Function Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.BasicSoftwareFunctionTypeImpl
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getBasicSoftwareFunctionType()
+	 * @generated
+	 */
+	int BASIC_SOFTWARE_FUNCTION_TYPE = 16;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.HardwareFunctionTypeImpl <em>Hardware Function Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.HardwareFunctionTypeImpl
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getHardwareFunctionType()
+	 * @generated
+	 */
+	int HARDWARE_FUNCTION_TYPE = 17;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl <em>Function Allocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionAllocation()
+	 * @generated
+	 */
+	int FUNCTION_ALLOCATION = 18;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocationImpl <em>Allocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocationImpl
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAllocation()
+	 * @generated
+	 */
+	int ALLOCATION = 19;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl <em>Function Power Port</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionPowerPort()
+	 * @generated
+	 */
+	int FUNCTION_POWER_PORT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int OPERATION__BASE_NAMED_ELEMENT = ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__NAME = ElementsPackage.EA_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2166,7 +2142,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2176,7 +2151,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Argument</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2186,7 +2160,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Return</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2196,59 +2169,60 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int OPERATION_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.BasicSoftwareFunctionTypeImpl
-	 * <em>Basic Software Function Type</em>}' class.
+	 * The number of operations of the '<em>Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.BasicSoftwareFunctionTypeImpl
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getBasicSoftwareFunctionType()
-	 * @generated
-	 */
-	int BASIC_SOFTWARE_FUNCTION_TYPE = 16;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int BASIC_SOFTWARE_FUNCTION_TYPE__NAME = DESIGN_FUNCTION_TYPE__NAME;
+	int OPERATION_OPERATION_COUNT = ElementsPackage.EA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int BASIC_SOFTWARE_FUNCTION_TYPE__BASE_NAMED_ELEMENT = DESIGN_FUNCTION_TYPE__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_SOFTWARE_FUNCTION_TYPE__NAME = DESIGN_FUNCTION_TYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int BASIC_SOFTWARE_FUNCTION_TYPE__OWNED_COMMENT = DESIGN_FUNCTION_TYPE__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_SOFTWARE_FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT = DESIGN_FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2258,27 +2232,15 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int BASIC_SOFTWARE_FUNCTION_TYPE__OWNED_RELATIONSHIP = DESIGN_FUNCTION_TYPE__OWNED_RELATIONSHIP;
 
 	/**
-	 * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int BASIC_SOFTWARE_FUNCTION_TYPE__IS_ENCAPSULATED = DESIGN_FUNCTION_TYPE__IS_ENCAPSULATED;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2288,7 +2250,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2298,7 +2259,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2308,7 +2268,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2318,7 +2277,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2328,7 +2286,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2338,59 +2295,69 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Basic Software Function Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int BASIC_SOFTWARE_FUNCTION_TYPE_FEATURE_COUNT = DESIGN_FUNCTION_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.HardwareFunctionTypeImpl
-	 * <em>Hardware Function Type</em>}' class.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.HardwareFunctionTypeImpl
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getHardwareFunctionType()
-	 * @generated
-	 */
-	int HARDWARE_FUNCTION_TYPE = 17;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_FUNCTION_TYPE__NAME = DESIGN_FUNCTION_TYPE__NAME;
+	int BASIC_SOFTWARE_FUNCTION_TYPE___GET_ICON = DESIGN_FUNCTION_TYPE___GET_ICON;
+
+	/**
+	 * The number of operations of the '<em>Basic Software Function Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_SOFTWARE_FUNCTION_TYPE_OPERATION_COUNT = DESIGN_FUNCTION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int HARDWARE_FUNCTION_TYPE__BASE_NAMED_ELEMENT = DESIGN_FUNCTION_TYPE__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_FUNCTION_TYPE__NAME = DESIGN_FUNCTION_TYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int HARDWARE_FUNCTION_TYPE__OWNED_COMMENT = DESIGN_FUNCTION_TYPE__OWNED_COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT = DESIGN_FUNCTION_TYPE__BASE_PACKAGEABLE_ELEMENT;
+
+	/**
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2400,27 +2367,15 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int HARDWARE_FUNCTION_TYPE__OWNED_RELATIONSHIP = DESIGN_FUNCTION_TYPE__OWNED_RELATIONSHIP;
 
 	/**
-	 * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_FUNCTION_TYPE__IS_ENCAPSULATED = DESIGN_FUNCTION_TYPE__IS_ENCAPSULATED;
-
-	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2430,7 +2385,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2440,7 +2394,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2450,7 +2403,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2460,7 +2412,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2470,7 +2421,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2480,7 +2430,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Hardware Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2490,150 +2439,123 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hardware Function Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int HARDWARE_FUNCTION_TYPE_FEATURE_COUNT = DESIGN_FUNCTION_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl
-	 * <em>Function Allocation</em>}' class.
+	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionAllocationImpl
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionAllocation()
-	 * @generated
-	 */
-	int FUNCTION_ALLOCATION = 18;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_ALLOCATION__NAME = ElementsPackage.EA_ELEMENT__NAME;
+	int HARDWARE_FUNCTION_TYPE___GET_ICON = DESIGN_FUNCTION_TYPE___GET_ICON;
+
+	/**
+	 * The number of operations of the '<em>Hardware Function Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_FUNCTION_TYPE_OPERATION_COUNT = DESIGN_FUNCTION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_ALLOCATION__BASE_NAMED_ELEMENT = ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_ALLOCATION__NAME = ElementsPackage.EA_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_ALLOCATION__OWNED_COMMENT = ElementsPackage.EA_ELEMENT__OWNED_COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Target</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_ALLOCATION__TARGET = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Allocated Element</b></em>' reference.
+	 * The feature id for the '<em><b>Allocated Element</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_ALLOCATION__ALLOCATED_ELEMENT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
+	 * The feature id for the '<em><b>Base Abstraction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_ALLOCATION__BASE_DEPENDENCY = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Allocated Element path</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_ALLOCATION__ALLOCATED_ELEMENT_PATH = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Target path</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_ALLOCATION__TARGET_PATH = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 4;
+	int FUNCTION_ALLOCATION__BASE_ABSTRACTION = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Function Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_ALLOCATION_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 5;
+	int FUNCTION_ALLOCATION_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocationImpl <em>Allocation</em>}' class.
+	 * The number of operations of the '<em>Function Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AllocationImpl
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getAllocation()
-	 * @generated
-	 */
-	int ALLOCATION = 19;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION__NAME = ElementsPackage.EA_ELEMENT__NAME;
+	int FUNCTION_ALLOCATION_OPERATION_COUNT = ElementsPackage.EA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ALLOCATION__BASE_NAMED_ELEMENT = ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__NAME = ElementsPackage.EA_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2643,79 +2565,60 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ALLOCATION__BASE_CLASS = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Base Package</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__BASE_PACKAGE = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Function Allocation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION__FUNCTION_ALLOCATION = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 2;
+	int ALLOCATION__FUNCTION_ALLOCATION = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 3;
+	int ALLOCATION_FEATURE_COUNT = ElementsPackage.EA_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl
-	 * <em>Function Power Port</em>}' class.
+	 * The number of operations of the '<em>Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getFunctionPowerPort()
-	 * @generated
-	 */
-	int FUNCTION_POWER_PORT = 20;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_POWER_PORT__NAME = FUNCTION_PORT__NAME;
+	int ALLOCATION_OPERATION_COUNT = ElementsPackage.EA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FUNCTION_POWER_PORT__BASE_NAMED_ELEMENT = FUNCTION_PORT__BASE_NAMED_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_POWER_PORT__NAME = FUNCTION_PORT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2725,60 +2628,62 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_POWER_PORT__BASE_PORT = FUNCTION_PORT_FEATURE_COUNT + 0;
+	int FUNCTION_POWER_PORT__BASE_PORT = FUNCTION_PORT__BASE_PORT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_POWER_PORT__TYPE = FUNCTION_PORT_FEATURE_COUNT + 1;
+	int FUNCTION_POWER_PORT__TYPE = FUNCTION_PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Function Power Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_POWER_PORT_FEATURE_COUNT = FUNCTION_PORT_FEATURE_COUNT + 2;
+	int FUNCTION_POWER_PORT_FEATURE_COUNT = FUNCTION_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Function Power Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_POWER_PORT_OPERATION_COUNT = FUNCTION_PORT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind <em>EA Direction Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getEADirectionKind()
 	 * @generated
 	 */
-	int EA_DIRECTION_KIND = 22;
+	int EA_DIRECTION_KIND = 21;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind <em>Client Server Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl#getClientServerKind()
 	 * @generated
 	 */
-	int CLIENT_SERVER_KIND = 21;
+	int CLIENT_SERVER_KIND = 22;
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AllocateableElement
-	 * <em>Allocateable Element</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AllocateableElement <em>Allocateable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Allocateable Element</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.AllocateableElement
 	 * @generated
@@ -2789,7 +2694,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation <em>Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Allocation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation
 	 * @generated
@@ -2797,11 +2701,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getAllocation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation#getBase_Class
-	 * <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation#getBase_Class()
 	 * @see #getAllocation()
@@ -2810,24 +2712,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getAllocation_Base_Class();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation#getBase_Package
-	 * <em>Base Package</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation#getFunctionAllocation <em>Function Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Base Package</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation#getBase_Package()
-	 * @see #getAllocation()
-	 * @generated
-	 */
-	EReference getAllocation_Base_Package();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation#getFunctionAllocation
-	 * <em>Function Allocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Function Allocation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation#getFunctionAllocation()
 	 * @see #getAllocation()
@@ -2836,11 +2723,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getAllocation_FunctionAllocation();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionPrototype
-	 * <em>Analysis Function Prototype</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionPrototype <em>Analysis Function Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Analysis Function Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionPrototype
 	 * @generated
@@ -2848,11 +2733,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getAnalysisFunctionPrototype();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionPrototype#getType
-	 * <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionPrototype#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionPrototype#getType()
 	 * @see #getAnalysisFunctionPrototype()
@@ -2861,11 +2744,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getAnalysisFunctionPrototype_Type();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionType
-	 * <em>Analysis Function Type</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionType <em>Analysis Function Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Analysis Function Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionType
 	 * @generated
@@ -2873,11 +2754,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getAnalysisFunctionType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionType#getPart
-	 * <em>Part</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionType#getPart <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Part</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionType#getPart()
 	 * @see #getAnalysisFunctionType()
@@ -2886,11 +2765,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getAnalysisFunctionType_Part();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.BasicSoftwareFunctionType
-	 * <em>Basic Software Function Type</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.BasicSoftwareFunctionType <em>Basic Software Function Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Basic Software Function Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.BasicSoftwareFunctionType
 	 * @generated
@@ -2901,7 +2778,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind <em>Client Server Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for enum '<em>Client Server Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind
 	 * @generated
@@ -2912,7 +2788,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind <em>EA Direction Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for enum '<em>EA Direction Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind
 	 * @generated
@@ -2920,11 +2795,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EEnum getEADirectionKind();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionPrototype
-	 * <em>Design Function Prototype</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionPrototype <em>Design Function Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Design Function Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionPrototype
 	 * @generated
@@ -2932,11 +2805,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getDesignFunctionPrototype();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionPrototype#getType
-	 * <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionPrototype#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionPrototype#getType()
 	 * @see #getDesignFunctionPrototype()
@@ -2945,11 +2816,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getDesignFunctionPrototype_Type();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionType
-	 * <em>Design Function Type</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionType <em>Design Function Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Design Function Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionType
 	 * @generated
@@ -2957,11 +2826,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getDesignFunctionType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionType#getPart
-	 * <em>Part</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionType#getPart <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Part</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionType#getPart()
 	 * @see #getDesignFunctionType()
@@ -2972,7 +2839,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionalDevice <em>Functional Device</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Functional Device</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionalDevice
 	 * @generated
@@ -2980,11 +2846,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionalDevice();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation
-	 * <em>Function Allocation</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation <em>Function Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Allocation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation
 	 * @generated
@@ -2992,12 +2856,10 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionAllocation();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getAllocatedElement <em>Allocated Element</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getAllocatedElement <em>Allocated Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Allocated Element</em>'.
+	 * @return the meta object for the containment reference '<em>Allocated Element</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getAllocatedElement()
 	 * @see #getFunctionAllocation()
 	 * @generated
@@ -3005,51 +2867,21 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionAllocation_AllocatedElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getBase_Dependency
-	 * <em>Base Dependency</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getBase_Abstraction <em>Base Abstraction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Base Dependency</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getBase_Dependency()
+	 * @return the meta object for the reference '<em>Base Abstraction</em>'.
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getBase_Abstraction()
 	 * @see #getFunctionAllocation()
 	 * @generated
 	 */
-	EReference getFunctionAllocation_Base_Dependency();
+	EReference getFunctionAllocation_Base_Abstraction();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getAllocatedElement_path <em>Allocated Element path</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference list '<em>Allocated Element path</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getAllocatedElement_path()
-	 * @see #getFunctionAllocation()
-	 * @generated
-	 */
-	EReference getFunctionAllocation_AllocatedElement_path();
-
-	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getTarget_path <em>Target path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference list '<em>Target path</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getTarget_path()
-	 * @see #getFunctionAllocation()
-	 * @generated
-	 */
-	EReference getFunctionAllocation_Target_path();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getTarget
-	 * <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @return the meta object for the containment reference '<em>Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getTarget()
 	 * @see #getFunctionAllocation()
 	 * @generated
@@ -3057,11 +2889,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionAllocation_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface
-	 * <em>Function Client Server Interface</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface <em>Function Client Server Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Client Server Interface</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface
 	 * @generated
@@ -3069,11 +2899,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionClientServerInterface();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface#getBase_Interface <em>Base Interface</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface#getBase_Interface <em>Base Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Interface</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface#getBase_Interface()
 	 * @see #getFunctionClientServerInterface()
@@ -3082,11 +2910,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionClientServerInterface_Base_Interface();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface#getOperation <em>Operation</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Operation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface#getOperation()
 	 * @see #getFunctionClientServerInterface()
@@ -3095,11 +2921,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionClientServerInterface_Operation();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort
-	 * <em>Function Client Server Port</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort <em>Function Client Server Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Client Server Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort
 	 * @generated
@@ -3107,24 +2931,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionClientServerPort();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getClientServerType <em>Client Server Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Client Server Type</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getClientServerType()
-	 * @see #getFunctionClientServerPort()
-	 * @generated
-	 */
-	EAttribute getFunctionClientServerPort_ClientServerType();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getType
-	 * <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getType()
 	 * @see #getFunctionClientServerPort()
@@ -3133,24 +2942,20 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionClientServerPort_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getBase_Port
-	 * <em>Base Port</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getClientServerKind <em>Client Server Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Base Port</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getBase_Port()
+	 * @return the meta object for the attribute '<em>Client Server Kind</em>'.
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getClientServerKind()
 	 * @see #getFunctionClientServerPort()
 	 * @generated
 	 */
-	EReference getFunctionClientServerPort_Base_Port();
+	EAttribute getFunctionClientServerPort_ClientServerKind();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector <em>Function Connector</em>}
-	 * '.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector <em>Function Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector
 	 * @generated
@@ -3158,12 +2963,10 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionConnector();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getPort
-	 * <em>Port</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference list '<em>Port</em>'.
+	 * @return the meta object for the containment reference list '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getPort()
 	 * @see #getFunctionConnector()
 	 * @generated
@@ -3171,50 +2974,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionConnector_Port();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getBase_Connector
-	 * <em>Base Connector</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort <em>Function Flow Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Base Connector</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getBase_Connector()
-	 * @see #getFunctionConnector()
-	 * @generated
-	 */
-	EReference getFunctionConnector_Base_Connector();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getPort1_path
-	 * <em>Port1 path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference list '<em>Port1 path</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getPort1_path()
-	 * @see #getFunctionConnector()
-	 * @generated
-	 */
-	EReference getFunctionConnector_Port1_path();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getPort2_path
-	 * <em>Port2 path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference list '<em>Port2 path</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector#getPort2_path()
-	 * @see #getFunctionConnector()
-	 * @generated
-	 */
-	EReference getFunctionConnector_Port2_path();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort <em>Function Flow Port</em>}
-	 * '.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Flow Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort
 	 * @generated
@@ -3222,11 +2984,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionFlowPort();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getType
-	 * <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getType()
 	 * @see #getFunctionFlowPort()
@@ -3235,10 +2995,31 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionFlowPort_Type();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getDefaultValue <em>Default Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Default Value</em>'.
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getDefaultValue()
+	 * @see #getFunctionFlowPort()
+	 * @generated
+	 */
+	EReference getFunctionFlowPort_DefaultValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getDirection <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Direction</em>'.
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getDirection()
+	 * @see #getFunctionFlowPort()
+	 * @generated
+	 */
+	EAttribute getFunctionFlowPort_Direction();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -3248,7 +3029,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort <em>Function Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort
 	 * @generated
@@ -3256,11 +3036,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionPort();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort
-	 * <em>Function Power Port</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort <em>Function Power Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Power Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort
 	 * @generated
@@ -3268,24 +3046,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionPowerPort();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort#getBase_Port
-	 * <em>Base Port</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Base Port</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort#getBase_Port()
-	 * @see #getFunctionPowerPort()
-	 * @generated
-	 */
-	EReference getFunctionPowerPort_Base_Port();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort#getType
-	 * <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort#getType()
 	 * @see #getFunctionPowerPort()
@@ -3294,11 +3057,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionPowerPort_Type();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype <em>Function Prototype</em>}
-	 * '.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype <em>Function Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype
 	 * @generated
@@ -3306,23 +3067,19 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionPrototype();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype#getBase_Property
-	 * <em>Base Property</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype#getIcon() <em>Get Icon</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Base Property</em>'.
-	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype#getBase_Property()
-	 * @see #getFunctionPrototype()
+	 * @return the meta object for the '<em>Get Icon</em>' operation.
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype#getIcon()
 	 * @generated
 	 */
-	EReference getFunctionPrototype_Base_Property();
+	EOperation getFunctionPrototype__GetIcon();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType <em>Function Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Function Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType
 	 * @generated
@@ -3330,11 +3087,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getFunctionType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getConnector
-	 * <em>Connector</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getConnector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getConnector()
 	 * @see #getFunctionType()
@@ -3343,11 +3098,19 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionType_Connector();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#isIsElementary
-	 * <em>Is Elementary</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getIcon() <em>Get Icon</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @return the meta object for the '<em>Get Icon</em>' operation.
+	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getIcon()
+	 * @generated
+	 */
+	EOperation getFunctionType__GetIcon();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#isIsElementary <em>Is Elementary</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Elementary</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#isIsElementary()
 	 * @see #getFunctionType()
@@ -3356,11 +3119,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EAttribute getFunctionType_IsElementary();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getPort
-	 * <em>Port</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getPort()
 	 * @see #getFunctionType()
@@ -3369,11 +3130,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionType_Port();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getPortGroup
-	 * <em>Port Group</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getPortGroup <em>Port Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Port Group</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType#getPortGroup()
 	 * @see #getFunctionType()
@@ -3382,11 +3141,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getFunctionType_PortGroup();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.HardwareFunctionType
-	 * <em>Hardware Function Type</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.HardwareFunctionType <em>Hardware Function Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Hardware Function Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.HardwareFunctionType
 	 * @generated
@@ -3394,11 +3151,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getHardwareFunctionType();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.HardwareFunctionType#getHardwareComponent <em>Hardware Component</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.HardwareFunctionType#getHardwareComponent <em>Hardware Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Hardware Component</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.HardwareFunctionType#getHardwareComponent()
 	 * @see #getHardwareFunctionType()
@@ -3407,10 +3162,8 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getHardwareFunctionType_HardwareComponent();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.LocalDeviceManager
-	 * <em>Local Device Manager</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.LocalDeviceManager <em>Local Device Manager</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Local Device Manager</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.LocalDeviceManager
 	 * @generated
@@ -3421,7 +3174,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Operation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation
 	 * @generated
@@ -3429,11 +3181,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getBase_Operation
-	 * <em>Base Operation</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getBase_Operation <em>Base Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Operation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getBase_Operation()
 	 * @see #getOperation()
@@ -3442,11 +3192,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getOperation_Base_Operation();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getArgument
-	 * <em>Argument</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getArgument <em>Argument</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Argument</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getArgument()
 	 * @see #getOperation()
@@ -3458,7 +3206,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getReturn <em>Return</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Return</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getReturn()
 	 * @see #getOperation()
@@ -3470,7 +3217,6 @@ public interface FunctionmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup <em>Port Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Port Group</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup
 	 * @generated
@@ -3478,11 +3224,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EClass getPortGroup();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getPort <em>Port</em>}
-	 * '.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getPort()
 	 * @see #getPortGroup()
@@ -3491,11 +3235,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getPortGroup_Port();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getBase_Class
-	 * <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getBase_Class()
 	 * @see #getPortGroup()
@@ -3504,11 +3246,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getPortGroup_Base_Class();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getBase_Port
-	 * <em>Base Port</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getBase_Port <em>Base Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference '<em>Base Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getBase_Port()
 	 * @see #getPortGroup()
@@ -3517,11 +3257,9 @@ public interface FunctionmodelingPackage extends EPackage {
 	EReference getPortGroup_Base_Port();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getPortGroup
-	 * <em>Port Group</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getPortGroup <em>Port Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the reference list '<em>Port Group</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getPortGroup()
 	 * @see #getPortGroup()

@@ -15,25 +15,20 @@ package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
 import java.util.Collection;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.papyrus.infra.core.services.ServiceException;
-import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
-import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
-import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.internal.participants.StereotypeApplicationRepairParticipant;
-import org.eclipse.papyrus.uml.modelrepair.ui.BrowseProfilesDialog;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.UMLPackage;
 
 import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
 
 
 /**
@@ -45,6 +40,16 @@ public class ApplyProfileAction extends AbstractRepairAction {
 
 	private Supplier<Profile> profileSupplier;
 
+	private String label;
+
+	public ApplyProfileAction(Element root, Profile profile, LabelProviderService labelProviderService) {
+		this(root, Suppliers.ofInstance(profile));
+
+		// Don't have to worry about the profile not have any definition because if it didn't, we couldn't be
+		// looking at a previous version that traced to it to let us know that we need to apply this profile
+		this.label = NLS.bind("Migrate to {0}", labelProviderService.getLabelProvider().getText(profile.getDefinition()));
+	}
+
 	public ApplyProfileAction(Element root, Supplier<Profile> profileSupplier) {
 		super(Kind.APPLY_LATEST_PROFILE_DEFINITION);
 
@@ -52,63 +57,39 @@ public class ApplyProfileAction extends AbstractRepairAction {
 		this.profileSupplier = profileSupplier;
 	}
 
-	public boolean repair(Resource resource, EPackage profileDefinition, Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor) {
-		Profile profile = profileSupplier.get();
-		if(profile == null) {
-			return false;
-		}
-
-		// Get the topmost package
-		Package topPackage = root.getNearestPackage();
-		for(Element higher = topPackage; higher != null; higher = higher.getOwner()) {
-			Package next = higher.getNearestPackage();
-			if(next != null) {
-				topPackage = next;
-			}
-			higher = next;
-		}
-
-		// Apply the profile
-		if(topPackage != null) {
-			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications);
-			topPackage.applyProfile(profile);
-		}
-
-		return true;
+	@Override
+	public String getLabel() {
+		return (label != null) ? label : super.getLabel();
 	}
 
-	protected Profile promptForProfile(Shell parentShell) {
-		Profile result = null;
+	public boolean repair(Resource resource, EPackage profileDefinition, Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor) {
+		// We can be assured that there is at least one stereotype application, otherwise we wouldn't be here
+		boolean result = false;
 
-		LabelProviderService labelProvider = null;
-		boolean localProvider = false;
-		try {
-			labelProvider = ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, root);
-		} catch (ServiceException e) {
-			labelProvider = new LabelProviderServiceImpl();
-			localProvider = true;
-		}
+		Profile profile = profileSupplier.get();
+		if(profile != null) {
+			String taskName = NLS.bind("Migrating stereotypes to current version of profile \"{0}\"...", profile.getName());
+			SubMonitor sub = SubMonitor.convert(monitor, taskName, stereotypeApplications.size() * 3 / 2);
 
-		final BrowseProfilesDialog dlg = new BrowseProfilesDialog(parentShell, labelProvider);
-
-		parentShell.getDisplay().syncExec(new Runnable() {
-
-			public void run() {
-				dlg.setBlockOnOpen(true);
-				dlg.open();
+			// Get the topmost package
+			Package topPackage = root.getNearestPackage();
+			for(Element higher = topPackage; higher != null; higher = higher.getOwner()) {
+				Package next = higher.getNearestPackage();
+				if(next != null) {
+					topPackage = next;
+				}
+				higher = next;
 			}
-		});
 
-		if(localProvider) {
-			try {
-				labelProvider.disposeService();
-			} catch (ServiceException e) {
-				Activator.log.error(e);
+			// Apply the profile
+			if(topPackage != null) {
+				StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
+				topPackage.applyProfile(profile);
 			}
-		}
 
-		if(dlg.getSelectedProfileURI() != null) {
-			result = UML2Util.load(root.eResource().getResourceSet(), dlg.getSelectedProfileURI(), UMLPackage.Literals.PROFILE);
+			result = true;
+
+			sub.done();
 		}
 
 		return result;

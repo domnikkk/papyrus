@@ -16,7 +16,7 @@
 package org.eclipse.papyrus.eastadl.structure.functionmodeling.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.AllocateableElement;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage;
 
@@ -27,15 +27,13 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPa
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
-public abstract class AllocateableElementImpl extends EObjectImpl implements AllocateableElement {
-
+public abstract class AllocateableElementImpl extends MinimalEObjectImpl.Container implements AllocateableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected AllocateableElementImpl() {
@@ -45,7 +43,6 @@ public abstract class AllocateableElementImpl extends EObjectImpl implements All
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

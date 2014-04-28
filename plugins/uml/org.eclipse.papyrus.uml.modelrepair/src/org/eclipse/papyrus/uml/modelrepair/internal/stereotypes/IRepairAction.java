@@ -38,6 +38,10 @@ public interface IRepairAction {
 			return false;
 		}
 
+		public String getLabel() {
+			return kind().displayName();
+		}
+
 		public boolean repair(Resource resource, EPackage profileDefinition, java.util.Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor) {
 			return true;
 		}
@@ -51,6 +55,10 @@ public interface IRepairAction {
 
 		public boolean isNull() {
 			return true;
+		}
+		
+		public String getLabel() {
+			return "null action";
 		}
 
 		public boolean repair(Resource resource, EPackage profileDefinition, java.util.Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor) {
@@ -68,6 +76,8 @@ public interface IRepairAction {
 	Kind kind();
 
 	boolean isNull();
+
+	String getLabel();
 
 	boolean repair(Resource resource, EPackage profileDefinition, Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor);
 

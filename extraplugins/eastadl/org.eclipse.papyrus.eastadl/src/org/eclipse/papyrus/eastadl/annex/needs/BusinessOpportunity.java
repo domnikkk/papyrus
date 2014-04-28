@@ -17,42 +17,42 @@ package org.eclipse.papyrus.eastadl.annex.needs;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecification;
+import org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel;
 
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Business Opportunity</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
- * The business opportunity represents a brief description of the business opportunity being met by developing the EE-System which establishes
- * traceability from artifacts created later, for example to provide rationales to design decisions or trade-off analysis.
+ * The business opportunity represents a brief description of the business opportunity being met by developing the EE-System which establishes traceability from artifacts created later, for example to provide rationales to design decisions or trade-off analysis.
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBase_Class <em>Base Class</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getProblemStatement <em>Problem Statement</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getProductPositioning <em>Product Positioning</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBusinessOpportunity <em>Business Opportunity</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getProblemStatement <em>Problem Statement</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getProductPositioning <em>Product Positioning</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBusinessOpportunity <em>Business Opportunity</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getMotivatesDevelopmentOf <em>Motivates Development Of</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getBusinessOpportunity()
  * @model
  * @generated
  */
 public interface BusinessOpportunity extends TraceableSpecification {
-
 	/**
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getBusinessOpportunity_Base_Class()
@@ -65,9 +65,7 @@ public interface BusinessOpportunity extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *        the new value of the '<em>Base Class</em>' reference.
+	 * @param value the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -77,10 +75,10 @@ public interface BusinessOpportunity extends TraceableSpecification {
 	 * Returns the value of the '<em><b>Business Opportunity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Business Opportunity</em>' attribute isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Business Opportunity</em>' attribute isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Business Opportunity</em>' attribute.
 	 * @see #setBusinessOpportunity(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getBusinessOpportunity_BusinessOpportunity()
@@ -94,10 +92,10 @@ public interface BusinessOpportunity extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Problem Statement</em>' reference list isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Problem Statement</em>' reference list isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Problem Statement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getBusinessOpportunity_ProblemStatement()
 	 * @model ordered="false"
@@ -110,10 +108,10 @@ public interface BusinessOpportunity extends TraceableSpecification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Product Positioning</em>' reference list isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Product Positioning</em>' reference list isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Product Positioning</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getBusinessOpportunity_ProductPositioning()
 	 * @model ordered="false"
@@ -122,16 +120,29 @@ public interface BusinessOpportunity extends TraceableSpecification {
 	EList<ProductPositioning> getProductPositioning();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBusinessOpportunity <em>Business Opportunity</em>}
-	 * ' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBusinessOpportunity <em>Business Opportunity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *        the new value of the '<em>Business Opportunity</em>' attribute.
+	 * @param value the new value of the '<em>Business Opportunity</em>' attribute.
 	 * @see #getBusinessOpportunity()
 	 * @generated
 	 */
 	void setBusinessOpportunity(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Motivates Development Of</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Motivates Development Of</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Motivates Development Of</em>' reference list.
+	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getBusinessOpportunity_MotivatesDevelopmentOf()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	EList<SystemModel> getMotivatesDevelopmentOf();
 
 } // BusinessOpportunity

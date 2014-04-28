@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><paletteDefinition><content><drawer 
+	iconpath="/icons/drawer.gif" id="Drawer__1379324952233" 
+	name="Variability"><aspectTool description="Create an element with a stereotype" 
+		iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" 
+		id="clazz.tool.class_1379325045091" name="VariableElement (Class)" 
+		refToolId="clazz.tool.class">
+		<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+			<stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Variability::VariableElement"/>
+			</stereotypesToApply></postAction></aspectTool><aspectTool 
+				description="Create an element with a stereotype" 
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" 
+			id="clazz.tool.class_1379325116715" name="FeatureConfiguration (Class)" 
+				refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Variability::FeatureConfiguration">
+					</stereotype></stereotypesToApply></postAction></aspectTool>
+					<aspectTool description="Create an element with a stereotype" 
+						iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" 
+						id="clazz.tool.class_1379325174574" name="ConfigurableContainer (Class)" 
+						refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Variability::ConfigurableContainer"/></stereotypesToApply></postAction></aspectTool><aspectTool description="Create an element with a stereotype" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="clazz.tool.class_1379325261697" name="VariationGroup (Class)" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Variability::VariationGroup"/></stereotypesToApply></postAction></aspectTool><aspectTool description="Create an element with a stereotype" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="clazz.tool.class_1379325357918" name="ConfigurationDecision (Class)" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Variability::ConfigurationDecision"></stereotype></stereotypesToApply></postAction></aspectTool></drawer></content></paletteDefinition>

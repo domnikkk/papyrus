@@ -24,10 +24,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
+import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ArrayListMultimap;
@@ -46,21 +48,24 @@ public class ZombieStereotypesDescriptor {
 
 	private final Element root;
 
+	private final LabelProviderService labelProviderService;
+
 	private final Set<EPackage> appliedProfileDefinitions;
 
 	private final Multimap<EPackage, EObject> zombies = ArrayListMultimap.create();
 
 	private final Map<EPackage, IRepairAction> suggestedActions = Maps.newHashMap();
 
-	private final Supplier<Profile> dynamicProfileSupplier;
+	private final Function<? super EPackage, Profile> dynamicProfileSupplier;
 
 	private Map<EPackage, Map<IRepairAction.Kind, IRepairAction>> repairActions = Maps.newHashMap();
 
-	public ZombieStereotypesDescriptor(Resource resource, Element root, Set<EPackage> appliedProfileDefinitions, Supplier<Profile> dynamicProfileSupplier) {
+	public ZombieStereotypesDescriptor(Resource resource, Element root, Set<EPackage> appliedProfileDefinitions, Function<? super EPackage, Profile> dynamicProfileSupplier, LabelProviderService labelProviderService) {
 		this.resource = resource;
 		this.root = root;
 		this.appliedProfileDefinitions = appliedProfileDefinitions;
 		this.dynamicProfileSupplier = dynamicProfileSupplier;
+		this.labelProviderService = labelProviderService;
 	}
 
 	public void analyze(EObject stereotypeApplication) {
@@ -119,12 +124,20 @@ public class ZombieStereotypesDescriptor {
 		result.put(DeleteAction.INSTANCE.kind(), DeleteAction.INSTANCE);
 		result.put(CreateMarkersAction.INSTANCE.kind(), CreateMarkersAction.INSTANCE);
 
+		IRepairAction applyProfile;
 		Profile profile = findProfile(schema);
-		Supplier<Profile> supplier = (profile == null) ? dynamicProfileSupplier : Suppliers.ofInstance(profile);
-		IRepairAction applyProfile = new ApplyProfileAction(root, supplier);
+		if(profile == null) {
+			applyProfile = new ApplyProfileAction(root, curry(schema, dynamicProfileSupplier));
+		} else {
+			applyProfile = new ApplyProfileAction(root, profile, labelProviderService);
+		}
 		result.put(applyProfile.kind(), applyProfile);
 
 		return result;
+	}
+
+	static <F, T> Supplier<T> curry(F input, Function<? super F, T> function) {
+		return Suppliers.compose(function, Suppliers.ofInstance(input));
 	}
 
 	public IRepairAction getSuggestedRepairAction(EPackage schema) {

@@ -26,15 +26,13 @@ import org.eclipse.papyrus.eastadl.variability.VariabilityPackage;
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class InternalBindingImpl extends ConfigurationDecisionModelImpl implements InternalBinding {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected InternalBindingImpl() {
@@ -44,7 +42,6 @@ public class InternalBindingImpl extends ConfigurationDecisionModelImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

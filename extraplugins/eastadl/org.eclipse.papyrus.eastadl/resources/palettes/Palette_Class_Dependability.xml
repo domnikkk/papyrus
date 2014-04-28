@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<paletteDefinition>
+	<content>
+		<drawer iconpath="/icons/drawer.gif" id="Drawer__1378471911052"
+			name="Dependability">
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472297427" name="Hazard (Class)" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::Hazard" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472318646" name="HazardousEvent (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::HazardousEvent" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472343271" name="Item (Class)" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::Item" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472353739" name="FeatureFlaw (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::FeatureFlaw" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472530192" name="OperationalSituation (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Requirements::Requirements::OperationalSituation" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<separator id="Separator_1378472768724" />
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
+				id="clazz.tool.package_1378472029192" name="FunctionalSafetyConcept (Package)"
+				refToolId="clazz.tool.package">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Dependability::SafetyRequirement::FunctionalSafetyConcept" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
+				id="clazz.tool.package_1378472073286" name="TechnicalSafetyConcept (Package)"
+				refToolId="clazz.tool.package">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Dependability::SafetyRequirement::TechnicalSafetyConcept" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472117239" name="SafetyGoal (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Dependability::SafetyRequirement::SafetyGoal" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<separator id="Separator_1378472759458" />
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472839942" name="FaultFailure (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Dependability::SafetyConstraints::FaultFailure" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472860005" name="QuantitativeSafetyConstraint (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Dependability::SafetyConstraints::QuantitativeSafetyConstraint" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472891646" name="SafetyConstraint (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Dependability::SafetyConstraints::SafetyConstraint" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<separator id="Separator_1378472933989" />
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378472930958" name="Claim (Class)" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::SafetyCase::Claim" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378473002974" name="Ground (Class)" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::SafetyCase::Ground" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378473019958" name="SafetyCase (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::SafetyCase::SafetyCase" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create an element with a stereotype"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				id="clazz.tool.class_1378473037177" name="Warrant (Class)"
+				refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::SafetyCase::Warrant" />
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+				<separator id="Separator_1378472933990" />
+			<aspectTool description="ErrorModelType"
+				iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/dependability/errormodel/ErrorModelType.gif"
+				id="clazz.tool.class_1281003486395" name="ErrorModelType" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="EAST-ADL2::Dependability::ErrorModel::ErrorModelType" />
+					</stereotypesToApply>
+				</postAction>
+				<postAction displayKind="IconStereotype" displayPlace="Compartment"
+					id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider" />
+			</aspectTool>
+			<aspectTool description="ErrorModelPrototype"
+				iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/dependability/errormodel/ErrorModelPrototype.gif"
+				id="clazz.tool.property_1281003493830" name="ErrorModelPrototype"
+				refToolId="clazz.tool.property">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype
+							stereotypeName="EAST-ADL2::Dependability::ErrorModel::ErrorModelPrototype" />
+					</stereotypesToApply>
+				</postAction>
+				<postAction displayKind="IconStereotype" displayPlace="Compartment"
+					id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider" />
+			</aspectTool>
+		</drawer>
+	</content>
+</paletteDefinition>

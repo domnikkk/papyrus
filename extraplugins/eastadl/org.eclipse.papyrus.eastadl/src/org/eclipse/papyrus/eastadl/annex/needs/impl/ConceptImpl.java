@@ -27,15 +27,13 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ConceptImpl extends EAElementImpl implements Concept {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ConceptImpl() {
@@ -45,7 +43,6 @@ public abstract class ConceptImpl extends EAElementImpl implements Concept {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

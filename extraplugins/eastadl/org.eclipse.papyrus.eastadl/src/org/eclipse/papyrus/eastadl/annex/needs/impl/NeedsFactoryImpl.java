@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.annex.needs.*;
 import org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalDescription;
 import org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalModel;
 import org.eclipse.papyrus.eastadl.annex.needs.Architecture;
@@ -39,15 +38,12 @@ import org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -60,16 +56,16 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static NeedsFactory init() {
 		try {
 			NeedsFactory theNeedsFactory = (NeedsFactory)EPackage.Registry.INSTANCE.getEFactory(NeedsPackage.eNS_URI);
-			if(theNeedsFactory != null) {
+			if (theNeedsFactory != null) {
 				return theNeedsFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new NeedsFactoryImpl();
@@ -79,7 +75,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NeedsFactoryImpl() {
@@ -89,41 +84,29 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
-		case NeedsPackage.STAKEHOLDER:
-			return createStakeholder();
-		case NeedsPackage.STAKEHOLDER_NEED:
-			return createStakeholderNeed();
-		case NeedsPackage.PROBLEM_STATEMENT:
-			return createProblemStatement();
-		case NeedsPackage.PRODUCT_POSITIONING:
-			return createProductPositioning();
-		case NeedsPackage.BUSINESS_OPPORTUNITY:
-			return createBusinessOpportunity();
-		case NeedsPackage.MISSION:
-			return createMission();
-		case NeedsPackage.VEHICLE_SYSTEM:
-			return createVehicleSystem();
-		case NeedsPackage.ARCHITECTURE:
-			return createArchitecture();
-		case NeedsPackage.ARCHITECTURAL_DESCRIPTION:
-			return createArchitecturalDescription();
-		case NeedsPackage.ARCHITECTURAL_MODEL:
-			return createArchitecturalModel();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case NeedsPackage.STAKEHOLDER: return createStakeholder();
+			case NeedsPackage.STAKEHOLDER_NEED: return createStakeholderNeed();
+			case NeedsPackage.PROBLEM_STATEMENT: return createProblemStatement();
+			case NeedsPackage.PRODUCT_POSITIONING: return createProductPositioning();
+			case NeedsPackage.BUSINESS_OPPORTUNITY: return createBusinessOpportunity();
+			case NeedsPackage.MISSION: return createMission();
+			case NeedsPackage.VEHICLE_SYSTEM: return createVehicleSystem();
+			case NeedsPackage.ARCHITECTURE: return createArchitecture();
+			case NeedsPackage.ARCHITECTURAL_DESCRIPTION: return createArchitecturalDescription();
+			case NeedsPackage.ARCHITECTURAL_MODEL: return createArchitecturalModel();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public BusinessOpportunity createBusinessOpportunity() {
@@ -134,7 +117,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Mission createMission() {
@@ -145,7 +127,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public VehicleSystem createVehicleSystem() {
@@ -156,7 +137,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Architecture createArchitecture() {
@@ -167,7 +147,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ArchitecturalDescription createArchitecturalDescription() {
@@ -178,7 +157,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ArchitecturalModel createArchitecturalModel() {
@@ -189,7 +167,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ProblemStatement createProblemStatement() {
@@ -200,7 +177,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ProductPositioning createProductPositioning() {
@@ -211,7 +187,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Stakeholder createStakeholder() {
@@ -222,7 +197,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StakeholderNeed createStakeholderNeed() {
@@ -233,7 +207,6 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NeedsPackage getNeedsPackage() {

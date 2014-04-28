@@ -47,7 +47,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.google.common.base.Suppliers;
+import com.google.common.base.Functions;
 
 
 /**
@@ -171,7 +171,7 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 		stereotype = profile.getOwnedStereotype("Stereo");
 		class1 = (Class)modelSet.getModel().getOwnedType("Class1");
 
-		fixture = new StereotypeApplicationRepairSnippet(Suppliers.ofInstance(profile));
+		fixture = new StereotypeApplicationRepairSnippet(Functions.constant(profile));
 		fixture.start(modelSet.getResourceSet());
 		zombies = fixture.getZombieStereotypes(modelSet.getModelResource(), modelSet.getModel());
 	}

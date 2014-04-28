@@ -27,7 +27,6 @@ import org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPack
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public class FeaturemodelingXMLProcessor extends XMLProcessor {
@@ -35,7 +34,6 @@ public class FeaturemodelingXMLProcessor extends XMLProcessor {
 	/**
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FeaturemodelingXMLProcessor() {
@@ -46,12 +44,11 @@ public class FeaturemodelingXMLProcessor extends XMLProcessor {
 	/**
 	 * Register for "*" and "xml" file extensions the FeaturemodelingResourceFactoryImpl factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected Map<String, Resource.Factory> getRegistrations() {
-		if(registrations == null) {
+		if (registrations == null) {
 			super.getRegistrations();
 			registrations.put(XML_EXTENSION, new FeaturemodelingResourceFactoryImpl());
 			registrations.put(STAR_EXTENSION, new FeaturemodelingResourceFactoryImpl());

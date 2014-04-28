@@ -22,17 +22,14 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
  * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage
  * @generated
  */
 public interface GenericconstraintsFactory extends EFactory {
-
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	GenericconstraintsFactory eINSTANCE = org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsFactoryImpl.init();
@@ -41,7 +38,6 @@ public interface GenericconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Generic Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Generic Constraint</em>'.
 	 * @generated
 	 */
@@ -51,7 +47,6 @@ public interface GenericconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Generic Constraint Set</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Generic Constraint Set</em>'.
 	 * @generated
 	 */
@@ -61,7 +56,6 @@ public interface GenericconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Take Rate Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return a new object of class '<em>Take Rate Constraint</em>'.
 	 * @generated
 	 */
@@ -71,7 +65,6 @@ public interface GenericconstraintsFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

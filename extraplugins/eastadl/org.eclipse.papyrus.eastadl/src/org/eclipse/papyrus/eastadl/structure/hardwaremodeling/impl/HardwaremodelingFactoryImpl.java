@@ -21,22 +21,21 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.*;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Actuator;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.CommunicationHardwarePin;
+import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent;
+import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareConnector;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePinGroup;
+import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort;
+import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingFactory;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePin;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePinKind;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.LogicalBus;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.LogicalBusKind;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Node;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.PowerHardwarePin;
-import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.PowerSupply;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Sensor;
 
 
@@ -44,15 +43,12 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Sensor;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class HardwaremodelingFactoryImpl extends EFactoryImpl implements HardwaremodelingFactory {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -65,16 +61,16 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static HardwaremodelingFactory init() {
 		try {
 			HardwaremodelingFactory theHardwaremodelingFactory = (HardwaremodelingFactory)EPackage.Registry.INSTANCE.getEFactory(HardwaremodelingPackage.eNS_URI);
-			if(theHardwaremodelingFactory != null) {
+			if (theHardwaremodelingFactory != null) {
 				return theHardwaremodelingFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new HardwaremodelingFactoryImpl();
@@ -84,7 +80,6 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public HardwaremodelingFactoryImpl() {
@@ -94,73 +89,48 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String convertLogicalBusKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
-		case HardwaremodelingPackage.IO_HARDWARE_PIN_KIND:
-			return convertIOHardwarePinKindToString(eDataType, instanceValue);
-		case HardwaremodelingPackage.LOGICAL_BUS_KIND:
-			return convertLogicalBusKindToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+			case HardwaremodelingPackage.HARDWARE_BUS_KIND:
+				return convertHardwareBusKindToString(eDataType, instanceValue);
+			case HardwaremodelingPackage.IO_HARDWARE_PIN_KIND:
+				return convertIOHardwarePinKindToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
-		case HardwaremodelingPackage.HARDWARE_CONNECTOR:
-			return createHardwareConnector();
-		case HardwaremodelingPackage.HARDWARE_COMPONENT_PROTOTYPE:
-			return createHardwareComponentPrototype();
-		case HardwaremodelingPackage.IO_HARDWARE_PIN:
-			return createIOHardwarePin();
-		case HardwaremodelingPackage.POWER_HARDWARE_PIN:
-			return createPowerHardwarePin();
-		case HardwaremodelingPackage.COMMUNICATION_HARDWARE_PIN:
-			return createCommunicationHardwarePin();
-		case HardwaremodelingPackage.NODE:
-			return createNode();
-		case HardwaremodelingPackage.POWER_SUPPLY:
-			return createPowerSupply();
-		case HardwaremodelingPackage.SENSOR:
-			return createSensor();
-		case HardwaremodelingPackage.ACTUATOR:
-			return createActuator();
-		case HardwaremodelingPackage.LOGICAL_BUS:
-			return createLogicalBus();
-		case HardwaremodelingPackage.HARDWARE_PIN_GROUP:
-			return createHardwarePinGroup();
-		case HardwaremodelingPackage.HARDWARE_COMPONENT_TYPE:
-			return createHardwareComponentType();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+			case HardwaremodelingPackage.HARDWARE_COMPONENT_TYPE: return createHardwareComponentType();
+			case HardwaremodelingPackage.HARDWARE_CONNECTOR: return createHardwareConnector();
+			case HardwaremodelingPackage.HARDWARE_COMPONENT_PROTOTYPE: return createHardwareComponentPrototype();
+			case HardwaremodelingPackage.HARDWARE_PORT_CONNECTOR: return createHardwarePortConnector();
+			case HardwaremodelingPackage.HARDWARE_PORT: return createHardwarePort();
+			case HardwaremodelingPackage.IO_HARDWARE_PIN: return createIOHardwarePin();
+			case HardwaremodelingPackage.POWER_HARDWARE_PIN: return createPowerHardwarePin();
+			case HardwaremodelingPackage.COMMUNICATION_HARDWARE_PIN: return createCommunicationHardwarePin();
+			case HardwaremodelingPackage.NODE: return createNode();
+			case HardwaremodelingPackage.ELECTRICAL_COMPONENT: return createElectricalComponent();
+			case HardwaremodelingPackage.SENSOR: return createSensor();
+			case HardwaremodelingPackage.ACTUATOR: return createActuator();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Actuator createActuator() {
@@ -171,7 +141,26 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public HardwareBusKind createHardwareBusKindFromString(EDataType eDataType, String initialValue) {
+		HardwareBusKind result = HardwareBusKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertHardwareBusKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public CommunicationHardwarePin createCommunicationHardwarePin() {
@@ -182,25 +171,23 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
-		case HardwaremodelingPackage.IO_HARDWARE_PIN_KIND:
-			return createIOHardwarePinKindFromString(eDataType, initialValue);
-		case HardwaremodelingPackage.LOGICAL_BUS_KIND:
-			return createLogicalBusKindFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+			case HardwaremodelingPackage.HARDWARE_BUS_KIND:
+				return createHardwareBusKindFromString(eDataType, initialValue);
+			case HardwaremodelingPackage.IO_HARDWARE_PIN_KIND:
+				return createIOHardwarePinKindFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public HardwareComponentPrototype createHardwareComponentPrototype() {
@@ -211,7 +198,26 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public HardwarePortConnector createHardwarePortConnector() {
+		HardwarePortConnectorImpl hardwarePortConnector = new HardwarePortConnectorImpl();
+		return hardwarePortConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HardwarePort createHardwarePort() {
+		HardwarePortImpl hardwarePort = new HardwarePortImpl();
+		return hardwarePort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public IOHardwarePin createIOHardwarePin() {
@@ -222,7 +228,6 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public HardwareComponentType createHardwareComponentType() {
@@ -233,20 +238,17 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public IOHardwarePinKind createIOHardwarePinKindFromString(EDataType eDataType, String initialValue) {
 		IOHardwarePinKind result = IOHardwarePinKind.get(initialValue);
-		if(result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertIOHardwarePinKindToString(EDataType eDataType, Object instanceValue) {
@@ -256,7 +258,6 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public HardwareConnector createHardwareConnector() {
@@ -267,42 +268,6 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public HardwarePinGroup createHardwarePinGroup() {
-		HardwarePinGroupImpl hardwarePinGroup = new HardwarePinGroupImpl();
-		return hardwarePinGroup;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public LogicalBus createLogicalBus() {
-		LogicalBusImpl logicalBus = new LogicalBusImpl();
-		return logicalBus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public LogicalBusKind createLogicalBusKindFromString(EDataType eDataType, String initialValue) {
-		LogicalBusKind result = LogicalBusKind.get(initialValue);
-		if(result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Node createNode() {
@@ -313,7 +278,16 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public ElectricalComponent createElectricalComponent() {
+		ElectricalComponentImpl electricalComponent = new ElectricalComponentImpl();
+		return electricalComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public PowerHardwarePin createPowerHardwarePin() {
@@ -324,18 +298,6 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public PowerSupply createPowerSupply() {
-		PowerSupplyImpl powerSupply = new PowerSupplyImpl();
-		return powerSupply;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Sensor createSensor() {
@@ -346,7 +308,6 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public HardwaremodelingPackage getHardwaremodelingPackage() {

@@ -157,7 +157,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			}
 		}
 
-		createStereotypeApplicationMigrator(newProfile, diagnostics).migrate(oldStereotypeApplications);
+		createStereotypeApplicationMigrator(newProfile, diagnostics).migrate(oldStereotypeApplications, null);
 
 		if(!newProfile.getOwnedExtensions(true).isEmpty()) {
 			// Ensure that required stereotypes of the new profile are applied
@@ -214,7 +214,9 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 			copier = new StereotypeApplicationRepairCopier(profile, diagnostics);
 		}
 
-		public void migrate(Collection<? extends EObject> stereotypeApplications) {
+		public void migrate(Collection<? extends EObject> stereotypeApplications, IProgressMonitor monitor) {
+			SubMonitor sub = SubMonitor.convert(monitor, (2 * stereotypeApplications.size()) + 2);
+
 			for(EObject next : stereotypeApplications) {
 				EObject newInstance = copier.copy(next);
 				if((newInstance != null) && (newInstance != next)) {
@@ -224,9 +226,14 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 						EcoreUtil.replace(next, newInstance);
 					}
 				}
+
+				sub.worked(1);
 			}
 
 			copier.copyReferences();
+			sub.worked(1);
+
+			SubMonitor sub2 = SubMonitor.convert(sub.newChild(stereotypeApplications.size()), copier.size());
 
 			// Preserve the identities of stereotype applications and their contents and update references not accounted for by the copier
 			// (for example, references from Notation views/styles in the diagrams)
@@ -260,9 +267,13 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 						}
 					}
 				}
+
+				sub2.worked(1);
 			}
+			sub2.done();
 
 			UML2Util.destroyAll(stereotypeApplications);
+			sub.worked(1);
 
 			copier.clear();
 		}
@@ -291,7 +302,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 		@Override
 		public EObject copy(EObject eObject) {
 			final EObject previousCopying = copying;
-			
+
 			try {
 				copying = eObject;
 				return super.copy(eObject);
@@ -299,7 +310,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 				copying = previousCopying;
 			}
 		}
-		
+
 		@Override
 		protected NamedElement getNamedElement(ENamedElement element) {
 			if(element instanceof EClassifier) {
@@ -567,7 +578,7 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 				}
 			}
 		}
-		
+
 		@Override
 		protected EObject createCopy(EObject eObject) {
 			try {

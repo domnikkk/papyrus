@@ -26,15 +26,13 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPa
  * <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class CommunicationHardwarePinImpl extends HardwarePinImpl implements CommunicationHardwarePin {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected CommunicationHardwarePinImpl() {
@@ -44,7 +42,6 @@ public class CommunicationHardwarePinImpl extends HardwarePinImpl implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

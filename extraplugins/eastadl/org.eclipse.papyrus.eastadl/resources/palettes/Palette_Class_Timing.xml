@@ -1,1 +1,173 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><paletteDefinition><content><drawer iconpath="/icons/drawer.gif" id="Drawer__1281003191216" name="Timing"><aspectTool description="PrecedenceConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/PrecedenceConstraint.gif" id="clazz.tool.class_1281003240458" name="PrecedenceConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::PrecedenceConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="ExecutionTimeConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/ExecutionTimeConstraint.gif" id="clazz.tool.class_1281003247996" name="ExecutionTimeConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::ExecutionTimeConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="InputSynchronizationConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/timingconstraints/InputSynchronizationConstraint.gif" id="clazz.tool.class_1281003276991" name="InputSynchronizationConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::InputSynchronizationConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="OutputSynchronizationConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/timingconstraints/OutputSynchronizationConstraint.gif" id="clazz.tool.class_1281003281693" name="OutputSynchronizationConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::OutputSynchronizationConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="PeriodicEventConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/timingconstraints/PeriodicEventConstraint.gif" id="clazz.tool.class_1281003287473" name="PeriodicEventConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::PeriodicEventConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool></drawer></content></paletteDefinition>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><paletteDefinition><content><drawer iconpath="/icons/drawer.gif" id="Drawer__1281003191216" name="Timing">
+
+
+<aspectTool description="EventChain" id="clazz.tool.class_1281003287474" name="EventChain" refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::EventChain"></stereotype></stereotypesToApply></postAction>
+				</aspectTool>
+				
+				
+				<aspectTool description="PrecedenceConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/PrecedenceConstraint.gif" id="clazz.tool.class_1281003240458" name="PrecedenceConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::PrecedenceConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool>
+				<separator id="Separator_1281003240459"></separator>
+				<aspectTool description="ExecutionTimeConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/ExecutionTimeConstraint.gif" id="clazz.tool.class_1281003247996" name="ExecutionTimeConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::ExecutionTimeConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="InputSynchronizationConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/timingconstraints/InputSynchronizationConstraint.gif" id="clazz.tool.class_1281003276991" name="InputSynchronizationConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::InputSynchronizationConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="OutputSynchronizationConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/timingconstraints/OutputSynchronizationConstraint.gif" id="clazz.tool.class_1281003281693" name="OutputSynchronizationConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::OutputSynchronizationConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool><aspectTool description="PeriodicConstraint" iconpath="platform:/plugin/org.eclipse.papyrus.eastadl/resources/icons/timing/timingconstraints/PeriodicEventConstraint.gif" id="clazz.tool.class_1281003287473" name="PeriodicConstraint" refToolId="clazz.tool.class"><postAction id="org.eclipse.papyrus.applystereotypeactionprovider"><stereotypesToApply><stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::PeriodicConstraint"/></stereotypesToApply></postAction><postAction displayKind="IconStereotype" displayPlace="Compartment" id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"/></aspectTool>
+	<aspectTool description="AgeConstraint"
+		id="clazz.tool.class_1281003287476" name="AgeConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::AgeConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="ArbitraryConstraint"
+		id="clazz.tool.class_1281003287488" name="ArbitraryConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::ArbitraryConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="BurstConstraint"
+		id="clazz.tool.class_1281003287489" name="BurstConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::BurstConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="ComparisonConstraint"
+		id="clazz.tool.class_1281003287490" name="ComparisonConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::ComparisonConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="DelayConstraint"
+		id="clazz.tool.class_1281003287491" name="DelayConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::DelayConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="OrderConstraint"
+		id="clazz.tool.class_1281003287493" name="OrderConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::OrderConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="PatternConstraint"
+		id="clazz.tool.class_1281003287494" name="PatternConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::PatternConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="ReactionConstraint"
+		id="clazz.tool.class_1281003287495" name="ReactionConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::ReactionConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="RepetitionConstraint"
+		id="clazz.tool.class_1281003287496" name="RepetitionConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::RepetitionConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="SporadicConstraint"
+		id="clazz.tool.class_1281003287497" name="SporadicConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::SporadicConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="StrongDelayConstraint"
+		id="clazz.tool.class_1281003287498" name="StrongDelayConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::StrongDelayConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="StrongSynchronizationConstraint"
+		id="clazz.tool.class_1281003287499" name="StrongSynchronizationConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::StrongSynchronizationConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="SynchronizationConstraint"
+		id="clazz.tool.class_1281003287487" name="SynchronizationConstraint"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::TimingConstraints::SynchronizationConstraint"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<separator id="Separator_1281003240460"></separator>
+	<aspectTool description="EventFunction"
+		id="clazz.tool.class_1281003287478" name="EventFunction"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::Events::EventFunction"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="EventFunctionClientServerPort"
+		id="clazz.tool.class_1281003287479" name="EventFunctionClientServerPort"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::Events::EventFunctionClientServerPort"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="EventFunctionFlowPort"
+		id="clazz.tool.class_1281003287483" name="EventFunctionFlowPort"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::Events::EventFunctionFlowPort"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="ExternalEvent"
+		id="clazz.tool.class_1281003287484" name="ExternalEvent"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::Events::ExternalEvent"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	
+	<aspectTool description="AUTOSAREvent"
+		id="clazz.tool.class_1281003287480" name="AUTOSAREvent"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::Events::AUTOSAREvent"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	
+	<aspectTool description="EventFaultFailure"
+		id="clazz.tool.class_1281003287481" name="EventFaultFailure"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::Events::EventFaultFailure"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="EventFeatureFlaw"
+		id="clazz.tool.class_1281003287482" name="EventFeatureFlaw"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::Events::EventFeatureFlaw"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	
+	<aspectTool description="ModeEvent"
+		id="clazz.tool.class_1281003287485" name="ModeEvent"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Timing::Events::ModeEvent"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	<aspectTool description="StateEvent"
+		id="clazz.tool.class_1281003287486" name="StateEvent"
+		refToolId="clazz.tool.class">
+		<postAction>
+			<stereotypesToApply>
+				<stereotype stereotypeName="EAST-ADL2::Annex::TemporalConstraint::StateEvent"></stereotype></stereotypesToApply></postAction>
+	</aspectTool>
+	
+</drawer></content></paletteDefinition>

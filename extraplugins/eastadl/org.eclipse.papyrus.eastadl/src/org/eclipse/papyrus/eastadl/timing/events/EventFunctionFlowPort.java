@@ -15,9 +15,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.eastadl.timing.events;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort;
-import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
+import org.eclipse.papyrus.eastadl.infrastructure.EventFunctionFlowPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.values.EAExpression;
 import org.eclipse.papyrus.eastadl.timing.Event;
 
 
@@ -25,67 +24,47 @@ import org.eclipse.papyrus.eastadl.timing.Event;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Event Function Flow Port</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * Event that refers to the triggering of the Function at a flow port, i.e., when data is sent or received.
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}</li>
- * <li>{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort_path <em>Port path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFunctionFlowPort()
  * @model
  * @generated
  */
-public interface EventFunctionFlowPort extends Event {
-
+public interface EventFunctionFlowPort extends Event, EAExpression {
 	/**
-	 * Returns the value of the '<em><b>Port</b></em>' reference.
+	 * Returns the value of the '<em><b>Port</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Port</em>' reference isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Port</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Port</em>' reference.
-	 * @see #setPort(FunctionPort)
+	 * @return the value of the '<em>Port</em>' containment reference.
+	 * @see #setPort(EventFunctionFlowPortInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFunctionFlowPort_Port()
-	 * @model required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
-	FunctionPort getPort();
+	EventFunctionFlowPortInstanceRef getPort();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *        the new value of the '<em>Port</em>' reference.
+	 * @param value the new value of the '<em>Port</em>' containment reference.
 	 * @see #getPort()
 	 * @generated
 	 */
-	void setPort(FunctionPort value);
-
-	/**
-	 * Returns the value of the '<em><b>Port path</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Port path</em>' reference list isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Port path</em>' reference list.
-	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFunctionFlowPort_Port_path()
-	 * @model
-	 * @generated
-	 */
-	EList<FunctionPrototype> getPort_path();
+	void setPort(EventFunctionFlowPortInstanceRef value);
 
 } // EventFunctionFlowPort

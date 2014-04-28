@@ -1,20 +1,29 @@
 Manifest-Version: 1.0
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.eclipse.uml2.types;visibility:=reexport,
- org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.diagram.wizards;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.0",
- org.eclipse.uml2.uml;bundle-version="4.1.0",
- org.eclipse.uml2.uml.profile.standard;visibility:=reexport,
- org.eclipse.papyrus.sysml;bundle-version="1.0.0"
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.papyrus.eastadl;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Export-Package: org.eclipse.papyrus.eastadl,
  org.eclipse.papyrus.eastadl.annex,
+ org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint,
+ org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl,
+ org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.util,
+ org.eclipse.papyrus.eastadl.annex.behaviordescription,
+ org.eclipse.papyrus.eastadl.annex.behaviordescription.impl,
+ org.eclipse.papyrus.eastadl.annex.behaviordescription.util,
+ org.eclipse.papyrus.eastadl.annex.computationconstraint,
+ org.eclipse.papyrus.eastadl.annex.computationconstraint.impl,
+ org.eclipse.papyrus.eastadl.annex.computationconstraint.util,
  org.eclipse.papyrus.eastadl.annex.impl,
  org.eclipse.papyrus.eastadl.annex.needs,
  org.eclipse.papyrus.eastadl.annex.needs.impl,
  org.eclipse.papyrus.eastadl.annex.needs.util,
+ org.eclipse.papyrus.eastadl.annex.temporalconstraint,
+ org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl,
+ org.eclipse.papyrus.eastadl.annex.temporalconstraint.util,
  org.eclipse.papyrus.eastadl.behavior,
  org.eclipse.papyrus.eastadl.behavior.impl,
  org.eclipse.papyrus.eastadl.behavior.util,
@@ -52,12 +61,17 @@ Export-Package: org.eclipse.papyrus.eastadl,
  org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl,
  org.eclipse.papyrus.eastadl.infrastructure.userattributes.util,
  org.eclipse.papyrus.eastadl.infrastructure.util,
- org.eclipse.papyrus.eastadl.interchange,
- org.eclipse.papyrus.eastadl.interchange.impl,
- org.eclipse.papyrus.eastadl.interchange.util,
+ org.eclipse.papyrus.eastadl.infrastructure.values,
+ org.eclipse.papyrus.eastadl.infrastructure.values.impl,
+ org.eclipse.papyrus.eastadl.infrastructure.values.util,
  org.eclipse.papyrus.eastadl.requirements,
  org.eclipse.papyrus.eastadl.requirements.impl,
- org.eclipse.papyrus.eastadl.requirements.util,
+ org.eclipse.papyrus.eastadl.requirements.requirements,
+ org.eclipse.papyrus.eastadl.requirements.requirements.impl,
+ org.eclipse.papyrus.eastadl.requirements.requirements.util,
+ org.eclipse.papyrus.eastadl.requirements.usecases,
+ org.eclipse.papyrus.eastadl.requirements.usecases.impl,
+ org.eclipse.papyrus.eastadl.requirements.usecases.util,
  org.eclipse.papyrus.eastadl.requirements.verificationvalidation,
  org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl,
  org.eclipse.papyrus.eastadl.requirements.verificationvalidation.util,
@@ -93,13 +107,15 @@ Export-Package: org.eclipse.papyrus.eastadl,
  org.eclipse.papyrus.eastadl.variability,
  org.eclipse.papyrus.eastadl.variability.impl,
  org.eclipse.papyrus.eastadl.variability.util
-Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.uml2.types;visibility:=reexport,
+ org.eclipse.papyrus.uml.diagram.common,
+ org.eclipse.papyrus.uml.diagram.wizards,
+ org.eclipse.papyrus.uml.tools.utils;bundle-version="0.10.0",
+ org.eclipse.uml2.uml;bundle-version="4.1.0",
+ org.eclipse.papyrus.sysml;bundle-version="0.10.0",
+ org.eclipse.uml2.uml.profile.standard;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: .
-Bundle-Version: 1.0.0.qualifier
-Bundle-Localization: plugin
-Bundle-Name: %pluginName
-Bundle-ManifestVersion: 2
-Bundle-SymbolicName: org.eclipse.papyrus.eastadl;singleton:=true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
-
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -21,34 +21,60 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Enumeration</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#isIsMultiValued <em>Is Multi Valued</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEnumeration()
  * @model
  * @generated
  */
 public interface Enumeration extends EADatatype {
-
 	/**
 	 * Returns the value of the '<em><b>Literal</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EnumerationLiteral}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Literal</em>' containment reference list isn't clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Literal</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Literal</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEnumeration_Literal()
 	 * @model containment="true" lower="2" ordered="false"
 	 * @generated
 	 */
 	EList<EnumerationLiteral> getLiteral();
+
+	/**
+	 * Returns the value of the '<em><b>Is Multi Valued</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Multi Valued</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Multi Valued</em>' attribute.
+	 * @see #setIsMultiValued(boolean)
+	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEnumeration_IsMultiValued()
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isIsMultiValued();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#isIsMultiValued <em>Is Multi Valued</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Multi Valued</em>' attribute.
+	 * @see #isIsMultiValued()
+	 * @generated
+	 */
+	void setIsMultiValued(boolean value);
 
 } // Enumeration
