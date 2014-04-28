@@ -2376,5 +2376,12 @@
 
 		</diagramMappings>
 	</extension>
+<extension
+      point="org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild">
+   <semanticChild
+         editPart="org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartCompartmentEditPartCN"
+         getSemanticChildren="org.eclipse.papyrus.uml.diagram.composite.SynchroSemanticForPopertyPartCompartment">
+   </semanticChild>
+</extension>
 
 </plugin>
