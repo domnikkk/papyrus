@@ -209,6 +209,7 @@
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.css</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.deployment</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.dnd</module>
+		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.synchronizeview</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.icons</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.interactionoverview</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.menu</module>
