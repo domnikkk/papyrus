@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *      Christian W. Damus (CEA) - bug 413703
  *
@@ -47,7 +47,7 @@ public class DynamicNewChild extends ContributionItem {
 	protected CreationMenuRegistry creationMenuRegistry;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
@@ -56,7 +56,7 @@ public class DynamicNewChild extends ContributionItem {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param id
@@ -70,27 +70,28 @@ public class DynamicNewChild extends ContributionItem {
 		return new IContributionItem[0];
 	}
 
+	@Override
 	public boolean isDynamic() {
 		return true;
 	}
 
 
 
+	@Override
 	public void fill(Menu menu, int index) {
 		EObject eObject = getSelection();
-		if( eObject!=null){
+		if(eObject != null) {
 			CreationMenuFactory creationMenuFactory = new CreationMenuFactory(editingDomain);
 			ArrayList<Folder> folders = creationMenuRegistry.getRootFolder();
 			Iterator<Folder> iterFolder = folders.iterator();
 			while(iterFolder.hasNext()) {
 				Folder currentFolder = iterFolder.next();
-				boolean hasbeenBuild=creationMenuFactory.populateMenu(menu, currentFolder, eObject, index);
-				if( hasbeenBuild){
+				boolean hasbeenBuild = creationMenuFactory.populateMenu(menu, currentFolder, eObject, index);
+				if(hasbeenBuild) {
 					index++;
 				}
 			}
-		}
-		else{
+		} else {
 			super.fill(menu, index);
 		}
 	}
@@ -100,7 +101,7 @@ public class DynamicNewChild extends ContributionItem {
 
 	/**
 	 * getSelected eObject in the model explorer
-	 * 
+	 *
 	 * @return eObject or null
 	 */
 	protected EObject getSelection() {
@@ -123,8 +124,8 @@ public class DynamicNewChild extends ContributionItem {
 
 			try {
 				editingDomain = ServiceUtilsForEObject.getInstance().getService(org.eclipse.emf.transaction.TransactionalEditingDomain.class, editingDomainCitizen);
-			} catch (Throwable ex) {
-				Activator.log.error("Impossible to get the Transactional Editing Domain.", ex);
+			} catch (Exception ex) {
+				//Nothing to do. We can't handle this case
 			}
 			return selectedEObject;
 		}
