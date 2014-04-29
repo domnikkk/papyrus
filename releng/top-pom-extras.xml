@@ -54,6 +54,11 @@
 		<module>../extraplugins/dsml.validation/org.eclipse.papyrus.dsml.validation.properties</module>
 		<module>../extraplugins/dsml.validation/org.eclipse.papyrus.dsml.validation.wizard</module>
 		<module>../extraplugins/eastadl/org.eclipse.papyrus.eastadl</module>
+		<module>../extraplugins/eastadl/org.eclipse.papyrus.eastadl.nattable</module>
+		<module>../extraplugins/eastadl/org.eclipse.papyrus.eastadl.nattable.allocation</module>
+		<module>../extraplugins/eastadl/org.eclipse.papyrus.eastadl.nattable.allocation.config</module>
+		<module>../extraplugins/eastadl/org.eclipse.papyrus.eastadl.nattable.menu</module>
+		<module>../extraplugins/eastadl/org.eclipse.papyrus.eastadl.service.types</module>
 		<module>../plugins/infra/org.eclipse.papyrus.eclipse.project.editors</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.fcm.profile</module>
 		<module>../extraplugins/tablemigration/org.eclipse.papyrus.infra.emf.nattable.converter</module>
