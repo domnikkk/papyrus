@@ -2,6 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild" name="org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild" schema="schema/org.eclipse.papyrus.uml.diagram.synchronizeview.semanticchild.exsd"/>
+<!-- FIXME: Bug 433206 Reinstate this edit-policy provider when it doesn't break numerous automated test cases
 <extension
       point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
    <editpolicyProvider
@@ -11,5 +12,5 @@
       </Priority>
    </editpolicyProvider>
 </extension>
-
+-->
 </plugin>
