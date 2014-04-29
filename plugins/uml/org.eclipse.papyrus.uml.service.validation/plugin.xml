@@ -2,103 +2,43 @@
 <?eclipse version="3.4"?>
 <plugin>
 
- <extension
+  <extension
        point="org.eclipse.ui.handlers">
+	<handler
+			class="org.eclipse.papyrus.uml.service.validation.handler.ValidateModelHandler"
+			commandId="org.eclipse.papyrus.validation.ValidateModelCommand">
+		<activeWhen>
+			<iterate ifEmpty="false">
+				<adapt type="org.eclipse.emf.ecore.EObject"></adapt>
+			</iterate>
+		</activeWhen>
+	</handler>
     <handler
-          class="org.eclipse.papyrus.uml.service.validation.handler.ValidateModelHandler"
-          commandId="org.eclipse.papyrus.validation.ValidateModelCommand">
-       <activeWhen>
-       <with
-              variable="selection">
-           <iterate
-                 ifEmpty="false"
-                 operator="or">
-              <instanceof
-                    value="org.eclipse.emf.ecore.EObject">
-              </instanceof>
-           </iterate>
-        </with>
-        </activeWhen>
-    </handler>
+			class="org.eclipse.papyrus.uml.service.validation.handler.ValidateSubtreeHandler"
+			commandId="org.eclipse.papyrus.validation.ValidateSubtreeCommand">
+		<activeWhen>
+			<iterate ifEmpty="false">
+				<adapt type="org.eclipse.emf.ecore.EObject"></adapt>
+			</iterate>
+		</activeWhen>
+	</handler>
     <handler
-          class="org.eclipse.papyrus.uml.service.validation.handler.ValidateSubtreeHandler"
-          commandId="org.eclipse.papyrus.validation.ValidateSubtreeCommand">
-       <activeWhen>
-          <with
-                variable="selection">
-             <iterate
-                   ifEmpty="false"
-                   operator="or">
-                <instanceof
-                      value="org.eclipse.emf.ecore.EObject">
-                </instanceof>
-             </iterate>
-          </with>
-       </activeWhen>
-    </handler>
-    <handler
-          class="org.eclipse.papyrus.uml.service.validation.handler.SelectAndValidateSubtreeHandler"
-          commandId="org.eclipse.papyrus.validation.SelectAndValidateSubtreeCommand">
-       <activeWhen>
-          <with
-                variable="selection">
-             <iterate
-                   ifEmpty="false"
-                   operator="or">
-                <instanceof
-                      value="org.eclipse.emf.ecore.EObject">
-                </instanceof>
-             </iterate>
-          </with>
-       </activeWhen>
-    </handler>
-    <handler
-          class="org.eclipse.papyrus.uml.service.validation.handler.SelectAndValidateModelHandler"
-          commandId="org.eclipse.papyrus.validation.SelectAndValidateModelCommand">
-       <activeWhen>
-          <with
-                variable="selection">
-             <iterate
-                   ifEmpty="false"
-                   operator="or">
-                <instanceof
-                      value="org.eclipse.emf.ecore.EObject">
-                </instanceof>
-             </iterate>
-          </with>
-       </activeWhen>
-    </handler>
-    <handler
-          class="org.eclipse.papyrus.uml.service.validation.handler.ValidateDelMarkersFromModelHandler"
-          commandId="org.eclipse.papyrus.validation.ValidateDelMarkersFromModelCommand">
-       <activeWhen>
-          <with
-                variable="selection">
-             <iterate
-                   ifEmpty="false"
-                   operator="or">
-                <instanceof
-                      value="org.eclipse.emf.ecore.EObject">
-                </instanceof>
-             </iterate>
-          </with>
-       </activeWhen>
-    </handler>
-    <handler
-          class="org.eclipse.papyrus.validation.ValidateDelMarkersFromSubtreeCommand"
-          commandId="org.eclipse.papyrus.uml.service.validation.handler6">
-       <activeWhen>
-          <with
-                variable="selection">
-             <iterate
-                   ifEmpty="false"
-                   operator="or">
-                <instanceof
-                      value="org.eclipse.emf.ecore.EObject">
-                </instanceof>
-             </iterate>
-          </with>
-       </activeWhen>
-    </handler>
- </extension>
+			class="org.eclipse.papyrus.uml.service.validation.handler.SelectAndValidateSubtreeHandler"
+			commandId="org.eclipse.papyrus.validation.SelectAndValidateSubtreeCommand">
+		<activeWhen>
+			<iterate ifEmpty="false">
+				<adapt type="org.eclipse.emf.ecore.EObject"></adapt>
+			</iterate>
+		</activeWhen>
+	</handler>
+	<handler
+			class="org.eclipse.papyrus.uml.service.validation.handler.SelectAndValidateModelHandler"
+			commandId="org.eclipse.papyrus.validation.SelectAndValidateModelCommand">
+		<activeWhen>
+			<iterate ifEmpty="false">
+				<adapt type="org.eclipse.emf.ecore.EObject"></adapt>
+			</iterate>
+		</activeWhen>
+	</handler>
+  </extension>
 </plugin>

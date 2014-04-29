@@ -17,7 +17,6 @@ package org.eclipse.papyrus.infra.services.validation;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.CoreException;
@@ -32,11 +31,7 @@ import org.eclipse.papyrus.infra.services.markerlistener.providers.IMarkerProvid
 import org.eclipse.papyrus.infra.services.markerlistener.providers.WorkspaceMarkerProvider;
 import org.eclipse.papyrus.infra.services.markerlistener.util.MarkerListenerUtils;
 
-@SuppressWarnings("restriction")
 public class ValidationTool {
-
-	/** Current element */
-	private Object element;
 
 	/** current eobject */
 	private EObject eObject;

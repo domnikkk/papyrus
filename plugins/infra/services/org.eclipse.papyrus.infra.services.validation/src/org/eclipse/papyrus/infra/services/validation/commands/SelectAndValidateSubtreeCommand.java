@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.papyrus.infra.services.validation.IPapyrusDiagnostician;
+import org.eclipse.papyrus.infra.services.validation.Messages;
 import org.eclipse.ui.dialogs.PreferencesUtil;
 
 

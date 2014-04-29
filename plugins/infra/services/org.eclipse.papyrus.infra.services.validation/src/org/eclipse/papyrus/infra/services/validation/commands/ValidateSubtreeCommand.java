@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.papyrus.infra.services.validation.IPapyrusDiagnostician;
+import org.eclipse.papyrus.infra.services.validation.Messages;
 
 /**
  * Validate a sub-tree (in the sense of ecore containment hierarchy).

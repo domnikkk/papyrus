@@ -20,9 +20,7 @@ import org.eclipse.papyrus.infra.services.validation.EcoreDiagnostician;
 import org.eclipse.papyrus.infra.services.validation.commands.ValidateSubtreeCommand;
 
 /**
- * Action used for pasting either a model element or a shape (i.e. the model element represented
- * by the shape). Delegates to PasteShapeOrElementCommand
- * 
+ * Handler for validating a subtree
  */
 public class ValidateSubtreeHandler extends AbstractCommandHandler {
 

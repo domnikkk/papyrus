@@ -23,6 +23,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.infra.services.validation.Activator;
+import org.eclipse.papyrus.infra.services.validation.Messages;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
@@ -40,10 +41,10 @@ public class PreferencePage extends FieldEditorPreferencePage implements IWorkbe
 				{ "&Direct parent", "DIRECT" }, //$NON-NLS-1$//$NON-NLS-2$
 				{ "&All parents", "ALL" } //$NON-NLS-1$//$NON-NLS-2$
 		};
-		addField(new RadioGroupFieldEditor(PreferenceConstants.HIERARCHICAL_MARKERS, "Mark parents of erroneous elements in model explorer",
+		addField(new RadioGroupFieldEditor(PreferenceConstants.HIERARCHICAL_MARKERS, Messages.PreferencePage_MarkParents,
 			1, selection, getFieldEditorParent()));
 
-		addField(new BooleanFieldEditor(PreferenceConstants.AUTO_SHOW_VALIDATION_VIEW, "Automatically open the validation view, once validation is finished (and errors/warnings are present)",
+		addField(new BooleanFieldEditor(PreferenceConstants.AUTO_SHOW_VALIDATION_VIEW, Messages.PreferencePage_AutoOpenValidationView,
 			getFieldEditorParent()));
 		// stringField1 = new StringFieldEditor("MySTRING1",
 		//		"A &text preference:", getFieldEditorParent());

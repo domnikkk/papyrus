@@ -20,9 +20,7 @@ import org.eclipse.papyrus.infra.services.validation.handler.AbstractCommandHand
 import org.eclipse.papyrus.uml.service.validation.UMLDiagnostician;
 
 /**
- * Action used for pasting either a model element or a shape (i.e. the model element represented
- * by the shape). Delegates to PasteShapeOrElementCommand
- * 
+ * Handler for selecting constraints and then validating a subtree
  */
 public class SelectAndValidateSubtreeHandler extends AbstractCommandHandler {
 
