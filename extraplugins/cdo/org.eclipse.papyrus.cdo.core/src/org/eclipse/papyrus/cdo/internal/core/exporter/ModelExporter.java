@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.exporter;
 
@@ -33,8 +35,10 @@ import org.eclipse.papyrus.cdo.core.importer.IModelTransferNode;
 import org.eclipse.papyrus.cdo.core.importer.IModelTransferOperation;
 import org.eclipse.papyrus.cdo.internal.core.Activator;
 import org.eclipse.papyrus.cdo.internal.core.CDOProxyResolvingResourceSet;
+import org.eclipse.papyrus.cdo.internal.core.CDOUtils;
 import org.eclipse.papyrus.cdo.internal.core.IInternalPapyrusRepository;
 import org.eclipse.papyrus.cdo.internal.core.l10n.Messages;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
  * This is the ModelExporter type. Enjoy.
@@ -45,6 +49,7 @@ public class ModelExporter implements IModelExporter {
 		super();
 	}
 
+	@Override
 	public Diagnostic exportModels(final IModelExportMapping mapping) {
 		BasicDiagnostic result = new BasicDiagnostic();
 
@@ -54,6 +59,7 @@ public class ModelExporter implements IModelExporter {
 		if(result.getSeverity() < Diagnostic.ERROR) {
 			add(result, mapping.getConfiguration().getOperationContext().run(new IModelTransferOperation() {
 
+				@Override
 				public Diagnostic run(IProgressMonitor monitor) {
 					return doExport(mapping, monitor);
 				}
@@ -95,9 +101,10 @@ public class ModelExporter implements IModelExporter {
 			sub.worked(1);
 		} finally {
 			// don't clean up the configuration's resource set because it is not owned by the configuration
-			cleanUp(destination);
+			EMFHelper.unload(destination);
+			CDOUtils.unload(repository.getCDOView(source));
 			repository.close(source);
-			cleanUp(source);
+			EMFHelper.unload(source);
 			sub.worked(1);
 		}
 
@@ -164,14 +171,6 @@ public class ModelExporter implements IModelExporter {
 		}
 
 		return result;
-	}
-
-	private void cleanUp(ResourceSet resourceSet) {
-		for(Resource next : resourceSet.getResources()) {
-			next.unload();
-			next.eAdapters().clear();
-		}
-		resourceSet.getResources().clear();
 	}
 
 	private static void add(DiagnosticChain diagnostics, Diagnostic diagnostic) {

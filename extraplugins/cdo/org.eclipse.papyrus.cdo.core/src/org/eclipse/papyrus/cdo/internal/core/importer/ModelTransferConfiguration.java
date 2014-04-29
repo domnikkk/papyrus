@@ -9,6 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
+ *   Christian W. Damus (CEA) - bug 422257
  *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.importer;
@@ -38,6 +39,7 @@ import org.eclipse.papyrus.cdo.core.importer.IModelTransferOperation.Context;
 import org.eclipse.papyrus.cdo.internal.core.Activator;
 import org.eclipse.papyrus.cdo.internal.core.l10n.Messages;
 import org.eclipse.papyrus.infra.core.sashwindows.di.util.DiUtils;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
@@ -97,13 +99,7 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	public void dispose() {
 		if(resourceSet != null) {
 			if(ownResourceSet) {
-				for(Resource next : resourceSet.getResources()) {
-					next.unload();
-					next.eAdapters().clear();
-				}
-
-				resourceSet.getResources().clear();
-				resourceSet.eAdapters().clear();
+				EMFHelper.unload(resourceSet);
 				resourceSet = null;
 			} else {
 				// even if not owned, we should remove DependencyAdapters

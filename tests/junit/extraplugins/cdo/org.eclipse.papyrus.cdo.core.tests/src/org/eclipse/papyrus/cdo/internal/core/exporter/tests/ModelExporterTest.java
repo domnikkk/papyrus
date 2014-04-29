@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.exporter.tests;
 
@@ -34,6 +36,7 @@ import org.eclipse.papyrus.cdo.core.importer.IModelTransferConfiguration;
 import org.eclipse.papyrus.cdo.core.importer.IModelTransferNode;
 import org.eclipse.papyrus.cdo.core.importer.IModelTransferOperation;
 import org.eclipse.papyrus.cdo.core.tests.TestProject;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -98,6 +101,7 @@ public class ModelExporterTest extends AbstractModelExportTest {
 
 		config = IModelTransferConfiguration.Factory.EXPORT.create(new IModelTransferOperation.Context() {
 
+			@Override
 			public Diagnostic run(IModelTransferOperation operation) {
 				operation.run(new NullProgressMonitor());
 				return Diagnostic.OK_INSTANCE;
@@ -128,6 +132,7 @@ public class ModelExporterTest extends AbstractModelExportTest {
 
 			assertThat(Iterables.size(Iterables.filter(resource.getContents(), new Predicate<EObject>() {
 
+				@Override
 				public boolean apply(EObject input) {
 					boolean result = false;
 
@@ -146,13 +151,7 @@ public class ModelExporterTest extends AbstractModelExportTest {
 	}
 
 	protected void cleanUp(ResourceSet rset) {
-		for(Resource next : rset.getResources()) {
-			next.unload();
-			next.eAdapters().clear();
-		}
-
-		rset.getResources().clear();
-		rset.eAdapters().clear();
+		EMFHelper.unload(rset);
 	}
 
 	IModelTransferNode getNode(URI uri) {

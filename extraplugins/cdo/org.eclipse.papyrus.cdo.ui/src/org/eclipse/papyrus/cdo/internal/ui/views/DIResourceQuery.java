@@ -72,6 +72,8 @@ public class DIResourceQuery {
 
 	private AtomicReference<Set<CDOResource>> diResources = new AtomicReference<Set<CDOResource>>(Collections.<CDOResource> emptySet());
 
+	private Boolean hasLegacyModels;
+
 	private DIResourceQuery(StructuredViewer viewer, CDOView view) {
 		super();
 
@@ -195,6 +197,14 @@ public class DIResourceQuery {
 		return diResources.get();
 	}
 
+	boolean hasLegacyModels() {
+		if(hasLegacyModels == null) {
+			hasLegacyModels = query.getView().getSession().getPackageRegistry().getPackageInfo(DiPackage.eINSTANCE) != null;
+		}
+
+		return hasLegacyModels;
+	}
+
 	private void runQuery() {
 		// we cannot query for EClasses that the server doesn't know about. And,
 		// if it doesn't know about an EClass, then a priori, none of its
@@ -300,10 +310,6 @@ public class DIResourceQuery {
 			}
 
 			return Status.OK_STATUS;
-		}
-
-		private boolean hasLegacyModels() {
-			return query.getView().getSession().getPackageRegistry().getPackageInfo(DiPackage.eINSTANCE) != null;
 		}
 
 		private boolean isContained(CDOResource resource) {

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.editors;
 
@@ -38,6 +40,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.net4j.util.event.IEvent;
+import org.eclipse.papyrus.cdo.internal.core.CDOUtils;
 import org.eclipse.papyrus.cdo.internal.ui.util.UIUtil;
 
 import com.google.common.collect.Maps;
@@ -101,22 +105,27 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 			} else {
 				result = new CDOViewInvalidationEvent() {
 
+					@Override
 					public CDOView getSource() {
 						return event.getSource();
 					}
 
+					@Override
 					public long getTimeStamp() {
 						return event.getTimeStamp();
 					}
 
+					@Override
 					public Map<CDOObject, CDORevisionDelta> getRevisionDeltas() {
 						return deltas;
 					}
 
+					@Override
 					public Set<CDOObject> getDirtyObjects() {
 						return dirty;
 					}
 
+					@Override
 					public Set<CDOObject> getDetachedObjects() {
 						return detached;
 					}
@@ -154,6 +163,19 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 		// vis-a-vis refreshing the object and setting the editor dirty
 
 		RefreshAdapter.refreshLater(object, editor);
+	}
+
+	@Override
+	public void handleEvent(IEvent event) {
+		try {
+			super.handleEvent(event);
+		} finally {
+			if(CDOUtils.removeListenerFromDeactivatedLifecycle(this, event)) {
+				if(event.getSource() instanceof CDOTransaction) {
+					((CDOTransaction)event.getSource()).removeTransactionHandler(this);
+				}
+			}
+		}
 	}
 
 	//
@@ -206,6 +228,7 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 			return type == TYPE;
 		}
 
+		@Override
 		public void run() {
 			pending.remove(editor, this);
 

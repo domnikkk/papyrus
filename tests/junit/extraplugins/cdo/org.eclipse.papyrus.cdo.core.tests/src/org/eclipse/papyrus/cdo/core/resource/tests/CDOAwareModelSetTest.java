@@ -11,6 +11,7 @@
  *   Christian W. Damus (CEA) - bug 429242
  *   Christian W. Damus (CEA) - bug 429826
  *   Christian W. Damus (CEA) - bug 431953 (pre-requisite refactoring of ModelSet service start-up)
+ *   Christian W. Damus (CEA) - bug 422257
  *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource.tests;
@@ -31,7 +32,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.net4j.util.lifecycle.LifecycleException;
@@ -116,7 +116,7 @@ public class CDOAwareModelSetTest extends AbstractPapyrusCDOTest {
 
 	@Test
 	public void getEObject() throws Exception {
-		ResourceSet other = getPapyrusRepository().createTransaction(new ResourceSetImpl());
+		ResourceSet other = getPapyrusRepository().createTransaction(houseKeeper.createResourceSet());
 
 		Resource resource = getTransaction(other).getOrCreateResource(getResourcePath("other.uml"));
 
@@ -139,7 +139,7 @@ public class CDOAwareModelSetTest extends AbstractPapyrusCDOTest {
 
 	@Test
 	public void resolveProxy() throws Exception {
-		ResourceSet other = getPapyrusRepository().createTransaction(new ResourceSetImpl());
+		ResourceSet other = getPapyrusRepository().createTransaction(houseKeeper.createResourceSet());
 
 		Resource resource1 = getTransaction(other).getOrCreateResource(getResourcePath(MODEL_FILENAME));
 		Model model1 = UMLFactory.eINSTANCE.createModel();

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.editors;
 
@@ -35,7 +37,14 @@ import org.eclipse.papyrus.cdo.internal.ui.Activator;
 import org.eclipse.papyrus.cdo.internal.ui.l10n.Messages;
 import org.eclipse.papyrus.cdo.internal.ui.util.UIUtil;
 import org.eclipse.papyrus.editor.PapyrusMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.sasheditor.editor.IComponentPage;
+import org.eclipse.papyrus.infra.core.sasheditor.editor.IEditorPage;
+import org.eclipse.papyrus.infra.core.sasheditor.editor.IPage;
+import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageLifeCycleEventsListener;
+import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageVisitor;
+import org.eclipse.papyrus.infra.core.sasheditor.editor.ISashWindowsContainer;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -44,6 +53,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 
+import com.google.common.base.Optional;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
@@ -174,12 +184,17 @@ public class PapyrusCDOEditorManager {
 		}
 	}
 
-	private class EditorListener implements IPartListener {
+	private class EditorListener implements IPartListener, IPageLifeCycleEventsListener {
 
 		private final Set<IEditorPart> editors = Sets.newHashSet();
 
 		void addEditor(IEditorPart editor) {
 			editors.add(editor);
+
+			Optional<ISashWindowsContainer> sashContainer = AdapterUtils.adapt(editor, ISashWindowsContainer.class);
+			if(sashContainer.isPresent()) {
+				sashContainer.get().addPageLifeCycleListener(this);
+			}
 		}
 
 		@Override
@@ -187,6 +202,30 @@ public class PapyrusCDOEditorManager {
 			if(editors.remove(part)) {
 				IEditorPart editor = (IEditorPart)part;
 				closed(editor);
+			}
+
+			Optional<ISashWindowsContainer> sashContainer = AdapterUtils.adapt(part, ISashWindowsContainer.class);
+			if(sashContainer.isPresent()) {
+				sashContainer.get().removePageLifeCycleListener(this);
+				sashContainer.get().visit(new IPageVisitor() {
+
+					@Override
+					public void accept(IEditorPage page) {
+						pageClosed(page);
+					}
+
+					@Override
+					public void accept(IComponentPage page) {
+						// pass
+					}
+				});
+			}
+		}
+
+		@Override
+		public void pageClosed(IPage page) {
+			if(page instanceof IEditorPage) {
+				closed(((IEditorPage)page).getIEditorPart());
 			}
 		}
 
@@ -207,6 +246,36 @@ public class PapyrusCDOEditorManager {
 
 		@Override
 		public void partOpened(IWorkbenchPart part) {
+			// pass
+		}
+
+		@Override
+		public void pageChanged(IPage newPage) {
+			// pass
+		}
+
+		@Override
+		public void pageOpened(IPage page) {
+			// pass
+		}
+
+		@Override
+		public void pageActivated(IPage page) {
+			// pass
+		}
+
+		@Override
+		public void pageDeactivated(IPage page) {
+			// pass
+		}
+
+		@Override
+		public void pageAboutToBeOpened(IPage page) {
+			// pass
+		}
+
+		@Override
+		public void pageAboutToBeClosed(IPage page) {
 			// pass
 		}
 	}

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.tests;
 
@@ -23,10 +25,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EContentsEList.FeatureListIterator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.cdo.internal.core.CDOUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
+import org.junit.Rule;
 import org.junit.Test;
 
 
@@ -34,6 +37,9 @@ import org.junit.Test;
  * Selected unit tests for the {@link CDOUtils} class.
  */
 public class CDOUtilsTest {
+
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
 
 	public CDOUtilsTest() {
 		super();
@@ -63,7 +69,7 @@ public class CDOUtilsTest {
 
 	@Test
 	public void testIteratorReferenceResolving() throws Exception {
-		ResourceSet rset = new ResourceSetImpl();
+		ResourceSet rset = houseKeeper.createResourceSet();
 		Resource a = rset.getResource(getTestResourceURI("A.ecore"), true);
 
 		EClass a1 = (EClass)((EPackage)a.getContents().get(0)).getEClassifier("A1");
@@ -92,8 +98,9 @@ public class CDOUtilsTest {
 	}
 
 	@Test
-	public void testIteratorReferenceNonesolving() throws Exception {
-		ResourceSet rset = new ResourceSetImpl();
+	public void testIteratorReferenceNonResolving() throws Exception {
+		ResourceSet rset = houseKeeper.createResourceSet();
+
 		Resource a = rset.getResource(getTestResourceURI("A.ecore"), true);
 
 		EClass a1 = (EClass)((EPackage)a.getContents().get(0)).getEClassifier("A1");

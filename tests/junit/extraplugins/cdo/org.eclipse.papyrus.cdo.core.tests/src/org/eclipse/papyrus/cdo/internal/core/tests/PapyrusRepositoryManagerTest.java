@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.tests;
 
@@ -112,7 +114,7 @@ public class PapyrusRepositoryManagerTest extends AbstractPapyrusCDOTest {
 
 		repo.connect();
 
-		ResourceSet rset = new ResourceSetImpl();
+		ResourceSet rset = houseKeeper.createResourceSet();
 		assertThat(repo.createTransaction(rset), sameInstance(rset));
 
 		CDOTransaction transaction = (CDOTransaction)repo.getCDOView(rset);
@@ -173,7 +175,7 @@ public class PapyrusRepositoryManagerTest extends AbstractPapyrusCDOTest {
 	@Test
 	public void disposalNoAction() throws Exception {
 
-		PapyrusRepository repo = (PapyrusRepository)fixture.createRepository(getRepositoryURL());
+		PapyrusRepository repo = houseKeeper.cleanUpLater((PapyrusRepository)fixture.createRepository(getRepositoryURL()), repositoryDisposer());
 		repo.connect();
 
 		repo.addResourceSetDisposalApprover(new IResourceSetDisposalApprover() {
@@ -186,6 +188,7 @@ public class PapyrusRepositoryManagerTest extends AbstractPapyrusCDOTest {
 		});
 
 		ResourceSet rset = repo.createTransaction(new ResourceSetImpl());
+		houseKeeper.cleanUpLater(repo.getCDOView(rset), viewDisposer(repo));
 		CommitListener listener = new CommitListener();
 		repo.getCDOView(rset).addListener(listener);
 
@@ -215,7 +218,7 @@ public class PapyrusRepositoryManagerTest extends AbstractPapyrusCDOTest {
 			}
 		});
 
-		ResourceSet rset = repo.createTransaction(new ResourceSetImpl());
+		ResourceSet rset = repo.createTransaction(houseKeeper.createResourceSet());
 		CDOView view = repo.getCDOView(rset);
 		CommitListener listener = new CommitListener();
 		view.addListener(listener);
@@ -246,7 +249,7 @@ public class PapyrusRepositoryManagerTest extends AbstractPapyrusCDOTest {
 			}
 		});
 
-		ResourceSet rset = repo.createTransaction(new ResourceSetImpl());
+		ResourceSet rset = repo.createTransaction(houseKeeper.createResourceSet());
 		CDOView view = repo.getCDOView(rset);
 		CommitListener listener = new CommitListener();
 		view.addListener(listener);

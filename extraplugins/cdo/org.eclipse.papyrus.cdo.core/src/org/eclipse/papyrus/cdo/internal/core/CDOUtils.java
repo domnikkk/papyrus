@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core;
 
@@ -25,12 +27,15 @@ import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.cdo.common.id.CDOID;
 import org.eclipse.emf.cdo.common.id.CDOIDUtil;
 import org.eclipse.emf.cdo.dawn.spi.DawnState;
+import org.eclipse.emf.cdo.eresource.CDOResource;
 import org.eclipse.emf.cdo.eresource.CDOResourceNode;
 import org.eclipse.emf.cdo.util.CDOUtil;
 import org.eclipse.emf.cdo.view.CDOView;
 import org.eclipse.emf.cdo.view.CDOViewInvalidationEvent;
 import org.eclipse.emf.cdo.view.CDOViewSet;
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -42,11 +47,17 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.spi.cdo.InternalCDOView;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.net4j.util.event.IEvent;
+import org.eclipse.net4j.util.event.IListener;
+import org.eclipse.net4j.util.lifecycle.LifecycleEvent;
 import org.eclipse.papyrus.cdo.core.resource.CDOAwareTransactionalEditingDomain;
 import org.eclipse.papyrus.cdo.core.util.CDOFunctions;
 
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.UnmodifiableListIterator;
@@ -59,6 +70,9 @@ public class CDOUtils {
 	private static final Set<String> CDO_URI_SCHEMES = ImmutableSet.of("cdo", "dawn"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	private static Executor broadcastExecutor = new DirectExecutor();
+
+	@SuppressWarnings("restriction")
+	private static final Predicate<Object> IS_LEGACY_WRAPPER = Predicates.instanceOf(org.eclipse.emf.internal.cdo.object.CDOObjectWrapperBase.class);
 
 	/**
 	 * Not instantiable by clients.
@@ -441,6 +455,81 @@ public class CDOUtils {
 
 	public static void setBroadcastExecutor(Executor executor) {
 		broadcastExecutor = (executor == null) ? new DirectExecutor() : executor;
+	}
+
+	/**
+	 * Remove the given {@code listener} if the event it received is a lifecycle deactivation event.
+	 * 
+	 * @param listener
+	 *        a listener that received a possible deactivation event
+	 * @param possibleDeactivation
+	 *        the event that may be a lifecycle deactivation
+	 * 
+	 * @return whether the listener was removed because the event was a deactivation
+	 */
+	public static boolean removeListenerFromDeactivatedLifecycle(IListener listener, IEvent possibleDeactivation) {
+		boolean result = false;
+
+		if(possibleDeactivation instanceof LifecycleEvent) {
+			switch(((LifecycleEvent)possibleDeactivation).getKind()) {
+			case DEACTIVATED:
+				possibleDeactivation.getSource().removeListener(listener);
+				result = true;
+				break;
+			default:
+				// Pass
+				break;
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * Unloads a {@code cdoObject} (because {@link CDOResource}s don't implement unloading) by clearing its adapters.
+	 * 
+	 * @param cdoObject
+	 *        a CDO object to unload
+	 * 
+	 * @see #unload(CDOView)
+	 */
+	public static void unload(CDOObject cdoObject) {
+		EObject eObject = CDOUtil.getEObject(cdoObject);
+		if(eObject != null) {
+			// Remove all adapters *except* the all-important legacy wrapper!
+			EList<Adapter> adapters = eObject.eAdapters();
+			if(!adapters.isEmpty()) {
+				Adapter legacyWrapper = Iterables.find(eObject.eAdapters(), IS_LEGACY_WRAPPER, null);
+
+				// Don't do anything if the only adapter is the legacy wrapper
+				if((legacyWrapper == null) || (adapters.size() > 1)) {
+					adapters.clear();
+					if(legacyWrapper != null) {
+						// Restore it, otherwise references to this CDOObject will break
+						adapters.add(0, legacyWrapper);
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Unloads aall of the objects in a {@code cdoView} (because {@link CDOResource}s don't implement unloading) by clearing thriw adapters.
+	 * 
+	 * @param cdoView
+	 *        a view to unload
+	 * 
+	 * @see #unload(CDOObject)
+	 */
+	public static void unload(CDOView cdoView) {
+		if(cdoView instanceof InternalCDOView) {
+			for(CDOObject next : ((InternalCDOView)cdoView).getObjectsList()) {
+				// Don't clear adapters of the resource because ECrossReferenceAdapters would try to crawl the contents
+				if(!(next instanceof CDOResourceNode)) {
+					CDOUtils.unload(next);
+				}
+			}
+		}
 	}
 
 	//

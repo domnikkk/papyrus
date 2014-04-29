@@ -10,6 +10,7 @@
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
  *   Christian W. Damus (CEA) - bug 430023
+ *   Christian W. Damus (CEA) - bug 422257
  *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.tests;
@@ -36,6 +37,7 @@ import org.eclipse.emf.cdo.transaction.CDOTransaction;
 import org.eclipse.emf.cdo.view.CDOView;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -46,17 +48,18 @@ import org.eclipse.net4j.util.container.ContainerUtil;
 import org.eclipse.net4j.util.container.IManagedContainer;
 import org.eclipse.net4j.util.lifecycle.LifecycleUtil;
 import org.eclipse.papyrus.cdo.core.IPapyrusRepository;
+import org.eclipse.papyrus.cdo.internal.core.CDOUtils;
 import org.eclipse.papyrus.cdo.internal.core.IInternalPapyrusRepository;
 import org.eclipse.papyrus.cdo.internal.core.PapyrusRepositoryManager;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
-import org.junit.rules.TestName;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 
@@ -68,7 +71,7 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 	private static final Pattern LEADING_SLASHES = Pattern.compile("^/+");
 
 	@Rule
-	public final TestName name = new TestName();
+	public final HouseKeeper houseKeeper = new HouseKeeper();
 
 	private String repoUUID;
 
@@ -94,10 +97,10 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 		if(needPapyrusRepository()) {
 			repository = PapyrusRepositoryManager.INSTANCE.getRepository(repoURL);
 			if(repository == null) {
-				repository = PapyrusRepositoryManager.INSTANCE.createRepository(repoURL);
+				repository = houseKeeper.cleanUpLater(PapyrusRepositoryManager.INSTANCE.createRepository(repoURL), repositoryDisposer());
 			}
 
-			repository.setName(name.getMethodName());
+			repository.setName(houseKeeper.getTestName());
 
 			if(!repository.isConnected()) {
 				repository.connect();
@@ -113,19 +116,38 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 		}
 	}
 
-	@After
-	public void disposeRepository() throws Exception {
+	protected HouseKeeper.Disposer<IManagedContainer> containerDisposer() {
+		return new HouseKeeper.Disposer<IManagedContainer>() {
 
-		if(repository != null) {
-			repository.disconnect();
-			PapyrusRepositoryManager.INSTANCE.removeRepository(repository);
-			repository = null;
+			@Override
+			public void dispose(IManagedContainer object) {
+				LifecycleUtil.deactivate(object);
+			}
+		};
+	}
 
-			// persist the removal (the new new repository saved its UUID when opened)
-			PapyrusRepositoryManager.INSTANCE.saveRepositories();
-		}
+	protected HouseKeeper.Disposer<IPapyrusRepository> repositoryDisposer() {
+		return new HouseKeeper.Disposer<IPapyrusRepository>() {
 
-		LifecycleUtil.deactivate(container);
+			@Override
+			public void dispose(IPapyrusRepository object) throws Exception {
+				Exception exception = null;
+				try {
+					object.disconnect();
+				} catch (Exception e) {
+					exception = e;
+				}
+
+				PapyrusRepositoryManager.INSTANCE.removeRepository(object);
+
+				// persist the removal (the new repository saved its UUID when opened)
+				PapyrusRepositoryManager.INSTANCE.saveRepositories();
+
+				if(exception != null) {
+					throw exception;
+				}
+			}
+		};
 	}
 
 	protected Map<String, String> getRepositoryProperties() {
@@ -144,7 +166,7 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 	}
 
 	protected IManagedContainer createServerContainer() {
-		IManagedContainer result = ContainerUtil.createContainer();
+		IManagedContainer result = houseKeeper.cleanUpLater(ContainerUtil.createContainer(), containerDisposer());
 
 		prepareContainer(result);
 
@@ -181,7 +203,7 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 
 		CDOTransaction result = getTransaction(repo.createTransaction(createResourceSet()));
 
-		return result;
+		return houseKeeper.cleanUpLater(result, viewDisposer(repo));
 	}
 
 	protected CDOView createView() {
@@ -189,7 +211,46 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 
 		CDOView result = getInternalPapyrusRepository().getCDOView(repo.createReadOnlyView(createResourceSet()));
 
-		return result;
+		return houseKeeper.cleanUpLater(result, viewDisposer(repo));
+	}
+
+	protected void close(IPapyrusRepository repository, CDOView view) {
+		ResourceSet rset = view.getResourceSet();
+
+		// CDOResources don't implement unload(), but we can remove adapters from
+		// all of the objects that we have loaded in this view
+		CDOUtils.unload(view);
+
+		for(Resource next : ImmutableList.copyOf(rset.getResources())) {
+			next.unload();
+		}
+
+		if(repository.isConnected()) {
+			repository.close(rset);
+		}
+
+		rset.getResources().clear();
+		rset.eAdapters().clear();
+
+		// Clear the package registry (it may contain dynamic profile EPackages that we don't
+		// want to leak in BasicExtendedMetaData instances attached to static EPackages)
+		// Works around EMF bug 433108
+		EPackage.Registry packageRegistry = rset.getPackageRegistry();
+		if(packageRegistry != null) {
+			packageRegistry.clear();
+		}
+	}
+
+	protected HouseKeeper.Disposer<CDOView> viewDisposer(final IPapyrusRepository repository) {
+		return new HouseKeeper.Disposer<CDOView>() {
+
+			@Override
+			public void dispose(CDOView object) {
+				if(!object.isClosed()) {
+					close(repository, object);
+				}
+			}
+		};
 	}
 
 	private ResourceSet createResourceSet() {
@@ -241,7 +302,7 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 	}
 
 	protected String getResourceFolder() {
-		return String.format("/%s/%s", getClass().getSimpleName(), name.getMethodName());
+		return String.format("/%s/%s", getClass().getSimpleName(), houseKeeper.getTestName());
 	}
 
 	protected String getResourcePath(String path) {
@@ -262,7 +323,7 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 
 	protected URI getTestFolderURI() {
 		// last segment adds the trailing separator
-		return getRepositoryURI().appendSegment(getClass().getSimpleName()).appendSegment(name.getMethodName()).appendSegment("");
+		return getRepositoryURI().appendSegment(getClass().getSimpleName()).appendSegment(houseKeeper.getTestName()).appendSegment("");
 	}
 
 	protected static <T> T cast(Object object, Class<T> type) {
@@ -275,7 +336,7 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 	}
 
 	protected void loadTemplate(String templateName, String resourceName, Resource... resource) {
-		ResourceSet rset = new ResourceSetImpl();
+		ResourceSet rset = houseKeeper.createResourceSet();
 
 		// load all the templates
 		Resource[] templates = new Resource[resource.length];
@@ -292,14 +353,6 @@ public abstract class AbstractPapyrusCDOTest extends AbstractPapyrusTest {
 		for(int i = 0; i < resource.length; i++) {
 			resource[i].getContents().addAll(templates[i].getContents());
 		}
-
-		// unload the now empty template resources
-		for(Resource next : rset.getResources()) {
-			next.unload();
-			next.eAdapters().clear();
-		}
-		rset.getResources().clear();
-		rset.eAdapters().clear();
 	}
 
 	protected <T extends EObject> T getMasterViewObject(T object) {

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.ui.tests;
 
@@ -114,14 +116,13 @@ public abstract class AbstractPapyrusCDOUITest extends AbstractPapyrusCDOTest {
 	public void importTestModel() throws Exception {
 
 		CDOTransaction transaction = createTransaction();
-		ResourceSet rset = transaction.getResourceSet();
 
 		importResource(transaction, TEST_MODEL_NAME, TEST_MODEL_NAME);
 		importResource(transaction, TEST_UML_NAME, TEST_UML_NAME);
 		importResource(transaction, TEST_NOTATION_NAME, TEST_NOTATION_NAME);
 
-		getPapyrusRepository().commit(rset);
-		getPapyrusRepository().close(rset);
+		getPapyrusRepository().commit(transaction.getResourceSet());
+		close(getPapyrusRepository(), transaction);
 	}
 
 	@After

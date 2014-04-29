@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core;
 
@@ -461,6 +463,9 @@ public class PapyrusRepository extends Container<CDOResourceNode> implements IIn
 				} else {
 					fireEvent(); // just refresh my presentation
 				}
+
+				// We created this view, so we should do our best to clean it up
+				CDOUtils.unload(view);
 			}
 		} finally {
 			unadaptView(view);

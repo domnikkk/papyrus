@@ -9,6 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
+ *   Christian W. Damus (CEA) - bug 422257
  *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource;
@@ -203,23 +204,29 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 	@Override
 	public void unload() {
 		try {
-			super.unload();
+			// CDOResources don't implement unload(), but we can remove adapters from
+			// all of the objects that we have loaded in this view
+			CDOUtils.unload(getCDOView());
 		} finally {
-			if((repository != null) && (getCDOView() != null)) {
-				CDOView view = getCDOView();
-				if(view != null) {
-					view.removeListener(getInvalidationListener());
+			try {
+				super.unload();
+			} finally {
+				if((repository != null) && (getCDOView() != null)) {
+					CDOView view = getCDOView();
+					if(view != null) {
+						view.removeListener(getInvalidationListener());
+					}
+					invalidationListener = null;
+
+					// dispose the transaction
+					repository.close(this);
+
+					// now, we can remove the CDOViewSet adapter
+					eAdapters().clear();
 				}
-				invalidationListener = null;
 
-				// dispose the transaction
-				repository.close(this);
-
-				// now, we can remove the CDOViewSet adapter
-				eAdapters().clear();
+				repository = null;
 			}
-
-			repository = null;
 		}
 	}
 

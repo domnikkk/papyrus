@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.customization.properties.storage.action;
 
@@ -70,14 +72,17 @@ import com.google.common.io.Closeables;
  */
 public class CDOContextCopyAction extends AbstractCDOContextAction implements IContextCopyAction {
 
+	@Override
 	public String getLabel() {
 		return Messages.CDOContextCopyAction_0;
 	}
 
+	@Override
 	public String getToolTip() {
 		return Messages.CDOContextCopyAction_1;
 	}
 
+	@Override
 	public Context copy(Context source, String targetName, IProgressMonitor monitor) throws CoreException {
 		IInternalPapyrusRepository repository = selectRepository(source);
 		if(repository == null) {
@@ -135,7 +140,9 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 		} catch (Exception e) {
 			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getLocalizedMessage(), e));
 		} finally {
+			CDOUtils.unload(transaction);
 			transaction.close();
+			EMFHelper.unload(transaction.getResourceSet());
 			sub.done();
 		}
 
@@ -170,10 +177,12 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 			final IPapyrusRepository[] innerResult = { initialSelection };
 			Display.getDefault().syncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					Shell active = Display.getDefault().getActiveShell();
 					RepositorySelectionDialog dlg = new RepositorySelectionDialog(active, mgr, innerResult[0], new Supplier<IRunnableContext>() {
 
+						@Override
 						public IRunnableContext get() {
 							return new ProgressMonitorDialog(Display.getDefault().getActiveShell());
 						}

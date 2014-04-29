@@ -9,6 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
+ *   Christian W. Damus (CEA) - bug 422257
  *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.importer;
@@ -48,6 +49,7 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.PageList;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashModel;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr;
 import org.eclipse.papyrus.infra.core.sashwindows.di.util.DiUtils;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 import com.google.common.collect.Sets;
 
@@ -147,9 +149,10 @@ public class ModelImporter implements IModelImporter {
 				result.add(new BasicDiagnostic(IStatus.ERROR, Activator.PLUGIN_ID, 0, Messages.ModelImporter_6, new Object[]{ e }));
 			}
 		} finally {
-			cleanUp(configuration.getResourceSet());
-			cleanUp(destination);
+			EMFHelper.unload(configuration.getResourceSet());
+			CDOUtils.unload(repository.getCDOView(destination));
 			repository.close(destination);
+			EMFHelper.unload(destination);
 			sub.worked(1);
 		}
 
@@ -336,14 +339,6 @@ public class ModelImporter implements IModelImporter {
 		}
 
 		return result;
-	}
-
-	private void cleanUp(ResourceSet resourceSet) {
-		for(Resource next : resourceSet.getResources()) {
-			next.unload();
-			next.eAdapters().clear();
-		}
-		resourceSet.getResources().clear();
 	}
 
 	private static void add(DiagnosticChain diagnostics, Diagnostic diagnostic) {
