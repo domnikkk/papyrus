@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -75,6 +76,7 @@ import org.eclipse.papyrus.uml.diagram.common.part.PaletteUtil;
 import org.eclipse.papyrus.uml.diagram.common.part.PapyrusPalettePreferences;
 import org.eclipse.papyrus.uml.diagram.common.service.AspectCreationEntry;
 import org.eclipse.papyrus.uml.diagram.common.service.IPapyrusPaletteConstant;
+import org.eclipse.papyrus.uml.diagram.common.service.PaletteConfigurationUtils;
 import org.eclipse.papyrus.uml.diagram.common.service.PapyrusPaletteService;
 import org.eclipse.papyrus.uml.diagram.common.service.palette.StereotypeAspectActionProvider;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration;
@@ -85,7 +87,6 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Paletteconfiguration
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.SeparatorConfiguration;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolConfiguration;
-import org.eclipse.papyrus.uml.diagram.paletteconfiguration.util.PaletteConfigurationUtils;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.util.PaletteconfigurationSwitch;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
@@ -838,7 +839,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 					return;
 				}
 
-				Iterator<Object> it = selection.iterator();
+				Iterator<?> it = selection.iterator();
 				while(it.hasNext()) {
 					Object o = it.next();
 					if(o instanceof IAdaptable) {
@@ -1342,7 +1343,7 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		if(topPackage != null) {
 			return topPackage.getAllAppliedProfiles();
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -2122,12 +2123,12 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 							List<Class> metaclasses = stereotype.getAllExtendedMetaclasses();
 							for(Class stMetaclass : metaclasses) {
 								// get Eclass
-								java.lang.Class metaclassClass = stMetaclass.getClass();
+								java.lang.Class<?> metaclassClass = stMetaclass.getClass();
 								if(metaclassClass != null) {
 									EClassifier metaClassifier = UMLPackage.eINSTANCE.getEClassifier(stMetaclass.getName());
 									if(((EClass)metaClassifier).isSuperTypeOf(toolMetaclass)) {
 										// should create the palette entry
-										HashMap properties = new HashMap();
+										Map<Object, Object> properties = new HashMap<Object, Object>();
 										properties.put(IPapyrusPaletteConstant.ASPECT_ACTION_KEY, StereotypeAspectActionProvider.createConfigurationNode(stereotype.getQualifiedName()));
 										AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(), entry.getSmallIcon(), (CombinedTemplateCreationEntry)entry, properties);
 										entries.add(aspectEntry);
@@ -2241,8 +2242,8 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 									EClassifier metaClassifier = UMLPackage.eINSTANCE.getEClassifier(stMetaclass.getName());
 									if(((EClass)metaClassifier).isSuperTypeOf(toolMetaclass)) {
 										// should create the palette entry
-										HashMap properties = new HashMap();
-										ArrayList<String> stereotypesQNToApply = new ArrayList<String>();
+										Map<Object, Object> properties = new HashMap<Object, Object>();
+										// ArrayList<String> stereotypesQNToApply = new ArrayList<String>();
 										properties.put(IPapyrusPaletteConstant.ASPECT_ACTION_KEY, StereotypeAspectActionProvider.createConfigurationNode(stereotype.getQualifiedName()));
 										AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(), entry.getSmallIcon(), entry, properties);
 										entries.add(aspectEntry);

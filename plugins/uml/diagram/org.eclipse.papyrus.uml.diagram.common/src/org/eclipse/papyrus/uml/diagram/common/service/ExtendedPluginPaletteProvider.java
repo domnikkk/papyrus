@@ -9,7 +9,7 @@
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.uml.diagram.paletteconfiguration.provider;
+package org.eclipse.papyrus.uml.diagram.common.service;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,9 +46,6 @@ import org.eclipse.gmf.runtime.diagram.ui.services.palette.PaletteFactory;
 import org.eclipse.gmf.runtime.gef.ui.internal.palette.PaletteStack;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.uml.diagram.common.part.PapyrusPalettePreferences;
-import org.eclipse.papyrus.uml.diagram.common.service.AspectUnspecifiedTypeConnectionTool;
-import org.eclipse.papyrus.uml.diagram.common.service.AspectUnspecifiedTypeCreationTool;
-import org.eclipse.papyrus.uml.diagram.common.service.IProfileDependantPaletteProvider;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Activator;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ChildConfiguration;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Configuration;
@@ -60,7 +57,10 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Paletteconfiguration
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.SeparatorConfiguration;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolConfiguration;
-import org.eclipse.papyrus.uml.diagram.paletteconfiguration.util.PaletteConfigurationUtils;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.provider.ExtendedConnectionToolEntry;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.provider.ExtendedCreationToolEntry;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.provider.ExtendedPaletteDrawer;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.provider.IElementTypesBasedTool;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.util.PaletteconfigurationSwitch;
 import org.eclipse.ui.IEditorPart;
 import org.osgi.framework.Bundle;
@@ -494,7 +494,7 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 			contributions = Collections.emptyList();
 		}
 	}
-
+	
 	/**
 	 * Loads and returns the model, given the bundle and path of the model file.
 	 * 
@@ -606,6 +606,18 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 		}
 
 		resource = resourceSet.createResource(URI.createPlatformPluginURI("/" + bundleId + "/" + path, true));
+		return resource;
+	}
+	
+	
+	/**
+	 * Loads the resource from the plugin area
+	 * 
+	 * @return the resource to load.
+	 * @throws FileNotFoundException
+	 */
+	protected Resource loadResourceFromWorkspace(String path, ResourceSet resourceSet) {
+		Resource resource = resourceSet.createResource(URI.createPlatformResourceURI(path, true));
 		return resource;
 	}
 

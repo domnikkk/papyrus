@@ -11,7 +11,7 @@
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.uml.diagram.paletteconfiguration.util;
+package org.eclipse.papyrus.uml.diagram.common.service;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -28,6 +28,7 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Paletteconfiguration
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.SeparatorConfiguration;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolConfiguration;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.util.PaletteconfigurationSwitch;
 
 
 /**

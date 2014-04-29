@@ -77,6 +77,25 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 	}
 
 	/**
+	 * @return
+	 */
+	public static List<IPaletteDescription> getWorkspaceExtendedPalettes() {
+		ArrayList<IPaletteDescription> paletteDescriptions = new ArrayList<IPaletteDescription>();
+		// retrieve the value of the preference field
+		XMLMemento rootMemento = getExistingWorkspaceExtendedPalettes();
+		if(rootMemento == null) {
+			return paletteDescriptions;
+		}
+		// retrieve all palette descriptions
+		for(IMemento memento : rootMemento.getChildren(PALETTE)) {
+			// there should be a factory here ?!
+			IPaletteDescription description = PapyrusPaletteDescription.create(memento);
+			paletteDescriptions.add(description);
+		}
+		return paletteDescriptions;
+	}
+
+	/**
 	 * Returns the preference store used to store palette preferences.
 	 * 
 	 * @return the preference store of this plugin
@@ -235,6 +254,16 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 	 */
 	public static void saveWorkspacePalettes(XMLMemento rootMemento) {
 		saveMemento(rootMemento, PALETTE_WORKSPACE_DEFINITIONS);
+	}
+
+	/**
+	 * Saves the list of local palettes based on model into the preferences
+	 * 
+	 * @param rootMemento
+	 *        the memento to save
+	 */
+	public static void saveWorkspaceExtendedPalettes(XMLMemento rootMemento) {
+		saveMemento(rootMemento, EXTENDED_PALETTE_WORKSPACE_DEFINITIONS);
 	}
 
 	/**
@@ -403,13 +432,12 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 		// check with the id of the editor
 		if(part instanceof DiagramEditorWithFlyOutPalette) {
 			String editorID = ((DiagramEditorWithFlyOutPalette)part).getContributorId();
-			if(editorID!=null) {
+			if(editorID != null) {
 				IMemento editorIDMemento = getEditorMemento(rootMemento, editorID);
 				IMemento hiddenPalettesMementoEditorID = getEditorHiddenPalettesMemento(editorIDMemento);
 				List<String> hiddenPalettesEditorId = getHiddenPalettesList(hiddenPalettesMementoEditorID);
-				
-				if(hiddenPalettesEditorId!=null) {
-					if(hiddenPalettes !=null) {
+				if(hiddenPalettesEditorId != null) {
+					if(hiddenPalettes != null) {
 						hiddenPalettes.addAll(hiddenPalettesEditorId);
 					} else {
 						hiddenPalettes = hiddenPalettesEditorId;
@@ -417,7 +445,6 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 				}
 			}
 		}
-		
 		return hiddenPalettes;
 	}
 
@@ -440,7 +467,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 	 * @return the root memento if there were existing customizations; null
 	 *         otherwise
 	 */
-	protected static XMLMemento getExistingLocalPalettes() {
+	public static XMLMemento getExistingLocalPalettes() {
 		String sValue = getPreferenceStore().getString(PALETTE_LOCAL_DEFINITIONS);
 		try {
 			if(sValue != null && !sValue.equals("")) { //$NON-NLS-1$
@@ -462,7 +489,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 	 * @return the root memento if there were existing customizations; null
 	 *         otherwise
 	 */
-	protected static XMLMemento getExistingWorkspacePalettes() {
+	public static XMLMemento getExistingWorkspacePalettes() {
 		String sValue = getPreferenceStore().getString(PALETTE_WORKSPACE_DEFINITIONS);
 		try {
 			if(sValue != null && !sValue.equals("")) { //$NON-NLS-1$
@@ -470,6 +497,28 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 				return rootMemento;
 			} else {
 				return XMLMemento.createWriteRoot(PALETTE_WORKSPACE_DEFINITIONS);
+			}
+		} catch (WorkbenchException e) {
+			Activator.getDefault().logError("Impossible to read preferences", e);
+		}
+		return null;
+	}
+
+	/**
+	 * Retrieves the root memento from the plugin preferences if there were
+	 * existing local palettes.
+	 * 
+	 * @return the root memento if there were existing customizations; null
+	 *         otherwise
+	 */
+	public static XMLMemento getExistingWorkspaceExtendedPalettes() {
+		String sValue = getPreferenceStore().getString(EXTENDED_PALETTE_WORKSPACE_DEFINITIONS);
+		try {
+			if(sValue != null && !sValue.equals("")) { //$NON-NLS-1$
+				XMLMemento rootMemento = XMLMemento.createReadRoot(new StringReader(sValue));
+				return rootMemento;
+			} else {
+				return XMLMemento.createWriteRoot(EXTENDED_PALETTE_WORKSPACE_DEFINITIONS);
 			}
 		} catch (WorkbenchException e) {
 			Activator.getDefault().logError("Impossible to read preferences", e); //$NON-NLS-1$
@@ -524,27 +573,53 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 	}
 
 	/**
-	 * Returns the provider priority for the palette provider with the given ID
+	 * Adds or update local palette
 	 */
-	public static ProviderPriority getLocalPalettePriority(String paletteID) {
+	public static void addWorkspaceExtendedPalette(String paletteID, String paletteName, String path, ProviderPriority priority, String editorID, Set<String> requiredProfiles) {
 		// retrieves memento
-		XMLMemento rootMemento = getExistingLocalPalettes();
+		XMLMemento rootMemento = getExistingWorkspaceExtendedPalettes();
 		// search existing customization
 		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
 		if(paletteMemento == null) {
 			paletteMemento = createMemento(rootMemento, paletteID);
 		}
 		// update values in the memento
-		String palettePriority = paletteMemento.getString(PRIORITY);
-		return ProviderPriority.parse(palettePriority);
+		paletteMemento.putString(NAME, paletteName);
+		paletteMemento.putString(PRIORITY, priority.getName());
+		paletteMemento.putString(EDITOR_ID, editorID);
+		paletteMemento.putString(PATH, path);
+		// add properties if required
+		IMemento propertiesMemento = paletteMemento.createChild(IPapyrusPaletteConstant.PALETTE_DESCRIPTION_PROPERTIES);
+		propertiesMemento.putString(IPapyrusPaletteConstant.PROFILE_LIST, PaletteUtil.getSerializedProfileList(requiredProfiles));
+		// saves the root memento
+		saveWorkspaceExtendedPalettes(rootMemento);
+	}
+
+	/**
+	 * Returns the provider priority for the palette provider with the given ID
+	 */
+	public static ProviderPriority getLocalPalettePriority(String paletteID) {
+		return getPalettePriority(paletteID, getExistingLocalPalettes());
 	}
 
 	/**
 	 * Returns the provider priority for the palette provider with the given ID
 	 */
 	public static ProviderPriority getWorkspacePalettePriority(String paletteID) {
-		// retrieves memento
-		XMLMemento rootMemento = getExistingWorkspacePalettes();
+		return getPalettePriority(paletteID, getExistingWorkspacePalettes());
+	}
+
+	/**
+	 * Returns the provider priority for the workspace extended palette provider with the given ID
+	 */
+	public static ProviderPriority getWorkspaceExtendedPalettePriority(String paletteID) {
+		return getPalettePriority(paletteID, getExistingWorkspaceExtendedPalettes());
+	}
+
+	/**
+	 * Returns the provider priority for the palette provider with the given ID, or <code>null</code> if none was set for this palette
+	 */
+	public static ProviderPriority getPalettePriority(String paletteID, XMLMemento rootMemento) {
 		// search existing customization
 		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
 		if(paletteMemento == null) {
@@ -553,114 +628,133 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 		// update values in the memento
 		String palettePriority = paletteMemento.getString(PRIORITY);
 		if(palettePriority!=null) {
-			return ProviderPriority.parse(palettePriority);
+			return ProviderPriority.parse(palettePriority);	
 		}
 		return null;
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	// EDITOR ID
+	///////////////////////////////////////////////////////////////////////////
+	/**
+	 * Returns the editor id for the palette provider with the given ID
+	 */
+	public static String getEditorID(String paletteID, XMLMemento rootMemento) {
+		// search existing customization
+		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
+		if(paletteMemento == null) {
+			paletteMemento = createMemento(rootMemento, paletteID);
+		}
+		// update values in the memento
+		String editorID = paletteMemento.getString(EDITOR_ID);
+		return editorID;
 	}
 
 	/**
 	 * Returns the editor id for the palette provider with the given ID
 	 */
 	public static String getLocalEditorID(String paletteID) {
-		// retrieves memento
-		XMLMemento rootMemento = getExistingLocalPalettes();
-		// search existing customization
-		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
-		if(paletteMemento == null) {
-			paletteMemento = createMemento(rootMemento, paletteID);
-		}
-		// update values in the memento
-		String editorID = paletteMemento.getString(EDITOR_ID);
-		return editorID;
+		return getEditorID(paletteID, getExistingLocalPalettes());
 	}
 
 	/**
 	 * Returns the editor id for the palette provider with the given ID
 	 */
 	public static String getWorkspaceEditorID(String paletteID) {
-		// retrieves memento
-		XMLMemento rootMemento = getExistingWorkspacePalettes();
+		return getEditorID(paletteID, getExistingWorkspacePalettes());
+	}
+
+	/**
+	 * Returns the editor id for the palette provider with the given ID
+	 */
+	public static String getWorkspaceExtendedEditorID(String paletteID) {
+		return getEditorID(paletteID, getExistingWorkspaceExtendedPalettes());
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	// Palette Name
+	///////////////////////////////////////////////////////////////////////////
+	/**
+	 * Returns the name for the palette provider with the given ID
+	 */
+	public static String getPaletteName(String paletteID, XMLMemento rootMemento) {
 		// search existing customization
 		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
 		if(paletteMemento == null) {
 			paletteMemento = createMemento(rootMemento, paletteID);
 		}
 		// update values in the memento
-		String editorID = paletteMemento.getString(EDITOR_ID);
-		return editorID;
+		String paletteName = paletteMemento.getString(NAME);
+		return paletteName;
 	}
 
 	/**
 	 * Returns the name for the palette provider with the given ID
 	 */
 	public static String getLocalPaletteName(String paletteID) {
-		// retrieves memento
-		XMLMemento rootMemento = getExistingLocalPalettes();
-		// search existing customization
-		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
-		if(paletteMemento == null) {
-			paletteMemento = createMemento(rootMemento, paletteID);
-		}
-		// update values in the memento
-		String editorID = paletteMemento.getString(NAME);
-		return editorID;
+		return getPaletteName(paletteID, getExistingLocalPalettes());
 	}
 
 	/**
 	 * Returns the name for the palette provider with the given ID
 	 */
 	public static String getWorkspacePaletteName(String paletteID) {
-		// retrieves memento
-		XMLMemento rootMemento = getExistingWorkspacePalettes();
+		return getPaletteName(paletteID, getExistingWorkspacePalettes());
+	}
+
+	/**
+	 * Returns the name for the palette provider with the given ID
+	 */
+	public static String getWorkspaceExtendedPaletteName(String paletteID) {
+		return getPaletteName(paletteID, getExistingWorkspaceExtendedPalettes());
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	// Palette Path
+	/////////////////////////////////////////////////////////////////////////
+	/**
+	 * Returns the path for the palette provider with the given ID
+	 */
+	public static String getPalettePath(String paletteID, XMLMemento rootMemento) {
 		// search existing customization
 		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
 		if(paletteMemento == null) {
 			paletteMemento = createMemento(rootMemento, paletteID);
 		}
 		// update values in the memento
-		String editorID = paletteMemento.getString(NAME);
-		return editorID;
+		String path = paletteMemento.getString(PATH);
+		return path;
 	}
 
 	/**
 	 * Returns the path for the palette provider with the given ID
 	 */
 	public static String getLocalPalettePath(String paletteID) {
-		// retrieves memento
-		XMLMemento rootMemento = getExistingLocalPalettes();
-		// search existing customization
-		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
-		if(paletteMemento == null) {
-			paletteMemento = createMemento(rootMemento, paletteID);
-		}
-		// update values in the memento
-		String editorID = paletteMemento.getString(PATH);
-		return editorID;
+		return getPalettePath(paletteID, getExistingLocalPalettes());
 	}
 
 	/**
 	 * Returns the path for the palette provider with the given ID
 	 */
 	public static String getWorkspacePalettePath(String paletteID) {
-		// retrieves memento
-		XMLMemento rootMemento = getExistingWorkspacePalettes();
-		// search existing customization
-		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
-		if(paletteMemento == null) {
-			paletteMemento = createMemento(rootMemento, paletteID);
-		}
-		// update values in the memento
-		String editorID = paletteMemento.getString(PATH);
-		return editorID;
+		return getPalettePath(paletteID, getExistingWorkspacePalettes());
 	}
 
+	/**
+	 * Returns the path for the palette provider with the given ID
+	 */
+	public static String getWorkspaceExtendedPalettePath(String paletteID) {
+		return getPalettePath(paletteID, getExistingWorkspaceExtendedPalettes());
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	// Required profiles
+	/////////////////////////////////////////////////////////////////////////
 	/**
 	 * @param fileName
 	 * @return
 	 */
-	public static Set<String> getRequiredProfiles(String paletteID) {
-		// retrieves memento
-		XMLMemento rootMemento = getExistingWorkspacePalettes();
+	public static Set<String> getRequiredProfiles(String paletteID, XMLMemento rootMemento) {
 		// search existing customization
 		IMemento paletteMemento = searchPaletteMemento(rootMemento, paletteID);
 		if(paletteMemento == null) {
@@ -668,13 +762,30 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 		}
 		// update values in the memento
 		IMemento propertiesMemento = paletteMemento.getChild(PALETTE_DESCRIPTION_PROPERTIES);
-		if(propertiesMemento !=null)  {
+		if(propertiesMemento != null) {
 			String profilesSerializedList = propertiesMemento.getString(PROFILE_LIST);
-			if(profilesSerializedList!=null && profilesSerializedList.length()>0) {
+			if(profilesSerializedList != null && profilesSerializedList.length() > 0) {
 				return PaletteUtil.getProfileSetFromString(profilesSerializedList);
 			}
 		}
 		return null;
+	}
+	
+	/**
+	 * compatibility with existing. should be called workspaceXX
+	 * @param fileName
+	 * @return
+	 */
+	public static Set<String> getRequiredProfiles(String paletteID) {
+		return getRequiredProfiles(paletteID, getExistingWorkspacePalettes());
+	}
+	
+	/**
+	 * @param fileName
+	 * @return
+	 */
+	public static Set<String> getRequiredProfilesExtendedPalette(String paletteID) {
+		return getRequiredProfiles(paletteID, getExistingWorkspaceExtendedPalettes());
 	}
 
 	/**
@@ -732,6 +843,33 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 		}
 		// save new Memento
 		saveWorkspacePalettes(newRootMemento);
+	}
+
+	/**
+	 * @param fileName
+	 */
+	public static void deleteWorkspaceExtendedPalette(String id) {
+		// retrieves memento
+		XMLMemento rootMemento = getExistingWorkspaceExtendedPalettes();
+		// search existing customization
+		IMemento paletteMemento = searchPaletteMemento(rootMemento, id);
+		if(paletteMemento == null) {
+			Activator.log.warn("impossible to find the palette in workspace with id: " + id);
+			return;
+		}
+		// no remove method...
+		// so, creation of a new root memento, then, duplicate all entries
+		// except the one to
+		// delete...
+		XMLMemento newRootMemento = XMLMemento.createWriteRoot(EXTENDED_PALETTE_WORKSPACE_DEFINITIONS);
+		for(IMemento memento : rootMemento.getChildren(PALETTE)) {
+			if(!memento.getString(ID).equals(paletteMemento.getString(ID))) {
+				IMemento newChild = newRootMemento.createChild(PALETTE);
+				newChild.putMemento(memento);
+			}
+		}
+		// save new Memento
+		saveWorkspaceExtendedPalettes(newRootMemento);
 	}
 
 	/**

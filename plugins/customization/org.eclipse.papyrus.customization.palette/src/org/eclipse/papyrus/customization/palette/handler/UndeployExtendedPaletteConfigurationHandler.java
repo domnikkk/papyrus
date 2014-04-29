@@ -18,10 +18,12 @@ import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.part.PapyrusPalettePreferences;
 import org.eclipse.ui.XMLMemento;
 
+
+
 /**
- * Handler to undeploy a palette configured by a XML file
+ * Handler to undeploy a palette configured by a EMF model. similar implementation to the XML based palette, because visibility has the same implementation in our case.
  */
-public class UndeployPaletteConfigurationHandler extends AbstractUndeployPaletteConfigurationHandler {
+public class UndeployExtendedPaletteConfigurationHandler extends AbstractUndeployPaletteConfigurationHandler {
 
 	/**
 	 * {@inheritDoc}
@@ -29,14 +31,14 @@ public class UndeployPaletteConfigurationHandler extends AbstractUndeployPalette
 	@Override
 	protected IStatus deactivatePalette(String identifier, String editorId) {
 		PapyrusPalettePreferences.changePaletteVisibility(identifier, editorId, false);
-		return new Status(IStatus.OK, Activator.ID, "The palette configuration " + identifier + " has been successfully deactivated and undeployed");
+		return new Status(IStatus.OK, Activator.ID, "The palette configuration "+identifier+" has been successfully deactivated and undeployed");
 	}
-
+	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected XMLMemento getMemento() {
-		return PapyrusPalettePreferences.getExistingWorkspacePalettes();
+		return PapyrusPalettePreferences.getExistingWorkspaceExtendedPalettes();
 	}
 }
