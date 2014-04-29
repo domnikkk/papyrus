@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:css="clr-namespace:org.eclipse.papyrus.infra.gmfdiag.css.properties.widgets"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:j="clr-namespace:java.lang" xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+	</Composite.layout>
+	<ppe:StringEditor input="{Binding}" property="WorkspaceThemes:Theme:label"></ppe:StringEditor>
+	<ppe:BrowseFilePropertyEditor input="{Binding}"
+		buttonLabel="Browse..." property="WorkspaceThemes:Theme:icon">
+		<ppe:BrowseFilePropertyEditor.filterNames>
+			<x:Array Type="j:String">
+             <j:String>All images</j:String>
+             <j:String>PNG Icon</j:String>
+             <j:String>GIF Icon</j:String>
+             <j:String>JPEG Icon</j:String>
+            </x:Array>
+		</ppe:BrowseFilePropertyEditor.filterNames>
+		<ppe:BrowseFilePropertyEditor.filterExtensions>
+			<x:Array Type="j:String">
+             <j:String>*.gif;*.png;*.jpeg</j:String>
+             <j:String>*.png</j:String>
+             <j:String>*.gif</j:String>
+             <j:String>*.jpeg</j:String>
+             </x:Array>
+		</ppe:BrowseFilePropertyEditor.filterExtensions>
+	</ppe:BrowseFilePropertyEditor>
+	<ppe:MultiReference input="{Binding}"
+		property="WorkspaceThemes:Theme:stylesheets"></ppe:MultiReference>
+</Composite>

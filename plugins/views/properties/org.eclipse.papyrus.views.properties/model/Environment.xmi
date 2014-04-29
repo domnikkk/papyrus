@@ -38,6 +38,7 @@
   <propertyEditorTypes label="FloatEditor" widgetClass="FloatEditor" namespace="//@namespaces.3"/>
   <propertyEditorTypes label="DoubleEditor" widgetClass="DoubleEditor" namespace="//@namespaces.3"/>
   <propertyEditorTypes label="UnlimitedNaturalEditor" widgetClass="UnlimitedNaturalEditor" namespace="//@namespaces.3"/>
+  <propertyEditorTypes label="Browse Path Button" widgetClass="BrowseFilePropertyEditor" namespace="//@namespaces.3"/>
   <compositeWidgetTypes label="Composite" widgetClass="Composite"/>
   <compositeWidgetTypes label="Group" widgetClass="Group"/>
   <layoutTypes label="GridLayout" widgetClass="GridLayout"/>
