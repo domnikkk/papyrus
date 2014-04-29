@@ -61,7 +61,7 @@ public class AddProfileHandler extends AbstractBaseHandler {
 	 * @param selections
 	 */
 	@Override
-	protected void doExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) {
+	protected void doExecute(ExecutionEvent event, IEvaluationContext context) {
 
 		cachedSelectionAsNamedElement = null;
 		

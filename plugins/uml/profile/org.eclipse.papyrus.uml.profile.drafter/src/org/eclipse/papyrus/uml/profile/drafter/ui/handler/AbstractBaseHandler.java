@@ -69,10 +69,8 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 		
 		// Get requested objects
 		IEvaluationContext context;
-		List<Object> selections;
 		try {
 			context = getIEvaluationContext(event);
-			selections = getSelections(context);
 		} catch (NotFoundException e) {
 			// silently fails
 			return null;
@@ -80,11 +78,11 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 
 
 		// Execute the command in 3 phases
-		if (!preExecute(event, context, selections) ) {
+		if (!preExecute(event, context) ) {
 			return null;
 		}
-		executeTransaction(event, context, selections);
-		postExecute(event, context, selections);
+		executeTransaction(event, context);
+		postExecute(event, context);
 
 		return null;
 	}
@@ -103,11 +101,10 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 	 * outside of the transaction.
 	 * 
 	 * @param event
-	 * @param selections 
 	 * @param context 
 	 * @return true if the doExecute() should be called, false if the command should stop
 	 */
-	protected boolean preExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) throws ExecutionException {
+	protected boolean preExecute(ExecutionEvent event, IEvaluationContext context) throws ExecutionException {
 		return true;
 	}
 
@@ -117,10 +114,9 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 	 * outside of the transaction.
 	 * 
 	 * @param event
-	 * @param selections 
 	 * @param context 
 	 */
-	protected void postExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) throws ExecutionException {
+	protected void postExecute(ExecutionEvent event, IEvaluationContext context) throws ExecutionException {
 		// TODO Auto-generated method stub
 		
 	}
@@ -132,7 +128,7 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 	 * @param selections 
 	 * @param context 
 	 */
-	private void executeTransaction(ExecutionEvent event, final IEvaluationContext context, final List<Object> selections) {
+	private void executeTransaction(ExecutionEvent event, final IEvaluationContext context) {
 
 		// Get requested objects
 		final TransactionalEditingDomain editingDomain;
@@ -149,7 +145,7 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 
 			@Override
 			protected void doExecute() {
-				AbstractBaseHandler.this.doExecute(finalEvent, context, selections);
+				AbstractBaseHandler.this.doExecute(finalEvent, context);
 			}
 
 			
@@ -245,7 +241,7 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 	 * 
 	 * @param notationDiagramHelper
 	 */
-	protected abstract void doExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections);
+	protected abstract void doExecute(ExecutionEvent event, IEvaluationContext context);
 
 //	/**
 //	 * 
@@ -303,6 +299,8 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		
+		resetCachedValues();
+		
 		if( ! (evaluationContext instanceof IEvaluationContext)) {
 			setBaseEnabled(false);
 			System.out.println(getCommandName() + ".setEnabled(" + isEnabled() + ") - no context");
@@ -311,7 +309,7 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 		
 		IEvaluationContext context = (IEvaluationContext)evaluationContext;
 
-		List<Object> selections = getSelections(context);
+		List<Object> selections = getCachedSelections(context);
 		// Ask the subclass
 		setBaseEnabled(isEnabled(context, selections));
 		

@@ -17,6 +17,7 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.handler;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -65,6 +66,20 @@ public class CreateProfileHandler extends AbstractBaseHandler {
 	}
 
 	/**
+	 * Compute the selection.
+	 * @param event
+	 * @param context
+	 * @return
+	 * @throws ExecutionException
+	 */
+	@Override
+	protected boolean preExecute(ExecutionEvent event, IEvaluationContext context) throws ExecutionException {
+		// Get the selection here in order to not do it in the transaction.
+		getCachedSelections(context);
+		
+		return super.preExecute(event, context);
+	}
+	/**
 	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.handler.AbstractBaseHandler#doExecute(org.eclipse.core.commands.ExecutionEvent, org.eclipse.core.expressions.IEvaluationContext, java.util.List)
 	 *
 	 * @param event
@@ -72,9 +87,10 @@ public class CreateProfileHandler extends AbstractBaseHandler {
 	 * @param selections
 	 */
 	@Override
-	protected void doExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) {
+	protected void doExecute(ExecutionEvent event, IEvaluationContext context) {
 
 		String stereotypeName ="MyNewStereotype";
+		List<Object> selections = getCachedSelections(context);
 		
 		if( !(selections.get(0) instanceof Profile ) ) {
 			return;
