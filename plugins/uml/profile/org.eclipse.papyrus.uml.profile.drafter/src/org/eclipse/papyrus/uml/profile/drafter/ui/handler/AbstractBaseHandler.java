@@ -12,6 +12,7 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.handler;
 
 
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,12 +20,15 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForIEvaluationContext;
@@ -38,6 +42,11 @@ import org.eclipse.ui.IEditorPart;
  *
  */
 public abstract class AbstractBaseHandler extends AbstractHandler {
+
+	/**
+	 * Cached list of selections.
+	 */
+	private List<Object> cachedSelections;
 
 	/**
 	 * Constructor.
@@ -55,6 +64,8 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 	 * 
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
+		
+		resetCachedValues();
 		
 		// Get requested objects
 		IEvaluationContext context;
@@ -76,6 +87,14 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 		postExecute(event, context, selections);
 
 		return null;
+	}
+
+	/**
+	 * Reset all cached values associated with this handlers.
+	 * The handlers is reused across subsequent calls. So, it is needed to reset the cached values.
+	 */
+	protected void resetCachedValues() {
+		cachedSelections = null;
 	}
 
 	/**
@@ -145,6 +164,20 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 	 * @param context
 	 * @return
 	 */
+	protected List<Object> getCachedSelections(IEvaluationContext context) {
+
+		if( cachedSelections == null) {
+			cachedSelections = getSelections(context);
+		}
+		
+		return cachedSelections;
+	}
+	
+	/**
+	 * get the selected objects from the context.
+	 * @param context
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	protected List<Object> getSelections(IEvaluationContext context) {
 		Object sel = context.getVariable("selection");
@@ -155,6 +188,47 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 		IStructuredSelection structuredSelection = (IStructuredSelection)sel;
 
 		return structuredSelection.toList();
+	}
+
+	/**
+	 * Return a list of selected element of the expected type.
+	 * If a selected element is not of the expected type, it is ignored.
+	 * 
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	protected <T> List<T> getSelectionsByType(IEvaluationContext context, Class<T> expectedType) {
+		List<Object> selections = getCachedSelections(context);
+
+		List<T> results = new ArrayList<T>();
+
+		// create model with EList<EObject> objects
+		for(Object obj : selections) {
+			
+			T ele = null;
+
+			// Bug in Tree Explorer
+			// ModelExplorer tree element do not implements IAdaptable. So, we should manually get the underlying adaptable object.
+			if( obj instanceof EObjectTreeElement ) {
+				obj = ((EObjectTreeElement)obj).getEObject();
+			}
+
+			// Adapt object to NamedElement
+			if(obj instanceof IAdaptable) {
+				ele = (T)((IAdaptable)obj).getAdapter(expectedType);
+			}
+			if(ele == null) {
+				ele = (T)Platform.getAdapterManager().getAdapter(obj, expectedType);
+			}
+
+			// Add uml element if found
+			if(ele != null) {
+				results.add(ele);
+			}
+
+		}
+
+		return results;
 	}
 
 	/**

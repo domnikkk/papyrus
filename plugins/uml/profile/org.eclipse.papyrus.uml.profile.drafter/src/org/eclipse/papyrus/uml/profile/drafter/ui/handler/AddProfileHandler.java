@@ -18,22 +18,10 @@ import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.expressions.IEvaluationContext;
-import org.eclipse.papyrus.infra.core.resource.NotFoundException;
-import org.eclipse.papyrus.infra.core.services.ServiceException;
-import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
-import org.eclipse.papyrus.uml.profile.definition.PapyrusDefinitionAnnotation;
-import org.eclipse.papyrus.uml.profile.definition.ProfileRedefinition;
-import org.eclipse.papyrus.uml.profile.definition.Version;
-import org.eclipse.papyrus.uml.profile.utils.Util;
-import org.eclipse.papyrus.uml.tools.model.UmlModel;
-import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.uml2.uml.AggregationKind;
-import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.ExtensionEnd;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
@@ -46,6 +34,7 @@ import org.eclipse.uml2.uml.UMLFactory;
  */
 public class AddProfileHandler extends AbstractBaseHandler {
 
+	private List<NamedElement> cachedSelectionAsNamedElement;
 	/**
 	 * Constructor.
 	 *
@@ -61,7 +50,6 @@ public class AddProfileHandler extends AbstractBaseHandler {
 	 */
 	@Override
 	public String getCommandName() {
-		// TODO Auto-generated method stub
 		return "Add Profile";
 	}
 
@@ -75,24 +63,41 @@ public class AddProfileHandler extends AbstractBaseHandler {
 	@Override
 	protected void doExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) {
 
-		System.err.println("Add Profile called");
+		cachedSelectionAsNamedElement = null;
+		
+		System.err.println("Add Profile called. Selected elements:");
+		List<NamedElement> selected = getSelectionAsNamedElements(context);
+		for( NamedElement ele : selected) {
+			System.err.println(ele.getName());
+		}
+		System.err.println("********************");
 	}
 
 	/**
-	 * Lookup the metaclass of type "Class"
 	 * 
-	 * @param profile
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.handler.AbstractBaseHandler#resetCachedValues()
+	 *
+	 */
+	@Override
+	protected void resetCachedValues() {
+		super.resetCachedValues();
+		cachedSelectionAsNamedElement = null;
+	}
+	
+	/**
+	 * Get the list of selected element of type 'NamedElement'.
+	 * 
+	 * @param context
 	 * @return
 	 */
-	private ElementImport lookupMetaclass(Profile profile, String aliasName) {
-		//
-		for( ElementImport ele : profile.getElementImports() ) {
-			if(aliasName.equals(ele.getAlias() ) ) {
-				return ele;
-			}
+	protected List<NamedElement> getSelectionAsNamedElements(IEvaluationContext context) {
+	
+		if( cachedSelectionAsNamedElement == null) {
+
+			cachedSelectionAsNamedElement = getSelectionsByType(context, NamedElement.class);
 		}
-		// Not found;
-		return null;
+		
+		return cachedSelectionAsNamedElement;
 	}
 
 	protected Extension createExtension( Stereotype source,  Type target) {
