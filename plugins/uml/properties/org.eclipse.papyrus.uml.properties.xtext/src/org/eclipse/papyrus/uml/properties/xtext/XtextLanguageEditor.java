@@ -40,19 +40,18 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 	protected StyledText textControl;
 
 	UndoRedoStack<ExtendedModifyEvent> undoRedoStack;
-	
+
 	protected boolean isUndo;
 
 	protected boolean isRedo;
-	
+
 	private DefaultXtextDirectEditorConfiguration configuration;
 
 	private StyledTextXtextAdapter xtextAdapter;
 
 	protected EObject currentEObj;
 
-	final private ContextElementAdapter contextElementAdapter = new ContextElementAdapter(
-			this);
+	final private ContextElementAdapter contextElementAdapter = new ContextElementAdapter(this);
 
 	public void createWidget(Composite parent, int style) {
 		undoRedoStack = new UndoRedoStack<ExtendedModifyEvent>();
@@ -61,51 +60,53 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 
 	protected void createTextControl(final Composite parent) {
 
-		textControl = new StyledText(parent, SWT.MULTI | SWT.BORDER
-				| SWT.V_SCROLL | SWT.WRAP);
+		textControl = new StyledText(parent, SWT.MULTI | SWT.BORDER | SWT.V_SCROLL | SWT.WRAP);
 
 		textControl.addFocusListener(new FocusListener() {
 
 			public void focusLost(FocusEvent e) {
 				IParser parser = getParser();
-				if (xtextAdapter.getCompletionProposalAdapter().delayedIsPopupOpen()) {
+				if(xtextAdapter == null) { //May happen under specific circumstances (See Bug 433647)
+					return;
+				}
+
+				if(xtextAdapter.getCompletionProposalAdapter().delayedIsPopupOpen()) {
 					// ignore focus lost
 					return;
 				}
-				if ((parser != null) &&	!parser.getEditString(null, 0).equals(textControl.getText())) {
-					ICommand command = parser.getParseCommand(
-							new EObjectAdapter(getEObject()),
-							textControl.getText(), 0);
+				if((parser != null) && !parser.getEditString(null, 0).equals(textControl.getText())) {
+					ICommand command = parser.getParseCommand(new EObjectAdapter(getEObject()), textControl.getText(), 0);
 
 					TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(getEObject());
-					if (domain == null) {
+					if(domain == null) {
 						// can be null for opaque expression that have been created but have not been added to parent
 						// try to get resource set from nested dialog context
 						ResourceSet rs = NestedEditingDialogContext.getInstance().getResourceSet();
 						domain = TransactionUtil.getEditingDomain(rs);
 					}
-					if (domain != null) {
+					if(domain != null) {
 						domain.getCommandStack().execute(new GMFtoEMFCommandWrapper(command));
 					}
 				}
 			}
 
 			public void focusGained(FocusEvent e) {
+				//Nothing
 			}
 		});
-		
+
 		textControl.setAlwaysShowScrollBars(false);
 		textControl.setLayout(new GridLayout());
-	
+
 		// GridDataFactory.fillDefaults().grab(true, true).hint(parent.getSize()).applyTo(textControl);
 		textControl.addExtendedModifyListener(new ExtendedModifyListener() {
-			
+
 			public void modifyText(ExtendedModifyEvent event) {
-				if (isUndo) {
+				if(isUndo) {
 					undoRedoStack.pushRedo(event);
 				} else { // is Redo or a normal user action
 					undoRedoStack.pushUndo(event);
-					if (!isRedo) {
+					if(!isRedo) {
 						undoRedoStack.clearRedo();
 						// TODO Switch to treat consecutive characters as one event?
 					}
@@ -114,16 +115,17 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 		});
 
 		textControl.addKeyListener(new KeyAdapter() {
+
+			@Override
 			public void keyPressed(KeyEvent e) {
 				boolean isCtrl = (e.stateMask & SWT.CTRL) > 0;
 				boolean isAlt = (e.stateMask & SWT.ALT) > 0;
-				if (isCtrl && !isAlt) {
+				if(isCtrl && !isAlt) {
 					boolean isShift = (e.stateMask & SWT.SHIFT) > 0;
-					if (e.keyCode == 'z') {
-						if (isShift) {
+					if(e.keyCode == 'z') {
+						if(isShift) {
 							redo();
-		            	}
-						else {
+						} else {
 							undo();
 						}
 					}
@@ -133,7 +135,7 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 	}
 
 	protected void undo() {
-		if (undoRedoStack.hasUndo()) {
+		if(undoRedoStack.hasUndo()) {
 			isUndo = true;
 			revertEvent(undoRedoStack.popUndo());
 			isUndo = false;
@@ -141,7 +143,7 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 	}
 
 	protected void redo() {
-		if (undoRedoStack.hasRedo()) {
+		if(undoRedoStack.hasRedo()) {
 			isRedo = true;
 			revertEvent(undoRedoStack.popRedo());
 			isRedo = false;
@@ -151,82 +153,73 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 	/**
 	 * Reverts the given modify event, in the way as the Eclipse text editor
 	 * does it.
-	 * 
+	 *
 	 * @param event
 	 */
 	protected void revertEvent(ExtendedModifyEvent event) {
 		textControl.replaceTextRange(event.start, event.length, event.replacedText);
 		// (causes the modifyText() listener method to be called)
-		
+
 		textControl.setSelectionRange(event.start, event.replacedText.length());
 	}
-	
+
 	protected IParser getParser() {
 		final EObject semanticElement = getEObject();
-		if (configuration != null && semanticElement != null) {
+		if(configuration != null && semanticElement != null) {
 			return configuration.createParser(semanticElement);
 		}
 		return null;
 	}
-	
+
 	protected void updateXtextAdapters(Control styledText) {
 		final Object oldObjectToEdit = configuration != null ? configuration.getObjectToEdit() : null;
-		
+
 		final DefaultXtextDirectEditorConfiguration newConfiguration = getConfigurationFromSelection();
 		// Check if configuration has changed and update adapters
-		if (newConfiguration != null && newConfiguration != configuration) {
-			if (xtextAdapter != null) {
-				xtextAdapter.getFakeResourceContext().getFakeResource()
-						.eAdapters().remove(contextElementAdapter);
+		if(newConfiguration != null && newConfiguration != configuration) {
+			if(xtextAdapter != null) {
+				xtextAdapter.getFakeResourceContext().getFakeResource().eAdapters().remove(contextElementAdapter);
 			}
 			configuration = newConfiguration;
-			xtextAdapter = new StyledTextXtextAdapter(
-					configuration.getInjector());
-			
+			xtextAdapter = new StyledTextXtextAdapter(configuration.getInjector());
+
 			EObject semanticElement = getEObject();
-			if (semanticElement != null) {
-				newConfiguration.preEditAction(semanticElement);	
+			if(semanticElement != null) {
+				newConfiguration.preEditAction(semanticElement);
 			}
-			
-			xtextAdapter.getFakeResourceContext().getFakeResource().eAdapters()
-					.add(contextElementAdapter);
-			xtextAdapter.adapt((StyledText) styledText);
+
+			xtextAdapter.getFakeResourceContext().getFakeResource().eAdapters().add(contextElementAdapter);
+			xtextAdapter.adapt((StyledText)styledText);
 		}
-		
-		if (configuration != null && configuration.getObjectToEdit() != oldObjectToEdit) {
+
+		if(configuration != null && configuration.getObjectToEdit() != oldObjectToEdit) {
 			IContextElementProvider provider = configuration.getContextProvider();
-			if (provider instanceof IContextElementProviderWithInit) {
+			if(provider instanceof IContextElementProviderWithInit) {
 				// update resource, if required by text editor
-				if (xtextAdapter != null) {
-					((IContextElementProviderWithInit) provider).initResource(
-						xtextAdapter.getFakeResourceContext().getFakeResource());
+				if(xtextAdapter != null) {
+					((IContextElementProviderWithInit)provider).initResource(xtextAdapter.getFakeResourceContext().getFakeResource());
 				}
 			}
 			Object semanticObject = configuration.getObjectToEdit();
-			if (semanticObject instanceof EObject) {
-				currentEObj = (EObject) semanticObject;
+			if(semanticObject instanceof EObject) {
+				currentEObj = (EObject)semanticObject;
 			}
 		}
 	}
 
 	protected DefaultXtextDirectEditorConfiguration getConfigurationFromSelection() {
 		EObject semanticElement = getEObject();
-		if (semanticElement != null) {
-			IPreferenceStore store = Activator.getDefault()
-					.getPreferenceStore();
-			String semanticClassName = semanticElement.eClass()
-					.getInstanceClassName();
-			String key = IDirectEditorsIds.EDITOR_FOR_ELEMENT
-					+ semanticClassName;
+		if(semanticElement != null) {
+			IPreferenceStore store = Activator.getDefault().getPreferenceStore();
+			String semanticClassName = semanticElement.eClass().getInstanceClassName();
+			String key = IDirectEditorsIds.EDITOR_FOR_ELEMENT + semanticClassName;
 			String languagePreferred = store.getString(key);
 
-			if (languagePreferred != null && !languagePreferred.equals("")) { //$NON-NLS-1$
-				IDirectEditorConfiguration configuration = DirectEditorsUtil
-						.findEditorConfiguration(languagePreferred,
-								semanticClassName);
-				if (configuration instanceof DefaultXtextDirectEditorConfiguration) {
-					
-					DefaultXtextDirectEditorConfiguration xtextConfiguration = (DefaultXtextDirectEditorConfiguration) configuration;
+			if(languagePreferred != null && !languagePreferred.equals("")) { //$NON-NLS-1$
+				IDirectEditorConfiguration configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, semanticClassName);
+				if(configuration instanceof DefaultXtextDirectEditorConfiguration) {
+
+					DefaultXtextDirectEditorConfiguration xtextConfiguration = (DefaultXtextDirectEditorConfiguration)configuration;
 					xtextConfiguration.preEditAction(semanticElement);
 					return xtextConfiguration;
 				}
@@ -234,36 +227,36 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 		}
 		return null;
 	}
-	
+
 	public EObject getContextObject() {
 		return getEObject();
 	}
-	
+
 	public void setInput(String value) {
-		if (value != null) {
+		if(value != null) {
 			textControl.setText(value);
 		}
 	}
 
-	public void dispose() {
+	public void dispose() { //TODO
 	}
 
-	public void addChangeListener(Listener listener) {
+	public void addChangeListener(Listener listener) { //TODO
 	}
 
-	public void removeChangeListener(Listener listener) {
+	public void removeChangeListener(Listener listener) { //TODO
 	}
 
 	public String getValue() {
 		return null;
 	}
 
-	public void setReadOnly(boolean readOnly) {
+	public void setReadOnly(boolean readOnly) { //TODO
 	}
 
 	public void setContext(ModelElement context) {
-		if (context instanceof UMLModelElement) {
-			currentEObj = ((UMLModelElement) context).getSource();
+		if(context instanceof UMLModelElement) {
+			currentEObj = ((UMLModelElement)context).getSource();
 			updateXtextAdapters(textControl);
 		}
 	}
