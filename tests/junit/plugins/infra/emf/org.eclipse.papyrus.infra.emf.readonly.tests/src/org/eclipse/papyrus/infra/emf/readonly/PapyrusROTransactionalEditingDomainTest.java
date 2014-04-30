@@ -45,6 +45,7 @@ import org.eclipse.papyrus.infra.core.resource.IRollbackStatus;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.papyrus.infra.core.resource.RollbackStatus;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.junit.utils.rules.ProjectFixture;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.uml2.common.util.UML2Util;
@@ -251,12 +252,6 @@ public class PapyrusROTransactionalEditingDomainTest extends AbstractPapyrusTest
 		fixture.dispose();
 		fixture = null;
 
-		for(Resource next : rset.getResources()) {
-			next.unload();
-			next.eAdapters().clear();
-		}
-
-		rset.getResources().clear();
-		rset.eAdapters().clear();
+		EMFHelper.unload(rset);
 	}
 }

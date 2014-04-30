@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.tests.tests;
 
@@ -22,22 +24,25 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.infra.emf.providers.EMFContentProvider;
 import org.eclipse.papyrus.infra.emf.providers.strategy.SemanticEMFContentProvider;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.widgets.providers.IAdaptableContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IHierarchicContentProvider;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.tools.tests.Activator;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 
 //TODO : Test TreeToFlatContentProvider (Number of elements displayed, isValid...)
 public class ContentProviderTest extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	private EObject testModel;
 
 	private EClass Class1, Class2, Class3, Class4;
@@ -49,7 +54,7 @@ public class ContentProviderTest extends AbstractPapyrusTest {
 	@Before
 	public void init() {
 		try {
-			testModel = EMFHelper.loadEMFModel(new ResourceSetImpl(), URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/emf/TestModel.xmi", true));
+			testModel = EMFHelper.loadEMFModel(houseKeeper.createResourceSet(), URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/emf/TestModel.xmi", true));
 		} catch (IOException ex) {
 			Activator.log.error(ex);
 		}
@@ -73,11 +78,6 @@ public class ContentProviderTest extends AbstractPapyrusTest {
 		assertNotNull(singleValuedProperty);
 		assertNotNull(multiValuedProperty);
 		assertNotNull(enumProperty);
-	}
-
-	@After
-	public void dispose() {
-		testModel = null;
 	}
 
 	@Test

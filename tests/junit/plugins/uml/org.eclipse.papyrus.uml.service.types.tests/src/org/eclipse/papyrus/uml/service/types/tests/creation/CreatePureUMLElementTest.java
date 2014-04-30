@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.tests.creation;
@@ -34,6 +35,7 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
@@ -43,6 +45,7 @@ import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Model;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -62,8 +65,6 @@ public class CreatePureUMLElementTest extends AbstractPapyrusTest {
 	private static Model rootModel;
 
 	private static Activity testActivity;
-
-	private static TransactionalEditingDomain transactionalEditingDomain;
 
 	private static Class testClass;
 
@@ -110,6 +111,32 @@ public class CreatePureUMLElementTest extends AbstractPapyrusTest {
 			fail(e.getMessage());
 		}
 
+	}
+	
+	@AfterClass
+	public static void finiTest() {
+		if(domain != null) {
+			ResourceSet rset = domain.getResourceSet();
+			domain.dispose();
+			EMFHelper.unload(rset);
+			domain = null;
+		}
+
+		resource = null;
+		rootModel = null;
+		testActivity = null;
+		testActivityWithNode = null;
+		testClass = null;
+
+		copyPapyrusModel = null;
+
+		if(createProject != null) {
+			try {
+				createProject.delete(true, null);
+			} catch (CoreException e) {
+				fail(e.getMessage());
+			}
+		}
 	}
 
 	/**

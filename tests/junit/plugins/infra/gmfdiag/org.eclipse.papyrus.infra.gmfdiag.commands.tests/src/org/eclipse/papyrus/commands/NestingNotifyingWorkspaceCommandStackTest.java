@@ -45,6 +45,7 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalCommandStack;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.emf.readonly.PapyrusROTransactionalEditingDomain;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
@@ -316,13 +317,7 @@ public class NestingNotifyingWorkspaceCommandStackTest extends AbstractPapyrusTe
 	}
 
 	void dispose(ResourceSet rset) {
-		for(Resource next : rset.getResources()) {
-			next.unload();
-			next.eAdapters().clear();
-		}
-
-		rset.getResources().clear();
-		rset.eAdapters().clear();
+		EMFHelper.unload(rset);
 	}
 
 	<V> V execute(final Callable<V> operation) {

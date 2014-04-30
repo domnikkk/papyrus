@@ -72,6 +72,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.infra.core.resource.ResourceAdapter;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.junit.utils.rules.Condition;
 import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
 import org.eclipse.papyrus.junit.utils.rules.Conditional;
@@ -572,13 +573,8 @@ public class ReadOnlyObjectEditAdviceTest {
 		domain.dispose();
 		domain = null;
 
-		for(Resource next : rset.getResources()) {
-			next.unload();
-			next.eAdapters().clear();
-		}
-
-		rset.getResources().clear();
-		rset.eAdapters().clear();
+		EMFHelper.unload(rset);
+		
 		writablePackage = null;
 		readOnlyPackage = null;
 

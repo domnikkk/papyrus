@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
- *
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.tests.tests;
@@ -22,8 +22,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.tools.providers.UMLStereotypePropertyContentProvider;
 import org.eclipse.papyrus.uml.tools.tests.Activator;
@@ -33,6 +33,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 /**
@@ -47,6 +48,9 @@ import org.junit.Test;
  */
 public class UMLStereotypePropertyContentProviderTest extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	/** the root profile of the tested model */
 	private Profile rootProfile;
 
@@ -76,7 +80,7 @@ public class UMLStereotypePropertyContentProviderTest extends AbstractPapyrusTes
 	@Before
 	public void init() {
 		try {
-			EObject testModel = EMFHelper.loadEMFModel(new ResourceSetImpl(), URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/uml/profileTest.profile.uml", true)); //$NON-NLS-1$
+			EObject testModel = EMFHelper.loadEMFModel(houseKeeper.createResourceSet(), URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/uml/profileTest.profile.uml", true)); //$NON-NLS-1$
 			Assert.assertTrue(testModel instanceof Profile);
 			rootProfile = (Profile)testModel;
 		} catch (IOException ex) {

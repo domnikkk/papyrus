@@ -1,3 +1,16 @@
+/*****************************************************************************
+ * Copyright (c) 2010, 2014 LIFL, CEA, and others.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  LIFL - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
 import static org.junit.Assert.assertEquals;
@@ -213,15 +226,24 @@ public class ModelSetTest extends AbstractPapyrusTest {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 
-		for(String filename : filenames) {
-			createResource(p, resourceSet, filename);
-		}
+		try {
+			for(String filename : filenames) {
+				createResource(p, resourceSet, filename);
+			}
 
-		// Save created resources
-		for(Resource resource : resourceSet.getResources()) {
-			resource.save(null);
+			// Save created resources
+			for(Resource resource : resourceSet.getResources()) {
+				resource.save(null);
+			}
+		} finally {
+			// Clean up
+			for(Resource next : resourceSet.getResources()) {
+				next.unload();
+				next.eAdapters().clear();
+			}
+			resourceSet.getResources().clear();
+			resourceSet.eAdapters().clear();
 		}
-
 	}
 
 

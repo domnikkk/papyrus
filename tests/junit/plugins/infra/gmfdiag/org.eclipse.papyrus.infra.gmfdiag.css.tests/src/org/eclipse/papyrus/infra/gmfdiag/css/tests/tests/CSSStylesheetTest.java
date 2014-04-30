@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.tests.tests;
 
@@ -17,7 +19,6 @@ import java.util.Iterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.GradientStyle;
 import org.eclipse.gmf.runtime.notation.Shape;
@@ -30,17 +31,22 @@ import org.eclipse.papyrus.infra.gmfdiag.css.helper.CSSHelper;
 import org.eclipse.papyrus.infra.gmfdiag.css.notation.CSSDiagram;
 import org.eclipse.papyrus.infra.gmfdiag.css.preferences.ThemePreferences;
 import org.eclipse.papyrus.infra.gmfdiag.css.tests.Activator;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.uml2.uml.NamedElement;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 
 
 public class CSSStylesheetTest extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	private CSSDiagram diagram;
 
 	@BeforeClass
@@ -52,7 +58,7 @@ public class CSSStylesheetTest extends AbstractPapyrusTest {
 
 	@Before
 	public void init() {
-		ResourceSet resourceSet = new ResourceSetImpl();
+		ResourceSet resourceSet = houseKeeper.createResourceSet();
 		CSSHelper.installCSSSupport(resourceSet);
 
 		URI uri = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/model/stylesheetTest/model.notation", true);

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.tests.deletion;
@@ -21,27 +22,23 @@ import java.util.Collections;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
-import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
-import org.eclipse.papyrus.junit.utils.ProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.Model;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 import org.junit.Test;
 
 /**
@@ -54,13 +51,14 @@ public class DeletePureUMLElementTest extends AbstractPapyrusTest {
 
 	private static final int deleteActivityChildrenSize = 4;
 
+	@ClassRule
+	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
+
 	private static IProject createProject;
 
 	private static IFile copyPapyrusModel;
 
 	private static Model rootModel;
-
-	private static TransactionalEditingDomain transactionalEditingDomain;
 
 	private static Resource resource;
 
@@ -79,26 +77,15 @@ public class DeletePureUMLElementTest extends AbstractPapyrusTest {
 	@BeforeClass
 	public static void initTest() {
 		// create Project
-		try {
-			createProject = ProjectUtils.createProject("UMLOnlyTest");
-		} catch (CoreException e) {
-			fail(e.getMessage());
-		}
+		createProject = houseKeeper.createProject("UMLOnlyTest");
 
 		// create UML resource
 		// import test model
-		try {
-			copyPapyrusModel = PapyrusProjectUtils.copyIFile("/resource/TestPureUMLModel.uml", Platform.getBundle("org.eclipse.papyrus.uml.service.types"), createProject, "TestPureUMLModel.uml");
-		} catch (CoreException e) {
-			fail(e.getMessage());
-		} catch (IOException e) {
-			fail(e.getMessage());
-		}
+		copyPapyrusModel = houseKeeper.createFile(createProject, "TestPureUMLModel.uml", "/resource/TestPureUMLModel.uml");
 
 		// open model as UML resource
-		ResourceSet set = new ResourceSetImpl();
-		domain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(set);
-		resource = set.createResource(URI.createPlatformResourceURI(createProject.getName() + '/' + copyPapyrusModel.getName(), true));
+		domain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain();
+		resource = domain.getResourceSet().createResource(URI.createPlatformResourceURI(copyPapyrusModel.getFullPath().toString(), true));
 		try {
 			resource.load(Collections.emptyMap());
 		} catch (IOException e) {

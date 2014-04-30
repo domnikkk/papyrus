@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.nattable.tests.tests;
@@ -23,11 +24,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.nattable.manager.table.NattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.widgets.providers.IRestrictedContentProvider;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.nattable.tests.Activator;
 import org.eclipse.uml2.uml.Model;
@@ -35,6 +36,7 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 /**
@@ -66,6 +68,9 @@ import org.junit.Test;
  */
 public class UMLRestrictedContentProviderTest extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	/** the root of the model */
 	private Model modelRoot;
 
@@ -91,7 +96,7 @@ public class UMLRestrictedContentProviderTest extends AbstractPapyrusTest {
 	@Before
 	public void init() {
 		try {
-			resourceSet = new ResourceSetImpl();
+			resourceSet = houseKeeper.createResourceSet();
 			EMFHelper.loadEMFModel(resourceSet, URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/model.di", true)); //$NON-NLS-1$
 			Resource umlModel = resourceSet.getResource(URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/model.uml", true), true); //$NON-NLS-1$
 

@@ -19,7 +19,6 @@ import static org.junit.Assert.fail;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Enumeration;
 
 import org.eclipse.core.runtime.IPath;
@@ -31,6 +30,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.uml2.uml.Model;
 import org.junit.Rule;
 import org.junit.rules.TestWatcher;
@@ -157,14 +157,7 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 		}
 		domain = null;
 
-		for(Resource next : new ArrayList<Resource>(resourceSet.getResources())) {
-			next.unload();
-			next.eAdapters().clear();
-		}
-
-		resourceSet.getResources().clear();
-		resourceSet.eAdapters().clear();
-		
+		EMFHelper.unload(resourceSet);
 		resourceSet = null;
 	}
 

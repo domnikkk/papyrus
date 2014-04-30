@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.nattable.tests.tests;
@@ -37,6 +38,7 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -149,6 +151,29 @@ public class UMLRestrictedContentProviderTestCustomProfile extends AbstractPapyr
 
 	}
 
+	@After
+	public void fini() {
+		if(resourceSet != null) {
+			EMFHelper.unload(resourceSet);
+			resourceSet = null;
+		}
+
+		basePropSte1 = null;
+		basePropSte2 = null;
+		rootProfile = null;
+		subProfile1 = null;
+		subProfile2 = null;
+		package1 = null;
+		stereotype1 = null;
+		stereotype2 = null;
+		profile1 = null;
+		prop1 = null;
+		prop2 = null;
+		modelRoot = null;
+		table = null;
+		stereotypedClass = null;
+	}
+	
 	@Test
 	public void testWithRestriction() {
 		NattableModelManager modelManager = new NattableModelManager(table);
