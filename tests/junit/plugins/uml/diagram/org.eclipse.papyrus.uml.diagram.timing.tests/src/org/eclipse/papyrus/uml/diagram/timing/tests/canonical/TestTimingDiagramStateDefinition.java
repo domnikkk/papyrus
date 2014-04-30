@@ -1,10 +1,16 @@
 /*******************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ * 
+ *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - fix deletion test to run on Mac OS X
+ *    
  *******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.timing.tests.canonical;
 
@@ -19,6 +25,7 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
@@ -170,7 +177,14 @@ public class TestTimingDiagramStateDefinition extends AbstractTimingDiagramTestC
 
 	protected void testDeleteStateDefinition(final EditPart stateDefinition, final String name) {
 		// set a name before deleting so that we can then check whether it was really deleted/re-created
-		setNameWithDirectEditRequest(getStateDefinitionLabelEditPart(stateDefinition), name);
+		final View stateDefinitionView = (View)stateDefinition.getModel();
+		getCommandStack().execute(new RecordingCommand(getDiagramEditor().getEditingDomain()) {
+
+			@Override
+			protected void doExecute() {
+				StateDefinitionUtils.setStateDefinitionName(stateDefinitionView, name);
+			}
+		});
 		checkStateDefinition(name);
 
 		final FullLifelineStateDefinitionCompartmentEditPartCN stateDefinitionCompartment = getDefaultStateDefinitionCompartment();
