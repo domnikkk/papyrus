@@ -60,6 +60,54 @@
        </with>
     </visibleWhen>
  </command>
+ <command
+       commandId="org.eclipse.papyrus.customization.palette.extended.undeploy"
+       icon="icons/configuration.gif"
+       style="push">
+    <visibleWhen
+          checkEnabled="false">
+       <with
+             variable="selection">
+          <iterate
+                ifEmpty="false"
+                operator="and">
+             <adapt
+                   type="org.eclipse.core.resources.IFile">
+                <or>
+                   <test
+                         property="org.eclipse.core.resources.extension"
+                         value="paletteconfiguration">
+                   </test>
+                </or>
+             </adapt>
+          </iterate>
+       </with>
+    </visibleWhen>
+ </command>
+ <command
+       commandId="org.eclipse.papyrus.customization.palette.extended.deploy"
+       icon="icons/configuration.gif"
+       style="push">
+    <visibleWhen
+          checkEnabled="false">
+       <with
+             variable="selection">
+          <iterate
+                ifEmpty="false"
+                operator="and">
+             <adapt
+                   type="org.eclipse.core.resources.IFile">
+                <or>
+                   <test
+                         property="org.eclipse.core.resources.extension"
+                         value="paletteconfiguration">
+                   </test>
+                </or>
+             </adapt>
+          </iterate>
+       </with>
+    </visibleWhen>
+ </command>
 </menuContribution>
    </extension>
    <extension
@@ -73,6 +121,16 @@
             defaultHandler="org.eclipse.papyrus.customization.palette.handler.UndeployPaletteConfigurationHandler"
             id="org.eclipse.papyrus.customization.palette.undeploy"
             name="Disable Palette configuration">
+      </command>
+       <command
+            defaultHandler="org.eclipse.papyrus.customization.palette.handler.DeployExtendedPaletteConfigurationHandler"
+            id="org.eclipse.papyrus.customization.palette.extended.deploy"
+            name="Deploy Extended Palette configuration">
+      </command>
+      <command
+            defaultHandler="org.eclipse.papyrus.customization.palette.handler.UndeployExtendedPaletteConfigurationHandler"
+            id="org.eclipse.papyrus.customization.palette.extended.undeploy"
+            name="Disable Extended Palette configuration">
       </command>
    </extension>
 </plugin>

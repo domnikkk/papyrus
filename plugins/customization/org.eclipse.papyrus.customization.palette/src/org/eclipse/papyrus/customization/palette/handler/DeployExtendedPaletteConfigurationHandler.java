@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2014 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -26,7 +26,7 @@ import org.eclipse.ui.XMLMemento;
 /**
  * Handler to deploy new configuration of palette based on a XML file
  */
-public class DeployPaletteConfigurationHandler extends AbstractDeployPaletteConfigurationHandler implements IHandler {
+public class DeployExtendedPaletteConfigurationHandler extends AbstractDeployPaletteConfigurationHandler implements IHandler {
 
 	/**
 	 * {@inheritDoc}
@@ -34,8 +34,8 @@ public class DeployPaletteConfigurationHandler extends AbstractDeployPaletteConf
 	@Override
 	protected IStatus deployPalette(String fileName, String paletteName, String path, ProviderPriority priority, String editorID, Set<String> requiredProfiles) {
 		// just add the palette
-		PapyrusPalettePreferences.addWorkspacePalette(fileName, paletteName, path, priority, editorID, requiredProfiles);
-		return new Status(IStatus.OK, Activator.ID, "The palette configuration has been successfully deployed and activated");
+		PapyrusPalettePreferences.addWorkspaceExtendedPalette(fileName, paletteName, path, priority, editorID, requiredProfiles);
+		return new Status(IStatus.OK, Activator.ID, "The palette configuration has been successfully deployed and activated"); 
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class DeployPaletteConfigurationHandler extends AbstractDeployPaletteConf
 	 */
 	@Override
 	protected IStatus activatePalette(String fileName, String paletteName, String path, ProviderPriority priority, String editorID, Set<String> requiredProfiles) {
-		PapyrusPalettePreferences.addWorkspacePalette(fileName, paletteName, path, priority, editorID, requiredProfiles);
+		PapyrusPalettePreferences.addWorkspaceExtendedPalette(fileName, paletteName, path, priority, editorID, requiredProfiles);
 		PapyrusPalettePreferences.changePaletteVisibility(fileName, editorID, true);
 		return new Status(IStatus.OK, Activator.ID, "The palette configuration was already deployed, it has just been activated");
 	}
@@ -53,6 +53,6 @@ public class DeployPaletteConfigurationHandler extends AbstractDeployPaletteConf
 	 */
 	@Override
 	protected XMLMemento getMemento() {
-		return PapyrusPalettePreferences.getExistingWorkspacePalettes();
+		return PapyrusPalettePreferences.getExistingWorkspaceExtendedPalettes();
 	}
 }

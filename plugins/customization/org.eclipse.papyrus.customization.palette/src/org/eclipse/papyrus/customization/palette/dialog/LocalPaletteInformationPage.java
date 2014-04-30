@@ -229,7 +229,12 @@ public class LocalPaletteInformationPage extends WizardPage implements Listener 
 	 *        value to set
 	 */
 	protected void initPriority(ProviderPriority value) {
-		this.priority = value; // by default, Medium
+		if(value!=null) {
+			this.priority = value; 	
+		} else {
+			// by default, Medium
+			this.priority = ProviderPriority.MEDIUM;
+		}
 	}
 
 	/**
