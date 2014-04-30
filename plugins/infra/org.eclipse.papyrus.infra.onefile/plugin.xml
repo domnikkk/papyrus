@@ -86,23 +86,40 @@
                </adapt>
             </or>
          </enablement>
-         <actionProvider
+         <actionProvider 
 		         class="org.eclipse.papyrus.infra.onefile.providers.PapyrusModelActionProvider"
 		         id="org.eclipse.papyrus.infra.onefile.DiContent.OpenActions"
-		         overrides="org.eclipse.ui.navigator.resources.OpenActions">
+		        overrides="org.eclipse.ui.navigator.resources.OpenActions">
             <enablement>
                <instanceof
                      value="org.eclipse.papyrus.infra.onefile.model.IPapyrusFile">
                </instanceof>
             </enablement> 
          </actionProvider>
+         <actionProvider
+               class="org.eclipse.papyrus.infra.onefile.providers.PapyrusEditActionProvider"
+               dependsOn="org.eclipse.ui.navigator.resources.actions.EditActions"
+               id="org.eclipse.papyrus.infra.onefile.DiContent.EditActions">
+               <enablement>
+               <and>
+		           <with
+		                 variable="activeShell">
+		              <test
+		                    property="org.eclipse.papyrus.infra.onefile.handlers.tester.containsPapyrusModel"
+		                    value="true">
+		              </test>
+		           </with>               
+               </and>
+               </enablement>
+                </actionProvider>      
          <dropAssistant
                class="org.eclipse.papyrus.infra.onefile.model.adapters.PapyrusCommonDropAdapterAssistant"
                id="org.eclipse.papyrus.infra.onefile.PapyrusDropAssistant">
             <possibleDropTargets>
                <instanceof
                      value="org.eclipse.core.resources.IContainer">
-               </instanceof></possibleDropTargets>
+               </instanceof>
+            </possibleDropTargets>
          </dropAssistant>
          <commonSorter
                class="org.eclipse.papyrus.infra.onefile.providers.PapyrusViewerSorter"
@@ -279,4 +296,21 @@
          </enablement>
       </decorator>
    </extension>
+<extension
+      point="org.eclipse.core.expressions.propertyTesters">
+   <propertyTester
+         class="org.eclipse.papyrus.infra.onefile.testers.PapyrusClipboardTester"
+         id="org.eclipse.papyrus.infra.onefile.handlers.tester"
+         namespace="org.eclipse.papyrus.infra.onefile.handlers.tester"
+         properties="containsPapyrusModel"
+         type="org.eclipse.swt.widgets.Shell">
+   </propertyTester>
+   <propertyTester
+         class="org.eclipse.papyrus.infra.onefile.testers.PapyrusClipboardTester"
+         id="org.eclipse.papyrus.infra.onefile.handlers.tester"
+         namespace="org.eclipse.papyrus.infra.onefile.handlers.tester"
+         properties="toto"
+         type="java.util.Collection">
+   </propertyTester>   
+</extension>      
 </plugin>

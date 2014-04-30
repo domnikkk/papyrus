@@ -9,6 +9,7 @@
  * Contributors:
  *  Tristan Faure (Atos Origin Integration) tristan.faure@atosorigin.com - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Add copy Action
  *****************************************************************************/
 package org.eclipse.papyrus.infra.onefile.providers;
 
@@ -84,9 +85,6 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 	private Action deleteAction;
 
-	//Disabled. The CopyResourceAction may create inconsistent changes (i.e. it renames files without editing the links).
-	//We need to use a CopyToClipboard action instead
-	//@unused
 	private Action copyAction;
 
 	private Action renameAction;
@@ -111,9 +109,8 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 			actionBars.setGlobalActionHandler(ActionFactory.DELETE.getId(), deleteAction);
 			actionBars.setGlobalActionHandler(ActionFactory.RENAME.getId(), renameAction);
 			actionBars.setGlobalActionHandler(ActionFactory.MOVE.getId(), moveAction);
-			//			actionBars.setGlobalActionHandler(ActionFactory.COPY.getId(), copyAction);
+			actionBars.setGlobalActionHandler(ActionFactory.COPY.getId(), copyAction);
 			actionBars.setGlobalActionHandler(ActionFactory.REFRESH.getId(), refreshAction);
-
 		}
 		super.fillActionBars(actionBars);
 	}
@@ -124,7 +121,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 		appendToGroup(menu, openAction, ICommonMenuConstants.GROUP_OPEN);
 		appendToGroup(menu, deleteAction, ICommonMenuConstants.GROUP_EDIT);
 		appendToGroup(menu, moveAction, ICommonMenuConstants.GROUP_EDIT);
-		//		appendToGroup(menu, copyAction, ICommonMenuConstants.GROUP_EDIT);
+		appendToGroup(menu, copyAction, ICommonMenuConstants.GROUP_EDIT);
 		appendToGroup(menu, renameAction, ICommonMenuConstants.GROUP_EDIT);
 		appendToGroup(menu, refreshAction, ICommonMenuConstants.GROUP_EDIT);
 	}
@@ -211,24 +208,21 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 				return helper.getSelectedResources(getContext());
 			}
 		};
+		
+		copyAction = new CopyToClipboardAction(provider){
+			
+			@Override
+			public IStructuredSelection getStructuredSelection() {
+				return helper.getStructuredSelection(getContext());
+			}
 
-
-		//FIXME: The CopyResourceAction is actually a copy + paste
-		//It fails when the target folder is the same as the source folder (Because it needs to rename the copied files)
-		//Replace this action with a Copy to Clipboard action
-		//		copyAction = new CopyResourceAction(provider) {
-		//
-		//			@Override
-		//			public IStructuredSelection getStructuredSelection() {
-		//				return helper.getStructuredSelection(getContext());
-		//			}
-		//
-		//			@Override
-		//			protected List getSelectedResources() {
-		//				return helper.getSelectedResources(getContext());
-		//			}
-		//		};
-
+			@Override
+			protected List getSelectedResources() {
+				return helper.getSelectedResources(getContext());
+			}			
+			
+		};
+				
 		renameAction = new OneFileRenameAction(provider);
 
 		refreshAction = new RefreshAction(provider) {
@@ -243,8 +237,8 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 		makeAction(openAction, ICommonActionConstants.OPEN, ISharedImages.IMG_TOOL_COPY, ISharedImages.IMG_TOOL_COPY_DISABLED);
 		makeAction(deleteAction, IWorkbenchCommandConstants.EDIT_DELETE, ISharedImages.IMG_TOOL_DELETE, ISharedImages.IMG_TOOL_DELETE_DISABLED);
 		makeAction(moveAction, ActionFactory.MOVE.getId(), null, null);
-		//		makeAction(copyAction, IWorkbenchCommandConstants.EDIT_CUT, ISharedImages.IMG_TOOL_CUT, ISharedImages.IMG_TOOL_CUT_DISABLED);
-		//		makeAction(copyAction, IWorkbenchCommandConstants.EDIT_COPY, ISharedImages.IMG_TOOL_COPY, ISharedImages.IMG_TOOL_COPY_DISABLED);
+		makeAction(copyAction, IWorkbenchCommandConstants.EDIT_CUT, ISharedImages.IMG_TOOL_CUT, ISharedImages.IMG_TOOL_CUT_DISABLED);
+		makeAction(copyAction, IWorkbenchCommandConstants.EDIT_COPY, ISharedImages.IMG_TOOL_COPY, ISharedImages.IMG_TOOL_COPY_DISABLED);
 		makeAction(refreshAction, ActionFactory.REFRESH.getCommandId(), null, null);
 	}
 
