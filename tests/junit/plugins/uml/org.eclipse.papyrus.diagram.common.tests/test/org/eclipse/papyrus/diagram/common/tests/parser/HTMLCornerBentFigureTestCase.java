@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,13 +8,18 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - skip tests on Mac that use unavailable fonts
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.common.tests.parser;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.text.FlowPage;
 import org.eclipse.gmf.runtime.draw2d.ui.text.TextFlowEx;
 import org.eclipse.papyrus.junit.utils.classification.ClassificationRunner;
+import org.eclipse.papyrus.junit.utils.rules.Condition;
+import org.eclipse.papyrus.junit.utils.rules.Conditional;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
@@ -74,7 +79,9 @@ public class HTMLCornerBentFigureTestCase extends HTMLCornerBentFigure {
 
 	public final String TEST_CASE_11_EXPECTED = "[org.eclipse.draw2d.text.FlowPage]\n" + "  [org.eclipse.draw2d.text.BlockFlow]\n" + "    [org.eclipse.gmf.runtime.draw2d.ui.text.TextFlowEx {Text : text ; Font : name=Arial; size=8; bold=false; italic=false; underline= false}]\n" + "    [org.eclipse.gmf.runtime.draw2d.ui.text.TextFlowEx {Text : specific font size/kind; Font : name=Lucida Console; size=14; bold=false; italic=false; underline= false}]\n" + "    [org.eclipse.gmf.runtime.draw2d.ui.text.TextFlowEx {Text :  text; Font : name=Arial; size=8; bold=false; italic=false; underline= false}]\n";
 
-
+	@Condition
+	public final boolean notMac = !Platform.OS_MACOSX.equals(Platform.getOS());
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -134,6 +141,7 @@ public class HTMLCornerBentFigureTestCase extends HTMLCornerBentFigure {
 	 * Test method for {@link org.eclipse.papyrus.diagram.common.figure.node.HTMLCornerBentFigure#generateBlockForText(java.lang.String)}.
 	 */
 	@Test
+	@Conditional(key="notMac")
 	public void testGenerateBlockForText7() {
 		testGenerateBlockForText("test for code Sample paragraph", TEST_CASE_7, TEST_CASE_7_EXPECTED);
 	}
@@ -142,6 +150,7 @@ public class HTMLCornerBentFigureTestCase extends HTMLCornerBentFigure {
 	 * Test method for {@link org.eclipse.papyrus.diagram.common.figure.node.HTMLCornerBentFigure#generateBlockForText(java.lang.String)}.
 	 */
 	@Test
+	@Conditional(key="notMac")
 	public void testGenerateBlockForText8() {
 		testGenerateBlockForText("test for quote paragraph", TEST_CASE_8, TEST_CASE_8_EXPECTED);
 	}
@@ -166,6 +175,7 @@ public class HTMLCornerBentFigureTestCase extends HTMLCornerBentFigure {
 	 * Test method for {@link org.eclipse.papyrus.diagram.common.figure.node.HTMLCornerBentFigure#generateBlockForText(java.lang.String)}.
 	 */
 	@Test
+	@Conditional(key="notMac")
 	public void testGenerateBlockForText11() {
 		testGenerateBlockForText("test for font height and kind", TEST_CASE_11, TEST_CASE_11_EXPECTED);
 	}
