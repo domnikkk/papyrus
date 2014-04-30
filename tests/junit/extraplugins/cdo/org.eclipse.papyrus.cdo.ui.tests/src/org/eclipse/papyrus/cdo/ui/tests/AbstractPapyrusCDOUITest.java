@@ -9,6 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 422257
+ *   Christian W. Damus (CEA) - bug 432813
  *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.ui.tests;
@@ -20,11 +21,13 @@ import static org.junit.Assert.fail;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.cdo.dawn.editors.IDawnEditor;
 import org.eclipse.emf.cdo.dawn.editors.IDawnEditorSupport;
 import org.eclipse.emf.cdo.dawn.gmf.util.DawnDiagramUpdater;
 import org.eclipse.emf.cdo.transaction.CDOTransaction;
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -57,7 +60,9 @@ import org.junit.After;
 import org.junit.Before;
 
 import com.google.common.base.Splitter;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 /**
  * This is the AbstractPapyrusCDOUITest type. Enjoy.
@@ -116,10 +121,20 @@ public abstract class AbstractPapyrusCDOUITest extends AbstractPapyrusCDOTest {
 	public void importTestModel() throws Exception {
 
 		CDOTransaction transaction = createTransaction();
+		Map<Resource, Resource> importMap = Maps.newHashMap();
 
-		importResource(transaction, TEST_MODEL_NAME, TEST_MODEL_NAME);
-		importResource(transaction, TEST_UML_NAME, TEST_UML_NAME);
-		importResource(transaction, TEST_NOTATION_NAME, TEST_NOTATION_NAME);
+		importResource(transaction, TEST_MODEL_NAME, TEST_MODEL_NAME, importMap);
+		importResource(transaction, TEST_UML_NAME, TEST_UML_NAME, importMap);
+		importResource(transaction, TEST_NOTATION_NAME, TEST_NOTATION_NAME, importMap);
+
+		for(Map.Entry<Resource, Resource> next : importMap.entrySet()) {
+			Resource xml = next.getKey();
+			Resource cdo = next.getValue();
+			ECollections.setEList(cdo.getContents(), ImmutableList.copyOf(xml.getContents()));
+			xml.unload();
+			xml.eAdapters().clear();
+			xml.getResourceSet().getResources().remove(xml);
+		}
 
 		getPapyrusRepository().commit(transaction.getResourceSet());
 		close(getPapyrusRepository(), transaction);
@@ -147,21 +162,16 @@ public abstract class AbstractPapyrusCDOUITest extends AbstractPapyrusCDOTest {
 		flushDisplayEvents();
 	}
 
-	private Resource importResource(CDOTransaction transaction, String srcPath, String dstPath) {
+	private void importResource(CDOTransaction transaction, String srcPath, String dstPath, Map<? super Resource, ? super Resource> importMap) {
 		ResourceSet rset = transaction.getResourceSet();
 
 		Resource xml = rset.getResource(URI.createPlatformPluginURI(PLUGIN_ID + "/resources/" + srcPath, true), true);
 
 		EcoreUtil.resolveAll(xml);
 
-		Resource result = transaction.getOrCreateResource(getResourcePath(dstPath));
-		result.getContents().clear();
-		result.getContents().addAll(xml.getContents());
+		Resource cdo = transaction.getOrCreateResource(getResourcePath(dstPath));
 
-		xml.unload();
-		rset.getResources().remove(xml);
-
-		return result;
+		importMap.put(xml, cdo);
 	}
 
 	protected IWorkbenchPage getWorkbenchPage() {
