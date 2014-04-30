@@ -16,14 +16,16 @@
              <j:String>PNG Icon</j:String>
              <j:String>GIF Icon</j:String>
              <j:String>JPEG Icon</j:String>
+			 <j:String>All</j:String>
             </x:Array>
 		</ppe:BrowseFilePropertyEditor.filterNames>
 		<ppe:BrowseFilePropertyEditor.filterExtensions>
 			<x:Array Type="j:String">
-             <j:String>*.gif;*.png;*.jpeg</j:String>
+             <j:String>*.gif;*.png;*.jpeg;*.jpg;*.bmp</j:String>
              <j:String>*.png</j:String>
              <j:String>*.gif</j:String>
-             <j:String>*.jpeg</j:String>
+             <j:String>*.jpeg;*.jpg</j:String>
+			 <j:String>*.*</j:String>
              </x:Array>
 		</ppe:BrowseFilePropertyEditor.filterExtensions>
 	</ppe:BrowseFilePropertyEditor>

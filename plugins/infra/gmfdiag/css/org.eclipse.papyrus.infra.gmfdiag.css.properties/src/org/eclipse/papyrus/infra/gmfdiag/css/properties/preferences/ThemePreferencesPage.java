@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -85,7 +85,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * A Preference page for selecting the Workspace CSS Theme
- * 
+ *
  * @author Camille Letavernier
  */
 public class ThemePreferencesPage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
@@ -165,10 +165,10 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	private static final String THEME_NAME_LABEL = "Label";
 
 	/** List of valid extensions for an icon. */
-	private List<String> filterExtensions = Arrays.asList(new String[]{ "*.gif;*.png;*.jpeg", "*.gif", "*.png", "*.jpeg" });
+	private List<String> filterExtensions = Arrays.asList(new String[]{ "*.gif;*.png;*.jpeg;*.jpg;*.bmp", "*.gif", "*.png", "*.jpeg;*.jpg", "*.*" });
 
 	/** List of name associated to valid extensions. */
-	private List<String> filterNames = Arrays.asList(new String[]{ "All images", "GIF Icon", "PNG Icon", "JPEG Icon" });
+	private List<String> filterNames = Arrays.asList(new String[]{ "All images", "GIF Icon", "PNG Icon", "JPEG Icon", "All" });
 
 	/** Flag to define if refresh must be done. */
 	public boolean needsRefresh = false;
@@ -205,9 +205,9 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 
 	/**
-	 * 
+	 *
 	 * Default constructor.
-	 * 
+	 *
 	 */
 	public ThemePreferencesPage() {
 		super(PAGE_TITLE, org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageDescriptor("/icons/papyrus.png"), FieldEditorPreferencePage.GRID);
@@ -243,7 +243,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		//Used default preference store to save current theme
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
 
-		// Set description for page 
+		// Set description for page
 		setDescription("Papyrus Theme preferences");
 	}
 
@@ -283,13 +283,13 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Create part of page to select, add and remove theme.
-	 * 
+	 *
 	 * @param parent
 	 *        Parent composite where components will be added
 	 */
 	private void createPreferenceThemePart(Composite parent) {
 
-		// Add theme field editor 
+		// Add theme field editor
 		createFieldEditors();
 		Composite buttonsPanel = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
@@ -323,7 +323,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Create theme label composite.
-	 * 
+	 *
 	 * @param parent
 	 *        Parent composite where components will be added
 	 */
@@ -352,7 +352,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Create theme icon part.
-	 * 
+	 *
 	 * @param parent
 	 *        Parent composite where components will be added
 	 */
@@ -381,7 +381,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Create menu item.
-	 * 
+	 *
 	 * @param parentMenu
 	 *        Menu where it will be added
 	 * @param label
@@ -406,7 +406,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Action to run when a menu is slected.
-	 * 
+	 *
 	 * @param menuId
 	 *        ID of selected menu
 	 */
@@ -419,7 +419,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 			browseFileSytem();
 			break;
 		default:
-			// Nothing to do 
+			// Nothing to do
 			break;
 		}
 	}
@@ -466,7 +466,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 
 		if(!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
-			//The filters have been defined 
+			//The filters have been defined
 			contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); //Reset the default filters
 
 			//Use our own filters
@@ -552,7 +552,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Create theme style sheets part.
-	 * 
+	 *
 	 * @param parent
 	 *        Parent composite where components will be added
 	 */
@@ -600,7 +600,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Create actions associate to tree viewer.
-	 * 
+	 *
 	 * @param parent
 	 *        Composite where action buttons will be added
 	 */
@@ -622,9 +622,9 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Override method to create a button with an icon and no label.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createButton(Composite, int, String, boolean)
-	 * 
+	 *
 	 * @param parent
 	 * @param id
 	 * @param icon
@@ -757,7 +757,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Fill style sheets viewer with selected style sheets.
-	 * 
+	 *
 	 * @param result
 	 *        Result from dialog selection
 	 */
@@ -767,8 +767,9 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		for(Object object : result) {
 
 			// Check if this is a style sheet
-			if(object instanceof StyleSheet)
+			if(object instanceof StyleSheet) {
 				currentTheme.getStylesheets().add((StyleSheet)object);
+			}
 		}
 
 		needsRefresh = true;
@@ -778,7 +779,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Refresh content of tree viewer according to selected theme/
-	 * 
+	 *
 	 * @param currentTheme
 	 *        Current theme
 	 */
@@ -911,9 +912,9 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	}
 
 	/**
-	 * 
+	 *
 	 * Update state of dialog buttons.
-	 * 
+	 *
 	 * @param currentTheme
 	 *        Selected theme which determine state of different buttons.
 	 */
@@ -1008,7 +1009,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 	/**
 	 * Refresh dialog area according to combo selection.
-	 * 
+	 *
 	 * @param selection
 	 *        selection which comes from combo viewer
 	 */
@@ -1084,7 +1085,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.PreferencePage#performCancel()
 	 *
 	 * @return
