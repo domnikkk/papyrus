@@ -790,27 +790,21 @@
     <extension
           point="org.eclipse.ui.menus">
        <menuContribution
-             allPopups="false"
-             locationURI="popup:popup:org.eclipse.ui.popup.any?after=additions">
+             allPopups="true"
+             locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu?after=additions">
           <command
                 commandId="org.eclipse.papyrus.uml.diagram.interactionoverview.updateSnapshotCommand"
                 label="Update Snapshot"
                 style="push">
              <visibleWhen>
-                <and>
-	                    <iterate>
+                
+	                    <iterate
+                           ifEmpty="false"
+                           operator="or">
 	                        <instanceof value="org.eclipse.papyrus.uml.diagram.interactionoverview.edit.part.CallBehaviorActionAsInteractionEditPart">
 	                        </instanceof>
 	                    </iterate>
-	                    <with
-	                          variable="selection">
-	                       <not>
-	                          <count
-	                                value="0">
-	                          </count>
-	                       </not>
-	                    </with>
-	                </and>
+	                
              </visibleWhen>
           </command>
           <command
@@ -818,26 +812,16 @@
                 label="Switch Interaction &lt;-&gt;InteractionUse"
                 style="push">
              <visibleWhen>
-                <and>
-                   <iterate>
-                      <or>
-                         <instanceof
-                               value="org.eclipse.papyrus.uml.diagram.interactionoverview.edit.part.CallBehaviorActionAsInteractionEditPart">
-                         </instanceof>
-                         <instanceof
-                               value="org.eclipse.papyrus.uml.diagram.interactionoverview.edit.part.CustomInteractionUseEditPartCN">
-                         </instanceof>
-                      </or>
+                   <iterate
+                         ifEmpty="false"
+                         operator="or">
+                      <instanceof
+                            value="org.eclipse.papyrus.uml.diagram.interactionoverview.edit.part.CallBehaviorActionAsInteractionEditPart">
+                      </instanceof>
+                      <instanceof
+                            value="org.eclipse.papyrus.uml.diagram.interactionoverview.edit.part.CustomInteractionUseEditPartCN">
+                      </instanceof>
                    </iterate>
-                   <with
-                         variable="selection">
-                      <not>
-                         <count
-                               value="0">
-                         </count>
-                      </not>
-                   </with>
-                </and>
              </visibleWhen>
           </command>
        </menuContribution>

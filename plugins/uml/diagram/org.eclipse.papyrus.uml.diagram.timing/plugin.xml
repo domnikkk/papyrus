@@ -1294,7 +1294,9 @@
 
 
 
-        <menuContribution locationURI="popup:popup:org.eclipse.ui.popup.any?after=additions">
+        <menuContribution
+              allPopups="true"
+              locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu?after=additions">
             <command
                 commandId="org.eclipse.papyrus.uml.diagram.timing.custom.switchLifeline"
                 label="Switch Lifeline to Compact"
