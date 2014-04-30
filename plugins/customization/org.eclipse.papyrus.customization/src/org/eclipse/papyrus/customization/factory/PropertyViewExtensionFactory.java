@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.factory;
 
@@ -74,12 +76,14 @@ public class PropertyViewExtensionFactory extends FileBasedExtensionFactory {
 			targetFile.getParentFile().mkdirs();
 		}
 
+		ResourceSet resourceSet = new ResourceSetImpl();
 		try {
-			ResourceSet resourceSet = new ResourceSetImpl();
 			EObject propertyViewModel = EMFHelper.loadEMFModel(resourceSet, uri);
 			copyAll((Context)propertyViewModel, targetFile);
 		} catch (IOException ex) {
 			Activator.log.error(ex);
+		} finally {
+			EMFHelper.unload(resourceSet);
 		}
 
 		//		try {

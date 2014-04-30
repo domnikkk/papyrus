@@ -131,12 +131,7 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 	 *         If the URI isn't a valid EObject
 	 */
 	protected EObject loadEMFModel(URI uri) throws IOException {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		if(scratchResourceSets == null) {
-			scratchResourceSets = new ArrayList<ResourceSet>();
-		}
-		scratchResourceSets.add(resourceSet);
-
+		ResourceSet resourceSet = createResourceSet();
 		try {
 			Resource resource = resourceSet.getResource(uri, true);
 			if(resource != null) {
@@ -149,6 +144,15 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 		}
 
 		return null;
+	}
+	
+	protected final ResourceSet createResourceSet() {
+		ResourceSet result = new ResourceSetImpl();
+		if(scratchResourceSets == null) {
+			scratchResourceSets = new ArrayList<ResourceSet>();
+		}
+		scratchResourceSets.add(result);
+		return result;
 	}
 
 	public void addListener(Listener listener) {
@@ -218,7 +222,7 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 				return null;
 			}
 
-			ResourceSet resourceSet = new ResourceSetImpl();
+			ResourceSet resourceSet = createResourceSet();
 			Resource contextResource = resourceSet.createResource(targetURI.get(0));
 			contextResource.getContents().addAll(outObjects);
 
@@ -265,7 +269,7 @@ public abstract class AbstractQVTGenerator implements IGenerator, Listener {
 				if(!(objectResult instanceof Context)) {
 					return null;
 				}
-				ResourceSet resourceSet = new ResourceSetImpl();
+				ResourceSet resourceSet = createResourceSet();
 				Resource contextResource = resourceSet.createResource(targetURI.get(i));
 				contextResource.getContents().addAll(outObjects);
 				temp.addAll(getContexts(outObjects));

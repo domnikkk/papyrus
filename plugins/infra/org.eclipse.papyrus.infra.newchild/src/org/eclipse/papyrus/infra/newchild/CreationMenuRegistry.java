@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.newchild;
@@ -49,10 +50,14 @@ public class CreationMenuRegistry {
 	 * this method load the extension points
 	 */
 	public void init(){
+		// Obtain a new resource set
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getPackageRegistry().put(ElementCreationMenuModelPackage.eINSTANCE.getNsURI(), ElementCreationMenuModelPackage.eINSTANCE);
+		
 		// Reading data from plugins
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(MENU_CREATION_MODEL_EXTENSION_ID);
 		for(int i = 0; i < configElements.length; i++) {
-			rootFolders.add(inializeOneModel(configElements[i]));
+			rootFolders.add(initializeOneModel(resourceSet, configElements[i]));
 		}
 
 	}
@@ -73,9 +78,9 @@ public class CreationMenuRegistry {
 	 * @param element
 	 *        the extension point
 	 */
-	private Folder inializeOneModel(IConfigurationElement element) {
+	private Folder initializeOneModel(ResourceSet resourceSet, IConfigurationElement element) {
 		try {
-			return (Folder)createExtension(element, element.getAttribute(MODEL_ID));
+			return (Folder)createExtension(resourceSet, element, element.getAttribute(MODEL_ID));
 
 		} catch (Exception e) {
 			System.err.println("model of new child can not be loaded: " + e); //$NON-NLS-1$
@@ -84,8 +89,10 @@ public class CreationMenuRegistry {
 	}
 
 	/**
-	 * Load a resource instanceof  ElementCreationMenuModel
+	 * Load a resource instanceof ElementCreationMenuModel
 	 * 
+	 * @param resourceSet
+	 *        the resource set in which to load the menu model
 	 * @param element
 	 *        the extension point
 	 * @param classAttribute
@@ -94,7 +101,7 @@ public class CreationMenuRegistry {
 	 * @throws Exception
 	 *         if the resource is not loaded
 	 */
-	private static Folder createExtension(final IConfigurationElement element, final String classAttribute) throws Exception {
+	private static Folder createExtension(final ResourceSet resourceSet, final IConfigurationElement element, final String classAttribute) throws Exception {
 		try {
 			Bundle extensionBundle = Platform.getBundle(element.getDeclaringExtension().getNamespaceIdentifier());
 			URL url = extensionBundle.getResource(classAttribute);
@@ -103,9 +110,6 @@ public class CreationMenuRegistry {
 			if(url!=null){
 				URI uri=URI.createURI(url.toURI().toASCIIString());
 
-				// Obtain a new resource set
-				ResourceSet resourceSet = new ResourceSetImpl();
-				resourceSet.getPackageRegistry().put(ElementCreationMenuModelPackage.eINSTANCE.getNsURI(), ElementCreationMenuModelPackage.eINSTANCE);
 				// Get the resource
 				Resource resource = resourceSet.getResource(uri, true);
 				if(resource.getContents().get(0) instanceof Folder ){

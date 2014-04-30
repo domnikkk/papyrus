@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.preferences;
 
@@ -52,22 +54,22 @@ public class LanguageRegistry {
 		String preferencesPath = path.toString() + "/languagePreferences.xmi"; //$NON-NLS-1$
 		URI preferencesURI = URI.createFileURI(preferencesPath);
 
+		ResourceSet resourceSet = new ResourceSetImpl();
 		try {
-			ResourceSet resourceSet = new ResourceSetImpl();
 			Object preferencesObject = EMFHelper.loadEMFModel(resourceSet, preferencesURI);
 			if(preferencesObject instanceof Preferences) {
 				preferences = (Preferences)preferencesObject;
 			} else {
-				createPreferences(preferencesURI);
+				createPreferences(resourceSet, preferencesURI);
 			}
 		} catch (IOException e) {
-			createPreferences(preferencesURI);
+			createPreferences(resourceSet, preferencesURI);
 		}
 
 		//Init
 	}
 
-	private void createPreferences(URI preferencesURI) {
+	private void createPreferences(ResourceSet resourceSet, URI preferencesURI) {
 		preferences = languagepreferencesFactory.eINSTANCE.createPreferences();
 		Editor defaultEditor = languagepreferencesFactory.eINSTANCE.createEditor();
 		defaultEditor.setClass("org.eclipse.papyrus.uml.properties.widgets.NaturalLanguageEditor"); //$NON-NLS-1$
@@ -75,7 +77,6 @@ public class LanguageRegistry {
 		preferences.getEditors().add(defaultEditor);
 		preferences.setDefaultEditor(defaultEditor);
 
-		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource resource = resourceSet.createResource(preferencesURI);
 		resource.getContents().add(preferences);
 
