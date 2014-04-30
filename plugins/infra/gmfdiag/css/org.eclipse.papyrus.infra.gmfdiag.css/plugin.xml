@@ -18,15 +18,6 @@
     </styleprovider>
  </extension>
  <extension
-       point="org.eclipse.ui.preferencePages">
-    <page
-          category="org.eclipse.papyrus.infra.core.sasheditor.preferences.generalcategory"
-          class="org.eclipse.papyrus.infra.gmfdiag.css.preferences.ThemePreferencesPage"
-          id="org.eclipse.papyrus.infra.gmfdiag.css.theme"
-          name="CSS Theme">
-    </page>
- </extension>
- <extension
        point="org.eclipse.core.runtime.preferences">
     <initializer
           class="org.eclipse.papyrus.infra.gmfdiag.css.preferences.ThemePreferenceInitializer">
