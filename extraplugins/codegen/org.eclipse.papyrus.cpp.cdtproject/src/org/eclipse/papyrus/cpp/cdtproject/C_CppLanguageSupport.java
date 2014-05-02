@@ -1,4 +1,4 @@
-package org.eclipse.papyrus.qompass.designer.cpp;
+package org.eclipse.papyrus.cpp.cdtproject;
 
 import org.eclipse.cdt.core.model.CoreModel;
 import org.eclipse.cdt.core.settings.model.CIncludePathEntry;
@@ -10,31 +10,24 @@ import org.eclipse.cdt.core.settings.model.ICLanguageSettingEntry;
 import org.eclipse.cdt.core.settings.model.ICProjectDescription;
 import org.eclipse.cdt.core.settings.model.ICProjectDescriptionManager;
 import org.eclipse.cdt.core.settings.model.ICSettingEntry;
+import org.eclipse.cdt.managedbuilder.core.BuildException;
 import org.eclipse.cdt.managedbuilder.core.IConfiguration;
 import org.eclipse.cdt.managedbuilder.core.IOption;
 import org.eclipse.cdt.managedbuilder.core.ITool;
 import org.eclipse.cdt.managedbuilder.core.ManagedBuildManager;
 import org.eclipse.cdt.ui.wizards.CCProjectWizard;
-import org.eclipse.core.resources.ICommand;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.C_Cpp.ExternLibrary;
-import org.eclipse.papyrus.FCM.OperatingSystem;
-import org.eclipse.papyrus.FCM.Target;
+import org.eclipse.papyrus.acceleo.extensions.ILangSupport;
 import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
-import org.eclipse.papyrus.qompass.designer.core.Log;
-import org.eclipse.papyrus.qompass.designer.core.deployment.DepUtils;
-import org.eclipse.papyrus.qompass.designer.core.extensions.ILangSupport;
-import org.eclipse.papyrus.qompass.designer.core.transformations.TransformationException;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
@@ -53,13 +46,20 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  */
 public class C_CppLanguageSupport implements ILangSupport {
 
+	// TODO specific "root" is only required for component based code generation
+	private static final String ROOT = "root"; //$NON-NLS-1$
+
+	private static final String C = "c";  //$NON-NLS-1$
+
+	private static final String CPP = "cpp"; //$NON-NLS-1$
+
 	/**
 	 * Caller should test before calling, whether the project exists already
 	 * 
 	 * @param projectName
 	 * @return
 	 */
-	public IProject createProject(String projectName, InstanceSpecification node) throws TransformationException
+	public IProject createProject(String projectName, InstanceSpecification node)
 	{
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
@@ -88,7 +88,7 @@ public class C_CppLanguageSupport implements ILangSupport {
 			project = null;
 		}
 		if((project == null) || !project.exists()) {
-			throw new TransformationException("could not create CDT project ..."); //$NON-NLS-1$
+			throw new RuntimeException("could not create CDT project ..."); //$NON-NLS-1$
 		}
 		setProject(project);
 		setSettings(node);
@@ -99,19 +99,16 @@ public class C_CppLanguageSupport implements ILangSupport {
 		m_project = project;
 	}
 	
-	@Override
 	public IProject getProject() {
 		return m_project;
 	}
 
-	public void setSettings(InstanceSpecification node) throws TransformationException
+	public void setSettings(InstanceSpecification node)
 	{
 		try {
 			// ((CProject) project).
-			IProjectDescription desc = m_project.getDescription();
-			for(ICommand ic : desc.getBuildSpec()) {
-				Log.log(Status.INFO, Log.CODEGEN, "CppLanguageSupport - read build spec: " + ic);
-			}
+			// IProjectDescription desc = m_project.getDescription();
+
 			ICProjectDescriptionManager mngr =
 				CoreModel.getDefault().getProjectDescriptionManager();
 			ICProjectDescription cdesc = mngr.getProjectDescription(m_project, true);
@@ -132,6 +129,7 @@ public class C_CppLanguageSupport implements ILangSupport {
 
 				// define name of used operating system from model (attribute of "Target" stereotype)
 				// and add it to list of macros
+				/*
 				Target target = UMLUtil.getStereotypeApplication(node, Target.class);
 				if(target == null) {
 					// get information from node referenced by the instance
@@ -143,7 +141,8 @@ public class C_CppLanguageSupport implements ILangSupport {
 						macros.add("OS_" + os.getBase_Class().getName()); //$NON-NLS-1$
 					}
 				}
-
+				*/
+				
 				// define macros
 				EList<ICLanguageSettingEntry> icMacros =
 					new BasicEList<ICLanguageSettingEntry>();
@@ -155,9 +154,9 @@ public class C_CppLanguageSupport implements ILangSupport {
 				// now set include path and preprocessor code
 				for(ICLanguageSetting lang : languageSettings) {
 					// selection better via ID? (instead of extension)
-					Log.log(Status.INFO, Log.CODEGEN, "CppLanguageSupport: lang.getID: " + lang.getId() + " lang.getLanguageID: " + lang.getLanguageId());
+					// Log.log(Status.INFO, Log.CODEGEN, "CppLanguageSupport: lang.getID: " + lang.getId() + " lang.getLanguageID: " + lang.getLanguageId());
 					for(String ext : lang.getSourceExtensions()) {
-						if(ext.equals("cpp") || ext.equals("c")) {
+						if(ext.equals(CPP) || ext.equals(C)) {
 							lang.setSettingEntries(ICSettingEntry.INCLUDE_PATH, icIncludePaths);
 							ICLanguageSettingEntry icOldMacros[] =
 								lang.getSettingEntries(ICSettingEntry.MACRO);
@@ -188,37 +187,39 @@ public class C_CppLanguageSupport implements ILangSupport {
 				mngr.setProjectDescription(m_project, cdesc, true, null);
 			}
 			ManagedBuildManager.saveBuildInfo(m_project, true);
-		} catch (Exception e) {
-			throw new TransformationException(e.getMessage());
+		}
+		catch (BuildException be) {
+			throw new RuntimeException(be.getMessage());
+		}
+		catch (CoreException ce) {
+			throw new RuntimeException(ce.getMessage());
 		}
 	}
 
 	public void generateCode(IProgressMonitor monitor, PackageableElement element)
-		throws TransformationException
 	{
 		try {
 			creator.createPackageableElement(monitor, element);
 		} catch (CoreException exception) {
-			throw new TransformationException("Exception during C/C++ code generation: " + exception.toString());
+			throw new RuntimeException("Exception during C/C++ code generation: " + exception.getMessage());
 		}
 	}
 
 	public void cleanCode(IProgressMonitor monitor, PackageableElement element)
-		throws TransformationException
 	{
 		try {
 			creator.removePackageableElement(monitor, element);
 		} catch (CoreException exception) {
-			throw new TransformationException("Exception during C/C++ code generation: " + exception.toString());
+			throw new RuntimeException("Exception during C/C++ code generation: " + exception.getMessage());
 		}
 	}
 
 	public void resetConfigurationData() {
 		includePaths = new UniqueEList<String>();
 		// include project directory (all paths are relative to it => ".")
-		includePaths.add(".");
+		includePaths.add("."); //$NON-NLS-1$
 		// include also "root" (relative path) 
-		includePaths.add("root");
+		includePaths.add(ROOT);
 
 		libs = new UniqueEList<String>();
 		libPaths = new UniqueEList<String>();

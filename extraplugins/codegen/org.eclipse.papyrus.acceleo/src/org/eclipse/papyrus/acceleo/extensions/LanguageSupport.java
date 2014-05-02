@@ -9,15 +9,14 @@
  *     CEA LIST - initial API and implementation
  *******************************************************************************/
 
-package org.eclipse.papyrus.qompass.designer.core.extensions;
+package org.eclipse.papyrus.acceleo.extensions;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.papyrus.qompass.designer.core.Activator;
-import org.eclipse.papyrus.qompass.designer.core.Messages;
-import org.eclipse.papyrus.qompass.designer.core.transformations.TransformationException;
+import org.eclipse.papyrus.acceleo.Activator;
+import org.eclipse.papyrus.acceleo.Messages;
 
 
 /**
@@ -27,7 +26,7 @@ public class LanguageSupport {
 
 	public static final String ILANG_SUPPORT_ID = Activator.PLUGIN_ID + ".language"; //$NON-NLS-1$
 
-	public static ILangSupport getLangSupport(String language) throws TransformationException
+	public static ILangSupport getLangSupport(String language)
 	{
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor(ILANG_SUPPORT_ID);
@@ -45,6 +44,6 @@ public class LanguageSupport {
 				exception.printStackTrace();
 			}
 		}
-		throw new TransformationException(String.format(Messages.LanguageSupport_LanguageNotSupported, language));
+		throw new RuntimeException(String.format(Messages.LanguageSupport_LanguageNotSupported, language));
 	}
 }

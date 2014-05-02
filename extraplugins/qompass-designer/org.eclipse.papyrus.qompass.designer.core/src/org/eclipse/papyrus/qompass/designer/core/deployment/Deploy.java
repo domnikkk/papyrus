@@ -16,8 +16,8 @@ package org.eclipse.papyrus.qompass.designer.core.deployment;
 
 import java.util.Stack;
 
+import org.eclipse.papyrus.acceleo.extensions.ILangSupport;
 import org.eclipse.papyrus.qompass.designer.core.Messages;
-import org.eclipse.papyrus.qompass.designer.core.extensions.ILangSupport;
 import org.eclipse.papyrus.qompass.designer.core.extensions.InstanceConfigurator;
 import org.eclipse.papyrus.qompass.designer.core.transformations.LazyCopier;
 import org.eclipse.papyrus.qompass.designer.core.transformations.TransformationException;

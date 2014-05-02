@@ -19,9 +19,9 @@ import org.eclipse.emf.compare.match.service.MatchService;
 import org.eclipse.emf.compare.util.ModelUtils;
 */
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.acceleo.extensions.ILangSupport;
 import org.eclipse.papyrus.qompass.designer.core.Messages;
 import org.eclipse.papyrus.qompass.designer.core.ModelManagement;
-import org.eclipse.papyrus.qompass.designer.core.extensions.ILangSupport;
 import org.eclipse.papyrus.qompass.designer.core.transformations.TransformationException;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.2"?>
 <plugin>
-   <extension-point id="language" name="languageSupport" schema="schema/language.exsd"/>
    <extension-point id="instanceConfig" name="instanceConfigName" schema="schema/instanceConfig.exsd"/>
    <extension-point id="externalGenerator" name="externalGenerator" schema="schema/externalGenerator.exsd"/>
    <extension

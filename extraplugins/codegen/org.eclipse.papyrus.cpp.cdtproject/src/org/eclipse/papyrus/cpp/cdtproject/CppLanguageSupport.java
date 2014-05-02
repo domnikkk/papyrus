@@ -1,10 +1,10 @@
-package org.eclipse.papyrus.qompass.designer.cpp;
+package org.eclipse.papyrus.cpp.cdtproject;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.acceleo.extensions.ILangSupport;
+import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenConstants;
 import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
-import org.eclipse.papyrus.qompass.designer.core.extensions.ILangSupport;
-import org.eclipse.papyrus.qompass.designer.core.preferences.QompassPreferenceConstants;
 
 /**
  * C++ language support
@@ -17,8 +17,8 @@ public class CppLanguageSupport extends C_CppLanguageSupport implements ILangSup
 	public void setProject(IProject project) {
 		super.setProject(project);
 		
-		IPreferenceStore store = org.eclipse.papyrus.qompass.designer.core.Activator.getDefault().getPreferenceStore();
-		String prefix = store.getString(QompassPreferenceConstants.P_CODE_GEN_PREFIX) + "\n\n";
+		IPreferenceStore store = org.eclipse.papyrus.cpp.codegen.Activator.getDefault().getPreferenceStore();
+		String prefix = store.getString(CppCodeGenConstants.P_COMMENT_HEADER) + "\n\n"; //$NON-NLS-1$
 		creator = new CppModelElementsCreator(project, prefix);
 	}
 

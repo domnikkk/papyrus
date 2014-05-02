@@ -9,15 +9,13 @@
  *     CEA LIST - initial API and implementation
  *******************************************************************************/
 
-package org.eclipse.papyrus.qompass.designer.core.extensions;
+package org.eclipse.papyrus.acceleo.extensions;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.PackageableElement;
-
-import org.eclipse.papyrus.qompass.designer.core.transformations.TransformationException;
 
 /**
  * Interface used by Qompass extensions that support a specific programming language
@@ -36,7 +34,7 @@ public interface ILangSupport {
 	 *        the node for which the project should be created
 	 * @return the created project
 	 */
-	public IProject createProject(String projectName, InstanceSpecification node) throws TransformationException;
+	public IProject createProject(String projectName, InstanceSpecification node);
 
 	/**
 	 * Set project information
@@ -55,7 +53,7 @@ public interface ILangSupport {
 	 *        node for which settings should be set
 	 * @throws TransformationException
 	 */
-	public void setSettings(InstanceSpecification node) throws TransformationException;
+	public void setSettings(InstanceSpecification node);
 
 	/**
 	 * Generate code for a specific language
@@ -67,9 +65,7 @@ public interface ILangSupport {
 	 * 
 	 * @throws TransformationException
 	 */
-	public void generateCode(IProgressMonitor monitor, PackageableElement element)
-		throws TransformationException;
-
+	public void generateCode(IProgressMonitor monitor, PackageableElement element);
 
 	/**
 	 * Clean the code for a certain element, i.e. remove code that has previously generated for this element
@@ -82,8 +78,7 @@ public interface ILangSupport {
 	 *        the element for which the generate code should be removed
 	 * @throws TransformationException
 	 */
-	public void cleanCode(IProgressMonitor monitor, PackageableElement element)
-		throws TransformationException;
+	public void cleanCode(IProgressMonitor monitor, PackageableElement element);
 
 	/**
 	 * Reset gathered configuration data

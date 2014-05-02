@@ -1,4 +1,4 @@
-package org.eclipse.papyrus.qompass.designer.cpp;
+package org.eclipse.papyrus.cpp.cdtproject;
 
 import org.eclipse.cdt.ui.wizards.CDTMainWizardPage;
 

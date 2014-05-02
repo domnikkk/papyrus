@@ -1,4 +1,4 @@
-package org.eclipse.papyrus.qompass.designer.cpp;
+package org.eclipse.papyrus.cpp.cdtproject;
 
 import org.eclipse.cdt.ui.wizards.CCProjectWizard;
 import org.eclipse.jface.wizard.IWizardPage;
@@ -10,7 +10,7 @@ import org.eclipse.jface.wizard.IWizardPage;
  * called CDTMainWizardPageV that skips the first validation which
  * would other trigger an error.
  * 
- * @see org.eclipse.papyrus.qompass.designer.cpp.CDTMainWizardPageV
+ * @see org.eclipse.papyrus.cpp.cdtproject.CDTMainWizardPageV
  * 
  * @author ansgar
  */
