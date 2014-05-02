@@ -991,10 +991,7 @@ public class EMFHelper {
 	 * @param eObject
 	 */
 	public static ResourceSet getResourceSet(EObject eObject) {
-		if(eObject == null || eObject.eResource() == null) {
-			return null;
-		}
-
-		return eObject.eResource().getResourceSet();
+		Resource resource = (eObject == null) ? null : eObject.eResource();
+		return (resource == null) ? null : resource.getResourceSet();
 	}
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.stereotypeproperty;
@@ -21,8 +22,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
-import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Profile;
 import org.junit.Test;
@@ -36,8 +37,7 @@ public class TestProfileApplication extends AbstractPapyrusTestCase {
 		final Model root = ((Model)getDiagramEditPart().resolveSemanticElement());
 		assertTrue("Registered profile not found", registeredProfile != null);
 		URI modelUri = registeredProfile.uri;
-		@SuppressWarnings("deprecation")
-		final Resource modelResource = Util.getResourceSet(root).getResource(modelUri, true);
+		final Resource modelResource = EMFHelper.getResourceSet(root).getResource(modelUri, true);
 		assertTrue("the registered profile is not a profile", (modelResource.getContents().get(0) instanceof Profile));
 		assertTrue("strange profile", ("".equals(registeredProfile.qualifiednames)));
 		final Profile profile = (Profile)modelResource.getContents().get(0);
