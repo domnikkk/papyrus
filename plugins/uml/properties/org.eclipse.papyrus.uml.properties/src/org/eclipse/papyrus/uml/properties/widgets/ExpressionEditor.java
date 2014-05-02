@@ -11,6 +11,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
 
+import org.eclipse.core.databinding.observable.ChangeEvent;
+import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -54,6 +56,18 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 
 	private DynamicBodyEditor bodyEditor;
 
+	public class ExpressionListChangeHandler implements IChangeListener {
+
+		public void handleChange(ChangeEvent event) {
+			if (event.getSource() == currentExpression) {
+				bodyEditor.display(currentExpression);
+			}
+		}
+		
+	}
+	
+	ExpressionListChangeHandler expressionListChangeHandler;
+	
 	/**
 	 * Constructor.
 	 * 
@@ -82,9 +96,10 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 		languageEditor.getViewer().addSelectionChangedListener(this);
 		languageEditor.addCommitListener(this);
 
-		setEditor(languageEditor);
+		expressionListChangeHandler = new ExpressionListChangeHandler();
+		setEditor(languageEditor);		
 	}
-
+	
 	@Override
 	public void setInput(DataSource input) {
 		bodies = (IObservableList)input.getObservable("UML:OpaqueExpression:body"); //$NON-NLS-1$
@@ -111,7 +126,7 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 	@Override
 	protected IObservableList getInputObservableList() {
 		if(observableList == null) {
-			observableList = new ExpressionList(super.getInputObservableList(), bodies);
+			observableList = new ExpressionList(super.getInputObservableList(), bodies, expressionListChangeHandler);
 		}
 
 		return observableList;
@@ -134,9 +149,12 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 			bodyEditor.display(null);
 		} else if(selection instanceof IStructuredSelection) {
 			IStructuredSelection sSelection = (IStructuredSelection)selection;
-			currentExpression = (Expression)sSelection.getFirstElement();
-
-			bodyEditor.display(currentExpression);
+			Expression newExpression = (Expression)sSelection.getFirstElement();
+			if (newExpression != currentExpression) {
+				// ((ExpressionList)observableList).commit(bodyEditor);
+				currentExpression = newExpression;
+				bodyEditor.display(currentExpression);
+			}
 		}
 
 		//Force the layout of the widget after the new widget has been displayed

@@ -219,7 +219,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 
 	/**
 	 * Adds a commit listener to this editor. A Commit event is
-	 * fired when a modification occures on this editor.
+	 * fired when a modification occurs on this editor.
 	 *
 	 * @param listener
 	 *        The commit listener to add to this editor

@@ -244,10 +244,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 		AbstractEditor editor = getEditor();
 		if(editor != null ) {
 			editor.refreshValue();
-			}
-
-
-			
+		}	
 	}
 
 	/**

@@ -17,9 +17,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.core.databinding.observable.AbstractObservable;
 import org.eclipse.core.databinding.observable.ChangeEvent;
 import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.IObserving;
+import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.papyrus.infra.widgets.editors.AbstractEditor;
@@ -49,6 +51,33 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 
 	private boolean ignoreChanges = false;
 
+	private IChangeListener nestedChangeListener;
+	
+	/**
+	 * 
+	 * Constructor.
+	 * 
+	 * @param languages
+	 *        The IObservableList containing Languages
+	 * @param bodies
+	 *        The IObservableList containing Bodies
+	 * @param nestedChangeListener
+	 *        Execute listener.
+	 */
+	public ExpressionList(IObservableList languages, IObservableList bodies, IChangeListener nestedChangeListener) {
+		super(new LinkedList<Expression>(), Expression.class);
+		expressions = wrappedList;
+
+		this.languages = languages;
+		this.bodies = bodies;
+
+		languages.addChangeListener(this);
+		bodies.addChangeListener(this);
+		this.nestedChangeListener = nestedChangeListener;
+
+		UMLToExpression();
+	}
+
 	/**
 	 * 
 	 * Constructor.
@@ -59,37 +88,39 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 	 *        The IObservableList containing Bodies
 	 */
 	public ExpressionList(IObservableList languages, IObservableList bodies) {
-		super(new LinkedList<Expression>(), Expression.class);
-		expressions = wrappedList;
-
-		this.languages = languages;
-		this.bodies = bodies;
-
-		languages.addChangeListener(this);
-		bodies.addChangeListener(this);
-
-		UMLToExpression();
+		this(languages, bodies, null);
 	}
-
+	
 	private void UMLToExpression() {
-		expressions.clear();
 		int maxSize = Math.max(languages.size(), bodies.size());
 
 		Iterator<?> languageIterator = languages.iterator();
 		Iterator<?> bodyIterator = bodies.iterator();
 
-		for(int i = 0; i < maxSize; i++) {
-			Expression expression = new Expression();
+		for(int i = 0; i < maxSize; i++) {			
+			Expression expression;
+			if (i < expressions.size()) {
+				expression = expressions.get(i);
+			}
+			else {
+				expression = new Expression();
+				if (nestedChangeListener != null) {
+					expression.addChangeListener(nestedChangeListener);
+				}
+				expressions.add(expression);
+			}
 
 			if(languageIterator.hasNext()) {
-				expression.language = (String)languageIterator.next();
+				expression.setLanguage((String)languageIterator.next());
 			}
 
 			if(bodyIterator.hasNext()) {
-				expression.body = (String)bodyIterator.next();
+				expression.setBody((String)bodyIterator.next());
 			}
-
-			expressions.add(expression);
+		}
+		// remove additional entries in expressions list that are not in the UML list
+		for (int i = maxSize; i < expressions.size(); i++) {
+			expressions.remove(i);
 		}
 	}
 
@@ -180,9 +211,14 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 	 * A helper class to aggregate the expression body and language in a single
 	 * object
 	 * 
-	 * @author Camille Letavernier
+	 * @author Camille Letavernier, Ansgar Radermacher (made observable for handling bug 433647,
+	 *         update expression editor, if UML expression changes)
 	 */
-	public static class Expression {
+	public static class Expression extends AbstractObservable {
+
+		public Expression() {
+			super(Realm.getDefault());
+		}
 
 		String language;
 
@@ -208,7 +244,10 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 		 * @param language
 		 */
 		public void setLanguage(String language) {
-			this.language = language;
+			if(language != this.language) {
+				this.language = language;
+				fireChange();
+			}
 		}
 
 		/**
@@ -217,7 +256,10 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 		 * @param body
 		 */
 		public void setBody(String body) {
-			this.body = body;
+			if (body != this.body) {
+				this.body = body;
+				fireChange();
+			}
 		}
 
 		@Override
@@ -242,6 +284,10 @@ public class ExpressionList extends WritableList implements IChangeListener, ICo
 			}
 
 			return otherExpression.getLanguage().equals(getLanguage());
+		}
+
+		public boolean isStale() {
+			return false;
 		}
 	}
 }
