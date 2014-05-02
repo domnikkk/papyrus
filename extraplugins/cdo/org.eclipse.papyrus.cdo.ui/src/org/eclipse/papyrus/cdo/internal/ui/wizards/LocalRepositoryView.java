@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.wizards;
 
@@ -23,9 +25,12 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.cdo.core.IPapyrusRepository;
 import org.eclipse.papyrus.cdo.internal.core.CDOProxyResolvingResourceSet;
+import org.eclipse.papyrus.cdo.internal.core.CDOUtils;
 import org.eclipse.papyrus.cdo.internal.core.IInternalPapyrusRepository;
 import org.eclipse.papyrus.cdo.internal.core.PapyrusRepositoryManager;
+import org.eclipse.papyrus.cdo.internal.ui.Activator;
 import org.eclipse.papyrus.cdo.internal.ui.views.DIModel;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -49,10 +54,27 @@ public class LocalRepositoryView {
 	 */
 	public void dispose() {
 		for(Map.Entry<IPapyrusRepository, CDOView> next : localViews.entrySet()) {
-			next.getKey().close(next.getValue().getResourceSet());
+			CDOView view = next.getValue();
+			try {
+				CDOUtils.unload(view);
+			} catch (Exception e) {
+				Activator.error("Exception in unloading CDO repository view.", e); //$NON-NLS-1$
+			} finally {
+				next.getKey().close(view.getResourceSet());
+			}
 		}
 
 		localViews.clear();
+
+		if(rset != null) {
+			try {
+				EMFHelper.unload(rset);
+			} catch (Exception e) {
+				Activator.error("Exception in unloading CDO repository view's resource set.", e); //$NON-NLS-1$
+			} finally {
+				rset = null;
+			}
+		}
 	}
 
 	/**
