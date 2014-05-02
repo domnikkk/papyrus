@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * 
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.viewpoints.policy;
@@ -65,6 +66,11 @@ public class PolicyChecker {
 	 * The cache of loaded configurations
 	 */
 	private static final Map<String, PapyrusConfiguration> CONFIGURATIONS_CACHE = new HashMap<String, PapyrusConfiguration>();
+	/**
+	 * The resource set for our configuration cache. Use a single resource set for loading configurations so that configurations
+	 * for dynamic profiles don't cause the UML metamodel and all of its dependencies to be loaded repeatedly
+	 */
+	private static final ResourceSet CONFIGURATIONS_RESOURCE_SET = new ResourceSetImpl();
 	/**
 	 * The default built-in configuration
 	 */
@@ -128,8 +134,7 @@ public class PolicyChecker {
 			PapyrusConfiguration config = CONFIGURATIONS_CACHE.get(location);
 			if (config != null)
 				return config;
-			ResourceSet set = new ResourceSetImpl();
-			Resource res = set.getResource(uri, true);
+			Resource res = CONFIGURATIONS_RESOURCE_SET.getResource(uri, true);
 			config = (PapyrusConfiguration) res.getContents().get(0);
 			CONFIGURATIONS_CACHE.put(location, config);
 			return config;
