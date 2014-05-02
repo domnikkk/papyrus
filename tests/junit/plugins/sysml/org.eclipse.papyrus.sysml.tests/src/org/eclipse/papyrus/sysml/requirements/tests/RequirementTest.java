@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,12 +9,14 @@
  *
  * Contributors:
  *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.requirements.tests;
 
 import static org.junit.Assert.fail;
 
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.requirements.Requirement;
 import org.eclipse.papyrus.sysml.requirements.RequirementsFactory;
@@ -31,6 +33,7 @@ import org.eclipse.uml2.uml.profile.standard.StandardPackage;
 import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 /**
@@ -53,6 +56,9 @@ import org.junit.Test;
  */
 public class RequirementTest extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	/**
 	 * The fixture for this Requirement test case. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -171,7 +177,7 @@ public class RequirementTest extends AbstractPapyrusTest {
 		setFixture(RequirementsFactory.eINSTANCE.createRequirement());
 
 		// Prepare test
-		model = SysMLTestResources.createSysMLModel();
+		model = SysMLTestResources.createSysMLModel(houseKeeper.createResourceSet());
 		if(model == null) {
 			fail();
 		}

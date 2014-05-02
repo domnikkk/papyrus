@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,12 +9,14 @@
  *
  * Contributors:
  *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.allocations.tests;
 
 import static org.junit.Assert.fail;
 
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.allocations.Allocated;
 import org.eclipse.papyrus.sysml.allocations.AllocationsFactory;
@@ -27,6 +29,7 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 /**
@@ -44,6 +47,9 @@ import org.junit.Test;
  */
 public class AllocatedTest extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	protected Allocated fixture = null;
 
 	protected Class c0 = null;
@@ -99,7 +105,7 @@ public class AllocatedTest extends AbstractPapyrusTest {
 		setFixture(AllocationsFactory.eINSTANCE.createAllocated());
 
 		// Prepare test
-		model = SysMLTestResources.createSysMLModel();
+		model = SysMLTestResources.createSysMLModel(houseKeeper.createResourceSet());
 		if(model == null) {
 			fail();
 		}
