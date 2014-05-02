@@ -270,6 +270,10 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		if(resourceSet != null) {
 			EMFHelper.unload(resourceSet);
 		}
+
+		if(manager != null) {
+			EMFHelper.unload(manager.getResourceSet());
+		}
 	}
 
 	/**
@@ -1738,13 +1742,17 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 	 */
 	public class ExtendedPaletteContentProvider extends CustomizedTreeContentProvider {
 
+		private CustomizationCatalogManager catalogManager;
+		private ResourceSet catalogManagerResourceSet;
+		
 		/**
 		 * Constructor.
 		 */
 		public ExtendedPaletteContentProvider() {
 			super(manager);
 			//TODO: EMFFACET refactor this code
-			CustomizationCatalogManager catalogManager=(CustomizationCatalogManager)ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(new ResourceSetImpl());
+			catalogManagerResourceSet = new ResourceSetImpl();
+			catalogManager=(CustomizationCatalogManager)ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(catalogManagerResourceSet);
 			List<Customization> paletteCustomizations =catalogManager.getCustomizationsByName("PaletteConfiguration");
 			if(paletteCustomizations.size()>0) {
 //				manager.setShowTypeOfLinks(false);
@@ -1753,6 +1761,18 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 			}
 		}
 
+		@Override
+		public void dispose() {
+			super.dispose();
+
+			if(catalogManagerResourceSet != null) {
+				EMFHelper.unload(catalogManagerResourceSet);
+				catalogManagerResourceSet = null;
+			}
+
+			catalogManager = null;
+		}
+		
 		/**
 		 * {@inheritDoc}
 		 */
