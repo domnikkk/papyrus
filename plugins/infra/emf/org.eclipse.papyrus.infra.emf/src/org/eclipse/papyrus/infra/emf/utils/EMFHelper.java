@@ -14,6 +14,7 @@
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 408491
  *  Christian W. Damus (CEA) - bug 432813
+ *  Christian W. Damus (CEA) - bug 422257
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.utils;
@@ -350,9 +351,12 @@ public class EMFHelper {
 	 *         When the URI cannot be loaded
 	 */
 	public static EObject loadEMFModel(ResourceSet resourceSet, final URI uri) throws IOException {
+		assert resourceSet != null : "null resourceSet"; //$NON-NLS-1$
 		if(resourceSet == null) {
+			Activator.log.warn("Created a new resourceSet to load an EMF model in " + Activator.log.getCallerMethod()); //$NON-NLS-1$
 			resourceSet = new ResourceSetImpl();
 		}
+		
 		try {
 			Resource resource = resourceSet.getResource(uri, true);
 			if(resource != null) {

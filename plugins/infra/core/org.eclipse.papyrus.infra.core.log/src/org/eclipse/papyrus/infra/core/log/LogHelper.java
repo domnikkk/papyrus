@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 Atos Origin.
+ * Copyright (c) 2009, 2014 Atos Origin, CEA, and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,8 @@
  * 
  * Contributors:
  *     Atos Origin - initial API and implementation
+ *     Christian W. Damus (CEA) - bug 422257
+ *     
  *******************************************************************************/
 package org.eclipse.papyrus.infra.core.log;
 
@@ -166,5 +168,17 @@ public class LogHelper {
 		}
 
 		log(status);
+	}
+	
+	/**
+	 * Obtains the stack-trace description of the caller of the calling method (that is, the method that
+	 * called the method using this helper method). Useful for logging warning messages etc.
+	 * 
+	 * @return the caller of my caller, or a placeholder in case the JVM cannot provide the necessary
+	 *         stack information (which is a documented possibility)
+	 */
+	public String getCallerMethod() {
+		StackTraceElement[] stack = new Exception().fillInStackTrace().getStackTrace();
+		return ((stack == null) || (stack.length < 3)) ? "<unknown caller>" : stack[2].toString();
 	}
 }
