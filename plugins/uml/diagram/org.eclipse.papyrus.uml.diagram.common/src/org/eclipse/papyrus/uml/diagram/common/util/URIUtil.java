@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2006, 2007 Eclipse.org
+ * Copyright (c) 2006, 2014 Eclipse.org, CEA, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *    Dmitry Stadnik - initial API and implementation
+ *    Christian W. Damus (CEA) - bug 422257
  */
 package org.eclipse.papyrus.uml.diagram.common.util;
 
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.ui.IEditorInput;
 
 /**
@@ -82,12 +84,16 @@ public class URIUtil {
 				return uri;
 			}
 			ResourceSet resourceSet = new ResourceSetImpl();
-			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
-			Resource resource = resourceSet.getResource(uri, true);
-			Diagram diagram = MDTUtil.getFirstDiagramFromResource(resource);
-			if(diagram != null) {
-				String fragment = resource.getURIFragment(diagram);
-				uri = uri.appendFragment(fragment);
+			try {
+				resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+				Resource resource = resourceSet.getResource(uri, true);
+				Diagram diagram = MDTUtil.getFirstDiagramFromResource(resource);
+				if(diagram != null) {
+					String fragment = resource.getURIFragment(diagram);
+					uri = uri.appendFragment(fragment);
+				}
+			} finally {
+				EMFHelper.unload(resourceSet);
 			}
 			return uri;
 		}

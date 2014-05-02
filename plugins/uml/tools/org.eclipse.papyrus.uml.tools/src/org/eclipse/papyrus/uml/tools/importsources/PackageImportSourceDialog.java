@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.widgets.editors.MultipleValueSelectorDialog;
 import org.eclipse.papyrus.infra.widgets.selectors.ReferenceSelector;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
@@ -144,6 +145,11 @@ public class PackageImportSourceDialog extends MultipleValueSelectorDialog {
 		if(source != null) {
 			source.dispose();
 			source = null;
+		}
+		
+		if(resourceSet != null) {
+			EMFHelper.unload(resourceSet);
+			resourceSet = null;
 		}
 	}
 

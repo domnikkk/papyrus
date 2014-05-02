@@ -1,12 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2006 CEA List.
+ * Copyright (c) 2006, 2014 CEA List and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     CEA List - initial API and implementation
+ *  CEA List - initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.library;
 
@@ -20,10 +22,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionLabelProvider;
-import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.uml.Element;
@@ -39,7 +41,7 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	/**
 	 * 
 	 */
-	private EList importedProfiles;
+	private EList<PackageImport> importedProfiles;
 
 	/**
 	 * 
@@ -95,13 +97,13 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	 * 
 	 * @return
 	 */
-	private List<String> getImportedProfileNames(EList appliedProfiles) {
+	private List<String> getImportedProfileNames(EList<? extends PackageImport> importedProfiles) {
 
 		List<String> Libraries = new ArrayList<String>();
-		Iterator importedIt = importedProfiles.iterator();
+		Iterator<? extends PackageImport> importedIt = importedProfiles.iterator();
 
 		while(importedIt.hasNext()) {
-			org.eclipse.uml2.uml.PackageImport currentImport = (org.eclipse.uml2.uml.PackageImport)importedIt.next();
+			PackageImport currentImport = importedIt.next();
 			String currentName = currentImport.getImportedPackage().getName();
 			Libraries.add(currentName);
 		}
@@ -170,7 +172,7 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	 */
 	public PackageImport getModelLibraryImportFromURI(URI uri) {
 
-		ResourceSet resourceSet = Util.getResourceSet(currentPackage);
+		ResourceSet resourceSet = EMFHelper.getResourceSet(currentPackage);
 		Resource modelResource = resourceSet.getResource(uri, true);
 
 		if(modelResource.getContents().size() <= 0) {

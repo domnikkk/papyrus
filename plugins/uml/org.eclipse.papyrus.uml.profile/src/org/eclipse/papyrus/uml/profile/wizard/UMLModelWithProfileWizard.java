@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008 CEA LIST.
+ * Copyright (c) 2008, 2014 CEA LIST and others.
  *
  * 
  * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,7 @@
  * Contributors:
  *  Chokri Mraidha (CEA LIST) Chokri.Mraidha@cea.fr - Initial API and implementation
  *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - modification
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.wizard;
@@ -29,8 +30,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
-import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
@@ -134,7 +135,7 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 		int num = 0;
 		if(root instanceof org.eclipse.uml2.uml.Package) {
 			URI modelUri = rProfile.uri;
-			Resource modelResource = Util.getResourceSet(root).getResource(modelUri, true);
+			Resource modelResource = EMFHelper.getResourceSet(root).getResource(modelUri, true);
 			if(modelResource.getContents().get(0) instanceof Profile) {
 				// two case : qualified names is equal to "" => whole profile must be applied
 				// not equal to "" => specific profiles must be applied

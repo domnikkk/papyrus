@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.window.Window;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.profile.FilteredRegisteredProfilesAsLibrarySelectionDialog;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
@@ -94,33 +95,36 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 	 */
 	protected void importProfiles(RegisteredProfile[] profilesToImport) {
 
-		// retrieve the current resource set
+		// create a temporary resource set. Be sure to unload it so that we don't leak models in the CacheAdapter!
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
+		try {
+			for(int i = 0; i < profilesToImport.length; i++) {
+				RegisteredProfile currentLibrary = (profilesToImport[i]);
+				URI modelUri = currentLibrary.uri;
 
-		for(int i = 0; i < profilesToImport.length; i++) {
-			RegisteredProfile currentLibrary = (profilesToImport[i]);
-			URI modelUri = currentLibrary.uri;
+				Resource modelResource = resourceSet.getResource(modelUri, true);
+				//			PackageImportTreeSelectionDialog dialog = new PackageImportTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
+				ProfileTreeSelectionDialog dialog = new ProfileTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
+				int ret = dialog.open();
 
-			Resource modelResource = resourceSet.getResource(modelUri, true);
-			//			PackageImportTreeSelectionDialog dialog = new PackageImportTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
-			ProfileTreeSelectionDialog dialog = new ProfileTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
-			int ret = dialog.open();
+				if(ret == Window.OK) {
+					Collection<ImportSpec<Profile>> result = dialog.getResult();
+					Iterator<ImportSpec<Profile>> resultIter = result.iterator();
+					while(resultIter.hasNext()) {
+						Package element = resultIter.next().getElement();
+						PackageImport ei = UMLFactory.eINSTANCE.createPackageImport();
+						ei.setImportedPackage(element);
 
-			if(ret == Window.OK) {
-				Collection<ImportSpec<Profile>> result = dialog.getResult();
-				Iterator<ImportSpec<Profile>> resultIter = result.iterator();
-				while(resultIter.hasNext()) {
-					Package element = resultIter.next().getElement();
-					PackageImport ei = UMLFactory.eINSTANCE.createPackageImport();
-					ei.setImportedPackage(element);
-
-					//we import only once an element :
-					List<Package> importedPackages = ((Package)getSelectedElement()).getImportedPackages();
-					if(!importedPackages.contains(element)) {
-						((Package)getSelectedElement()).getPackageImports().add(ei);
+						//we import only once an element :
+						List<Package> importedPackages = ((Package)getSelectedElement()).getImportedPackages();
+						if(!importedPackages.contains(element)) {
+							((Package)getSelectedElement()).getPackageImports().add(ei);
+						}
 					}
 				}
 			}
+		} finally {
+			EMFHelper.unload(resourceSet);
 		}
 	}
 

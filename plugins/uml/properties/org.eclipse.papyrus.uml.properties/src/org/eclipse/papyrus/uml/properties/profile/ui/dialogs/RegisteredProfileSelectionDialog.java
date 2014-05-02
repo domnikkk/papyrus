@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008, 2013 CEA LIST.
+ * Copyright (c) 2008, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
  *  Chokri Mraidha (CEA LIST) Chokri.Mraidha@cea.fr - Initial API and implementation
  *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - modification
  *  Christian W. Damus (CEA) - Refactoring package/profile import/apply UI for CDO
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.profile.ui.dialogs;
@@ -38,11 +39,6 @@ import org.eclipse.uml2.uml.Profile;
  *
  */
 public class RegisteredProfileSelectionDialog extends FilteredRegisteredElementsSelectionDialog {
-
-	/**
-	 *
-	 */
-	private RegisteredProfile[] regProfiles;
 
 	/**
 	 *
@@ -79,12 +75,20 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 		// 0);
 		// dialog.open();
 		this.open();
-		List<Profile> profilesToApply = this.treatSelection();
-
+		
 		List<Profile> result = new LinkedList<Profile>();
-		for(Profile profile : profilesToApply) {
-			result.add(EMFHelper.reloadIntoContext(profile, currentPackage));
+		ResourceSet resourceSet = Util.createTemporaryResourceSet();
+		
+		try {
+			List<Profile> profilesToApply = this.treatSelection(resourceSet);
+
+			for(Profile profile : profilesToApply) {
+				result.add(EMFHelper.reloadIntoContext(profile, currentPackage));
+			}
+		} finally {
+			EMFHelper.unload(resourceSet);
 		}
+		
 		return result;
 	}
 
@@ -93,12 +97,10 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 	 *
 	 * @return
 	 */
-	private List<Profile> treatSelection() {
+	private List<Profile> treatSelection(ResourceSet resourceSet) {
 
 		// User selection
 		Object[] selection = this.getResult();
-
-		ResourceSet resourceSet = Util.createTemporaryResourceSet();
 
 		if(selection == null) { // Cancel was selected
 			return new ArrayList<Profile>();

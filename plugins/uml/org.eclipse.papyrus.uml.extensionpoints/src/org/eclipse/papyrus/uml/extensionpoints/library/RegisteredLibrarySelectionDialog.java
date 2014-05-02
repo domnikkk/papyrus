@@ -1,12 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2006 CEA List.
+ * Copyright (c) 2006, 2014 CEA List and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     CEA List - initial API and implementation
+ *  CEA List - initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.library;
 
@@ -17,9 +19,9 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionLabelProvider;
-import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.uml.Element;
@@ -35,7 +37,7 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	/**
 	 * 
 	 */
-	private EList importedLibraries;
+	private EList<PackageImport> importedLibraries;
 
 	/**
 	 * 
@@ -89,13 +91,13 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	 * 
 	 * @return
 	 */
-	private List<String> getImportedLibraryNames(EList appliedLibraries) {
+	private List<String> getImportedLibraryNames(EList<? extends PackageImport> appliedLibraries) {
 
 		List<String> Libraries = new ArrayList<String>();
-		Iterator importedIt = appliedLibraries.iterator();
+		Iterator<? extends PackageImport> importedIt = appliedLibraries.iterator();
 
 		while(importedIt.hasNext()) {
-			org.eclipse.uml2.uml.PackageImport currentImport = (org.eclipse.uml2.uml.PackageImport)importedIt.next();
+			PackageImport currentImport = importedIt.next();
 			String currentName = currentImport.getImportedPackage().getName();
 			Libraries.add(currentName);
 		}
@@ -147,7 +149,7 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	}
 
 	protected boolean addModelLibraryImportFromURI(Package currentModel, URI modelUri) {
-		Resource modelResource = Util.getResourceSet(currentModel).getResource(modelUri, true);
+		Resource modelResource = EMFHelper.getResourceSet(currentModel).getResource(modelUri, true);
 
 		if(modelResource.getContents().size() <= 0) {
 			Activator.log("The selected uri (" + modelUri.toString() + ") does not contain any model library !");

@@ -10,6 +10,7 @@
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Refactoring package/profile import/apply UI for CDO
  *  Christian W. Damus (CEA) - bug 323802
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.importt.handlers;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.window.Window;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.library.FilteredRegisteredLibrariesSelectionDialog;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
@@ -50,34 +52,38 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 	 *        the array of Libraries to import
 	 */
 	protected void importLibraries(RegisteredLibrary[] librariesToImport) {
-		// retrieve the current resource set
+		// create a temporary resource set. Be sure to unload it so that we don't leak models in the CacheAdapter!
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
 
-		for(int i = 0; i < librariesToImport.length; i++) {
-			RegisteredLibrary currentLibrary = (librariesToImport[i]);
-			URI modelUri = currentLibrary.uri;
+		try {
+			for(int i = 0; i < librariesToImport.length; i++) {
+				RegisteredLibrary currentLibrary = (librariesToImport[i]);
+				URI modelUri = currentLibrary.uri;
 
-			Resource modelResource = resourceSet.getResource(modelUri, true);
-			PackageImportDialog dialog = new PackageImportDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
+				Resource modelResource = resourceSet.getResource(modelUri, true);
+				PackageImportDialog dialog = new PackageImportDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
 
-			if(dialog.open() == Window.OK) {
-				Collection<ImportSpec<Package>> result = dialog.getResult();
+				if(dialog.open() == Window.OK) {
+					Collection<ImportSpec<Package>> result = dialog.getResult();
 
-				for(ImportSpec<Package> resultElement : result) {
-					Package selectedPackage = resultElement.getElement();
-					switch(resultElement.getAction()) {
-					case COPY:
-						handleCopyPackage(selectedPackage);
-						break;
-					case IMPORT:
-						handleImportPackage(selectedPackage);
-						break;
-					default: //Load
-						handleLoadPackage(selectedPackage);
-						break;
+					for(ImportSpec<Package> resultElement : result) {
+						Package selectedPackage = resultElement.getElement();
+						switch(resultElement.getAction()) {
+						case COPY:
+							handleCopyPackage(selectedPackage);
+							break;
+						case IMPORT:
+							handleImportPackage(selectedPackage);
+							break;
+						default: //Load
+							handleLoadPackage(selectedPackage);
+							break;
+						}
 					}
 				}
 			}
+		} finally {
+			EMFHelper.unload(resourceSet);;
 		}
 	}
 

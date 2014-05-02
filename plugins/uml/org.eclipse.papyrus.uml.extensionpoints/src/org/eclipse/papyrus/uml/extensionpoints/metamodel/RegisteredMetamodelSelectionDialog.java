@@ -1,12 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2006 CEA List.
+ * Copyright (c) 2006, 2014 CEA List and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     CEA List - initial API and implementation
+ *  CEA List - initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.metamodel;
 
@@ -17,9 +19,9 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionLabelProvider;
-import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.uml.Element;
@@ -35,7 +37,7 @@ public class RegisteredMetamodelSelectionDialog extends ElementListSelectionDial
 	/**
 	 * 
 	 */
-	private EList importedMetamodels;
+	private EList<PackageImport> importedMetamodels;
 
 	/**
 	 * 
@@ -89,13 +91,13 @@ public class RegisteredMetamodelSelectionDialog extends ElementListSelectionDial
 	 * 
 	 * @return
 	 */
-	private List<String> getImportedMetamodelsNames(EList importedMetamodels) {
+	private List<String> getImportedMetamodelsNames(EList<? extends PackageImport> importedMetamodels) {
 
 		List<String> Metamodels = new ArrayList<String>();
-		Iterator importedIt = importedMetamodels.iterator();
+		Iterator<? extends PackageImport> importedIt = importedMetamodels.iterator();
 
 		while(importedIt.hasNext()) {
-			org.eclipse.uml2.uml.PackageImport currentImport = (org.eclipse.uml2.uml.PackageImport)importedIt.next();
+			PackageImport currentImport = importedIt.next();
 			String currentName = currentImport.getImportedPackage().getName();
 			Metamodels.add(currentName);
 		}
@@ -147,7 +149,7 @@ public class RegisteredMetamodelSelectionDialog extends ElementListSelectionDial
 	}
 
 	protected boolean addModelImportFromURI(Package currentModel, URI modelUri) {
-		Resource modelResource = Util.getResourceSet(currentModel).getResource(modelUri, true);
+		Resource modelResource = EMFHelper.getResourceSet(currentModel).getResource(modelUri, true);
 
 		if(modelResource.getContents().size() <= 0) {
 			Activator.log("The selected uri (" + modelUri.toString() + ") does not contain any model library !");
