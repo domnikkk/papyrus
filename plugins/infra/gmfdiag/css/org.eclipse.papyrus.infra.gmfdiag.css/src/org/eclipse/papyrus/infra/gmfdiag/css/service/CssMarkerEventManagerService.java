@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +10,7 @@
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - gracefully handle resources not in the workspace (CDO)
  *  Christian W. Damus (CEA) - refactor for non-workspace abstraction of problem markers (CDO)
+ *  Christian W. Damus (CEA) - bug 422257
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.service;
@@ -19,7 +20,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.MissingResourceException;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
@@ -159,18 +159,51 @@ public class CssMarkerEventManagerService implements IMarkerEventListener {
 	 * @param marker
 	 *        The marker from which eObject has to be retrieved
 	 * @return The EObject associated with the given marker
+	 * 
+	 * @deprecated Use the {@link #getEObjectOfMarker(IPapyrusMarker, ResourceSet)} method, which does not create a new resource set and leak
+	 *             it forever in the UML {@code CacheAdapter}. If the JVM has assertions enabled for this package, then this method will throw an
+	 *             assertion error
 	 */
+	@Deprecated
 	public static EObject getEObjectOfMarker(IPapyrusMarker marker) {
+		assert false : "the getEObjectOfMarker(IPapyrusMarker, ResourceSet) API should be used"; //$NON-NLS-1$
+
+		URI uriOfMarker = getURI(marker);
+		if(uriOfMarker != null) {
+			ResourceSet resourceSet = new ResourceSetImpl();
+			Activator.log.warn("Created a new resourceSet to load a marker's target object in " + Activator.log.getCallerMethod()); //$NON-NLS-1$
+			return getEObjectOfMarker(marker, resourceSet);
+		}
+		return null;
+	}
+
+	/**
+	 * Convenience method returning the EObject of a given marker (provided that it is a marker with a URI)
+	 * 
+	 * @param marker
+	 *        The marker from which eObject has to be retrieved
+	 * @param resourceSet
+	 *        the resource set in which to load the marker's target object. Must not be {@code null}
+	 * 
+	 * @return The EObject associated with the given marker
+	 * 
+	 * @throws NullPointerException
+	 *         if the {@code resourceSet} is {@code null}
+	 */
+	public static EObject getEObjectOfMarker(IPapyrusMarker marker, ResourceSet resourceSet) {
+		if(resourceSet == null) {
+			throw new NullPointerException("resourceSet"); //$NON-NLS-1$
+		}
+
 		URI uriOfMarker = getURI(marker);
 		if(uriOfMarker != null) {
 			try {
-				ResourceSet resourceSet = new ResourceSetImpl();
-				resourceSet.getResource(uriOfMarker.trimFragment(), true);
 				return resourceSet.getEObject(uriOfMarker, true);
-			} catch (MissingResourceException e) {
+			} catch (Exception e) {
 				Activator.log.error(e);
 			}
 		}
+
 		return null;
 	}
 

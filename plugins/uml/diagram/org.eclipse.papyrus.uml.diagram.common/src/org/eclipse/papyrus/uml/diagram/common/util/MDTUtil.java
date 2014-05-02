@@ -1,12 +1,15 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
- * de la Comunitat Valenciana . All rights reserved. This program
+ * Copyright (c) 2008, 2014 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * de la Comunitat Valenciana, CEA, and others. All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation.
- * 				 Gabriel Merin Cubero (Prodevelop) – Operations to add a diagram version
+ * Contributors:
+ * 
+ *   Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation.
+ *   Gabriel Merin Cubero (Prodevelop) – Operations to add a diagram version
+ *   Christian W. Damus (CEA) - bug 422257
  *
  ******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.util;
@@ -38,7 +41,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -72,6 +74,7 @@ import org.eclipse.ui.IURIEditorInput;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
+import org.eclipse.uml2.common.util.CacheAdapter;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.Constants;
 
@@ -370,10 +373,29 @@ public class MDTUtil {
 		return diagram;
 	}
 
+	/**
+	 * @deprecated This creates a new resource set, which will leak UML model content forever in the {@link CacheAdapter}. Use the
+	 *             {@link #getRootElementsFromFile(IEditorInput, ResourceSet)} method, instead. Note that if the JVM has assertions
+	 *             enabled for this package, then this method will throw an assertion error
+	 */
+	@Deprecated
 	public static List<EObject> getRootElementsFromFile(IEditorInput input) {
+		assert false : "use the getRootElementsFromFile(IEditorInput, ResourceSet) API"; //$NON-NLS-1$
 		return getRootElementsFromFile(input, null);
 	}
 
+	/**
+	 * Get the root elements in the file indicated by the specified editor {@code input}.
+	 * 
+	 * @param input
+	 *        an editor input
+	 * @param resourceSet
+	 *        a resource set in which to load the indicated resource. Must not be {@code null}
+	 * @return the root elements
+	 * 
+	 * @throws NullPointerException
+	 *         if the {@code resourceSet} is {@code null}
+	 */
 	public static List<EObject> getRootElementsFromFile(IEditorInput input, ResourceSet resourceSet) {
 		URI uri = null;
 		IURIEditorInput uriEditorInput = (IURIEditorInput)Platform.getAdapterManager().getAdapter(input, IURIEditorInput.class);
@@ -386,7 +408,6 @@ public class MDTUtil {
 			}
 		}
 		if(uri != null) {
-			resourceSet = resourceSet != null ? resourceSet : new ResourceSetImpl();
 			Resource resource = resourceSet.getResource(uri, true);
 			if(resource != null) {
 				List<EObject> rootEObjects = new ArrayList<EObject>();
