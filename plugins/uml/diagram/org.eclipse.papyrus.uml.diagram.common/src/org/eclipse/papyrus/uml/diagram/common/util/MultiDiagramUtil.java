@@ -1,12 +1,13 @@
 /*******************************************************************************
  * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
- * de la Comunitat Valenciana . All rights reserved. This program
+ * de la Comunitat Valenciana, CEA, and others . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation.
  * 				 Gabriel Merin Cubero (Prodevelop) – Added version to diagrams
+ *               Christian W. Damus (CEA) - bug 422257
  *
  ******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.util;
@@ -50,6 +51,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.ids.MOSKittEditorIDs;
 import org.eclipse.papyrus.uml.diagram.common.part.CachedResourcesDiagramEditor;
@@ -856,19 +858,25 @@ public class MultiDiagramUtil {
 	// @unused
 	public static boolean deleteAndSaveEObjectInResource(URI uri, String fragment) {
 		URI resourceURI = uri;
-		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
-		Resource resource = resourceSet.getResource(resourceURI, true);
-		EObject toDelete = resource.getEObject(fragment);
-		if(toDelete != null && resource.getContents().contains(toDelete)) {
-			resource.getContents().remove(toDelete);
-			try {
-				resource.save(getSaveOptions());
-			} catch (IOException e) {
-				Log.error(null, 0, "Error saving resource " + resource.toString(), e);
-				return false;
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		
+		try {
+			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+			Resource resource = resourceSet.getResource(resourceURI, true);
+			EObject toDelete = resource.getEObject(fragment);
+			if(toDelete != null && resource.getContents().contains(toDelete)) {
+				resource.getContents().remove(toDelete);
+				try {
+					resource.save(getSaveOptions());
+				} catch (IOException e) {
+					Log.error(null, 0, "Error saving resource " + resource.toString(), e);
+					return false;
+				}
 			}
+		} finally {
+			EMFHelper.unload(resourceSet);
 		}
+		
 		return true;
 	}
 

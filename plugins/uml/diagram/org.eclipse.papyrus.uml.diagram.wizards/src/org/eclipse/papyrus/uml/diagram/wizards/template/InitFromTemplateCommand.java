@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -10,12 +10,13 @@
  * Contributors:
  *  Tatiana Fesenko (CEA LIST) - Initial API and implementation
  *	Saadia Dhouib (CEA LIST) - Implementation of loading diagrams from template files  (.uml, .di , .notation)
+ *  Christian W. Damus (CEA) - bug 422257
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.wizards.template;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
@@ -26,10 +27,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModelUtils;
-import org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.uml.diagram.wizards.utils.WizardsHelper;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
@@ -123,65 +123,56 @@ public class InitFromTemplateCommand extends RecordingCommand {
 		Resource templateUmlResource = null;
 
 
-		//0. initalization of the UML object
-		ResourceSet resourceSet = new ResourceSetImpl();
-		templateUmlResource = loadTemplateResource(myUmlTemplatePath, resourceSet);
+		final ResourceSet resourceSet = new ResourceSetImpl();
 
+		try {
+			//0. initalization of the UML object
+			templateUmlResource = loadTemplateResource(myUmlTemplatePath, resourceSet);
+			EcoreUtil.resolveAll(templateUmlResource);
 
-		//1. prepare the copy of UML element
-		List<EObject> eObjectsToAdd = new ArrayList<EObject>();
-		eObjectsToAdd = (templateUmlResource.getContents());
+			//1. test if di and notation exist
+			//verify if .di file and .notation file were filled in the org.eclipse.papyrus.uml.diagram.wizards.templates extension
+			if((myDiTemplatePath != null) && (myNotationTemplatePath != null)) {
+				//2.1 verify if the .di , .notation and .uml files have the same name
+				String diFileName = WizardsHelper.getFileNameWithoutExtension(myDiTemplatePath);
+				String umlFileName = WizardsHelper.getFileNameWithoutExtension(myUmlTemplatePath);
+				String notationFileName = WizardsHelper.getFileNameWithoutExtension(myNotationTemplatePath);
 
+				if(diFileName.contentEquals(umlFileName) && diFileName.contentEquals(notationFileName)) {
 
-		//2. test if di and notation exist
-		//verify if .di file and .notation file were filled in the org.eclipse.papyrus.uml.diagram.wizards.templates extension
-		if((myDiTemplatePath != null) && (myNotationTemplatePath != null)) {
-			//2.1 verify if the .di , .notation and .uml files have the same name
-			String diFileName = WizardsHelper.getFileNameWithoutExtension(myDiTemplatePath);
-			String umlFileName = WizardsHelper.getFileNameWithoutExtension(myUmlTemplatePath);
-			String notationFileName = WizardsHelper.getFileNameWithoutExtension(myNotationTemplatePath);
+					//1.2 load  di resource
+					if(myDiTemplatePath != null) {
+						templateDiResource = loadTemplateResource(myDiTemplatePath, resourceSet);
+						EcoreUtil.resolveAll(templateDiResource);
+					}
 
-			if(diFileName.contentEquals(umlFileName) && diFileName.contentEquals(notationFileName)) {
+					//1.3 load notation resource
+					if(myNotationTemplatePath != null) {
+						templateNotationResource = loadTemplateResource(myNotationTemplatePath, resourceSet);
+						EcoreUtil.resolveAll(templateNotationResource);
+					}
 
-				//2.2 load  di resource
-				if(myDiTemplatePath != null) {
-					templateDiResource = loadTemplateResource(myDiTemplatePath, resourceSet);
-				}
-
-				//2.3 load notation resource
-				if(myNotationTemplatePath != null) {
-					templateNotationResource = loadTemplateResource(myNotationTemplatePath, resourceSet);
-				}
-
-				//Visits all proxies in the resource set and tries to resolve them.
-				EcoreUtil.resolveAll(resourceSet);
-
-				//2.4 prepare the copy of di and notation elements
-				if(templateNotationResource != null) {
-					eObjectsToAdd.addAll(templateNotationResource.getContents());
-				}
-				if(templateDiResource != null) {
-					eObjectsToAdd.addAll(templateDiResource.getContents());
 				}
 			}
-		}
-		//3. copy all element into eObjectResult
-		List<EObject> eObjectsResult = new ArrayList<EObject>();
-		eObjectsResult.addAll(EcoreUtil.copyAll(eObjectsToAdd));
+
+			//2. copy all elements
+			EcoreUtil.Copier copier = new EcoreUtil.Copier();
+			Collection<EObject> umlObjects = copier.copyAll(templateUmlResource.getContents());
+			Collection<EObject> diObjects = (templateDiResource == null) ? null : copier.copyAll(templateDiResource.getContents());
+			Collection<EObject> notationObjects = (templateNotationResource == null) ? null : copier.copyAll(templateNotationResource.getContents());
+			copier.copyReferences();
 
 
-		//4. set copied elements in goods resources
-		for(EObject eObject : eObjectsResult) {
-			if(eObject.eContainer() == null) {
-				if(eObject instanceof Diagram) {
-					myModelNotationResource.getContents().add(eObject);
-				} else if(eObject instanceof SashWindowsMngr) {
-					myModelDiResource.getContents().clear();
-					myModelDiResource.getContents().add(eObject);
-				} else {
-					myModelUMLResource.getContents().add(eObject);
-				}
+			//3. set copied elements in goods resources
+			myModelUMLResource.getContents().addAll(umlObjects);
+			if(diObjects != null) {
+				myModelDiResource.getContents().addAll(diObjects);
 			}
+			if(notationObjects != null) {
+				myModelNotationResource.getContents().addAll(notationObjects);
+			}
+		} finally {
+			EMFHelper.unload(resourceSet);
 		}
 	}
 

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.palette.dialog;
@@ -60,13 +61,11 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.WizardPage;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationCatalogManager;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationCatalogManagerFactory;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManagerFactory;
 import org.eclipse.papyrus.emf.facet.custom.core.internal.CustomizationCatalogManager;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.CustomizationcatalogFactory;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.CustomizedLabelProvider;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.CustomizedTreeContentProvider;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
@@ -264,6 +263,14 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 		this.customizer = customizer;
 	}
 
+	@Override
+	public void dispose() {
+		super.dispose();
+
+		if(resourceSet != null) {
+			EMFHelper.unload(resourceSet);
+		}
+	}
 
 	/**
 	 * Sets the priority of the current edited palette
@@ -2237,19 +2244,15 @@ public class ExtendedPaletteContentPage extends WizardPage implements Listener {
 							List<Class> metaclasses = stereotype.getAllExtendedMetaclasses();
 							for(Class stMetaclass : metaclasses) {
 								// get Eclass
-								java.lang.Class metaclassClass = stMetaclass.getClass();
-								if(metaclassClass != null) {
-									EClassifier metaClassifier = UMLPackage.eINSTANCE.getEClassifier(stMetaclass.getName());
-									if(((EClass)metaClassifier).isSuperTypeOf(toolMetaclass)) {
-										// should create the palette entry
-										Map<Object, Object> properties = new HashMap<Object, Object>();
-										// ArrayList<String> stereotypesQNToApply = new ArrayList<String>();
-										properties.put(IPapyrusPaletteConstant.ASPECT_ACTION_KEY, StereotypeAspectActionProvider.createConfigurationNode(stereotype.getQualifiedName()));
-										AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(), entry.getSmallIcon(), entry, properties);
-										entries.add(aspectEntry);
-									}
+								EClassifier metaClassifier = UMLPackage.eINSTANCE.getEClassifier(stMetaclass.getName());
+								if(((EClass)metaClassifier).isSuperTypeOf(toolMetaclass)) {
+									// should create the palette entry
+									Map<Object, Object> properties = new HashMap<Object, Object>();
+									// ArrayList<String> stereotypesQNToApply = new ArrayList<String>();
+									properties.put(IPapyrusPaletteConstant.ASPECT_ACTION_KEY, StereotypeAspectActionProvider.createConfigurationNode(stereotype.getQualifiedName()));
+									AspectCreationEntry aspectEntry = new AspectCreationEntry(stereotype.getName() + " (" + entry.getLabel() + ")", "Create an element with a stereotype", entry.getId() + "_" + System.currentTimeMillis(), entry.getSmallIcon(), entry, properties);
+									entries.add(aspectEntry);
 								}
-
 							}
 						}
 					}
