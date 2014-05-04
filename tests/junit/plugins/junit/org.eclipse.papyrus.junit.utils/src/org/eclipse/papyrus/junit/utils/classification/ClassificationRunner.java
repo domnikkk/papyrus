@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - add support for conditional tests
+ *  Christian W. Damus (CEA) - bug 432813
  *
  *****************************************************************************/
 package org.eclipse.papyrus.junit.utils.classification;
@@ -20,11 +21,16 @@ import java.util.List;
 import org.eclipse.papyrus.infra.tools.util.ListHelper;
 import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
 import org.eclipse.papyrus.junit.utils.rules.Conditional;
+import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule;
+import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
+
+import com.google.common.base.Predicates;
+import com.google.common.collect.Iterables;
 
 /**
  * A Test Runner which is aware of Classification-related annotations and {@link Conditional @Conditional} tests.
@@ -111,5 +117,31 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 		}
 
 		return result;
+	}
+
+	@Override
+	protected List<TestRule> getTestRules(Object target) {
+		// MemoryLeakRules must be the outer-most rules, because leak assertions must only happen after all possible tear-down actions have run
+		return reorderForMemoryLeakRules(super.getTestRules(target));
+	}
+
+	private List<TestRule> reorderForMemoryLeakRules(List<TestRule> rules) {
+		// Quick scan for memory rules
+		if(!rules.isEmpty()) {
+			int memoryRuleCount = Iterables.size(Iterables.filter(rules, Predicates.instanceOf(MemoryLeakRule.class)));
+			if(memoryRuleCount > 0) {
+				// Bubble the memory rules to the end
+				int limit = rules.size() - memoryRuleCount;
+
+				for(int i = 0; i < limit; i++) {
+					if(rules.get(i) instanceof MemoryLeakRule) {
+						// Move the rule to the end and take a step back to get the next element
+						rules.add(rules.remove(i--));
+					}
+				}
+			}
+		}
+
+		return rules;
 	}
 }

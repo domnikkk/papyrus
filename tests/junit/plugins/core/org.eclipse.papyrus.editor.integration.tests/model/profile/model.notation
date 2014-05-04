@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_J526gLjVEeOUcroamP8z5w" type="PapyrusUMLClassDiagram" name="classes" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_K0bsYLjVEeOUcroamP8z5w" type="2008">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dJGWkLjVEeOUcroamP8z5w" source="Stereotype_Annotation">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jJ0i4LjVEeOUcroamP8z5w" key="StereotypeWithQualifiedNameList" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jJ0i4bjVEeOUcroamP8z5w" key="StereotypeList" value="j2ee::Bean"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jJ0i4rjVEeOUcroamP8z5w" key="PropStereoDisplay" value="j2ee::Bean.finder,j2ee::Bean.comment,j2ee::Bean.disposition,j2ee::Bean.tag"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jJ1J8LjVEeOUcroamP8z5w" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jJ1J8bjVEeOUcroamP8z5w" key="StereotypePropertyLocation" value="Comment"/>
+    </eAnnotations>
+    <children xmi:type="notation:DecorationNode" xmi:id="_K0eIoLjVEeOUcroamP8z5w" type="5029"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_K0gk4LjVEeOUcroamP8z5w" type="7017">
+      <children xmi:type="notation:Node" xmi:id="_nMwz4LjVEeOUcroamP8z5w" type="3012">
+        <element xmi:type="uml:Property" href="model.uml#_nMtwkLjVEeOUcroamP8z5w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nMwz4bjVEeOUcroamP8z5w"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_K0gk4bjVEeOUcroamP8z5w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_K0gk4rjVEeOUcroamP8z5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_K0gk47jVEeOUcroamP8z5w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0gk5LjVEeOUcroamP8z5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_K0hL8LjVEeOUcroamP8z5w" type="7018">
+      <children xmi:type="notation:Node" xmi:id="_mFRAULjVEeOUcroamP8z5w" type="3013">
+        <element xmi:type="uml:Operation" href="model.uml#_mDkXMLjVEeOUcroamP8z5w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mFRAUbjVEeOUcroamP8z5w"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_K0hL8bjVEeOUcroamP8z5w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_K0hL8rjVEeOUcroamP8z5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_K0hL87jVEeOUcroamP8z5w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0hL9LjVEeOUcroamP8z5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_K0hL9bjVEeOUcroamP8z5w" type="7019">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_K0hL9rjVEeOUcroamP8z5w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_K0hL97jVEeOUcroamP8z5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_K0hL-LjVEeOUcroamP8z5w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0hL-bjVEeOUcroamP8z5w"/>
+    </children>
+    <element xmi:type="uml:Class" href="model.uml#_Kzml8LjVEeOUcroamP8z5w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K0bsYbjVEeOUcroamP8z5w" x="35" y="123"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ef5KYLjVEeOUcroamP8z5w" type="AppliedStereotypesComment">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jK7WILjVEeOUcroamP8z5w" source="Stereotype_Annotation">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jK79MbjVEeOUcroamP8z5w" key="StereotypeWithQualifiedNameList" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jK79MrjVEeOUcroamP8z5w" key="StereotypeList" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jK79M7jVEeOUcroamP8z5w" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jK79NLjVEeOUcroamP8z5w" key="PropStereoDisplay" value="j2ee::Bean.finder,j2ee::Bean.comment,j2ee::Bean.disposition,j2ee::Bean.tag"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jK79NbjVEeOUcroamP8z5w" key="StereotypePropertyLocation" value="Compartment"/>
+    </eAnnotations>
+    <styles xmi:type="notation:TitleStyle" xmi:id="_ef5KYbjVEeOUcroamP8z5w" showTitle="true"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_ef6YgLjVEeOUcroamP8z5w" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="model.uml#_Kzml8LjVEeOUcroamP8z5w"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ef5KYrjVEeOUcroamP8z5w" x="221" y="116"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_J526gbjVEeOUcroamP8z5w"/>
+  <styles xmi:type="style:PapyrusViewStyle" xmi:id="_J526grjVEeOUcroamP8z5w">
+    <owner xmi:type="uml:Model" href="model.uml#_J4wuULjVEeOUcroamP8z5w"/>
+  </styles>
+  <element xmi:type="uml:Model" href="model.uml#_J4wuULjVEeOUcroamP8z5w"/>
+  <edges xmi:type="notation:Connector" xmi:id="_ef6_kLjVEeOUcroamP8z5w" type="AppliedStereotypesCommentLink" source="_K0bsYLjVEeOUcroamP8z5w" target="_ef5KYLjVEeOUcroamP8z5w">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ef6_kbjVEeOUcroamP8z5w"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_ef6_lbjVEeOUcroamP8z5w" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="model.uml#_Kzml8LjVEeOUcroamP8z5w"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ef6_krjVEeOUcroamP8z5w" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ef6_k7jVEeOUcroamP8z5w" id="(1.0,0.4473684210526316)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ef6_lLjVEeOUcroamP8z5w" id="(0.0,0.6323529411764706)"/>
+  </edges>
+</notation:Diagram>
