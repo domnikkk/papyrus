@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * A generic Label Provider for EObjects which are instances of UML DataTypes (Defined as EClasses)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see {@link DataTypeUtil#isDataTypeDefinition(EClass)}
  */
 public class GenericDataTypeLabelProvider extends EMFLabelProvider implements IFilteredLabelProvider {
@@ -51,18 +51,14 @@ public class GenericDataTypeLabelProvider extends EMFLabelProvider implements IF
 		if(eObject == null) {
 			return false;
 		}
-		EClass definition = eObject.eClass();
-		if(definition == null) {
-			return false;
-		}
 
-		return DataTypeUtil.isDataTypeDefinition(definition);
+		return DataTypeUtil.isDataTypeInstance(eObject);
 	}
 
 	@Override
 	public String getText(Object element) {
 		//Initial implementation. TODO: Improve the label
-		if(element instanceof Collection<?> && !(((Collection)element).isEmpty())) {
+		if(element instanceof Collection<?> && !(((Collection<?>)element).isEmpty())) {
 			Set<EClass> allEClasses = new HashSet<EClass>();
 			for(Object item : (Collection<?>)element) {
 				EObject eObject = EMFHelper.getEObject(item);

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 Atos, CEA, and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Mathieu Velten (Atos) mathieu.velten@atos.net - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
 
@@ -111,7 +111,7 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 				currentPage = editor;
 			} else {
 				EClassifier featureType = feature.getEType();
-				if(featureType instanceof EClass && DataTypeUtil.isDataTypeDefinition(((EClass)featureType))) {
+				if(featureType instanceof EClass && DataTypeUtil.isDataTypeDefinition((EClass)featureType, element)) {
 					EObjectContentsEditor editor = new EObjectContentsEditor(pageBook, style, (EReference)feature);
 					editor.setValue(new PapyrusObservableValue(element, feature, EMFHelper.resolveEditingDomain(element)));
 					currentPage = editor;
@@ -245,7 +245,7 @@ public class EStructuralFeatureEditor implements IValueChangeListener, IListChan
 
 		observable.addListChangeListener(this);
 	}
-	
+
 	protected boolean isEditable(EObject object, EStructuralFeature feature) {
 		return !feature.isDerived() && feature.isChangeable() && !EMFHelper.isReadOnly(object);
 	}

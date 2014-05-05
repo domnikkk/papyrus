@@ -435,6 +435,9 @@ public class StringEditor extends AbstractValueEditor implements KeyListener, Mo
 
 				@Override
 				public void run() {
+					if(StringEditor.this.isDisposed()) {
+						return;
+					}
 					StringEditor.this.getDisplay().syncExec(new Runnable() {
 
 						@Override
