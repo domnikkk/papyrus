@@ -45,7 +45,7 @@ import org.w3c.dom.svg.SVGDocument;
  */
 public abstract class NodeEditPart extends AbstractBorderedShapeEditPart implements IPapyrusEditPart {
 
-	private SVGNodePlateFigure svgNodePlate;
+	protected SVGNodePlateFigure svgNodePlate;
 
 	protected IFigure shape;
 

@@ -82,6 +82,7 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 			refreshFontColor();
 			refreshLabelDisplay();
 		}
+		
 	}
 
 	@Override
@@ -91,6 +92,12 @@ public abstract class NamedElementEditPart extends UMLNodeEditPart implements IU
 
 	protected void refreshLabelDisplay() {
 		View view = getNotationView();
+		if(svgNodePlate.hasLabelBounds()){
+			getNodeNamedElementFigure().getNameLabel().setTextWrap(true);
+		}
+		else{
+			getNodeNamedElementFigure().getNameLabel().setTextWrap(false);
+		}
 		BooleanValueStyle displayNameStyle = (BooleanValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), NameDisplayEditPolicy.DISPLAY_NAME);
 		BooleanValueStyle displayStereotypes = (BooleanValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), DISPLAY_STEREOTYPES);
 		BooleanValueStyle displayTags = (BooleanValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), DISPLAY_TAGS);
