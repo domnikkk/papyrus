@@ -18,6 +18,8 @@ import java.util.Collections;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.infra.services.validation.commands.ValidateModelCommand;
@@ -106,9 +108,53 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 	}
 
 	/**
-	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when the editor is closed.
+	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when the editor is closed
+	 * (the case of profiles that do not have OCL constraints and, therefore, do not have {@link ETypedElement}s of {@link EGenericType} type).
 	 */
-	@FailingTest("Awaiting a build with fixes for EMF Core/Validation bugs 433027 and 433050")
+	@Test
+	@SoftReferenceSensitive
+	@PluginResource("model/profile/model-no-j2ee-constraints.di")
+	public void testProfileContentDoesNotLeak_noEGenericTypes() {
+		// Activate the Properties view
+		editor.getView(PROPERTY_SHEET, true);
+
+		// Select the Model element to show it in the Properties
+		selectModelInModelExplorer();
+
+		// Back to the Properties view
+		editor.getView(PROPERTY_SHEET, false);
+
+		memory.add(editor.getModel());
+		memory.add(editor.getModel().getAppliedProfile("j2ee"));
+	}
+
+	/**
+	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when when validation is run on them
+	 * (the case of profiles that do not have OCL constraints and, therefore, do not have {@link ETypedElement}s of {@link EGenericType} type).
+	 */
+	@Test
+	@SoftReferenceSensitive
+	@PluginResource("model/profile/model-no-j2ee-constraints.di")
+	public void testValidatedProfiledModelContentDoesNotLeak_noEGenericTypes() {
+		// Validate the model
+		try {
+			new ValidateModelCommand(editor.getModel(), new UMLDiagnostician()).execute(new NullProgressMonitor(), null);
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+			fail("Failed to validate model: " + e.getLocalizedMessage());
+		}
+
+		editor.flushDisplayEvents();
+		
+		memory.add(editor.getModel());
+		memory.add(editor.getModel().getAppliedProfile("j2ee"));
+	}
+
+	/**
+	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when the editor is closed
+	 * (the case of profiles that have OCL constraints and, therefore, do have {@link ETypedElement}s of {@link EGenericType} type).
+	 */
+	@FailingTest("Awaiting a build with fixes for EMF Core bug 433027")
 	@Test
 	@SoftReferenceSensitive
 	@PluginResource("model/profile/model.di")
@@ -127,9 +173,10 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 	}
 
 	/**
-	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when when validation is run on them.
+	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when when validation is run on them
+	 * (the case of profiles that have OCL constraints and, therefore, do have {@link ETypedElement}s of {@link EGenericType} type).
 	 */
-	@FailingTest("Awaiting a build with fixes for EMF Core/Validation bugs 433027 and 433050")
+	@FailingTest("Awaiting a build with fixes for EMF Core bug 433027")
 	@Test
 	@SoftReferenceSensitive
 	@PluginResource("model/profile/model.di")
