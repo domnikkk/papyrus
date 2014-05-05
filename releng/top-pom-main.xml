@@ -388,7 +388,7 @@
 		<repository>
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.0.0/S201403101212</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/interim/5.0.0</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
