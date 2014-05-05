@@ -18,7 +18,10 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.model.IConstraintStatus;
+import org.eclipse.ocl.examples.pivot.delegate.OCLDelegateValidator;
 import org.eclipse.ocl.examples.pivot.uml.UMLOCLEValidator;
 import org.eclipse.papyrus.infra.services.validation.EValidatorAdapter;
 import org.eclipse.uml2.uml.InstanceSpecification;
@@ -44,6 +47,36 @@ import org.eclipse.uml2.uml.OpaqueExpression;
  */
 public class OCLEValidatorAdapter
 	extends EValidatorAdapter {
+
+	// Overridden to invoke OCLDelegateValidator
+	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (eObject.eIsProxy()) {
+			if (context != null && context.get(ROOT_OBJECT) != null) {
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE,
+							EOBJECT__EVERY_PROXY_RESOLVES, "_UI_UnresolvedProxy_diagnostic",
+							new Object[] {
+								getFeatureLabel(eObject.eContainmentFeature(), context),
+								getObjectLabel(eObject.eContainer(), context),
+								getObjectLabel(eObject, context) },
+							new Object[] {
+								eObject.eContainer(),
+								eObject.eContainmentFeature(),
+								eObject },
+							context));
+				}
+				return false;
+			} else {
+				return true;
+			}
+		} else if (eClass.eContainer() == getEPackage()) {
+			return validate(eClass.getClassifierID(), eObject, diagnostics, context);
+		} else {
+			return new OCLDelegateValidator(this) {
+				// Ensure that the class loader for this class will be used downstream.
+			}.validate(eClass, eObject, diagnostics, context);
+		}
+	}
 	
 	@Override
 	public boolean validateInstanceSpecification(InstanceSpecification instanceSpecification,

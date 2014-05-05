@@ -22,6 +22,8 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.ocl.examples.pivot.delegate.OCLDelegateDomain;
 import org.eclipse.papyrus.infra.services.validation.EcoreDiagnostician;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -35,6 +37,24 @@ public class UMLDiagnostician extends EcoreDiagnostician {
 	public UMLDiagnostician() {
 		super(new OCLEValidatorAdapter());
 		validateStereotype = false;
+	}
+	
+	@Override
+	public Map<Object, Object> createDefaultContext() {
+		Map<Object, Object> context = super.createDefaultContext();
+	    if (context != null) {
+	    	OCLDelegateDomain.initializePivotOnlyDiagnosticianContext(context);
+	    }
+		return context;
+	}
+	
+	@Override
+	public BasicDiagnostic createDefaultDiagnostic(EObject eObject) {
+		ResourceSet resourceSet = eObject.eResource().getResourceSet();
+		if (resourceSet != null) {
+			OCLDelegateDomain.initializePivotOnlyDiagnosticianResourceSet(resourceSet);
+		}
+		return super.createDefaultDiagnostic(eObject);
 	}
 	
 	protected boolean doValidateStereotypeApplications(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
