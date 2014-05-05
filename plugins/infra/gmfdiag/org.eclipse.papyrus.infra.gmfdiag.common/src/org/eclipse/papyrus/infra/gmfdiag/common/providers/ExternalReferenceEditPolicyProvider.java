@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvider;
-import org.eclipse.gmf.runtime.notation.Shape;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalReferenceEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
@@ -37,7 +37,7 @@ public class ExternalReferenceEditPolicyProvider extends AbstractProvider implem
 			CreateEditPoliciesOperation createOperation = (CreateEditPoliciesOperation)operation;
 			try {
 				if(ServiceUtilsForEditPart.getInstance().getServiceRegistry(createOperation.getEditPart()) != null) {
-					return createOperation.getEditPart().getModel() instanceof Shape;
+					return createOperation.getEditPart().getModel() instanceof Node;
 				}
 			} catch (ServiceException ex) {
 				//Do nothing: the services registry is not available.

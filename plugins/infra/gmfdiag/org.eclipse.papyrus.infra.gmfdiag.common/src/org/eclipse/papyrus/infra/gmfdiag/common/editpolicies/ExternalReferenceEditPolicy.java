@@ -71,7 +71,7 @@ public class ExternalReferenceEditPolicy extends GraphicalEditPolicyEx {
 		}
 
 		//Add or remove the decoration when the current value is different from the last known value
-		if(NotationHelper.isExternalRef(getView()) != isExternalReference) {
+		if(isExternalRef(getView()) != isExternalReference) {
 			isExternalReference = !isExternalReference;
 			if(isExternalReference) {
 				decorationService.addDecoration(getMarker(), getView());
@@ -82,6 +82,10 @@ public class ExternalReferenceEditPolicy extends GraphicalEditPolicyEx {
 			//We shouldn't end up with a StackOverFlow, because we arrive here only when the "isExternalRef" value changes
 			getHost().refresh();
 		}
+	}
+
+	protected boolean isExternalRef(View view) {
+		return NotationHelper.isExternalRef(view);
 	}
 
 	/**
