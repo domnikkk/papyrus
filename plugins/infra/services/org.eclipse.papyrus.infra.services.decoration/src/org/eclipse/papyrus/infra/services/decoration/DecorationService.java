@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -13,10 +13,12 @@
  *   
  *  Arnaud Cuccuru (CEA LIST) - arnaud.cuccuru@cea.fr
  *  Christian W. Damus (CEA) - refactor for non-workspace abstraction of problem markers (CDO)
+ *  Christian W. Damus (CEA) - bug 432813
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.decoration;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -82,8 +84,28 @@ public class DecorationService extends Observable implements IDecorationService 
 	 *         the service exception
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#disposeService()
 	 */
-
 	public void disposeService() throws ServiceException {
+		List<Decoration> removed = null;
+
+		synchronized(this) {
+			if(!decorations.isEmpty()) {
+				if(countObservers() > 0) {
+					// Will have to notify listeners
+					removed = new ArrayList<Decoration>(decorations.values());
+				}
+				decorations.clear();
+			}
+		}
+
+		if(removed != null) {
+			// Notify listeners
+			for(Decoration next : removed) {
+				synchronized(this) {
+					setChanged();
+					notifyObservers(new DecorationChange(DecorationChangeKind.DecorationRemoved, next));
+				}
+			}
+		}
 	}
 
 	/**
