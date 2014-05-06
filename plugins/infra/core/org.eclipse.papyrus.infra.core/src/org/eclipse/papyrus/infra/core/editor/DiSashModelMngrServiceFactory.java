@@ -62,7 +62,7 @@ public class DiSashModelMngrServiceFactory implements IServiceFactory {
 		editorReader.populate(pageModelRegistry, servicesRegistry);
 
 		if(sashModel.getResource() == null) {
-			throw new ServiceException("Can't start " + this.getClass().getSimpleName() + "'. Required model (SashModel) should be loaded prior starting the service.");
+			throw new ServiceException("Can't start " + this.getClass().getSimpleName() + "'. Required model (SashModel) should be loaded prior starting the service."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		// create the service

@@ -71,7 +71,7 @@ public class PageIconsRegistry implements IPageIconsRegistryExtended {
 	public void add(IEditorIconFactory editorIconFactory) {
 		// This should never happen
 		if(editorIconFactory == null) {
-			throw new RuntimeException("Parameter should not be null.");
+			throw new RuntimeException("Parameter should not be null."); //$NON-NLS-1$
 		}
 
 		pageIcons.add(editorIconFactory);

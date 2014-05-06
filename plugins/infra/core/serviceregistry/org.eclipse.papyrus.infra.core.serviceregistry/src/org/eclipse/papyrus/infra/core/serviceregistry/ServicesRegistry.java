@@ -1,6 +1,16 @@
-/**
- * 
- */
+/*****************************************************************************
+ * Copyright (c) 2011, 2014 LIFL and others.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  LIFL - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.core.serviceregistry;
 
 import java.util.ArrayList;
@@ -218,7 +228,7 @@ public class ServicesRegistry {
 			if(service.getDescriptor().getPriority() > priority)
 				return;
 			else if(service.getDescriptor().getPriority() == priority)
-				log.warning("Two services with same priority (" + priority + ") are declared under key '" + service.getDescriptor().getKey() + "'. Keep the first encountered only.");
+				log.warning("Two services with same priority (" + priority + ") are declared under key '" + service.getDescriptor().getKey() + "'. Keep the first encountered only."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 
 		// Create descriptor and add service.
@@ -282,7 +292,7 @@ public class ServicesRegistry {
 			if(service.getDescriptor().getPriority() > priority)
 				return;
 			else if(service.getDescriptor().getPriority() == priority)
-				log.warning("Two services with same priority (" + priority + ") are declared under key '" + service.getDescriptor().getKey() + "'. Keep the first encountered only.");
+				log.warning("Two services with same priority (" + priority + ") are declared under key '" + service.getDescriptor().getKey() + "'. Keep the first encountered only."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 
 		// Create descriptor and add service.
@@ -387,9 +397,9 @@ public class ServicesRegistry {
 			// throw an appropriate exception (If added, say it).
 			serviceEntry = addedServices.get(key);
 			if(serviceEntry != null)
-				throw new BadStateException("Registry should be started before.", serviceEntry.getState(), serviceEntry.getDescriptor());
+				throw new BadStateException("Registry should be started before.", serviceEntry.getState(), serviceEntry.getDescriptor()); //$NON-NLS-1$
 			else
-				throw new ServiceNotFoundException("No service registered under '" + key + "'");
+				throw new ServiceNotFoundException("No service registered under '" + key + "'"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		return serviceEntry.getServiceInstance();
@@ -425,9 +435,9 @@ public class ServicesRegistry {
 			// throw an appropriate exception (If added, say it).
 			serviceEntry = addedServices.get(realKey);
 			if(serviceEntry != null)
-				throw new BadStateException("Registry should be started before.", serviceEntry.getState(), serviceEntry.getDescriptor());
+				throw new BadStateException("Registry should be started before.", serviceEntry.getState(), serviceEntry.getDescriptor()); //$NON-NLS-1$
 			else
-				throw new ServiceNotFoundException("No service registered under '" + key + "'");
+				throw new ServiceNotFoundException("No service registered under '" + key + "'"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		// Service found, return it.
@@ -548,7 +558,7 @@ public class ServicesRegistry {
 	public boolean isStarted(Object key, boolean searchInParents) throws ServiceNotFoundException {
 		ServiceStartupEntry service = getServiceStartupEntry(key, searchInParents);
 		if(service == null) {
-			throw new ServiceNotFoundException("No service registered under '" + key + "'");
+			throw new ServiceNotFoundException("No service registered under '" + key + "'"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		return service.isStarted();
@@ -595,7 +605,7 @@ public class ServicesRegistry {
 	public ServiceState serviceState(Object key, boolean searchInParents ) throws ServiceNotFoundException {
 		ServiceStartupEntry service = getServiceStartupEntry(key, searchInParents);
 		if(service == null) {
-			throw new ServiceNotFoundException("No service registered under '" + key + "'");
+			throw new ServiceNotFoundException("No service registered under '" + key + "'"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		return service.getState();
@@ -1140,7 +1150,7 @@ public class ServicesRegistry {
 
 				serviceEntry.createService();
 			} catch (ServiceException e) {
-				log.log(Level.SEVERE, "Can't create service '" + serviceEntry + "'", e);
+				log.log(Level.SEVERE, "Can't create service '" + serviceEntry + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 
 				errors.addException(serviceEntry.getDescriptor().getKey(), e);
 			}
@@ -1192,7 +1202,7 @@ public class ServicesRegistry {
 
 				serviceEntry.initService(this);
 			} catch (ServiceException e) {
-				log.log(Level.SEVERE, "Can't initialize service '" + serviceEntry + "'", e);
+				log.log(Level.SEVERE, "Can't initialize service '" + serviceEntry + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 				errors.addException(serviceEntry.getDescriptor().getKey(), e);
 			}
 		}
@@ -1220,7 +1230,7 @@ public class ServicesRegistry {
 
 				serviceEntry.startService();
 			} catch (ServiceException e) {
-				log.log(Level.SEVERE, "Can't start service '" + serviceEntry + "'", e);
+				log.log(Level.SEVERE, "Can't start service '" + serviceEntry + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 
 				errors.addException(serviceEntry.getDescriptor().getKey(), e);
 			}
@@ -1244,7 +1254,7 @@ public class ServicesRegistry {
 			try {
 				serviceEntry.disposeService();
 			} catch (ServiceException e) {
-				log.log(Level.SEVERE, "Can't dispose service '" + serviceEntry.getDescriptor().getKey() + "'", e);
+				log.log(Level.SEVERE, "Can't dispose service '" + serviceEntry.getDescriptor().getKey() + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 				errors.addException(serviceEntry.getDescriptor(), e);
 			}
 		}
@@ -1342,7 +1352,7 @@ public class ServicesRegistry {
 			if(res != null)
 				return res;
 
-			throw new ServiceNotFoundException("No service found under key '" + key.toString() + "'");
+			throw new ServiceNotFoundException("No service found under key '" + key.toString() + "'"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		
 		/**

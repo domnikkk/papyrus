@@ -71,7 +71,7 @@ public class ModelListenerManager extends EContentAdapter {
 			IPapyrusListener listener = (IPapyrusListener)createExtension(element, element.getAttribute(REALIZATION_ID));
 			listenerRegistry.put(listenerName, listener);
 		} catch (Exception e) {
-			Activator.log.error("- " + listenerName + " can not be loaded: " + e.getLocalizedMessage(), e);
+			Activator.log.error("- " + listenerName + " can not be loaded: " + e.getLocalizedMessage(), e); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 	}
@@ -95,7 +95,7 @@ public class ModelListenerManager extends EContentAdapter {
 			return obj;
 			// return element.createExecutableExtension(classAttribute);
 		} catch (Exception e) {
-			throw new Exception("unable to create Extension" + e);
+			throw new Exception("unable to create Extension" + e); //$NON-NLS-1$
 		}
 	}
 
