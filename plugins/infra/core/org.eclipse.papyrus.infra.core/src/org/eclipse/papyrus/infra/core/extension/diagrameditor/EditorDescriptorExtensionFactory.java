@@ -74,7 +74,7 @@ public class EditorDescriptorExtensionFactory extends ExtensionUtils {
 		}
 
 		if(log.isDebugEnabled()) {
-			log.debug("Read editor descriptor " + res);
+			log.debug("Read editor descriptor " + res); //$NON-NLS-1$
 		}
 		return res;
 	}

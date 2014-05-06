@@ -277,7 +277,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 			registeredIsaveablePart.doSave(monitor);
 			markSaveLocation();
 		} catch (IOException e) {
-			log.error("Error during save", e);
+			log.error("Error during save", e); //$NON-NLS-1$
 		}
 
 		// Sent post Events
@@ -321,7 +321,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 								// notify registered IsaveablePart
 								registeredIsaveablePart.doSave(monitor);
 							} catch (IOException e) {
-								log.error("Unable to saveAs the resource set", e);
+								log.error("Unable to saveAs the resource set", e); //$NON-NLS-1$
 							}
 						}
 					});
@@ -351,7 +351,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 			try {
 				listener.editorInputChanged(fileEditorInput);
 			} catch (Exception e) {
-				log.error("Can't set input for '" + listener + "'", e);
+				log.error("Can't set input for '" + listener + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
 
@@ -368,7 +368,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 			try {
 				listener.isDirtyChanged();
 			} catch (Exception e) {
-				log.error("Can't call listener '" + listener + "'", e);
+				log.error("Can't call listener '" + listener + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
 
@@ -506,7 +506,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 				try {
 					part.doSave(monitor);
 				} catch (Exception e) {
-					log.error("Can't save ISaveablePart '" + part + "'", e);
+					log.error("Can't save ISaveablePart '" + part + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 			}
 
@@ -522,7 +522,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 				try {
 					part.doSaveAs();
 				} catch (Exception e) {
-					log.error("Can't save ISaveablePart '" + part + "'", e);
+					log.error("Can't save ISaveablePart '" + part + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 			}
 

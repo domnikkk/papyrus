@@ -46,7 +46,7 @@ public class ServiceUtilsForWorkbenchPage extends AbstractServiceUtils<IWorkbenc
 		}
 
 
-		throw new ServiceException("Cannot resolve the ServiceRegistry from the IWorkbenchPage. Page: " + from);
+		throw new ServiceException("Cannot resolve the ServiceRegistry from the IWorkbenchPage. Page: " + from); //$NON-NLS-1$
 	}
 
 	public static ServiceUtilsForWorkbenchPage getInstance() {

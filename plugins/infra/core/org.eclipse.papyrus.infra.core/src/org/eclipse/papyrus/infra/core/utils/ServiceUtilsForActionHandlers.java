@@ -74,7 +74,7 @@ public class ServiceUtilsForActionHandlers {
 		}
 
 		// Not found
-		throw new ServiceNotFoundException("Can't get the ServiceRegistry from current Eclipse Active Editor");
+		throw new ServiceNotFoundException("Can't get the ServiceRegistry from current Eclipse Active Editor"); //$NON-NLS-1$
 	}
 
 	/**

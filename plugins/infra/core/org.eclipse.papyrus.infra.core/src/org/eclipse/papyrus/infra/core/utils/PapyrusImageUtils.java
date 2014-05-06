@@ -27,9 +27,9 @@ import org.eclipse.swt.widgets.Display;
  */
 public class PapyrusImageUtils {
 
-	private static final String default_icon_32 = "/icons/papyrus/32x32/Papyrus_32x32_t.gif";
+	private static final String default_icon_32 = "/icons/papyrus/32x32/Papyrus_32x32_t.gif"; //$NON-NLS-1$
 
-	private static final String default_icon = "/icons/papyrus/Papyrus.gif";
+	private static final String default_icon = "/icons/papyrus/Papyrus.gif"; //$NON-NLS-1$
 
 	/**
 	 * get the default icon for Papyrus the image does not have to be disposed

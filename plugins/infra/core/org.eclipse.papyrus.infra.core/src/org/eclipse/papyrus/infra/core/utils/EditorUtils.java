@@ -538,7 +538,7 @@ public class EditorUtils {
 		// Lookup ServiceRegistry
 		IMultiDiagramEditor editor = getMultiDiagramEditor();
 		if(editor == null) {
-			throw new ServiceException("Can't get ServiceRegistry");
+			throw new ServiceException("Can't get ServiceRegistry"); //$NON-NLS-1$
 		}
 
 		return (ServicesRegistry)editor.getAdapter(ServicesRegistry.class);
@@ -650,13 +650,13 @@ public class EditorUtils {
 			editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		} catch (NullPointerException e) {
 			// Can't get the active editor
-			throw new BackboneException("Can't get the current Eclipse Active Editor: There is no active editor at this time.");
+			throw new BackboneException("Can't get the current Eclipse Active Editor: There is no active editor at this time."); //$NON-NLS-1$
 		}
 
 		if(editor instanceof IMultiDiagramEditor) {
 			return (IMultiDiagramEditor)editor;
 		} else {
-			throw new BackboneException("Can't get an Active Editor instance of IMultiDiagramEditor. (actual type:" + editor.getClass().getName() + ")");
+			throw new BackboneException("Can't get an Active Editor instance of IMultiDiagramEditor. (actual type:" + editor.getClass().getName() + ")"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

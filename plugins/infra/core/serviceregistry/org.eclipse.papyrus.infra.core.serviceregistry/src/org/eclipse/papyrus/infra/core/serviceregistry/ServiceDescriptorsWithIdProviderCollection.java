@@ -77,13 +77,13 @@ public class ServiceDescriptorsWithIdProviderCollection /*implements IServiceDes
 			
 			RegistryIdDesc res = provider.getRegistryDescriptor(registryName);
 			if( found != null && res != null) {
-				throw new DeclarationException("Registry '" +  registryName + "' is declared more than once in declarations.");
+				throw new DeclarationException("Registry '" +  registryName + "' is declared more than once in declarations."); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			found = res;
 		}
 		
 		if( found == null ) {
-			throw new DeclarationNotFoundException("Can't find registry named '" +  registryName + "'.");
+			throw new DeclarationNotFoundException("Can't find registry named '" +  registryName + "'."); //$NON-NLS-1$ //$NON-NLS-2$ 
 		}
 
 		return found;
@@ -221,7 +221,7 @@ public class ServiceDescriptorsWithIdProviderCollection /*implements IServiceDes
 		}
 		
 		if( result == null ) {
-			throw new DeclarationNotFoundException("Can't find ServiceSetIdDesc named '" +  serviceSetName + "'.");
+			throw new DeclarationNotFoundException("Can't find ServiceSetIdDesc named '" +  serviceSetName + "'."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		// Remove doubles
 		removeDoubleName(result.getExtends());

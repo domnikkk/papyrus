@@ -126,8 +126,8 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 			if(REGISTRY_ELEMENT_NAME.equals(ele.getName()) && registryName.equals(ele.getAttribute(ID_ATTRIBUTE))) {
 				if(isRegistryFound) {
 					// Already found: exception
-					throw new DeclarationException("More than one registry declared under name '" + registryName + "'. "
-							+ " Declaration from '" + ele.getContributor().getName() + "' is disguarded.");
+					throw new DeclarationException("More than one registry declared under name '" + registryName + "'. " //$NON-NLS-1$ //$NON-NLS-2$
+							+ " Declaration from '" + ele.getContributor().getName() + "' is disguarded."); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 				isRegistryFound = true;
 				// read the set
@@ -137,7 +137,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 		}
 		
 		if( warnings.size()>0) {
-			throw new DeclarationMultiException("Problems encountered during extensions processing.", warnings);
+			throw new DeclarationMultiException("Problems encountered during extensions processing.", warnings); //$NON-NLS-1$
 		}
 		return registryIdDesc;
 	}
@@ -178,7 +178,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 			
 			String extendedRegistry = ele.getAttribute(SERVICE_SET_ID_ATTRIBUTE);
 			if(extendedRegistry == null || extendedRegistry.length() == 0) { 
-				warnings.add( new BadDeclarationException( ele.getName() + "/" + SERVICE_SET_ID_ATTRIBUTE + " should be set.") );
+				warnings.add( new BadDeclarationException( ele.getName() + "/" + SERVICE_SET_ID_ATTRIBUTE + " should be set.") ); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			else {
 			registryIdDesc.getSets().add(extendedRegistry);
@@ -201,7 +201,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 			
 			String extendedRegistry = ele.getAttribute(REGISTRY_ID_ATTRIBUTE);
 			if(extendedRegistry == null || extendedRegistry.length() == 0) { 
-				warnings.add( new BadDeclarationException( ele.getName() + "/" + REGISTRY_ID_ATTRIBUTE + " should be set.") );
+				warnings.add( new BadDeclarationException( ele.getName() + "/" + REGISTRY_ID_ATTRIBUTE + " should be set.") ); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			else {
 			registryIdDesc.getParents().add(extendedRegistry);
@@ -224,7 +224,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 			
 			String extendedRegistry = ele.getAttribute(REGISTRY_ID_ATTRIBUTE);
 			if(extendedRegistry == null || extendedRegistry.length() == 0) { 
-				warnings.add( new BadDeclarationException( ele.getName() + "/" + REGISTRY_ID_ATTRIBUTE + " should be set.") );
+				warnings.add( new BadDeclarationException( ele.getName() + "/" + REGISTRY_ID_ATTRIBUTE + " should be set.") ); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			else {
 			registryIdDesc.getExtends().add(extendedRegistry);
@@ -259,7 +259,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 		}
 		
 		if( warnings.size()>0) {
-			throw new DeclarationMultiException("Problems encountered during extensions processing.", warnings);
+			throw new DeclarationMultiException("Problems encountered during extensions processing.", warnings); //$NON-NLS-1$
 		}
 		return fragments;
 	}
@@ -291,7 +291,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 		}
 		
 		if( warnings.size()>0) {
-			throw new DeclarationMultiException("Problems encountered during extensions processing.", warnings);
+			throw new DeclarationMultiException("Problems encountered during extensions processing.", warnings); //$NON-NLS-1$
 		}
 		return serviceSet;
 	}
@@ -340,7 +340,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 			
 			String extendedServiceSet = ele.getAttribute(SERVICE_SET_ID_ATTRIBUTE);
 			if(extendedServiceSet == null || extendedServiceSet.length() == 0) { 
-				warnings.add( new BadDeclarationException( ele.getName() + "/" + SERVICE_SET_ID_ATTRIBUTE + " should be set.") );
+				warnings.add( new BadDeclarationException( ele.getName() + "/" + SERVICE_SET_ID_ATTRIBUTE + " should be set.") ); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			else {
 				serviceSet.getExtends().add(extendedServiceSet);
@@ -414,14 +414,14 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 		// key
 		String key = ele.getAttribute(ID_ATTRIBUTE);
 		if(key == null || key.length() == 0) {
-			throw new BadDeclarationException( ele.getName() + "/" + ID_ATTRIBUTE + " should be set for an alias.");
+			throw new BadDeclarationException( ele.getName() + "/" + ID_ATTRIBUTE + " should be set for an alias."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		aliasIdDesc.setName(key);
 		
 		// key
 		String aliasedService = ele.getAttribute(ALIASED_SERVICE_ID_ATTRIBUTE);
 		if(key == null || key.length() == 0) {
-			throw new BadDeclarationException( ele.getName() + "/" + ALIASED_SERVICE_ID_ATTRIBUTE + " should be set for an alias.");
+			throw new BadDeclarationException( ele.getName() + "/" + ALIASED_SERVICE_ID_ATTRIBUTE + " should be set for an alias."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		aliasIdDesc.setAliasedService(aliasedService);
 	
@@ -480,7 +480,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 				serviceStartKind = StartupKind.valueOf(serviceStartKindStr.toUpperCase());
 			} catch (IllegalArgumentException e) {
 				// Can't convert property
-				throw new DeclarationException("Can't convert property " + STARTKIND_PROPERTY + "(plugin=" + ele.getContributor() + "declaringExtension=" + ele.getDeclaringExtension() + ")", e);
+				throw new DeclarationException("Can't convert property " + STARTKIND_PROPERTY + "(plugin=" + ele.getContributor() + "declaringExtension=" + ele.getDeclaringExtension() + ")", e); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 			}
 		}
 		return serviceStartKind;
