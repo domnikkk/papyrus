@@ -28,7 +28,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForIEvaluationContext;
@@ -205,9 +204,9 @@ public abstract class AbstractBaseHandler extends AbstractHandler {
 
 			// Bug in Tree Explorer
 			// ModelExplorer tree element do not implements IAdaptable. So, we should manually get the underlying adaptable object.
-			if( obj instanceof EObjectTreeElement ) {
-				obj = ((EObjectTreeElement)obj).getEObject();
-			}
+//			if( obj instanceof EObjectTreeElement ) {
+//				obj = ((EObjectTreeElement)obj).getEObject();
+//			}
 
 			// Adapt object to NamedElement
 			if(obj instanceof IAdaptable) {
