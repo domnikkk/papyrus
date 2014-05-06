@@ -9,6 +9,8 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 402525
+ *   Christian W. Damus (CEA) - bug 432813
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource;
 
@@ -37,6 +39,16 @@ public class CDOAwareCommandStack extends NestingNotifyingWorkspaceCommandStack 
 
 	protected CDOAwareCommandStack(boolean nested, IOperationHistory history) {
 		super(nested, history);
+	}
+
+	@Override
+	public void dispose() {
+		IOperationHistory history = getOperationHistory();
+		if(history != null) {
+			CDOUndoContext.flushAll(history);
+		}
+
+		super.dispose();
 	}
 
 	@Override
