@@ -9,10 +9,12 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
+ *  Christian W. Damus (CEA) - bug 432813
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.editor.integration.tests;
 
+import org.eclipse.papyrus.editor.integration.tests.tests.EditingScenariosMemoryLeakTest;
 import org.eclipse.papyrus.editor.integration.tests.tests.EditorMemoryLeakTest;
 import org.eclipse.papyrus.editor.integration.tests.tests.ModelSetTests;
 import org.eclipse.papyrus.editor.integration.tests.tests.PageManagerTests;
@@ -29,7 +31,7 @@ import org.junit.runners.Suite.SuiteClasses;
  * models opened later.
  */
 @RunWith(Suite.class)
-@SuiteClasses({ EditorMemoryLeakTest.class, PageManagerTests.class, RecoveryTest.class, ModelSetTests.class })
+@SuiteClasses({ EditorMemoryLeakTest.class, EditingScenariosMemoryLeakTest.class, PageManagerTests.class, RecoveryTest.class, ModelSetTests.class })
 public class AllTests {
 
 }

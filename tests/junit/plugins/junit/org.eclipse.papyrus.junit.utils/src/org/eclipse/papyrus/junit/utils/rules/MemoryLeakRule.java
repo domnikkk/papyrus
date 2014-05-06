@@ -32,13 +32,11 @@ import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
-import org.junit.runner.manipulation.Filter;
-import org.junit.runner.notification.RunNotifier;
-import org.junit.runners.JUnit4;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Request;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
-import com.google.common.base.Objects;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -250,23 +248,11 @@ public class MemoryLeakRule extends TestWatcher {
 	}
 
 	private void warmUp() {
+		// The first test that relies on the soft-reference clearing hack will
+		// always fail, so run such a test once up-front. Call this a metahack
+
 		try {
-			// The first test that relies on the soft-reference clearing hack will
-			// always fail, so run such a test once up-front. Call this a metahack
-			JUnit4 runner = new JUnit4(testClass);
-			runner.filter(new Filter() {
-
-				@Override
-				public boolean shouldRun(Description description) {
-					return Objects.equal(description.getTestClass(), testClass) && Objects.equal(description.getMethodName(), testName);
-				}
-
-				@Override
-				public String describe() {
-					return "Warm-up test run";
-				}
-			});
-			runner.run(new RunNotifier());
+			new JUnitCore().run(Request.method(testClass, testName));
 		} catch (Exception e) {
 			// Fine, so the warm-up didn't work
 			e.printStackTrace();

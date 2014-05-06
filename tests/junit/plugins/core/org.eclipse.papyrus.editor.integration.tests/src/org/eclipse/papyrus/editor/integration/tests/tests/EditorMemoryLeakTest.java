@@ -12,16 +12,14 @@
  */
 package org.eclipse.papyrus.editor.integration.tests.tests;
 
+import static org.eclipse.papyrus.editor.integration.tests.tests.EditingMemoryLeakFixture.PROPERTY_SHEET;
 import static org.junit.Assert.fail;
-
-import java.util.Collections;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.infra.services.validation.commands.ValidateModelCommand;
 import org.eclipse.papyrus.junit.utils.classification.FailingTest;
 import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule;
@@ -30,10 +28,6 @@ import org.eclipse.papyrus.junit.utils.rules.PapyrusEditorFixture;
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.service.validation.UMLDiagnostician;
-import org.eclipse.ui.IViewPart;
-import org.eclipse.ui.part.ISetSelectionTarget;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -44,19 +38,13 @@ import org.junit.Test;
 @PluginResource("model/basic/simple_class_model.di")
 public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 
-	private static final String PROPERTY_SHEET = "org.eclipse.ui.views.PropertySheet";
-
-	private static final String OUTLINE = "org.eclipse.ui.views.ContentOutline";
-
-	private static final String PROJECT_EXPLORER = "org.eclipse.ui.navigator.ProjectExplorer";
-
-	private static final String PACKAGE_EXPLORER = "org.eclipse.jdt.ui.PackageExplorer";
-
 	@Rule
 	public final MemoryLeakRule memory = new MemoryLeakRule();
 
+	private final PapyrusEditorFixture editor = new PapyrusEditorFixture();
+
 	@Rule
-	public final PapyrusEditorFixture editor = new PapyrusEditorFixture();
+	public final EditingMemoryLeakFixture fixture = new EditingMemoryLeakFixture(editor);
 
 	public EditorMemoryLeakTest() {
 		super();
@@ -99,7 +87,7 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 		editor.getView(PROPERTY_SHEET, true);
 
 		// Select the Model element to show it in the Properties
-		selectModelInModelExplorer();
+		fixture.selectModelInModelExplorer();
 
 		// Back to the Properties view
 		editor.getView(PROPERTY_SHEET, false);
@@ -119,7 +107,7 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 		editor.getView(PROPERTY_SHEET, true);
 
 		// Select the Model element to show it in the Properties
-		selectModelInModelExplorer();
+		fixture.selectModelInModelExplorer();
 
 		// Back to the Properties view
 		editor.getView(PROPERTY_SHEET, false);
@@ -163,7 +151,7 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 		editor.getView(PROPERTY_SHEET, true);
 
 		// Select the Model element to show it in the Properties
-		selectModelInModelExplorer();
+		fixture.selectModelInModelExplorer();
 
 		// Back to the Properties view
 		editor.getView(PROPERTY_SHEET, false);
@@ -193,60 +181,6 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 		
 		memory.add(editor.getModel());
 		memory.add(editor.getModel().getAppliedProfile("j2ee"));
-	}
-
-	//
-	// Test framework
-	//
-
-	@Before
-	public void selectModelInModelExplorer() {
-		// Select the Model element
-		editor.getModelExplorerView().revealSemanticElement(Collections.singletonList(editor.getModel()));
-		editor.flushDisplayEvents();
-	}
-
-	@After
-	public void closeEditor() throws Exception {
-		editor.close();
-
-		// now, open a new editor and close it to ensure that views such as Model Explorer, Outline, etc. get
-		// a new model into context and forget the previous
-		editor.open("model/basic/empty_model.di"); // This will be closed automatically when finished
-		selectModelInModelExplorer();
-
-		editor.getView(PROPERTY_SHEET, true);
-		editor.getView(OUTLINE, true);
-
-		// Select something in the Project Explorer to flush the last model selection from the Properties view's default page
-		selectProjectInProjectExplorer();
-
-		editor.getView(PROPERTY_SHEET, true);
-		editor.getView(OUTLINE, true);
-	}
-
-	void selectProjectInProjectExplorer() {
-		ISetSelectionTarget projectExplorer = getProjectOrPackageExplorer();
-		projectExplorer.selectReveal(new StructuredSelection(editor.getProject().getProject()));
-		editor.flushDisplayEvents();
-	}
-
-	ISetSelectionTarget getProjectOrPackageExplorer() {
-		ISetSelectionTarget result = null;
-
-		IViewPart explorer = editor.getView(PROJECT_EXPLORER, false);
-		if(explorer == null) {
-			// Maybe we're in the Java perspective
-			explorer = editor.getView(PACKAGE_EXPLORER, false);
-			if(explorer == null) {
-				// Force the Project Explorer, then
-				explorer = editor.getView(PROJECT_EXPLORER, true);
-			}
-		}
-
-		result = (ISetSelectionTarget)explorer;
-
-		return result;
 	}
 
 }

@@ -53,8 +53,8 @@ import org.osgi.framework.FrameworkUtil;
 
 
 /**
- * A fixture that presents editors on a model specified via an annotation as for {@link ProjectFixture.
- * The editor is closed automatically upon completion of the test.
+ * A fixture that presents editors on a model specified via an annotation as for {@link ProjectFixture. The editor is closed automatically upon
+ * completion of the test.
  */
 public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEditingDomain> {
 
@@ -63,6 +63,8 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	private ModelExplorerView modelExplorer;
 
 	private Class<?> testClass;
+
+	private Description testDescription;
 
 	public PapyrusEditorFixture() {
 		super();
@@ -75,6 +77,7 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	@Override
 	protected void starting(Description description) {
 		testClass = description.getTestClass();
+		testDescription = description;
 
 		open(description);
 
@@ -165,6 +168,10 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 		return open(papyrusModel);
 	}
 
+	public IMultiDiagramEditor open() {
+		return open(testDescription);
+	}
+
 	public IMultiDiagramEditor open(String resourcePath) {
 		return open(new Path(resourcePath).removeFileExtension().lastSegment(), ResourceKind.BUNDLE, resourcePath);
 	}
@@ -176,6 +183,16 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 	public IMultiDiagramEditor open(String targetPath, ResourceKind resourceKind, String resourcePath) {
 		final IFile papyrusModel = getProject().getFile(initModelResource(targetPath, resourceKind, resourcePath).getURI().trimFileExtension().appendFileExtension(DiModel.DI_FILE_EXTENSION));
 		return open(papyrusModel);
+	}
+
+	public void activate() {
+		if(editor != null) {
+			activate(editor);
+		}
+	}
+
+	public void activate(IWorkbenchPart part) {
+		part.getSite().getPage().activate(part);
 	}
 
 	public void close() {
