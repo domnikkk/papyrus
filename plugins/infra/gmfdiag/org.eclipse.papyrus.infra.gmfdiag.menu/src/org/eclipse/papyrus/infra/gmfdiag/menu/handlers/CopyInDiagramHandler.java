@@ -113,7 +113,9 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 			if(activeFocusControl instanceof StyledText || focusControl instanceof Text) { // true if the focus is on an internal xtext editor or a text edit
 				setBaseEnabled(false);
 			} else {
+				PapyrusClipboard<Object> instance = PapyrusClipboard.getInstance();
 				super.setEnabled(evaluationContext);
+				PapyrusClipboard.setInstance(instance);
 			}
 		}
 	}

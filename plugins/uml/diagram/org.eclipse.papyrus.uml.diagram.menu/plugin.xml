@@ -4342,10 +4342,10 @@
          <menuContribution
                allPopups="false"
                locationURI="popup:org.eclipse.papyrus.infra.gmfdiag.menu.editmenu?after=edit_actions_separator">
-            <command
+           <!-- <command
                   commandId="org.eclipse.papyrus.infra.gmfdiag.menu.pastewithmodel"
                   style="push">
-            </command>
+            </command>-->
             <command
                   commandId="org.eclipse.papyrus.infra.gmfdiag.menu.cleandiagram"
                   style="push">
