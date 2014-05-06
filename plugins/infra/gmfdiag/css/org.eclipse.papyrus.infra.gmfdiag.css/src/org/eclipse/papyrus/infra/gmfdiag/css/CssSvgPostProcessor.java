@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.StringValueStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.handler.IRefreshHandlerPart;
@@ -122,7 +121,7 @@ public class CssSvgPostProcessor implements SVGPostProcessor, IRefreshHandlerPar
 	 *      org.w3c.dom.svg.SVGDocument)
 	 */
 	public void postProcess(EObject view, SVGDocument document) {
-		if(view instanceof Shape) {
+		if(view instanceof org.eclipse.gmf.runtime.notation.Node) {
 			View shape = (View)view;
 			// Retrieve the applied CSS stylesheet if necessary
 			StringValueStyle nsURI = (StringValueStyle)shape.getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), CSS_PROPERTY_SVG_STYLESHEET);
