@@ -158,5 +158,13 @@ public class EAttributeTreeElementImpl extends EStructuralFeatureTreeElementImpl
 		}
 		return super.eIsSet(featureID);
 	}
+	
+	 @Override
+	public Object getAdapter(Class adapter) {
+		if (adapter == EAttribute.class){
+			return getEAttribute();
+		}
+		return super.getAdapter(adapter);
+	}
 
 } //EAttributeTreeElementImpl

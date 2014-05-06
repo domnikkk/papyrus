@@ -17,6 +17,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -78,7 +79,7 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 	 */
 	public EObjectTreeElement getParent() {
 		if (eContainerFeatureID() != TreeproxyPackage.ESTRUCTURAL_FEATURE_TREE_ELEMENT__PARENT) return null;
-		return (EObjectTreeElement)eContainer();
+		return (EObjectTreeElement)eInternalContainer();
 	}
 
 	/**
@@ -241,6 +242,10 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 				return referedEObjectTE != null && !referedEObjectTE.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+	
+	public Object getAdapter(Class adapter) {
+		return null;
 	}
 
 } //EStructuralFeatureTreeElementImpl

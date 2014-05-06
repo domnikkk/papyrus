@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.infra.gmfdiag.common.commands;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -32,10 +31,11 @@ import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
+import org.eclipse.uml2.uml.Element;
 
 
 /**
- * this handler has in charge to exexute the paste of UML element with their applied stereotypes
+ * this handler has in charge to execute the paste of UML element with their applied stereotypes
  * 
  */
 public class DefaultPasteCommand extends AbstractCommand {
@@ -62,7 +62,7 @@ public class DefaultPasteCommand extends AbstractCommand {
 			Iterator<Object> iterData = papyrusClipboard.iterator();
 			while(iterData.hasNext()) {
 				Object object = iterData.next();
-				if(object instanceof EObject) {
+				if(object instanceof Element) { // TODO : create utility to detec if the element is part of the semantic model
 					eobjectsTopaste.add((EObject)object);
 				}
 			}

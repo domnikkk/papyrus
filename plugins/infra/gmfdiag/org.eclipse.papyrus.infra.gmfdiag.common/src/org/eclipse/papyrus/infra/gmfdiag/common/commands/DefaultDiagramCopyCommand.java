@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.AbstractOverrideableCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
 
@@ -67,6 +68,15 @@ public class DefaultDiagramCopyCommand extends AbstractOverrideableCommand imple
 		Map<EObject, Object> mapInternalCopyInClipboard = new HashMap<EObject, Object>();
 		mapInternalCopyInClipboard.putAll(copier);
 		papyrusClipboard.addAllInternalCopyInClipboard(mapInternalCopyInClipboard);
+		
+		
+		if (pObjectsToPutInClipboard!=null && !pObjectsToPutInClipboard.isEmpty()){
+			IGraphicalEditPart next = pObjectsToPutInClipboard.iterator().next();
+			Diagram diagram = next.getNotationView().getDiagram();
+			String type = diagram.getType();
+			papyrusClipboard.setContainerType(type);
+		}
+		
 	}
 
 

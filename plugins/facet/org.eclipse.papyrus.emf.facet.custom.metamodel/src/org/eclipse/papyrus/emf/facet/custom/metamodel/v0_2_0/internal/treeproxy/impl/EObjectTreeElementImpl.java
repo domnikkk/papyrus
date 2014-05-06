@@ -139,7 +139,7 @@ public class EObjectTreeElementImpl extends TreeElementImpl implements EObjectTr
 	 */
 	public EStructuralFeatureTreeElement getParent() {
 		if (eContainerFeatureID() != TreeproxyPackage.EOBJECT_TREE_ELEMENT__PARENT) return null;
-		return (EStructuralFeatureTreeElement)eContainer();
+		return (EStructuralFeatureTreeElement)eInternalContainer();
 	}
 
 	/**
@@ -301,6 +301,13 @@ public class EObjectTreeElementImpl extends TreeElementImpl implements EObjectTr
 				return getParent() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+	
+	public Object getAdapter(Class adapter) {
+		if (adapter == EObject.class){
+			return getEObject();
+		}
+		return null;
 	}
 
 } //EObjectTreeElementImpl

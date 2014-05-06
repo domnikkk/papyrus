@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.GMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.DefaultDiagramPasteCommand;
@@ -139,7 +138,7 @@ public class DefaultPasteStrategy implements IPasteStrategy {
 	@Override
 	public Command getGraphicalCommand(EditingDomain domain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart targetEditPart, PapyrusClipboard<Object> papyrusClipboard) {
 		CompoundCommand compoundCommand = new CompoundCommand("Semantic And Graphical paste"); //$NON-NLS-1$
-		DefaultDiagramPasteCommand defaultDiagramPasteCommand = new DefaultDiagramPasteCommand(targetEditPart.getEditingDomain(), "DefaultGraphicalPasteWithModel", papyrusClipboard, (View)targetEditPart.getModel());
+		DefaultDiagramPasteCommand defaultDiagramPasteCommand = new DefaultDiagramPasteCommand(targetEditPart.getEditingDomain(), "DefaultGraphicalPasteWithModel", papyrusClipboard,targetEditPart ); //$NON-NLS-1$
 		GMFtoGEFCommandWrapper gmFtoGEFCommandWrapper = new GMFtoGEFCommandWrapper(defaultDiagramPasteCommand);
 		compoundCommand.add(gmFtoGEFCommandWrapper);
 		return compoundCommand;

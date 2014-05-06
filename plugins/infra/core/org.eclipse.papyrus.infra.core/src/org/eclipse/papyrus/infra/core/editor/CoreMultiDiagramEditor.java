@@ -108,7 +108,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  *
  *         TODO : remove GMF dependency !
  */
-public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implements IMultiDiagramEditor, ITabbedPropertySheetPageContributor, IGotoMarker {
+public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implements IMultiDiagramEditor, ITabbedPropertySheetPageContributor, IGotoMarker, IEditingDomainProvider {
 
 	/** Gef adapter */
 	private MultiDiagramEditorGefDelegate gefAdaptorDelegate;
@@ -207,29 +207,6 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 * Cached event that can be reused.
 	 */
 	protected DoSaveEvent lifeCycleEvent;
-
-	private static class EditingDomainProvider implements IEditingDomainProvider {
-
-		private CoreMultiDiagramEditor editor;
-
-		public EditingDomainProvider(CoreMultiDiagramEditor editor) {
-			this.editor = editor;
-		}
-
-		@Override
-		public EditingDomain getEditingDomain() {
-			return editor.transactionalEditingDomain;
-		}
-
-		public void dispose() {
-			this.editor = null;
-		}
-	}
-
-	/**
-	 * My editing domain provider.
-	 */
-	private EditingDomainProvider domainProvider = new EditingDomainProvider(this);
 
 	private class ContentChangedListener implements IContentChangedListener {
 
@@ -442,7 +419,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 
 		// EMF requirements
 		if(IEditingDomainProvider.class == adapter) {
-			return domainProvider;
+			return this;
 		}
 
 		// GEF diagram requirements
@@ -548,7 +525,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			// Must create a new adapter factory
 			factory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 		}
-		
+
 		/** label provider for EMF objects */
 		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(factory) {
 
@@ -784,11 +761,6 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			}
 		}
 
-		if(domainProvider != null) {
-			this.domainProvider.dispose();
-			this.domainProvider = null;
-		}
-
 		if(contentChangedListener != null) {
 			this.contentChangedListener = null;
 		}
@@ -948,6 +920,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 *
 	 * @see org.eclipse.emf.edit.domain.IEditingDomainProvider#getEditingDomain()
 	 */
+	@Override
 	public EditingDomain getEditingDomain() {
 		return transactionalEditingDomain;
 	}

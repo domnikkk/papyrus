@@ -53,6 +53,30 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 		return instance;
 	}	
 	
+	private static String UNKNOW_TYPE = "unknown"; //$NON-NLS-1$
+	
+	/** Type of the source container, ex : type of Diagram */
+	protected String containerType;
+	
+	
+	/**
+	 * @return containerType
+	 */
+	public String getContainerType() {
+		if (containerType != null) {
+			return containerType;
+		}
+		return UNKNOW_TYPE;
+	}
+
+	/**
+	 * set containerType
+	 * @param containerType
+	 */
+	public void setContainerType(String containerType) {
+		this.containerType = containerType;
+	}
+
 	/**
 	 * Clean the clipboard (target data) before pasting 
 	 */
