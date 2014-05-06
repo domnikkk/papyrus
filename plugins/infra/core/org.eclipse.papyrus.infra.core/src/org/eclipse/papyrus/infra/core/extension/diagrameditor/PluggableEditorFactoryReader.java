@@ -120,12 +120,12 @@ public class PluggableEditorFactoryReader {
 					editorDescriptors.add(desc);
 				}
 			} catch (ExtensionException e) {
-				log.error("Initialization editor problem ", e);
+				log.error("Initialization editor problem ", e); //$NON-NLS-1$
 			}
 		}
 
 		if(log.isDebugEnabled()) {
-			log.debug("Read " + editorDescriptors.size() + " editor descriptors from Eclipse extensions");
+			log.debug("Read " + editorDescriptors.size() + " editor descriptors from Eclipse extensions"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

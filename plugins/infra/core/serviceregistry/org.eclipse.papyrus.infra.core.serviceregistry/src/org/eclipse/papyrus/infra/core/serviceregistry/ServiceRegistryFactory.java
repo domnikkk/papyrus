@@ -125,7 +125,7 @@ public class ServiceRegistryFactory {
 			}
 			else {
 				// TODO: throw a multi exception
-				throw new DeclarationException("Somme services are not started (first is shown)", errors.get(0));
+				throw new DeclarationException("Somme services are not started (first is shown)", errors.get(0)); //$NON-NLS-1$
 			}
 		}
 
@@ -169,7 +169,7 @@ public class ServiceRegistryFactory {
 		// add missing parents
 		// 
 		if( extendRegistryDesc.getParents().size()>0) {
-			throw new UnsupportedOperationException("Registry extension with parents not yet implemented.");
+			throw new UnsupportedOperationException("Registry extension with parents not yet implemented."); //$NON-NLS-1$
 		}
 //		for(RegistryDesc newExtend:  extendRegistryDesc.getParents()) {
 //			try {

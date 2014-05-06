@@ -47,7 +47,7 @@ public class ServiceDescriptorUtils {
 		}
 		
 		// Should not happen
-		throw new UnsupportedOperationException("Don't know how to transform '" + idDesc.getClass().getName() + "'.");
+		throw new UnsupportedOperationException("Don't know how to transform '" + idDesc.getClass().getName() + "'."); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class ServiceDescriptorUtils {
 		}
 		
 		// Should not happen
-		throw new UnsupportedOperationException("Don't know how to transform '" + serviceDesc.getClass().getName() + "'.");
+		throw new UnsupportedOperationException("Don't know how to transform '" + serviceDesc.getClass().getName() + "'."); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 		
 	/**

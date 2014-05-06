@@ -1,6 +1,16 @@
-/**
- * 
- */
+/*****************************************************************************
+ * Copyright (c) 2011, 2014 LIFL and others.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  LIFL - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.core.serviceregistry;
 
 import java.util.ArrayList;
@@ -108,7 +118,7 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 			if(exceptions.size() == 1)
 				throw exceptions.get(0);
 			else
-				throw new ServiceException("Somme services are not started (first is shown)", exceptions.get(0));
+				throw new ServiceException("Somme services are not started (first is shown)", exceptions.get(0)); //$NON-NLS-1$
 
 		}
 
@@ -140,7 +150,7 @@ public class ExtensionServicesRegistry extends ServicesRegistry {
 				serviceStartKind = ServiceStartKind.valueOf(serviceStartKindStr.toUpperCase());
 			} catch (IllegalArgumentException e) {
 				// Can't convert property
-				throw new ServiceException("Can't convert property " + STARTKIND_PROPERTY + "(plugin=" + ele.getContributor() + "declaringExtension=" + ele.getDeclaringExtension() + ")", e);
+				throw new ServiceException("Can't convert property " + STARTKIND_PROPERTY + "(plugin=" + ele.getContributor() + "declaringExtension=" + ele.getDeclaringExtension() + ")", e); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			}
 		}
 

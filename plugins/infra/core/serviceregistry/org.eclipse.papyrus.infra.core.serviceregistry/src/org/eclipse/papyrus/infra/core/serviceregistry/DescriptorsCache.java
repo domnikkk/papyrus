@@ -204,7 +204,7 @@ public class DescriptorsCache {
 			return transformAliasIdDescToRef((AliasIdDesc)serviceIdDesc);
 		} else {
 			// Should never happen
-			throw new UnsupportedOperationException("Don't no how to transform '" + serviceIdDesc + "' to AbstractServiceDesc.");
+			throw new UnsupportedOperationException("Don't no how to transform '" + serviceIdDesc + "' to AbstractServiceDesc."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

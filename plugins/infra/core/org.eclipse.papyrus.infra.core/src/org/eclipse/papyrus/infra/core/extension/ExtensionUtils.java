@@ -47,7 +47,7 @@ public abstract class ExtensionUtils {
 	protected void checkTagName(IConfigurationElement element, String tagName) throws BadNameExtensionException {
 		String name = element.getName();
 		if(!tagName.equals(name))
-			throw new BadNameExtensionException("Expected '" + tagName + "', found '" + name + "'.");
+			throw new BadNameExtensionException("Expected '" + tagName + "', found '" + name + "'."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	/**
@@ -70,7 +70,7 @@ public abstract class ExtensionUtils {
 
 		element.getContributor().getName();
 		if(className == null || className.length() == 0) {
-			throw new BadClassNameException(attributeName + "=null ", extensionPointName, attributeName);
+			throw new BadClassNameException(attributeName + "=null ", extensionPointName, attributeName); //$NON-NLS-1$
 		}
 		Class<?> factoryClass;
 		try {
@@ -82,7 +82,7 @@ public abstract class ExtensionUtils {
 				Bundle bundle = Platform.getBundle(declaringID);
 				factoryClass = bundle.loadClass(className);
 			} catch (ClassNotFoundException e1) {
-				throw new BadClassNameException(className + " can not be loaded ", extensionPointName, attributeName, e1);
+				throw new BadClassNameException(className + " can not be loaded ", extensionPointName, attributeName, e1); //$NON-NLS-1$
 			}
 		}
 		return factoryClass;

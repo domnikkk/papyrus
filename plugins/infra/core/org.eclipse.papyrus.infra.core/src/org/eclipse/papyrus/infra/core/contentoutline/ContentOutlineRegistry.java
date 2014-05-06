@@ -98,7 +98,7 @@ public class ContentOutlineRegistry {
 
 		// Instanciate the object
 		if(found == null) {
-			throw new NotFoundException("No ContentOutline registered.");
+			throw new NotFoundException("No ContentOutline registered."); //$NON-NLS-1$
 		}
 
 		return found;
@@ -157,7 +157,7 @@ public class ContentOutlineRegistry {
 			this.element = element;
 			// check parameters
 			if(className == null) {
-				throw new BadClassNameException("Class name must be set", "contentoutline", classAttributeName);
+				throw new BadClassNameException("Class name must be set", "contentoutline", classAttributeName); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 
 		}
@@ -206,7 +206,7 @@ public class ContentOutlineRegistry {
 		 */
 		private Class<IPapyrusContentOutlinePage> loadClass() throws BadClassNameException {
 			if(className == null || className.length() == 0) {
-				throw new BadClassNameException("Classname should be set.", "contentoutline", classAttributeName);
+				throw new BadClassNameException("Classname should be set.", "contentoutline", classAttributeName); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			Class<IPapyrusContentOutlinePage> factoryClass;
 			try {
@@ -218,7 +218,7 @@ public class ContentOutlineRegistry {
 					Bundle bundle = Platform.getBundle(declaringID);
 					factoryClass = (Class<IPapyrusContentOutlinePage>)bundle.loadClass(className);
 				} catch (ClassNotFoundException e1) {
-					throw new BadClassNameException("", "contentoutline", classAttributeName, e1);
+					throw new BadClassNameException("", "contentoutline", classAttributeName, e1); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 			}
 			return factoryClass;
@@ -233,7 +233,7 @@ public class ContentOutlineRegistry {
 		 */
 		protected IPapyrusContentOutlinePage createContentOutlinePage() throws BackboneException {
 			if(false) {
-				System.out.println("Not yet");
+				System.out.println("Not yet"); // FIXME : no syso
 				return null;
 			}
 			try {
