@@ -35,7 +35,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.
  *
  * @generated
  */
-public abstract class TreeElementImpl extends EObjectImpl implements TreeElement {
+public abstract class TreeElementImpl extends AdaptableTreeElementImpl implements TreeElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
