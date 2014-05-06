@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.tests.tests;
 
@@ -19,10 +19,12 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.infra.emf.providers.EMFContentProvider;
 import org.eclipse.papyrus.infra.emf.providers.strategy.SemanticEMFContentProvider;
@@ -32,6 +34,7 @@ import org.eclipse.papyrus.infra.widgets.providers.IHierarchicContentProvider;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.tools.tests.Activator;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Rule;
@@ -42,7 +45,7 @@ public class ContentProviderTest extends AbstractPapyrusTest {
 
 	@Rule
 	public final HouseKeeper houseKeeper = new HouseKeeper();
-	
+
 	private EObject testModel;
 
 	private EClass Class1, Class2, Class3, Class4;
@@ -138,6 +141,17 @@ public class ContentProviderTest extends AbstractPapyrusTest {
 		Object adaptedValue = adaptableProvider.getAdaptedValue(current);
 		assertNotNull(adaptedValue);
 		assertTrue(adaptedValue instanceof EObject);
+
+		//Bug 434133: EMFFacet Wrapper should still be adaptable to EObject/EReference
+		Assert.assertTrue(current instanceof IAdaptable);
+
+		if(adaptedValue instanceof EReference) {
+			Assert.assertEquals(adaptedValue, ((IAdaptable)current).getAdapter(EReference.class));
+		} else if(adaptedValue instanceof EObject) {
+			Assert.assertEquals(adaptedValue, ((IAdaptable)current).getAdapter(EObject.class));
+		}
+		//End of test for Bug 434133
+
 		EObject eObject = (EObject)adaptedValue;
 
 		boolean isValid = hierarchicProvider.isValidValue(current);
