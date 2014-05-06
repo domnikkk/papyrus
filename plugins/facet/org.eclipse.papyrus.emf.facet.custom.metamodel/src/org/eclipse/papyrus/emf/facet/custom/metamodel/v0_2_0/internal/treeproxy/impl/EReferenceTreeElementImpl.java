@@ -159,12 +159,25 @@ public class EReferenceTreeElementImpl extends EStructuralFeatureTreeElementImpl
 		return super.eIsSet(featureID);
 	}
 	
+	/**
+	 * Try to adapt this object to the requested type.
+	 * Check if the underlying EObject ({@link #getEObject()}) can be adapted to the requested type.
+	 *
+	 * @param key
+	 * @return
+	 */
 	@Override
-	public Object getAdapter(Class adapter) {
-		if (adapter == EReference.class){
-			return getEReference();
+	public Object getAdapter(Class key) {
+		// Check if the underlying EObject can request to the adaptation
+		Object model =  getEReference();
+
+		if (key.isInstance(model)){
+			return model;
 		}
-		return super.getAdapter(adapter);
+		else {
+			return super.getAdapter(key);
+		}
+
 	}
 
 } //EReferenceTreeElementImpl

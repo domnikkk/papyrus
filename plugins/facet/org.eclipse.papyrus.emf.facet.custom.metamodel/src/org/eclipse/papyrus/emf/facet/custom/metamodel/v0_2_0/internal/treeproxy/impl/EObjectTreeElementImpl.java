@@ -13,6 +13,7 @@ package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy
 
 import java.util.Collection;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement;
@@ -303,11 +303,26 @@ public class EObjectTreeElementImpl extends TreeElementImpl implements EObjectTr
 		return super.eIsSet(featureID);
 	}
 	
-	public Object getAdapter(Class adapter) {
-		if (adapter == EObject.class){
-			return getEObject();
+	/**
+	 * Try to adapt this object to the requested type.
+	 * Check if the underlying EObject ({@link #getEObject()}) can be adapted to the requested type.
+	 *
+	 * @param key
+	 * @return
+	 */
+	public Object getAdapter(Class key) {
+
+		// Check if the underlying EObject can request to the adaptation
+		Object model = getEObject();
+
+		if (key.isInstance(model)){
+			return model;
 		}
-		return null;
+		else {
+			// Try the platform process
+//			return Platform.getAdapterManager().getAdapter(model, key);
+			return null;
+		}
 	}
 
 } //EObjectTreeElementImpl
