@@ -16,13 +16,14 @@
 package org.eclipse.papyrus.uml.modelexplorer.tests;
 
 
+import org.eclipse.papyrus.uml.modelexplorer.tests.paste.CopyPasteHandlerTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
- DeleteHandlerTest.class, RenameHandlerTest.class, ModelExplorerViewTests.class
+ DeleteHandlerTest.class, RenameHandlerTest.class, ModelExplorerViewTests.class, CopyPasteHandlerTest.class
 
 })
 public class AllTests {

@@ -21,6 +21,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.uml.modelexplorer.tests.Activator;
+import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.papyrus.views.modelexplorer.tests.AbstractDualHandlerTest;
 import org.eclipse.uml2.uml.NamedElement;
 import org.junit.Assert;
@@ -70,8 +71,8 @@ public class CopyPasteHandlerTest extends AbstractDualHandlerTest {
 			Assert.assertTrue(pasteHandler.isEnabled());
 			pasteHandler.execute(new ExecutionEvent());
 			
-			// check that there is 2 Class1 
-			Assert.assertEquals("Class1 copy is missing", getCountElementByName(CLASS1), 2); //$NON-NLS-1$
+			// check that there is a Class1 
+			Assert.assertNotNull("Class1 copy is missing", getNameElementByName(NamedElementUtil.COPY_OF+"_"+CLASS1+"_1")); //$NON-NLS-1$
 			
 		} catch (ExecutionException e) {
 			Assert.fail(e.toString());
@@ -112,9 +113,9 @@ public class CopyPasteHandlerTest extends AbstractDualHandlerTest {
 			IHandler pasteHandler = getSecondActiveHandler();
 			Assert.assertTrue(pasteHandler.isEnabled());
 			pasteHandler.execute(new ExecutionEvent());
-			// check that there is 2 Class1 and 2 Class2
-			Assert.assertEquals("Class1 copy is missing", getCountElementByName(CLASS1), 2); //$NON-NLS-1$
-			Assert.assertEquals("Class2 copy is missing", getCountElementByName(CLASS2), 2); //$NON-NLS-1$
+			// check that there are Class1 and Class2
+			Assert.assertNotNull("Class1 copy is missing", getNameElementByName(NamedElementUtil.COPY_OF+"_"+CLASS1+"_1")); //$NON-NLS-1$
+			Assert.assertNotNull("Class2 copy is missing", getNameElementByName(NamedElementUtil.COPY_OF+"_"+CLASS2+"_1")); //$NON-NLS-1$
 			
 		} catch (ExecutionException e) {
 			Assert.fail(e.toString());
