@@ -128,7 +128,7 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 	//
 
 	@SuppressWarnings("restriction")
-	private static class MyCopyImageCommand extends org.eclipse.gmf.runtime.diagram.ui.render.internal.commands.CopyImageCommand implements INonDirtying {
+	static class MyCopyImageCommand extends org.eclipse.gmf.runtime.diagram.ui.render.internal.commands.CopyImageCommand implements INonDirtying {
 
 		MyCopyImageCommand(String label, View viewContext, @SuppressWarnings("rawtypes") List source, DiagramEditPart diagramEP) {
 			super(label, viewContext, source, diagramEP);
