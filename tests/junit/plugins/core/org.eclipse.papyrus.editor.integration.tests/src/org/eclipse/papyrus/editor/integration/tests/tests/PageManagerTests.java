@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,8 +8,15 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 433371
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.editor.integration.tests.tests;
+
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -47,10 +54,13 @@ import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.UmlClassDiagramForMultiEditor;
 import org.eclipse.papyrus.uml.diagram.common.commands.CreateUMLModelCommand;
+import org.eclipse.papyrus.uml.diagram.sequence.UmlSequenceDiagramForMultiEditor;
 import org.eclipse.papyrus.uml.diagram.timing.custom.UmlTimingDiagramForMultiEditor;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.junit.Assert;
@@ -298,6 +308,18 @@ public class PageManagerTests extends AbstractEditorIntegrationTest {
 		testPageDeletion(diagram, UmlClassDiagramForMultiEditor.class);
 	}
 
+	@Test
+	public void testDiagramIndirectDeletion_bug433371() throws Exception {
+		initModel("bug433371", "delete_sash_page", getBundle());
+		ModelSet modelSet = getModelSet();
+		final Diagram diagram = (Diagram)NotationUtils.getNotationModel(modelSet).getResource().getContents().get(1);
+		
+		IPageManager pageManager = editor.getServicesRegistry().getService(IPageManager.class);
+		pageManager.selectPage(diagram); // Make sure the one we want deleted is active
+		
+		testPageDeletion(diagram.getElement(), diagram, UmlSequenceDiagramForMultiEditor.class);
+	}
+
 	/**
 	 * @author vincent lorenzo
 	 * @throws Exception
@@ -387,6 +409,34 @@ public class PageManagerTests extends AbstractEditorIntegrationTest {
 
 			Assert.assertEquals("The has not been correctly created", initialPagesSize, pageManager.allPages().size());
 			Assert.assertTrue("The editor has not been correctly opened", expectedEditorClass.isInstance(editor.getActiveEditor()));
+
+			editingDomain.getCommandStack().redo();
+		}
+	}
+
+	private void testPageDeletion(final EObject elementToDelete, final Object dependentPage, Class<?> expectedEditorClass) throws Exception {
+		final IPageManager pageManager = editor.getServicesRegistry().getService(IPageManager.class);
+
+		//Check initial state
+		assertThat("Page not open", pageManager.allPages(), hasItem(dependentPage));
+
+		assertThat("Wrong kind of page", editor.getActiveEditor(), instanceOf(expectedEditorClass));
+
+		TransactionalEditingDomain editingDomain = editor.getServicesRegistry().getService(TransactionalEditingDomain.class);
+
+		Element clazz = getRootUMLModel().getOwnedType("Class1");
+		Behavior toDelete = ((BehavioredClassifier)clazz).getOwnedBehaviors().get(0);
+		IElementEditService edit = ElementEditServiceUtils.getCommandProvider(clazz);
+		ICommand command = edit.getEditCommand(new DestroyElementRequest(toDelete, false));
+
+		editingDomain.getCommandStack().execute(GMFtoEMFCommandWrapper.wrap(command));
+
+		for(int i = 0; i < 3; i++) { //Undo/Redo 3 times
+			assertThat("The editor page should be closed", pageManager.allPages(), not(hasItem(dependentPage)));
+
+			editingDomain.getCommandStack().undo();
+
+			assertThat("The page has not been correctly restored", pageManager.allPages(), hasItem(dependentPage));
 
 			editingDomain.getCommandStack().redo();
 		}

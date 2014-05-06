@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL
+ * Copyright (c) 2009, 2014 LIFL, CEA LIST, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 433371
  *
  *****************************************************************************/
 
@@ -197,6 +198,10 @@ public class PageMngrImpl implements IPageMngr {
 	@Override
 	public boolean isOpen(Object pageIdentifier) {
 		return diSashModel.getSashModel().lookupPage(pageIdentifier) != null;
+	}
+	
+	ContentChangedEventProvider getContentChangedEventProvider() {
+		return contentChangedEventProvider;
 	}
 
 }

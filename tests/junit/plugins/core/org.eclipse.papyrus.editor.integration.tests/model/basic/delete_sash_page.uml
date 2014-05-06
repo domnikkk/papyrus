@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_sgZU8NVWEeOoXOFyw97Vng" name="delete_sash_page">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_sgZU8dVWEeOoXOFyw97Vng">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_vzHp8NVWEeOoXOFyw97Vng" name="Class1" classifierBehavior="_yOvX0NVWEeOoXOFyw97Vng">
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_yOvX0NVWEeOoXOFyw97Vng" name="Interaction"/>
+  </packagedElement>
+</uml:Model>
