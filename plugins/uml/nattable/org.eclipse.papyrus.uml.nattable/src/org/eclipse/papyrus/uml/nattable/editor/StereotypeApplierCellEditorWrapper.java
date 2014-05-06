@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *       Christian W. Damus (CEA) - bug 402525
  *
@@ -33,6 +33,7 @@ import org.eclipse.papyrus.infra.nattable.manager.table.ITableAxisElementProvide
 import org.eclipse.papyrus.infra.nattable.utils.AxisUtils;
 import org.eclipse.papyrus.uml.nattable.utils.UMLTableUtils;
 import org.eclipse.papyrus.uml.tools.commands.ApplyStereotypeCommand;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.uml2.uml.Element;
@@ -42,7 +43,7 @@ import org.eclipse.uml2.uml.Stereotype;
  * Wrapper to apply stereotypes if required before to do the edition
  * see bug 426709: [Table 2][Stereotype] Papyrus Table must allows to edit stereotype properties even if the required stereotypes is not yet applied
  * https://bugs.eclipse.org/bugs/show_bug.cgi?id=426709
- * 
+ *
  * elementProvider
  */
 public class StereotypeApplierCellEditorWrapper implements ICellEditor {
@@ -61,9 +62,9 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	protected final ITableAxisElementProvider elementProvider;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param wrappedCellEditor
 	 *        the wrapped cell editor
 	 * @param axisElement
@@ -81,7 +82,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#activateCell(org.eclipse.swt.widgets.Composite, java.lang.Object,
 	 *      org.eclipse.nebula.widgets.nattable.widget.EditModeEnum, org.eclipse.nebula.widgets.nattable.edit.ICellEditHandler,
 	 *      org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
-	 * 
+	 *
 	 * @param parent
 	 * @param originalCanonicalValue
 	 * @param editMode
@@ -118,7 +119,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#getColumnIndex()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -129,7 +130,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#getRowIndex()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -140,7 +141,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#getColumnPosition()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -151,7 +152,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#getRowPosition()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -162,7 +163,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#getEditorValue()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -173,7 +174,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#setEditorValue(java.lang.Object)
-	 * 
+	 *
 	 * @param value
 	 */
 
@@ -184,7 +185,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#getCanonicalValue()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -195,7 +196,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#getCanonicalValue(org.eclipse.nebula.widgets.nattable.edit.editor.IEditErrorHandler)
-	 * 
+	 *
 	 * @param conversionErrorHandler
 	 * @return
 	 */
@@ -207,7 +208,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#setCanonicalValue(java.lang.Object)
-	 * 
+	 *
 	 * @param canonicalValue
 	 */
 
@@ -218,7 +219,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#validateCanonicalValue(java.lang.Object)
-	 * 
+	 *
 	 * @param canonicalValue
 	 * @return
 	 */
@@ -231,7 +232,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#validateCanonicalValue(java.lang.Object,
 	 *      org.eclipse.nebula.widgets.nattable.edit.editor.IEditErrorHandler)
-	 * 
+	 *
 	 * @param canonicalValue
 	 * @param validationErrorHandler
 	 * @return
@@ -244,7 +245,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#commit(org.eclipse.nebula.widgets.nattable.selection.SelectionLayer.MoveDirectionEnum)
-	 * 
+	 *
 	 * @param direction
 	 * @return
 	 */
@@ -257,7 +258,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#commit(org.eclipse.nebula.widgets.nattable.selection.SelectionLayer.MoveDirectionEnum,
 	 *      boolean)
-	 * 
+	 *
 	 * @param direction
 	 * @param closeAfterCommit
 	 * @return
@@ -271,7 +272,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#commit(org.eclipse.nebula.widgets.nattable.selection.SelectionLayer.MoveDirectionEnum,
 	 *      boolean, boolean)
-	 * 
+	 *
 	 * @param direction
 	 * @param closeAfterCommit
 	 * @param skipValidation
@@ -285,7 +286,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#close()
-	 * 
+	 *
 	 */
 
 	@Override
@@ -295,7 +296,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#isClosed()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -306,7 +307,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#getEditorControl()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -317,7 +318,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#createEditorControl(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
@@ -330,7 +331,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#openInline(org.eclipse.nebula.widgets.nattable.config.IConfigRegistry,
 	 *      java.util.List)
-	 * 
+	 *
 	 * @param configRegistry
 	 * @param configLabels
 	 * @return
@@ -344,7 +345,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#supportMultiEdit(org.eclipse.nebula.widgets.nattable.config.IConfigRegistry,
 	 *      java.util.List)
-	 * 
+	 *
 	 * @param configRegistry
 	 * @param configLabels
 	 * @return
@@ -357,7 +358,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#openAdjacentEditor()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -368,7 +369,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#activateAtAnyPosition()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -379,7 +380,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#addEditorControlListeners()
-	 * 
+	 *
 	 */
 
 	@Override
@@ -389,7 +390,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 
 	/**
 	 * Removes the editor control listeners.
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#removeEditorControlListeners()
 	 */
 
@@ -399,7 +400,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param el
 	 *        an element of the model
 	 * @param propertyId
@@ -422,6 +423,16 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public boolean openMultiEditDialog() {
+		return wrappedCellEditor == null ? false : wrappedCellEditor.openMultiEditDialog();
+	}
+
+	@Override
+	public Rectangle calculateControlBounds(Rectangle cellBounds) {
+		return wrappedCellEditor == null ? cellBounds : wrappedCellEditor.calculateControlBounds(cellBounds);
 	}
 
 }

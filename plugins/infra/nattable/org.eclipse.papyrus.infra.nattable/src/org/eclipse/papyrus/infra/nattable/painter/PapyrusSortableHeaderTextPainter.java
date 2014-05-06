@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,21 +12,17 @@
  /*****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.painter;
 
-import org.apache.commons.lang.StringUtils;
 import org.eclipse.nebula.widgets.nattable.config.IConfigRegistry;
 import org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell;
 import org.eclipse.nebula.widgets.nattable.painter.cell.ICellPainter;
 import org.eclipse.nebula.widgets.nattable.painter.cell.TextPainter;
 import org.eclipse.nebula.widgets.nattable.painter.cell.decorator.CellPainterDecorator;
-import org.eclipse.nebula.widgets.nattable.sort.config.DefaultSortConfiguration;
 import org.eclipse.nebula.widgets.nattable.sort.painter.SortableHeaderTextPainter;
 import org.eclipse.nebula.widgets.nattable.style.CellStyleUtil;
 import org.eclipse.nebula.widgets.nattable.style.DisplayMode;
 import org.eclipse.nebula.widgets.nattable.style.IStyle;
 import org.eclipse.nebula.widgets.nattable.ui.util.CellEdgeEnum;
-import org.eclipse.nebula.widgets.nattable.util.GUIHelper;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
-import org.eclipse.papyrus.infra.nattable.manager.table.NattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration;
 import org.eclipse.papyrus.infra.nattable.utils.HeaderAxisConfigurationManagementUtils;
 import org.eclipse.papyrus.infra.nattable.utils.NattableConfigAttributes;
@@ -50,7 +46,7 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 	 * Creates a {@link SortableHeaderTextPainter} that uses the given {@link ICellPainter} as base {@link ICellPainter} and decorate it with the
 	 * {@link SortIconPainter} on the right
 	 * edge of the cell.
-	 * 
+	 *
 	 * @param interiorPainter
 	 *        the base {@link ICellPainter} to use
 	 */
@@ -62,7 +58,7 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 	 * Creates a {@link SortableHeaderTextPainter} that uses the given {@link ICellPainter} as base {@link ICellPainter} and decorate it with the
 	 * {@link SortIconPainter} on the specified
 	 * edge of the cell.
-	 * 
+	 *
 	 * @param interiorPainter
 	 *        the base {@link ICellPainter} to use
 	 * @param cellEdge
@@ -76,7 +72,7 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 	 * Creates a {@link SortableHeaderTextPainter} that uses the given {@link ICellPainter} as base {@link ICellPainter} and decorate it with the
 	 * given {@link ICellPainter} to use for sort
 	 * related decoration on the specified edge of the cell.
-	 * 
+	 *
 	 * @param interiorPainter
 	 *        the base {@link ICellPainter} to use
 	 * @param cellEdge
@@ -93,7 +89,7 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 	 * Paints the triangular sort icon images.
 	 * Adapted code from Nattable
 	 */
-	protected static class SortIconPainter extends SortableHeaderTextPainter.SortIconPainter {
+	protected static class SortIconPainter extends org.eclipse.nebula.widgets.nattable.sort.painter.SortIconPainter {
 
 		public SortIconPainter(boolean paintBg) {
 			super(paintBg);
@@ -104,7 +100,7 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 		public void paintCell(ILayerCell cell, GC gc, Rectangle bounds, IConfigRegistry configRegistry) {
 			int position = cell.getRowPosition();
 			if(position == 0) {
-				INattableModelManager manager = (NattableModelManager)configRegistry.getConfigAttribute(NattableConfigAttributes.NATTABLE_MODEL_MANAGER_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.NATTABLE_MODEL_MANAGER_ID);
+				INattableModelManager manager = configRegistry.getConfigAttribute(NattableConfigAttributes.NATTABLE_MODEL_MANAGER_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.NATTABLE_MODEL_MANAGER_ID);
 				AbstractHeaderAxisConfiguration config = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(manager.getTable());
 				if(config != null && config.isDisplayIndex()) {
 					return;
@@ -145,83 +141,6 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 		public int getPreferredWidth(ILayerCell cell, GC gc, IConfigRegistry configRegistry) {
 			return super.getPreferredWidth(cell, gc, configRegistry);
 		}
-
-		@Override
-		protected Image getImage(ILayerCell cell, IConfigRegistry configRegistry) {
-
-			Image icon = null;
-
-			if(isSortedAscending(cell)) {
-				icon = selectUpImage(getSortSequence(cell));
-			} else if(isSortedDescending(cell)) {
-				icon = selectDownImage(getSortSequence(cell));
-			}
-			//to change the color of the icon
-			//			ImageData ideaImageData = icon.getImageData();
-			//			int[] lineData = new int[ideaImageData.width];
-			//			for(int y = 0; y < ideaImageData.height; y++) {
-			//				ideaImageData.getPixels(0, y, ideaImageData.width, lineData, 0);
-			//				// Analyze each pixel value in the line
-			//				for(int x = 0; x < lineData.length; x++) {
-			//					// Extract the red, green and blue component
-			//					int pixelValue = lineData[x];
-			//					ideaImageData.setPixel(x, y, ideaImageData.palette.getPixel(new RGB(0, 0, 250)));
-			//				}
-			//			};
-			//			icon = new Image(Display.getDefault(), ideaImageData);
-
-
-			return icon;
-		}
-
-		private boolean isSortedAscending(ILayerCell cell) {
-			return cell.getConfigLabels().hasLabel(DefaultSortConfiguration.SORT_UP_CONFIG_TYPE);
-		}
-
-		private boolean isSortedDescending(ILayerCell cell) {
-			return cell.getConfigLabels().hasLabel(DefaultSortConfiguration.SORT_DOWN_CONFIG_TYPE);
-		}
-
-		private int getSortSequence(ILayerCell cell) {
-			int sortSeq = 0;
-
-			for(String configLabel : cell.getConfigLabels().getLabels()) {
-				if(configLabel.startsWith(DefaultSortConfiguration.SORT_SEQ_CONFIG_TYPE)) {
-					String[] tokens = StringUtils.split(configLabel, "_"); //$NON-NLS-1$
-					sortSeq = Integer.valueOf(tokens[tokens.length - 1]).intValue();
-				}
-			}
-			return sortSeq;
-		}
-
-		private Image selectUpImage(int sortSequence) {
-			//			return GUIHelper.getImage("up_0"); //$NON-NLS-1$
-			switch(sortSequence) {
-			case 0:
-				return GUIHelper.getImage("up_0"); //$NON-NLS-1$
-			case 1:
-				return GUIHelper.getImage("up_1"); //$NON-NLS-1$
-			case 2:
-				return GUIHelper.getImage("up_2"); //$NON-NLS-1$
-			default:
-				return GUIHelper.getImage("up_2"); //$NON-NLS-1$
-			}
-		}
-
-		private Image selectDownImage(int sortSequence) {
-			//			return GUIHelper.getImage("down_0"); //$NON-NLS-1$
-			switch(sortSequence) {
-			case 0:
-				return GUIHelper.getImage("down_0"); //$NON-NLS-1$
-			case 1:
-				return GUIHelper.getImage("down_1"); //$NON-NLS-1$
-			case 2:
-				return GUIHelper.getImage("down_2"); //$NON-NLS-1$
-			default:
-				return GUIHelper.getImage("down_2"); //$NON-NLS-1$
-			}
-		}
-
 
 	}
 
