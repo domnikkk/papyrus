@@ -27,10 +27,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.FCM.Configuration;
+import org.eclipse.papyrus.FCM.OperatingSystem;
+import org.eclipse.papyrus.FCM.Target;
 import org.eclipse.papyrus.FCM.util.MapUtil;
 import org.eclipse.papyrus.acceleo.AcceleoDriver;
-import org.eclipse.papyrus.acceleo.extensions.ILangSupport;
-import org.eclipse.papyrus.acceleo.extensions.LanguageSupport;
+import org.eclipse.papyrus.codegen.extensionpoints.ILangSupport;
+import org.eclipse.papyrus.codegen.extensionpoints.LanguageSupport;
 import org.eclipse.papyrus.qompass.designer.core.Log;
 import org.eclipse.papyrus.qompass.designer.core.Messages;
 import org.eclipse.papyrus.qompass.designer.core.ModelManagement;
@@ -58,6 +60,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * This class executes all transformations during the instantiation of a
@@ -373,16 +376,31 @@ public class InstantiateDepPlan {
 		String modelName = getModelName(existingModel, node);
 		IProject genProject = ProjectManagement.getNamedProject(modelName);
 		if ((genProject == null) || !genProject.exists()) {
-			genProject = langSupport.createProject(modelName, node);
+			genProject = langSupport.createProject(modelName, getTargetOS(node));
 		} else {
 			langSupport.setProject(genProject);
 			if ((generationOptions & GenerationOptions.REWRITE_SETTINGS) != 0) {
-				langSupport.setSettings(node);
+				langSupport.setSettings(getTargetOS(node));
 			}
 		}
 		return langSupport;
 	}
 
+	protected String getTargetOS(InstanceSpecification node) {
+		Target target = UMLUtil.getStereotypeApplication(node, Target.class);
+		if(target == null) {
+			// get information from node referenced by the instance
+			target = UMLUtil.getStereotypeApplication(DepUtils.getClassifier(node), Target.class);
+		}
+		if(target != null) {
+			OperatingSystem os = target.getUsedOS();
+			if(os != null) {
+				return os.getBase_Class().getName();
+			}
+		}
+		return null;
+	}
+	
 	private void destroyDeploymentPlanFolder(Model generatedModel) {
 		PackageableElement deploymentPlanFolder = generatedModel
 				.getPackagedElement(DeployConstants.depPlanFolderHw);
@@ -456,9 +474,9 @@ public class InstantiateDepPlan {
 
 	private void printAndDisplayErrorMessage(Exception e, final String title,
 			final boolean consultConsole) {
-		String message = e.toString(); //$NON-NLS-1$
+		String message = e.toString();
 		if (consultConsole) {
-			message = message + "\n\n"
+			message = message + "\n\n" //$NON-NLS-1$
 					+ Messages.InstantiateDepPlan_ConsultConsole;
 		}
 

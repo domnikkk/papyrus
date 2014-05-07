@@ -15,7 +15,7 @@
 package org.eclipse.papyrus.qompass.designer.core.deployment;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.acceleo.extensions.ILangSupport;
+import org.eclipse.papyrus.codegen.extensionpoints.ILangSupport;
 import org.eclipse.papyrus.qompass.designer.core.listeners.PreCopyListener;
 import org.eclipse.papyrus.qompass.designer.core.transformations.LazyCopier;
 import org.eclipse.uml2.uml.Class;

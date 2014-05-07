@@ -28,6 +28,7 @@ public class CppCodeGenPreferenceInitializer extends AbstractPreferenceInitializ
 		store.setDefault(CppCodeGenConstants.P_HEADER_SUFFIX, "h"); //$NON-NLS-1$
 		store.setDefault(CppCodeGenConstants.P_IMPLEM_SUFFIX, "cpp"); //$NON-NLS-1$
 		store.setDefault(CppCodeGenConstants.P_OUT_INOUT_OP, "*"); //$NON-NLS-1$
+		store.setDefault(CppCodeGenConstants.P_PROJECT_PREFIX, "org.eclipse.papyrus.cppgen."); //$NON-NLS-1$
 
 		// Default value for P_COMMENT_HEADER
 		String NL = System.getProperties().getProperty("line.separator"); //$NON-NLS-1$

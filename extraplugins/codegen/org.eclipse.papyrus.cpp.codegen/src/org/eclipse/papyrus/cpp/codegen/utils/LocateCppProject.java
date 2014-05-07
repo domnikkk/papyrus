@@ -16,13 +16,20 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.codegen.extensionpoints.ILangSupport;
+import org.eclipse.papyrus.codegen.extensionpoints.LanguageSupport;
 import org.eclipse.papyrus.cpp.codegen.Activator;
+import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenConstants;
+import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 
 public class LocateCppProject {
+	public static final String LANGUAGE_NAME = "C++"; //$NON-NLS-1$
+
 	/**
 	 * Locate and return the target project for the given packageable element.  Return null if
 	 * no target project can be found.
@@ -35,22 +42,45 @@ public class LocateCppProject {
 	 * @return the associated project, if the C++ nature is applied.
 	 */
 	public static IProject getTargetProject(PackageableElement pe, boolean interactive) {
-		URI uri = pe.eResource().getURI();
-
+		// URI uri = pe.eResource().getURI();
+		Package rootPkg = PackageUtil.getRootPackage(pe);
+		
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		if(uri.segmentCount() < 2)
+		/*
+		if(uri.segmentCount() < 2) {
 			return null;
-			
-		IProject modelProject = root.getProject(uri.segment(1));
-		if(!modelProject.exists())
-			return null;
+		}
+		*/
+		
+		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
+		String prefix = store != null ? store.getString(CppCodeGenConstants.P_PROJECT_PREFIX) : "bad preferences."; //$NON-NLS-1$
+		String projectName = prefix + rootPkg.getName();
+		IProject modelProject = root.getProject(projectName);
+		if(!modelProject.exists()) {
+			boolean create = interactive && MessageDialog.openQuestion(new Shell(),
+					Messages.LocateCppProject_CreateTargetProjectTitle,
+					String.format(Messages.LocateCppProject_CreateTargetProjectDesc, projectName));
+			if (create) {
+				ILangSupport langSupport = LanguageSupport.getLangSupport(LANGUAGE_NAME);
+				if (langSupport != null) {
+					langSupport.resetConfigurationData();
+					modelProject = langSupport.createProject(projectName, null);
+				}
+				else {
+					return null;
+				}
+			}
+			else {
+				return null;
+			}
+		}
 	
 		// Make sure the target project has the C and C++ build natures.
 		try {
 			if(!modelProject.hasNature(CCProjectNature.CC_NATURE_ID)) {
 				boolean apply = interactive && MessageDialog.openQuestion(new Shell(),
-						Messages.LocateCppProject_0,
-						Messages.LocateCppProject_1);
+						Messages.LocateCppProject_ApplyCNatureTitle,
+						Messages.LocateCppProject_ApplyCNatureDesc);
 				if (!apply) {
 					return null;
 				}
