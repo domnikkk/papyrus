@@ -11,13 +11,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gef,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.uml2.uml,
- org.eclipse.papyrus.infra.core,
- org.eclipse.papyrus.infra.gmfdiag.common,
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.0.0",
  org.eclipse.gmf.tooling.runtime,
- org.eclipse.papyrus.infra.core.log
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.papyrus.infra.gmfdiag.common.commands
 Export-Package: org.eclipse.papyrus.uml.diagram.synchronizeview.customization
 Bundle-Description: The goal of this plugin is add the fucntionality to synchronize elements in diagram. More details (models and .html) has been store in the docs directory.
 Bundle-Vendor: %providerName

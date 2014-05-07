@@ -243,7 +243,7 @@ public class BundlesTests extends AbstractPapyrusTest {
 	}
 
 	@Test
-	public void natTableDependencyVersionText() {
+	public void natTableDependencyVersionTest() {
 		testPapyrusDependencies2("org.eclipse.nebula.widgets.nattable", NATTABLE_VERSION);//$NON-NLS-1$
 	}
 
@@ -301,7 +301,7 @@ public class BundlesTests extends AbstractPapyrusTest {
 		}
 
 		public boolean inIncludedIn(final Version version) {
-			// verifying intersaction between versions!
+			// verifying intersection between versions!
 			if(compare(this.max, version.min) < 0) {
 				return false;
 			}

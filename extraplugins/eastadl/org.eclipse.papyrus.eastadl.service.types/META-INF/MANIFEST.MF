@@ -25,3 +25,4 @@ Export-Package: org.eclipse.papyrus.eastadl.service.types,
  org.eclipse.papyrus.eastadl.service.types.handlers,
  org.eclipse.papyrus.eastadl.service.types.menu
 Bundle-Vendor: %providerName
+Bundle-Localization: plugin
