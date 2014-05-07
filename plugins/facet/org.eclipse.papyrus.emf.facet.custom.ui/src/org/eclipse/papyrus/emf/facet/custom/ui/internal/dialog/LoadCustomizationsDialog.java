@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.emf.facet.custom.ui.internal.dialog;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -375,7 +376,8 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 	}
 
 	protected void removeFromSelection(final List<Customization> toBeRemoved) {
-		for (final Customization element : toBeRemoved) {
+		List<Customization> customizations = new ArrayList<Customization>(toBeRemoved);
+		for (final Customization element : customizations) {
 			LoadCustomizationsDialog.this.selectedCustomizations.remove(element);
 			LoadCustomizationsDialog.this.availableCustoms.add(element);
 		}
