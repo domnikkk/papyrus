@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_zf8FgLpxEeOiIqA0Y8pjRA" name="model">
+  <packagedElement xmi:type="uml:Package" href="submodel.uml#_BRaDULsMEeO75-I_oucZEA"/>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_uf2E8LsPEeOBNLJQ9YB1Vw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uf8yoLsPEeOBNLJQ9YB1Vw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="testProfile.profile.uml#_RtfCMLpyEeOiIqA0Y8pjRA"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="testProfile.profile.uml#_JOBikLpyEeOiIqA0Y8pjRA"/>
+  </profileApplication>
+</uml:Model>
