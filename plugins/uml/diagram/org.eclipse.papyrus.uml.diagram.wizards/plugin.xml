@@ -9,6 +9,11 @@
 		id="org.eclipse.papyrus.wizards.category"
     	name="Papyrus">
 	</category>
+	<category
+		id="org.eclipse.papyrus.examples"
+		parentCategory="org.eclipse.ui.Examples"
+		name="Papyrus examples">
+	</category>
 	<wizard
          category="org.eclipse.papyrus.wizards.category"
          class="org.eclipse.papyrus.uml.diagram.wizards.NewPapyrusProjectWizard"
@@ -45,5 +50,5 @@
       </enablement>
    </provider>
 </extension>
-
+		
 </plugin>

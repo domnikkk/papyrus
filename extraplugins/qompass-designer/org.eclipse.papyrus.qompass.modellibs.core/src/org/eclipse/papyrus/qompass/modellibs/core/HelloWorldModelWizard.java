@@ -14,9 +14,14 @@
 
 package org.eclipse.papyrus.qompass.modellibs.core;
 
+import org.eclipse.papyrus.uml.diagram.wizards.ModelCopyWizard;
+
+/**
+ * Copy wizard for the HelloWorld example
+ */
 public class HelloWorldModelWizard extends ModelCopyWizard {
 	
-	public HelloWorldModelWizard () {
-		modelName = "HelloWorld";
+	public HelloWorldModelWizard() {
+		super("HelloWorld"); //$NON-NLS-1$
 	}
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2014 CEA LIST.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -13,7 +13,7 @@
  *****************************************************************************/
 
 
-package org.eclipse.papyrus.qompass.modellibs.core;
+package org.eclipse.papyrus.uml.diagram.wizards;
 
 import java.io.InputStream;
 
@@ -36,15 +36,52 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 
+/**
+ * An abstract wizard that can be used for copying model pages. Concrete examples need to
+ * inherit from this class and specify model name and location. 
+ *
+ */
 abstract public class ModelCopyWizard extends Wizard implements INewWizard {
+
+	private static final String EXT_DI = ".di"; //$NON-NLS-1$
+
+	private static final String EXT_NOTATION = ".notation"; //$NON-NLS-1$
+
+	private static final String EXT_UML = ".uml"; //$NON-NLS-1$
 
 	private IStructuredSelection selection;
 
+	/**
+	 * The model name (without extension)
+	 */
 	protected String modelName;
 
-	WizardNewFileCreationPage selectionPage;
+	/**
+	 * The model location
+	 */
+	protected String modelLocation;
+	
+	/**
+	 * Constructor taking modelName as parameter. Default location in
+	 * models/examples is used
+	 * @param modelName the name of the example (without extension)
+	 */
+	protected ModelCopyWizard(String modelName) {
+		this.modelName = modelName;
+		this.modelLocation = "/models/examples/"; //$NON-NLS-1$
+	}
 
-	public static final String modelLocation = "/models/examples/";
+	/**
+	 * Constructor taking modelName (without extension) and location as parameters
+	 * @param modelName the name of the example (without extension)
+	 * @param modelLocation location of the model relative to the plug-in in which it is contained
+	 */
+	protected ModelCopyWizard(String modelName, String modelLocation) {
+		this.modelName = modelName;
+		this.modelLocation = modelLocation;
+	}
+	
+	protected WizardNewFileCreationPage selectionPage;
 
 	@Override
 	public boolean performFinish() {
@@ -58,7 +95,7 @@ abstract public class ModelCopyWizard extends Wizard implements INewWizard {
 		IWorkbench wb = PlatformUI.getWorkbench();
 		IWorkbenchPage page = wb.getActiveWorkbenchWindow().getActivePage();
 		try {
-			IEditorDescriptor desc = wb.getEditorRegistry().getDefaultEditor(modelName + ".di");
+			IEditorDescriptor desc = wb.getEditorRegistry().getDefaultEditor(modelName + EXT_DI);
 			IEditorInput input = new FileEditorInput(model);
 			page.openEditor(input, desc.getId(), false);
 		} catch (PartInitException e) {
@@ -75,18 +112,18 @@ abstract public class ModelCopyWizard extends Wizard implements INewWizard {
 	 */
 	public IFile copyModel(String sourceModelName) {
 		try {
-			IFile model = copyFile(sourceModelName + ".di");
-			copyFile(sourceModelName + ".notation");
-			copyFile(sourceModelName + ".uml");
-
+			IFile model = copyFile(sourceModelName + EXT_DI);
+			copyFile(sourceModelName + EXT_NOTATION);
+			copyFile(sourceModelName + EXT_UML);
 			return model;
 		} catch (CoreException e) {
 			Shell shell = new Shell();
 			String reason = e.getMessage();
-			if(reason.endsWith("already exists.")) {
-				reason += "\nChoose another parent folder or delete existing model first.";
+			if(reason.endsWith(Messages.ModelCopyWizard_AlreadyyExists)) {
+				reason += "\n" + //$NON-NLS-1$
+						Messages.ModelCopyWizard_ChooseOtherParentFolder; 
 			}
-			MessageDialog.openError(shell, "Cannot create copy", reason);
+			MessageDialog.openError(shell, Messages.ModelCopyWizard_CannotCreateCopy, reason);
 			return null;
 		}
 	}
@@ -106,14 +143,15 @@ abstract public class ModelCopyWizard extends Wizard implements INewWizard {
 			return destFile;
 		}
 		else {
-			throw new CoreException(new Status(0, Activator.PLUGIN_ID, "Cannot open file <" + modelLocation + sourceFileName + ">"));
+			throw new CoreException(new Status(0, Activator.PLUGIN_ID,
+					String.format(Messages.ModelCopyWizard_CannotOpenFIle, modelLocation + sourceFileName)));
 		}
 	}
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		// this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle("Create Qompass example");
+		setWindowTitle(Messages.ModelCopyWizard_CreatePapyrusExample);
 		setNeedsProgressMonitor(true);
 	}
 
@@ -123,9 +161,9 @@ abstract public class ModelCopyWizard extends Wizard implements INewWizard {
 	 */
 	@Override
 	public void addPages() {
-		selectionPage = new WizardNewFileCreationPage("Copy model", selection);
-		selectionPage.setTitle("Select parent folder for example " + modelName);
-		selectionPage.setDescription("Do not change file name (will be ignored)");
+		selectionPage = new WizardNewFileCreationPage(Messages.ModelCopyWizard_CopyModel, selection);
+		selectionPage.setTitle(String.format(Messages.ModelCopyWizard_SelectParentFolder, modelName));
+		selectionPage.setDescription(Messages.ModelCopyWizard_DoNotChangeFileName);
 		selectionPage.setFileName(modelName);
 		addPage(selectionPage);
 	}

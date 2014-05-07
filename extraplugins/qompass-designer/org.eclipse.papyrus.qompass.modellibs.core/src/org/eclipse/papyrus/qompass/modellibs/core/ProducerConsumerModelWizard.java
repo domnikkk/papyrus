@@ -14,9 +14,14 @@
 
 package org.eclipse.papyrus.qompass.modellibs.core;
 
+import org.eclipse.papyrus.uml.diagram.wizards.ModelCopyWizard;
+
+/**
+ * Copy wizard for the ProducerConsumer example
+ */
 public class ProducerConsumerModelWizard extends ModelCopyWizard {
 	
 	public ProducerConsumerModelWizard () {
-		modelName = "ProducerConsumer";
+		super("ProducerConsumer"); //$NON-NLS-1$
 	}
 }

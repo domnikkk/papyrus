@@ -116,6 +116,15 @@ public class Messages extends NLS {
 	/** The Select root element page_select_root_element_title. */
 	public static String SelectRootElementPage_select_root_element_title;
 
+	public static String ModelCopyWizard_AlreadyyExists;
+	public static String ModelCopyWizard_CannotCreateCopy;
+	public static String ModelCopyWizard_CannotOpenFIle;
+	public static String ModelCopyWizard_ChooseOtherParentFolder;
+	public static String ModelCopyWizard_CopyModel;
+	public static String ModelCopyWizard_CreatePapyrusExample;
+	public static String ModelCopyWizard_DoNotChangeFileName;
+	public static String ModelCopyWizard_SelectParentFolder;
+	
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

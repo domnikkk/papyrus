@@ -1,11 +1,14 @@
 package org.eclipse.papyrus.qompass.modellibs.tracing;
 
-import org.eclipse.papyrus.qompass.modellibs.core.ModelCopyWizard;
+import org.eclipse.papyrus.uml.diagram.wizards.ModelCopyWizard;
 
+/**
+ * Copy wizard for the ClientServerTraceTest example
+ */
 
 public class ClientServerTraceTestModelWizard extends ModelCopyWizard {
 	
 	public ClientServerTraceTestModelWizard () {
-		modelName = "ClientServerTraceTest"; //$NON-NLS-1$
+		super("ClientServerTraceTest"); //$NON-NLS-1$
 	}
 }

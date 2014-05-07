@@ -105,13 +105,8 @@
 		</client>
 	</extension>
 	<extension point="org.eclipse.ui.newWizards">
-		<category
-			id = "org.eclipse.papyrus.qompass.designer.examples"
-			parentCategory="org.eclipse.ui.Examples"
-			name="Qompass examples">
-		</category>
 		<wizard
-			category="org.eclipse.ui.Examples/org.eclipse.papyrus.qompass.designer.examples"
+			category="org.eclipse.ui.Examples/org.eclipse.papyrus.examples"
 			class="org.eclipse.papyrus.qompass.modellibs.core.HelloWorldModelWizard"
 			finalPerspective="org.eclipse.papyrus.infra.core.perspective"
 			icon="platform:/plugin/org.eclipse.papyrus.qompass.designer.ui/icons/Qompass-16x16.gif"
@@ -120,7 +115,7 @@
 			<selection class="org.eclipse.core.resources.IResource"/>
 		</wizard>
 		<wizard
-			category="org.eclipse.ui.Examples/org.eclipse.papyrus.qompass.designer.examples"
+			category="org.eclipse.ui.Examples/org.eclipse.papyrus.examples"
 			class="org.eclipse.papyrus.qompass.modellibs.core.ProducerConsumerModelWizard"
 			finalPerspective="org.eclipse.papyrus.infra.core.perspective"
 			icon="platform:/plugin/org.eclipse.papyrus.qompass.designer.ui/icons/Qompass-16x16.gif"
