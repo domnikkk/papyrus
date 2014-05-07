@@ -37,8 +37,7 @@ import org.eclipse.papyrus.customization.properties.Activator;
 import org.eclipse.papyrus.customization.properties.editor.UIEditor;
 import org.eclipse.papyrus.customization.properties.messages.Messages;
 import org.eclipse.papyrus.customization.properties.model.xwt.resource.XWTResource;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeElement;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.views.properties.contexts.Section;
 import org.eclipse.papyrus.views.properties.contexts.Tab;
@@ -443,8 +442,8 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 	public void selectionChanged(SelectionChangedEvent event) {
 		IStructuredSelection selection = (IStructuredSelection)event.getSelection();
 		if(selection.size() == 1) {
-			EObjectTreeElement child = null;
-			EObjectTreeElement treeElement = (EObjectTreeElement)selection.getFirstElement();
+			TreeElement child = null;
+			TreeElement treeElement = (TreeElement)selection.getFirstElement();
 
 			do {
 				EObject semantic = EMFHelper.getEObject(treeElement);
@@ -454,10 +453,7 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 				}
 
 				child = treeElement;
-				EStructuralFeatureTreeElement elementFeature = treeElement.getParent();
-				if(elementFeature != null && elementFeature.getParent() != null) {
-					treeElement = elementFeature.getParent();
-				}
+				treeElement = treeElement.getParent();
 			} while(child != treeElement && treeElement != null);
 		}
 	}
