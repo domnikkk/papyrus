@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
@@ -44,6 +45,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationModel;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Profile;
 import org.junit.Rule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
@@ -51,6 +53,8 @@ import org.junit.runners.model.Statement;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
+import com.google.common.base.Predicates;
+import com.google.common.collect.Iterables;
 import com.google.common.io.ByteStreams;
 
 
@@ -204,6 +208,7 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 			Queue<Resource> dependents = new LinkedList<Resource>();
 			Set<Resource> scanned = new HashSet<Resource>();
 			dependents.add(result);
+			boolean loadedProfiles = false;
 			for(Resource dependent = dependents.poll(); dependent != null; dependent = dependents.poll()) {
 				if(scanned.add(dependent)) {
 					URI baseURI = result.getURI().trimSegments(1);
@@ -227,6 +232,7 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 									}
 
 									dependency = doInitModelResource(resourceSet, URI.decode(relative.toString()), resourceKind, depPath);
+									loadedProfiles = loadedProfiles || Iterables.any(dependency.getContents(), Predicates.instanceOf(Profile.class));
 
 									// Enqueue this for recursive dependency processing
 									dependents.add(dependency);
@@ -234,6 +240,18 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 							}
 						}
 					}
+				}
+			}
+
+			// If we depend on profiles, then we may have stereotype applications that need to resolve against that schema.
+			// In such case, re-load the model resource to resolve the stereotype schema
+			if(loadedProfiles && Iterables.any(result.getContents(), Predicates.instanceOf(AnyType.class))) {
+				try {
+					result.unload();
+					result.load(null);
+				} catch (Exception e) {
+					e.printStackTrace();
+					fail("Error re-loading resource to resolve stereotype schema: " + e.getLocalizedMessage());
 				}
 			}
 		} finally {

@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.rules.ModelSetFixture;
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
@@ -42,7 +43,6 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -51,12 +51,15 @@ import com.google.common.base.Functions;
 
 
 /**
- * Automated tests for the {@link StereotypeApplicationRepairSnippet} class and its dependecies.
+ * Automated tests for the {@link StereotypeApplicationRepairSnippet} class and its dependencies.
  */
 public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest {
 
 	@Rule
-	public ModelSetFixture modelSet = new ModelSetFixture();
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+
+	@Rule
+	public final ModelSetFixture modelSet = new ModelSetFixture();
 
 	private Profile profile;
 
@@ -156,7 +159,7 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 		assertThat("Wrong repair action", action.kind(), is(IRepairAction.Kind.DELETE));
 
 		repair(schema, action);
-		
+
 		assertThat("Stereotypes not deleted.", modelSet.getModelResource().getContents().size(), is(1));
 	}
 
@@ -171,18 +174,9 @@ public class StereotypeApplicationRepairSnippetTest extends AbstractPapyrusTest 
 		stereotype = profile.getOwnedStereotype("Stereo");
 		class1 = (Class)modelSet.getModel().getOwnedType("Class1");
 
-		fixture = new StereotypeApplicationRepairSnippet(Functions.constant(profile));
+		fixture = houseKeeper.cleanUpLater(new StereotypeApplicationRepairSnippet(Functions.constant(profile)), "dispose", modelSet.getResourceSet());
 		fixture.start(modelSet.getResourceSet());
-		zombies = fixture.getZombieStereotypes(modelSet.getModelResource(), modelSet.getModel());
-	}
-
-	@After
-	public void destroyFixture() {
-		class1 = null;
-		stereotype = null;
-		profile = null;
-		fixture.dispose(modelSet.getResourceSet());
-		fixture = null;
+		houseKeeper.setField("zombies", fixture.getZombieStereotypes(modelSet.getModelResource(), modelSet.getModel()));
 	}
 
 	void repair(final EPackage schema, final IRepairAction action) {

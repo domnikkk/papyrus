@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Nested1="http://Profile/schemas/Nested1/_U6h_ANXnEeOlftjDtxgO1Q/1" xmlns:Nested1_1="http://Profile/schemas/Nested1/_RleZoNXlEeOlftjDtxgO1Q/0" xmlns:Nested2="http://Profile/schemas/Nested2/_Rlg159XlEeOlftjDtxgO1Q/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://Profile/schemas/Nested1/_U6h_ANXnEeOlftjDtxgO1Q/1 nested.profile.uml#_U6h_AdXnEeOlftjDtxgO1Q http://Profile/schemas/Nested1/_RleZoNXlEeOlftjDtxgO1Q/0 nested.profile.uml#_Rlg14NXlEeOlftjDtxgO1Q http://Profile/schemas/Nested2/_Rlg159XlEeOlftjDtxgO1Q/0 nested.profile.uml#_Rlhc8NXlEeOlftjDtxgO1Q">
+  <uml:Model xmi:id="_fTGnQNXlEeOlftjDtxgO1Q" name="Model">
+    <packageImport xmi:id="_fTGnQdXlEeOlftjDtxgO1Q">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_pMREwNXlEeOlftjDtxgO1Q" name="Package1">
+      <packagedElement xmi:type="uml:Class" xmi:id="_zvUMwNXlEeOlftjDtxgO1Q" name="Class1"/>
+      <profileApplication xmi:id="_KqUI4NXmEeOlftjDtxgO1Q">
+        <eAnnotations xmi:id="_KrgbsNXmEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="nested.profile.uml#_U6h_AdXnEeOlftjDtxgO1Q"/>
+        </eAnnotations>
+        <appliedProfile href="nested.profile.uml#_s6jw4NXkEeOlftjDtxgO1Q"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_qpR1UNXlEeOlftjDtxgO1Q" name="Package2">
+      <packagedElement xmi:type="uml:Class" xmi:id="_-aof8NXlEeOlftjDtxgO1Q" name="Class2">
+        <ownedAttribute xmi:id="_AV6g4NXmEeOlftjDtxgO1Q" name="class1" type="_zvUMwNXlEeOlftjDtxgO1Q"/>
+      </packagedElement>
+      <profileApplication xmi:id="_M8bVcNXmEeOlftjDtxgO1Q">
+        <eAnnotations xmi:id="_M9Qb4NXmEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="nested.profile.uml#_Rlhc8NXlEeOlftjDtxgO1Q"/>
+        </eAnnotations>
+        <appliedProfile href="nested.profile.uml#_t0fpkNXkEeOlftjDtxgO1Q"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wta3INXnEeOlftjDtxgO1Q" name="Class0"/>
+    <profileApplication xmi:id="_lJOGENXlEeOlftjDtxgO1Q">
+      <eAnnotations xmi:id="_lKEaoNXlEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="nested.profile.uml#_RldLgNXlEeOlftjDtxgO1Q"/>
+      </eAnnotations>
+      <appliedProfile href="nested.profile.uml#_ruke4NXkEeOlftjDtxgO1Q"/>
+    </profileApplication>
+    <profileApplication xmi:id="_lKFBsNXlEeOlftjDtxgO1Q">
+      <eAnnotations xmi:id="_lK7WQNXlEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="nested.profile.uml#_Rlg14NXlEeOlftjDtxgO1Q"/>
+      </eAnnotations>
+      <appliedProfile href="nested.profile.uml#_s6jw4NXkEeOlftjDtxgO1Q"/>
+    </profileApplication>
+  </uml:Model>
+  <Nested1:Stereo1 xmi:id="_07j9cNXlEeOlftjDtxgO1Q" tag="new version" base_Class="_zvUMwNXlEeOlftjDtxgO1Q" reportable="true"/>
+  <Nested2:Stereo2 xmi:id="_N0TYoNXmEeOlftjDtxgO1Q" weight="15" base_Property="_AV6g4NXmEeOlftjDtxgO1Q"/>
+  <Nested1_1:Stereo1 xmi:id="_yZZQwNXnEeOlftjDtxgO1Q" tag="old version" base_Class="_wta3INXnEeOlftjDtxgO1Q"/>
+</xmi:XMI>

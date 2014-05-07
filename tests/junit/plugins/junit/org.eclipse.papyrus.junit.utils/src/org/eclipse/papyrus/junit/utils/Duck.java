@@ -50,6 +50,34 @@ public class Duck {
 	}
 
 	/**
+	 * Queries whether the duck understands the named message (implying that it can {@linkplain #quack(String, Object...) quack} it.
+	 * This accounts for signature overloading by finding the first method that accepts the given arguments.
+	 * 
+	 * @param methodName
+	 *        the method name
+	 * @param arg
+	 *        the arguments to the method
+	 * @return whether I can invoke the named method with these arguments
+	 */
+	public boolean understands(String methodName, Object... arg) {
+		return lookup(methodName, null, arg) != null;
+	}
+
+	/**
+	 * Queries whether the duck understands a message matching the given regex(implying that it can {@linkplain #quackp(String, Object...) quack} it.
+	 * This accounts for signature overloading by finding the first method that accepts the given arguments.
+	 * 
+	 * @param methodPattern
+	 *        the method name pattern
+	 * @param arg
+	 *        the arguments to the method
+	 * @return whether I can invoke the indicated method with these arguments
+	 */
+	public boolean understandsp(String methodPattern, Object... arg) {
+		return lookup(Pattern.compile(methodPattern), null, arg) != null;
+	}
+
+	/**
 	 * Reflectively invokes a method by name. This accounts for signature overloading by finding the first method that accepts the given arguments.
 	 * 
 	 * @param methodName

@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IStatus;
@@ -20,6 +21,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -36,6 +38,7 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProvid
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.ui.ZombieStereotypeDialogPresenter;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
@@ -44,6 +47,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 
@@ -133,29 +137,35 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	protected ZombieStereotypesDescriptor getZombieStereotypes(Resource resource, Element root) {
 		ZombieStereotypesDescriptor result = null;
 
-		Package contextPackage = root.getNearestPackage();
-
-		// Could be a Class or something that is a disconnected controlled unit?
-		if(contextPackage != null) {
-			Collection<ProfileApplication> profileApplications = contextPackage.getAllProfileApplications();
-			Set<EPackage> appliedDefinitions = getAppliedDefinitions(profileApplications);
-
-			Function<? super EPackage, Profile> profileSupplier = dynamicProfileSupplier;
-			if(profileSupplier == null) {
-				profileSupplier = presenter.getDynamicProfileSupplier();
+		Collection<ProfileApplication> profileApplications = Lists.newArrayList();
+		for(TreeIterator<EObject> iter = EcoreUtil.getAllProperContents(Collections.singleton(root), false); iter.hasNext();) {
+			EObject next = iter.next();
+			if(next instanceof ProfileApplication) {
+				profileApplications.add((ProfileApplication)next);
+				iter.prune();
+			} else if(!(next instanceof Package) && !(next instanceof Component)) {
+				// No sense looking for packages except in the things that can contain packages
+				iter.prune();
 			}
+		}
 
-			ZombieStereotypesDescriptor zombies = new ZombieStereotypesDescriptor(resource, root, appliedDefinitions, profileSupplier, getLabelProvider());
+		Set<EPackage> appliedDefinitions = getAppliedDefinitions(profileApplications);
 
-			for(EObject next : resource.getContents()) {
-				if(!(next instanceof Element)) {
-					zombies.analyze(next);
-				}
+		Function<? super EPackage, Profile> profileSupplier = dynamicProfileSupplier;
+		if(profileSupplier == null) {
+			profileSupplier = presenter.getDynamicProfileSupplier();
+		}
+
+		ZombieStereotypesDescriptor zombies = new ZombieStereotypesDescriptor(resource, root, appliedDefinitions, profileSupplier, getLabelProvider());
+
+		for(EObject next : resource.getContents()) {
+			if(!(next instanceof Element)) {
+				zombies.analyze(next);
 			}
+		}
 
-			if(zombies.hasZombies()) {
-				result = zombies;
-			}
+		if(zombies.hasZombies()) {
+			result = zombies;
 		}
 
 		return result;

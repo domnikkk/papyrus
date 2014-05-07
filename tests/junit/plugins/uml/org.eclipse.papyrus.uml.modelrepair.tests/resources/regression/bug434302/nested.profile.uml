@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g">
+  <uml:Profile xmi:id="_ruke4NXkEeOlftjDtxgO1Q" name="Profile" metamodelReference="_ruke4dXkEeOlftjDtxgO1Q">
+    <eAnnotations xmi:id="_RlckcNXlEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <contents xmi:type="ecore:EPackage" xmi:id="_RldLgNXlEeOlftjDtxgO1Q" name="Profile" nsURI="http:///schemas/Profile/_RlavQNXlEeOlftjDtxgO1Q/0" nsPrefix="Profile">
+        <eAnnotations xmi:id="_RldLgdXlEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_s6jw4NXkEeOlftjDtxgO1Q"/>
+        <eAnnotations xmi:id="_RlirENXlEeOlftjDtxgO1Q" source="PapyrusVersion">
+          <details xmi:id="_RlirEdXlEeOlftjDtxgO1Q" key="Version" value="0.0.1"/>
+          <details xmi:id="_RlirEtXlEeOlftjDtxgO1Q" key="Comment" value=""/>
+          <details xmi:id="_RlirE9XlEeOlftjDtxgO1Q" key="Copyright" value=""/>
+          <details xmi:id="_RlirFNXlEeOlftjDtxgO1Q" key="Date" value="2014-05-07"/>
+          <details xmi:id="_RlirFdXlEeOlftjDtxgO1Q" key="Author" value="Christian W. Damus"/>
+        </eAnnotations>
+      </contents>
+    </eAnnotations>
+    <packageImport xmi:id="_ruke4dXkEeOlftjDtxgO1Q">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:id="_ruke4tXkEeOlftjDtxgO1Q">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Profile" xmi:id="_s6jw4NXkEeOlftjDtxgO1Q" name="Nested1" metaclassReference="_0z99INXkEeOlftjDtxgO1Q">
+      <eAnnotations xmi:id="_RlgO0NXlEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <contents xmi:type="ecore:EPackage" xmi:id="_U6h_AdXnEeOlftjDtxgO1Q" name="Nested1" nsURI="http://Profile/schemas/Nested1/_U6h_ANXnEeOlftjDtxgO1Q/1" nsPrefix="Nested1">
+          <eAnnotations xmi:id="_WPeYsNXnEeOlftjDtxgO1Q" source="PapyrusVersion">
+            <details xmi:id="_WPeYsdXnEeOlftjDtxgO1Q" key="Version" value="0.0.2"/>
+            <details xmi:id="_WPeYstXnEeOlftjDtxgO1Q" key="Comment" value=""/>
+            <details xmi:id="_WPeYs9XnEeOlftjDtxgO1Q" key="Copyright" value=""/>
+            <details xmi:id="_WPeYtNXnEeOlftjDtxgO1Q" key="Date" value="2014-05-07"/>
+            <details xmi:id="_WPeYtdXnEeOlftjDtxgO1Q" key="Author" value="Christian W. Damus"/>
+          </eAnnotations>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_U6h_AtXnEeOlftjDtxgO1Q" name="Stereo1">
+            <eAnnotations xmi:id="_U6h_A9XnEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_14hxcNXkEeOlftjDtxgO1Q"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U6h_BNXnEeOlftjDtxgO1Q" name="tag" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U6h_BtXnEeOlftjDtxgO1Q" name="base_Class" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U6h_CNXnEeOlftjDtxgO1Q" name="reportable" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Boolean"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </contents>
+        <contents xmi:type="ecore:EPackage" xmi:id="_Rlg14NXlEeOlftjDtxgO1Q" name="Nested1" nsURI="http://Profile/schemas/Nested1/_RleZoNXlEeOlftjDtxgO1Q/0" nsPrefix="Nested1">
+          <eAnnotations xmi:id="_RljSIdXlEeOlftjDtxgO1Q" source="PapyrusVersion">
+            <details xmi:id="_RljSItXlEeOlftjDtxgO1Q" key="Version" value="0.0.1"/>
+            <details xmi:id="_RljSI9XlEeOlftjDtxgO1Q" key="Comment" value=""/>
+            <details xmi:id="_RljSJNXlEeOlftjDtxgO1Q" key="Copyright" value=""/>
+            <details xmi:id="_RljSJdXlEeOlftjDtxgO1Q" key="Date" value="2014-05-07"/>
+            <details xmi:id="_RljSJtXlEeOlftjDtxgO1Q" key="Author" value="Christian W. Damus"/>
+          </eAnnotations>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_Rlg14dXlEeOlftjDtxgO1Q" name="Stereo1">
+            <eAnnotations xmi:id="_Rlg14tXlEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_14hxcNXkEeOlftjDtxgO1Q"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_Rlg149XlEeOlftjDtxgO1Q" name="tag" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_Rlg15dXlEeOlftjDtxgO1Q" name="base_Class" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </contents>
+      </eAnnotations>
+      <elementImport xmi:id="_0z99INXkEeOlftjDtxgO1Q" alias="Class">
+        <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </elementImport>
+      <packagedElement xmi:type="uml:Stereotype" xmi:id="_14hxcNXkEeOlftjDtxgO1Q" name="Stereo1">
+        <ownedAttribute xmi:id="_3DjaINXkEeOlftjDtxgO1Q" name="tag">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_-MiPANXkEeOlftjDtxgO1Q" name="base_Class" association="_-Mi2ENXkEeOlftjDtxgO1Q">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_J_LrwNXnEeOlftjDtxgO1Q" name="reportable">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_-Mi2ENXkEeOlftjDtxgO1Q" name="E_Stereo1_Class1" memberEnd="_-Mi2EdXkEeOlftjDtxgO1Q _-MiPANXkEeOlftjDtxgO1Q">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_-Mi2EdXkEeOlftjDtxgO1Q" name="extension_Stereo1" type="_14hxcNXkEeOlftjDtxgO1Q" aggregation="composite" association="_-Mi2ENXkEeOlftjDtxgO1Q"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Profile" xmi:id="_t0fpkNXkEeOlftjDtxgO1Q" name="Nested2" metaclassReference="_E2JnUNXlEeOlftjDtxgO1Q">
+      <eAnnotations xmi:id="_Rlg16NXlEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <contents xmi:type="ecore:EPackage" xmi:id="_Rlhc8NXlEeOlftjDtxgO1Q" name="Nested2" nsURI="http://Profile/schemas/Nested2/_Rlg159XlEeOlftjDtxgO1Q/0" nsPrefix="Nested2">
+          <eAnnotations xmi:id="_Rlj5MNXlEeOlftjDtxgO1Q" source="PapyrusVersion">
+            <details xmi:id="_Rlj5MdXlEeOlftjDtxgO1Q" key="Version" value="0.0.1"/>
+            <details xmi:id="_Rlj5MtXlEeOlftjDtxgO1Q" key="Comment" value=""/>
+            <details xmi:id="_Rlj5M9XlEeOlftjDtxgO1Q" key="Copyright" value=""/>
+            <details xmi:id="_Rlj5NNXlEeOlftjDtxgO1Q" key="Date" value="2014-05-07"/>
+            <details xmi:id="_Rlj5NdXlEeOlftjDtxgO1Q" key="Author" value="Christian W. Damus"/>
+          </eAnnotations>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_Rlhc8dXlEeOlftjDtxgO1Q" name="Stereo2">
+            <eAnnotations xmi:id="_Rlhc8tXlEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_F4GMgNXlEeOlftjDtxgO1Q"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_Rlhc89XlEeOlftjDtxgO1Q" name="weight" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_Rlhc9dXlEeOlftjDtxgO1Q" name="base_Property" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </contents>
+      </eAnnotations>
+      <elementImport xmi:id="_E2JnUNXlEeOlftjDtxgO1Q" alias="Property">
+        <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      </elementImport>
+      <packagedElement xmi:type="uml:Stereotype" xmi:id="_F4GMgNXlEeOlftjDtxgO1Q" name="Stereo2">
+        <ownedAttribute xmi:id="_JHReQNXlEeOlftjDtxgO1Q" name="weight">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_OXokoNXlEeOlftjDtxgO1Q" name="base_Property" association="_OXpLsNXlEeOlftjDtxgO1Q">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_OXpLsNXlEeOlftjDtxgO1Q" name="E_Stereo2_Property1" memberEnd="_OXpLsdXlEeOlftjDtxgO1Q _OXokoNXlEeOlftjDtxgO1Q">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_OXpLsdXlEeOlftjDtxgO1Q" name="extension_Stereo2" type="_F4GMgNXlEeOlftjDtxgO1Q" aggregation="composite" association="_OXpLsNXlEeOlftjDtxgO1Q"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_4QEQkNXkEeOlftjDtxgO1Q">
+      <eAnnotations xmi:id="_4Qkm4NXkEeOlftjDtxgO1Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+  </uml:Profile>
+  <ActionLanguage:TextualRepresentation xmi:id="_4QmcENXkEeOlftjDtxgO1Q" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+</xmi:XMI>

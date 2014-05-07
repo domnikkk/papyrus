@@ -13,12 +13,14 @@
 package org.eclipse.papyrus.junit.utils.rules;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -29,20 +31,57 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.junit.utils.Duck;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
 import org.eclipse.papyrus.junit.utils.ProjectUtils;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper.Disposer;
 import org.osgi.framework.FrameworkUtil;
 
+import com.google.common.base.Function;
+import com.google.common.base.Functions;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 public abstract class AbstractHouseKeeperRule {
+
+	private static final Function<Object, Disposer<Object>> DISPOSER_FUNCTION;
 
 	Object test;
 
 	String testName;
 
 	private List<Runnable> cleanUpActions;
+
+	static {
+		final Map<Class<?>, Function<Object, Disposer<?>>> disposers = Maps.newLinkedHashMap();
+
+		ResourceSetDisposer.register(disposers);
+		TransactionalEditingDomainDisposer.register(disposers);
+		WorkspaceResourceDisposer.register(disposers);
+
+		// This one must be last because it matches any object
+		ReflectiveDisposer.register(disposers);
+
+		DISPOSER_FUNCTION = new Function<Object, Disposer<Object>>() {
+
+			private final Function<Object, Disposer<?>> nullFunction = Functions.constant(null);
+
+			public Disposer<Object> apply(Object input) {
+				Function<Object, Disposer<?>> resultFunction = nullFunction;
+
+				for(Map.Entry<Class<?>, Function<Object, Disposer<?>>> next : disposers.entrySet()) {
+					if(next.getKey().isInstance(input)) {
+						resultFunction = next.getValue();
+						break;
+					}
+				}
+
+				@SuppressWarnings("unchecked")
+				Disposer<Object> result = (Disposer<Object>)resultFunction.apply(input);
+				return result;
+			}
+		};
+	}
 
 	AbstractHouseKeeperRule() {
 		super();
@@ -55,6 +94,23 @@ public abstract class AbstractHouseKeeperRule {
 	 */
 	public final String getTestName() {
 		return testName;
+	}
+
+	/**
+	 * Adds an {@code object} to clean up later, with a {@code disposer} method that is invoked reflectively to do the cleaning up.
+	 * 
+	 * @param object
+	 *        an object to dispose after the test has completed
+	 * @param disposer
+	 *        the disposal method name
+	 * @param arg
+	 *        arguments (if any) to the {@code disposer} method
+	 * 
+	 * @return the {@code object}, for convenience
+	 */
+	public <T> T cleanUpLater(T object, String disposer, Object... arg) {
+		assertThat("No such disposal method", new Duck(object).understands(disposer, arg), is(true));
+		return cleanUpLater(object, new ReflectiveDisposer(disposer, arg));
 	}
 
 	/**
@@ -75,6 +131,22 @@ public abstract class AbstractHouseKeeperRule {
 		// Clean up in reverse order to best manage dependencies between cleaned-up objects
 		cleanUpActions.add(0, new CleanUpAction(object, disposer));
 		return object;
+	}
+
+	/**
+	 * Adds an {@code object} to clean up later, using the appropriate built-in disposer.
+	 * Fails if the {@code object} does not have a corresponding built-in disposer.
+	 * 
+	 * @param object
+	 *        an object to dispose after the test has completed
+	 * 
+	 * @return the {@code object}, for convenience
+	 */
+	public <T> T cleanUpLater(T object) {
+		@SuppressWarnings("unchecked")
+		Disposer<T> disposer = (Disposer<T>)DISPOSER_FUNCTION.apply(object);
+		assertThat("No built-in disposer available", disposer, notNullValue());
+		return cleanUpLater(object, disposer);
 	}
 
 	/**
@@ -163,9 +235,7 @@ public abstract class AbstractHouseKeeperRule {
 	 */
 	public <T> T getField(String fieldName) {
 		try {
-			Field field = getTestClass().getDeclaredField(fieldName);
-			field.setAccessible(true);
-			assertThat(String.format("Field is not %sstatic", isStatic() ? "" : "non-"), field.getModifiers() & Modifier.STATIC, is(isStatic() ? Modifier.STATIC : 0));
+			Field field = field(fieldName);
 
 			@SuppressWarnings("unchecked")
 			T result = (T)field.get(test);
@@ -177,6 +247,44 @@ public abstract class AbstractHouseKeeperRule {
 			fail(String.format("Could not access field %s of test instance.", fieldName));
 			return null; // Unreachable
 		}
+	}
+
+	Field field(String fieldName) {
+		Field result = null;
+
+		try {
+			result = getTestClass().getDeclaredField(fieldName);
+			result.setAccessible(true);
+			assertThat(String.format("Field is not %sstatic", isStatic() ? "" : "non-"), Modifier.isStatic(result.getModifiers()), is(isStatic()));
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(String.format("Could not access field %s of test instance.", fieldName));
+		}
+
+		return result;
+	}
+
+	/**
+	 * Sets the value of the named field of the test instance and ensures that it will be automatically cleared after the test completes.
+	 * 
+	 * @param fieldName
+	 *        the field to access now and clear later
+	 * @param value
+	 *        the value to set
+	 * 
+	 * @return the new value of the field
+	 */
+	public <T> T setField(String fieldName, T value) {
+		try {
+			Field field = field(fieldName);
+			field.set(test, value);
+			cleanUpLater(field, new FieldDisposer());
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(String.format("Could not access field %s of test instance.", fieldName));
+		}
+
+		return value;
 	}
 
 	abstract boolean isStatic();
@@ -265,6 +373,10 @@ public abstract class AbstractHouseKeeperRule {
 			super();
 		}
 
+		static void register(Map<Class<?>, Function<Object, Disposer<?>>> disposers) {
+			disposers.put(ResourceSet.class, Functions.<Disposer<?>> constant(INSTANCE));
+		}
+
 		public void dispose(ResourceSet object) {
 			EMFHelper.unload(object);
 		}
@@ -276,6 +388,10 @@ public abstract class AbstractHouseKeeperRule {
 
 		private TransactionalEditingDomainDisposer() {
 			super();
+		}
+
+		static void register(Map<Class<?>, Function<Object, Disposer<?>>> disposers) {
+			disposers.put(TransactionalEditingDomain.class, Functions.<Disposer<?>> constant(INSTANCE));
 		}
 
 		public void dispose(TransactionalEditingDomain object) {
@@ -294,6 +410,10 @@ public abstract class AbstractHouseKeeperRule {
 
 		static final WorkspaceResourceDisposer INSTANCE = new WorkspaceResourceDisposer();
 
+		static void register(Map<Class<?>, Function<Object, Disposer<?>>> disposers) {
+			disposers.put(IResource.class, Functions.<Disposer<?>> constant(INSTANCE));
+		}
+
 		public void dispose(IResource object) throws Exception {
 			switch(object.getType()) {
 			case IResource.PROJECT:
@@ -306,6 +426,35 @@ public abstract class AbstractHouseKeeperRule {
 				fail("Cannot delete resource " + object);
 				break;
 			}
+		}
+	}
+
+	private static final class ReflectiveDisposer implements Disposer<Object> {
+
+		static final ReflectiveDisposer INSTANCE = new ReflectiveDisposer("dispose");
+
+		private final String disposeMethod;
+
+		private final Object[] arguments;
+
+		ReflectiveDisposer(String methodName, Object... arguments) {
+			this.disposeMethod = methodName;
+			this.arguments = arguments;
+		}
+
+		static void register(Map<Class<?>, Function<Object, Disposer<?>>> disposers) {
+			disposers.put(Object.class, new Function<Object, Disposer<?>>() {
+
+				public Disposer<?> apply(Object input) {
+					Duck duck = new Duck(input);
+
+					return duck.understands(INSTANCE.disposeMethod, INSTANCE.arguments) ? INSTANCE : null;
+				}
+			});
+		}
+
+		public void dispose(Object object) throws Exception {
+			new Duck(object).quack("dispose", arguments);
 		}
 	}
 }
