@@ -1,6 +1,5 @@
 Manifest-Version: 1.0
-Export-Package: org.eclipse.papyrus.acceleo,
- org.eclipse.papyrus.acceleo.extensions
+Export-Package: org.eclipse.papyrus.acceleo
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.engine;bundle-version="3.2.2",
  org.eclipse.acceleo.parser;bundle-version="3.2.2",

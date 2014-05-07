@@ -152,8 +152,9 @@ public class CppGenUtils {
         }
 
         for(Namespace ns : ne.allNamespaces()) {
-        	// don't add top-level
-        	if(ns.getOwner() != null) {
+        	// don't add qualified name for specific top-level namespace "root".
+        	// TODO: specific workaround for the way Qompass creates its target model. Needs to be removed.
+        	if(!((ns.getOwner() == null) && ns.getName().equals("root"))) { //$NON-NLS-1$
         		qName = ns.getName() + "::" + qName; //$NON-NLS-1$
         	}
         }

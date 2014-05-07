@@ -22,12 +22,12 @@
 [constIncludeHFile()/]
 [IncludeDirective( getNearestPackage().getFullPath() + '/' + class.name + '.' + getHeaderSuffix() )/]
 
-[CppIncludeBody()/]
-
 [constDerivedIncludes()/]
 [for (path : String | CppClassAllIncludesDeclarationBody()->flatten()->asOrderedSet())]
 [path.IncludeDirective()/]
 [/for]
+
+[CppIncludeBody()/]
 
 [openNS(class)/]
 [CppStaticAttributes(class)/]

@@ -91,7 +91,7 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 	 * @param selectedElement
 	 *        the selected element
 	 * @param diagnostician
-	 *        a diagnocstician adapted to a domain see {@link IPapyrusDiagnostician}
+	 *        a diagnostician adapted to a domain see {@link IPapyrusDiagnostician}
 	 */
 	public AbstractValidateCommand(String label, TransactionalEditingDomain domain, EObject selectedElement, IPapyrusDiagnostician diagnostician) {
 		super(domain, label, Collections.EMPTY_LIST);

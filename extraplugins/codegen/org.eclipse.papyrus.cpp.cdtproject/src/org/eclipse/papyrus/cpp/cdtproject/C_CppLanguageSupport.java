@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.C_Cpp.ExternLibrary;
-import org.eclipse.papyrus.acceleo.extensions.ILangSupport;
+import org.eclipse.papyrus.codegen.extensionpoints.ILangSupport;
 import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
@@ -34,7 +34,6 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -59,7 +58,7 @@ public class C_CppLanguageSupport implements ILangSupport {
 	 * @param projectName
 	 * @return
 	 */
-	public IProject createProject(String projectName, InstanceSpecification node)
+	public IProject createProject(String projectName, String targetOS)
 	{
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
@@ -91,7 +90,7 @@ public class C_CppLanguageSupport implements ILangSupport {
 			throw new RuntimeException("could not create CDT project ..."); //$NON-NLS-1$
 		}
 		setProject(project);
-		setSettings(node);
+		setSettings(targetOS);
 		return project;
 	}
 
@@ -103,7 +102,7 @@ public class C_CppLanguageSupport implements ILangSupport {
 		return m_project;
 	}
 
-	public void setSettings(InstanceSpecification node)
+	public void setSettings(String targetOS)
 	{
 		try {
 			// ((CProject) project).
@@ -129,19 +128,9 @@ public class C_CppLanguageSupport implements ILangSupport {
 
 				// define name of used operating system from model (attribute of "Target" stereotype)
 				// and add it to list of macros
-				/*
-				Target target = UMLUtil.getStereotypeApplication(node, Target.class);
-				if(target == null) {
-					// get information from node referenced by the instance
-					target = UMLUtil.getStereotypeApplication(DepUtils.getClassifier(node), Target.class);
+				if (targetOS != null) {
+					macros.add("OS_" + targetOS); //$NON-NLS-1$
 				}
-				if(target != null) {
-					OperatingSystem os = target.getUsedOS();
-					if(os != null) {
-						macros.add("OS_" + os.getBase_Class().getName()); //$NON-NLS-1$
-					}
-				}
-				*/
 				
 				// define macros
 				EList<ICLanguageSettingEntry> icMacros =

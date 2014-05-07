@@ -56,7 +56,7 @@ public class SyncModelToCDT {
 			// get the container for the current element
 			ModelElementsCreator mec = new CppModelElementsCreator(modelProject);
 			srcPkg = mec.getContainer(classifier);
-			mec.createPackageableElement(srcPkg, null, classifier); // need listener for sync in both directions!
+			mec.createPackageableElement(srcPkg, null, classifier, false); // need listener for sync in both directions!
 		
 			cppFile = srcPkg.getFile(new Path(name + ".cpp"));	// TODO: extension is configurable! //$NON-NLS-1$
 	

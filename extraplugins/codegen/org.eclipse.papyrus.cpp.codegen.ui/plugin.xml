@@ -29,6 +29,16 @@
       </command>
    </extension>
    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Re-write CDT project settings"
+            categoryId="org.eclipse.papyrus.editor.category"
+            id="org.eclipse.papyrus.cpp.codegen.cdtproject"
+            defaultHandler="org.eclipse.papyrus.cpp.codegen.ui.handlers.CDTprojectHandler"
+            name="Configure CDT project">
+      </command>
+   </extension>
+   <extension
          point="org.eclipse.ui.preferencePages">
       <page
             category="org.eclipse.papyrus.infra.core.sasheditor.preferences.generalcategory"

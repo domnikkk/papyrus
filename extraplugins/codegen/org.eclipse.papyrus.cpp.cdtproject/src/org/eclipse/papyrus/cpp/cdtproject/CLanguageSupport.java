@@ -2,7 +2,7 @@ package org.eclipse.papyrus.cpp.cdtproject;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.papyrus.acceleo.extensions.ILangSupport;
+import org.eclipse.papyrus.codegen.extensionpoints.ILangSupport;
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenConstants;
 
 /**

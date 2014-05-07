@@ -102,7 +102,8 @@ abstract public class ModelElementsCreator {
 	protected IProject project;
 
 	/**
-	 * Main function for user calls. Creates code for a packageable element.
+	 * Main function for user calls. Creates code for a packageable element. In case of a passed package, the contained elements
+	 * are generated recursively.
 	 * 
 	 * @param monitor
 	 *        a progress monitor
@@ -112,7 +113,7 @@ abstract public class ModelElementsCreator {
 	 */
 	public void createPackageableElement(IProgressMonitor monitor, PackageableElement element) throws CoreException {
 		IContainer packageContainer = getContainer(element);
-		createPackageableElement(packageContainer, monitor, element);
+		createPackageableElement(packageContainer, monitor, element, true);
 	}
 
 	/**
@@ -127,9 +128,9 @@ abstract public class ModelElementsCreator {
 	 *        the element for which code should be generated
 	 * @throws CoreException
 	 */
-	public void createPackageableElement(IContainer packageContainer, IProgressMonitor monitor, PackageableElement element) throws CoreException {
+	public void createPackageableElement(IContainer packageContainer, IProgressMonitor monitor, PackageableElement element, boolean recursive) throws CoreException {
 		if(element instanceof Package) {
-			createPackage(packageContainer, monitor, (Package)element);
+			createPackage(packageContainer, monitor, (Package)element, recursive);
 		}
 		else if((element instanceof PrimitiveType) || (element instanceof Enumeration) || (element instanceof Usage)) {
 			// do nothing, included in package
@@ -249,7 +250,7 @@ abstract public class ModelElementsCreator {
 	 *        the package for which code should be created
 	 * @throws CoreException
 	 */
-	protected void createPackage(IContainer packageContainer, IProgressMonitor monitor, Package pkg) throws CoreException {
+	protected void createPackage(IContainer packageContainer, IProgressMonitor monitor, Package pkg, boolean recurse) throws CoreException {
 		if (monitor != null) {
 			monitor.subTask("generate package " + pkg.getQualifiedName()); //$NON-NLS-1$
 		}
@@ -266,11 +267,11 @@ abstract public class ModelElementsCreator {
 
 			createPackageFiles(packageContainer, monitor, pkg);
 
-			// Continue generation parsing package content
-			// If CppNoCodeGen on package, it applies to its content
-
-			for(PackageableElement currentElement : pkg.getPackagedElements()) {
-				createPackageableElement(packageContainer, monitor, currentElement);
+			if (recurse) {
+				// Continue generation parsing package contents
+				for(PackageableElement currentElement : pkg.getPackagedElements()) {
+					createPackageableElement(packageContainer, monitor, currentElement, recurse);
+				}
 			}
 		}
 	}
