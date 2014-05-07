@@ -72,6 +72,16 @@ public abstract class AbstractUMLShowHideRelatedLinkEditPolicy extends AbstractS
 	public AbstractUMLShowHideRelatedLinkEditPolicy(final DiagramEditPart host) {
 		super(host);
 	}
+	
+	/**
+	 * 
+	 * Constructor.
+	 * 
+	 *
+	 */
+	public AbstractUMLShowHideRelatedLinkEditPolicy() {
+		super(null);
+	}
 
 
 	/**
