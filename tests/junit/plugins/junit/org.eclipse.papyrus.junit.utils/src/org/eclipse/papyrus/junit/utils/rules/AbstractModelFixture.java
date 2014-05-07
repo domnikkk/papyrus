@@ -278,7 +278,10 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 
 		if(!result.isLoaded()) {
 			if(resourceSet instanceof ModelSet) {
-				((ModelSet)resourceSet).getInternal().setPrimaryModelResourceURI(modelURI);
+				ModelSet modelSet = (ModelSet)resourceSet;
+				if(modelSet.getURIWithoutExtension() == null) {
+					modelSet.getInternal().setPrimaryModelResourceURI(modelURI);
+				}
 			}
 
 			try {
