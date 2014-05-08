@@ -25,15 +25,21 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.emf.providers.AdapterFactoryHierarchicContentProvider;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
 import org.eclipse.papyrus.infra.tools.util.UIUtil;
+import org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.ZombieStereotypesDescriptor;
+import org.eclipse.papyrus.uml.modelrepair.ui.providers.NestedProfilesAdapterFactory;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eclipse.uml2.common.util.UML2Util;
@@ -41,7 +47,9 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 
 import com.google.common.base.Function;
+import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 
 
@@ -172,6 +180,10 @@ public class ZombieStereotypeDialogPresenter {
 		}
 	}
 
+	boolean hasNestedProfiles(Profile profile) {
+		return Iterators.any(profile.eAllContents(), Predicates.instanceOf(Profile.class));
+	}
+
 	//
 	// Nested types
 	//
@@ -210,6 +222,48 @@ public class ZombieStereotypeDialogPresenter {
 				URI selectedProfileURI = task.get();
 				if(selectedProfileURI != null) {
 					result = UML2Util.load(modelSet, selectedProfileURI, UMLPackage.Literals.PROFILE);
+
+					if(hasNestedProfiles(result)) {
+						// Need to select a particular profile from this resource
+						final TreeSelectorDialog selectorDlg = new TreeSelectorDialog(parentWindow.getShell());
+
+						NestedProfilesAdapterFactory factory = new NestedProfilesAdapterFactory();
+						ITreeContentProvider content = new AdapterFactoryHierarchicContentProvider(factory);
+						ILabelProvider labels = new AdapterFactoryLabelProvider(factory);
+
+						try {
+							selectorDlg.setContentProvider(content);
+							selectorDlg.setLabelProvider(labels);
+							final Object dlgInput = result.eResource();
+
+							Future<Profile> specific = uiExecutor.submit(new Callable<Profile>() {
+
+								public Profile call() throws Exception {
+									selectorDlg.setTitle("Select a Profile");
+									selectorDlg.setDescription("Select a Profile from within the chosen resource.");
+									selectorDlg.setHelpAvailable(false);
+									selectorDlg.setBlockOnOpen(true);
+									selectorDlg.setInput(dlgInput);
+									selectorDlg.open();
+
+									Profile result = null;
+
+									Object[] selected = selectorDlg.getResult();
+									if((selected != null) && (selected.length > 0)) {
+										result = (Profile)selected[0];
+									}
+
+									return result;
+								}
+							});
+
+							result = specific.get();
+						} finally {
+							content.dispose();
+							labels.dispose();
+							factory.dispose();
+						}
+					}
 				}
 			} catch (ExecutionException e) {
 				Activator.log.error("Profile selection dialog presentation failed.", e); //$NON-NLS-1$

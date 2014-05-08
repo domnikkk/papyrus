@@ -123,8 +123,8 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		Element root = getRootUMLElement(resource);
 
 		// Only check for zombies in resources that we can modify (those being the resources in the user model opened in the editor)
-		if((root != null) && !EMFHelper.isReadOnly(resource, EMFHelper.resolveEditingDomain(root))) {
-			result = getZombieStereotypes(resource, root);
+		if((root instanceof Package) && !EMFHelper.isReadOnly(resource, EMFHelper.resolveEditingDomain(root))) {
+			result = getZombieStereotypes(resource, (Package)root);
 		}
 
 		return result;
@@ -134,7 +134,7 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		return (Element)EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.ELEMENT);
 	}
 
-	protected ZombieStereotypesDescriptor getZombieStereotypes(Resource resource, Element root) {
+	protected ZombieStereotypesDescriptor getZombieStereotypes(Resource resource, Package root) {
 		ZombieStereotypesDescriptor result = null;
 
 		Collection<ProfileApplication> profileApplications = Lists.newArrayList();
