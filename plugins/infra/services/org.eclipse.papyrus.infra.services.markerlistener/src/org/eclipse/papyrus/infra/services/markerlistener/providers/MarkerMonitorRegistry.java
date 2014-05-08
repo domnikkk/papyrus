@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.markerlistener.providers;
 
@@ -16,7 +18,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.ecore.plugin.RegistryReader;
+import org.eclipse.papyrus.infra.core.utils.OneTimeRegistryReader;
 import org.eclipse.papyrus.infra.services.markerlistener.Activator;
 
 /**
@@ -42,30 +44,26 @@ public class MarkerMonitorRegistry {
 	// Nested types
 	//
 
-	private class MyRegistryReader
-			extends RegistryReader {
+	private class MyRegistryReader extends OneTimeRegistryReader {
 
 		private static final String A_CLASS = "class";
 
 		private static final String E_MONITOR = "monitor";
 
 		MyRegistryReader() {
-			super(Platform.getExtensionRegistry(), Activator.PLUGIN_ID,
-				EXT_POINT);
+			super(Platform.getExtensionRegistry(), Activator.PLUGIN_ID, EXT_POINT);
 		}
 
 		@Override
 		protected boolean readElement(IConfigurationElement element) {
 			boolean result = true;
 
-			if (E_MONITOR.equals(element.getName())) {
+			if(E_MONITOR.equals(element.getName())) {
 				try {
-					monitors.add((IMarkerMonitor) element
-						.createExecutableExtension(A_CLASS));
+					monitors.add((IMarkerMonitor)element.createExecutableExtension(A_CLASS));
 				} catch (Exception e) {
 					result = false;
-					Activator.log.error(
-						"Failed to instantiate marker monitor extension.", e);
+					Activator.log.error("Failed to instantiate marker monitor extension.", e);
 				}
 			}
 
