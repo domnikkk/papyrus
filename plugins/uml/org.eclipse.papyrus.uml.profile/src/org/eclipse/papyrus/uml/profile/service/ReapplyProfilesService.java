@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434302
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.service;
 
@@ -28,6 +30,7 @@ import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.uml.modelrepair.service.IStereotypeRepairService;
 import org.eclipse.papyrus.uml.profile.Activator;
 import org.eclipse.papyrus.uml.profile.service.ui.RefreshProfileDialog;
 import org.eclipse.papyrus.uml.profile.validation.ProfileValidationHelper;
@@ -53,6 +56,8 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 
 	private org.eclipse.uml2.uml.Package rootPackage;
 
+	private IStereotypeRepairService stereotypeRepairService;
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,6 +74,12 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 			lifecyleManager.addEditorLifecycleEventsListener(this);
 		} catch (ServiceException ex) {
 			return; //If the EditorLifecycleManager is not present, do nothing
+		}
+
+		try {
+			stereotypeRepairService = servicesRegistry.getService(IStereotypeRepairService.class);
+		} catch (ServiceException ex) {
+			// If there's no stereotype repair service, then we don't have to worry about waiting for it
 		}
 	}
 
@@ -170,6 +181,7 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 	 */
 	public void disposeService() throws ServiceException {
 		this.rootPackage = null;
+		this.stereotypeRepairService = null;
 		this.servicesRegistry = null;
 	}
 
@@ -177,8 +189,19 @@ public class ReapplyProfilesService implements IService, EditorLifecycleEventLis
 		//Nothing
 	}
 
-	public void postDisplay(IMultiDiagramEditor editor) {
-		checkProfiles(editor);
+	public void postDisplay(final IMultiDiagramEditor editor) {
+		if(stereotypeRepairService == null) {
+			// Just check profiles, now
+			checkProfiles(editor);
+		} else {
+			// Ensure that we only kick in the profile migration after any pending repair has completed
+			stereotypeRepairService.getPostRepairExecutor().execute(new Runnable() {
+
+				public void run() {
+					checkProfiles(editor);
+				}
+			});
+		}
 	}
 
 	public void beforeClose(IMultiDiagramEditor editor) {

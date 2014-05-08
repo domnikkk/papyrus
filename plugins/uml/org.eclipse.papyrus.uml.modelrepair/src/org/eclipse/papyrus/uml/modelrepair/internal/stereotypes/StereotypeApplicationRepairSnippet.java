@@ -111,10 +111,29 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 	}
 
 	protected void handleResourceLoaded(Resource resource) {
-		ZombieStereotypesDescriptor zombies = getZombieStereotypes(resource);
+		final ModelSet modelSet = (ModelSet)resource.getResourceSet();
 
-		if((zombies != null) && (presenter != null)) {
-			presenter.addZombies(zombies);
+		StereotypeRepairService.startedRepairing(modelSet);
+		boolean presented = false;
+
+		try {
+			ZombieStereotypesDescriptor zombies = getZombieStereotypes(resource);
+
+			if((zombies != null) && (presenter != null)) {
+				presenter.addZombies(zombies);
+				presenter.onPendingDone(new Runnable() {
+
+					public void run() {
+						StereotypeRepairService.finishedRepairing(modelSet);
+					}
+				});
+			}
+
+			presented = (presenter != null) && presenter.isPending();
+		} finally {
+			if(!presented) {
+				StereotypeRepairService.finishedRepairing(modelSet);
+			}
 		}
 	}
 

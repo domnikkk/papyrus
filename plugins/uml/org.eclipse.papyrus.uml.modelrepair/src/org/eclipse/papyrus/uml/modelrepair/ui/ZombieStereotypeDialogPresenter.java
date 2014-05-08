@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -75,6 +76,8 @@ public class ZombieStereotypeDialogPresenter {
 	private volatile boolean pending = false;
 
 	private final ExecutorService uiExecutor;
+
+	private ExecutorService pendingExecutor;
 
 	public ZombieStereotypeDialogPresenter(Shell parentShell, ModelSet modelSet) {
 		super();
@@ -164,6 +167,35 @@ public class ZombieStereotypeDialogPresenter {
 		try {
 			while(pending != expected) {
 				pendingCond.await();
+			}
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	public void onPendingDone(final Runnable runnable) {
+		lock.lock();
+		try {
+			if(!pending) {
+				// Just do it now
+				runnable.run();
+			} else {
+				// Schedule a wait
+				if(pendingExecutor == null) {
+					pendingExecutor = Executors.newSingleThreadExecutor();
+				}
+
+				pendingExecutor.execute(new Runnable() {
+
+					public void run() {
+						try {
+							awaitPending(false);
+							runnable.run();
+						} catch (InterruptedException e) {
+							// Oh, well. This runnable won't happen
+						}
+					}
+				});
 			}
 		} finally {
 			lock.unlock();
