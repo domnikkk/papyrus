@@ -48,6 +48,7 @@ import org.eclipse.papyrus.texteditor.cdt.modelresource.TextEditorModelSharedRes
 import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel;
 import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelFactory;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Operation;
@@ -139,7 +140,7 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 	 */
 	public void doExecute(final ServicesRegistry serviceRegistry) throws ServiceException, NotFoundException {
 		// Get the page manager allowing to add/open an editor.
-		IPageManager pageMngr = ServiceUtils.getInstance().getIPageManager(serviceRegistry);
+		final IPageManager pageMngr = ServiceUtils.getInstance().getIPageManager(serviceRegistry);
 				
 		Classifier classifierToEdit = getClassifierToEdit();
 		if (LocateCppProject.getTargetProject(classifierToEdit, true) == null) {
@@ -153,33 +154,48 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 			// add the new editor model to the sash.
 		}
 		editorModel.setSelectedObject(selectedEObject);
-		if (pageMngr.isOpen(editorModel)) {
-			// select existing editor
-			pageMngr.selectPage(editorModel);
-		}
-		else {
-			pageMngr.openPage(editorModel);
-		}
+		
+		final TextEditorModel editorModelFinal = editorModel;
+		// open asynchronously to prevent handler cycles, see bug 434484
+		Display.getDefault().syncExec(new Runnable() {
 
-		// move page to the RIGHT
-		DiSashModelManager modelMngr = ServiceUtils.getInstance().getService(DiSashModelManager.class, serviceRegistry);
-		ISashWindowsContentProvider sashContentProvider = modelMngr.getISashWindowsContentProvider();
-		Object rootModel = sashContentProvider.getRootModel();
-	
- 		if (rootModel instanceof TabFolder) {
- 			// root = tabFolder, i.e. there is a single folder
-			ISashWindowsContainer sashContainer = ServiceUtils.getInstance().getISashWindowsContainer(serviceRegistry);
-			int index = lookupIndex((TabFolder) rootModel, editorModel);
-			if (index != -1) {
-				sashContentProvider.createFolder(sashContainer.getSelectedTabFolderModel(), index, sashContainer.getSelectedTabFolderModel(), SWT.RIGHT);
+			@Override
+			public void run() {
+				if (pageMngr.isOpen(editorModelFinal)) {
+					// select existing editor
+					pageMngr.selectPage(editorModelFinal);
+				}
+				else {
+					pageMngr.openPage(editorModelFinal);
+				}
+				try {
+				// TODO Auto-generated method stub
+				// move page to the RIGHT
+				DiSashModelManager modelMngr = ServiceUtils.getInstance().getService(DiSashModelManager.class, serviceRegistry);
+				ISashWindowsContentProvider sashContentProvider = modelMngr.getISashWindowsContentProvider();
+				Object rootModel = sashContentProvider.getRootModel();
+			
+		 		if (rootModel instanceof TabFolder) {
+		 			// root = tabFolder, i.e. there is a single folder
+					ISashWindowsContainer sashContainer = ServiceUtils.getInstance().getISashWindowsContainer(serviceRegistry);
+					int index = lookupIndex((TabFolder) rootModel, editorModelFinal);
+					if (index != -1) {
+						sashContentProvider.createFolder(sashContainer.getSelectedTabFolderModel(), index, sashContainer.getSelectedTabFolderModel(), SWT.RIGHT);
+					}
+				}
+		 		else if (rootModel instanceof SashPanel) {
+		 			// multiple tab-folders exist. Find existing one and move editorModel to other
+		 			// TODO
+		 			// ISashWindowsContainer sashContainer = ServiceUtils.getInstance().getISashWindowsContainer(serviceRegistry);
+		 			// sashContentProvider.movePage(sashContainer.getSelectedTabFolderModel(), lookupIndex(sourceTab, editorModel), targetTabModel, -1);
+				}
+				} catch (ServiceException e) {
+					
+				}
 			}
-		}
- 		else if (rootModel instanceof SashPanel) {
- 			// multiple tab-folders exist. Find existing one and move editorModel to other
- 			// TODO
- 			// ISashWindowsContainer sashContainer = ServiceUtils.getInstance().getISashWindowsContainer(serviceRegistry);
- 			// sashContentProvider.movePage(sashContainer.getSelectedTabFolderModel(), lookupIndex(sourceTab, editorModel), targetTabModel, -1);
-		}
+			
+		});
+		
 	}
 
 	/**
