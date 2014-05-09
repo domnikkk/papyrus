@@ -12,6 +12,7 @@
  *  Christian W. Damus (CEA) - support non-IFile resources and object-level permissions (CDO)
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 429826
+ *  Christian W. Damus (CEA) - bug 422257
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.readonly;
@@ -29,6 +30,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -45,16 +47,13 @@ import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyEvent;
 
 import com.google.common.base.Optional;
+import com.google.common.collect.MapMaker;
 
 
 public class ReadOnlyManager implements IReadOnlyHandler2 {
 
-	//Using a WeakHashMap leads to a Memory Leak, because only the Key is weak. 
-	//The IReadOnlyHandler typically has a reference to its editingDomain, 
-	//which prevents garbage collection of the EditingDomain
-	//Workaround: when the (Papyrus) editing domain is disposed, it removes itself from this map
-	//This won't work for non-papyrus editing domains, which are still leaked (But we do not use non-papyrus editing domains which this ReadOnlyManager)
-	protected static Map<EditingDomain, IReadOnlyHandler2> roHandlers = new HashMap<EditingDomain, IReadOnlyHandler2>();
+	// Use weak values because the values otherwise retain the keys (indirectly)
+	protected static final ConcurrentMap<EditingDomain, IReadOnlyHandler2> roHandlers = new MapMaker().weakKeys().weakValues().makeMap();
 
 	private final CopyOnWriteArrayList<IReadOnlyListener> listeners = new CopyOnWriteArrayList<IReadOnlyListener>();
 	
@@ -67,7 +66,11 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 			roHandler = roHandlers.get(editingDomain);
 			if(roHandler == null) {
 				roHandler = new ReadOnlyManager(editingDomain);
-				roHandlers.put(editingDomain, roHandler);
+				IReadOnlyHandler2 existing = roHandlers.putIfAbsent(editingDomain, roHandler);
+				if(existing != null) {
+					// Another thread beat us to it since we checked for an existing instance
+					roHandler = existing;
+				}
 			}
 		}
 		

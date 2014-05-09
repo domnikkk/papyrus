@@ -22,7 +22,8 @@ Bundle-Vendor: %providerName
 Bundle-Version: 1.0.0.qualifier
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.infra.emf.readonly.Activator
-Import-Package: com.google.common.base;version="11.0.0"
+Import-Package: com.google.common.base;version="11.0.0",
+ com.google.common.collect;version="11.0.0"
 Bundle-SymbolicName: org.eclipse.papyrus.infra.emf.readonly;singleton:
  =true
 
