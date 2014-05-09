@@ -157,7 +157,7 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 		
 		final TextEditorModel editorModelFinal = editorModel;
 		// open asynchronously to prevent handler cycles, see bug 434484
-		Display.getDefault().syncExec(new Runnable() {
+		Display.getDefault().asyncExec(new Runnable() {
 
 			@Override
 			public void run() {
