@@ -142,7 +142,6 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when the editor is closed
 	 * (the case of profiles that have OCL constraints and, therefore, do have {@link ETypedElement}s of {@link EGenericType} type).
 	 */
-	@FailingTest("Awaiting a build with fixes for EMF Core bug 433027")
 	@Test
 	@SoftReferenceSensitive
 	@PluginResource("model/profile/model.di")
@@ -164,7 +163,7 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when when validation is run on them
 	 * (the case of profiles that have OCL constraints and, therefore, do have {@link ETypedElement}s of {@link EGenericType} type).
 	 */
-	@FailingTest("Awaiting a build with fixes for EMF Core bug 433027")
+	@FailingTest("OCL pivot environment has a memory leak: bug 434554")
 	@Test
 	@SoftReferenceSensitive
 	@PluginResource("model/profile/model.di")

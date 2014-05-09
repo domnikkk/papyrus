@@ -294,7 +294,7 @@
     <!-- EMF -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("EMF (Core)",0) -->
-      <rm:uri format="{0}/modeling/emf/emf/updates/milestones/">
+      <rm:uri format="{0}/modeling/emf/emf/updates/interim/">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
