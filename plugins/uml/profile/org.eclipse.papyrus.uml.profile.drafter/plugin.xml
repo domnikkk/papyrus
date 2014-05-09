@@ -11,6 +11,10 @@
             id="org.eclipse.papyrus.uml.profile.drafter.addprofile"
             name="Add Profile">
       </command>
+      <command
+            id="org.eclipse.papyrus.uml.profile.drafter.checkselection"
+            name="Check Selection Type">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -21,6 +25,10 @@
       <handler
             class="org.eclipse.papyrus.uml.profile.drafter.ui.handler.AddProfileHandler"
             commandId="org.eclipse.papyrus.uml.profile.drafter.addprofile">
+      </handler>
+      <handler
+            class="org.eclipse.papyrus.uml.profile.drafter.ui.handler.CheckSelectionHandler"
+            commandId="org.eclipse.papyrus.uml.profile.drafter.checkselection">
       </handler>
    </extension>
    <extension
@@ -50,6 +58,18 @@
                   style="push"
                   tooltip="Add a UML Profile to selected element">
             </command>
+            <command
+                  commandId="org.eclipse.papyrus.uml.profile.drafter.createprofile"
+                  label="Create Profile"
+                  style="push"
+                  tooltip="Create a UML Profile to selected element">
+            </command>
+            <command
+                  commandId="org.eclipse.papyrus.uml.profile.drafter.checkselection"
+                  label="Check Selection Type"
+                  style="push"
+                  tooltip="Print Selection Type in Console">
+            </command>
          </menu>
       </menuContribution>
       <menuContribution
@@ -62,6 +82,18 @@
                   label="Add Profile"
                   style="push"
                   tooltip="Add a UML Profile to selected element">
+            </command>
+            <command
+                  commandId="org.eclipse.papyrus.uml.profile.drafter.createprofile"
+                  label="Create Profile"
+                  style="push"
+                  tooltip="Create a UML Profile to selected element">
+            </command>
+            <command
+                  commandId="org.eclipse.papyrus.uml.profile.drafter.checkselection"
+                  label="Check Selection Type"
+                  style="push"
+                  tooltip="Print Selection Type in Console">
             </command>
          </menu>
       </menuContribution>
@@ -76,6 +108,18 @@
                   label="Add Profile"
                   style="push"
                   tooltip="Add a UML Profile to selected element">
+            </command>
+            <command
+                  commandId="org.eclipse.papyrus.uml.profile.drafter.createprofile"
+                  label="Create Profile"
+                  style="push"
+                  tooltip="Create a UML Profile to selected element">
+            </command>
+            <command
+                  commandId="org.eclipse.papyrus.uml.profile.drafter.checkselection"
+                  label="Check Selection Type"
+                  style="push"
+                  tooltip="Print Selection Type in Console">
             </command>
          </menu>
       </menuContribution>
