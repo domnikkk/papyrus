@@ -19,6 +19,7 @@ import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.custom.VerifyKeyListener;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
@@ -31,6 +32,7 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.TraverseEvent;
 import org.eclipse.swt.events.TraverseListener;
+import org.eclipse.swt.events.VerifyEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Text;
@@ -161,6 +163,20 @@ public class StyledTextCellEditor extends CellEditor {
 		text.setBackground(parent.getBackground());
 		text.setText("");//$NON-NLS-1$
 		text.addModifyListener(getModifyListener());
+		
+		// fix for bug 433855: delete at end of input deletes whole constraint
+		text.addVerifyKeyListener(new VerifyKeyListener() {
+				
+			public void verifyKey(VerifyEvent event) {
+				event.doit = true;
+				// Allow delete only, if enabled
+				if (event.character == '\u007F') {
+					if (!isDeleteEnabled()) {
+		        		event.doit = false;
+					}
+				}
+			}
+		});
 		return text;
 	}
 
