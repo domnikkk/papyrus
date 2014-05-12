@@ -19,6 +19,7 @@ import org.eclipse.papyrus.uml.diagram.component.part.UMLDiagramEditorPlugin;
  * @generated
  */
 public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer {
+
 	/**
 	 * @generated
 	 */
@@ -29,6 +30,7 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 		DiagramConnectionsPreferencePage.initDefaults(store);
 		DiagramPrintingPreferencePage.initDefaults(store);
 		DiagramRulersAndGridPreferencePage.initDefaults(store);
+
 	}
 
 	/**

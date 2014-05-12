@@ -68,6 +68,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class UMLElementTypes {
+
 	/**
 	 * @generated
 	 */
@@ -78,158 +79,197 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	private static Map<IElementType, ENamedElement> elements;
+
 	/**
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+
 	/**
 	 * @generated
 	 */
 	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Package_1000 = getElementType("org.eclipse.papyrus.uml.diagram.component.Model_1000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Dependency_3203 = getElementType("org.eclipse.papyrus.uml.diagram.component.DependencyNode_3203"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Component_2002 = getElementType("org.eclipse.papyrus.uml.diagram.component.Component_2002"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Model_3202 = getElementType("org.eclipse.papyrus.uml.diagram.component.Model_3202"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Package_3200 = getElementType("org.eclipse.papyrus.uml.diagram.component.Package_3200"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Interface_3205 = getElementType("org.eclipse.papyrus.uml.diagram.component.Interface_3205"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Comment_3201 = getElementType("org.eclipse.papyrus.uml.diagram.component.Comment_3201"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Constraint_3199 = getElementType("org.eclipse.papyrus.uml.diagram.component.Comment_3199"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType NamedElement_3204 = getElementType("org.eclipse.papyrus.uml.diagram.component.DefaultNamedElement_3204"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Interface_2003 = getElementType("org.eclipse.papyrus.uml.diagram.component.Interface_2003"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Port_3069 = getElementType("org.eclipse.papyrus.uml.diagram.component.Port_3069"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Model_3077 = getElementType("org.eclipse.papyrus.uml.diagram.component.Model_3077"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Package_3076 = getElementType("org.eclipse.papyrus.uml.diagram.component.Package_3076"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Interface_3078 = getElementType("org.eclipse.papyrus.uml.diagram.component.Interface_3078"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Component_3070 = getElementType("org.eclipse.papyrus.uml.diagram.component.Component_3070"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Component_3071 = getElementType("org.eclipse.papyrus.uml.diagram.component.Component_3071"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Comment_3074 = getElementType("org.eclipse.papyrus.uml.diagram.component.Comment_3074"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Constraint_3075 = getElementType("org.eclipse.papyrus.uml.diagram.component.Constraint_3075"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Property_1 = getElementType("org.eclipse.papyrus.uml.diagram.component.Property_1"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Operation_5 = getElementType("org.eclipse.papyrus.uml.diagram.component.Operation_5"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Reception_6 = getElementType("org.eclipse.papyrus.uml.diagram.component.Reception_6"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Interface_3072 = getElementType("org.eclipse.papyrus.uml.diagram.component.Interface_3072"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Property_3079 = getElementType("org.eclipse.papyrus.uml.diagram.component.Property_3079"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Usage_4001 = getElementType("org.eclipse.papyrus.uml.diagram.component.Usage_4001"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType InterfaceRealization_4006 = getElementType("org.eclipse.papyrus.uml.diagram.component.InterfaceRealization_4006"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Generalization_4003 = getElementType("org.eclipse.papyrus.uml.diagram.component.Generalization_4003"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Substitution_4012 = getElementType("org.eclipse.papyrus.uml.diagram.component.Substitution_4012"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Manifestation_4014 = getElementType("org.eclipse.papyrus.uml.diagram.component.Manifestation_4014"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType ComponentRealization_4007 = getElementType("org.eclipse.papyrus.uml.diagram.component.ComponentRealization_4007"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Abstraction_4013 = getElementType("org.eclipse.papyrus.uml.diagram.component.Abstraction_4013"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Link_4016 = getElementType("org.eclipse.papyrus.uml.diagram.component.Link_4016"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType CommentAnnotatedElement_4015 = getElementType("org.eclipse.papyrus.uml.diagram.component.CommentAnnotatedElement_4008"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType ConstraintConstrainedElement_4009 = getElementType("org.eclipse.papyrus.uml.diagram.component.ConstraintConstrainedElement_4009"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Dependency_4010 = getElementType("org.eclipse.papyrus.uml.diagram.component.Dependency_4010"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Dependency_4017 = getElementType("org.eclipse.papyrus.uml.diagram.component.Dependency_4017"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Link_4018 = getElementType("org.eclipse.papyrus.uml.diagram.component.Link_4018"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -270,45 +310,112 @@ public class UMLElementTypes {
 	 */
 	public static synchronized ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
-		if (elements == null) {
+		if(elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
+
 			elements.put(Package_1000, UMLPackage.eINSTANCE.getPackage());
+
+
 			elements.put(Dependency_3203, UMLPackage.eINSTANCE.getDependency());
+
+
 			elements.put(Component_2002, UMLPackage.eINSTANCE.getComponent());
+
+
 			elements.put(Model_3202, UMLPackage.eINSTANCE.getModel());
+
+
 			elements.put(Package_3200, UMLPackage.eINSTANCE.getPackage());
+
+
 			elements.put(Interface_3205, UMLPackage.eINSTANCE.getInterface());
+
+
 			elements.put(Comment_3201, UMLPackage.eINSTANCE.getComment());
+
+
 			elements.put(Constraint_3199, UMLPackage.eINSTANCE.getConstraint());
+
+
 			elements.put(NamedElement_3204, UMLPackage.eINSTANCE.getNamedElement());
+
+
 			elements.put(Interface_2003, UMLPackage.eINSTANCE.getInterface());
+
+
 			elements.put(Port_3069, UMLPackage.eINSTANCE.getPort());
+
+
 			elements.put(Model_3077, UMLPackage.eINSTANCE.getModel());
+
+
 			elements.put(Package_3076, UMLPackage.eINSTANCE.getPackage());
+
+
 			elements.put(Interface_3078, UMLPackage.eINSTANCE.getInterface());
+
+
 			elements.put(Component_3070, UMLPackage.eINSTANCE.getComponent());
+
+
 			elements.put(Component_3071, UMLPackage.eINSTANCE.getComponent());
+
+
 			elements.put(Comment_3074, UMLPackage.eINSTANCE.getComment());
+
+
 			elements.put(Constraint_3075, UMLPackage.eINSTANCE.getConstraint());
+
+
 			elements.put(Property_1, UMLPackage.eINSTANCE.getProperty());
+
+
 			elements.put(Operation_5, UMLPackage.eINSTANCE.getOperation());
+
+
 			elements.put(Reception_6, UMLPackage.eINSTANCE.getReception());
+
+
 			elements.put(Interface_3072, UMLPackage.eINSTANCE.getInterface());
+
+
 			elements.put(Property_3079, UMLPackage.eINSTANCE.getProperty());
+
+
 			elements.put(Usage_4001, UMLPackage.eINSTANCE.getUsage());
+
+
 			elements.put(InterfaceRealization_4006, UMLPackage.eINSTANCE.getInterfaceRealization());
+
+
 			elements.put(Generalization_4003, UMLPackage.eINSTANCE.getGeneralization());
+
+
 			elements.put(Substitution_4012, UMLPackage.eINSTANCE.getSubstitution());
+
+
 			elements.put(Manifestation_4014, UMLPackage.eINSTANCE.getManifestation());
+
+
 			elements.put(ComponentRealization_4007, UMLPackage.eINSTANCE.getComponentRealization());
+
+
 			elements.put(Abstraction_4013, UMLPackage.eINSTANCE.getAbstraction());
+
 			elements.put(CommentAnnotatedElement_4015, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
+
 			elements.put(ConstraintConstrainedElement_4009, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
+
+
 			elements.put(Dependency_4010, UMLPackage.eINSTANCE.getDependency());
+
+
 			elements.put(Dependency_4017, UMLPackage.eINSTANCE.getDependency());
+
+
 			elements.put(Connector_4019, UMLPackage.eINSTANCE.getConnector());
 		}
-		return (ENamedElement) elements.get(type);
+		return (ENamedElement)elements.get(type);
 	}
 
 	/**
@@ -322,7 +429,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static synchronized boolean isKnownElementType(IElementType elementType) {
-		if (KNOWN_ELEMENT_TYPES == null) {
+		if(KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Package_1000);
 			KNOWN_ELEMENT_TYPES.add(Dependency_3203);
@@ -369,7 +476,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static IElementType getElementType(int visualID) {
-		switch (visualID) {
+		switch(visualID) {
 		case ComponentDiagramEditPart.VISUAL_ID:
 			return Package_1000;
 		case DependencyNodeEditPart.VISUAL_ID:
@@ -452,6 +559,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
+
 		/**
 		 * @generated
 		 */

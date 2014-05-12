@@ -42,16 +42,18 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class RectangleInterfaceEditPartCN extends NodeEditPart
-{
+public class RectangleInterfaceEditPartCN extends NodeEditPart {
+
 	/**
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 3078;
+
 	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
+
 	/**
 	 * @generated
 	 */
@@ -83,9 +85,10 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
+				if(result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -111,32 +114,37 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.common.figure.node.InterfaceFigure
+	 * 
 	 * @generated
 	 */
 	public InterfaceFigure getPrimaryShape() {
-		return (InterfaceFigure) primaryShape;
+		return (InterfaceFigure)primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof RectangleInterfaceNameEditPartCN) {
-			((RectangleInterfaceNameEditPartCN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if(childEditPart instanceof RectangleInterfaceNameEditPartCN) {
+			((RectangleInterfaceNameEditPartCN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof InterfaceAttributeCompartmentEditPartCN) {
+
+
+		if(childEditPart instanceof InterfaceAttributeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getAttributeCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((InterfaceAttributeCompartmentEditPartCN) childEditPart).getFigure());
+			pane.add(((InterfaceAttributeCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof InterfaceOperationCompartmentEditPartCN) {
+
+		if(childEditPart instanceof InterfaceOperationCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getOperationCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((InterfaceOperationCompartmentEditPartCN) childEditPart).getFigure());
+			pane.add(((InterfaceOperationCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -144,17 +152,17 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof RectangleInterfaceNameEditPartCN) {
+		if(childEditPart instanceof RectangleInterfaceNameEditPartCN) {
 			return true;
 		}
-		if (childEditPart instanceof InterfaceAttributeCompartmentEditPartCN) {
+		if(childEditPart instanceof InterfaceAttributeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getAttributeCompartmentFigure();
-			pane.remove(((InterfaceAttributeCompartmentEditPartCN) childEditPart).getFigure());
+			pane.remove(((InterfaceAttributeCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof InterfaceOperationCompartmentEditPartCN) {
+		if(childEditPart instanceof InterfaceOperationCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getOperationCompartmentFigure();
-			pane.remove(((InterfaceOperationCompartmentEditPartCN) childEditPart).getFigure());
+			pane.remove(((InterfaceOperationCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -164,7 +172,7 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
+		if(addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -174,7 +182,7 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
+		if(removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -184,10 +192,10 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof InterfaceAttributeCompartmentEditPartCN) {
+		if(editPart instanceof InterfaceAttributeCompartmentEditPartCN) {
 			return getPrimaryShape().getAttributeCompartmentFigure();
 		}
-		if (editPart instanceof InterfaceOperationCompartmentEditPartCN) {
+		if(editPart instanceof InterfaceOperationCompartmentEditPartCN) {
 			return getPrimaryShape().getOperationCompartmentFigure();
 		}
 		return getContentPane();
@@ -211,16 +219,19 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
+		if(nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -232,7 +243,7 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	public IFigure getContentPane() {
-		if (contentPane != null) {
+		if(contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -242,7 +253,7 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void setForegroundColor(Color color) {
-		if (primaryShape != null) {
+		if(primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -258,8 +269,8 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void setLineType(int style) {
-		if (primaryShape instanceof NodeFigure) {
-			((NodeFigure) primaryShape).setLineStyle(style);
+		if(primaryShape instanceof NodeFigure) {
+			((NodeFigure)primaryShape).setLineStyle(style);
 		}
 	}
 
@@ -274,16 +285,16 @@ public class RectangleInterfaceEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == UMLElementTypes.Property_1) {
+		if(request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+			IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
+			if(type == UMLElementTypes.Property_1) {
 				return getChildBySemanticHint(UMLVisualIDRegistry.getType(InterfaceAttributeCompartmentEditPartCN.VISUAL_ID));
 			}
-			if (type == UMLElementTypes.Operation_5) {
+			if(type == UMLElementTypes.Operation_5) {
 				return getChildBySemanticHint(UMLVisualIDRegistry.getType(InterfaceOperationCompartmentEditPartCN.VISUAL_ID));
 			}
-			if (type == UMLElementTypes.Reception_6) {
+			if(type == UMLElementTypes.Reception_6) {
 				return getChildBySemanticHint(UMLVisualIDRegistry.getType(InterfaceOperationCompartmentEditPartCN.VISUAL_ID));
 			}
 		}

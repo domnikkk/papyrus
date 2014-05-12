@@ -25,6 +25,7 @@ import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
  * @generated
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
+
 	//RS: New Palette generation
 	//Generates the ID for the tool elements
 	//Generate the tool factory (if(ID) createtool...)
@@ -32,82 +33,102 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_CONSTRAINT = "component.tool.constraint";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_COMMENT = "component.tool.comment";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_COMPONENT = "component.tool.component";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_INTERFACE = "component.tool.interface";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_MODEL = "component.tool.model";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_PROPERTY = "component.tool.property";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_OPERATION = "component.tool.operation";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_PACKAGE = "component.tool.package";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_PORT = "component.tool.port";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_RECEPTION = "component.tool.reception";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_LINK = "component.tool.link";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_CONNECTOR = "component.tool.connector";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_DEPENDENCY = "component.tool.dependency";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_DEPENDENCYBRANCH = "component.tool.dependencybranch";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_ABSTRACTION = "component.tool.abstraction";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_MANIFESTATION = "component.tool.manifestation";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_GENERALIZATION = "component.tool.generalization";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_USAGE = "component.tool.usage";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_SUBSTITUTION = "component.tool.substitution";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	private final static String COMPONENT_TOOL_INTERFACEREALIZATION = "component.tool.interfaceRealization";//$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -117,73 +138,74 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	public UMLPaletteFactory() {
+
 	}
 
 	/**
 	 * @generated
 	 */
 	public Tool createTool(String toolId) {
-		if (toolId.equals(COMPONENT_TOOL_CONSTRAINT)) {
+		if(toolId.equals(COMPONENT_TOOL_CONSTRAINT)) {
 			return createConstraintCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_COMMENT)) {
+		if(toolId.equals(COMPONENT_TOOL_COMMENT)) {
 			return createCommentCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_COMPONENT)) {
+		if(toolId.equals(COMPONENT_TOOL_COMPONENT)) {
 			return createComponentCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_INTERFACE)) {
+		if(toolId.equals(COMPONENT_TOOL_INTERFACE)) {
 			return createRectancleInterfaceCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_MODEL)) {
+		if(toolId.equals(COMPONENT_TOOL_MODEL)) {
 			return createModelCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_PROPERTY)) {
+		if(toolId.equals(COMPONENT_TOOL_PROPERTY)) {
 			return createPropertyCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_OPERATION)) {
+		if(toolId.equals(COMPONENT_TOOL_OPERATION)) {
 			return createOperationCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_PACKAGE)) {
+		if(toolId.equals(COMPONENT_TOOL_PACKAGE)) {
 			return createPackageCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_PORT)) {
+		if(toolId.equals(COMPONENT_TOOL_PORT)) {
 			return createPortCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_RECEPTION)) {
+		if(toolId.equals(COMPONENT_TOOL_RECEPTION)) {
 			return createReceptionCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_LINK)) {
+		if(toolId.equals(COMPONENT_TOOL_LINK)) {
 			return createLinkCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_CONNECTOR)) {
+		if(toolId.equals(COMPONENT_TOOL_CONNECTOR)) {
 			return createConnectorCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_DEPENDENCY)) {
+		if(toolId.equals(COMPONENT_TOOL_DEPENDENCY)) {
 			return createDependencyCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_DEPENDENCYBRANCH)) {
+		if(toolId.equals(COMPONENT_TOOL_DEPENDENCYBRANCH)) {
 			return createDependencyBranchCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_ABSTRACTION)) {
+		if(toolId.equals(COMPONENT_TOOL_ABSTRACTION)) {
 			return createAbstractionCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_MANIFESTATION)) {
+		if(toolId.equals(COMPONENT_TOOL_MANIFESTATION)) {
 			return createManifestationCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_GENERALIZATION)) {
+		if(toolId.equals(COMPONENT_TOOL_GENERALIZATION)) {
 			return createGeneralizationCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_USAGE)) {
+		if(toolId.equals(COMPONENT_TOOL_USAGE)) {
 			return createUsageCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_SUBSTITUTION)) {
+		if(toolId.equals(COMPONENT_TOOL_SUBSTITUTION)) {
 			return createSubstitutionCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_INTERFACEREALIZATION)) {
+		if(toolId.equals(COMPONENT_TOOL_INTERFACEREALIZATION)) {
 			return createInterfaceRealizationCreationTool();
 		}
-		if (toolId.equals(COMPONENT_TOOL_COMPONENTREALIZATION)) {
+		if(toolId.equals(COMPONENT_TOOL_COMPONENTREALIZATION)) {
 			return createComponentRealizationCreationTool();
 		}
 		// default return: null
@@ -194,6 +216,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	 * @generated
 	 */
 	public Object getTemplate(String templateId) {
+
 		// default return: null
 		return null;
 	}
