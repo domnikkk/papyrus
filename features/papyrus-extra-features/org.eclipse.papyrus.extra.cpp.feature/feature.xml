@@ -10,6 +10,7 @@
 - A C++ profile, enabling the specification for C++ features, for instance: pointers, friends, constructor initializers
 - A code generator from UML enriched with the C++ profile
 - A C++ view allowing simple editing of opaque behaviors and manipulation of C++ profile attributes
+- An experimental CDT integration
    </description>
 
    <copyright url="http://www.eclipse.org/legal/epl-v10.html">
