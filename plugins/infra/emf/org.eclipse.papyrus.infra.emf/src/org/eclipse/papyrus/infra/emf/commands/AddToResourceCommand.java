@@ -41,12 +41,12 @@ public class AddToResourceCommand extends AbstractCommand {
 	 * @param resource
 	 *        the resource
 	 * @param toAdd
-	 *        the objectto add to the resource
+	 *        the object to add to the resource
 	 */
 	public AddToResourceCommand(final Resource resource, final EObject toAdd) {
 		this.resource = resource;
 		this.toAdd = toAdd;
-		setLabel("Add an object to a resource");
+		setLabel("Add an object to a resource"); 
 	}
 
 	/**
