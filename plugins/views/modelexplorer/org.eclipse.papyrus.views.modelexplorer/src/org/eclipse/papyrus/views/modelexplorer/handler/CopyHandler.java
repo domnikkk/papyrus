@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer.handler;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.command.Command;
@@ -30,6 +31,32 @@ import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.PasteStrategyMana
 public class CopyHandler extends AbstractCommandHandler {
 
 	/**
+	 * Check if the selection allow copy
+	 * @param selectedElements
+	 * @return
+	 */
+	public static boolean isCopyEnabled(Collection<EObject> selectedElements) {
+		return !selectedElements.isEmpty();
+	}	
+
+	/**
+	 * Construct copy command from the selection
+	 * @param editingDomain
+	 * @param selectedElements
+	 * @return
+	 */
+	public static Command buildCopyCommand(TransactionalEditingDomain editingDomain, Collection<EObject> selectedElements) {
+		PapyrusClipboard<Object> papyrusClipboard = PapyrusClipboard.getNewInstance();
+		DefaultCopyCommand defaultCopyCommand = new DefaultCopyCommand(editingDomain, papyrusClipboard, selectedElements); 
+		List<IStrategy> allStrategies = PasteStrategyManager.getInstance().getAllStrategies();
+		for(IStrategy iStrategy : allStrategies) {
+			IPasteStrategy iPasteStrategy = (IPasteStrategy)iStrategy;
+			iPasteStrategy.prepare(papyrusClipboard);
+		}
+		return defaultCopyCommand;		
+	}
+	
+	/**
 	 * 
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
 	 * 
@@ -37,18 +64,7 @@ public class CopyHandler extends AbstractCommandHandler {
 	 */
 	@Override
 	protected Command getCommand() {
-		List<EObject> selection = getSelectedElements();
-		TransactionalEditingDomain editingDomain = getEditingDomain();
-		PapyrusClipboard<Object> papyrusClipboard = PapyrusClipboard.getNewInstance();
-
-		DefaultCopyCommand defaultCopyCommand = new DefaultCopyCommand(editingDomain, papyrusClipboard, selection); // TODO : select copyStrategy
-
-		List<IStrategy> allStrategies = PasteStrategyManager.getInstance().getAllStrategies();
-		for(IStrategy iStrategy : allStrategies) {
-			IPasteStrategy iPasteStrategy = (IPasteStrategy)iStrategy;
-			iPasteStrategy.prepare(papyrusClipboard);
-		}
-		return defaultCopyCommand;
+		return buildCopyCommand(getEditingDomain(),getSelectedElements());
 	}
 	
 	/* (non-Javadoc)
@@ -56,9 +72,10 @@ public class CopyHandler extends AbstractCommandHandler {
 	 */
 	@Override
 	protected boolean computeEnabled() { // copy is enable as long as there is an EObject to put in the Clipboard
-		return !getSelectedElements().isEmpty();
+		return isCopyEnabled(getSelectedElements());
 	}
 	
+
 	/* (non-Javadoc)
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#setEnabled(java.lang.Object)
 	 */

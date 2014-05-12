@@ -14,9 +14,11 @@
 package org.eclipse.papyrus.uml.modelexplorer.tests.paste;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.IHandler;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.junit.utils.HandlerUtils;
@@ -27,6 +29,8 @@ import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.PackageableElement;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -50,7 +54,8 @@ public class CutPasteModelExplorerTest extends AbstractEditorTest {
 
 	public final static String CLASS1_NAME = "Class1"; //$NON-NLS-1$
 
-
+	public final static String PRIMITIVE_BOOLEAN_NAME = "Boolean"; //$NON-NLS-1$ 
+	
 	@Before
 	public void initModelForCutTest() {
 		try {
@@ -65,7 +70,69 @@ public class CutPasteModelExplorerTest extends AbstractEditorTest {
 		return RESOURCES_PATH;
 	}
 
+	/**
+	 * A user can not cut the root of a model (Bug 434514)
+	 */
+	@Test
+	public void cutRootOfTheModel() throws Exception {
 
+		Assert.assertNotNull("RootModel is null", getRootUMLModel()); //$NON-NLS-1$
+		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		ISelectionService selectionService = activeWorkbenchWindow.getSelectionService();
+
+		modelExplorerView = getModelExplorerView();
+		modelExplorerView.setFocus();
+		List<Object> elements = new ArrayList<Object>();
+		elements.add(getRootUMLModel());
+		modelExplorerView.revealSemanticElement(elements);
+
+		//getItem for model
+		EObject modelTreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Assert.assertNotNull("Model TreeElement is null", modelTreeObject); //$NON-NLS-1$		
+
+		IHandler cutHandler = HandlerUtils.getActiveHandlerFor(CUT_COMMAND_ID); //$NON-NLS-1$
+		Assert.assertFalse("Cut is available", cutHandler.isEnabled()); //$NON-NLS-1$
+	}	
+	
+	/**
+	 * A user can not cut a read only element (Bug 434514)
+	 */
+	@Test
+	public void cutReadOnlyElement() throws Exception {
+
+		Package rootUMLModel = getRootUMLModel();
+
+		Assert.assertNotNull("RootModel is null", rootUMLModel); //$NON-NLS-1$
+		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		ISelectionService selectionService = activeWorkbenchWindow.getSelectionService();
+
+		modelExplorerView = getModelExplorerView();
+		modelExplorerView.setFocus();
+
+		List<Object> elements = new ArrayList<Object>();
+		elements.add(rootUMLModel);
+		modelExplorerView.revealSemanticElement(elements);
+
+		//getItem for model
+		EObject modelTreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Assert.assertNotNull("Model TreeElement is null", modelTreeObject); //$NON-NLS-1$			
+
+		//get read only item
+		EList<Package> importedPackages = rootUMLModel.getImportedPackages();
+		Package primitiveTypes = importedPackages.get(0);
+		PackageableElement packagedElement = primitiveTypes.getPackagedElement(PRIMITIVE_BOOLEAN_NAME);
+		
+		elements.clear();
+		elements.add(packagedElement);
+		modelExplorerView.revealSemanticElement(elements);
+		EObject treeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Assert.assertNotNull("Boolean Primitive PrimitiveTypes TreeElement is null", treeObject); //$NON-NLS-1$
+
+		IHandler cutHandler = HandlerUtils.getActiveHandlerFor(CUT_COMMAND_ID);
+		Assert.assertFalse("Cut is available on a readonly element (Boolean Primitive)", cutHandler.isEnabled()); //$NON-NLS-1$			
+	}
+	
+	
 	/**
 	 * here the purpose is to test the cut/paste of a class in modelexplorer.
 	 */

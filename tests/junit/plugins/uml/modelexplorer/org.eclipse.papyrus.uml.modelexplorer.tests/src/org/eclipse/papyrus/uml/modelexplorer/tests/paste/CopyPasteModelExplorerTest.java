@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.IHandler;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.junit.utils.HandlerUtils;
@@ -28,6 +29,7 @@ import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Package;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -67,7 +69,9 @@ public class CopyPasteModelExplorerTest extends AbstractEditorTest {
 		return RESOURCES_PATH;
 	}
 
+	
 
+	
 	/**
 	 * Simple copy paste of a class1
 	 * 
@@ -115,7 +119,57 @@ public class CopyPasteModelExplorerTest extends AbstractEditorTest {
 		Assert.assertNotNull("The copy is missing", copyOfClass1); //$NON-NLS-1$			
 	}
 
+	/**
+	 * A user can not paste on a read only element (Bug 434514)
+	 */
+	@Test
+	public void pasteOnReadOnlyElement() throws Exception {
 
+		Package rootUMLModel = getRootUMLModel();
+
+		Assert.assertNotNull("RootModel is null", rootUMLModel); //$NON-NLS-1$
+		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		ISelectionService selectionService = activeWorkbenchWindow.getSelectionService();
+
+		modelExplorerView = getModelExplorerView();
+		modelExplorerView.setFocus();
+
+		List<Object> elements = new ArrayList<Object>();
+		elements.add(rootUMLModel);
+		modelExplorerView.revealSemanticElement(elements);
+
+		//getItem for model
+		EObject modelTreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Assert.assertNotNull("Model TreeElement is null", modelTreeObject); //$NON-NLS-1$			
+
+		// copy class1
+		org.eclipse.uml2.uml.Class class1 = (org.eclipse.uml2.uml.Class)rootUMLModel.getPackagedElement(CLASS1_NAME);
+		elements.clear();
+		elements.add(class1);
+		modelExplorerView.revealSemanticElement(elements);
+		EObject class1TreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Assert.assertNotNull("Class1 TreeElement is null", class1TreeObject); //$NON-NLS-1$
+
+		IHandler copyHandler = HandlerUtils.getActiveHandlerFor(COPY_COMMAND_ID);
+		Assert.assertTrue("Copy not available", copyHandler.isEnabled()); //$NON-NLS-1$
+		copyHandler.execute(new ExecutionEvent());		
+		
+		//get read only item
+		EList<Package> importedPackages = rootUMLModel.getImportedPackages();
+		Package primitiveTypes = importedPackages.get(0);
+
+		elements.clear();
+		elements.add(primitiveTypes);
+		modelExplorerView.revealSemanticElement(elements);
+		EObject treeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Assert.assertNotNull("PrimitiveTypes TreeElement is null", treeObject); //$NON-NLS-1$
+
+		IHandler pasteHandler = HandlerUtils.getActiveHandlerFor(PASTE_COMMAND_ID);
+		Assert.assertFalse("Paste is available on a readonly element", pasteHandler.isEnabled()); //$NON-NLS-1$			
+	}
+	
+	
+	
 	/**
 	 * Simple copy pasteof class1 & class2 test.
 	 */
