@@ -140,10 +140,9 @@ public class WorkspaceMarkerMonitor extends AbstractMarkerMonitor {
 		 */
 		public void handleMarkerDeleted(IMarker marker, @SuppressWarnings("rawtypes") Map attributes) {
 			EObject eObjectFromMarker = MarkerListenerUtils.eObjectFromMarkerOrMap(null, attributes, domain);
-			if(eObjectFromMarker != null) {
-				Resource resource = eObjectFromMarker.eResource();
-				fireMarkerRemoved(PapyrusMarkerAdapter.wrap(resource, marker, attributes));
-			}
+			Resource resource = (eObjectFromMarker != null) ?
+					eObjectFromMarker.eResource() : null;
+			fireMarkerRemoved(PapyrusMarkerAdapter.wrap(resource, marker, attributes));
 		}
 
 		/**
