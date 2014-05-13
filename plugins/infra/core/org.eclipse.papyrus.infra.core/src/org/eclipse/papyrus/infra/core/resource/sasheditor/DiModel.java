@@ -14,12 +14,17 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource.sasheditor;
 
+import java.util.Collections;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource;
+import org.eclipse.papyrus.infra.core.resource.IEMFModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 
 /**
@@ -112,4 +117,68 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 		return false; //DiModel is currently an empty model
 	}
 
+	@Override
+	public void setModelURI(URI uriWithoutExtension) {
+		for(Resource resource : getResources()) {
+			if(isControlled(resource)) {
+				URI newBaseUri = uriWithoutExtension.trimSegments(1).appendSegment(resource.getURI().lastSegment());
+				resource.setURI(newBaseUri);
+			}
+		}
+		super.setModelURI(uriWithoutExtension);
+		
+	}
+	
+	@Override
+	public void handle(Resource resource) {
+		super.handle(resource);
+		if(resource == null) {
+			return;
+		}
+
+		
+		//If the parameter resource is already a di resource, nothing to do
+		if(!isRelatedResource(resource)) {
+			URI diUri = resource.getURI().trimFileExtension().appendFileExtension(DI_FILE_EXTENSION);
+			ResourceSet resourceSet = getResourceSet();
+			
+			boolean diAlreadyLoaded = false;
+			for(Resource loadedResource : resourceSet.getResources()) {
+				if(loadedResource.getURI().equals(diUri)){
+					diAlreadyLoaded = true;
+				}
+			}
+			
+			if(resourceSet != null && !diAlreadyLoaded && resourceSet.getURIConverter() != null) {
+				URIConverter converter = resourceSet.getURIConverter();
+				if(converter.exists(diUri, Collections.emptyMap())) {
+					//If the di resource associated to the parameter resource exists, load it
+					getResourceSet().getResource(diUri, true);
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Notation resources are controlled if their base element is controlled
+	 */
+	@Override
+	public boolean isControlled(Resource resource) {
+		for(Resource resourceInModelSet : modelSet.getResources()) {
+			if ( resource.getURI().trimFileExtension().equals(resourceInModelSet.getURI().trimFileExtension()) && !isRelatedResource(resourceInModelSet)){
+				if(!resourceInModelSet.getContents().isEmpty()){
+					EObject eObject = resourceInModelSet.getContents().get(0);
+					IModel iModel = modelSet.getModelFor(eObject);
+					if(iModel instanceof IEMFModel) {
+						if(((IEMFModel)iModel).isControlled(resourceInModelSet)) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
+	
+	
 }
