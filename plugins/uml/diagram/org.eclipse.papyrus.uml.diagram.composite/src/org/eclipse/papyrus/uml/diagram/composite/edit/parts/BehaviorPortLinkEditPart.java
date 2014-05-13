@@ -25,9 +25,8 @@ import org.eclipse.papyrus.uml.diagram.composite.custom.edit.policies.NoDeleteFr
 /**
  * @generated
  */
-public class BehaviorPortLinkEditPart extends ConnectionEditPart
-		implements ITreeBranchEditPart
-{
+public class BehaviorPortLinkEditPart extends ConnectionEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -67,6 +66,6 @@ public class BehaviorPortLinkEditPart extends ConnectionEditPart
 	 * @generated
 	 */
 	public PolylineConnectionEx getPrimaryShape() {
-		return (PolylineConnectionEx) getFigure();
+		return (PolylineConnectionEx)getFigure();
 	}
 }

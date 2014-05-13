@@ -20,6 +20,7 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
  * @generated
  */
 public class CommentAnnotatedElementItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+
 	/**
 	 * @generated
 	 */

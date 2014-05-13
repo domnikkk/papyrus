@@ -24,9 +24,8 @@ import org.eclipse.papyrus.uml.diagram.composite.edit.policies.DependencyItemSem
 /**
  * @generated
  */
-public class DependencyEditPart extends UMLConnectionNodeEditPart
-		implements ITreeBranchEditPart
-{
+public class DependencyEditPart extends UMLConnectionNodeEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -52,15 +51,11 @@ public class DependencyEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof DependencyNameEditPart) {
-			((DependencyNameEditPart) childEditPart).setLabel(
-					getPrimaryShape().getNameLabel());
-			return true;
+		if(childEditPart instanceof DependencyNameEditPart) {
+			((DependencyNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 		}
-		if (childEditPart instanceof DependencyAppliedStereotypeEditPart) {
-			((DependencyAppliedStereotypeEditPart) childEditPart).setLabel(
-					getPrimaryShape().getAppliedStereotypeLabel());
-			return true;
+		if(childEditPart instanceof DependencyAppliedStereotypeEditPart) {
+			((DependencyAppliedStereotypeEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}
@@ -69,7 +64,7 @@ public class DependencyEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
+		if(addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -79,10 +74,10 @@ public class DependencyEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof DependencyNameEditPart) {
+		if(childEditPart instanceof DependencyNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof DependencyAppliedStereotypeEditPart) {
+		if(childEditPart instanceof DependencyAppliedStereotypeEditPart) {
 			return true;
 		}
 		return false;
@@ -92,7 +87,7 @@ public class DependencyEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
+		if(removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -114,6 +109,6 @@ public class DependencyEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	public DashedEdgeFigure getPrimaryShape() {
-		return (DashedEdgeFigure) getFigure();
+		return (DashedEdgeFigure)getFigure();
 	}
 }

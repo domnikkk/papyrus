@@ -17,8 +17,8 @@ import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
-public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage
-{
+public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage {
+
 	/**
 	 * @generated
 	 */

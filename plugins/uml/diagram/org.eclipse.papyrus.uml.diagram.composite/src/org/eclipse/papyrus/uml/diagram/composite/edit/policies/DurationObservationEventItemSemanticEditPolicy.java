@@ -20,6 +20,7 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
  * @generated
  */
 public class DurationObservationEventItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+
 	/**
 	 * @generated
 	 */

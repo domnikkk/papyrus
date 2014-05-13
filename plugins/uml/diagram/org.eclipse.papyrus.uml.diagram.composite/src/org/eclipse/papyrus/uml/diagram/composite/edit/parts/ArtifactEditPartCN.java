@@ -39,16 +39,18 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class ArtifactEditPartCN extends NodeEditPart
-{
+public class ArtifactEditPartCN extends NodeEditPart {
+
 	/**
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 3093;
+
 	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
+
 	/**
 	 * @generated
 	 */
@@ -80,9 +82,10 @@ public class ArtifactEditPartCN extends NodeEditPart
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
+				if(result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -108,20 +111,23 @@ public class ArtifactEditPartCN extends NodeEditPart
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure
+	 * 
 	 * @generated
 	 */
 	public NodeNamedElementFigure getPrimaryShape() {
-		return (NodeNamedElementFigure) primaryShape;
+		return (NodeNamedElementFigure)primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ArtifactNameEditPartCN) {
-			((ArtifactNameEditPartCN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if(childEditPart instanceof ArtifactNameEditPartCN) {
+			((ArtifactNameEditPartCN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -129,7 +135,7 @@ public class ArtifactEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ArtifactNameEditPartCN) {
+		if(childEditPart instanceof ArtifactNameEditPartCN) {
 			return true;
 		}
 		return false;
@@ -139,7 +145,7 @@ public class ArtifactEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
+		if(addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -149,7 +155,7 @@ public class ArtifactEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
+		if(removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -180,16 +186,19 @@ public class ArtifactEditPartCN extends NodeEditPart
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
+		if(nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -201,7 +210,7 @@ public class ArtifactEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	public IFigure getContentPane() {
-		if (contentPane != null) {
+		if(contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -211,7 +220,7 @@ public class ArtifactEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void setForegroundColor(Color color) {
-		if (primaryShape != null) {
+		if(primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -227,8 +236,8 @@ public class ArtifactEditPartCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void setLineType(int style) {
-		if (primaryShape instanceof NodeFigure) {
-			((NodeFigure) primaryShape).setLineStyle(style);
+		if(primaryShape instanceof NodeFigure) {
+			((NodeFigure)primaryShape).setLineStyle(style);
 		}
 	}
 
