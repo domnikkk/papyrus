@@ -51,6 +51,7 @@ public class NestedExecutionEnvironmentCreateCommandCN extends EditElementComman
 
 	/**
 	 * FIXME: replace with setElementToEdit()
+	 * 
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
@@ -65,16 +66,21 @@ public class NestedExecutionEnvironmentCreateCommandCN extends EditElementComman
 	 * @generated
 	 */
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getExecutionEnvironment());
 		return data.isPermitted();
+
+
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		ExecutionEnvironment newElement = UMLFactory.eINSTANCE.createExecutionEnvironment();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if(data.isPermitted()) {
@@ -82,14 +88,20 @@ public class NestedExecutionEnvironmentCreateCommandCN extends EditElementComman
 				if(!data.execute(target, newElement))
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 			} else {
+
 				Package qualifiedTarget = (Package)target;
 				qualifiedTarget.getPackagedElements().add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
+
 		ElementInitializers.getInstance().init_ExecutionEnvironment_46(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest)getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

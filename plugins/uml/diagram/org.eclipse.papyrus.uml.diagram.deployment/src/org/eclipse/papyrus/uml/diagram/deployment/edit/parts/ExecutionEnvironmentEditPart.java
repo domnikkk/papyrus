@@ -114,11 +114,13 @@ public class ExecutionEnvironmentEditPart extends NamedElementEditPart {
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -130,6 +132,7 @@ public class ExecutionEnvironmentEditPart extends NamedElementEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ExecutionEnvironmentFigure
+	 * 
 	 * @generated
 	 */
 	public ExecutionEnvironmentFigure getPrimaryShape() {
@@ -144,12 +147,15 @@ public class ExecutionEnvironmentEditPart extends NamedElementEditPart {
 			((ExecutionEnvironmentNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if(childEditPart instanceof ExecutionEnvironmentCompositeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ExecutionEnvironmentCompositeCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -216,12 +222,15 @@ public class ExecutionEnvironmentEditPart extends NamedElementEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {

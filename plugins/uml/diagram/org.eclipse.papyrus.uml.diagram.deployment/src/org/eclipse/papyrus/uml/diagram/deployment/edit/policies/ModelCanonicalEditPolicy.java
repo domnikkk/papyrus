@@ -117,7 +117,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View)getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getPackage_1000SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackage_1000SemanticChildren(viewObject);
 		for(UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -160,7 +160,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getPackage_1000SemanticChildren((View)getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getPackage_1000SemanticChildren((View)getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -206,6 +206,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
+
 		boolean changed = deleteViews(orphaned.iterator());
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
@@ -220,13 +221,17 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		if(changed || createdViews.size() > 0) {
 			postProcessRefreshSemantic(createdViews);
 		}
+
 		Collection<IAdaptable> createdConnectionViews = refreshConnections();
+
 		if(createdViews.size() > 1) {
 			// perform a layout of the container
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
+
 		createdViews.addAll(createdConnectionViews);
+
 		makeViewsImmutable(createdViews);
 	}
 
@@ -280,7 +285,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DeploymentDiagramEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getPackage_1000ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getPackage_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -288,7 +293,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DependencyNodeEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDependency_2011ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDependency_2011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -296,7 +301,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ModelEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getModel_2010ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getModel_2010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -304,7 +309,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case PackageEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getPackage_2009ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getPackage_2009ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -312,7 +317,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ConstraintEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getConstraint_2005ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getConstraint_2005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -320,7 +325,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case CommentEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getComment_2001ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getComment_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -328,7 +333,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ExecutionEnvironmentEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getExecutionEnvironment_2002ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getExecutionEnvironment_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -336,7 +341,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DeviceEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDevice_2003ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDevice_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -344,7 +349,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ArtifactEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getArtifact_2006ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getArtifact_2006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -352,7 +357,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case NodeEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getNode_2008ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getNode_2008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -360,7 +365,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DefaultNamedElementEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getNamedElement_2012ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getNamedElement_2012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -368,7 +373,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ModelEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getModel_49ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getModel_49ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -376,7 +381,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case PackageEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getPackage_36ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getPackage_36ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -384,7 +389,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DeviceEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDevice_16ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDevice_16ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -392,7 +397,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case NestedDeviceEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDevice_44ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDevice_44ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -400,7 +405,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ExecutionEnvironmentEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getExecutionEnvironment_21ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getExecutionEnvironment_21ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -408,7 +413,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case NestedExecutionEnvironmentEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getExecutionEnvironment_46ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getExecutionEnvironment_46ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -416,7 +421,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case NodeEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getNode_23ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getNode_23ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -424,7 +429,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case NestedNodeEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getNode_42ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getNode_42ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -432,7 +437,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ArtifactEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getArtifact_25ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getArtifact_25ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -440,7 +445,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ArtifactEditPartACN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getArtifact_28ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getArtifact_28ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -448,7 +453,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case NestedArtifactNodeEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getArtifact_40ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getArtifact_40ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -456,7 +461,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case CommentEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getComment_54ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getComment_54ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -464,7 +469,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ConstraintEditPartCN.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getConstraint_56ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getConstraint_56ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -472,7 +477,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DeploymentEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDeployment_4001ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDeployment_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -480,7 +485,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ManifestationEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getManifestation_4002ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getManifestation_4002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -488,7 +493,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case GeneralizationEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getGeneralization_4003ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getGeneralization_4003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -496,7 +501,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DependencyEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDependency_4004ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDependency_4004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -504,7 +509,7 @@ public class ModelCanonicalEditPolicy extends CanonicalEditPolicy {
 		case DependencyBranchEditPart.VISUAL_ID:
 		{
 			if(!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getDependency_4010ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.INSTANCE.getDependency_4010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

@@ -128,6 +128,7 @@ public class DependencyNodeEditPart extends NodeEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.common.figure.node.DependencyNodeFigure
+	 * 
 	 * @generated
 	 */
 	public DependencyNodeFigure getPrimaryShape() {
@@ -165,12 +166,15 @@ public class DependencyNodeEditPart extends NodeEditPart {
 	 */
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {

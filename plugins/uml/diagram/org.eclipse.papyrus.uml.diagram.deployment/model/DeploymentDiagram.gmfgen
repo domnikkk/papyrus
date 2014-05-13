@@ -32,7 +32,6 @@
         <labels visualID="50" editPartClassName="ModelNameEditPartCN" itemSemanticEditPolicyClassName="ModelNameItemSemanticEditPolicyCN" elementIcon="true">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -63,7 +62,7 @@
         <labels visualID="37" editPartClassName="PackageNameEditPartCN" itemSemanticEditPolicyClassName="PackageNameItemSemanticEditPolicyCN" elementIcon="true">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0" editPattern="">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -74,7 +73,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" uniqueIdentifier="org.eclipse.papyrus.uml.diagram.deployment.Device_16" displayName="Device" metamodelType="/0/@diagram/@topLevelNodes.6/@elementType" />
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.DeviceFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="100"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -98,7 +97,7 @@
         <labels visualID="20" editPartClassName="DeviceNameEditPartCN" itemSemanticEditPolicyClassName="DeviceNameItemSemanticEditPolicyCN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -109,7 +108,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" uniqueIdentifier="org.eclipse.papyrus.uml.diagram.deployment.Device_44" displayName="Device" metamodelType="/0/@diagram/@topLevelNodes.6/@elementType" />
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.DeviceFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="100"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -133,7 +132,7 @@
         <labels visualID="45" editPartClassName="NestedDeviceNameEditPartCN" itemSemanticEditPolicyClassName="NestedDeviceNameItemSemanticEditPolicyCN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -144,7 +143,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" uniqueIdentifier="org.eclipse.papyrus.uml.diagram.deployment.ExecutionEnvironment_21" displayName="ExecutionEnvironment"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ExecutionEnvironmentFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="100"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -168,7 +167,7 @@
         <labels visualID="22" editPartClassName="ExecutionEnvironmentNameEditPartCN" itemSemanticEditPolicyClassName="ExecutionEnvironmentNameItemSemanticEditPolicyCN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -179,7 +178,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" uniqueIdentifier="org.eclipse.papyrus.uml.diagram.deployment.ExecutionEnvironment_46" displayName="ExecutionEnvironment"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ExecutionEnvironmentFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="100"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -203,7 +202,7 @@
         <labels visualID="47" editPartClassName="NestedExecutionEnvironmentNameEditPartCN" itemSemanticEditPolicyClassName="NestedExecutionEnvironmentNameItemSemanticEditPolicyCN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -214,7 +213,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" displayName="Node"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.NodeFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="150"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -238,7 +237,7 @@
         <labels visualID="24" editPartClassName="NodeNameEditPartCN" itemSemanticEditPolicyClassName="NodeNameItemSemanticEditPolicyCN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -249,7 +248,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" displayName="Node"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.NodeFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="150"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -273,7 +272,7 @@
         <labels visualID="43" editPartClassName="NestedNodeNameEditPart" itemSemanticEditPolicyClassName="NestedNodeNameItemSemanticEditPolicy">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -284,7 +283,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" uniqueIdentifier="org.eclipse.papyrus.uml.diagram.deployment.Artifact_25" displayName="Artifact" metamodelType="/0/@diagram/@topLevelNodes.7/@elementType"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ArtifactFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+ 
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="70"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -310,7 +309,7 @@
         <labels visualID="27" editPartClassName="ArtifactNameEditPartCN" itemSemanticEditPolicyClassName="ArtifactNameItemSemanticEditPolicyCN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -321,7 +320,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" displayName="Artifact" metamodelType="/0/@diagram/@topLevelNodes.7/@elementType"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ArtifactFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="70"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -346,7 +345,7 @@
         <labels visualID="29" editPartClassName="ArtifactNameEditPartACN" itemSemanticEditPolicyClassName="ArtifactNameItemSemanticEditPolicyACN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -357,7 +356,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:SpecializationType" displayName="Artifact" metamodelType="/0/@diagram/@topLevelNodes.7/@elementType"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ArtifactFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="70"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -383,7 +382,7 @@
         <labels visualID="41" editPartClassName="NestedArtifactNameEditPart" itemSemanticEditPolicyClassName="NestedArtifactNameItemSemanticEditPolicy">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0" editPattern="">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -410,7 +409,7 @@
         <labels visualID="55" editPartClassName="CommentBodyEditPartCN" itemSemanticEditPolicyClassName="CommentBodyEditPartCN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getCornerBentFigure" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.1">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Comment/body"/>
@@ -440,7 +439,7 @@
         <labels visualID="57" editPartClassName="ConstraintNameEditPartCN" itemSemanticEditPolicyClassName="ConstraintNameItemSemanticEditPolicyCN">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -500,7 +499,7 @@
         <labels visualID="48" editPartClassName="ModelNameEditPart" itemSemanticEditPolicyClassName="ModelNameItemSemanticEditPolicy" elementIcon="true">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -531,7 +530,7 @@
         <labels visualID="35" editPartClassName="PackageNameEditPart" itemSemanticEditPolicyClassName="PackageNameItemSemanticEditPolicy" elementIcon="true">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -561,7 +560,7 @@
         <labels visualID="2" editPartClassName="ConstraintNameEditPart" itemSemanticEditPolicyClassName="ConstraintNameItemSemanticEditPolicy">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -596,7 +595,7 @@
         <labels visualID="1" editPartClassName="CommentBodyEditPart" itemSemanticEditPolicyClassName="CommentBodyEditPart">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getCornerBentFigure" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
+ 
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.1">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Comment/body"/>
@@ -607,7 +606,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ExecutionEnvironmentEditHelper"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ExecutionEnvironmentFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="100"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -631,7 +630,7 @@
         <labels visualID="5" editPartClassName="ExecutionEnvironmentNameEditPart" itemSemanticEditPolicyClassName="ExecutionEnvironmentNameItemSemanticEditPolicy">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -642,7 +641,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="DeviceEditHelper"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.DeviceFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="100"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -666,7 +665,7 @@
         <labels visualID="6" editPartClassName="DeviceNameEditPart" itemSemanticEditPolicyClassName="DeviceNameItemSemanticEditPolicy">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -677,7 +676,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ArtifactEditHelper"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ArtifactFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="70"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -703,7 +702,7 @@
         <labels visualID="8" editPartClassName="ArtifactNameEditPart" itemSemanticEditPolicyClassName="ArtifactNameItemSemanticEditPolicy">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -714,7 +713,7 @@
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="NodeEditHelper"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.NodeFigure">
-          <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true" fixedBackground="true"/>
+
           <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="150" height="150"/>
         </viewmap>
         <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY" editPolicyQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy"/>
@@ -738,7 +737,7 @@
         <labels visualID="9" editPartClassName="NodeNameEditPart" itemSemanticEditPolicyClassName="NodeNameItemSemanticEditPolicy">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true" fixedForeground="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0" editPattern="">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -764,7 +763,7 @@
         <labels visualID="53" editPartClassName="DefaultNamedElementNameEditPart" itemSemanticEditPolicyClassName="DefaultNamedElementNameItemSemanticEditPolicy" elementIcon="true">
           <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
           <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getNameLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
+
           </viewmap>
           <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="/0/@labelParsers/@implementations.0" editPattern="">
             <metaFeatures href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
