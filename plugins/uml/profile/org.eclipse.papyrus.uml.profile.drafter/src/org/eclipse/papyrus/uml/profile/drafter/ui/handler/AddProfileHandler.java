@@ -17,7 +17,15 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.handler;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
+import org.eclipse.jface.dialogs.InputDialog;
+import org.eclipse.jface.window.Window;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.uml.profile.drafter.ProfileApplicator;
+import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
+import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.ExtensionEnd;
@@ -32,9 +40,13 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @author cedric dumoulin
  *
  */
-public class AddProfileHandler extends AbstractBaseHandler {
+public class AddProfileHandler extends AbstractProfileBaseHandler {
 
 	private List<NamedElement> cachedSelectionAsNamedElement;
+	
+	private String stereotypeNameInput;
+	private String profileNameInput;
+	
 	/**
 	 * Constructor.
 	 *
@@ -54,6 +66,39 @@ public class AddProfileHandler extends AbstractBaseHandler {
 	}
 
 	/**
+	 * 
+	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.handler.AbstractBaseHandler#preExecute(org.eclipse.core.commands.ExecutionEvent, org.eclipse.core.expressions.IEvaluationContext)
+	 *
+	 * @param event
+	 * @param context
+	 * @return
+	 * @throws ExecutionException
+	 */
+	@Override
+	protected boolean preExecute(ExecutionEvent event, IEvaluationContext context) throws ExecutionException {
+
+		// Open the dialog to ask the new name
+		// TODO dialog should not be in the transaction !! put it outside !
+		String inputName = null;
+		InputDialog dialog = new InputDialog(Display.getCurrent().getActiveShell(), "Attach a Stereotype to Selected Element", "Enter the stereotype name.", inputName, null);
+		if(dialog.open() == Window.OK) {
+			inputName = dialog.getValue();
+			if(inputName == null || inputName.length() <= 0) {
+				return false;
+			}
+		} else {
+			// cancelled
+			return false;
+		}
+
+		stereotypeNameInput = inputName;
+		profileNameInput = "testProfile";
+		
+		System.err.println("Try to apply stereotype '" + profileNameInput + ":" +stereotypeNameInput + "'");
+		return true;
+	}
+	
+	/**
 	 * @see org.eclipse.papyrus.uml.profile.drafter.ui.handler.AbstractBaseHandler#doExecute(org.eclipse.core.commands.ExecutionEvent, org.eclipse.core.expressions.IEvaluationContext, java.util.List)
 	 *
 	 * @param event
@@ -63,14 +108,24 @@ public class AddProfileHandler extends AbstractBaseHandler {
 	@Override
 	protected void doExecute(ExecutionEvent event, IEvaluationContext context) {
 
-		cachedSelectionAsNamedElement = null;
-		
 		System.err.println("Add Profile called. Selected elements:");
 		List<NamedElement> selected = getSelectionAsNamedElements(context);
 		for( NamedElement ele : selected) {
-			System.err.println(ele.getName());
+				System.err.println(ele.getName());
 		}
 		System.err.println("********************");
+		
+		if( selected.isEmpty()) {
+			return;
+		}
+		
+		// Try to apply the stereotype
+		ProfileApplicator profileApplicator = new ProfileApplicator(selected.get(0));
+		try {
+			profileApplicator.applyStereotype(profileNameInput, stereotypeNameInput);
+		} catch (DraftProfileException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -82,6 +137,8 @@ public class AddProfileHandler extends AbstractBaseHandler {
 	protected void resetCachedValues() {
 		super.resetCachedValues();
 		cachedSelectionAsNamedElement = null;
+		stereotypeNameInput = null;
+		profileNameInput = null;
 	}
 	
 	/**

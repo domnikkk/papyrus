@@ -124,5 +124,20 @@
          </menu>
       </menuContribution>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.core.service">
+      <service
+            classname="org.eclipse.papyrus.uml.profile.drafter.services.ProfileCatalogService"
+            description="Service used to initialize and access the ProfileCatalog."
+            priority="1"
+            startKind="lazy">
+         <dependsOn
+               serviceKeyRef="org.eclipse.emf.transaction.TransactionalEditingDomain">
+         </dependsOn>
+         <dependsOn
+               serviceKeyRef="org.eclipse.papyrus.infra.core.resource.ModelSet">
+         </dependsOn>
+      </service>
+   </extension>
 
 </plugin>

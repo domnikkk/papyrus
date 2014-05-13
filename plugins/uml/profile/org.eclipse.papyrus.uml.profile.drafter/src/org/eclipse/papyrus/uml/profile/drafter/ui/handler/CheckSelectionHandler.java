@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @author cedric dumoulin
  *
  */
-public class CheckSelectionHandler extends AbstractBaseHandler {
+public class CheckSelectionHandler extends AbstractProfileBaseHandler {
 
 	private List<NamedElement> cachedSelectionAsNamedElement;
 	/**
@@ -40,7 +40,6 @@ public class CheckSelectionHandler extends AbstractBaseHandler {
 	 *
 	 */
 	public CheckSelectionHandler() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -68,7 +67,14 @@ public class CheckSelectionHandler extends AbstractBaseHandler {
 		System.err.println("Add Profile called. Selected elements:");
 		List<NamedElement> selected = getSelectionAsNamedElements(context);
 		for( NamedElement ele : selected) {
-			System.err.println(ele.getName());
+			try {
+				System.err.println(ele.getName());
+				System.err.println("applicable stereotypes:" + ele.getApplicableStereotypes() );
+				System.err.println("applied profiles:" + ele.getNearestPackage().getAllAppliedProfiles());
+				System.err.println("profiles application:" + ele.getNearestPackage().getAllProfileApplications());
+			} catch (Exception e) {
+				System.err.println("error while printing data (" + e.getMessage() + ")");;
+			}
 		}
 		System.err.println("********************");
 	}
