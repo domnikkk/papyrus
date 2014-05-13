@@ -114,12 +114,14 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
+	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
+	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -346,6 +348,7 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -432,7 +435,9 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -465,6 +470,7 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -472,6 +478,7 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -650,6 +657,7 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -679,6 +687,7 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 
 	/**
 	 * Initializes the extended editor configuration
+	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -694,6 +703,7 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 
 	/**
 	 * Updates the preference configuration
+	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -707,7 +717,9 @@ public class ActorNameEditPartTN extends LabelEditPart implements ITextAwareEdit
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * @param theRequest the direct edit request that starts the direct edit system
+	 * 
+	 * @param theRequest
+	 *        the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {

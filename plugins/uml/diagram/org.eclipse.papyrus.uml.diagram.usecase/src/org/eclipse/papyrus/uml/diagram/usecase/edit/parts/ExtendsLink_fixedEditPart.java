@@ -111,12 +111,14 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
+	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
+	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -318,6 +320,7 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -404,7 +407,9 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -437,6 +442,7 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -444,6 +450,7 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -644,6 +651,7 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 
 	/**
 	 * Initializes the extended editor configuration
+	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -659,6 +667,7 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 
 	/**
 	 * Updates the preference configuration
+	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -672,7 +681,9 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * @param theRequest the direct edit request that starts the direct edit system
+	 * 
+	 * @param theRequest
+	 *        the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {
@@ -728,6 +739,7 @@ public class ExtendsLink_fixedEditPart extends PapyrusLabelEditPart implements I
 				}
 			}
 		}
+
 		super.handleNotificationEvent(event);
 	}
 

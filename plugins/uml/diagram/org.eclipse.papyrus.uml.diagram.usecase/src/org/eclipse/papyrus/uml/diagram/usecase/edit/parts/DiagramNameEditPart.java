@@ -112,12 +112,14 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
+	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
+	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -334,6 +336,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -420,7 +423,9 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -453,6 +458,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -460,6 +466,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -638,6 +645,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -667,6 +675,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 
 	/**
 	 * Initializes the extended editor configuration
+	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -682,6 +691,7 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 
 	/**
 	 * Updates the preference configuration
+	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -695,7 +705,9 @@ public class DiagramNameEditPart extends AbstractShortcutDiagramNameEditPart imp
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * @param theRequest the direct edit request that starts the direct edit system
+	 * 
+	 * @param theRequest
+	 *        the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {

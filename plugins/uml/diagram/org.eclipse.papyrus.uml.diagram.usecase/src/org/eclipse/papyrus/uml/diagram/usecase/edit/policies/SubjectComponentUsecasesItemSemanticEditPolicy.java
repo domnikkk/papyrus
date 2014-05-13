@@ -40,14 +40,22 @@ public class SubjectComponentUsecasesItemSemanticEditPolicy extends UMLBaseItemS
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.UseCase_3009 == requestElementType) {
+
 			return getGEFWrapper(new UseCaseInComponentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Comment_3015 == requestElementType) {
+
 			return getGEFWrapper(new CommentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Constraint_3017 == requestElementType) {
+
 			return getGEFWrapper(new ConstraintInComponentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

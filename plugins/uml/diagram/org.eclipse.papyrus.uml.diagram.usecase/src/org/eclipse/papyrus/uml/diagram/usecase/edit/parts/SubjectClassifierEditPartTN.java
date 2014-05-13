@@ -102,11 +102,13 @@ public class SubjectClassifierEditPartTN extends NamedElementEditPart {
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -118,6 +120,7 @@ public class SubjectClassifierEditPartTN extends NamedElementEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.usecase.figure.SubjectFigure
+	 * 
 	 * @generated
 	 */
 	public SubjectFigure getPrimaryShape() {
@@ -132,12 +135,15 @@ public class SubjectClassifierEditPartTN extends NamedElementEditPart {
 			((SubjectClassifierNameEditPartTN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if(childEditPart instanceof SubjectComponentUsecasesEditPart) {
 			IFigure pane = getPrimaryShape().getUseCasesContainerFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((SubjectComponentUsecasesEditPart)childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -204,12 +210,15 @@ public class SubjectClassifierEditPartTN extends NamedElementEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {

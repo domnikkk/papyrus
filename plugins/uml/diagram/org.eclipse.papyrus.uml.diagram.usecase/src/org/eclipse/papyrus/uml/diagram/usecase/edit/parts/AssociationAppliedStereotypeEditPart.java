@@ -110,12 +110,14 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
+	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
+	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -317,6 +319,7 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -403,7 +406,9 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -436,6 +441,7 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -443,6 +449,7 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -643,6 +650,7 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 
 	/**
 	 * Initializes the extended editor configuration
+	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -658,6 +666,7 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 
 	/**
 	 * Updates the preference configuration
+	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -671,7 +680,9 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * @param theRequest the direct edit request that starts the direct edit system
+	 * 
+	 * @param theRequest
+	 *        the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {
@@ -727,6 +738,7 @@ public class AssociationAppliedStereotypeEditPart extends PapyrusLabelEditPart i
 				}
 			}
 		}
+
 		super.handleNotificationEvent(event);
 	}
 
