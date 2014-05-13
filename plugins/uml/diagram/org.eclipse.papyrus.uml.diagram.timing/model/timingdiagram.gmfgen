@@ -1105,9 +1105,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getMessageLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-10"/>
@@ -1128,9 +1126,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getAppliedStereotypeLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-30"/>
@@ -1176,9 +1172,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getMessageLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-10"/>
@@ -1199,9 +1193,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getAppliedStereotypeLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-30"/>
@@ -1247,9 +1239,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getMessageLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-10"/>
@@ -1270,9 +1260,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getAppliedStereotypeLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-30"/>
@@ -1318,9 +1306,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getMessageLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-10"/>
@@ -1341,9 +1327,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getAppliedStereotypeLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-30"/>
@@ -1389,9 +1373,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getMessageLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-10"/>
@@ -1412,9 +1394,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getAppliedStereotypeLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-30"/>
@@ -1460,9 +1440,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getMessageLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-10"/>
@@ -1483,9 +1461,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getAppliedStereotypeLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-30"/>
@@ -1531,9 +1507,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getMessageLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-10"/>
@@ -1554,9 +1528,7 @@
                         xsi:type="gmfgen:ParentAssignedViewmap"
                         getterName="getAppliedStereotypeLabel"
                         figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-                        <attributes
-                            xsi:type="gmfgen:StyleAttributes"
-                            fixedFont="true"/>
+
                         <attributes
                             xsi:type="gmfgen:LabelOffsetAttributes"
                             y="-30"/>
