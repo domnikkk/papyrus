@@ -24,9 +24,8 @@ import org.eclipse.papyrus.uml.diagram.component.edit.policies.UsageItemSemantic
 /**
  * @generated
  */
-public class UsageEditPart extends ConnectionEditPart
-		implements ITreeBranchEditPart
-{
+public class UsageEditPart extends ConnectionEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -64,6 +63,6 @@ public class UsageEditPart extends ConnectionEditPart
 	 * @generated
 	 */
 	public UsageLinkFigure getPrimaryShape() {
-		return (UsageLinkFigure) getFigure();
+		return (UsageLinkFigure)getFigure();
 	}
 }

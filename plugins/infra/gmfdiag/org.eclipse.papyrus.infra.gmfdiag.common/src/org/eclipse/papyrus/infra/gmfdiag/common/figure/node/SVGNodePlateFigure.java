@@ -18,13 +18,16 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.batik.dom.svg.AbstractSVGPathSegList.SVGPathSegMovetoLinetoItem;
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.PrecisionDimension;
 import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.IOvalAnchorableFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.SlidableEllipseAnchor;
 import org.w3c.dom.Element;
 import org.w3c.dom.svg.SVGAnimatedLength;
 import org.w3c.dom.svg.SVGDocument;
@@ -259,10 +262,10 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 */
 	private PrecisionRectangle toDraw2DRectangle(SVGRectElement element) {
 		return new PrecisionRectangle(
-				getValueOf(element.getX()),
-				getValueOf(element.getY()),
-				getValueOf(element.getWidth()),
-				getValueOf(element.getHeight()));
+			getValueOf(element.getX()),
+			getValueOf(element.getY()),
+			getValueOf(element.getWidth()),
+			getValueOf(element.getHeight()));
 	}
 
 
@@ -296,10 +299,10 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	private SvgToDraw2DTransform getTransform(double innerWidth, double innerHeight, Rectangle anchor) {
 		PrecisionDimension maxDim = new PrecisionDimension(Math.max(svgDimension.preciseWidth(), innerWidth), Math.max(svgDimension.preciseHeight(), innerHeight));
 		return new SvgToDraw2DTransform(
-				anchor.width / maxDim.preciseWidth(),
-				anchor.height / maxDim.preciseHeight(),
-				anchor.x,
-				anchor.y);
+			anchor.width / maxDim.preciseWidth(),
+			anchor.height / maxDim.preciseHeight(),
+			anchor.x,
+			anchor.y);
 	}
 
 	/**
@@ -318,6 +321,40 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		}
 		return getHandleBounds();
 	}
+
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
+	 */
+	protected ConnectionAnchor createAnchor(PrecisionPoint p) {
+		if(this.outlinePoints == null) {
+			if(defaultNodePlate instanceof IOvalAnchorableFigure) {
+				defaultNodePlate.setBounds(this.getBounds());
+				if (p!=null){
+					// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
+					// PrecisionPoint will passed in - this is handled here
+					return new SlidableEllipseAnchor(this, p);
+				}
+			}
+			return super.createAnchor(p);
+		}
+
+		return super.createAnchor(p);
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
+	 */
+	protected ConnectionAnchor createDefaultAnchor() {
+		if(this.outlinePoints == null) {
+			if(defaultNodePlate instanceof IOvalAnchorableFigure) {
+				defaultNodePlate.setBounds(this.getBounds());
+				return new SlidableEllipseAnchor(this);
+			}
+		}
+		return super.createDefaultAnchor();
+	}
+
 
 	/**
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getPolygonPoints()

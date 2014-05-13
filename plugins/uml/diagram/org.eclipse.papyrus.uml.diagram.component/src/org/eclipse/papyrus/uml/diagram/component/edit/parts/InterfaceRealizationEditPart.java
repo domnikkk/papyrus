@@ -24,9 +24,8 @@ import org.eclipse.papyrus.uml.diagram.component.edit.policies.InterfaceRealizat
 /**
  * @generated
  */
-public class InterfaceRealizationEditPart extends ConnectionEditPart
-		implements ITreeBranchEditPart
-{
+public class InterfaceRealizationEditPart extends ConnectionEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -64,6 +63,6 @@ public class InterfaceRealizationEditPart extends ConnectionEditPart
 	 * @generated
 	 */
 	public InterfaceRealizationLinkFigure getPrimaryShape() {
-		return (InterfaceRealizationLinkFigure) getFigure();
+		return (InterfaceRealizationLinkFigure)getFigure();
 	}
 }

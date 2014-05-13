@@ -12,6 +12,7 @@
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.component.custom.figure.nodes;
 
+import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.PositionConstants;
@@ -49,6 +50,10 @@ public class LollipopInterfaceFigure  extends PapyrusNodeFigure implements IPapy
 	setBorder(null);
 	}
 
+	@Override
+	public void setBorder(Border border) {
+		super.setBorder(null);
+	}
 	/**
 	 * display it as provided
 	 * @param provided true if the display has to be provided

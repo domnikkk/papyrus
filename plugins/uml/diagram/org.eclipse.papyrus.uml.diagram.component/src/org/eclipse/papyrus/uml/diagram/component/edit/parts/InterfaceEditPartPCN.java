@@ -45,16 +45,18 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class InterfaceEditPartPCN extends NodeEditPart
-{
+public class InterfaceEditPartPCN extends NodeEditPart {
+
 	/**
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 3072;
+
 	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
+
 	/**
 	 * @generated
 	 */
@@ -86,21 +88,22 @@ public class InterfaceEditPartPCN extends NodeEditPart
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View) child.getModel();
-				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				View childView = (View)child.getModel();
+				switch(UMLVisualIDRegistry.getVisualID(childView)) {
 				case InterfaceNameEditPartPCN.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
+
 						protected List<?> createSelectionHandles() {
-							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
-					}
-					;
+					};
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
+				if(result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -126,21 +129,21 @@ public class InterfaceEditPartPCN extends NodeEditPart
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.component.custom.figure.nodes.LollipopInterfaceFigure
+	 * 
 	 * @generated
 	 */
 	public LollipopInterfaceFigure getPrimaryShape() {
-		return (LollipopInterfaceFigure) primaryShape;
+		return (LollipopInterfaceFigure)primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof InterfaceNameEditPartPCN) {
+		if(borderItemEditPart instanceof InterfaceNameEditPartPCN) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else
-		{
+		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
 	}
@@ -163,12 +166,15 @@ public class InterfaceEditPartPCN extends NodeEditPart
 	 */
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -179,7 +185,7 @@ public class InterfaceEditPartPCN extends NodeEditPart
 	 * @generated
 	 */
 	public IFigure getContentPane() {
-		if (contentPane != null) {
+		if(contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -189,7 +195,7 @@ public class InterfaceEditPartPCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void setForegroundColor(Color color) {
-		if (primaryShape != null) {
+		if(primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -205,8 +211,8 @@ public class InterfaceEditPartPCN extends NodeEditPart
 	 * @generated
 	 */
 	protected void setLineType(int style) {
-		if (primaryShape instanceof NodeFigure) {
-			((NodeFigure) primaryShape).setLineStyle(style);
+		if(primaryShape instanceof NodeFigure) {
+			((NodeFigure)primaryShape).setLineStyle(style);
 		}
 	}
 
