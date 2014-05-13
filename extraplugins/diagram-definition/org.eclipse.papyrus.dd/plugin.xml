@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2014 CEA LIST.
+  
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+  
+ Contributors:
+  CEA LIST - Initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DC -->
+      <package
+            uri="http://www.omg.org/spec/DD/20110901/DC"
+            class="org.eclipse.papyrus.dd.dc.DCPackage"
+            genModel="model/DC.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DG -->
+      <package
+            uri="http://www.omg.org/spec/DD/20110901/DG"
+            class="org.eclipse.papyrus.dd.dg.DGPackage"
+            genModel="model/DG.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DI -->
+      <package
+            uri="http://www.omg.org/spec/DD/20110901/DI"
+            class="org.eclipse.papyrus.dd.di.DIPackage"
+            genModel="model/DI.genmodel"/>
+   </extension>
+
+</plugin>
