@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * 
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434681
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.search.ui.query;
@@ -26,7 +27,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.text.IDocument;
@@ -178,15 +178,13 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 
 	private class EvaluationRunnable implements IRunnableWithProgress {
 
-		private final @NonNull
-		BaseResource resource;
+		private final BaseResource resource;
 
-		private final @NonNull
-		String expression;
+		private final String expression;
 
 		private Object value = null;
 
-		public EvaluationRunnable(@NonNull BaseResource resource, @NonNull String expression) {
+		public EvaluationRunnable(BaseResource resource, String expression) {
 			this.resource = resource;
 			this.expression = expression;
 		}
@@ -219,7 +217,6 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 				evaluationEnvironment.add(DomainUtil.nonNullModel(expressionInOCL.getContextVariable()), contextValue);
 				// if (modelManager == null) {
 				// let the evaluation environment create one
-				@NonNull
 				DomainModelManager modelManager2 = modelManager = evaluationEnvironment.createModelManager(contextObject);
 				// }
 				monitor.worked(2);
@@ -258,17 +255,15 @@ public class PapyrusOCLQuery extends AbstractPapyrusQuery {
 	 */
 	protected static class CancelableEvaluationVisitor extends EvaluationVisitorImpl {
 
-		private final @NonNull
-		IProgressMonitor monitor;
+		private final IProgressMonitor monitor;
 
-		protected CancelableEvaluationVisitor(@NonNull IProgressMonitor monitor, @NonNull Environment env, @NonNull EvaluationEnvironment evalEnv, @NonNull DomainModelManager modelManager) {
+		protected CancelableEvaluationVisitor(IProgressMonitor monitor, Environment env, EvaluationEnvironment evalEnv, DomainModelManager modelManager) {
 			super(env, evalEnv, modelManager);
 			this.monitor = monitor;
 		}
 
 		@Override
-		public @NonNull
-		EvaluationVisitor createNestedEvaluator() {
+		public EvaluationVisitor createNestedEvaluator() {
 			EnvironmentFactory factory = environment.getFactory();
 			EvaluationEnvironment nestedEvalEnv = factory.createEvaluationEnvironment(evaluationEnvironment);
 			CancelableEvaluationVisitor nestedVisitor = new CancelableEvaluationVisitor(monitor, environment, nestedEvalEnv, modelManager);
