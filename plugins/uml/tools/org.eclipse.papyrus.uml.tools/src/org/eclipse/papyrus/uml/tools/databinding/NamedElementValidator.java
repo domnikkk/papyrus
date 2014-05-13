@@ -41,26 +41,23 @@ public class NamedElementValidator extends AbstractUMLValidator {
 		boolean status = true;
 		String string = null;
 		if(value instanceof String) {
-
 			string = (String)value;
 		}
+
+		if(string == null) {
+			return Status.OK_STATUS;
+		}
+
 		if(this.source instanceof NamedElement) {
-
-
 			Namespace ns = ((NamedElement)this.source).getNamespace();
 			if(ns != null) {
 				EList<NamedElement> listElement = ns.getMembers();
 				for(NamedElement namedElement : listElement) {
-					if(namedElement.getName().equals(string) && (this.source != namedElement)) {
-						return warning("Same name in namespace");
-
+					if(this.source != namedElement && string.equals(namedElement.getName())) {
+						return warning("A NamedElement with the same name exists in the Namespace");
 					}
 				}
 			}
-
-
-
-
 
 			if(status) {
 				return Status.OK_STATUS;
