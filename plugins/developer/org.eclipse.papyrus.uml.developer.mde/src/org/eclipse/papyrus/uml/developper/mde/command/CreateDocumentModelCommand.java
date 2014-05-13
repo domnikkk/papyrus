@@ -40,8 +40,10 @@ import org.eclipse.papyrus.uml.developper.mde.I_DeveloperIDMStereotype;
 import org.eclipse.papyrus.uml.developper.mde.I_DocumentStereotype;
 import org.eclipse.papyrus.views.modelexplorer.NavigatorUtils;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Stereotype;
@@ -96,6 +98,8 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		//getDesing package
 		generateDesign(copyImageUtil, documentModel);
 
+		generateTests(copyImageUtil, documentModel);
+
 	}
 
 	protected void generateRequirements(Model documentModel) {
@@ -125,7 +129,6 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 					Stereotype contentStereotype= comment.getApplicableStereotype(I_DocumentStereotype.CONTENT_STEREOTYPE);
 					comment.applyStereotype(contentStereotype);
 					comment.setBody(out);
-
 				}
 			}
 		}
@@ -194,6 +197,67 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 
 	}
+
+	protected Model generateTests(CopyToImageUtil copyImageUtil, Model documentModel) {
+		Model testIN=null;
+		for(Iterator<PackageableElement> iterator = topModel.getPackagedElements().iterator(); iterator.hasNext();) {
+			PackageableElement packageableElement = (PackageableElement)iterator.next();
+			if((packageableElement.getAppliedStereotype(I_DeveloperIDMStereotype.TESTS_STEREOTYPE))!=null){
+				testIN=(Model)packageableElement;
+			}
+		}
+
+		if (testIN!= null){
+			Package testModelOUT = createSection(documentModel, "Tests");
+
+			//createRef diagram
+			Diagram currentDiagram= containedDiagrams(testIN).get(0);
+			generateImg(copyImageUtil, testModelOUT, currentDiagram);
+
+			for(Iterator<Comment> iteComment = (testIN).getOwnedComments().iterator(); iteComment.hasNext();) {
+				Comment currentComment = (Comment)iteComment.next();
+				transformToContentComment(testModelOUT, currentComment);
+
+			}
+
+			for(Iterator<EObject> iterator = testIN.eAllContents(); iterator.hasNext();) {
+				EObject packageableElement = (EObject)iterator.next();
+				if(packageableElement instanceof UseCase){
+					Package useCaseSectionOUT= createSection(testModelOUT, ((UseCase)packageableElement).getName());
+					for(Iterator<Comment> iteComment = ((UseCase)packageableElement).getOwnedComments().iterator(); iteComment.hasNext();) {
+						Comment currentComment = (Comment)iteComment.next();
+						transformToContentComment(useCaseSectionOUT, currentComment);
+					}
+					ArrayList<NamedElement> test= getAllDependentElement((UseCase)packageableElement, topModel);
+					for(Iterator<NamedElement> iteratorTest = test.iterator(); iteratorTest.hasNext();) {
+						NamedElement currentTest = (NamedElement)iteratorTest.next();
+						createSection(useCaseSectionOUT, currentTest.getName());
+
+					}
+				}
+
+			}
+
+		}
+		return testIN;
+	}
+
+	public ArrayList<NamedElement> getAllDependentElement(NamedElement namedElement, Package topModel){
+		ArrayList<NamedElement> result= new ArrayList<NamedElement>();
+		Iterator<EObject> iteratorEObject= topModel.eAllContents();
+		while(iteratorEObject.hasNext()) {
+			EObject eObject = (EObject)iteratorEObject.next();
+			if(eObject instanceof Dependency){
+				if(((Dependency)eObject).getSuppliers().contains(namedElement)){
+					result.addAll(((Dependency)eObject).getClients());
+					}
+			}
+
+		}
+		return result;
+
+	}
+
 
 	protected void createImageFromHyperLink(CopyToImageUtil copyImageUtil, Package designPackageOUT, Comment currentComment) {
 		List<Object>referedViews=NavigatorUtils.getEObjectViews(currentComment);
