@@ -112,6 +112,7 @@ public class InformationItemEditPartCN extends ClassifierEditPart {
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -138,6 +139,8 @@ public class InformationItemEditPartCN extends ClassifierEditPart {
 			((InformationItemNameEditPartCN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -196,6 +199,7 @@ public class InformationItemEditPartCN extends ClassifierEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

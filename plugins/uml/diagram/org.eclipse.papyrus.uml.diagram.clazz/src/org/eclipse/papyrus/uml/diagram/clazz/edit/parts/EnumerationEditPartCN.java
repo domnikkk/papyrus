@@ -122,6 +122,7 @@ public class EnumerationEditPartCN extends ClassifierEditPart {
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -148,12 +149,15 @@ public class EnumerationEditPartCN extends ClassifierEditPart {
 			((EnumerationNameEditPartCN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if(childEditPart instanceof EnumerationEnumerationLiteralCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getEnumerationLiteralCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((EnumerationEnumerationLiteralCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -220,6 +224,7 @@ public class EnumerationEditPartCN extends ClassifierEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

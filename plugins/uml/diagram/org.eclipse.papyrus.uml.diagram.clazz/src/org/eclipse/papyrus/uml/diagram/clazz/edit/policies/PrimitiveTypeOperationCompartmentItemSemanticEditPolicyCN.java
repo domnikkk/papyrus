@@ -38,8 +38,12 @@ public class PrimitiveTypeOperationCompartmentItemSemanticEditPolicyCN extends U
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.Operation_3042 == requestElementType) {
+
 			return getGEFWrapper(new OperationForPrimitiveTypeCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

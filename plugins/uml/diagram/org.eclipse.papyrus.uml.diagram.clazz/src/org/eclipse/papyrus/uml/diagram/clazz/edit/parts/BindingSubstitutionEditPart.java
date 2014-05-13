@@ -321,6 +321,7 @@ public class BindingSubstitutionEditPart extends PapyrusLabelEditPart implements
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -407,7 +408,9 @@ public class BindingSubstitutionEditPart extends PapyrusLabelEditPart implements
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -440,6 +443,7 @@ public class BindingSubstitutionEditPart extends PapyrusLabelEditPart implements
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -447,6 +451,7 @@ public class BindingSubstitutionEditPart extends PapyrusLabelEditPart implements
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -625,6 +630,7 @@ public class BindingSubstitutionEditPart extends PapyrusLabelEditPart implements
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -742,6 +748,7 @@ public class BindingSubstitutionEditPart extends PapyrusLabelEditPart implements
 				}
 			}
 		}
+
 		super.handleNotificationEvent(event);
 	}
 

@@ -108,6 +108,7 @@ public class CommentEditPart extends AbstractCommentEditPart {
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -134,6 +135,8 @@ public class CommentEditPart extends AbstractCommentEditPart {
 			((CommentBodyEditPart)childEditPart).setLabel(getPrimaryShape().getCornerBentFigure());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -192,6 +195,7 @@ public class CommentEditPart extends AbstractCommentEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

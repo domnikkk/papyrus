@@ -308,6 +308,7 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -394,7 +395,9 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -427,6 +430,7 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -434,6 +438,7 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -595,7 +600,7 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View)getModel();
+		return getPrimaryView();
 	}
 
 	/**
@@ -612,6 +617,7 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -775,6 +781,7 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 	 */
 	protected void addOwnerElementListeners() {
 		addListenerFilter(ADD_PARENT_MODEL, this, ((View)getParent().getModel())); //$NON-NLS-1$
+
 	}
 
 	/**
@@ -783,6 +790,7 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 	public void deactivate() {
 		removeOwnerElementListeners();
 		super.deactivate();
+
 	}
 
 	/**
@@ -790,5 +798,6 @@ public class InstanceSpecificationNameEditPartCN extends PapyrusCompartmentEditP
 	 */
 	protected void removeOwnerElementListeners() {
 		removeListenerFilter(ADD_PARENT_MODEL);
+
 	}
 }

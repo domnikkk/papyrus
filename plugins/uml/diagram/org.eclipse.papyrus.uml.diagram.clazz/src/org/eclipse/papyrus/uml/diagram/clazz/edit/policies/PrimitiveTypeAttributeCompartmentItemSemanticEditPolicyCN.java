@@ -38,8 +38,12 @@ public class PrimitiveTypeAttributeCompartmentItemSemanticEditPolicyCN extends U
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.Property_3041 == requestElementType) {
+
 			return getGEFWrapper(new PropertyforPrimitiveTypeCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

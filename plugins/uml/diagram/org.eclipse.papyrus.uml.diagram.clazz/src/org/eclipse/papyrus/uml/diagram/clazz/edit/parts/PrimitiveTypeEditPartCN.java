@@ -126,6 +126,7 @@ public class PrimitiveTypeEditPartCN extends ClassifierEditPart {
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -152,18 +153,22 @@ public class PrimitiveTypeEditPartCN extends ClassifierEditPart {
 			((PrimitiveTypeNameEditPartCN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if(childEditPart instanceof PrimitiveTypeAttributeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getAttributeCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((PrimitiveTypeAttributeCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
+
 		if(childEditPart instanceof PrimitiveTypeOperationCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getOperationCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((PrimitiveTypeOperationCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -238,6 +243,7 @@ public class PrimitiveTypeEditPartCN extends ClassifierEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

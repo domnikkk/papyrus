@@ -85,6 +85,7 @@ public class ModelEditPartCN extends NamedElementEditPart {
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		//in Papyrus diagrams are not strongly synchronised
 		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.clazz.edit.policies.ModelCanonicalEditPolicyCN());
+
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy("RESIZE_BORDER_ITEMS", new ConstrainedItemBorderLayoutEditPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new CustomGraphicalNodeEditPolicy());
@@ -135,6 +136,7 @@ public class ModelEditPartCN extends NamedElementEditPart {
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -161,24 +163,35 @@ public class ModelEditPartCN extends NamedElementEditPart {
 			((ModelNameEditPartCN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if(childEditPart instanceof ModelPackageableElementCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getPackageableElementFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ModelPackageableElementCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
+
+
+
 		//Papyrus Gencode :precise the locator for a template signature
 		if(childEditPart instanceof RedefinableTemplateSignatureEditPart) {
 			IBorderItemLocator locator = new TemplateBorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer().add(((RedefinableTemplateSignatureEditPart)childEditPart).getFigure(), locator);
 			return true;
 		}
+
+
+
+
 		//Papyrus Gencode :precise the locator for a template signature
 		if(childEditPart instanceof TemplateSignatureEditPart) {
 			IBorderItemLocator locator = new TemplateBorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer().add(((TemplateSignatureEditPart)childEditPart).getFigure(), locator);
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -256,6 +269,7 @@ public class ModelEditPartCN extends NamedElementEditPart {
 	 */
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

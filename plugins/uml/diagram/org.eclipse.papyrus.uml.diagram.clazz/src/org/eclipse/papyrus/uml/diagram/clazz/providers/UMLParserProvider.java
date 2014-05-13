@@ -1790,48 +1790,68 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch(visualID) {
 		case MultiDependencyLabelEditPart.VISUAL_ID:
 			return getDependencyName_1Parser();
+
 		case AssociationClassNameEditPart.VISUAL_ID:
 			return getAssociationClassName_5066Parser();
+
+
 		case InstanceSpecificationNameEditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5002Parser();
+
 		case ComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5005Parser();
+
 		case SignalNameEditPart.VISUAL_ID:
 			return getSignalName_5008Parser();
+
 		case InterfaceNameEditPart.VISUAL_ID:
 			return getInterfaceName_5011Parser();
+
 		case ModelNameEditPartTN.VISUAL_ID:
 			return getModelName_5020Parser();
+
 		case EnumerationNameEditPart.VISUAL_ID:
 			return getEnumerationName_5023Parser();
+
 		case PackageNameEditPart.VISUAL_ID:
 			return getPackageName_5026Parser();
+
 		case InformationItemNameEditPart.VISUAL_ID:
 			return getInformationItemName_5161Parser();
+
 		case ClassNameEditPart.VISUAL_ID:
 			return getClassName_5029Parser();
+
 		case PrimitiveTypeNameEditPart.VISUAL_ID:
 			return getPrimitiveTypeName_5032Parser();
+
 		case DataTypeNameEditPart.VISUAL_ID:
 			return getDataTypeName_5035Parser();
+
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5037Parser();
 		case ConstraintBodyEditPart.VISUAL_ID:
 			return getConstraintSpecification_5159Parser();
+
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_5038Parser();
+
 		case DiagramNameEditPart.VISUAL_ID:
 			return getDiagramName_0Parser();
+
 		case DurationObservationNameEditPart.VISUAL_ID:
 			return getDurationObservationName_5155Parser();
 		case DurationObservationStereotypeLabelEditPart.VISUAL_ID:
 			return getDurationObservationName_5156Parser();
+
 		case TimeObservationNameEditPart.VISUAL_ID:
 			return getTimeObservationName_5153Parser();
 		case TimeObservationStereotypeLabelEditPart.VISUAL_ID:
 			return getTimeObservationName_5154Parser();
+
 		case DefaultNamedElementNameEditPart.VISUAL_ID:
 			return getNamedElementName_5157Parser();
+
 		case PropertyForComponentEditPart.VISUAL_ID:
 			return getProperty_3002Parser();
 		case PropertyForSignalEditPart.VISUAL_ID:
@@ -1872,34 +1892,50 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getReception_3039Parser();
 		case SlotEditPart.VISUAL_ID:
 			return getSlot_3030Parser();
+
+
+
 		case InstanceSpecificationNameEditPartCN.VISUAL_ID:
 			return getInstanceSpecificationName_5040Parser();
+
 		case ComponentNameEditPartCN.VISUAL_ID:
 			return getComponentName_5043Parser();
+
 		case SignalNameEditPartCN.VISUAL_ID:
 			return getSignalName_5046Parser();
+
 		case InterfaceNameEditPartCN.VISUAL_ID:
 			return getInterfaceName_5049Parser();
+
 		case ModelNameEditPartCN.VISUAL_ID:
 			return getModelName_5052Parser();
+
 		case EnumerationNameEditPartCN.VISUAL_ID:
 			return getEnumerationName_5055Parser();
+
 		case PackageNameEditPartCN.VISUAL_ID:
 			return getPackageName_5017Parser();
+
 		case InformationItemNameEditPartCN.VISUAL_ID:
 			return getInformationItemName_5162Parser();
+
 		case ClassNameEditPartCN.VISUAL_ID:
 			return getClassName_5014Parser();
+
 		case PrimitiveTypeNameEditPartCN.VISUAL_ID:
 			return getPrimitiveTypeName_5058Parser();
+
 		case DataTypeNameEditPartCN.VISUAL_ID:
 			return getDataTypeName_5061Parser();
+
 		case CommentBodyEditPartCN.VISUAL_ID:
 			return getCommentBody_5063Parser();
+
 		case ConstraintNameEditPartCN.VISUAL_ID:
 			return getConstraintName_5064Parser();
 		case ConstraintBodyEditPartCN.VISUAL_ID:
 			return getConstraintSpecification_5160Parser();
+
 		case NestedInterfaceForClassEditPart.VISUAL_ID:
 			return getInterface_3036Parser();
 		case NestedInterfaceForComponentEditPart.VISUAL_ID:
@@ -1930,10 +1966,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getSignal_3051Parser();
 		case NestedSignalForInterfaceEditPart.VISUAL_ID:
 			return getSignal_3049Parser();
+
 		case AssociationClassRoleSourceEditPart.VISUAL_ID:
 			return getAssociationClassName_6031Parser();
 		case AssociationClassRoleTargetEditPart.VISUAL_ID:
 			return getAssociationClassName_6032Parser();
+
 		case AppliedStereotypeAssociationEditPart.VISUAL_ID:
 			return getAssociationName_6001Parser();
 		case AssociationNameEditPart.VISUAL_ID:
@@ -1946,56 +1984,81 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAssociationName_6033Parser();
 		case AssociationMultiplicityTargetEditPart.VISUAL_ID:
 			return getAssociationName_6034Parser();
+
 		case AssociationBranchMutliplicityEditPart.VISUAL_ID:
 			return getAssociationName_6035Parser();
+
 		case AppliedStereotyperGeneralizationEditPart.VISUAL_ID:
 			return getGeneralizationIsSubstitutable_6007Parser();
+
 		case AppliedStereotypeInterfaceRealizationEditPart.VISUAL_ID:
 			return getInterfaceRealizationName_6008Parser();
 		case InterfaceRealizationNameEditPart.VISUAL_ID:
 			return getInterfaceRealizationName_6009Parser();
+
 		case AppliedStereotypeSubstitutionEditPart.VISUAL_ID:
 			return getSubstitutionName_6010Parser();
 		case SubstitutionNameEditPart.VISUAL_ID:
 			return getSubstitutionName_6011Parser();
+
 		case AppliedStereotypeRealizationEditPart.VISUAL_ID:
 			return getRealizationName_6012Parser();
 		case RealizationNameEditPart.VISUAL_ID:
 			return getRealizationName_6013Parser();
+
 		case AbstractionNameEditPart.VISUAL_ID:
 			return getAbstractionName_6014Parser();
 		case AppliedStereotypeAbstractionEditPart.VISUAL_ID:
 			return getAbstractionName_6015Parser();
+
 		case UsageNameEditPart.VISUAL_ID:
 			return getUsageName_6016Parser();
 		case AppliedStereotypeUsageEditPart.VISUAL_ID:
 			return getUsageName_6017Parser();
+
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6026Parser();
 		case AppliedStereotypeDependencyEditPart.VISUAL_ID:
 			return getDependencyName_6027Parser();
+
+
 		case ElementImportAliasEditPart.VISUAL_ID:
 			return getElementImportAlias_6020Parser();
 		case AppliedStereotypeElementImportEditPart.VISUAL_ID:
 			return getElementImportAlias_6021Parser();
+
 		case AppliedStereotypePackageImportEditPart.VISUAL_ID:
 			return getPackageImportVisibility_6022Parser();
+
 		case AppliedStereotypePackageMergeEditPart.VISUAL_ID:
 			return getPackageMergeLabel_6030Parser();
+
+
+
+
 		case BindingSubstitutionEditPart.VISUAL_ID:
 			return getTemplateBindingLabel_6023Parser();
 		case AppliedStereotypeTemplateBindingEditPart.VISUAL_ID:
 			return getTemplateBindingLabel_6036Parser();
+
 		case ConstraintLabelEditPart.VISUAL_ID:
 			return getGeneralizationSetIsCoveringIsDisjoint_5067Parser();
 		case AppliedStereotypeGeneralizationSetLabelEditPart.VISUAL_ID:
 			return getGeneralizationSetLabel_6037Parser();
+
 		case SourceISLinkLabelEditPart.VISUAL_ID:
 			return getInstanceSpecificationLabel_6039Parser();
 		case TargetISLinkLabelEditPart.VISUAL_ID:
 			return getInstanceSpecificationLabel_6038Parser();
+
+
+
+
+
 		case InformationFlowAppliedStereotypeEditPart.VISUAL_ID:
 			return getInformationFlowName_6041Parser();
+
+
 		}
 		return null;
 	}

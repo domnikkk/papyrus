@@ -44,6 +44,7 @@ public class UMLDomainNavigatorItem extends PlatformObject {
 						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
 				}
+
 				return null;
 			}
 

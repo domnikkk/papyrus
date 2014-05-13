@@ -105,6 +105,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory = createAdapterFactory();
 		DiagramPreferenceInitializer diagramPreferenceInitializer = new DiagramPreferenceInitializer();
 		diagramPreferenceInitializer.initializeDefaultPreferences();
+
 	}
 
 	/**

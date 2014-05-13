@@ -38,8 +38,12 @@ public class InterfaceAttributeCompartmentItemSemanticEditPolicyCN extends UMLBa
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.Property_3006 == requestElementType) {
+
 			return getGEFWrapper(new PropertyForInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

@@ -76,6 +76,7 @@ public class InstanceSpecificationSlotCompartmentEditPartCN extends ListCompartm
 		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
 		//in Papyrus diagrams are not strongly synchronised
 		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.clazz.edit.policies.InstanceSpecificationSlotCompartmentCanonicalEditPolicyCN());
+
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ClassDiagramDragDropEditPolicy());
 	}
@@ -93,6 +94,7 @@ public class InstanceSpecificationSlotCompartmentEditPartCN extends ListCompartm
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
+
 		return super.getTargetEditPart(request);
 	}
 

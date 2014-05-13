@@ -112,6 +112,7 @@ public class DefaultNamedElementEditPart extends NamedElementEditPart {
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -138,6 +139,8 @@ public class DefaultNamedElementEditPart extends NamedElementEditPart {
 			((DefaultNamedElementNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -196,6 +199,7 @@ public class DefaultNamedElementEditPart extends NamedElementEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

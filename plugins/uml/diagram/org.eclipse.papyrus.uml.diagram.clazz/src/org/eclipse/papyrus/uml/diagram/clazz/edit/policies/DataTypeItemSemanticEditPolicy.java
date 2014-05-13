@@ -106,8 +106,12 @@ public class DataTypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.RedefinableTemplateSignature_3015 == requestElementType) {
+
 			return getGEFWrapper(new RedefinableTemplateSignatureCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}
@@ -121,6 +125,7 @@ public class DataTypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		if(provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
+
 			if(deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}

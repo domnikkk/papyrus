@@ -38,8 +38,12 @@ public class EnumerationEnumerationLiteralCompartmentItemSemanticEditPolicy exte
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.EnumerationLiteral_3017 == requestElementType) {
+
 			return getGEFWrapper(new EnumerationLiteralCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

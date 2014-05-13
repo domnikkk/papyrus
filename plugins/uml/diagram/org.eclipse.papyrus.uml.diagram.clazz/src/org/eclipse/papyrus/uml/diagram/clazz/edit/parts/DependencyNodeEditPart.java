@@ -166,6 +166,7 @@ public class DependencyNodeEditPart extends NodeEditPart {
 	 */
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

@@ -77,6 +77,7 @@ public class ComponentNestedClassifierCompartmentEditPart extends ResizeableList
 		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
 		//in Papyrus diagrams are not strongly synchronised
 		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.clazz.edit.policies.ComponentNestedClassifierCompartmentCanonicalEditPolicy());
+
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new NestedClazzCompartmentCreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ClassDiagramDragDropEditPolicy());
@@ -95,6 +96,7 @@ public class ComponentNestedClassifierCompartmentEditPart extends ResizeableList
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
+
 		return super.getTargetEditPart(request);
 	}
 

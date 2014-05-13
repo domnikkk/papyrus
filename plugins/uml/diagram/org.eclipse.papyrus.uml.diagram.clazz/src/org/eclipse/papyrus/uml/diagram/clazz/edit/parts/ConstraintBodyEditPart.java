@@ -306,6 +306,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -392,7 +393,9 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -425,6 +428,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -432,6 +436,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -593,7 +598,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View)getModel();
+		return getPrimaryView();
 	}
 
 	/**
@@ -610,6 +615,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -773,6 +779,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	 */
 	protected void addOwnerElementListeners() {
 		addListenerFilter(ADD_PARENT_MODEL, this, ((View)getParent().getModel())); //$NON-NLS-1$
+
 	}
 
 	/**
@@ -781,6 +788,7 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	public void deactivate() {
 		removeOwnerElementListeners();
 		super.deactivate();
+
 	}
 
 	/**
@@ -788,5 +796,6 @@ public class ConstraintBodyEditPart extends PapyrusCompartmentEditPart implement
 	 */
 	protected void removeOwnerElementListeners() {
 		removeListenerFilter(ADD_PARENT_MODEL);
+
 	}
 }

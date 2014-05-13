@@ -66,16 +66,21 @@ public class NestedInterfaceForClassCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getInterface());
 		return data.isPermitted();
+
+
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		Interface newElement = UMLFactory.eINSTANCE.createInterface();
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if(data.isPermitted()) {
@@ -83,14 +88,20 @@ public class NestedInterfaceForClassCreateCommand extends EditElementCommand {
 				if(!data.execute(target, newElement))
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 			} else {
+
 				Class qualifiedTarget = (Class)target;
 				qualifiedTarget.getNestedClassifiers().add(newElement);
+
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
+
+
 		ElementInitializers.getInstance().init_Interface_3036(newElement);
+
 		doConfigure(newElement, monitor, info);
+
 		((CreateElementRequest)getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

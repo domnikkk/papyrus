@@ -319,6 +319,7 @@ public class AppliedStereotypeAbstractionEditPart extends PapyrusLabelEditPart i
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -405,7 +406,9 @@ public class AppliedStereotypeAbstractionEditPart extends PapyrusLabelEditPart i
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -438,6 +441,7 @@ public class AppliedStereotypeAbstractionEditPart extends PapyrusLabelEditPart i
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -445,6 +449,7 @@ public class AppliedStereotypeAbstractionEditPart extends PapyrusLabelEditPart i
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -733,6 +738,7 @@ public class AppliedStereotypeAbstractionEditPart extends PapyrusLabelEditPart i
 				}
 			}
 		}
+
 		super.handleNotificationEvent(event);
 	}
 

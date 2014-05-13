@@ -110,6 +110,7 @@ public class ConstraintEditPart extends AbstractConstraintEditPart {
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -140,6 +141,8 @@ public class ConstraintEditPart extends AbstractConstraintEditPart {
 			((ConstraintBodyEditPart)childEditPart).setLabel(getPrimaryShape().getConstraintFigure());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -201,6 +204,7 @@ public class ConstraintEditPart extends AbstractConstraintEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
