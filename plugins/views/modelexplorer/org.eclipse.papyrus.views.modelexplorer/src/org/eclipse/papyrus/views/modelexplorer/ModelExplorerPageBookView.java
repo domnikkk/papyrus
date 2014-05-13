@@ -55,7 +55,9 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 	public void init(IViewSite site, IMemento memento) throws PartInitException {
 		super.init(site, memento);
 
-		state.load(memento);
+		if(memento != null) {
+			state.load(memento);
+		}
 	}
 
 	/**
