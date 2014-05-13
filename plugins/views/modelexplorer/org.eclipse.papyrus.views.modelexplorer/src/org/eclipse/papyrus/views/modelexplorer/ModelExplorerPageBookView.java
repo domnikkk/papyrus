@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 LIFL & CEA LIST.
+ * Copyright (c) 2010, 2014 LIFL, CEA LIST, and others.
  *
  * 
  * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,7 @@
  * Contributors:
  *  Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Ansgar Radermacher (CEA) ansgar.radermacher@cea.fr - Added support for IGotoMarker
+ *  Christian W. Damus (CEA) - bug 434635
  *
  *****************************************************************************/
 
@@ -21,9 +22,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.views.modelexplorer.core.ui.pagebookview.MultiViewPageBookView;
-import org.eclipse.papyrus.views.modelexplorer.core.ui.pagebookview.ViewPartPage;
+import org.eclipse.papyrus.views.modelexplorer.sorting.DefaultTreeViewerSorting;
+import org.eclipse.papyrus.views.modelexplorer.sorting.ITreeViewerSorting;
+import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IViewPart;
+import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.navigator.CommonViewer;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
@@ -44,6 +49,15 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 	/** ID of the view, as given in the plugin.xml file */
 	public static final String VIEW_ID = "org.eclipse.papyrus.views.modelexplorer.modelexplorer"; //$NON-NLS-1$
 
+	private final SharedModelExplorerState state = new SharedModelExplorerState();
+
+	@Override
+	public void init(IViewSite site, IMemento memento) throws PartInitException {
+		super.init(site, memento);
+
+		state.load(memento);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -52,7 +66,8 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 
 		// part is of type IMultiDiagramEditor (because of isImportant() )
 
-		ViewPartPage page = new ModelExplorerPage();
+		ModelExplorerPage page = new ModelExplorerPage();
+		page.setSharedState(state);
 
 		// Init the page, and so the View
 		initPage(page, part);
@@ -65,12 +80,30 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Object getAdapter(Class adapter) {
+	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
 
 		if(IPropertySheetPage.class == adapter) {
 			// Do not test if tabbedPropertySheetPage is null before calling new
 			// this is managed by Eclipse which only call current method when necessary
 			return new TabbedPropertySheetPage(this);
+		}
+
+		if(adapter == ITreeViewerSorting.class) {
+			return new DefaultTreeViewerSorting() {
+
+				@Override
+				public void setSorted(boolean sorted) {
+					// Update the shared state
+					if(state != null) {
+						state.setAlphaSorted(sorted);
+					}
+				}
+
+				@Override
+				public boolean isSorted() {
+					return state != null && state.isAlphaSorted();
+				}
+			};
 		}
 
 		return super.getAdapter(adapter);
@@ -104,5 +137,12 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 				}
 			}
 		}
+	}
+
+	@Override
+	public void saveState(IMemento memento) {
+		state.save(memento);
+
+		super.saveState(memento);
 	}
 }
