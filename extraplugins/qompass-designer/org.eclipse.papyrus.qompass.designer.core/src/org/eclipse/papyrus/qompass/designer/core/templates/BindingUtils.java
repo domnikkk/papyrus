@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.C_Cpp.ConstInit;
 import org.eclipse.papyrus.qompass.designer.core.Messages;
 import org.eclipse.papyrus.qompass.designer.core.PortUtils;
+import org.eclipse.papyrus.qompass.designer.core.StUtils;
 import org.eclipse.papyrus.qompass.designer.core.acceleo.AcceleoDriverWrapper;
 import org.eclipse.papyrus.qompass.designer.core.transformations.LazyCopier;
 import org.eclipse.papyrus.qompass.designer.core.transformations.TransformationContext;
@@ -52,6 +53,7 @@ public class BindingUtils {
 					Parameter newParam = EcoreUtil.copy(parameter); // copy parameter via EcoreUtil
 					newParam.setType(copy.getCopy(parameter.getType()));
 					newOperation.getOwnedParameters().add(newParam);
+					StUtils.copyStereotypes(parameter, newParam);	// copy stereotypes of the parameter
 				}
 			}
 			TransformationContext.classifier = newOperation.getClass_();
