@@ -70,6 +70,9 @@ public class AllTests {
 		/* css */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.gmfdiag.css.tests.tests.AllTests.class));
 
+		/* control mode */
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.controlmode.tests.AllTests.class));
+		
 		//
 		/* sysml moved to a separate launcher */
 		//

@@ -46,7 +46,7 @@ public class CreateModelFragmentDialog extends ResourceDialog {
 		this.defaultName = defaultName;
 	}
 
-	private String computeDefaultURI() {
+	public String computeDefaultURI() {
 		String ext = currentResource.getURI().fileExtension();
 		URI uri = currentResource.getURI().trimSegments(1);
 		uri = uri.appendSegment(defaultName).appendFileExtension(ext);
