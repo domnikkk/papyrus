@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_TQU0cLaBEeOpyp3GKGu8Hw" type="PapyrusUMLClassDiagram" name="ClassDiagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_UVYYALaBEeOpyp3GKGu8Hw" type="2008">
+    <children xmi:type="notation:DecorationNode" xmi:id="_UVfFsLaBEeOpyp3GKGu8Hw" type="5029"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UVlzYLaBEeOpyp3GKGu8Hw" type="7017">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UVlzYbaBEeOpyp3GKGu8Hw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UVlzYraBEeOpyp3GKGu8Hw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UVlzY7aBEeOpyp3GKGu8Hw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UVlzZLaBEeOpyp3GKGu8Hw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UVlzZbaBEeOpyp3GKGu8Hw" type="7018">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UVlzZraBEeOpyp3GKGu8Hw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UVlzZ7aBEeOpyp3GKGu8Hw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UVlzaLaBEeOpyp3GKGu8Hw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UVlzabaBEeOpyp3GKGu8Hw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UVlzaraBEeOpyp3GKGu8Hw" type="7019">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UVlza7aBEeOpyp3GKGu8Hw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UVlzbLaBEeOpyp3GKGu8Hw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UVlzbbaBEeOpyp3GKGu8Hw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UVlzbraBEeOpyp3GKGu8Hw"/>
+    </children>
+    <element xmi:type="uml:Class" href="ControlModeTestModel.uml#_iORqgLUNEeOpyp3GKGu8Hw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UVYYAbaBEeOpyp3GKGu8Hw" x="420" y="179"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_TQU0cbaBEeOpyp3GKGu8Hw"/>
+  <styles xmi:type="style:PapyrusViewStyle" xmi:id="_TQU0craBEeOpyp3GKGu8Hw">
+    <owner xmi:type="uml:Model" href="ControlModeTestModel.uml#_LOdvgLNPEeOZR-JQ361_AA"/>
+  </styles>
+  <element xmi:type="uml:Model" href="ControlModeTestModel.uml#_LOdvgLNPEeOZR-JQ361_AA"/>
+</notation:Diagram>
