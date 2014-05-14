@@ -74,7 +74,7 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0"
 Bundle-Vendor: %providerName
 Eclipse-LazyStart: true
-Bundle-Version: 1.0.0.vqualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramEditorPlugin
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.communication; singleton:=true
