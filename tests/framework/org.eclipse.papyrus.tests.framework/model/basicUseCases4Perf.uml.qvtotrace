@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testCreateElement"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9LE32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testLoadEditor"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9MU32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testDeleteElement"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9N032EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testRefreshOutline"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9Lk32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testMoveElement"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9M032EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testControlMode"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9NE32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testOpenOneDiagram"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9LU32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testSelectElement"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9Nk32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testOpenNDiagrams"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9NU32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testLoadModel"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9ME32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testRefreshModelExplorer"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9Mk32EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="testCaseActivities" package="basicUseCases4Perf" module="basicUseCases4Perf">
+      <runtimeMappingOperation href="../../org.eclipse.papyrus.tests.performance/qvto/basicUseCases4PerfTesting.qvtox#//testCaseActivities"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="String">
+        <value primitiveValue="testSaveModel"/>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="basicUseCases4Perf.uml#_i0M9L032EeOWhtYz6Vtxpw"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

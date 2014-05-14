@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:utp="http://utp_1-2.profile.uml" xsi:schemaLocation="http://utp_1-2.profile.uml platform:/plugin/org.omg.utp/model/utp_1-2.profile.uml#_bgefUFXiEeOIvfWlaSfWrQ">
+  <uml:Model xmi:id="_ZVIpIFrEEeO3hPlhOzBsZw" name="org.eclipse.papyrus.uml.diagram.component.test">
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZVIpIVrEEeO3hPlhOzBsZw" name="TestComponentDiagramTopNodeGen">
+      <generalization xmi:id="_ZVIpIlrEEeO3hPlhOzBsZw">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_kHbiID-pEeOBJIvKdeZtpQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_ZVIpI1rEEeO3hPlhOzBsZw" name="containerEditPart" isDerived="true" redefinedProperty="_ZVIpMVrEEeO3hPlhOzBsZw">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1yUix5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpJFrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJcVoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpJVrEEeO3hPlhOzBsZw" name="diagram">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xF_x5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpJlrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJKloiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpJ1rEEeO3hPlhOzBsZw" name="constraintEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1yUix5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpKFrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJg1oiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpKVrEEeO3hPlhOzBsZw" name="generator">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1weoB5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpKlrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJIVoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpK1rEEeO3hPlhOzBsZw" name="commentEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1yUix5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpLFrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJlVoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpLVrEEeO3hPlhOzBsZw" name="interfaceEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1yUix5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpLlrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJaFoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpL1rEEeO3hPlhOzBsZw" name="componentEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1yUix5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpMFrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJX1oiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpMVrEEeO3hPlhOzBsZw" name="packageEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1yUix5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpMlrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJcVoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpM1rEEeO3hPlhOzBsZw" name="modelEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1yUix5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpNFrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJnloiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpNVrEEeO3hPlhOzBsZw" name="self" type="_ZVIpIVrEEeO3hPlhOzBsZw"/>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVIpNlrEEeO3hPlhOzBsZw" name="constraintEditPartTestCase" specification="_ZVIpTlrEEeO3hPlhOzBsZw" node="_ZVIpN1rEEeO3hPlhOzBsZw _5dXhIFrVEeOdj6J6uSKo0g _8e3jQFrVEeOdj6J6uSKo0g">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_A78LgFrWEeOdj6J6uSKo0g" name="ControlFlow" source="_5dXhIFrVEeOdj6J6uSKo0g" target="_ZVIpN1rEEeO3hPlhOzBsZw"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_CPOYUFrWEeOdj6J6uSKo0g" name="ControlFlow1" source="_ZVIpN1rEEeO3hPlhOzBsZw" target="_8e3jQFrVEeOdj6J6uSKo0g"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVIpN1rEEeO3hPlhOzBsZw" name="manageTopNode" outgoing="_CPOYUFrWEeOdj6J6uSKo0g" incoming="_A78LgFrWEeOdj6J6uSKo0g">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVIpOFrEEeO3hPlhOzBsZw" name=""/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVIpOVrEEeO3hPlhOzBsZw"/>
+        </node>
+        <node xmi:type="uml:InitialNode" xmi:id="_5dXhIFrVEeOdj6J6uSKo0g" name="InitialNode" outgoing="_A78LgFrWEeOdj6J6uSKo0g"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_8e3jQFrVEeOdj6J6uSKo0g" name="ActivityFinalNode" incoming="_CPOYUFrWEeOdj6J6uSKo0g"/>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVIpOlrEEeO3hPlhOzBsZw" name="commentEditPartTestCase" specification="_ZVIpUVrEEeO3hPlhOzBsZw" node="_ZVIpO1rEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVIpO1rEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVIpPFrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVIpPVrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVIpPlrEEeO3hPlhOzBsZw" name="packageEditPartTestCase" specification="_ZVIpVFrEEeO3hPlhOzBsZw" node="_ZVIpP1rEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVIpP1rEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVIpQFrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVIpQVrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVIpQlrEEeO3hPlhOzBsZw" name="modelEditPartTestCase" specification="_ZVIpV1rEEeO3hPlhOzBsZw" node="_ZVIpQ1rEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVIpQ1rEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVIpRFrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVIpRVrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVIpRlrEEeO3hPlhOzBsZw" name="interfaceEditPartTestCase" specification="_ZVIpXVrEEeO3hPlhOzBsZw" node="_ZVIpR1rEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVIpR1rEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVIpSFrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVIpSVrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVIpSlrEEeO3hPlhOzBsZw" name="componentEditPartTestCase" specification="_ZVIpWlrEEeO3hPlhOzBsZw" node="_ZVIpS1rEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVIpS1rEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVIpTFrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVIpTVrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_ZVIpTlrEEeO3hPlhOzBsZw" name="testTopNodeConstraintEditPart" method="_ZVIpNlrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVIpT1rEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpUFrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJg1oiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVIpUVrEEeO3hPlhOzBsZw" name="testTopNodeCommentEditPart" method="_ZVIpOlrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVIpUlrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpU1rEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJlVoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVIpVFrEEeO3hPlhOzBsZw" name="testTopNodePackageEditPart" method="_ZVIpPlrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVIpVVrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpVlrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJcVoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVIpV1rEEeO3hPlhOzBsZw" name="testTopNodeModelEditPart" method="_ZVIpQlrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVIpWFrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpWVrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJnloiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVIpWlrEEeO3hPlhOzBsZw" name="testTopNodeComponentEditPart" method="_ZVIpSlrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVIpW1rEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpXFrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJX1oiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVIpXVrEEeO3hPlhOzBsZw" name="testTopNodeInterfaceEditPart" method="_ZVIpRlrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVIpXlrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpX1rEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJaFoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZVIpYFrEEeO3hPlhOzBsZw" name="TestComponentDiagramChildNodeGen">
+      <generalization xmi:id="_ZVIpYVrEEeO3hPlhOzBsZw">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_hyiuYD-pEeOBJIvKdeZtpQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_ZVIpYlrEEeO3hPlhOzBsZw" name="componentEditPartPCN">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG1B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpY1rEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwMFoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpZFrEEeO3hPlhOzBsZw" name="containerEditPart" isDerived="true" redefinedProperty="_ZVJQMVrEEeO3hPlhOzBsZw">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG1B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpZVrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ-FoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpZlrEEeO3hPlhOzBsZw" name="constraintEditPartPCN">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG1B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVIpZ1rEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ71oiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVIpaFrEEeO3hPlhOzBsZw" name="generator">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1weoB5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQMFrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJIVoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQMVrEEeO3hPlhOzBsZw" name="packageEditPartCN">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG1B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQMlrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ-FoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQM1rEEeO3hPlhOzBsZw" name="modelEditPartCN">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG1B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQNFrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ3VoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQNVrEEeO3hPlhOzBsZw" name="interfaceEditPartPCN">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG1B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQNlrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ5loiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQN1rEEeO3hPlhOzBsZw" name="diagram">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xF_x5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQOFrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJKloiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQOVrEEeO3hPlhOzBsZw" name="commentEditPartPCN">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG1B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQOlrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pKE1oiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQO1rEEeO3hPlhOzBsZw" name="self" type="_ZVIpYFrEEeO3hPlhOzBsZw"/>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQPFrEEeO3hPlhOzBsZw" name="packageEditPartCNTestCase" specification="_ZVJQY1rEEeO3hPlhOzBsZw" node="_ZVJQPVrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQPVrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQPlrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQP1rEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQQFrEEeO3hPlhOzBsZw" name="commentEditPartPCNTestCase" specification="_ZVJQWlrEEeO3hPlhOzBsZw" node="_ZVJQQVrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQQVrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQQlrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQQ1rEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQRFrEEeO3hPlhOzBsZw" name="componentEditPartPCNTestCase" specification="_ZVJQYFrEEeO3hPlhOzBsZw" node="_ZVJQRVrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQRVrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQRlrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQR1rEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQSFrEEeO3hPlhOzBsZw" name="interfaceEditPartPCNTestCase" specification="_ZVJQVFrEEeO3hPlhOzBsZw" node="_ZVJQSVrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQSVrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQSlrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQS1rEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQTFrEEeO3hPlhOzBsZw" name="modelEditPartCNTestCase" specification="_ZVJQXVrEEeO3hPlhOzBsZw" node="_ZVJQTVrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQTVrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQTlrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQT1rEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQUFrEEeO3hPlhOzBsZw" name="constraintEditPartPCNTestCase" specification="_ZVJQV1rEEeO3hPlhOzBsZw" node="_ZVJQUVrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQUVrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQUlrEEeO3hPlhOzBsZw"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQU1rEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_ZVJQVFrEEeO3hPlhOzBsZw" name="testChildNodeInterfaceEditPartPCN" method="_ZVJQSFrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQVVrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQVlrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ5loiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQV1rEEeO3hPlhOzBsZw" name="testChildNodeConstraintEditPartPCN" method="_ZVJQUFrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQWFrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQWVrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ71oiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQWlrEEeO3hPlhOzBsZw" name="testChildNodeCommentEditPartPCN" method="_ZVJQQFrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQW1rEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQXFrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pKE1oiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQXVrEEeO3hPlhOzBsZw" name="testChildNodeModelEditPartCN" method="_ZVJQTFrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQXlrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQX1rEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ3VoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQYFrEEeO3hPlhOzBsZw" name="testChildNodeComponentEditPartPCN" method="_ZVJQRFrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQYVrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQYlrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwMFoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQY1rEEeO3hPlhOzBsZw" name="testChildNodePackageEditPartCN" method="_ZVJQPFrEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQZFrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQZVrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJ-FoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZVJQZlrEEeO3hPlhOzBsZw" name="TestComponentDiagramLinkGen">
+      <generalization xmi:id="_ZVJQZ1rEEeO3hPlhOzBsZw">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_lX988D-pEeOBJIvKdeZtpQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_ZVJQaFrEEeO3hPlhOzBsZw" name="diagram">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xF_x5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQaVrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJKloiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQalrEEeO3hPlhOzBsZw" name="interfaceRealizationEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG5B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQa1rEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwtloiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQbFrEEeO3hPlhOzBsZw" name="generator">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1weoB5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQbVrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJIVoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQblrEEeO3hPlhOzBsZw" name="usageEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG5B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQb1rEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pweFoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQcFrEEeO3hPlhOzBsZw" name="manifestationEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG5B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQcVrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pw0VoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQclrEEeO3hPlhOzBsZw" name="dependencyEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG5B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQc1rEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwb1oiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQdFrEEeO3hPlhOzBsZw" name="abstractionEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG5B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQdVrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwyFoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQdlrEEeO3hPlhOzBsZw" name="componentRealizationEditPart">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1xG5B5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQd1rEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwk1oiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQeFrEEeO3hPlhOzBsZw" name="containerEditPart" isDerived="true" redefinedProperty="_ZVIpMVrEEeO3hPlhOzBsZw">
+        <type xmi:type="uml:Class" href="../../org.eclipse.gmf.codegen/models/gmfgen.uml#_I1yUix5VEeOGS-CW6AxI2g"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQeVrEEeO3hPlhOzBsZw">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pJcVoiEeObH75FUB6--Q"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZVJQelrEEeO3hPlhOzBsZw" name="self" type="_ZVJQZlrEEeO3hPlhOzBsZw"/>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQe1rEEeO3hPlhOzBsZw" name="interfaceRealizationEditPartTestCase" specification="_ZVJQmVrEEeO3hPlhOzBsZw" node="_ZVJQfFrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQfFrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQfVrEEeO3hPlhOzBsZw"/>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_gT9wMD-sEeOBJIvKdeZtpQ"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQflrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQf1rEEeO3hPlhOzBsZw" name="dependencyEditPartTestCase" specification="_ZVJQllrEEeO3hPlhOzBsZw" node="_ZVJQgFrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQgFrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQgVrEEeO3hPlhOzBsZw"/>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_gT9wMD-sEeOBJIvKdeZtpQ"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQglrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQg1rEEeO3hPlhOzBsZw" name="abstractionEditPartTestCase" specification="_ZVJQnFrEEeO3hPlhOzBsZw" node="_ZVJQhFrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQhFrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQhVrEEeO3hPlhOzBsZw"/>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_gT9wMD-sEeOBJIvKdeZtpQ"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQhlrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQh1rEEeO3hPlhOzBsZw" name="componentRealizationEditPartTestCase" specification="_ZVJQn1rEEeO3hPlhOzBsZw" node="_ZVJQiFrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQiFrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQiVrEEeO3hPlhOzBsZw"/>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_gT9wMD-sEeOBJIvKdeZtpQ"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQilrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQi1rEEeO3hPlhOzBsZw" name="usageEditPartTestCase" specification="_ZVJQolrEEeO3hPlhOzBsZw" node="_ZVJQjFrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQjFrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQjVrEEeO3hPlhOzBsZw"/>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_gT9wMD-sEeOBJIvKdeZtpQ"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQjlrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZVJQj1rEEeO3hPlhOzBsZw" name="manifestationEditPartTestCase" specification="_ZVJQk1rEEeO3hPlhOzBsZw" node="_ZVJQkFrEEeO3hPlhOzBsZw">
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZVJQkFrEEeO3hPlhOzBsZw">
+          <argument xmi:type="uml:ValuePin" xmi:id="_ZVJQkVrEEeO3hPlhOzBsZw"/>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_gT9wMD-sEeOBJIvKdeZtpQ"/>
+          <target xmi:type="uml:ValuePin" xmi:id="_ZVJQklrEEeO3hPlhOzBsZw"/>
+        </node>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_ZVJQk1rEEeO3hPlhOzBsZw" name="testLinkManifestationEditPart" method="_ZVJQj1rEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQlFrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQlVrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pw0VoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQllrEEeO3hPlhOzBsZw" name="testLinkDependencyEditPart" method="_ZVJQf1rEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQl1rEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQmFrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwb1oiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQmVrEEeO3hPlhOzBsZw" name="testLinkInterfaceRealizationEditPart" method="_ZVJQe1rEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQmlrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQm1rEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwtloiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQnFrEEeO3hPlhOzBsZw" name="testLinkAbstractionEditPart" method="_ZVJQg1rEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQnVrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQnlrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwyFoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQn1rEEeO3hPlhOzBsZw" name="testLinkComponentRealizationEditPart" method="_ZVJQh1rEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQoFrEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQoVrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pwk1oiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZVJQolrEEeO3hPlhOzBsZw" name="testLinkUsageEditPart" method="_ZVJQi1rEEeO3hPlhOzBsZw">
+        <ownedParameter xmi:id="_ZVJQo1rEEeO3hPlhOzBsZw">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZVJQpFrEEeO3hPlhOzBsZw">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen.uml#_v8pweFoiEeObH75FUB6--Q"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <profileApplication xmi:id="_ZVJQpVrEEeO3hPlhOzBsZw">
+      <eAnnotations xmi:id="_ZVJQplrEEeO3hPlhOzBsZw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../org.omg.utp/utp_1-2.profile.uml#_bgefUFXiEeOIvfWlaSfWrQ"/>
+      </eAnnotations>
+      <appliedProfile href="../../org.omg.utp/utp_1-2.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+    </profileApplication>
+  </uml:Model>
+  <utp:TestContext xmi:id="_ZVJQp1rEEeO3hPlhOzBsZw" base_BehavioredClassifier="_ZVIpIVrEEeO3hPlhOzBsZw" base_StructuredClassifier="_ZVIpIVrEEeO3hPlhOzBsZw"/>
+  <utp:TestContext xmi:id="_ZVJQqFrEEeO3hPlhOzBsZw" base_BehavioredClassifier="_ZVIpYFrEEeO3hPlhOzBsZw" base_StructuredClassifier="_ZVIpYFrEEeO3hPlhOzBsZw"/>
+  <utp:TestContext xmi:id="_ZVJQqVrEEeO3hPlhOzBsZw" base_BehavioredClassifier="_ZVJQZlrEEeO3hPlhOzBsZw" base_StructuredClassifier="_ZVJQZlrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQqlrEEeO3hPlhOzBsZw" base_Property="_ZVIpJ1rEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQq1rEEeO3hPlhOzBsZw" base_Property="_ZVIpK1rEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQrFrEEeO3hPlhOzBsZw" base_Property="_ZVIpLVrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQrVrEEeO3hPlhOzBsZw" base_Property="_ZVIpL1rEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQrlrEEeO3hPlhOzBsZw" base_Property="_ZVIpMVrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQr1rEEeO3hPlhOzBsZw" base_Property="_ZVIpM1rEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQsFrEEeO3hPlhOzBsZw" base_Property="_ZVIpYlrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQsVrEEeO3hPlhOzBsZw" base_Property="_ZVIpZlrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQslrEEeO3hPlhOzBsZw" base_Property="_ZVJQMVrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQs1rEEeO3hPlhOzBsZw" base_Property="_ZVJQM1rEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQtFrEEeO3hPlhOzBsZw" base_Property="_ZVJQNVrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQtVrEEeO3hPlhOzBsZw" base_Property="_ZVJQOVrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQtlrEEeO3hPlhOzBsZw" base_Property="_ZVJQalrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQt1rEEeO3hPlhOzBsZw" base_Property="_ZVJQblrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQuFrEEeO3hPlhOzBsZw" base_Property="_ZVJQcFrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQuVrEEeO3hPlhOzBsZw" base_Property="_ZVJQclrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQulrEEeO3hPlhOzBsZw" base_Property="_ZVJQdFrEEeO3hPlhOzBsZw"/>
+  <utp:SUT xmi:id="_ZVJQu1rEEeO3hPlhOzBsZw" base_Property="_ZVJQdlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQvFrEEeO3hPlhOzBsZw" base_Operation="_ZVIpTlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQvVrEEeO3hPlhOzBsZw" base_Operation="_ZVIpUVrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQvlrEEeO3hPlhOzBsZw" base_Operation="_ZVIpVFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQv1rEEeO3hPlhOzBsZw" base_Operation="_ZVIpV1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQwFrEEeO3hPlhOzBsZw" base_Operation="_ZVIpWlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQwVrEEeO3hPlhOzBsZw" base_Operation="_ZVIpXVrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQwlrEEeO3hPlhOzBsZw" base_Operation="_ZVJQVFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQw1rEEeO3hPlhOzBsZw" base_Operation="_ZVJQV1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQxFrEEeO3hPlhOzBsZw" base_Operation="_ZVJQWlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQxVrEEeO3hPlhOzBsZw" base_Operation="_ZVJQXVrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQxlrEEeO3hPlhOzBsZw" base_Operation="_ZVJQYFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQx1rEEeO3hPlhOzBsZw" base_Operation="_ZVJQY1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQyFrEEeO3hPlhOzBsZw" base_Operation="_ZVJQk1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQyVrEEeO3hPlhOzBsZw" base_Operation="_ZVJQllrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQylrEEeO3hPlhOzBsZw" base_Operation="_ZVJQmVrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQy1rEEeO3hPlhOzBsZw" base_Operation="_ZVJQnFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQzFrEEeO3hPlhOzBsZw" base_Operation="_ZVJQn1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQzVrEEeO3hPlhOzBsZw" base_Operation="_ZVJQolrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQzlrEEeO3hPlhOzBsZw" base_Behavior="_ZVIpNlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQz1rEEeO3hPlhOzBsZw" base_Behavior="_ZVIpOlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ0FrEEeO3hPlhOzBsZw" base_Behavior="_ZVIpPlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ0VrEEeO3hPlhOzBsZw" base_Behavior="_ZVIpQlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ0lrEEeO3hPlhOzBsZw" base_Behavior="_ZVIpRlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ01rEEeO3hPlhOzBsZw" base_Behavior="_ZVIpSlrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ1FrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQPFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ1VrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQQFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ1lrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQRFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ11rEEeO3hPlhOzBsZw" base_Behavior="_ZVJQSFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ2FrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQTFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ2VrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQUFrEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ2lrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQe1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ21rEEeO3hPlhOzBsZw" base_Behavior="_ZVJQf1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ3FrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQg1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ3VrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQi1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ3lrEEeO3hPlhOzBsZw" base_Behavior="_ZVJQh1rEEeO3hPlhOzBsZw"/>
+  <utp:TestCase xmi:id="_ZVJQ31rEEeO3hPlhOzBsZw" base_Behavior="_ZVJQj1rEEeO3hPlhOzBsZw"/>
+</xmi:XMI>

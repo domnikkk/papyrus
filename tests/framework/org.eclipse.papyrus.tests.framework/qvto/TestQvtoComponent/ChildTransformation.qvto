@@ -1,0 +1,3 @@
+import qvto.TestQvtoComponent.ParentTransformation;
+
+transformation childTransformation;

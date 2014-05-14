@@ -1,0 +1,55 @@
+import canonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation classdiagramtest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends canonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "PackageEditPart";
+	topNodesToTest := Set{
+		"ComponentEditPart",
+		"InstanceSpecificationEditPart",
+		"SignalEditPart",
+		"ModelEditPartTN",
+		"EnumerationEditPart",
+		"PackageEditPart",
+		"ClassEditPart",
+		"PrimitiveTypeEditPart",
+		"DataTypeEditPart",
+		"ConstraintEditPart",
+		"CommentEditPart",
+		"InformationItemEditPart"
+	} ;
+	childNodesToTest := Set{
+		"ComponentEditPartCN",
+		"InstanceSpecificationEditPartCN",
+		"SignalEditPartCN",
+		"ModelEditPartCN",
+		"EnumerationEditPartCN",
+		"PackageEditPartCN",
+		"ClassEditPartCN",
+		"InformationItemEditPartCN",
+		"PrimitiveTypeEditPartCN",
+		"DataTypeEditPartCN",
+		"ConstraintEditPartCN",
+		"CommentEditPartCN"
+	};
+	linksToTest := Set{
+		"DependencyEditPart",
+		"AssociationEditPart",
+		"RealizationEditPart"
+		"AbstractionEditPart",
+		"UsageEditPart",
+		"InformationFlowEditPart"
+	};
+	linksOwnedBySourceToTest := Set{
+		"GeneralizationEditPart",
+		"InterfaceRealizationEditPart",
+		"SubstitutionEditPart",
+		"ElementImportEditPart",
+		"PackageImportEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->map gmfgen2papyrusTest("org.eclipse.papyrus.uml.diagram.clazz.test");
+}
+
+

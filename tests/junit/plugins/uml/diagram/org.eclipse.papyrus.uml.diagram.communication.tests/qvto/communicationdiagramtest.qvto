@@ -1,0 +1,25 @@
+import canonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation communicationdiagramtest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends canonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "InteractionEditPart";
+	topNodesToTest := Set{
+		"InteractionEditPart" 
+	} ;
+	childNodesToTest := Set{
+		"LifelineEditPartCN", 
+		"ConstraintEditPartCN",
+		"CommentEditPartCN" 
+		"TimeObservationEditPartCN", 
+		"DurationObservationEditPartCN"
+	};
+	linksToTest := Set{
+		"MessageEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->map gmfgen2papyrusTest("org.eclipse.papyrus.uml.diagram.communication.test");
+}
+
+

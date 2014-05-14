@@ -1,0 +1,207 @@
+<<<<<<< HEAD
+[comment encoding = Cp1252 /]
+[**
+ * The documentation of the module.
+ */]
+[module generateTopNodeTestsFromPapyrusTesting('http://papyrustesting/1.0')/]
+
+[**
+ * The documentation of the template.
+ * @param aGenEditorGenerator
+ */]
+[template public generateTopNodeTestsFromPapyrusTesting(testSuite : TestSuite)]
+	
+	[comment @main /]
+
+[for (tc : TestCase | testSuite.testCases)]
+
+	[file (className().concat('.java'), false, 'Cp1252')]
+/*****************************************************************************
+ * Copyright (c) 2009 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * This file has been generated automatically in the Papyrus Test Framework.
+ *
+ *****************************************************************************/
+package [testSuite.javaPackageName/].test.canonical;
+
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
+import org.eclipse.papyrus.commands.ICreationCommand;
+import [testSuite.javaPackageName/].test.I[tc.diagramName/]TestsConstants;
+import org.eclipse.papyrus.diagram.tests.canonical.TestTopNode;
+import [testSuite.javaPackageName/].Create[tc.diagramName/]Command;
+import [testSuite.javaPackageName/].providers.UMLElementTypes;
+[for (test : TopNodeTest | tc.tests.oclAsType(TopNodeTest))]
+import [testSuite.javaPackageName/].edit.parts.[test.genTopLevelNode.editPartClassName/];
+[/for]
+import org.eclipse.uml2.uml.UMLPackage;
+import org.junit.Test;
+
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class [className()/].
+ */
+public class [className()/] extends TestTopNode {
+	
+	
+	@Override
+	protected ICreationCommand getDiagramCommandCreation() {
+		return new Create[tc.diagramName/]Command();
+	}
+	
+	@Override
+	protected String getProjectName() {
+		return IClassDiagramTestsConstants.PROJECT_NAME;
+	}
+
+	@Override
+	protected String getFileName() {
+		return IClassDiagramTestsConstants.FILE_NAME;
+	}
+
+	[for (test : TopNodeTest | tc.tests.oclAsType(TopNodeTest))]
+	/**
+	 * Test to manage component [genTopLevelNodeName()/].
+	 */
+	@Test
+	public void testToManage[genTopLevelNodeName()/]() {
+		testToManageNode(UMLElementTypes.getElementType([test.genTopLevelNode.editPartClassName/].VISUAL_ID), [newTopNodeTestTemplate()/], UMLElementTypes.Package_2007, true);
+	}
+	[/for]
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override 
+	protected CreateViewRequest createViewRequestShapeContainer() {
+		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.Package_2007, getDiagramEditPart().getDiagramPreferencesHint());
+	}
+	
+}
+	[/file]
+	
+[/for]
+
+
+[/template]
+
+[template public newTopNodeTestTemplate (test : TopNodeTest) ]
+[if (genTopLevelNodeName() = 'Class')]UMLPackage.eINSTANCE.get[genTopLevelNodeName() + '_'/]()[else]UMLPackage.eINSTANCE.get[genTopLevelNodeName()/]()[/if]
+[/template]
+
+[query public className (tc : TestCase) : String = 'Test' + tc.diagramName + 'TopNode'/]
+[query public genTopLevelNodeName (test : TopNodeTest) : String = 
+	test.genTopLevelNode.modelFacet.metaClass.ecoreClass.name
+/]
+
+=======
+[comment encoding = Cp1252 /]
+[**
+ * The documentation of the module.
+ */]
+[module generateTopNodeTestsFromPapyrusTesting('http://papyrustesting/1.0')/]
+
+[**
+ * The documentation of the template.
+ * @param aGenEditorGenerator
+ */]
+[template public generateTopNodeTestsFromPapyrusTesting(testSuite : TestSuite)]
+	
+	[comment @main /]
+
+[for (tc : TestCase | testSuite.testCases)]
+
+	[file (className().concat('.java'), false, 'Cp1252')]
+/*****************************************************************************
+ * Copyright (c) 2009 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * This file has been generated automatically in the Papyrus Test Framework.
+ *
+ *****************************************************************************/
+package [testSuite.javaPackageName/].test.canonical;
+
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
+import org.eclipse.papyrus.commands.ICreationCommand;
+import [testSuite.javaPackageName/].test.I[tc.diagramName/]TestsConstants;
+import org.eclipse.papyrus.diagram.tests.canonical.TestTopNode;
+import [testSuite.javaPackageName/].Create[tc.diagramName/]Command;
+import [testSuite.javaPackageName/].providers.UMLElementTypes;
+[for (test : TopNodeTest | tc.tests.oclAsType(TopNodeTest))]
+import [testSuite.javaPackageName/].edit.parts.[test.genTopLevelNode.editPartClassName/];
+[/for]
+import org.eclipse.uml2.uml.UMLPackage;
+import org.junit.Test;
+
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class [className()/].
+ */
+public class [className()/] extends TestTopNode {
+	
+	
+	@Override
+	protected ICreationCommand getDiagramCommandCreation() {
+		return new Create[tc.diagramName/]Command();
+	}
+	
+	@Override
+	protected String getProjectName() {
+		return IClassDiagramTestsConstants.PROJECT_NAME;
+	}
+
+	@Override
+	protected String getFileName() {
+		return IClassDiagramTestsConstants.FILE_NAME;
+	}
+
+	[for (test : TopNodeTest | tc.tests.oclAsType(TopNodeTest))]
+	/**
+	 * Test to manage component [genTopLevelNodeName()/].
+	 */
+	@Test
+	public void testToManage[genTopLevelNodeName()/]() {
+		testToManageNode(UMLElementTypes.getElementType([test.genTopLevelNode.editPartClassName/].VISUAL_ID), [newTopNodeTestTemplate()/], UMLElementTypes.Package_2007, true);
+	}
+	[/for]
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override 
+	protected CreateViewRequest createViewRequestShapeContainer() {
+		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.Package_2007, getDiagramEditPart().getDiagramPreferencesHint());
+	}
+	
+}
+	[/file]
+	
+[/for]
+
+
+[/template]
+
+[template public newTopNodeTestTemplate (test : TopNodeTest) ]
+[if (genTopLevelNodeName() = 'Class')]UMLPackage.eINSTANCE.get[genTopLevelNodeName() + '_'/]()[else]UMLPackage.eINSTANCE.get[genTopLevelNodeName()/]()[/if]
+[/template]
+
+[query public className (tc : TestCase) : String = 'Test' + tc.diagramName + 'TopNode'/]
+[query public genTopLevelNodeName (test : TopNodeTest) : String = 
+	test.genTopLevelNode.modelFacet.metaClass.ecoreClass.name
+/]
+
+>>>>>>> refs/remotes/origin/master

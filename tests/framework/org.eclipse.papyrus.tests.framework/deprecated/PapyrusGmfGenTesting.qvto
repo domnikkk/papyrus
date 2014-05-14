@@ -1,0 +1,180 @@
+<<<<<<< HEAD
+modeltype gmfgen uses 'http://www.eclipse.org/gmf/2009/GenModel';
+modeltype papyrusTesting uses 'http://papyrustesting/1.0';
+
+transformation PapyrusGmfGenTesting(in gmfgenIn : gmfgen, out papyrusTesting);
+
+main() {
+	gmfgenIn.rootObjects()[gmfgen::GenEditorGenerator]->map gmfGenDiag2papyrusTestingSuite();
+}
+
+mapping gmfgen::GenEditorGenerator::gmfGenDiag2papyrusTestingSuite() : papyrusTesting::TestSuite {
+	testCases := self.diagram.map diagram2testCase(self.plugin.name.replace('PapyrusUML', ''))->asOrderedSet();
+	javaPackageName := self.packageNamePrefix;
+}
+
+mapping gmfgen::GenDiagram::diagram2testCase(gmfgenDiagramName : String) : papyrusTesting::TestCase {
+	tests := self.topLevelNodes.map topLevelNodes2tests(gmfgenDiagramName)->asOrderedSet();
+	name := gmfgenDiagramName + 'TestCase';
+	diagramName := gmfgenDiagramName;
+}																			
+
+mapping gmfgen::GenTopLevelNode::topLevelNodes2tests(pluginName : String) : papyrusTesting::TopNodeTest
+when {self.isTopLevelNodeToTest(pluginName) } 
+{
+	genTopLevelNode := self;
+	
+}
+
+query gmfgen::GenTopLevelNode::isTopLevelNodeToTest(pluginName : String) : Boolean {
+	 var topNodeClasses : List(String) = null;
+	 switch{
+	 	case (pluginName = 'ClassDiagram'){
+			topNodeClasses := classDiagramTopNodes();
+	 	}
+	 	case (pluginName = 'ComponentDiagram'){
+	 		topNodeClasses := componentDiagramTopNodes();
+	 	}
+	 	case (pluginName = 'DeploymentDiagram'){
+	 		topNodeClasses := deploymentDiagramTopNodes();
+	 	}
+	 };
+	 return topNodeClasses->exists(n | n = self.elementType.displayName);
+}
+
+query classDiagramTopNodes() : List(String) 
+{
+	return List{
+	 	"Component", 
+	 	"InstanceSpecification", 
+	 	"Signal", 
+	 	"Model", 
+	 	"Enumeration", 
+	 	"Package", 
+	 	"Class", 
+	 	"PrimitiveType", 
+	 	"DataType", 
+	 	"Constraint", 
+	 	"Comment", 
+	 	"InformationItem"};
+}
+
+query componentDiagramTopNodes() : List(String)
+{
+	return List{
+		"DependencyNode",
+		"Component",
+		"Model",
+		"Package",
+		"Interface",
+		"Comment",
+		"Constraint",
+		"DefaultNamedElement"
+	}
+}				
+
+query deploymentDiagramTopNodes() : List(String)
+{
+	return List{
+		"DependencyNode",
+		"Model",
+		"Package",
+		"Constraint",
+		"Comment",
+		"ExecutionEnvironment",
+		"Device",
+		"Artifact",
+		"Node",
+		"DefaultNamedElement"	
+	}
+=======
+modeltype gmfgen uses 'http://www.eclipse.org/gmf/2009/GenModel';
+modeltype papyrusTesting uses 'http://papyrustesting/1.0';
+
+transformation PapyrusGmfGenTesting(in gmfgenIn : gmfgen, out papyrusTesting);
+
+main() {
+	gmfgenIn.rootObjects()[gmfgen::GenEditorGenerator]->map gmfGenDiag2papyrusTestingSuite();
+}
+
+mapping gmfgen::GenEditorGenerator::gmfGenDiag2papyrusTestingSuite() : papyrusTesting::TestSuite {
+	testCases := self.diagram.map diagram2testCase(self.plugin.name.replace('PapyrusUML', ''))->asOrderedSet();
+	javaPackageName := self.packageNamePrefix;
+}
+
+mapping gmfgen::GenDiagram::diagram2testCase(gmfgenDiagramName : String) : papyrusTesting::TestCase {
+	tests := self.topLevelNodes.map topLevelNodes2tests(gmfgenDiagramName)->asOrderedSet();
+	name := gmfgenDiagramName + 'TestCase';
+	diagramName := gmfgenDiagramName;
+}																			
+
+mapping gmfgen::GenTopLevelNode::topLevelNodes2tests(pluginName : String) : papyrusTesting::TopNodeTest
+when {self.isTopLevelNodeToTest(pluginName) } 
+{
+	genTopLevelNode := self;
+	
+}
+
+query gmfgen::GenTopLevelNode::isTopLevelNodeToTest(pluginName : String) : Boolean {
+	 var topNodeClasses : List(String) = null;
+	 switch{
+	 	case (pluginName = 'ClassDiagram'){
+			topNodeClasses := classDiagramTopNodes();
+	 	}
+	 	case (pluginName = 'ComponentDiagram'){
+	 		topNodeClasses := componentDiagramTopNodes();
+	 	}
+	 	case (pluginName = 'DeploymentDiagram'){
+	 		topNodeClasses := deploymentDiagramTopNodes();
+	 	}
+	 };
+	 return topNodeClasses->exists(n | n = self.elementType.displayName);
+}
+
+query classDiagramTopNodes() : List(String) 
+{
+	return List{
+	 	"Component", 
+	 	"InstanceSpecification", 
+	 	"Signal", 
+	 	"Model", 
+	 	"Enumeration", 
+	 	"Package", 
+	 	"Class", 
+	 	"PrimitiveType", 
+	 	"DataType", 
+	 	"Constraint", 
+	 	"Comment", 
+	 	"InformationItem"};
+}
+
+query componentDiagramTopNodes() : List(String)
+{
+	return List{
+		"DependencyNode",
+		"Component",
+		"Model",
+		"Package",
+		"Interface",
+		"Comment",
+		"Constraint",
+		"DefaultNamedElement"
+	}
+}				
+
+query deploymentDiagramTopNodes() : List(String)
+{
+	return List{
+		"DependencyNode",
+		"Model",
+		"Package",
+		"Constraint",
+		"Comment",
+		"ExecutionEnvironment",
+		"Device",
+		"Artifact",
+		"Node",
+		"DefaultNamedElement"	
+	}
+>>>>>>> refs/remotes/origin/master
+}																		

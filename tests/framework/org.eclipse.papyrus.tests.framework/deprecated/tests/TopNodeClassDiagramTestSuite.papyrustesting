@@ -1,0 +1,85 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="ASCII"?>
+<papyrustesting:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:papyrustesting="http://papyrustesting/1.0" javaPackageName="org.eclipse.papyrus.diagram.clazz">
+  <testCases diagramName="ClassDiagram" name="ClassDiagramTestCase">
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.3"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.4"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.5"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.7"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.8"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.9"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.10"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.11"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.12"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.13"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.14"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.15"/>
+    </tests>
+  </testCases>
+</papyrustesting:TestSuite>
+=======
+<?xml version="1.0" encoding="ASCII"?>
+<papyrustesting:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:papyrustesting="http://papyrustesting/1.0" javaPackageName="org.eclipse.papyrus.diagram.clazz">
+  <testCases diagramName="ClassDiagram" name="ClassDiagramTestCase">
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.3"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.4"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.5"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.7"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.8"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.9"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.10"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.11"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.12"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.13"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.14"/>
+    </tests>
+    <tests xsi:type="papyrustesting:TopNodeTest">
+      <genTopLevelNode href="../../../org.eclipse.papyrus.diagram.clazz/model/classdiagram.gmfgen#/0/@diagram/@topLevelNodes.15"/>
+    </tests>
+  </testCases>
+</papyrustesting:TestSuite>
+>>>>>>> refs/remotes/origin/master

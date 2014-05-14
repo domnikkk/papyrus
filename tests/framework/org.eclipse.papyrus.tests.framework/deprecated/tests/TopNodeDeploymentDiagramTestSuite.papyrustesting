@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="ASCII"?>
+<papyrustesting:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:papyrustesting="http://papyrustesting/1.0" javaPackageName="org.eclipse.papyrus.diagram.deployment">
+  <testCases diagramName="Papyrus Deployment Diagram (Incubation)" name="Papyrus Deployment Diagram (Incubation)TestCase"/>
+</papyrustesting:TestSuite>
+=======
+<?xml version="1.0" encoding="ASCII"?>
+<papyrustesting:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:papyrustesting="http://papyrustesting/1.0" javaPackageName="org.eclipse.papyrus.diagram.deployment">
+  <testCases diagramName="Papyrus Deployment Diagram (Incubation)" name="Papyrus Deployment Diagram (Incubation)TestCase"/>
+</papyrustesting:TestSuite>
+>>>>>>> refs/remotes/origin/master

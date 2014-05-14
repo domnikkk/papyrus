@@ -1,0 +1,53 @@
+import canonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation compositediagramtest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends canonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "ClassCompositeEditPart";
+	topNodesToTest := Set{
+		"ActivityCompositeEditPart", 
+		"ProtocolStateMachineCompositeEditPart", 
+		"InteractionCompositeEditPart", 
+		"StateMachineCompositeEditPart", 
+		"FunctionBehaviorCompositeEditPart", 
+		"OpaqueBehaviorCompositeEditPart",
+		"ClassCompositeEditPart",
+		"CollaborationCompositeEditPart",
+		"InformationItemEditPart",
+		"DurationObservationEditPart",
+		"TimeObservationEditPart",
+		"CommentEditPart",
+		"ConstraintEditPart"
+	} ;
+	childNodesToTest := Set{
+		"PropertyPartEditPartCN", 
+		"CollaborationRoleEditPartCN",
+		"CollaborationUseEditPartCN",
+		"ActivityCompositeEditPartCN",
+		"InteractionCompositeEditPartCN",
+		"FunctionBehaviorCompositeEditPartCN",
+		"OpaqueBehaviorCompositeEditPartCN",
+		"CollaborationCompositeEditPartCN",
+		"CommentEditPartCN",
+		"ConstraintEditPartCN"
+	};
+	linksToTest := Set{
+		"ConnectorEditPart",
+		"RoleBindingEditPart",
+		"RealizationEditPart",
+		"AbstractionEditPart",
+		"UsageEditPart",
+		"DependencyEditPart",
+		"InformationFlowEditPart"
+	};
+	linksOwnedBySourceToTest := Set{
+		"GeneralizationEditPart",
+		"InterfaceRealizationEditPart",
+		"SubstitutionEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->map gmfgen2papyrusTest("org.eclipse.papyrus.uml.diagram.composite.test");
+}
+
+

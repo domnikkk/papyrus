@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+
+
+
+
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="UML Testing Profile, v1.2"
+            name="UTP"
+            path="platform:/plugin/org.eclipse.papyrus.utp/model/utp_1-2.profile.uml"
+            provider="OMG">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="pathmap://UTP_PROFILES/utp_1-2.profile.uml#_iCl4wOVMEeG84fBOY39c0g"
+            uri="http://utp_1-2.profile.uml">
+      </profile>
+   </extension>
+	<extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://UTP_PROFILES/"
+            target="platform:/plugin/org.eclipse.papyrus.utp/model/"/>
+   </extension>
+ <extension
+       point="org.eclipse.emf.ecore.generated_package">
+    <package
+          class="org.eclipse.papyrus.utp.UtpPackage"
+          genModel="model/utp.genmodel"
+          uri="http://utp_1-2.profile.uml#_Q1BygJ4eEeOzlKyq4_5CeA">
+    </package>
+ </extension>
+</plugin>

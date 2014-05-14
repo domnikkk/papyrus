@@ -1,0 +1,139 @@
+module org.eclipse.papyrus.tests.framework.xtend.GeneratePapyrusTestsWorkflow
+
+import java.util.ArrayList
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+
+var String gmfgenUri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.composite/model/compositediagram.gmfgen'
+var String gmfgenUmlUri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.composite/model/compositediagram.gmfgen.uml'
+var String qvtoScriptUri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.composite.tests/qvto/compositediagramtest.qvto'
+var String testModelUri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.composite.tests/model/CompositeDiagramTest.uml'
+
+Workflow {
+	bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+		platformUri = '../../../../../..'	
+		uriMap = {
+			from = 'pathmap://UML_METAMODELS/UML.metamodel.uml'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/UML.metamodel.uml'
+		}
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/UML.genmodel'
+		}
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore'
+			to = 'platform:/resource/org.eclipse.gmf.codegen/models/gmfgen.ecore'
+		}
+		scanClassPath = true
+		registerGeneratedEPackage = 'org.eclipse.uml2.uml.UMLPackage'
+		registerGeneratedEPackage = 'org.eclipse.uml2.codegen.ecore.genmodel.GenModelPackage'
+		registerGeneratedEPackage = 'org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage'
+	}
+	
+	//1. Transform GMFGen file to UML
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/UML.genmodel'
+		modelSlot = 'genmodelUml'
+		useSingleGlobalResourceSet = true
+	}
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = gmfgenUri
+		modelSlot = 'inputGmfgen'
+		firstElementOnly = true
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/ecore.profile.uml'
+		modelSlot = 'ecoreprofile'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.papyrus.mwe.utils.components.RegisterUmlProfile {
+		profileSlot = 'ecoreprofile'
+	} 
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/Ecore.uml'
+		modelSlot = 'genmodeluml'
+		useSingleGlobalResourceSet = true
+	}
+		
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/genmodel.uml'
+		modelSlot = 'genmodeluml'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/gmfgen.uml'
+		modelSlot = 'gmfgenUmlMetamodel'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.papyrus.mwe.utils.components.QvtoTransformationWorkflowComponent {
+		inputSlots = 'inputGmfgen'
+		inputSlots = 'gmfgenUmlMetamodel'
+		transformationURI = 'platform:/resource/org.eclipse.papyrus.tests.framework/qvto/gmfgen2uml-instances.qvto'
+		outputSlot = 'inputGmfgenUml'
+	}
+	 
+	component = org.eclipse.emf.mwe.utils.Writer{
+		modelSlot = 'inputGmfgenUml'
+		uri = gmfgenUmlUri
+		useSingleGlobalResourceSet = true
+	}	
+	
+	//2. Generate Test specification model from QVTO script
+	/*
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = gmfgenUmlUri
+		modelSlot = 'inputGmfgenUml'
+	}
+	 */
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml'
+		modelSlot = 'frameworkBase'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.utp/model/utp_1-2.profile.uml'
+		modelSlot = 'utp'
+		useSingleGlobalResourceSet = true
+	}
+	component = org.eclipse.papyrus.mwe.utils.components.RegisterUmlProfile {
+		profileSlot = 'utp'
+	} 
+	component = org.eclipse.emf.mwe.utils.FileCopy{
+		sourceFile = '../../../../../framework/org.eclipse.papyrus.tests.framework/qvto/canonicalTests.qvto'
+		targetFile = 'qvto/canonicalTests.qvto'
+	}
+	component = org.eclipse.papyrus.mwe.utils.components.QvtoTransformationWorkflowComponent {
+		inputSlots = 'inputGmfgenUml'
+		inputSlots = 'gmfgenUmlMetamodel'
+		inputSlots = 'frameworkBase'
+		inputSlots = 'utp'
+		transformationURI = qvtoScriptUri
+		outputSlot = 'papyrusTestModel'
+	}
+	component = org.eclipse.papyrus.tests.framework.m2t.xtend.DeleteFile{
+		uri = 'qvto/canonicalTests.qvto'
+	}
+	component = org.eclipse.emf.mwe.utils.Writer{
+		modelSlot = 'papyrusTestModel'		
+		uri = testModelUri
+		useSingleGlobalResourceSet = true
+	}
+
+	//3. Generate Test code
+	/*
+ 	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = testModelUri
+		modelSlot = 'papyrusTestModel'
+	}
+	 */
+	component = org.eclipse.papyrus.tests.framework.m2t.xtend.CodeGeneratorComponent {
+		tempSrcPath = 'src-gen/'
+		modelSlot = 'papyrusTestModel'
+	}
+}

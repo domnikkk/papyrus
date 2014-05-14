@@ -1,0 +1,74 @@
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation basicUseCases4Perf(in utp : UML, out testModel : UML);
+
+property performanceTestCases : Set(String) = Set{
+	"testLoadModel",
+	"testSaveModel",
+	"testLoadEditor",
+	"testOpenOneDiagram",
+	"testOpenNDiagrams",
+	"testRefreshModelExplorer",
+	"testRefreshOutline",
+	"testCreateElement",
+	"testSelectElement",
+	"testMoveElement",
+	"testDeleteElement",
+	"testControlMode"
+};
+property utpProfile : Profile = utp.rootObjects()[Profile]->any(true);
+
+main() {
+	createModel();
+}
+
+helper createModel() : Model{
+	var model := object Model{
+		packagedElement := Set{
+			createBehaviorModel(),
+			createStructuralModel()
+		}
+	};
+	
+	return model;
+}
+
+helper createBehaviorModel() : Model{
+	var model := object Model{
+		name := "Test Behavior";
+		packagedElement := performanceTestCases.map testCaseActivities();
+	};
+	model.applyProfile(utpProfile);
+	return model;
+}
+
+mapping String::testCaseActivities() : Activity{
+	name := self + "Activity";
+}
+
+helper createStructuralModel() : Model{
+	var testCases := performanceTestCases->collect(testCaseName : String | 
+		object Operation{
+			name := testCaseName;
+			method := testCaseName.resolveIn(String::testCaseActivities, Activity);
+		}
+	);
+	var testClass := object Class{
+				name := 'BasicPerfTestCases';
+				ownedOperation := testCases;
+			};
+	var model := object Model{
+		name := "Test Structure";
+		packagedElement := Set{
+			testClass
+		}
+	};
+	model.applyProfile(utpProfile);
+	testClass.applyStereotype(testClass.getApplicableStereotype("utp::TestContext"));
+	//log(testClass.toString());
+	testCases.applyStereotype(testCases->any(true).getApplicableStereotype("utp::TestCase"));
+	testCases.method.applyStereotype(testCases.method->any(true).getApplicableStereotype("utp::TestLog"));
+	
+	return model;
+}

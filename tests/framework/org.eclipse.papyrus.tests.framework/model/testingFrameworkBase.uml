@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3xixwD-oEeOBJIvKdeZtpQ" name="org.eclipse.papyrus.diagram.tests">
+  <packagedElement xmi:type="uml:Class" xmi:id="_OlpbsD-pEeOBJIvKdeZtpQ" name="AbstractTestNode" isAbstract="true">
+    <generalization xmi:id="_zs1UQD-qEeOBJIvKdeZtpQ" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_zFEUMD-rEeOBJIvKdeZtpQ" name="testToManageNode"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hyiuYD-pEeOBJIvKdeZtpQ" name="TestChildNode">
+    <generalization xmi:id="_vS_boD-pEeOBJIvKdeZtpQ" general="_OlpbsD-pEeOBJIvKdeZtpQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_kHbiID-pEeOBJIvKdeZtpQ" name="TestTopNode">
+    <generalization xmi:id="_vwyx8D-pEeOBJIvKdeZtpQ" general="_OlpbsD-pEeOBJIvKdeZtpQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_lX988D-pEeOBJIvKdeZtpQ" name="TestLink">
+    <generalization xmi:id="_0MQbMD-qEeOBJIvKdeZtpQ" general="_FAMH4D-qEeOBJIvKdeZtpQ"/>
+    <ownedOperation xmi:id="_gT9wMD-sEeOBJIvKdeZtpQ" name="testToManageLink"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FAMH4D-qEeOBJIvKdeZtpQ" name="AbstractPapyrusTestCase"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8DwYEEhfEeOZGbAGN97tSQ" name="UMLElementTypes"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9YLNUEhfEeOZGbAGN97tSQ" name="UMLPackage"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_s0iGMIT3EeOrPKjlKV9JBA" name="TestLinkOwnedBySource">
+    <generalization xmi:id="_3TuB4IT3EeOrPKjlKV9JBA" general="_lX988D-pEeOBJIvKdeZtpQ"/>
+  </packagedElement>
+</uml:Model>

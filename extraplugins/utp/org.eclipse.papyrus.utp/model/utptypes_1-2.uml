@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_nGjLwOVVEeG84fBOY39c0g" name="utptypes">
+  <packageImport xmi:id="_nGjLweVVEeG84fBOY39c0g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_ntpoAOVVEeG84fBOY39c0g" name="Verdict">
+    <ownedLiteral xmi:id="_w-6YAOVVEeG84fBOY39c0g" name="none"/>
+    <ownedLiteral xmi:id="_yANc8OVVEeG84fBOY39c0g" name="pass"/>
+    <ownedLiteral xmi:id="_ynk-8OVVEeG84fBOY39c0g" name="inconclusive"/>
+    <ownedLiteral xmi:id="_0RKy8OVVEeG84fBOY39c0g" name="fail"/>
+    <ownedLiteral xmi:id="_02K9cOVVEeG84fBOY39c0g" name="error"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_rCbLcOVVEeG84fBOY39c0g" name="Arbiter">
+    <ownedOperation xmi:id="_GhAAcOVWEeG84fBOY39c0g" name="getVerdict">
+      <ownedParameter xmi:id="_JV04gOVWEeG84fBOY39c0g" name="verdict" type="_ntpoAOVVEeG84fBOY39c0g" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_J0UyYOVWEeG84fBOY39c0g" name="setVerdict">
+      <ownedParameter xmi:id="_LiTXIOVWEeG84fBOY39c0g" name="v" type="_ntpoAOVVEeG84fBOY39c0g"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_rvwLgOVVEeG84fBOY39c0g" name="Timer">
+    <ownedAttribute xmi:id="_M05AYOVWEeG84fBOY39c0g" name="isRunning" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_ULFx4OVWEeG84fBOY39c0g" name="start">
+      <ownedParameter xmi:id="_V_3iMOVWEeG84fBOY39c0g" name="expire" type="_skeNAOVVEeG84fBOY39c0g"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_W01bUOVWEeG84fBOY39c0g" name="start2">
+      <ownedParameter xmi:id="_YS1DUOVWEeG84fBOY39c0g" name="expire" type="_tnmd8OVVEeG84fBOY39c0g"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_YtPHYOVWEeG84fBOY39c0g" name="stop"/>
+    <ownedOperation xmi:id="_ZflKUOVWEeG84fBOY39c0g" name="read">
+      <ownedParameter xmi:id="_bIwHkOVWEeG84fBOY39c0g" type="_tnmd8OVVEeG84fBOY39c0g" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_skeNAOVVEeG84fBOY39c0g" name="Timepoint"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_tnmd8OVVEeG84fBOY39c0g" name="Duration"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_uz-KcOVVEeG84fBOY39c0g" name="Timezone"/>
+</uml:Model>

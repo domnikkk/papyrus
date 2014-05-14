@@ -1,0 +1,19 @@
+=Papyrus Testing Framework=
+
+== Framework Goals==
+* Automate the  development of test cases for Papyrus
+* Set the bases for a model-based testing approach
+
+== How to use the framework ==
+As a requirement, following the Papyrus development guidelines an Eclipse plugin project must be created to 
+# Describe qvto
+# Describe 
+
+==Testing diagram editors== 
+
+
+
+== Framework Architecture ==
+
+
+

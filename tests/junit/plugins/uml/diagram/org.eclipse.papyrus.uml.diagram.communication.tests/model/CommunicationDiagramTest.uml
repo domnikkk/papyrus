@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:utp="http://utp_1-2.profile.uml" xsi:schemaLocation="http://www.eclipse.org/uml2/4.0.0/UML java://org.eclipse.uml2.uml.UMLPackage http://utp_1-2.profile.uml ../../org.eclipse.papyrus.utp/model/utp_1-2.profile.uml#_Q1BygJ4eEeOzlKyq4_5CeA">
+  <uml:Model name="org.eclipse.papyrus.uml.diagram.communication.test">
+    <packagedElement xsi:type="uml:Class" name="TestCommunicationDiagramTopNodeGen">
+      <generalization>
+        <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_kHbiID-pEeOBJIvKdeZtpQ"/>
+      </generalization>
+      <ownedAttribute name="generator">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUOkYDWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.communication"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="containerEditPart" isDerived="true" redefinedProperty="/0/TestCommunicationDiagramTopNodeGen/interactionEditPart">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BURA9zWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="interactionEditPart">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BURA9zWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="diagram">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUPLmzWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenDiagram_ModelEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="self" type="/0/TestCommunicationDiagramTopNodeGen"/>
+      <ownedBehavior xsi:type="uml:Activity" name="interactionEditPartTestCase" specification="/0/TestCommunicationDiagramTopNodeGen/testTopNodeInteractionEditPart">
+        <ownedNode xsi:type="uml:CallOperationAction">
+          <argument xsi:type="uml:ValuePin" name="node">
+            <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPart">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+            </value>
+          </argument>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_zFEUMD-rEeOBJIvKdeZtpQ"/>
+        </ownedNode>
+      </ownedBehavior>
+      <ownedOperation name="testTopNodeInteractionEditPart" method="/0/TestCommunicationDiagramTopNodeGen/interactionEditPartTestCase">
+        <ownedParameter>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TestCommunicationDiagramChildNodeGen">
+      <generalization>
+        <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_hyiuYD-pEeOBJIvKdeZtpQ"/>
+      </generalization>
+      <ownedAttribute name="generator">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUOkYDWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.communication"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="diagram">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUPLmzWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenDiagram_ModelEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="durationObservationEditPartCN">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUPykzWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_DurationObservationEditPartCN"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="constraintEditPartCN">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUPykzWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_ConstraintEditPartCN"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="lifelineEditPartCN">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUPykzWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_LifelineEditPartCN"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="containerEditPart" isDerived="true" redefinedProperty="/0/TestCommunicationDiagramTopNodeGen/interactionEditPart">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BURA9zWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="self" type="/0/TestCommunicationDiagramChildNodeGen"/>
+      <ownedBehavior xsi:type="uml:Activity" name="durationObservationEditPartCNTestCase" specification="/0/TestCommunicationDiagramChildNodeGen/testChildNodeDurationObservationEditPartCN">
+        <ownedNode xsi:type="uml:CallOperationAction">
+          <argument xsi:type="uml:ValuePin" name="node">
+            <value xsi:type="uml:InstanceValue" name="GenChildNode_DurationObservationEditPartCN">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_DurationObservationEditPartCN"/>
+            </value>
+          </argument>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_zFEUMD-rEeOBJIvKdeZtpQ"/>
+        </ownedNode>
+      </ownedBehavior>
+      <ownedBehavior xsi:type="uml:Activity" name="constraintEditPartCNTestCase" specification="/0/TestCommunicationDiagramChildNodeGen/testChildNodeConstraintEditPartCN">
+        <ownedNode xsi:type="uml:CallOperationAction">
+          <argument xsi:type="uml:ValuePin" name="node">
+            <value xsi:type="uml:InstanceValue" name="GenChildNode_ConstraintEditPartCN">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_ConstraintEditPartCN"/>
+            </value>
+          </argument>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_zFEUMD-rEeOBJIvKdeZtpQ"/>
+        </ownedNode>
+      </ownedBehavior>
+      <ownedBehavior xsi:type="uml:Activity" name="lifelineEditPartCNTestCase" specification="/0/TestCommunicationDiagramChildNodeGen/testChildNodeLifelineEditPartCN">
+        <ownedNode xsi:type="uml:CallOperationAction">
+          <argument xsi:type="uml:ValuePin" name="node">
+            <value xsi:type="uml:InstanceValue" name="GenChildNode_LifelineEditPartCN">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_LifelineEditPartCN"/>
+            </value>
+          </argument>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_zFEUMD-rEeOBJIvKdeZtpQ"/>
+        </ownedNode>
+      </ownedBehavior>
+      <ownedOperation name="testChildNodeLifelineEditPartCN" method="/0/TestCommunicationDiagramChildNodeGen/lifelineEditPartCNTestCase">
+        <ownedParameter>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_LifelineEditPartCN"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation name="testChildNodeConstraintEditPartCN" method="/0/TestCommunicationDiagramChildNodeGen/constraintEditPartCNTestCase">
+        <ownedParameter>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_ConstraintEditPartCN"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation name="testChildNodeDurationObservationEditPartCN" method="/0/TestCommunicationDiagramChildNodeGen/durationObservationEditPartCNTestCase">
+        <ownedParameter>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenChildNode_DurationObservationEditPartCN"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TestCommunicationDiagramLinkGen">
+      <generalization>
+        <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_lX988D-pEeOBJIvKdeZtpQ"/>
+      </generalization>
+      <ownedAttribute name="containerEditPart" isDerived="true" redefinedProperty="/0/TestCommunicationDiagramTopNodeGen/interactionEditPart">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BURA9zWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="generator">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUOkYDWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.communication"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="diagram">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUPLmzWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenDiagram_ModelEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="messageEditPart">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUPyozWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenLink_MessageEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="self" type="/0/TestCommunicationDiagramLinkGen"/>
+      <ownedBehavior xsi:type="uml:Activity" name="messageFromInteractionToInteractionTestCase" specification="/0/TestCommunicationDiagramLinkGen/testLinkMessageFromInteractionToInteraction">
+        <ownedNode xsi:type="uml:CallOperationAction">
+          <argument xsi:type="uml:ValuePin" name="link">
+            <value xsi:type="uml:InstanceValue" name="GenLink_MessageEditPart">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenLink_MessageEditPart"/>
+            </value>
+          </argument>
+          <argument xsi:type="uml:ValuePin" name="source">
+            <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPart">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+            </value>
+          </argument>
+          <argument xsi:type="uml:ValuePin" name="target">
+            <value xsi:type="uml:InstanceValue" name="GenTopLevelNode_InteractionEditPart">
+              <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+            </value>
+          </argument>
+          <operation href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_gT9wMD-sEeOBJIvKdeZtpQ"/>
+        </ownedNode>
+      </ownedBehavior>
+      <ownedOperation name="testLinkMessageFromInteractionToInteraction" method="/0/TestCommunicationDiagramLinkGen/messageFromInteractionToInteractionTestCase">
+        <ownedParameter>
+          <defaultValue xsi:type="uml:InstanceValue">
+            <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenLink_MessageEditPart"/>
+          </defaultValue>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TestCommunicationDiagramLinkOwnedBySourceGen">
+      <generalization>
+        <general xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml#_s0iGMIT3EeOrPKjlKV9JBA"/>
+      </generalization>
+      <ownedAttribute name="diagram">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUPLmzWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenDiagram_ModelEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="containerEditPart" isDerived="true" redefinedProperty="/0/TestCommunicationDiagramTopNodeGen/interactionEditPart">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BURA9zWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenTopLevelNode_InteractionEditPart"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="generator">
+        <type xsi:type="uml:Class" href="../../org.eclipse.papyrus.tests.framework/model/gmfgen.uml#_BUOkYDWiEeOjwpwM2cAALw"/>
+        <defaultValue xsi:type="uml:InstanceValue">
+          <instance href="../../org.eclipse.papyrus.uml.diagram.communication/model/communicationdiagram.gmfgen.uml#//GenEditorGenerator_org.eclipse.papyrus.uml.diagram.communication"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute name="self" type="/0/TestCommunicationDiagramLinkOwnedBySourceGen"/>
+    </packagedElement>
+    <profileApplication>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references href="../../org.eclipse.papyrus.utp/model/utp_1-2.profile.uml#_Q1BygJ4eEeOzlKyq4_5CeA"/>
+      </eAnnotations>
+      <appliedProfile href="../../org.eclipse.papyrus.utp/model/utp_1-2.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+    </profileApplication>
+  </uml:Model>
+  <utp:TestContext base_BehavioredClassifier="/0/TestCommunicationDiagramTopNodeGen" base_StructuredClassifier="/0/TestCommunicationDiagramTopNodeGen"/>
+  <utp:TestContext base_BehavioredClassifier="/0/TestCommunicationDiagramChildNodeGen" base_StructuredClassifier="/0/TestCommunicationDiagramChildNodeGen"/>
+  <utp:TestContext base_BehavioredClassifier="/0/TestCommunicationDiagramLinkGen" base_StructuredClassifier="/0/TestCommunicationDiagramLinkGen"/>
+  <utp:TestContext base_BehavioredClassifier="/0/TestCommunicationDiagramLinkOwnedBySourceGen" base_StructuredClassifier="/0/TestCommunicationDiagramLinkOwnedBySourceGen"/>
+  <utp:SUT base_Property="/0/TestCommunicationDiagramTopNodeGen/interactionEditPart"/>
+  <utp:SUT base_Property="/0/TestCommunicationDiagramChildNodeGen/durationObservationEditPartCN"/>
+  <utp:SUT base_Property="/0/TestCommunicationDiagramChildNodeGen/constraintEditPartCN"/>
+  <utp:SUT base_Property="/0/TestCommunicationDiagramChildNodeGen/lifelineEditPartCN"/>
+  <utp:SUT base_Property="/0/TestCommunicationDiagramLinkGen/messageEditPart"/>
+  <utp:TestCase base_Operation="/0/TestCommunicationDiagramTopNodeGen/testTopNodeInteractionEditPart"/>
+  <utp:TestCase base_Operation="/0/TestCommunicationDiagramChildNodeGen/testChildNodeLifelineEditPartCN"/>
+  <utp:TestCase base_Operation="/0/TestCommunicationDiagramChildNodeGen/testChildNodeConstraintEditPartCN"/>
+  <utp:TestCase base_Operation="/0/TestCommunicationDiagramChildNodeGen/testChildNodeDurationObservationEditPartCN"/>
+  <utp:TestCase base_Operation="/0/TestCommunicationDiagramLinkGen/testLinkMessageFromInteractionToInteraction"/>
+</xmi:XMI>
