@@ -56,7 +56,7 @@ public class TestProfileDiagramTopNode extends TestTopNode {
 
 	@Test
 	public void testToManageDataType() {
-		testToManageNode(UMLElementTypes.DataType_2010, UMLPackage.eINSTANCE.getPackage(), UMLElementTypes.Package_2007, false);
+		testToManageNode(UMLElementTypes.DataType_2010, UMLPackage.eINSTANCE.getDataType(), UMLElementTypes.Package_2007, false);
 	}
 
 	@Test

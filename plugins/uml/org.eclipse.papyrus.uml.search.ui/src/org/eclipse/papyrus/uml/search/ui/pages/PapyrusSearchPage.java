@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST and others.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * 
  * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA LIST) - Fix leaking of all UML models in search results
  *  Christian W. Damus (CEA LIST) - Replace workspace IResource dependency with URI for CDO compatibility
+ *  Christian W. Damus (CEA) - bug 434681
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.search.ui.pages;
@@ -33,8 +34,6 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EClassImpl;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.jface.dialogs.DialogPage;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -1172,8 +1171,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 
 
 
-	public @NonNull
-	MetaModelManager getMetaModelManager(@Nullable EObject contextObject) {
+	public MetaModelManager getMetaModelManager(EObject contextObject) {
 		MetaModelManager metaModelManager = contextObject != null ? PivotUtil.findMetaModelManager(contextObject) : null;
 		if(metaModelManager != null) {
 			return metaModelManager;
@@ -1186,7 +1184,7 @@ public class PapyrusSearchPage extends DialogPage implements ISearchPage, IRepla
 		return nullMetaModelManager2;
 	}
 
-	public void metaModelManagerDisposed(@NonNull MetaModelManager metaModelManager) {
+	public void metaModelManagerDisposed(MetaModelManager metaModelManager) {
 		metaModelManager.removeListener(this);
 		reset();
 

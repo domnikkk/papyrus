@@ -117,6 +117,9 @@ public class ValueSpecificationUtil {
 			case UMLPackage.INTERVAL:
 			case UMLPackage.TIME_INTERVAL:
 			case UMLPackage.DURATION_INTERVAL:
+				if(!(specification instanceof Interval)) { // safety test for bug 430525, but should not be necessary to perform a test here...
+					break;
+				}
 				Interval interval = (Interval)specification;
 				String min = getSpecificationValue(interval.getMin());
 				String max = getSpecificationValue(interval.getMax());
