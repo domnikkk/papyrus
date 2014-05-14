@@ -33,6 +33,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.providers.AdapterFactoryHierarchicContentProvider;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
@@ -43,9 +44,7 @@ import org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.ZombieStereotype
 import org.eclipse.papyrus.uml.modelrepair.ui.providers.NestedProfilesAdapterFactory;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.statushandlers.StatusManager;
-import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.UMLPackage;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicates;
@@ -253,9 +252,9 @@ public class ZombieStereotypeDialogPresenter {
 			try {
 				URI selectedProfileURI = task.get();
 				if(selectedProfileURI != null) {
-					result = UML2Util.load(modelSet, selectedProfileURI, UMLPackage.Literals.PROFILE);
+					result = EMFHelper.load(modelSet, selectedProfileURI, Profile.class);
 
-					if(hasNestedProfiles(result)) {
+					if((result != null) && hasNestedProfiles(result)) {
 						// Need to select a particular profile from this resource
 						final TreeSelectorDialog selectorDlg = new TreeSelectorDialog(parentWindow.getShell());
 

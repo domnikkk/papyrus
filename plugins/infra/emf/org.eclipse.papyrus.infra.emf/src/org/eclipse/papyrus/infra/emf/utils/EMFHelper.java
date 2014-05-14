@@ -32,6 +32,7 @@ import java.util.Set;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -60,6 +61,7 @@ import org.eclipse.papyrus.infra.emf.Activator;
 import org.eclipse.papyrus.infra.tools.util.PlatformHelper;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 
 /**
  * A Helper class for manipulating EMF Objects
@@ -356,7 +358,7 @@ public class EMFHelper {
 			Activator.log.warn("Created a new resourceSet to load an EMF model in " + Activator.log.getCallerMethod()); //$NON-NLS-1$
 			resourceSet = new ResourceSetImpl();
 		}
-		
+
 		try {
 			Resource resource = resourceSet.getResource(uri, true);
 			if(resource != null) {
@@ -576,7 +578,7 @@ public class EMFHelper {
 			Object handler = PlatformHelper.getAdapter(domain, IReadOnlyHandler.class);
 			if(handler instanceof IReadOnlyHandler2) {
 				return ((IReadOnlyHandler2)handler).isReadOnly(axes, eObject).get();
-			}else if(handler instanceof IReadOnlyHandler) {
+			} else if(handler instanceof IReadOnlyHandler) {
 				// these handlers only deal with permission-based read-only-ness
 				return axes.contains(ReadOnlyAxis.PERMISSION) && ((IReadOnlyHandler)handler).isReadOnly(eObject).get();
 			}
@@ -711,7 +713,7 @@ public class EMFHelper {
 		if(domain != null) {
 			Object handler = PlatformHelper.getAdapter(domain, IReadOnlyHandler.class);
 			if(handler instanceof IReadOnlyHandler2) {
-				return ((IReadOnlyHandler2)handler).canMakeWritable(axes, new URI[] { resource.getURI() }).or(false);
+				return ((IReadOnlyHandler2)handler).canMakeWritable(axes, new URI[]{ resource.getURI() }).or(false);
 			}
 		}
 		return false;
@@ -993,5 +995,69 @@ public class EMFHelper {
 	public static ResourceSet getResourceSet(EObject eObject) {
 		Resource resource = (eObject == null) ? null : eObject.eResource();
 		return (resource == null) ? null : resource.getResourceSet();
+	}
+
+	/**
+	 * Best-effort loads a resource, returning the first root element of the requested {@code type}. Unlike the
+	 * {@link #loadChecked(ResourceSet, URI, Class) loadChecked} method, this will never throw an exception.
+	 * 
+	 * @param rset
+	 *        a resource set in which to load the resource
+	 * @param uri
+	 *        the URI of the resource to load
+	 * @param type
+	 *        the type of root element to retrieve
+	 * 
+	 * @return the requested root element, or {@code null} if the resource does not contain such an element or could not be loaded
+	 * 
+	 * @see #loadChecked(ResourceSet, URI, Class)
+	 */
+	public static <T extends EObject> T load(ResourceSet rset, URI uri, Class<T> type) {
+		T result = null;
+
+		try {
+			result = loadChecked(rset, uri, type);
+		} catch (Exception e) {
+			Activator.log.error("Exception in loading resource " + uri, e); //$NON-NLS-1$
+
+			// Maybe it was partially loaded? If so, try again
+			Resource res = rset.getResource(uri, false);
+			if((res != null) && res.isLoaded()) {
+				result = Iterables.getFirst(Iterables.filter(res.getContents(), type), null);
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * Best-effort loads a resource, returning the first root element of the requested {@code type}.
+	 * 
+	 * @param rset
+	 *        a resource set in which to load the resource
+	 * @param uri
+	 *        the URI of the resource to load
+	 * @param type
+	 *        the type of root element to retrieve
+	 * 
+	 * @return the requested root element, or {@code null} if the resource does not contain such an element or could not be loaded
+	 * @throws IOException
+	 *         on an I/O problem in loading the resource
+	 * @throw RuntimeException on any other unforeseen (usually programming error) problem
+	 * 
+	 * @see #load(ResourceSet, URI, Class)
+	 */
+	public static <T extends EObject> T loadChecked(ResourceSet rset, URI uri, Class<T> type) throws IOException {
+		try {
+			return Iterables.getFirst(Iterables.filter(rset.getResource(uri, true).getContents(), type), null);
+		} catch (WrappedException e) {
+			if(e.exception() instanceof IOException) {
+				throw (IOException)e.exception();
+			} else if(e.exception() instanceof RuntimeException) {
+				throw (RuntimeException)e.exception();
+			} else {
+				throw e;
+			}
+		}
 	}
 }
