@@ -1,21 +1,19 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.providers;
 
-import org.eclipse.papyrus.uml.diagram.common.helper.NamedElementHelper;
 import org.eclipse.papyrus.uml.diagram.communication.expressions.UMLOCLFactory;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramEditorPlugin;
+import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DurationObservation;
@@ -126,28 +124,28 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	private String name_Interaction_8002(Interaction self) {
-		return NamedElementHelper.EINSTANCE.getNewUMLElementName(self.getOwner(), self.eClass());
+	private String name_Interaction_8002(Interaction it) {
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
-	private String name_Lifeline_8001(Lifeline self) {
-		return NamedElementHelper.EINSTANCE.getNewUMLElementName(self.getOwner(), self.eClass());
+	private String name_Lifeline_8001(Lifeline it) {
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
-	private String name_Constraint_8004(Constraint self) {
-		return NamedElementHelper.EINSTANCE.getNewUMLElementName(self.getOwner(), self.eClass());
+	private String name_Constraint_8004(Constraint it) {
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
-	private ValueSpecification specification_Constraint_8004(Constraint self) {
+	private ValueSpecification specification_Constraint_8004(Constraint it) {
 		LiteralString literalString = UMLFactory.eINSTANCE.createLiteralString();
 		literalString.setValue("");
 		return literalString;
@@ -156,22 +154,22 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	private String name_TimeObservation_8006(TimeObservation self) {
-		return NamedElementHelper.EINSTANCE.getNewUMLElementName(self.getOwner(), self.eClass());
+	private String name_TimeObservation_8006(TimeObservation it) {
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
-	private String name_DurationObservation_8007(DurationObservation self) {
-		return NamedElementHelper.EINSTANCE.getNewUMLElementName(self.getOwner(), self.eClass());
+	private String name_DurationObservation_8007(DurationObservation it) {
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**
 	 * @generated
 	 */
-	private String name_Message_8009(Message self) {
-		return NamedElementHelper.EINSTANCE.getNewUMLElementName(self.getOwner(), self.eClass());
+	private String name_Message_8009(Message it) {
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());
 	}
 
 	/**

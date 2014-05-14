@@ -16,8 +16,6 @@ package org.eclipse.papyrus.uml.diagram.communication.custom.helper;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class MessageInfo is intended to store information about a message such as the source and target lifelines.
  */
@@ -25,8 +23,6 @@ public class MessageInfo {
 
 	/** The message. */
 	private Message message;
-
-
 
 	/** The source lifeline of the message. */
 	private Lifeline source;
@@ -47,11 +43,9 @@ public class MessageInfo {
 	public MessageInfo(Message message, Lifeline source, Lifeline target) {
 		super();
 		this.message = message;
-
 		this.source = source;
 		this.target = target;
 	}
-
 
 	/**
 	 * Gets the source.
@@ -61,7 +55,6 @@ public class MessageInfo {
 	public Lifeline getSource() {
 		return source;
 	}
-
 
 	/**
 	 * Sets the source.
@@ -73,7 +66,6 @@ public class MessageInfo {
 		this.source = source;
 	}
 
-
 	/**
 	 * Gets the target.
 	 * 
@@ -82,7 +74,6 @@ public class MessageInfo {
 	public Lifeline getTarget() {
 		return target;
 	}
-
 
 	/**
 	 * Sets the target.
@@ -112,6 +103,4 @@ public class MessageInfo {
 	public void setMessage(Message message) {
 		this.message = message;
 	}
-
-
 }

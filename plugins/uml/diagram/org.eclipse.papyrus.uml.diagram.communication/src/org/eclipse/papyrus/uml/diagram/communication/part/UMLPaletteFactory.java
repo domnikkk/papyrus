@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.part;
 
 import java.util.ArrayList;
@@ -28,40 +26,43 @@ import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
+	//RS: New Palette generation
+	//Generates the ID for the tool elements
+	//Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
-	private final static String COMMUNICATION_TOOL_LIFELINE = "communication.tool.lifeline"; //$NON-NLS-1$
+	private final static String COMMUNICATION_TOOL_LIFELINE = "communication.tool.lifeline";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String COMMUNICATION_TOOL_COMMENT = "communication.tool.comment"; //$NON-NLS-1$
+	private final static String COMMUNICATION_TOOL_COMMENT = "communication.tool.comment";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String COMMUNICATION_TOOL_CONSTRAINT = "communication.tool.constraint"; //$NON-NLS-1$
+	private final static String COMMUNICATION_TOOL_CONSTRAINT = "communication.tool.constraint";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String COMMUNICATION_TOOL_DURATIONOBSERVATION = "communication.tool.durationobservation"; //$NON-NLS-1$
+	private final static String COMMUNICATION_TOOL_DURATIONOBSERVATION = "communication.tool.durationobservation";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String COMMUNICATION_TOOL_TIMEOBSERVATION = "communication.tool.timeobservation"; //$NON-NLS-1$
+	private final static String COMMUNICATION_TOOL_TIMEOBSERVATION = "communication.tool.timeobservation";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String CREATEMESSAGECREATECREATIONTOOL = "createMessageCreateCreationTool"; //$NON-NLS-1$
+	private final static String CREATEMESSAGECREATECREATIONTOOL = "createMessageCreateCreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	private final static String CREATELINK13CREATIONTOOL = "createLink13CreationTool"; //$NON-NLS-1$
+	private final static String CREATELINK13CREATIONTOOL = "createLink13CreationTool";//$NON-NLS-1$
 
 	/**
 	 * @generated

@@ -13,8 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.communication.custom.commands;
 
-
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IAdaptable;
@@ -28,9 +26,6 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLViewProvider;
 
-
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class DiagramShortCutCreationViewCommand.
  */
@@ -53,19 +48,14 @@ public class DiagramShortCutCreationViewCommand extends AbstractTransactionalCom
 	 *        the container view
 	 */
 	public DiagramShortCutCreationViewCommand(TransactionalEditingDomain editingDomain, CreateViewRequest.ViewDescriptor viewDescriptor, View containerView) {
-
 		super(editingDomain, DiagramUIMessages.CreateCommand_Label, getWorkspaceFiles(containerView));
-
 		Assert.isNotNull(viewDescriptor);
 		Assert.isNotNull(containerView);
-
 		this.viewDescriptor = viewDescriptor;
 		this.containerView = containerView;
-
 		// make sure the return object is available even before executing/undoing/redoing
 		setResult(CommandResult.newOKCommandResult(viewDescriptor));
 	}
-
 
 	/**
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
@@ -76,7 +66,6 @@ public class DiagramShortCutCreationViewCommand extends AbstractTransactionalCom
 	 * @return
 	 * @throws ExecutionException
 	 */
-
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		UMLViewProvider umlViewProvider = new UMLViewProvider();
@@ -84,8 +73,6 @@ public class DiagramShortCutCreationViewCommand extends AbstractTransactionalCom
 		View view = umlViewProvider.createDiagram_8016(eObject, containerView, -1, viewDescriptor.isPersisted(), viewDescriptor.getPreferencesHint());
 		Assert.isNotNull(view, "failed to create a view"); //$NON-NLS-1$
 		viewDescriptor.setView(view);
-
 		return CommandResult.newOKCommandResult(viewDescriptor);
 	}
-
 }

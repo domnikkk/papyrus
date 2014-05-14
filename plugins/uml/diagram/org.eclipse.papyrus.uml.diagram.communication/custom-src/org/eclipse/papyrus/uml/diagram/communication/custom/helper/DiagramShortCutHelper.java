@@ -13,8 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.communication.custom.helper;
 
-
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -35,9 +33,6 @@ import org.eclipse.papyrus.uml.diagram.common.helper.ElementHelper;
 import org.eclipse.papyrus.uml.diagram.communication.custom.commands.DiagramShortCutCreationViewCommand;
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
 
-
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class DiagramShortCutHelper.
  */
@@ -72,21 +67,13 @@ public class DiagramShortCutHelper extends ElementHelper {
 	 */
 	public Command dropDiagramShortCut(Diagram diagram, EditPartViewer viewer, PreferencesHint diagramPreferencesHint, Point location, View containerView) {
 		CompositeCommand cc = new CompositeCommand("dropDiagramShortCut"); //$NON-NLS-1$
-
-
-
 		//creation of the node DiagramShortCut
-
 		IAdaptable elementAdapter = new EObjectAdapter(diagram);
 		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)UMLElementTypes.Diagram_8016).getSemanticHint(), ViewUtil.APPEND, true, diagramPreferencesHint);
 		DiagramShortCutCreationViewCommand nodeCreationCommand = new DiagramShortCutCreationViewCommand(getEditingDomain(), descriptor, ((View)containerView));
 		cc.compose(nodeCreationCommand);
-
 		SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "drop", (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue(), location); //$NON-NLS-1$
 		cc.compose(setBoundsCommand);
-
-
 		return new ICommandProxy(cc);
 	}
-
 }

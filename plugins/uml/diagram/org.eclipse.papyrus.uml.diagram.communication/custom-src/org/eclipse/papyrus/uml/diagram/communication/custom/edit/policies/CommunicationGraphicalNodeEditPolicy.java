@@ -37,12 +37,10 @@ import org.eclipse.papyrus.uml.diagram.communication.custom.helper.Communication
 import org.eclipse.papyrus.uml.diagram.communication.custom.helper.MessageHelper;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.LifelineEditPartCN;
 
-// TODO: Auto-generated Javadoc
 /**
  * A specific policy to handle the message : - Message feedback on creation is
  * always drawn in black (to avoid invisible feedback).
  */
-
 @SuppressWarnings("restriction")
 public class CommunicationGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
@@ -68,13 +66,10 @@ public class CommunicationGraphicalNodeEditPolicy extends GraphicalNodeEditPolic
 			if(obj instanceof SetConnectionBendpointsCommand) {
 				SetConnectionBendpointsCommand sbbCommand = (SetConnectionBendpointsCommand)obj;
 				final PointList pointList = sbbCommand.getNewPointList();
-
 				request.getExtendedData().put(CommunicationRequestConstant.SOURCE_MODEL_CONTAINER, CommunicationUtil.findInteractionFragmentAt(pointList.getFirstPoint(), getHost()));
 				request.getExtendedData().put(CommunicationRequestConstant.TARGET_MODEL_CONTAINER, CommunicationUtil.findInteractionFragmentAt(pointList.getLastPoint(), getHost()));
-
 			}
 		}
-
 		return command;
 	}
 
@@ -99,35 +94,24 @@ public class CommunicationGraphicalNodeEditPolicy extends GraphicalNodeEditPolic
 			if(request instanceof CreateConnectionViewAndElementRequest) {
 				// default behavior
 				Command c = getConnectionAndRelationshipCompleteCommand((CreateConnectionViewAndElementRequest)request);
-
 				// case of Message
 				CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest)request).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
 				CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class);
 				if(org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes.Message_8009.equals(createElementRequest.getElementType())) {
 					EditPart sourceEditPart = ((CreateConnectionViewAndElementRequest)request).getSourceEditPart();
 					EditPart targetEditPart = ((CreateConnectionViewAndElementRequest)request).getTargetEditPart();
-
 					MessageHelper messageHelper = new MessageHelper(getEditingDomain());
-
 					//test if source and target are already connected
-
 					if((sourceEditPart instanceof LifelineEditPartCN) && (targetEditPart instanceof LifelineEditPartCN)) {
-
 						if(CommunicationUtil.verifyIfLifelinesEPConnected(sourceEditPart, targetEditPart) != null) {
 							ConnectionEditPart link = CommunicationUtil.verifyIfLifelinesEPConnected(sourceEditPart, targetEditPart);
-
 							return messageHelper.getCommand((CreateConnectionViewAndElementRequest)request, c, link);
 						}
-
-
 					}
 				}
 			}
 		}
-
 		return super.getCommand(request);
-
-
 	}
 
 	/**
@@ -146,6 +130,4 @@ public class CommunicationGraphicalNodeEditPolicy extends GraphicalNodeEditPolic
 		conn.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);
 		return conn;
 	}
-
-
 }

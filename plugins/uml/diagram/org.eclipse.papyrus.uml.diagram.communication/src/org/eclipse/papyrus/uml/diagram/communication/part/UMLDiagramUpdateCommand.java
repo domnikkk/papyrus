@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.part;
 
 import java.util.Iterator;
@@ -57,8 +55,8 @@ public class UMLDiagramUpdateCommand implements IHandler {
 			}
 			if(structuredSelection.getFirstElement() instanceof EditPart && ((EditPart)structuredSelection.getFirstElement()).getModel() instanceof View) {
 				EObject modelElement = ((View)((EditPart)structuredSelection.getFirstElement()).getModel()).getElement();
-				List editPolicies = CanonicalEditPolicy.getRegisteredEditPolicies(modelElement);
-				for(Iterator it = editPolicies.iterator(); it.hasNext();) {
+				List<?> editPolicies = CanonicalEditPolicy.getRegisteredEditPolicies(modelElement);
+				for(Iterator<?> it = editPolicies.iterator(); it.hasNext();) {
 					CanonicalEditPolicy nextEditPolicy = (CanonicalEditPolicy)it.next();
 					nextEditPolicy.refresh();
 				}

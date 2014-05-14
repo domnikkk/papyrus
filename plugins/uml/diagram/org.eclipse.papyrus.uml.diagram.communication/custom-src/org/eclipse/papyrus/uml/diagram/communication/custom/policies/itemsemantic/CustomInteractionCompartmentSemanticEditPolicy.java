@@ -34,22 +34,18 @@ public class CustomInteractionCompartmentSemanticEditPolicy extends InteractionC
 
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-
 		if(UMLElementTypes.TimeObservation_8006 == req.getElementType()) {
 			return getGEFWrapper(new CustomTimeObservationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		if(UMLElementTypes.DurationObservation_8007 == req.getElementType()) {
 			return getGEFWrapper(new CustomDurationObservationCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-
 		return super.getCreateCommand(req);
 	}
 
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		// TODO Auto-generated method stub
 		//System.err.println("getReorientRelationshipCommand VisualID of element to reorient" + getVisualID(req));
 		return super.getReorientRelationshipCommand(req);
 	}
-
 }

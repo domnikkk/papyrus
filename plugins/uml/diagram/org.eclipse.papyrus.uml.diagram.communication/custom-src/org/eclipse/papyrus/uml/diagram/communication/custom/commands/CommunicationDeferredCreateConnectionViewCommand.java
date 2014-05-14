@@ -66,7 +66,6 @@ public class CommunicationDeferredCreateConnectionViewCommand extends CommonDefe
 	public CommunicationDeferredCreateConnectionViewCommand(TransactionalEditingDomain editingDomain, String semanticHint, IAdaptable sourceViewAdapter, IAdaptable targetViewAdapter, EditPartViewer viewer, PreferencesHint preferencesHint, ConnectionViewDescriptor viewDescriptor, ICommand command, EObject labelElement) {
 		super(editingDomain, semanticHint, sourceViewAdapter, targetViewAdapter, viewer, preferencesHint, viewDescriptor, command);
 		this.labelElement = labelElement;
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

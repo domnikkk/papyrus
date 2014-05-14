@@ -15,7 +15,6 @@ package org.eclipse.papyrus.uml.diagram.communication.custom.messages;
 
 import org.eclipse.osgi.util.NLS;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Messages.
  */
@@ -43,8 +42,6 @@ public class Messages extends NLS {
 	 * 
 	 */
 	public static String CommandHelper_signatureslection;
-
-
 
 	/** The Message parser. */
 	public static String MessageParser_undefined;

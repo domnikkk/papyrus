@@ -46,10 +46,6 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 		createContents();
 	}
 
-	/**
-	 * @generated
-	 */
-
 	protected void createContents() {
 		add(createHeader(), BorderLayout.TOP);
 		add(createContentPane(), BorderLayout.CENTER);
@@ -61,19 +57,15 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 		interactionContentPane.setBorder(new MarginBorder(5, 5, 5, 5));
 		interactionContentPane.setFill(false);
 		interactionContentPane.setOutline(true);
-
 		return interactionContentPane;
 	}
 
 	protected RectangleFigure createHeader() {
 		interactionLabel = new WrappingLabel();
-
 		interactionLabelContainer = new InteractionFigure();
 		interactionLabelContainer.setBorder(new MarginBorder(3, 3, 3, 3));
 		interactionLabelContainer.setLayoutManager(new LeftToolbarLayout());
-
 		interactionLabelContainer.add(interactionLabel);
-
 		RectangleFigure container = new RectangleFigure();
 		container.setOutline(false);
 		container.setFill(false);
@@ -106,5 +98,4 @@ public class InteractionRectangleFigure extends NodeNamedElementFigure {
 	public RectangleFigure getCompartmentFigure() {
 		return interactionContentPane;
 	}
-
 }

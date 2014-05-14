@@ -21,6 +21,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Event;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.MessageEnd;
@@ -31,11 +32,6 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.Signal;
 import org.eclipse.uml2.uml.UMLFactory;
 
-
-
-
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class CommunicationCommandHelper.
  */
@@ -62,9 +58,6 @@ public class CommunicationCommandHelper {
 		return messageSort;
 	}
 
-
-
-
 	/**
 	 * Create a message. It also creates its message end, their corresponding events and updates the signature of the message.
 	 * 
@@ -81,7 +74,6 @@ public class CommunicationCommandHelper {
 	public static Message doCreateMessage(Interaction container, MessageSort messageSort, Element source, Element target) {
 		return doCreateMessage(container, messageSort, source, target, null, null);
 	}
-
 
 	/**
 	 * Create a message. It also creates its message end (if not provided), their corresponding events and updates the signature of the message.
@@ -101,22 +93,15 @@ public class CommunicationCommandHelper {
 	 * @return the created message
 	 */
 	public static Message doCreateMessage(Interaction container, MessageSort messageSort, Element source, Element target, MessageEnd sendMessageEnd, MessageEnd receiveMessageEnd) {
-
 		List<NamedElement> signatures = new ArrayList<NamedElement>();
-
-
-
 		NamedElement signature = null;
 		if(!signatures.isEmpty()) {
 			signature = signatures.get(0);
 		}
-
 		// Get the correct MessageSort
 		messageSort = getMessageSort(signature, messageSort);
-
 		// Create the message
 		Message message = doCreateMessage(container, messageSort, signature);
-
 		// Create the two message ends
 		if(sendMessageEnd == null && source != null) {
 			sendMessageEnd = createMessageEnd(container, EventHelper.doCreateSendEvent(messageSort, container, signature), source, MessageDirection.OUT);
@@ -124,7 +109,6 @@ public class CommunicationCommandHelper {
 		if(receiveMessageEnd == null && target != null) {
 			receiveMessageEnd = createMessageEnd(container, EventHelper.doCreateReceiveEvent(messageSort, container, signature), target, MessageDirection.IN);
 		}
-
 		// Update the messages end with the message
 		if(sendMessageEnd != null) {
 			sendMessageEnd.setMessage(message);
@@ -138,7 +122,6 @@ public class CommunicationCommandHelper {
 			// Update the message with the messages end
 			message.setReceiveEvent(receiveMessageEnd);
 		}
-
 		return message;
 	}
 
@@ -155,13 +138,10 @@ public class CommunicationCommandHelper {
 	 */
 	public static Message doCreateMessage(Interaction interaction, MessageSort messageSort, NamedElement signature) {
 		Message message = interaction.createMessage(null);
-
 		// Set the interaction that will contain the message
 		message.setInteraction(interaction);
-
 		// Set MessageSort
 		message.setMessageSort(messageSort);
-
 		// Init Name
 		if(signature == null) {
 			org.eclipse.papyrus.uml.diagram.communication.custom.providers.ElementInitializers.init_NamedElement(message);
@@ -169,7 +149,6 @@ public class CommunicationCommandHelper {
 			message.setName(signature.getName());
 			message.setSignature(signature);
 		}
-
 		return message;
 	}
 
@@ -185,13 +164,10 @@ public class CommunicationCommandHelper {
 	 * @return The message occurence specification
 	 */
 	public static MessageOccurrenceSpecification doCreateMessageOccurrence(InteractionFragment fragment, Event event, Lifeline lifeline) {
-
 		// Create the MOS
 		MessageOccurrenceSpecification mos = UMLFactory.eINSTANCE.createMessageOccurrenceSpecification();
-
 		// Configure the MOS
 		doConfigureOccurenceSpecification(mos, event, fragment, lifeline);
-
 		return mos;
 	}
 
@@ -208,18 +184,14 @@ public class CommunicationCommandHelper {
 	 *        the covered lifeline
 	 */
 	private static void doConfigureOccurenceSpecification(OccurrenceSpecification os, Event event, InteractionFragment fragment, Lifeline lifeline) {
-
 		// Set the Container of the OccurrenceSpecification
 		if(fragment instanceof Interaction) {
 			os.setEnclosingInteraction((Interaction)fragment);
 		}
-
 		// Set the covered lifeline
 		os.getCovereds().add(lifeline);
-
 		// Set the event of the OccurrenceSpecification
 		//os.setEvent(event);
-
 	}
 
 	/**
@@ -243,6 +215,4 @@ public class CommunicationCommandHelper {
 		}
 		return endMsg;
 	}
-
-
 }

@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.navigator;
 
 import java.util.Collection;
@@ -34,7 +32,7 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	private Collection myChildren = new LinkedList();
+	private Collection<java.lang.Object> myChildren = new LinkedList<java.lang.Object>();
 
 	/**
 	 * @generated
@@ -69,7 +67,7 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	public void addChildren(Collection children) {
+	public void addChildren(Collection<java.lang.Object> children) {
 		myChildren.addAll(children);
 	}
 

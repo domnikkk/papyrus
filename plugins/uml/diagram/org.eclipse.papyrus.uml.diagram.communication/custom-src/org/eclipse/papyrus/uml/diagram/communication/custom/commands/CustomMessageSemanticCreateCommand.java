@@ -83,7 +83,6 @@ public class CustomMessageSemanticCreateCommand extends MessageCreateCommand {
 	/**
 	 * Add a condition on the MOS container
 	 * 
-	 * @generated NOT
 	 */
 	@Override
 	public boolean canExecute() {

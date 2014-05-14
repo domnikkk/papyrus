@@ -26,7 +26,6 @@ import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageNameEditP
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.UMLEditPartFactory;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLVisualIDRegistry;
 
-// TODO: Auto-generated Javadoc
 /**
  * This class is used to create the custom edit parts.
  */
@@ -35,8 +34,10 @@ public class CustomUMLeditPartFactory extends UMLEditPartFactory {
 	/**
 	 * Creates a new CustomUMLeditPart object.
 	 *
-	 * @param context the context
-	 * @param model the model
+	 * @param context
+	 *        the context
+	 * @param model
+	 *        the model
 	 * @return the custom edit part
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.parts.UMLEditPartFactory#createEditPart(org.eclipse.gef.EditPart, java.lang.Object)
 	 */

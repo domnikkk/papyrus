@@ -37,14 +37,10 @@ import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageNameEditP
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLViewProvider;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class CustomUmlViewProvider provides a custom creation of the message
  */
 public class CustomUMLViewProvider extends UMLViewProvider {
-
-
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.communication.providers.UMLViewProvider#createEdge(org.eclipse.core.runtime.IAdaptable,
@@ -58,14 +54,12 @@ public class CustomUMLViewProvider extends UMLViewProvider {
 	 * @param preferencesHint
 	 * @return the edge
 	 */
-
 	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType)elementType).getSemanticHint();
 		switch(UMLVisualIDRegistry.getVisualID(elementTypeHint)) {
 		case MessageEditPart.VISUAL_ID:
 			return customCreateMessage_8009(getSemanticElement(semanticAdapter), containerView, index, persisted, preferencesHint);
-
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
 		return super.createEdge(semanticAdapter, containerView, semanticHint, index, persisted, preferencesHint);
@@ -103,19 +97,13 @@ public class CustomUMLViewProvider extends UMLViewProvider {
 		//edge.setElement(domainElement);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
-
 		PreferenceInitializerForElementHelper.initForegroundFromPrefs(edge, prefStore, "Message"); //$NON-NLS-1$
-
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(edge, prefStore, "Message"); //$NON-NLS-1$
-
 		//org.eclipse.gmf.runtime.notation.Routing routing = org.eclipse.gmf.runtime.notation.Routing.get(prefStore.getInt(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_STYLE));
 		//if (routing != null) {
 		//	org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(edge, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		//}
-
-
 		PreferenceInitializerForElementHelper.initRountingFromPrefs(edge, prefStore, "Message"); //$NON-NLS-1$
-
 		Node label6001 = createLabel(edge, UMLVisualIDRegistry.getType(MessageNameEditPart.VISUAL_ID));
 		label6001.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location6001 = (Location)label6001.getLayoutConstraint();
