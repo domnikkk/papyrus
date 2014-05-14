@@ -131,9 +131,8 @@
           <and>
              <with variable="selection">
                 <iterate>
-                   <instanceof
-                         value="org.eclipse.emf.ecore.EObject">
-                   </instanceof>
+                   <adapt type="org.eclipse.emf.ecore.EObject">
+                   </adapt>
                 </iterate>
              </with>
           </and>
