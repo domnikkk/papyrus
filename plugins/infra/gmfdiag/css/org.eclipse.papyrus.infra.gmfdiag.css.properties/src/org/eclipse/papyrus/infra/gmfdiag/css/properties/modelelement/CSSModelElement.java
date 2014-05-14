@@ -25,6 +25,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngine;
 import org.eclipse.papyrus.infra.gmfdiag.css.engine.ModelCSSEngine;
 import org.eclipse.papyrus.infra.gmfdiag.css.notation.CSSDiagram;
 import org.eclipse.papyrus.infra.gmfdiag.css.notation.CSSStyles;
+import org.eclipse.papyrus.infra.gmfdiag.css.properties.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.css.properties.creation.StyleSheetFactory;
 import org.eclipse.papyrus.infra.gmfdiag.css.properties.databinding.DiagramStyleSheetObservableList;
 import org.eclipse.papyrus.infra.gmfdiag.css.properties.databinding.ModelStyleSheetObservableList;
@@ -40,9 +41,6 @@ import org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory;
 import org.eclipse.papyrus.infra.widgets.creation.StringEditionFactory;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
-
-import com.google.common.base.Optional;
-
 
 public class CSSModelElement extends CustomStyleModelElement {
 
@@ -67,7 +65,6 @@ public class CSSModelElement extends CustomStyleModelElement {
 			factory.setContentProvider(getContentProvider(propertyPath));
 			return factory;
 		}
-
 		return super.getValueFactory(propertyPath);
 	}
 
@@ -79,29 +76,22 @@ public class CSSModelElement extends CustomStyleModelElement {
 		if(CSSStyles.CSS_MODEL_STYLESHEETS_KEY.equals(propertyPath)) {
 			//Get the resource
 			final Resource notationResource = source.eResource();
-			//The model styleSheet
-			ModelStyleSheets modelStyleSheetsSource = null;
 			//Get the model styleSheet Object
 			Object modelStyleSheetObject = EcoreUtil.getObjectByType(notationResource.getContents(), StylesheetsPackage.Literals.MODEL_STYLE_SHEETS);
-			//If the model styleSheet exist
-			if(modelStyleSheetObject instanceof ModelStyleSheets) {
-				// set modelStyleSheetsSource
-				modelStyleSheetsSource = (ModelStyleSheets)modelStyleSheetObject;
-			} else {
-				//or create a model styleSheet
-				modelStyleSheetsSource = StylesheetsFactory.eINSTANCE.createModelStyleSheets();
-				//Optional used to pass the modelStyleSheetsSource on runnable without final
-				final Optional<ModelStyleSheets> modelStyleSheetsOnOptional = Optional.of(modelStyleSheetsSource);
+			//The model styleSheet
+			final ModelStyleSheets modelStyleSheetsSource = modelStyleSheetObject instanceof ModelStyleSheets ? (ModelStyleSheets)modelStyleSheetObject : StylesheetsFactory.eINSTANCE.createModelStyleSheets();
+			//If the modelStylesheet doesn't exist
+			if(!(modelStyleSheetObject instanceof ModelStyleSheets)) {
 				try {
 					TransactionHelper.run(domain, new Runnable() {
 
 						public void run() {
 							//Add modelStylesheet to the resource without command
-							notationResource.getContents().add(modelStyleSheetsOnOptional.get());
+							notationResource.getContents().add(modelStyleSheetsSource);
 						}
 					});
 				} catch (Exception e) {
-					e.printStackTrace();
+					Activator.log.error(e);
 				}
 				//Initialize the adapter of the engine to listen model styleSheet
 				ExtendedCSSEngine engine = ((CSSNotationResource)notationResource).getModelEngine();
@@ -136,9 +126,7 @@ public class CSSModelElement extends CustomStyleModelElement {
 		if(propertyPath.equals(CSSStyles.CSS_GMF_CLASS_KEY)) {
 			Diagram diagram = ((View)source).getDiagram();
 			if(diagram instanceof CSSDiagram) {
-
 				EObject semanticElement = ((View)source).getElement();
-
 				if(semanticElement != null) {
 					//TODO: For Diagrams, we should use the right DiagramKind (See GMFElementAdapter)
 					//Until then, we list all available classes (*)
@@ -146,11 +134,19 @@ public class CSSModelElement extends CustomStyleModelElement {
 					return new CSSClassContentProvider(elementName, ((CSSDiagram)diagram).getEngine());
 				}
 			}
-
 			return null;
 		}
-
 		return null;
 	}
 
+	@Override
+	public boolean isUnique(String propertyPath) {
+		if(CSSStyles.CSS_DIAGRAM_STYLESHEETS_KEY.equals(propertyPath)) {
+			return true;
+		}
+		if(CSSStyles.CSS_MODEL_STYLESHEETS_KEY.equals(propertyPath)) {
+			return true;
+		}
+		return super.isUnique(propertyPath);
+	}
 }

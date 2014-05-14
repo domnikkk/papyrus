@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
+ *  Christian W. Damus (CEA) - bug 434133
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.tests.tests;
@@ -146,7 +147,9 @@ public class ContentProviderTest extends AbstractPapyrusTest {
 		Assert.assertTrue(current instanceof IAdaptable);
 
 		if(adaptedValue instanceof EReference) {
-			Assert.assertEquals(adaptedValue, ((IAdaptable)current).getAdapter(EReference.class));
+			EStructuralFeature.Setting setting = (EStructuralFeature.Setting)((IAdaptable)current).getAdapter(EStructuralFeature.Setting.class);
+			Assert.assertNotNull(setting);
+			Assert.assertEquals(adaptedValue, setting.getEStructuralFeature());
 		} else if(adaptedValue instanceof EObject) {
 			Assert.assertEquals(adaptedValue, ((IAdaptable)current).getAdapter(EObject.class));
 		}

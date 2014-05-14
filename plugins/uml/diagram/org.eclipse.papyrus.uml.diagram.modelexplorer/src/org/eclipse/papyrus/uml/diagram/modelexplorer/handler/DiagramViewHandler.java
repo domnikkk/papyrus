@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434635
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.modelexplorer.handler;
@@ -36,7 +37,7 @@ public class DiagramViewHandler extends AbstractHandler {
 	 * 
 	 * @return the common navigator
 	 */
-	protected CommonNavigator getCommonNavigator() {
+	protected static CommonNavigator getCommonNavigator() {
 		IViewPart part = org.eclipse.papyrus.views.modelexplorer.NavigatorUtils.findViewPart(ModelExplorerPageBookView.VIEW_ID);
 		// the part is only a book, retrieving correct page
 		if(part instanceof ModelExplorerPageBookView) {

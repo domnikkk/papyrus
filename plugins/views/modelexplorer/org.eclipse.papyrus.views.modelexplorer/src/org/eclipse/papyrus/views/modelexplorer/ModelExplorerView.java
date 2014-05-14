@@ -11,6 +11,7 @@
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - post refreshes for transaction commit asynchronously (CDO)
  *  Christian W. Damus (CEA) - bug 429826
+ *  Christian W. Damus (CEA) - bug 434635
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer;
@@ -74,6 +75,7 @@ import org.eclipse.papyrus.infra.services.navigation.service.NavigableElement;
 import org.eclipse.papyrus.infra.services.navigation.service.NavigationService;
 import org.eclipse.papyrus.infra.widgets.editors.SelectionMenu;
 import org.eclipse.papyrus.infra.widgets.util.IRevealSemanticElement;
+import org.eclipse.papyrus.views.modelexplorer.SharedModelExplorerState.StateChangedEvent;
 import org.eclipse.papyrus.views.modelexplorer.listener.DoubleClickListener;
 import org.eclipse.papyrus.views.modelexplorer.matching.IMatchingItem;
 import org.eclipse.papyrus.views.modelexplorer.matching.LinkItemMatchingItem;
@@ -95,6 +97,7 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IMemento;
+import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.ISaveablePart;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
@@ -105,6 +108,8 @@ import org.eclipse.ui.internal.navigator.NavigatorContentService;
 import org.eclipse.ui.internal.navigator.extensions.NavigatorContentDescriptor;
 import org.eclipse.ui.navigator.CommonNavigator;
 import org.eclipse.ui.navigator.CommonViewer;
+import org.eclipse.ui.navigator.CommonViewerSorter;
+import org.eclipse.ui.navigator.IExtensionActivationListener;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
@@ -120,6 +125,10 @@ import com.google.common.collect.Lists;
  *
  */
 public class ModelExplorerView extends CommonNavigator implements IRevealSemanticElement, IEditingDomainProvider, IPageLifeCycleEventsListener {
+
+	private SharedModelExplorerState sharedState;
+	
+	private SharedModelExplorerState.StateChangedListener sharedStateListener;
 
 	/**
 	 * The context of the LabelProviderService used by this view
@@ -213,8 +222,6 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		if(serviceRegistry == null) {
 			throw new IllegalArgumentException("The part should have a ServiceRegistry.");
 		}
-
-		setLinkingEnabled(true);
 
 		// Get required services from ServicesRegistry
 		try {
@@ -367,6 +374,15 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				break;
 			}
 		}
+		contentService.dispose(); // No longer need this
+		
+		viewer.getNavigatorContentService().getActivationService().addExtensionActivationListener(new IExtensionActivationListener() {
+			
+			public void onExtensionActivation(String aViewerId, String[] theNavigatorExtensionIds, boolean isActive) {
+				sharedState.updateNavigatorContentExtensions(theNavigatorExtensionIds, isActive);
+			}
+		});
+		
 		ColumnViewerToolTipSupport.enableFor(viewer, ToolTip.NO_RECREATE);
 
 		return viewer;
@@ -483,6 +499,10 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			sashWindowsContainer.addPageLifeCycleListener(this);
 		} catch (ServiceException ex) {
 			//Ignore
+		}
+
+		if(sharedState != null) {
+			initSharedState(sharedState);
 		}
 	}
 
@@ -757,6 +777,19 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		if(this.getCommonViewer() != null) {
 			syncRefresh();
 		}
+
+		// Self-listen for property changes
+		addPropertyListener(new IPropertyListener() {
+
+			public void propertyChanged(Object source, int propId) {
+				switch(propId) {
+				case IS_LINKING_ENABLED_PROPERTY:
+					// Propagate to other instances
+					sharedState.setLinkingEnabled(isLinkingEnabled());
+					break;
+				}
+			}
+		});
 	}
 
 	/**
@@ -789,6 +822,10 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		// Stop if we are already disposed
 		if(isDisposed()) {
 			return;
+		}
+
+		if((sharedStateListener != null) && (sharedState != null)) {
+			sharedState.removeListener(sharedStateListener);
 		}
 
 		try {
@@ -972,11 +1009,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				 * in the good order. This is a lot faster than going through the whole tree
 				 * using getChildren of the ContentProvider since our Viewer uses a Hashtable
 				 * to keep track of the revealed elements.
-				 *
+				 * 
 				 * However we need to use a dedicated MatchingItem to do the matching,
 				 * and a specific comparer in our viewer so than the equals of MatchingItem is
 				 * used in priority.
-				 *
+				 * 
 				 * Please refer to MatchingItem for more infos.
 				 */
 				EObject previousParent = null;
@@ -1109,5 +1146,85 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				}
 			}
 		};
+	}
+
+	void setSharedState(SharedModelExplorerState state) {
+		if(this.sharedState != null) {
+			this.sharedState.removeListener(getSharedStateListener());
+		}
+
+		this.sharedState = state;
+
+		if(state != null) {
+			state.addListener(getSharedStateListener());
+			initSharedState(state);
+		}
+	}
+
+	void initSharedState(SharedModelExplorerState state) {
+		setLinkingEnabled(state.isLinkingEnabled());
+		setAlphaSorted(state.isAlphaSorted());
+	}
+
+	void setAlphaSorted(boolean sorted) {
+		CommonViewer viewer = getCommonViewer();
+		if((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
+			if(sorted) {
+				viewer.setSorter(new CommonViewerSorter());
+				if(viewer instanceof CustomCommonViewer) {
+					((CustomCommonViewer)viewer).getDropAdapter().setFeedbackEnabled(false);
+				}
+			} else {
+				viewer.setSorter(null);
+				if(viewer instanceof CustomCommonViewer) {
+					((CustomCommonViewer)viewer).getDropAdapter().setFeedbackEnabled(true);
+				}
+			}
+		}
+	}
+
+	SharedModelExplorerState.StateChangedListener getSharedStateListener() {
+		if(sharedStateListener == null) {
+			sharedStateListener = new SharedModelExplorerState.StateChangedListener() {
+
+				private volatile Runnable contentUpdate;
+
+				public void sharedStateChanged(StateChangedEvent event) {
+					switch(event.getEventType()) {
+					case StateChangedEvent.LINKING_ENABLED:
+						setLinkingEnabled(event.getSource().isLinkingEnabled());
+						break;
+					case StateChangedEvent.ALPHA_SORTED:
+						setAlphaSorted(event.getSource().isAlphaSorted());
+						break;
+					case StateChangedEvent.CONTENT_EXTENSIONS:
+						if(contentUpdate == null) {
+							getCommonViewer().getControl().getDisplay().asyncExec(getContentUpdate());
+						}
+						break;
+					}
+				}
+
+				private Runnable getContentUpdate() {
+					if(contentUpdate == null) {
+						contentUpdate = new Runnable() {
+
+							public void run() {
+								CommonViewer viewer = getCommonViewer();
+								if((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
+									viewer.getNavigatorContentService().getActivationService().activateExtensions(sharedState.getNavigatorContentExtensions(), true);
+								}
+
+								// I am no longer pending
+								contentUpdate = null;
+							}
+						};
+					}
+					return contentUpdate;
+				}
+			};
+		}
+
+		return sharedStateListener;
 	}
 }

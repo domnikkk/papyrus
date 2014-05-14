@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434635
  *
  *****************************************************************************/
 
@@ -17,17 +18,12 @@ package org.eclipse.papyrus.views.modelexplorer.handler;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.papyrus.views.modelexplorer.Activator;
-import org.eclipse.papyrus.views.modelexplorer.CustomCommonViewer;
-import org.eclipse.papyrus.views.modelexplorer.ModelExplorerView;
-import org.eclipse.papyrus.views.modelexplorer.core.ui.pagebookview.MultiViewPageBookView;
+import org.eclipse.papyrus.views.modelexplorer.sorting.DefaultTreeViewerSorting;
+import org.eclipse.papyrus.views.modelexplorer.sorting.ITreeViewerSorting;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.ToolItem;
-import org.eclipse.ui.IViewPart;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.eclipse.ui.navigator.CommonViewerSorter;
 
 
 /**
@@ -40,53 +36,14 @@ public class SortElementHandler extends AbstractHandler {
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		if(Activator.getDefault().getCustomizationManager() != null) {
-			TreeViewer selectedTreeViewer = getSelectedTreeViewer(event);
-			if(selectedTreeViewer == null) {
-				return null;
-			}
+			final boolean isSorted = ((ToolItem)((Event)event.getTrigger()).widget).getSelection();
 
-			if(((ToolItem)((Event)event.getTrigger()).widget).getSelection()) {
-
-
-				selectedTreeViewer.setSorter(new CommonViewerSorter());
-				if(selectedTreeViewer instanceof CustomCommonViewer) {
-					((CustomCommonViewer)selectedTreeViewer).getDropAdapter().setFeedbackEnabled(false);
-				}
-			} else {
-				selectedTreeViewer.setSorter(null);
-				if(selectedTreeViewer instanceof CustomCommonViewer) {
-					((CustomCommonViewer)selectedTreeViewer).getDropAdapter().setFeedbackEnabled(true);
-				}
-			}
-
-			getSelectedTreeViewer(event).refresh();
+			getTreeViewerSorting(event).setSorted(isSorted);
 		}
 		return null;
 	}
 
-	/**
-	 * used to obtain the tree viewer of the model explorer
-	 * 
-	 * @param event
-	 * @return
-	 */
-	protected TreeViewer getSelectedTreeViewer(ExecutionEvent event) {
-		// Try to get the active part
-		IWorkbenchPart activePart = HandlerUtil.getActivePart(event);
-
-		if(activePart instanceof TreeViewer) {
-			return (TreeViewer)activePart;
-		}
-
-		if(activePart instanceof MultiViewPageBookView) {
-			MultiViewPageBookView pageBookView = (MultiViewPageBookView)activePart;
-			IViewPart viewPart = pageBookView.getActiveView();
-			if(viewPart instanceof ModelExplorerView) {
-				return ((ModelExplorerView)viewPart).getCommonViewer();
-			}
-		}
-
-		// Not found
-		return null;
+	protected ITreeViewerSorting getTreeViewerSorting(ExecutionEvent event) {
+		return DefaultTreeViewerSorting.getSorting(HandlerUtil.getActivePart(event));
 	}
 }

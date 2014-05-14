@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 LIFL & CEA LIST.
+ * Copyright (c) 2010, 2014 LIFL, CEA LIST, and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434635
  *
  *****************************************************************************/
 
@@ -30,6 +31,8 @@ import org.eclipse.ui.IWorkbenchPart;
  */
 public class ModelExplorerPage extends ViewPartPage {
 
+	private SharedModelExplorerState state;
+	
 	/**
 	 * Constructor.
 	 * 
@@ -47,8 +50,10 @@ public class ModelExplorerPage extends ViewPartPage {
 	 */
 	@Override
 	protected IViewPart createViewer(IWorkbenchPart part) {
-		// Part is of the right type because of call  to isImportant()
-		return new ModelExplorerView((IMultiDiagramEditor)part);
+		// Part is of the right type because of call to isImportant()
+		ModelExplorerView result = new ModelExplorerView((IMultiDiagramEditor)part);
+		result.setSharedState(state);
+		return result;
 	}
 
 	/**
@@ -75,4 +80,7 @@ public class ModelExplorerPage extends ViewPartPage {
 		return ((ModelExplorerView)getViewer()).getControl();
 	}
 
+	void setSharedState(SharedModelExplorerState state) {
+		this.state = state;
+	}
 }

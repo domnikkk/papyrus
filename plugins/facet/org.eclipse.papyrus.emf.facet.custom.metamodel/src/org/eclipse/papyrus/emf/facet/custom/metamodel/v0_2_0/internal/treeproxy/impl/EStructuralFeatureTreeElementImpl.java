@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012 Mia-Software.
+ * Copyright (c) 2012, 2014 Mia-Software, CEA, and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *    Nicolas Bros (Mia-Software) - Bug 379683 - customizable Tree content provider
  *    Gregoire Dupe (Mia-Software) - Bug 386387 - [CustomizedTreeContentProvider] The TreeElements are not preserved between two calls to getElements()
+ *    Christian W. Damus (CEA) - bug 434133
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl;
 
@@ -62,7 +63,7 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 	 */
 	public Object getAdapter(Class key) {
 		if(key == EStructuralFeature.Setting.class) { //Metamodel element
-			EStructuralFeature.Setting result = new EStructuralFeature.Setting() {
+			return new EStructuralFeature.Setting() {
 
 				public void unset() {
 					getEObject().eUnset(getEStructuralFeature());
@@ -77,7 +78,7 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 				}
 
 				public EStructuralFeature getEStructuralFeature() {
-					return getEStructuralFeature();
+					return EStructuralFeatureTreeElementImpl.this.getEStructuralFeature();
 				}
 
 				public EObject getEObject() {
@@ -102,6 +103,10 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 		return null;
 	}
 
+	protected EStructuralFeature getEStructuralFeature() {
+		throw new UnsupportedOperationException();
+	}
+	
 	// The semantic EObject of a EReferenceTreeElement is the semantic EObject of it's parent (Which is an EObjectTreeElement)
 	protected EObject getEObject() {
 		TreeElement parent = getParent();

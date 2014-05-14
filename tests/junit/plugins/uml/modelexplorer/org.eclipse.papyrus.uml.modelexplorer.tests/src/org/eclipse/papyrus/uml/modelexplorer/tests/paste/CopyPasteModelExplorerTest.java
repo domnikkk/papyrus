@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST.
+ * Copyright (c) 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434133
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelexplorer.tests.paste;
@@ -19,7 +20,6 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.junit.utils.HandlerUtils;
 import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
@@ -96,7 +96,7 @@ public class CopyPasteModelExplorerTest extends AbstractEditorTest {
 		elements.clear();
 		elements.add(class1);
 		modelExplorerView.revealSemanticElement(elements);
-		EObject class1TreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Object class1TreeObject = ((IStructuredSelection)selectionService.getSelection()).getFirstElement();
 		Assert.assertNotNull("Class1 TreeElement is null", class1TreeObject); //$NON-NLS-1$
 
 		IHandler copyHandler = HandlerUtils.getActiveHandlerFor(COPY_COMMAND_ID);
@@ -139,7 +139,7 @@ public class CopyPasteModelExplorerTest extends AbstractEditorTest {
 		modelExplorerView.revealSemanticElement(elements);
 
 		//getItem for model
-		EObject modelTreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Object modelTreeObject = ((IStructuredSelection)selectionService.getSelection()).getFirstElement();
 		Assert.assertNotNull("Model TreeElement is null", modelTreeObject); //$NON-NLS-1$			
 
 		// copy class1
@@ -147,7 +147,7 @@ public class CopyPasteModelExplorerTest extends AbstractEditorTest {
 		elements.clear();
 		elements.add(class1);
 		modelExplorerView.revealSemanticElement(elements);
-		EObject class1TreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Object class1TreeObject = ((IStructuredSelection)selectionService.getSelection()).getFirstElement();
 		Assert.assertNotNull("Class1 TreeElement is null", class1TreeObject); //$NON-NLS-1$
 
 		IHandler copyHandler = HandlerUtils.getActiveHandlerFor(COPY_COMMAND_ID);
@@ -161,7 +161,7 @@ public class CopyPasteModelExplorerTest extends AbstractEditorTest {
 		elements.clear();
 		elements.add(primitiveTypes);
 		modelExplorerView.revealSemanticElement(elements);
-		EObject treeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Object treeObject = ((IStructuredSelection)selectionService.getSelection()).getFirstElement();
 		Assert.assertNotNull("PrimitiveTypes TreeElement is null", treeObject); //$NON-NLS-1$
 
 		IHandler pasteHandler = HandlerUtils.getActiveHandlerFor(PASTE_COMMAND_ID);
@@ -195,10 +195,10 @@ public class CopyPasteModelExplorerTest extends AbstractEditorTest {
 		elements.add(class1);
 		elements.add(class2);
 		modelExplorerView.revealSemanticElement(elements);
-		EObject class1TreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Object class1TreeObject = ((IStructuredSelection)selectionService.getSelection()).getFirstElement();
 		Assert.assertNotNull("Class1 TreeElement is null", class1TreeObject); //$NON-NLS-1$
 
-		EObject class2TreeObject = (EObject)((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Object class2TreeObject = ((IStructuredSelection)selectionService.getSelection()).getFirstElement();
 		Assert.assertNotNull("Class2 TreeElement is null", class2TreeObject); //$NON-NLS-1$		
 
 		IHandler copyHandler = HandlerUtils.getActiveHandlerFor(COPY_COMMAND_ID);
