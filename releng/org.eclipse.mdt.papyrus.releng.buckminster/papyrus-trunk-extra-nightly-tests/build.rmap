@@ -230,7 +230,7 @@
     <!-- EMF -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("EMF (Core)",0) -->
-      <rm:uri format="{0}/modeling/emf/emf/updates/interim/">
+      <rm:uri format="{0}/modeling/emf/emf/updates/milestones/">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -282,7 +282,7 @@
     <!-- GMF Tooling -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("GMF Tooling",0) -->
-      <rm:uri format="{0}/modeling/gmp/gmf-tooling/updates/milestones-3.2.M6a">
+      <rm:uri format="{0}/modeling/gmp/gmf-tooling/updates/milestones-3.2.M7">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
