@@ -228,7 +228,7 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 				IStatus status = (IStatus)binding.getValidationStatus().getValue();
 				updateStatus(status);
 
-				if(!isReadOnly()) {
+				if(!isReadOnly() && !AbstractValueEditor.this.isDisposed()) { //Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
 					changeColorField();
 				}
 			}
