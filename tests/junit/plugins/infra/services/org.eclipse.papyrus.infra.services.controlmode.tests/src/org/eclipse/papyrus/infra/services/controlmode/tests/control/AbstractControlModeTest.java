@@ -112,7 +112,7 @@ public abstract class AbstractControlModeTest extends AbstractPapyrusTest {
 		// Execute save
 		// Assert that the parent package is controlled
 		PackageableElement submodel = elements.get(0);
-		Assert.assertTrue(ControlHelper.isRootControlledObject(submodel));
+		Assert.assertNotEquals("The controlled submodel's resource equals its parent's", model.eResource(), submodel.eResource());
 
 		// Assert that the model and submodel belong to different
 		// resources
