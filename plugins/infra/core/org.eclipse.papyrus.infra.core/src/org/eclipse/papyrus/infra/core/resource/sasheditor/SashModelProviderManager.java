@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,9 +64,9 @@ class SashModelProviderManager {
 
 	/**
 	 * Obtains the most appropriate sash model provider for the specified URI.
-	 * 
+	 *
 	 * @param userModelURI
-	 * 
+	 *
 	 * @return the sash model provider, never {@code null} (there is always a default available)
 	 */
 	ISashModelProvider getSashModelProvider(final URI userModelURI) {
@@ -118,7 +118,12 @@ class SashModelProviderManager {
 
 			@Override
 			public URI getSashModelURI(URI userModelURI) {
-				final URI uriWithoutExtension = userModelURI.trimFileExtension();
+				final URI uriWithoutExtension;
+				if(!userModelURI.lastSegment().endsWith(SashModel.SASH_MODEL_FILE_EXTENSION)) { //Bug 434839 : we create a new papyrus sashmodel from an existing model.profile.uml
+					uriWithoutExtension = userModelURI;
+				} else {
+					uriWithoutExtension = userModelURI.trimFileExtension();
+				}
 
 				IPath stateLocation = Activator.getDefault().getStateLocation();
 
