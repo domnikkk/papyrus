@@ -591,7 +591,7 @@ public class ClassNameEditPartCN extends PapyrusCompartmentEditPart implements I
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View)getModel();
+		return getPrimaryView();
 	}
 
 	/**

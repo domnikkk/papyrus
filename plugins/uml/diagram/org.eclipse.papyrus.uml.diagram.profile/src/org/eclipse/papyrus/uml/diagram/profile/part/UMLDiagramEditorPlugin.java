@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
@@ -7,9 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- * 
- * 
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.profile.part;
 
@@ -17,10 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -29,9 +25,9 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.eclipse.papyrus.infra.gmfdiag.preferences.Activator;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.profile.preferences.DiagramPreferenceInitializer;
@@ -98,6 +94,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
+		myLogHelper = new LogHelper(this);
 		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = createAdapterFactory();
 		DiagramPreferenceInitializer diagramPreferenceInitializer = new DiagramPreferenceInitializer();
@@ -266,58 +263,34 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void logError(String error) {
-		logError(error, null);
+		getLogHelper().warn(error);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logError(String error, Throwable throwable) {
-		if (error == null && throwable != null) {
-			error = throwable.getMessage();
-		}
-		getLog().log(new Status(
-				IStatus.ERROR,
-				UMLDiagramEditorPlugin.ID,
-				IStatus.OK,
-				error, throwable));
-		debug(error, throwable);
+		getLogHelper().error(error, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message) {
-		logInfo(message, null);
+		getLogHelper().info(message);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message, Throwable throwable) {
-		if (message == null && throwable != null) {
-			message = throwable.getMessage();
-		}
-		getLog().log(new Status(
-				IStatus.INFO,
-				UMLDiagramEditorPlugin.ID,
-				IStatus.OK,
-				message, throwable));
-		debug(message, throwable);
+		getLogHelper().error(message, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
-	private void debug(String message, Throwable throwable) {
-		if (!isDebugging()) {
-			return;
-		}
-		if (message != null) {
-			System.err.println(message);
-		}
-		if (throwable != null) {
-			throwable.printStackTrace();
-		}
+	public LogHelper getLogHelper() {
+		return myLogHelper;
 	}
 }
