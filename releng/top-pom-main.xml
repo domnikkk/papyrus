@@ -298,6 +298,7 @@
 	<properties>
 		<tycho-version>0.20.0</tycho-version>
 		<tychoExtrasVersion>0.20.0</tychoExtrasVersion>
+		<findbugs.version>2.5.3</findbugs.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -521,7 +522,7 @@
 			<plugin>
 	            <groupId>org.codehaus.mojo</groupId>
 	            <artifactId>findbugs-maven-plugin</artifactId>
-	            <version>2.5.3-SNAPSHOT</version>
+	            <version>${findbugs.version}</version>
 	            <configuration>
 	               <findbugsXmlOutput>true</findbugsXmlOutput>
 	               <failOnError>false</failOnError>
