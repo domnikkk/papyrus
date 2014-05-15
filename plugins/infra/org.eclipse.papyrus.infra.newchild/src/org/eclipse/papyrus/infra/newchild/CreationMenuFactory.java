@@ -32,8 +32,8 @@ import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.papyrus.infra.newchild.ElementCreationMenuModel.CreationMenu;
-import org.eclipse.papyrus.infra.newchild.ElementCreationMenuModel.Folder;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.CreationMenu;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Folder;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.swt.SWT;
@@ -87,7 +87,7 @@ public class CreationMenuFactory {
 			Menu topMenu = new Menu(menu);
 			topMenuItem.setMenu(topMenu);
 			boolean oneDisplayedMenu = false;
-			for(org.eclipse.papyrus.infra.newchild.ElementCreationMenuModel.Menu currentMenu : folder.getMenu()) {
+			for(org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu currentMenu : folder.getMenu()) {
 				boolean result = false;
 				if(currentMenu instanceof Folder) {
 					result = populateMenu(topMenu, (Folder)currentMenu, selectedObject, topMenu.getItemCount());

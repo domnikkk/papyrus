@@ -143,6 +143,7 @@
 		<module>../plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.config</module>
 		<module>../plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.editor</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.newchild</module>
+		<module>../plugins/infra/org.eclipse.papyrus.infra.newchild.edit</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.onefile</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.psf</module>
 		<module>../plugins/infra/services/org.eclipse.papyrus.infra.services.controlmode</module>
