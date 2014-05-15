@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule;
@@ -189,7 +188,6 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		isInited = true;
 
 		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
 		Iso42010Package.eINSTANCE.eClass();
 
 		// Create package meta-data objects

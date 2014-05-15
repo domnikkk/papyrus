@@ -16,23 +16,15 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
-import org.eclipse.papyrus.infra.viewpoints.configuration.EClassPropertyDescriptor;
-import org.eclipse.papyrus.infra.viewpoints.configuration.StereotypePropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule} object.
@@ -41,13 +33,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.StereotypePropertyDesc
  * @generated
  */
 public class ChildRuleItemProvider
-	extends RuleItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends RuleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -84,7 +70,7 @@ public class ChildRuleItemProvider
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new EClassPropertyDescriptor(createItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ChildRule_element_feature"),
@@ -95,7 +81,7 @@ public class ChildRuleItemProvider
 				 true,
 				 null,
 				 null,
-				 null)));
+				 null));
 	}
 
 	/**
@@ -106,7 +92,7 @@ public class ChildRuleItemProvider
 	 */
 	protected void addStereotypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new StereotypePropertyDescriptor(createItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ChildRule_stereotypes_feature"),
@@ -117,7 +103,7 @@ public class ChildRuleItemProvider
 				 true,
 				 null,
 				 null,
-				 null)));
+				 null));
 	}
 
 	/**
@@ -128,7 +114,7 @@ public class ChildRuleItemProvider
 	 */
 	protected void addOriginPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new EClassPropertyDescriptor(createItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ChildRule_origin_feature"),
@@ -139,7 +125,7 @@ public class ChildRuleItemProvider
 				 true,
 				 null,
 				 null,
-				 null)));
+				 null));
 	}
 
 	/**
@@ -176,7 +162,7 @@ public class ChildRuleItemProvider
 	 * This returns ChildRule.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT - custom image
 	 */
 	@Override
 	public Object getImage(Object object) {
