@@ -101,8 +101,7 @@ public abstract class AbstractUncontrolModelTest extends AbstractPapyrusTest {
 		// Assert that this element is controlled
 		PackageableElement submodel = elements.get(0);
 		Assert.assertNotNull(submodel);
-		boolean isControlled = ControlHelper.isRootControlledObject(submodel);
-		Assert.assertTrue(isControlled);
+		Assert.assertNotEquals("The controlled submodel's resource equals its parent's", model.eResource(), submodel.eResource());
 		ModelExplorerUtils.setSelectionInTheModelexplorer(view, elements);
 		return submodel;
 	}
