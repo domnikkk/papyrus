@@ -1,17 +1,19 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -31,35 +33,12 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class TimeConstraintCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
 	private Diagram diagram = null;
-
-	/**
-	 * @generated
-	 */
-	private EObject eObject = null;
-
-	/**
-	 * @generated
-	 */
-	public TimeConstraintCreateCommand(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		super(req.getLabel(), null, req);
-		this.eObject = eObject;
-		this.diagram = diagram;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static TimeConstraintCreateCommand create(CreateElementRequest req, EObject eObject, Diagram diagram) {
-		return new TimeConstraintCreateCommand(req, eObject, diagram);
-	}
 
 	/**
 	 * @generated
@@ -71,25 +50,19 @@ public class TimeConstraintCreateCommand extends EditElementCommand {
 
 	/**
 	 * FIXME: replace with setElementToEdit()
-	 * 
 	 * @generated
 	 */
-	@Override
 	protected EObject getElementToEdit() {
 		EObject container = ((CreateElementRequest)getRequest()).getContainer();
 		if(container instanceof View) {
 			container = ((View)container).getElement();
 		}
-		if(container != null) {
-			return container;
-		}
-		return eObject;
+		return container;
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	public boolean canExecute() {
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getTimeConstraint());
@@ -99,7 +72,6 @@ public class TimeConstraintCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		TimeConstraint newElement = UMLFactory.eINSTANCE.createTimeConstraint();
 		EObject target = getElementToEdit();

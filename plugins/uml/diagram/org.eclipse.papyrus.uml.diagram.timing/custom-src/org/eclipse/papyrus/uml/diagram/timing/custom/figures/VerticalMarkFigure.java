@@ -12,10 +12,10 @@ package org.eclipse.papyrus.uml.diagram.timing.custom.figures;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusNodeFigure;
 import org.eclipse.swt.graphics.Image;
 
-public class VerticalMarkFigure extends org.eclipse.draw2d.Figure implements IPapyrusUMLElementFigure {
+public class VerticalMarkFigure extends PapyrusNodeFigure {
 
 	public static final int PREFERRED_WIDTH = 5;
 
@@ -26,7 +26,7 @@ public class VerticalMarkFigure extends org.eclipse.draw2d.Figure implements IPa
 	}
 
 	@Override
-	protected void paintFigure(final Graphics g) {
+	public void paintFigure(final Graphics g) {
 		super.paintFigure(g);
 		g.pushState();
 		final int middleX = this.bounds.x + this.bounds.width / 2;
@@ -41,8 +41,5 @@ public class VerticalMarkFigure extends org.eclipse.draw2d.Figure implements IPa
 	}
 
 	public void setStereotypeDisplay(final String stereotypes, final Image image) {
-		// TODO Auto-generated method stub
-
 	}
-
 }

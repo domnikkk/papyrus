@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.navigator;
 
@@ -28,8 +31,6 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
@@ -43,8 +44,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
-	public void updateLabel(final ViewerLabel label, final TreePath elementPath) {
-		final Object element = elementPath.getLastSegment();
+	public void updateLabel(ViewerLabel label, TreePath elementPath) {
+		Object element = elementPath.getLastSegment();
 		if(element instanceof UMLNavigatorItem && !isOwnView(((UMLNavigatorItem)element).getView())) {
 			return;
 		}
@@ -55,42 +56,38 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
-	@Override
-	public Image getImage(final Object element) {
+	public Image getImage(Object element) {
 		if(element instanceof UMLNavigatorGroup) {
-			final UMLNavigatorGroup group = (UMLNavigatorGroup)element;
+			UMLNavigatorGroup group = (UMLNavigatorGroup)element;
 			return UMLDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
-
 		if(element instanceof UMLNavigatorItem) {
-			final UMLNavigatorItem navigatorItem = (UMLNavigatorItem)element;
+			UMLNavigatorItem navigatorItem = (UMLNavigatorItem)element;
 			if(!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
 			return getImage(navigatorItem.getView());
 		}
-
 		return super.getImage(element);
 	}
 
 	/**
 	 * @generated
 	 */
-	public Image getImage(final View view) {
+	public Image getImage(View view) {
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
 
 	/**
 	 * @generated
 	 */
-	private Image getImage(final String key, final IElementType elementType) {
-		final ImageRegistry imageRegistry = UMLDiagramEditorPlugin.getInstance().getImageRegistry();
+	private Image getImage(String key, IElementType elementType) {
+		ImageRegistry imageRegistry = UMLDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
 		if(image == null && elementType != null && UMLElementTypes.isKnownElementType(elementType)) {
 			image = UMLElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
-
 		if(image == null) {
 			image = imageRegistry.get("Navigator?ImageNotFound"); //$NON-NLS-1$
 			imageRegistry.put(key, image);
@@ -101,28 +98,25 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
-	@Override
-	public String getText(final Object element) {
+	public String getText(Object element) {
 		if(element instanceof UMLNavigatorGroup) {
-			final UMLNavigatorGroup group = (UMLNavigatorGroup)element;
+			UMLNavigatorGroup group = (UMLNavigatorGroup)element;
 			return group.getGroupName();
 		}
-
 		if(element instanceof UMLNavigatorItem) {
-			final UMLNavigatorItem navigatorItem = (UMLNavigatorItem)element;
+			UMLNavigatorItem navigatorItem = (UMLNavigatorItem)element;
 			if(!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
 			return getText(navigatorItem.getView());
 		}
-
 		return super.getText(element);
 	}
 
 	/**
 	 * @generated
 	 */
-	public String getText(final View view) {
+	public String getText(View view) {
 		if(view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
@@ -132,47 +126,46 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
-	private String getUnknownElementText(final View view) {
+	private String getUnknownElementText(View view) {
 		return "<UnknownElement Visual_ID = " + view.getType() + ">"; //$NON-NLS-1$  //$NON-NLS-2$
 	}
 
 	/**
 	 * @generated
 	 */
-	private String getUnresolvedDomainElementProxyText(final View view) {
+	private String getUnresolvedDomainElementProxyText(View view) {
 		return "<Unresolved domain element Visual_ID = " + view.getType() + ">"; //$NON-NLS-1$  //$NON-NLS-2$
 	}
 
 	/**
 	 * @generated
 	 */
-	public void init(final ICommonContentExtensionSite aConfig) {
+	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
 	/**
 	 * @generated
 	 */
-	public void restoreState(final IMemento aMemento) {
+	public void restoreState(IMemento aMemento) {
 	}
 
 	/**
 	 * @generated
 	 */
-	public void saveState(final IMemento aMemento) {
+	public void saveState(IMemento aMemento) {
 	}
 
 	/**
 	 * @generated
 	 */
-	public String getDescription(final Object anElement) {
+	public String getDescription(Object anElement) {
 		return null;
 	}
 
 	/**
 	 * @generated
 	 */
-	private boolean isOwnView(final View view) {
+	private boolean isOwnView(View view) {
 		return TimingDiagramEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view));
 	}
-
 }

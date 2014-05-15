@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.part;
 
@@ -19,22 +22,18 @@ import org.eclipse.ui.IWorkbenchPage;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLDiagramActionBarContributor extends DiagramActionBarContributor {
 
 	/**
 	 * @generated
 	 */
-	@Override
-	protected Class getEditorClass() {
+	protected Class<UMLDiagramEditor> getEditorClass() {
 		return UMLDiagramEditor.class;
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	protected String getEditorId() {
 		return UMLDiagramEditor.ID;
 	}
@@ -42,19 +41,18 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	/**
 	 * @generated
 	 */
-	@Override
-	public void init(final IActionBars bars, final IWorkbenchPage page) {
+	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview
-		final IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_FILE);
+		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_FILE);
 		assert fileMenu != null;
 		fileMenu.remove("pageSetupAction"); //$NON-NLS-1$
-		final IMenuManager editMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_EDIT);
+		IMenuManager editMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_EDIT);
 		assert editMenu != null;
 		if(editMenu.find("validationGroup") == null) { //$NON-NLS-1$
 			editMenu.add(new GroupMarker("validationGroup")); //$NON-NLS-1$
 		}
-		final IAction validateAction = new ValidateAction(page);
+		IAction validateAction = new ValidateAction(page);
 		editMenu.appendToGroup("validationGroup", validateAction); //$NON-NLS-1$
 	}
 }

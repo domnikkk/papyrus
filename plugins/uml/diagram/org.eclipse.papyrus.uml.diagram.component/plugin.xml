@@ -1147,20 +1147,6 @@
 				         <context decoratorTargets="PRIMARY_VIEW"/>
 				      </decoratorProvider>
 				   </extension>
-<!-- added by Remi Schnekenburger-->
-<extension point="org.eclipse.ui.preferencePages">
-	<?gmfgen generated="false"?>
-	<page  	category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLClassDiagram"
-			class="org.eclipse.papyrus.uml.diagram.component.custom.preferences.PropertyPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.clazz.custom.preferences.PropertyPreferencePage"
-            name="Property" />
- <page
-       category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams.PapyrusUMLClassDiagram"
-       class="org.eclipse.papyrus.uml.diagram.component.custom.preferences.OperationPreferencePage"
-       id="org.eclipse.papyrus.uml.diagram.clazz.custom.preferences.OperationPreferencePage"
-       name="Operation">
- </page>
-</extension>
 <extension
       point="org.eclipse.ui.commands">
    <command

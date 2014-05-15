@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.part;
 
@@ -55,24 +58,22 @@ import org.eclipse.uml2.uml.Package;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLDiagramContentInitializer {
 
 	/**
 	 * @generated
 	 */
-	private final Map myDomain2NotationMap = new HashMap();
+	private Map myDomain2NotationMap = new HashMap();
 
 	/**
 	 * @generated
 	 */
-	private final Collection myLinkDescriptors = new LinkedList();
+	private Collection myLinkDescriptors = new LinkedList();
 
 	/**
 	 * @generated
 	 */
-	public void initDiagramContent(final Diagram diagram) {
+	public void initDiagramContent(Diagram diagram) {
 		if(!TimingDiagramEditPart.MODEL_ID.equals(diagram.getType())) {
 			UMLDiagramEditorPlugin.getInstance().logError("Incorrect diagram passed as a parameter: " + diagram.getType());
 			return;
@@ -88,9 +89,9 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createPackage_1Children(final View view) {
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getPackage_1SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createPackage_1Children(View view) {
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getPackage_1SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 	}
@@ -98,155 +99,140 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createInteraction_2Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getInteraction_2OutgoingLinks(view));
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getInteraction_2SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createInteraction_2Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getInteraction_2OutgoingLinks(view));
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getInteraction_2SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 		createInteractionInteractionCompartment_5Children(getCompartment(view, InteractionCompartmentEditPartTN.VISUAL_ID));
 		createInteractionTimeRulerCompartment_29Children(getCompartment(view, TimeRulerCompartmentEditPartCN.VISUAL_ID));
-
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createLifeline_19Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getLifeline_19OutgoingLinks(view));
+	private void createLifeline_19Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getLifeline_19OutgoingLinks(view));
 		createLifelineFullLifelineStateDefinitionCompartment_7Children(getCompartment(view, FullLifelineStateDefinitionCompartmentEditPartCN.VISUAL_ID));
 		createLifelineFullLifelineTimelineCompartment_8Children(getCompartment(view, FullLifelineTimelineCompartmentEditPartCN.VISUAL_ID));
 		createLifelineFullLifelineTimeRuler_82Children(getCompartment(view, FullLifelineTimeRulerCompartmentEditPartCN.VISUAL_ID));
-
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createLifeline_20Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getLifeline_20OutgoingLinks(view));
+	private void createLifeline_20Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getLifeline_20OutgoingLinks(view));
 		createLifelineCompactLifelineCompartment_23Children(getCompartment(view, CompactLifelineCompartmentEditPartCN.VISUAL_ID));
 		createLifelineCompactLifelineTimeRuler_83Children(getCompartment(view, CompactLifelineTimeRulerCompartmentEditPartCN.VISUAL_ID));
-
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createStateInvariant_11Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getStateInvariant_11OutgoingLinks(view));
-
+	private void createStateInvariant_11Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getStateInvariant_11OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createStateInvariant_28Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getStateInvariant_28OutgoingLinks(view));
-
+	private void createStateInvariant_28Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getStateInvariant_28OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createOccurrenceSpecification_12Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getOccurrenceSpecification_12OutgoingLinks(view));
-
+	private void createOccurrenceSpecification_12Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getOccurrenceSpecification_12OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createMessageOccurrenceSpecification_13Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getMessageOccurrenceSpecification_13OutgoingLinks(view));
-
+	private void createMessageOccurrenceSpecification_13Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getMessageOccurrenceSpecification_13OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createTimeConstraint_15Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getTimeConstraint_15OutgoingLinks(view));
-
+	private void createTimeConstraint_15Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getTimeConstraint_15OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createTimeObservation_16Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getTimeObservation_16OutgoingLinks(view));
-
+	private void createTimeObservation_16Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getTimeObservation_16OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createDurationConstraint_18Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getDurationConstraint_18OutgoingLinks(view));
-
+	private void createDurationConstraint_18Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getDurationConstraint_18OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createDurationObservation_17Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getDurationObservation_17OutgoingLinks(view));
-
+	private void createDurationObservation_17Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getDurationObservation_17OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createGeneralOrdering_67Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getGeneralOrdering_67OutgoingLinks(view));
-
+	private void createGeneralOrdering_67Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getGeneralOrdering_67OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createDestructionOccurrenceSpecification_27Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getDestructionOccurrenceSpecification_27OutgoingLinks(view));
-
+	private void createDestructionOccurrenceSpecification_27Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getDestructionOccurrenceSpecification_27OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createLifeline_40Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getLifeline_40OutgoingLinks(view));
-
+	private void createLifeline_40Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getLifeline_40OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createGate_69Children(final View view) {
-		this.myDomain2NotationMap.put(view.getElement(), view);
-		this.myLinkDescriptors.addAll(UMLDiagramUpdater.getGate_69OutgoingLinks(view));
-
+	private void createGate_69Children(View view) {
+		myDomain2NotationMap.put(view.getElement(), view);
+		myLinkDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getGate_69OutgoingLinks(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private void createInteractionInteractionCompartment_5Children(final View view) {
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getInteractionInteractionCompartment_5SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createInteractionInteractionCompartment_5Children(View view) {
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getInteractionInteractionCompartment_5SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 	}
@@ -254,9 +240,9 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createLifelineFullLifelineStateDefinitionCompartment_7Children(final View view) {
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getLifelineFullLifelineStateDefinitionCompartment_7SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createLifelineFullLifelineStateDefinitionCompartment_7Children(View view) {
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getLifelineFullLifelineStateDefinitionCompartment_7SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 	}
@@ -264,9 +250,9 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createLifelineFullLifelineTimelineCompartment_8Children(final View view) {
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getLifelineFullLifelineTimelineCompartment_8SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createLifelineFullLifelineTimelineCompartment_8Children(View view) {
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getLifelineFullLifelineTimelineCompartment_8SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 	}
@@ -274,9 +260,9 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createLifelineCompactLifelineCompartment_23Children(final View view) {
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getLifelineCompactLifelineCompartment_23SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createLifelineCompactLifelineCompartment_23Children(View view) {
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getLifelineCompactLifelineCompartment_23SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 	}
@@ -284,9 +270,9 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createInteractionTimeRulerCompartment_29Children(final View view) {
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getInteractionTimeRulerCompartment_29SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createInteractionTimeRulerCompartment_29Children(View view) {
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getInteractionTimeRulerCompartment_29SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 	}
@@ -294,9 +280,9 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createLifelineFullLifelineTimeRuler_82Children(final View view) {
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getLifelineFullLifelineTimeRuler_82SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createLifelineFullLifelineTimeRuler_82Children(View view) {
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getLifelineFullLifelineTimeRuler_82SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 	}
@@ -304,9 +290,9 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createLifelineCompactLifelineTimeRuler_83Children(final View view) {
-		final Collection childNodeDescriptors = UMLDiagramUpdater.getLifelineCompactLifelineTimeRuler_83SemanticChildren(view);
-		for(final Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
+	private void createLifelineCompactLifelineTimeRuler_83Children(View view) {
+		Collection childNodeDescriptors = UMLDiagramUpdater.INSTANCE.getLifelineCompactLifelineTimeRuler_83SemanticChildren(view);
+		for(Iterator it = childNodeDescriptors.iterator(); it.hasNext();) {
 			createNode(view, (UMLNodeDescriptor)it.next());
 		}
 	}
@@ -314,9 +300,9 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createNode(final View parentView, final UMLNodeDescriptor nodeDescriptor) {
+	private void createNode(View parentView, UMLNodeDescriptor nodeDescriptor) {
 		final String nodeType = UMLVisualIDRegistry.getType(nodeDescriptor.getVisualID());
-		final Node node = ViewService.createNode(parentView, nodeDescriptor.getModelElement(), nodeType, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+		Node node = ViewService.createNode(parentView, nodeDescriptor.getModelElement(), nodeType, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 		switch(nodeDescriptor.getVisualID()) {
 		case InteractionEditPartTN.VISUAL_ID:
 			createInteraction_2Children(node);
@@ -369,66 +355,65 @@ public class UMLDiagramContentInitializer {
 	/**
 	 * @generated
 	 */
-	private void createLinks(final Diagram diagram) {
+	private void createLinks(Diagram diagram) {
 		for(boolean continueLinkCreation = true; continueLinkCreation;) {
 			continueLinkCreation = false;
-			final Collection additionalDescriptors = new LinkedList();
-			for(final Iterator it = this.myLinkDescriptors.iterator(); it.hasNext();) {
-				final UMLLinkDescriptor nextLinkDescriptor = (UMLLinkDescriptor)it.next();
-				if(!this.myDomain2NotationMap.containsKey(nextLinkDescriptor.getSource()) || !this.myDomain2NotationMap.containsKey(nextLinkDescriptor.getDestination())) {
+			Collection additionalDescriptors = new LinkedList();
+			for(Iterator it = myLinkDescriptors.iterator(); it.hasNext();) {
+				UMLLinkDescriptor nextLinkDescriptor = (UMLLinkDescriptor)it.next();
+				if(!myDomain2NotationMap.containsKey(nextLinkDescriptor.getSource()) || !myDomain2NotationMap.containsKey(nextLinkDescriptor.getDestination())) {
 					continue;
 				}
 				final String linkType = UMLVisualIDRegistry.getType(nextLinkDescriptor.getVisualID());
-				final Edge edge = ViewService.getInstance().createEdge(nextLinkDescriptor.getSemanticAdapter(), diagram, linkType, ViewUtil.APPEND, true, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Edge edge = ViewService.getInstance().createEdge(nextLinkDescriptor.getSemanticAdapter(), diagram, linkType, ViewUtil.APPEND, true, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if(edge != null) {
-					edge.setSource((View)this.myDomain2NotationMap.get(nextLinkDescriptor.getSource()));
-					edge.setTarget((View)this.myDomain2NotationMap.get(nextLinkDescriptor.getDestination()));
+					edge.setSource((View)myDomain2NotationMap.get(nextLinkDescriptor.getSource()));
+					edge.setTarget((View)myDomain2NotationMap.get(nextLinkDescriptor.getDestination()));
 					it.remove();
 					if(nextLinkDescriptor.getModelElement() != null) {
-						this.myDomain2NotationMap.put(nextLinkDescriptor.getModelElement(), edge);
+						myDomain2NotationMap.put(nextLinkDescriptor.getModelElement(), edge);
 					}
 					continueLinkCreation = true;
 					switch(nextLinkDescriptor.getVisualID()) {
 					case MessageSyncEditPart.VISUAL_ID:
-						additionalDescriptors.addAll(UMLDiagramUpdater.getMessage_3OutgoingLinks(edge));
+						additionalDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getMessage_3OutgoingLinks(edge));
 						break;
 					case MessageAsyncEditPart.VISUAL_ID:
-						additionalDescriptors.addAll(UMLDiagramUpdater.getMessage_4OutgoingLinks(edge));
+						additionalDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getMessage_4OutgoingLinks(edge));
 						break;
 					case MessageReplyEditPart.VISUAL_ID:
-						additionalDescriptors.addAll(UMLDiagramUpdater.getMessage_41OutgoingLinks(edge));
+						additionalDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getMessage_41OutgoingLinks(edge));
 						break;
 					case MessageCreateEditPart.VISUAL_ID:
-						additionalDescriptors.addAll(UMLDiagramUpdater.getMessage_44OutgoingLinks(edge));
+						additionalDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getMessage_44OutgoingLinks(edge));
 						break;
 					case MessageDeleteEditPart.VISUAL_ID:
-						additionalDescriptors.addAll(UMLDiagramUpdater.getMessage_47OutgoingLinks(edge));
+						additionalDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getMessage_47OutgoingLinks(edge));
 						break;
 					case MessageLostEditPart.VISUAL_ID:
-						additionalDescriptors.addAll(UMLDiagramUpdater.getMessage_50OutgoingLinks(edge));
+						additionalDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getMessage_50OutgoingLinks(edge));
 						break;
 					case MessageFoundEditPart.VISUAL_ID:
-						additionalDescriptors.addAll(UMLDiagramUpdater.getMessage_53OutgoingLinks(edge));
+						additionalDescriptors.addAll(UMLDiagramUpdater.INSTANCE.getMessage_53OutgoingLinks(edge));
 						break;
 					}
 				}
 			}
-			this.myLinkDescriptors.addAll(additionalDescriptors);
+			myLinkDescriptors.addAll(additionalDescriptors);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
-	private Node getCompartment(final View node, final int visualID) {
-		final String type = UMLVisualIDRegistry.getType(visualID);
-		for(final Iterator it = node.getChildren().iterator(); it.hasNext();) {
-			final View nextView = (View)it.next();
+	private Node getCompartment(View node, int visualID) {
+		String type = UMLVisualIDRegistry.getType(visualID);
+		for(Iterator it = node.getChildren().iterator(); it.hasNext();) {
+			View nextView = (View)it.next();
 			if(nextView instanceof Node && type.equals(nextView.getType())) {
 				return (Node)nextView;
 			}
 		}
 		return null;
 	}
-
 }

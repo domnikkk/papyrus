@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.part;
 
@@ -20,40 +23,35 @@ import org.eclipse.ui.IWorkbenchPart;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class DiagramEditorContextMenuProvider extends DiagramContextMenuProvider {
 
 	/**
 	 * @generated
 	 */
-	private final IWorkbenchPart part;
+	private IWorkbenchPart part;
 
 	/**
 	 * @generated
 	 */
-	public DiagramEditorContextMenuProvider(final IWorkbenchPart part, final EditPartViewer viewer) {
+	public DiagramEditorContextMenuProvider(IWorkbenchPart part, EditPartViewer viewer) {
 		super(part, viewer);
 		this.part = part;
-
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	public void buildContextMenu(final IMenuManager menu) {
 		getViewer().flush();
 		try {
 			TransactionUtil.getEditingDomain((EObject)getViewer().getContents().getModel()).runExclusive(new Runnable() {
 
 				public void run() {
-					ContributionItemService.getInstance().contributeToPopupMenu(DiagramEditorContextMenuProvider.this, DiagramEditorContextMenuProvider.this.part);
+					ContributionItemService.getInstance().contributeToPopupMenu(DiagramEditorContextMenuProvider.this, part);
 					menu.remove(ActionIds.ACTION_DELETE_FROM_MODEL);
-
 				}
 			});
-		} catch (final Exception e) {
+		} catch (Exception e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Error building context menu", e);
 		}
 	}

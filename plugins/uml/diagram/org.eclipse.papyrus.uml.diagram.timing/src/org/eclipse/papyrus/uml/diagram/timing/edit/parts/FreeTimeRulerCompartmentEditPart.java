@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.edit.parts;
 
@@ -13,8 +16,10 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
+import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -30,13 +35,7 @@ import org.eclipse.papyrus.uml.diagram.timing.part.Messages;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
-public class FreeTimeRulerCompartmentEditPart
-
-extends ShapeCompartmentEditPart
-
-{
+public class FreeTimeRulerCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -46,14 +45,13 @@ extends ShapeCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public FreeTimeRulerCompartmentEditPart(final View view) {
+	public FreeTimeRulerCompartmentEditPart(View view) {
 		super(view);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	public String getCompartmentName() {
 		return Messages.FreeTimeRulerCompartmentEditPart_title;
 	}
@@ -61,9 +59,8 @@ extends ShapeCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	@Override
 	public IFigure createFigure() {
-		final ResizableCompartmentFigure result = (ResizableCompartmentFigure)super.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure)super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -71,7 +68,6 @@ extends ShapeCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
@@ -84,8 +80,7 @@ extends ShapeCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void setRatio(final Double ratio) {
+	protected void setRatio(Double ratio) {
 		if(getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
@@ -94,9 +89,15 @@ extends ShapeCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void handleNotificationEvent(final Notification notification) {
-		final Object feature = notification.getFeature();
+	public EditPart getTargetEditPart(Request request) {
+		return super.getTargetEditPart(request);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification notification) {
+		Object feature = notification.getFeature();
 		if(NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature) || NotationPackage.eINSTANCE.getLocation_X().equals(feature) || NotationPackage.eINSTANCE.getLocation_Y().equals(feature)) {
 			refreshBounds();
 		}
@@ -107,19 +108,18 @@ extends ShapeCompartmentEditPart
 	 * @generated
 	 */
 	protected void refreshBounds() {
-		final int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		final int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
-		final Dimension size = new Dimension(width, height);
-		final int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		final int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
-		final Point loc = new Point(x, y);
+		int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		Dimension size = new Dimension(width, height);
+		int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		Point loc = new Point(x, y);
 		((GraphicalEditPart)getParent()).setLayoutConstraint(this, getFigure(), new Rectangle(loc, size));
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshBounds();

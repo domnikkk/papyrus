@@ -1,23 +1,17 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.edit.parts;
 
-import java.util.Collections;
-import java.util.List;
-
-import org.eclipse.gef.GraphicalEditPart;
-import org.eclipse.gef.Request;
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableLabelEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.DuplicatePasteEditPolicy;
@@ -29,8 +23,6 @@ import org.eclipse.papyrus.uml.diagram.timing.edit.policies.TimingDiagramEditPar
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class TimingDiagramEditPart extends PapyrusDiagramEditPart {
 
 	/**
@@ -46,74 +38,20 @@ public class TimingDiagramEditPart extends PapyrusDiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public TimingDiagramEditPart(final View view) {
+	public TimingDiagramEditPart(View view) {
 		super(view);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new PapyrusCreationEditPolicy());
 		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
-
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TimingDiagramEditPartFactoryItemSemanticEditPolicy());
-
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new TimingDiagramDragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CustomTimingDiagramCreationEditPolicy());
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
-
-	/**
-	 * @generated
-	 */
-	/* package-local */static class NodeLabelDragPolicy extends NonResizableEditPolicy {
-
-		/**
-		 * @generated
-		 */
-		@Override
-		@SuppressWarnings("rawtypes")
-		protected List createSelectionHandles() {
-			final MoveHandle h = new MoveHandle((GraphicalEditPart)getHost());
-			h.setBorder(null);
-			return Collections.singletonList(h);
-		}
-
-		/**
-		 * @generated
-		 */
-		@Override
-		public Command getCommand(final Request request) {
-			return null;
-		}
-
-		/**
-		 * @generated
-		 */
-		@Override
-		public boolean understandsRequest(final Request request) {
-			return false;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	/* package-local */static class LinkLabelDragPolicy extends NonResizableLabelEditPolicy {
-
-		/**
-		 * @generated
-		 */
-		@Override
-		@SuppressWarnings("rawtypes")
-		protected List createSelectionHandles() {
-			final MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
-			mh.setBorder(null);
-			return Collections.singletonList(mh);
-		}
-	}
-
 }

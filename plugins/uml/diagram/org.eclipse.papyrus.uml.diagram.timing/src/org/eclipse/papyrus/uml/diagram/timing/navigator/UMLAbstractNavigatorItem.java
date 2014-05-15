@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.navigator;
 
@@ -16,14 +19,13 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public abstract class UMLAbstractNavigatorItem extends PlatformObject {
 
 	/**
 	 * @generated
 	 */
 	static {
+		@SuppressWarnings("rawtypes")
 		final Class[] supportedTypes = new Class[]{ ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 
@@ -33,13 +35,15 @@ public abstract class UMLAbstractNavigatorItem extends PlatformObject {
 		};
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-			public Object getAdapter(final Object adaptableObject, final Class adapterType) {
+			@SuppressWarnings("rawtypes")
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
 				if(adaptableObject instanceof org.eclipse.papyrus.uml.diagram.timing.navigator.UMLAbstractNavigatorItem && adapterType == ITabbedPropertySheetPageContributor.class) {
 					return propertySheetPageContributor;
 				}
 				return null;
 			}
 
+			@SuppressWarnings("rawtypes")
 			public Class[] getAdapterList() {
 				return supportedTypes;
 			}
@@ -49,20 +53,19 @@ public abstract class UMLAbstractNavigatorItem extends PlatformObject {
 	/**
 	 * @generated
 	 */
-	private final Object myParent;
+	private Object myParent;
 
 	/**
 	 * @generated
 	 */
-	protected UMLAbstractNavigatorItem(final Object parent) {
-		this.myParent = parent;
+	protected UMLAbstractNavigatorItem(Object parent) {
+		myParent = parent;
 	}
 
 	/**
 	 * @generated
 	 */
 	public Object getParent() {
-		return this.myParent;
+		return myParent;
 	}
-
 }

@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.part;
 
@@ -25,8 +28,6 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLCreationWizard extends Wizard implements INewWizard {
 
 	/**
@@ -63,41 +64,41 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public IWorkbench getWorkbench() {
-		return this.workbench;
+		return workbench;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IStructuredSelection getSelection() {
-		return this.selection;
+		return selection;
 	}
 
 	/**
 	 * @generated
 	 */
 	public final Resource getDiagram() {
-		return this.diagram;
+		return diagram;
 	}
 
 	/**
 	 * @generated
 	 */
 	public final boolean isOpenNewlyCreatedDiagramEditor() {
-		return this.openNewlyCreatedDiagramEditor;
+		return openNewlyCreatedDiagramEditor;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setOpenNewlyCreatedDiagramEditor(final boolean openNewlyCreatedDiagramEditor) {
+	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void init(final IWorkbench workbench, final IStructuredSelection selection) {
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(Messages.UMLCreationWizardTitle);
@@ -108,44 +109,39 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	@Override
 	public void addPages() {
-		this.diagramModelFilePage = new UMLCreationWizardPage("DiagramModelFile", getSelection(), "PapyrusUMLTiming_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
-		this.diagramModelFilePage.setTitle(Messages.UMLCreationWizard_DiagramModelFilePageTitle);
-		this.diagramModelFilePage.setDescription(Messages.UMLCreationWizard_DiagramModelFilePageDescription);
-		addPage(this.diagramModelFilePage);
+		diagramModelFilePage = new UMLCreationWizardPage("DiagramModelFile", getSelection(), "PapyrusUMLTiming_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage.setTitle(Messages.UMLCreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage.setDescription(Messages.UMLCreationWizard_DiagramModelFilePageDescription);
+		addPage(diagramModelFilePage);
+		domainModelFilePage = new UMLCreationWizardPage("DomainModelFile", getSelection(), "PapyrusUMLTiming") { //$NON-NLS-1$ //$NON-NLS-2$
 
-		this.domainModelFilePage = new UMLCreationWizardPage("DomainModelFile", getSelection(), "PapyrusUMLTiming") { //$NON-NLS-1$ //$NON-NLS-2$
-
-			@Override
-			public void setVisible(final boolean visible) {
+			public void setVisible(boolean visible) {
 				if(visible) {
-					String fileName = UMLCreationWizard.this.diagramModelFilePage.getFileName();
+					String fileName = diagramModelFilePage.getFileName();
 					fileName = fileName.substring(0, fileName.length() - ".PapyrusUMLTiming_diagram".length()); //$NON-NLS-1$
 					setFileName(UMLDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName, "PapyrusUMLTiming")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}
 		};
-		this.domainModelFilePage.setTitle(Messages.UMLCreationWizard_DomainModelFilePageTitle);
-		this.domainModelFilePage.setDescription(Messages.UMLCreationWizard_DomainModelFilePageDescription);
-		addPage(this.domainModelFilePage);
+		domainModelFilePage.setTitle(Messages.UMLCreationWizard_DomainModelFilePageTitle);
+		domainModelFilePage.setDescription(Messages.UMLCreationWizard_DomainModelFilePageDescription);
+		addPage(domainModelFilePage);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	public boolean performFinish() {
-		final IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
+		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
-			@Override
-			protected void execute(final IProgressMonitor monitor) throws CoreException, InterruptedException {
-				UMLCreationWizard.this.diagram = UMLDiagramEditorUtil.createDiagram(UMLCreationWizard.this.diagramModelFilePage.getURI(), UMLCreationWizard.this.domainModelFilePage.getURI(), monitor);
-				if(isOpenNewlyCreatedDiagramEditor() && UMLCreationWizard.this.diagram != null) {
+			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
+				diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), monitor);
+				if(isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
-						UMLDiagramEditorUtil.openDiagram(UMLCreationWizard.this.diagram);
-					} catch (final PartInitException e) {
+						UMLDiagramEditorUtil.openDiagram(diagram);
+					} catch (PartInitException e) {
 						ErrorDialog.openError(getContainer().getShell(), Messages.UMLCreationWizardOpenEditorError, null, e.getStatus());
 					}
 				}
@@ -153,9 +149,9 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		};
 		try {
 			getContainer().run(false, true, op);
-		} catch (final InterruptedException e) {
+		} catch (InterruptedException e) {
 			return false;
-		} catch (final InvocationTargetException e) {
+		} catch (InvocationTargetException e) {
 			if(e.getTargetException() instanceof CoreException) {
 				ErrorDialog.openError(getContainer().getShell(), Messages.UMLCreationWizardCreationError, null, ((CoreException)e.getTargetException()).getStatus());
 			} else {
@@ -163,6 +159,6 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 			}
 			return false;
 		}
-		return this.diagram != null;
+		return diagram != null;
 	}
 }

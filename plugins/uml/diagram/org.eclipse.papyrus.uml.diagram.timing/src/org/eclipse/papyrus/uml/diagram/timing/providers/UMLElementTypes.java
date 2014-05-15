@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.providers;
 
@@ -14,14 +17,12 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
+import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.CompactLifelineEditPartCN;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.CompactStateInvariantEditPartCN;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.DestructionOccurrenceSpecificationEditPartCN;
@@ -57,8 +58,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLElementTypes {
 
 	/**
@@ -75,7 +74,7 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
-	private static ImageRegistry imageRegistry;
+	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -225,97 +224,29 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
-	private static ImageRegistry getImageRegistry() {
-		if(imageRegistry == null) {
-			imageRegistry = new ImageRegistry();
-		}
-		return imageRegistry;
+	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
+		return elementTypeImages.getImageDescriptor(element);
 	}
 
 	/**
 	 * @generated
 	 */
-	private static String getImageRegistryKey(final ENamedElement element) {
-		return element.getName();
+	public static Image getImage(ENamedElement element) {
+		return elementTypeImages.getImage(element);
 	}
 
 	/**
 	 * @generated
 	 */
-	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
-		if(element instanceof EStructuralFeature) {
-			final EStructuralFeature feature = ((EStructuralFeature)element);
-			final EClass eContainingClass = feature.getEContainingClass();
-			final EClassifier eType = feature.getEType();
-			if(eContainingClass != null && !eContainingClass.isAbstract()) {
-				element = eContainingClass;
-			} else if(eType instanceof EClass && !((EClass)eType).isAbstract()) {
-				element = eType;
-			}
-		}
-		if(element instanceof EClass) {
-			final EClass eClass = (EClass)element;
-			if(!eClass.isAbstract()) {
-				return UMLDiagramEditorPlugin.getInstance().getItemImageDescriptor(eClass.getEPackage().getEFactoryInstance().create(eClass));
-			}
-		}
-		// TODO : support structural features
-		return null;
+	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
+		return getImageDescriptor(getElement(hint));
 	}
 
 	/**
 	 * @generated
 	 */
-	public static ImageDescriptor getImageDescriptor(final ENamedElement element) {
-		final String key = getImageRegistryKey(element);
-		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(key);
-		if(imageDescriptor == null) {
-			imageDescriptor = getProvidedImageDescriptor(element);
-			if(imageDescriptor == null) {
-				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
-			}
-			getImageRegistry().put(key, imageDescriptor);
-		}
-		return imageDescriptor;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Image getImage(final ENamedElement element) {
-		final String key = getImageRegistryKey(element);
-		Image image = getImageRegistry().get(key);
-		if(image == null) {
-			ImageDescriptor imageDescriptor = getProvidedImageDescriptor(element);
-			if(imageDescriptor == null) {
-				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
-			}
-			getImageRegistry().put(key, imageDescriptor);
-			image = getImageRegistry().get(key);
-		}
-		return image;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static ImageDescriptor getImageDescriptor(final IAdaptable hint) {
-		final ENamedElement element = getElement(hint);
-		if(element == null) {
-			return null;
-		}
-		return getImageDescriptor(element);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Image getImage(final IAdaptable hint) {
-		final ENamedElement element = getElement(hint);
-		if(element == null) {
-			return null;
-		}
-		return getImage(element);
+	public static Image getImage(IAdaptable hint) {
+		return getImage(getElement(hint));
 	}
 
 	/**
@@ -323,71 +254,48 @@ public class UMLElementTypes {
 	 * 
 	 * @generated
 	 */
-	public static ENamedElement getElement(final IAdaptable hint) {
-		final Object type = hint.getAdapter(IElementType.class);
+	public static synchronized ENamedElement getElement(IAdaptable hint) {
+		Object type = hint.getAdapter(IElementType.class);
 		if(elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
-
 			elements.put(Package_1, UMLPackage.eINSTANCE.getPackage());
-
 			elements.put(Interaction_2, UMLPackage.eINSTANCE.getInteraction());
-
 			elements.put(Lifeline_19, UMLPackage.eINSTANCE.getLifeline());
-
 			elements.put(Lifeline_20, UMLPackage.eINSTANCE.getLifeline());
-
 			elements.put(StateInvariant_11, UMLPackage.eINSTANCE.getStateInvariant());
-
 			elements.put(StateInvariant_28, UMLPackage.eINSTANCE.getStateInvariant());
-
 			elements.put(OccurrenceSpecification_12, UMLPackage.eINSTANCE.getOccurrenceSpecification());
-
 			elements.put(MessageOccurrenceSpecification_13, UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
-
 			elements.put(TimeConstraint_15, UMLPackage.eINSTANCE.getTimeConstraint());
-
 			elements.put(TimeObservation_16, UMLPackage.eINSTANCE.getTimeObservation());
-
 			elements.put(DurationConstraint_18, UMLPackage.eINSTANCE.getDurationConstraint());
-
 			elements.put(DurationObservation_17, UMLPackage.eINSTANCE.getDurationObservation());
-
 			elements.put(GeneralOrdering_67, UMLPackage.eINSTANCE.getGeneralOrdering());
-
 			elements.put(DestructionOccurrenceSpecification_27, UMLPackage.eINSTANCE.getDestructionOccurrenceSpecification());
-
 			elements.put(Lifeline_40, UMLPackage.eINSTANCE.getLifeline());
-
 			elements.put(Gate_69, UMLPackage.eINSTANCE.getGate());
-
 			elements.put(Message_3, UMLPackage.eINSTANCE.getMessage());
-
 			elements.put(Message_4, UMLPackage.eINSTANCE.getMessage());
-
 			elements.put(Message_41, UMLPackage.eINSTANCE.getMessage());
-
 			elements.put(Message_44, UMLPackage.eINSTANCE.getMessage());
-
 			elements.put(Message_47, UMLPackage.eINSTANCE.getMessage());
-
 			elements.put(Message_50, UMLPackage.eINSTANCE.getMessage());
-
 			elements.put(Message_53, UMLPackage.eINSTANCE.getMessage());
 		}
-		return elements.get(type);
+		return (ENamedElement)elements.get(type);
 	}
 
 	/**
 	 * @generated
 	 */
-	private static IElementType getElementType(final String id) {
+	private static IElementType getElementType(String id) {
 		return ElementTypeRegistry.getInstance().getType(id);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static boolean isKnownElementType(final IElementType elementType) {
+	public static synchronized boolean isKnownElementType(IElementType elementType) {
 		if(KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Package_1);
@@ -425,7 +333,7 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
-	public static IElementType getElementType(final int visualID) {
+	public static IElementType getElementType(int visualID) {
 		switch(visualID) {
 		case TimingDiagramEditPart.VISUAL_ID:
 			return Package_1;
@@ -487,4 +395,33 @@ public class UMLElementTypes {
 		return null;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isKnownElementType(IElementType elementType) {
+			return org.eclipse.papyrus.uml.diagram.timing.providers.UMLElementTypes.isKnownElementType(elementType);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public IElementType getElementTypeForVisualId(int visualID) {
+			return org.eclipse.papyrus.uml.diagram.timing.providers.UMLElementTypes.getElementType(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
+			return org.eclipse.papyrus.uml.diagram.timing.providers.UMLElementTypes.getElement(elementTypeAdapter);
+		}
+	};
 }
