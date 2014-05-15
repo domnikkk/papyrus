@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
@@ -7,9 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- * 
- * 
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.profile.edit.parts;
 
@@ -18,7 +16,6 @@ import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
@@ -39,17 +36,14 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
-import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
 import org.eclipse.papyrus.uml.diagram.common.editparts.AbstractShortCutDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShortCutDiagramEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.DiagramNodeFigure;
-import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.papyrus.uml.diagram.profile.custom.policies.CustomGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.ShortCutDiagramItemSemanticEditPolicy;
-import org.eclipse.papyrus.uml.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.swt.graphics.Color;
 
@@ -240,8 +234,8 @@ public class ShortCutDiagramEditPart extends AbstractShortCutDiagramEditPart {
 	 * @generated
 	 */
 	protected void setLineType(int style) {
-		if(primaryShape instanceof NodeFigure) {
-			((NodeFigure)primaryShape).setLineStyle(style);
+		if(primaryShape instanceof IPapyrusNodeFigure) {
+			((IPapyrusNodeFigure)primaryShape).setLineStyle(style);
 		}
 	}
 
