@@ -62,7 +62,7 @@ import org.eclipse.papyrus.infra.emf.resource.Replacement;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.services.markerlistener.dialogs.DiagnosticDialog;
-import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.tools.util.ProfileHelper;
 import org.eclipse.swt.SWT;
@@ -155,8 +155,8 @@ public class SwitchProfileDialog extends SelectionDialog {
 			}
 
 			@Subscribe
-			public void registeredProfileSelected(RegisteredProfile profile) {
-				replaceSelectionWith(profile.uri);
+			public void registeredProfileSelected(IRegisteredProfile profile) {
+				replaceSelectionWith(profile.getUri());
 			}
 		});
 		

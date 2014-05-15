@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     CEA List - initial API and implementation
+ *     Dr. David H. Akehurst - enable programmatic registration
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.metamodel;
 
@@ -16,6 +17,7 @@ import java.util.List;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionIds;
 import org.eclipse.papyrus.uml.extensionpoints.standard.RegisteredElementExtensionPoint;
@@ -23,13 +25,10 @@ import org.eclipse.papyrus.uml.extensionpoints.standard.RegisteredElementExtensi
 /**
  * Class that manages registered metamodel extension point
  */
-public class RegisteredMetamodel extends RegisteredElementExtensionPoint {
+public class RegisteredMetamodel extends RegisteredElementExtensionPoint implements IRegisteredMetamodel {
 
 	/** name of the extension point (main element name) in the DTD */
 	private static final String TAG_METAMODEL = "metamodel";
-
-	/** list of registered metamodels (Cache) */
-	private static RegisteredMetamodel[] RegisteredMetamodels;
 
 	/**
 	 * Creates a new RegisteredMetamodel.
@@ -41,23 +40,27 @@ public class RegisteredMetamodel extends RegisteredElementExtensionPoint {
 		super(configElt, ordinal);
 	}
 
+	public URI getUri() {
+		return super.uri;
+	}
+	
+	public String getPath() {
+		return super.path;
+	}
+	
 	/**
 	 * Returns the list of registered metamodels in the platform, using the Papyrus extension point.
 	 * 
 	 * @return the list of registered metamodels in the platform
 	 */
-	public static RegisteredMetamodel[] getRegisteredMetamodels() {
-		// list was already computed, returns it.
-		if(RegisteredMetamodels != null) {
-			return RegisteredMetamodels;
-		}
-		List<RegisteredMetamodel> metamodels = new ArrayList<RegisteredMetamodel>();
+	public static List<IRegisteredMetamodel> getRegisteredMetamodels() {
+		List<IRegisteredMetamodel> metamodels = new ArrayList<IRegisteredMetamodel>();
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(
 				ExtensionIds.METAMODEL_EXTENSION_ID);
 
 		// Read configuration elements for the current extension
 		for(int j = 0; j < configElements.length; j++) {
-			RegisteredMetamodel proxy = parseMetamodelExtension(configElements[j], metamodels.size());
+			IRegisteredMetamodel proxy = parseMetamodelExtension(configElements[j], metamodels.size());
 
 			if(proxy != null) {
 				metamodels.add(proxy);
@@ -71,8 +74,7 @@ public class RegisteredMetamodel extends RegisteredElementExtensionPoint {
 		// = new RegisteredMetamodel("ecore", URI.createURI(UMLResource.ECORE_METAMODEL_URI));
 		// metamodels.add(EcoreMetamodel);
 
-		RegisteredMetamodels = metamodels.toArray(new RegisteredMetamodel[metamodels.size()]);
-		return RegisteredMetamodels;
+		return metamodels;
 	}
 
 	/**
@@ -84,7 +86,7 @@ public class RegisteredMetamodel extends RegisteredElementExtensionPoint {
 	 * @return the RegisteredMetamodel with given name or <code>null</code> if no metamodel was
 	 *         found.
 	 */
-	public static RegisteredMetamodel getRegisteredMetamodel(String name) {
+	public static IRegisteredMetamodel getRegisteredMetamodel(String name) {
 		return getRegisteredMetamodel(name, null);
 	}
 
@@ -99,18 +101,18 @@ public class RegisteredMetamodel extends RegisteredElementExtensionPoint {
 	 * @return the RegisteredMetamodel with given name or <code>null</code> if no metamodel was
 	 *         found.
 	 */
-	public static RegisteredMetamodel getRegisteredMetamodel(String name, String path) {
+	public static IRegisteredMetamodel getRegisteredMetamodel(String name, String path) {
 		Assert.isNotNull(name);
-		RegisteredMetamodel[] metamodels = getRegisteredMetamodels();
+		IRegisteredMetamodel[] metamodels = getRegisteredMetamodels().toArray(new IRegisteredMetamodel[0]);
 		for(int i = 0; i < metamodels.length; i++) {
-			RegisteredMetamodel metamodel = metamodels[i];
+			IRegisteredMetamodel metamodel = metamodels[i];
 
 			// name corresponds. is path equal?
-			if(name.equals(metamodel.name)) {
+			if(name.equals(metamodel.getName())) {
 				// no path indicated => first name that corresponds => profile returned
 				if(path == null) {
 					return metamodel;
-				} else if(path.equals(metamodel.path)) {
+				} else if(path.equals(metamodel.getPath())) {
 					return metamodel;
 				}
 			}
@@ -127,7 +129,7 @@ public class RegisteredMetamodel extends RegisteredElementExtensionPoint {
 	 *        the configuration element from which to retrieve the registered profile
 	 * @return the registered profile
 	 */
-	private static RegisteredMetamodel parseMetamodelExtension(IConfigurationElement configElt, int ordinal) {
+	private static IRegisteredMetamodel parseMetamodelExtension(IConfigurationElement configElt, int ordinal) {
 		if(!TAG_METAMODEL.equals(configElt.getName())) {
 			return null;
 		}

@@ -6,9 +6,9 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  CEA List - initial API and implementation
- *  Christian W. Damus (CEA) - bug 422257
- *  
+ *     CEA List - initial API and implementation
+ *     Christian W. Damus (CEA) - bug 422257
+ *     Dr. David H. Akehurst - enable programmatic registration
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.metamodel;
 
@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionLabelProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
@@ -47,7 +48,7 @@ public class RegisteredMetamodelSelectionDialog extends ElementListSelectionDial
 	/**
 	 * 
 	 */
-	private RegisteredMetamodel[] regMetamodels;
+	private IRegisteredMetamodel[] regMetamodels;
 
 	/**
 	 * 
@@ -68,7 +69,7 @@ public class RegisteredMetamodelSelectionDialog extends ElementListSelectionDial
 		importedMetamodelsNames = getImportedMetamodelsNames(importedMetamodels);
 
 		// Retrieve registered Libraries
-		regMetamodels = RegisteredMetamodel.getRegisteredMetamodels();
+		regMetamodels = Registry.getRegisteredMetamodels().toArray(new IRegisteredMetamodel[0]);
 		// remove already applied Libraries from the list
 		regMetamodels = removeAlreadyImportedFromSelection();
 
@@ -110,20 +111,20 @@ public class RegisteredMetamodelSelectionDialog extends ElementListSelectionDial
 	 * 
 	 * @return
 	 */
-	private RegisteredMetamodel[] removeAlreadyImportedFromSelection() {
+	private IRegisteredMetamodel[] removeAlreadyImportedFromSelection() {
 
-		List<RegisteredMetamodel> Metamodels = new ArrayList<RegisteredMetamodel>();
+		List<IRegisteredMetamodel> Metamodels = new ArrayList<IRegisteredMetamodel>();
 
 		for(int i = 0; i < regMetamodels.length; i++) {
 
-			String currentName = regMetamodels[i].name;
+			String currentName = regMetamodels[i].getName();
 			if(!importedMetamodelsNames.contains(currentName)) {
 				Metamodels.add(regMetamodels[i]);
 			}
 		}
 
-		RegisteredMetamodel[] cleanedList;
-		cleanedList = Metamodels.toArray(new RegisteredMetamodel[Metamodels.size()]);
+		IRegisteredMetamodel[] cleanedList;
+		cleanedList = Metamodels.toArray(new IRegisteredMetamodel[Metamodels.size()]);
 
 		return cleanedList;
 	}
@@ -141,8 +142,8 @@ public class RegisteredMetamodelSelectionDialog extends ElementListSelectionDial
 		}
 
 		for(int i = 0; i < selection.length; i++) {
-			RegisteredMetamodel currentLibrary = (RegisteredMetamodel)(selection[i]);
-			URI modelUri = currentLibrary.uri;
+			IRegisteredMetamodel currentLibrary = (IRegisteredMetamodel)(selection[i]);
+			URI modelUri = currentLibrary.getUri();
 			addModelImportFromURI(currentModel, modelUri);
 
 		}

@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     CEA List - initial API and implementation
+ *     Dr. David H. Akehurst - enable programmatic registration
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.library;
 
@@ -15,6 +16,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionIds;
 import org.eclipse.papyrus.uml.extensionpoints.standard.RegisteredElementExtensionPoint;
@@ -22,13 +24,10 @@ import org.eclipse.papyrus.uml.extensionpoints.standard.RegisteredElementExtensi
 /**
  * Class that manages registered library extension point
  */
-public class RegisteredLibrary extends RegisteredElementExtensionPoint {
+public class RegisteredLibrary extends RegisteredElementExtensionPoint implements IRegisteredLibrary {
 
 	/** name of the extension point (main element name) in the DTD */
 	private static final String TAG_LIBRARY = "library";
-
-	/** attribute that acts as a cache for the list of registered libraries */
-	private static RegisteredLibrary[] RegisteredLibraries;
 
 	/**
 	 * Main constructor.
@@ -42,20 +41,22 @@ public class RegisteredLibrary extends RegisteredElementExtensionPoint {
 		super(configElt, ordinal);
 	}
 
+	public URI getUri() {
+		return super.uri;
+	}
+	
+	public String getPath() {
+		return super.path;
+	}
+	
 	/**
 	 * Returns the list of registered libraries in the platform, using the Papyrus extension point.
 	 * 
 	 * @return the list of registered libraries in the platform
 	 */
-	public static RegisteredLibrary[] getRegisteredLibraries() {
+	public static List<IRegisteredLibrary> getRegisteredLibraries() {
 
-		// if the list was already computed, returns it (like a cache)
-		if(RegisteredLibraries != null) {
-			return RegisteredLibraries;
-		}
-
-		// the list of libraries was not already computed. Read configuration elements
-		List<RegisteredLibrary> libraries = new ArrayList<RegisteredLibrary>();
+		List<IRegisteredLibrary> libraries = new ArrayList<IRegisteredLibrary>();
 
 		// // Default elements : UML, Ecore, Java, XML PrimitiveTypes model library
 		// RegisteredLibrary UmlPrimitiveTypes
@@ -81,15 +82,14 @@ public class RegisteredLibrary extends RegisteredElementExtensionPoint {
 
 		// Read configuration elements for the current extension
 		for(int j = 0; j < configElements.length; j++) {
-			RegisteredLibrary proxy = parseLibraryExtension(configElements[j], libraries.size());
+			IRegisteredLibrary proxy = parseLibraryExtension(configElements[j], libraries.size());
 
 			if(proxy != null) {
 				libraries.add(proxy);
 			}
 		} // end of configElements loop
 
-		RegisteredLibraries = libraries.toArray(new RegisteredLibrary[libraries.size()]);
-		return RegisteredLibraries;
+		return libraries;
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class RegisteredLibrary extends RegisteredElementExtensionPoint {
 	 * @param configElt
 	 * @return
 	 */
-	private static RegisteredLibrary parseLibraryExtension(IConfigurationElement configElt, int ordinal) {
+	private static IRegisteredLibrary parseLibraryExtension(IConfigurationElement configElt, int ordinal) {
 		if(!TAG_LIBRARY.equals(configElt.getName())) {
 			return null;
 		}
