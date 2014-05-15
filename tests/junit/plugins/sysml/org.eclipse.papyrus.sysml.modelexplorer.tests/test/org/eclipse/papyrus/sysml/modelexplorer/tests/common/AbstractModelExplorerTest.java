@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,8 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
- *
- *
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.modelexplorer.tests.common;
@@ -22,7 +21,6 @@ import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -38,6 +36,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customizatio
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.additional.AdditionalResourcesModel;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.modelexplorer.Activator;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.utils.EditorUtils;
@@ -54,12 +53,11 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.navigator.CommonViewer;
-import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 
 
 
@@ -68,14 +66,11 @@ import org.junit.BeforeClass;
  */
 public abstract class AbstractModelExplorerTest extends AbstractPapyrusTest {
 
-	/** boolean to indicate if the test is initialized or not */
-	private static boolean isInitialized;
+	@ClassRule
+	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
 
 	/** main papyrus editor */
 	public static IEditorPart editor = null;
-
-	/** id of the papyrus editor */
-	public static String editorID = "org.eclipse.papyrus.infra.core.papyrusEditor";
 
 	/** view part: the model explorer */
 	protected static IViewPart modelExplorerPart;
@@ -118,14 +113,7 @@ public abstract class AbstractModelExplorerTest extends AbstractPapyrusTest {
 	@BeforeClass
 	public static void openPapyrusWithAnEmptyProject() throws Exception {
 		// Prepare new project for tests
-		IProject testProject = ResourcesPlugin.getWorkspace().getRoot().getProject("TestCopyPasteProject");
-		if(!testProject.exists()) {
-			testProject.create(new NullProgressMonitor());
-		}
-
-		if(!testProject.isOpen()) {
-			testProject.open(new NullProgressMonitor());
-		}
+		IProject testProject = houseKeeper.createProject("TestCopyPasteProject");
 
 		// Copy EmptyModel from bundle to the test project
 		final IFile emptyModel_di = testProject.getFile("ModelWithBDD.di");
@@ -134,12 +122,9 @@ public abstract class AbstractModelExplorerTest extends AbstractPapyrusTest {
 
 		// isInitialized = isInitialized || emptyModel_di.exists();
 
-		if(!isInitialized) {
-			isInitialized = true;
-			emptyModel_di.create(Activator.getDefault().getBundle().getResource("/model/ModelWithBDD.di").openStream(), true, new NullProgressMonitor());
-			emptyModel_no.create(Activator.getDefault().getBundle().getResource("/model/ModelWithBDD.notation").openStream(), true, new NullProgressMonitor());
-			emptyModel_uml.create(Activator.getDefault().getBundle().getResource("/model/ModelWithBDD.uml").openStream(), true, new NullProgressMonitor());
-		}
+		emptyModel_di.create(Activator.getDefault().getBundle().getResource("/model/ModelWithBDD.di").openStream(), true, new NullProgressMonitor());
+		emptyModel_no.create(Activator.getDefault().getBundle().getResource("/model/ModelWithBDD.notation").openStream(), true, new NullProgressMonitor());
+		emptyModel_uml.create(Activator.getDefault().getBundle().getResource("/model/ModelWithBDD.uml").openStream(), true, new NullProgressMonitor());
 
 		// Open the EmptyModel.di file with Papyrus (assumed to be the default editor for "di" files here).
 		Display.getDefault().syncExec(new Runnable() {
@@ -147,9 +132,8 @@ public abstract class AbstractModelExplorerTest extends AbstractPapyrusTest {
 			public void run() {
 				try {
 					IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-					editor = page.openEditor(new FileEditorInput(emptyModel_di), editorID);
-
-					modelExplorerPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(ModelExplorerPageBookView.VIEW_ID);
+					editor = houseKeeper.openPapyrusEditor(emptyModel_di);
+					modelExplorerPart = page.showView(ModelExplorerPageBookView.VIEW_ID);
 					modelExplorerPart.setFocus();
 				} catch (Exception ex) {
 					ex.printStackTrace(System.out);
@@ -157,7 +141,7 @@ public abstract class AbstractModelExplorerTest extends AbstractPapyrusTest {
 			}
 		});
 
-		Assert.assertNotNull("Model explorer is null", modelExplorerPart);
+		Assert.assertNotNull("Model explorer is null", houseKeeper.getField("modelExplorerPart"));
 
 		prepareTest();
 	}
@@ -225,27 +209,6 @@ public abstract class AbstractModelExplorerTest extends AbstractPapyrusTest {
 		Assert.assertEquals("bad order of applied Custom", "SimpleUML", appliedCustomizations.get(0).getName()); //$NON-NLS-1$
 
 		/** end of generated selectable objects */
-	}
-
-	/**
-	 * Close editor
-	 *
-	 * @throws Exception
-	 *         exception thrown in case of problem
-	 */
-	@AfterClass
-	public static void closePapyrusAndCleanProject() throws Exception {
-		// Close the editor without saving content created during tests
-		Display.getDefault().syncExec(new Runnable() {
-
-			public void run() {
-				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-				page.closeEditor(editor, false);
-			}
-		});
-
-		editor = null;
-		modelExplorerPart = null;
 	}
 
 
@@ -421,11 +384,11 @@ public abstract class AbstractModelExplorerTest extends AbstractPapyrusTest {
 				 * in the good order. This is a lot faster than going through the whole tree
 				 * using getChildren of the ContentProvider since our Viewer uses a Hashtable
 				 * to keep track of the revealed elements.
-				 *
+				 * 
 				 * However we need to use a dedicated MatchingItem to do the matching,
 				 * and a specific comparer in our viewer so than the equals of MatchingItem is
 				 * used in priority.
-				 *
+				 * 
 				 * Please refer to MatchingItem for more infos.
 				 */
 				EObject previousParent = null;

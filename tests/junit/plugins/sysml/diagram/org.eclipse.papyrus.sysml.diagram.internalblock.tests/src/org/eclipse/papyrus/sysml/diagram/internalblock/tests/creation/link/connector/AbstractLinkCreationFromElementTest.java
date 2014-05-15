@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,19 +8,22 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link.connector;
 
 import static org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.TestUtils.createEdgeConnectorFromPalette;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link.AbstractLinkPrepareTest;
 import org.eclipse.uml2.uml.Property;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -32,10 +35,16 @@ public abstract class AbstractLinkCreationFromElementTest extends AbstractLinkPr
 
 	public static View sourceView;
 
-	public static Map<View, List<Property>> expectedSourceNestedPath;
+	public static final Map<View, List<Property>> expectedSourceNestedPath = new HashMap<View, List<Property>>();
 
-	public static Map<View, List<Property>> expectedTargetNestedPath;
+	public static final Map<View, List<Property>> expectedTargetNestedPath = new HashMap<View, List<Property>>();
 
+	@BeforeClass
+	public static void initExpectedPathMaps() {
+		houseKeeper.cleanUpLater(expectedSourceNestedPath);
+		houseKeeper.cleanUpLater(expectedTargetNestedPath);
+	}
+	
 	@Test
 	public void createLinkWithTargetBlock() throws Exception {
 		View targetView = blockTargetView;

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,18 +8,21 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.reorient.connector.delegation;
 
 import static org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.TestUtils.reorientConnectorTargetAndTestDelegate;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.sysml.diagram.internalblock.tests.reorient.AbstractLinkPrepareTest;
 import org.eclipse.uml2.uml.ConnectableElement;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -29,9 +32,15 @@ public class AbstractLinkReorientTargetConnectorTest extends AbstractLinkPrepare
 
 	public static View relationshipView;
 
-	public static Map<View, ConnectableElement> expectedSourcePartWithPort;
+	public static final Map<View, ConnectableElement> expectedSourcePartWithPort = new HashMap<View, ConnectableElement>();
 
-	public static Map<View, ConnectableElement> expectedTargetPartWithPort;
+	public static final Map<View, ConnectableElement> expectedTargetPartWithPort = new HashMap<View, ConnectableElement>();
+
+	@BeforeClass
+	public static void initializeExpectedMaps() {
+		houseKeeper.cleanUpLater(expectedSourcePartWithPort);
+		houseKeeper.cleanUpLater(expectedTargetPartWithPort);
+	}
 	
 	@Test
 	public void reorientLinkTargetToActorPart() throws Exception {

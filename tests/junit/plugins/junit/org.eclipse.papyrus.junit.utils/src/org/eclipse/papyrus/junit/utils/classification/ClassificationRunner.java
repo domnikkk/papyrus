@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - add support for conditional tests
  *  Christian W. Damus (CEA) - bug 432813
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.junit.utils.classification;
@@ -22,14 +23,20 @@ import org.eclipse.papyrus.infra.tools.util.ListHelper;
 import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
 import org.eclipse.papyrus.junit.utils.rules.Conditional;
 import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.PlatformUI;
 import org.junit.rules.TestRule;
+import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
+import org.junit.runners.model.Statement;
 
 import com.google.common.base.Predicates;
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
 import com.google.common.collect.Iterables;
 
 /**
@@ -47,6 +54,8 @@ import com.google.common.collect.Iterables;
  *
  */
 public class ClassificationRunner extends BlockJUnit4ClassRunner {
+
+	private static final Supplier<TestRule> uiFlusherRuleSupplier = createURIFlusherRuleSupplier();
 
 	private final ThreadLocal<Object> preparedTest = new ThreadLocal<Object>();
 
@@ -143,5 +152,57 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 		}
 
 		return rules;
+	}
+
+	@Override
+	protected Statement classBlock(RunNotifier notifier) {
+		Statement result = super.classBlock(notifier);
+
+		// Wrap the class suite in a rule that flushes the UI thread to release memory referenced by UI runnables
+		TestRule uiFlusher = uiFlusherRuleSupplier.get();
+		if(uiFlusher != null) {
+			// This rule doesn't need any actual test description
+			result = uiFlusher.apply(result, Description.EMPTY);
+		}
+
+		return result;
+	}
+
+	private static Supplier<TestRule> createURIFlusherRuleSupplier() {
+		Supplier<TestRule> result = Suppliers.ofInstance(null);
+
+		try {
+			if(PlatformUI.isWorkbenchRunning()) {
+				result = Suppliers.memoize(new Supplier<TestRule>() {
+
+					public TestRule get() {
+						if(Display.getCurrent() != null) {
+							return new TestWatcher() {
+
+								@Override
+								protected void finished(Description description) {
+									// Flush the UI thread's pending events
+									for(Display display = Display.getCurrent(); (display != null) && !display.isDisposed();) {
+										try {
+											if(!display.readAndDispatch()) {
+												break;
+											}
+										} catch (Exception e) {
+											// Ignore it
+										}
+									}
+								}
+							};
+						}
+
+						return null;
+					}
+				});
+			}
+		} catch (LinkageError e) {
+			// Not running in Eclipse UI context.  Fine
+		}
+
+		return result;
 	}
 }

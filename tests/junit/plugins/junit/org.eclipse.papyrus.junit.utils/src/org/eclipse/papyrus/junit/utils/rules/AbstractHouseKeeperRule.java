@@ -19,6 +19,7 @@ import static org.junit.Assert.fail;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -27,22 +28,39 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPart;
+import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.junit.utils.Duck;
+import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
 import org.eclipse.papyrus.junit.utils.ProjectUtils;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper.Disposer;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IWorkbenchPage;
 import org.osgi.framework.FrameworkUtil;
 
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 public abstract class AbstractHouseKeeperRule {
+
+	private static final LoadingCache<Class<?>, Field[]> leakProneInstanceFields = CacheBuilder.newBuilder().maximumSize(128).build(fieldCacheLoader(false));
+
+	private static final LoadingCache<Class<?>, Field[]> leakProneStaticFields = CacheBuilder.newBuilder().maximumSize(128).build(fieldCacheLoader(true));
 
 	private static final Function<Object, Disposer<Object>> DISPOSER_FUNCTION;
 
@@ -58,6 +76,9 @@ public abstract class AbstractHouseKeeperRule {
 		ResourceSetDisposer.register(disposers);
 		TransactionalEditingDomainDisposer.register(disposers);
 		WorkspaceResourceDisposer.register(disposers);
+		EditorDisposer.register(disposers);
+		CollectionDisposer.register(disposers);
+		MapDisposer.register(disposers);
 
 		// This one must be last because it matches any object
 		ReflectiveDisposer.register(disposers);
@@ -226,6 +247,56 @@ public abstract class AbstractHouseKeeperRule {
 	}
 
 	/**
+	 * Opens the default editor on the given {@code file} and ensures that it will be closed after the test terminates.
+	 * 
+	 * @param file
+	 *        the file to open in its editor
+	 * 
+	 * @return the editor
+	 */
+	public IEditorPart openEditor(final IFile file) {
+		final IEditorPart[] result = { null };
+
+		Display.getDefault().syncExec(new Runnable() {
+
+			public void run() {
+				try {
+					result[0] = cleanUpLater(EditorUtils.openEditor(file), EditorDisposer.INSTANCE);
+				} catch (Exception e) {
+					fail(e.getMessage());
+				}
+			}
+		});
+
+		return result[0];
+	}
+
+	/**
+	 * Opens the Papyrus editor on the given {@code file} and ensures that it will be closed after the test terminates.
+	 * 
+	 * @param file
+	 *        the file to open in the Papyrus editor
+	 * 
+	 * @return the editor
+	 */
+	public IMultiDiagramEditor openPapyrusEditor(final IFile file) {
+		final IMultiDiagramEditor[] result = { null };
+
+		Display.getDefault().syncExec(new Runnable() {
+
+			public void run() {
+				try {
+					result[0] = cleanUpLater(EditorUtils.openPapyrusEditor(file), EditorDisposer.INSTANCE);
+				} catch (Exception e) {
+					fail(e.getMessage());
+				}
+			}
+		});
+
+		return result[0];
+	}
+
+	/**
 	 * Obtains the value of the named field of the test instance and ensures that it will be automatically cleared after the test completes.
 	 * 
 	 * @param fieldName
@@ -252,14 +323,20 @@ public abstract class AbstractHouseKeeperRule {
 	Field field(String fieldName) {
 		Field result = null;
 
-		try {
-			result = getTestClass().getDeclaredField(fieldName);
-			result.setAccessible(true);
-			assertThat(String.format("Field is not %sstatic", isStatic() ? "" : "non-"), Modifier.isStatic(result.getModifiers()), is(isStatic()));
-		} catch (Exception e) {
-			e.printStackTrace();
-			fail(String.format("Could not access field %s of test instance.", fieldName));
+		for(Class<?> next = getTestClass(); (result == null) && (next != null) && (next != Object.class); next = next.getSuperclass()) {
+			try {
+				result = next.getDeclaredField(fieldName);
+				if(result != null) {
+					result.setAccessible(true);
+				}
+			} catch (Exception e) {
+				// Keep looking
+				result = null;
+			}
 		}
+
+		assertThat(String.format("Could not access field %s of test instance.", fieldName), result, notNullValue());
+		assertThat(String.format("Field is not %sstatic", isStatic() ? "" : "non-"), Modifier.isStatic(result.getModifiers()), is(isStatic()));
 
 		return result;
 	}
@@ -293,7 +370,7 @@ public abstract class AbstractHouseKeeperRule {
 
 
 	void cleanUp() throws Exception {
-		cleanUpEObjectFields();
+		cleanUpLeakProneFields();
 
 		if(cleanUpActions != null) {
 			Exception toThrow = null;
@@ -325,19 +402,49 @@ public abstract class AbstractHouseKeeperRule {
 	/**
 	 * Automatically clear all fields of the test instance that are of some {@link EObject} type.
 	 */
-	private void cleanUpEObjectFields() {
-		final int requiredModifiers = isStatic() ? Modifier.STATIC : 0;
+	private void cleanUpLeakProneFields() {
+		try {
+			final Field[] fields = isStatic() ? leakProneStaticFields.get(getTestClass()) : leakProneInstanceFields.get(getTestClass());
 
-		for(Field field : getTestClass().getDeclaredFields()) {
-			if(EObject.class.isAssignableFrom(field.getType()) && ((field.getModifiers() & (Modifier.FINAL | Modifier.STATIC)) == requiredModifiers)) {
-				try {
-					field.setAccessible(true);
-					field.set(test, null);
-				} catch (Exception e) {
-					// We tried our best. Don't propagate as a test failure because the test didn't ask for this
-				}
+			for(int i = 0; i < fields.length; i++) {
+				fields[i].set(test, null);
 			}
+		} catch (Exception e) {
+			// We tried our best. Don't propagate as a test failure because the test didn't ask for this
 		}
+	}
+
+	private static CacheLoader<Class<?>, Field[]> fieldCacheLoader(final boolean staticFields) {
+		return new CacheLoader<Class<?>, Field[]>() {
+
+			@Override
+			public Field[] load(Class<?> key) {
+				List<Field> result = Lists.newArrayList();
+
+				// Get all inherited fields, too
+				for(Class<?> next = key; (next != null) && (next != Object.class); next = next.getSuperclass()) {
+					for(Field field : next.getDeclaredFields()) {
+						if((Modifier.isStatic(field.getModifiers()) == staticFields) && !Modifier.isFinal(field.getModifiers()) && isLeakProne(field)) {
+							try {
+								field.setAccessible(true);
+								result.add(field);
+							} catch (Exception e) {
+								// Can't make it accessible? Then it's of no use
+							}
+						}
+					}
+				}
+
+				return Iterables.toArray(result, Field.class);
+			}
+		};
+	}
+
+	private static boolean isLeakProne(Field field) {
+		Class<?> type = field.getType();
+		return EObject.class.isAssignableFrom(type) || Resource.class.isAssignableFrom(type) //
+			|| ResourceSet.class.isAssignableFrom(type) || EditingDomain.class.isAssignableFrom(type) //
+			|| EditPart.class.isAssignableFrom(type);
 	}
 
 	//
@@ -378,6 +485,11 @@ public abstract class AbstractHouseKeeperRule {
 		}
 
 		public void dispose(ResourceSet object) {
+			if (object instanceof ModelSet) {
+				((ModelSet)object).unload();
+			}
+
+			// No harm in hitting a ModelSet again
 			EMFHelper.unload(object);
 		}
 	}
@@ -426,6 +538,57 @@ public abstract class AbstractHouseKeeperRule {
 				fail("Cannot delete resource " + object);
 				break;
 			}
+		}
+	}
+
+	private static final class EditorDisposer implements Disposer<IEditorPart> {
+
+		static final EditorDisposer INSTANCE = new EditorDisposer();
+
+		static void register(Map<Class<?>, Function<Object, Disposer<?>>> disposers) {
+			disposers.put(IEditorPart.class, Functions.<Disposer<?>> constant(INSTANCE));
+		}
+
+		public void dispose(final IEditorPart object) throws Exception {
+			Display.getDefault().syncExec(new Runnable() {
+
+				public void run() {
+					IWorkbenchPage page = (object.getSite() == null) ? null : object.getSite().getPage();
+					if(page != null) {
+						try {
+							page.closeEditor(object, false);
+						} catch (Exception e) {
+							// Best effort
+						}
+					}
+				}
+			});
+		}
+	}
+
+	private static final class CollectionDisposer implements Disposer<Collection<?>> {
+
+		static final CollectionDisposer INSTANCE = new CollectionDisposer();
+
+		static void register(Map<Class<?>, Function<Object, Disposer<?>>> disposers) {
+			disposers.put(Collection.class, Functions.<Disposer<?>> constant(INSTANCE));
+		}
+
+		public void dispose(final Collection<?> object) throws Exception {
+			object.clear();
+		}
+	}
+
+	private static final class MapDisposer implements Disposer<Map<?, ?>> {
+
+		static final MapDisposer INSTANCE = new MapDisposer();
+
+		static void register(Map<Class<?>, Function<Object, Disposer<?>>> disposers) {
+			disposers.put(Map.class, Functions.<Disposer<?>> constant(INSTANCE));
+		}
+
+		public void dispose(final Map<?, ?> object) throws Exception {
+			object.clear();
 		}
 	}
 

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,15 +8,12 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link.connector.delegation;
 
-import java.util.HashMap;
-
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Property;
 import org.junit.BeforeClass;
 
@@ -39,7 +36,6 @@ public class TestCreationAndTestDelegateFromNestedPart extends AbstractConnector
 	public static void initExpectedResults() throws Exception {
 
 		// Initialize source creation results
-		isCreationAllowed = new HashMap<View, Boolean>();
 
 		isCreationAllowed.put(blockTargetView, false);
 
@@ -72,8 +68,6 @@ public class TestCreationAndTestDelegateFromNestedPart extends AbstractConnector
 		Property part = (Property)p2View.getElement();
 		Property nestedpart = (Property)p2_p1View.getElement();
 
-		expectedSourcePartWithPort = new HashMap<View, ConnectableElement>();
-		expectedTargetPartWithPort = new HashMap<View, ConnectableElement>();
 
 		expectedTargetPartWithPort.put(port1_Part2TargetView, part);
 		expectedTargetPartWithPort.put(port2OnNestedPart2_Part1TargetView, nestedpart);

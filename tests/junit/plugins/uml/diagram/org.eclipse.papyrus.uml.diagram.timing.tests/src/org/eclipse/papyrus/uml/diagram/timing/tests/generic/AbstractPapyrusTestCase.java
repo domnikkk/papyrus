@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.timing.tests.generic;
@@ -80,6 +81,7 @@ import org.eclipse.papyrus.infra.core.services.ExtensionServicesRegistry;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.diagram.common.command.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.uml.diagram.common.commands.CreateUMLModelCommand;
@@ -91,25 +93,25 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.IWorkbenchPreferenceConstants;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.intro.IIntroPart;
-import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 
 // DiResourceSet is deprecated but we need it for CreateUMLModelCommand
 @SuppressWarnings({ "deprecation" })
 public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	protected PapyrusMultiDiagramEditor papyrusEditor;
 
 	protected DiResourceSet diResourceSet;
@@ -117,8 +119,6 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	protected IProject project;
 
 	protected IFile file;
-
-	protected IWorkbenchPage page;
 
 	protected UmlGmfDiagramEditor diagramEditor = null;
 
@@ -200,18 +200,6 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		// diResourceSet.save( new NullProgressMonitor());
 		// diagramEditor.close(true);
 		this.papyrusEditor = null;
-		Display.getDefault().syncExec(new Runnable() {
-
-			@Override
-			public void run() {
-				closeAllEditors();
-			}
-		});
-		this.project.delete(true, new NullProgressMonitor());
-	}
-
-	protected void closeAllEditors() {
-		this.page.closeAllEditors(false);
 	}
 
 	protected DiagramEditPart getDiagramEditPart() {
@@ -263,17 +251,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			this.diResourceSet.save(new NullProgressMonitor());
 
 		}
-		Display.getDefault().syncExec(new Runnable() {
-
-			@Override
-			public void run() {
-				try {
-					openPapyrusEditor();
-				} catch (final Exception e) {
-					throw new RuntimeException(e);
-				}
-			}
-		});
+		IEditorPart _editor = houseKeeper.openPapyrusEditor(file);
+		assertTrue("The editor must be a " + PapyrusMultiDiagramEditor.class.getSimpleName() + " (Actual type: " + _editor.getClass().getSimpleName() + ")", _editor instanceof PapyrusMultiDiagramEditor);
+		this.papyrusEditor = ((PapyrusMultiDiagramEditor)_editor);
 		flushEventLoop();
 	}
 
@@ -293,18 +273,6 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		//				page.closeAllEditors(false);
 		//			}
 		//		}
-	}
-
-	protected void openPapyrusEditor() throws Exception {
-		this.page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		final IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(this.file.getName());
-		final IEditorPart editorPart = this.page.openEditor(new FileEditorInput(this.file), desc.getId());
-		assertTrue("The editor must be a " + PapyrusMultiDiagramEditor.class.getSimpleName() + " (Actual type: " + editorPart.getClass().getSimpleName() + ")", editorPart instanceof PapyrusMultiDiagramEditor);
-		// maximize the editor
-		final IWorkbenchPartReference reference = this.page.getReference(editorPart);
-		//		editorPart.getSite().getPage().toggleZoom(reference);
-		this.papyrusEditor = ((PapyrusMultiDiagramEditor)editorPart);
-		Assert.assertNotNull(papyrusEditor);
 	}
 
 	/**

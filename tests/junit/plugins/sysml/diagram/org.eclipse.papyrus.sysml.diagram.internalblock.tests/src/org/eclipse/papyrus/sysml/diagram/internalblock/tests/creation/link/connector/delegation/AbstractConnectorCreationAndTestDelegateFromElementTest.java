@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,17 +8,20 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link.connector.delegation;
 
 import static org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.TestUtils.createEdgeConnectorAndTestDelegateFromPalette;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.ConnectableElement;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -30,12 +33,18 @@ public abstract class AbstractConnectorCreationAndTestDelegateFromElementTest ex
 
 	public static View sourceView;
 
-	public static Map<View, ConnectableElement> expectedSourcePartWithPort;
+	public static final Map<View, ConnectableElement> expectedSourcePartWithPort = new HashMap<View, ConnectableElement>();
 
-	public static Map<View, ConnectableElement> expectedTargetPartWithPort;
+	public static final Map<View, ConnectableElement> expectedTargetPartWithPort = new HashMap<View, ConnectableElement>();
 
+	@BeforeClass
+	public static void initializeExpectedMaps() {
+		houseKeeper.cleanUpLater(expectedSourcePartWithPort);
+		houseKeeper.cleanUpLater(expectedTargetPartWithPort);
+	}
+	
 	// FIXME : wrong name in all methods => replace Source by Target
-	// BMA : ne passe pas là
+	// BMA : ne passe pas lï¿½
 	@Test
 	public void createLinkWithSourceBlock() throws Exception {
 		View targetView = blockTargetView;
@@ -60,14 +69,14 @@ public abstract class AbstractConnectorCreationAndTestDelegateFromElementTest ex
 		createEdgeConnectorAndTestDelegateFromPalette(toolID, sourceView, targetView, isCreationAllowed.get(targetView), expectedSourcePartWithPort.get(targetView), expectedTargetPartWithPort.get(targetView));
 	}	
 	
-	// BMA : ne passe pas là
+	// BMA : ne passe pas lï¿½
 	@Test
 	public void createLinkWithTargetPort2OnPart1() throws Exception {
 		View targetView = port2_Part1TargetView;
 		createEdgeConnectorAndTestDelegateFromPalette(toolID, sourceView, targetView, isCreationAllowed.get(targetView), expectedSourcePartWithPort.get(targetView), expectedTargetPartWithPort.get(targetView));
 	}	
 
-	// BMA : ne passe pas là
+	// BMA : ne passe pas lï¿½
 	@Test
 	public void createLinkWithTargetPort1OnPart1() throws Exception {
 		View targetView = port1_Part1SourceView;

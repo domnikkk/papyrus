@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011-2012 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,41 +8,36 @@
  *
  * Contributors:
  *
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.blockdefinition.tests;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jface.dialogs.MessageDialogWithToggle;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.Activator;
 import org.eclipse.papyrus.uml.diagram.common.helper.CreateOrShowExistingElementHelper;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.intro.IIntroPart;
-import org.eclipse.ui.part.FileEditorInput;
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 
 /**
  * Abstract Papyrus initialization class (required to get Service activation).
  */
 public abstract class AbstractTest extends AbstractPapyrusTest {
 
-	public static boolean isInitialized = false;
-
+	@ClassRule
+	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
+	
 	public static IEditorPart editor = null;
-
-	public static String editorID = "org.eclipse.papyrus.infra.core.papyrusEditor";
 
 	@BeforeClass
 	public static void openPapyrusWithAnEmptyProject() throws Exception {
@@ -56,44 +51,19 @@ public abstract class AbstractTest extends AbstractPapyrusTest {
 		PlatformUI.getWorkbench().getDisplay().syncExec(closeIntroRunnable);
 
 		// Prepare new project for tests
-		IProject testProject = ResourcesPlugin.getWorkspace().getRoot().getProject("TestProject");
-		if(!testProject.exists()) {
-			testProject.create(new NullProgressMonitor());
-		}
-
-		if(!testProject.isOpen()) {
-			testProject.open(new NullProgressMonitor());
-		}
+		IProject testProject = houseKeeper.createProject("TestProject");
 
 		// Copy EmptyModel from bundle to the test project
 		final IFile emptyModel_di = testProject.getFile("ModelWithBDD.di");
 		IFile emptyModel_no = testProject.getFile("ModelWithBDD.notation");
 		IFile emptyModel_uml = testProject.getFile("ModelWithBDD.uml");
 
-		// isInitialized = isInitialized || emptyModel_di.exists();
-
-		if(!isInitialized) {
-			isInitialized = true;
-			emptyModel_di.create(Activator.getInstance().getBundle().getResource("/model/ModelWithBDD.di").openStream(), true, new NullProgressMonitor());
-			emptyModel_no.create(Activator.getInstance().getBundle().getResource("/model/ModelWithBDD.notation").openStream(), true, new NullProgressMonitor());
-			emptyModel_uml.create(Activator.getInstance().getBundle().getResource("/model/ModelWithBDD.uml").openStream(), true, new NullProgressMonitor());
-		}
+		emptyModel_di.create(Activator.getInstance().getBundle().getResource("/model/ModelWithBDD.di").openStream(), true, new NullProgressMonitor());
+		emptyModel_no.create(Activator.getInstance().getBundle().getResource("/model/ModelWithBDD.notation").openStream(), true, new NullProgressMonitor());
+		emptyModel_uml.create(Activator.getInstance().getBundle().getResource("/model/ModelWithBDD.uml").openStream(), true, new NullProgressMonitor());
 
 		// Open the EmptyModel.di file with Papyrus (assumed to be the default editor for "di" files here).
-		Runnable openEditorRunnable = new Runnable() {
-
-			public void run() {
-				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-				try {
-					editor = page.openEditor(new FileEditorInput(emptyModel_di), editorID);
-				} catch (Exception ex) {
-					ex.printStackTrace(System.out);
-				}
-			}
-		};
-
-		Display.getDefault().syncExec(openEditorRunnable);
-		assertNotNull("Failed to open an Editor", editor);
+		editor = houseKeeper.openPapyrusEditor(emptyModel_di);
 
 		//set the preference to never for the dialog to display existing link instead of create a new one.
 		final IPreferenceStore store = org.eclipse.papyrus.uml.diagram.common.Activator.getDefault().getPreferenceStore();
@@ -102,18 +72,5 @@ public abstract class AbstractTest extends AbstractPapyrusTest {
 			store.setValue(CreateOrShowExistingElementHelper.DISPLAY_DIALOG_FOR_CREATE_OR_RESTORE_ELEMENT, MessageDialogWithToggle.NEVER);
 			store.setDefault(CreateOrShowExistingElementHelper.DISPLAY_DIALOG_FOR_CREATE_OR_RESTORE_ELEMENT, MessageDialogWithToggle.NEVER);
 		}
-	}
-
-	@AfterClass
-	public static void closePapyrusAndCleanProject() throws Exception {
-		// Close the editor without saving content created during tests
-		Runnable closeEditorRunnable = new Runnable() {
-
-			public void run() {
-				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-				page.closeEditor(editor, false);
-			}
-		};
-		Display.getDefault().syncExec(closeEditorRunnable);
 	}
 }
