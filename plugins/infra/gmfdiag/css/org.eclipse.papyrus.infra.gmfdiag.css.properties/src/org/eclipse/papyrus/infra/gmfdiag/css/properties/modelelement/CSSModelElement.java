@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -76,6 +76,9 @@ public class CSSModelElement extends CustomStyleModelElement {
 		if(CSSStyles.CSS_MODEL_STYLESHEETS_KEY.equals(propertyPath)) {
 			//Get the resource
 			final Resource notationResource = source.eResource();
+			if(notationResource == null) { //May happen e.g. during deletion of the diagram
+				return null;
+			}
 			//Get the model styleSheet Object
 			Object modelStyleSheetObject = EcoreUtil.getObjectByType(notationResource.getContents(), StylesheetsPackage.Literals.MODEL_STYLE_SHEETS);
 			//The model styleSheet
