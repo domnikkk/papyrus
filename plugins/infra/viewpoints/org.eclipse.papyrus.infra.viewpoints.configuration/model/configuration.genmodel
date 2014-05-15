@@ -8,8 +8,8 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>configuration.ecore</foreignModel>
   <genPackages prefix="Configuration" basePackage="org.eclipse.papyrus.infra.viewpoints"
-      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
-      ecorePackage="configuration.ecore#/">
+      resource="XMI" disposableProviderFactory="true" extensibleProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="configuration.ecore#/">
     <genClasses ecoreClass="configuration.ecore#//PapyrusConfiguration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//PapyrusConfiguration/defaultStakeholder"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//PapyrusConfiguration/metamodel"/>
