@@ -605,7 +605,7 @@ public class ClassNameEditPart extends PapyrusCompartmentEditPart implements ITe
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View)getModel();
+		return getPrimaryView();
 	}
 
 	/**
