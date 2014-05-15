@@ -21,9 +21,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.window.Window;
-import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.uml.profile.drafter.ProfileApplicator;
-import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.AggregationKind;
@@ -46,6 +44,8 @@ public class AddProfileHandler extends AbstractProfileBaseHandler {
 	
 	private String stereotypeNameInput;
 	private String profileNameInput;
+
+	private String taggedValeNameInput;
 	
 	/**
 	 * Constructor.
@@ -91,8 +91,32 @@ public class AddProfileHandler extends AbstractProfileBaseHandler {
 			return false;
 		}
 
-		stereotypeNameInput = inputName;
-		profileNameInput = "testProfile";
+		taggedValeNameInput = "";
+		String args[] = inputName.split(":");
+		switch (args.length) {
+		case 0:
+			System.err.println("No names found in '" + inputName + "'" );
+			return false;
+		case 1:
+			// Stereotype
+			stereotypeNameInput = args[0];
+			profileNameInput = "testProfile";
+			break;
+		case 2:
+			// profile + Stereotype 
+			stereotypeNameInput = args[1].trim();
+			profileNameInput = args[0].trim();
+			break;
+		case 3:
+			// profile + Stereotype + tagged value
+			stereotypeNameInput = args[1].trim();
+			profileNameInput = args[0].trim();
+			taggedValeNameInput = args[2].trim();
+			break;
+
+		default:
+			break;
+		} 
 		
 		System.err.println("Try to apply stereotype '" + profileNameInput + ":" +stereotypeNameInput + "'");
 		return true;
@@ -122,7 +146,7 @@ public class AddProfileHandler extends AbstractProfileBaseHandler {
 		// Try to apply the stereotype
 		ProfileApplicator profileApplicator = new ProfileApplicator(selected.get(0));
 		try {
-			profileApplicator.applyStereotype(profileNameInput, stereotypeNameInput);
+			profileApplicator.applyStereotype2(profileNameInput, stereotypeNameInput);
 		} catch (DraftProfileException e) {
 			e.printStackTrace();
 		}
@@ -139,6 +163,7 @@ public class AddProfileHandler extends AbstractProfileBaseHandler {
 		cachedSelectionAsNamedElement = null;
 		stereotypeNameInput = null;
 		profileNameInput = null;
+		taggedValeNameInput = null;
 	}
 	
 	/**
