@@ -24,7 +24,7 @@ import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService;
 import org.eclipse.papyrus.infra.services.controlmode.tests.Messages;
 import org.eclipse.papyrus.infra.services.controlmode.tests.control.Activator;
-import org.eclipse.papyrus.infra.services.controlmode.util.ControlHelper;
+import org.eclipse.papyrus.infra.services.resourceloading.preferences.StrategyChooser;
 import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.GenericUtils;
 import org.eclipse.papyrus.junit.utils.HandlerUtils;
@@ -64,6 +64,9 @@ public abstract class AbstractUncontrolModelTest extends AbstractPapyrusTest {
 
 	@Before
 	public void setUp() {
+		//Set the current resource loading strategy to the default
+		StrategyChooser.setCurrentStrategy(0);
+		
 		try {
 			initTests(Activator.getDefault().getBundle());
 		} catch (CoreException e) {
