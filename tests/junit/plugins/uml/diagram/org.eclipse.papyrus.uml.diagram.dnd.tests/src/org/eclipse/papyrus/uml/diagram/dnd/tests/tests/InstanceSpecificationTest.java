@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 434993
- * 
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.dnd.tests.tests;
 
@@ -48,6 +48,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -65,7 +66,7 @@ public class InstanceSpecificationTest extends AbstractPapyrusTest {
 
 	@ClassRule
 	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
-	
+
 	private static Diagram diagram;
 
 	private static IMultiDiagramEditor papyrusEditor;
@@ -89,6 +90,7 @@ public class InstanceSpecificationTest extends AbstractPapyrusTest {
 		houseKeeper.setField("strategy", DropStrategyManager.instance.findStrategy(org.eclipse.papyrus.uml.diagram.dnd.Activator.PLUGIN_ID + ".instanceSpecification"));
 	}
 
+	@After
 	@Before
 	public void initDefaults() {
 		//Restore the default DND preferences before each test
