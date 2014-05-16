@@ -11,6 +11,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.junit.utils;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
@@ -114,6 +117,24 @@ public class DiagramUtils {
 		return null;
 	}
 
+	public static Collection<Diagram> getAllNotationDiagram(ModelSet modelSet, String string) {
+		IModel notationModel = modelSet.getModel(NotationModel.MODEL_ID);
+		Collection<Diagram> arrayList = new ArrayList<Diagram>();
+		AbstractBaseModel notationBaseModel = null;
+		if (notationModel instanceof AbstractBaseModel) {
+			notationBaseModel = (AbstractBaseModel) notationModel;
+		} else {
+			Assert.fail("notation model is not an abstract base model");
+			return null;
+		}
+		Assert.assertTrue("notation resource contains nothing", notationBaseModel.getResource().getContents().size() >= 1);
+		for (EObject object : notationBaseModel.getResource().getContents()) {
+			if (object instanceof Diagram && string.equals(((Diagram) object).getName())) {
+				arrayList.add((Diagram) object);
+			}
+		}
+		return arrayList;
+	}
 
 
 }

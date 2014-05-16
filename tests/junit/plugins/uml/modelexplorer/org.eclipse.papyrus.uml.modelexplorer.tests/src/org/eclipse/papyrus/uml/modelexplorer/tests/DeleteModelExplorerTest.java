@@ -60,7 +60,7 @@ public class DeleteModelExplorerTest extends AbstractEditorTest {
 		try {
 			initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault().getBundle()); //$NON-NLS-1$ //$NON-NLS-2$
 		} catch (Exception e) {
-			e.printStackTrace();
+			Assert.fail(e.getMessage());
 		}
 	}
 
