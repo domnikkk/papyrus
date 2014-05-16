@@ -33,6 +33,9 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 	 */
 	public static PapyrusClipboard<Object> instance = null;
 	
+	/**
+	 * @return singleton of papyrus clipboard
+	 */
 	public static PapyrusClipboard<Object> getInstance() {
 		if (instance == null) {
 			instance = new PapyrusClipboard<Object>();
@@ -40,6 +43,10 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 		return instance;
 	}
 
+	/**
+	 * Set instance of papyrus clipboard
+	 * @param pInstance
+	 */
 	public static void setInstance(PapyrusClipboard<Object> pInstance) {
 		instance = pInstance;
 	}	
@@ -84,19 +91,43 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 		internalClipboardToTargetCopy = new HashMap<Object, EObject>();
 	}
 	
+	
+	/**
+	 * @return true if the clipboard is empty without additional data
+	 */
+	public boolean isEmptyWithNoAdditionalData(){
+		return this.isEmpty() && this.getStrategiesAdditionalData().isEmpty();
+	}	
+	
 	/**
 	 * Keeps the mapping between the source and the temporary copy in clipboard
 	 * (Can be use for a reference copy strategy)
 	 */
 	private Map<EObject, Object> sourceToInternalClipboard = new HashMap<EObject, Object>();
-
 	
+	/**
+	 * Get the mapping for source to internal clipboard
+	 * @return
+	 */
+	public Map<EObject, Object> getSourceToInternalClipboard() {
+		return sourceToInternalClipboard;
+	}
+
 	/**
 	 * Keeps the mapping between the internal clipboard copy and the target copy 
 	 * (Used by paste strategies)
 	 */	
 	private Map<Object, EObject> internalClipboardToTargetCopy = new HashMap<Object, EObject>();
 	
+	
+	/**
+	 * Get the mapping for internal copy to target copy
+	 * @return
+	 */
+	public Map<Object, EObject> getInternalClipboardToTargetCopy() {
+		return internalClipboardToTargetCopy;
+	}
+
 	/**
 	 * Store all additional data needed for paste stregies application
 	 * key: Strategy id ; Map<E,ClipboardAdditionalData> data for each object 

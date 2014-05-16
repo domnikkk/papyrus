@@ -51,7 +51,7 @@ public class CopyHandler extends AbstractCommandHandler {
 		List<IStrategy> allStrategies = PasteStrategyManager.getInstance().getAllStrategies();
 		for(IStrategy iStrategy : allStrategies) {
 			IPasteStrategy iPasteStrategy = (IPasteStrategy)iStrategy;
-			iPasteStrategy.prepare(papyrusClipboard);
+			iPasteStrategy.prepare(papyrusClipboard, selectedElements);
 		}
 		return defaultCopyCommand;		
 	}

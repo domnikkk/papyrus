@@ -25,7 +25,7 @@ public class PasteStrategyManager extends StrategyManager {
 	/**
 	 * The paste strategy extension point
 	 */
-	public static final String EXTENSION_ID = Activator.ID + ".pasteStrategy";	
+	public static final String EXTENSION_ID = Activator.ID + ".pasteStrategy";	//$NON-NLS-1$
 	
 	public static final PasteStrategyManager instance = new PasteStrategyManager(EXTENSION_ID);
 

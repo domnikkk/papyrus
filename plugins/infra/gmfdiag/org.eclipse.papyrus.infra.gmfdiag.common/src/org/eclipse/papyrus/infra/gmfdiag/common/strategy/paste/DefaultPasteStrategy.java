@@ -10,9 +10,7 @@
  *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
  *  
  *****************************************************************************/
-package org.eclipse.papyrus.uml.diagram.common.strategy.paste;
-
-import java.util.Map;
+package org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -20,17 +18,14 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.papyrus.commands.wrappers.GMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
+import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.DefaultDiagramPasteCommand;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.DefaultPasteCommand;
-import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy;
-import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.swt.graphics.Image;
-
 
 /**
  * The Class DefaultPasteStrategy.
  */
-public class DefaultPasteStrategy implements IPasteStrategy {
+public class DefaultPasteStrategy extends AbstractPasteStrategy implements IPasteStrategy {
 
 
 	/** The instance. */
@@ -67,31 +62,6 @@ public class DefaultPasteStrategy implements IPasteStrategy {
 		return "Default Paste Strategy"; //$NON-NLS-1$
 	}
 
-	/**
-	 * Gets the category id.
-	 *
-	 * @return the category id
-	 */
-	public String getCategoryID() {
-		return "org.eclipse.papyrus.strategy.paste"; //$NON-NLS-1$
-	}
-
-	/**
-	 * Gets the category label.
-	 *
-	 * @return the category label
-	 */
-	public String getCategoryLabel() {
-		return "Paste all copied elements"; //$NON-NLS-1$
-	}
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getImage()
-	 */
-	public Image getImage() {
-		return null;
-	}
-
 	/* (non-Javadoc)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getPriority()
 	 */
@@ -99,15 +69,14 @@ public class DefaultPasteStrategy implements IPasteStrategy {
 		return 0;
 	}
 
-	/**
-	 * Sets the options.
-	 *
-	 * @param options the options
+	/* (non-Javadoc)
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
-	public void setOptions(Map<String, Object> options) {
-		//Nothing
-	}
-
+	@Override
+	public IPasteStrategy dependsOn() {
+		return null;
+	}	
+	
 	/* (non-Javadoc)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain, org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
@@ -117,28 +86,13 @@ public class DefaultPasteStrategy implements IPasteStrategy {
 	}
 
 	/* (non-Javadoc)
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
-	 */
-	@Override
-	public IPasteStrategy dependsOn() {
-		return null;
-	}
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
-	 */
-	@Override
-	public void prepare(PapyrusClipboard<Object> papyrusClipboard) {
-	}
-
-
-	/* (non-Javadoc)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
 	public Command getGraphicalCommand(EditingDomain domain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart targetEditPart, PapyrusClipboard<Object> papyrusClipboard) {
 		CompoundCommand compoundCommand = new CompoundCommand("Semantic And Graphical paste"); //$NON-NLS-1$
-		DefaultDiagramPasteCommand defaultDiagramPasteCommand = new DefaultDiagramPasteCommand(targetEditPart.getEditingDomain(), "DefaultGraphicalPasteWithModel", papyrusClipboard,targetEditPart ); //$NON-NLS-1$
+// (View)targetEditPart.getModel()
+		DefaultDiagramPasteCommand defaultDiagramPasteCommand = new DefaultDiagramPasteCommand(targetEditPart.getEditingDomain(), "DefaultDiagramPasteCommand", papyrusClipboard, targetEditPart); //$NON-NLS-1$
 		GMFtoGEFCommandWrapper gmFtoGEFCommandWrapper = new GMFtoGEFCommandWrapper(defaultDiagramPasteCommand);
 		compoundCommand.add(gmFtoGEFCommandWrapper);
 		return compoundCommand;

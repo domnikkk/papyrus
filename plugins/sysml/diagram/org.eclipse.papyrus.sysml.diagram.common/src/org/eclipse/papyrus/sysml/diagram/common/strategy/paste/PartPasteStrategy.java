@@ -11,6 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.common.strategy.paste;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -29,12 +30,12 @@ import org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.core.clipboard.IClipboardAdditionalData;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
+import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.DefaultPasteStrategy;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.sysml.blocks.Block;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.papyrus.uml.diagram.common.strategy.paste.DefaultPasteStrategy;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
@@ -236,7 +237,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
-	public void prepare(PapyrusClipboard<Object> papyrusClipboard) {
+	public void prepare(PapyrusClipboard<Object> papyrusClipboard, Collection<EObject> selection) {
 		Map<Object, IClipboardAdditionalData> mapCopyPartData = new HashMap<Object, IClipboardAdditionalData>();
 		for(Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
 			EObject eObjectSource = iterator.next();
