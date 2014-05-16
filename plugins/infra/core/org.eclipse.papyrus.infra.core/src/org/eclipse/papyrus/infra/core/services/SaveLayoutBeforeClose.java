@@ -52,7 +52,6 @@ public class SaveLayoutBeforeClose implements IService {
 	}
 
 	protected void installSaveOnClose() {
-		EditorLifecycleManager lifecycleManager;
 		try {
 			lifecycleManager = registry.getService(EditorLifecycleManager.class);
 			if(lifecycleManager == null) {
@@ -62,7 +61,7 @@ public class SaveLayoutBeforeClose implements IService {
 			return;
 		}
 
-		lifecycleManager.addEditorLifecycleEventsListener(new EditorLifecycleEventListener() {
+		lifecycleListener = new EditorLifecycleEventListener() {
 
 			@Override
 			public void postInit(IMultiDiagramEditor editor) {
@@ -78,7 +77,9 @@ public class SaveLayoutBeforeClose implements IService {
 			public void beforeClose(IMultiDiagramEditor editor) {
 				saveBeforeClose(editor);
 			}
-		});
+		};
+
+		lifecycleManager.addEditorLifecycleEventsListener(lifecycleListener);
 	}
 
 	protected void saveBeforeClose(IMultiDiagramEditor editor) {
