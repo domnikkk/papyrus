@@ -10,7 +10,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.provider
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.papyrus.infra.newchild;visibility:=reexport,
+ org.eclipse.papyrus.infra.newchild;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport
