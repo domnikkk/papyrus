@@ -16,13 +16,13 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -32,9 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.eclipse.papyrus.infra.viewpoints.configuration.ComplexTypePropertyDescriptor;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
-import org.eclipse.papyrus.infra.viewpoints.configuration.EReferencePropertyDescriptor;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate;
 
 /**
@@ -87,7 +85,7 @@ public class ModelAutoCreateItemProvider
 	 */
 	protected void addFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new EReferencePropertyDescriptor(createItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ModelAutoCreate_feature_feature"),
@@ -98,7 +96,7 @@ public class ModelAutoCreateItemProvider
 				 true,
 				 null,
 				 null,
-				 null)));
+				 null));
 	}
 
 	/**
@@ -131,7 +129,7 @@ public class ModelAutoCreateItemProvider
 	 */
 	protected void addCreationTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new ComplexTypePropertyDescriptor(createItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ModelAutoCreate_creationType_feature"),
@@ -142,14 +140,14 @@ public class ModelAutoCreateItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
-				 null)));
+				 null));
 	}
 
 	/**
 	 * This returns ModelAutoCreate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT - Custom Image
 	 */
 	@Override
 	public Object getImage(Object object) {
@@ -216,7 +214,7 @@ public class ModelAutoCreateItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ConfigurationEditPlugin.INSTANCE;
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }
