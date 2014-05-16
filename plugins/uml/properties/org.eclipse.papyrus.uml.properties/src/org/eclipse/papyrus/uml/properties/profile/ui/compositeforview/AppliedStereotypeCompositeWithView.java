@@ -139,7 +139,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.cea.papyrus.profile.ui.composites.StereotypeComposite#removeButtonPressed()
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 	 */
 	@Override
 	protected Command getApplyStereotypeCommmand(Element elt, Stereotype st, TransactionalEditingDomain domain) {
-		CompoundCommand compoundCommand = new CompoundCommand("applyStereotypeCommand");
+		CompoundCommand compoundCommand = new CompoundCommand("ApplyStereotypeCommand");
 
 		Command parentCommmand = super.getApplyStereotypeCommmand(elt, st, domain);
 		compoundCommand.append(parentCommmand);
@@ -191,7 +191,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 			compoundCommand.append(command);
 		}
 
-		return parentCommmand;
+		return compoundCommand;
 	}
 
 	/**
