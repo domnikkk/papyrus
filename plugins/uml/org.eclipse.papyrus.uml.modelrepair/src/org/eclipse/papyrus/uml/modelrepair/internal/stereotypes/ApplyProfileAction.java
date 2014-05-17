@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
 
 import java.util.Collection;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
@@ -23,12 +24,13 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.uml.modelrepair.internal.participants.StereotypeApplicationRepairParticipant;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
 
 
 /**
@@ -36,30 +38,38 @@ import com.google.common.base.Suppliers;
  */
 public class ApplyProfileAction extends AbstractRepairAction {
 
-	private final Element root;
+	private final Set<Package> packages;
 
 	private Supplier<Profile> profileSupplier;
 
 	private String label;
 
-	public ApplyProfileAction(Element root, Profile profile, LabelProviderService labelProviderService) {
-		this(root, Suppliers.ofInstance(profile));
+	public ApplyProfileAction(Iterable<? extends Package> packages, Profile profile, LabelProviderService labelProviderService) {
+		this(packages, Suppliers.ofInstance(profile));
 
-		// Don't have to worry about the profile not have any definition because if it didn't, we couldn't be
+		// Don't have to worry about the profile not having any definition because if it didn't, we couldn't be
 		// looking at a previous version that traced to it to let us know that we need to apply this profile
 		this.label = NLS.bind("Migrate to {0}", labelProviderService.getLabelProvider().getText(profile.getDefinition()));
 	}
 
-	public ApplyProfileAction(Element root, Supplier<Profile> profileSupplier) {
+	public ApplyProfileAction(Iterable<? extends Package> packages, Supplier<Profile> profileSupplier) {
 		super(Kind.APPLY_LATEST_PROFILE_DEFINITION);
 
-		this.root = root;
+		if(Iterables.isEmpty(packages)) {
+			throw new IllegalArgumentException("no packages"); //$NON-NLS-1$
+		}
+
+		this.packages = Sets.newLinkedHashSet(packages);
 		this.profileSupplier = profileSupplier;
 	}
 
 	@Override
 	public String getLabel() {
 		return (label != null) ? label : super.getLabel();
+	}
+
+	public void addPackage(Package package_) {
+		this.packages.add(package_);
 	}
 
 	public boolean repair(Resource resource, EPackage profileDefinition, Collection<? extends EObject> stereotypeApplications, DiagnosticChain diagnostics, IProgressMonitor monitor) {
@@ -71,20 +81,10 @@ public class ApplyProfileAction extends AbstractRepairAction {
 			String taskName = NLS.bind("Migrating stereotypes to current version of profile \"{0}\"...", profile.getName());
 			SubMonitor sub = SubMonitor.convert(monitor, taskName, stereotypeApplications.size() * 3 / 2);
 
-			// Get the topmost package
-			Package topPackage = root.getNearestPackage();
-			for(Element higher = topPackage; higher != null; higher = higher.getOwner()) {
-				Package next = higher.getNearestPackage();
-				if(next != null) {
-					topPackage = next;
-				}
-				higher = next;
-			}
-
 			// Apply the profile
-			if(topPackage != null) {
-				StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
-				topPackage.applyProfile(profile);
+			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
+			for(Package next : packages) {
+				next.applyProfile(profile);
 			}
 
 			result = true;

@@ -38,8 +38,12 @@ public class InstanceSpecificationSlotCompartmentItemSemanticEditPolicyCN extend
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.Slot_3030 == requestElementType) {
+
 			return getGEFWrapper(new SlotCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

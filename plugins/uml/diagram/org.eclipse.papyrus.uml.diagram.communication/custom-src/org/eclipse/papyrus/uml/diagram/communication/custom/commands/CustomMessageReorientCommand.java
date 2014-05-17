@@ -24,7 +24,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interaction;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class CustomMessageReorientCommand permits to reorient a UML message.
  */

@@ -602,7 +602,19 @@ public class StereotypeApplicationRepairParticipant extends PackageOperations im
 				return null;
 			}
 
-			return findNamedElement(package_, namedElement.getQualifiedName(), namedElement.eClass());
+			// Ensure that the search is relative to the target package
+			String qualifiedName = namedElement.getQualifiedName();
+			String prefix = package_.getQualifiedName();
+			int last = prefix.lastIndexOf(NamedElement.SEPARATOR);
+			if(last >= 0) {
+				prefix = prefix.substring(0, last + NamedElement.SEPARATOR.length());
+
+				if(qualifiedName.startsWith(prefix)) {
+					qualifiedName = qualifiedName.substring(prefix.length());
+				}
+			}
+
+			return findNamedElement(package_, qualifiedName, namedElement.eClass());
 		}
 
 		@Override

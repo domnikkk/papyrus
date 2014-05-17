@@ -24,9 +24,8 @@ import org.eclipse.papyrus.uml.diagram.composite.edit.policies.GeneralizationIte
 /**
  * @generated
  */
-public class GeneralizationEditPart extends UMLConnectionNodeEditPart
-		implements ITreeBranchEditPart
-{
+public class GeneralizationEditPart extends UMLConnectionNodeEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -52,10 +51,8 @@ public class GeneralizationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof GeneralizationAppliedStereotypeEditPart) {
-			((GeneralizationAppliedStereotypeEditPart) childEditPart).setLabel(
-					getPrimaryShape().getAppliedStereotypeLabel());
-			return true;
+		if(childEditPart instanceof GeneralizationAppliedStereotypeEditPart) {
+			((GeneralizationAppliedStereotypeEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}
@@ -64,7 +61,7 @@ public class GeneralizationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
+		if(addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -74,7 +71,7 @@ public class GeneralizationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof GeneralizationAppliedStereotypeEditPart) {
+		if(childEditPart instanceof GeneralizationAppliedStereotypeEditPart) {
 			return true;
 		}
 		return false;
@@ -84,7 +81,7 @@ public class GeneralizationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
+		if(removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -106,6 +103,6 @@ public class GeneralizationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	public GeneralizationFigure getPrimaryShape() {
-		return (GeneralizationFigure) getFigure();
+		return (GeneralizationFigure)getFigure();
 	}
 }

@@ -41,12 +41,8 @@ public class CustomDurationObservationCreateCommandCN extends DurationObservatio
 	 */
 	public CustomDurationObservationCreateCommandCN(CreateElementRequest req, Diagram diagram) {
 		super(req, diagram);
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @generated
-	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 

@@ -60,7 +60,6 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 	@Override
 	public void paintFigure(final Graphics g) {
 		// super.paintFigure(g);
-
 		g.pushState();
 		final int height = Math.min(PREFERRED_HEIGHT, this.bounds.height);
 		final int middleY = this.bounds.y + this.bounds.height / 2;
@@ -68,11 +67,8 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 		final int w = this.bounds.width - 1;
 		final int y = middleY - height / 2;
 		final int h = height - 1;
-
 		g.setLineWidth(1);
-
 		final int cornerSize = Math.min(h / 3, w / 3);
-
 		final int[] polygon;
 		if(this.infinite) {
 			polygon = new int[]{ x, middleY, x + cornerSize, y, x + w + 1, y, x + w + 1, y + h, x + cornerSize, y + h };
@@ -120,7 +116,6 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 	// }
 	// g.popState();
 	// }
-
 	/**
 	 * Compute the half height of a CompactStateFigure with the given width and height, at the given abscissa.
 	 * <p>
@@ -141,7 +136,6 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 		final int width = figureWidth;
 		final int halfHeight = figureHeight / 2;
 		final int cornerSize = Math.min(height / 3, width / 3);
-
 		final int resultY;
 		if(x < cornerSize) {
 			// on the left corner
@@ -176,7 +170,5 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 	}
 
 	public void setStereotypeDisplay(final String stereotypes, final Image image) {
-		// TODO Auto-generated method stub
-
 	}
 }

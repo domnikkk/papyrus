@@ -11,6 +11,14 @@
             file="resource/symbols-toc.xml"
             primary="false">
       </toc>
+	  <toc
+      		file="resource/constraints-toc.xml"
+      		primary="false">
+      </toc>
+      <toc
+      		file="resource/constraint-creation-toc.xml"
+      		primary="false">
+      </toc>
    </extension>
 
 </plugin>

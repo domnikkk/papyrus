@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.navigator;
 
@@ -19,21 +22,21 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLDomainNavigatorItem extends PlatformObject {
 
 	/**
 	 * @generated
 	 */
 	static {
+		@SuppressWarnings("rawtypes")
 		final Class[] supportedTypes = new Class[]{ EObject.class, IPropertySource.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-			public Object getAdapter(final Object adaptableObject, final Class adapterType) {
+			@SuppressWarnings("rawtypes")
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
 				if(adaptableObject instanceof org.eclipse.papyrus.uml.diagram.timing.navigator.UMLDomainNavigatorItem) {
-					final org.eclipse.papyrus.uml.diagram.timing.navigator.UMLDomainNavigatorItem domainNavigatorItem = (org.eclipse.papyrus.uml.diagram.timing.navigator.UMLDomainNavigatorItem)adaptableObject;
-					final EObject eObject = domainNavigatorItem.getEObject();
+					org.eclipse.papyrus.uml.diagram.timing.navigator.UMLDomainNavigatorItem domainNavigatorItem = (org.eclipse.papyrus.uml.diagram.timing.navigator.UMLDomainNavigatorItem)adaptableObject;
+					EObject eObject = domainNavigatorItem.getEObject();
 					if(adapterType == EObject.class) {
 						return eObject;
 					}
@@ -41,10 +44,10 @@ public class UMLDomainNavigatorItem extends PlatformObject {
 						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
 				}
-
 				return null;
 			}
 
+			@SuppressWarnings("rawtypes")
 			public Class[] getAdapterList() {
 				return supportedTypes;
 			}
@@ -54,53 +57,52 @@ public class UMLDomainNavigatorItem extends PlatformObject {
 	/**
 	 * @generated
 	 */
-	private final Object myParent;
+	private Object myParent;
 
 	/**
 	 * @generated
 	 */
-	private final EObject myEObject;
+	private EObject myEObject;
 
 	/**
 	 * @generated
 	 */
-	private final IPropertySourceProvider myPropertySourceProvider;
+	private IPropertySourceProvider myPropertySourceProvider;
 
 	/**
 	 * @generated
 	 */
-	public UMLDomainNavigatorItem(final EObject eObject, final Object parent, final IPropertySourceProvider propertySourceProvider) {
-		this.myParent = parent;
-		this.myEObject = eObject;
-		this.myPropertySourceProvider = propertySourceProvider;
+	public UMLDomainNavigatorItem(EObject eObject, Object parent, IPropertySourceProvider propertySourceProvider) {
+		myParent = parent;
+		myEObject = eObject;
+		myPropertySourceProvider = propertySourceProvider;
 	}
 
 	/**
 	 * @generated
 	 */
 	public Object getParent() {
-		return this.myParent;
+		return myParent;
 	}
 
 	/**
 	 * @generated
 	 */
 	public EObject getEObject() {
-		return this.myEObject;
+		return myEObject;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IPropertySourceProvider getPropertySourceProvider() {
-		return this.myPropertySourceProvider;
+		return myPropertySourceProvider;
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
-	public boolean equals(final Object obj) {
+	public boolean equals(Object obj) {
 		if(obj instanceof org.eclipse.papyrus.uml.diagram.timing.navigator.UMLDomainNavigatorItem) {
 			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(((org.eclipse.papyrus.uml.diagram.timing.navigator.UMLDomainNavigatorItem)obj).getEObject()));
 		}
@@ -110,9 +112,7 @@ public class UMLDomainNavigatorItem extends PlatformObject {
 	/**
 	 * @generated
 	 */
-	@Override
 	public int hashCode() {
 		return EcoreUtil.getURI(getEObject()).hashCode();
 	}
-
 }

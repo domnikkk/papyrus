@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.reorient.connector.delegation;
@@ -16,7 +17,6 @@ package org.eclipse.papyrus.sysml.diagram.internalblock.tests.reorient.connector
 import static org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.EditorUtils.getDiagramView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -26,7 +26,6 @@ import org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.EditorUtils;
 import org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.TestPrepareUtils;
 import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
-import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Property;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -59,8 +58,7 @@ public class TestLinkReorientTargetConnector extends AbstractLinkReorientTargetC
 		nestedPath.add(part);
 				
 		// Initialize source creation results
-		isReorientAllowed = new HashMap<View, Boolean>();
-			
+
 		isReorientAllowed.put(actorPartTargetView, true);
 		isReorientAllowed.put(nestedActorPartTargetView, true);
 		
@@ -95,9 +93,6 @@ public class TestLinkReorientTargetConnector extends AbstractLinkReorientTargetC
 		
 		Property targetsubNestedPartContainer1 = (Property)subNestedPartContainer1TargetView.getElement();
 		Property targetsubNestedPartContainer2 = (Property)subNestedPartContainer2TargetView.getElement();
-
-		expectedSourcePartWithPort = new HashMap<View, ConnectableElement>();
-		expectedTargetPartWithPort = new HashMap<View, ConnectableElement>();
 
 		for (View view : isReorientAllowed.keySet()) {
 			expectedSourcePartWithPort.put(view, sourcepart);

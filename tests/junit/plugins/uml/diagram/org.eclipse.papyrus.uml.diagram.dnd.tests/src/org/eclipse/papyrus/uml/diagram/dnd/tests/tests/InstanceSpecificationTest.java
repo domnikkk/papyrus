@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.dnd.tests.tests;
 
@@ -22,9 +24,6 @@ import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -39,23 +38,21 @@ import org.eclipse.papyrus.infra.gmfdiag.dnd.strategy.DropStrategy;
 import org.eclipse.papyrus.infra.widgets.providers.EncapsulatedContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.TreeToFlatContentProvider;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.diagram.dnd.strategy.instancespecification.ui.ClassifierPropertiesContentProvider;
 import org.eclipse.papyrus.uml.diagram.dnd.tests.Activator;
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IEditorDescriptor;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 import org.junit.Test;
 
 /**
@@ -66,6 +63,9 @@ import org.junit.Test;
  *
  */
 public class InstanceSpecificationTest extends AbstractPapyrusTest {
+
+	@ClassRule
+	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
 
 	private static Diagram diagram;
 
@@ -87,9 +87,10 @@ public class InstanceSpecificationTest extends AbstractPapyrusTest {
 			Assert.fail("Cannot load the test model");
 		}
 
-		strategy = DropStrategyManager.instance.findStrategy(org.eclipse.papyrus.uml.diagram.dnd.Activator.PLUGIN_ID + ".instanceSpecification");
+		houseKeeper.setField("strategy", DropStrategyManager.instance.findStrategy(org.eclipse.papyrus.uml.diagram.dnd.Activator.PLUGIN_ID + ".instanceSpecification"));
 	}
 
+	@After
 	@Before
 	public void initDefaults() {
 		//Restore the default DND preferences before each test
@@ -97,15 +98,7 @@ public class InstanceSpecificationTest extends AbstractPapyrusTest {
 	}
 
 	protected static void initModel(String sourcePath, String projectName, String modelName) throws CoreException, IOException {
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IWorkspaceRoot root = workspace.getRoot();
-		IProject project = root.getProject(projectName);
-		if(!project.exists()) {
-			project.create(new NullProgressMonitor());
-		}
-		if(!project.isOpen()) {
-			project.open(new NullProgressMonitor());
-		}
+		IProject project = houseKeeper.createProject(projectName);
 
 		String[] extensions = { "di", "notation", "uml" };
 		for(String extension : extensions) {
@@ -120,9 +113,7 @@ public class InstanceSpecificationTest extends AbstractPapyrusTest {
 
 			public void run() {
 				try {
-					IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-					IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(modelFile.getName());
-					papyrusEditor = (IMultiDiagramEditor)page.openEditor(new FileEditorInput(modelFile), desc.getId());
+					papyrusEditor = houseKeeper.openPapyrusEditor(modelFile);
 					diagram = (Diagram)papyrusEditor.getAdapter(Diagram.class);
 				} catch (Exception ex) {
 					ex.printStackTrace(System.out);
@@ -138,24 +129,6 @@ public class InstanceSpecificationTest extends AbstractPapyrusTest {
 		targetFile.create(sourceStream, true, new NullProgressMonitor());
 		model.add(targetFile);
 		sourceStream.close();
-	}
-
-	@AfterClass
-	public static void dispose() throws Exception {
-		Display.getDefault().syncExec(new Runnable() {
-
-			public void run() {
-				papyrusEditor.getSite().getPage().closeEditor(papyrusEditor, false);
-			}
-		});
-
-		papyrusEditor = null;
-		diagram = null;
-		strategy = null;
-
-		for(IFile modelFile : model) {
-			modelFile.delete(true, false, new NullProgressMonitor());
-		}
 	}
 
 	protected void drop(Object source, EditPart target, boolean shouldWork) {

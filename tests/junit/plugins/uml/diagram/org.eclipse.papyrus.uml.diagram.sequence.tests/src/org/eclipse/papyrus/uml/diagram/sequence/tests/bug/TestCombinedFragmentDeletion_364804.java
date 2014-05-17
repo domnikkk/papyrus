@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -217,7 +218,6 @@ public class TestCombinedFragmentDeletion_364804 extends TestTopNode {
 	@After
 	@Override
 	public void tearDown() throws Exception {
-		page.closeAllEditors(false);
 		papyrusEditor = null;
 
 		waitForComplete();

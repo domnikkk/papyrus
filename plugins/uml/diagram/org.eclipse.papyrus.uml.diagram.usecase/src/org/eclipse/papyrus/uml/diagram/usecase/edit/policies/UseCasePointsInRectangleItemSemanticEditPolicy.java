@@ -38,8 +38,12 @@ public class UseCasePointsInRectangleItemSemanticEditPolicy extends UMLBaseItemS
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.ExtensionPoint_3008 == requestElementType) {
+
 			return getGEFWrapper(new ExtensionPointInRectangleCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

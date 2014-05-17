@@ -119,6 +119,7 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ArtifactFigure
+	 * 
 	 * @generated
 	 */
 	public ArtifactFigure getPrimaryShape() {
@@ -133,12 +134,15 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 			((NestedArtifactNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		if(childEditPart instanceof ArtifactCompositeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ArtifactCompositeCompartmentEditPartCN)childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -205,12 +209,15 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {

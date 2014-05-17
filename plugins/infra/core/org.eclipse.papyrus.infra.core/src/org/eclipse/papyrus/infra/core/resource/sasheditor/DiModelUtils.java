@@ -32,11 +32,11 @@ public class DiModelUtils {
 			return null;
 		}
 		IFile diFile;
-		if(SashModel.MODEL_FILE_EXTENSION.equalsIgnoreCase(file.getFileExtension())) {
+		if(DiModel.MODEL_FILE_EXTENSION.equalsIgnoreCase(file.getFileExtension())) {
 			diFile = file;
 		} else {
 			// Find the correct file
-			IPath diPath = file.getFullPath().removeFileExtension().addFileExtension(SashModel.MODEL_FILE_EXTENSION);
+			IPath diPath = file.getFullPath().removeFileExtension().addFileExtension(DiModel.MODEL_FILE_EXTENSION);
 			diFile = file.getParent().getFile(diPath.makeRelativeTo(file.getParent().getFullPath()));
 		}
 		return diFile;

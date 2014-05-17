@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.navigator;
 
@@ -14,8 +17,6 @@ import org.eclipse.papyrus.uml.diagram.timing.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLNavigatorSorter extends ViewerSorter {
 
 	/**
@@ -26,13 +27,11 @@ public class UMLNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	@Override
-	public int category(final Object element) {
+	public int category(Object element) {
 		if(element instanceof UMLNavigatorItem) {
-			final UMLNavigatorItem item = (UMLNavigatorItem)element;
+			UMLNavigatorItem item = (UMLNavigatorItem)element;
 			return UMLVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}
-
 }

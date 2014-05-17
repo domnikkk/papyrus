@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * Base class for the TreeProxy metamodel
@@ -22,6 +21,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @author Camille Letavernier
  *
  */
-public abstract class AdaptableTreeElementImpl extends EObjectImpl implements IAdaptable {
+public abstract class AdaptableTreeElementImpl implements IAdaptable {
 	//Nothing: used in the treeproxy genmodel to specify the IAdaptable interface
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <css:ModelStyleSheets xmi:id="_ix6IENXzEeO4Ts63-0amCA"/>
+  <notation:Diagram xmi:id="_k2QlcNXzEeO4Ts63-0amCA" type="CompositeStructure" name="CompositeDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_l5oG8NXzEeO4Ts63-0amCA" type="2073">
+      <children xmi:type="notation:DecorationNode" xmi:id="_l5ouANXzEeO4Ts63-0amCA" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_l5ouAdXzEeO4Ts63-0amCA" type="7073">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wlNf4NXzEeO4Ts63-0amCA" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wlNf4dXzEeO4Ts63-0amCA" key="mutable" value="true"/>
+        </eAnnotations>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_l5ouAtXzEeO4Ts63-0amCA"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_uUlhENXzEeO4Ts63-0amCA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l5ouA9XzEeO4Ts63-0amCA"/>
+      </children>
+      <element xmi:type="uml:Class" href="AddAPartIntoACompositeInTheDiagram.uml#_l5iAUNXzEeO4Ts63-0amCA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l5oG8dXzEeO4Ts63-0amCA" x="376" y="60" width="606" height="378"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_k2QlcdXzEeO4Ts63-0amCA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_k2QlctXzEeO4Ts63-0amCA">
+      <owner xmi:type="uml:Model" href="AddAPartIntoACompositeInTheDiagram.uml#_NW6bkNXyEeO4Ts63-0amCA"/>
+    </styles>
+    <element xmi:type="uml:Model" href="AddAPartIntoACompositeInTheDiagram.uml#_NW6bkNXyEeO4Ts63-0amCA"/>
+  </notation:Diagram>
+</xmi:XMI>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="Constraints in Papyrus" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
+	<topic href="resource/constraints.html" label="Constraints in Papyrus">
+		<anchor id="Constraints"/>
+		<link toc="resource/constraint-creation-toc.xml"/>
+	</topic>	
+</toc>

@@ -27,8 +27,6 @@ import org.eclipse.papyrus.uml.diagram.communication.edit.policies.UMLBaseItemSe
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Message;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class CustomMessageNameItemSemanticEditPolicy is intended to manage the deletion of a message when it is a label of a connector.
  */
@@ -39,8 +37,6 @@ public class CustomMessageNameItemSemanticEditPolicy extends UMLBaseItemSemantic
 	 */
 	public CustomMessageNameItemSemanticEditPolicy() {
 		super(UMLElementTypes.Message_8009);
-
-
 	}
 
 	/**
@@ -49,52 +45,39 @@ public class CustomMessageNameItemSemanticEditPolicy extends UMLBaseItemSemantic
 	 * @param req
 	 * @return
 	 */
-
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-
 		EObject elementToDestroy = req.getElementToDestroy();
 		List<EObject> elementsToDestroy = new ArrayList<EObject>();
-
 		//A. Find the elements to destroy
 		if(elementToDestroy instanceof Message) {
 			Message message = (Message)elementToDestroy;
 			//Add the message to the list of elements to destroy
 			elementsToDestroy.add(message);
 		}
-
 		//B. Build the command to destroy all the semantic elements
 		for(EObject selectedEObject : elementsToDestroy) {
-
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
 			if(provider == null) {
 				continue;
 			}
-
 			// Retrieve delete command from the Element Edit service
 			DestroyElementRequest request = new DestroyElementRequest(selectedEObject, false);
 			ICommand deleteCommand = provider.getEditCommand(request);
-
 			// Add current EObject destroy command to the global command
 			cmd.add(deleteCommand);
 		}
-
-
 		//C. Build the command to destroy all the views associated to the message
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(elementToDestroy);
 		if(provider == null) {
 			return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
 		}
-
 		ICommand destroyViewsCommand = provider.getEditCommand(req);
-
 		if(destroyViewsCommand == null) {
 			return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
 		}
 		cmd.add(destroyViewsCommand);
-
-
 		return getGEFWrapper(cmd.reduce());
 	}
 }

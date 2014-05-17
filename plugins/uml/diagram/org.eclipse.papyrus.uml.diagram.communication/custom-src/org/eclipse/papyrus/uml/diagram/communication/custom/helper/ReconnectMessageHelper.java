@@ -20,7 +20,6 @@ import org.eclipse.uml2.uml.MessageEnd;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
 
-// TODO: Auto-generated Javadoc
 /**
  * An helper class to reconnect message.
  * TODO : finish the implementation of this class
@@ -35,8 +34,6 @@ public class ReconnectMessageHelper {
 	 *        the message
 	 */
 	public static void updateMessage(Message message) {
-		// TODO Auto-generated method stub
-
 	}
 
 	/**
@@ -55,8 +52,6 @@ public class ReconnectMessageHelper {
 		}
 	}
 
-
-
 	/**
 	 * Update mos.
 	 * 
@@ -73,7 +68,6 @@ public class ReconnectMessageHelper {
 		}
 	}
 
-
 	/**
 	 * OccurrenceSpecification cover a unique lifeline.
 	 * 
@@ -83,7 +77,6 @@ public class ReconnectMessageHelper {
 	 *        the new lifeline covered by the OS
 	 */
 	public static void updateOccurenceSpecification(OccurrenceSpecification os, Lifeline newLifeline) {
-
 		// An occurrence specification covers a unique lifeline
 		os.getCovereds().clear();
 		os.getCovereds().add(newLifeline);

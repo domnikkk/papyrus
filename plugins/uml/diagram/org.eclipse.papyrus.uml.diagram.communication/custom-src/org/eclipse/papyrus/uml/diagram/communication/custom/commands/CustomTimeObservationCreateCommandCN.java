@@ -40,23 +40,16 @@ public class CustomTimeObservationCreateCommandCN extends TimeObservationCreateC
 	 */
 	public CustomTimeObservationCreateCommandCN(CreateElementRequest req, Diagram diagram) {
 		super(req, diagram);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-
 		TimeObservation newElement = UMLFactory.eINSTANCE.createTimeObservation();
-
 		Interaction owner = (Interaction)getElementToEdit();
 		owner.getNearestPackage().getPackagedElements().add(newElement);
-
 		ElementInitializers.getInstance().init_TimeObservation_8006(newElement);
-
 		doConfigure(newElement, monitor, info);
-
 		((CreateElementRequest)getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
-
 }

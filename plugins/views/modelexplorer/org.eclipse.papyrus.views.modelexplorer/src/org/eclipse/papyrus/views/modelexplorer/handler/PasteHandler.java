@@ -20,6 +20,7 @@ import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.IStrategy;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.PasteStrategyManager;
@@ -59,9 +60,9 @@ public class PasteHandler extends AbstractCommandHandler {
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#computeEnabled()
 	 */
 	@Override
-	protected boolean computeEnabled() { // paste is only available on a simple selection and wit ha full Clipboard
-		if (!PapyrusClipboard.getInstance().isEmpty() && getSelectedElements().size() == 1){
-			return true;
+	protected boolean computeEnabled() { // paste is only available on a simple selection and with a non empty Clipboard
+		if (!PapyrusClipboard.getInstance().isEmptyWithNoAdditionalData() && getSelectedElements().size() == 1){
+			return !EMFHelper.isReadOnly(getSelectedElements().get(0));
 		} else {
 			return super.computeEnabled();
 		}			

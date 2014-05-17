@@ -38,8 +38,12 @@ public class ArtifactCompositeCompartmentItemSemanticEditPolicyCN extends UMLBas
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.Artifact_28 == requestElementType) {
+
 			return getGEFWrapper(new ArtifactCreateCommandACN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

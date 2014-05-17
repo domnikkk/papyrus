@@ -48,6 +48,7 @@ public class SubjectClassifierCreateCommandTN extends EditElementCommand {
 
 	/**
 	 * FIXME: replace with setElementToEdit()
+	 * 
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
@@ -62,15 +63,19 @@ public class SubjectClassifierCreateCommandTN extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getClassifier());
 		return data.isPermitted();
+
+
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
 		throw new UnsupportedOperationException("Unimplemented operation (abstract domain element).");
 	}
 

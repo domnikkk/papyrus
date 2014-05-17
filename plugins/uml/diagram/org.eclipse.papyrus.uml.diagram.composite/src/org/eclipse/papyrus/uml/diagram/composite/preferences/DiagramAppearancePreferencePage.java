@@ -17,8 +17,8 @@ import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
-public class DiagramAppearancePreferencePage extends AppearancePreferencePage
-{
+public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
+
 	/**
 	 * @generated
 	 */

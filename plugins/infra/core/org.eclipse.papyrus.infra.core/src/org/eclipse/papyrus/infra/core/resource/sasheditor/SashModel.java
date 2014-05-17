@@ -10,7 +10,7 @@
  * 	Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Rewrite the sash model - store in the plugin's PreferenceStore (Bug 429239)
  *  Christian W. Damus (CEA) - bug 429242
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource.sasheditor;
 
@@ -34,10 +34,10 @@ import com.google.common.base.Objects;
  *
  * It may be stored in the *.di file (Legacy mode) or in a *.sash file in the user
  * preference space (~workspace/.metadata/.plugins/org.eclipse.papyrus.infra.core/)
- * 
+ *
  * @author Cedric Dumoulin
  * @author Camille Letavernier
- * 
+ *
  */
 public class SashModel extends EMFLogicalModel implements IModel {
 
@@ -45,7 +45,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 
 	/**
 	 * File extension.
-	 * 
+	 *
 	 * @deprecated Use {@link DiModel#MODEL_FILE_EXTENSION} instead. The SashModel has been moved to a separate file
 	 */
 	@Deprecated
@@ -62,9 +62,9 @@ public class SashModel extends EMFLogicalModel implements IModel {
 	public static final String MODEL_ID = "org.eclipse.papyrus.infra.core.resource.sasheditor.SashModel"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public SashModel() {
 
@@ -72,15 +72,15 @@ public class SashModel extends EMFLogicalModel implements IModel {
 
 	/**
 	 * Get the file extension used for this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getModelFileExtension()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected String getModelFileExtension() {
 		if(isLegacy((resourceURI == null) ? resourceURI : resourceURI.trimFileExtension())) {
-			return MODEL_FILE_EXTENSION;
+			return DiModel.MODEL_FILE_EXTENSION;
 		} else {
 			return SASH_MODEL_FILE_EXTENSION;
 		}
@@ -109,14 +109,14 @@ public class SashModel extends EMFLogicalModel implements IModel {
 			return false;
 		}
 		String fileExtension = resource.getURI().fileExtension();
-		return MODEL_FILE_EXTENSION.equals(fileExtension) || SASH_MODEL_FILE_EXTENSION.equals(fileExtension);
+		return DiModel.MODEL_FILE_EXTENSION.equals(fileExtension) || SASH_MODEL_FILE_EXTENSION.equals(fileExtension);
 	}
 
 	/**
 	 * Get the identifier used to register this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getIdentifier()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 	 *
 	 * @param uriWithoutExtension
 	 * @return
-	 * 
+	 *
 	 */
 	protected URI getSashModelURI(URI uriWithoutExtension) {
 		URIConverter converter = getModelManager().getURIConverter();
@@ -205,7 +205,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 	}
 
 	protected URI getLegacyURI(URI uriWithoutExtension) {
-		return uriWithoutExtension.appendFileExtension(MODEL_FILE_EXTENSION);
+		return uriWithoutExtension.appendFileExtension(DiModel.MODEL_FILE_EXTENSION);
 	}
 
 	protected URI getSashModelStoreURI(URI uriWithoutExtension) {

@@ -23,12 +23,13 @@ import org.eclipse.papyrus.uml.diagram.component.edit.policies.ComponentDiagramI
 /**
  * @generated
  */
-public class ComponentDiagramEditPart extends PapyrusDiagramEditPart
-{
+public class ComponentDiagramEditPart extends PapyrusDiagramEditPart {
+
 	/**
 	 * @generated
 	 */
 	public final static String MODEL_ID = "PapyrusUMLComponentDiagram"; //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -46,11 +47,14 @@ public class ComponentDiagramEditPart extends PapyrusDiagramEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new PapyrusCreationEditPolicy());
 		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComponentDiagramItemSemanticEditPolicy());
 		//in Papyrus diagrams are not strongly synchronised
 		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.component.edit.policies.ModelCanonicalEditPolicy());
+
 		installEditPolicy("REMOVE_ORPHAN_VIEW", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomDiagramDragDropEditPolicy());
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);

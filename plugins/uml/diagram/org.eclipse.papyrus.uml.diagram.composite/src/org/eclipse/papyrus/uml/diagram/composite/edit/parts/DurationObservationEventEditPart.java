@@ -22,9 +22,8 @@ import org.eclipse.papyrus.uml.diagram.composite.edit.policies.DurationObservati
 /**
  * @generated
  */
-public class DurationObservationEventEditPart extends ConnectionEditPart
-		implements ITreeBranchEditPart
-{
+public class DurationObservationEventEditPart extends ConnectionEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -61,6 +60,6 @@ public class DurationObservationEventEditPart extends ConnectionEditPart
 	 * @generated
 	 */
 	public SimpleDashedEdgeFigure getPrimaryShape() {
-		return (SimpleDashedEdgeFigure) getFigure();
+		return (SimpleDashedEdgeFigure)getFigure();
 	}
 }

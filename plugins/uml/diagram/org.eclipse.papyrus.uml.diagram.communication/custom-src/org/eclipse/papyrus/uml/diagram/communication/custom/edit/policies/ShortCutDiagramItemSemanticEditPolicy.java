@@ -24,27 +24,16 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.communication.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
 
-
-/**
- * @generated
- */
 public class ShortCutDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
-	/**
-	 * @generated
-	 */
 	public ShortCutDiagramItemSemanticEditPolicy() {
 		super(UMLElementTypes.Diagram_8016);
 	}
 
-	/**
-	 * @generated
-	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View)getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if(annotation == null) {
 			// there are indirectly referenced children, need extra commands: false
@@ -56,5 +45,4 @@ public class ShortCutDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 		}
 		return getGEFWrapper(cmd.reduce());
 	}
-
 }

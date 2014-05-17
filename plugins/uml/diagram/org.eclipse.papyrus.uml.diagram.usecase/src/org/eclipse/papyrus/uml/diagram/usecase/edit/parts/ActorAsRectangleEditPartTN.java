@@ -73,6 +73,7 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
+
 		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
@@ -96,6 +97,7 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.usecase.figure.ActorAsRectangleFigure
+	 * 
 	 * @generated
 	 */
 	public ActorAsRectangleFigure getPrimaryShape() {
@@ -110,6 +112,8 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 			((ActorAsRectangleNameEditPartTN)childEditPart).setLabel(getPrimaryShape().getActorAsRectangleFigure_name());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -168,12 +172,15 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {

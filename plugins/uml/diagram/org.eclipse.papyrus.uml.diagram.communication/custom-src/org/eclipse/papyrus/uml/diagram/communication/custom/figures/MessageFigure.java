@@ -17,11 +17,9 @@ import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
 
 /**
  * 
@@ -30,15 +28,9 @@ import org.eclipse.swt.widgets.Display;
  */
 public class MessageFigure extends PolylineConnectionEx implements IPapyrusUMLElementFigure {
 
-
-
-
-	private CustomWrappingLabel fFigureMessageCreateLabelFigure;
+	private WrappingLabel fFigureMessageCreateLabelFigure;
 
 	private CustomWrappingLabel appliedStereotypeLabelFigure;
-
-	static final Font FFIGUREMESSAGECREATELABELFIGURE_FONT = new Font(Display.getCurrent(), "Arial", 8, SWT.NORMAL); //$NON-NLS-1$
-
 
 	/**
 	 * 
@@ -50,31 +42,27 @@ public class MessageFigure extends PolylineConnectionEx implements IPapyrusUMLEl
 		this.setLineStyle(Graphics.LINE_SOLID);
 		this.setForegroundColor(ColorConstants.white);
 		this.setBackgroundColor(ColorConstants.white);
-
 		createContents();
-
 	}
 
 	private void createContents() {
-
 		appliedStereotypeLabelFigure = new CustomWrappingLabel();
 		appliedStereotypeLabelFigure.setText(""); //$NON-NLS-1$
-
-
 		appliedStereotypeLabelFigure.setTextWrap(true);
 		appliedStereotypeLabelFigure.setTextJustification(PositionConstants.CENTER);
-
-
-
 		this.add(appliedStereotypeLabelFigure);
+		fFigureMessageCreateLabelFigure = new WrappingLabel();
+		fFigureMessageCreateLabelFigure.setText("");
+		fFigureMessageCreateLabelFigure.setTextWrap(true);
+		fFigureMessageCreateLabelFigure.setTextJustification(PositionConstants.CENTER);
+		this.add(fFigureMessageCreateLabelFigure);
 	}
 
 	/**
 	 * 
 	 * @return fFigureMessageCreateLabelFigure
 	 */
-
-	public CustomWrappingLabel getFigureMessageCreateLabelFigure() {
+	public WrappingLabel getFigureMessageCreateLabelFigure() {
 		return fFigureMessageCreateLabelFigure;
 	}
 
@@ -102,9 +90,7 @@ public class MessageFigure extends PolylineConnectionEx implements IPapyrusUMLEl
 		} else {
 			appliedStereotypeLabelFigure.setText(""); //$NON-NLS-1$
 		}
-
 		appliedStereotypeLabelFigure.setIcon(image);
-
 	}
 
 	/**
@@ -115,6 +101,4 @@ public class MessageFigure extends PolylineConnectionEx implements IPapyrusUMLEl
 	public CustomWrappingLabel getAppliedStereotypeLabel() {
 		return appliedStereotypeLabelFigure;
 	}
-
-
 }

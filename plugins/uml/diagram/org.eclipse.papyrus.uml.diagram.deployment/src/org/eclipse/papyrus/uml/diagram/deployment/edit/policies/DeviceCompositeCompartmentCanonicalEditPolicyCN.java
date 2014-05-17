@@ -69,7 +69,7 @@ public class DeviceCompositeCompartmentCanonicalEditPolicyCN extends CanonicalEd
 	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View)getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getDeviceDeviceCompositeCompartment_30SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getDeviceDeviceCompositeCompartment_30SemanticChildren(viewObject);
 		for(UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -99,7 +99,7 @@ public class DeviceCompositeCompartmentCanonicalEditPolicyCN extends CanonicalEd
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.getDeviceDeviceCompositeCompartment_30SemanticChildren((View)getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getDeviceDeviceCompositeCompartment_30SemanticChildren((View)getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -145,6 +145,7 @@ public class DeviceCompositeCompartmentCanonicalEditPolicyCN extends CanonicalEd
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
+
 		boolean changed = deleteViews(orphaned.iterator());
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
@@ -164,6 +165,7 @@ public class DeviceCompositeCompartmentCanonicalEditPolicyCN extends CanonicalEd
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
+
 		makeViewsImmutable(createdViews);
 	}
 }

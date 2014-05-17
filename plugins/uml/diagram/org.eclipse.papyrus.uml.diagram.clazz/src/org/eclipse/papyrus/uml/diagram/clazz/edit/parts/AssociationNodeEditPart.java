@@ -104,6 +104,7 @@ public class AssociationNodeEditPart extends NodeEditPart {
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -140,6 +141,7 @@ public class AssociationNodeEditPart extends NodeEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

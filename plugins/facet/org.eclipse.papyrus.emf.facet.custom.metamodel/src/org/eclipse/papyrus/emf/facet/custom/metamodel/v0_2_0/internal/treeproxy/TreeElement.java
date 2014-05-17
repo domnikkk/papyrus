@@ -11,23 +11,19 @@
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Tree Element</b></em>'.
- * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
  * Represents a proxy element in a tree view
- * <!-- end-model-doc -->
  *
  *
  * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeproxyPackage#getTreeElement()
- * @model abstract="true"
- * @generated
+ *      abstract="true"
  */
-public interface TreeElement extends EObject {
+public interface TreeElement {
 
+	public TreeElement getParent();
+
+	public void setParent(TreeElement parent);
 } // TreeElement

@@ -19,4 +19,11 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated configuration -->
+      <extender
+            uri="http://www.eclipse.org/papyrus/infra/viewpoints/iso42010"
+            class="org.eclipse.papyrus.infra.viewpoints.configuration.provider.ConfigurationItemProviderAdapterFactory$Iso42010ChildCreationExtender"/>
+   </extension>
+
 </plugin>

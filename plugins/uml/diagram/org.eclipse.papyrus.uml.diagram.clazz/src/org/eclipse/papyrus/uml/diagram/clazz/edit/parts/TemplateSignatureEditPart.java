@@ -126,12 +126,15 @@ public class TemplateSignatureEditPart extends AbstractBorderItemEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+
+
 		if(childEditPart instanceof TemplateSignatureTemplateParameterCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getTemplateParameterRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((TemplateSignatureTemplateParameterCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -200,6 +203,7 @@ public class TemplateSignatureEditPart extends AbstractBorderItemEditPart {
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
 		return figure;
+
 	}
 
 	/**

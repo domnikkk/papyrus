@@ -109,14 +109,25 @@ public class ThemeManager {
 	}
 
 	/**
-	 * Returns the theme associated to the given id, or <code>null</code> if it doesn't
+	 * Returns the theme associated to the given id, or {@link EmptyTheme} if it doesn't
 	 * exist
 	 *
 	 * @param themeId
 	 * @return
 	 */
 	public Theme getTheme(String themeId) {
-		return getAllThemes().get(themeId);
+		Theme registeredTheme = null;
+
+		if(getAllThemes().containsKey(themeId)) {
+			registeredTheme = getAllThemes().get(themeId);
+		}
+
+		// Bug 434956 : Patch to ensure that one theme is returned.
+		if(registeredTheme == null) {
+			registeredTheme = EmptyTheme.instance;
+		}
+
+		return registeredTheme;
 	}
 
 	/**
@@ -477,8 +488,7 @@ public class ThemeManager {
 
 		if(store.contains(ThemePreferences.CURRENT_THEME)) {
 			String themeId = store.getString(ThemePreferences.CURRENT_THEME);
-			Theme theme = getAllThemes().containsKey(themeId) ? getAllThemes().get(themeId) : EmptyTheme.instance;
-			return theme;
+			return getTheme(themeId);
 		}
 
 		//The theme has not been defined: return the first one, and store it

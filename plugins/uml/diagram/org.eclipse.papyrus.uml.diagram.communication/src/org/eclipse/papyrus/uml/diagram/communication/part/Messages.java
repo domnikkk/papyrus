@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.part;
 
 import org.eclipse.osgi.util.NLS;
@@ -256,92 +254,92 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String createNodes1Group_title;
+	public static String Nodes1Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createNodes1Group_desc;
+	public static String Nodes1Group_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createEdges2Group_title;
+	public static String Edges2Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createEdges2Group_desc;
+	public static String Edges2Group_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createLifelineComCreationTool_title;
+	public static String LifelineComCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createLifelineComCreationTool_desc;
+	public static String LifelineComCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createComment7CreationTool_title;
+	public static String Comment7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createComment7CreationTool_desc;
+	public static String Comment7CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createConstraint5CreationTool_title;
+	public static String Constraint5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createConstraint5CreationTool_desc;
+	public static String Constraint5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createDurationObservation4CreationTool_title;
+	public static String DurationObservation4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createDurationObservation4CreationTool_desc;
+	public static String DurationObservation4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createTimeObservation6CreationTool_title;
+	public static String TimeObservation6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createTimeObservation6CreationTool_desc;
+	public static String TimeObservation6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createMessageCreateCreationTool_title;
+	public static String MessageCreateCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createMessageCreateCreationTool_desc;
+	public static String MessageCreateCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createLink13CreationTool_title;
+	public static String Link13CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createLink13CreationTool_desc;
+	public static String Link13CreationTool_desc;
 
 	/**
 	 * @generated
@@ -357,21 +355,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnexpectedValueType;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_WrongStringConversion;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnknownLiteral;
 
 	/**
 	 * @generated

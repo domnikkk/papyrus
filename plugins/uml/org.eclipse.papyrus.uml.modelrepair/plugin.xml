@@ -124,5 +124,18 @@
             class="org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.StereotypeApplicationPrecondition">
       </precondition>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.core.service">
+      <service
+            classname="org.eclipse.papyrus.uml.modelrepair.internal.stereotypes.StereotypeRepairService"
+            description="Service for interaction with the stereotype repair function."
+            id="org.eclipse.papyrus.uml.modelrepair.service.IStereotypeRepairService"
+            priority="50"
+            startKind="lazy">
+         <dependsOn
+               serviceKeyRef="org.eclipse.papyrus.infra.core.resource.ModelSet">
+         </dependsOn>
+      </service>
+   </extension>
 
 </plugin>

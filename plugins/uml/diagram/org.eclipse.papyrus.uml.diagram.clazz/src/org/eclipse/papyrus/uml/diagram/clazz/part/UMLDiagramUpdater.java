@@ -6863,6 +6863,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			}
 			Classifier container = (Classifier)link.eContainer();
 			result.add(new UMLLinkDescriptor(container, target, link, UMLElementTypes.Generalization_4002, GeneralizationEditPart.VISUAL_ID));
+
 		}
 		return result;
 	}
@@ -6886,6 +6887,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			}
 			BehavioredClassifier container = (BehavioredClassifier)link.eContainer();
 			result.add(new UMLLinkDescriptor(container, target, link, UMLElementTypes.InterfaceRealization_4003, InterfaceRealizationEditPart.VISUAL_ID));
+
 		}
 		return result;
 	}
@@ -7054,6 +7056,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			}
 			Namespace container = (Namespace)link.eContainer();
 			result.add(new UMLLinkDescriptor(container, target, link, UMLElementTypes.ElementImport_4009, ElementImportEditPart.VISUAL_ID));
+
 		}
 		return result;
 	}
@@ -7077,6 +7080,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			}
 			Namespace container = (Namespace)link.eContainer();
 			result.add(new UMLLinkDescriptor(container, target, link, UMLElementTypes.PackageImport_4010, PackageImportEditPart.VISUAL_ID));
+
 		}
 		return result;
 	}

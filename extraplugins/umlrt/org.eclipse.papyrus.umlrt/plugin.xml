@@ -1,17 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><?eclipse version="3.4"?>
 <plugin>
-<extension point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile"><profile description="UML RealTime Profile" name="UML RealTime" path="pathmap://UMLRT_PROFILES/uml-rt.profile.uml" provider="Eclipse Modeling Project"/></extension>
-<extension
-      point="org.eclipse.emf.ecore.uri_mapping">
-   <mapping
-         source="pathmap://UMLRT_PROFILES/"
-         target="platform:/plugin/org.eclipse.papyrus.umlrt/umlProfile/">
-   </mapping>
-</extension>
-<extension
-      point="org.eclipse.uml2.uml.dynamic_package">
-   <profile
-         location="pathmap://UMLRT_PROFILES/uml-rt.profile.uml#_0"
-         uri="http:///schemas/UMLRealTime/_iXHNMNgxEeKmBIMLIFUmag/0">
-   </profile>
-</extension></plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated uml-rt -->
+      <package
+            uri="http://www.eclipse.org/papyrus/umlrt"
+            class="org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage"
+            genModel="umlProfile/uml-rt.genmodel"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated UMLRealTimeSM -->
+      <package
+            uri="http://www.eclipse.org/papyrus/umlrt/statemachine"
+            class="org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage"
+            genModel="umlProfile/UMLRealTimeSM.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://UML_RT_PROFILE/"
+            target="platform:/plugin/org.eclipse.papyrus.umlrt/umlProfile/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"
+            uri="http://www.eclipse.org/papyrus/umlrt">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"
+            uri="http://www.eclipse.org/papyrus/umlrt/statemachine">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="UML RealTime Profile"
+            name="UML RT"
+            path="pathmap://UML_RT_PROFILE/uml-rt.profile.uml"
+            provider="Eclipse Modeling Project">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="UML RealTime StateMachines Profile"
+            name="UML RT StateMachines"
+            path="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml"
+            provider="Eclipse Modeling Project">
+      </profile>
+   </extension>
+
+
+</plugin>

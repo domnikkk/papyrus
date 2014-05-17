@@ -144,6 +144,7 @@ public class ShortCutDiagramEditPart extends AbstractShortCutDiagramEditPart {
 			}
 		}
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -193,6 +194,7 @@ public class ShortCutDiagramEditPart extends AbstractShortCutDiagramEditPart {
 	 */
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

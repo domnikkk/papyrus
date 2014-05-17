@@ -149,6 +149,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 			}
 		}
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -200,6 +201,7 @@ public class TimeObservationEditPart extends AbstractObservationEditPart {
 	 */
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**

@@ -1,26 +1,22 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.part;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -31,6 +27,7 @@ import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.eclipse.papyrus.infra.gmfdiag.preferences.Activator;
 import org.eclipse.papyrus.uml.diagram.communication.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.communication.expressions.UMLOCLFactory;
@@ -50,6 +47,11 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public static final String ID = "org.eclipse.papyrus.uml.diagram.communication"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private LogHelper myLogHelper;
 
 	/**
 	 * @generated
@@ -95,10 +97,10 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
+		myLogHelper = new LogHelper(this);
 		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = createAdapterFactory();
 		DiagramPreferenceInitializer diagramPreferenceInitializer = new DiagramPreferenceInitializer();
@@ -108,7 +110,6 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	@Override
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
@@ -129,7 +130,6 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	@Override
 	public IPreferenceStore getPreferenceStore() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		return store;
@@ -177,8 +177,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * plug-in relative path.
 	 * 
 	 * @generated
-	 * @param path
-	 *        the path
+	 * @param path the path
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getBundledImageDescriptor(String path) {
@@ -191,8 +190,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * path, first segment is taken as id of plug-in with image
 	 * 
 	 * @generated
-	 * @param path
-	 *        the path to image, either absolute (with plug-in id as first segment), or relative for bundled images
+	 * @param path the path to image, either absolute (with plug-in id as first segment), or relative for bundled images
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor findImageDescriptor(String path) {
@@ -205,12 +203,11 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * Returns an image for the image file at the given plug-in relative path.
+	 * Returns an image for the image file at the given plugin relative path.
 	 * Client do not need to dispose this image. Images will be disposed automatically.
 	 * 
 	 * @generated
-	 * @param path
-	 *        the path
+	 * @param path the path
 	 * @return image instance
 	 */
 	public Image getBundledImage(String path) {
@@ -287,50 +284,34 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void logError(String error) {
-		logError(error, null);
+		getLogHelper().warn(error);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logError(String error, Throwable throwable) {
-		if(error == null && throwable != null) {
-			error = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, IStatus.OK, error, throwable));
-		debug(error, throwable);
+		getLogHelper().error(error, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message) {
-		logInfo(message, null);
+		getLogHelper().info(message);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message, Throwable throwable) {
-		if(message == null && throwable != null) {
-			message = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.INFO, UMLDiagramEditorPlugin.ID, IStatus.OK, message, throwable));
-		debug(message, throwable);
+		getLogHelper().error(message, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
-	private void debug(String message, Throwable throwable) {
-		if(!isDebugging()) {
-			return;
-		}
-		if(message != null) {
-			System.err.println(message);
-		}
-		if(throwable != null) {
-			throwable.printStackTrace();
-		}
+	public LogHelper getLogHelper() {
+		return myLogHelper;
 	}
 }

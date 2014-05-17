@@ -1,15 +1,13 @@
-/*
+/**
  * Copyright (c) 2014 CEA LIST.
- *
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
- *
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.profile.part;
 
@@ -22,10 +20,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 import org.eclipse.papyrus.uml.diagram.common.util.Util;
 import org.eclipse.papyrus.uml.diagram.profile.edit.parts.*;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -33,7 +28,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * This registry is used to determine which type of visual object should be
  * created for the corresponding Diagram, Node, ChildNode or Link represented
  * by a domain model object.
- *
+ * 
  * @generated
  */
 public class UMLVisualIDRegistry {
@@ -65,7 +60,7 @@ public class UMLVisualIDRegistry {
 		while(view != diagram) {
 			EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 			if(annotation != null) {
-				return annotation.getDetails().get("modelID"); //$NON-NLS-1$
+				return (String)annotation.getDetails().get("modelID"); //$NON-NLS-1$
 			}
 			view = (View)view.eContainer();
 		}
@@ -1059,7 +1054,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * User can change implementation of this method to handle some specific
 	 * situations not covered by default logic.
-	 *
+	 * 
 	 * @generated
 	 */
 	private static boolean isDiagram(Profile element) {

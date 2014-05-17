@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,9 +47,9 @@ import org.eclipse.ui.ide.IDE;
 
 /**
  * A Service to check workspace modifications on current resources
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ResourceUpdateService implements IService, IPartListener {
 
@@ -70,15 +70,17 @@ public class ResourceUpdateService implements IService, IPartListener {
 		public void run() {
 			isSaving = false;
 		}
-		
+
 	};
-	
+
 	private final ISaveEventListener preSaveListener = new ISaveEventListener() {
 
+		@Override
 		public void doSaveAs(DoSaveEvent event) {
 			isSaving = true;
 		}
 
+		@Override
 		public void doSave(DoSaveEvent event) {
 			isSaving = true;
 		}
@@ -86,19 +88,23 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 	private final ISaveEventListener postSaveListener = new ISaveEventListener() {
 
+		@Override
 		public void doSaveAs(DoSaveEvent event) {
 			Display.getDefault().asyncExec(postSaveRunnable);
 		}
 
+		@Override
 		public void doSave(DoSaveEvent event) {
 			Display.getDefault().asyncExec(postSaveRunnable);
 		}
 	};
 
+	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
 		this.registry = servicesRegistry;
 	}
 
+	@Override
 	public void startService() throws ServiceException {
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
 		modelSet = registry.getService(ModelSet.class);
@@ -106,6 +112,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 		registry.getService(ILifeCycleEventsProvider.class).addPostDoSaveListener(postSaveListener);
 	}
 
+	@Override
 	public void disposeService() throws ServiceException {
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
 		modelSet = null;
@@ -117,10 +124,14 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 	protected void closeEditor(final boolean save, final boolean reopen) {
 		try {
+			if(!reopen) {
+				registry.remove(SaveLayoutBeforeClose.class.getName());
+			}
 			final IMultiDiagramEditor editor = registry.getService(IMultiDiagramEditor.class);
 			if(editor != null) {
 				Runnable closeEditorRunnable = new Runnable() {
 
+					@Override
 					public void run() {
 						final IWorkbenchPage page = editor.getSite().getPage();
 						final IEditorInput currentInput = editor.getEditorInput();
@@ -135,6 +146,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 						if(reopen) {
 							Display.getCurrent().asyncExec(new Runnable() {
 
+								@Override
 								public void run() {
 									try {
 										IDE.openEditor(page, currentInput, editorId);
@@ -171,6 +183,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 			//Only read-only models have changed. We (most likely) won't save them within this current editor. As they are already loaded, we can just continue.
 			Display.getDefault().syncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					Shell parentShell = Display.getCurrent().getActiveShell();
 					MessageDialog dialog = new MessageDialog(parentShell, "Resources changed", null, "Some resources used by '" + modelSet.getURIWithoutExtension().lastSegment() + "' have been removed. Note: all these resources are loaded in read-only mode and won't be overriden if you choose to save. Unsaved changes will be lost.", MessageDialog.QUESTION, new String[]{ "Close editor", "Save and close", "Ignore" }, 1);
@@ -193,6 +206,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 			//At least one read-write resource has changed. Potential conflicts.
 			Display.getDefault().syncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					if(MessageDialog.openConfirm(Display.getCurrent().getActiveShell(), "Resources removed", "Some resources used by '" + modelSet.getURIWithoutExtension().lastSegment() + "' have been removed. Do you wish to close the current editor? Unsaved changes will be lost.")) {
 						closeEditor();
@@ -243,6 +257,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 			//Only read-only models have changed. We (most likely) won't save them within this current editor. As they are already loaded, we can just continue.
 			Display.getDefault().syncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					Shell parentShell = Display.getCurrent().getActiveShell();
 					MessageDialog dialog = new MessageDialog(parentShell, "Resources changed", null, "Some resources used by '" + modelSet.getURIWithoutExtension().lastSegment() + "' have changed. Note: all these resources are loaded in read-only mode and won't be overriden if you choose to save. Unsaved changes will be lost.", MessageDialog.WARNING, new String[]{ "Reopen editor", "Save and reopen", "Ignore" }, 1);
@@ -265,6 +280,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 			//At least one read-write resource has changed. Potential conflicts.
 			Display.getDefault().syncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					final Shell parentShell = Display.getCurrent().getActiveShell();
 					if(MessageDialog.openConfirm(parentShell, "Resources changed", "Some resources used by the model '" + modelSet.getURIWithoutExtension().lastSegment() + "' have changed. Do you want to reopen the current editor? Unsaved changes will be lost.")) {
@@ -278,6 +294,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 	//Copied from org.eclipse.emf.ecore.presentation.EcoreEditor
 	protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
 
+		@Override
 		public void resourceChanged(IResourceChangeEvent event) {
 			IResourceDelta delta = event.getDelta();
 			try {
@@ -287,18 +304,19 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 					protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
+					@Override
 					public boolean visit(final IResourceDelta delta) {
 						if(delta.getResource().getType() == IResource.FILE) {
 							if(delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED) {
 								URI resourceURI = URI.createPlatformResourceURI(delta.getFullPath().toString(), true);
 								Resource resource = modelSet.getResource(resourceURI, false);
-								if (resource == null) {
+								if(resource == null) {
 									// try again, with a pluginURI, see bug 418428
 									URI pluginURI = URI.createPlatformPluginURI(delta.getFullPath().toString(), true);
 									resource = modelSet.getResource(pluginURI, false);
 								}
 								if(resource != null) {
-									
+
 									if(delta.getKind() == IResourceDelta.REMOVED) {
 										removedResources.add(resource);
 									} else {
@@ -349,22 +367,27 @@ public class ResourceUpdateService implements IService, IPartListener {
 		}
 	};
 
+	@Override
 	public void partActivated(IWorkbenchPart part) {
 		//Nothing
 	}
 
+	@Override
 	public void partBroughtToTop(IWorkbenchPart part) {
 		//Nothing
 	}
 
+	@Override
 	public void partClosed(IWorkbenchPart part) {
 		//Nothing
 	}
 
+	@Override
 	public void partDeactivated(IWorkbenchPart part) {
 		//Nothing
 	}
 
+	@Override
 	public void partOpened(IWorkbenchPart part) {
 		//Nothing
 	}

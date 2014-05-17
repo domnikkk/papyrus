@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.reorient.connector;
@@ -19,7 +20,6 @@ import static org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.TestPr
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -67,8 +67,7 @@ public class TestLinkReorientTargetConnector extends AbstractLinkReorientTargetC
 		List<Property> deepNestedPath = Arrays.asList(part, nestedPart);
 		
 		// Initialize source creation results
-		isReorientAllowed = new HashMap<View, Boolean>();
-		
+
 		isReorientAllowed.put(getDiagramView(), false);
 
 		isReorientAllowed.put(blockTargetView, false);

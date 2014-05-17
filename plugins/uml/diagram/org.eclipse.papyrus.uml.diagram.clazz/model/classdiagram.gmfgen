@@ -60,9 +60,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.PropertyFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -114,9 +111,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.PropertyFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -168,9 +162,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.PropertyFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -234,9 +225,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.PropertyFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -288,9 +276,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.PropertyFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -342,9 +327,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.PropertyFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -535,9 +517,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.OperationFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -589,9 +568,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.OperationFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -643,9 +619,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.OperationFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -697,9 +670,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.OperationFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -752,9 +722,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.OperationFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -935,9 +902,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.clazz.custom.figure.LiteralEnumerationFigure">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
         </viewmap>
         <modelFacet>
           <metaClass
@@ -1272,9 +1236,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
@@ -1371,9 +1332,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1468,9 +1426,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1561,9 +1516,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1654,9 +1606,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1742,9 +1691,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1829,9 +1775,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1902,9 +1845,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1997,9 +1937,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -2093,9 +2030,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -2188,9 +2122,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -2251,9 +2182,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getCornerBentFigure"
               figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -2326,9 +2254,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -2349,9 +2274,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getConstraintFigure"
               figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ConstraintFigure">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3219,9 +3141,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3340,9 +3259,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
@@ -3438,9 +3354,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3534,9 +3447,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3622,9 +3532,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3714,9 +3621,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3801,9 +3705,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3895,9 +3796,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3962,9 +3860,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -4060,9 +3955,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -4159,9 +4051,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -4253,9 +4142,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -4326,9 +4212,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -4348,9 +4231,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getConstraintFigure"
               figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.ConstraintFigure">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -4411,9 +4291,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getCornerBentFigure"
               figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -4739,9 +4616,6 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"

@@ -11,8 +11,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.junit.utils;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -23,9 +25,7 @@ import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.AbstractBaseModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
-import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationModel;
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.uml2.uml.NamedElement;
 import org.junit.Assert;
@@ -105,10 +105,10 @@ public class DiagramUtils {
 		if (notationModel instanceof AbstractBaseModel) {
 			notationBaseModel = (AbstractBaseModel) notationModel;
 		} else {
-			Assert.fail("notation model is not an abstract base model");
+			Assert.fail("notation model is not an abstract base model"); //$NON-NLS-1$
 			return null;
 		}
-		Assert.assertTrue("notation resource contains nothing", notationBaseModel.getResource().getContents().size() >= 1);
+		Assert.assertTrue("notation resource contains nothing", notationBaseModel.getResource().getContents().size() >= 1); //$NON-NLS-1$
 		for (EObject object : notationBaseModel.getResource().getContents()) {
 			if (object instanceof Diagram && string.equals(((Diagram) object).getName())) {
 				return (Diagram) object;
@@ -117,6 +117,24 @@ public class DiagramUtils {
 		return null;
 	}
 
+	public static Collection<Diagram> getAllNotationDiagram(ModelSet modelSet, String string) {
+		IModel notationModel = modelSet.getModel(NotationModel.MODEL_ID);
+		Collection<Diagram> arrayList = new ArrayList<Diagram>();
+		AbstractBaseModel notationBaseModel = null;
+		if (notationModel instanceof AbstractBaseModel) {
+			notationBaseModel = (AbstractBaseModel) notationModel;
+		} else {
+			Assert.fail("notation model is not an abstract base model");
+			return null;
+		}
+		Assert.assertTrue("notation resource contains nothing", notationBaseModel.getResource().getContents().size() >= 1);
+		for (EObject object : notationBaseModel.getResource().getContents()) {
+			if (object instanceof Diagram && string.equals(((Diagram) object).getName())) {
+				arrayList.add((Diagram) object);
+			}
+		}
+		return arrayList;
+	}
 
 
 }

@@ -2,18 +2,18 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="configuration" nsURI="http://www.eclipse.org/papyrus/infra/viewpoints/configuration"
     nsPrefix="configuration">
-  <eClassifiers xsi:type="ecore:EClass" name="PapyrusConfiguration" eSuperTypes="../../org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.ecore#//ArchitectureFramework">
+  <eClassifiers xsi:type="ecore:EClass" name="PapyrusConfiguration" eSuperTypes="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.ecore#//ArchitectureFramework">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultStakeholder" lowerBound="1"
-        eType="ecore:EClass ../../org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.ecore#//Stakeholder"/>
+        eType="ecore:EClass platform:/plugin/org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.ecore#//Stakeholder"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metamodel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
         eType="#//Category" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PapyrusViewpoint" eSuperTypes="../../org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.ecore#//ArchitectureViewpoint">
+  <eClassifiers xsi:type="ecore:EClass" name="PapyrusViewpoint" eSuperTypes="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.ecore#//ArchitectureViewpoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//PapyrusViewpoint"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PapyrusView" eSuperTypes="../../org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.ecore#//ModelKind">
+  <eClassifiers xsi:type="ecore:EClass" name="PapyrusView" eSuperTypes="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.ecore#//ModelKind">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//PapyrusView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="profiles" upperBound="-1"

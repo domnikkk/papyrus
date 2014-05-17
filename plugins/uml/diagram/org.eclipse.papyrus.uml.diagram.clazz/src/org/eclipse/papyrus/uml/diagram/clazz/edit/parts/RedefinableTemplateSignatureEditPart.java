@@ -114,6 +114,7 @@ public class RedefinableTemplateSignatureEditPart extends AbstractRedefinableTem
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -136,12 +137,15 @@ public class RedefinableTemplateSignatureEditPart extends AbstractRedefinableTem
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+
+
 		if(childEditPart instanceof RedefinableTemplateSignatureTemplateParameterCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getTemplateParameterRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((RedefinableTemplateSignatureTemplateParameterCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
+
 		return false;
 	}
 
@@ -210,6 +214,7 @@ public class RedefinableTemplateSignatureEditPart extends AbstractRedefinableTem
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
 		return figure;
+
 	}
 
 	/**

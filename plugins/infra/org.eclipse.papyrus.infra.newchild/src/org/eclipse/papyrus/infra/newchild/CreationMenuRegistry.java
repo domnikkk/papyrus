@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.papyrus.infra.newchild.ElementCreationMenuModel.ElementCreationMenuModelPackage;
-import org.eclipse.papyrus.infra.newchild.ElementCreationMenuModel.Folder;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Folder;
 import org.osgi.framework.Bundle;
 /**
  * This class is used to load all extension point call org.eclipse.papyrus.infra.newchild

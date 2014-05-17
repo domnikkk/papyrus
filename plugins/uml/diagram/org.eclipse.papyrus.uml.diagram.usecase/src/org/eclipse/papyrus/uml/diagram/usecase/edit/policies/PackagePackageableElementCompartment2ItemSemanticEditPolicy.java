@@ -43,23 +43,37 @@ public class PackagePackageableElementCompartment2ItemSemanticEditPolicy extends
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.Constraint_3010 == requestElementType) {
+
 			return getGEFWrapper(new ConstraintInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Actor_3011 == requestElementType) {
+
 			return getGEFWrapper(new ActorInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.UseCase_3012 == requestElementType) {
+
 			return getGEFWrapper(new UseCaseInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Component_3013 == requestElementType) {
+
 			return getGEFWrapper(new ComponentInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Package_3014 == requestElementType) {
+
 			return getGEFWrapper(new PackageCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Comment_3015 == requestElementType) {
+
 			return getGEFWrapper(new CommentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

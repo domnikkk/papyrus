@@ -78,23 +78,15 @@ public class MessageNameEditPolicy extends AbstractEditPolicy implements AnchorL
 	 */
 	@Override
 	public void activate() {
-
 		ConnectionEditPart connEditPart = (ConnectionEditPart)getHost().getParent();
 		sourceConnectionAnchor = getSrcConnectionAnchor((ConnectionNodeEditPart)connEditPart);
-
 		if(sourceConnectionAnchor != null) {
-
 			sourceConnectionAnchor.addAnchorListener(this);
 		}
-
-
 		targetConnectionAnchor = getTargetConnectionAnchor((ConnectionNodeEditPart)connEditPart);
-
 		if(targetConnectionAnchor != null) {
-
 			targetConnectionAnchor.addAnchorListener(this);
 		}
-
 	}
 
 	/**
@@ -103,9 +95,7 @@ public class MessageNameEditPolicy extends AbstractEditPolicy implements AnchorL
 	 */
 	@Override
 	public void deactivate() {
-
 		sourceConnectionAnchor.removeAnchorListener(this);
-
 		targetConnectionAnchor.removeAnchorListener(this);
 	}
 
@@ -121,77 +111,48 @@ public class MessageNameEditPolicy extends AbstractEditPolicy implements AnchorL
 	 *        The location of the target connection anchor
 	 */
 	public void refreshEditPartDisplay(GraphicalEditPart editPart, Point src, Point target) {
-
-
 		IFigure figure = (editPart).getFigure();
-
-
 		((CustomWrappingLabel)figure).setRotation(Math.toRadians(RotationHelper.calculateRotAngle(src, target)));
 		((CustomWrappingLabel)figure).setTextAlignment(PositionConstants.CENTER);
 		((CustomWrappingLabel)figure).setTextStrikeThrough(false);
-
-
-
 	}
 
 	/**
 	 * When the anchor is moved the label icon is rotated to be parallel to the
 	 * connection
 	 **/
-
 	public void anchorMoved(ConnectionAnchor anchor) {
-		// TODO Auto-generated method stub
-
-
-
-
 		Point sLoc = new Point();
 		Point tLoc = new Point();
-
-
 		ConnectionEditPart connectionEditPart = (ConnectionEditPart)getHost().getParent();
 		//Style conStyle = ((View)connectionEditPart.getModel()).getStyle(NotationPackage.eINSTANCE.getLineStyle());
 		//((LineStyle)conStyle).setLineColor(777);
-
-
 		MessageNameEditPart messageNameEditPart = (MessageNameEditPart)getHost();
 		Message message = (Message)messageNameEditPart.resolveSemanticElement();
 		if(message != null) {
 			MessageEnd receiveEvent = message.getReceiveEvent();
 			MessageEnd sendEvent = message.getSendEvent();
 			LifelineEditPartCN lifeLineSrc = (LifelineEditPartCN)connectionEditPart.getSource();
-
-
 			Lifeline lifelineSrcOfConnection = (Lifeline)lifeLineSrc.resolveSemanticElement();
 			EList<InteractionFragment> listSrc = lifelineSrcOfConnection.getCoveredBys();
-
 			if(connectionEditPart.getFigure() instanceof Polyline) {
 				//verify which is the source of the message represented by the label
 				if(!listSrc.isEmpty()) {
 					done: for(int i = 0; i < listSrc.size(); i++) {
 						if(listSrc.get(i).equals(receiveEvent)) {
-
 							Polyline polyline = (Polyline)connectionEditPart.getFigure();
-
 							sLoc = polyline.getPoints().getLastPoint().getCopy();
 							tLoc = polyline.getPoints().getFirstPoint().getCopy();
 							break done;
-
 						} else if(listSrc.get(i).equals(sendEvent)) {
-
 							Polyline polyline = (Polyline)connectionEditPart.getFigure();
-
 							sLoc = polyline.getPoints().getFirstPoint().getCopy();
 							tLoc = polyline.getPoints().getLastPoint().getCopy();
 							break done;
-
 						}
 					}
-
-
 				}
 			}
-
 			//Code before adding messages (as labels) on the same connection
 			//		if(connectionEditPart.getModel() instanceof Edge) {
 			//			Edge edge = (Edge)connectionEditPart.getModel();
@@ -204,14 +165,11 @@ public class MessageNameEditPolicy extends AbstractEditPolicy implements AnchorL
 			//				}
 			//			}
 			//		}
-
-
 			/*
 			 * refreshEditPartDisplay calculates the rotation angle and does the
 			 * icon rotation
 			 */
 			refreshEditPartDisplay((GraphicalEditPart)getHost(), sLoc, tLoc);
-
 		}
 	}
 
@@ -221,7 +179,6 @@ public class MessageNameEditPolicy extends AbstractEditPolicy implements AnchorL
 	 *        the connection that connects two lifelines
 	 * @return the source container (ie. Lifeline) of the connection
 	 */
-
 	protected IFigure getSourceContainer(Connection conn) {
 		if(conn.getSourceAnchor() != null)
 			// return findContainerFigure(conn.getSourceAnchor().getOwner());
@@ -235,7 +192,6 @@ public class MessageNameEditPolicy extends AbstractEditPolicy implements AnchorL
 	 *        the connection that connects two lifelines
 	 * @return the target container (ie. Lifeline) of the connection
 	 */
-
 	protected IFigure getTargetContainer(Connection conn) {
 		if(conn.getTargetAnchor() != null)
 			// return findContainerFigure(conn.getTargetAnchor().getOwner());
@@ -248,15 +204,11 @@ public class MessageNameEditPolicy extends AbstractEditPolicy implements AnchorL
 	 * @param fig
 	 * @return the container figure
 	 */
-
 	private IFigure findContainerFigure(IFigure fig) {
 		if(fig == null)
 			return null;
-
 		if(fig.getLayoutManager() instanceof XYLayout)
 			return fig;
-
 		return findContainerFigure(fig.getParent());
 	}
-
 }

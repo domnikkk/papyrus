@@ -34,16 +34,18 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart
-{
+public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart {
+
 	/**
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 3121;
+
 	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
+
 	/**
 	 * @generated
 	 */
@@ -74,9 +76,10 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
+				if(result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -94,11 +97,13 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -110,10 +115,11 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusRoundedNodeFigure
+	 * 
 	 * @generated
 	 */
 	public PapyrusRoundedNodeFigure getPrimaryShape() {
-		return (PapyrusRoundedNodeFigure) primaryShape;
+		return (PapyrusRoundedNodeFigure)primaryShape;
 	}
 
 	/**
@@ -134,12 +140,15 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -150,7 +159,7 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart
 	 * @generated
 	 */
 	public IFigure getContentPane() {
-		if (contentPane != null) {
+		if(contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -160,7 +169,7 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart
 	 * @generated
 	 */
 	protected void setForegroundColor(Color color) {
-		if (primaryShape != null) {
+		if(primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -176,8 +185,8 @@ public class BehaviorPortEditPart extends AbstractBehaviorPortEditPart
 	 * @generated
 	 */
 	protected void setLineType(int style) {
-		if (primaryShape instanceof NodeFigure) {
-			((NodeFigure) primaryShape).setLineStyle(style);
+		if(primaryShape instanceof NodeFigure) {
+			((NodeFigure)primaryShape).setLineStyle(style);
 		}
 	}
 }

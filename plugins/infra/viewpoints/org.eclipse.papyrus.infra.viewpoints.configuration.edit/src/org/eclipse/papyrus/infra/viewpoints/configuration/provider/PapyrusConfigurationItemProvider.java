@@ -16,18 +16,13 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
@@ -44,13 +39,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.provider.ArchitectureFramew
  * @generated
  */
 public class PapyrusConfigurationItemProvider
-	extends ArchitectureFrameworkItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ArchitectureFrameworkItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -74,7 +63,6 @@ public class PapyrusConfigurationItemProvider
 
 			addDefaultStakeholderPropertyDescriptor(object);
 			addMetamodelPropertyDescriptor(object);
-			addCategoriesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -123,28 +111,6 @@ public class PapyrusConfigurationItemProvider
 	}
 	
 	/**
-	 * This adds a property descriptor for the Categories feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCategoriesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PapyrusConfiguration_categories_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PapyrusConfiguration_categories_feature", "_UI_PapyrusConfiguration_type"),
-				 ConfigurationPackage.Literals.PAPYRUS_CONFIGURATION__CATEGORIES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -178,7 +144,7 @@ public class PapyrusConfigurationItemProvider
 	 * This returns PapyrusConfiguration.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT - Custom Image
 	 */
 	@Override
 	public Object getImage(Object object) {
@@ -249,7 +215,7 @@ public class PapyrusConfigurationItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ConfigurationEditPlugin.INSTANCE;
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

@@ -602,74 +602,106 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch(visualID) {
 		case MultiDependencyLabelEditPart.VISUAL_ID:
 			return getDependencyName_7Parser();
+
 		case ModelNameEditPart.VISUAL_ID:
 			return getModelName_48Parser();
+
 		case PackageNameEditPart.VISUAL_ID:
 			return getPackageName_35Parser();
+
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_2Parser();
 		case ConstraintSpecificationEditPart.VISUAL_ID:
 			return getConstraintSpecification_3Parser();
+
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_1Parser();
+
 		case ExecutionEnvironmentNameEditPart.VISUAL_ID:
 			return getExecutionEnvironmentName_5Parser();
+
 		case DeviceNameEditPart.VISUAL_ID:
 			return getDeviceName_6Parser();
+
 		case ArtifactNameEditPart.VISUAL_ID:
 			return getArtifactName_8Parser();
+
 		case NodeNameEditPart.VISUAL_ID:
 			return getNodeName_9Parser();
+
 		case DefaultNamedElementNameEditPart.VISUAL_ID:
 			return getNamedElementName_53Parser();
+
 		case ModelNameEditPartCN.VISUAL_ID:
 			return getModelName_50Parser();
+
 		case PackageNameEditPartCN.VISUAL_ID:
 			return getPackageName_37Parser();
+
 		case DeviceNameEditPartCN.VISUAL_ID:
 			return getDeviceName_20Parser();
+
 		case NestedDeviceNameEditPartCN.VISUAL_ID:
 			return getDeviceName_45Parser();
+
 		case ExecutionEnvironmentNameEditPartCN.VISUAL_ID:
 			return getExecutionEnvironmentName_22Parser();
+
 		case NestedExecutionEnvironmentNameEditPartCN.VISUAL_ID:
 			return getExecutionEnvironmentName_47Parser();
+
 		case NodeNameEditPartCN.VISUAL_ID:
 			return getNodeName_24Parser();
+
 		case NestedNodeNameEditPart.VISUAL_ID:
 			return getNodeName_43Parser();
+
 		case ArtifactNameEditPartCN.VISUAL_ID:
 			return getArtifactName_27Parser();
+
 		case ArtifactNameEditPartACN.VISUAL_ID:
 			return getArtifactName_29Parser();
+
 		case NestedArtifactNameEditPart.VISUAL_ID:
 			return getArtifactName_41Parser();
+
 		case CommentBodyEditPartCN.VISUAL_ID:
 			return getCommentBody_55Parser();
+
 		case ConstraintNameEditPartCN.VISUAL_ID:
 			return getConstraintName_57Parser();
 		case ConstraintSpecificationEditPartCN.VISUAL_ID:
 			return getConstraintSpecification_58Parser();
+
+
+
+
 		case DeploymentNameEditPart.VISUAL_ID:
 			return getDeploymentName_13Parser();
 		case DeploymentAppliedStereotypeEditPart.VISUAL_ID:
 			return getDeploymentName_14Parser();
+
 		case ManifestationNameEditPart.VISUAL_ID:
 			return getManifestationName_10Parser();
 		case ManifestationAppliedStereotypeEditPart.VISUAL_ID:
 			return getManifestationName_11Parser();
+
 		case GeneralizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getGeneralizationIsSubstitutable_4Parser();
+
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_12Parser();
 		case DependencyAppliedStereotypeEditPart.VISUAL_ID:
 			return getDependencyName_15Parser();
+
+
 		}
 		return null;
 	}
 
 	/**
 	 * Utility method that consults ParserService
+	 * 
 	 * @generated
 	 */
 	public static IParser getParser(IElementType type, EObject object, String parserHint) {

@@ -43,6 +43,7 @@ import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationExceptio
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EAttributeTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EReferenceTreeElement;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeproxyFactory;
 
@@ -183,6 +184,7 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 		final EObject eObject = (EObject)element;
 		final EObjectTreeElement eObjectProxy = TreeproxyFactory.eINSTANCE.createEObjectTreeElement();
 		eObjectProxy.setEObject(eObject);
+		eObjectProxy.setParent(parent);
 		return eObjectProxy;
 	}
 
@@ -351,7 +353,7 @@ public class CustomizedTreeContentProvider implements ICustomizedTreeContentProv
 		Object result = null;
 		if (element instanceof TreeElement) {
 			final TreeElement treeElement = (TreeElement) element;
-			result = treeElement.eContainer();
+			result = treeElement.getParent();
 		}
 		return result;
 	}

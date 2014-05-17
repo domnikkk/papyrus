@@ -41,12 +41,12 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.commands.CommonDeferredCreateConnectionViewCommand;
 import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
+import org.eclipse.papyrus.uml.diagram.common.helper.AssociationHelper;
 import org.eclipse.papyrus.uml.diagram.common.helper.ElementHelper;
 import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.DurationObservation;
 import org.eclipse.uml2.uml.NamedElement;
 
-// TODO: Auto-generated Javadoc
 /**
  * This class handles {@link DurationObservation} drop in diagram.
  * Derived from {@link AssociationHelper}
@@ -81,26 +81,19 @@ public class DurationObservationHelper extends ElementHelper {
 	public Command dropDurationObservation(DurationObservation durationObservation, EditPartViewer viewer, PreferencesHint diagramPreferencesHint, Point location, View containerView) {
 		CompositeCommand cc = new CompositeCommand("dropDurationObservation"); //$NON-NLS-1$
 		int nbEvents = durationObservation.getEvents().size();
-
 		// 0. Obtain list of the events
 		ArrayList<NamedElement> endToConnect = new ArrayList<NamedElement>(durationObservation.getEvents());
 		GraphicalEditPart[] endEditPart = new GraphicalEditPart[nbEvents];
-
 		// 1. Look for if each event is on the diagram
 		Iterator<NamedElement> iteratorProp = endToConnect.iterator();
 		int index = 0;
 		while(iteratorProp.hasNext()) {
-
 			NamedElement currentEvent = iteratorProp.next();
-
 			// look for if an EditPart exist for this element
 			Collection<?> editPartSet = viewer.getEditPartRegistry().values();
 			Iterator<?> editPartIterator = editPartSet.iterator();
-
 			while(editPartIterator.hasNext() && endEditPart[index] == null) {
-
 				EditPart currentEditPart = (EditPart)editPartIterator.next();
-
 				if(currentEditPart instanceof GraphicalEditPart && currentEvent.equals(((GraphicalEditPart)currentEditPart).resolveSemanticElement())) {
 					/**
 					 * Warning : TimeObservationEditPart, TimeObservationStereotypeLabelEditPart and
@@ -109,51 +102,38 @@ public class DurationObservationHelper extends ElementHelper {
 					if(!(currentEditPart instanceof CompartmentEditPart) && !(currentEditPart instanceof LabelEditPart))
 						endEditPart[index] = (GraphicalEditPart)currentEditPart;
 				}
-
 			}
 			index += 1;
 		}
-
 		// 2. creation of the node DurationObservation
-
 		IAdaptable elementAdapter = new EObjectAdapter(durationObservation);
 		ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, ((IHintedType)UMLElementTypes.DurationObservation_8007).getSemanticHint(), ViewUtil.APPEND, true, diagramPreferencesHint);
 		CreateCommand nodeCreationCommand = new CreateCommand(getEditingDomain(), descriptor, ((View)containerView));
 		cc.compose(nodeCreationCommand);
-
 		SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "move", (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue(), location); //$NON-NLS-1$
 		cc.compose(setBoundsCommand);
-
 		if(nbEvents != 0) {
 			IAdaptable sourceEventAdapter = null;
 			IAdaptable targetEvent0Adapter = null;
 			IAdaptable targetEvent1Adapter = null;
-
 			// obtain the node figure
 			sourceEventAdapter = (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue();
-
 			// used in the creation command of each event
 			ConnectionViewDescriptor dashedLineViewDescriptor = new ConnectionViewDescriptor(UMLElementTypes.DurationObservationEvent_8012, ((IHintedType)UMLElementTypes.DurationObservationEvent_8012).getSemanticHint(), diagramPreferencesHint);
-
 			// 3. creation of the dashed line between the associationClass link
 			if(endEditPart[0] != null) {
-
 				targetEvent0Adapter = new SemanticAdapter(null, endEditPart[0].getModel());
 				CommonDeferredCreateConnectionViewCommand dashedLineCmd = new CommonDeferredCreateConnectionViewCommand(getEditingDomain(), ((IHintedType)UMLElementTypes.DurationObservationEvent_8012).getSemanticHint(), ((IAdaptable)sourceEventAdapter), ((IAdaptable)targetEvent0Adapter), viewer, diagramPreferencesHint, dashedLineViewDescriptor, null);
 				dashedLineCmd.setElement(durationObservation);
 				cc.compose(dashedLineCmd);
-
 			}
-
 			if((nbEvents == 2) && endEditPart[1] != null) {
 				targetEvent1Adapter = new SemanticAdapter(null, endEditPart[1].getModel());
 				CommonDeferredCreateConnectionViewCommand dashedLineCmd = new CommonDeferredCreateConnectionViewCommand(getEditingDomain(), ((IHintedType)UMLElementTypes.DurationObservationEvent_8012).getSemanticHint(), ((IAdaptable)sourceEventAdapter), ((IAdaptable)targetEvent1Adapter), viewer, diagramPreferencesHint, dashedLineViewDescriptor, null);
 				dashedLineCmd.setElement(durationObservation);
 				cc.compose(dashedLineCmd);
 			}
-
 		}
 		return new ICommandProxy(cc);
 	}
-
 }

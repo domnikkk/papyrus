@@ -133,4 +133,9 @@ public interface ISashWindowsContainer {
 	public abstract void selectPage(IPage page);
 
 	public abstract void visit(IPageVisitor pageVisitor);
+	
+	/**
+	 * @return <code>true</code> if already disposed
+	 */
+	public boolean isDisposed();
 }

@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.edit.parts;
 
@@ -26,6 +29,7 @@ import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
+import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -39,12 +43,14 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultNodeLabelDragPolicy;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.extensionpoints.editors.Activator;
 import org.eclipse.papyrus.extensionpoints.editors.configuration.IAdvancedEditorConfiguration;
+import org.eclipse.papyrus.extensionpoints.editors.configuration.ICustomDirectEditorConfiguration;
 import org.eclipse.papyrus.extensionpoints.editors.configuration.IDirectEditorConfiguration;
 import org.eclipse.papyrus.extensionpoints.editors.configuration.IPopupEditorConfiguration;
 import org.eclipse.papyrus.extensionpoints.editors.ui.ExtendedDirectEditionDialog;
@@ -52,31 +58,31 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusCompartmentEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.policies.CustomLifelineNameEditPolicy;
-import org.eclipse.papyrus.uml.diagram.timing.custom.figures.LifelineVerticalLabel;
 import org.eclipse.papyrus.uml.diagram.timing.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.timing.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.timing.providers.UMLParserProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.accessibility.AccessibleEvent;
+import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Feature;
 
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
-public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart implements ITextAwareEditPart {
+public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
 
 	/**
 	 * @generated
@@ -105,14 +111,12 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
-	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
-	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -120,26 +124,25 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	public FullLifelineNameEditPart(final View view) {
+	public FullLifelineNameEditPart(View view) {
 		super(view);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new TimingDiagramEditPart.NodeLabelDragPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new DefaultNodeLabelDragPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new CustomLifelineNameEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected String getLabelTextHelper(final IFigure figure) {
+	protected String getLabelTextHelper(IFigure figure) {
 		if(figure instanceof WrappingLabel) {
 			return ((WrappingLabel)figure).getText();
 		} else if(figure instanceof ILabelFigure) {
@@ -152,7 +155,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	protected void setLabelTextHelper(final IFigure figure, final String text) {
+	protected void setLabelTextHelper(IFigure figure, String text) {
 		if(figure instanceof WrappingLabel) {
 			((WrappingLabel)figure).setText(text);
 		} else if(figure instanceof ILabelFigure) {
@@ -165,7 +168,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	protected Image getLabelIconHelper(final IFigure figure) {
+	protected Image getLabelIconHelper(IFigure figure) {
 		if(figure instanceof WrappingLabel) {
 			return ((WrappingLabel)figure).getIcon();
 		} else if(figure instanceof ILabelFigure) {
@@ -178,7 +181,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	protected void setLabelIconHelper(final IFigure figure, final Image icon) {
+	protected void setLabelIconHelper(IFigure figure, Image icon) {
 		if(figure instanceof WrappingLabel) {
 			((WrappingLabel)figure).setIcon(icon);
 		} else if(figure instanceof ILabelFigure) {
@@ -191,10 +194,10 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	public void setLabel(final LifelineVerticalLabel figure) {
+	public void setLabel(IFigure figure) {
 		unregisterVisuals();
 		setFigure(figure);
-		this.defaultText = getLabelTextHelper(figure);
+		defaultText = getLabelTextHelper(figure);
 		registerVisuals();
 		refreshVisuals();
 	}
@@ -202,17 +205,22 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
-	protected List getModelChildren() {
+	protected List<?> getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
-	public IGraphicalEditPart getChildBySemanticHint(final String semanticHint) {
+	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setParser(IParser parser) {
+		this.parser = parser;
 	}
 
 	/**
@@ -234,12 +242,12 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	 */
 	protected String getLabelText() {
 		String text = null;
-		final EObject parserElement = getParserElement();
+		EObject parserElement = getParserElement();
 		if(parserElement != null && getParser() != null) {
 			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
 		if(text == null || text.length() == 0) {
-			text = this.defaultText;
+			text = defaultText;
 		}
 		return text;
 	}
@@ -247,13 +255,13 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	public void setLabelText(final String text) {
+	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
-		final Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		if(pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
 			((UMLTextSelectionEditPolicy)pdEditPolicy).refreshFeedback();
 		}
-		final Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
+		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
 		if(sfEditPolicy instanceof UMLTextSelectionEditPolicy) {
 			((UMLTextSelectionEditPolicy)sfEditPolicy).refreshFeedback();
 		}
@@ -287,18 +295,17 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						final IParserEditStatus valid = (IParserEditStatus)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus)getEditingDomain().runExclusive(new RunnableWithResult.Impl<java.lang.Object>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String)value));
 							}
 						});
-						return valid.getCode() == IParserEditStatus.EDITABLE ? null : valid.getMessage();
-					} catch (final InterruptedException ie) {
+						return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
+					} catch (InterruptedException ie) {
 						ie.printStackTrace();
 					}
 				}
-
 				// shouldn't get here
 				return null;
 			}
@@ -326,26 +333,26 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	 * @generated
 	 */
 	public IParser getParser() {
-		if(this.parser == null) {
-			this.parser = UMLParserProvider.getParser(UMLElementTypes.Lifeline_19, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.timing.edit.parts.FullLifelineNameEditPart.VISUAL_ID));
+		if(parser == null) {
+			parser = UMLParserProvider.getParser(UMLElementTypes.Lifeline_19, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.timing.edit.parts.FullLifelineNameEditPart.VISUAL_ID));
 		}
-		return this.parser;
+		return parser;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected DirectEditManager getManager() {
-		if(this.manager == null) {
+		if(manager == null) {
 			setManager(new MultilineLabelDirectEditManager(this, MultilineLabelDirectEditManager.getTextCellEditorClass(this), UMLEditPartFactory.getTextCellEditorLocator(this)));
 		}
-		return this.manager;
+		return manager;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected void setManager(final DirectEditManager manager) {
+	protected void setManager(DirectEditManager manager) {
 		this.manager = manager;
 	}
 
@@ -353,13 +360,18 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	 * @generated
 	 */
 	protected void performDirectEdit() {
-		getManager().show();
+		BusyIndicator.showWhile(Display.getDefault(), new java.lang.Runnable() {
+
+			public void run() {
+				getManager().show();
+			}
+		});
 	}
 
 	/**
 	 * @generated
 	 */
-	protected void performDirectEdit(final Point eventLocation) {
+	protected void performDirectEdit(Point eventLocation) {
 		if(getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager)getManager()).show(eventLocation.getSWTPoint());
 		}
@@ -368,7 +380,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	private void performDirectEdit(final char initialCharacter) {
+	private void performDirectEdit(char initialCharacter) {
 		if(getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager)getManager()).show(initialCharacter);
 		} else {
@@ -379,46 +391,47 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void performDirectEditRequest(final Request request) {
-
+	protected void performDirectEditRequest(Request request) {
 		final Request theRequest = request;
-
-		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == this.directEditionMode) {
-			this.directEditionMode = getDirectEditionType();
+		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
+			directEditionMode = getDirectEditionType();
 		}
-		switch(this.directEditionMode) {
+		switch(directEditionMode) {
 		case IDirectEdition.NO_DIRECT_EDITION:
 			// no direct edition mode => does nothing
 			return;
 		case IDirectEdition.EXTENDED_DIRECT_EDITOR:
 			updateExtendedEditorConfiguration();
-			if(this.configuration == null || this.configuration.getLanguage() == null) {
+			if(configuration == null || configuration.getLanguage() == null) {
+				// Create default edit manager
+				setManager(new MultilineLabelDirectEditManager(this, MultilineLabelDirectEditManager.getTextCellEditorClass(this), UMLEditPartFactory.getTextCellEditorLocator(this)));
 				performDefaultDirectEditorEdit(theRequest);
 			} else {
-				this.configuration.preEditAction(resolveSemanticElement());
+				configuration.preEditAction(resolveSemanticElement());
 				Dialog dialog = null;
-				if(this.configuration instanceof IPopupEditorConfiguration) {
-					final IPopupEditorHelper helper = ((IPopupEditorConfiguration)this.configuration).createPopupEditorHelper(this);
+				if(configuration instanceof ICustomDirectEditorConfiguration) {
+					setManager(((ICustomDirectEditorConfiguration)configuration).createDirectEditManager(this));
+					initializeDirectEditManager(theRequest);
+					return;
+				} else if(configuration instanceof IPopupEditorConfiguration) {
+					IPopupEditorHelper helper = ((IPopupEditorConfiguration)configuration).createPopupEditorHelper(this);
 					helper.showEditor();
 					return;
-				} else if(this.configuration instanceof IAdvancedEditorConfiguration) {
-					dialog = ((IAdvancedEditorConfiguration)this.configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), this.configuration.getTextToEdit(resolveSemanticElement()));
-				} else if(this.configuration instanceof IDirectEditorConfiguration) {
-					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), this.configuration.getTextToEdit(resolveSemanticElement()), this.configuration);
+				} else if(configuration instanceof IAdvancedEditorConfiguration) {
+					dialog = ((IAdvancedEditorConfiguration)configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
+				} else if(configuration instanceof IDirectEditorConfiguration) {
+					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), ((IDirectEditorConfiguration)configuration).getTextToEdit(resolveSemanticElement()), (IDirectEditorConfiguration)configuration);
 				} else {
 					return;
 				}
 				final Dialog finalDialog = dialog;
-
 				if(Window.OK == dialog.open()) {
-					final TransactionalEditingDomain domain = getEditingDomain();
-					final RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
+					TransactionalEditingDomain domain = getEditingDomain();
+					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
 
 						@Override
 						protected void doExecute() {
-							FullLifelineNameEditPart.this.configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
-
+							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -426,28 +439,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 			}
 			break;
 		case IDirectEdition.DEFAULT_DIRECT_EDITOR:
-
-			// initialize the direct edit manager
-			try {
-				getEditingDomain().runExclusive(new Runnable() {
-
-					public void run() {
-						if(isActive() && isEditable()) {
-							if(theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-								final Character initialChar = (Character)theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
-								performDirectEdit(initialChar.charValue());
-							} else if((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
-								final DirectEditRequest editRequest = (DirectEditRequest)theRequest;
-								performDirectEdit(editRequest.getLocation());
-							} else {
-								performDirectEdit();
-							}
-						}
-					}
-				});
-			} catch (final InterruptedException e) {
-				e.printStackTrace();
-			}
+			initializeDirectEditManager(theRequest);
 			break;
 		default:
 			break;
@@ -457,7 +449,30 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
+	protected void initializeDirectEditManager(final Request request) {
+		// initialize the direct edit manager
+		try {
+			getEditingDomain().runExclusive(new Runnable() {
+
+				public void run() {
+					if(isActive() && isEditable()) {
+						if(request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character)request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+							performDirectEdit(initialChar.charValue());
+						} else {
+							performDirectEdit();
+						}
+					}
+				}
+			});
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshLabel();
@@ -471,16 +486,16 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	 * @generated
 	 */
 	protected void refreshLabel() {
-		final EditPolicy maskLabelPolicy = getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		EditPolicy maskLabelPolicy = getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
 		if(maskLabelPolicy == null) {
 			setLabelTextHelper(getFigure(), getLabelText());
 			setLabelIconHelper(getFigure(), getLabelIcon());
 		}
-		final Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		if(pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
 			((UMLTextSelectionEditPolicy)pdEditPolicy).refreshFeedback();
 		}
-		final Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
+		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
 		if(sfEditPolicy instanceof UMLTextSelectionEditPolicy) {
 			((UMLTextSelectionEditPolicy)sfEditPolicy).refreshFeedback();
 		}
@@ -490,7 +505,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	 * @generated
 	 */
 	protected void refreshUnderline() {
-		final FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if(style != null && getFigure() instanceof WrappingLabel) {
 			((WrappingLabel)getFigure()).setTextUnderline(style.isUnderline());
 		}
@@ -507,7 +522,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	 * @generated
 	 */
 	protected void refreshStrikeThrough() {
-		final FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if(style != null && getFigure() instanceof WrappingLabel) {
 			((WrappingLabel)getFigure()).setTextStrikeThrough(style.isStrikeThrough());
 		}
@@ -516,11 +531,10 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void refreshFont() {
-		final FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if(style != null) {
-			final FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? SWT.BOLD : SWT.NORMAL) | (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
+			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? SWT.BOLD : SWT.NORMAL) | (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
 			setFont(fontData);
 		}
 	}
@@ -528,21 +542,19 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void setFontColor(final Color color) {
+	protected void setFontColor(Color color) {
 		getFigure().setForegroundColor(color);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void addSemanticListeners() {
 		if(getParser() instanceof ISemanticParser) {
-			final EObject element = resolveSemanticElement();
-			this.parserElements = ((ISemanticParser)getParser()).getSemanticElementsBeingParsed(element);
-			for(int i = 0; i < this.parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (EObject)this.parserElements.get(i)); //$NON-NLS-1$
+			EObject element = resolveSemanticElement();
+			parserElements = ((ISemanticParser)getParser()).getSemanticElementsBeingParsed(element);
+			for(int i = 0; i < parserElements.size(); i++) {
+				addListenerFilter("SemanticModel" + i, this, (EObject)parserElements.get(i)); //$NON-NLS-1$
 			}
 		} else {
 			super.addSemanticListeners();
@@ -552,10 +564,9 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void removeSemanticListeners() {
-		if(this.parserElements != null) {
-			for(int i = 0; i < this.parserElements.size(); i++) {
+		if(parserElements != null) {
+			for(int i = 0; i < parserElements.size(); i++) {
 				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
 			}
 		} else {
@@ -566,18 +577,16 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
 	protected AccessibleEditPart getAccessibleEditPart() {
-		if(this.accessibleEP == null) {
-			this.accessibleEP = new AccessibleGraphicalEditPart() {
+		if(accessibleEP == null) {
+			accessibleEP = new AccessibleGraphicalEditPart() {
 
-				@Override
-				public void getName(final AccessibleEvent e) {
+				public void getName(AccessibleEvent e) {
 					e.result = getLabelTextHelper(getFigure());
 				}
 			};
 		}
-		return this.accessibleEP;
+		return accessibleEP;
 	}
 
 	/**
@@ -590,8 +599,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * Returns the kind of associated editor for direct edition.
 	 * 
-	 * @return an <code>int</code> corresponding to the kind of direct editor, @see
-	 *         org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition
+	 * @return an <code>int</code> corresponding to the kind of direct editor, @see org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition
 	 * @generated
 	 */
 	public int getDirectEditionType() {
@@ -602,7 +610,6 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
-
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -632,39 +639,35 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 
 	/**
 	 * Initializes the extended editor configuration
-	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
-		if(this.configuration == null) {
+		if(configuration == null) {
 			final String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
 			if(languagePreferred != null && !languagePreferred.equals("")) {
-				this.configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
+				configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 			} else {
-				this.configuration = DirectEditorsUtil.findEditorConfiguration(IDirectEditorsIds.UML_LANGUAGE, resolveSemanticElement().eClass().getInstanceClassName());
+				configuration = DirectEditorsUtil.findEditorConfiguration(IDirectEditorsIds.UML_LANGUAGE, resolveSemanticElement().eClass().getInstanceClassName());
 			}
 		}
 	}
 
 	/**
 	 * Updates the preference configuration
-	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
-		final String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-		if(languagePreferred != null && !languagePreferred.equals("") && languagePreferred != this.configuration.getLanguage()) {
-			this.configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
+		String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
+		if(languagePreferred != null && !languagePreferred.equals("") && !languagePreferred.equals(configuration.getLanguage())) {
+			configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 		} else if(IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
-			this.configuration = null;
+			configuration = null;
 		}
 	}
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * 
-	 * @param theRequest
-	 *        the direct edit request that starts the direct edit system
+	 * @param theRequest the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {
@@ -675,10 +678,10 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 				public void run() {
 					if(isActive() && isEditable()) {
 						if(theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-							final Character initialChar = (Character)theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+							Character initialChar = (Character)theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 							performDirectEdit(initialChar.charValue());
 						} else if((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
-							final DirectEditRequest editRequest = (DirectEditRequest)theRequest;
+							DirectEditRequest editRequest = (DirectEditRequest)theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {
 							performDirectEdit();
@@ -686,7 +689,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 					}
 				}
 			});
-		} catch (final InterruptedException e) {
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
@@ -694,7 +697,6 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void addNotationalListeners() {
 		super.addNotationalListeners();
 		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
@@ -703,7 +705,6 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void removeNotationalListeners() {
 		super.removeNotationalListeners();
 		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
@@ -712,12 +713,11 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void handleNotificationEvent(final Notification event) {
+	protected void handleNotificationEvent(Notification event) {
 		refreshLabel();
-		final Object feature = event.getFeature();
+		Object feature = event.getFeature();
 		if(NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
-			final Integer c = (Integer)event.getNewValue();
+			Integer c = (Integer)event.getNewValue();
 			setFontColor(DiagramColorRegistry.getInstance().getColor(c));
 		} else if(NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature)) {
 			refreshUnderline();
@@ -730,7 +730,7 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 				refreshLabel();
 			}
 			if(getParser() instanceof ISemanticParser) {
-				final ISemanticParser modelParser = (ISemanticParser)getParser();
+				ISemanticParser modelParser = (ISemanticParser)getParser();
 				if(modelParser.areSemanticElementsAffected(null, event)) {
 					removeSemanticListeners();
 					if(resolveSemanticElement() != null) {
@@ -740,14 +740,12 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 				}
 			}
 		}
-
 		super.handleNotificationEvent(event);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	protected IFigure createFigure() {
 		// Parent should assign one using setLabel() method
 		return null;
@@ -761,7 +759,6 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	/**
 	 * @generated
 	 */
-	@Override
 	public void activate() {
 		super.activate();
 		addOwnerElementListeners();
@@ -771,18 +768,15 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	 * @generated
 	 */
 	protected void addOwnerElementListeners() {
-		addListenerFilter(ADD_PARENT_MODEL, this, ((View)getParent().getModel()));
-
+		addListenerFilter(ADD_PARENT_MODEL, this, ((View)getParent().getModel())); //$NON-NLS-1$
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	public void deactivate() {
 		removeOwnerElementListeners();
 		super.deactivate();
-
 	}
 
 	/**
@@ -790,7 +784,5 @@ public class FullLifelineNameEditPart extends PapyrusCompartmentEditPart impleme
 	 */
 	protected void removeOwnerElementListeners() {
 		removeListenerFilter(ADD_PARENT_MODEL);
-
 	}
-
 }

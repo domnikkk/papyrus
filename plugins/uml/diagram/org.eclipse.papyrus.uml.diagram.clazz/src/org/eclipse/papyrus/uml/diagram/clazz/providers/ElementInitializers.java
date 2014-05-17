@@ -284,7 +284,9 @@ public class ElementInitializers {
 			Object value_0 = name_Property_3005(instance);
 			instance.setName((String)value_0);
 			instance.setLower(0);
+
 			instance.setUpper(1);
+
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}

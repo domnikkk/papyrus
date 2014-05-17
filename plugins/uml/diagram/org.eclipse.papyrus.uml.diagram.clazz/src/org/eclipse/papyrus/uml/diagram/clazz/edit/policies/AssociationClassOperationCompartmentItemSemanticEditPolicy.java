@@ -38,8 +38,12 @@ public class AssociationClassOperationCompartmentItemSemanticEditPolicy extends 
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.Operation_3003 == requestElementType) {
+
 			return getGEFWrapper(new OperationForComponentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

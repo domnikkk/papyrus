@@ -1,8 +1,5 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
@@ -10,198 +7,81 @@
 </head>
 
 <body>
-Papyrus supports the creation of constraints. In the sequel, we describe
+Papyrus supports an additional profile for domain specific modeling languages (DSML) that
+refines how constraints are validated. In the sequel, we describe how this is done.
+
+<p>
+The additional profile enables a more precise specification of validation properties:
+
+<ul>
+<li>The mode: define if the validation of the constraint is done in
+	&ldquo;batch&rdquo; or &ldquo;live&rdquo; mode
+<li>The severity: The severity of constraint violation. It can be one of INFORMATION, WARNING or ERROR.
+	The latter is the default severity (if none specified). The CANCEL severity should be used
+	with caution, as it causes the validation operation to be interrupted, possibly
+	resulting in the loss of valuable diagnostic information from other constraints.
+<li>The message: the message that will be displayed if the constraint is violated
+<li>The description: a description of the constraint
+<li>Enabled default: indicates if this constraint should be enabled by
+</ul>
+
+CAVEAT: The information added via the profile is currently not taken into account OCL validation.
+The support will be added soon.
+
+<p>
+
+Advanced users you can also precise<br>
+<ul>
+<li>The Id: the constraint id
+<li>The status code: The plug-in unique status code, useful for logging.
+<li>The target of validation, the element to be validated
+</ul>
+
+<h3 id="How_to_4">How to apply the DSML validation profile</h3>
+
 <ol>
-<li>How-to create constraints
-<li>How-to configure how constraint validation can be achieved.
+<li>Select the profile root and apply the profile
+<li>Select the profile tab in the property view
+<li>Click on the registered profile button
+<li>Select the DSML validation profile
 </ol>
 
+<center>
+<img vspace="5" src="DSMLprofileApplication.png"><br>
+Apply the DSML profile
+</center>
 
+<ol>
+<li>Select the constraint
+<li>Select profile tab of the property view
+<li>Click on apply profile button
+<li>Select validationRule stereotype
+</ol>
 
-There are two different ways to create constraints.
-(1). It is tedious.
+<center>
+<img vspace="5" src="stereotypeApplication.png"><br>
+Apply stereotype &ldquo;ValidationRule &rdquo;
+</center>
 
-  <p>In order to validate constraints from a profile, first creation of constraints with
-  specific annotations will be explained and then generation of validation will be
-  explained.<br />
-  <img border="0" src="ConstraintCreationUseCase.png" /><br />
-  Figure 1: Constraint creation<br /></p>
+Then you can edit a stereotype attribute to add information about the behavior of the
+validation.
+<p>
 
+<center>
+<img vspace="5" src="AnnotationEdition.png"><br>
+Edition of a stereotype attribute
+</center>
 
-  <h1 id="Create_a_constraint">Create a constraint</h1>
+<h1 id="Generation_from_Constraints">Generation from Constraints</h1>
 
-  <p>In the context of the construction of a profile (but also in any class diagram), it
-  is possible to add constraints.<br />
-  A constraint is a condition or restriction expressed in a language for the purpose of
-  declaring some of the semantics of an element.<br /></p>
+Constraints expressed in OCL can be validated directly. This is not the case for Java constraints
+which must be placed in a suitable plugin. Papyrus supports the generation of this plugin.
 
-  <h3 id="How_to">How to</h3>
+<p>
 
-  <p>In the context of a profile diagram you can create a constraint from the
-  palette.<br /></p>
-  <pre>
-<img border="0" src="diagramConstraintCreation.png" /> <br />
-</pre>
+<h1>CAVEAT</it>: The following information not up to date and will be updated soon</h1>
 
-  <p>Figure 2: Constraint creation from the palette<br />
-  From the model explorer, click right --&gt; new child--&gt; Create a new
-  Constraint<br /></p>
-  <pre>
- <img border="0" src="MEConstraintCreation.png" /><br /> 
-</pre>
-
-  <p>Figure 3: Constraint creation from the model explorer<br /></p>
-
-  <h2 id="Specify_the_context">Specify the context</h2>
-
-  <p>Before editing a constraint, it is important to specify the context of a constraint;
-  it can be for instance a stereotype or an operation (in fact, it can be any meta-model
-  element that inherits from namespace).<br /></p>
-
-  <h3 id="How_to_2">How to</h3>
-
-  <p>Since Eclipse Luna, Papyrus automatically selects the context-link-tool after
-  creation of a constraint. It will also already set the newly created constraint as one
-  end of the context-link relationship. The user needs to select the owning context such
-  as a stereotype, class or operation (must subclass namespace on meta-model
-  level).<br />
-  If you want to create this link later, select the associated tool manually. It can be
-  found in the relationships drawer of the the palette, as shown in the following
-  figure:<br /></p>
-  <pre>
-<img border="0" src="DiagramContextLink.png" /><br />
-</pre>
-
-  <p>Figure 4: Context link creation in a the profile diagram<br />
-  <br />
-  From the property view, the context can be specified:<br /></p>
-  <pre>
-<img border="0" src="propertyviewContextlink.png" /><br />
-</pre>
-
-  <p>Figure 5: specify context from the property view<br /></p>
-
-  <h2 id="Specify_the_language">Specify the language</h2>
-
-  <p>It is possible to precise the language of the constraint into Papyrus. The
-  constraint body may be written into OCL, JAVA, or natural language.<br />
-  In order to make constraints usable by the Papyrus, constraint must be written in OCL
-  or JAVA.<br /></p>
-
-  <h3 id="How_to_3">How to</h3>
-
-  <p>The default language for editing a constraint is OCL (controllable via the
-  preferences).<br />
-  At the creation, after setting the context, you can choose the editor for the
-  constraint:<br /></p>
-  <pre>
-<img border="0" src="constraintEdition.png" /><br /> 
-</pre>
-
-  <p>Figure 6: choose the editor for the constraint<br />
-  Alternatively, the default editor for constraints (controllable via the preferences)
-  will pop-up on the second click on a constraint or when using the keyboard shortcut F2.
-  You can also specify the language in the property view:<br /></p>
-
-  <ul>
-    <li>Select the field specification and choose create or edit the associated opaque
-    expression:</li>
-  </ul>
-  <pre>
-<img border="0" src="SpecificationCreation.png" /><br />
-</pre>
-
-  <p>Figure 7: creation of a specification for the constraint<br />
-  You can add the language, see following figure:<br />
-  <img border="0" src="opaqueExpressionCreation.png" /><br />
-  Figure 8: specify the language<br />
-  Then if you want you write the body in the specified language:<br /></p>
-  <pre>
-<img border="0" src="fillOpaqueExpression.png" /><br />
-</pre>
-
-  <p>Figure 9: Write the body of the opaque expression<br /></p>
-
-  <h2 id="Specify_the_behavior_of_the_constraint_in_the_context_of_validation">Specify
-  the behavior of the constraint in the context of validation</h2>
-
-  <p>Into Papyrus, the behavior of the constraint during the validation can be
-  precise.<br />
-  It is possible to precise:<br /></p>
-
-  <ul>
-    <li>The mode, if the validation of the constraint can be done, in t
-    &ldquo;batch&rdquo; or &ldquo;live&rdquo; mode.</li>
-
-    <li>The severity: The severity of the problem if the constraint is violated. This
-    correlates to the severity of tasks in the Tasks view of the Eclipse environment. The
-    default severity (if none specified) is ERROR. The CANCEL severity should be used
-    with caution, as it causes the validation operation to be interrupted, possibly
-    resulting in the loss of valuable diagnostic information from other constraints.</li>
-
-    <li>The message: the message that will be displayed if the constraints is
-    violated</li>
-
-    <li>The description: a description of the constraint</li>
-
-    <li>If it is enable by default: Indicates if this constraint should be enabled by
-    default.</li>
-  </ul>
-
-  <p>For advanced user you can also precise:<br /></p>
-
-  <ul>
-    <li>The Id : the constraint id</li>
-
-    <li>The status code: The plug-in unique status code, useful for logging.</li>
-
-    <li>the target of validation, the element to be validated</li>
-  </ul>
-
-  <h3 id="How_to_4">How to</h3>
-
-  <p>Apply the DSML validation profile</p>
-
-  <ul>
-    <li>1. Select the profile root and apply the profile</li>
-
-    <li>2. Select the profile tab in the property view</li>
-
-    <li>3. Click on the registered profile button</li>
-
-    <li>4. Selection the DSML validation profile</li>
-  </ul>
-  <pre>
- <img border="0" src="DSMLprofileApplication.png" /><br /> 
-</pre>
-
-  <p>Figure 10: apply DSML profile<br />
-  Apply Stereotype on constraint</p>
-
-  <ul>
-    <li>1. Select the constraint</li>
-
-    <li>2. Select profile tab of the property view</li>
-
-    <li>3. Click on apply profile button</li>
-
-    <li>4. Select validationRule stereotype</li>
-  </ul>
-  <pre>
- <img border="0" src="stereotypeApplication.png" /><br />
-</pre>
-
-  <p>Figure 11: Apply validationRule stereotype<br />
-  Then you can edit property of stereotype to add information about the behavior of the
-  validation<br /></p>
-  <pre>
-<img border="0" src="AnnotationEdition.png" /><br />
-</pre>
-
-  <p>Figure 12: edition of the property of stereotype<br /></p>
-
-  <h1 id="Generation_from_Constraints">Generation from Constraints</h1>
-  <pre>
+<pre>
 <img border="0" src="UseCaseGeneration.png" /><br />
 </pre>
 

@@ -132,8 +132,8 @@ override addFixedChild (GenNode it)'''
 		override def setLineStyle(GenNode it) '''
 		«generatedMemberComment»
 		protected void setLineType(int style) {
-			if (primaryShape instanceof org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure) {	
-				((org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure) primaryShape).setLineStyle(style);
+			if (primaryShape instanceof org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure) {	
+				((org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure) primaryShape).setLineStyle(style);
 			}
 		}
 	'''

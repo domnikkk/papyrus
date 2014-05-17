@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2013 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
  *  Ansgar Radermacher (CEA LIST) ansgar.radermacher@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - refactor for non-workspace abstraction of problem markers (CDO)
  *  Patrick Tessier (CEA LIST) refacor to add allowing adding validation specific to UML
+ *  Christian W. Damus (CEA) - bug 432813
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.validation.commands;
@@ -119,19 +120,7 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 	protected void runValidation(final EObject validateElement) {
 		final Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 
-		IRunnableWithProgress runValidationWithProgress = new IRunnableWithProgress()
-		{
-
-			public void run(final IProgressMonitor progressMonitor) throws InvocationTargetException, InterruptedException
-			{
-				try {
-					diagnostic = validate(progressMonitor, validateElement);
-				}
-				finally {
-					progressMonitor.done();
-				}
-			}
-		};
+		ValidationOperation runValidationWithProgress = new ValidationOperation(validateElement, this);
 
 		IRunnableWithProgress createMarkersWithProgress = new IRunnableWithProgress()
 		{
@@ -153,13 +142,17 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 
 		try {
 			// runs the operation, and shows progress.
-			diagnostic = null;
-			if (showUIfeedback) {
-				new ProgressMonitorDialog(shell).run(true, true, runValidationWithProgress);
+			try {
+				if(showUIfeedback) {
+					new ProgressMonitorDialog(shell).run(true, true, runValidationWithProgress);
+				} else {
+					runValidationWithProgress.run(new NullProgressMonitor());
+				}
+			} finally {
+				diagnostic = runValidationWithProgress.getDiagnostics();
+				runValidationWithProgress.dispose();
 			}
-			else {
-				runValidationWithProgress.run(new NullProgressMonitor());
-			}
+			
 			if(diagnostic != null) {
 				int markersToCreate = diagnostic.getChildren().size();
 				if((markersToCreate > 0) && PreferenceUtils.getAutoShowValidation() && showUIfeedback) {

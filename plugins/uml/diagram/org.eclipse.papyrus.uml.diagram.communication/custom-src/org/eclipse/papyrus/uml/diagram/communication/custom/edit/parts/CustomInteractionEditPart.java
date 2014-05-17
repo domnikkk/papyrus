@@ -18,8 +18,6 @@ import org.eclipse.papyrus.uml.diagram.communication.custom.figures.InteractionR
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.InteractionEditPart;
 import org.eclipse.swt.graphics.Color;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class CustomInteractionEditPart.
  */
@@ -33,7 +31,6 @@ public class CustomInteractionEditPart extends InteractionEditPart {
 	 */
 	public CustomInteractionEditPart(View view) {
 		super(view);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -56,6 +53,4 @@ public class CustomInteractionEditPart extends InteractionEditPart {
 			}
 		}
 	}
-
-
 }

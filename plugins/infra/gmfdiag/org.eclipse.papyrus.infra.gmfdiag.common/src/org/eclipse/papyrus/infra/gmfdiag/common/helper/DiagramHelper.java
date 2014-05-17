@@ -100,7 +100,11 @@ public class DiagramHelper {
 			needsRefresh = false;
 		}
 
-		for(IMultiDiagramEditor activeMultiEditor : EditorUtils.getMultiDiagramEditors()) {
+		IMultiDiagramEditor[] editors = EditorUtils.getMultiDiagramEditors();
+		if(editors == null || editors.length < 1) {
+			return;
+		}
+		for(IMultiDiagramEditor activeMultiEditor : editors) {
 			refresh(activeMultiEditor);
 		}
 	}

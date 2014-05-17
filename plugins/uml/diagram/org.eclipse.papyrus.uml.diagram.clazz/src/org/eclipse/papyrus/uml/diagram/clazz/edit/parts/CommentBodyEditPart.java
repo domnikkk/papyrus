@@ -306,6 +306,7 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -392,7 +393,9 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -425,6 +428,7 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -432,6 +436,7 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -593,7 +598,7 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View)getModel();
+		return getPrimaryView();
 	}
 
 	/**
@@ -610,6 +615,7 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -773,6 +779,7 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 	 */
 	protected void addOwnerElementListeners() {
 		addListenerFilter(ADD_PARENT_MODEL, this, ((View)getParent().getModel())); //$NON-NLS-1$
+
 	}
 
 	/**
@@ -781,6 +788,7 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 	public void deactivate() {
 		removeOwnerElementListeners();
 		super.deactivate();
+
 	}
 
 	/**
@@ -788,5 +796,6 @@ public class CommentBodyEditPart extends PapyrusCompartmentEditPart implements I
 	 */
 	protected void removeOwnerElementListeners() {
 		removeListenerFilter(ADD_PARENT_MODEL);
+
 	}
 }

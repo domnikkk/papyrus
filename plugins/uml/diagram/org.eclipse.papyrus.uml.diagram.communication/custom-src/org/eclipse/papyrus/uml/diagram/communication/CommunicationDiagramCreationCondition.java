@@ -17,7 +17,6 @@ package org.eclipse.papyrus.uml.diagram.communication;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.extension.commands.PerspectiveContextDependence;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class CommunicationDiagramCreationCondition.
  */
@@ -33,5 +32,4 @@ public class CommunicationDiagramCreationCondition extends PerspectiveContextDep
 	public boolean create(EObject selectedElement) {
 		return false;
 	}
-
 }

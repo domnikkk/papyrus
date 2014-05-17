@@ -37,11 +37,9 @@ import org.eclipse.papyrus.uml.diagram.common.helper.ElementHelper;
 import org.eclipse.papyrus.uml.diagram.communication.custom.commands.CustomMessageSemanticCreateCommand;
 import org.eclipse.papyrus.uml.diagram.communication.custom.commands.CustomMessageViewCreateCommand;
 
-// TODO: Auto-generated Javadoc
 /**
  * The class MessageHelper to manage creating messages as labels of only one connection.
  */
-
 public class MessageHelper extends ElementHelper {
 
 	/**
@@ -54,7 +52,6 @@ public class MessageHelper extends ElementHelper {
 		super();
 		this.editDomain = editDomain;
 	}
-
 
 	/**
 	 * Gets the command.
@@ -72,26 +69,21 @@ public class MessageHelper extends ElementHelper {
 		command = new CompoundCommand();
 		EditPart sourceEditPart = createConnectionViewAndElementRequest.getSourceEditPart();
 		EditPart targetEditPart = createConnectionViewAndElementRequest.getTargetEditPart();
-
 		Point sourceLocation = null;
 		Point targetLocation = null;
 		Point nodeLocation = null;
-
 		//	NamedElement messageSemanticElement = null;// message that will be added as a label of the existing connection
 		//	IAdaptable message = null;
 		//View parentView = null;
-
 		// 1. initialization
 		ICommandProxy startcommand = ((ICommandProxy)createConnectionViewAndElementRequest.getStartCommand());
 		Iterator<?> ite = ((CompositeCommand)startcommand.getICommand()).iterator();
-
 		while(ite.hasNext()) {
 			ICommand currentCommand = (ICommand)ite.next();
 			if(currentCommand instanceof SetConnectionBendpointsCommand) {
 				sourceLocation = ((SetConnectionBendpointsCommand)currentCommand).getSourceRefPoint();
 				targetLocation = ((SetConnectionBendpointsCommand)currentCommand).getTargetRefPoint();
 				nodeLocation = new Point((sourceLocation.x + targetLocation.x) / 2, (sourceLocation.y + targetLocation.y) / 2);
-
 			}
 		}
 		//nodeLocation.x = (sourceLocation.x + targetLocation.x) / 2;
@@ -108,9 +100,7 @@ public class MessageHelper extends ElementHelper {
 		// System.err.println("+-> feature:" + feature);
 		// System.err.println("+-> parentView:" + parentView);
 		// ---------------------------------------------------------
-
 		//2. Aggregates the semantic creation command
-
 		EObject targetlifeline = (EObject)((View)targetEditPart.getModel()).getElement();
 		EObject sourcelifeline = (EObject)((View)sourceEditPart.getModel()).getElement();
 		CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest)createConnectionViewAndElementRequest).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
@@ -118,19 +108,11 @@ public class MessageHelper extends ElementHelper {
 		CustomMessageSemanticCreateCommand customMessageCreateComand = new CustomMessageSemanticCreateCommand(createElementRequest, sourcelifeline, targetlifeline);
 		Command realSemanticCommand = new ICommandProxy(customMessageCreateComand);
 		((CompoundCommand)command).add(realSemanticCommand);
-
-
 		//3. Aggregates the create node command
 		//parentView = (View)((View)sourceEditPart.getModel()).eContainer();
-
 		CustomMessageViewCreateCommand nodeCreation = new CustomMessageViewCreateCommand(getEditingDomain(), (EditPartViewer)sourceEditPart.getViewer(), ((IGraphicalEditPart)sourceEditPart).getDiagramPreferencesHint(), nodeLocation, (IAdaptable)((ICommand)customMessageCreateComand).getCommandResult().getReturnValue(), link);
-
 		((CompoundCommand)command).add(new ICommandProxy(nodeCreation));
-
 		//return the command that contains the semantic creation and the view creation
 		return command;
 	}
-
-
-
 }

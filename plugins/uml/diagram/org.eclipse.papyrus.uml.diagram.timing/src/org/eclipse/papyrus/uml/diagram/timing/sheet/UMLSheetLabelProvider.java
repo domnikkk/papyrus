@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.sheet;
 
@@ -22,8 +25,6 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
@@ -34,22 +35,22 @@ public class UMLSheetLabelProvider extends BaseLabelProvider implements ILabelPr
 		if(element instanceof UMLNavigatorGroup) {
 			return ((UMLNavigatorGroup)element).getGroupName();
 		}
-		final IElementType etype = getElementType(getView(element));
+		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
 	}
 
 	/**
 	 * @generated
 	 */
-	public Image getImage(final Object element) {
-		final IElementType etype = getElementType(getView(unwrap(element)));
+	public Image getImage(Object element) {
+		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null : UMLElementTypes.getImage(etype);
 	}
 
 	/**
 	 * @generated
 	 */
-	private Object unwrap(final Object element) {
+	private Object unwrap(Object element) {
 		if(element instanceof IStructuredSelection) {
 			return ((IStructuredSelection)element).getFirstElement();
 		}
@@ -59,7 +60,7 @@ public class UMLSheetLabelProvider extends BaseLabelProvider implements ILabelPr
 	/**
 	 * @generated
 	 */
-	private View getView(final Object element) {
+	private View getView(Object element) {
 		if(element instanceof View) {
 			return (View)element;
 		}
@@ -75,8 +76,8 @@ public class UMLSheetLabelProvider extends BaseLabelProvider implements ILabelPr
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while(view != null) {
-			final int vid = UMLVisualIDRegistry.getVisualID(view);
-			final IElementType etype = UMLElementTypes.getElementType(vid);
+			int vid = UMLVisualIDRegistry.getVisualID(view);
+			IElementType etype = UMLElementTypes.getElementType(vid);
 			if(etype != null) {
 				return etype;
 			}
@@ -84,5 +85,4 @@ public class UMLSheetLabelProvider extends BaseLabelProvider implements ILabelPr
 		}
 		return null;
 	}
-
 }

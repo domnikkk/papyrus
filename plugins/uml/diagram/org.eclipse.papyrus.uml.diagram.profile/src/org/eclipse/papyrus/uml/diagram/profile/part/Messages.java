@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
@@ -7,9 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- * 
- * 
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.profile.part;
 
@@ -276,62 +274,62 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Package1CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Package1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Profile2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Profile2CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Comment3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Comment3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Constraint4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Constraint4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Stereotype5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Stereotype5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String Class6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
 	public static String Class6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Comment2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Constraint3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Constraint3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String DataType4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String DataType4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Enumeration5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Enumeration5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String EnumerationLiteral6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String EnumerationLiteral6CreationTool_desc;
 
 	/**
 	 * @generated
@@ -346,112 +344,72 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Enumeration8CreationTool_title;
+	public static String Operation8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Enumeration8CreationTool_desc;
+	public static String Operation8CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DataType9CreationTool_title;
+	public static String Package9CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DataType9CreationTool_desc;
+	public static String Package9CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PrimitiveType10CreationTool_title;
+	public static String Profile10CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PrimitiveType10CreationTool_desc;
+	public static String Profile10CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Property11CreationTool_title;
+	public static String PrimitiveType11CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Property11CreationTool_desc;
+	public static String PrimitiveType11CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Operation12CreationTool_title;
+	public static String Property12CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Operation12CreationTool_desc;
+	public static String Property12CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String EnumerationLiteral13CreationTool_title;
+	public static String Stereotype13CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String EnumerationLiteral13CreationTool_desc;
+	public static String Stereotype13CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Extension1CreationTool_title;
+	public static String Association1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Extension1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Generalization2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Generalization2CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Link3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Link3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ProfileApplication4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ProfileApplication4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Association5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Association5CreationTool_desc;
+	public static String Association1CreationTool_desc;
 
 	/**
 	 * @generated
@@ -462,6 +420,46 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String ContextLink6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Extension3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Extension3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Generalization4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Generalization4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Link5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Link5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ProfileApplication6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ProfileApplication6CreationTool_desc;
 
 	/**
 	 * @generated

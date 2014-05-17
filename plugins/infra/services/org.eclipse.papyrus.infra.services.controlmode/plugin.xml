@@ -9,6 +9,14 @@
             description="Move this submodel into its own resource (file)"
             id="org.eclipse.papyrus.infra.services.controlmode.createsubmodel"
             name="Create submodel unit">
+         <commandParameter
+               id="org.eclipse.papyrus.infra.services.controlmode.useDialogParameter"
+               name="Show control mode dialog"
+               optional="true">
+            <values
+                  class="org.eclipse.papyrus.infra.services.controlmode.commands.ControlModeCommandParameterValues">
+            </values>
+         </commandParameter>
       </command>
       <command
             defaultHandler="org.eclipse.papyrus.infra.services.controlmode.handlers.UncontrolCommandHandler"

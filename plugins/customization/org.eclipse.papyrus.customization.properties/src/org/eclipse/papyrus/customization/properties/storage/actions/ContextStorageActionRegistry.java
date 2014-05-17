@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 422257
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.storage.actions;
 
@@ -18,8 +20,8 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.ecore.plugin.RegistryReader;
 import org.eclipse.papyrus.customization.properties.Activator;
+import org.eclipse.papyrus.infra.core.utils.OneTimeRegistryReader;
 import org.eclipse.papyrus.views.properties.contexts.Context;
 
 /**
@@ -57,20 +59,20 @@ public class ContextStorageActionRegistry {
 	public IContextCopyAction getContextCopyAction(Context context) {
 		return getStorageActionProvider(context).getContextCopyAction();
 	}
-	
+
 	public IContextEditAction getContextEditAction(Context context) {
 		return getStorageActionProvider(context).getContextEditAction();
 	}
-	
+
 	public IContextDeleteAction getContextDeleteAction(Context context) {
 		return getStorageActionProvider(context).getContextDeleteAction();
 	}
-	
+
 	//
 	// Nested types
 	//
 
-	private class MyRegistryReader extends RegistryReader {
+	private class MyRegistryReader extends OneTimeRegistryReader {
 
 		private static final String A_CLASS = "class"; //$NON-NLS-1$
 

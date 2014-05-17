@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
- *  Christian W. Damus (CEA) - bugs 402525, 323802, 431953, 433310
+ *  Christian W. Damus (CEA) - bugs 402525, 323802, 431953, 433310, 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.tests;
@@ -70,10 +70,14 @@ public class AllTests {
 		/* css */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.gmfdiag.css.tests.tests.AllTests.class));
 
-		//
-		/* sysml moved to a separate launcher */
-		//
-
+		/* control mode */
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.services.controlmode.tests.AllTests.class));
+		
+		if(System.getProperty("no.SysML.tests") == null) {
+			// SysML tests
+			suiteClasses.addAll(AllSysMLTests.suiteClasses);
+		}
+		
 		/* uml */
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.uml.diagram.common.Activator.ID, "org.eclipse.papyrus.diagram.common.tests.AllTests"));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.uml.service.types.Activator.PLUGIN_ID, "org.eclipse.papyrus.uml.service.types.tests.suites.AllTests"));

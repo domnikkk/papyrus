@@ -31,7 +31,6 @@ import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
-import org.eclipse.uml2.uml.Element;
 
 
 /**
@@ -61,8 +60,8 @@ public class DefaultPasteCommand extends AbstractCommand {
 			List<EObject> eobjectsTopaste = new ArrayList<EObject>();
 			Iterator<Object> iterData = papyrusClipboard.iterator();
 			while(iterData.hasNext()) {
-				Object object = iterData.next();
-				if(object instanceof Element) { // TODO : create utility to detec if the element is part of the semantic model
+				Object object = iterData.next(); 
+				if(object instanceof EObject) {
 					eobjectsTopaste.add((EObject)object);
 				}
 			}
@@ -90,17 +89,29 @@ public class DefaultPasteCommand extends AbstractCommand {
 					objectsToMove.add(copyObject);
 				}
 			}
-
-			MoveRequest moveRequest = new MoveRequest(targetOwner, EcoreUtil.filterDescendants(objectsToMove));
-			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetOwner);
-			if(provider != null) {
-				command = new CompositeCommand("Paste All Object"); //$NON-NLS-1$
-				ICommand editCommand = provider.getEditCommand(moveRequest);
-				command.compose(editCommand);
-			}
+			List<EObject> rootObjectsToMove = EcoreUtil.filterDescendants(objectsToMove);
+			
+			for(EObject eObject : rootObjectsToMove) {
+				MoveRequest moveRequest = new MoveRequest(targetOwner, eObject);
+				IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetOwner);
+				if(provider != null) {
+					ICommand editCommand = provider.getEditCommand(moveRequest);
+					if (editCommand.canExecute()){
+						getCommand().compose(editCommand);
+					}
+				}				
+			} 	
 		}
 	}
 
+	
+	public CompositeCommand getCommand() {
+		if (command == null){
+			command = new CompositeCommand("Paste All Object"); //$NON-NLS-1$
+		}
+		return command;
+	}
+	
 	/**
 	 * {@inheritDoc}
 	 */
@@ -119,8 +130,8 @@ public class DefaultPasteCommand extends AbstractCommand {
 	 */
 	@Override
 	public boolean canExecute() {
-		if(command == null) {
-			return false;
+		if(command == null) { // allow an empty copy for paste with only additional data (Diagram)
+			return true;
 		}
 		return command.canExecute();
 	}
@@ -144,12 +155,13 @@ public class DefaultPasteCommand extends AbstractCommand {
 	 */
 	@Override
 	public void undo() {
-		try {
-			IProgressMonitor monitor = new NullProgressMonitor();
-			command.undo(monitor, null);
-		} catch (ExecutionException e) {
-			Activator.log.error(e);
+		if (command != null){
+			try {
+				IProgressMonitor monitor = new NullProgressMonitor();
+				command.undo(monitor, null);
+			} catch (ExecutionException e) {
+				Activator.log.error(e);
+			}			
 		}
 	}
-
 }

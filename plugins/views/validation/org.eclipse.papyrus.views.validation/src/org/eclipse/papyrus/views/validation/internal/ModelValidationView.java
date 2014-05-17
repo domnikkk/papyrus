@@ -35,7 +35,7 @@ import org.eclipse.ui.part.PageBookView;
 public class ModelValidationView
 		extends PageBookView {
 
-	public static final String VIEW_ID = "org.eclipse.papyrus.views.validation.ModelValidationView";
+	public static final String VIEW_ID = "org.eclipse.papyrus.views.validation.ModelValidationView"; //$NON-NLS-1$
 
 	private ViewSettings settings;
 	

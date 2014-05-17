@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.part;
 
@@ -12,10 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -26,6 +27,7 @@ import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.eclipse.papyrus.infra.gmfdiag.preferences.Activator;
 import org.eclipse.papyrus.uml.diagram.timing.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.expressions.UMLOCLFactory;
@@ -39,14 +41,17 @@ import org.osgi.framework.BundleContext;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 
 	/**
 	 * @generated
 	 */
 	public static final String ID = "org.eclipse.papyrus.uml.diagram.timing"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private LogHelper myLogHelper;
 
 	/**
 	 * @generated
@@ -92,26 +97,25 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	@Override
-	public void start(final BundleContext context) throws Exception {
+	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
+		myLogHelper = new LogHelper(this);
 		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
-		this.adapterFactory = createAdapterFactory();
-		final DiagramPreferenceInitializer diagramPreferenceInitializer = new DiagramPreferenceInitializer();
+		adapterFactory = createAdapterFactory();
+		DiagramPreferenceInitializer diagramPreferenceInitializer = new DiagramPreferenceInitializer();
 		diagramPreferenceInitializer.initializeDefaultPreferences();
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
-	public void stop(final BundleContext context) throws Exception {
-		this.adapterFactory.dispose();
-		this.adapterFactory = null;
-		this.linkConstraints = null;
-		this.initializers = null;
-		this.oclFactory = null;
+	public void stop(BundleContext context) throws Exception {
+		adapterFactory.dispose();
+		adapterFactory = null;
+		linkConstraints = null;
+		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -126,9 +130,8 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	@Override
 	public IPreferenceStore getPreferenceStore() {
-		final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
+		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		return store;
 	}
 
@@ -136,7 +139,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
-		final ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
+		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
 		return new ComposedAdapterFactory(factories);
 	}
@@ -144,7 +147,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(final List<AdapterFactory> factories) {
+	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories.add(new UMLItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
@@ -155,14 +158,14 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return this.adapterFactory;
+		return adapterFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ImageDescriptor getItemImageDescriptor(final Object item) {
-		final IItemLabelProvider labelProvider = (IItemLabelProvider)this.adapterFactory.adapt(item, IItemLabelProvider.class);
+	public ImageDescriptor getItemImageDescriptor(Object item) {
+		IItemLabelProvider labelProvider = (IItemLabelProvider)adapterFactory.adapt(item, IItemLabelProvider.class);
 		if(labelProvider != null) {
 			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
@@ -170,27 +173,27 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * Returns an image descriptor for the image file at the given plug-in relative path.
+	 * Returns an image descriptor for the image file at the given
+	 * plug-in relative path.
 	 * 
 	 * @generated
-	 * @param path
-	 *        the path
+	 * @param path the path
 	 * @return the image descriptor
 	 */
-	public static ImageDescriptor getBundledImageDescriptor(final String path) {
+	public static ImageDescriptor getBundledImageDescriptor(String path) {
 		return AbstractUIPlugin.imageDescriptorFromPlugin(ID, path);
 	}
 
 	/**
-	 * Respects images residing in any plug-in. If path is relative, then this bundle is looked up for the image,
-	 * otherwise, for absolute path, first segment is taken as id of plug-in with image
+	 * Respects images residing in any plug-in. If path is relative,
+	 * then this bundle is looked up for the image, otherwise, for absolute
+	 * path, first segment is taken as id of plug-in with image
 	 * 
 	 * @generated
-	 * @param path
-	 *        the path to image, either absolute (with plug-in id as first segment), or relative for bundled images
+	 * @param path the path to image, either absolute (with plug-in id as first segment), or relative for bundled images
 	 * @return the image descriptor
 	 */
-	public static ImageDescriptor findImageDescriptor(final String path) {
+	public static ImageDescriptor findImageDescriptor(String path) {
 		final IPath p = new Path(path);
 		if(p.isAbsolute() && p.segmentCount() > 1) {
 			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p.removeFirstSegments(1).makeAbsolute().toString());
@@ -200,15 +203,14 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * Returns an image for the image file at the given plug-in relative path. Client do not need to dispose this image.
-	 * Images will be disposed automatically.
+	 * Returns an image for the image file at the given plugin relative path.
+	 * Client do not need to dispose this image. Images will be disposed automatically.
 	 * 
 	 * @generated
-	 * @param path
-	 *        the path
+	 * @param path the path
 	 * @return image instance
 	 */
-	public Image getBundledImage(final String path) {
+	public Image getBundledImage(String path) {
 		Image image = getImageRegistry().get(path);
 		if(image == null) {
 			getImageRegistry().put(path, getBundledImageDescriptor(path));
@@ -222,7 +224,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * 
 	 * @generated
 	 */
-	public static String getString(final String key) {
+	public static String getString(String key) {
 		return Platform.getResourceString(getInstance().getBundle(), "%" + key); //$NON-NLS-1$
 	}
 
@@ -230,23 +232,23 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public UMLDocumentProvider getDocumentProvider() {
-		if(this.documentProvider == null) {
-			this.documentProvider = new UMLDocumentProvider();
+		if(documentProvider == null) {
+			documentProvider = new UMLDocumentProvider();
 		}
-		return this.documentProvider;
+		return documentProvider;
 	}
 
 	/**
 	 * @generated
 	 */
 	public UMLBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
-		return this.linkConstraints;
+		return linkConstraints;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setLinkConstraints(final UMLBaseItemSemanticEditPolicy.LinkConstraints lc) {
+	public void setLinkConstraints(UMLBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
@@ -254,13 +256,13 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public ElementInitializers getElementInitializers() {
-		return this.initializers;
+		return initializers;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setElementInitializers(final ElementInitializers i) {
+	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
 	}
 
@@ -268,64 +270,48 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public UMLOCLFactory getUMLOCLFactory() {
-		return this.oclFactory;
+		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setUMLOCLFactory(final UMLOCLFactory f) {
+	public void setUMLOCLFactory(UMLOCLFactory f) {
 		this.oclFactory = f;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void logError(final String error) {
-		logError(error, null);
+	public void logError(String error) {
+		getLogHelper().warn(error);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void logError(String error, final Throwable throwable) {
-		if(error == null && throwable != null) {
-			error = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, IStatus.OK, error, throwable));
-		debug(error, throwable);
+	public void logError(String error, Throwable throwable) {
+		getLogHelper().error(error, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void logInfo(final String message) {
-		logInfo(message, null);
+	public void logInfo(String message) {
+		getLogHelper().info(message);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void logInfo(String message, final Throwable throwable) {
-		if(message == null && throwable != null) {
-			message = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.INFO, UMLDiagramEditorPlugin.ID, IStatus.OK, message, throwable));
-		debug(message, throwable);
+	public void logInfo(String message, Throwable throwable) {
+		getLogHelper().error(message, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
-	private void debug(final String message, final Throwable throwable) {
-		if(!isDebugging()) {
-			return;
-		}
-		if(message != null) {
-			System.err.println(message);
-		}
-		if(throwable != null) {
-			throwable.printStackTrace();
-		}
+	public LogHelper getLogHelper() {
+		return myLogHelper;
 	}
 }

@@ -102,11 +102,13 @@ public class CommentEditPartTN extends AbstractCommentEditPart {
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -118,6 +120,7 @@ public class CommentEditPartTN extends AbstractCommentEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure
+	 * 
 	 * @generated
 	 */
 	public HTMLCornerBentFigure getPrimaryShape() {
@@ -132,6 +135,8 @@ public class CommentEditPartTN extends AbstractCommentEditPart {
 			((CommentBodyEditPartTN)childEditPart).setLabel(getPrimaryShape().getCornerBentFigure());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -190,12 +195,15 @@ public class CommentEditPartTN extends AbstractCommentEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {

@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.navigator;
 
@@ -18,12 +21,10 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
-import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramEditorPlugin;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
@@ -33,16 +34,14 @@ import org.eclipse.ui.part.FileEditorInput;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLNavigatorLinkHelper implements ILinkHelper {
 
 	/**
 	 * @generated
 	 */
-	private static IEditorInput getEditorInput(final Diagram diagram) {
-		final Resource diagramResource = diagram.eResource();
-		for(final EObject nextEObject : diagramResource.getContents()) {
+	private static IEditorInput getEditorInput(Diagram diagram) {
+		Resource diagramResource = diagram.eResource();
+		for(EObject nextEObject : diagramResource.getContents()) {
 			if(nextEObject == diagram) {
 				return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 			}
@@ -50,37 +49,35 @@ public class UMLNavigatorLinkHelper implements ILinkHelper {
 				break;
 			}
 		}
-		final URI uri = EcoreUtil.getURI(diagram);
-		final String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
-		final IEditorInput editorInput = new URIEditorInput(uri, editorName);
+		URI uri = EcoreUtil.getURI(diagram);
+		String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
+		IEditorInput editorInput = new URIEditorInput(uri, editorName);
 		return editorInput;
 	}
 
 	/**
 	 * @generated
 	 */
-	public IStructuredSelection findSelection(final IEditorInput anInput) {
-		final IDiagramDocument document = UMLDiagramEditorPlugin.getInstance().getDocumentProvider().getDiagramDocument(anInput);
+	public IStructuredSelection findSelection(IEditorInput anInput) {
 		return StructuredSelection.EMPTY;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void activateEditor(final IWorkbenchPage aPage, final IStructuredSelection aSelection) {
+	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
 		if(aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
 		if(false == aSelection.getFirstElement() instanceof UMLAbstractNavigatorItem) {
 			return;
 		}
-
-		final UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem)aSelection.getFirstElement();
+		UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem)aSelection.getFirstElement();
 		View navigatorView = null;
 		if(abstractNavigatorItem instanceof UMLNavigatorItem) {
 			navigatorView = ((UMLNavigatorItem)abstractNavigatorItem).getView();
 		} else if(abstractNavigatorItem instanceof UMLNavigatorGroup) {
-			final UMLNavigatorGroup navigatorGroup = (UMLNavigatorGroup)abstractNavigatorItem;
+			UMLNavigatorGroup navigatorGroup = (UMLNavigatorGroup)abstractNavigatorItem;
 			if(navigatorGroup.getParent() instanceof UMLNavigatorItem) {
 				navigatorView = ((UMLNavigatorItem)navigatorGroup.getParent()).getView();
 			}
@@ -88,25 +85,24 @@ public class UMLNavigatorLinkHelper implements ILinkHelper {
 		if(navigatorView == null) {
 			return;
 		}
-		final IEditorInput editorInput = getEditorInput(navigatorView.getDiagram());
-		final IEditorPart editor = aPage.findEditor(editorInput);
+		IEditorInput editorInput = getEditorInput(navigatorView.getDiagram());
+		IEditorPart editor = aPage.findEditor(editorInput);
 		if(editor == null) {
 			return;
 		}
 		aPage.bringToTop(editor);
 		if(editor instanceof DiagramEditor) {
-			final DiagramEditor diagramEditor = (DiagramEditor)editor;
-			final ResourceSet diagramEditorResourceSet = diagramEditor.getEditingDomain().getResourceSet();
-			final EObject selectedView = diagramEditorResourceSet.getEObject(EcoreUtil.getURI(navigatorView), true);
+			DiagramEditor diagramEditor = (DiagramEditor)editor;
+			ResourceSet diagramEditorResourceSet = diagramEditor.getEditingDomain().getResourceSet();
+			EObject selectedView = diagramEditorResourceSet.getEObject(EcoreUtil.getURI(navigatorView), true);
 			if(selectedView == null) {
 				return;
 			}
-			final GraphicalViewer graphicalViewer = (GraphicalViewer)diagramEditor.getAdapter(GraphicalViewer.class);
-			final EditPart selectedEditPart = (EditPart)graphicalViewer.getEditPartRegistry().get(selectedView);
+			GraphicalViewer graphicalViewer = (GraphicalViewer)diagramEditor.getAdapter(GraphicalViewer.class);
+			EditPart selectedEditPart = (EditPart)graphicalViewer.getEditPartRegistry().get(selectedView);
 			if(selectedEditPart != null) {
 				graphicalViewer.select(selectedEditPart);
 			}
 		}
 	}
-
 }

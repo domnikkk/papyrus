@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version='1.0' encoding='utf-8'?>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <title>Constraint creation</title>
+</head>
+
+<body>
+<h1>Create and edit constraints</h1>
+
+<h2 id="Create_a_constraint">Create constraints</h1>
+
+Do one of the following
+<ul>
+<li>Within a Papyrus diagram:
+
+All Papyrus diagrams support constraints. Select the constraint tool from the palette.
+<center>
+<img vspace="5" src="Constraint_CreateViaDiagram.png"><br>
+</center>
+Then, press the mouse button at the place where you want to create the constraint and resize the constraint while holding the mouse button down.
+
+<li>Within the model explorer:
+
+From the model explorer, click right --&gt; new child--&gt; Create a new Constraint<br>
+<center>
+<img vspace="5" src="Constraint_CreateViaME.png"><br>
+</center>
+
+</ul>
+
+<h2 id="Specify_the_context">Specify the context</h2>
+
+<p>
+Before editing a constraint body, it is important to specify the context of a constraint;
+it can be for instance a stereotype or an operation (in fact, it can be any meta-model
+ element that inherits from namespace).
+<p>
+
+Do one of the following
+<ul>
+<li>Use the context-link-tool to create a visual link to the context element
+(Papyrus selects the context-link-tool automatically after creation of a constraint): if in two-click-mode
+(connection tool preference), target the context-line towards the context element and click. If you are in
+one-click-mode, press mouse button on the constraint and keep it pressed until the context object is targeted. 
+<center>
+<img vspace="5" src="Constraint_ContextViaDiagram.png"><br>
+</center>
+
+<li>Use the property view to select the context via a dialog popup
+<center>
+<img vspace="5" src="Constraint_ContextViaPropertyView.png"><br>
+</center>
+
+</ul>
+
+<h2 id="Define_specification">Define constraint specification</h2>
+
+Each constraint has a specification containing a condition. Whereas it may be an arbitrary value specification,
+such as a StringExpression or LiteralInteger, it is in most cases useful to define an opaque expression consisting
+of a pair of language and body (a list of these pairs). The constraint body may be written into OCL, JAVA,
+or natural language. In order to make constraints usable by the Papyrus,
+constraint must be written in OCL or JAVA.
+
+<p>
+Select a constraint in a diagram or model explorer. Then do one of the following to edit a specification<br>
+<ul>
+<li>Open the default editor for constraints using the keyboard shortcut F2
+or with a second click on an already selected constraint. All editors are using opaque expressions and support
+a specific language. This language is configured automatically within the opaque expression, the user edits
+directly the body.<br>
+The default editor can be controlled via the preferences.
+
+<p>
+
+<li>Select a specific editor via the context menu, as shown in the following screenshot.
+
+<center>
+<img vspace="5" src="Constraint_ChooseEditor.png"><br>
+Explicitly choose the editor for the constraint
+</center>
+
+<p>
+
+<li>Use the property view to create a new or open an existing specification, as shown in the following figure.
+In the sequel, we assume that the specification is an opaque expression.<br>
+
+<center>
+<img vspace="5" src="Constraint_SpecViaPropertyView.png"><br>
+Open the specification via the property view
+</center>
+
+You can add the language, as in the following figure:<br>
+  
+<center>
+<img vspace="5" src="Constraint_OpaqueExpressionAddLang.png"><br/>
+Specify a language.
+</center>
+
+<center>
+<img vspace="5" src="Constraint_OpaqueExpressionEdit.png"><br/>
+Write the body of the opaque expression
+</center>
+
+This method is a bit more complicated, but gives the user full control over the opaque specification. In particular,
+it is possible to enter more than one language, body pair (even if this is rarely needed).
+</ul>
+
+</body>
+</html>

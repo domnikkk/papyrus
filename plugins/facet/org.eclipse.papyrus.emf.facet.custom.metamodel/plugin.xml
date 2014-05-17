@@ -38,12 +38,4 @@ Contributors:
             genModel="model/query-0.3.0.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated treeproxy-0.2.0 -->
-      <package
-            uri="http://www.eclipse.org/papyrus/emf/facet/custom/0.2.incubation/internal/treeproxy"
-            class="org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeproxyPackage"
-            genModel="model/treeproxy-0.2.0.genmodel"/>
-   </extension>
-
 </plugin>

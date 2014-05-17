@@ -331,6 +331,7 @@ public class PropertyforDataTypeEditPart extends UMLCompartmentEditPart implemen
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -417,7 +418,9 @@ public class PropertyforDataTypeEditPart extends UMLCompartmentEditPart implemen
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -450,6 +453,7 @@ public class PropertyforDataTypeEditPart extends UMLCompartmentEditPart implemen
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -457,6 +461,7 @@ public class PropertyforDataTypeEditPart extends UMLCompartmentEditPart implemen
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -618,7 +623,7 @@ public class PropertyforDataTypeEditPart extends UMLCompartmentEditPart implemen
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View)getModel();
+		return getPrimaryView();
 	}
 
 	/**
@@ -635,6 +640,7 @@ public class PropertyforDataTypeEditPart extends UMLCompartmentEditPart implemen
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}

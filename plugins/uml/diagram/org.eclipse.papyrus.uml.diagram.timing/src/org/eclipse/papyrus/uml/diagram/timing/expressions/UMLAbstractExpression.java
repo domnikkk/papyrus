@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.expressions;
 
@@ -25,8 +28,6 @@ import org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public abstract class UMLAbstractExpression {
 
 	/**
@@ -37,8 +38,8 @@ public abstract class UMLAbstractExpression {
 	/**
 	 * @generated
 	 */
-	protected void setStatus(final int severity, final String message, final Throwable throwable) {
-		final String pluginID = UMLDiagramEditorPlugin.ID;
+	protected void setStatus(int severity, String message, Throwable throwable) {
+		String pluginID = UMLDiagramEditorPlugin.ID;
 		this.status = new Status(severity, pluginID, -1, (message != null) ? message : "", throwable); //$NON-NLS-1$
 		if(!this.status.isOK()) {
 			UMLDiagramEditorPlugin.getInstance().logError("Expression problem:" + message + "body:" + body(), throwable); //$NON-NLS-1$ //$NON-NLS-2$
@@ -49,7 +50,7 @@ public abstract class UMLAbstractExpression {
 	 * @generated
 	 */
 	public IStatus getStatus() {
-		return this.status;
+		return status;
 	}
 
 	/**
@@ -61,7 +62,7 @@ public abstract class UMLAbstractExpression {
 	 * @generated
 	 */
 	public String body() {
-		return this.myBody;
+		return myBody;
 	}
 
 	/**
@@ -73,15 +74,15 @@ public abstract class UMLAbstractExpression {
 	 * @generated
 	 */
 	public EClassifier context() {
-		return this.myContext;
+		return myContext;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected UMLAbstractExpression(final String body, final EClassifier context) {
-		this.myBody = body;
-		this.myContext = context;
+	protected UMLAbstractExpression(String body, EClassifier context) {
+		myBody = body;
+		myContext = context;
 	}
 
 	/**
@@ -93,7 +94,7 @@ public abstract class UMLAbstractExpression {
 	/**
 	 * @generated
 	 */
-	public Object evaluate(final Object context) {
+	public Object evaluate(Object context) {
 		return evaluate(context, Collections.EMPTY_MAP);
 	}
 
@@ -101,11 +102,11 @@ public abstract class UMLAbstractExpression {
 	 * @generated
 	 */
 	@SuppressWarnings("rawtypes")
-	public Object evaluate(final Object context, final Map env) {
+	public Object evaluate(Object context, Map env) {
 		if(context().isInstance(context)) {
 			try {
 				return doEvaluate(context, env);
-			} catch (final Exception e) {
+			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Expression evaluation failure: " + body(), e); //$NON-NLS-1$
 			}
 		}
@@ -113,24 +114,22 @@ public abstract class UMLAbstractExpression {
 	}
 
 	/**
-	 * Expression may return number value which is not directly compatible with feature type (e.g. Double when Integer
-	 * is expected), or EEnumLiteral meta-object when literal instance is expected
-	 * 
+	 * Expression may return number value which is not directly compatible with feature type (e.g. Double when Integer is expected), or EEnumLiteral meta-object when literal instance is expected
 	 * @generated
 	 */
-	public static Object performCast(final Object value, final EDataType targetType) {
+	public static Object performCast(Object value, EDataType targetType) {
 		if(targetType instanceof EEnum) {
 			if(value instanceof EEnumLiteral) {
-				final EEnumLiteral literal = (EEnumLiteral)value;
+				EEnumLiteral literal = (EEnumLiteral)value;
 				return (literal.getInstance() != null) ? literal.getInstance() : literal;
 			}
 		}
 		if(false == value instanceof Number || targetType == null || targetType.getInstanceClass() == null) {
 			return value;
 		}
-		final Class<?> targetClass = targetType.getInstanceClass();
-		final Number num = (Number)value;
-		final Class<?> valClass = value.getClass();
+		Class<?> targetClass = targetType.getInstanceClass();
+		Number num = (Number)value;
+		Class<?> valClass = value.getClass();
 		Class<?> targetWrapperClass = targetClass;
 		if(targetClass.isPrimitive()) {
 			targetWrapperClass = EcoreUtil.wrapperClassFor(targetClass);
@@ -139,32 +138,23 @@ public abstract class UMLAbstractExpression {
 			return value;
 		}
 		if(Number.class.isAssignableFrom(targetWrapperClass)) {
-			if(targetWrapperClass.equals(Byte.class)) {
+			if(targetWrapperClass.equals(Byte.class))
 				return new Byte(num.byteValue());
-			}
-			if(targetWrapperClass.equals(Integer.class)) {
+			if(targetWrapperClass.equals(Integer.class))
 				return new Integer(num.intValue());
-			}
-			if(targetWrapperClass.equals(Short.class)) {
+			if(targetWrapperClass.equals(Short.class))
 				return new Short(num.shortValue());
-			}
-			if(targetWrapperClass.equals(Long.class)) {
+			if(targetWrapperClass.equals(Long.class))
 				return new Long(num.longValue());
-			}
-			if(targetWrapperClass.equals(BigInteger.class)) {
+			if(targetWrapperClass.equals(BigInteger.class))
 				return BigInteger.valueOf(num.longValue());
-			}
-			if(targetWrapperClass.equals(Float.class)) {
+			if(targetWrapperClass.equals(Float.class))
 				return new Float(num.floatValue());
-			}
-			if(targetWrapperClass.equals(Double.class)) {
+			if(targetWrapperClass.equals(Double.class))
 				return new Double(num.doubleValue());
-			}
-			if(targetWrapperClass.equals(BigDecimal.class)) {
+			if(targetWrapperClass.equals(BigDecimal.class))
 				return new BigDecimal(num.doubleValue());
-			}
 		}
 		return value;
 	}
-
 }

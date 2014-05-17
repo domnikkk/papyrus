@@ -15,6 +15,7 @@
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.expressions.IEvaluationContext;
@@ -47,18 +48,17 @@ import org.eclipse.swt.widgets.Text;
  */
 public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 
+	
+	
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 * Construct copy command from the selection
+	 * @param editingDomain
+	 * @param selectedElements
 	 * @return
 	 */
-	@Override
-	protected Command getCommand() {
+	public static Command buildCopyCommand(TransactionalEditingDomain editingDomain, Collection<IGraphicalEditPart> selectedElements) {
 		PapyrusClipboard<Object> papyrusClipboard = PapyrusClipboard.getNewInstance();
-		List<IGraphicalEditPart> selectedElements = getSelectedElements();
-		TransactionalEditingDomain editingDomain = getEditingDomain();
-		// TODO : select copyStrategy
+		
 		Command result;
 
 		DefaultDiagramCopyCommand defaultDiagramCopyCommand = new DefaultDiagramCopyCommand(editingDomain, papyrusClipboard, selectedElements);
@@ -83,10 +83,23 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 		List<IStrategy> allStrategies = PasteStrategyManager.getInstance().getAllStrategies();
 		for(IStrategy iStrategy : allStrategies) {
 			IPasteStrategy iIPasteStrategy = (IPasteStrategy)iStrategy;
-			iIPasteStrategy.prepare(papyrusClipboard);
+			iIPasteStrategy.prepare(papyrusClipboard, null);
 		}
 
 		return result;
+	}
+	
+	
+	
+	/**
+	 * 
+	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
+	 * 
+	 * @return
+	 */
+	@Override
+	protected Command getCommand() {
+		return CopyInDiagramHandler.buildCopyCommand(getEditingDomain(), getSelectedElements());
 	}
 
 

@@ -1,30 +1,23 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.edit.parts;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.Shape;
-import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
@@ -35,34 +28,25 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.preference.PreferenceConverter;
-import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
-import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeIconlDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
 import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.AbstractObservationEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.custom.edit.policies.ObservationLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.communication.custom.figures.TimeObservationNodeFigure;
 import org.eclipse.papyrus.uml.diagram.communication.edit.policies.TimeObservationItemSemanticEditPolicyCN;
-import org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLVisualIDRegistry;
-import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
 import org.eclipse.swt.graphics.Color;
 
 /**
@@ -107,28 +91,6 @@ public class TimeObservationEditPartCN extends AbstractObservationEditPart {
 	}
 
 	/**
-	 * Papyrus codeGen
-	 * 
-	 * @generated
-	 **/
-	protected void handleNotificationEvent(Notification event) {
-		/*
-		 * when a node have external node labels, the methods refreshChildren() remove the EditPart corresponding to the Label from the EditPart
-		 * Registry. After that, we can't reset the visibility to true (using the Show/Hide Label Action)!
-		 */
-		if(NotationPackage.eINSTANCE.getView_Visible().equals(event.getFeature())) {
-			Object notifier = event.getNotifier();
-			List<?> modelChildren = ((View)getModel()).getChildren();
-			if(!(notifier instanceof Edge)) {
-				if(modelChildren.contains(event.getNotifier())) {
-					return;
-				}
-			}
-		}
-		super.handleNotificationEvent(event);
-	}
-
-	/**
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
@@ -141,7 +103,7 @@ public class TimeObservationEditPartCN extends AbstractObservationEditPart {
 				case TimeObservationStereotypeLabelEditPartCN.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
-						protected List createSelectionHandles() {
+						protected List<?> createSelectionHandles() {
 							MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
@@ -167,6 +129,27 @@ public class TimeObservationEditPartCN extends AbstractObservationEditPart {
 	}
 
 	/**
+	 *Papyrus codeGen
+	 *@generated
+	 **/
+	protected void handleNotificationEvent(Notification event) {
+		/*
+		 * when a node have external node labels, the methods refreshChildren() remove the EditPart corresponding to the Label from the EditPart
+		 * Registry. After that, we can't reset the visibility to true (using the Show/Hide Label Action)!
+		 */
+		if(NotationPackage.eINSTANCE.getView_Visible().equals(event.getFeature())) {
+			Object notifier = event.getNotifier();
+			List<?> modelChildren = ((View)getModel()).getChildren();
+			if(!(notifier instanceof Edge)) {
+				if(modelChildren.contains(event.getNotifier())) {
+					return;
+				}
+			}
+		}
+		super.handleNotificationEvent(event);
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
@@ -174,6 +157,7 @@ public class TimeObservationEditPartCN extends AbstractObservationEditPart {
 	}
 
 	/**
+	 * org.eclipse.papyrus.uml.diagram.communication.custom.figures.TimeObservationNodeFigure
 	 * @generated
 	 */
 	public TimeObservationNodeFigure getPrimaryShape() {
@@ -200,11 +184,7 @@ public class TimeObservationEditPartCN extends AbstractObservationEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		String prefElementId = "TimeObservation";
-		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
-		String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
-		String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
@@ -217,20 +197,13 @@ public class TimeObservationEditPartCN extends AbstractObservationEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createMainFigure() {
-		NodeFigure figure = createNodePlate();
-		figure.setLayoutManager(new StackLayout());
-		IFigure shape = createNodeShape();
-		figure.add(shape);
-		contentPane = setupContentPane(shape);
-		return figure;
+		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
-	 * @param nodeShape
-	 *        instance of generated figure class
+	 * @param nodeShape instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -260,17 +233,15 @@ public class TimeObservationEditPartCN extends AbstractObservationEditPart {
 	 * @generated
 	 */
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineWidth(width);
-		}
+		super.setLineWidth(width);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected void setLineType(int style) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineStyle(style);
+		if(primaryShape instanceof NodeFigure) {
+			((NodeFigure)primaryShape).setLineStyle(style);
 		}
 	}
 
@@ -279,147 +250,5 @@ public class TimeObservationEditPartCN extends AbstractObservationEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(TimeObservationNameEditPartCN.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(UMLElementTypes.Message_8009);
-		types.add(UMLElementTypes.TimeObservationEvent_8013);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(targetEditPart instanceof InteractionEditPart) {
-			types.add(UMLElementTypes.Message_8009);
-		}
-		if(targetEditPart instanceof LifelineEditPartCN) {
-			types.add(UMLElementTypes.Message_8009);
-		}
-		if(targetEditPart instanceof ConstraintEditPartCN) {
-			types.add(UMLElementTypes.Message_8009);
-		}
-		if(targetEditPart instanceof CommentEditPartCN) {
-			types.add(UMLElementTypes.Message_8009);
-		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.communication.edit.parts.TimeObservationEditPartCN) {
-			types.add(UMLElementTypes.Message_8009);
-		}
-		if(targetEditPart instanceof DurationObservationEditPartCN) {
-			types.add(UMLElementTypes.Message_8009);
-		}
-		if(targetEditPart instanceof InteractionEditPart) {
-			types.add(UMLElementTypes.TimeObservationEvent_8013);
-		}
-		if(targetEditPart instanceof LifelineEditPartCN) {
-			types.add(UMLElementTypes.TimeObservationEvent_8013);
-		}
-		if(targetEditPart instanceof ConstraintEditPartCN) {
-			types.add(UMLElementTypes.TimeObservationEvent_8013);
-		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.communication.edit.parts.TimeObservationEditPartCN) {
-			types.add(UMLElementTypes.TimeObservationEvent_8013);
-		}
-		if(targetEditPart instanceof DurationObservationEditPartCN) {
-			types.add(UMLElementTypes.TimeObservationEvent_8013);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.Message_8009) {
-			types.add(UMLElementTypes.Interaction_8002);
-			types.add(UMLElementTypes.Lifeline_8001);
-			types.add(UMLElementTypes.Constraint_8004);
-			types.add(UMLElementTypes.Comment_8005);
-			types.add(UMLElementTypes.TimeObservation_8006);
-			types.add(UMLElementTypes.DurationObservation_8007);
-		} else if(relationshipType == UMLElementTypes.TimeObservationEvent_8013) {
-			types.add(UMLElementTypes.Interaction_8002);
-			types.add(UMLElementTypes.Lifeline_8001);
-			types.add(UMLElementTypes.Constraint_8004);
-			types.add(UMLElementTypes.TimeObservation_8006);
-			types.add(UMLElementTypes.DurationObservation_8007);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(5);
-		types.add(UMLElementTypes.Message_8009);
-		types.add(UMLElementTypes.CommentAnnotatedElement_8010);
-		types.add(UMLElementTypes.ConstraintConstrainedElement_8011);
-		types.add(UMLElementTypes.DurationObservationEvent_8012);
-		types.add(UMLElementTypes.TimeObservationEvent_8013);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.Message_8009) {
-			types.add(UMLElementTypes.Interaction_8002);
-			types.add(UMLElementTypes.Lifeline_8001);
-			types.add(UMLElementTypes.Constraint_8004);
-			types.add(UMLElementTypes.Comment_8005);
-			types.add(UMLElementTypes.TimeObservation_8006);
-			types.add(UMLElementTypes.DurationObservation_8007);
-		} else if(relationshipType == UMLElementTypes.CommentAnnotatedElement_8010) {
-			types.add(UMLElementTypes.Comment_8005);
-		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_8011) {
-			types.add(UMLElementTypes.Constraint_8004);
-		} else if(relationshipType == UMLElementTypes.DurationObservationEvent_8012) {
-			types.add(UMLElementTypes.DurationObservation_8007);
-		} else if(relationshipType == UMLElementTypes.TimeObservationEvent_8013) {
-			types.add(UMLElementTypes.TimeObservation_8006);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public Object getPreferredValue(EStructuralFeature feature) {
-		IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
-		Object result = null;
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
-			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("TimeObservation", PreferencesConstantsHelper.COLOR_LINE);
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("TimeObservation", PreferencesConstantsHelper.COLOR_FONT);
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("TimeObservation", PreferencesConstantsHelper.COLOR_FILL);
-			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor((IPreferenceStore)preferenceStore, prefColor));
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
-			String prefGradient = PreferencesConstantsHelper.getElementConstant("TimeObservation", PreferencesConstantsHelper.COLOR_GRADIENT);
-			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
-				result = new Integer(gradientPreferenceConverter.getTransparency());
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
-				result = gradientPreferenceConverter.getGradientData();
-			}
-		}
-		if(result == null) {
-			result = getStructuralFeatureValue(feature);
-		}
-		return result;
 	}
 }

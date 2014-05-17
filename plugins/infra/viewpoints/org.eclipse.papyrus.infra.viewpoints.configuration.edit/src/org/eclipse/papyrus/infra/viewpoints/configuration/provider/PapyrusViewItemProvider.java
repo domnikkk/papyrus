@@ -16,25 +16,19 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint;
-import org.eclipse.papyrus.infra.viewpoints.configuration.ProfilePropertyDescriptor;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.provider.ModelKindItemProvider;
 
 /**
@@ -44,13 +38,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.provider.ModelKindItemProvi
  * @generated
  */
 public class PapyrusViewItemProvider
-	extends ModelKindItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ModelKindItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -133,7 +121,7 @@ public class PapyrusViewItemProvider
 	 */
 	protected void addProfilesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new ProfilePropertyDescriptor(createItemPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_PapyrusView_profiles_feature"),
@@ -144,7 +132,7 @@ public class PapyrusViewItemProvider
 				 true,
 				 null,
 				 null,
-				 null)));
+				 null));
 	}
 
 	/**
@@ -226,7 +214,7 @@ public class PapyrusViewItemProvider
 	 * This returns PapyrusView.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT - Custom Image
 	 */
 	@Override
 	public Object getImage(Object object) {
@@ -241,7 +229,10 @@ public class PapyrusViewItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getTextFor((PapyrusView) object);
+		String label = ((PapyrusView)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_PapyrusView_type") :
+			getString("_UI_PapyrusView_type") + " " + label;
 	}
 
 	/**
@@ -310,7 +301,7 @@ public class PapyrusViewItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ConfigurationEditPlugin.INSTANCE;
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

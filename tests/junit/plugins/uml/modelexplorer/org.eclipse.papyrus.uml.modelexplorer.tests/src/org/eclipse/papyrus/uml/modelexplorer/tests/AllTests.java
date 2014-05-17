@@ -16,15 +16,18 @@
 package org.eclipse.papyrus.uml.modelexplorer.tests;
 
 
-import org.eclipse.papyrus.uml.modelexplorer.tests.paste.CopyPasteHandlerTest;
+import org.eclipse.papyrus.uml.modelexplorer.tests.paste.CopyPasteModelExplorerTest;
+import org.eclipse.papyrus.uml.modelexplorer.tests.paste.CutPasteModelExplorerTest;
+import org.eclipse.papyrus.uml.modelexplorer.tests.paste.DiagramCopyPasteModelExplorerTest;
+import org.eclipse.papyrus.uml.modelexplorer.tests.paste.TableCopyPasteModelExplorerTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
- DeleteHandlerTest.class, RenameHandlerTest.class, ModelExplorerViewTests.class, CopyPasteHandlerTest.class
-
+	DeleteModelExplorerTest.class, RenameHandlerTest.class, ModelExplorerViewTests.class, CutPasteModelExplorerTest.class, CopyPasteModelExplorerTest.class,
+	DiagramCopyPasteModelExplorerTest.class,TableCopyPasteModelExplorerTest.class
 })
 public class AllTests {
 	// JUnit for test suite

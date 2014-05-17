@@ -1,25 +1,16 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.providers;
 
-import java.util.Map;
-
-import org.eclipse.core.resources.IMarker;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gef.EditDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
@@ -74,34 +65,5 @@ public class UMLValidationDecoratorProvider extends ValidationDecoratorProvider 
 		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation)operation).getDecoratorTarget();
 		View view = (View)decoratorTarget.getAdapter(View.class);
 		return view != null && ModelEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view));
-	}
-
-	/**
-	 * @generated
-	 */
-	/**
-	 * Return the EObject retrieved from the URI attribute in the map. Retrieve it either via the marker itself
-	 * or via the attribute mapping (required in case a deleted marker)
-	 * 
-	 * @param marker
-	 *        the problem marker
-	 * @param attributes
-	 *        a map of the problem marker
-	 * @param domain
-	 *        the editing domain used for the conversion from URI to eObecjt
-	 * @return
-	 */
-	private static EObject getEObjectFromMarkerOrMap(IMarker marker, Map attributes, EditingDomain domain) {
-		String uriAttribute;
-		if(marker != null) {
-			uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
-		} else {
-			uriAttribute = (String)attributes.get(EValidator.URI_ATTRIBUTE);
-		}
-		if(uriAttribute != null) {
-			// get EObject from marker via resourceSet of domain
-			return domain.getResourceSet().getEObject(URI.createURI(uriAttribute), true);
-		}
-		return null;
 	}
 }

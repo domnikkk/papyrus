@@ -155,6 +155,9 @@
          <dependsOn
                serviceKeyRef="org.eclipse.papyrus.infra.core.resource.ModelSet">
          </dependsOn>
+         <dependsOn
+               serviceKeyRef="org.eclipse.papyrus.uml.modelrepair.service.IStereotypeRepairService">
+         </dependsOn>
       </service>
    </extension>
    <extension

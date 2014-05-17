@@ -40,14 +40,22 @@ public class DeviceCompositeCompartmentItemSemanticEditPolicyCN extends UMLBaseI
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.ExecutionEnvironment_21 == requestElementType) {
+
 			return getGEFWrapper(new ExecutionEnvironmentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Device_16 == requestElementType) {
+
 			return getGEFWrapper(new DeviceCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Node_23 == requestElementType) {
+
 			return getGEFWrapper(new NodeCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

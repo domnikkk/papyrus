@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.navigator;
 
@@ -38,8 +41,6 @@ import org.eclipse.ui.part.FileEditorInput;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLNavigatorActionProvider extends CommonActionProvider {
 
 	/**
@@ -55,44 +56,41 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 	/**
 	 * @generated
 	 */
-	@Override
-	public void init(final ICommonActionExtensionSite aSite) {
+	public void init(ICommonActionExtensionSite aSite) {
 		super.init(aSite);
 		if(aSite.getViewSite() instanceof ICommonViewerWorkbenchSite) {
-			this.myContribute = true;
+			myContribute = true;
 			makeActions((ICommonViewerWorkbenchSite)aSite.getViewSite());
 		} else {
-			this.myContribute = false;
+			myContribute = false;
 		}
 	}
 
 	/**
 	 * @generated
 	 */
-	private void makeActions(final ICommonViewerWorkbenchSite viewerSite) {
-		this.myOpenDiagramAction = new OpenDiagramAction(viewerSite);
+	private void makeActions(ICommonViewerWorkbenchSite viewerSite) {
+		myOpenDiagramAction = new OpenDiagramAction(viewerSite);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
-	public void fillActionBars(final IActionBars actionBars) {
-		if(!this.myContribute) {
+	public void fillActionBars(IActionBars actionBars) {
+		if(!myContribute) {
 			return;
 		}
-		final IStructuredSelection selection = (IStructuredSelection)getContext().getSelection();
-		this.myOpenDiagramAction.selectionChanged(selection);
-		if(this.myOpenDiagramAction.isEnabled()) {
-			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, this.myOpenDiagramAction);
+		IStructuredSelection selection = (IStructuredSelection)getContext().getSelection();
+		myOpenDiagramAction.selectionChanged(selection);
+		if(myOpenDiagramAction.isEnabled()) {
+			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, myOpenDiagramAction);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
-	public void fillContextMenu(final IMenuManager menu) {
+	public void fillContextMenu(IMenuManager menu) {
 	}
 
 	/**
@@ -108,21 +106,21 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 		/**
 		 * @generated
 		 */
-		private final ICommonViewerWorkbenchSite myViewerSite;
+		private ICommonViewerWorkbenchSite myViewerSite;
 
 		/**
 		 * @generated
 		 */
-		public OpenDiagramAction(final ICommonViewerWorkbenchSite viewerSite) {
+		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
 			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
-			this.myViewerSite = viewerSite;
+			myViewerSite = viewerSite;
 		}
 
 		/**
 		 * @generated
 		 */
-		public final void selectionChanged(final IStructuredSelection selection) {
-			this.myDiagram = null;
+		public final void selectionChanged(IStructuredSelection selection) {
+			myDiagram = null;
 			if(selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
 				if(selectedElement instanceof UMLNavigatorItem) {
@@ -131,29 +129,27 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 					selectedElement = ((IAdaptable)selectedElement).getAdapter(View.class);
 				}
 				if(selectedElement instanceof Diagram) {
-					final Diagram diagram = (Diagram)selectedElement;
+					Diagram diagram = (Diagram)selectedElement;
 					if(TimingDiagramEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(diagram))) {
-						this.myDiagram = diagram;
+						myDiagram = diagram;
 					}
 				}
 			}
-			setEnabled(this.myDiagram != null);
+			setEnabled(myDiagram != null);
 		}
 
 		/**
 		 * @generated
 		 */
-		@Override
 		public void run() {
-			if(this.myDiagram == null || this.myDiagram.eResource() == null) {
+			if(myDiagram == null || myDiagram.eResource() == null) {
 				return;
 			}
-
-			final IEditorInput editorInput = getEditorInput(this.myDiagram);
-			final IWorkbenchPage page = this.myViewerSite.getPage();
+			IEditorInput editorInput = getEditorInput(myDiagram);
+			IWorkbenchPage page = myViewerSite.getPage();
 			try {
 				page.openEditor(editorInput, UMLDiagramEditor.ID);
-			} catch (final PartInitException e) {
+			} catch (PartInitException e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
@@ -161,9 +157,9 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 		/**
 		 * @generated
 		 */
-		private static IEditorInput getEditorInput(final Diagram diagram) {
-			final Resource diagramResource = diagram.eResource();
-			for(final EObject nextEObject : diagramResource.getContents()) {
+		private static IEditorInput getEditorInput(Diagram diagram) {
+			Resource diagramResource = diagram.eResource();
+			for(EObject nextEObject : diagramResource.getContents()) {
 				if(nextEObject == diagram) {
 					return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 				}
@@ -171,12 +167,10 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 					break;
 				}
 			}
-			final URI uri = EcoreUtil.getURI(diagram);
-			final String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
-			final IEditorInput editorInput = new URIEditorInput(uri, editorName);
+			URI uri = EcoreUtil.getURI(diagram);
+			String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
+			IEditorInput editorInput = new URIEditorInput(uri, editorName);
 			return editorInput;
 		}
-
 	}
-
 }
