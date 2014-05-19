@@ -74,7 +74,6 @@ public class TableCopyPasteModelExplorerTest extends AbstractEditorTest {
 	 * here the purpose is to test the creation of constraint on variable elements.
 	 */
 	@Test
-	@Ignore // TODO to activate with implementation of table strategy
 	public void copyPasteTableTest() throws Exception {
 
 		//get the rootModel

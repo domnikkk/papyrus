@@ -226,4 +226,10 @@
          class="org.eclipse.papyrus.infra.nattable.common.helper.SyncTableCommandHelper">
    </helper>
 </extension>
+<extension
+      point="org.eclipse.papyrus.infra.gmfdiag.common.pasteStrategy">
+   <strategy
+         strategy="org.eclipse.papyrus.infra.nattable.common.strategy.paste.TablePasteStrategy">
+   </strategy>
+</extension>
 </plugin>
