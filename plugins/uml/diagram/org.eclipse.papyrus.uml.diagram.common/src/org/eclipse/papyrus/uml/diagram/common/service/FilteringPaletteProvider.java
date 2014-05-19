@@ -32,9 +32,9 @@ import org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider;
 import org.eclipse.gmf.runtime.diagram.ui.services.palette.IPaletteProvider;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram;
-import org.eclipse.papyrus.infra.viewpoints.policy.Activator;
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
+import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.ui.IEditorPart;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -219,7 +219,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 			list.clear();
 		}
 		catch (Exception e) {
-			Activator.getDefault().getPapyrusLog().error("Failed to setup the filtering palette's configuration", e);
+			Activator.log.error("Failed to setup the filtering palette's configuration", e);
 		}
 	}
 	
