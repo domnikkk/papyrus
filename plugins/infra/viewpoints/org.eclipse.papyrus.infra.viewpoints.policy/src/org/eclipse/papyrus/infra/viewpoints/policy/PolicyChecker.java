@@ -791,7 +791,7 @@ public class PolicyChecker {
 		PapyrusView current = view;
 		while (current != null) {
 			for (OwningRule rule : current.getOwningRules()) {
-				int result = allows(rule, owner.eClass(), stereotypes);
+				int result = allows(rule, owner, stereotypes);
 				if (result == RESULT_DENY)
 					return false;
 				if (result == RESULT_PERMIT)
@@ -819,7 +819,7 @@ public class PolicyChecker {
 		PapyrusView current = view;
 		while (current != null) {
 			for (OwningRule rule : current.getOwningRules()) {
-				int allow = allows(rule, owner.eClass(), stereotypes);
+				int allow = allows(rule, owner, stereotypes);
 				if (allow == RESULT_DENY)
 					return null;
 				if (allow == RESULT_UNKNOWN)
@@ -851,7 +851,7 @@ public class PolicyChecker {
 		PapyrusView current = view;
 		while (current != null) {
 			for (ModelRule rule : current.getModelRules()) {
-				int result = allows(rule, root.eClass(), stereotypes);
+				int result = allows(rule, root, stereotypes);
 				if (result == RESULT_DENY)
 					return false;
 				if (result == RESULT_PERMIT)
@@ -879,7 +879,7 @@ public class PolicyChecker {
 		PapyrusView current = view;
 		while (current != null) {
 			for (ModelRule rule : current.getModelRules()) {
-				int allow = allows(rule, root.eClass(), stereotypes);
+				int allow = allows(rule, root, stereotypes);
 				if (allow == RESULT_DENY)
 					return false;
 				if (allow == RESULT_UNKNOWN)
@@ -904,9 +904,9 @@ public class PolicyChecker {
 	 *            The stereotypes applied on <code>owner</code>
 	 * @return The check result
 	 */
-	private int allows(OwningRule rule, EClass owner, Collection<EClass> stereotypes) {
+	private int allows(OwningRule rule, EObject owner, Collection<EClass> stereotypes) {
 		EClass c = rule.getElement();
-		if (c == null || c.isSuperTypeOf(owner)) {
+		if (c == null || c.isSuperTypeOf(owner.eClass())) {
 			// matching type => check the application of the required stereotypes
 			for (EClass stereotype : rule.getStereotypes())
 				if (!stereotypes.contains(stereotype))
@@ -955,13 +955,21 @@ public class PolicyChecker {
 	 *            The stereotypes applied on <code>element</code>
 	 * @return The check result
 	 */
-	private int allows(ModelRule rule, EClass element, Collection<EClass> stereotypes) {
+	private int allows(ModelRule rule, EObject element, Collection<EClass> stereotypes) {
 		EClass c = rule.getElement();
-		if (c == null || c.isSuperTypeOf(element)) {
+		if (c == null || c.isSuperTypeOf(element.eClass())) {
 			// matching type => check the application of the required stereotypes
-			for (EClass stereotype : rule.getStereotypes())
-				if (!stereotypes.contains(stereotype))
+			// each stereotype required to match the model rule should be applied on the element
+			for (EClass stereotype : rule.getStereotypes()){
+				if (!stereotypes.contains(stereotype)) {
 					return RESULT_UNKNOWN;
+				}
+			}
+			// check the rule
+			boolean ruleMatches = RuleConstraintManager.getInstance().matchRule(rule, element);
+			if(!ruleMatches) {
+				return RESULT_UNKNOWN;
+			}
 			return rule.isPermit() ? RESULT_PERMIT : RESULT_DENY;
 		} else {
 			// type is not matching => unknown
@@ -982,11 +990,11 @@ public class PolicyChecker {
 	 *            The stereotypes applied on <code>element</code>
 	 * @return The check result
 	 */
-	private int allows(ChildRule rule, EClass origin, EClass element, Collection<EClass> stereotypes) {
+	private int allows(ChildRule rule, EObject origin, EObject element, Collection<EClass> stereotypes) {
 		EClass ce = rule.getElement();
 		EClass co = rule.getOrigin();
-		if ((ce == null || ce.isSuperTypeOf(element))
-				&& (co == null || co.isSuperTypeOf(origin))) {
+		if ((ce == null || ce.isSuperTypeOf(element.eClass()))
+				&& (co == null || co.isSuperTypeOf(origin.eClass()))) {
 			// matching type => check the application of the required stereotypes
 			for (EClass stereotype : rule.getStereotypes())
 				if (!stereotypes.contains(stereotype))

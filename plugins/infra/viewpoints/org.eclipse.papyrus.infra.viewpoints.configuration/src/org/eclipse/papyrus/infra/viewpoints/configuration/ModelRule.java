@@ -15,6 +15,7 @@ package org.eclipse.papyrus.infra.viewpoints.configuration;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.papyrus.infra.constraints.DisplayUnit;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +35,7 @@ import org.eclipse.emf.ecore.EClass;
  * @model
  * @generated
  */
-public interface ModelRule extends Rule {
+public interface ModelRule extends Rule, DisplayUnit {
 	/**
 	 * Returns the value of the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->

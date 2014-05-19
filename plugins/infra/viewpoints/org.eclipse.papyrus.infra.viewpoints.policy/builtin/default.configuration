@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration:PapyrusConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmi:id="_7wLmkNxhEeOqHvRyiN87hA" defaultStakeholder="_7wLmkdxhEeOqHvRyiN87hA">
+<configuration:PapyrusConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmi:id="_7wLmkNxhEeOqHvRyiN87hA" defaultStakeholder="_7wLmkdxhEeOqHvRyiN87hA">
   <stakeholders xmi:id="_7wLmkdxhEeOqHvRyiN87hA" name="Default Modeler" viewpoints="_7wLmktxhEeOqHvRyiN87hA"/>
   <viewpoints xsi:type="configuration:PapyrusViewpoint" xmi:id="_7wLmktxhEeOqHvRyiN87hA" name="Default Papyrus Viewpoint">
     <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_7wLmk9xhEeOqHvRyiN87hA" name="UML Inner Class Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.clazz/icons/obj16/Diagram_Class.gif" implementationID="PapyrusUMLClassDiagram" categories="_7wNb4txhEeOqHvRyiN87hA">
@@ -212,7 +212,11 @@
     </modelKinds>
     <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_7wM0stxhEeOqHvRyiN87hA" implementationID="PapyrusUMLProfileDiagram" categories="_7wNb5NxhEeOqHvRyiN87hA">
       <modelRules xmi:id="_7wM0s9xhEeOqHvRyiN87hA">
-        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Profile"/>
+        <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_rd91gN9EEeOOpcSm0dG8Kg" name="">
+          <constraintType href="platform:/plugin/org.eclipse.papyrus.infra.constraints/Model/ConstraintEnvironment.xmi#//@constraintTypes.4"/>
+          <properties xsi:type="constraints:ValueProperty" xmi:id="_iic2kN9FEeOOpcSm0dG8Kg" name="className" value="org.eclipse.papyrus.infra.viewpoints.policy.query.isContainedByProfileQuery"/>
+        </constraints>
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </modelRules>
       <owningRules xmi:id="_7wM0tNxhEeOqHvRyiN87hA">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
