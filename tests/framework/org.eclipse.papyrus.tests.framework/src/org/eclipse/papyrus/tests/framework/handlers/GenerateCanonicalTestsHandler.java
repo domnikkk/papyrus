@@ -6,12 +6,11 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.commands.IHandlerListener;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.mwe2.runtime.workflow.WorkflowContextImpl;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.tests.framework.mwe.GenerateTestsWorkflow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 public class GenerateCanonicalTestsHandler implements IHandler {
@@ -41,12 +40,16 @@ public class GenerateCanonicalTestsHandler implements IHandler {
 						"Oops", "The selected element is not an IFile!");
 			} else {
 				IFile iFile = (IFile) selectedElement;
-				Resource resource = new ResourceSetImpl().getResource(
-						URI.createPlatformResourceURI(iFile.getFullPath().toOSString(), true), true);
-				EObject eObject = resource.getContents().get(0);
-				MessageDialog.openInformation(
-						HandlerUtil.getActiveShell(event),
-						"PapyrusTesting Model", eObject.toString());
+				URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toOSString(), true);
+				
+				GenerateTestsWorkflow workflow = new GenerateTestsWorkflow(uri.toString());
+				workflow.run(new WorkflowContextImpl());
+//				Resource resource = new ResourceSetImpl().getResource(
+//						uri, true);
+//				EObject eObject = resource.getContents().get(0);
+//				MessageDialog.openInformation(
+//						HandlerUtil.getActiveShell(event),
+//						"PapyrusTesting Model", eObject.toString());
 
 			}
 		}

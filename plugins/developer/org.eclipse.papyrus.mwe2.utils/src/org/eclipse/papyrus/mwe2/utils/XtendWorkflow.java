@@ -48,21 +48,6 @@ public class XtendWorkflow extends Workflow {
 		return t;
 	}
 
-	protected List<IGeneratorFragment> fragments(final LanguageConfig cfg) {
-		return new ForwardingList<IGeneratorFragment>() {
-			@Override
-			protected List<IGeneratorFragment> delegate() {
-				throw new UnsupportedOperationException();
-			}
-
-			@Override
-			public boolean add(IGeneratorFragment element) {
-				cfg.addFragment(element);
-				return true;
-			}
-		};
-	}
-
 	protected <T> T getInstance(Class<T> clazz) {
 		T t = null;
 		try {

@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Profile;
 	</blockquote>
  * where profileSlot is a slot that contains the uml Profile object to register.
  */
-public class RegisterUmlProfileComponent extends AbstractWorkflowComponent {
+public class RegisterUmlProfile extends AbstractWorkflowComponent {
 	private org.apache.commons.logging.Log log = LogFactory.getLog(getClass());
 
 

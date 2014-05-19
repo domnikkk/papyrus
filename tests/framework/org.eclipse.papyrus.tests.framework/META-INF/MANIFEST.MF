@@ -31,7 +31,7 @@ Require-Bundle: org.junit;visibility:=reexport,
  org.eclipse.m2m.qvt.oml.emf.util;bundle-version="3.4.0";visibility:=reexport,
  org.eclipse.emf;bundle-version="2.6.0";visibility:=reexport,
  org.eclipse.emf.ecore.editor;bundle-version="2.10.0";visibility:=reexport,
- org.eclipse.papyrus.mwe2.utils;bundle-version="1.0.0",
+ org.eclipse.papyrus.mwe2.utils;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.core.resources,
  org.eclipse.jface
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -40,5 +40,6 @@ Eclipse-LazyStart: true
 Export-Package: org.eclipse.papyrus.tests.framework,
  org.eclipse.papyrus.tests.framework.m2m,
  org.eclipse.papyrus.tests.framework.m2t.xtend,
+ org.eclipse.papyrus.tests.framework.mwe,
  org.eclipse.papyrus.tests.framework.performance
 
