@@ -17,9 +17,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({ CSSClassProviderTest.class, CSSStylesheetTest.class, CSSCompartmentsTests.class, CSSSupportTest.class
-
-})
+@SuiteClasses({ CSSClassProviderTest.class, CSSStylesheetTest.class, CSSModelStylesheetTest.class, CSSCompartmentsTests.class, CSSSupportTest.class })
 public class AllTests {
-
+	//Test suite
 }
