@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,18 +54,21 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * This class provides listeners
- * 
- * 
+ *
+ *
  * This class describes the actions to do just before the save action
  */
 public class PreSaveProfileListener implements ISaveEventListener {
 
 	/**
 	 * If an error comes here, the save action can't be make entirely -> use try-catch!
-	 * 
+	 *
 	 * This function is called before the user make a "save" action
 	 */
 	public void doSave(DoSaveEvent event) {
+		if(event.isAutoSave()) {
+			return;
+		}
 		try {
 			//System.out.println("preSave Event received"); //$NON-NLS-1$
 			/**
@@ -229,7 +232,7 @@ public class PreSaveProfileListener implements ISaveEventListener {
 
 	/**
 	 * If an error comes here, the save action can't be make entirely -> use try-catch!
-	 * 
+	 *
 	 * This function is called before the user make a "save as" action
 	 */
 	public void doSaveAs(DoSaveEvent event) {

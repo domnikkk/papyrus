@@ -110,7 +110,7 @@ public class SaveLayoutBeforeClose implements IService {
 		try {
 			//We need to send pre- and post-save events, but we can only do that with the internal LifecycleEventsProvider
 			//The ISaveAndDirtyService can only save the whole model, but we just want to save the sash
-			DoSaveEvent event = new DoSaveEvent(registry, editor);
+			DoSaveEvent event = new DoSaveEvent(registry, editor, true);
 			internalLifecycleEventsProvider.fireAboutToDoSaveEvent(event);
 			internalLifecycleEventsProvider.fireDoSaveEvent(event);
 			sashModel.saveModel();

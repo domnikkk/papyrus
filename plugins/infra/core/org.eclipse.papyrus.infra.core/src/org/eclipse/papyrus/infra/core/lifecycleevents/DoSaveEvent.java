@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.lifecycleevents;
 
@@ -8,9 +8,9 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
  * Event sent whith a Save or SaveAs.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class DoSaveEvent {
 
@@ -18,16 +18,31 @@ public class DoSaveEvent {
 
 	final protected IMultiDiagramEditor multiDiagramEditor;
 
+	final protected boolean isAutoSave;
+
 	/**
 	 * Create an Event that is sent with a Save or SaveAs. The same event can be
 	 * reused. Constructor.
-	 * 
+	 *
 	 * @param serviceRegistry
 	 * @param multiDiagramEditor
 	 */
 	public DoSaveEvent(ServicesRegistry serviceRegistry, IMultiDiagramEditor multiDiagramEditor) {
+		this(serviceRegistry, multiDiagramEditor, false);
+	}
+
+	/**
+	 * Create an Event that is sent with a Save or SaveAs. The same event can be
+	 * reused. Constructor.
+	 *
+	 * @param serviceRegistry
+	 * @param multiDiagramEditor
+	 * @param isAutoSave
+	 */
+	public DoSaveEvent(ServicesRegistry serviceRegistry, IMultiDiagramEditor multiDiagramEditor, boolean isAutoSave) {
 		this.serviceRegistry = serviceRegistry;
 		this.multiDiagramEditor = multiDiagramEditor;
+		this.isAutoSave = isAutoSave;
 	}
 
 	/**
@@ -42,6 +57,10 @@ public class DoSaveEvent {
 	 */
 	public IMultiDiagramEditor getMultiDiagramEditor() {
 		return multiDiagramEditor;
+	}
+
+	public boolean isAutoSave() {
+		return isAutoSave;
 	}
 
 }
