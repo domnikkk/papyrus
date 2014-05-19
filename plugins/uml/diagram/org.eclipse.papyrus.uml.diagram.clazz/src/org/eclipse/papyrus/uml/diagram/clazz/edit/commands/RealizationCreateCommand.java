@@ -89,7 +89,6 @@ public class RealizationCreateCommand extends EditElementCommand {
 		if(!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-
 		Realization newElement = UMLFactory.eINSTANCE.createRealization();
 		getContainer().getPackagedElements().add(newElement);
 		newElement.getClients().add(getSource());
@@ -98,7 +97,6 @@ public class RealizationCreateCommand extends EditElementCommand {
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest)getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
-
 	}
 
 	/**

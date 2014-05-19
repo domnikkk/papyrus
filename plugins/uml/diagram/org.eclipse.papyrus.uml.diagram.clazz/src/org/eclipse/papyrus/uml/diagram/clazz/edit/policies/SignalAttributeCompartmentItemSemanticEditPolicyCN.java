@@ -38,12 +38,8 @@ public class SignalAttributeCompartmentItemSemanticEditPolicyCN extends UMLBaseI
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Property_3005 == requestElementType) {
-
 			return getGEFWrapper(new PropertyForSignalCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}

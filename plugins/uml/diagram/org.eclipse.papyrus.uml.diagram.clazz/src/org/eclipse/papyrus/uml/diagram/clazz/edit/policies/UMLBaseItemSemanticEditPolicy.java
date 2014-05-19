@@ -369,7 +369,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
-
 	}
 
 	/**
@@ -561,7 +560,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-
 			return canExistCommentAnnotatedElement_4013(source, target);
 		}
 
@@ -574,7 +572,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-
 			return canExistConstraintConstrainedElement_4014(source, target);
 		}
 
@@ -622,7 +619,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-
 			return canExistTimeObservationEvent_4024(source, target);
 		}
 
@@ -635,7 +631,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-
 			return canExistDurationObservationEvent_4025(source, target);
 		}
 
@@ -658,7 +653,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			if(target != null && (target.getOwnedRules().contains(target))) {
 				return false;
 			}
-
 			return canExistConstraintContext_8500(source, target);
 		}
 
@@ -845,9 +839,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				//Information Flow source constraint
 				if(source != null) {
 					if(!((source instanceof Actor) || (source instanceof Node) || (source instanceof UseCase) || (source instanceof Artifact) || (source instanceof Class) || (source instanceof Component) || (source instanceof Port) || (source instanceof Property) || (source instanceof Interface) || (source instanceof Package) || (source instanceof ActivityNode) || (source instanceof ActivityPartition) || (source instanceof InstanceSpecification))) {
-
 						return false;
-
 					}
 					if(source instanceof InstanceSpecification) {
 						EList<Classifier> classes = ((InstanceSpecification)source).getClassifiers();
@@ -861,9 +853,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				//Information Flow target constraint
 				if(target != null) {
 					if(!((target instanceof Actor) || (target instanceof Node) || (target instanceof UseCase) || (target instanceof Artifact) || (target instanceof Class) || (target instanceof Component) || (target instanceof Port) || (target instanceof Property) || (target instanceof Interface) || (target instanceof Package) || (target instanceof ActivityNode) || (target instanceof ActivityPartition) || (target instanceof InstanceSpecification))) {
-
 						return false;
-
 					}
 					if(target instanceof InstanceSpecification) {
 						EList<Classifier> classes = ((InstanceSpecification)target).getClassifiers();

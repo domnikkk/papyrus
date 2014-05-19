@@ -157,7 +157,6 @@ public class InterfaceNestedClassifierCompartmentCanonicalEditPolicy extends Can
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
-
 		boolean changed = deleteViews(orphaned.iterator());
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
@@ -177,7 +176,6 @@ public class InterfaceNestedClassifierCompartmentCanonicalEditPolicy extends Can
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
-
 		makeViewsImmutable(createdViews);
 	}
 }
