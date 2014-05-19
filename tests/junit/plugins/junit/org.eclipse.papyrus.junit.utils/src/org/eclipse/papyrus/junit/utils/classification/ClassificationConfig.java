@@ -11,19 +11,24 @@
  *****************************************************************************/
 package org.eclipse.papyrus.junit.utils.classification;
 
+import static org.eclipse.papyrus.junit.utils.classification.TestCategory.ExpensiveTest;
 import static org.eclipse.papyrus.junit.utils.classification.TestCategory.FailingTest;
 import static org.eclipse.papyrus.junit.utils.classification.TestCategory.InteractiveTest;
 import static org.eclipse.papyrus.junit.utils.classification.TestCategory.InvalidTest;
 import static org.eclipse.papyrus.junit.utils.classification.TestCategory.NotImplemented;
+import static org.eclipse.papyrus.junit.utils.classification.TestCategory.Standard;
 
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.eclipse.papyrus.infra.tools.util.ListHelper;
+
+import com.google.common.collect.ImmutableSet;
 
 
 /**
@@ -47,13 +52,51 @@ import org.eclipse.papyrus.infra.tools.util.ListHelper;
 public class ClassificationConfig {
 
 	public static final Set<TestCategory> excludedTestCategories = new HashSet<TestCategory>();
+	
+	/**
+	 * Default tests configuration for Continuous Integration (Hudson): Excludes the tests which are 
+	 * identified as failing, as well as the interactive tests
+	 * 
+	 * This configuration may require a couple of hours to run
+	 */
+	public static final Set<TestCategory> CI_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{
+		NotImplemented, InvalidTest, FailingTest, InteractiveTest
+	});
+	
+	/**
+	 * This tests configuration runs all tests which are already identified as failing. 
+	 * If one test from this configuration passes, this might mean that the annotation should be removed
+	 * 
+	 * InteractiveTests are excluded as well, as this configuration is supposed to be executed on Hudson
+	 */
+	public static final Set<TestCategory> FAILING_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{
+		Standard, InteractiveTest
+	});
+	
+	/**
+	 * This tests configuration is expected to run in ~15 minutes. This is useful for quick testing, 
+	 * and validation through Gerrit
+	 */
+	public static final Set<TestCategory> LIGTHWEIGHT_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{
+		InteractiveTest, NotImplemented, FailingTest, InvalidTest, ExpensiveTest
+	});
+	
+	/**
+	 * Executes all tests
+	 */
+	public static final Set<TestCategory> FULL_TESTS_CONFIG = Collections.emptySet();
 
 	static {
 		//Default on Hudson: exclude everything which is already identified as an issue (i.e. is not a (new) regression)
-		setExcludedTestCategories(NotImplemented, InvalidTest, FailingTest, InteractiveTest);
+		setTestsConfiguration(CI_TESTS_CONFIG);
 
 		//Check whether identified regressions are still failing
 		//setIncludedTestCategories(FailingTest);
+	}
+	
+	//Same as setExcludedTestsCategories, but renamed for clarity (To be used with predefined configurations)
+	public static void setTestsConfiguration(Set<TestCategory> predefinedConfiguration){
+		setExcludedTestCategories(predefinedConfiguration);
 	}
 
 	/**

@@ -42,6 +42,11 @@ public enum TestCategory {
 	InteractiveTest(InteractiveTest.class),
 
 	/**
+	 * Test methods annotated with {@link ExpensiveTest}
+	 */
+	ExpensiveTest(ExpensiveTest.class),
+
+	/**
 	 * Test methods without any classification-related annotation
 	 */
 	Standard();
