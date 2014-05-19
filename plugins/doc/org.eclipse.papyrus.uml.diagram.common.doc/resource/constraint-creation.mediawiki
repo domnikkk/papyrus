@@ -1,0 +1,66 @@
+= Create and edit constraints =
+
+Creation and edition comprises includes multiple use case, namely creation of a constraint and its context and setting a specification.
+
+<center>
+[[image:PapyrusConstraint-CreationUseCase.png]]<br/> 
+</center>
+
+== Define a constraint and its context ==
+
+Papyrus supports the creation of UML constraints. To create a constraint, and associated context, do one of the following:
+
+* Within any Papyrus diagram select the constraint tool from the palette and then press the mouse button at the position where you want to create the constraint on the diagram canvas. The constraint should then be connected to another element on the diagram, via a ContextLink relationship, by clicking on the target element in the diagram (in two-click mode). If you are in one-click-mode (connection tool preference), press the mouse button on the constraint and keep it pressed until the context object is selected. This ContextLink relationship defines the context for which the constraint will be evaluated.
+
+<center>
+[[Image:PapyrusConstraint-CreateViaDiagram.png]]&nbsp;&nbsp;&nbsp;[[Image:PapyrusConstraint-ContextViaDiagram.png]]<br>
+The constraint and context-link tools in the palette
+</center>
+
+* Within the Model Explorer via right clicking a model element and then selecting New Child -> Create a new Constraint. The context is automatically set to the parent of the constraint. The context can be changed via the Properties View if required.<br>
+
+<center>
+[[Image:PapyrusConstraint-CreateViaME.png]]<br>
+Create a constraint via the model explorer
+</center>
+
+<center>
+[[Image:PapyrusConstraint-ContextViaPropertyView.png]]<br>
+Set the context via the property view
+</center>
+
+== Define constraint specification ==
+
+Each constraint has a specification containing a condition. Whereas it may be an arbitrary value specification, such as a StringExpression or LiteralInteger, it is in most cases useful to define an opaque expression consisting of a pair of language and body (a list of these pairs). The constraint body may be written in at least OCL, JAVA, or natural language. In order to make constraints evaluable by Papyrus the constraint must be written in either OCL or JAVA. To define a constraint's specification, first select a constraint on either a diagram or in the Model Explorer, then do the following:
+
+* On the diagram open the default editor for constraints using the keyboard shortcut F2 or with a second click on an already selected constraint. The editor assume the language is OCL but this can be changed later via the Properties View. The constraint text is defined directly in the editor. The default editor can be controlled via the preferences. 
+
+* On the diagram select a specific editor via the context menu, as shown in the following screenshot.
+
+<center>
+[[Image:PapyrusConstraint-ChooseEditor.png]]<br>
+Explicitly choose the editor for the constraint
+</center>
+
+Use the property view to create a new or open an existing specification, as shown in the following figure.
+In the sequel, we assume that the specification is an opaque expression.
+
+<center>
+[[Image:PapyrusConstraint-SpecViaPropertyView.png]]<br>
+Open the specification via the property view
+</center>
+
+You can add the language, as in the following figure:<br>
+  
+<center>
+[[Image:PapyrusConstraint-OpaqueExpressionAddLang.png]]<br>
+Specify a language.
+</center>
+
+<center>
+[[Image:PapyrusConstraint-OpaqueExpressionEdit.png]]<br>
+Write the body of the opaque expression
+</center>
+
+This method is a bit more complicated, but gives the user full control over the opaque specification. In particular,
+it is possible to enter more than one language, body pair (even if this is rarely needed).
