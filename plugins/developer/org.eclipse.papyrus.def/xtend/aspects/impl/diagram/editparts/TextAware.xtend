@@ -573,7 +573,7 @@ override refreshLabel(GenCommonBase it , GenDiagram diagram )'''
 				setLabelIconHelper(getFigure(), getLabelIcon());
 			}
 			else {
-				setLabelTextHelper(getFigure(), "");
+				setLabelTextHelper(getFigure(), ""); //$NON-NLS-1$
 				setLabelIconHelper(getFigure(), null);
 			}
 		}

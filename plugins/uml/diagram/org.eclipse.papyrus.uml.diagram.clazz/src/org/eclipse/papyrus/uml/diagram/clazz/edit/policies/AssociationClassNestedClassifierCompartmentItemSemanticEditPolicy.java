@@ -38,12 +38,8 @@ public class AssociationClassNestedClassifierCompartmentItemSemanticEditPolicy e
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Class_3004 == requestElementType) {
-
 			return getGEFWrapper(new NestedClassForComponentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}

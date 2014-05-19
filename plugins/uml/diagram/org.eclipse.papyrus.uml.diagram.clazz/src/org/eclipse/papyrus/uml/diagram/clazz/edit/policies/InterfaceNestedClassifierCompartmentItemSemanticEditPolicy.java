@@ -43,37 +43,23 @@ public class InterfaceNestedClassifierCompartmentItemSemanticEditPolicy extends 
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Class_3008 == requestElementType) {
-
 			return getGEFWrapper(new NestedClassForInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Interface_3038 == requestElementType) {
-
 			return getGEFWrapper(new NestedInterfaceForInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Enumeration_3054 == requestElementType) {
-
 			return getGEFWrapper(new NestedEnumerationForInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.PrimitiveType_3048 == requestElementType) {
-
 			return getGEFWrapper(new NestedPrimitiveTypeForInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.DataType_3043 == requestElementType) {
-
 			return getGEFWrapper(new NestedDataTypeForInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Signal_3049 == requestElementType) {
-
 			return getGEFWrapper(new NestedSignalForInterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}

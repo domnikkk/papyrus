@@ -87,9 +87,7 @@ public class AssociationCreateCommand extends EditElementCommand {
 		if(!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-
 		throw new UnsupportedOperationException();
-
 	}
 
 	/**

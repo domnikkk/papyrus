@@ -40,22 +40,14 @@ public class TemplateSignatureTemplateParameterCompartmentItemSemanticEditPolicy
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.ClassifierTemplateParameter_3031 == requestElementType) {
-
 			return getGEFWrapper(new ClassifierTemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.OperationTemplateParameter_3035 == requestElementType) {
-
 			return getGEFWrapper(new OperationTemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.TemplateParameter_3016 == requestElementType) {
-
 			return getGEFWrapper(new TemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}
