@@ -9,11 +9,9 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.tests.tests;
-
-import java.io.IOException;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -39,17 +37,14 @@ public class CSSStylesheetTest extends AbstractCSSStylesheetTest {
 	}
 
 	@Before
-	public void init() {
+	public void init() throws Exception {
 		ResourceSet resourceSet = houseKeeper.createResourceSet();
 		CSSHelper.installCSSSupport(resourceSet);
 		URI uri = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/model/stylesheetTest/model.notation", true);
-		try {
-			Diagram diagram = (Diagram)EMFHelper.loadEMFModel(resourceSet, uri);
-			Assert.assertNotNull("Cannot find the model", diagram);
-			Assert.assertTrue("CSS are not activated on this resource", diagram instanceof CSSDiagram);
-			this.diagram = (CSSDiagram)diagram;
-		} catch (IOException ex) {
-			Activator.log.error(ex);
-		}
+
+		Diagram diagram = (Diagram)EMFHelper.loadEMFModel(resourceSet, uri);
+		Assert.assertNotNull("Cannot find the model", diagram);
+		Assert.assertTrue("CSS are not activated on this resource", diagram instanceof CSSDiagram);
+		this.diagram = (CSSDiagram)diagram;
 	}
 }
