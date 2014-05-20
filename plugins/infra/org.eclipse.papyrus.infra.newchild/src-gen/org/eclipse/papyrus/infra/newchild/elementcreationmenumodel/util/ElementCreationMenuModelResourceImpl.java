@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
- * @see org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.util.CustomElementCreationMenuModelResourceFactory
+ * @see org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.util.ElementCreationMenuModelResourceFactoryImpl
  * @generated
  */
 public class ElementCreationMenuModelResourceImpl extends XMIResourceImpl {

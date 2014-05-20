@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- * @see org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.util.CustomElementCreationMenuModelResource
+ * @see org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.util.ElementCreationMenuModelResourceImpl
  * @generated
  */
 public class ElementCreationMenuModelResourceFactoryImpl extends ResourceFactoryImpl {

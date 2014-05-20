@@ -20,6 +20,7 @@
     <genClasses image="false" ecoreClass="elementCreationMenuModel.ecore#//Menu">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elementCreationMenuModel.ecore#//Menu/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elementCreationMenuModel.ecore#//Menu/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elementCreationMenuModel.ecore#//Menu/visible"/>
     </genClasses>
     <genClasses ecoreClass="elementCreationMenuModel.ecore#//CreationMenu">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elementCreationMenuModel.ecore#//CreationMenu/elementTypeIdRef"/>

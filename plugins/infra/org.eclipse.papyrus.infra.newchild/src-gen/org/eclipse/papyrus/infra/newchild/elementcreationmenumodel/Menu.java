@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu#getLabel <em>Label</em>}</li>
  *   <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu#isVisible <em>Visible</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,5 +84,32 @@ public interface Menu extends EObject {
 	 * @generated
 	 */
 	void setIcon(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Visible</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Visible</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Visible</em>' attribute.
+	 * @see #setVisible(boolean)
+	 * @see org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage#getMenu_Visible()
+	 * @model default="true"
+	 * @generated
+	 */
+	boolean isVisible();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu#isVisible <em>Visible</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Visible</em>' attribute.
+	 * @see #isVisible()
+	 * @generated
+	 */
+	void setVisible(boolean value);
 
 } // Menu
