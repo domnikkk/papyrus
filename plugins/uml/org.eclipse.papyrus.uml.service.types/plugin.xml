@@ -10,14 +10,18 @@
 	<!-- Declaration of IElementTypes -->
 	
 	<!-- IMetamodelType for Abstraction -->
-	<metamodelType id="org.eclipse.papyrus.uml.Abstraction" name="UML::Abstraction"
-		eclass="Abstraction"
-		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
+	<metamodelType
+       eclass="Abstraction"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Abstraction.gif"
+       id="org.eclipse.papyrus.uml.Abstraction"
+       kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+       name="UML::Abstraction">
 			<param name="semanticHint" value="UML::Abstraction"/>
 	</metamodelType>
 	
 	<!-- IMetamodelType for AcceptCallAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.AcceptCallAction" name="UML::AcceptCallAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptCallAction.gif"
 		eclass="AcceptCallAction"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::AcceptCallAction"/>
@@ -25,6 +29,7 @@
 	
 	<!-- IMetamodelType for AcceptEventAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.AcceptEventAction" name="UML::AcceptEventAction"
+	icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif"
 		eclass="AcceptEventAction"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::AcceptEventAction"/>
@@ -39,6 +44,7 @@
 	
 	<!-- IMetamodelType for ActionExecutionSpecification -->
 	<metamodelType id="org.eclipse.papyrus.uml.ActionExecutionSpecification" name="UML::ActionExecutionSpecification"
+	icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionExecutionSpecification.gif"
 		eclass="ActionExecutionSpecification"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ActionExecutionSpecification"/>
@@ -46,16 +52,20 @@
 	
 	<!-- IMetamodelType for ActionInputPin -->
 	<metamodelType id="org.eclipse.papyrus.uml.ActionInputPin" name="UML::ActionInputPin"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif"
 		eclass="ActionInputPin"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ActionInputPin"/>
 	</metamodelType>
 	
 	<!-- IMetamodelType for Activity -->
-	<metamodelType id="org.eclipse.papyrus.uml.Activity" name="UML::Activity"
-		eclass="Activity"
-		 edithelper="org.eclipse.papyrus.uml.service.types.helper.ActivityHelper"
-		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
+	<metamodelType
+       eclass="Activity"
+       edithelper="org.eclipse.papyrus.uml.service.types.helper.ActivityHelper"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Activity.gif"
+       id="org.eclipse.papyrus.uml.Activity"
+       kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+       name="UML::Activity">
 			<param name="semanticHint" value="UML::Activity"/>
 	</metamodelType>
 	
@@ -68,6 +78,7 @@
 	
 	<!-- IMetamodelType for ActivityFinalNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.ActivityFinalNode" name="UML::ActivityFinalNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityFinalNode.gif"
 		eclass="ActivityFinalNode"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ActivityFinalNode"/>
@@ -93,6 +104,7 @@
 	
 	<!-- IMetamodelType for ActivityParameterNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.ActivityParameterNode" name="UML::ActivityParameterNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityParameterNode.gif"
 		eclass="ActivityParameterNode"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ActivityParameterNode"/>
@@ -100,6 +112,7 @@
 	
 	<!-- IMetamodelType for ActivityPartition -->
 	<metamodelType id="org.eclipse.papyrus.uml.ActivityPartition" name="UML::ActivityPartition"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif"
 		eclass="ActivityPartition"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ActivityPartition"/>
@@ -108,12 +121,14 @@
 	<!-- IMetamodelType for Actor -->
 	<metamodelType id="org.eclipse.papyrus.uml.Actor" name="UML::Actor"
 		eclass="Actor"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Actor.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Actor"/>
 	</metamodelType>
 	
 	<!-- IMetamodelType for AddStructuralFeatureValueAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.AddStructuralFeatureValueAction" name="UML::AddStructuralFeatureValueAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddStructuralFeatureValueAction.gif"
 		eclass="AddStructuralFeatureValueAction"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::AddStructuralFeatureValueAction"/>
@@ -122,6 +137,7 @@
 	<!-- IMetamodelType for AddVariableValueAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.AddVariableValueAction" name="UML::AddVariableValueAction"
 		eclass="AddVariableValueAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AddVariableValueAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::AddVariableValueAction"/>
 	</metamodelType>
@@ -129,6 +145,7 @@
 	<!-- IMetamodelType for AnyReceiveEvent -->
 	<metamodelType id="org.eclipse.papyrus.uml.AnyReceiveEvent" name="UML::AnyReceiveEvent"
 		eclass="AnyReceiveEvent"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AnyReceiveEvent.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::AnyReceiveEvent"/>
 	</metamodelType>
@@ -136,6 +153,7 @@
 	<!-- IMetamodelType for Artifact -->
 	<metamodelType id="org.eclipse.papyrus.uml.Artifact" name="UML::Artifact"
 		eclass="Artifact"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Artifact.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Artifact"/>
 	</metamodelType>
@@ -143,6 +161,7 @@
 	<!-- IMetamodelType for Association (Base IElementType) not directly used (use specializations) -->
 	<metamodelType id="org.eclipse.papyrus.uml.AssociationBase" name="UML::AssociationBase"
 		eclass="Association"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.AssociationBaseEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::AssociationBase"/>
@@ -151,6 +170,7 @@
 	<!-- IMetamodelType for AssociationClass -->
 	<metamodelType id="org.eclipse.papyrus.uml.AssociationClass" name="UML::AssociationClass"
 		eclass="AssociationClass"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AssociationClass.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::AssociationClass"/>
 	</metamodelType>
@@ -165,6 +185,7 @@
 	<!-- IMetamodelType for BehaviorExecutionSpecification -->
 	<metamodelType id="org.eclipse.papyrus.uml.BehaviorExecutionSpecification" name="UML::BehaviorExecutionSpecification"
 		eclass="BehaviorExecutionSpecification"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BehaviorExecutionSpecification.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::BehaviorExecutionSpecification"/>
 	</metamodelType>
@@ -186,6 +207,7 @@
 	
 	<!-- IMetamodelType for BroadcastSignalAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.BroadcastSignalAction" name="UML::BroadcastSignalAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/BroadcastSignalAction.gif"
 		eclass="BroadcastSignalAction"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::BroadcastSignalAction"/>
@@ -201,6 +223,7 @@
 	<!-- IMetamodelType for CallBehaviorAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.CallBehaviorAction" name="UML::CallBehaviorAction"
 		eclass="CallBehaviorAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CallBehaviorAction"/>
 	</metamodelType>
@@ -208,6 +231,7 @@
 	<!-- IMetamodelType for CallEvent -->
 	<metamodelType id="org.eclipse.papyrus.uml.CallEvent" name="UML::CallEvent"
 		eclass="CallEvent"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallEvent.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CallEvent"/>
 	</metamodelType>
@@ -215,6 +239,7 @@
 	<!-- IMetamodelType for CallOperationAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.CallOperationAction" name="UML::CallOperationAction"
 		eclass="CallOperationAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CallOperationAction"/>
 	</metamodelType>
@@ -223,6 +248,7 @@
 	<metamodelType
        eclass="CentralBufferNode"
        id="org.eclipse.papyrus.uml.CentralBufferNode"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CentralBufferNode.gif"
        kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
        name="UML::CentralBufferNode">
 			<param name="semanticHint" value="UML::CentralBufferNode"/>
@@ -231,6 +257,7 @@
 	<!-- IMetamodelType for ChangeEvent -->
 	<metamodelType id="org.eclipse.papyrus.uml.ChangeEvent" name="UML::ChangeEvent"
 		eclass="ChangeEvent"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ChangeEvent.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ChangeEvent"/>
 	</metamodelType>
@@ -256,6 +283,7 @@
 	<!-- IMetamodelType for ClassifierTemplateParameter -->
 	<metamodelType id="org.eclipse.papyrus.uml.ClassifierTemplateParameter" name="UML::ClassifierTemplateParameter"
 		eclass="ClassifierTemplateParameter"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ClassifierTemplateParameter.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ClassifierTemplateParameter"/>
 	</metamodelType>
@@ -263,6 +291,7 @@
 	<!-- IMetamodelType for Clause -->
 	<metamodelType id="org.eclipse.papyrus.uml.Clause" name="UML::Clause"
 		eclass="Clause"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Clause.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Clause"/>
 	</metamodelType>
@@ -270,6 +299,7 @@
 	<!-- IMetamodelType for ClearAssociationAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ClearAssociationAction" name="UML::ClearAssociationAction"
 		eclass="ClearAssociationAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ClearAssociationAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ClearAssociationAction"/>
 	</metamodelType>
@@ -277,6 +307,7 @@
 	<!-- IMetamodelType for ClearStructuralFeatureAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ClearStructuralFeatureAction" name="UML::ClearStructuralFeatureAction"
 		eclass="ClearStructuralFeatureAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ClearStructuralFeatureAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ClearStructuralFeatureAction"/>
 	</metamodelType>
@@ -284,6 +315,7 @@
 	<!-- IMetamodelType for ClearVariableAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ClearVariableAction" name="UML::ClearVariableAction"
 		eclass="ClearVariableAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ClearVariableAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ClearVariableAction"/>
 	</metamodelType>
@@ -291,6 +323,7 @@
 	<!-- IMetamodelType for Collaboration -->
 	<metamodelType id="org.eclipse.papyrus.uml.Collaboration" name="UML::Collaboration"
 		eclass="Collaboration"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Collaboration.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.CollaborationEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Collaboration"/>
@@ -299,6 +332,7 @@
 	<!-- IMetamodelType for CollaborationUse -->
 	<metamodelType id="org.eclipse.papyrus.uml.CollaborationUse" name="UML::CollaborationUse"
 		eclass="CollaborationUse"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CollaborationUse.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CollaborationUse"/>
 	</metamodelType>
@@ -306,20 +340,25 @@
 	<!-- IMetamodelType for CombinedFragment -->
 	<metamodelType id="org.eclipse.papyrus.uml.CombinedFragment" name="UML::CombinedFragment"
 		eclass="CombinedFragment"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CombinedFragment.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CombinedFragment"/>
 	</metamodelType>
 	
 	<!-- IMetamodelType for Comment -->
-	<metamodelType id="org.eclipse.papyrus.uml.Comment" name="UML::Comment"
-		eclass="Comment"
-		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
+	<metamodelType
+       eclass="Comment"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif"
+       id="org.eclipse.papyrus.uml.Comment"
+       kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+       name="UML::Comment">
 			<param name="semanticHint" value="UML::Comment"/>
 	</metamodelType>
 	
 	<!-- IMetamodelType for CommunicationPath -->
 	<metamodelType id="org.eclipse.papyrus.uml.CommunicationPath" name="UML::CommunicationPath"
 		eclass="CommunicationPath"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CommunicationPath.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CommunicationPath"/>
 	</metamodelType>
@@ -327,6 +366,7 @@
 	<!-- IMetamodelType for Component -->
 	<metamodelType
        eclass="Component"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif"
        edithelper="org.eclipse.papyrus.uml.service.types.helper.ComponentEditHelper"
        id="org.eclipse.papyrus.uml.Component"
        kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -337,6 +377,7 @@
 	<!-- IMetamodelType for ComponentRealization -->
 	<metamodelType id="org.eclipse.papyrus.uml.ComponentRealization" name="UML::ComponentRealization"
 		eclass="ComponentRealization"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ComponentRealization.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ComponentRealizationEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ComponentRealization"/>
@@ -345,6 +386,7 @@
 	<!-- IMetamodelType for ConditionalNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.ConditionalNode" name="UML::ConditionalNode"
 		eclass="ConditionalNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConditionalNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ConditionalNode"/>
 	</metamodelType>
@@ -359,6 +401,7 @@
 	<!-- IMetamodelType for ConnectableElementTemplateParameter -->
 	<metamodelType id="org.eclipse.papyrus.uml.ConnectableElementTemplateParameter" name="UML::ConnectableElementTemplateParameter"
 		eclass="ConnectableElementTemplateParameter"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConnectableElementTemplateParameter.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ConnectableElementTemplateParameter"/>
 	</metamodelType>
@@ -366,6 +409,7 @@
 	<!-- IMetamodelType for ConnectionPointReference -->
 	<metamodelType id="org.eclipse.papyrus.uml.ConnectionPointReference" name="UML::ConnectionPointReference"
 		eclass="ConnectionPointReference"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConnectionPointReference.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ConnectionPointReference"/>
 	</metamodelType>
@@ -373,6 +417,7 @@
 	<!-- IMetamodelType for Connector -->
 	<metamodelType id="org.eclipse.papyrus.uml.Connector" name="UML::Connector"
 		eclass="Connector"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Connector.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ConnectorEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Connector"/>
@@ -381,6 +426,7 @@
 	<!-- IMetamodelType for ConnectorEnd -->
 	<metamodelType id="org.eclipse.papyrus.uml.ConnectorEnd" name="UML::ConnectorEnd"
 		eclass="ConnectorEnd"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConnectorEnd.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ConnectorEnd"/>
 	</metamodelType>
@@ -388,6 +434,7 @@
 	<!-- IMetamodelType for ConsiderIgnoreFragment -->
 	<metamodelType id="org.eclipse.papyrus.uml.ConsiderIgnoreFragment" name="UML::ConsiderIgnoreFragment"
 		eclass="ConsiderIgnoreFragment"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ConsiderIgnoreFragment.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ConsiderIgnoreFragment"/>
 	</metamodelType>
@@ -395,6 +442,7 @@
 	<!-- IMetamodelType for Constraint -->
 	<metamodelType id="org.eclipse.papyrus.uml.Constraint" name="UML::Constraint"
 		eclass="Constraint"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ConstraintEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Constraint"/>
@@ -403,6 +451,7 @@
 	<!-- IMetamodelType for Continuation -->
 	<metamodelType id="org.eclipse.papyrus.uml.Continuation" name="UML::Continuation"
 		eclass="Continuation"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Continuation.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Continuation"/>
 	</metamodelType>
@@ -410,6 +459,7 @@
 	<!-- IMetamodelType for ControlFlow -->
 	<metamodelType id="org.eclipse.papyrus.uml.ControlFlow" name="UML::ControlFlow"
 		eclass="ControlFlow"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ControlFlow.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ControlFlowEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ControlFlow"/>
@@ -425,6 +475,7 @@
 	<!-- IMetamodelType for CreateLinkAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.CreateLinkAction" name="UML::CreateLinkAction"
 		eclass="CreateLinkAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateLinkAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CreateLinkAction"/>
 	</metamodelType>
@@ -432,6 +483,7 @@
 	<!-- IMetamodelType for CreateLinkObjectAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.CreateLinkObjectAction" name="UML::CreateLinkObjectAction"
 		eclass="CreateLinkObjectAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateLinkObjectAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CreateLinkObjectAction"/>
 	</metamodelType>
@@ -439,6 +491,7 @@
 	<!-- IMetamodelType for CreateObjectAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.CreateObjectAction" name="UML::CreateObjectAction"
 		eclass="CreateObjectAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/CreateObjectAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::CreateObjectAction"/>
 	</metamodelType>
@@ -446,6 +499,7 @@
 	<!-- IMetamodelType for DataStoreNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.DataStoreNode" name="UML::DataStoreNode"
 		eclass="DataStoreNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataStoreNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DataStoreNode"/>
 	</metamodelType>
@@ -453,6 +507,7 @@
 	<!-- IMetamodelType for DataType -->
 	<metamodelType id="org.eclipse.papyrus.uml.DataType" name="UML::DataType"
 		eclass="DataType"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DataType"/>
 	</metamodelType>
@@ -460,6 +515,7 @@
 	<!-- IMetamodelType for DecisionNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.DecisionNode" name="UML::DecisionNode"
 		eclass="DecisionNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DecisionNode"/>
 	</metamodelType>
@@ -467,6 +523,7 @@
 	<!-- IMetamodelType for Dependency -->
 	<metamodelType id="org.eclipse.papyrus.uml.Dependency" name="UML::Dependency"
 		eclass="Dependency"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Dependency.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.DependencyEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Dependency"/>
@@ -482,6 +539,7 @@
 	<!-- IMetamodelType for Deployment -->
 	<metamodelType id="org.eclipse.papyrus.uml.Deployment" name="UML::Deployment"
 		eclass="Deployment"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Deployment.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Deployment"/>
 	</metamodelType>
@@ -489,6 +547,7 @@
 	<!-- IMetamodelType for DeploymentSpecification -->
 	<metamodelType id="org.eclipse.papyrus.uml.DeploymentSpecification" name="UML::DeploymentSpecification"
 		eclass="DeploymentSpecification"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DeploymentSpecification.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DeploymentSpecification"/>
 	</metamodelType>
@@ -503,6 +562,7 @@
 	<!-- IMetamodelType for DestroyLinkAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.DestroyLinkAction" name="UML::DestroyLinkAction"
 		eclass="DestroyLinkAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyLinkAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DestroyLinkAction"/>
 	</metamodelType>
@@ -510,6 +570,7 @@
 	<!-- IMetamodelType for DestroyObjectAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.DestroyObjectAction" name="UML::DestroyObjectAction"
 		eclass="DestroyObjectAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestroyObjectAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DestroyObjectAction"/>
 	</metamodelType>
@@ -517,6 +578,7 @@
 	<!-- IMetamodelType for DestructionOccurrenceSpecification -->
 	<metamodelType id="org.eclipse.papyrus.uml.DestructionOccurrenceSpecification" name="UML::DestructionOccurrenceSpecification"
 		eclass="DestructionOccurrenceSpecification"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DestructionOccurrenceSpecification.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DestructionOccurrenceSpecification"/>
 	</metamodelType>
@@ -524,6 +586,7 @@
 	<!-- IMetamodelType for Device -->
 	<metamodelType id="org.eclipse.papyrus.uml.Device" name="UML::Device"
 		eclass="Device"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Device.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Device"/>
 	</metamodelType>
@@ -538,6 +601,7 @@
 	<!-- IMetamodelType for Duration -->
 	<metamodelType id="org.eclipse.papyrus.uml.Duration" name="UML::Duration"
 		eclass="Duration"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Duration.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Duration"/>
 	</metamodelType>
@@ -545,6 +609,7 @@
 	<!-- IMetamodelType for DurationConstraint -->
 	<metamodelType id="org.eclipse.papyrus.uml.DurationConstraint" name="UML::DurationConstraint"
 		eclass="DurationConstraint"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationConstraint.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DurationConstraint"/>
 	</metamodelType>
@@ -552,6 +617,7 @@
 	<!-- IMetamodelType for DurationInterval -->
 	<metamodelType id="org.eclipse.papyrus.uml.DurationInterval" name="UML::DurationInterval"
 		eclass="DurationInterval"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationInterval.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DurationInterval"/>
 	</metamodelType>
@@ -559,6 +625,7 @@
 	<!-- IMetamodelType for DurationObservation -->
 	<metamodelType id="org.eclipse.papyrus.uml.DurationObservation" name="UML::DurationObservation"
 		eclass="DurationObservation"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DurationObservation.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::DurationObservation"/>
 	</metamodelType>
@@ -574,6 +641,7 @@
 	<!-- IMetamodelType for ElementImport -->
 	<metamodelType id="org.eclipse.papyrus.uml.ElementImport" name="UML::ElementImport"
 		eclass="ElementImport"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ElementImport.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ElementImport"/>
 	</metamodelType>
@@ -588,6 +656,7 @@
 	<!-- IMetamodelType for Enumeration -->
 	<metamodelType id="org.eclipse.papyrus.uml.Enumeration" name="UML::Enumeration"
 		eclass="Enumeration"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Enumeration.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Enumeration"/>
 	</metamodelType>
@@ -595,6 +664,7 @@
 	<!-- IMetamodelType for EnumerationLiteral -->
 	<metamodelType id="org.eclipse.papyrus.uml.EnumerationLiteral" name="UML::EnumerationLiteral"
 		eclass="EnumerationLiteral"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/EnumerationLiteral.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::EnumerationLiteral"/>
 	</metamodelType>
@@ -609,6 +679,7 @@
 	<!-- IMetamodelType for ExceptionHandler -->
 	<metamodelType id="org.eclipse.papyrus.uml.ExceptionHandler" name="UML::ExceptionHandler"
 		eclass="ExceptionHandler"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExceptionHandler.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ExceptionHandlerEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ExceptionHandler"/>
@@ -624,6 +695,7 @@
 	<!-- IMetamodelType for ExecutionEnvironment -->
 	<metamodelType id="org.eclipse.papyrus.uml.ExecutionEnvironment" name="UML::ExecutionEnvironment"
 		eclass="ExecutionEnvironment"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExecutionEnvironment.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ExecutionEnvironment"/>
 	</metamodelType>
@@ -631,6 +703,7 @@
 	<!-- IMetamodelType for ExecutionOccurrenceSpecification -->
 	<metamodelType id="org.eclipse.papyrus.uml.ExecutionOccurrenceSpecification" name="UML::ExecutionOccurrenceSpecification"
 		eclass="ExecutionOccurrenceSpecification"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExecutionOccurrenceSpecification.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ExecutionOccurrenceSpecification"/>
 	</metamodelType>
@@ -645,6 +718,7 @@
 	<!-- IMetamodelType for ExpansionNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.ExpansionNode" name="UML::ExpansionNode"
 		eclass="ExpansionNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ExpansionNode"/>
 	</metamodelType>
@@ -652,6 +726,7 @@
 	<!-- IMetamodelType for ExpansionRegion -->
 	<metamodelType id="org.eclipse.papyrus.uml.ExpansionRegion" name="UML::ExpansionRegion"
 		eclass="ExpansionRegion"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ExpansionRegion"/>
 	</metamodelType>
@@ -659,6 +734,7 @@
 	<!-- IMetamodelType for Expression -->
 	<metamodelType id="org.eclipse.papyrus.uml.Expression" name="UML::Expression"
 		eclass="Expression"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Expression.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Expression"/>
 	</metamodelType>
@@ -666,6 +742,7 @@
 	<!-- IMetamodelType for Extend -->
 	<metamodelType id="org.eclipse.papyrus.uml.Extend" name="UML::Extend"
 		eclass="Extend"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Extend.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ExtendEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Extend"/>
@@ -674,6 +751,7 @@
 	<!-- IMetamodelType for Extension -->
 	<metamodelType id="org.eclipse.papyrus.uml.Extension" name="UML::Extension"
 		eclass="Extension"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Extension.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Extension"/>
 	</metamodelType>
@@ -681,6 +759,7 @@
 	<!-- IMetamodelType for ExtensionEnd -->
 	<metamodelType id="org.eclipse.papyrus.uml.ExtensionEnd" name="UML::ExtensionEnd"
 		eclass="ExtensionEnd"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExtensionEnd.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ExtensionEnd"/>
 	</metamodelType>
@@ -688,6 +767,7 @@
 	<!-- IMetamodelType for ExtensionPoint -->
 	<metamodelType id="org.eclipse.papyrus.uml.ExtensionPoint" name="UML::ExtensionPoint"
 		eclass="ExtensionPoint"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExtensionPoint.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ExtensionPoint"/>
 	</metamodelType>
@@ -709,6 +789,7 @@
 	<!-- IMetamodelType for FinalState -->
 	<metamodelType id="org.eclipse.papyrus.uml.FinalState" name="UML::FinalState"
 		eclass="FinalState"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FinalState.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::FinalState"/>
 	</metamodelType>
@@ -716,6 +797,7 @@
 	<!-- IMetamodelType for FlowFinalNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.FlowFinalNode" name="UML::FlowFinalNode"
 		eclass="FlowFinalNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FlowFinalNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::FlowFinalNode"/>
 	</metamodelType>
@@ -723,6 +805,7 @@
 	<!-- IMetamodelType for ForkNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.ForkNode" name="UML::ForkNode"
 		eclass="ForkNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ForkNode"/>
 	</metamodelType>
@@ -730,6 +813,7 @@
 	<!-- IMetamodelType for FunctionBehavior -->
 	<metamodelType id="org.eclipse.papyrus.uml.FunctionBehavior" name="UML::FunctionBehavior"
 		eclass="FunctionBehavior"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FunctionBehavior.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::FunctionBehavior"/>
 	</metamodelType>
@@ -737,6 +821,7 @@
 	<!-- IMetamodelType for Gate -->
 	<metamodelType id="org.eclipse.papyrus.uml.Gate" name="UML::Gate"
 		eclass="Gate"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Gate.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Gate"/>
 	</metamodelType>
@@ -744,6 +829,7 @@
 	<!-- IMetamodelType for GeneralOrdering -->
 	<metamodelType id="org.eclipse.papyrus.uml.GeneralOrdering" name="UML::GeneralOrdering"
 		eclass="GeneralOrdering"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/GeneralOrdering.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::GeneralOrdering"/>
 	</metamodelType>
@@ -751,6 +837,7 @@
 	<!-- IMetamodelType for Generalization -->
 	<metamodelType id="org.eclipse.papyrus.uml.Generalization" name="UML::Generalization"
 		eclass="Generalization"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Generalization.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.GeneralizationEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Generalization"/>
@@ -759,6 +846,7 @@
 	<!-- IMetamodelType for GeneralizationSet -->
 	<metamodelType id="org.eclipse.papyrus.uml.GeneralizationSet" name="UML::GeneralizationSet"
 		eclass="GeneralizationSet"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/GeneralizationSet.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::GeneralizationSet"/>
 	</metamodelType>
@@ -766,6 +854,7 @@
 	<!-- IMetamodelType for Image -->
 	<metamodelType id="org.eclipse.papyrus.uml.Image" name="UML::Image"
 		eclass="Image"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Image.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Image"/>
 	</metamodelType>
@@ -773,6 +862,7 @@
 	<!-- IMetamodelType for Include -->
 	<metamodelType id="org.eclipse.papyrus.uml.Include" name="UML::Include"
 		eclass="Include"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Include.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.IncludeEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Include"/>
@@ -781,6 +871,7 @@
 	<!-- IMetamodelType for InformationFlow -->
 	<metamodelType id="org.eclipse.papyrus.uml.InformationFlow" name="UML::InformationFlow"
 		eclass="InformationFlow"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InformationFlow.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.InformationFlowEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InformationFlow"/>
@@ -789,6 +880,7 @@
 	<!-- IMetamodelType for InformationItem -->
 	<metamodelType id="org.eclipse.papyrus.uml.InformationItem" name="UML::InformationItem"
 		eclass="InformationItem"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InformationItem.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InformationItem"/>
 	</metamodelType>
@@ -796,6 +888,7 @@
 	<!-- IMetamodelType for InitialNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.InitialNode" name="UML::InitialNode"
 		eclass="InitialNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InitialNode"/>
 	</metamodelType>
@@ -803,6 +896,7 @@
 	<!-- IMetamodelType for InputPin -->
 	<metamodelType id="org.eclipse.papyrus.uml.InputPin" name="UML::InputPin"
 		eclass="InputPin"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InputPin"/>
 	</metamodelType>
@@ -810,6 +904,7 @@
 	<!-- IMetamodelType for InstanceSpecification -->
 	<metamodelType id="org.eclipse.papyrus.uml.InstanceSpecification" name="UML::InstanceSpecification"
 		eclass="InstanceSpecification"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InstanceSpecification.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InstanceSpecification"/>
 	</metamodelType>
@@ -817,6 +912,7 @@
 	<!-- IMetamodelType for InstanceValue -->
 	<metamodelType id="org.eclipse.papyrus.uml.InstanceValue" name="UML::InstanceValue"
 		eclass="InstanceValue"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InstanceValue.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InstanceValue"/>
 	</metamodelType>
@@ -824,6 +920,7 @@
 	<!-- IMetamodelType for Interaction -->
 	<metamodelType id="org.eclipse.papyrus.uml.Interaction" name="UML::Interaction"
 		eclass="Interaction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Interaction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Interaction"/>
 	</metamodelType>
@@ -831,6 +928,7 @@
 	<!-- IMetamodelType for InteractionConstraint -->
 	<metamodelType id="org.eclipse.papyrus.uml.InteractionConstraint" name="UML::InteractionConstraint"
 		eclass="InteractionConstraint"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionConstraint.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InteractionConstraint"/>
 	</metamodelType>
@@ -845,6 +943,7 @@
 	<!-- IMetamodelType for InteractionOperand -->
 	<metamodelType id="org.eclipse.papyrus.uml.InteractionOperand" name="UML::InteractionOperand"
 		eclass="InteractionOperand"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionOperand.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InteractionOperand"/>
 	</metamodelType>
@@ -852,6 +951,7 @@
 	<!-- IMetamodelType for InteractionUse -->
 	<metamodelType id="org.eclipse.papyrus.uml.InteractionUse" name="UML::InteractionUse"
 		eclass="InteractionUse"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InteractionUse.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InteractionUse"/>
 	</metamodelType>
@@ -859,6 +959,7 @@
 	<!-- IMetamodelType for Interface -->
 	<metamodelType id="org.eclipse.papyrus.uml.Interface" name="UML::Interface"
 		eclass="Interface"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Interface.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Interface"/>
 	</metamodelType>
@@ -866,6 +967,7 @@
 	<!-- IMetamodelType for InterfaceRealization -->
 	<metamodelType id="org.eclipse.papyrus.uml.InterfaceRealization" name="UML::InterfaceRealization"
 		eclass="InterfaceRealization"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterfaceRealization.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.InterfaceRealizationEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InterfaceRealization"/>
@@ -874,6 +976,7 @@
 	<!-- IMetamodelType for InterruptibleActivityRegion -->
 	<metamodelType id="org.eclipse.papyrus.uml.InterruptibleActivityRegion" name="UML::InterruptibleActivityRegion"
 		eclass="InterruptibleActivityRegion"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/InterruptibleActivityRegion.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::InterruptibleActivityRegion"/>
 	</metamodelType>
@@ -881,6 +984,7 @@
 	<!-- IMetamodelType for Interval -->
 	<metamodelType id="org.eclipse.papyrus.uml.Interval" name="UML::Interval"
 		eclass="Interval"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Interval.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Interval"/>
 	</metamodelType>
@@ -888,6 +992,7 @@
 	<!-- IMetamodelType for IntervalConstraint -->
 	<metamodelType id="org.eclipse.papyrus.uml.IntervalConstraint" name="UML::IntervalConstraint"
 		eclass="IntervalConstraint"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/IntervalConstraint.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::IntervalConstraint"/>
 	</metamodelType>
@@ -902,6 +1007,7 @@
 	<!-- IMetamodelType for JoinNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.JoinNode" name="UML::JoinNode"
 		eclass="JoinNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::JoinNode"/>
 	</metamodelType>
@@ -909,6 +1015,7 @@
 	<!-- IMetamodelType for Lifeline -->
 	<metamodelType id="org.eclipse.papyrus.uml.Lifeline" name="UML::Lifeline"
 		eclass="Lifeline"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Lifeline.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Lifeline"/>
 	</metamodelType>
@@ -923,6 +1030,7 @@
 	<!-- IMetamodelType for LinkEndCreationData -->
 	<metamodelType id="org.eclipse.papyrus.uml.LinkEndCreationData" name="UML::LinkEndCreationData"
 		eclass="LinkEndCreationData"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LinkEndCreationData.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LinkEndCreationData"/>
 	</metamodelType>
@@ -930,6 +1038,7 @@
 	<!-- IMetamodelType for LinkEndData -->
 	<metamodelType id="org.eclipse.papyrus.uml.LinkEndData" name="UML::LinkEndData"
 		eclass="LinkEndData"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LinkEndData.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LinkEndData"/>
 	</metamodelType>
@@ -937,6 +1046,7 @@
 	<!-- IMetamodelType for LinkEndDestructionData -->
 	<metamodelType id="org.eclipse.papyrus.uml.LinkEndDestructionData" name="UML::LinkEndDestructionData"
 		eclass="LinkEndDestructionData"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LinkEndDestructionData.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LinkEndDestructionData"/>
 	</metamodelType>
@@ -944,6 +1054,7 @@
 	<!-- IMetamodelType for LiteralBoolean -->
 	<metamodelType id="org.eclipse.papyrus.uml.LiteralBoolean" name="UML::LiteralBoolean"
 		eclass="LiteralBoolean"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LiteralBoolean.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LiteralBoolean"/>
 	</metamodelType>
@@ -951,6 +1062,7 @@
 	<!-- IMetamodelType for LiteralInteger -->
 	<metamodelType
        eclass="LiteralInteger"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LiteralInteger.gif"
        edithelper="org.eclipse.papyrus.uml.service.types.helper.LiteralIntegerEditHelper"
        id="org.eclipse.papyrus.uml.LiteralInteger"
        kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -961,6 +1073,7 @@
 	<!-- IMetamodelType for LiteralNull -->
 	<metamodelType id="org.eclipse.papyrus.uml.LiteralNull" name="UML::LiteralNull"
 		eclass="LiteralNull"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LiteralNull.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LiteralNull"/>
 	</metamodelType>
@@ -968,6 +1081,7 @@
 	<!-- IMetamodelType for LiteralReal -->
 	<metamodelType id="org.eclipse.papyrus.uml.LiteralReal" name="UML::LiteralReal"
 		eclass="LiteralReal"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LiteralReal.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LiteralReal"/>
 	</metamodelType>
@@ -982,6 +1096,7 @@
 	<!-- IMetamodelType for LiteralString -->
 	<metamodelType id="org.eclipse.papyrus.uml.LiteralString" name="UML::LiteralString"
 		eclass="LiteralString"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LiteralString.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LiteralString"/>
 	</metamodelType>
@@ -989,6 +1104,7 @@
 	<!-- IMetamodelType for LiteralUnlimitedNatural -->
 	<metamodelType id="org.eclipse.papyrus.uml.LiteralUnlimitedNatural" name="UML::LiteralUnlimitedNatural"
 		eclass="LiteralUnlimitedNatural"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LiteralUnlimitedNatural.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LiteralUnlimitedNatural"/>
 	</metamodelType>
@@ -996,6 +1112,7 @@
 	<!-- IMetamodelType for LoopNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.LoopNode" name="UML::LoopNode"
 		eclass="LoopNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/LoopNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::LoopNode"/>
 	</metamodelType>
@@ -1003,6 +1120,7 @@
 	<!-- IMetamodelType for Manifestation -->
 	<metamodelType id="org.eclipse.papyrus.uml.Manifestation" name="UML::Manifestation"
 		eclass="Manifestation"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Manifestation.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Manifestation"/>
 	</metamodelType>
@@ -1010,6 +1128,7 @@
 	<!-- IMetamodelType for MergeNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.MergeNode" name="UML::MergeNode"
 		eclass="MergeNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::MergeNode"/>
 	</metamodelType>
@@ -1017,6 +1136,7 @@
 	<!-- IMetamodelType for Message -->
 	<metamodelType id="org.eclipse.papyrus.uml.Message" name="UML::Message"
 		eclass="Message"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Message.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.MessageEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Message"/>
@@ -1039,6 +1159,7 @@
 	<!-- IMetamodelType for MessageOccurrenceSpecification -->
 	<metamodelType id="org.eclipse.papyrus.uml.MessageOccurrenceSpecification" name="UML::MessageOccurrenceSpecification"
 		eclass="MessageOccurrenceSpecification"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/MessageOccurrenceSpecification.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::MessageOccurrenceSpecification"/>
 	</metamodelType>
@@ -1046,6 +1167,7 @@
 	<!-- IMetamodelType for Model -->
 	<metamodelType id="org.eclipse.papyrus.uml.Model" name="UML::Model"
 		eclass="Model"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Model.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Model"/>
 	</metamodelType>
@@ -1074,6 +1196,7 @@
 	<!-- IMetamodelType for Node -->
 	<metamodelType id="org.eclipse.papyrus.uml.Node" name="UML::Node"
 		eclass="Node"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Node.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Node"/>
 	</metamodelType>
@@ -1081,6 +1204,7 @@
 	<!-- IMetamodelType for ObjectFlow -->
 	<metamodelType id="org.eclipse.papyrus.uml.ObjectFlow" name="UML::ObjectFlow"
 		eclass="ObjectFlow"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ObjectFlow.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ObjectFlowEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ObjectFlow"/>
@@ -1104,6 +1228,7 @@
 	<!-- IMetamodelType for OccurrenceSpecification -->
 	<metamodelType id="org.eclipse.papyrus.uml.OccurrenceSpecification" name="UML::OccurrenceSpecification"
 		eclass="OccurrenceSpecification"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OccurrenceSpecification.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::OccurrenceSpecification"/>
 	</metamodelType>
@@ -1111,6 +1236,7 @@
 	<!-- IMetamodelType for OpaqueAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.OpaqueAction" name="UML::OpaqueAction"
 		eclass="OpaqueAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::OpaqueAction"/>
 	</metamodelType>
@@ -1118,6 +1244,7 @@
 	<!-- IMetamodelType for OpaqueBehavior -->
 	<metamodelType id="org.eclipse.papyrus.uml.OpaqueBehavior" name="UML::OpaqueBehavior"
 		eclass="OpaqueBehavior"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueBehavior.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::OpaqueBehavior"/>
 	</metamodelType>
@@ -1125,6 +1252,7 @@
 	<!-- IMetamodelType for OpaqueExpression -->
 	<metamodelType id="org.eclipse.papyrus.uml.OpaqueExpression" name="UML::OpaqueExpression"
 		eclass="OpaqueExpression"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueExpression.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::OpaqueExpression"/>
 	</metamodelType>
@@ -1132,6 +1260,7 @@
 	<!-- IMetamodelType for Operation -->
 	<metamodelType id="org.eclipse.papyrus.uml.Operation" name="UML::Operation"
 		eclass="Operation"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Operation"/>
 	</metamodelType>
@@ -1139,6 +1268,7 @@
 	<!-- IMetamodelType for OperationTemplateParameter -->
 	<metamodelType id="org.eclipse.papyrus.uml.OperationTemplateParameter" name="UML::OperationTemplateParameter"
 		eclass="OperationTemplateParameter"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OperationTemplateParameter.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::OperationTemplateParameter"/>
 	</metamodelType>
@@ -1146,6 +1276,7 @@
 	<!-- IMetamodelType for OutputPin -->
 	<metamodelType id="org.eclipse.papyrus.uml.OutputPin" name="UML::OutputPin"
 		eclass="OutputPin"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::OutputPin"/>
 	</metamodelType>
@@ -1153,6 +1284,7 @@
 	<!-- IMetamodelType for Package -->
 	<metamodelType id="org.eclipse.papyrus.uml.Package" name="UML::Package"
 		eclass="Package"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Package"/>
 	</metamodelType>
@@ -1160,6 +1292,7 @@
 	<!-- IMetamodelType for PackageImport -->
 	<metamodelType id="org.eclipse.papyrus.uml.PackageImport" name="UML::PackageImport"
 		eclass="PackageImport"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/PackageImport.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::PackageImport"/>
 	</metamodelType>
@@ -1167,6 +1300,7 @@
 	<!-- IMetamodelType for PackageMerge -->
 	<metamodelType id="org.eclipse.papyrus.uml.PackageMerge" name="UML::PackageMerge"
 		eclass="PackageMerge"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/PackageMerge.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::PackageMerge"/>
 	</metamodelType>
@@ -1181,6 +1315,7 @@
 	<!-- IMetamodelType for Parameter -->
 	<metamodelType id="org.eclipse.papyrus.uml.Parameter" name="UML::Parameter"
 		eclass="Parameter"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Parameter.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Parameter"/>
 	</metamodelType>
@@ -1188,6 +1323,7 @@
 	<!-- IMetamodelType for ParameterSet -->
 	<metamodelType id="org.eclipse.papyrus.uml.ParameterSet" name="UML::ParameterSet"
 		eclass="ParameterSet"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ParameterSet.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ParameterSet"/>
 	</metamodelType>
@@ -1202,6 +1338,7 @@
 	<!-- IMetamodelType for PartDecomposition -->
 	<metamodelType id="org.eclipse.papyrus.uml.PartDecomposition" name="UML::PartDecomposition"
 		eclass="PartDecomposition"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/PartDecomposition.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::PartDecomposition"/>
 	</metamodelType>
@@ -1211,6 +1348,7 @@
        eclass="Pin"
        edithelper="org.eclipse.papyrus.uml.service.types.helper.PinEditHelper"
        id="org.eclipse.papyrus.uml.Pin"
+       icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Pin.gif"
        kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
        name="UML::Pin">
 			<param name="semanticHint" value="UML::Pin"/>
@@ -1219,6 +1357,7 @@
 	<!-- IMetamodelType for Port -->
 	<metamodelType id="org.eclipse.papyrus.uml.Port" name="UML::Port"
 		eclass="Port"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Port.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.PortEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Port"/>
@@ -1227,6 +1366,7 @@
 	<!-- IMetamodelType for PrimitiveType -->
 	<metamodelType id="org.eclipse.papyrus.uml.PrimitiveType" name="UML::PrimitiveType"
 		eclass="PrimitiveType"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/PrimitiveType.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::PrimitiveType"/>
 	</metamodelType>
@@ -1234,6 +1374,7 @@
 	<!-- IMetamodelType for Profile -->
 	<metamodelType id="org.eclipse.papyrus.uml.Profile" name="UML::Profile"
 		eclass="Profile"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Profile.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Profile"/>
 	</metamodelType>
@@ -1241,6 +1382,7 @@
 	<!-- IMetamodelType for ProfileApplication -->
 	<metamodelType id="org.eclipse.papyrus.uml.ProfileApplication" name="UML::ProfileApplication"
 		eclass="ProfileApplication"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ProfileApplication.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ProfileApplication"/>
 	</metamodelType>
@@ -1248,6 +1390,7 @@
 	<!-- IMetamodelType for Property -->
 	<metamodelType id="org.eclipse.papyrus.uml.Property" name="UML::Property"
 		eclass="Property"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Property"/>
 	</metamodelType>
@@ -1255,6 +1398,7 @@
 	<!-- IMetamodelType for ProtocolConformance -->
 	<metamodelType id="org.eclipse.papyrus.uml.ProtocolConformance" name="UML::ProtocolConformance"
 		eclass="ProtocolConformance"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ProtocolConformance.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ProtocolConformanceEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ProtocolConformance"/>
@@ -1263,6 +1407,7 @@
 	<!-- IMetamodelType for ProtocolStateMachine -->
 	<metamodelType id="org.eclipse.papyrus.uml.ProtocolStateMachine" name="UML::ProtocolStateMachine"
 		eclass="ProtocolStateMachine"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ProtocolStateMachine.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.ProtocolStateMachineEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ProtocolStateMachine"/>
@@ -1271,6 +1416,7 @@
 	<!-- IMetamodelType for ProtocolTransition -->
 	<metamodelType id="org.eclipse.papyrus.uml.ProtocolTransition" name="UML::ProtocolTransition"
 		eclass="ProtocolTransition"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ProtocolTransition.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ProtocolTransition"/>
 	</metamodelType>
@@ -1278,6 +1424,7 @@
 	<!-- IMetamodelType for Pseudostate -->
 	<metamodelType id="org.eclipse.papyrus.uml.Pseudostate" name="UML::Pseudostate"
 		eclass="Pseudostate"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Pseudostate"/>
 	</metamodelType>
@@ -1285,6 +1432,7 @@
 	<!-- IMetamodelType for QualifierValue -->
 	<metamodelType id="org.eclipse.papyrus.uml.QualifierValue" name="UML::QualifierValue"
 		eclass="QualifierValue"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/QualifierValue.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::QualifierValue"/>
 	</metamodelType>
@@ -1292,6 +1440,7 @@
 	<!-- IMetamodelType for RaiseExceptionAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.RaiseExceptionAction" name="UML::RaiseExceptionAction"
 		eclass="RaiseExceptionAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/RaiseExceptionAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::RaiseExceptionAction"/>
 	</metamodelType>
@@ -1299,6 +1448,7 @@
 	<!-- IMetamodelType for ReadExtentAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReadExtentAction" name="UML::ReadExtentAction"
 		eclass="ReadExtentAction"
+	icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadExtentAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReadExtentAction"/>
 	</metamodelType>
@@ -1306,6 +1456,7 @@
 	<!-- IMetamodelType for ReadIsClassifiedObjectAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReadIsClassifiedObjectAction" name="UML::ReadIsClassifiedObjectAction"
 		eclass="ReadIsClassifiedObjectAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadIsClassifiedObjectAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReadIsClassifiedObjectAction"/>
 	</metamodelType>
@@ -1313,6 +1464,7 @@
 	<!-- IMetamodelType for ReadLinkAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReadLinkAction" name="UML::ReadLinkAction"
 		eclass="ReadLinkAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadLinkAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReadLinkAction"/>
 	</metamodelType>
@@ -1320,6 +1472,7 @@
 	<!-- IMetamodelType for ReadLinkObjectEndAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReadLinkObjectEndAction" name="UML::ReadLinkObjectEndAction"
 		eclass="ReadLinkObjectEndAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadLinkObjectEndAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReadLinkObjectEndAction"/>
 	</metamodelType>
@@ -1327,6 +1480,7 @@
 	<!-- IMetamodelType for ReadLinkObjectEndQualifierAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReadLinkObjectEndQualifierAction" name="UML::ReadLinkObjectEndQualifierAction"
 		eclass="ReadLinkObjectEndQualifierAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadLinkObjectEndQualifierAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReadLinkObjectEndQualifierAction"/>
 	</metamodelType>
@@ -1334,6 +1488,7 @@
 	<!-- IMetamodelType for ReadSelfAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReadSelfAction" name="UML::ReadSelfAction"
 		eclass="ReadSelfAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadSelfAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReadSelfAction"/>
 	</metamodelType>
@@ -1341,6 +1496,7 @@
 	<!-- IMetamodelType for ReadStructuralFeatureAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReadStructuralFeatureAction" name="UML::ReadStructuralFeatureAction"
 		eclass="ReadStructuralFeatureAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadStructuralFeatureAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReadStructuralFeatureAction"/>
 	</metamodelType>
@@ -1348,6 +1504,7 @@
 	<!-- IMetamodelType for ReadVariableAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReadVariableAction" name="UML::ReadVariableAction"
 		eclass="ReadVariableAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReadVariableAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReadVariableAction"/>
 	</metamodelType>
@@ -1355,6 +1512,7 @@
 	<!-- IMetamodelType for Realization -->
 	<metamodelType id="org.eclipse.papyrus.uml.Realization" name="UML::Realization"
 		eclass="Realization"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Realization.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Realization"/>
 	</metamodelType>
@@ -1362,6 +1520,7 @@
 	<!-- IMetamodelType for Reception -->
 	<metamodelType id="org.eclipse.papyrus.uml.Reception" name="UML::Reception"
 		eclass="Reception"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Reception.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Reception"/>
 	</metamodelType>
@@ -1369,6 +1528,7 @@
 	<!-- IMetamodelType for ReclassifyObjectAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReclassifyObjectAction" name="UML::ReclassifyObjectAction"
 		eclass="ReclassifyObjectAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReclassifyObjectAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReclassifyObjectAction"/>
 	</metamodelType>
@@ -1383,6 +1543,7 @@
 	<!-- IMetamodelType for RedefinableTemplateSignature -->
 	<metamodelType id="org.eclipse.papyrus.uml.RedefinableTemplateSignature" name="UML::RedefinableTemplateSignature"
 		eclass="RedefinableTemplateSignature"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/RedefinableTemplateSignature.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::RedefinableTemplateSignature"/>
 	</metamodelType>
@@ -1390,6 +1551,7 @@
 	<!-- IMetamodelType for ReduceAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReduceAction" name="UML::ReduceAction"
 		eclass="ReduceAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReduceAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReduceAction"/>
 	</metamodelType>
@@ -1397,6 +1559,7 @@
 	<!-- IMetamodelType for Region -->
 	<metamodelType id="org.eclipse.papyrus.uml.Region" name="UML::Region"
 		eclass="Region"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Region.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Region"/>
 	</metamodelType>
@@ -1411,6 +1574,7 @@
 	<!-- IMetamodelType for RemoveStructuralFeatureValueAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.RemoveStructuralFeatureValueAction" name="UML::RemoveStructuralFeatureValueAction"
 		eclass="RemoveStructuralFeatureValueAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/RemoveStructuralFeatureValueAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::RemoveStructuralFeatureValueAction"/>
 	</metamodelType>
@@ -1418,6 +1582,8 @@
 	<!-- IMetamodelType for RemoveVariableValueAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.RemoveVariableValueAction" name="UML::RemoveVariableValueAction"
 		eclass="RemoveVariableValueAction"
+		
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/RemoveVariableValueAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::RemoveVariableValueAction"/>
 	</metamodelType>
@@ -1425,6 +1591,7 @@
 	<!-- IMetamodelType for ReplyAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ReplyAction" name="UML::ReplyAction"
 		eclass="ReplyAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ReplyAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ReplyAction"/>
 	</metamodelType>
@@ -1432,6 +1599,7 @@
 	<!-- IMetamodelType for SendObjectAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.SendObjectAction" name="UML::SendObjectAction"
 		eclass="SendObjectAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendObjectAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::SendObjectAction"/>
 	</metamodelType>
@@ -1439,6 +1607,7 @@
 	<!-- IMetamodelType for SendSignalAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.SendSignalAction" name="UML::SendSignalAction"
 		eclass="SendSignalAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SendSignalAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::SendSignalAction"/>
 	</metamodelType>
@@ -1446,6 +1615,7 @@
 	<!-- IMetamodelType for SequenceNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.SequenceNode" name="UML::SequenceNode"
 		eclass="SequenceNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SequenceNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::SequenceNode"/>
 	</metamodelType>
@@ -1453,6 +1623,7 @@
 	<!-- IMetamodelType for Signal -->
 	<metamodelType id="org.eclipse.papyrus.uml.Signal" name="UML::Signal"
 		eclass="Signal"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Signal.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Signal"/>
 	</metamodelType>
@@ -1460,6 +1631,7 @@
 	<!-- IMetamodelType for SignalEvent -->
 	<metamodelType id="org.eclipse.papyrus.uml.SignalEvent" name="UML::SignalEvent"
 		eclass="SignalEvent"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/SignalEvent.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::SignalEvent"/>
 	</metamodelType>
@@ -1467,6 +1639,7 @@
 	<!-- IMetamodelType for Slot -->
 	<metamodelType id="org.eclipse.papyrus.uml.Slot" name="UML::Slot"
 		eclass="Slot"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Slot.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Slot"/>
 	</metamodelType>
@@ -1474,6 +1647,7 @@
 	<!-- IMetamodelType for StartClassifierBehaviorAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.StartClassifierBehaviorAction" name="UML::StartClassifierBehaviorAction"
 		eclass="StartClassifierBehaviorAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StartClassifierBehaviorAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::StartClassifierBehaviorAction"/>
 	</metamodelType>
@@ -1481,6 +1655,7 @@
 	<!-- IMetamodelType for StartObjectBehaviorAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.StartObjectBehaviorAction" name="UML::StartObjectBehaviorAction"
 		eclass="StartObjectBehaviorAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StartObjectBehaviorAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::StartObjectBehaviorAction"/>
 	</metamodelType>
@@ -1488,6 +1663,7 @@
 	<!-- IMetamodelType for State -->
 	<metamodelType id="org.eclipse.papyrus.uml.State" name="UML::State"
 		eclass="State"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/State.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::State"/>
 	</metamodelType>
@@ -1495,6 +1671,7 @@
 	<!-- IMetamodelType for StateInvariant -->
 	<metamodelType id="org.eclipse.papyrus.uml.StateInvariant" name="UML::StateInvariant"
 		eclass="StateInvariant"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StateInvariant.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::StateInvariant"/>
 	</metamodelType>
@@ -1502,6 +1679,7 @@
 	<!-- IMetamodelType for StateMachine -->
 	<metamodelType id="org.eclipse.papyrus.uml.StateMachine" name="UML::StateMachine"
 		eclass="StateMachine"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StateMachine.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::StateMachine"/>
 	</metamodelType>
@@ -1509,6 +1687,7 @@
 	<!-- IMetamodelType for Stereotype -->
 	<metamodelType id="org.eclipse.papyrus.uml.Stereotype" name="UML::Stereotype"
 		eclass="Stereotype"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Stereotype.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Stereotype"/>
 	</metamodelType>
@@ -1516,6 +1695,7 @@
 	<!-- IMetamodelType for StringExpression -->
 	<metamodelType id="org.eclipse.papyrus.uml.StringExpression" name="UML::StringExpression"
 		eclass="StringExpression"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StringExpression.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::StringExpression"/>
 	</metamodelType>
@@ -1537,6 +1717,7 @@
 	<!-- IMetamodelType for StructuredActivityNode -->
 	<metamodelType id="org.eclipse.papyrus.uml.StructuredActivityNode" name="UML::StructuredActivityNode"
 		eclass="StructuredActivityNode"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/StructuredActivityNode.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::StructuredActivityNode"/>
 	</metamodelType>
@@ -1551,6 +1732,7 @@
 	<!-- IMetamodelType for Substitution -->
 	<metamodelType id="org.eclipse.papyrus.uml.Substitution" name="UML::Substitution"
 		eclass="Substitution"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Substitution.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.SubstitutionEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Substitution"/>
@@ -1559,6 +1741,7 @@
 	<!-- IMetamodelType for TemplateBinding -->
 	<metamodelType id="org.eclipse.papyrus.uml.TemplateBinding" name="UML::TemplateBinding"
 		eclass="TemplateBinding"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TemplateBinding.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TemplateBinding"/>
 	</metamodelType>
@@ -1566,6 +1749,7 @@
 	<!-- IMetamodelType for TemplateParameter -->
 	<metamodelType id="org.eclipse.papyrus.uml.TemplateParameter" name="UML::TemplateParameter"
 		eclass="TemplateParameter"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TemplateParameter.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TemplateParameter"/>
 	</metamodelType>
@@ -1573,6 +1757,7 @@
 	<!-- IMetamodelType for TemplateParameterSubstitution -->
 	<metamodelType id="org.eclipse.papyrus.uml.TemplateParameterSubstitution" name="UML::TemplateParameterSubstitution"
 		eclass="TemplateParameterSubstitution"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TemplateParameterSubstitution.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TemplateParameterSubstitution"/>
 	</metamodelType>
@@ -1580,6 +1765,7 @@
 	<!-- IMetamodelType for TemplateSignature -->
 	<metamodelType id="org.eclipse.papyrus.uml.TemplateSignature" name="UML::TemplateSignature"
 		eclass="TemplateSignature"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TemplateSignature.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TemplateSignature"/>
 	</metamodelType>
@@ -1594,6 +1780,7 @@
 	<!-- IMetamodelType for TestIdentityAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.TestIdentityAction" name="UML::TestIdentityAction"
 		eclass="TestIdentityAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TestIdentityAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TestIdentityAction"/>
 	</metamodelType>
@@ -1601,6 +1788,7 @@
 	<!-- IMetamodelType for TimeConstraint -->
 	<metamodelType id="org.eclipse.papyrus.uml.TimeConstraint" name="UML::TimeConstraint"
 		eclass="TimeConstraint"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeConstraint.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TimeConstraint"/>
 	</metamodelType>
@@ -1608,6 +1796,7 @@
 	<!-- IMetamodelType for TimeEvent -->
 	<metamodelType id="org.eclipse.papyrus.uml.TimeEvent" name="UML::TimeEvent"
 		eclass="TimeEvent"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeEvent.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TimeEvent"/>
 	</metamodelType>
@@ -1615,6 +1804,7 @@
 	<!-- IMetamodelType for TimeExpression -->
 	<metamodelType id="org.eclipse.papyrus.uml.TimeExpression" name="UML::TimeExpression"
 		eclass="TimeExpression"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeExpression.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TimeExpression"/>
 	</metamodelType>
@@ -1622,6 +1812,7 @@
 	<!-- IMetamodelType for TimeInterval -->
 	<metamodelType id="org.eclipse.papyrus.uml.TimeInterval" name="UML::TimeInterval"
 		eclass="TimeInterval"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeInterval.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TimeInterval"/>
 	</metamodelType>
@@ -1629,6 +1820,7 @@
 	<!-- IMetamodelType for TimeObservation -->
 	<metamodelType id="org.eclipse.papyrus.uml.TimeObservation" name="UML::TimeObservation"
 		eclass="TimeObservation"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TimeObservation.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::TimeObservation"/>
 	</metamodelType>
@@ -1636,6 +1828,7 @@
 	<!-- IMetamodelType for Transition -->
 	<metamodelType id="org.eclipse.papyrus.uml.Transition" name="UML::Transition"
 		eclass="Transition"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Transition.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Transition"/>
 	</metamodelType>
@@ -1643,6 +1836,7 @@
 	<!-- IMetamodelType for Trigger -->
 	<metamodelType id="org.eclipse.papyrus.uml.Trigger" name="UML::Trigger"
 		eclass="Trigger"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Trigger.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Trigger"/>
 	</metamodelType>
@@ -1664,6 +1858,7 @@
 	<!-- IMetamodelType for UnmarshallAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.UnmarshallAction" name="UML::UnmarshallAction"
 		eclass="UnmarshallAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/UnmarshallAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::UnmarshallAction"/>
 	</metamodelType>
@@ -1671,6 +1866,7 @@
 	<!-- IMetamodelType for Usage -->
 	<metamodelType id="org.eclipse.papyrus.uml.Usage" name="UML::Usage"
 		eclass="Usage"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Usage"/>
 	</metamodelType>
@@ -1678,6 +1874,7 @@
 	<!-- IMetamodelType for UseCase -->
 	<metamodelType id="org.eclipse.papyrus.uml.UseCase" name="UML::UseCase"
 		eclass="UseCase"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/UseCase.gif"
 		edithelper="org.eclipse.papyrus.uml.service.types.helper.UseCaseEditHelper"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::UseCase"/>
@@ -1686,6 +1883,7 @@
 	<!-- IMetamodelType for ValuePin -->
 	<metamodelType id="org.eclipse.papyrus.uml.ValuePin" name="UML::ValuePin"
 		eclass="ValuePin"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValuePin.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ValuePin"/>
 	</metamodelType>
@@ -1700,6 +1898,7 @@
 	<!-- IMetamodelType for ValueSpecificationAction -->
 	<metamodelType id="org.eclipse.papyrus.uml.ValueSpecificationAction" name="UML::ValueSpecificationAction"
 		eclass="ValueSpecificationAction"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::ValueSpecificationAction"/>
 	</metamodelType>
@@ -1707,6 +1906,7 @@
 	<!-- IMetamodelType for Variable -->
 	<metamodelType id="org.eclipse.papyrus.uml.Variable" name="UML::Variable"
 		eclass="Variable"
+		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Variable.gif"
 		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
 			<param name="semanticHint" value="UML::Variable"/>
 	</metamodelType>
