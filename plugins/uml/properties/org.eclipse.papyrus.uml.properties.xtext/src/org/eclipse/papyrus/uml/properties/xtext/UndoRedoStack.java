@@ -35,6 +35,10 @@ public class UndoRedoStack<T> {
 		return res;
 	}
 
+	public void clearUndo() {
+		undo.clear();
+	}
+
 	public void clearRedo() {
 		redo.clear();
 	}

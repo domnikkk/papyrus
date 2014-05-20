@@ -235,23 +235,28 @@ public class XtextLanguageEditor implements BodyEditor, IContextElementProvider 
 	public void setInput(String value) {
 		if(value != null) {
 			textControl.setText(value);
+			// clear undo redo/stack, since we do not want to give the user the possibility
+			// to undo the initial input.
+			undoRedoStack.clearUndo();
+			undoRedoStack.clearRedo();
 		}
 	}
 
-	public void dispose() { //TODO
+	public void dispose() {
+		// TODO?
 	}
 
-	public void addChangeListener(Listener listener) { //TODO
+	public void addChangeListener(Listener listener) {
 	}
 
-	public void removeChangeListener(Listener listener) { //TODO
+	public void removeChangeListener(Listener listener) {
 	}
 
 	public String getValue() {
 		return null;
 	}
 
-	public void setReadOnly(boolean readOnly) { //TODO
+	public void setReadOnly(boolean readOnly) {
 	}
 
 	public void setContext(ModelElement context) {
