@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * An Implementation of ISection for the TabbedPropertyView framework.
  * The XWTSection uses an XWT File to display the SWT Controls, and
  * a DataSource for DataBinding
- * 
+ *
  * @author Camille Letavernier
  */
 public class XWTSection extends AbstractPropertySection implements IChangeListener {
@@ -58,7 +58,7 @@ public class XWTSection extends AbstractPropertySection implements IChangeListen
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param section
 	 *        The Section object containing the Metadata for the XWTSection
 	 * @param view
@@ -127,7 +127,7 @@ public class XWTSection extends AbstractPropertySection implements IChangeListen
 
 	/**
 	 * Displays the section
-	 * 
+	 *
 	 * @param refresh
 	 *        If true, and the section has already been displayed, the controls will be
 	 *        regenerated. If false, the section will only be displayed if it hasn't been
@@ -144,12 +144,14 @@ public class XWTSection extends AbstractPropertySection implements IChangeListen
 			hide();
 			return;
 		}
-		
+
+		self.setRedraw(false); //Avoid flickering during refresh
 		if(refresh) {
 			display.refreshSection(self, section, source);
 		} else {
 			display.createSection(self, section, source);
 		}
+		self.setRedraw(true);
 	}
 
 	private void hide() {
@@ -164,7 +166,7 @@ public class XWTSection extends AbstractPropertySection implements IChangeListen
 	/**
 	 * Tests if this section is applied. A section is applied if it doesn't have
 	 * any constraint, or if at least one of its constraints match the current selection
-	 * 
+	 *
 	 * @return
 	 *         True if the section should be displayed
 	 */
