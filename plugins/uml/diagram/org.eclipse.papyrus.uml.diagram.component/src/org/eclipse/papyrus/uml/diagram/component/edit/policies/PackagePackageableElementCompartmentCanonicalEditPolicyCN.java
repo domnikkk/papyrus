@@ -211,7 +211,6 @@ public class PackagePackageableElementCompartmentCanonicalEditPolicyCN extends C
 				}
 			}
 		}
-
 		boolean changed = deleteViews(orphaned.iterator());
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
@@ -234,7 +233,6 @@ public class PackagePackageableElementCompartmentCanonicalEditPolicyCN extends C
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
-
 		makeViewsImmutable(createdViews);
 	}
 }

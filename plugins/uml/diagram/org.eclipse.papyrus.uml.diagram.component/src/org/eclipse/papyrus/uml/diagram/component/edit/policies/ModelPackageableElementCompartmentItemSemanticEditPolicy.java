@@ -44,42 +44,26 @@ public class ModelPackageableElementCompartmentItemSemanticEditPolicy extends UM
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Interface_3078 == requestElementType) {
-
 			return getGEFWrapper(new InterfaceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Model_3077 == requestElementType) {
-
 			return getGEFWrapper(new ModelCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Package_3076 == requestElementType) {
-
 			return getGEFWrapper(new PackageCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Component_3071 == requestElementType) {
-
 			return getGEFWrapper(new ComponentCreateCommandPCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Comment_3074 == requestElementType) {
-
 			return getGEFWrapper(new CommentCreateCommandPCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Constraint_3075 == requestElementType) {
-
 			return getGEFWrapper(new ConstraintCreateCommandPCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Interface_3072 == requestElementType) {
-
 			return getGEFWrapper(new InterfaceCreateCommandPCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}

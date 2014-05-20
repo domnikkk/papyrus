@@ -39,17 +39,11 @@ public class ComponentCompositeCompartmentItemSemanticEditPolicyPCN extends UMLB
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Component_3070 == requestElementType) {
-
 			return getGEFWrapper(new ComponentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Property_3079 == requestElementType) {
-
 			return getGEFWrapper(new PropertyCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}

@@ -88,12 +88,8 @@ public class PropertyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Port_3069 == requestElementType) {
-
 			return getGEFWrapper(new PortCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}
@@ -130,11 +126,6 @@ public class PropertyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			Node node = (Node)nit.next();
 			switch(UMLVisualIDRegistry.getVisualID(node)) {
 			case PortEditPart.VISUAL_ID:
-
-
-
-
-
 				for(Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
 					Edge incomingLink = (Edge)it.next();
 					switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
@@ -157,7 +148,6 @@ public class PropertyItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 						break;
 					}
 				}
-
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), node.getElement(), false))); // directlyOwned: false
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
