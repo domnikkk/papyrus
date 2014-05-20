@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
  *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.tests.tests;
 
@@ -31,10 +31,10 @@ import org.junit.Rule;
 import org.junit.Test;
 
 /**
- * 
+ *
  * An abstract Class to test CSSStylesheet. The Papyrus model tested is "../../model/stylesheetTest/".
  * In the daughter's class you must implement initCSSTheme() with the @BeforeClass tag and init() with the @Before tag.
- * 
+ *
  * @author Mickael ADAM
  *
  */
@@ -44,8 +44,6 @@ public abstract class AbstractCSSStylesheetTest extends AbstractPapyrusTest {
 	public final HouseKeeper houseKeeper = new HouseKeeper();
 
 	protected CSSDiagram diagram;
-
-	abstract void init();
 
 	@Test
 	public void testClassStyle() {
