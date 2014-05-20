@@ -25,9 +25,8 @@ import org.eclipse.papyrus.uml.diagram.composite.edit.policies.ManifestationItem
 /**
  * @generated
  */
-public class ManifestationEditPart extends UMLConnectionNodeEditPart
-		implements ITreeBranchEditPart
-{
+public class ManifestationEditPart extends UMLConnectionNodeEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -53,15 +52,11 @@ public class ManifestationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ManifestationNameEditPart) {
-			((ManifestationNameEditPart) childEditPart).setLabel(
-					getPrimaryShape().getNameLabel());
-			return true;
+		if(childEditPart instanceof ManifestationNameEditPart) {
+			((ManifestationNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 		}
-		if (childEditPart instanceof ManifestationAppliedStereotypeEditPart) {
-			((ManifestationAppliedStereotypeEditPart) childEditPart).setLabel(
-					getPrimaryShape().getAppliedStereotypeLabel());
-			return true;
+		if(childEditPart instanceof ManifestationAppliedStereotypeEditPart) {
+			((ManifestationAppliedStereotypeEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
 		}
 		return false;
 	}
@@ -70,7 +65,7 @@ public class ManifestationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
+		if(addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -80,10 +75,10 @@ public class ManifestationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ManifestationNameEditPart) {
+		if(childEditPart instanceof ManifestationNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ManifestationAppliedStereotypeEditPart) {
+		if(childEditPart instanceof ManifestationAppliedStereotypeEditPart) {
 			return true;
 		}
 		return false;
@@ -93,7 +88,7 @@ public class ManifestationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
+		if(removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -115,6 +110,6 @@ public class ManifestationEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	public DashedEdgeFigure getPrimaryShape() {
-		return (DashedEdgeFigure) getFigure();
+		return (DashedEdgeFigure)getFigure();
 	}
 }

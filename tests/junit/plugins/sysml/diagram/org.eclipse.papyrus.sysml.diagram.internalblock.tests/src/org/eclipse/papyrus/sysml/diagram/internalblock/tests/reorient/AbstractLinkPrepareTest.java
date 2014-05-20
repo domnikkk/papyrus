@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.reorient;
@@ -65,9 +66,13 @@ public class AbstractLinkPrepareTest extends AbstractTest {
 	public static View partContainer1, partContainer2; // Its type block may be set encapsulated for testing purpose.
 	public static View nestedPartContainer1, nestedPartContainer2;
 	
-	public static Map<View, Boolean> isReorientAllowed = new HashMap<View, Boolean>();
+	public static final Map<View, Boolean> isReorientAllowed = new HashMap<View, Boolean>();
 
 	
+	@BeforeClass
+	public static void initializeReorientAllowedMap() {
+		houseKeeper.cleanUpLater(isReorientAllowed);
+	}
 	
 	@BeforeClass
 	public static void prepareInheritedNodes() throws Exception {

@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.TreeItem;
 // TODO : make drag&dropEditor extends it 
 public class StrategyEditor extends MultipleReferenceEditor {
 
-	private static final String STRATEGIES = "Strategies";
+	private static final String STRATEGIES = "Strategies"; //$NON-NLS-1$
 
 	public static final int ACTIVATION_COLUMN = 0;
 
@@ -61,7 +61,7 @@ public class StrategyEditor extends MultipleReferenceEditor {
 
 		IStaticContentProvider provider = new StaticContentProvider(values.toArray());
 		ColumnViewerToolTipSupport.enableFor(treeViewer, ToolTip.NO_RECREATE);
-		setProviders(provider, new StrategyLabelProvider(getStrategyManager()));// FIXME
+		setProviders(provider, new StrategyLabelProvider(getStrategyManager()));
 		setModelObservable(new StrategyObservableList(values));
 
 		TableLayout layout = new TableLayout();

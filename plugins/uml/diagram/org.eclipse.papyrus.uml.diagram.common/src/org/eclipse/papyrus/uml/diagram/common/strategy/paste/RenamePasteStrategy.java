@@ -13,28 +13,25 @@ package org.eclipse.papyrus.uml.diagram.common.strategy.paste;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
+import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.AbstractPasteStrategy;
+import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.DefaultPasteStrategy;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.tools.commands.RenameElementCommand;
 import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
- * Offer a strategy for copying stereotypes.
+ * Offer a strategy for renaming paste root elements.
  */
-public class RenamePasteStrategy implements IPasteStrategy {
+public class RenamePasteStrategy extends AbstractPasteStrategy implements IPasteStrategy {
 
 	/** The instance. */
 	private static IPasteStrategy instance = new RenamePasteStrategy();
@@ -76,54 +73,16 @@ public class RenamePasteStrategy implements IPasteStrategy {
 		return "Rename elements"; //$NON-NLS-1$
 	}
 
-	/**
-	 * Gets the category id.
-	 *
-	 * @return the category id
-	 */
-	public String getCategoryID() {
-		return "org.eclipse.papyrus.strategy.paste"; //$NON-NLS-1$
-	}
-
-	/**
-	 * Gets the category label.
-	 *
-	 * @return the category label
-	 */
-	public String getCategoryLabel() {
-		return "Paste all copied elements"; //$NON-NLS-1$
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getImage()
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
-	@Deprecated
-	public Image getImage() {
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getPriority()
-	 */
-	@Deprecated
-	public int getPriority() {
-		return 1;
-	}
-
-	/**
-	 * Sets the options.
-	 *
-	 * @param options
-	 *        the options
-	 */
-	public void setOptions(Map<String, Object> options) {
-		//Nothing
-	}
-
+	@Override
+	public IPasteStrategy dependsOn() {
+		return DefaultPasteStrategy.getInstance();
+	}	
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -152,56 +111,5 @@ public class RenamePasteStrategy implements IPasteStrategy {
 		return compoundCommand;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain,
-	 * org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
-	 */
-	@Override
-	public Command getGraphicalCommand(EditingDomain domain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart targetEditPart, PapyrusClipboard<Object> papyrusClipboard) {
-		org.eclipse.gef.commands.CompoundCommand compoundCommand = new org.eclipse.gef.commands.CompoundCommand("Stereotype Semantic And Graphical paste"); //$NON-NLS-1$
-		View view = (View)targetEditPart.getModel();
-		EObject modelTargetOwner = (EObject)view.getElement();
-		List<EObject> filterDescendants = EcoreUtil.filterDescendants(papyrusClipboard.getTarget());
-		for(Iterator<EObject> iterator = filterDescendants.iterator(); iterator.hasNext();) {
-			EObject target = (EObject)iterator.next();
-			if(target instanceof NamedElement) {
-				NamedElement namedElement = (NamedElement)target;
-				if(namedElement.getName() != null) {
-					String defaultCopyNameWithIncrement = NamedElementUtil.getDefaultCopyNameWithIncrement(namedElement, modelTargetOwner.eContents());
-					RenameElementCommand renameElementCommand = new RenameElementCommand((TransactionalEditingDomain)domain, (NamedElement)target, defaultCopyNameWithIncrement);
-					EMFtoGEFCommandWrapper emFtoGEFCommandWrapper = new EMFtoGEFCommandWrapper(renameElementCommand);
-					compoundCommand.add(emFtoGEFCommandWrapper);
-				}
-			}
-		}
-
-		if(compoundCommand.size() == 0) {// TODO : use unwrap if no use of UnexecutableCommand.INSTANCE
-			return null;
-		}
-		return compoundCommand;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
-	 */
-	@Override
-	public IPasteStrategy dependsOn() {
-		return DefaultPasteStrategy.getInstance();
-	}
-
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
-	 */
-	@Override
-	public void prepare(PapyrusClipboard<Object> papyrusClipboard) {
-		// Nothing to prepare since the renaming depends of the pasting context
-	}
 
 }

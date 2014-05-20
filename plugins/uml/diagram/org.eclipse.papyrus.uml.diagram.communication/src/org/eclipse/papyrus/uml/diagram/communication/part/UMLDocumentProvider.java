@@ -1,16 +1,14 @@
-/*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
- *    
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
- *
- *****************************************************************************/
+ *  CEA LIST - Initial API and implementation
+ */
 package org.eclipse.papyrus.uml.diagram.communication.part;
 
 import java.io.IOException;
@@ -107,10 +105,8 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 	 * content of the document is not changed. This default implementation is empty.
 	 * Subclasses may reimplement.
 	 * 
-	 * @param element
-	 *        the blue-print element
-	 * @param document
-	 *        the document to set up
+	 * @param element the blue-print element
+	 * @param document the document to set up
 	 * @generated
 	 */
 	protected void setupDocument(Object element, IDocument document) {
@@ -200,7 +196,8 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 				}
 				if(!resource.isLoaded()) {
 					try {
-						Map options = new HashMap(GMFResourceFactory.getDefaultLoadOptions());
+						@SuppressWarnings({ "rawtypes", "unchecked" })
+						Map<?, ?> options = new HashMap(GMFResourceFactory.getDefaultLoadOptions());
 						// @see 171060 
 						// options.put(org.eclipse.emf.ecore.xmi.XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 						resource.load(options);
@@ -216,7 +213,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 						return;
 					}
 				} else {
-					for(Iterator it = resource.getContents().iterator(); it.hasNext();) {
+					for(Iterator<EObject> it = resource.getContents().iterator(); it.hasNext();) {
 						Object rootElement = it.next();
 						if(rootElement instanceof Diagram) {
 							document.setContent((Diagram)rootElement);
@@ -947,7 +944,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 					Resource resource = (Resource)notification.getNotifier();
 					if(resource.isLoaded()) {
 						boolean modified = false;
-						for(Iterator/* <org.eclipse.emf.ecore.resource.Resource> */it = myInfo.getLoadedResourcesIterator(); it.hasNext() && !modified;) {
+						for(Iterator<Resource> it = myInfo.getLoadedResourcesIterator(); it.hasNext() && !modified;) {
 							Resource nextResource = (Resource)it.next();
 							if(nextResource.isLoaded()) {
 								modified = nextResource.isModified();

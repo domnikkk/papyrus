@@ -14,13 +14,9 @@ package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy
 import org.eclipse.emf.ecore.EAttribute;
 
 /**
- * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>EAttribute Tree Element</b></em>'.
- * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
  * Represents an EAttribute in a tree view
- * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
@@ -30,32 +26,21 @@ import org.eclipse.emf.ecore.EAttribute;
  * </p>
  *
  * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeproxyPackage#getEAttributeTreeElement()
- * @model
- * @generated
  */
 public interface EAttributeTreeElement extends EStructuralFeatureTreeElement {
 	/**
 	 * Returns the value of the '<em><b>EAttribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
 	 * The EAttribute represented by this tree element
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EAttribute</em>' reference.
 	 * @see #setEAttribute(EAttribute)
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeproxyPackage#getEAttributeTreeElement_EAttribute()
-	 * @model
-	 * @generated
 	 */
 	EAttribute getEAttribute();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EAttributeTreeElement#getEAttribute <em>EAttribute</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>EAttribute</em>' reference.
 	 * @see #getEAttribute()
-	 * @generated
 	 */
 	void setEAttribute(EAttribute value);
 

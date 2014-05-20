@@ -114,12 +114,14 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
+	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
+	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -318,6 +320,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -404,7 +407,9 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -437,6 +442,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -444,6 +450,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -605,7 +612,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View)getModel();
+		return getPrimaryView();
 	}
 
 	/**
@@ -622,6 +629,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -651,6 +659,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 
 	/**
 	 * Initializes the extended editor configuration
+	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -666,6 +675,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 
 	/**
 	 * Updates the preference configuration
+	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -679,7 +689,9 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * @param theRequest the direct edit request that starts the direct edit system
+	 * 
+	 * @param theRequest
+	 *        the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {
@@ -784,6 +796,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 	 */
 	protected void addOwnerElementListeners() {
 		addListenerFilter(ADD_PARENT_MODEL, this, ((View)getParent().getModel())); //$NON-NLS-1$
+
 	}
 
 	/**
@@ -792,6 +805,7 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 	public void deactivate() {
 		removeOwnerElementListeners();
 		super.deactivate();
+
 	}
 
 	/**
@@ -799,5 +813,6 @@ public class UseCaseAsRectangleNameEditPartTN extends PapyrusCompartmentEditPart
 	 */
 	protected void removeOwnerElementListeners() {
 		removeListenerFilter(ADD_PARENT_MODEL);
+
 	}
 }

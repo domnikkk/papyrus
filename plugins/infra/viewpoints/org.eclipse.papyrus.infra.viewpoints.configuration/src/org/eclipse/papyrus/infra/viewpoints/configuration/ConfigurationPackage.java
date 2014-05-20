@@ -852,13 +852,31 @@ public interface ConfigurationPackage extends EPackage {
 	int MODEL_RULE__PERMIT = RULE__PERMIT;
 
 	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_RULE__CONSTRAINTS = RULE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Element Multiplicity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_RULE__ELEMENT_MULTIPLICITY = RULE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_RULE__ELEMENT = RULE_FEATURE_COUNT + 0;
+	int MODEL_RULE__ELEMENT = RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Stereotypes</b></em>' reference list.
@@ -867,7 +885,7 @@ public interface ConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_RULE__STEREOTYPES = RULE_FEATURE_COUNT + 1;
+	int MODEL_RULE__STEREOTYPES = RULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
@@ -876,7 +894,7 @@ public interface ConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_RULE__MULTIPLICITY = RULE_FEATURE_COUNT + 2;
+	int MODEL_RULE__MULTIPLICITY = RULE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Model Rule</em>' class.
@@ -885,7 +903,7 @@ public interface ConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_RULE_FEATURE_COUNT = RULE_FEATURE_COUNT + 3;
+	int MODEL_RULE_FEATURE_COUNT = RULE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Model Rule</em>' class.

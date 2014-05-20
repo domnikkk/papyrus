@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,8 +20,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
+import org.eclipse.papyrus.infra.tools.util.EditorHelper;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.PlatformUI;
 
 
 public abstract class AbstractParametricAction {
@@ -37,9 +37,9 @@ public abstract class AbstractParametricAction {
 	private List<IGraphicalEditPart> selection;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
 	 *        parameter for the action
 	 * @param selectedEditPart
@@ -52,7 +52,7 @@ public abstract class AbstractParametricAction {
 
 	/**
 	 * Returns the selected Editparts for this action
-	 * 
+	 *
 	 * @return
 	 *         {@link #selection}
 	 */
@@ -62,7 +62,7 @@ public abstract class AbstractParametricAction {
 
 	/**
 	 * Test if the command can be build
-	 * 
+	 *
 	 * @return
 	 *         <code>true</code> if the command can be build
 	 */
@@ -72,7 +72,7 @@ public abstract class AbstractParametricAction {
 
 	/**
 	 * Gets the parameter.
-	 * 
+	 *
 	 * @return the parameter
 	 */
 	public String getParameter() {
@@ -82,7 +82,7 @@ public abstract class AbstractParametricAction {
 
 	/**
 	 * Sets the parameter.
-	 * 
+	 *
 	 * @param parameter
 	 *        the new parameter
 	 */
@@ -100,7 +100,7 @@ public abstract class AbstractParametricAction {
 	/**
 	 * A utility method to return the active part if it implements
 	 * or adapts to the <code>IDiagramWorkbenchPart</code> interface
-	 * 
+	 *
 	 * @return The current part if it implements or adapts to <code>IDiagramWorkbenchPart</code>; <code>null</code> otherwise
 	 */
 	protected IDiagramWorkbenchPart getDiagramWorkbenchPart() {
@@ -120,17 +120,17 @@ public abstract class AbstractParametricAction {
 	/**
 	 * Retrieves the value of the <code>workbenchPart</code> instance
 	 * variable.
-	 * 
+	 *
 	 * @return The value of the <code>workbenchPart</code> instance variable.
 	 */
 	protected final IWorkbenchPart getWorkbenchPart() {
-		return PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
+		return EditorHelper.getActivePart();
 	}
 
 	/**
 	 * A utility method to return the active <code>DiagramEditPart</code> if
 	 * the current part implements <code>IDiagramWorkbenchPart</code>
-	 * 
+	 *
 	 * @return The current diagram if the parts implements <code>IDiagramWorkbenchPart</code>; <code>null</code> otherwise
 	 */
 	protected DiagramEditPart getDiagramEditPart() {
@@ -141,7 +141,7 @@ public abstract class AbstractParametricAction {
 	/**
 	 * A utility method to return the active <code>DiagramEditPart</code> if
 	 * the current part implements <code>IDiagramWorkbenchPart</code>
-	 * 
+	 *
 	 * @return The current diagram if the parts implements <code>IDiagramWorkbenchPart</code>; <code>null</code> otherwise
 	 */
 	protected IDiagramGraphicalViewer getDiagramGraphicalViewer() {

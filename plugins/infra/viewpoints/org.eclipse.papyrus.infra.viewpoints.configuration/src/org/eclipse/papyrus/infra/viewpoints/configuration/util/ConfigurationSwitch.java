@@ -16,6 +16,7 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.papyrus.infra.constraints.DisplayUnit;
 import org.eclipse.papyrus.infra.viewpoints.configuration.*;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework;
@@ -139,6 +140,7 @@ public class ConfigurationSwitch<T> extends Switch<T> {
 				ModelRule modelRule = (ModelRule)theEObject;
 				T result = caseModelRule(modelRule);
 				if (result == null) result = caseRule(modelRule);
+				if (result == null) result = caseDisplayUnit(modelRule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -452,6 +454,21 @@ public class ConfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseModelKind(ModelKind object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Display Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Display Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDisplayUnit(DisplayUnit object) {
 		return null;
 	}
 

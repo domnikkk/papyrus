@@ -51,35 +51,57 @@ public class DeploymentDiagramItemSemanticEditPolicy extends UMLBaseItemSemantic
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.Dependency_2011 == requestElementType) {
+
 			return getGEFWrapper(new DependencyNodeCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Model_2010 == requestElementType) {
+
 			return getGEFWrapper(new ModelCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Package_2009 == requestElementType) {
+
 			return getGEFWrapper(new PackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Constraint_2005 == requestElementType) {
+
 			return getGEFWrapper(new ConstraintCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Comment_2001 == requestElementType) {
+
 			return getGEFWrapper(new CommentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.ExecutionEnvironment_2002 == requestElementType) {
+
 			return getGEFWrapper(new ExecutionEnvironmentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Device_2003 == requestElementType) {
+
 			return getGEFWrapper(new DeviceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Artifact_2006 == requestElementType) {
+
 			return getGEFWrapper(new ArtifactCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Node_2008 == requestElementType) {
+
 			return getGEFWrapper(new NodeCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.NamedElement_2012 == requestElementType) {
+
 			return getGEFWrapper(new DefaultNamedElementCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

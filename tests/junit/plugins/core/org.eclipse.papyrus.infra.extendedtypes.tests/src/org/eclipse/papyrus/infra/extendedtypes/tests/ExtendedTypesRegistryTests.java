@@ -9,6 +9,7 @@
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 431953 (fix test to prevent Model Repair dialog on unrecognized profile schema)
+ *  Christian W. Damus (CEA) - bug 434993
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.extendedtypes.tests;
@@ -34,7 +35,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSetRegistry;
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedTypeRegistryService;
 import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
-import org.eclipse.papyrus.junit.utils.ProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.swt.widgets.Display;
@@ -43,10 +44,10 @@ import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Model;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
@@ -57,6 +58,9 @@ import org.osgi.framework.Bundle;
  */
 public class ExtendedTypesRegistryTests implements ITestConstants {
 
+	@ClassRule
+	public static HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
+	
 	private static IProject createProject;
 
 	private static IFile copyPapyrusModel;
@@ -84,11 +88,7 @@ public class ExtendedTypesRegistryTests implements ITestConstants {
 	public static void initCreateElementTest() {
 
 		// create Project
-		try {
-			createProject = ProjectUtils.createProject("ExtendedTypes");
-		} catch (CoreException e) {
-			fail(e.getMessage());
-		}
+		createProject = houseKeeper.createProject("ExtendedTypes");
 
 		// import test model and profile
 		try {
@@ -106,7 +106,7 @@ public class ExtendedTypesRegistryTests implements ITestConstants {
 
 			public void run() {
 				try {
-					openPapyrusEditor = EditorUtils.openPapyrusEditor(copyPapyrusModel);
+					openPapyrusEditor = houseKeeper.cleanUpLater(EditorUtils.openPapyrusEditor(copyPapyrusModel));
 				} catch (PartInitException e) {
 					fail(e.getMessage());
 				}
@@ -145,13 +145,6 @@ public class ExtendedTypesRegistryTests implements ITestConstants {
 	private static void initExistingElements() throws Exception {
 		
 		
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
 	}
 
 	/**

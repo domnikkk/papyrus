@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.providers;
 
@@ -26,8 +29,6 @@ import org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramEditorUtil;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationProvider {
 
 	/**
@@ -38,19 +39,18 @@ public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationPr
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void doGotoMarker(final IMarker marker) {
-		final String elementId = marker.getAttribute(org.eclipse.gmf.runtime.common.core.resources.IMarker.ELEMENT_ID, null);
+	protected void doGotoMarker(IMarker marker) {
+		String elementId = marker.getAttribute(org.eclipse.gmf.runtime.common.core.resources.IMarker.ELEMENT_ID, null);
 		if(elementId == null || !(getEditor() instanceof DiagramEditor)) {
 			return;
 		}
-		final DiagramEditor editor = (DiagramEditor)getEditor();
-		final Map editPartRegistry = editor.getDiagramGraphicalViewer().getEditPartRegistry();
-		final EObject targetView = editor.getDiagram().eResource().getEObject(elementId);
+		DiagramEditor editor = (DiagramEditor)getEditor();
+		Map<?, ?> editPartRegistry = editor.getDiagramGraphicalViewer().getEditPartRegistry();
+		EObject targetView = editor.getDiagram().eResource().getEObject(elementId);
 		if(targetView == null) {
 			return;
 		}
-		final EditPart targetEditPart = (EditPart)editPartRegistry.get(targetView);
+		EditPart targetEditPart = (EditPart)editPartRegistry.get(targetView);
 		if(targetEditPart != null) {
 			UMLDiagramEditorUtil.selectElementsInDiagram(editor, Arrays.asList(new EditPart[]{ targetEditPart }));
 		}
@@ -59,10 +59,10 @@ public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationPr
 	/**
 	 * @generated
 	 */
-	public static void deleteMarkers(final IResource resource) {
+	public static void deleteMarkers(IResource resource) {
 		try {
 			resource.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_ZERO);
-		} catch (final CoreException e) {
+		} catch (CoreException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Failed to delete validation markers", e); //$NON-NLS-1$
 		}
 	}
@@ -70,13 +70,13 @@ public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationPr
 	/**
 	 * @generated
 	 */
-	public static IMarker addMarker(final IFile file, final String elementId, final String location, final String message, final int statusSeverity) {
+	public static IMarker addMarker(IFile file, String elementId, String location, String message, int statusSeverity) {
 		IMarker marker = null;
 		try {
 			marker = file.createMarker(MARKER_TYPE);
 			marker.setAttribute(IMarker.MESSAGE, message);
 			marker.setAttribute(IMarker.LOCATION, location);
-			marker.setAttribute(org.eclipse.gmf.runtime.common.core.resources.IMarker.ELEMENT_ID, elementId);
+			marker.setAttribute(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID, elementId);
 			int markerSeverity = IMarker.SEVERITY_INFO;
 			if(statusSeverity == IStatus.WARNING) {
 				markerSeverity = IMarker.SEVERITY_WARNING;
@@ -84,7 +84,7 @@ public class UMLMarkerNavigationProvider extends AbstractModelMarkerNavigationPr
 				markerSeverity = IMarker.SEVERITY_ERROR;
 			}
 			marker.setAttribute(IMarker.SEVERITY, markerSeverity);
-		} catch (final CoreException e) {
+		} catch (CoreException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Failed to create validation marker", e); //$NON-NLS-1$
 		}
 		return marker;

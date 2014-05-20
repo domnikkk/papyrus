@@ -24,8 +24,6 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.OrphanViewPolicy;
 import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLVisualIDRegistry;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class CustomOrphanViewPolicy is intended to ignore the communication diagram message connectors when searching for orphan views
  */
@@ -36,7 +34,6 @@ public class CustomOrphanViewPolicy extends OrphanViewPolicy {
 	 * 
 	 * @param notification
 	 */
-
 	public void notifyChanged(Notification notification) {
 		// something has change. What ? :)
 		// check who is responsible of notification. If this is host edit part related semantic element, act as standard
@@ -51,23 +48,19 @@ public class CustomOrphanViewPolicy extends OrphanViewPolicy {
 			if(notifier instanceof EObject) {
 				if(!(notifier instanceof View)) {
 					if(Notification.REMOVE == notification.getEventType()) {
-
 						// 2 cases... remove or simple move ? 
 						// this can be checked with the view, if it is now orphaned or not
 						// if it is orphaned, element has to be destroyed, remove from parent listener, etc.
 						// if not, this was just a move => change listener using new parent
 						// checks also for whole hierarchy...
 						EObject parentNotifier = (EObject)notifier;
-
 						if(additionalParentToListen.containsKey(parentNotifier)) {
 							// this should be one of the elements that are inside the 
 							List<View> views = additionalParentToListen.get(parentNotifier);
-
 							List<View> orphaned = findOrphanView(views.iterator());
 							//
 							// delete all the remaining views
 							deleteViews(orphaned.iterator());
-
 							removeListeners(orphaned);
 						}
 					}
@@ -80,7 +73,6 @@ public class CustomOrphanViewPolicy extends OrphanViewPolicy {
 							View oldView = (View)notification.getOldValue();
 							removeListenerForView(oldView);
 						}
-
 					} else if(Notification.ADD == notification.getEventType()) {
 						// check the parent of the associated semantic element
 						if(notification.getNewValue() instanceof View) {
@@ -88,7 +80,6 @@ public class CustomOrphanViewPolicy extends OrphanViewPolicy {
 							addListenerForView(newView);
 						}
 					}
-
 				}
 			}
 		}
@@ -106,11 +97,9 @@ public class CustomOrphanViewPolicy extends OrphanViewPolicy {
 		ArrayList<View> orphanView = new ArrayList<View>();
 		while(viewChildrenIterator.hasNext()) {
 			EObject view = viewChildrenIterator.next();
-
 			if(view instanceof View) {
 				//Verify if the view is  a message connector, in this case it should not be considered as an orphan view, 
 				//because the message connector has no semantic element associated to it
-
 				if(((View)view).getType().equals(UMLVisualIDRegistry.getType(MessageEditPart.VISUAL_ID))) {
 					//if(!((View)view).getChildren().isEmpty())
 					continue;
@@ -118,7 +107,6 @@ public class CustomOrphanViewPolicy extends OrphanViewPolicy {
 				if(isOrphaned((View)view)) {
 					orphanView.add((View)view);
 				}
-
 			}
 		}
 		return orphanView;

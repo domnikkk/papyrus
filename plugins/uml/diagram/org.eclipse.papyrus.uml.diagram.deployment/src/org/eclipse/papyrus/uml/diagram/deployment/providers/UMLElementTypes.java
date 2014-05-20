@@ -282,36 +282,95 @@ public class UMLElementTypes {
 		Object type = hint.getAdapter(IElementType.class);
 		if(elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
+
 			elements.put(Package_1000, UMLPackage.eINSTANCE.getPackage());
+
+
 			elements.put(Dependency_2011, UMLPackage.eINSTANCE.getDependency());
+
+
 			elements.put(Model_2010, UMLPackage.eINSTANCE.getModel());
+
+
 			elements.put(Package_2009, UMLPackage.eINSTANCE.getPackage());
+
+
 			elements.put(Constraint_2005, UMLPackage.eINSTANCE.getConstraint());
+
+
 			elements.put(Comment_2001, UMLPackage.eINSTANCE.getComment());
+
+
 			elements.put(ExecutionEnvironment_2002, UMLPackage.eINSTANCE.getExecutionEnvironment());
+
+
 			elements.put(Device_2003, UMLPackage.eINSTANCE.getDevice());
+
+
 			elements.put(Artifact_2006, UMLPackage.eINSTANCE.getArtifact());
+
+
 			elements.put(Node_2008, UMLPackage.eINSTANCE.getNode());
+
+
 			elements.put(NamedElement_2012, UMLPackage.eINSTANCE.getNamedElement());
+
+
 			elements.put(Model_49, UMLPackage.eINSTANCE.getModel());
+
+
 			elements.put(Package_36, UMLPackage.eINSTANCE.getPackage());
+
+
 			elements.put(Device_16, UMLPackage.eINSTANCE.getDevice());
+
+
 			elements.put(Device_44, UMLPackage.eINSTANCE.getDevice());
+
+
 			elements.put(ExecutionEnvironment_21, UMLPackage.eINSTANCE.getExecutionEnvironment());
+
+
 			elements.put(ExecutionEnvironment_46, UMLPackage.eINSTANCE.getExecutionEnvironment());
+
+
 			elements.put(Node_23, UMLPackage.eINSTANCE.getNode());
+
+
 			elements.put(Node_42, UMLPackage.eINSTANCE.getNode());
+
+
 			elements.put(Artifact_25, UMLPackage.eINSTANCE.getArtifact());
+
+
 			elements.put(Artifact_28, UMLPackage.eINSTANCE.getArtifact());
+
+
 			elements.put(Artifact_40, UMLPackage.eINSTANCE.getArtifact());
+
+
 			elements.put(Comment_54, UMLPackage.eINSTANCE.getComment());
+
+
 			elements.put(Constraint_56, UMLPackage.eINSTANCE.getConstraint());
+
 			elements.put(CommentAnnotatedElement_4008, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
+
 			elements.put(ConstraintConstrainedElement_4009, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
+
+
 			elements.put(Deployment_4001, UMLPackage.eINSTANCE.getDeployment());
+
+
 			elements.put(Manifestation_4002, UMLPackage.eINSTANCE.getManifestation());
+
+
 			elements.put(Generalization_4003, UMLPackage.eINSTANCE.getGeneralization());
+
+
 			elements.put(Dependency_4004, UMLPackage.eINSTANCE.getDependency());
+
+
 			elements.put(Dependency_4010, UMLPackage.eINSTANCE.getDependency());
 		}
 		return (ENamedElement)elements.get(type);

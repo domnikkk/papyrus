@@ -25,8 +25,8 @@
             priority="lower">
          <triggerPoints>
             <or>
-               <instanceof value="org.eclipse.emf.ecore.EObject">
-               </instanceof>
+               <adapt type="org.eclipse.emf.ecore.EObject">
+               </adapt>
                <instanceof value="java.lang.Object">
                </instanceof>
             </or>
@@ -35,17 +35,17 @@
             <or>
                <instanceof value="org.eclipse.gmf.runtime.notation.Diagram">
                </instanceof>
-               <instanceof
-                     value="org.eclipse.emf.ecore.EObject">
-               </instanceof>
+               <adapt
+                     type="org.eclipse.emf.ecore.EObject">
+               </adapt>
             </or>
          </possibleChildren>
          <actionProvider class="org.eclipse.papyrus.views.modelexplorer.actionprovider.GenericTransformActionProvider" id="org.eclipse.papyrus.views.modelexplorer.actionprovider.GenericTransformActionProvider">
             <enablement>
                <or>
-                  <instanceof
-                        value="org.eclipse.emf.ecore.EObject">
-                  </instanceof>
+                  <adapt
+                        type="org.eclipse.emf.ecore.EObject">
+                  </adapt>
                </or>
             </enablement>
          </actionProvider>
@@ -56,9 +56,9 @@
                      <instanceof value="org.eclipse.gmf.runtime.notation.Diagram">
                      </instanceof>
                   </not>
-                  <instanceof
-                        value="org.eclipse.emf.ecore.EObject">
-                  </instanceof>
+                  <adapt
+                        type="org.eclipse.emf.ecore.EObject">
+                  </adapt>
                </and>
             </enablement>
          </actionProvider>
@@ -67,9 +67,9 @@
                <or>
                   <instanceof value="org.eclipse.gmf.runtime.notation.Diagram">
                   </instanceof>
-                  <instanceof
-                        value="org.eclipse.emf.ecore.EObject">
-                  </instanceof>
+                  <adapt
+                        type="org.eclipse.emf.ecore.EObject">
+                  </adapt>
                </or>
             </possibleDropTargets>
          </dropAssistant>
@@ -3331,6 +3331,18 @@
       <modeldeclaration
             file="resource/StereotypeDisplay.custom">
       </modeldeclaration>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.newchild">
+      <menuCreationModel
+            model="resource/UML.creationmenumodel">
+      </menuCreationModel>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.newchild">
+      <menuCreationModel
+            model="resource/UMLEdges.creationmenumodel">
+      </menuCreationModel>
    </extension>
    
 </plugin>

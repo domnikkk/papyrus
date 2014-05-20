@@ -53,3 +53,8 @@ Class[isAbstract=true] {
 	fillColor: rgb(195, 205, 255);
 	gradient: white vertical;
 }
+
+Component {
+	gradient:none;
+	fillColor:rgb(0, 0, 255);
+}

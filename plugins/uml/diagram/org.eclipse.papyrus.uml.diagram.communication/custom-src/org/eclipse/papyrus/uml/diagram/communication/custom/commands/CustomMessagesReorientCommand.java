@@ -36,8 +36,6 @@ import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.MessageEnd;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class CustomMessageReorientCommand is intended to reorient the messages on a connector between two lifelines
  * This command is used when a connector is reoriented
@@ -56,7 +54,6 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 	/** The messages to edit */
 	protected List<MessageInfo> elementsToEdit;
 
-
 	/** the Lifeline source of the graphical connector */
 	Lifeline srcLifeline = null;
 
@@ -66,8 +63,6 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 	/** the graphical edge (or connector) that is reconnected */
 	Object graphicalRconnectedEdge = null;
 
-
-
 	/**
 	 * Constructor.
 	 * 
@@ -76,17 +71,13 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 	 */
 	public CustomMessagesReorientCommand(ReorientRelationshipRequest req) {
 		super(req);
-
-
 		this.reorientDirection = req.getDirection();
 		this.oldEnd = req.getOldRelationshipEnd();
 		this.newEnd = req.getNewRelationshipEnd();
 		this.graphicalRconnectedEdge = req.getParameter(UMLBaseItemSemanticEditPolicy.GRAPHICAL_RECONNECTED_EDGE);
-
 		this.elementsToEdit = getElementstoEdit();
 		this.srcLifeline = getsrcLifeline();
 		this.targetLifeline = gettargetLifeline();
-
 	}
 
 	/**
@@ -103,7 +94,6 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 			}
 		}
 		return null;
-
 	}
 
 	/**
@@ -120,10 +110,7 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 			}
 		}
 		return null;
-
 	}
-
-
 
 	/**
 	 * Returns the list of messages that will be reoriented
@@ -136,14 +123,11 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 		List<InteractionFragment> listEventsOldLifeline = null;
 		//the list of messages on the connection
 		List<MessageInfo> listMessagesOnConnection = new ArrayList<MessageInfo>();
-
 		//Verify if the oldEnd is a Lifeline
 		if(oldEnd instanceof Lifeline) {
 			listEventsOldLifeline = ((Lifeline)oldEnd).getCoveredBys();
-
 			//Verify if the graphicalRconnectedEdge is a Connector
 			if(this.graphicalRconnectedEdge instanceof Connector) {
-
 				@SuppressWarnings("rawtypes")
 				List children = ((Connector)graphicalRconnectedEdge).getChildren();
 				for(int j = 0; j < children.size(); j++) {
@@ -153,11 +137,8 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 						if(label.getElement() instanceof Message) {// if the child of the graphicalRconnectedEdge corresponds to a message on the connector
 							//Collect the MessageInfo (UML message, source lifeline of the message, target lifeline of the message)
 							Message mess = (Message)label.getElement();
-
 							MessageEnd sendEvent = mess.getSendEvent();
-
 							MessageEnd rcvEvent = mess.getReceiveEvent();
-
 							//							Collection<?> sources = CommunicationLinkMappingHelper.getInstance().getSource(mess);
 							//							Collection<?> targets = CommunicationLinkMappingHelper.getInstance().getTarget(mess);
 							//							if(!sources.isEmpty() && !targets.isEmpty()) {
@@ -174,13 +155,11 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 									//it's not important to set the source of the message, we dont need it because we are going to update one end of the message
 									MessageInfo messInfo = new MessageInfo(mess, null, (Lifeline)oldEnd);
 									listMessagesOnConnection.add(messInfo);
-
 									break;
 								} else if(listEventsOldLifeline.get(i).equals(sendEvent)) {//the host lifeline is the source of the connection
 									//it's not important to set the target of the message,  we dont need it because we are going to update one end of the message
 									MessageInfo messInfo = new MessageInfo(mess, (Lifeline)oldEnd, null);
 									listMessagesOnConnection.add(messInfo);
-
 									break;
 								}
 							}
@@ -189,12 +168,8 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 				}
 			}
 		}
-
-
 		return listMessagesOnConnection;
 	}
-
-
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.commands.MessageReorientCommand#canExecute()
@@ -205,10 +180,6 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 		return !areConnected();
 		//return true;
 	}
-
-
-
-
 
 	protected boolean canReorient() {
 		if(!(oldEnd instanceof Element && newEnd instanceof Element)) {
@@ -237,10 +208,7 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 		return false;
 	}
 
-
 	protected CommandResult reorient() throws ExecutionException {
-
-
 		if(!elementsToEdit.isEmpty()) {
 			for(int k = 0; k < elementsToEdit.size(); k++) {//reorient all the elementsToEdit
 				Message mess = elementsToEdit.get(k).getMessage();
@@ -254,7 +222,6 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 						//								break done;
 						//							}
 						//						}
-
 					}
 				} else {
 					if(!(elementsToEdit.get(k).getSource() == null)) {
@@ -267,25 +234,13 @@ public class CustomMessagesReorientCommand extends MessageReorientCommand {
 			return CommandResult.newOKCommandResult(elementsToEdit.get(0).getMessage());
 		}
 		throw new IllegalStateException();
-
 		//throw new UnsupportedOperationException();
-
-
 	}
 
-	/**
-	 * @generated
-	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if(!canReorient()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		return reorient();
-
 	}
-
-
-
-
-
 }

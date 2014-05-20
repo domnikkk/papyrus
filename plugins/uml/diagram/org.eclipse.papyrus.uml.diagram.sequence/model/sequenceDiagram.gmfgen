@@ -460,9 +460,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getFigureLifelineLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1059,9 +1057,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getNameLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1139,9 +1135,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getCornerBentFigure"
               figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.common.figure.node.HTMLCornerBentFigure">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
           </viewmap>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1170,10 +1164,7 @@
             xsi:type="gmfgen:InnerClassViewmap"
             className="DurationObservationConstraint"
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DurationObservationConstraint extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fDurationLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DurationObservationConstraint() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#xA;&#xA;this.setTextWrap(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextJustification(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;this.setFont(THIS_FONT);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getDurationLabel() {&#xA;&#x9;&#x9;return fDurationLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font THIS_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), &quot;SANS&quot;, 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"
-              fixedForeground="true"/>
+
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
               x="1"
@@ -1234,10 +1225,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getDurationLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"
-                fixedForeground="true"/>
+
           </viewmap>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
@@ -1289,10 +1277,7 @@
             xsi:type="gmfgen:InnerClassViewmap"
             className="DurationObservationConstraint"
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DurationObservationConstraint extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fDurationLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DurationObservationConstraint() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#xA;&#xA;this.setTextWrap(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;this.setTextJustification(&#xA;PositionConstants.CENTER);&#xA;&#xA;&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;this.setFont(THIS_FONT);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getDurationLabel() {&#xA;&#x9;&#x9;return fDurationLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font THIS_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), &quot;SANS&quot;, 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"
-              fixedForeground="true"/>
+
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
               x="1"
@@ -1338,10 +1323,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getDurationLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"
-                fixedForeground="true"/>
+
           </viewmap>
           <behaviour
               xsi:type="gmfgen:CustomBehaviour"
@@ -1464,9 +1446,7 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageSync">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"/>
+
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -1509,9 +1489,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1538,9 +1516,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1568,9 +1544,7 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageAsync">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"/>
+
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -1613,10 +1587,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"
-                fixedForeground="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1642,10 +1613,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"
-                fixedForeground="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1673,9 +1641,7 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageReply">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"/>
+
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -1718,9 +1684,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1746,9 +1710,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1776,9 +1738,7 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageCreate">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"/>
+
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -1821,9 +1781,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1850,9 +1808,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1880,9 +1836,7 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageDelete">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"/>
+
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -1925,9 +1879,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1953,9 +1905,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -1983,9 +1933,7 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageLost">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"/>
+
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2028,9 +1976,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -2058,9 +2004,6 @@
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
             <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
-            <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
                 y="-33"/>
@@ -2087,9 +2030,7 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.papyrus.uml.diagram.sequence.figures.MessageFound">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"/>
+
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2132,9 +2073,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getMessageLabelFigure"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -2161,9 +2100,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"
@@ -2232,9 +2169,7 @@
             xsi:type="gmfgen:InnerClassViewmap"
             className="GeneralOrderingDescriptor"
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GeneralOrderingDescriptor extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fAppliedStereotypeLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GeneralOrderingDescriptor() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;&#x9;df.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;df.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getAppliedStereotypeLabel() {&#xA;&#x9;&#x9;return fAppliedStereotypeLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"/>
+
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2275,10 +2210,7 @@
               xsi:type="gmfgen:ParentAssignedViewmap"
               getterName="getAppliedStereotypeLabel"
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <attributes
-                xsi:type="gmfgen:StyleAttributes"
-                fixedFont="true"
-                fixedForeground="true"/>
+
             <attributes
                 xsi:type="gmfgen:LabelOffsetAttributes"
                 x="1"

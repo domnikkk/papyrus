@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.tests.creation;
@@ -35,20 +36,18 @@ import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
-import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
-import org.eclipse.papyrus.junit.utils.ProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Model;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 import org.junit.Test;
 
 /**
@@ -56,6 +55,9 @@ import org.junit.Test;
  */
 public class CreateElementTest extends AbstractPapyrusTest {
 
+	@ClassRule
+	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
+	
 	private static IProject createProject;
 
 	private static IFile copyPapyrusModel;
@@ -83,11 +85,7 @@ public class CreateElementTest extends AbstractPapyrusTest {
 	public static void initCreateElementTest() {
 
 		// create Project
-		try {
-			createProject = ProjectUtils.createProject("UMLServiceTypesTest");
-		} catch (CoreException e) {
-			fail(e.getMessage());
-		}
+		createProject = houseKeeper.createProject("UMLServiceTypesTest");
 
 		// import test model
 		try {
@@ -99,16 +97,7 @@ public class CreateElementTest extends AbstractPapyrusTest {
 		}
 
 		// open project
-		Display.getDefault().syncExec(new Runnable() {
-
-			public void run() {
-				try {
-					openPapyrusEditor = EditorUtils.openPapyrusEditor(copyPapyrusModel);
-				} catch (PartInitException e) {
-					fail(e.getMessage());
-				}
-			}
-		});
+		openPapyrusEditor = houseKeeper.openPapyrusEditor(copyPapyrusModel);
 
 		transactionalEditingDomain = (TransactionalEditingDomain)openPapyrusEditor.getAdapter(TransactionalEditingDomain.class);
 		assertTrue("Impossible to init editing domain", transactionalEditingDomain instanceof TransactionalEditingDomain);

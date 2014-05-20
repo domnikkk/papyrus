@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.
 
 /***
  * An IMatchingItem implementation that matches for ModelElementItem
- * 
+ *
  * @author proland
  */
 public class ModelElementItemMatchingItem implements IMatchingItem {
@@ -32,7 +32,7 @@ public class ModelElementItemMatchingItem implements IMatchingItem {
 
 	public boolean matchingItemEquals(Object obj) {
 		if(element != null && obj instanceof EObjectTreeElement) {
-			return element.equals(((EObjectTreeElement)obj).getEObject());
+			return element == ((EObjectTreeElement)obj).getEObject();
 		}
 		return super.equals(obj);
 	}

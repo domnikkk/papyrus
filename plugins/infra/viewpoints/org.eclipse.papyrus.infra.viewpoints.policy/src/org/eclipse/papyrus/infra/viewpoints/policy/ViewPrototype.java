@@ -295,7 +295,7 @@ public abstract class ViewPrototype {
 		try {
 			url = new URL(getIconURI());
 		} catch (MalformedURLException e) {
-			Activator.getDefault().getPapyrusLog().error("Cannot load icon at URI " + getIconURI(), e);
+			Activator.log.error("Cannot load icon at URI " + getIconURI(), e);
 		}
 		return ImageDescriptor.createFromURL(url);
 	}

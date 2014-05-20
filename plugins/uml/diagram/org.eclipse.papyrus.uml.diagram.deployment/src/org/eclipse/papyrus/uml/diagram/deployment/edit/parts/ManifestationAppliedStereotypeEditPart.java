@@ -110,12 +110,14 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 
 	/**
 	 * direct edition mode (default, undefined, registered editor, etc.)
+	 * 
 	 * @generated
 	 */
 	protected int directEditionMode = IDirectEdition.UNDEFINED_DIRECT_EDITOR;
 
 	/**
 	 * configuration from a registered edit dialog
+	 * 
 	 * @generated
 	 */
 	protected IDirectEditorConfiguration configuration;
@@ -317,6 +319,7 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 						ie.printStackTrace();
 					}
 				}
+
 				// shouldn't get here
 				return null;
 			}
@@ -403,7 +406,9 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 	 * @generated
 	 */
 	protected void performDirectEditRequest(Request request) {
+
 		final Request theRequest = request;
+
 		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
@@ -436,6 +441,7 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 					return;
 				}
 				final Dialog finalDialog = dialog;
+
 				if(Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
@@ -443,6 +449,7 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 						@Override
 						protected void doExecute() {
 							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -621,6 +628,7 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 		if(checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
+
 		// not a named element. no specific editor => do nothing
 		return IDirectEdition.NO_DIRECT_EDITION;
 	}
@@ -650,6 +658,7 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 
 	/**
 	 * Initializes the extended editor configuration
+	 * 
 	 * @generated
 	 */
 	protected void initExtendedEditorConfiguration() {
@@ -665,6 +674,7 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 
 	/**
 	 * Updates the preference configuration
+	 * 
 	 * @generated
 	 */
 	protected void updateExtendedEditorConfiguration() {
@@ -678,7 +688,9 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 
 	/**
 	 * Performs the direct edit usually used by GMF editors.
-	 * @param theRequest the direct edit request that starts the direct edit system
+	 * 
+	 * @param theRequest
+	 *        the direct edit request that starts the direct edit system
 	 * @generated
 	 */
 	protected void performDefaultDirectEditorEdit(final Request theRequest) {
@@ -734,6 +746,7 @@ public class ManifestationAppliedStereotypeEditPart extends PapyrusLabelEditPart
 				}
 			}
 		}
+
 		super.handleNotificationEvent(event);
 	}
 

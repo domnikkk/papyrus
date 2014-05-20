@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,21 +35,21 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
  * A Helper to edit dependencies (URIs) between EMF Resources
- * 
+ *
  * It replaces all references from a Resource A to a Resource B with references from A to B'
- * 
+ *
  * B and B' must be "equivalent" (e.g. B is a copy of B' with or without modifications).
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class DependencyManagementHelper {
 
 	/**
 	 * Replaces all references (dependencies) in the "fromResources" to the "uriToReplace" URI, with the "targetURI"
-	 * 
+	 *
 	 * Simplified pseudo code algorithm: fromResources.replaceAll(uriToReplace, targetURI)
-	 * 
+	 *
 	 * @param uriToReplace
 	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
 	 *        Must not be null
@@ -62,7 +62,7 @@ public class DependencyManagementHelper {
 	 *        Must not be empty
 	 * @param editingDomain
 	 *        The editing domain. May be null.
-	 * 
+	 *
 	 * @return
 	 *         The collection of replacements
 	 */
@@ -90,9 +90,9 @@ public class DependencyManagementHelper {
 
 	/**
 	 * Replaces all references (dependencies) in the "fromResources" to the "uriToReplace" URI, with the "targetURI"
-	 * 
+	 *
 	 * Simplified pseudo code algorithm: fromResources.replaceAll(uriToReplace, targetURI)
-	 * 
+	 *
 	 * @param uriToReplace
 	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
 	 *        Must not be null
@@ -197,7 +197,7 @@ public class DependencyManagementHelper {
 	/**
 	 * Replaces the EObject (Which may be a proxy) by its equivalent in the given Resource's URI.
 	 * Returns null if the "currentValueToReplace" doesn't belong to the resource represented by "uriToReplace".
-	 * 
+	 *
 	 * @param currentValueToReplace
 	 *        The current value, to be replaced. May be a proxy
 	 * @param uriToReplace
@@ -221,7 +221,7 @@ public class DependencyManagementHelper {
 
 	/**
 	 * Replaces the EObject (Which may be a proxy) by its equivalent in the given Resource's URI.
-	 * 
+	 *
 	 * @param currentValueToReplace
 	 *        The current value, to be replaced. May be a proxy
 	 * @param targetURI
@@ -255,9 +255,9 @@ public class DependencyManagementHelper {
 
 	/**
 	 * Replaces all references (dependencies) in the "resourceSet" to the "uriToReplace" URI, with the "targetURI"
-	 * 
+	 *
 	 * Simplified pseudo code algorithm: resourceSet.getResources().replaceAll(uriToReplace, targetURI)
-	 * 
+	 *
 	 * @param uriToReplace
 	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
 	 *        Must not be null
@@ -283,9 +283,9 @@ public class DependencyManagementHelper {
 
 	/**
 	 * Replaces all references (dependencies) in the "fromResources" to the "uriToReplace" URI, with the "targetURI"
-	 * 
+	 *
 	 * Simplified pseudo code algorithm: fromResources.replaceAll(uriToReplace, targetURI)
-	 * 
+	 *
 	 * @param uriToReplace
 	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
 	 *        Must not be null
@@ -305,9 +305,9 @@ public class DependencyManagementHelper {
 
 	/**
 	 * Replaces all references (dependencies) in the "fromResource" to the "uriToReplace" URI, with the "targetURI"
-	 * 
+	 *
 	 * Simplified pseudo code algorithm: fromResource.replaceAll(uriToReplace, targetURI)
-	 * 
+	 *
 	 * @param uriToReplace
 	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
 	 *        Must not be null
@@ -327,9 +327,9 @@ public class DependencyManagementHelper {
 
 	/**
 	 * Replaces all references (dependencies) in the "resourceSet" to the "uriToReplace" URI, with the "targetURI"
-	 * 
+	 *
 	 * Simplified pseudo code algorithm: resourceSet.getResources().replaceAll(uriToReplace, targetURI)
-	 * 
+	 *
 	 * @param uriToReplace
 	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
 	 *        Must not be null
@@ -345,61 +345,6 @@ public class DependencyManagementHelper {
 		Set<Resource> resourcesToEdit = new HashSet<Resource>(resourceSet.getResources());
 		resourcesToEdit.remove(resourceSet.getResource(uriToReplace, false));
 		return updateDependencies(uriToReplace, targetURI, resourcesToEdit, null);
-	}
-
-	private static class ReplacementImpl implements Replacement {
-
-		private EObject parent;
-
-		private EStructuralFeature property;
-
-		private EObject oldValue;
-
-		private EObject newValue;
-
-		public ReplacementImpl(EObject parent, EStructuralFeature property, EObject oldValue, EObject newValue) {
-			this.parent = parent;
-			this.property = property;
-			this.oldValue = oldValue;
-			this.newValue = newValue;
-		}
-
-		public EObject getEObject() {
-			return parent;
-		}
-
-		public EStructuralFeature getEStructuralFeature() {
-			return property;
-		}
-
-		public EObject get(boolean resolve) {
-			if(resolve && newValue != null && newValue.eIsProxy()) {
-				newValue = EcoreUtil.resolve(newValue, parent);
-			}
-
-			return newValue;
-		}
-
-		public void set(Object newValue) {
-			throw new UnsupportedOperationException();
-		}
-
-		public boolean isSet() {
-			return newValue != null;
-		}
-
-		public void unset() {
-			throw new UnsupportedOperationException();
-		}
-
-		public EObject getOldValue() {
-			return oldValue;
-		}
-
-		@Override
-		public String toString() {
-			return String.format("%s replaced with %s", EcoreUtil.getURI(oldValue), EcoreUtil.getURI(newValue));
-		}
 	}
 
 }

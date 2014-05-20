@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011-2012 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.link;
@@ -16,8 +17,6 @@ package org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.link;
 import static org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.utils.EditorUtils.getDiagramView;
 import static org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.utils.TestPrepareUtils.createGraphicalNode;
 import static org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.utils.TestUtils.createEdgeFromPalette;
-
-import java.util.HashMap;
 
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
@@ -45,7 +44,6 @@ public class TestLinkCreationGeneralizationFromBlock extends AbstractLinkCreatio
 	public static void initExpectedResults() throws Exception {
 		
 		// Initialize source creation results
-		isCreationAllowed = new HashMap<View, Boolean>();
 		isCreationAllowed.put(actorTargetView, true);
 		isCreationAllowed.put(actorPartTargetView, false);
 		isCreationAllowed.put(blockTargetView, true);

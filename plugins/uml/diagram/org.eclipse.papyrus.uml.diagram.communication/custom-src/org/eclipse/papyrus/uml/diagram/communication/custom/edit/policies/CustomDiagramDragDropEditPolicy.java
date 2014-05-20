@@ -74,7 +74,6 @@ import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.TimeObservation;
 
-
 /**
  * A policy to support dNd from the Model Explorer in the communication diagram.
  */
@@ -85,7 +84,6 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 */
 	public CustomDiagramDragDropEditPolicy() {
 		super(CommunicationLinkMappingHelper.getInstance());
-
 	}
 
 	/**
@@ -136,16 +134,11 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 * @param linkVISUALID
 	 * @return
 	 */
-
 	@Override
 	protected Command getSpecificDropCommand(DropObjectsRequest dropRequest, Element semanticElement, int nodeVISUALID, int linkVISUALID) {
-
-
 		switch(linkVISUALID) {
 		case MessageEditPart.VISUAL_ID:
-
 			return dropMessage(dropRequest, semanticElement, linkVISUALID);
-
 		default:
 			// Switch test over nodeVISUALID
 			switch(nodeVISUALID) {
@@ -165,7 +158,6 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 				return dropConstraint(dropRequest, semanticElement, nodeVISUALID);
 			default:
 				return super.getSpecificDropCommand(dropRequest, semanticElement, nodeVISUALID, linkVISUALID);
-
 			}
 		}
 	}
@@ -189,7 +181,6 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 			return UnexecutableCommand.INSTANCE;
 		}
 		return getDropCommentCommand((Comment)semanticLink, getViewer(), getDiagramPreferencesHint(), dropRequest.getLocation(), ((GraphicalEditPart)getHost()).getNotationView(), (IHintedType)UMLElementTypes.Comment_8005, (IHintedType)UMLElementTypes.CommentAnnotatedElement_8010);
-
 	}
 
 	/**
@@ -225,14 +216,12 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 * @return the drop command
 	 */
 	protected Command dropTimeObservation(DropObjectsRequest dropRequest, TimeObservation droppedElement, int nodeVISUALID) {
-
 		// Test canvas element
 		GraphicalEditPart graphicalParentEditPart = (GraphicalEditPart)getHost();
 		EObject graphicalParentObject = graphicalParentEditPart.resolveSemanticElement();
 		if(!(graphicalParentObject instanceof org.eclipse.uml2.uml.Interaction)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-
 		TimeObservationHelper timeObservationHelper = new TimeObservationHelper(getEditingDomain());
 		return timeObservationHelper.dropTimeObservation(droppedElement, getViewer(), getDiagramPreferencesHint(), dropRequest.getLocation(), ((GraphicalEditPart)getHost()).getNotationView());
 	}
@@ -249,21 +238,15 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 * @return the drop command
 	 */
 	protected Command dropShortCutDiagram(DropObjectsRequest dropRequest, Diagram droppedElement, int nodeVISUALID) {
-
 		// Test canvas element
 		GraphicalEditPart graphicalParentEditPart = (GraphicalEditPart)getHost();
 		EObject graphicalParentObject = graphicalParentEditPart.resolveSemanticElement();
 		if(!(graphicalParentObject instanceof org.eclipse.uml2.uml.Interaction)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-
 		DiagramShortCutHelper diagramShortCutHelper = new DiagramShortCutHelper(getEditingDomain());
-
 		return diagramShortCutHelper.dropDiagramShortCut(droppedElement, getViewer(), getDiagramPreferencesHint(), dropRequest.getLocation(), ((GraphicalEditPart)getHost()).getNotationView());
 	}
-
-
-
 
 	/**
 	 * <pre>
@@ -282,13 +265,11 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 * @return the drop command
 	 */
 	protected Command dropChildNode(DropObjectsRequest dropRequest, Element semanticElement, int nodeVISUALID) {
-
 		GraphicalEditPart graphicalParentEditPart = (GraphicalEditPart)getHost();
 		EObject graphicalParentObject = graphicalParentEditPart.resolveSemanticElement();
 		if(graphicalParentObject instanceof org.eclipse.uml2.uml.Interaction) {
 			return new ICommandProxy(getDefaultDropNodeCommand(nodeVISUALID, dropRequest.getLocation(), semanticElement));
 		}
-
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -304,17 +285,14 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 * @return the drop command
 	 */
 	protected Command dropDurationObservation(DropObjectsRequest dropRequest, DurationObservation droppedElement, int nodeVISUALID) {
-
 		// Test canvas element
 		GraphicalEditPart graphicalParentEditPart = (GraphicalEditPart)getHost();
 		EObject graphicalParentObject = graphicalParentEditPart.resolveSemanticElement();
 		if(!(graphicalParentObject instanceof org.eclipse.uml2.uml.Interaction)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-
 		DurationObservationHelper durationObservationHelper = new DurationObservationHelper(getEditingDomain());
 		return durationObservationHelper.dropDurationObservation(droppedElement, getViewer(), getDiagramPreferencesHint(), dropRequest.getLocation(), ((GraphicalEditPart)getHost()).getNotationView());
-
 	}
 
 	/**
@@ -330,9 +308,7 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 * @return the drop command
 	 * 
 	 */
-
 	public Command dropMessage(DropObjectsRequest dropRequest, Element semanticLink, int linkVISUALID) {
-
 		GraphicalEditPart graphicalParentEditPart = (GraphicalEditPart)getHost();
 		EObject graphicalParentObject = graphicalParentEditPart.resolveSemanticElement();
 		if(!(graphicalParentObject instanceof org.eclipse.uml2.uml.Interaction)) {
@@ -348,7 +324,6 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 				if((source instanceof Lifeline) && (target instanceof Lifeline)) {
 					Set<Message> messages = CommunicationUtil.verifyUMLLifelinesConnected((Lifeline)source, (Lifeline)target);
 					if(!(messages == null) && (messages.size() >= 1)) {//the UML lifelines are already connected by one or more than one more message
-
 						//1. search for the edit parts of the messages
 						List<EditPart> messagesEP = null;
 						for(Message current : messages) {
@@ -360,12 +335,10 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 								} else {
 									messagesEP.add(messageEP);
 								}
-
 							}
 						}
 						//System.err.println("Messages edit parts on the link :" + messagesEP);
 						//System.err.println("Semantic messages  on the link :" + messages);
-
 						//2. Create the drop commands
 						if(messagesEP == null) {//There is no graphical connection between the two lifelines (in  this diagram)
 							//create a dropMessageAsConnector Command
@@ -377,15 +350,11 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 							Point loc = new Point(1, -23);
 							//reuse of the CustomMessageViewCreateCommand
 							return new ICommandProxy(new CustomMessageViewCreateCommand(((IGraphicalEditPart)getHost()).getEditingDomain(), conEP.getViewer(), ((IGraphicalEditPart)conEP).getDiagramPreferencesHint(), loc, linkAdapter, conEP));
-
 						}
 					}
 				}
 			}
-
 		}
-
-
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -412,22 +381,18 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 		// look for editpart
 		GraphicalEditPart sourceEditPart = (GraphicalEditPart)lookForEditPart(source);
 		GraphicalEditPart targetEditPart = (GraphicalEditPart)lookForEditPart(target);
-
 		// descriptor of the link
 		CreateConnectionViewRequest.ConnectionViewDescriptor linkdescriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(getUMLElementType(linkVISUALID), ((IHintedType)getUMLElementType(linkVISUALID)).getSemanticHint(), getDiagramPreferencesHint());
-
 		IAdaptable sourceAdapter = null;
 		IAdaptable targetAdapter = null;
 		if(sourceEditPart == null) {
 			// creation of the node
 			ViewDescriptor descriptor = new ViewDescriptor(new EObjectAdapter(source), Node.class, null, ViewUtil.APPEND, true, ((IGraphicalEditPart)getHost()).getDiagramPreferencesHint());
-
 			// get the command and execute it.
 			CreateCommand nodeCreationCommand = new CreateCommand(((IGraphicalEditPart)getHost()).getEditingDomain(), descriptor, ((View)getHost().getModel()));
 			cc.compose(nodeCreationCommand);
 			SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "move", (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue(), new Point(location.x, location.y + 100)); //$NON-NLS-1$
 			cc.compose(setBoundsCommand);
-
 			sourceAdapter = (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue();
 		} else {
 			sourceAdapter = new SemanticAdapter(null, sourceEditPart.getModel());
@@ -435,27 +400,19 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 		if(targetEditPart == null) {
 			// creation of the node
 			ViewDescriptor descriptor = new ViewDescriptor(new EObjectAdapter(target), Node.class, null, ViewUtil.APPEND, true, ((IGraphicalEditPart)getHost()).getDiagramPreferencesHint());
-
 			// get the command and execute it.
 			CreateCommand nodeCreationCommand = new CreateCommand(((IGraphicalEditPart)getHost()).getEditingDomain(), descriptor, ((View)getHost().getModel()));
 			cc.compose(nodeCreationCommand);
 			SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "move", (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue(), new Point(location.x, location.y - 100)); //$NON-NLS-1$
 			cc.compose(setBoundsCommand);
 			targetAdapter = (IAdaptable)nodeCreationCommand.getCommandResult().getReturnValue();
-
 		} else {
 			targetAdapter = new SemanticAdapter(null, targetEditPart.getModel());
 		}
-
 		CommunicationDeferredCreateConnectionViewCommand aLinkCommand = new CommunicationDeferredCreateConnectionViewCommand(((IGraphicalEditPart)getHost()).getEditingDomain(), ((IHintedType)getUMLElementType(linkVISUALID)).getSemanticHint(), sourceAdapter, targetAdapter, getViewer(), getDiagramPreferencesHint(), linkdescriptor, null, semanticLink);
-
 		cc.compose(aLinkCommand);
-
 		return cc;
-
 	}
-
-
 
 	/**
 	 * Gets the droppable element visual id.
@@ -465,7 +422,6 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 */
 	@Override
 	protected Set<Integer> getDroppableElementVisualId() {
-		// TODO Auto-generated method stub
 		Set<Integer> elementsVisualId = new HashSet<Integer>();
 		elementsVisualId.add(MessageEditPart.VISUAL_ID);
 		elementsVisualId.add(CommentEditPartCN.VISUAL_ID);
@@ -485,11 +441,9 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 	 * @param dropRequest
 	 * @return the drop command
 	 */
-
 	@Override
 	public Command getDropObjectsCommand(DropObjectsRequest dropRequest) {
 		ViewServiceUtil.forceLoad();
-
 		// Create a view request from the drop request and then forward getting
 		// the command for that.
 		CompositeCommand cc = new CompositeCommand("Drop"); //$NON-NLS-1$
@@ -515,28 +469,23 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 				}
 				continue;
 			}
-
 			if(linkVISUALID == -1 && nodeVISUALID != -1) {
 				// The element to drop is a node
 				// Retrieve it's expected graphical parent
 				EObject graphicalParent = ((GraphicalEditPart)getHost()).resolveSemanticElement();
-
 				// Restrict the default node creation to the following cases:
 				// . Take the containment relationship into consideration
 				// . Release the constraint when GraphicalParent is a Package (Canvas for most
 				// diagrams)
 				if(graphicalParent instanceof Package) {
 					cc.add(getDefaultDropNodeCommand(nodeVISUALID, location, droppedObject));
-
 				} else {
 					if((graphicalParent instanceof Element) && ((Element)graphicalParent).getOwnedElements().contains(droppedObject)) {
 						cc.add(getDefaultDropNodeCommand(nodeVISUALID, location, droppedObject));
-
 					} else {
 						return UnexecutableCommand.INSTANCE;
 					}
 				}
-
 			} else {
 				if(linkVISUALID != -1) {
 					Collection<?> sources = linkmappingHelper.getSource((Element)droppedObject);
@@ -551,8 +500,6 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 				}
 			}
 		}
-
 		return new ICommandProxy(cc);
-
 	}
 }

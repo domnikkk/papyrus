@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.nattable.requirement.tests.tests;
@@ -37,11 +38,11 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.junit.utils.DisplayUtils;
-import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.GenericUtils;
 import org.eclipse.papyrus.junit.utils.ModelExplorerUtils;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
 import org.eclipse.papyrus.junit.utils.ProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.nattable.requirement.tests.Activator;
 import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
@@ -54,12 +55,16 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleException;
 
 public class TableCreationInSysMLModelTest extends AbstractPapyrusTest {
 
+	@ClassRule
+	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
+	
 	private static Class class_;
 
 	private static Class requirement1;
@@ -107,17 +112,14 @@ public class TableCreationInSysMLModelTest extends AbstractPapyrusTest {
 
 	public static void initTests(final Bundle bundle, final String projectName, final String papyrusModelPath) throws CoreException, IOException, BundleException {
 		ProjectUtils.removeAllProjectFromTheWorkspace();
-		IProject testProject = ProjectUtils.createProject(projectName);
+		IProject testProject = houseKeeper.createProject(projectName);
 		final IFile file = PapyrusProjectUtils.copyPapyrusModel(testProject, bundle, SOURCE_PATH, FILE_ROOT_NAME);
 		RunnableWithResult<?> runnableWithResult = new RunnableWithResult.Impl<Object>() {
 
 			@Override
 			public void run() {
-				try {
-					papyrusEditor = EditorUtils.openPapyrusEditor(file);
-				} catch (PartInitException e) {
-					setStatus(new Status(IStatus.ERROR, bundle.getSymbolicName(), e.getMessage()));
-				}
+				papyrusEditor = houseKeeper.openPapyrusEditor(file);
+				
 				try {
 					TableCreationInSysMLModelTest.view = ModelExplorerUtils.openModelExplorerView();
 				} catch (PartInitException e) {
@@ -148,9 +150,6 @@ public class TableCreationInSysMLModelTest extends AbstractPapyrusTest {
 		Assert.assertNotNull(requirement1);
 		Assert.assertNotNull(requirement2);
 		Assert.assertNotNull(TableCreationInSysMLModelTest.rootModel);
-
-
-
 	}
 
 	@Test

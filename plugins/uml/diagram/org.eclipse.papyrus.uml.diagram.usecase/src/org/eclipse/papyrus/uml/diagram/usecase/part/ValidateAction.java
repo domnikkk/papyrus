@@ -114,6 +114,7 @@ public class ValidateAction extends Action {
 		if(shell == null) {
 			shell = new Shell();
 		}
+
 		DiagramEditPart diagramEditPart = OffscreenEditPartFactory.getInstance().createDiagramEditPart(view.getDiagram(), shell);
 		runValidation(diagramEditPart, view);
 	}

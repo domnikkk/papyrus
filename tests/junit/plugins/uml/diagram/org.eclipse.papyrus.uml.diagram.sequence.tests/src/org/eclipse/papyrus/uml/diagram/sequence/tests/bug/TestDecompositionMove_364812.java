@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -19,8 +19,6 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayInputStream;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.draw2d.IFigure;
@@ -43,7 +41,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
-import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ExtensionServicesRegistry;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -58,9 +55,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.ISequenceDiagramTestsConstants;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.CreateSequenceDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.TestTopNode;
-import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
@@ -101,20 +96,11 @@ public class TestDecompositionMove_364812 extends TestTopNode {
 
 	@Override
 	protected void projectCreation() {
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		root = workspace.getRoot();
-		project = root.getProject(getProjectName());
+		project = houseKeeper.createProject(getProjectName());
 		file = project.getFile(getFileName());
-		this.diResourceSet = new DiResourceSet();
+		this.diResourceSet = houseKeeper.cleanUpLater(new DiResourceSet());
 		try {
 			//at this point, no resources have been created
-			if(!project.exists()) {
-				project.create(null);
-			}
-			if(!project.isOpen()) {
-				project.open(null);
-			}
-
 			if(file.exists()) {
 				file.delete(true, new NullProgressMonitor());
 			}
@@ -137,11 +123,9 @@ public class TestDecompositionMove_364812 extends TestTopNode {
 			}
 			initUml();
 
-			page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-			page.closeAllEditors(true);
+			PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().closeAllEditors(true);
 
-			IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(file.getName());
-			papyrusEditor = (IMultiDiagramEditor)page.openEditor(new FileEditorInput(file), desc.getId());
+			papyrusEditor = houseKeeper.openPapyrusEditor(file);
 		} catch (Exception e) {
 			System.err.println("error " + e);
 		}

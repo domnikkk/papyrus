@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.part;
 
@@ -40,38 +43,35 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLNewDiagramFileWizard extends Wizard {
 
 	/**
 	 * @generated
 	 */
-	private final WizardNewFileCreationPage myFileCreationPage;
+	private WizardNewFileCreationPage myFileCreationPage;
 
 	/**
 	 * @generated
 	 */
-	private final ModelElementSelectionPage diagramRootElementSelectionPage;
+	private ModelElementSelectionPage diagramRootElementSelectionPage;
 
 	/**
 	 * @generated
 	 */
-	private final TransactionalEditingDomain myEditingDomain;
+	private TransactionalEditingDomain myEditingDomain;
 
 	/**
 	 * @generated
 	 */
-	public UMLNewDiagramFileWizard(final URI domainModelURI, final EObject diagramRoot, final TransactionalEditingDomain editingDomain) {
+	public UMLNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot, TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
-
-		this.myFileCreationPage = new WizardNewFileCreationPage(Messages.UMLNewDiagramFileWizard_CreationPageName, StructuredSelection.EMPTY);
-		this.myFileCreationPage.setTitle(Messages.UMLNewDiagramFileWizard_CreationPageTitle);
-		this.myFileCreationPage.setDescription(NLS.bind(Messages.UMLNewDiagramFileWizard_CreationPageDescription, TimingDiagramEditPart.MODEL_ID));
+		myFileCreationPage = new WizardNewFileCreationPage(Messages.UMLNewDiagramFileWizard_CreationPageName, StructuredSelection.EMPTY);
+		myFileCreationPage.setTitle(Messages.UMLNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(NLS.bind(Messages.UMLNewDiagramFileWizard_CreationPageDescription, TimingDiagramEditPart.MODEL_ID));
 		IPath filePath;
-		final String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
+		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if(domainModelURI.isPlatformResource()) {
 			filePath = new Path(domainModelURI.trimSegments(1).toPlatformString(true));
 		} else if(domainModelURI.isFile()) {
@@ -80,47 +80,42 @@ public class UMLNewDiagramFileWizard extends Wizard {
 			// TODO : use some default path
 			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
-		this.myFileCreationPage.setContainerFullPath(filePath);
-		this.myFileCreationPage.setFileName(UMLDiagramEditorUtil.getUniqueFileName(filePath, fileName, "PapyrusUMLTiming_diagram")); //$NON-NLS-1$
-
-		this.diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(Messages.UMLNewDiagramFileWizard_RootSelectionPageName);
-		this.diagramRootElementSelectionPage.setTitle(Messages.UMLNewDiagramFileWizard_RootSelectionPageTitle);
-		this.diagramRootElementSelectionPage.setDescription(Messages.UMLNewDiagramFileWizard_RootSelectionPageDescription);
-		this.diagramRootElementSelectionPage.setModelElement(diagramRoot);
-
-		this.myEditingDomain = editingDomain;
+		myFileCreationPage.setContainerFullPath(filePath);
+		myFileCreationPage.setFileName(UMLDiagramEditorUtil.getUniqueFileName(filePath, fileName, "PapyrusUMLTiming_diagram")); //$NON-NLS-1$
+		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(Messages.UMLNewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage.setTitle(Messages.UMLNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage.setDescription(Messages.UMLNewDiagramFileWizard_RootSelectionPageDescription);
+		diagramRootElementSelectionPage.setModelElement(diagramRoot);
+		myEditingDomain = editingDomain;
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	public void addPages() {
-		addPage(this.myFileCreationPage);
-		addPage(this.diagramRootElementSelectionPage);
+		addPage(myFileCreationPage);
+		addPage(diagramRootElementSelectionPage);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	public boolean performFinish() {
-		final LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
-		final IFile diagramFile = this.myFileCreationPage.createNewFile();
+		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
+		IFile diagramFile = myFileCreationPage.createNewFile();
 		UMLDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
-		final URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
-		final ResourceSet resourceSet = this.myEditingDomain.getResourceSet();
+		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
+		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
-		final AbstractTransactionalCommand command = new AbstractTransactionalCommand(this.myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
-			@Override
-			protected CommandResult doExecuteWithResult(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
-				final int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(UMLNewDiagramFileWizard.this.diagramRootElementSelectionPage.getModelElement());
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+				int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
 				if(diagramVID != TimingDiagramEditPart.VISUAL_ID) {
 					return CommandResult.newErrorCommandResult(Messages.UMLNewDiagramFileWizard_IncorrectRootError);
 				}
-				final Diagram diagram = ViewService.createDiagram(UMLNewDiagramFileWizard.this.diagramRootElementSelectionPage.getModelElement(), TimingDiagramEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), TimingDiagramEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				new UMLDiagramContentInitializer().initDiagramContent(diagram);
 				return CommandResult.newOKCommandResult();
@@ -130,11 +125,11 @@ public class UMLNewDiagramFileWizard extends Wizard {
 			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
 			diagramResource.save(UMLDiagramEditorUtil.getSaveOptions());
 			UMLDiagramEditorUtil.openDiagram(diagramResource);
-		} catch (final ExecutionException e) {
+		} catch (ExecutionException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
-		} catch (final IOException ex) {
+		} catch (IOException ex) {
 			UMLDiagramEditorPlugin.getInstance().logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
-		} catch (final PartInitException ex) {
+		} catch (PartInitException ex) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
@@ -148,14 +143,13 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		/**
 		 * @generated
 		 */
-		protected DiagramRootElementSelectionPage(final String pageName) {
+		protected DiagramRootElementSelectionPage(String pageName) {
 			super(pageName);
 		}
 
 		/**
 		 * @generated
 		 */
-		@Override
 		protected String getSelectionTitle() {
 			return Messages.UMLNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
@@ -163,13 +157,12 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		/**
 		 * @generated
 		 */
-		@Override
 		protected boolean validatePage() {
-			if(this.selectedModelElement == null) {
+			if(getModelElement() == null) {
 				setErrorMessage(Messages.UMLNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
-			final boolean result = ViewService.getInstance().provides(new CreateDiagramViewOperation(new EObjectAdapter(this.selectedModelElement), TimingDiagramEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			boolean result = ViewService.getInstance().provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()), TimingDiagramEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null : Messages.UMLNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}

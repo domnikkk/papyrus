@@ -74,7 +74,6 @@ public class EventHelper {
 	//		sendOperationEvent.setOperation(operation);
 	//		return sendOperationEvent;
 	//	}
-
 	/**
 	 * Create a ReceiveOperation event and initializes its name
 	 * 
@@ -90,35 +89,32 @@ public class EventHelper {
 	//		receiveOperationEvent.setOperation(operation);
 	//		return receiveOperationEvent;
 	//	}
-
-/** 
+	/**
 	 * @param eventContainer
 	 *        the container
 	 * @param signal
 	 *        the signal of the event. Can't be null
 	 * @return the send signal event
-	// Does not exist anymore in UML 2.4	
-	//	public static SendSignalEvent doCreateSendSignalEvent(Package eventContainer, Signal signal) {
-	//		SendSignalEvent sendSignalEvent = (SendSignalEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getSendSignalEvent());
-	//		sendSignalEvent.setSignal(signal);
-	//		return sendSignalEvent;
-	//	}
-
-/** 
+	 *         // Does not exist anymore in UML 2.4
+	 *         // public static SendSignalEvent doCreateSendSignalEvent(Package eventContainer, Signal signal) {
+	 *         // SendSignalEvent sendSignalEvent = (SendSignalEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getSendSignalEvent());
+	 *         // sendSignalEvent.setSignal(signal);
+	 *         // return sendSignalEvent;
+	 *         // }
+	 * 
+	 *         /**
 	 * @param eventContainer
 	 *        the container
 	 * @param signal
 	 *        the signal of the event. Can't be null
 	 * @return the ReceiveSignal event
 	 */
-		// Does not exist anymore in UML 2.4	
+	// Does not exist anymore in UML 2.4	
 	//	public static ReceiveSignalEvent doCreateReceiveSignalEvent(Package eventContainer, Signal signal) {
 	//		ReceiveSignalEvent receiveSignalEvent = (ReceiveSignalEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getReceiveSignalEvent());
 	//		receiveSignalEvent.setSignal(signal);
 	//		return receiveSignalEvent;
 	//	}
-
-
 	// Does not exist anymore in UML 2.4	
 	//	/**
 	//	 * Create a receive signal event
@@ -152,9 +148,6 @@ public class EventHelper {
 	//	public static ExecutionEvent doCreateExecutionEvent(Package eventContainer) {
 	//		return (ExecutionEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getExecutionEvent());
 	//	}
-
-	
-
 	/**
 	 * Create a receive event in the package containing the interaction If the
 	 * messageSort is ASYNCH_SIGNAL, it creates a ReceiveSignalEvent If the
@@ -172,9 +165,7 @@ public class EventHelper {
 	 * @return the created receive event or null
 	 */
 	public static Event doCreateReceiveEvent(MessageSort messageSort, Interaction interaction, NamedElement signature) {
-		Package eventContainer = getEventContainer(interaction);
 		Event event = null;
-
 		switch(messageSort) {
 		case ASYNCH_SIGNAL_LITERAL:
 			//event = doCreateReceiveSignalEvent(eventContainer, (Signal)signature);
@@ -192,7 +183,6 @@ public class EventHelper {
 			break;
 		default:
 			break;
-
 		}
 		return event;
 	}
@@ -212,7 +202,6 @@ public class EventHelper {
 	 * @return the created send event or null
 	 */
 	public static Event doCreateSendEvent(MessageSort messageSort, Interaction interaction, NamedElement signature) {
-		Package eventContainer = getEventContainer(interaction);
 		Event event = null;
 		switch(messageSort) {
 		case ASYNCH_SIGNAL_LITERAL:
@@ -227,7 +216,6 @@ public class EventHelper {
 			break;
 		default:
 			break;
-
 		}
 		return event;
 	}

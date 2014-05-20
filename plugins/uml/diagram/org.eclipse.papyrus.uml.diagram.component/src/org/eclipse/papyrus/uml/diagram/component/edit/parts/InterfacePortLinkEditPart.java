@@ -23,9 +23,8 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpart.ConnectionEditPart;
 /**
  * @generated
  */
-public class InterfacePortLinkEditPart extends ConnectionEditPart
-		implements ITreeBranchEditPart
-{
+public class InterfacePortLinkEditPart extends ConnectionEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -63,6 +62,6 @@ public class InterfacePortLinkEditPart extends ConnectionEditPart
 	 * @generated
 	 */
 	public PolylineConnectionEx getPrimaryShape() {
-		return (PolylineConnectionEx) getFigure();
+		return (PolylineConnectionEx)getFigure();
 	}
 }

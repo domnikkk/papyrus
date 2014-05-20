@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.providers;
 
@@ -17,8 +20,6 @@ import org.eclipse.papyrus.uml.diagram.timing.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLValidationProvider {
 
 	/**
@@ -36,9 +37,9 @@ public class UMLValidationProvider {
 	/**
 	 * @generated
 	 */
-	public static void runWithConstraints(final TransactionalEditingDomain editingDomain, final Runnable operation) {
+	public static void runWithConstraints(TransactionalEditingDomain editingDomain, Runnable operation) {
 		final Runnable op = operation;
-		final Runnable task = new Runnable() {
+		Runnable task = new Runnable() {
 
 			public void run() {
 				try {
@@ -52,7 +53,7 @@ public class UMLValidationProvider {
 		if(editingDomain != null) {
 			try {
 				editingDomain.runExclusive(task);
-			} catch (final Exception e) {
+			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
@@ -63,7 +64,7 @@ public class UMLValidationProvider {
 	/**
 	 * @generated
 	 */
-	static boolean isInDefaultEditorContext(final Object object) {
+	static boolean isInDefaultEditorContext(Object object) {
 		if(shouldConstraintsBePrivate() && !constraintsActive) {
 			return false;
 		}
@@ -72,5 +73,4 @@ public class UMLValidationProvider {
 		}
 		return true;
 	}
-
 }

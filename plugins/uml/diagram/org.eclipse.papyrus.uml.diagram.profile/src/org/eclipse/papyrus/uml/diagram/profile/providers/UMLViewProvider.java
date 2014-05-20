@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
@@ -7,9 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- * 
- * 
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.profile.providers;
 
@@ -59,101 +57,6 @@ import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstants
 import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
 import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
 import org.eclipse.papyrus.uml.diagram.profile.edit.parts.*;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AppliedStereotypeElementImportEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationAppliedStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationBranchEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationBranchMultiplicityEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationBranchRoleEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationMultiplicitySourceEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationMultiplicityTargetEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationNodeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationRoleSourceEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.AssociationRoleTargetEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ClassOperationEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ClassPropertyEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.CommentAnnotatedElementEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.CommentBodyEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.CommentBodyEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.CommentEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.CommentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ConstraintBodyEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ConstraintBodyEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ConstraintEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ConstraintEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ConstraintNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ConstraintNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ContextLinkEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeAttributeCompartmentEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeAttributeCompartmentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeOperationCompartmentEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeOperationCompartmentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypeOperationEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DataTypePropertyEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DependencyAppliedStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DependencyBranchEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DependencyEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DependencyNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DependencyNodeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DiagramNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ElementImportAliasEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ElementImportEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.EnumerationEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.EnumerationEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.EnumerationEnumerationLiteralCompartmentEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.EnumerationEnumerationLiteralCompartmentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.EnumerationLiteralEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.EnumerationNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.EnumerationNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ExtensionEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.GeneralizationAppliedStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.GeneralizationEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.MetaclassEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.MetaclassEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.MetaclassNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.MetaclassNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ModelEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ModelEditPartTN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ModelNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ModelNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ModelPackageableElementCompartmentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ModelPackageableElementCompartmentEditPartTN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.MultiDependencyLabelEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PackageEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PackageEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PackageImportAppliedStereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PackageImportEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PackageNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PackageNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PackagePackageableElementCompartmentEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PackagePackageableElementCompartmentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PrimitiveTypeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PrimitiveTypeEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PrimitiveTypeNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.PrimitiveTypeNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ProfileApplicationEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ProfileDiagramEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ProfileEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ProfileEditPartTN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ProfileNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ProfileNameEditPartTN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ProfilePackageableElementCompartmentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ProfilePackageableElementCompartmentEditPartTN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.ShortCutDiagramEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.StereotypeAttributeCompartmentEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.StereotypeAttributeCompartmentEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.StereotypeEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.StereotypeEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.StereotypeNameEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.StereotypeNameEditPartCN;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.StereotypeOperationCompartmentEditPart;
-import org.eclipse.papyrus.uml.diagram.profile.edit.parts.StereotypeOperationCompartmentEditPartCN;
 import org.eclipse.papyrus.uml.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
@@ -247,9 +150,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 			visualID = UMLVisualIDRegistry.getVisualID(op.getSemanticHint());
 			if(elementType != null) {
 				if(elementType instanceof IExtendedHintedElementType) {
-					IElementType closestNonExtendedType = ElementTypeUtils.getClosestDiagramType(elementType);
-					if(!UMLElementTypes.isKnownElementType(closestNonExtendedType) || (!(closestNonExtendedType instanceof IHintedType))) {
-						return false; // foreign element type.
+					if(domainElement != null) {
+						if(!UMLVisualIDRegistry.checkNodeVisualID(op.getContainerView(), domainElement, visualID)) {
+							return false;
+						}
 					}
 				} else {
 					if(!UMLElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {

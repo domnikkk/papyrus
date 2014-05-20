@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.views.tests.tests;
@@ -42,11 +43,11 @@ import org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.nattable.views.tests.Activator;
-import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.GenericUtils;
 import org.eclipse.papyrus.junit.utils.ModelExplorerUtils;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
 import org.eclipse.papyrus.junit.utils.ProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerView;
 import org.eclipse.swt.widgets.Display;
@@ -56,12 +57,16 @@ import org.eclipse.uml2.uml.Model;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleException;
 
 public class TableVerifyContents extends AbstractPapyrusTest {
 
+	@ClassRule
+	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
+	
 	private static final String MODEL_PATH = "/resources/model2"; //$NON-NLS-1$
 
 	private static final String SOURCE_PATH = "/resources/"; //$NON-NLS-1$
@@ -103,17 +108,14 @@ public class TableVerifyContents extends AbstractPapyrusTest {
 
 	public static void initTests(final Bundle bundle, final String projectName, final String papyrusModelPath) throws CoreException, IOException, BundleException {
 		ProjectUtils.removeAllProjectFromTheWorkspace();
-		IProject testProject = ProjectUtils.createProject(projectName);
+		IProject testProject = houseKeeper.createProject(projectName);
 		final IFile file = PapyrusProjectUtils.copyPapyrusModel(testProject, bundle, SOURCE_PATH, FILE_ROOT_NAME);
 		RunnableWithResult<?> runnableWithResult = new RunnableWithResult.Impl<Object>() {
 
 			@Override
 			public void run() {
-				try {
-					papyrusEditor = EditorUtils.openPapyrusEditor(file);
-				} catch (PartInitException e) {
-					setStatus(new Status(IStatus.ERROR, bundle.getSymbolicName(), e.getMessage()));
-				}
+				papyrusEditor = houseKeeper.openPapyrusEditor(file);
+				
 				try {
 					TableVerifyContents.view = ModelExplorerUtils.openModelExplorerView();
 				} catch (PartInitException e) {

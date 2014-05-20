@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link.connector.delegation;
@@ -66,7 +67,12 @@ public abstract class AbstractConnectorCreationAndTestDelegatePrepareTest extend
 	public static View p1_p2StructureView;
 	
 	
-	public static Map<View, Boolean> isCreationAllowed = new HashMap<View, Boolean>();
+	public static final Map<View, Boolean> isCreationAllowed = new HashMap<View, Boolean>();
+	
+	@BeforeClass
+	public static void initializeCreationAllowedMap() {
+		houseKeeper.cleanUpLater(isCreationAllowed);
+	}
 		
 	@BeforeClass
 	public static void prepareCustomNodes() throws Exception {

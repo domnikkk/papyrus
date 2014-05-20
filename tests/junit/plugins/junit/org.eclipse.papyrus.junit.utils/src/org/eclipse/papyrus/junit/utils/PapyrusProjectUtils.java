@@ -22,7 +22,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.papyrus.infra.core.resource.sasheditor.SashModel;
+import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModel;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationModel;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.junit.Assert;
@@ -46,11 +46,11 @@ public class PapyrusProjectUtils {
 	 */
 	public static final IFile copyPapyrusModel(final IProject project, final Bundle bundle, final String sourcePath, final String fileRootName) throws CoreException, IOException {
 
-		String diSourcePath = sourcePath + fileRootName + "." + SashModel.MODEL_FILE_EXTENSION;
+		String diSourcePath = sourcePath + fileRootName + "." + DiModel.MODEL_FILE_EXTENSION;
 		String notationSourcePath = sourcePath + fileRootName + "." + NotationModel.NOTATION_FILE_EXTENSION;
 		String umlSourcePath = sourcePath + fileRootName + "." + UmlModel.UML_FILE_EXTENSION;
 
-		final IFile emptyModel_di = copyIFile(diSourcePath, bundle, project, fileRootName + "." + SashModel.MODEL_FILE_EXTENSION);
+		final IFile emptyModel_di = copyIFile(diSourcePath, bundle, project, fileRootName + "." + DiModel.MODEL_FILE_EXTENSION);
 		copyIFile(notationSourcePath, bundle, project, fileRootName + "." + NotationModel.NOTATION_FILE_EXTENSION);
 		copyIFile(umlSourcePath, bundle, project, fileRootName + "." + UmlModel.UML_FILE_EXTENSION);
 

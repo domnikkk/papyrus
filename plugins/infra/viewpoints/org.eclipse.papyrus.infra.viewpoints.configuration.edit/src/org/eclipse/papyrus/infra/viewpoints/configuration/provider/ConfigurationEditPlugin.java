@@ -14,11 +14,8 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
+import org.eclipse.papyrus.infra.constraints.provider.ConstraintsEditPlugin;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.provider.Iso42010EditPlugin;
 
 /**
@@ -53,7 +50,7 @@ public final class ConfigurationEditPlugin extends EMFPlugin {
 	public ConfigurationEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     EcoreEditPlugin.INSTANCE,
+		     ConstraintsEditPlugin.INSTANCE,
 		     Iso42010EditPlugin.INSTANCE,
 		   });
 	}

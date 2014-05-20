@@ -256,7 +256,7 @@
     <!-- CDO -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
 	  <!-- updateFrom("EMF CDO",0) -->
-      <rm:uri format="{0}/modeling/emf/cdo/drops/S20140312-0256">
+      <rm:uri format="{0}/modeling/emf/cdo/drops/S20140507-1015">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -303,7 +303,7 @@
     <!-- MDT OCL -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("MDT OCL 5.0",0) -->
-      <rm:uri format="{0}/modeling/mdt/ocl/updates/milestones/5.0.0/S201405051420">
+      <rm:uri format="{0}/modeling/mdt/ocl/updates/interim/5.0.0/">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>
@@ -405,7 +405,7 @@
     <!-- GMF Tooling -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("GMF Tooling",0) -->
-      <rm:uri format="{0}/modeling/gmp/gmf-tooling/updates/milestones-3.2.M6a">
+      <rm:uri format="{0}/modeling/gmp/gmf-tooling/updates/milestones-3.2.M7">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
     </rm:provider>

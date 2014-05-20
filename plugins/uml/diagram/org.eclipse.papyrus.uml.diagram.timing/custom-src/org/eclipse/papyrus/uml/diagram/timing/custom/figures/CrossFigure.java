@@ -38,13 +38,11 @@ public class CrossFigure extends PapyrusNodeFigure implements IPapyrusUMLElement
 		// draw the cross outside its bounds so that the StateInvariant lines touch the base of the cross
 		// instead of its invisible border
 		graphics.setClip(new Rectangle(getBounds()).expand(additionalSizeForCross, additionalSizeForCross));
-
 		final int x = this.bounds.x - additionalSizeForCross + 1;
 		final int y = this.bounds.y - additionalSizeForCross + 1;
 		final int w = this.bounds.width + additionalSizeForCross * 2;
 		final int h = this.bounds.height + additionalSizeForCross * 2;
 		final int z = Math.max(w / 8, 1);
-
 		graphics.setLineWidth(z);
 		graphics.setLineCap(SWT.CAP_ROUND);
 		graphics.drawLine(x + z, y + z, x + w - z * 2, y + h - z * 2);
@@ -59,8 +57,5 @@ public class CrossFigure extends PapyrusNodeFigure implements IPapyrusUMLElement
 	}
 
 	public void setStereotypeDisplay(final String stereotypes, final Image image) {
-		// TODO Auto-generated method stub
-
 	}
-
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,13 +8,15 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.set.encapsulation;
 
 import static org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.TestUtils.setEncapsulationDeleteConnectorTest;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.gmf.runtime.notation.View;
@@ -22,6 +24,7 @@ import org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link.Abstr
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -31,9 +34,14 @@ public class AbstractSetEncapsulationDeleteConnectorTest extends AbstractLinkPre
 
 	public static View sourceView;
 	
-	public static Map<View, Boolean> isConnectorDestroyed;
+	public static final Map<View, Boolean> isConnectorDestroyed = new HashMap<View, Boolean>();
 
 	public Element block;
+	
+	@BeforeClass
+	public static void initializeConnectorDestroyedMap() {
+		houseKeeper.cleanUpLater(isConnectorDestroyed);
+	}
 	
 	@Before
 	public void initBlock() {

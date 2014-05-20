@@ -30,6 +30,7 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 		DiagramConnectionsPreferencePage.initDefaults(store);
 		DiagramPrintingPreferencePage.initDefaults(store);
 		DiagramRulersAndGridPreferencePage.initDefaults(store);
+
 	}
 
 	/**

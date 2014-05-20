@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,15 +25,17 @@ import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.editparts.ZoomManager;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.internal.actions.ZoomContributionItem;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.MapModeUtil;
 
 
 /**
- * 
+ *
  * A part of this code comes from {@link ZoomContributionItem}
- * 
- * 
+ *
+ *
  */
 @SuppressWarnings("restriction")
 public class ZoomAction extends AbstractParametricAction {//extends Action
@@ -74,9 +76,9 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
 	 *        parameter for the zoom action
 	 *        Parameters can value :
@@ -90,7 +92,7 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	 *        <li>#ZOOM_SELECTION_PARAMETER</li>
 	 *        <li>a number as String (with % at end or not)</li>
 	 *        </ul>
-	 * 
+	 *
 	 * @param selectedElements
 	 *        the selected element for the zoom action
 	 */
@@ -99,9 +101,9 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.action.Action#isEnabled()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -111,7 +113,7 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 
 	/**
 	 * <code>false</code> if not
-	 * 
+	 *
 	 * @param zoomText
 	 *        the new zoom value
 	 * @return
@@ -154,9 +156,9 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.action.Action#run()
-	 * 
+	 *
 	 */
 	@Override
 	public void doRun(IProgressMonitor progressMonitor) {
@@ -185,7 +187,7 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 
 	/**
 	 * Performs the zoom operation. Always zooms when possible.
-	 * 
+	 *
 	 * @param onWidth
 	 *        true to perform zoom on the width
 	 * @param onHeight
@@ -200,7 +202,7 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 
 	/**
 	 * Performs the zoom operation.
-	 * 
+	 *
 	 * @param onWidth
 	 *        true to perform zoom on the width
 	 * @param onHeight
@@ -275,12 +277,16 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 
 	/**
 	 * Returns the current zoom manager
-	 * 
+	 *
 	 * @return
 	 *         the current zoom manager
 	 */
 	protected ZoomManager getZoomManager() {
-		return (ZoomManager)getDiagramWorkbenchPart().getAdapter(ZoomManager.class);
+		IDiagramWorkbenchPart diagramPart = getDiagramWorkbenchPart();
+		if(diagramPart != null) {
+			return (ZoomManager)diagramPart.getAdapter(ZoomManager.class);
+		}
+		return null;
 	}
 
 }

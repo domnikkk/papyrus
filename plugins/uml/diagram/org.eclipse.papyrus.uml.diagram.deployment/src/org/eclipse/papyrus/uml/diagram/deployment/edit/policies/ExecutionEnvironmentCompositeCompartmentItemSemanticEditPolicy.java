@@ -39,11 +39,17 @@ public class ExecutionEnvironmentCompositeCompartmentItemSemanticEditPolicy exte
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
+
+
 		if(UMLElementTypes.ExecutionEnvironment_21 == requestElementType) {
+
 			return getGEFWrapper(new ExecutionEnvironmentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		if(UMLElementTypes.Artifact_25 == requestElementType) {
+
 			return getGEFWrapper(new ArtifactCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
+
 		}
 		return super.getCreateCommand(req);
 	}

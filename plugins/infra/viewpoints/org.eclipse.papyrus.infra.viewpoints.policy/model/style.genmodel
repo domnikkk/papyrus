@@ -7,11 +7,11 @@
     language="" usedGenPackages="../../org.eclipse.papyrus.infra.viewpoints.configuration/model/configuration.genmodel#//configuration platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.genmodel#//iso42010 ../../org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation"
     operationReflection="true" importOrganizing="true">
   <foreignModel>style.ecore</foreignModel>
-  <genPackages prefix="Style" basePackage="org.eclipse.papyrus.infra.viewpoints" disposableProviderFactory="true"
-      ecorePackage="style.ecore#/">
+  <genPackages prefix="Style" basePackage="org.eclipse.papyrus.infra.viewpoints" resource="XMI"
+      disposableProviderFactory="true" ecorePackage="style.ecore#/">
     <genClasses ecoreClass="style.ecore#//PapyrusViewStyle">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference style.ecore#//PapyrusViewStyle/owner"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference style.ecore#//PapyrusViewStyle/prototype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference style.ecore#//PapyrusViewStyle/configuration"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

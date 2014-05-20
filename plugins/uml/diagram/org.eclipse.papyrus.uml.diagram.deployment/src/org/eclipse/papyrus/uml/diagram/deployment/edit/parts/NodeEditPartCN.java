@@ -113,11 +113,13 @@ public class NodeEditPartCN extends NamedElementEditPart {
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
+
 	}
 
 	/**
@@ -129,6 +131,7 @@ public class NodeEditPartCN extends NamedElementEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.NodeFigure
+	 * 
 	 * @generated
 	 */
 	public NodeFigure getPrimaryShape() {
@@ -143,6 +146,8 @@ public class NodeEditPartCN extends NamedElementEditPart {
 			((NodeNameEditPartCN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
+
+
 		return false;
 	}
 
@@ -201,12 +206,15 @@ public class NodeEditPartCN extends NamedElementEditPart {
 	 */
 	protected org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
+
 	}
 
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {

@@ -30,10 +30,9 @@ import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.Lifeline;
 
-public class PropertyDiagramUpdater implements ICustomDiagramUpdater {
+public class PropertyDiagramUpdater implements ICustomDiagramUpdater<UMLNodeDescriptor> {
 
-	public List<?> getSemanticChildren(final View view) {
-		// TODO Auto-generated method stub
+	public List<UMLNodeDescriptor> getSemanticChildren(final View view) {
 		return null;
 	}
 
@@ -47,12 +46,9 @@ public class PropertyDiagramUpdater implements ICustomDiagramUpdater {
 		}
 		final Lifeline modelElement = (Lifeline)containerView.getElement();
 		final LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
-
 		if((modelElement).getCoveredBys().size() > 0) {
 			final Interaction interaction = modelElement.getInteraction();
-
 			for(final Object element : interaction.getFragments()) {
-
 				final InteractionFragment childElement = (InteractionFragment)element;
 				final int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 				if(visualID == FullStateInvariantEditPartCN.VISUAL_ID) {
@@ -73,10 +69,8 @@ public class PropertyDiagramUpdater implements ICustomDiagramUpdater {
 				}
 			}
 		}
-
 		if((modelElement).getCoveredBys().size() > 0) {
 			final Interaction interaction = modelElement.getInteraction();
-
 			for(final Object element : interaction.getOwnedRules()) {
 				final Constraint childElement = (Constraint)element;
 				final int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -103,12 +97,9 @@ public class PropertyDiagramUpdater implements ICustomDiagramUpdater {
 		}
 		final Lifeline modelElement = (Lifeline)containerView.getElement();
 		final LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
-
 		if((modelElement).getCoveredBys().size() > 0) {
 			final Interaction interaction = modelElement.getInteraction();
-
 			for(final Object element : interaction.getFragments()) {
-
 				final InteractionFragment childElement = (InteractionFragment)element;
 				final int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 				if(visualID == CompactStateInvariantEditPartCN.VISUAL_ID) {
@@ -129,10 +120,8 @@ public class PropertyDiagramUpdater implements ICustomDiagramUpdater {
 				}
 			}
 		}
-
 		if((modelElement).getCoveredBys().size() > 0) {
 			final Interaction interaction = modelElement.getInteraction();
-
 			for(final Object element : interaction.getOwnedRules()) {
 				final Constraint childElement = (Constraint)element;
 				final int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -148,5 +137,4 @@ public class PropertyDiagramUpdater implements ICustomDiagramUpdater {
 		}
 		return result;
 	}
-
 }

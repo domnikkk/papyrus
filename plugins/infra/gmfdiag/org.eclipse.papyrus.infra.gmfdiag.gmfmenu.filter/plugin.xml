@@ -11,7 +11,7 @@
             name="High">
       </Priority>
       <partContribution
-            class="org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart">
+            class="org.eclipse.papyrus.infra.gmfdiag.common.SynchronizableGmfDiagramEditor">
          <partPredefinedItem
                id="org.eclipse.gef.align_left"
                menubarPath="/diagramMenu/alignMenu/alignHorizontalGroup"
@@ -99,6 +99,9 @@
                path="/addGroup"
                remove="true">
          </popupPredefinedItem>
+           <popupStructuredContributionCriteria
+                 policyClass="org.eclipse.papyrus.infra.gmfdiag.gmfmenu.filter.GMFMenuFilterPolicy">
+           </popupStructuredContributionCriteria>
       </popupContribution>
    </contributionItemProvider>
 </extension>
@@ -111,7 +114,7 @@
                name="High">
          </Priority>
          <partContribution
-               class="org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart">
+               class="org.eclipse.papyrus.infra.gmfdiag.common.SynchronizableGmfDiagramEditor">
                           <partPredefinedItem
                   id="lineTypeSolidAction"
                   menubarPath="/diagramMenu/lineTypeMenu/lineTypeGroup"
@@ -752,6 +755,8 @@
                   path="/editMenu/copyGroup"
                   remove="true">
             </popupPredefinedItem>
+            <popupStructuredContributionCriteria
+                  policyClass="org.eclipse.papyrus.infra.gmfdiag.gmfmenu.filter.GMFMenuFilterPolicy"></popupStructuredContributionCriteria>
          </popupContribution>
          <popupContribution
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -790,6 +795,9 @@
                   path="/filtersMenu/miscellaneousGroup"
                   remove="true">
             </popupPredefinedItem>
+            <popupStructuredContributionCriteria
+                  policyClass="org.eclipse.papyrus.infra.gmfdiag.gmfmenu.filter.GMFMenuFilterPolicy">
+            </popupStructuredContributionCriteria>
          </popupContribution>
       </contributionItemProvider>
    </extension>

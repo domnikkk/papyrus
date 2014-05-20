@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,17 +10,17 @@
  * Contributors:
  *	Amine EL KOUHEN (CEA LIST/LIFL) - Amine.Elkouhen@cea.fr
  *  Ansgar Radermacher (CEA LIST) - ansgar.radermacher@cea.fr
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.decoration.util;
 
 import java.util.List;
 
 import org.apache.commons.lang.WordUtils;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IDecoration;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.services.decoration.DecorationService;
 
 
@@ -83,7 +83,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Instantiates a new decoration.
-	 * 
+	 *
 	 * @param id
 	 *        the id
 	 * @param decorationImage
@@ -110,7 +110,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Gets the id.
-	 * 
+	 *
 	 * @return the id
 	 */
 	public String getId() {
@@ -126,7 +126,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Gets the message.
-	 * 
+	 *
 	 * @return the message
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#getMessage()
 	 */
@@ -138,7 +138,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Sets the message.
-	 * 
+	 *
 	 * @param message
 	 *        the new message
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#setMessage(java.lang.String)
@@ -151,7 +151,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Gets the element.
-	 * 
+	 *
 	 * @return the element
 	 */
 	public EObject getElement() {
@@ -161,7 +161,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Sets the element.
-	 * 
+	 *
 	 * @param element
 	 *        the new element
 	 */
@@ -171,7 +171,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Gets the decoration image for a graphical editor.
-	 * 
+	 *
 	 * @return the decoration image
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#getDecorationImage()
 	 */
@@ -181,7 +181,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Sets the decoration image for a graphical editor.
-	 * 
+	 *
 	 * @param decorationImage
 	 *        the new decoration image
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#setDecorationImageForGE(org.eclipse.jface.resource.ImageDescriptor)
@@ -192,7 +192,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Gets the decoration image for the model explorer.
-	 * 
+	 *
 	 * @return the decoration image
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#getDecorationImage()
 	 */
@@ -202,7 +202,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Sets the decoration image for the model explorer.
-	 * 
+	 *
 	 * @param decorationImage
 	 *        the new decoration image
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#setDecorationImageForGE(org.eclipse.jface.resource.ImageDescriptor)
@@ -214,7 +214,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Gets the position. Only used for display within model explorer
-	 * 
+	 *
 	 * @return the position
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#getPosition()
 	 */
@@ -225,7 +225,7 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Sets the position.
-	 * 
+	 *
 	 * @param position
 	 *        the new position
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#setPosition(org.eclipse.papyrus.infra.services.decoration.util.Decoration.PreferedPosition)
@@ -262,45 +262,45 @@ public class Decoration implements IPapyrusDecoration {
 	}
 
 	/**
-	 * @param element the element for which we want to get the message. This must be an eObject or an object
+	 * @param element
+	 *        the element for which we want to get the message. This must be an eObject or an object
 	 *        that can be adapted to an eObject (which is the case for elements of the model explorer)
 	 * @return the decoration message. This might be a multi-line message
 	 */
 	public static String getMessageFromDecorations(DecorationService decorationService, Object element) {
 
-		if (decorationService == null) {
+		if(decorationService == null) {
 			return null;
 		}
 
 		List<IPapyrusDecoration> decorations = decorationService.getDecorations(element, true);
 
-		EObject eObject = (EObject)Platform.getAdapterManager().getAdapter(element, EObject.class);
+		EObject eObject = EMFHelper.getEObject(element);
 		String message = decorationService.initialMessage(eObject);
 		if(decorations != null) {
 			for(IPapyrusDecoration decoration : decorations) {
-				if (message == null) {
+				if(message == null) {
 					message = ""; //$NON-NLS-1$
 				}
 				if(message.length() > 0) {
 					message += "\n"; //$NON-NLS-1$
-               	}
-				if (decoration.getMessage() != null) {
+				}
+				if(decoration.getMessage() != null) {
 					message += WordUtils.wrap(decoration.getMessage(), 100, "\n  ", true); //$NON-NLS-1$
 				}
 			}
 		}
-		if ((message != null) && message.length() > 0) {
+		if((message != null) && message.length() > 0) {
 			return message;
-		}
-		else {
+		} else {
 			return null;
 		}
-    }
- 
-	
+	}
+
+
 	/**
 	 * Gets the priority.
-	 * 
+	 *
 	 * @return the priority
 	 */
 	public int getPriority() {
@@ -309,9 +309,9 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * Sets the priority.
-	 * 
+	 *
 	 * @param priority
-	 * 		  the new priority
+	 *        the new priority
 	 */
 	public void setPriority(int priority) {
 		this.priority = priority;

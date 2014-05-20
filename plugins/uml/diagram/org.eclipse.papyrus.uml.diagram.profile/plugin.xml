@@ -45,28 +45,18 @@
 				
 				<entry
 				      defineOnly="true"
-				      description="Create a new Package"
-				      id="createPackage1CreationTool"
+				      description="Create a new Class"
+				      id="createClass6CreationTool"
 				      kind="tool"
-				      label="Package"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
+				      label="Class"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
 				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif">
-					</entry>
-				<entry
-				      defineOnly="true"
-				      description="Add a new Profile"
-				      id="createProfile2CreationTool"
-				      kind="tool"
-				      label="Profile"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Profile.gif"
-				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Profile.gif">
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif">
 					</entry>
 				<entry
 				      defineOnly="true"
 				      description="Create new comment"
-				      id="createComment3CreationTool"
+				      id="createComment2CreationTool"
 				      kind="tool"
 				      label="Comment"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif"
@@ -76,7 +66,7 @@
 				<entry
 				      defineOnly="true"
 				      description="Create a constraint"
-				      id="createConstraint4CreationTool"
+				      id="createConstraint3CreationTool"
 				      kind="tool"
 				      label="Constraint"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"
@@ -85,23 +75,33 @@
 					</entry>
 				<entry
 				      defineOnly="true"
-				      description="Add new Stereotype"
-				      id="createStereotype5CreationTool"
+				      description="Create new DataType"
+				      id="createDataType4CreationTool"
 				      kind="tool"
-				      label="Stereotype"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Stereotype.gif"
+				      label="DataType"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
 				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Stereotype.gif">
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif">
 					</entry>
 				<entry
 				      defineOnly="true"
-				      description="Create a new Class"
-				      id="createClass6CreationTool"
+				      description="Create new Enumeration"
+				      id="createEnumeration5CreationTool"
 				      kind="tool"
-				      label="Class"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"
+				      label="Enumeration"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Enumeration.gif"
 				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif">
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Enumeration.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Add new EnumerationLiteral"
+				      id="createEnumerationLiteral6CreationTool"
+				      kind="tool"
+				      label="EnumerationLiteral"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/EnumerationLiteral.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/EnumerationLiteral.gif">
 					</entry>
 				<entry
 				      defineOnly="true"
@@ -115,28 +115,38 @@
 					</entry>
 				<entry
 				      defineOnly="true"
-				      description="Create new Enumeration"
-				      id="createEnumeration8CreationTool"
+				      description="Add new operation"
+				      id="createOperation8CreationTool"
 				      kind="tool"
-				      label="Enumeration"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Enumeration.gif"
+				      label="Operation"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif"
 				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Enumeration.gif">
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif">
 					</entry>
 				<entry
 				      defineOnly="true"
-				      description="Create new DataType"
-				      id="createDataType9CreationTool"
+				      description="Create a new Package"
+				      id="createPackage9CreationTool"
 				      kind="tool"
-				      label="DataType"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"
+				      label="Package"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
 				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif">
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Add a new Profile"
+				      id="createProfile10CreationTool"
+				      kind="tool"
+				      label="Profile"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Profile.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Profile.gif">
 					</entry>
 				<entry
 				      defineOnly="true"
 				      description="Create new PrimitiveType"
-				      id="createPrimitiveType10CreationTool"
+				      id="createPrimitiveType11CreationTool"
 				      kind="tool"
 				      label="PrimitiveType"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/PrimitiveType.gif"
@@ -146,7 +156,7 @@
 				<entry
 				      defineOnly="true"
 				      description="Add new property"
-				      id="createProperty11CreationTool"
+				      id="createProperty12CreationTool"
 				      kind="tool"
 				      label="Property"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
@@ -155,68 +165,18 @@
 					</entry>
 				<entry
 				      defineOnly="true"
-				      description="Add new operation"
-				      id="createOperation12CreationTool"
+				      description="Add new Stereotype"
+				      id="createStereotype13CreationTool"
 				      kind="tool"
-				      label="Operation"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif"
+				      label="Stereotype"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Stereotype.gif"
 				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Operation.gif">
-					</entry>
-				<entry
-				      defineOnly="true"
-				      description="Add new EnumerationLiteral"
-				      id="createEnumerationLiteral13CreationTool"
-				      kind="tool"
-				      label="EnumerationLiteral"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/EnumerationLiteral.gif"
-				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/EnumerationLiteral.gif">
-					</entry>
-				<entry
-				      defineOnly="true"
-				      description="Add an Extension"
-				      id="createExtension1CreationTool"
-				      kind="tool"
-				      label="Extension"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Extension.gif"
-				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Extension.gif">
-					</entry>
-				<entry
-				      defineOnly="true"
-				      description="Create a generalization"
-				      id="createGeneralization2CreationTool"
-				      kind="tool"
-				      label="Generalization"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Generalization.gif"
-				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Generalization.gif">
-					</entry>
-				<entry
-				      defineOnly="true"
-				      description="Create a link for Comment, Constraint"
-				      id="createLink3CreationTool"
-				      kind="tool"
-				      label="Link"
-				      large_icon="icons/obj16/Link.gif"
-				      path=""
-				      small_icon="icons/obj16/Link.gif">
-					</entry>
-				<entry
-				      defineOnly="true"
-				      description="Create a ProfileApplication"
-				      id="createProfileApplication4CreationTool"
-				      kind="tool"
-				      label="ProfileApplication"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ProfileApplication.gif"
-				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ProfileApplication.gif">
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Stereotype.gif">
 					</entry>
 				<entry
 				      defineOnly="true"
 				      description="Create an Association"
-				      id="createAssociation5CreationTool"
+				      id="createAssociation1CreationTool"
 				      kind="tool"
 				      label="Association"
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
@@ -232,6 +192,46 @@
 				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
 				      path=""
 				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Add an Extension"
+				      id="createExtension3CreationTool"
+				      kind="tool"
+				      label="Extension"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Extension.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Extension.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a generalization"
+				      id="createGeneralization4CreationTool"
+				      kind="tool"
+				      label="Generalization"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Generalization.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Generalization.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a link for Comment, Constraint"
+				      id="createLink5CreationTool"
+				      kind="tool"
+				      label="Link"
+				      large_icon="icons/obj16/Link.gif"
+				      path=""
+				      small_icon="icons/obj16/Link.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
+				      description="Create a ProfileApplication"
+				      id="createProfileApplication6CreationTool"
+				      kind="tool"
+				      label="ProfileApplication"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ProfileApplication.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ProfileApplication.gif">
 					</entry>
 				
 				</contribution>
@@ -267,27 +267,27 @@
 		      </expand>
 			</entry>
 		<predefinedEntry
-		        id="createPackage1CreationTool"
-		        path="/createNodes1Group">
-		  </predefinedEntry>
-		<predefinedEntry
-		        id="createProfile2CreationTool"
-		        path="/createNodes1Group">
-		  </predefinedEntry>
-		<predefinedEntry
-		        id="createComment3CreationTool"
-		        path="/createNodes1Group">
-		  </predefinedEntry>
-		<predefinedEntry
-		        id="createConstraint4CreationTool"
-		        path="/createNodes1Group">
-		  </predefinedEntry>
-		<predefinedEntry
-		        id="createStereotype5CreationTool"
-		        path="/createNodes1Group">
-		  </predefinedEntry>
-		<predefinedEntry
 		        id="createClass6CreationTool"
+		        path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createComment2CreationTool"
+		        path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createConstraint3CreationTool"
+		        path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createDataType4CreationTool"
+		        path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createEnumeration5CreationTool"
+		        path="/createNodes1Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createEnumerationLiteral6CreationTool"
 		        path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
@@ -295,27 +295,27 @@
 		        path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createEnumeration8CreationTool"
+		        id="createOperation8CreationTool"
 		        path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createDataType9CreationTool"
+		        id="createPackage9CreationTool"
 		        path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createPrimitiveType10CreationTool"
+		        id="createProfile10CreationTool"
 		        path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createProperty11CreationTool"
+		        id="createPrimitiveType11CreationTool"
 		        path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createOperation12CreationTool"
+		        id="createProperty12CreationTool"
 		        path="/createNodes1Group">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createEnumerationLiteral13CreationTool"
+		        id="createStereotype13CreationTool"
 		        path="/createNodes1Group">
 		  </predefinedEntry>
 		<entry
@@ -331,27 +331,27 @@
 		      </expand>
 			</entry>
 		<predefinedEntry
-		        id="createExtension1CreationTool"
-		        path="/createEdges2Group">
-		  </predefinedEntry>
-		<predefinedEntry
-		        id="createGeneralization2CreationTool"
-		        path="/createEdges2Group">
-		  </predefinedEntry>
-		<predefinedEntry
-		        id="createLink3CreationTool"
-		        path="/createEdges2Group">
-		  </predefinedEntry>
-		<predefinedEntry
-		        id="createProfileApplication4CreationTool"
-		        path="/createEdges2Group">
-		  </predefinedEntry>
-		<predefinedEntry
-		        id="createAssociation5CreationTool"
+		        id="createAssociation1CreationTool"
 		        path="/createEdges2Group">
 		  </predefinedEntry>
 		<predefinedEntry
 		        id="createContextLink6CreationTool"
+		        path="/createEdges2Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createExtension3CreationTool"
+		        path="/createEdges2Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createGeneralization4CreationTool"
+		        path="/createEdges2Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createLink5CreationTool"
+		        path="/createEdges2Group">
+		  </predefinedEntry>
+		<predefinedEntry
+		        id="createProfileApplication6CreationTool"
 		        path="/createEdges2Group">
 		  </predefinedEntry>
 		</contribution>

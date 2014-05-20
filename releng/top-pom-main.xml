@@ -143,6 +143,7 @@
 		<module>../plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.config</module>
 		<module>../plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.editor</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.newchild</module>
+		<module>../plugins/infra/org.eclipse.papyrus.infra.newchild.edit</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.onefile</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.psf</module>
 		<module>../plugins/infra/services/org.eclipse.papyrus.infra.services.controlmode</module>
@@ -298,6 +299,7 @@
 	<properties>
 		<tycho-version>0.20.0</tycho-version>
 		<tychoExtrasVersion>0.20.0</tychoExtrasVersion>
+		<findbugs.version>2.5.3</findbugs.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -518,6 +520,22 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+	            <groupId>org.codehaus.mojo</groupId>
+	            <artifactId>findbugs-maven-plugin</artifactId>
+	            <version>${findbugs.version}</version>
+	            <configuration>
+	               <findbugsXmlOutput>true</findbugsXmlOutput>
+	               <failOnError>false</failOnError>
+	            </configuration>
+	            <executions>
+	               <execution>
+	                  <goals>
+	                     <goal>check</goal>
+	                  </goals>
+	               </execution>
+	            </executions>
+	         </plugin>
 		</plugins>
 	</build>
 </project>

@@ -289,4 +289,13 @@
          class="org.eclipse.papyrus.infra.gmfdiag.common.listener.RollbackNotificationHistoryListener">
    </historyListener>
 </extension>
+<extension
+      point="org.eclipse.papyrus.infra.gmfdiag.common.pasteStrategy">
+   <strategy
+         strategy="org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.DefaultPasteStrategy">
+   </strategy>
+   <strategy
+         strategy="org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.DiagramPasteStrategy">
+   </strategy>
+</extension>
 </plugin>

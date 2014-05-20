@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.reorient.connector;
@@ -23,6 +24,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.sysml.diagram.internalblock.tests.reorient.AbstractLinkPrepareTest;
 import org.eclipse.papyrus.sysml.diagram.internalblock.tests.utils.EditorUtils;
 import org.eclipse.uml2.uml.Property;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -32,8 +34,13 @@ public class AbstractLinkReorientSourceConnectorTest extends AbstractLinkPrepare
 
 	public static View relationshipView;
 
-	public static Map<View, List<Property>> expectedNestedPath = new HashMap<View, List<Property>>();
+	public static final Map<View, List<Property>> expectedNestedPath = new HashMap<View, List<Property>>();
 
+	@BeforeClass
+	public static void initializeExpectedMaps() {
+		houseKeeper.cleanUpLater(expectedNestedPath);
+	}
+	
 	@Test
 	public void reorientLinkTargetToDiagram() throws Exception {
 		View newSourceView = EditorUtils.getDiagramView();

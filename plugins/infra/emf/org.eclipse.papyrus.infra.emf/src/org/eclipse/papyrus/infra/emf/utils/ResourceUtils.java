@@ -14,8 +14,10 @@
 package org.eclipse.papyrus.infra.emf.utils;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
@@ -78,4 +80,28 @@ public class ResourceUtils {
 		}
 		return ids;
 	}
+	
+	
+	/**
+	 * Default options to save emf files used in Papyrus
+	 * @return
+	 */
+	public static Map<String, Object> getSaveOptions() {
+		Map<String, Object> saveOptions = new HashMap<String, Object>();
+
+		// default save options.
+		saveOptions.put(XMIResource.OPTION_DECLARE_XML, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_PROCESS_DANGLING_HREF, XMIResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
+		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_SKIP_ESCAPE_URI, Boolean.FALSE);
+		saveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8");
+
+		//see bug 397987: [Core][Save] The referenced plugin models are saved using relative path
+		saveOptions.put(XMIResource.OPTION_URI_HANDLER, new org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl.PlatformSchemeAware());
+
+		return saveOptions;
+	}
+	
 }

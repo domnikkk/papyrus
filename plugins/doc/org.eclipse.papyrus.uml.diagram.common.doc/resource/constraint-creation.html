@@ -1,111 +1,26 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<?xml version='1.0' encoding='utf-8'?>
-<head>
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Constraint creation</title>
-</head>
-
-<body>
-<h1>Create and edit constraints</h1>
-
-<h2 id="Create_a_constraint">Create constraints</h1>
-
-Do one of the following
-<ul>
-<li>Within a Papyrus diagram:
-
-All Papyrus diagrams support constraints. Select the constraint tool from the palette.
-<center>
-<img vspace="5" src="Constraint_CreateViaDiagram.png"><br>
-</center>
-Then, press the mouse button at the place where you want to create the constraint and resize the constraint while holding the mouse button down.
-
-<li>Within the model explorer:
-
-From the model explorer, click right --&gt; new child--&gt; Create a new Constraint<br>
-<center>
-<img vspace="5" src="Constraint_CreateViaME.png"><br>
-</center>
-
-</ul>
-
-<h2 id="Specify_the_context">Specify the context</h2>
-
-<p>
-Before editing a constraint body, it is important to specify the context of a constraint;
-it can be for instance a stereotype or an operation (in fact, it can be any meta-model
- element that inherits from namespace).
-<p>
-
-Do one of the following
-<ul>
-<li>Use the context-link-tool to create a visual link to the context element
-(Papyrus selects the context-link-tool automatically after creation of a constraint): if in two-click-mode
-(connection tool preference), target the context-line towards the context element and click. If you are in
-one-click-mode, press mouse button on the constraint and keep it pressed until the context object is targeted. 
-<center>
-<img vspace="5" src="Constraint_ContextViaDiagram.png"><br>
-</center>
-
-<li>Use the property view to select the context via a dialog popup
-<center>
-<img vspace="5" src="Constraint_ContextViaPropertyView.png"><br>
-</center>
-
-</ul>
-
-<h2 id="Define_specification">Define constraint specification</h2>
-
-Each constraint has a specification containing a condition. Whereas it may be an arbitrary value specification,
-such as a StringExpression or LiteralInteger, it is in most cases useful to define an opaque expression consisting
-of a pair of language and body (a list of these pairs). The constraint body may be written into OCL, JAVA,
-or natural language. In order to make constraints usable by the Papyrus,
-constraint must be written in OCL or JAVA.
-
-<p>
-Select a constraint in a diagram or model explorer. Then do one of the following to edit a specification<br>
-<ul>
-<li>Open the default editor for constraints using the keyboard shortcut F2
-or with a second click on an already selected constraint. All editors are using opaque expressions and support
-a specific language. This language is configured automatically within the opaque expression, the user edits
-directly the body.<br>
-The default editor can be controlled via the preferences.
-
-<p>
-
-<li>Select a specific editor via the context menu, as shown in the following screenshot.
-
-<center>
-<img vspace="5" src="Constraint_ChooseEditor.png"><br>
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body><h1 id="Create_and_edit_constraints">Create and edit constraints</h1><p>Creation and edition comprises includes multiple use case, namely creation of a constraint and its context and setting a specification.</p><p><center>
+<img border="0" src="PapyrusConstraint-CreationUseCase.png"/><br/> 
+</center></p><h2 id="Define_a_constraint_and_its_context">Define a constraint and its context</h2><p>Papyrus supports the creation of UML constraints. To create a constraint, and associated context, do one of the following:</p><ul><li>Within any Papyrus diagram select the constraint tool from the palette and then press the mouse button at the position where you want to create the constraint on the diagram canvas. The constraint should then be connected to another element on the diagram, via a ContextLink relationship, by clicking on the target element in the diagram (in two-click mode). If you are in one-click-mode (connection tool preference), press the mouse button on the constraint and keep it pressed until the context object is selected. This ContextLink relationship defines the context for which the constraint will be evaluated.</li></ul><p><center>
+<img border="0" src="PapyrusConstraint-CreateViaDiagram.png"/>&nbsp;&nbsp;&nbsp;<img border="0" src="PapyrusConstraint-ContextViaDiagram.png"/><br/>
+The constraint and context-link tools in the palette
+</center></p><ul><li>Within the Model Explorer via right clicking a model element and then selecting New Child -&gt; Create a new Constraint. The context is automatically set to the parent of the constraint. The context can be changed via the Properties View if required.<br/></li></ul><p><center>
+<img border="0" src="PapyrusConstraint-CreateViaME.png"/><br/>
+Create a constraint via the model explorer
+</center></p><p><center>
+<img border="0" src="PapyrusConstraint-ContextViaPropertyView.png"/><br/>
+Set the context via the property view
+</center></p><h2 id="Define_constraint_specification">Define constraint specification</h2><p>Each constraint has a specification containing a condition. Whereas it may be an arbitrary value specification, such as a StringExpression or LiteralInteger, it is in most cases useful to define an opaque expression consisting of a pair of language and body (a list of these pairs). The constraint body may be written in at least OCL, JAVA, or natural language. In order to make constraints evaluable by Papyrus the constraint must be written in either OCL or JAVA. To define a constraint's specification, first select a constraint on either a diagram or in the Model Explorer, then do the following:</p><ul><li>On the diagram open the default editor for constraints using the keyboard shortcut F2 or with a second click on an already selected constraint. The editor assume the language is OCL but this can be changed later via the Properties View. The constraint text is defined directly in the editor. The default editor can be controlled via the preferences. </li></ul><ul><li>On the diagram select a specific editor via the context menu, as shown in the following screenshot.</li></ul><p><center>
+<img border="0" src="PapyrusConstraint-ChooseEditor.png"/><br/>
 Explicitly choose the editor for the constraint
-</center>
-
-<p>
-
-<li>Use the property view to create a new or open an existing specification, as shown in the following figure.
-In the sequel, we assume that the specification is an opaque expression.<br>
-
-<center>
-<img vspace="5" src="Constraint_SpecViaPropertyView.png"><br>
+</center></p><p>Use the property view to create a new or open an existing specification, as shown in the following figure.
+In the sequel, we assume that the specification is an opaque expression.</p><p><center>
+<img border="0" src="PapyrusConstraint-SpecViaPropertyView.png"/><br/>
 Open the specification via the property view
-</center>
-
-You can add the language, as in the following figure:<br>
-  
-<center>
-<img vspace="5" src="Constraint_OpaqueExpressionAddLang.png"><br/>
+</center></p><p>You can add the language, as in the following figure:<br/></p><p><center>
+<img border="0" src="PapyrusConstraint-OpaqueExpressionAddLang.png"/><br/>
 Specify a language.
-</center>
-
-<center>
-<img vspace="5" src="Constraint_OpaqueExpressionEdit.png"><br/>
+</center></p><p><center>
+<img border="0" src="PapyrusConstraint-OpaqueExpressionEdit.png"/><br/>
 Write the body of the opaque expression
-</center>
-
-This method is a bit more complicated, but gives the user full control over the opaque specification. In particular,
-it is possible to enter more than one language, body pair (even if this is rarely needed).
-</ul>
-
-</body>
-</html>
+</center></p><p>This method is a bit more complicated, but gives the user full control over the opaque specification. In particular,
+it is possible to enter more than one language, body pair (even if this is rarely needed).</p></body></html>

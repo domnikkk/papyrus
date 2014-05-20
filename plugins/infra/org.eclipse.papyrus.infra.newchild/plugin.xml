@@ -6,15 +6,26 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated elementCreationMenuModel -->
       <package
-            uri="http://ElementCreationMenuModel"
-            class="org.eclipse.papyrus.infra.newchild.ElementCreationMenuModel.ElementCreationMenuModelPackage"
+            uri="http://www.eclipse.org/papyrus/infra/newchild/elementcreationmenumodel"
+            class="org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage"
             genModel="resource/elementCreationMenuModel.genmodel"/>
    </extension>
+   
+   <!-- COMPATIBILITY -->
+	<extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ElementCreationMenuModel"
+            class="org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage"
+            genModel="resource/elementCreationMenuModel.genmodel"/>
+   </extension>
+   
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <!-- @generated elementCreationMenuModel -->
       <parser
-            type="elementcreationmenumodel"
-            class="org.eclipse.papyrus.infra.newchild.ElementCreationMenuModel.util.ElementCreationMenuModelResourceFactoryImpl"/>
+            type="creationmenumodel"
+            class="org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.util.CustomElementCreationMenuModelResourceFactory"/>
    </extension>
 </plugin>
+
+

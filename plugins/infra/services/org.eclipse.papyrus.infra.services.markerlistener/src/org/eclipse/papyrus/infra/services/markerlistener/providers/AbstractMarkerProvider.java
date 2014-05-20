@@ -115,7 +115,14 @@ public abstract class AbstractMarkerProvider
 		this.deleteMarkers(eObject, monitor, null, true) ;
 	}
 
-	
+	/**
+	 * Delete all markers of a given type for EObjects that are within the subtree of the passed
+	 * first parameter.
+	 * @param eObject the root of the subtree for which markers should be deleted.
+	 * @param monitor a progress monitor
+	 * @param markerType the ID of a marker
+	 * @param includeSubtype boolean indicating whether sub-types are scheduled for deletion as well.
+	 */
 	public void deleteMarkers(EObject eObject, IProgressMonitor monitor, String markerType, boolean includeSubtypes)
 			throws CoreException {
 
@@ -129,7 +136,10 @@ public abstract class AbstractMarkerProvider
 
 		int i = 0;
 		for (IPapyrusMarker marker : markers) {
-			if (isContainedBy(marker.getEObject(), eObject)) {
+			EObject markerEObj = marker.getEObject();
+			// if the marker has no EObject any more, the associated EObject may have been deleted.
+			// remove the marker as well.
+			if ((markerEObj == null) || isContainedBy(markerEObj, eObject)) {
 				if (monitor.isCanceled()) {
 					break;
 				}
@@ -156,6 +166,12 @@ public abstract class AbstractMarkerProvider
 		}
 	}
 	
+	/**
+	 * Check if the first passed EObject is an indirect child of the 2nd passed object (or identical)
+	 * @param subEObj a potential child
+	 * @param eObj a father EObject
+	 * @return if subEObject is a child or identical to the father.
+	 */
 	private boolean isContainedBy(EObject subEObj, EObject eObj) {
 		if (eObj == subEObj)
 			return true;

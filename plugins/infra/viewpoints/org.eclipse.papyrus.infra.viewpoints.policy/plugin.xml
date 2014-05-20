@@ -12,6 +12,13 @@
             uri="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style">
       </package>
    </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated style -->
+      <parser
+            type="style"
+            class="org.eclipse.papyrus.infra.viewpoints.style.util.StyleResourceFactoryImpl"/>
+   </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer

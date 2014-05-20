@@ -22,7 +22,6 @@ import org.eclipse.jface.layout.TableColumnLayout;
 import org.eclipse.jface.viewers.ColumnLayoutData;
 import org.eclipse.jface.viewers.ColumnPixelData;
 import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
-import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -65,6 +64,12 @@ import org.eclipse.ui.part.Page;
  */
 public class ModelValidationPage
 		extends Page {
+
+	protected static final int COLUMN_WITH_MIN = 1;
+
+	protected static final int COLUMN_WITH_MAX = 2000;
+
+	protected static final int COLUMN_WITH_DEFAULT = 300;
 
 	private final ViewSettings settings;
 
@@ -173,15 +178,18 @@ public class ModelValidationPage
 		final int columnIndex = table.getTable().indexOf(result.getColumn());
 
 		int width = settings.getColumnWidth(columnIndex);
-		ColumnLayoutData layoutData;
-		if (width < 0) {
-			// it's a relative weight
-			layoutData = new ColumnWeightData(-width, true);
-		} else {
-			layoutData = new ColumnPixelData(width, true);
+		// sanity check, supply default values if outside authorized values, see bug 434953
+		if (width < COLUMN_WITH_MIN) {
+			width = COLUMN_WITH_DEFAULT;
 		}
-		layout.setColumnData(result.getColumn(), layoutData);
+		else if (width > COLUMN_WITH_MAX) {
+			width = COLUMN_WITH_MAX;
+		}
 
+		ColumnLayoutData layoutData;
+		layoutData = new ColumnPixelData(width, true);
+		layout.setColumnData(result.getColumn(), layoutData);
+		
 		result.getColumn().addListener(SWT.Resize, new Listener() {
 
 			public void handleEvent(Event event) {

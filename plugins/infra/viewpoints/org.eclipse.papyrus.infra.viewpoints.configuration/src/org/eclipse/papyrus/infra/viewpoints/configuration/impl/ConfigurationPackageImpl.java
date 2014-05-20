@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.papyrus.infra.constraints.ConstraintsPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
@@ -189,7 +189,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		isInited = true;
 
 		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
+		ConstraintsPackage.eINSTANCE.eClass();
 		Iso42010Package.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -775,6 +775,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 
 		// Obtain other dependent packages
 		Iso42010Package theIso42010Package = (Iso42010Package)EPackage.Registry.INSTANCE.getEPackage(Iso42010Package.eNS_URI);
+		ConstraintsPackage theConstraintsPackage = (ConstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -788,6 +789,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		papyrusSyncTableEClass.getESuperTypes().add(this.getPapyrusView());
 		papyrusTableEClass.getESuperTypes().add(this.getPapyrusView());
 		modelRuleEClass.getESuperTypes().add(this.getRule());
+		modelRuleEClass.getESuperTypes().add(theConstraintsPackage.getDisplayUnit());
 		owningRuleEClass.getESuperTypes().add(this.getRule());
 		childRuleEClass.getESuperTypes().add(this.getRule());
 		paletteRuleEClass.getESuperTypes().add(this.getRule());

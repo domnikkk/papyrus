@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,14 +8,14 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.parametric.tests.creation.link.connector;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.notation.View;
@@ -42,7 +42,6 @@ public class TestLinkCreationConnectorFromReference extends AbstractLinkCreation
 	public static void initExpectedResults() throws Exception {
 
 		// Initialize source creation results
-		isCreationAllowed = new HashMap<View, Boolean>();
 
 		isCreationAllowed.put(diagramContainerTargetView, false);
 
@@ -69,8 +68,7 @@ public class TestLinkCreationConnectorFromReference extends AbstractLinkCreation
 		isCreationAllowed.put(constraintCNTargetView, false);
 
 		// Initialize nested property path for tests
-		expectedSourceNestedPath = new HashMap<View, List<Property>>();
-		expectedTargetNestedPath = new HashMap<View, List<Property>>();
+
 
 		List<Property> emptyPath = Collections.emptyList();
 		for(View view : isCreationAllowed.keySet()) {

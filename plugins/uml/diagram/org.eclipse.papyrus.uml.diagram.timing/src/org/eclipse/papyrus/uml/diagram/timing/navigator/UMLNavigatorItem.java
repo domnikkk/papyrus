@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.navigator;
 
@@ -17,24 +20,25 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLNavigatorItem extends UMLAbstractNavigatorItem {
 
 	/**
 	 * @generated
 	 */
 	static {
+		@SuppressWarnings("rawtypes")
 		final Class[] supportedTypes = new Class[]{ View.class, EObject.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-			public Object getAdapter(final Object adaptableObject, final Class adapterType) {
+			@SuppressWarnings("rawtypes")
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
 				if(adaptableObject instanceof org.eclipse.papyrus.uml.diagram.timing.navigator.UMLNavigatorItem && (adapterType == View.class || adapterType == EObject.class)) {
 					return ((org.eclipse.papyrus.uml.diagram.timing.navigator.UMLNavigatorItem)adaptableObject).getView();
 				}
 				return null;
 			}
 
+			@SuppressWarnings("rawtypes")
 			public Class[] getAdapterList() {
 				return supportedTypes;
 			}
@@ -44,7 +48,7 @@ public class UMLNavigatorItem extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	private final View myView;
+	private View myView;
 
 	/**
 	 * @generated
@@ -54,31 +58,30 @@ public class UMLNavigatorItem extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	public UMLNavigatorItem(final View view, final Object parent, final boolean isLeaf) {
+	public UMLNavigatorItem(View view, Object parent, boolean isLeaf) {
 		super(parent);
-		this.myView = view;
-		this.myLeaf = isLeaf;
+		myView = view;
+		myLeaf = isLeaf;
 	}
 
 	/**
 	 * @generated
 	 */
 	public View getView() {
-		return this.myView;
+		return myView;
 	}
 
 	/**
 	 * @generated
 	 */
 	public boolean isLeaf() {
-		return this.myLeaf;
+		return myLeaf;
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
-	public boolean equals(final Object obj) {
+	public boolean equals(Object obj) {
 		if(obj instanceof org.eclipse.papyrus.uml.diagram.timing.navigator.UMLNavigatorItem) {
 			return EcoreUtil.getURI(getView()).equals(EcoreUtil.getURI(((org.eclipse.papyrus.uml.diagram.timing.navigator.UMLNavigatorItem)obj).getView()));
 		}
@@ -88,9 +91,7 @@ public class UMLNavigatorItem extends UMLAbstractNavigatorItem {
 	/**
 	 * @generated
 	 */
-	@Override
 	public int hashCode() {
 		return EcoreUtil.getURI(getView()).hashCode();
 	}
-
 }

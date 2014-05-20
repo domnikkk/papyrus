@@ -96,7 +96,7 @@ implements IPapyrusMarker {
 			uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE,
 					(String) null);
 		}
-		if (uriAttribute != null) {
+		if ((uriAttribute != null) && (getResource() != null)) {
 			URI uri = URI.createURI(uriAttribute);
 			if (getResource().getURI().equals(uri.trimFragment())) {
 				result = getResource().getEObject(uri.fragment());

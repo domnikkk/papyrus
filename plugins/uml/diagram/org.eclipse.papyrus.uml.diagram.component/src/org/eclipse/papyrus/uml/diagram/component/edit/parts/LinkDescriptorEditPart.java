@@ -24,9 +24,8 @@ import org.eclipse.papyrus.uml.diagram.component.custom.edit.policies.CustomGrap
 /**
  * @generated
  */
-public class LinkDescriptorEditPart extends ConnectionEditPart
-		implements ITreeBranchEditPart
-{
+public class LinkDescriptorEditPart extends ConnectionEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -65,6 +64,6 @@ public class LinkDescriptorEditPart extends ConnectionEditPart
 	 * @generated
 	 */
 	public SimpleDashedEdgeFigure getPrimaryShape() {
-		return (SimpleDashedEdgeFigure) getFigure();
+		return (SimpleDashedEdgeFigure)getFigure();
 	}
 }

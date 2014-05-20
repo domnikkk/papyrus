@@ -1,17 +1,17 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Shape;
-import org.eclipse.draw2d.StackLayout;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -20,32 +20,22 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.preference.PreferenceConverter;
-import org.eclipse.papyrus.infra.gmfdiag.preferences.utils.GradientPreferenceConverter;
-import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
-import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.policies.TimingDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.custom.figures.TimingRulerFigure;
-import org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramEditorPlugin;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
-public class FreeTimingRulerEditPartCN extends
-
-ShapeNodeEditPart {
+public class FreeTimingRulerEditPartCN extends NodeEditPart {
 
 	/**
 	 * @generated
@@ -65,21 +55,19 @@ ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public FreeTimingRulerEditPartCN(final View view) {
+	public FreeTimingRulerEditPartCN(View view) {
 		super(view);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new TimingDiagramDragDropEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable
-		// editpolicies
+		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
@@ -87,10 +75,9 @@ ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		final org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
-			@Override
-			protected EditPolicy createChildEditPolicy(final EditPart child) {
+			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if(result == null) {
 					result = new NonResizableEditPolicy();
@@ -98,13 +85,11 @@ ShapeNodeEditPart {
 				return result;
 			}
 
-			@Override
-			protected Command getMoveChildrenCommand(final Request request) {
+			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
-			@Override
-			protected Command getCreateCommand(final CreateRequest request) {
+			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
 		};
@@ -115,37 +100,36 @@ ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return this.primaryShape = new TimingRulerFigure();
+		return primaryShape = new TimingRulerFigure();
 	}
 
 	/**
+	 * org.eclipse.papyrus.uml.diagram.timing.custom.figures.TimingRulerFigure
 	 * @generated
 	 */
 	public TimingRulerFigure getPrimaryShape() {
-		return (TimingRulerFigure)this.primaryShape;
+		return (TimingRulerFigure)primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected boolean addFixedChild(final EditPart childEditPart) {
-
+	protected boolean addFixedChild(EditPart childEditPart) {
 		if(childEditPart instanceof FreeTimeRulerCompartmentEditPart) {
-			final IFigure pane = getPrimaryShape().getFreeTimeRulerContainerFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
+			IFigure pane = getPrimaryShape().getFreeTimeRulerContainerFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((FreeTimeRulerCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
-
 		return false;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected boolean removeFixedChild(final EditPart childEditPart) {
+	protected boolean removeFixedChild(EditPart childEditPart) {
 		if(childEditPart instanceof FreeTimeRulerCompartmentEditPart) {
-			final IFigure pane = getPrimaryShape().getFreeTimeRulerContainerFigure();
+			IFigure pane = getPrimaryShape().getFreeTimeRulerContainerFigure();
 			pane.remove(((FreeTimeRulerCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
@@ -155,8 +139,7 @@ ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void addChildVisual(final EditPart childEditPart, final int index) {
+	protected void addChildVisual(EditPart childEditPart, int index) {
 		if(addFixedChild(childEditPart)) {
 			return;
 		}
@@ -166,8 +149,7 @@ ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void removeChildVisual(final EditPart childEditPart) {
+	protected void removeChildVisual(EditPart childEditPart) {
 		if(removeFixedChild(childEditPart)) {
 			return;
 		}
@@ -177,8 +159,7 @@ ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	@Override
-	protected IFigure getContentPaneFor(final IGraphicalEditPart editPart) {
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if(editPart instanceof FreeTimeRulerCompartmentEditPart) {
 			return getPrimaryShape().getFreeTimeRulerContainerFigure();
 		}
@@ -189,44 +170,31 @@ ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		final String prefElementId = "FreeTimingRuler";
-		final IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
-		final String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
-		final String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
-		final DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
-
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
 	/**
 	 * Creates figure for this edit part.
 	 * 
-	 * Body of this method does not depend on settings in generation model so you may safely remove <i>generated</i> tag
-	 * and modify it.
+	 * Body of this method does not depend on settings in generation model
+	 * so you may safely remove <i>generated</i> tag and modify it.
 	 * 
 	 * @generated
 	 */
-	@Override
 	protected NodeFigure createNodeFigure() {
-		final NodeFigure figure = createNodePlate();
-		figure.setLayoutManager(new StackLayout());
-		final IFigure shape = createNodeShape();
-		figure.add(shape);
-		this.contentPane = setupContentPane(shape);
-		return figure;
+		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane. Respects layout one may have set for generated
-	 * figure.
-	 * 
-	 * @param nodeShape
-	 *        instance of generated figure class
+	 * Default implementation treats passed figure as content pane.
+	 * Respects layout one may have set for generated figure.
+	 * @param nodeShape instance of generated figure class
 	 * @generated
 	 */
-	protected IFigure setupContentPane(final IFigure nodeShape) {
+	protected IFigure setupContentPane(IFigure nodeShape) {
 		if(nodeShape.getLayoutManager() == null) {
-			final ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
 		}
@@ -236,10 +204,9 @@ ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	@Override
 	public IFigure getContentPane() {
-		if(this.contentPane != null) {
-			return this.contentPane;
+		if(contentPane != null) {
+			return contentPane;
 		}
 		return super.getContentPane();
 	}
@@ -247,64 +214,25 @@ ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void setForegroundColor(final Color color) {
-		if(this.primaryShape != null) {
-			this.primaryShape.setForegroundColor(color);
+	protected void setForegroundColor(Color color) {
+		if(primaryShape != null) {
+			primaryShape.setForegroundColor(color);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void setLineWidth(final int width) {
-		if(this.primaryShape instanceof Shape) {
-			((Shape)this.primaryShape).setLineWidth(width);
-		}
+	protected void setLineWidth(int width) {
+		super.setLineWidth(width);
 	}
 
 	/**
 	 * @generated
 	 */
-	@Override
-	protected void setLineType(final int style) {
-		if(this.primaryShape instanceof Shape) {
-			((Shape)this.primaryShape).setLineStyle(style);
+	protected void setLineType(int style) {
+		if(primaryShape instanceof IPapyrusNodeFigure) {
+			((IPapyrusNodeFigure)primaryShape).setLineStyle(style);
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public Object getPreferredValue(final EStructuralFeature feature) {
-		final IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
-		Object result = null;
-
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
-			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("FreeTimingRuler", PreferencesConstantsHelper.COLOR_LINE);
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("FreeTimingRuler", PreferencesConstantsHelper.COLOR_FONT);
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
-				prefColor = PreferencesConstantsHelper.getElementConstant("FreeTimingRuler", PreferencesConstantsHelper.COLOR_FILL);
-			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(preferenceStore, prefColor));
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
-			final String prefGradient = PreferencesConstantsHelper.getElementConstant("FreeTimingRuler", PreferencesConstantsHelper.COLOR_GRADIENT);
-			final GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
-				result = new Integer(gradientPreferenceConverter.getTransparency());
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
-				result = gradientPreferenceConverter.getGradientData();
-			}
-		}
-
-		if(result == null) {
-			result = getStructuralFeatureValue(feature);
-		}
-		return result;
 	}
 }

@@ -18,7 +18,9 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
@@ -26,6 +28,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
+import org.eclipse.papyrus.infra.emf.utils.BusinessModelResolver;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 
@@ -206,5 +209,42 @@ public class NotationUtils {
 			return null;
 		}
 	}
+	
+	
+	/**
+	 * Returns the notation resource where to add the new diagram
+	 *
+	 * @param eObject
+	 *        the semantic object linked to the diagram or the diagram itself.
+	 * @param domain
+	 *        the editing domain
+	 * @return the resource where the diagram should be added or <code>null</code> if no resource was found
+	 *         
+	 */
+	public static Resource getNotationResourceForDiagram(EObject eObject, TransactionalEditingDomain domain) {
+		Object object = BusinessModelResolver.getInstance().getBusinessModel(eObject);
+		EObject semanticObject;
+		if(!(object instanceof EObject)) {
+			semanticObject = eObject;
+		} else {
+			semanticObject = (EObject)object;
+		}
+
+		Resource containerResource = semanticObject.eResource();
+		if(containerResource == null) {
+			return null;
+		}
+		// retrieve the model set from the container resource
+		ResourceSet resourceSet = containerResource.getResourceSet();
+
+		if(resourceSet instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet)resourceSet;
+			Resource destinationResource = modelSet.getAssociatedResource(semanticObject, NotationModel.NOTATION_FILE_EXTENSION, true);
+			return destinationResource;
+		} else {
+			throw new RuntimeException("Resource Set is not a ModelSet or is null");  //$NON-NLS-1$
+		}
+	}		
+	
 }
 

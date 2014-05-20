@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Camille Letavernier (camille.letavernier@cea.fr) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434635
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelexplorer.handler;
@@ -38,8 +39,6 @@ import org.eclipse.ui.navigator.CommonNavigator;
  * @author Camille Letavernier
  * 
  */
-//EMF Facet 0.1 restricted & deprecated API
-@SuppressWarnings({ "deprecation", "restriction" })
 public class ToggleAdvancedModelExplorerHandler extends AbstractHandler {
 
 	/**

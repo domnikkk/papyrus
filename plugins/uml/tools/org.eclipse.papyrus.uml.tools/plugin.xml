@@ -90,7 +90,7 @@
             id="org.eclipse.papyrus.uml.tools.umlProperties"
             namespace="org.eclipse.papyrus.uml.tools"
             properties="isRoot"
-            type="org.eclipse.emf.ecore.EObject">
+            type="org.eclipse.core.runtime.IAdaptable">
       </propertyTester>
    </extension>
 </plugin>

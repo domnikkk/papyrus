@@ -28,21 +28,17 @@ public class FullStateFigure extends PapyrusNodeFigure implements IPapyrusUMLEle
 	public void paintFigure(final Graphics g) {
 		// super.paintFigure(g);
 		g.pushState();
-
 		// DEBUG
 		// g.setLineDash(new int[] { 1, 5 });
 		// g.drawRectangle(this.bounds.x, this.bounds.y, this.bounds.width - 1, this.bounds.height - 1);
 		// g.setLineDash(new int[] {});
 		// END DEBUG
-
 		// final int y = this.bounds.y;
 		final int x = this.bounds.x;
 		final int w = this.bounds.width;
 		final int y = this.posY;
-
 		g.setLineWidth(1);
 		g.drawLine(x, y, x + w, y);
-
 		g.popState();
 	}
 
@@ -56,7 +52,5 @@ public class FullStateFigure extends PapyrusNodeFigure implements IPapyrusUMLEle
 	}
 
 	public void setStereotypeDisplay(final String stereotypes, final Image image) {
-		// TODO Auto-generated method stub
-
 	}
 }

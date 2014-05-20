@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *	Amine EL KOUHEN (CEA LIST/LIFL) - Amine.Elkouhen@cea.fr
- *  Ansgar Radermacher (CEA LIST) - ansgar.radermacher@cea.fr 
+ *  Ansgar Radermacher (CEA LIST) - ansgar.radermacher@cea.fr
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.decoration.util;
 
@@ -17,11 +17,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang.WordUtils;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EReferenceTreeElement;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.services.decoration.DecorationService;
 import org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions;
 import org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions.MarkChildren;
@@ -45,7 +45,7 @@ public class DecorationUtils {
 
 	/**
 	 * Create instance of class DecorationUtils.
-	 * 
+	 *
 	 * @param element
 	 *        the element
 	 */
@@ -54,14 +54,13 @@ public class DecorationUtils {
 			throw new IllegalArgumentException("The decorated element shall not be null");
 		}
 
-		EObject eObject = (EObject)Platform.getAdapterManager().getAdapter(element, EObject.class);
+		EObject eObject = EMFHelper.getEObject(element);
 		eObjects = new BasicEList<EObject>();
 
 		this.element = element;
 		if(eObject != null) {
 			eObjects.add(eObject);
-		}
-		else if(element instanceof EReferenceTreeElement) {
+		} else if(element instanceof EReferenceTreeElement) {
 			// for bug 391676
 			for(Object child : ((EReferenceTreeElement)element).getReferedEObjectTE()) {
 				if(child instanceof EObject) {
@@ -74,7 +73,7 @@ public class DecorationUtils {
 
 	/**
 	 * Instantiates a new decoration utils.
-	 * 
+	 *
 	 * @param eObject
 	 *        the e object
 	 */
@@ -95,7 +94,7 @@ public class DecorationUtils {
 
 	/**
 	 * Gets the decorations.
-	 * 
+	 *
 	 * @param decorationService
 	 *        the decoration service
 	 * @return the decorations
@@ -108,9 +107,9 @@ public class DecorationUtils {
 	/**
 	 * Returns a list of decorations for a given UML element. It is a list, since there might be
 	 * more than one decoration (e.g. a validation marker and a tracepoint) for this element.
-	 * 
+	 *
 	 * If current element is a folder or link-item, decorations from childs are propagated.
-	 * 
+	 *
 	 * @param decorationService
 	 *        the decoration service
 	 * @param navigateToParents
@@ -183,13 +182,13 @@ public class DecorationUtils {
 	/**
 	 * Gets the decoration message.
 	 * Caveat: Decoration.getMessageFromDecorations is used instead of this operation
-     * 
-     * @param decorationService
-     *        the decoration service
-     * @return the decoration message
-     */
-    @Deprecated
-    public String getDecorationMessage(DecorationService decorationService) {
+	 * 
+	 * @param decorationService
+	 *        the decoration service
+	 * @return the decoration message
+	 */
+	@Deprecated
+	public String getDecorationMessage(DecorationService decorationService) {
 
 		Map<String, Decoration> decorations = getDecorations(decorationService);
 		if(decorations != null) {

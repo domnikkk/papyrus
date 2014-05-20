@@ -22,7 +22,6 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.papyrus.uml.diagram.communication.custom.messages.Messages;
 import org.eclipse.uml2.uml.Message;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MessageParser.
  */
@@ -34,7 +33,6 @@ public class MessageParser implements IParser {
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getEditString(org.eclipse.core.runtime.IAdaptable, int)
 	 */
 	public String getEditString(IAdaptable element, int flags) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -44,7 +42,6 @@ public class MessageParser implements IParser {
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isValidEditString(org.eclipse.core.runtime.IAdaptable, java.lang.String)
 	 */
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -54,7 +51,6 @@ public class MessageParser implements IParser {
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getParseCommand(org.eclipse.core.runtime.IAdaptable, java.lang.String, int)
 	 */
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -76,7 +72,6 @@ public class MessageParser implements IParser {
 				 * if (an.isEmpty())
 				 * System.out.print("List is empty");
 				 */
-
 				// if ( message.getEAnnotations().get(0) != null)
 				// result =
 				// message.getEAnnotations().get(0).getDetails().get(0).getValue()
@@ -86,7 +81,6 @@ public class MessageParser implements IParser {
 			} else
 				result = message.getName();
 			// result = "1:" + result;
-
 			return result;
 		}
 		return Messages.MessageParser_undefined;
@@ -98,7 +92,6 @@ public class MessageParser implements IParser {
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isAffectingEvent(java.lang.Object, int)
 	 */
 	public boolean isAffectingEvent(Object event, int flags) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -108,8 +101,6 @@ public class MessageParser implements IParser {
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getCompletionProcessor(org.eclipse.core.runtime.IAdaptable)
 	 */
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

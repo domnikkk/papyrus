@@ -24,9 +24,8 @@ import org.eclipse.papyrus.uml.diagram.composite.edit.policies.ConnectorItemSema
 /**
  * @generated
  */
-public class ConnectorEditPart extends UMLConnectionNodeEditPart
-		implements ITreeBranchEditPart
-{
+public class ConnectorEditPart extends UMLConnectionNodeEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -52,25 +51,17 @@ public class ConnectorEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ConnectorAppliedStereotypeEditPart) {
-			((ConnectorAppliedStereotypeEditPart) childEditPart).setLabel(
-					getPrimaryShape().getAppliedStereotypeLabel());
-			return true;
+		if(childEditPart instanceof ConnectorAppliedStereotypeEditPart) {
+			((ConnectorAppliedStereotypeEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
 		}
-		if (childEditPart instanceof ConnectorNameEditPart) {
-			((ConnectorNameEditPart) childEditPart).setLabel(
-					getPrimaryShape().getNameLabel());
-			return true;
+		if(childEditPart instanceof ConnectorNameEditPart) {
+			((ConnectorNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
 		}
-		if (childEditPart instanceof ConnectorMultiplicitySourceEditPart) {
-			((ConnectorMultiplicitySourceEditPart) childEditPart).setLabel(
-					getPrimaryShape().getMultiplicitySourceLabel());
-			return true;
+		if(childEditPart instanceof ConnectorMultiplicitySourceEditPart) {
+			((ConnectorMultiplicitySourceEditPart)childEditPart).setLabel(getPrimaryShape().getMultiplicitySourceLabel());
 		}
-		if (childEditPart instanceof ConnectorMultiplicityTargetEditPart) {
-			((ConnectorMultiplicityTargetEditPart) childEditPart).setLabel(
-					getPrimaryShape().getMultiplicityTargetLabel());
-			return true;
+		if(childEditPart instanceof ConnectorMultiplicityTargetEditPart) {
+			((ConnectorMultiplicityTargetEditPart)childEditPart).setLabel(getPrimaryShape().getMultiplicityTargetLabel());
 		}
 		return false;
 	}
@@ -79,7 +70,7 @@ public class ConnectorEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
+		if(addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -89,16 +80,16 @@ public class ConnectorEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ConnectorAppliedStereotypeEditPart) {
+		if(childEditPart instanceof ConnectorAppliedStereotypeEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ConnectorNameEditPart) {
+		if(childEditPart instanceof ConnectorNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ConnectorMultiplicitySourceEditPart) {
+		if(childEditPart instanceof ConnectorMultiplicitySourceEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ConnectorMultiplicityTargetEditPart) {
+		if(childEditPart instanceof ConnectorMultiplicityTargetEditPart) {
 			return true;
 		}
 		return false;
@@ -108,7 +99,7 @@ public class ConnectorEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
+		if(removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -130,6 +121,6 @@ public class ConnectorEditPart extends UMLConnectionNodeEditPart
 	 * @generated
 	 */
 	public ConnectorFigure getPrimaryShape() {
-		return (ConnectorFigure) getFigure();
+		return (ConnectorFigure)getFigure();
 	}
 }

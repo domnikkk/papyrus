@@ -78,7 +78,6 @@ public class CustomMessageCreateCommand extends MessageCreateCommand {
 	/**
 	 * Add a condition on the MOS container
 	 * 
-	 * @generated NOT
 	 */
 	@Override
 	public boolean canExecute() {

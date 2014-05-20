@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
- *
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.tests.canonical;
@@ -19,9 +19,6 @@ import java.util.ArrayList;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -37,7 +34,6 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
-import org.eclipse.papyrus.editor.PapyrusMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
@@ -45,6 +41,7 @@ import org.eclipse.papyrus.infra.core.services.ExtensionServicesRegistry;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.diagram.common.commands.CreateUMLModelCommand;
 import org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor;
@@ -52,10 +49,8 @@ import org.eclipse.papyrus.uml.diagram.profile.CreateProfileModelCommand;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.intro.IIntroPart;
-import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Profile;
@@ -63,12 +58,16 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 
 /**
  * The Class AbstractPapyrusTestCase.
  */
 public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	protected boolean operationFailed = false;
 
 	/** The Constant CREATION. */
@@ -121,12 +120,6 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
 	/** The file. */
 	protected IFile file;
-
-	/** The root. */
-	protected IWorkspaceRoot root;
-
-	/** The page. */
-	protected IWorkbenchPage page;
 
 	/** The diagram editor. */
 	protected UmlGmfDiagramEditor diagramEditor = null;
@@ -183,8 +176,6 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 					papyrusEditor = null;
 					diagramEditPart = null;
 					diagramEditor = null;
-					page.closeAllEditors(false);
-					project.delete(true, new NullProgressMonitor());
 					setResult(true);
 				} catch (Exception ex) {
 					ex.printStackTrace(System.out);
@@ -249,25 +240,17 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			}
 		};
 		Display.getDefault().syncExec(closeIntroRunnable);
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		root = workspace.getRoot();
 		/*
 		 * final String timestamp = Long.toString(System.currentTimeMillis());
 		 * 
 		 * project = root.getProject("DiagramTestProject_" + timestamp); file =
 		 * project.getFile("DiagramTest_" + timestamp + ".di"); //$NON-NLS-2$
 		 */
-		project = root.getProject(getProjectName());
+		project = houseKeeper.createProject(getProjectName());
 		file = project.getFile(getFileName());
-		this.diResourceSet = new DiResourceSet();
+		this.diResourceSet = houseKeeper.cleanUpLater(new DiResourceSet());
 		// at this point, no resources have been created
 
-		if(!project.exists()) {
-			project.create(null);
-		}
-		if(!project.isOpen()) {
-			project.open(null);
-		}
 		if(file.exists()) {
 			file.delete(true, new NullProgressMonitor());
 		}
@@ -329,19 +312,8 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			command.createDiagram(diResourceSet, null, "DiagramToTest");
 			diResourceSet.save(new NullProgressMonitor());
 		}
-		Runnable runnable = new Runnable() {
-
-			public void run() {
-				try {
-					page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-					papyrusEditor = (IMultiDiagramEditor)page.openEditor(new FileEditorInput(file), PapyrusMultiDiagramEditor.EDITOR_ID);
-				} catch (Exception ex) {
-					Assert.fail(ex.getMessage());
-					ex.printStackTrace(System.out);
-				}
-			}
-		};
-		Display.getDefault().syncExec(runnable);
+		
+		papyrusEditor = houseKeeper.openPapyrusEditor(file);
 		Assert.assertNotNull("Failed to open the editor", papyrusEditor);
 	}
 

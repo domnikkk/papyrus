@@ -7,7 +7,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
  org.eclipse.core.resources;bundle-version="3.7.0",
  org.eclipse.papyrus.infra.services.markerlistener;bundle-version="1.0.0",
- org.eclipse.papyrus.emf.facet.custom.metamodel;bundle-version="1.0.0"
+ org.eclipse.papyrus.emf.facet.custom.metamodel;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.0"
 Export-Package: org.eclipse.papyrus.infra.services.decoration,
  org.eclipse.papyrus.infra.services.decoration.util
 Bundle-Vendor: %providerName

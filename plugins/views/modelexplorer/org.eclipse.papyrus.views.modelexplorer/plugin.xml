@@ -45,7 +45,7 @@
             <or>
                <instanceof value="org.eclipse.gmf.runtime.notation.impl.DiagramImpl">
                </instanceof>
-               <instanceof value="org.eclipse.emf.ecore.EObject"/>
+               <adapt type="org.eclipse.emf.ecore.EObject"/>
             </or>
          </possibleChildren>
          <actionProvider class="org.eclipse.papyrus.views.modelexplorer.actionprovider.GenericTransformActionProvider" id="org.eclipse.papyrus.views.modelexplorer.actionprovider.GenericTransformActionProvider">
@@ -67,9 +67,9 @@
                      <instanceof value="org.eclipse.gmf.runtime.notation.Diagram">
                      </instanceof>
                   </not>
-                  <instanceof
-                        value="org.eclipse.emf.ecore.EObject">
-                  </instanceof>
+                  <adapt
+                        type="org.eclipse.emf.ecore.EObject">
+                  </adapt>
                </and>
             </enablement>
          </actionProvider>
@@ -78,9 +78,9 @@
                <or>
                   <instanceof value="org.eclipse.gmf.runtime.notation.impl.DiagramImpl">
                   </instanceof>
-                  <instanceof
-                        value="org.eclipse.emf.ecore.EObject">
-                  </instanceof>
+                  <adapt
+                        type="org.eclipse.emf.ecore.EObject">
+                  </adapt>
                </or>
             </possibleDropTargets>
          </dropAssistant>
@@ -131,9 +131,8 @@
           <and>
              <with variable="selection">
                 <iterate>
-                   <instanceof
-                         value="org.eclipse.emf.ecore.EObject">
-                   </instanceof>
+                   <adapt type="org.eclipse.emf.ecore.EObject">
+                   </adapt>
                 </iterate>
              </with>
           </and>
@@ -232,6 +231,10 @@
 	
 	<!-- Command declaration : Sort elements command -->			
 	<command categoryId="org.eclipse.papyrus.editor.category" defaultHandler="org.eclipse.papyrus.views.modelexplorer.handler.SortElementHandler" description="Sort elements" id="org.eclipse.papyrus.views.modelexplorer.sortelement" name="Sort elements">
+         <state
+               class="org.eclipse.papyrus.views.modelexplorer.handler.SortElementState:org.eclipse.papyrus.views.modelexplorer.modelexplorer"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
 	</command>
        
 	<!-- Command declaration : Delete element command -->

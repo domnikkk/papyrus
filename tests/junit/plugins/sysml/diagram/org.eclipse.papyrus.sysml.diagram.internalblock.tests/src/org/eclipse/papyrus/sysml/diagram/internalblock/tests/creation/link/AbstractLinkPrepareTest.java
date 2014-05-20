@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link;
@@ -66,7 +67,7 @@ public abstract class AbstractLinkPrepareTest extends AbstractTest {
 	public static View partContainer1; // Its type block may be set encapsulated for testing purpose.
 	public static View partContainer2; // Its type block may be set encapsulated for testing purpose.
 
-	public static Map<View, Boolean> isCreationAllowed = new HashMap<View, Boolean>();
+	public static final Map<View, Boolean> isCreationAllowed = new HashMap<View, Boolean>();
 
 	public static View subNestedActorPartContainer1_1_1SourceView;
 
@@ -135,6 +136,11 @@ public abstract class AbstractLinkPrepareTest extends AbstractTest {
 	public static View nestedPartContainer2_1;
 
 	public static View nestedPartContainer1_2;
+	
+	@BeforeClass
+	public static void initializeCreationAllowedMap() {
+		houseKeeper.cleanUpLater(isCreationAllowed);
+	}
 	
 	@BeforeClass
 	public static void prepareInheritedNodes() throws Exception {

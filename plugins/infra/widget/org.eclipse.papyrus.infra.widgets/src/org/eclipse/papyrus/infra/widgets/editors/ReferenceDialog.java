@@ -562,7 +562,9 @@ public class ReferenceDialog extends AbstractValueEditor implements SelectionLis
 
 						@Override
 						public void run() {
-
+							if(ReferenceDialog.this.isDisposed()) {//Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
+								return;
+							}
 							currentValueLabel.setBackground(DEFAULT);
 							currentValueLabel.update();
 						}

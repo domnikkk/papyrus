@@ -42,25 +42,17 @@ import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
 import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.CustomMessageNameEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLVisualIDRegistry;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class CustomMessageViewCreateCommand is intended to create the graphical view of the message when the target and source lifelines are already
  * connected. In this case, only a label is created
  */
 public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand {
 
-
-
 	/** The node. */
 	private static View node;
 
 	/** The container view. */
 	//private View containerView;
-
-
-
-
 	/** The location. */
 	@SuppressWarnings("unused")
 	private Point location;
@@ -83,7 +75,6 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 
 	/** The existing link. */
 	private ConnectionEditPart existingLink;
-
 
 	/**
 	 * Instantiates a new custom message view create command.
@@ -110,12 +101,10 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 		this.preferenceHint = preferencesHint;
 		this.location = point;
 		this.existingLink = link;
-
 		this.semanticApdater = semanticAdapter;
 		this.semanticViewApdater = new SemanticAdapter(null, null);
 		setResult(CommandResult.newOKCommandResult(semanticViewApdater));
 	}
-
 
 	/**
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
@@ -126,19 +115,13 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 	 * @return
 	 * @throws ExecutionException
 	 */
-
 	@SuppressWarnings("static-access")
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		// TODO Auto-generated method stub
-
-
 		//IFigure linkEditPart = (IFigure)existingLink.getFigure();
 		View linkView = ((IGraphicalEditPart)existingLink).getNotationView();
 		//Connector linkConnector = linkView.get
-
 		this.node = customCreateLabel(((EObject)semanticApdater.getAdapter(EObject.class)), linkView, UMLVisualIDRegistry.getType(CustomMessageNameEditPart.VISUAL_ID));
-
 		// put to the good position
 		Location notationLocation = NotationFactory.eINSTANCE.createLocation();
 		//notationLocation.setX(location.x);
@@ -190,10 +173,8 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 	 * @param hint
 	 *        the hint
 	 * @return the node
-	 * @generated
 	 * 
 	 */
-
 	public Node customCreateLabel(EObject domainElement, View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
 		rv.setType(hint);
@@ -201,5 +182,4 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 		rv.setElement(domainElement);
 		return rv;
 	}
-
 }

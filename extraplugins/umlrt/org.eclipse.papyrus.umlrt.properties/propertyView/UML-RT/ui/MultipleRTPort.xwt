@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Composite
 	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:j="clr-namespace:java.lang"
 	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
-	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:x="http://www.eclipse.org/xwt"
-	xmlns:j="clr-namespace:java.lang">
+	xmlns:x="http://www.eclipse.org/xwt">
 	<Composite.layout>
 		<ppel:PropertiesLayout></ppel:PropertiesLayout>
 	</Composite.layout>
@@ -12,11 +12,9 @@
 			<ppel:PropertiesLayout numColumns="2"></ppel:PropertiesLayout>
 		</Composite.layout>
 		<ppe:BooleanRadio input="{Binding}"
-			property="UMLRealTime:RTPort:isConjugate"></ppe:BooleanRadio>
+			property="UMLRealTime:RTPort:isNotification"></ppe:BooleanRadio>
 		<ppe:BooleanRadio input="{Binding}"
 			property="UMLRealTime:RTPort:isPublish"></ppe:BooleanRadio>
-		<ppe:BooleanRadio input="{Binding}"
-			property="UMLRealTime:RTPort:isNotification"></ppe:BooleanRadio>
 		<ppe:BooleanRadio input="{Binding}" property="UMLRealTime:RTPort:isWired"></ppe:BooleanRadio>
 	</Composite>
 	<Composite>

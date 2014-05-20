@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,14 +8,14 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 434993
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link.connector;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.notation.View;
@@ -40,7 +40,6 @@ public class TestLinkCreationConnectorFromFlowPortOnSubNestedPart extends Abstra
 	@BeforeClass
 	public static void initExpectedResults() throws Exception {
 		// Initialize source creation results
-		isCreationAllowed = new HashMap<View, Boolean>();
 		isCreationAllowed.put(blockTargetView, false);
 		isCreationAllowed.put(actorPartTargetView, true);
 		isCreationAllowed.put(nestedActorPartTargetView, true);
@@ -79,9 +78,8 @@ public class TestLinkCreationConnectorFromFlowPortOnSubNestedPart extends Abstra
 		List<Property> nestedContainer1_2Path = Arrays.asList(new Property[]{ part2, nestedPart1_2 });
 		List<Property> nestedContainer2_1Path = Arrays.asList(new Property[]{ nestedPart2_1 });
 		List<Property> emptyPath = Collections.emptyList();
-		
-		expectedSourceNestedPath = new HashMap<View, List<Property>>();
-		expectedTargetNestedPath = new HashMap<View, List<Property>>();
+
+
 		for(View view : isCreationAllowed.keySet()) {
 			expectedSourceNestedPath.put(view, emptyPath);
 			expectedTargetNestedPath.put(view, emptyPath);

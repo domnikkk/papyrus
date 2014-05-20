@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.part;
 
@@ -13,8 +16,6 @@ import org.eclipse.osgi.util.NLS;
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class Messages extends NLS {
 
 	/**
@@ -253,192 +254,192 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String createNodesGroup_title;
+	public static String NodesGroup_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createEdgesGroup_title;
+	public static String EdgesGroup_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createInteractionCreationTool_title;
+	public static String InteractionCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createInteractionCreationTool_desc;
+	public static String InteractionCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createLifelineCreationTool_title;
+	public static String LifelineCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createLifelineCreationTool_desc;
+	public static String LifelineCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createStateDefinitionCreationTool_title;
+	public static String StateDefinitionCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createStateDefinitionCreationTool_desc;
+	public static String StateDefinitionCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createTimeObservationCreationTool_title;
+	public static String TimeObservationCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createTimeObservationCreationTool_desc;
+	public static String TimeObservationCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createTimeConstraintCreationTool_title;
+	public static String TimeConstraintCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createTimeConstraintCreationTool_desc;
+	public static String TimeConstraintCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createDurationObservationCreationTool_title;
+	public static String DurationObservationCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createDurationObservationCreationTool_desc;
+	public static String DurationObservationCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createDurationConstraintCreationTool_title;
+	public static String DurationConstraintCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createDurationConstraintCreationTool_desc;
+	public static String DurationConstraintCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createOccurrenceSpecificationCreationTool_title;
+	public static String OccurrenceSpecificationCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createOccurrenceSpecificationCreationTool_desc;
+	public static String OccurrenceSpecificationCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createDestructionOccurrenceSpecificationCreationTool_title;
+	public static String DestructionOccurrenceSpecificationCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createDestructionOccurrenceSpecificationCreationTool_desc;
+	public static String DestructionOccurrenceSpecificationCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createGateCreationTool_title;
+	public static String GateCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createGateCreationTool_desc;
+	public static String GateCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createGeneralOrderingCreationTool_title;
+	public static String GeneralOrderingCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createGeneralOrderingCreationTool_desc;
+	public static String GeneralOrderingCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createMessageSyncCreationTool_title;
+	public static String MessageSyncCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createMessageSyncCreationTool_desc;
+	public static String MessageSyncCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createMessageAsyncCreationTool_title;
+	public static String MessageAsyncCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createMessageAsyncCreationTool_desc;
+	public static String MessageAsyncCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createMessageReplyCreationTool_title;
+	public static String MessageReplyCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createMessageReplyCreationTool_desc;
+	public static String MessageReplyCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createCreateMessageCreationTool_title;
+	public static String CreateMessageCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createCreateMessageCreationTool_desc;
+	public static String CreateMessageCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createDeleteMessageCreationTool_title;
+	public static String DeleteMessageCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createDeleteMessageCreationTool_desc;
+	public static String DeleteMessageCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createLostMessageCreationTool_title;
+	public static String LostMessageCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createLostMessageCreationTool_desc;
+	public static String LostMessageCreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String createFoundMessageCreationTool_title;
+	public static String FoundMessageCreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String createFoundMessageCreationTool_desc;
+	public static String FoundMessageCreationTool_desc;
 
 	/**
 	 * @generated
@@ -498,21 +499,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AbstractParser_UnexpectedValueType;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_WrongStringConversion;
-
-	/**
-	 * @generated
-	 */
-	public static String AbstractParser_UnknownLiteral;
-
-	/**
-	 * @generated
-	 */
 	public static String MessageFormatParser_InvalidInputError;
 
 	/**
@@ -524,6 +510,5 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLModelingAssistantProviderMessage;
-
-	// TODO: put accessor fields manually
+	//TODO: put accessor fields manually	
 }

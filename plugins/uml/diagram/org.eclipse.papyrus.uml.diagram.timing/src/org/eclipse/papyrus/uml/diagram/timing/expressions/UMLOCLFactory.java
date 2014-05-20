@@ -1,10 +1,13 @@
-/*
- * Copyright (c) 2012 CEA LIST.
+/**
+ * Copyright (c) 2014 CEA LIST.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
  */
 package org.eclipse.papyrus.uml.diagram.timing.expressions;
 
@@ -19,17 +22,15 @@ import org.eclipse.ocl.Environment;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.EcoreFactory;
-import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
+import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.options.ParsingOptions;
 import org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramEditorPlugin;
 
 /**
  * @generated
  */
-@SuppressWarnings("all")
-// disable warnings on generated code
 public class UMLOCLFactory {
 
 	/**
@@ -71,15 +72,15 @@ public class UMLOCLFactory {
 	/**
 	 * @generated
 	 */
-	public static String getExpressionBody(final int index) {
+	public static String getExpressionBody(int index) {
 		return getInstance().expressionBodies[index];
 	}
 
 	/**
 	 * @generated
 	 */
-	public static UMLAbstractExpression getExpression(final int index, final EClassifier context, final Map<String, EClassifier> environment) {
-		final UMLOCLFactory cached = getInstance();
+	public static UMLAbstractExpression getExpression(int index, EClassifier context, Map<String, EClassifier> environment) {
+		UMLOCLFactory cached = getInstance();
 		if(index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
@@ -90,21 +91,18 @@ public class UMLOCLFactory {
 	}
 
 	/**
-	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse
-	 * parsed expression
-	 * 
+	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
 	 * @generated
 	 */
-	public static UMLAbstractExpression getExpression(final String body, final EClassifier context, final Map<String, EClassifier> environment) {
+	public static UMLAbstractExpression getExpression(String body, EClassifier context, Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
 	/**
 	 * This method will become private in the next release
-	 * 
 	 * @generated
 	 */
-	public static UMLAbstractExpression getExpression(final String body, final EClassifier context) {
+	public static UMLAbstractExpression getExpression(String body, EClassifier context) {
 		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
@@ -126,16 +124,16 @@ public class UMLOCLFactory {
 		/**
 		 * @generated
 		 */
-		public Expression(final String body, final EClassifier context, final Map<String, EClassifier> environment) {
+		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
-			this.oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
-			initCustomEnv(this.oclInstance.getEnvironment(), environment);
-			final Helper oclHelper = this.oclInstance.createOCLHelper();
+			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
+			initCustomEnv(oclInstance.getEnvironment(), environment);
+			Helper oclHelper = oclInstance.createOCLHelper();
 			oclHelper.setContext(context());
 			try {
-				this.oclExpression = oclHelper.createQuery(body());
+				oclExpression = oclHelper.createQuery(body());
 				setStatus(IStatus.OK, null, null);
-			} catch (final ParserException e) {
+			} catch (ParserException e) {
 				setStatus(IStatus.ERROR, e.getMessage(), e);
 			}
 		}
@@ -143,37 +141,34 @@ public class UMLOCLFactory {
 		/**
 		 * @generated
 		 */
-		@Override
 		@SuppressWarnings("rawtypes")
-		protected Object doEvaluate(final Object context, final Map env) {
-			if(this.oclExpression == null) {
+		protected Object doEvaluate(Object context, Map env) {
+			if(oclExpression == null) {
 				return null;
 			}
 			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
-			final EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = this.oclInstance.getEvaluationEnvironment();
+			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
 			// initialize environment
-			for(final Object nextKey : env.keySet()) {
+			for(Object nextKey : env.keySet()) {
 				evalEnv.replace((String)nextKey, env.get(nextKey));
 			}
 			try {
-				final Object result = this.oclInstance.evaluate(context, this.oclExpression);
-				return this.oclInstance.isInvalid(result) ? null : result;
+				Object result = oclInstance.evaluate(context, oclExpression);
+				return oclInstance.isInvalid(result) ? null : result;
 			} finally {
 				evalEnv.clear();
-				this.oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the
-														// next call
+				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
 			}
 		}
 
 		/**
 		 * @generated
 		 */
-		private static void initCustomEnv(final Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv, final Map<String, EClassifier> environment) {
-			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations
-			// from OCL expressions
+		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv, Map<String, EClassifier> environment) {
+			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
 			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv), EcorePackage.eINSTANCE.getEObject());
-			for(final String varName : environment.keySet()) {
-				final EClassifier varType = environment.get(varName);
+			for(String varName : environment.keySet()) {
+				EClassifier varType = environment.get(varName);
 				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
 			}
 		}
@@ -181,8 +176,8 @@ public class UMLOCLFactory {
 		/**
 		 * @generated
 		 */
-		private static Variable createVar(final Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv, final String name, final EClassifier type) {
-			final Variable var = EcoreFactory.eINSTANCE.createVariable();
+		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv, String name, EClassifier type) {
+			Variable var = EcoreFactory.eINSTANCE.createVariable();
 			var.setName(name);
 			var.setType(ecoreEnv.getUMLReflection().getOCLType(type));
 			return var;

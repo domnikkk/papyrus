@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.papyrus.infra.services.validation.commands.ValidateModelCommand;
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
 import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule;
 import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule.SoftReferenceSensitive;
 import org.eclipse.papyrus.junit.utils.rules.PapyrusEditorFixture;
@@ -163,7 +162,6 @@ public class EditorMemoryLeakTest extends AbstractPapyrusTest {
 	 * Verify that models with dynamic profiles applied (and the profiles and everything else) don't leak when when validation is run on them
 	 * (the case of profiles that have OCL constraints and, therefore, do have {@link ETypedElement}s of {@link EGenericType} type).
 	 */
-	@FailingTest("OCL pivot environment has a memory leak: bug 434554")
 	@Test
 	@SoftReferenceSensitive
 	@PluginResource("model/profile/model.di")
