@@ -29,22 +29,12 @@ public class Activator extends AbstractUIPlugin {
 	private static Activator plugin;
 
 	// The log for this plugin
-	private LogHelper log;
-
-	/**
-	 * Gets the Papyrus log associated with this plugin
-	 * 
-	 * @return The Papyrus log for this plugin
-	 */
-	public LogHelper getPapyrusLog() {
-		return log;
-	}
+	public static LogHelper log;
 
 	/**
 	 * The constructor
 	 */
 	public Activator() {
-		this.log = new LogHelper(this);
 	}
 
 	/*
@@ -55,6 +45,7 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		log = new LogHelper(plugin);
 	}
 
 	/*
@@ -63,6 +54,7 @@ public class Activator extends AbstractUIPlugin {
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
 	public void stop(BundleContext context) throws Exception {
+		log = null;
 		plugin = null;
 		super.stop(context);
 	}

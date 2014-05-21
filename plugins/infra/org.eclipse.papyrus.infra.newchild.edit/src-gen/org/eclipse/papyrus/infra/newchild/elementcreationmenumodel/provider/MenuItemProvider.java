@@ -72,6 +72,7 @@ public class MenuItemProvider
 
 			addLabelPropertyDescriptor(object);
 			addIconPropertyDescriptor(object);
+			addVisiblePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -121,6 +122,28 @@ public class MenuItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Visible feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVisiblePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Menu_visible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_visible_feature", "_UI_Menu_type"),
+				 ElementCreationMenuModelPackage.Literals.MENU__VISIBLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,6 +172,7 @@ public class MenuItemProvider
 		switch (notification.getFeatureID(Menu.class)) {
 			case ElementCreationMenuModelPackage.MENU__LABEL:
 			case ElementCreationMenuModelPackage.MENU__ICON:
+			case ElementCreationMenuModelPackage.MENU__VISIBLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

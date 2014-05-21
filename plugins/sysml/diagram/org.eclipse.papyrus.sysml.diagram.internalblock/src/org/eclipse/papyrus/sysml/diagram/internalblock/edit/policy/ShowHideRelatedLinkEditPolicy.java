@@ -343,7 +343,7 @@ public class ShowHideRelatedLinkEditPolicy extends AbstractUMLShowHideRelatedLin
 	 */
 	
 	@Override 
-	public boolean canDisplayExistingLinkBetweenViews(final Element element, final View sourceView, final View targetView) {
+	public boolean canDisplayExistingLinkBetweenViews(final EObject element, final View sourceView, final View targetView) {
 		return (element instanceof Connector) && ConnectorUtils.canDisplayExistingConnectorBetweenViewsAccordingToNestedPaths((Connector) element, sourceView, targetView);
 	}
 	

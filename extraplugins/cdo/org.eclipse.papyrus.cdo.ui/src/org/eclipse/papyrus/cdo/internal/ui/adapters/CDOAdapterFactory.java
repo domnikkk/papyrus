@@ -20,46 +20,49 @@ import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.papyrus.cdo.internal.core.CDOUtils;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 
 /**
  * This is the CDOAdapterFactory type. Enjoy.
  */
-@SuppressWarnings("rawtypes")
 public class CDOAdapterFactory implements IAdapterFactory {
 
-	private final Class[] supported = { CDOObject.class };
+	private final Class<?>[] supported = { CDOObject.class };
 
 	public CDOAdapterFactory() {
 		super();
 	}
 
 	@Override
-	public Object getAdapter(Object adaptableObject, Class adapterType) {
-		EObject eObject = null;
-		if(adaptableObject instanceof EditPart) {
-			// notation views are important as CDOObjects for locking and
-			// conflict purposes, so do not defer to the semantic element
-			eObject = (EObject)((EditPart)adaptableObject).getModel();
-		} else if(adaptableObject instanceof EObjectTreeElement) {
-			eObject = ((EObjectTreeElement)adaptableObject).getEObject();
-		} else if(adaptableObject instanceof EObject) {
-			eObject = (EObject)adaptableObject;
-		} else {
-			// try really hard to get an EObject
-			if(adaptableObject instanceof IAdaptable) {
-				eObject = (EObject)((IAdaptable)adaptableObject).getAdapter(EObject.class);
+	public Object getAdapter(Object adaptableObject, @SuppressWarnings("rawtypes") Class adapterType) {
+		Object result = null;
+
+		if(adapterType == CDOObject.class) {
+			EObject eObject = null;
+			if(adaptableObject instanceof EditPart) {
+				// notation views are important as CDOObjects for locking and
+				// conflict purposes, so do not defer to the semantic element
+				eObject = (EObject)((EditPart)adaptableObject).getModel();
+			} else if(adaptableObject instanceof EObject) {
+				eObject = (EObject)adaptableObject;
+			} else {
+				// try really hard to get an EObject
+				if(adaptableObject instanceof IAdaptable) {
+					eObject = (EObject)((IAdaptable)adaptableObject).getAdapter(EObject.class);
+				}
+				if(eObject == null) {
+					eObject = (EObject)Platform.getAdapterManager().getAdapter(adaptableObject, EObject.class);
+				}
 			}
-			if(eObject == null) {
-				eObject = (EObject)Platform.getAdapterManager().getAdapter(adaptableObject, EObject.class);
-			}
+
+			// get the CDOObject from the EObject (if possible)
+			result = CDOUtils.getCDOObject(eObject);
 		}
 
-		// get the CDOObject from the EObject (if possible)
-		return CDOUtils.getCDOObject(eObject);
+		return result;
 	}
 
 	@Override
+	@SuppressWarnings("rawtypes")
 	public Class[] getAdapterList() {
 		return supported;
 	}

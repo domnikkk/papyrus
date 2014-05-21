@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.notation.BasicCompartment;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.EdgeWithNoSemanticElementRepresentationImpl;
 
 
 /**
@@ -51,6 +52,7 @@ public class Domain2Notation extends HashMap<EObject, Set<View>> {
 		for(View edge : sourceEdges) {
 			mapModel(edge);
 		}
+
 	}
 
 
@@ -62,6 +64,11 @@ public class Domain2Notation extends HashMap<EObject, Set<View>> {
 	 */
 	public void putView(View view) {
 		EObject element = view.getElement();
+		if(element == null) {
+			final EObject source = ((Connector)view).getSource().getElement();
+			final EObject target = ((Connector)view).getTarget().getElement();
+			element = new EdgeWithNoSemanticElementRepresentationImpl(source, target, view.getType());
+		}
 		Set<View> set = this.get(element);
 		if(set != null) {
 			set.add(view);

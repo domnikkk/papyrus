@@ -95,13 +95,22 @@ public interface ElementCreationMenuModelPackage extends EPackage {
 	int MENU__ICON = 1;
 
 	/**
+	 * The feature id for the '<em><b>Visible</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU__VISIBLE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Menu</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_FEATURE_COUNT = 2;
+	int MENU_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Menu</em>' class.
@@ -139,6 +148,15 @@ public interface ElementCreationMenuModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int FOLDER__ICON = MENU__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Visible</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER__VISIBLE = MENU__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>Menu</b></em>' containment reference list.
@@ -194,6 +212,15 @@ public interface ElementCreationMenuModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATION_MENU__ICON = MENU__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Visible</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATION_MENU__VISIBLE = MENU__VISIBLE;
 
 	/**
 	 * The feature id for the '<em><b>Element Type Id Ref</b></em>' attribute.
@@ -293,6 +320,17 @@ public interface ElementCreationMenuModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMenu_Icon();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu#isVisible <em>Visible</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Visible</em>'.
+	 * @see org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu#isVisible()
+	 * @see #getMenu()
+	 * @generated
+	 */
+	EAttribute getMenu_Visible();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.CreationMenu <em>Creation Menu</em>}'.
@@ -403,6 +441,14 @@ public interface ElementCreationMenuModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MENU__ICON = eINSTANCE.getMenu_Icon();
+
+		/**
+		 * The meta object literal for the '<em><b>Visible</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MENU__VISIBLE = eINSTANCE.getMenu_Visible();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl.CreationMenuImpl <em>Creation Menu</em>}' class.

@@ -3332,5 +3332,17 @@
             file="resource/StereotypeDisplay.custom">
       </modeldeclaration>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.newchild">
+      <menuCreationModel
+            model="resource/UML.creationmenumodel">
+      </menuCreationModel>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.newchild">
+      <menuCreationModel
+            model="resource/UMLEdges.creationmenumodel">
+      </menuCreationModel>
+   </extension>
    
 </plugin>

@@ -4,7 +4,7 @@
     modelDirectory="/org.eclipse.papyrus.infra.viewpoints.configuration/src" modelPluginID="org.eclipse.papyrus.infra.viewpoints.configuration"
     modelName="Configuration" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.genmodel#//iso42010"
+    usedGenPackages="../../org.eclipse.papyrus.infra.constraints/Model/Constraints.genmodel#//constraints platform:/plugin/org.eclipse.papyrus.infra.viewpoints.iso42010/model/iso42010.genmodel#//iso42010"
     operationReflection="true" importOrganizing="true">
   <foreignModel>configuration.ecore</foreignModel>
   <genPackages prefix="Configuration" basePackage="org.eclipse.papyrus.infra.viewpoints"

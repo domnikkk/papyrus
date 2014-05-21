@@ -12,6 +12,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.modelexplorer.tests.suites;
 
+import org.eclipse.papyrus.sysml.modelexplorer.tests.copypaste.CopyPasteInModelExplorer;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.copypaste.CopyPasteSimpleBlock2Test;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.copypaste.CopyPasteSimpleBlockTest;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.copypaste.CopyPasteSimplePartTest;
@@ -34,7 +35,7 @@ CopyPasteSimpleBlockTest.class,
 CopyPasteSimpleBlock2Test.class,
 // Part
 CopyPasteSimplePartTest.class,
-
+CopyPasteInModelExplorer.class, 
 })
 public class AllCopyPasteTests {
 	//Test suite

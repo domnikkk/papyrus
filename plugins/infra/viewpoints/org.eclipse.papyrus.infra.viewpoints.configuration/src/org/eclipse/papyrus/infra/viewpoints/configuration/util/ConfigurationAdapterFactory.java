@@ -17,6 +17,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.infra.constraints.DisplayUnit;
 import org.eclipse.papyrus.infra.viewpoints.configuration.*;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework;
@@ -150,6 +151,10 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseModelKind(ModelKind object) {
 				return createModelKindAdapter();
+			}
+			@Override
+			public Adapter caseDisplayUnit(DisplayUnit object) {
+				return createDisplayUnitAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -420,6 +425,20 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelKindAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.infra.constraints.DisplayUnit <em>Display Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.infra.constraints.DisplayUnit
+	 * @generated
+	 */
+	public Adapter createDisplayUnitAdapter() {
 		return null;
 	}
 

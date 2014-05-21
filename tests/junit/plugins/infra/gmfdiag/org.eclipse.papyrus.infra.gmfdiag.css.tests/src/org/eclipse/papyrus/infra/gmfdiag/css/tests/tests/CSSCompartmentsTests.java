@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.tests.tests;
 
@@ -74,7 +74,7 @@ public class CSSCompartmentsTests extends AbstractPapyrusTest {
 
 	@Rule
 	public final HouseKeeper houseKeeper = new HouseKeeper();
-	
+
 	private CSSDiagram diagram;
 
 	@Before

@@ -18,6 +18,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.util.EList;
@@ -71,17 +73,18 @@ public class CreationMenuFactory {
 	 * @return true if sub-menu has been added
 	 */
 	public boolean populateMenu(Menu menu, Folder folder, EObject selectedObject, int index) {
-		if(selectedObject != null && folder != null) {
+		if(selectedObject != null && folder != null && folder.isVisible()) {
 			org.eclipse.swt.widgets.MenuItem topMenuItem = new MenuItem(menu, SWT.CASCADE, index);
 			topMenuItem.setText(folder.getLabel());
-			if(folder.getIcon() != null) {
-				URL url;
+			if(folder.getIcon() != null && folder.getIcon().length() > 0) {
+				URL url = null;
 				try {
 					url = new URL(folder.getIcon());
 					ImageDescriptor imgDesc = ImageDescriptor.createFromURL(url);
 					topMenuItem.setImage(imgDesc.createImage());
 				} catch (MalformedURLException e) {
-					e.printStackTrace();
+					// no exception thrown
+					Activator.log.debug("Impossible to find icon with URL "+url);
 				}
 			}
 			Menu topMenu = new Menu(menu);
@@ -91,11 +94,9 @@ public class CreationMenuFactory {
 				boolean result = false;
 				if(currentMenu instanceof Folder) {
 					result = populateMenu(topMenu, (Folder)currentMenu, selectedObject, topMenu.getItemCount());
-
-
 				}
 
-				if(currentMenu instanceof CreationMenu) {
+				if(currentMenu instanceof CreationMenu && ((CreationMenu)currentMenu).isVisible()) {
 					CreationMenu currentCreationMenu = (CreationMenu)currentMenu;
 					EReference reference = null;
 					String role = currentCreationMenu.getRole();
@@ -197,7 +198,8 @@ public class CreationMenuFactory {
 				ImageDescriptor imgDesc = ImageDescriptor.createFromURL(url);
 				item.setImage(imgDesc.createImage());
 			} catch (MalformedURLException e) {
-				e.printStackTrace();
+				// no icon found
+				Activator.log.debug("Impossible to find icon"+ e);
 			}
 		} else {
 			createIconFromElementType(currentCreationMenu, item);

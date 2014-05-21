@@ -168,6 +168,15 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMenu_Visible() {
+		return (EAttribute)menuEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCreationMenu() {
 		return creationMenuEClass;
 	}
@@ -233,6 +242,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 		menuEClass = createEClass(MENU);
 		createEAttribute(menuEClass, MENU__LABEL);
 		createEAttribute(menuEClass, MENU__ICON);
+		createEAttribute(menuEClass, MENU__VISIBLE);
 
 		creationMenuEClass = createEClass(CREATION_MENU);
 		createEAttribute(creationMenuEClass, CREATION_MENU__ELEMENT_TYPE_ID_REF);
@@ -281,6 +291,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 		initEClass(menuEClass, Menu.class, "Menu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMenu_Label(), theEcorePackage.getEString(), "label", null, 1, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMenu_Icon(), theEcorePackage.getEString(), "icon", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getMenu_Visible(), ecorePackage.getEBoolean(), "visible", "true", 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(creationMenuEClass, CreationMenu.class, "CreationMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreationMenu_ElementTypeIdRef(), theEcorePackage.getEString(), "elementTypeIdRef", null, 1, 1, CreationMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

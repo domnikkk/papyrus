@@ -528,7 +528,7 @@ public abstract class AbstractShowHideRelatedLinkEditPolicy extends AbstractEdit
 					Set<View> targetViewList = domain2NotationMap.get(descriptor.getDestination());
 						for (View targetView : targetViewList) {
 							
-							if (canDisplayExistingLinkBetweenViews((Element) linkToShow, sourceView, targetView)){
+							if (canDisplayExistingLinkBetweenViews( linkToShow, sourceView, targetView)){
 								
 								EditPart sourceEditPart = getEditPartFromView(sourceView);
 								EditPart targetEditPart = getEditPartFromView(targetView);
@@ -568,7 +568,7 @@ public abstract class AbstractShowHideRelatedLinkEditPolicy extends AbstractEdit
 	 * @param targetView the target view
 	 * @return true, if successful
 	 */
-	public boolean canDisplayExistingLinkBetweenViews(final Element element, final View sourceView, final View targetView) {
+	public boolean canDisplayExistingLinkBetweenViews(final EObject element, final View sourceView, final View targetView) {
 		return true;
 	}
 
