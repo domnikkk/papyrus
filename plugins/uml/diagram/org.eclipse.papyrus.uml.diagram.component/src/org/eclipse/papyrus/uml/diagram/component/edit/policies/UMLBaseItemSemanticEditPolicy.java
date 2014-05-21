@@ -347,7 +347,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
-
 	}
 
 	/**
@@ -483,7 +482,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-
 			return canExistCommentAnnotatedElement_4015(source, target);
 		}
 
@@ -496,7 +494,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-
 			return canExistConstraintConstrainedElement_4009(source, target);
 		}
 

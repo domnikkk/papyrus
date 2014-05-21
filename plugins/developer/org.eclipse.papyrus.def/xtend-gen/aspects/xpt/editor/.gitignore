@@ -5,3 +5,6 @@
 /extensions.java
 /ActionBarContributor.java
 /NewDiagramFileWizard.java
+/DocumentProvider.java
+/ResourceSetModificationListener.java
+/ValidateAction.java

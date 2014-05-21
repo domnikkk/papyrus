@@ -714,61 +714,44 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch(visualID) {
 		case MultiDependencyLabelEditPart.VISUAL_ID:
 			return getDependencyName_5008Parser();
-
 		case ComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5004Parser();
-
 		case ModelNameEditPart.VISUAL_ID:
 			return getModelName_5262Parser();
-
 		case PackageNameEditPart.VISUAL_ID:
 			return getPackageName_5254Parser();
-
 		case RectangleInterfaceNameEditPart.VISUAL_ID:
 			return getInterfaceName_5266Parser();
-
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_5255Parser();
-
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5252Parser();
 		case ConstraintSpecificationEditPart.VISUAL_ID:
 			return getConstraintSpecification_5253Parser();
-
 		case DefaultNamedElementNameEditPart.VISUAL_ID:
 			return getNamedElementName_5265Parser();
-
 		case InterfaceNameEditPart.VISUAL_ID:
 			return getInterfaceName_5005Parser();
-
 		case PortNameEditPart.VISUAL_ID:
 			return getPortName_5006Parser();
 		case PortAppliedStereotypeEditPart.VISUAL_ID:
 			return getPortName_5007Parser();
-
 		case ModelNameEditPartCN.VISUAL_ID:
 			return getModelName_5264Parser();
-
 		case PackageNameEditPartCN.VISUAL_ID:
 			return getPackageName_5261Parser();
-
 		case RectangleInterfaceNameEditPartCN.VISUAL_ID:
 			return getInterfaceName_5267Parser();
-
 		case ComponentNameEditPartCN.VISUAL_ID:
 			return getComponentName_5256Parser();
-
 		case ComponentNameEditPartPCN.VISUAL_ID:
 			return getComponentName_5257Parser();
-
 		case CommentBodyEditPartPCN.VISUAL_ID:
 			return getCommentBody_5258Parser();
-
 		case ConstraintNameEditPartPCN.VISUAL_ID:
 			return getConstraintName_5259Parser();
 		case ConstraintSpecificationEditPartPCN.VISUAL_ID:
 			return getConstraintSpecification_5260Parser();
-
 		case PropertyForInterfaceEditPart.VISUAL_ID:
 			return getProperty_1Parser();
 		case OperationForInterfaceEditPart.VISUAL_ID:
@@ -777,50 +760,34 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getReception_6Parser();
 		case InterfaceNameEditPartPCN.VISUAL_ID:
 			return getInterfaceName_0Parser();
-
 		case PropertyPartNameEditPartCN.VISUAL_ID:
 			return getPropertyName_5268Parser();
-
-
-
 		case GeneralizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getGeneralizationIsSubstitutable_2Parser();
-
 		case SubstitutionNameEditPart.VISUAL_ID:
 			return getSubstitutionName_6006Parser();
 		case SubstitutionAppliedStereotypeEditPart.VISUAL_ID:
 			return getSubstitutionName_6020Parser();
-
 		case ManifestationNameEditPart.VISUAL_ID:
 			return getManifestationName_6008Parser();
 		case ManifestationAppliedStereotypeEditPart.VISUAL_ID:
 			return getManifestationName_6022Parser();
-
 		case ComponentRealizationNameEditPart.VISUAL_ID:
 			return getComponentRealizationName_3Parser();
 		case ComponentRealizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getComponentRealizationName_4Parser();
-
 		case AbstractionNameEditPart.VISUAL_ID:
 			return getAbstractionName_6007Parser();
 		case AbstractionAppliedStereotypeEditPart.VISUAL_ID:
 			return getAbstractionName_6021Parser();
-
-
-
-
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6009Parser();
 		case DependencyAppliedStereotypeEditPart.VISUAL_ID:
 			return getDependencyName_6023Parser();
-
-
-
 		case ConnectorAppliedStereotypeEditPart.VISUAL_ID:
 			return getConnectorName_6024Parser();
 		case ConnectorNameEditPart.VISUAL_ID:
 			return getConnectorName_6025Parser();
-
 		}
 		return null;
 	}

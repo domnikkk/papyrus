@@ -141,7 +141,6 @@ public class ElementInitializers {
 			Object value_0 = UMLOCLFactory.getExpression(1, UMLPackage.eINSTANCE.getPort(), null).evaluate(instance);
 			instance.setName((String)value_0);
 			instance.setAggregation(AggregationKind.COMPOSITE_LITERAL);
-
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}

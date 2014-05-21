@@ -74,7 +74,6 @@ public class InterfaceOperationCompartmentEditPart extends ResizeableListCompart
 		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
 		//in Papyrus diagrams are not strongly synchronised
 		//installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.component.edit.policies.InterfaceOperationCompartmentCanonicalEditPolicy());
-
 	}
 
 	/**
@@ -90,7 +89,6 @@ public class InterfaceOperationCompartmentEditPart extends ResizeableListCompart
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

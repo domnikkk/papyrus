@@ -117,11 +117,6 @@ public class RectangleInterfaceItemSemanticEditPolicy extends UMLBaseItemSemanti
 					Node cnode = (Node)cit.next();
 					switch(UMLVisualIDRegistry.getVisualID(cnode)) {
 					case PropertyForInterfaceEditPart.VISUAL_ID:
-
-
-
-
-
 						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
@@ -139,11 +134,6 @@ public class RectangleInterfaceItemSemanticEditPolicy extends UMLBaseItemSemanti
 					Node cnode = (Node)cit.next();
 					switch(UMLVisualIDRegistry.getVisualID(cnode)) {
 					case OperationForInterfaceEditPart.VISUAL_ID:
-
-
-
-
-
 						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {
@@ -154,11 +144,6 @@ public class RectangleInterfaceItemSemanticEditPolicy extends UMLBaseItemSemanti
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case ReceptionInInterfaceEditPart.VISUAL_ID:
-
-
-
-
-
 						for(Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge)it.next();
 							switch(UMLVisualIDRegistry.getVisualID(outgoingLink)) {

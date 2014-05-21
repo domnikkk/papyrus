@@ -566,6 +566,9 @@ override refreshLabel(GenCommonBase it , GenDiagram diagram )'''
 	«generatedMemberComment»
 	protected void refreshLabel() {
 		org.eclipse.gef.EditPolicy maskLabelPolicy = getEditPolicy(org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if(maskLabelPolicy==null){
+			 maskLabelPolicy = getEditPolicy(org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
+		}
 		if (maskLabelPolicy == null) {
 			View view = (View)getModel();
 			if(view.isVisible()) {
