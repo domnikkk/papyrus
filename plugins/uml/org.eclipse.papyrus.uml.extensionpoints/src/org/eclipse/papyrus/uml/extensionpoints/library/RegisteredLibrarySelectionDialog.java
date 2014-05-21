@@ -6,9 +6,9 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  CEA List - initial API and implementation
- *  Christian W. Damus (CEA) - bug 422257
- *  
+ *     CEA List - initial API and implementation
+ *     Christian W. Damus (CEA) - bug 422257
+ *     Dr. David H. Akehurst - enable programmatic registration 
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.library;
 
@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionLabelProvider;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.uml.Element;
@@ -47,7 +48,7 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	/**
 	 * 
 	 */
-	private RegisteredLibrary[] regLibraries;
+	private IRegisteredLibrary[] regLibraries;
 
 	/**
 	 * 
@@ -68,7 +69,7 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 		importedLibrariesNames = getImportedLibraryNames(importedLibraries);
 
 		// Retrieve registered Libraries
-		regLibraries = RegisteredLibrary.getRegisteredLibraries();
+		regLibraries = Registry.getRegisteredLibraries().toArray(new IRegisteredLibrary[0]);
 		// remove already applied Libraries from the list
 		regLibraries = removeAlreadyImportededFromSelection();
 
@@ -110,20 +111,20 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	 * 
 	 * @return
 	 */
-	private RegisteredLibrary[] removeAlreadyImportededFromSelection() {
+	private IRegisteredLibrary[] removeAlreadyImportededFromSelection() {
 
-		List<RegisteredLibrary> Libraries = new ArrayList<RegisteredLibrary>();
+		List<IRegisteredLibrary> Libraries = new ArrayList<IRegisteredLibrary>();
 
 		for(int i = 0; i < regLibraries.length; i++) {
 
-			String currentName = regLibraries[i].name;
+			String currentName = regLibraries[i].getName();
 			if(!importedLibrariesNames.contains(currentName)) {
 				Libraries.add(regLibraries[i]);
 			}
 		}
 
-		RegisteredLibrary[] cleandList;
-		cleandList = Libraries.toArray(new RegisteredLibrary[Libraries.size()]);
+		IRegisteredLibrary[] cleandList;
+		cleandList = Libraries.toArray(new IRegisteredLibrary[Libraries.size()]);
 
 		return cleandList;
 	}
@@ -141,8 +142,8 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 		}
 
 		for(int i = 0; i < selection.length; i++) {
-			RegisteredLibrary currentLibrary = (RegisteredLibrary)(selection[i]);
-			URI modelUri = currentLibrary.uri;
+			IRegisteredLibrary currentLibrary = (IRegisteredLibrary)(selection[i]);
+			URI modelUri = currentLibrary.getUri();
 			addModelLibraryImportFromURI(currentModel, modelUri);
 
 		}

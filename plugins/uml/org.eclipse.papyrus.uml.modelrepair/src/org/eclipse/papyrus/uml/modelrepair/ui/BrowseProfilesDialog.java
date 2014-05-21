@@ -22,7 +22,7 @@ import org.eclipse.jface.window.IShellProvider;
 import org.eclipse.jface.window.SameShellProvider;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
-import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -102,8 +102,8 @@ public class BrowseProfilesDialog extends TrayDialog {
 			}
 
 			@Subscribe
-			public void registeredProfileSelected(RegisteredProfile profile) {
-				setSelectedProfileURI(profile.uri);
+			public void registeredProfileSelected(IRegisteredProfile profile) {
+				setSelectedProfileURI(profile.getUri());
 			}
 		});
 

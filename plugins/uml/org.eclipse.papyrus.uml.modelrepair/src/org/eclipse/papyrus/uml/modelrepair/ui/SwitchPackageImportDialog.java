@@ -68,7 +68,8 @@ import org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog;
 import org.eclipse.papyrus.infra.widgets.providers.EncapsulatedContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.StaticContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.WorkspaceContentProvider;
-import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
+import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.papyrus.uml.tools.util.LibraryHelper;
 import org.eclipse.swt.SWT;
@@ -513,13 +514,13 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 		TreeSelectorDialog dialog = new TreeSelectorDialog(getShell());
 		dialog.setTitle("Browse Registered Libraries");
 		dialog.setDescription("Select one of the registered libraries below.");
-		dialog.setContentProvider(new EncapsulatedContentProvider(new StaticContentProvider(RegisteredLibrary.getRegisteredLibraries())));
+		dialog.setContentProvider(new EncapsulatedContentProvider(new StaticContentProvider(Registry.getRegisteredLibraries().toArray(new IRegisteredLibrary[0]))));
 		dialog.setLabelProvider(new LabelProvider() {
 
 			@Override
 			public Image getImage(Object element) {
-				if(element instanceof RegisteredLibrary) {
-					RegisteredLibrary library = (RegisteredLibrary)element;
+				if(element instanceof IRegisteredLibrary) {
+					IRegisteredLibrary library = (IRegisteredLibrary)element;
 					return library.getImage();
 				}
 				return super.getImage(element);
@@ -527,9 +528,9 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof RegisteredLibrary) {
-					RegisteredLibrary library = (RegisteredLibrary)element;
-					return library.name;
+				if(element instanceof IRegisteredLibrary) {
+					IRegisteredLibrary library = (IRegisteredLibrary)element;
+					return library.getName();
 				}
 
 				return super.getText(element);
@@ -543,10 +544,10 @@ public class SwitchPackageImportDialog extends SelectionDialog {
 			}
 
 			Object selectedElement = result[0];
-			if(selectedElement instanceof RegisteredLibrary) {
-				RegisteredLibrary library = (RegisteredLibrary)selectedElement;
+			if(selectedElement instanceof IRegisteredLibrary) {
+				IRegisteredLibrary library = (IRegisteredLibrary)selectedElement;
 
-				replaceSelectionWith(library.uri);
+				replaceSelectionWith(library.getUri());
 			}
 		}
 	}

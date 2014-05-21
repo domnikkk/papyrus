@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     CEA List - initial API and implementation
+ *     Dr. David H. Akehurst - enable programmatic registration
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.profile;
 
@@ -16,20 +17,20 @@ import java.util.List;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionIds;
 import org.eclipse.papyrus.uml.extensionpoints.standard.RegisteredElementExtensionPoint;
+import org.eclipse.swt.graphics.Image;
 
 /**
  * Class that manages registered profile extension point
  */
-public class RegisteredProfile extends RegisteredElementExtensionPoint {
+public class RegisteredProfile extends RegisteredElementExtensionPoint implements IRegisteredProfile {
 
 	/** name of the extension point (main element name) in the DTD */
 	private static final String TAG_PROFILE = "profile";
-
-	/** List of registered profiles in the platform */
-	private static RegisteredProfile[] registeredProfiles;
 
 	/** name of the <code>qualified name</code>attribute in the DTD */
 	private static final String ATT_QUALIFIED_NAMES = "qualifiednames";
@@ -45,6 +46,19 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint {
 		qualifiednames = getAttribute(configElt, ATT_QUALIFIED_NAMES, "", false);
 	}
 
+	public URI getUri() {
+		return super.uri;
+	}
+	
+	public String getPath() {
+		return super.path;
+	}
+	
+	public String getQualifiedNames() {
+		//?should this field really be defined on the superclass? is it not specific to profiles?
+		return super.qualifiednames;
+	}
+	
 	// /**
 	// * Creates a new RegisteredProfile.
 	// * @param name the name displayed to users
@@ -87,7 +101,7 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint {
 	 *        the name of the profile to find
 	 * @return the RegistredProfile with given name or <code>null</code> if no profile was found.
 	 */
-	public static RegisteredProfile getRegisteredProfile(String name) {
+	public static IRegisteredProfile getRegisteredProfile(String name) {
 		return getRegisteredProfile(name, null);
 	}
 
@@ -101,18 +115,18 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint {
 	 *        the path of the profile file
 	 * @return the RegistredProfile with given name or <code>null</code> if no profile was found.
 	 */
-	public static RegisteredProfile getRegisteredProfile(String name, String path) {
+	public static IRegisteredProfile getRegisteredProfile(String name, String path) {
 		Assert.isNotNull(name);
-		RegisteredProfile[] profiles = getRegisteredProfiles();
+		IRegisteredProfile[] profiles = Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]);
 		for(int i = 0; i < profiles.length; i++) {
-			RegisteredProfile profile = profiles[i];
+			IRegisteredProfile profile = profiles[i];
 
 			// name corresponds. is path equal?
-			if(name.equals(profile.name)) {
+			if(name.equals(profile.getName())) {
 				// no path indicated => first name that corresponds => profile returned
 				if(path == null) {
 					return profile;
-				} else if(path.equals(profile.path)) {
+				} else if(path.equals(profile.getPath())) {
 					return profile;
 				}
 			}
@@ -125,15 +139,10 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint {
 	 * 
 	 * @return the list of registred profiles in the platform
 	 */
-	public static RegisteredProfile[] getRegisteredProfiles() {
-
-		// if the list is already known, returns it (cache)
-		if(registeredProfiles != null) {
-			return registeredProfiles;
-		}
+	public static List<IRegisteredProfile> getRegisteredProfiles() {
 
 		// the list has not been already built. Creates a new one and fill it.
-		List<RegisteredProfile> profiles = new ArrayList<RegisteredProfile>();
+		List<IRegisteredProfile> profiles = new ArrayList<IRegisteredProfile>();
 
 		// // At least two element : Standard uml profile and Ecore uml profile
 		// RegisteredProfile UmlStdProfile = new RegisteredProfile("Standard",
@@ -151,15 +160,14 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint {
 
 		// Read configuration elements for the current extension
 		for(int j = 0; j < configElements.length; j++) {
-			RegisteredProfile proxy = parseProfileExtension(configElements[j], profiles.size());
+			IRegisteredProfile proxy = parseProfileExtension(configElements[j], profiles.size());
 
 			if(proxy != null) {
 				profiles.add(proxy);
 			}
 		} // end of configElements loop
 
-		registeredProfiles = profiles.toArray(new RegisteredProfile[profiles.size()]);
-		return registeredProfiles;
+		return profiles;
 	}
 
 	/**
@@ -171,7 +179,7 @@ public class RegisteredProfile extends RegisteredElementExtensionPoint {
 	 *        the configuration element from which to retrieve the registered profile
 	 * @return the registered profile
 	 */
-	private static RegisteredProfile parseProfileExtension(IConfigurationElement configElt, int ordinal) {
+	private static IRegisteredProfile parseProfileExtension(IConfigurationElement configElt, int ordinal) {
 		if(!TAG_PROFILE.equals(configElt.getName())) {
 			return null;
 		}
