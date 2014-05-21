@@ -21,6 +21,7 @@ import java.util.Map;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.papyrus.uml.tools.utils.PropertyUtil;
 import org.eclipse.uml2.uml.Property;
@@ -68,6 +69,9 @@ public class PropertyLabelHelper extends StereotypedElementLabelHelper {
 	@Override
 	protected String elementLabel(GraphicalEditPart editPart) {
 		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if( policy==null){
+			policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IndirectMaskLabelEditPolicy.INDRIRECT_MASK_MANAGED_LABEL);
+		}
 
 		Collection<String> displayValue = Collections.emptySet();
 

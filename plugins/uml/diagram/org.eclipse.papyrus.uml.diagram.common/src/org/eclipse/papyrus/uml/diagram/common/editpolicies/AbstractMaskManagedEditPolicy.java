@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.gef.ui.internal.editpolicies.GraphicalEditPolicyEx;
+import org.eclipse.gmf.runtime.notation.NamedStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
 import org.eclipse.papyrus.infra.emf.appearance.helper.VisualInformationPapyrusConstants;
@@ -169,12 +170,12 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	 */
 	protected boolean isMaskManagedAnnotation(Object object) {
 		// check the notifier is an annotation
-		if((object instanceof EAnnotation)) {
+		if((object instanceof NamedStyle)) {
 
 			// notifier is the eannotation. Check this is the annotation in
 			// charge of the property
 			// label display
-			if(VisualInformationPapyrusConstants.CUSTOM_APPEARENCE_ANNOTATION.equals(((EAnnotation)object).getSource())) {
+			if(VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL.equals(((NamedStyle)object).getName())) {
 				return true;
 			}
 		}
@@ -201,9 +202,9 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 				Object oldValue = notification.getOldValue();
 
 				// this is an annotation which is returned
-				if(oldValue instanceof EAnnotation) {
+				if(oldValue instanceof NamedStyle) {
 					// returns true if the annotation has the correct source
-					return VisualInformationPapyrusConstants.CUSTOM_APPEARENCE_ANNOTATION.equals(((EAnnotation)oldValue).getSource());
+					return VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL.equals(((NamedStyle)oldValue).getName());
 				}
 			}
 		}
@@ -232,21 +233,21 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	 * {@inheritDoc}
 	 */
 	public void setDefaultDisplayValue() {
-		MaskLabelHelper.unsetMaskValues((View)getHost().getModel());
+		MaskLabelHelper.unsetMaskValues(getView());
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public void updateDisplayValue(Collection<String> newValue) {
-		MaskLabelHelper.setMaskValues((View)getHost().getModel(), newValue);
+		MaskLabelHelper.setMaskValues(getView(), newValue);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public Collection<String> getCurrentDisplayValue() {
-		Collection<String> maskValues = MaskLabelHelper.getMaskValues((View)getHost().getModel());
+		Collection<String> maskValues = MaskLabelHelper.getMaskValues(getView());
 		if(maskValues == null) {
 			return getDefaultDisplayValue();
 		}

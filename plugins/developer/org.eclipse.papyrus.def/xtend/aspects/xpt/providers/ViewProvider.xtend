@@ -392,7 +392,7 @@ import xpt.editor.VisualIDRegistry
 	override dispatch createNodeMethod(GenChildLabelNode it) '''
 		«generatedMemberComment»
 		public org.eclipse.gmf.runtime.notation.Node create«uniqueIdentifier»(org.eclipse.emf.ecore.EObject domainElement, org.eclipse.gmf.runtime.notation.View containerView, int index, boolean persisted, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint preferencesHint) {
-			org.eclipse.gmf.runtime.notation.Node node = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createNode();
+			org.eclipse.gmf.runtime.notation.Node node = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createShape();
 			node.setLayoutConstraint(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createLocation());«/* [artem] XXX not sure, why LabelNode needs location */»
 			«xptViewStyles.addLinkedDiagramStyle(it, 'node.getStyles()')»
 			«xptViewStyles.addCustomStyles(it, 'node.getStyles()')»

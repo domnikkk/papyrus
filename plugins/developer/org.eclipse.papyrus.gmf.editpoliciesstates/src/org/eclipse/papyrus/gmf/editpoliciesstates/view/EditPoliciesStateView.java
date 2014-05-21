@@ -107,8 +107,8 @@ public class EditPoliciesStateView extends ViewPart {
 				if(selection instanceof IStructuredSelection) {
 					Object[] policiesValue=null;
 					Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-					if(selectedobject instanceof GraphicalEditPart) {
-						GraphicalEditPart graphicalEP = ((GraphicalEditPart)selectedobject);
+					if(selectedobject instanceof org.eclipse.gef.GraphicalEditPart) {
+						org.eclipse.gef.GraphicalEditPart graphicalEP = ((org.eclipse.gef.GraphicalEditPart)selectedobject);
 						Field policiesFiled = null;
 						try {
 							policiesFiled = AbstractEditPart.class.getDeclaredField("policies");
