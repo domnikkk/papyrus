@@ -153,14 +153,13 @@ public abstract class AbstractEditorTest extends AbstractPapyrusTest {
 			}
 
 
-			Assert.assertFalse("umlRessource contains nothing", umlModel.getResource().getContents().size()>1);
+			Assert.assertFalse("umlRessource contains nothing", umlModel.getResource().getContents().isEmpty());
 			Object root =umlModel.getResource().getContents().get(0);
 			Assert.assertFalse("the root of UML model is not a package", root instanceof Package);
 
 			return  (org.eclipse.uml2.uml.Package)root;
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.fail(e.getMessage());
 		}
 		return null;
 

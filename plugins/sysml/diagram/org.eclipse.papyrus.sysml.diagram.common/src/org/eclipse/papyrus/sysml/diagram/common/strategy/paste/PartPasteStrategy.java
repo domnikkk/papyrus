@@ -170,8 +170,10 @@ public class PartPasteStrategy implements IPasteStrategy {
 						PartBlockAdditionalData partBlockAdditionalData = (PartBlockAdditionalData)additionnalData;
 						for(Property property : allAttributes) {
 							Association duplicatedAssociation = partBlockAdditionalData.getDuplicatedAssociationByPropertyName(property.getName());
-							restoreAssociationPartContext(classifier, property, duplicatedAssociation);
-							listDuplicatedAssociation.add(duplicatedAssociation);
+							if (duplicatedAssociation != null){
+								restoreAssociationPartContext(classifier, property, duplicatedAssociation);
+								listDuplicatedAssociation.add(duplicatedAssociation);								
+							}
 						}
 						associationContainer = targetOwner;
 					}
