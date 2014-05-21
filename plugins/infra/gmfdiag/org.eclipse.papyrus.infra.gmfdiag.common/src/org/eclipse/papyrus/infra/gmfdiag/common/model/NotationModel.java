@@ -82,24 +82,23 @@ public class NotationModel extends EMFLogicalModel implements IModel {
 
 	/**
 	 * Notation resources are controlled if their base element is controlled
+	 * In case the notation resource is empty, we should look at the associated resources and see if one of them is controlled.
 	 */
 	@Override
 	public boolean isControlled(Resource resource) {
-		for(EObject rootElement : resource.getContents()) {
-			IOpenable openable = (IOpenableWithContainer)Platform.getAdapterManager().getAdapter(rootElement, IOpenable.class);
-			if(openable instanceof IOpenableWithContainer) {
-				EObject container = EMFHelper.getEObject(((IOpenableWithContainer)openable).getContainer());
-				if(container != null) {
-					IModel iModel = modelSet.getModelFor(container);
+		for(Resource resourceInModelSet : modelSet.getResources()) {
+			if ( resource.getURI().trimFileExtension().equals(resourceInModelSet.getURI().trimFileExtension()) && !isRelatedResource(resourceInModelSet)){
+				if(!resourceInModelSet.getContents().isEmpty()){
+					EObject eObject = resourceInModelSet.getContents().get(0);
+					IModel iModel = modelSet.getModelFor(eObject);
 					if(iModel instanceof IEMFModel) {
-						if(((IEMFModel)iModel).isControlled(container.eResource())) {
+						if(((IEMFModel)iModel).isControlled(resourceInModelSet)) {
 							return true;
 						}
 					}
 				}
 			}
 		}
-
 		return false;
 	}
 
