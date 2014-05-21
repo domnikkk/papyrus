@@ -22,14 +22,11 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModelUtils;
-import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.uml.diagram.wizards.utils.WizardsHelper;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
@@ -40,6 +37,9 @@ import org.eclipse.papyrus.uml.tools.model.UmlUtils;
  */
 public class InitFromTemplateCommand extends RecordingCommand {
 
+	/** The model-set in which to create the new resources. */
+	private ModelSet modelSet;
+	
 	/** The my model resource. */
 	private final Resource myModelUMLResource;
 
@@ -79,6 +79,8 @@ public class InitFromTemplateCommand extends RecordingCommand {
 	 */
 	public InitFromTemplateCommand(TransactionalEditingDomain editingDomain, ModelSet modelSet, String pluginId, String umlTemplatePath, String notationTemplatePath, String diTemplatePath) {
 		super(editingDomain);
+		
+		this.modelSet = modelSet;
 		myModelUMLResource = UmlUtils.getUmlResource(modelSet);
 		myModelDiResource = DiModelUtils.getDiResource(modelSet);
 		myModelNotationResource = NotationUtils.getNotationResource(modelSet);
@@ -123,11 +125,9 @@ public class InitFromTemplateCommand extends RecordingCommand {
 		Resource templateUmlResource = null;
 
 
-		final ResourceSet resourceSet = new ResourceSetImpl();
-
 		try {
 			//0. initalization of the UML object
-			templateUmlResource = loadTemplateResource(myUmlTemplatePath, resourceSet);
+			templateUmlResource = loadTemplateResource(myUmlTemplatePath);
 			EcoreUtil.resolveAll(templateUmlResource);
 
 			//1. test if di and notation exist
@@ -142,13 +142,13 @@ public class InitFromTemplateCommand extends RecordingCommand {
 
 					//1.2 load  di resource
 					if(myDiTemplatePath != null) {
-						templateDiResource = loadTemplateResource(myDiTemplatePath, resourceSet);
+						templateDiResource = loadTemplateResource(myDiTemplatePath);
 						EcoreUtil.resolveAll(templateDiResource);
 					}
 
 					//1.3 load notation resource
 					if(myNotationTemplatePath != null) {
-						templateNotationResource = loadTemplateResource(myNotationTemplatePath, resourceSet);
+						templateNotationResource = loadTemplateResource(myNotationTemplatePath);
 						EcoreUtil.resolveAll(templateNotationResource);
 					}
 
@@ -172,7 +172,15 @@ public class InitFromTemplateCommand extends RecordingCommand {
 				myModelNotationResource.getContents().addAll(notationObjects);
 			}
 		} finally {
-			EMFHelper.unload(resourceSet);
+			if(templateUmlResource != null) {
+				unload(templateUmlResource);
+			}
+			if(templateNotationResource != null) {
+				unload(templateNotationResource);
+			}
+			if(templateDiResource != null) {
+				unload(templateDiResource);
+			}
 		}
 	}
 
@@ -185,11 +193,11 @@ public class InitFromTemplateCommand extends RecordingCommand {
 	 *        the path
 	 * @return the resource
 	 */
-	private Resource loadTemplateResource(String path, ResourceSet resourceSet) {
+	private Resource loadTemplateResource(String path) {
 		java.net.URL templateURL = Platform.getBundle(myPluginId).getResource(path);
 		String fullUri = templateURL.getPath();
 		URI uri = URI.createPlatformPluginURI(myPluginId + fullUri, true);
-		Resource resource = resourceSet.getResource(uri, true);
+		Resource resource = modelSet.getResource(uri, true);
 		if(resource.isLoaded()) {
 			return resource;
 		}
@@ -197,6 +205,11 @@ public class InitFromTemplateCommand extends RecordingCommand {
 	}
 
 
+	private void unload(Resource resource) {
+		resource.unload();
+		resource.eAdapters().clear();
+		modelSet.getResources().remove(resource);
+	}
 
 
 }
