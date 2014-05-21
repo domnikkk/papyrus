@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2013 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,10 +9,13 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Use URIs to support non-URL-compatible storage (CDO)
+ *  Christian W. Damus (CEA) - bug 417409
+ *     
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.runtime;
 
 import java.net.URL;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -34,6 +37,7 @@ import org.eclipse.papyrus.views.properties.util.EMFURLStreamHandler;
 import org.eclipse.papyrus.views.properties.xwt.XWTTabDescriptor;
 import org.eclipse.papyrus.xwt.DefaultLoadingContext;
 import org.eclipse.papyrus.xwt.ILoadingContext;
+import org.eclipse.papyrus.xwt.IXWTLoader;
 import org.eclipse.papyrus.xwt.XWT;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -56,6 +60,8 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	private Set<Control> controls = new HashSet<Control>();
 
 	private boolean allowDuplicate;
+	
+	private Object xmlCache;
 
 	/**
 	 * Constructs a new DisplayEnginet that doesn't allow the duplication of sections
@@ -183,7 +189,13 @@ public class DefaultDisplayEngine implements DisplayEngine {
 		try {
 			ResourceSet rset = section.eResource().getResourceSet();
 			URL url = new URL(null, sectionFile.toString(), new EMFURLStreamHandler(rset.getURIConverter()));
-			control = (Control)XWT.load(parent, url, source);
+			
+			Map<String, Object> options = new HashMap<String, Object>();
+			options.put(IXWTLoader.CONTAINER_PROPERTY, parent);
+			options.put(IXWTLoader.DATACONTEXT_PROPERTY, source);
+			options.put(IXWTLoader.XML_CACHE_PROPERTY, (xmlCache != null) ? xmlCache : Boolean.TRUE);
+			control = (Control)XWT.loadWithOptions(url, options);
+			xmlCache = options.get(IXWTLoader.XML_CACHE_PROPERTY);
 
 			if(control != null) {
 				control.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
