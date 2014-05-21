@@ -134,7 +134,9 @@ public class ShowHideLabelSelectionDialog extends AbstractCheckedTreeColumnViewe
 						if(iconPath.indexOf("platform") == 0) {
 							//the path looks like "platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif"
 							try {
-								return ImageDescriptor.createFromURL(new URL(iconPath)).createImage();
+								URL url = new URL(iconPath);
+								ImageDescriptor descriptor = ImageDescriptor.createFromURL(url);
+								return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(descriptor);
 							} catch (MalformedURLException e) {
 								Activator.log.error("I can't find the following image " + iconPath, e);
 								return null;

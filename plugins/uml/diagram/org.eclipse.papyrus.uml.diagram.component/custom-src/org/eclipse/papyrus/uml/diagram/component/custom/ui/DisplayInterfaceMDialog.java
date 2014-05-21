@@ -243,11 +243,12 @@ public class DisplayInterfaceMDialog extends InterfaceManagerDialog {
 	 */
 	public class DisplayedSelectorLabelProvider extends SelectorLabelProvider {
 
+		private static final String ICONS_OBJ16_LOLLIPOP_GIF = "icons/obj16/lollipop.gif"; //$NON-NLS-1$
 
 		@Override
 		protected Image getImage(EObject element) {
 			if(displayedRequiredInterface.contains(element)||displayedProvidedInterface.contains(element)){
-				return UMLDiagramEditorPlugin.findImageDescriptor("icons/obj16/lollipop.gif").createImage();
+				return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(UMLDiagramEditorPlugin.ID, ICONS_OBJ16_LOLLIPOP_GIF);
 			}
 			return super.getImage(element);
 		}

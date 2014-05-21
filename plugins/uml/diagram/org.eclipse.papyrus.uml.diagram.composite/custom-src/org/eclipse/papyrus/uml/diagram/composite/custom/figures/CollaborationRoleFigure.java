@@ -21,6 +21,7 @@ import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
 import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramEditorPlugin;
+import org.eclipse.swt.graphics.Image;
 
 /**
  * Figure for CollaborationRole (in Composite) representation of ConnectableElement.
@@ -47,8 +48,8 @@ public class CollaborationRoleFigure extends NodeNamedElementFigure {
 		// Add an arrow on role figure to make a graphical distinction between Property owned by the
 		// Collaboration and a ConnectableElement reference as role of the Collaboration.
 		Panel panel = new Panel();
-		ImageDescriptor imgRef = UMLDiagramEditorPlugin.getBundledImageDescriptor(SHORTCUT_IMG_PATH);
-		ImageFigure imgFig = new ImageFigure(imgRef.createImage());
+		Image image = org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(UMLDiagramEditorPlugin.ID, SHORTCUT_IMG_PATH);
+		ImageFigure imgFig = new ImageFigure(image);
 		panel.add(imgFig);
 		FlowLayout panelLayout = new FlowLayout(true);
 		panelLayout.setMajorAlignment(OrderedLayout.ALIGN_BOTTOMRIGHT);

@@ -81,7 +81,7 @@ public class CreationMenuFactory {
 				try {
 					url = new URL(folder.getIcon());
 					ImageDescriptor imgDesc = ImageDescriptor.createFromURL(url);
-					topMenuItem.setImage(imgDesc.createImage());
+					topMenuItem.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(imgDesc));
 				} catch (MalformedURLException e) {
 					// no exception thrown
 					Activator.log.debug("Impossible to find icon with URL "+url);
@@ -159,6 +159,7 @@ public class CreationMenuFactory {
 		} else if(possibleEFeatures.size() > 1) {
 			org.eclipse.swt.widgets.MenuItem topMenuItem = new MenuItem(menu, SWT.CASCADE);
 			topMenuItem.setText(currentCreationMenu.getLabel());
+			fillIcon(currentCreationMenu, topMenuItem);
 			Menu topMenu = new Menu(menu);
 			topMenuItem.setMenu(topMenu);
 			for(EStructuralFeature eStructuralFeature : possibleEFeatures) {
@@ -196,7 +197,7 @@ public class CreationMenuFactory {
 			try {
 				url = new URL(currentCreationMenu.getIcon());
 				ImageDescriptor imgDesc = ImageDescriptor.createFromURL(url);
-				item.setImage(imgDesc.createImage());
+				item.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(imgDesc));
 			} catch (MalformedURLException e) {
 				// no icon found
 				Activator.log.debug("Impossible to find icon"+ e);
@@ -263,7 +264,7 @@ public class CreationMenuFactory {
 	protected void createIconFromElementType(CreationMenu currentCreationMenu, MenuItem item) {
 		if(getElementType(currentCreationMenu.getElementTypeIdRef()).getIconURL() != null) {
 			ImageDescriptor imgDesc = ImageDescriptor.createFromURL(getElementType(currentCreationMenu.getElementTypeIdRef()).getIconURL());
-			item.setImage(imgDesc.createImage());
+			item.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(imgDesc));
 		}
 	}
 
