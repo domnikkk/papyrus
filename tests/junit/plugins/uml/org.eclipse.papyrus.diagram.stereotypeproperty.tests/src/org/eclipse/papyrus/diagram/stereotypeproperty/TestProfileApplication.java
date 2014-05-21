@@ -10,6 +10,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
+ *  Christian W. Damus (CEA) - bug 434594
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.stereotypeproperty;
@@ -23,6 +24,7 @@ import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Profile;
@@ -33,13 +35,13 @@ public class TestProfileApplication extends AbstractPapyrusTestCase {
 
 	@Test
 	public void testProfileApplicationOnModel() throws ServiceException {
-		RegisteredProfile registeredProfile = RegisteredProfile.getRegisteredProfile("TestProfile");
+		IRegisteredProfile registeredProfile = RegisteredProfile.getRegisteredProfile("TestProfile");
 		final Model root = ((Model)getDiagramEditPart().resolveSemanticElement());
 		assertTrue("Registered profile not found", registeredProfile != null);
-		URI modelUri = registeredProfile.uri;
+		URI modelUri = registeredProfile.getUri();
 		final Resource modelResource = EMFHelper.getResourceSet(root).getResource(modelUri, true);
 		assertTrue("the registered profile is not a profile", (modelResource.getContents().get(0) instanceof Profile));
-		assertTrue("strange profile", ("".equals(registeredProfile.qualifiednames)));
+		assertTrue("strange profile", ("".equals(registeredProfile.getQualifiedNames())));
 		final Profile profile = (Profile)modelResource.getContents().get(0);
 		//	PackageUtil.applyProfile(root,profile, false);
 		final TransactionalEditingDomain domain = ServiceUtils.getInstance().getTransactionalEditingDomain(papyrusEditor.getServicesRegistry());

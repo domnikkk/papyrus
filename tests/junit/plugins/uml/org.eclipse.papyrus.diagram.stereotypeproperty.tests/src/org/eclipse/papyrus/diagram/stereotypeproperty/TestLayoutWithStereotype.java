@@ -9,6 +9,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
+ *  Christian W. Damus (CEA) - bug 434594
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.stereotypeproperty;
@@ -57,6 +58,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.PackageFigure;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.StereotypePropertiesCompartment;
 import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpart.AppliedStereotypeCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpart.AppliedStereotypeMultilinePropertyEditPart;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
 import org.eclipse.papyrus.uml.tools.commands.ApplyStereotypeCommand;
 import org.eclipse.uml2.uml.Element;
@@ -791,9 +793,9 @@ public class TestLayoutWithStereotype extends AbstractPapyrusTestCase {
 	@Override
 	public void setUp() throws Exception {
 		super.setUp();
-		RegisteredProfile registeredProfile = RegisteredProfile.getRegisteredProfile("TestProfile");
+		IRegisteredProfile registeredProfile = RegisteredProfile.getRegisteredProfile("TestProfile");
 		final Model root = ((Model)getDiagramEditPart().resolveSemanticElement());
-		URI modelUri = registeredProfile.uri;
+		URI modelUri = registeredProfile.getUri();
 		final Resource modelResource = EMFHelper.getResourceSet(root).getResource(modelUri, true);
 		final Profile profile = (Profile)modelResource.getContents().get(0);
 		//	PackageUtil.applyProfile(root,profile, false);
