@@ -6,9 +6,9 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  CEA List - initial API and implementation
- *  Christian W. Damus (CEA) - bug 422257
- *  
+ *     CEA List - initial API and implementation
+ *     Christian W. Damus (CEA) - bug 422257
+ *     Dr. David H. Akehurst - enable programmatic registration 
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.library;
 
@@ -24,7 +24,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.Activator;
-import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionLabelProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
@@ -51,7 +52,7 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	/**
 	 * 
 	 */
-	private RegisteredProfile[] regProfiles;
+	private IRegisteredProfile[] regProfiles;
 
 	/**
 	 * 
@@ -72,7 +73,7 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 		importedProfilesNames = getImportedProfileNames(importedProfiles);
 
 		// Retrieve registered profiles
-		regProfiles = RegisteredProfile.getRegisteredProfiles();
+		regProfiles = Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]);
 		// remove already applied profiles from the list
 		regProfiles = removeAlreadyImportedFromSelection();
 
@@ -116,20 +117,20 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 	 * 
 	 * @return
 	 */
-	private RegisteredProfile[] removeAlreadyImportedFromSelection() {
+	private IRegisteredProfile[] removeAlreadyImportedFromSelection() {
 
-		List<RegisteredProfile> profiles = new ArrayList<RegisteredProfile>();
+		List<IRegisteredProfile> profiles = new ArrayList<IRegisteredProfile>();
 
 		for(int i = 0; i < regProfiles.length; i++) {
 
-			String currentName = regProfiles[i].name;
+			String currentName = regProfiles[i].getName();
 			if(!importedProfilesNames.contains(currentName)) {
 				profiles.add(regProfiles[i]);
 			}
 		}
 
-		RegisteredProfile[] cleandList;
-		cleandList = profiles.toArray(new RegisteredProfile[profiles.size()]);
+		IRegisteredProfile[] cleandList;
+		cleandList = profiles.toArray(new IRegisteredProfile[profiles.size()]);
 
 		return cleandList;
 	}
@@ -151,8 +152,8 @@ public class RegisteredProfileAsLibrarySelectionDialog extends ElementListSelect
 
 		for(int i = 0; i < selection.length; i++) {
 
-			RegisteredProfile currentProfile = (RegisteredProfile)(selection[i]);
-			URI modelUri = currentProfile.uri;
+			IRegisteredProfile currentProfile = (IRegisteredProfile)(selection[i]);
+			URI modelUri = currentProfile.getUri();
 
 			PackageImport pi = getModelLibraryImportFromURI(modelUri);
 

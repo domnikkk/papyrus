@@ -11,7 +11,7 @@
  *  Christian W. Damus (CEA) - Refactoring package/profile import/apply UI for CDO
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 422257
- *
+ *  Dr. David H. Akehurst - enable programmatic registration
  *****************************************************************************/
 package org.eclipse.papyrus.uml.importt.handlers;
 
@@ -27,8 +27,9 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
 import org.eclipse.papyrus.uml.extensionpoints.library.FilteredRegisteredLibrariesSelectionDialog;
-import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
+import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.papyrus.uml.importt.ui.PackageImportDialog;
 import org.eclipse.papyrus.uml.profile.ui.dialogs.ElementImportTreeSelectionDialog.ImportSpec;
@@ -51,14 +52,14 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 	 * @param librariesToImport
 	 *        the array of Libraries to import
 	 */
-	protected void importLibraries(RegisteredLibrary[] librariesToImport) {
+	protected void importLibraries(IRegisteredLibrary[] librariesToImport) {
 		// create a temporary resource set. Be sure to unload it so that we don't leak models in the CacheAdapter!
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
 
 		try {
 			for(int i = 0; i < librariesToImport.length; i++) {
-				RegisteredLibrary currentLibrary = (librariesToImport[i]);
-				URI modelUri = currentLibrary.uri;
+				IRegisteredLibrary currentLibrary = (librariesToImport[i]);
+				URI modelUri = currentLibrary.getUri();
 
 				Resource modelResource = resourceSet.getResource(modelUri, true);
 				PackageImportDialog dialog = new PackageImportDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
@@ -95,17 +96,17 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 	 *
 	 * @return the array of available libraries for the currently selected package
 	 */
-	protected RegisteredLibrary[] getAvailableLibraries() {
-		List<RegisteredLibrary> libraries = new ArrayList<RegisteredLibrary>();
-		RegisteredLibrary[] allLibraries = RegisteredLibrary.getRegisteredLibraries();
+	protected IRegisteredLibrary[] getAvailableLibraries() {
+		List<IRegisteredLibrary> libraries = new ArrayList<IRegisteredLibrary>();
+		IRegisteredLibrary[] allLibraries = Registry.getRegisteredLibraries().toArray(new IRegisteredLibrary[0]);
 		for(int i = 0; i < allLibraries.length; i++) {
-			RegisteredLibrary registeredLibrary = allLibraries[i];
+			IRegisteredLibrary registeredLibrary = allLibraries[i];
 			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package)getSelectedElement());
 			if(!(importedPackageNames.contains(registeredLibrary.getName()))) {
 				libraries.add(registeredLibrary);
 			}
 		}
-		return libraries.toArray(new RegisteredLibrary[libraries.size()]);
+		return libraries.toArray(new IRegisteredLibrary[libraries.size()]);
 	}
 
 	/**
@@ -116,11 +117,11 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 	 *
 	 * @return the array of already selected libraries for the currently selected package
 	 */
-	protected Collection<RegisteredLibrary> getImportedLibraries() {
-		List<RegisteredLibrary> libraries = new ArrayList<RegisteredLibrary>();
-		RegisteredLibrary[] allLibraries = RegisteredLibrary.getRegisteredLibraries();
+	protected Collection<IRegisteredLibrary> getImportedLibraries() {
+		List<IRegisteredLibrary> libraries = new ArrayList<IRegisteredLibrary>();
+		IRegisteredLibrary[] allLibraries = Registry.getRegisteredLibraries().toArray(new IRegisteredLibrary[0]);
 		for(int i = 0; i < allLibraries.length; i++) {
-			RegisteredLibrary registeredLibrary = allLibraries[i];
+			IRegisteredLibrary registeredLibrary = allLibraries[i];
 			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package)getSelectedElement());
 			// problem: name of library might be different from name of top-level package
 			if(importedPackageNames.contains(registeredLibrary.getName())) {
@@ -155,7 +156,7 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 					Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 
 					// get the set of registered libraries available
-					RegisteredLibrary[] allLibraries = RegisteredLibrary.getRegisteredLibraries();
+					IRegisteredLibrary[] allLibraries = Registry.getRegisteredLibraries().toArray(new IRegisteredLibrary[0]);
 
 					// Open Registered ModelLibrary selection dialog
 					FilteredRegisteredLibrariesSelectionDialog dialog = new FilteredRegisteredLibrariesSelectionDialog(shell, true, allLibraries, getImportedLibraries());
@@ -163,7 +164,7 @@ public class ImportRegisteredPackageHandler extends AbstractImportHandler {
 					if(Dialog.OK == dialog.getReturnCode()) {
 						// get the result, which is the set of libraries to import
 						List<Object> librariesToImport = Arrays.asList(dialog.getResult());
-						importLibraries(librariesToImport.toArray(new RegisteredLibrary[librariesToImport.size()]));
+						importLibraries(librariesToImport.toArray(new IRegisteredLibrary[librariesToImport.size()]));
 					}
 				}
 			}, "Import Libraries", "Import Libraries from Repository"); //$NON-NLS-1$ //$NON-NLS-2$

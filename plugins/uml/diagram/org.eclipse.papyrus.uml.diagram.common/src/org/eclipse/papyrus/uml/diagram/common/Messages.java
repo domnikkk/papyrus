@@ -190,6 +190,15 @@ public class Messages extends NLS {
 	/** Message for dialog box when palette to delete is not a local palette */
 	public static String Dialog_Not_Local_Palette_Message;
 
+	/** Title for dialog box when palette to restore is not an extended palette */
+	public static String Dialog_Not_Extended_Palette_Title;
+
+	/** Message for dialog box when palette to restore is not an extended palette */
+	public static String Dialog_Not_Extended_Palette_Message;
+
+	/** Tooltip for the restore palette button. */
+	public static String Dialog_Restore_Palette_Tooltip;
+
 	/** tooltip for the delete palette button */
 	public static String Dialog_Delete_Palette_Tooltip;
 
@@ -354,7 +363,7 @@ public class Messages extends NLS {
 
 	/** IntegerEditor Title */
 	public static String PropertyEditors_IntegerTitle;
-	
+
 	/** RealEditor Title */
 	public static String PropertyEditors_RealTitle;
 
@@ -429,4 +438,6 @@ public class Messages extends NLS {
 	public static String ShowHideContentsAction_Title;
 
 	public static String CommonDeferredCreateConnectionViewCommand_NullConnectionCommand;
+
+
 }

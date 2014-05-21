@@ -26,7 +26,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.standard.FilteredRegisteredElementsSelectionDialog;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.papyrus.uml.profile.ui.dialogs.ElementImportTreeSelectionDialog.ImportSpec;
@@ -52,7 +53,7 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 	 * @param parent
 	 */
 	public RegisteredProfileSelectionDialog(Composite parent, Package umlPackage) {
-		super(parent.getShell(), true, RegisteredProfile.getRegisteredProfiles(), new ArrayList<Object>(), "Apply profiles from Papyrus repository :", "");
+		super(parent.getShell(), true, Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]), new ArrayList<Object>(), "Apply profiles from Papyrus repository :", "");
 		currentPackage = umlPackage;
 	}
 
@@ -115,12 +116,12 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 		List<String> subprofilesList = new ArrayList<String>();
 		for(int i = 0; i < selection.length; i++) {
 
-			RegisteredProfile currentProfile = (RegisteredProfile)(selection[i]);
-			URI modelUri = currentProfile.uri;
+			IRegisteredProfile currentProfile = (IRegisteredProfile)(selection[i]);
+			URI modelUri = currentProfile.getUri();
 			Resource modelResource = resourceSet.getResource(modelUri, true);
 
 			// retrieve registered sub-profiles to be selected
-			String qualifiedNames = currentProfile.qualifiednames;
+			String qualifiedNames = currentProfile.getQualifiedNames();
 
 			// try to parse the qualified names
 			String[] profiles = qualifiedNames.split(",");

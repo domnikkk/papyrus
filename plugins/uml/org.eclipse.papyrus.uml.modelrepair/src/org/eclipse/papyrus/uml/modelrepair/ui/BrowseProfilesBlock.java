@@ -24,7 +24,8 @@ import org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog;
 import org.eclipse.papyrus.infra.widgets.providers.EncapsulatedContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.StaticContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.WorkspaceContentProvider;
-import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.modelrepair.Activator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -169,13 +170,13 @@ public class BrowseProfilesBlock {
 		TreeSelectorDialog dialog = new TreeSelectorDialog(getShell());
 		dialog.setTitle("Browse Registered Profiles");
 		dialog.setDescription("Select one of the registered profiles below.");
-		dialog.setContentProvider(new EncapsulatedContentProvider(new StaticContentProvider(RegisteredProfile.getRegisteredProfiles())));
+		dialog.setContentProvider(new EncapsulatedContentProvider(new StaticContentProvider(Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]))));
 		dialog.setLabelProvider(new LabelProvider() {
 
 			@Override
 			public Image getImage(Object element) {
-				if(element instanceof RegisteredProfile) {
-					RegisteredProfile profile = (RegisteredProfile)element;
+				if(element instanceof IRegisteredProfile) {
+					IRegisteredProfile profile = (IRegisteredProfile)element;
 					return profile.getImage();
 				}
 				return super.getImage(element);
@@ -183,9 +184,9 @@ public class BrowseProfilesBlock {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof RegisteredProfile) {
-					RegisteredProfile profile = (RegisteredProfile)element;
-					return profile.name;
+				if(element instanceof IRegisteredProfile) {
+					IRegisteredProfile profile = (IRegisteredProfile)element;
+					return profile.getName();
 				}
 
 				return super.getText(element);
@@ -199,8 +200,8 @@ public class BrowseProfilesBlock {
 			}
 
 			Object selectedElement = result[0];
-			if(selectedElement instanceof RegisteredProfile) {
-				bus.post((RegisteredProfile)selectedElement);
+			if(selectedElement instanceof IRegisteredProfile) {
+				bus.post((IRegisteredProfile)selectedElement);
 			}
 		}
 	}

@@ -78,7 +78,7 @@ import org.eclipse.papyrus.uml.alf.validation.typing.TypeFacade;
 import org.eclipse.papyrus.uml.alf.validation.typing.TypeFacadeFactory;
 import org.eclipse.papyrus.uml.alf.validation.typing.TypeUtils;
 import org.eclipse.papyrus.uml.alf.validation.typing.VoidFacade;
-import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
+import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Class;
@@ -152,9 +152,9 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 			String question = "The context model " + contextClassifier.getModel().getName() + " does not import the standard Alf library. This import is required for static validation of Alf expressions and statements. \n\n Do you want to generate this import?";
 			boolean doGenerateImport = MessageDialog.openQuestion(new Shell(), "Alf editor", question);
 			if(doGenerateImport) {
-				RegisteredLibrary[] libraries = RegisteredLibrary.getRegisteredLibraries();
-				RegisteredLibrary alfLibrary = null;
-				for(RegisteredLibrary l : libraries) {
+				List<IRegisteredLibrary> libraries = org.eclipse.papyrus.uml.extensionpoints.Registry.getRegisteredLibraries();
+				IRegisteredLibrary alfLibrary = null;
+				for(IRegisteredLibrary l : libraries) {
 					if(l.getName().equals("AlfLibrary")) {
 						alfLibrary = l;
 					}
@@ -184,7 +184,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 		private Model model;
 
-		private RegisteredLibrary library;
+		private IRegisteredLibrary library;
 
 		/*
 		 * (non-Javadoc)
@@ -195,7 +195,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 		 */
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
-			URI libraryUri = library.uri;
+			URI libraryUri = library.getUri();
 			ResourceSet resourceSet = Util.getResourceSet(contextClassifier);
 			Resource libraryResource = resourceSet.getResource(libraryUri, true);
 			Package libraryObject = (Package)libraryResource.getContents().get(0);
@@ -203,7 +203,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 			return CommandResult.newOKCommandResult(model);
 		}
 
-		public UpdateImportCommand(Model model, RegisteredLibrary library) {
+		public UpdateImportCommand(Model model, IRegisteredLibrary library) {
 			super(getTransactionalEditingDomain(model), "Model Update", getWorkspaceFiles(model));
 			this.model = model;
 			this.library = library;

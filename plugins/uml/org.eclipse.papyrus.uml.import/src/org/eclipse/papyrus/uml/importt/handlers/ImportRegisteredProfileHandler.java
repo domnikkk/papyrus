@@ -10,7 +10,7 @@
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Refactoring package/profile import/apply UI for CDO
  *  Christian W. Damus (CEA) - bug 323802
- *
+ *  Dr. David H. Akehurst - enable programmatic registration
  *****************************************************************************/
 package org.eclipse.papyrus.uml.importt.handlers;
 
@@ -27,8 +27,9 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
 import org.eclipse.papyrus.uml.extensionpoints.profile.FilteredRegisteredProfilesAsLibrarySelectionDialog;
-import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.papyrus.uml.profile.ui.dialogs.ElementImportTreeSelectionDialog.ImportSpec;
 import org.eclipse.papyrus.uml.profile.ui.dialogs.ProfileTreeSelectionDialog;
@@ -72,7 +73,7 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 					Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 
 					// get the set of registered libraries available
-					RegisteredProfile[] allProfiles = RegisteredProfile.getRegisteredProfiles();
+					IRegisteredProfile[] allProfiles = Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]);
 
 					// Open Registered ModelLibrary selection dialog
 					FilteredRegisteredProfilesAsLibrarySelectionDialog dialog = new FilteredRegisteredProfilesAsLibrarySelectionDialog(shell, true, allProfiles, getImportedProfiles());
@@ -80,7 +81,7 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 					if(Dialog.OK == dialog.getReturnCode()) {
 						// get the result, which is the set of libraries to import
 						List<Object> profilesToImport = Arrays.asList(dialog.getResult());
-						importProfiles(profilesToImport.toArray(new RegisteredProfile[profilesToImport.size()]));
+						importProfiles(profilesToImport.toArray(new IRegisteredProfile[profilesToImport.size()]));
 					}
 				}
 			}, "Import Profile", "Import Profile from Registred Profiles"); //$NON-NLS-1$ //$NON-NLS-2$
@@ -93,14 +94,14 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 	 * @param profilesToImport
 	 *        the profiles to import
 	 */
-	protected void importProfiles(RegisteredProfile[] profilesToImport) {
+	protected void importProfiles(IRegisteredProfile[] profilesToImport) {
 
 		// create a temporary resource set. Be sure to unload it so that we don't leak models in the CacheAdapter!
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
 		try {
 			for(int i = 0; i < profilesToImport.length; i++) {
-				RegisteredProfile currentLibrary = (profilesToImport[i]);
-				URI modelUri = currentLibrary.uri;
+				IRegisteredProfile currentLibrary = (profilesToImport[i]);
+				URI modelUri = currentLibrary.getUri();
 
 				Resource modelResource = resourceSet.getResource(modelUri, true);
 				//			PackageImportTreeSelectionDialog dialog = new PackageImportTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
@@ -134,11 +135,11 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 	 * @return
 	 *         the list of the profiles which are already imported
 	 */
-	protected Collection<RegisteredProfile> getImportedProfiles() {
-		List<RegisteredProfile> profiles = new ArrayList<RegisteredProfile>();
-		RegisteredProfile[] allLibraries = RegisteredProfile.getRegisteredProfiles();
+	protected Collection<IRegisteredProfile> getImportedProfiles() {
+		List<IRegisteredProfile> profiles = new ArrayList<IRegisteredProfile>();
+		IRegisteredProfile[] allLibraries = Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]);
 		for(int i = 0; i < allLibraries.length; i++) {
-			RegisteredProfile registeredProfile = allLibraries[i];
+			IRegisteredProfile registeredProfile = allLibraries[i];
 			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package)getSelectedElement());
 			// problem: name of library might be different from name of top-level package
 			if(importedPackageNames.contains(registeredProfile.getName())) {

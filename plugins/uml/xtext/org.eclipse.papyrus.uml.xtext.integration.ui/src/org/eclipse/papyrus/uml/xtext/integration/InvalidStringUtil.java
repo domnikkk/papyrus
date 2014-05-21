@@ -17,7 +17,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
+import org.eclipse.papyrus.uml.extensionpoints.Registry;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
@@ -105,9 +106,8 @@ public class InvalidStringUtil {
 	 */
 	public static boolean isActionLanguageProfileApplied(Element element) {
 		if (actionLanguageProfile == null) {
-			RegisteredProfile registeredActionLanguageProfile = RegisteredProfile
-					.getRegisteredProfile(ACTION_LANGUAGE_PROFILE_NAME);
-			URI modelUri = registeredActionLanguageProfile.uri;
+			IRegisteredProfile registeredActionLanguageProfile = Registry.getRegisteredProfile(ACTION_LANGUAGE_PROFILE_NAME, null);
+			URI modelUri = registeredActionLanguageProfile.getUri();
 			Package root = PackageUtil.getRootPackage(element);
 	
 			Resource modelResource = root.eResource().getResourceSet()
