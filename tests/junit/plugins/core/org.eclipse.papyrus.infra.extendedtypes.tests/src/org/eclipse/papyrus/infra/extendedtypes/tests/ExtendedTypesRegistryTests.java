@@ -31,8 +31,6 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.ModelUtils;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
-import org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSetRegistry;
-import org.eclipse.papyrus.infra.extendedtypes.ExtendedTypeRegistryService;
 import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
@@ -162,25 +160,6 @@ public class ExtendedTypesRegistryTests implements ITestConstants {
 	}
 
 	/**
-	 * Test method for {@link ExtendedElementTypeSetRegistry#getInstance()}
-	 */
-	@Test
-	@Ignore
-	public final void testGetInstance() {
-		ExtendedTypeRegistryService service = null;
-		try {
-			service = openPapyrusEditor.getServicesRegistry().getService(ExtendedTypeRegistryService.class);
-		} catch (ServiceException e) {
-			fail(e.getMessage());
-		}
-		Assert.assertNotNull("Extended type service should not be null", service);
-		
-		// retrieve registry from this service
-		Assert.assertNotNull("Extended type registry singleton should not be null", service.getExtendedElementTypeSetRegistry());
-	}
-
-	
-	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.extendedtypes.tests.ExtendedTypesRegistry#createResourceSet()}.
 	 */
 	@Test
@@ -194,30 +173,4 @@ public class ExtendedTypesRegistryTests implements ITestConstants {
 		Assert.assertNotNull("Element type should be registered", restrictedClassType);
 	}
 
-//	/**
-//	 * Test method for {@link org.eclipse.papyrus.infra.extendedtypes.tests.ExtendedTypesRegistry#getExtendedElementTypeSet(java.lang.String, java.lang.String)}.
-//	 */
-//	@Test
-//	public final void testGetExtendedElementTypeSet() {
-//		ExtendedElementTypeSet set = ExtendedTypesRegistry.getInstance().getExtendedElementTypeSet(TEST1_CONFIGURATION_SET_ID, TEST1_MODEL_PATH, Activator.PLUGIN_ID);
-//		assertNotNull("Element type model file set should be  found", set);
-//
-//		ExtendedElementTypeSet set2 = ExtendedTypesRegistry.getInstance().getExtendedElementTypeSet("null", NO_FILE, Activator.PLUGIN_ID);
-//		assertNull("Element type model file set should not be found", set2);
-//	}
-//
-//	/**
-//	 * Test method for {@link org.eclipse.papyrus.infra.extendedtypes.tests.ExtendedTypesRegistry#getType(java.lang.String)}.
-//	 */
-//	@Test
-//	public final void testGetType() {
-//		IElementType classType = ExtendedTypesRegistry.getInstance().getType(UMLElementTypes.CLASS.getId());
-//		assertNotNull("element Type for class should be found", classType);
-//
-//		IElementType extendedClassType = ExtendedTypesRegistry.getInstance().getType(CLASS1_TEST_TYPE_ID);
-//		assertNotNull("element Type for class should be found", extendedClassType);
-//
-//		IElementType noType = ExtendedTypesRegistry.getInstance().getType(NO_TYPE);
-//		assertNull("element Type for class should not be found", noType);
-//	}
 }
