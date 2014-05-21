@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 LIFL, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,7 +45,7 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 
 	/**
 	 * Sash Model ID.
-	 * 
+	 *
 	 * @deprecated Use {@link SashModel#MODEL_ID} instead
 	 */
 	@Deprecated
@@ -63,9 +63,9 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 
 	/**
 	 * Get the file extension used for this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getModelFileExtension()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -75,9 +75,9 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 
 	/**
 	 * Get the identifier used to register this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getIdentifier()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 				createModel(uriWithoutExtension);
 			}
 		}
-		
+
 		if(resource == null) {
 			createModel(uriWithoutExtension);
 		}
@@ -126,9 +126,9 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 			}
 		}
 		super.setModelURI(uriWithoutExtension);
-		
+
 	}
-	
+
 	@Override
 	public void handle(Resource resource) {
 		super.handle(resource);
@@ -136,37 +136,38 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 			return;
 		}
 
-		
+
 		//If the parameter resource is already a di resource, nothing to do
 		if(!isRelatedResource(resource)) {
 			URI diUri = resource.getURI().trimFileExtension().appendFileExtension(DI_FILE_EXTENSION);
 			ResourceSet resourceSet = getResourceSet();
-			
+
 			boolean diAlreadyLoaded = false;
 			for(Resource loadedResource : resourceSet.getResources()) {
-				if(loadedResource.getURI().equals(diUri)){
+				if(loadedResource.getURI().equals(diUri)) {
 					diAlreadyLoaded = true;
+					break;
 				}
 			}
-			
+
 			if(resourceSet != null && !diAlreadyLoaded && resourceSet.getURIConverter() != null) {
 				URIConverter converter = resourceSet.getURIConverter();
 				if(converter.exists(diUri, Collections.emptyMap())) {
 					//If the di resource associated to the parameter resource exists, load it
-					getResourceSet().getResource(diUri, true);
+					loadModel(diUri.trimFileExtension());
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * Notation resources are controlled if their base element is controlled
 	 */
 	@Override
 	public boolean isControlled(Resource resource) {
 		for(Resource resourceInModelSet : modelSet.getResources()) {
-			if ( resource.getURI().trimFileExtension().equals(resourceInModelSet.getURI().trimFileExtension()) && !isRelatedResource(resourceInModelSet)){
-				if(!resourceInModelSet.getContents().isEmpty()){
+			if(resource.getURI().trimFileExtension().equals(resourceInModelSet.getURI().trimFileExtension()) && !isRelatedResource(resourceInModelSet)) {
+				if(!resourceInModelSet.getContents().isEmpty()) {
 					EObject eObject = resourceInModelSet.getContents().get(0);
 					IModel iModel = modelSet.getModelFor(eObject);
 					if(iModel instanceof IEMFModel) {
@@ -179,6 +180,6 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 		}
 		return false;
 	}
-	
-	
+
+
 }
