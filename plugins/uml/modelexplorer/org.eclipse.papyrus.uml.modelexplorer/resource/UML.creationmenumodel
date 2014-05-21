@@ -1,869 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ElementCreationMenuModel:Folder
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ElementCreationMenuModel="http://www.eclipse.org/papyrus/infra/newchild/elementcreationmenumodel"
-    xmi:id="_-5Z5sN90EeOzMY8AIRUeqQ"
-    label="New Child (new)">
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvoN-mEeOG_N6WMq4D6g"
-      label="Create a new AcceptCallAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.AcceptCallAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvod-mEeOG_N6WMq4D6g"
-      label="Create a new AcceptEventAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.AcceptEventAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvot-mEeOG_N6WMq4D6g"
-      label="Create a new ActionExecutionSpecification"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ActionExecutionSpecification"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvo9-mEeOG_N6WMq4D6g"
-      label="Create a new ActionInputPin"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ActionInputPin"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvpN-mEeOG_N6WMq4D6g"
-      label="Create a new Activity"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Activity"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvpd-mEeOG_N6WMq4D6g"
-      label="Create a new ActivityFinalNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ActivityFinalNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvpt-mEeOG_N6WMq4D6g"
-      label="Create a new ActivityParameterNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ActivityParameterNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvp9-mEeOG_N6WMq4D6g"
-      label="Create a new ActivityPartition"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ActivityPartition"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvqN-mEeOG_N6WMq4D6g"
-      label="Create a new Actor"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Actor"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvqd-mEeOG_N6WMq4D6g"
-      label="Create a new AddStructuralFeatureValueAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.AddStructuralFeatureValueAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvqt-mEeOG_N6WMq4D6g"
-      label="Create a new AddVariableValueAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.AddVariableValueAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvq9-mEeOG_N6WMq4D6g"
-      label="Create a new AnyReceiveEvent"
-      elementTypeIdRef="org.eclipse.papyrus.uml.AnyReceiveEvent"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvrN-mEeOG_N6WMq4D6g"
-      label="Create a new Artifact"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Artifact"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvrd-mEeOG_N6WMq4D6g"
-      label="Create a new BehaviorExecutionSpecification"
-      elementTypeIdRef="org.eclipse.papyrus.uml.BehaviorExecutionSpecification"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvrt-mEeOG_N6WMq4D6g"
-      label="Create a new BroadcastSignalAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.BroadcastSignalAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvr9-mEeOG_N6WMq4D6g"
-      label="Create a new CallBehaviorAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CallBehaviorAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvsN-mEeOG_N6WMq4D6g"
-      label="Create a new CallEvent"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CallEvent"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvsd-mEeOG_N6WMq4D6g"
-      label="Create a new CallOperationAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CallOperationAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvst-mEeOG_N6WMq4D6g"
-      label="Create a new CentralBufferNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CentralBufferNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvs9-mEeOG_N6WMq4D6g"
-      label="Create a new ChangeEvent"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ChangeEvent"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvtN-mEeOG_N6WMq4D6g"
-      label="Create a new Class"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Class"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvtd-mEeOG_N6WMq4D6g"
-      label="Create a new ClassifierTemplateParameter"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ClassifierTemplateParameter"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvtt-mEeOG_N6WMq4D6g"
-      label="Create a new Clause"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Clause"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvt9-mEeOG_N6WMq4D6g"
-      label="Create a new ClearAssociationAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ClearAssociationAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvuN-mEeOG_N6WMq4D6g"
-      label="Create a new ClearStructuralFeatureAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ClearStructuralFeatureAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvud-mEeOG_N6WMq4D6g"
-      label="Create a new ClearVariableAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ClearVariableAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvut-mEeOG_N6WMq4D6g"
-      label="Create a new Collaboration"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Collaboration"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvu9-mEeOG_N6WMq4D6g"
-      label="Create a new CollaborationUse"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CollaborationUse"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvvN-mEeOG_N6WMq4D6g"
-      label="Create a new CombinedFragment"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CombinedFragment"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvvd-mEeOG_N6WMq4D6g"
-      label="Create a new Comment"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Comment"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvvt-mEeOG_N6WMq4D6g"
-      label="Create a new Component"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Component"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvv9-mEeOG_N6WMq4D6g"
-      label="Create a new ConditionalNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ConditionalNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvwN-mEeOG_N6WMq4D6g"
-      label="Create a new ConnectableElementTemplateParameter"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ConnectableElementTemplateParameter"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvwd-mEeOG_N6WMq4D6g"
-      label="Create a new ConnectionPointReference"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ConnectionPointReference"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvwt-mEeOG_N6WMq4D6g"
-      label="Create a new ConnectorEnd"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ConnectorEnd"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvw9-mEeOG_N6WMq4D6g"
-      label="Create a new ConsiderIgnoreFragment"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ConsiderIgnoreFragment"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvxN-mEeOG_N6WMq4D6g"
-      label="Create a new Constraint"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Constraint"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvxd-mEeOG_N6WMq4D6g"
-      label="Create a new Continuation"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Continuation"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvxt-mEeOG_N6WMq4D6g"
-      label="Create a new ControlFlow"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ControlFlow"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvx9-mEeOG_N6WMq4D6g"
-      label="Create a new CreateLinkAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CreateLinkAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvyN-mEeOG_N6WMq4D6g"
-      label="Create a new CreateLinkObjectAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CreateLinkObjectAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvyd-mEeOG_N6WMq4D6g"
-      label="Create a new CreateObjectAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.CreateObjectAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvyt-mEeOG_N6WMq4D6g"
-      label="Create a new DataStoreNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DataStoreNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvy9-mEeOG_N6WMq4D6g"
-      label="Create a new DataType"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DataType"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvzN-mEeOG_N6WMq4D6g"
-      label="Create a new DecisionNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DecisionNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvzd-mEeOG_N6WMq4D6g"
-      label="Create a new DeploymentSpecification"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DeploymentSpecification"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvzt-mEeOG_N6WMq4D6g"
-      label="Create a new DestroyLinkAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DestroyLinkAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pvz9-mEeOG_N6WMq4D6g"
-      label="Create a new DestroyObjectAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DestroyObjectAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pv0N-mEeOG_N6WMq4D6g"
-      label="Create a new DestructionOccurrenceSpecification"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DestructionOccurrenceSpecification"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02pv0d-mEeOG_N6WMq4D6g"
-      label="Create a new Device"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Device"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWsN-mEeOG_N6WMq4D6g"
-      label="Create a new Duration"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Duration"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWsd-mEeOG_N6WMq4D6g"
-      label="Create a new DurationConstraint"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DurationConstraint"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWst-mEeOG_N6WMq4D6g"
-      label="Create a new DurationInterval"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DurationInterval"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWs9-mEeOG_N6WMq4D6g"
-      label="Create a new DurationObservation"
-      elementTypeIdRef="org.eclipse.papyrus.uml.DurationObservation"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_uS3cEN-yEeOUcI4WNK0OZw"
-      label="Create a new ElementImport"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ElementImport"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWtN-mEeOG_N6WMq4D6g"
-      label="Create a new Enumeration"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Enumeration"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWtd-mEeOG_N6WMq4D6g"
-      label="Create a new EnumerationLiteral"
-      elementTypeIdRef="org.eclipse.papyrus.uml.EnumerationLiteral"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWtt-mEeOG_N6WMq4D6g"
-      label="Create a new ExceptionHandler"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ExceptionHandler"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWt9-mEeOG_N6WMq4D6g"
-      label="Create a new ExecutionEnvironment"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ExecutionEnvironment"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWuN-mEeOG_N6WMq4D6g"
-      label="Create a new ExecutionOccurrenceSpecification"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ExecutionOccurrenceSpecification"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWud-mEeOG_N6WMq4D6g"
-      label="Create a new ExpansionNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ExpansionNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWut-mEeOG_N6WMq4D6g"
-      label="Create a new ExpansionRegion"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ExpansionRegion"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWu9-mEeOG_N6WMq4D6g"
-      label="Create a new Expression"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Expression"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWvN-mEeOG_N6WMq4D6g"
-      label="Create a new ExtensionEnd"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ExtensionEnd"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWvd-mEeOG_N6WMq4D6g"
-      label="Create a new ExtensionPoint"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ExtensionPoint"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWvt-mEeOG_N6WMq4D6g"
-      label="Create a new FinalState"
-      elementTypeIdRef="org.eclipse.papyrus.uml.FinalState"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWv9-mEeOG_N6WMq4D6g"
-      label="Create a new FlowFinalNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.FlowFinalNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWwN-mEeOG_N6WMq4D6g"
-      label="Create a new ForkNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ForkNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWwd-mEeOG_N6WMq4D6g"
-      label="Create a new FunctionBehavior"
-      elementTypeIdRef="org.eclipse.papyrus.uml.FunctionBehavior"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWwt-mEeOG_N6WMq4D6g"
-      label="Create a new Gate"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Gate"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWw9-mEeOG_N6WMq4D6g"
-      label="Create a new GeneralOrdering"
-      elementTypeIdRef="org.eclipse.papyrus.uml.GeneralOrdering"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWxd-mEeOG_N6WMq4D6g"
-      label="Create a new Image"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Image"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWxt-mEeOG_N6WMq4D6g"
-      label="Create a new InformationItem"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InformationItem"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWx9-mEeOG_N6WMq4D6g"
-      label="Create a new InitialNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InitialNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWyN-mEeOG_N6WMq4D6g"
-      label="Create a new InputPin"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InputPin"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWyd-mEeOG_N6WMq4D6g"
-      label="Create a new InstanceSpecification"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InstanceSpecification"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWyt-mEeOG_N6WMq4D6g"
-      label="Create a new InstanceValue"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InstanceValue"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWy9-mEeOG_N6WMq4D6g"
-      label="Create a new Interaction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Interaction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWzN-mEeOG_N6WMq4D6g"
-      label="Create a new InteractionConstraint"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InteractionConstraint"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWzd-mEeOG_N6WMq4D6g"
-      label="Create a new InteractionOperand"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InteractionOperand"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWzt-mEeOG_N6WMq4D6g"
-      label="Create a new InteractionUse"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InteractionUse"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qWz9-mEeOG_N6WMq4D6g"
-      label="Create a new Interface"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Interface"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW0N-mEeOG_N6WMq4D6g"
-      label="Create a new InterruptibleActivityRegion"
-      elementTypeIdRef="org.eclipse.papyrus.uml.InterruptibleActivityRegion"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW0d-mEeOG_N6WMq4D6g"
-      label="Create a new Interval"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Interval"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW0t-mEeOG_N6WMq4D6g"
-      label="Create a new IntervalConstraint"
-      elementTypeIdRef="org.eclipse.papyrus.uml.IntervalConstraint"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW09-mEeOG_N6WMq4D6g"
-      label="Create a new JoinNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.JoinNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW1N-mEeOG_N6WMq4D6g"
-      label="Create a new Lifeline"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Lifeline"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW1d-mEeOG_N6WMq4D6g"
-      label="Create a new LinkEndCreationData"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LinkEndCreationData"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW1t-mEeOG_N6WMq4D6g"
-      label="Create a new LinkEndData"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LinkEndData"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW19-mEeOG_N6WMq4D6g"
-      label="Create a new LinkEndDestructionData"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LinkEndDestructionData"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW2N-mEeOG_N6WMq4D6g"
-      label="Create a new LiteralBoolean"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LiteralBoolean"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW2d-mEeOG_N6WMq4D6g"
-      label="Create a new LiteralInteger"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LiteralInteger"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW2t-mEeOG_N6WMq4D6g"
-      label="Create a new LiteralNull"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LiteralNull"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW29-mEeOG_N6WMq4D6g"
-      label="Create a new LiteralReal"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LiteralReal"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW3N-mEeOG_N6WMq4D6g"
-      label="Create a new LiteralString"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LiteralString"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW3d-mEeOG_N6WMq4D6g"
-      label="Create a new LiteralUnlimitedNatural"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LiteralUnlimitedNatural"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW3t-mEeOG_N6WMq4D6g"
-      label="Create a new LoopNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.LoopNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW39-mEeOG_N6WMq4D6g"
-      label="Create a new MergeNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.MergeNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW4N-mEeOG_N6WMq4D6g"
-      label="Create a new Message"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Message"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW4d-mEeOG_N6WMq4D6g"
-      label="Create a new MessageOccurrenceSpecification"
-      elementTypeIdRef="org.eclipse.papyrus.uml.MessageOccurrenceSpecification"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW4t-mEeOG_N6WMq4D6g"
-      label="Create a new Model"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Model"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW49-mEeOG_N6WMq4D6g"
-      label="Create a new Node"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Node"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW5N-mEeOG_N6WMq4D6g"
-      label="Create a new ObjectFlow"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ObjectFlow"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW5d-mEeOG_N6WMq4D6g"
-      label="Create a new OccurrenceSpecification"
-      elementTypeIdRef="org.eclipse.papyrus.uml.OccurrenceSpecification"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW5t-mEeOG_N6WMq4D6g"
-      label="Create a new OpaqueAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.OpaqueAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW59-mEeOG_N6WMq4D6g"
-      label="Create a new OpaqueBehavior"
-      elementTypeIdRef="org.eclipse.papyrus.uml.OpaqueBehavior"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW6N-mEeOG_N6WMq4D6g"
-      label="Create a new OpaqueExpression"
-      elementTypeIdRef="org.eclipse.papyrus.uml.OpaqueExpression"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW6d-mEeOG_N6WMq4D6g"
-      label="Create a new Operation"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Operation"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW6t-mEeOG_N6WMq4D6g"
-      label="Create a new OperationTemplateParameter"
-      elementTypeIdRef="org.eclipse.papyrus.uml.OperationTemplateParameter"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW69-mEeOG_N6WMq4D6g"
-      label="Create a new OutputPin"
-      elementTypeIdRef="org.eclipse.papyrus.uml.OutputPin"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW7N-mEeOG_N6WMq4D6g"
-      label="Create a new Package"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Package"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_uS4qMN-yEeOUcI4WNK0OZw"
-      label="Create a new PackageImport"
-      elementTypeIdRef="org.eclipse.papyrus.uml.PackageImport"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW7d-mEeOG_N6WMq4D6g"
-      label="Create a new Parameter"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Parameter"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW7t-mEeOG_N6WMq4D6g"
-      label="Create a new ParameterSet"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ParameterSet"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW79-mEeOG_N6WMq4D6g"
-      label="Create a new PartDecomposition"
-      elementTypeIdRef="org.eclipse.papyrus.uml.PartDecomposition"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW8N-mEeOG_N6WMq4D6g"
-      label="Create a new Port"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Port"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW8d-mEeOG_N6WMq4D6g"
-      label="Create a new PrimitiveType"
-      elementTypeIdRef="org.eclipse.papyrus.uml.PrimitiveType"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW8t-mEeOG_N6WMq4D6g"
-      label="Create a new Profile"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Profile"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW89-mEeOG_N6WMq4D6g"
-      label="Create a new Property"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Property"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW9N-mEeOG_N6WMq4D6g"
-      label="Create a new ProtocolStateMachine"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ProtocolStateMachine"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW9d-mEeOG_N6WMq4D6g"
-      label="Create a new ProtocolTransition"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ProtocolTransition"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW9t-mEeOG_N6WMq4D6g"
-      label="Create a new Pseudostate"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Pseudostate"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW99-mEeOG_N6WMq4D6g"
-      label="Create a new QualifierValue"
-      elementTypeIdRef="org.eclipse.papyrus.uml.QualifierValue"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW-N-mEeOG_N6WMq4D6g"
-      label="Create a new RaiseExceptionAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.RaiseExceptionAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW-d-mEeOG_N6WMq4D6g"
-      label="Create a new ReadExtentAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReadExtentAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW-t-mEeOG_N6WMq4D6g"
-      label="Create a new ReadIsClassifiedObjectAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReadIsClassifiedObjectAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW-9-mEeOG_N6WMq4D6g"
-      label="Create a new ReadLinkAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReadLinkAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW_N-mEeOG_N6WMq4D6g"
-      label="Create a new ReadLinkObjectEndAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReadLinkObjectEndAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW_d-mEeOG_N6WMq4D6g"
-      label="Create a new ReadLinkObjectEndQualifierAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReadLinkObjectEndQualifierAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW_t-mEeOG_N6WMq4D6g"
-      label="Create a new ReadSelfAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReadSelfAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qW_9-mEeOG_N6WMq4D6g"
-      label="Create a new ReadStructuralFeatureAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReadStructuralFeatureAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXAN-mEeOG_N6WMq4D6g"
-      label="Create a new ReadVariableAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReadVariableAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXAd-mEeOG_N6WMq4D6g"
-      label="Create a new Reception"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Reception"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXAt-mEeOG_N6WMq4D6g"
-      label="Create a new ReclassifyObjectAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReclassifyObjectAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXA9-mEeOG_N6WMq4D6g"
-      label="Create a new RedefinableTemplateSignature"
-      elementTypeIdRef="org.eclipse.papyrus.uml.RedefinableTemplateSignature"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXBN-mEeOG_N6WMq4D6g"
-      label="Create a new ReduceAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReduceAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXBd-mEeOG_N6WMq4D6g"
-      label="Create a new Region"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Region"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXBt-mEeOG_N6WMq4D6g"
-      label="Create a new RemoveStructuralFeatureValueAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.RemoveStructuralFeatureValueAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXB9-mEeOG_N6WMq4D6g"
-      label="Create a new RemoveVariableValueAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.RemoveVariableValueAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXCN-mEeOG_N6WMq4D6g"
-      label="Create a new ReplyAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ReplyAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXCd-mEeOG_N6WMq4D6g"
-      label="Create a new SendObjectAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.SendObjectAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXCt-mEeOG_N6WMq4D6g"
-      label="Create a new SendSignalAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.SendSignalAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXC9-mEeOG_N6WMq4D6g"
-      label="Create a new SequenceNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.SequenceNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXDN-mEeOG_N6WMq4D6g"
-      label="Create a new Signal"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Signal"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXDd-mEeOG_N6WMq4D6g"
-      label="Create a new SignalEvent"
-      elementTypeIdRef="org.eclipse.papyrus.uml.SignalEvent"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXDt-mEeOG_N6WMq4D6g"
-      label="Create a new Slot"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Slot"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXD9-mEeOG_N6WMq4D6g"
-      label="Create a new StartClassifierBehaviorAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.StartClassifierBehaviorAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXEN-mEeOG_N6WMq4D6g"
-      label="Create a new StartObjectBehaviorAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.StartObjectBehaviorAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXEd-mEeOG_N6WMq4D6g"
-      label="Create a new State"
-      elementTypeIdRef="org.eclipse.papyrus.uml.State"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXEt-mEeOG_N6WMq4D6g"
-      label="Create a new StateInvariant"
-      elementTypeIdRef="org.eclipse.papyrus.uml.StateInvariant"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXE9-mEeOG_N6WMq4D6g"
-      label="Create a new StateMachine"
-      elementTypeIdRef="org.eclipse.papyrus.uml.StateMachine"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXFN-mEeOG_N6WMq4D6g"
-      label="Create a new Stereotype"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Stereotype"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXFd-mEeOG_N6WMq4D6g"
-      label="Create a new Refine"
-      elementTypeIdRef="org.eclipse.papyrus.uml.stereotype.Refine"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXFt-mEeOG_N6WMq4D6g"
-      label="Create a new Trace"
-      elementTypeIdRef="org.eclipse.papyrus.uml.stereotype.Trace"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXF9-mEeOG_N6WMq4D6g"
-      label="Create a new StringExpression"
-      elementTypeIdRef="org.eclipse.papyrus.uml.StringExpression"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXGN-mEeOG_N6WMq4D6g"
-      label="Create a new StructuredActivityNode"
-      elementTypeIdRef="org.eclipse.papyrus.uml.StructuredActivityNode"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXGd-mEeOG_N6WMq4D6g"
-      label="Create a new TemplateParameter"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TemplateParameter"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXGt-mEeOG_N6WMq4D6g"
-      label="Create a new TemplateParameterSubstitution"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TemplateParameterSubstitution"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXG9-mEeOG_N6WMq4D6g"
-      label="Create a new TemplateSignature"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TemplateSignature"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXHN-mEeOG_N6WMq4D6g"
-      label="Create a new TestIdentityAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TestIdentityAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXHd-mEeOG_N6WMq4D6g"
-      label="Create a new TimeConstraint"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TimeConstraint"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXHt-mEeOG_N6WMq4D6g"
-      label="Create a new TimeEvent"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TimeEvent"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXH9-mEeOG_N6WMq4D6g"
-      label="Create a new TimeExpression"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TimeExpression"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXIN-mEeOG_N6WMq4D6g"
-      label="Create a new TimeInterval"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TimeInterval"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXId-mEeOG_N6WMq4D6g"
-      label="Create a new TimeObservation"
-      elementTypeIdRef="org.eclipse.papyrus.uml.TimeObservation"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXIt-mEeOG_N6WMq4D6g"
-      label="Create a new Transition"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Transition"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXI9-mEeOG_N6WMq4D6g"
-      label="Create a new Trigger"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Trigger"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXJN-mEeOG_N6WMq4D6g"
-      label="Create a new UnmarshallAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.UnmarshallAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXJd-mEeOG_N6WMq4D6g"
-      label="Create a new UseCase"
-      elementTypeIdRef="org.eclipse.papyrus.uml.UseCase"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXJt-mEeOG_N6WMq4D6g"
-      label="Create a new ValuePin"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ValuePin"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXJ9-mEeOG_N6WMq4D6g"
-      label="Create a new ValueSpecificationAction"
-      elementTypeIdRef="org.eclipse.papyrus.uml.ValueSpecificationAction"
-      displayAllRoles="false"/>
-  <menu xsi:type="ElementCreationMenuModel:CreationMenu"
-      xmi:id="_02qXKN-mEeOG_N6WMq4D6g"
-      label="Create a new Variable"
-      elementTypeIdRef="org.eclipse.papyrus.uml.Variable"
-      displayAllRoles="false"/>
+<ElementCreationMenuModel:Folder xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ElementCreationMenuModel="http://www.eclipse.org/papyrus/infra/newchild/elementcreationmenumodel" xmi:id="_-5Z5sN90EeOzMY8AIRUeqQ" label="New Child">
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvoN-mEeOG_N6WMq4D6g" label="Create a new AcceptCallAction" elementTypeIdRef="org.eclipse.papyrus.uml.AcceptCallAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvod-mEeOG_N6WMq4D6g" label="Create a new AcceptEventAction" elementTypeIdRef="org.eclipse.papyrus.uml.AcceptEventAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvot-mEeOG_N6WMq4D6g" label="Create a new ActionExecutionSpecification" elementTypeIdRef="org.eclipse.papyrus.uml.ActionExecutionSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvo9-mEeOG_N6WMq4D6g" label="Create a new ActionInputPin" elementTypeIdRef="org.eclipse.papyrus.uml.ActionInputPin" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvpN-mEeOG_N6WMq4D6g" label="Create a new Activity" elementTypeIdRef="org.eclipse.papyrus.uml.Activity"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvpd-mEeOG_N6WMq4D6g" label="Create a new ActivityFinalNode" elementTypeIdRef="org.eclipse.papyrus.uml.ActivityFinalNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvpt-mEeOG_N6WMq4D6g" label="Create a new ActivityParameterNode" elementTypeIdRef="org.eclipse.papyrus.uml.ActivityParameterNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvp9-mEeOG_N6WMq4D6g" label="Create a new ActivityPartition" elementTypeIdRef="org.eclipse.papyrus.uml.ActivityPartition" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvqN-mEeOG_N6WMq4D6g" label="Create a new Actor" elementTypeIdRef="org.eclipse.papyrus.uml.Actor" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvqd-mEeOG_N6WMq4D6g" label="Create a new AddStructuralFeatureValueAction" elementTypeIdRef="org.eclipse.papyrus.uml.AddStructuralFeatureValueAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvqt-mEeOG_N6WMq4D6g" label="Create a new AddVariableValueAction" elementTypeIdRef="org.eclipse.papyrus.uml.AddVariableValueAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvq9-mEeOG_N6WMq4D6g" label="Create a new AnyReceiveEvent" elementTypeIdRef="org.eclipse.papyrus.uml.AnyReceiveEvent" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvrN-mEeOG_N6WMq4D6g" label="Create a new Artifact" elementTypeIdRef="org.eclipse.papyrus.uml.Artifact" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvrd-mEeOG_N6WMq4D6g" label="Create a new BehaviorExecutionSpecification" elementTypeIdRef="org.eclipse.papyrus.uml.BehaviorExecutionSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvrt-mEeOG_N6WMq4D6g" label="Create a new BroadcastSignalAction" elementTypeIdRef="org.eclipse.papyrus.uml.BroadcastSignalAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvr9-mEeOG_N6WMq4D6g" label="Create a new CallBehaviorAction" elementTypeIdRef="org.eclipse.papyrus.uml.CallBehaviorAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvsN-mEeOG_N6WMq4D6g" label="Create a new CallEvent" elementTypeIdRef="org.eclipse.papyrus.uml.CallEvent" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvsd-mEeOG_N6WMq4D6g" label="Create a new CallOperationAction" elementTypeIdRef="org.eclipse.papyrus.uml.CallOperationAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvst-mEeOG_N6WMq4D6g" label="Create a new CentralBufferNode" elementTypeIdRef="org.eclipse.papyrus.uml.CentralBufferNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvs9-mEeOG_N6WMq4D6g" label="Create a new ChangeEvent" elementTypeIdRef="org.eclipse.papyrus.uml.ChangeEvent" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvtN-mEeOG_N6WMq4D6g" label="Create a new Class" elementTypeIdRef="org.eclipse.papyrus.uml.Class" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvtd-mEeOG_N6WMq4D6g" label="Create a new ClassifierTemplateParameter" elementTypeIdRef="org.eclipse.papyrus.uml.ClassifierTemplateParameter" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvtt-mEeOG_N6WMq4D6g" label="Create a new Clause" elementTypeIdRef="org.eclipse.papyrus.uml.Clause" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvt9-mEeOG_N6WMq4D6g" label="Create a new ClearAssociationAction" elementTypeIdRef="org.eclipse.papyrus.uml.ClearAssociationAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvuN-mEeOG_N6WMq4D6g" label="Create a new ClearStructuralFeatureAction" elementTypeIdRef="org.eclipse.papyrus.uml.ClearStructuralFeatureAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvud-mEeOG_N6WMq4D6g" label="Create a new ClearVariableAction" elementTypeIdRef="org.eclipse.papyrus.uml.ClearVariableAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvut-mEeOG_N6WMq4D6g" label="Create a new Collaboration" elementTypeIdRef="org.eclipse.papyrus.uml.Collaboration" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvu9-mEeOG_N6WMq4D6g" label="Create a new CollaborationUse" elementTypeIdRef="org.eclipse.papyrus.uml.CollaborationUse" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvvN-mEeOG_N6WMq4D6g" label="Create a new CombinedFragment" elementTypeIdRef="org.eclipse.papyrus.uml.CombinedFragment" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvvd-mEeOG_N6WMq4D6g" label="Create a new Comment" elementTypeIdRef="org.eclipse.papyrus.uml.Comment" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvvt-mEeOG_N6WMq4D6g" label="Create a new Component" elementTypeIdRef="org.eclipse.papyrus.uml.Component" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvv9-mEeOG_N6WMq4D6g" label="Create a new ConditionalNode" elementTypeIdRef="org.eclipse.papyrus.uml.ConditionalNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvwN-mEeOG_N6WMq4D6g" label="Create a new ConnectableElementTemplateParameter" elementTypeIdRef="org.eclipse.papyrus.uml.ConnectableElementTemplateParameter" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvwd-mEeOG_N6WMq4D6g" label="Create a new ConnectionPointReference" elementTypeIdRef="org.eclipse.papyrus.uml.ConnectionPointReference" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvwt-mEeOG_N6WMq4D6g" label="Create a new ConnectorEnd" elementTypeIdRef="org.eclipse.papyrus.uml.ConnectorEnd" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvw9-mEeOG_N6WMq4D6g" label="Create a new ConsiderIgnoreFragment" elementTypeIdRef="org.eclipse.papyrus.uml.ConsiderIgnoreFragment" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvxN-mEeOG_N6WMq4D6g" label="Create a new Constraint" elementTypeIdRef="org.eclipse.papyrus.uml.Constraint" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvxd-mEeOG_N6WMq4D6g" label="Create a new Continuation" elementTypeIdRef="org.eclipse.papyrus.uml.Continuation" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvxt-mEeOG_N6WMq4D6g" label="Create a new ControlFlow" elementTypeIdRef="org.eclipse.papyrus.uml.ControlFlow" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvx9-mEeOG_N6WMq4D6g" label="Create a new CreateLinkAction" elementTypeIdRef="org.eclipse.papyrus.uml.CreateLinkAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvyN-mEeOG_N6WMq4D6g" label="Create a new CreateLinkObjectAction" elementTypeIdRef="org.eclipse.papyrus.uml.CreateLinkObjectAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvyd-mEeOG_N6WMq4D6g" label="Create a new CreateObjectAction" elementTypeIdRef="org.eclipse.papyrus.uml.CreateObjectAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvyt-mEeOG_N6WMq4D6g" label="Create a new DataStoreNode" elementTypeIdRef="org.eclipse.papyrus.uml.DataStoreNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvy9-mEeOG_N6WMq4D6g" label="Create a new DataType" elementTypeIdRef="org.eclipse.papyrus.uml.DataType" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvzN-mEeOG_N6WMq4D6g" label="Create a new DecisionNode" elementTypeIdRef="org.eclipse.papyrus.uml.DecisionNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvzd-mEeOG_N6WMq4D6g" label="Create a new DeploymentSpecification" elementTypeIdRef="org.eclipse.papyrus.uml.DeploymentSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvzt-mEeOG_N6WMq4D6g" label="Create a new DestroyLinkAction" elementTypeIdRef="org.eclipse.papyrus.uml.DestroyLinkAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pvz9-mEeOG_N6WMq4D6g" label="Create a new DestroyObjectAction" elementTypeIdRef="org.eclipse.papyrus.uml.DestroyObjectAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pv0N-mEeOG_N6WMq4D6g" label="Create a new DestructionOccurrenceSpecification" elementTypeIdRef="org.eclipse.papyrus.uml.DestructionOccurrenceSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02pv0d-mEeOG_N6WMq4D6g" label="Create a new Device" elementTypeIdRef="org.eclipse.papyrus.uml.Device" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWsN-mEeOG_N6WMq4D6g" label="Create a new Duration" elementTypeIdRef="org.eclipse.papyrus.uml.Duration" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWsd-mEeOG_N6WMq4D6g" label="Create a new DurationConstraint" elementTypeIdRef="org.eclipse.papyrus.uml.DurationConstraint" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWst-mEeOG_N6WMq4D6g" label="Create a new DurationInterval" elementTypeIdRef="org.eclipse.papyrus.uml.DurationInterval" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWs9-mEeOG_N6WMq4D6g" label="Create a new DurationObservation" elementTypeIdRef="org.eclipse.papyrus.uml.DurationObservation" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_uS3cEN-yEeOUcI4WNK0OZw" label="Create a new ElementImport" elementTypeIdRef="org.eclipse.papyrus.uml.ElementImport" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWtN-mEeOG_N6WMq4D6g" label="Create a new Enumeration" elementTypeIdRef="org.eclipse.papyrus.uml.Enumeration" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWtd-mEeOG_N6WMq4D6g" label="Create a new EnumerationLiteral" elementTypeIdRef="org.eclipse.papyrus.uml.EnumerationLiteral" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWtt-mEeOG_N6WMq4D6g" label="Create a new ExceptionHandler" elementTypeIdRef="org.eclipse.papyrus.uml.ExceptionHandler" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWt9-mEeOG_N6WMq4D6g" label="Create a new ExecutionEnvironment" elementTypeIdRef="org.eclipse.papyrus.uml.ExecutionEnvironment" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWuN-mEeOG_N6WMq4D6g" label="Create a new ExecutionOccurrenceSpecification" elementTypeIdRef="org.eclipse.papyrus.uml.ExecutionOccurrenceSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWud-mEeOG_N6WMq4D6g" label="Create a new ExpansionNode" elementTypeIdRef="org.eclipse.papyrus.uml.ExpansionNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWut-mEeOG_N6WMq4D6g" label="Create a new ExpansionRegion" elementTypeIdRef="org.eclipse.papyrus.uml.ExpansionRegion" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWu9-mEeOG_N6WMq4D6g" label="Create a new Expression" elementTypeIdRef="org.eclipse.papyrus.uml.Expression" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWvN-mEeOG_N6WMq4D6g" label="Create a new ExtensionEnd" elementTypeIdRef="org.eclipse.papyrus.uml.ExtensionEnd" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWvd-mEeOG_N6WMq4D6g" label="Create a new ExtensionPoint" elementTypeIdRef="org.eclipse.papyrus.uml.ExtensionPoint" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWvt-mEeOG_N6WMq4D6g" label="Create a new FinalState" elementTypeIdRef="org.eclipse.papyrus.uml.FinalState" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWv9-mEeOG_N6WMq4D6g" label="Create a new FlowFinalNode" elementTypeIdRef="org.eclipse.papyrus.uml.FlowFinalNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWwN-mEeOG_N6WMq4D6g" label="Create a new ForkNode" elementTypeIdRef="org.eclipse.papyrus.uml.ForkNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWwd-mEeOG_N6WMq4D6g" label="Create a new FunctionBehavior" elementTypeIdRef="org.eclipse.papyrus.uml.FunctionBehavior"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWwt-mEeOG_N6WMq4D6g" label="Create a new Gate" elementTypeIdRef="org.eclipse.papyrus.uml.Gate" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWw9-mEeOG_N6WMq4D6g" label="Create a new GeneralOrdering" elementTypeIdRef="org.eclipse.papyrus.uml.GeneralOrdering" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWxd-mEeOG_N6WMq4D6g" label="Create a new Image" elementTypeIdRef="org.eclipse.papyrus.uml.Image" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWxt-mEeOG_N6WMq4D6g" label="Create a new InformationItem" elementTypeIdRef="org.eclipse.papyrus.uml.InformationItem" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWx9-mEeOG_N6WMq4D6g" label="Create a new InitialNode" elementTypeIdRef="org.eclipse.papyrus.uml.InitialNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWyN-mEeOG_N6WMq4D6g" label="Create a new InputPin" elementTypeIdRef="org.eclipse.papyrus.uml.InputPin" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWyd-mEeOG_N6WMq4D6g" label="Create a new InstanceSpecification" elementTypeIdRef="org.eclipse.papyrus.uml.InstanceSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWyt-mEeOG_N6WMq4D6g" label="Create a new InstanceValue" elementTypeIdRef="org.eclipse.papyrus.uml.InstanceValue" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWy9-mEeOG_N6WMq4D6g" label="Create a new Interaction" elementTypeIdRef="org.eclipse.papyrus.uml.Interaction"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWzN-mEeOG_N6WMq4D6g" label="Create a new InteractionConstraint" elementTypeIdRef="org.eclipse.papyrus.uml.InteractionConstraint" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWzd-mEeOG_N6WMq4D6g" label="Create a new InteractionOperand" elementTypeIdRef="org.eclipse.papyrus.uml.InteractionOperand" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWzt-mEeOG_N6WMq4D6g" label="Create a new InteractionUse" elementTypeIdRef="org.eclipse.papyrus.uml.InteractionUse" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qWz9-mEeOG_N6WMq4D6g" label="Create a new Interface" elementTypeIdRef="org.eclipse.papyrus.uml.Interface" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW0N-mEeOG_N6WMq4D6g" label="Create a new InterruptibleActivityRegion" elementTypeIdRef="org.eclipse.papyrus.uml.InterruptibleActivityRegion" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW0d-mEeOG_N6WMq4D6g" label="Create a new Interval" elementTypeIdRef="org.eclipse.papyrus.uml.Interval" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW0t-mEeOG_N6WMq4D6g" label="Create a new IntervalConstraint" elementTypeIdRef="org.eclipse.papyrus.uml.IntervalConstraint" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW09-mEeOG_N6WMq4D6g" label="Create a new JoinNode" elementTypeIdRef="org.eclipse.papyrus.uml.JoinNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW1N-mEeOG_N6WMq4D6g" label="Create a new Lifeline" elementTypeIdRef="org.eclipse.papyrus.uml.Lifeline" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW1d-mEeOG_N6WMq4D6g" label="Create a new LinkEndCreationData" elementTypeIdRef="org.eclipse.papyrus.uml.LinkEndCreationData" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW1t-mEeOG_N6WMq4D6g" label="Create a new LinkEndData" elementTypeIdRef="org.eclipse.papyrus.uml.LinkEndData" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW19-mEeOG_N6WMq4D6g" label="Create a new LinkEndDestructionData" elementTypeIdRef="org.eclipse.papyrus.uml.LinkEndDestructionData" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW2N-mEeOG_N6WMq4D6g" label="Create a new LiteralBoolean" elementTypeIdRef="org.eclipse.papyrus.uml.LiteralBoolean" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW2d-mEeOG_N6WMq4D6g" label="Create a new LiteralInteger" elementTypeIdRef="org.eclipse.papyrus.uml.LiteralInteger"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW2t-mEeOG_N6WMq4D6g" label="Create a new LiteralNull" elementTypeIdRef="org.eclipse.papyrus.uml.LiteralNull" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW29-mEeOG_N6WMq4D6g" label="Create a new LiteralReal" elementTypeIdRef="org.eclipse.papyrus.uml.LiteralReal" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW3N-mEeOG_N6WMq4D6g" label="Create a new LiteralString" elementTypeIdRef="org.eclipse.papyrus.uml.LiteralString" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW3d-mEeOG_N6WMq4D6g" label="Create a new LiteralUnlimitedNatural" elementTypeIdRef="org.eclipse.papyrus.uml.LiteralUnlimitedNatural" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW3t-mEeOG_N6WMq4D6g" label="Create a new LoopNode" elementTypeIdRef="org.eclipse.papyrus.uml.LoopNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW39-mEeOG_N6WMq4D6g" label="Create a new MergeNode" elementTypeIdRef="org.eclipse.papyrus.uml.MergeNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW4N-mEeOG_N6WMq4D6g" label="Create a new Message" elementTypeIdRef="org.eclipse.papyrus.uml.Message" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW4d-mEeOG_N6WMq4D6g" label="Create a new MessageOccurrenceSpecification" elementTypeIdRef="org.eclipse.papyrus.uml.MessageOccurrenceSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW4t-mEeOG_N6WMq4D6g" label="Create a new Model" elementTypeIdRef="org.eclipse.papyrus.uml.Model" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW49-mEeOG_N6WMq4D6g" label="Create a new Node" elementTypeIdRef="org.eclipse.papyrus.uml.Node" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW5N-mEeOG_N6WMq4D6g" label="Create a new ObjectFlow" elementTypeIdRef="org.eclipse.papyrus.uml.ObjectFlow" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW5d-mEeOG_N6WMq4D6g" label="Create a new OccurrenceSpecification" elementTypeIdRef="org.eclipse.papyrus.uml.OccurrenceSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW5t-mEeOG_N6WMq4D6g" label="Create a new OpaqueAction" elementTypeIdRef="org.eclipse.papyrus.uml.OpaqueAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW59-mEeOG_N6WMq4D6g" label="Create a new OpaqueBehavior" elementTypeIdRef="org.eclipse.papyrus.uml.OpaqueBehavior"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW6N-mEeOG_N6WMq4D6g" label="Create a new OpaqueExpression" elementTypeIdRef="org.eclipse.papyrus.uml.OpaqueExpression" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW6d-mEeOG_N6WMq4D6g" label="Create a new Operation" elementTypeIdRef="org.eclipse.papyrus.uml.Operation" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW6t-mEeOG_N6WMq4D6g" label="Create a new OperationTemplateParameter" elementTypeIdRef="org.eclipse.papyrus.uml.OperationTemplateParameter" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW69-mEeOG_N6WMq4D6g" label="Create a new OutputPin" elementTypeIdRef="org.eclipse.papyrus.uml.OutputPin" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW7N-mEeOG_N6WMq4D6g" label="Create a new Package" elementTypeIdRef="org.eclipse.papyrus.uml.Package" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_uS4qMN-yEeOUcI4WNK0OZw" label="Create a new PackageImport" elementTypeIdRef="org.eclipse.papyrus.uml.PackageImport" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW7d-mEeOG_N6WMq4D6g" label="Create a new Parameter" elementTypeIdRef="org.eclipse.papyrus.uml.Parameter" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW7t-mEeOG_N6WMq4D6g" label="Create a new ParameterSet" elementTypeIdRef="org.eclipse.papyrus.uml.ParameterSet" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW79-mEeOG_N6WMq4D6g" label="Create a new PartDecomposition" elementTypeIdRef="org.eclipse.papyrus.uml.PartDecomposition" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW8N-mEeOG_N6WMq4D6g" label="Create a new Port" elementTypeIdRef="org.eclipse.papyrus.uml.Port" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW8d-mEeOG_N6WMq4D6g" label="Create a new PrimitiveType" elementTypeIdRef="org.eclipse.papyrus.uml.PrimitiveType" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW8t-mEeOG_N6WMq4D6g" label="Create a new Profile" elementTypeIdRef="org.eclipse.papyrus.uml.Profile" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW89-mEeOG_N6WMq4D6g" label="Create a new Property" elementTypeIdRef="org.eclipse.papyrus.uml.Property" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW9N-mEeOG_N6WMq4D6g" label="Create a new ProtocolStateMachine" elementTypeIdRef="org.eclipse.papyrus.uml.ProtocolStateMachine"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW9d-mEeOG_N6WMq4D6g" label="Create a new ProtocolTransition" elementTypeIdRef="org.eclipse.papyrus.uml.ProtocolTransition" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW9t-mEeOG_N6WMq4D6g" label="Create a new Pseudostate" elementTypeIdRef="org.eclipse.papyrus.uml.Pseudostate" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW99-mEeOG_N6WMq4D6g" label="Create a new QualifierValue" elementTypeIdRef="org.eclipse.papyrus.uml.QualifierValue" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW-N-mEeOG_N6WMq4D6g" label="Create a new RaiseExceptionAction" elementTypeIdRef="org.eclipse.papyrus.uml.RaiseExceptionAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW-d-mEeOG_N6WMq4D6g" label="Create a new ReadExtentAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReadExtentAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW-t-mEeOG_N6WMq4D6g" label="Create a new ReadIsClassifiedObjectAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReadIsClassifiedObjectAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW-9-mEeOG_N6WMq4D6g" label="Create a new ReadLinkAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReadLinkAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW_N-mEeOG_N6WMq4D6g" label="Create a new ReadLinkObjectEndAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReadLinkObjectEndAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW_d-mEeOG_N6WMq4D6g" label="Create a new ReadLinkObjectEndQualifierAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReadLinkObjectEndQualifierAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW_t-mEeOG_N6WMq4D6g" label="Create a new ReadSelfAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReadSelfAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qW_9-mEeOG_N6WMq4D6g" label="Create a new ReadStructuralFeatureAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReadStructuralFeatureAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXAN-mEeOG_N6WMq4D6g" label="Create a new ReadVariableAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReadVariableAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXAd-mEeOG_N6WMq4D6g" label="Create a new Reception" elementTypeIdRef="org.eclipse.papyrus.uml.Reception" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXAt-mEeOG_N6WMq4D6g" label="Create a new ReclassifyObjectAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReclassifyObjectAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXA9-mEeOG_N6WMq4D6g" label="Create a new RedefinableTemplateSignature" elementTypeIdRef="org.eclipse.papyrus.uml.RedefinableTemplateSignature" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXBN-mEeOG_N6WMq4D6g" label="Create a new ReduceAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReduceAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXBd-mEeOG_N6WMq4D6g" label="Create a new Region" elementTypeIdRef="org.eclipse.papyrus.uml.Region" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXBt-mEeOG_N6WMq4D6g" label="Create a new RemoveStructuralFeatureValueAction" elementTypeIdRef="org.eclipse.papyrus.uml.RemoveStructuralFeatureValueAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXB9-mEeOG_N6WMq4D6g" label="Create a new RemoveVariableValueAction" elementTypeIdRef="org.eclipse.papyrus.uml.RemoveVariableValueAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXCN-mEeOG_N6WMq4D6g" label="Create a new ReplyAction" elementTypeIdRef="org.eclipse.papyrus.uml.ReplyAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXCd-mEeOG_N6WMq4D6g" label="Create a new SendObjectAction" elementTypeIdRef="org.eclipse.papyrus.uml.SendObjectAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXCt-mEeOG_N6WMq4D6g" label="Create a new SendSignalAction" elementTypeIdRef="org.eclipse.papyrus.uml.SendSignalAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXC9-mEeOG_N6WMq4D6g" label="Create a new SequenceNode" elementTypeIdRef="org.eclipse.papyrus.uml.SequenceNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXDN-mEeOG_N6WMq4D6g" label="Create a new Signal" elementTypeIdRef="org.eclipse.papyrus.uml.Signal" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXDd-mEeOG_N6WMq4D6g" label="Create a new SignalEvent" elementTypeIdRef="org.eclipse.papyrus.uml.SignalEvent" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXDt-mEeOG_N6WMq4D6g" label="Create a new Slot" elementTypeIdRef="org.eclipse.papyrus.uml.Slot" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXD9-mEeOG_N6WMq4D6g" label="Create a new StartClassifierBehaviorAction" elementTypeIdRef="org.eclipse.papyrus.uml.StartClassifierBehaviorAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXEN-mEeOG_N6WMq4D6g" label="Create a new StartObjectBehaviorAction" elementTypeIdRef="org.eclipse.papyrus.uml.StartObjectBehaviorAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXEd-mEeOG_N6WMq4D6g" label="Create a new State" elementTypeIdRef="org.eclipse.papyrus.uml.State" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXEt-mEeOG_N6WMq4D6g" label="Create a new StateInvariant" elementTypeIdRef="org.eclipse.papyrus.uml.StateInvariant" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXE9-mEeOG_N6WMq4D6g" label="Create a new StateMachine" elementTypeIdRef="org.eclipse.papyrus.uml.StateMachine"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXFN-mEeOG_N6WMq4D6g" label="Create a new Stereotype" elementTypeIdRef="org.eclipse.papyrus.uml.Stereotype" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXFd-mEeOG_N6WMq4D6g" label="Create a new Refine" elementTypeIdRef="org.eclipse.papyrus.uml.stereotype.Refine" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXFt-mEeOG_N6WMq4D6g" label="Create a new Trace" elementTypeIdRef="org.eclipse.papyrus.uml.stereotype.Trace" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXF9-mEeOG_N6WMq4D6g" label="Create a new StringExpression" elementTypeIdRef="org.eclipse.papyrus.uml.StringExpression" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXGN-mEeOG_N6WMq4D6g" label="Create a new StructuredActivityNode" elementTypeIdRef="org.eclipse.papyrus.uml.StructuredActivityNode" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXGd-mEeOG_N6WMq4D6g" label="Create a new TemplateParameter" elementTypeIdRef="org.eclipse.papyrus.uml.TemplateParameter" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXGt-mEeOG_N6WMq4D6g" label="Create a new TemplateParameterSubstitution" elementTypeIdRef="org.eclipse.papyrus.uml.TemplateParameterSubstitution" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXG9-mEeOG_N6WMq4D6g" label="Create a new TemplateSignature" elementTypeIdRef="org.eclipse.papyrus.uml.TemplateSignature" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXHN-mEeOG_N6WMq4D6g" label="Create a new TestIdentityAction" elementTypeIdRef="org.eclipse.papyrus.uml.TestIdentityAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXHd-mEeOG_N6WMq4D6g" label="Create a new TimeConstraint" elementTypeIdRef="org.eclipse.papyrus.uml.TimeConstraint" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXHt-mEeOG_N6WMq4D6g" label="Create a new TimeEvent" elementTypeIdRef="org.eclipse.papyrus.uml.TimeEvent" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXH9-mEeOG_N6WMq4D6g" label="Create a new TimeExpression" elementTypeIdRef="org.eclipse.papyrus.uml.TimeExpression" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXIN-mEeOG_N6WMq4D6g" label="Create a new TimeInterval" elementTypeIdRef="org.eclipse.papyrus.uml.TimeInterval" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXId-mEeOG_N6WMq4D6g" label="Create a new TimeObservation" elementTypeIdRef="org.eclipse.papyrus.uml.TimeObservation" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXIt-mEeOG_N6WMq4D6g" label="Create a new Transition" elementTypeIdRef="org.eclipse.papyrus.uml.Transition" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXI9-mEeOG_N6WMq4D6g" label="Create a new Trigger" elementTypeIdRef="org.eclipse.papyrus.uml.Trigger" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXJN-mEeOG_N6WMq4D6g" label="Create a new UnmarshallAction" elementTypeIdRef="org.eclipse.papyrus.uml.UnmarshallAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXJd-mEeOG_N6WMq4D6g" label="Create a new UseCase" elementTypeIdRef="org.eclipse.papyrus.uml.UseCase" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXJt-mEeOG_N6WMq4D6g" label="Create a new ValuePin" elementTypeIdRef="org.eclipse.papyrus.uml.ValuePin" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXJ9-mEeOG_N6WMq4D6g" label="Create a new ValueSpecificationAction" elementTypeIdRef="org.eclipse.papyrus.uml.ValueSpecificationAction" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_02qXKN-mEeOG_N6WMq4D6g" label="Create a new Variable" elementTypeIdRef="org.eclipse.papyrus.uml.Variable" displayAllRoles="false"/>
 </ElementCreationMenuModel:Folder>
