@@ -4,15 +4,16 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *     Tatiana Fesenko(CEA) - initial API and implementation
  *     Christian W. Damus (CEA) - Support creating models in repositories (CDO)
- *     
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.wizards.pages;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
@@ -27,7 +28,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
 /**
  * This WizardPage can create an empty .uml2 file for the PapyrusEditor.
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public class NewModelFilePage extends WizardNewFileCreationPage {
@@ -43,7 +44,7 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 
 	/**
 	 * Instantiates a new new model file page.
-	 * 
+	 *
 	 * @param selection
 	 *        the selection
 	 * @param modelKindName
@@ -55,7 +56,7 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 
 	/**
 	 * Instantiates a new new model file page.
-	 * 
+	 *
 	 * @param pageId
 	 *        the page id
 	 * @param selection
@@ -72,7 +73,7 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 
 	/**
 	 * Creates the control.
-	 * 
+	 *
 	 * @param parent
 	 *        the parent {@inheritDoc}
 	 */
@@ -85,7 +86,7 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 
 	/**
 	 * Diagram extension changed.
-	 * 
+	 *
 	 * @param newExtension
 	 *        the new extension
 	 * @return the i status
@@ -114,10 +115,16 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 		return Status.OK_STATUS;
 	}
 
+	public IFile createFileHandle() {
+		IPath containerFullPath = getContainerFullPath();
+		String fileName = getFileName();
+		IPath filePath = containerFullPath.append(fileName);
+		return super.createFileHandle(filePath);
+	}
 
 	/**
 	 * Gets the unique file name.
-	 * 
+	 *
 	 * @param containerFullPath
 	 *        the container full path
 	 * @param fileName

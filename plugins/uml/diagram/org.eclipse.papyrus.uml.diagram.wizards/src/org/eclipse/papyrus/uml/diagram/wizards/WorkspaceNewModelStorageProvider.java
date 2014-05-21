@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -86,10 +86,10 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 
 	/**
 	 * Creates the new model file page, if required.
-	 * 
+	 *
 	 * @param selection
 	 *        the selection
-	 * 
+	 *
 	 * @return the new model file page, or {@code null} if none
 	 */
 	protected NewModelFilePage createNewModelFilePage(IStructuredSelection selection) {
@@ -112,7 +112,7 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 	/**
 	 * Suggests a name of diagram file for the domain model file without
 	 * extension.
-	 * 
+	 *
 	 * @param domainModel
 	 *        the domain model
 	 * @return the diagram file name
@@ -126,7 +126,7 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 	}
 
 	public URI createNewModelURI(String categoryId) {
-		IFile newFile = newModelFilePage.createNewFile();
+		IFile newFile = newModelFilePage.createFileHandle(); //Don't create an empty file, to avoid Resource load exceptions (Empty files are not valid EMF Resources)
 		return (newFile == null) ? null : URI.createPlatformResourceURI(newFile.getFullPath().toString(), true);
 	}
 
