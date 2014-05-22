@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.ui.IWorkbench;
 
 /**
- * 
+ *
  * The New Papyrus Model Wizard.
  * If being invoke on the *.uml file - initializes a new Papyrus diagram for the selected domain model.
  * If is selected is empty or in not uml - creates a new Papyrus Model.
@@ -48,10 +48,10 @@ public class InitModelWizard extends CreateModelWizard {
 	public boolean isInitModelWizard() {
 		return true;
 	}
-	
+
 	/**
 	 * Inits the.
-	 * 
+	 *
 	 * @param workbench
 	 *        the workbench
 	 * @param selection
@@ -71,7 +71,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Creates the select root element page.
-	 * 
+	 *
 	 * @param selection
 	 *        the initial workbench selection
 	 * @return the select root element page
@@ -86,7 +86,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Creates the select diagram kind page.
-	 * 
+	 *
 	 * @return the select diagram kind page {@inheritDoc}
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Adds the pages.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Returns true is the file can be served as a model model for the diagram.
-	 * 
+	 *
 	 * @param file
 	 *        the file
 	 * @return true, if is supported domain model file
@@ -124,26 +124,23 @@ public class InitModelWizard extends CreateModelWizard {
 	public static boolean isSupportedDomainModelFile(IFile file) {
 		//		if(file != null && UmlModel.UML_FILE_EXTENSION.equals(file.getFileExtension())){System.err.println("is SupportedDomainModelFile");}
 		//		else {System.err.println("not SupportedDomainModelFile");}
-		return file != null
-			&& isSupportedDomainModelResource(URI.createPlatformResourceURI(
-				file.getFullPath().toString(), true));
+		return file != null && isSupportedDomainModelResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
 	}
 
 	/**
 	 * Returns true if the resource can be served as a model model for the diagram.
-	 * 
+	 *
 	 * @param uri
 	 *        the resource's URI
 	 * @return true, if is supported domain model resource
 	 */
 	public static boolean isSupportedDomainModelResource(URI uri) {
-		return (uri != null)
-			&& UmlModel.UML_FILE_EXTENSION.equals(uri.fileExtension());
+		return (uri != null) && UmlModel.UML_FILE_EXTENSION.equals(uri.fileExtension());
 	}
 
 	/**
 	 * Checks if is supported domain model file.
-	 * 
+	 *
 	 * @param sselection
 	 *        the sselection
 	 * @return true, if is supported domain model file
@@ -155,7 +152,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Creates the papyrus models.
-	 * 
+	 *
 	 * @param diResourceSet
 	 *        the di resource set
 	 * @param newURI
@@ -164,8 +161,7 @@ public class InitModelWizard extends CreateModelWizard {
 	@Override
 	protected void createPapyrusModels(ModelSet modelSet, URI newURI) {
 		if(isCreateFromExistingDomainModel()) {
-			RecordingCommand command = new PapyrusModelFromExistingDomainModelCommand(
-				modelSet, newURI, getRoot());
+			RecordingCommand command = new PapyrusModelFromExistingDomainModelCommand(modelSet, newURI, getRoot());
 			getCommandStack(modelSet).execute(command);
 		} else {
 			super.createPapyrusModels(modelSet, newURI);
@@ -174,7 +170,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Inits the domain model.
-	 * 
+	 *
 	 * @param diResourceSet
 	 *        the di resource set
 	 * @param newURI
@@ -185,7 +181,8 @@ public class InitModelWizard extends CreateModelWizard {
 	@Override
 	protected void initDomainModel(ModelSet modelSet, final URI newURI, String diagramCategoryId) {
 		if(isCreateFromExistingDomainModel()) {
-			// do nothing
+			//We force the creation of the di file
+			modelSet.createResource(newURI);
 		} else {
 			super.initDomainModel(modelSet, newURI, diagramCategoryId);
 		}
@@ -193,7 +190,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Inits the diagrams.
-	 * 
+	 *
 	 * @param diResourceSet
 	 *        the di resource set
 	 * @param categoryId
@@ -206,7 +203,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Checks if is creates the from existing domain model.
-	 * 
+	 *
 	 * @return true, if is creates the from existing domain model
 	 */
 	public boolean isCreateFromExistingDomainModel() {
@@ -223,7 +220,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 	/**
 	 * Gets the root.
-	 * 
+	 *
 	 * @return the root
 	 */
 	private EObject getRoot() {
@@ -243,23 +240,21 @@ public class InitModelWizard extends CreateModelWizard {
 
 		/**
 		 * Instantiates a new new diagram for existing model page.
-		 * 
+		 *
 		 * @param selection
-		 *            the selection
+		 *        the selection
 		 * @param defaultFileName
-		 *            the default file name
+		 *        the default file name
 		 * @param modelKindName
-		 *            the user-presentable (translatable) name of the kind of
-		 *            model to create
+		 *        the user-presentable (translatable) name of the kind of
+		 *        model to create
 		 * @param diagramExtension
-		 *            the diagram extension
+		 *        the diagram extension
 		 */
-		public NewDiagramForExistingModelPage(IStructuredSelection selection,
-				String modelKindName, String defaultFileName,
-				String diagramExtension) {
-			
+		public NewDiagramForExistingModelPage(IStructuredSelection selection, String modelKindName, String defaultFileName, String diagramExtension) {
+
 			super(selection, modelKindName);
-			
+
 			myDiagramFileName = defaultFileName;
 			setFileName(defaultFileName);
 			setFileExtension(diagramExtension);

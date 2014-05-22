@@ -588,11 +588,12 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 *        the category id
 	 */
 	protected void initDiagrams(ModelSet resourceSet, EObject root, String categoryId) {
-		if (root == null)  {
-			UmlModel model = (UmlModel)resourceSet.getModel(UmlModel.MODEL_ID);
-			EList<EObject> roots = model.getResource().getContents();
-			if (!roots.isEmpty())
-				root = roots.get(0);
+		//FIXME we cannot properly set the root object
+		UmlModel model = (UmlModel)resourceSet.getModel(UmlModel.MODEL_ID);
+		EList<EObject> roots = model.getResource().getContents();
+		if(!roots.isEmpty()) {
+
+			root = roots.get(0);
 		}
 		List<ViewPrototype> creationCommands = getPrototypesFor(categoryId);
 		String diagramName = selectDiagramKindPage.getDiagramName();
