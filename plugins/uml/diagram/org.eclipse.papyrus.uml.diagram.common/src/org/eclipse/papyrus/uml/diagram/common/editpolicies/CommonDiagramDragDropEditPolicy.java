@@ -539,7 +539,7 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		List<View> existingViews = DiagramEditPartsUtil.findViews(droppedObject, getViewer());
 
 		// only allow one view instance of a single element by diagram
-		if(existingViews.isEmpty()) {
+		//if(existingViews.isEmpty()) {
 			IAdaptable elementAdapter = new EObjectAdapter(droppedObject);
 
 			ViewDescriptor descriptor = new ViewDescriptor(elementAdapter, Node.class, semanticHint, ViewUtil.APPEND, true, getDiagramPreferencesHint());
@@ -560,9 +560,9 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 			// set the viewdescriptor as result
 			// it then can be used as an adaptable to retrieve the View
 			return new CommandProxyWithResult(command, descriptor);
-		}
+		//}
 
-		return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
+		//return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
 	}
 	
 	/**
