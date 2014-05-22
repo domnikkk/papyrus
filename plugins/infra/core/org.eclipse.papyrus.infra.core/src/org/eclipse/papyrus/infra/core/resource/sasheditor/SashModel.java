@@ -147,7 +147,11 @@ public class SashModel extends EMFLogicalModel implements IModel {
 		if(isLegacy(uriWithoutExtension)) {
 			super.createModel(getSashModelStoreURI(uriWithoutExtension).trimFileExtension());
 		} else {
-			super.createModel(uriWithoutExtension);
+			if(!uriWithoutExtension.lastSegment().endsWith(SASH_MODEL_FILE_EXTENSION)) {//Bug 434839 : we create a new papyrus sashmodel from an existing model.profile.uml and were avoiding to trim .profile
+				super.createModel(getSashModelStoreURI(uriWithoutExtension).trimFileExtension());
+			} else {
+				super.createModel(uriWithoutExtension);
+			}
 		}
 	}
 

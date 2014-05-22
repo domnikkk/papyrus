@@ -976,8 +976,12 @@ public class ModelSet extends ResourceSetImpl {
 		return new Internal() {
 
 			@Override
-			public void setPrimaryModelResourceURI(URI uri) {
-				setURIWithoutExtension(uri.trimFileExtension());
+			public void setPrimaryModelResourceURI(URI uri) { //Bug 434839 : we create a new papyrus sashmodel from an existing model.profile.uml and we are avoiding to trim .profile
+				if(uri.lastSegment().endsWith("profile")) {
+					setURIWithoutExtension(uri);
+				} else {
+					setURIWithoutExtension(uri.trimFileExtension());
+				}
 			}
 
 			@Override
