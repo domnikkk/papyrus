@@ -276,20 +276,19 @@ public class ThemeManager {
 	 * @return <code>true</code> if theme can be edited, otherwise <code>false<code>
 	 */
 	public boolean isEditable(String id) {
-		boolean isEditable = false;
 
+		// Check if theme exist in temporary stack (edited or not saved)
+		boolean isEditable = temporaryThemesList.contains(allThemes.get(id));
+
+		// Check if theme is in persisted workspace themes
 		WorkspaceThemes workspacePreference = getWorkspaceThemesPreferences();
-		if(workspacePreference != null) {
-
-			// Check if theme existing in temporary
-			isEditable = temporaryThemesList.contains(allThemes.get(id));
+		if(workspacePreference != null && !isEditable) {
 
 			//Check if theme comes from workspace preferences
 			Iterator<Theme> themesIterator = workspacePreference.getThemes().iterator();
 			while(themesIterator.hasNext() && !isEditable) {
 				isEditable = id.equals(themesIterator.next().getId());
 			}
-
 
 		}
 
