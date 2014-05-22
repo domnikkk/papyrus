@@ -581,6 +581,10 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 		editPart.getViewer().getSelectionManager().appendSelection(editPart);
 	}
 
+	public void deselect(EditPart editPart) {
+		editPart.getViewer().getSelectionManager().deselect(editPart);
+	}
+
 	public PaletteViewer getPalette() {
 		return getPalette(getActiveDiagramEditor());
 	}

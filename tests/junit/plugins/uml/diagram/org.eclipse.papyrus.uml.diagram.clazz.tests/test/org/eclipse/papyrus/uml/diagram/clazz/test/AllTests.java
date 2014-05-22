@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.clazz.test;
 
 import org.eclipse.papyrus.uml.diagram.clazz.test.canonical.AllCanonicalTests;
 import org.eclipse.papyrus.uml.diagram.clazz.test.canonical.TestClassDiagram;
+import org.eclipse.papyrus.uml.diagram.clazz.test.copyPaste.ConstraintPasteStrategyTest;
 import org.eclipse.papyrus.uml.diagram.clazz.test.legacy.PackageDiagramLegacyTest;
 import org.eclipse.papyrus.uml.diagram.clazz.test.tests.Bug382954_InstanceSpecificationLink;
 import org.junit.runner.RunWith;
@@ -30,7 +31,8 @@ import org.junit.runners.Suite.SuiteClasses;
 		AllCanonicalTests.class,
 		TestClassDiagram.class,
 		PackageDiagramLegacyTest.class,
-		Bug382954_InstanceSpecificationLink.class
+		Bug382954_InstanceSpecificationLink.class,
+		ConstraintPasteStrategyTest.class
 // load
 // LoadTests.class
 
