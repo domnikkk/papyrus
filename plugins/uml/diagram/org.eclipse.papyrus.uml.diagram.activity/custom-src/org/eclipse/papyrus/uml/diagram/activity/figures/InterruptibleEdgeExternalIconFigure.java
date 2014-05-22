@@ -23,6 +23,6 @@ import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 public class InterruptibleEdgeExternalIconFigure extends ImageFigure {
 
 	public InterruptibleEdgeExternalIconFigure() {
-		super(UMLDiagramEditorPlugin.imageDescriptorFromPlugin(UMLDiagramEditorPlugin.ID, "icons/InterruptibleEdgeIcon.png").createImage(), 0);
+		super(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(UMLDiagramEditorPlugin.ID, "icons/InterruptibleEdgeIcon.png"), 0);
 	}
 }

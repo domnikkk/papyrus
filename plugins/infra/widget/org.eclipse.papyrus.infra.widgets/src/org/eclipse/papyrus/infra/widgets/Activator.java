@@ -14,6 +14,7 @@ package org.eclipse.papyrus.infra.widgets;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.papyrus.infra.core.log.LogHelper;
+import org.eclipse.papyrus.infra.widgets.util.ImageDescriptorManager;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -37,6 +38,11 @@ public class Activator extends AbstractUIPlugin {
 	 * The logger for this plugin
 	 */
 	public static LogHelper log;
+	
+	/**
+	 * The logger for this plugin
+	 */
+	public ImageDescriptorManager imageDescriptorManager;
 
 	/**
 	 * The constructor
@@ -54,6 +60,7 @@ public class Activator extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 		log = new LogHelper(plugin);
+		imageDescriptorManager = new ImageDescriptorManager();
 	}
 
 	/*
@@ -64,6 +71,9 @@ public class Activator extends AbstractUIPlugin {
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
+		log=null;
+		imageDescriptorManager.reset();
+		imageDescriptorManager = null;
 		super.stop(context);
 	}
 
@@ -108,6 +118,20 @@ public class Activator extends AbstractUIPlugin {
 		return image;
 	}
 
+	public Image getImage(ImageDescriptor descriptor) {
+		final ImageRegistry registry = getImageRegistry();
+		if(imageDescriptorManager==null || registry == null) {
+			return null; // should never happen => is set to null when activator is not started 
+		}
+		String key = imageDescriptorManager.getKey(descriptor);
+		Image image = registry.get(key);
+		if(image == null) {
+			registry.put(key, descriptor);
+			image = registry.get(key);
+		}
+		return image;
+	}
+	
 	/**
 	 * Returns the image from the given image location
 	 * 

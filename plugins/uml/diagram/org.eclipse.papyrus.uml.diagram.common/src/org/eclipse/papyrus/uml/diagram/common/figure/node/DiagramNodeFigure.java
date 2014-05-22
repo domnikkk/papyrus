@@ -22,15 +22,16 @@ import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 public class DiagramNodeFigure extends PapyrusNodeFigure {
+
+	/** figure for external call */
+	private static final String ICONS_OBJ16_CALL_GIF = "/icons/obj16/call.gif";
 
 	/**
 	 * @deprecated use org.eclipse.papyrus.uml.diagram.common.figure.layout.
@@ -107,8 +108,7 @@ public class DiagramNodeFigure extends PapyrusNodeFigure {
 	}
 
 	public void setIcon(Image image) {
-		Image initialImage = image;
-		ImageDescriptor visDesc = AbstractUIPlugin.imageDescriptorFromPlugin("org.eclipse.papyrus.uml.diagram.common", "/icons/obj16/call.gif");
+		Image imageVis = org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.ID, ICONS_OBJ16_CALL_GIF); 
 
 		// Overlay custom image over base image
 		// OverlayVisibilityIcon overlayIcon = new
@@ -116,7 +116,7 @@ public class DiagramNodeFigure extends PapyrusNodeFigure {
 		// image = overlayIcon.getImage();
 
 		getIconContainer().setIcon(image, 0);
-		getIconContainer().setIcon(visDesc.createImage(), 1);
+		getIconContainer().setIcon(imageVis, 1);
 	}
 
 }

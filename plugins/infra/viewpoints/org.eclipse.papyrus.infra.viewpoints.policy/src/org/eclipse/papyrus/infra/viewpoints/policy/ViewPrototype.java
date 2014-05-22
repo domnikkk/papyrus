@@ -306,7 +306,7 @@ public abstract class ViewPrototype {
 	 * @return The icon's image
 	 */
 	public Image getIcon() {
-		return getIconDescriptor().createImage();
+		return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(getIconDescriptor());
 	}
 
 	/**
