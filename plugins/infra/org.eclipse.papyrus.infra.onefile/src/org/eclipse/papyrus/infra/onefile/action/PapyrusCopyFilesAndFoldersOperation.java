@@ -17,9 +17,11 @@ package org.eclipse.papyrus.infra.onefile.action;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.runtime.CoreException;
@@ -29,6 +31,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModel;
+import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
 import org.eclipse.papyrus.infra.emf.resource.DependencyManagementHelper;
 import org.eclipse.papyrus.infra.emf.resource.MoveFileURIReplacementStrategy;
 import org.eclipse.papyrus.infra.emf.resource.RestoreDependencyHelper;
@@ -135,56 +138,93 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 	public IResource[] copyResources(IResource[] resources, IContainer destination) {
 		IResource[] copyResources = super.copyResources(resources, destination);
 		try {
-			ModelSet modelSet = new ModelSet();	
-			restoreInternalLinks(modelSet, resources, copyResources);
-			restoreExternalLinks(modelSet, resources, copyResources);
+			ModelSet modelSet = initModelSet(copyResources);
+			Map<URI, URI> constructInternalMapping = constructInternalMapping(copyResources);
+			for(int i = 0; i < resources.length; i++) {
+				if(checkResource(modelSet, resources[i])) {
+					restoreAllLink(modelSet, constructInternalMapping, copyResources[i], destinationPaths[i]);
+				}
+			}
 		} catch (IOException e) {
 			Activator.log.error("It was not possible to restore broken links", e); //$NON-NLS-1$
 		}
 		return copyResources;
 	}
 
-
 	/**
-	 * Restore referenced URI following the pattern ; 
-	 * 	- if there is an accessible Resource use it 
-	 *  - else search the resource in the source location of the copy
+	 * Init a modelSet with registred model from resources
 	 * @param resources
-	 * @param copyResources
-	 * @throws IOException
+	 * @return
 	 */
-	protected void restoreExternalLinks(ModelSet modelSet, IResource[] resources, IResource[] copyResources) throws IOException {
-		for(int i = 0; i < destinationPaths.length; i++) {
-			IPath iPath = destinationPaths[i];
-			URI uri = URI.createPlatformResourceURI(iPath.toString(), Boolean.TRUE);
-			Resource resource = modelSet.getResource(uri, Boolean.TRUE);
-			for(int j = 0; j < copyResources.length; j++) {
-				IPath targetPath = destinationPaths[j];
-				IResource sourceResource = copyResources[j];
-				URI targetURI = URI.createPlatformResourceURI(targetPath.toString(), true);
-				URI sourceURI = URI.createPlatformResourceURI(sourceResource.getFullPath().toString(), true);
-				DependencyManagementHelper.updateDependencies(sourceURI, targetURI, resource);
+	protected ModelSet initModelSet(IResource[] resources) {
+		ModelSet modelSet = new DiResourceSet();
+		for(IResource iResource : resources) {
+			IPath fullPath = iResource.getFullPath();
+			if(DiModel.MODEL_FILE_EXTENSION.equals(fullPath.getFileExtension())) {
+				if (iResource instanceof IFile){
+					modelSet.createsModels((IFile)iResource);
+				}	
 			}
-			resource.save(ResourceUtils.getSaveOptions());
 		}
+		return modelSet;
 	}
 
 	/**
-	 * Restore links to maintain coherence in the 3 files: uml-notation-di
-	 * @param resources
-	 * @param copyResources
-	 * @throws IOException
+	 * Check if the iResource is known by the ModelSet
+	 * @param modelSet
+	 * @param iResource
+	 * @return
 	 */
-	protected void restoreInternalLinks(ModelSet modelSet, IResource[] resources, IResource[] copyResources) throws IOException {
-		for(int i = 0; i < destinationPaths.length; i++) {
-			IPath iPath = destinationPaths[i];
-			MoveFileURIReplacementStrategy iURIReplacementStrategy = new MoveFileURIReplacementStrategy(new HashMap<URI, URI>(), resources[i].getFullPath().removeLastSegments(1), iPath.removeLastSegments(1));
-			RestoreDependencyHelper restoreDependencyHelper = new RestoreDependencyHelper(iURIReplacementStrategy);
-			URI uri = URI.createPlatformResourceURI(iPath.toString(), Boolean.TRUE);
-			Resource resource = modelSet.getResource(uri, Boolean.TRUE);
-			restoreDependencyHelper.restoreDependencies(resource);
-			resource.save(ResourceUtils.getSaveOptions());
-		}
+	protected boolean checkResource(ModelSet modelSet, IResource iResource) {
+		URI uri = URI.createPlatformResourceURI(iResource.getFullPath().toString(), Boolean.TRUE);
+		Resource resource = modelSet.getResource(uri, Boolean.FALSE);
+		return resource != null;
 	}
 	
+	/**
+	 * Restore referenced URI following the pattern ;
+	 * - if there is an accessible Resource use it
+	 * - else search the resource in the source location of the copy
+	 * 	
+	 * Restore links to maintain coherence in the 3 files: uml-notation-di
+	 * @param modelSet
+	 * @param constructInternalMapping
+	 * @param copyResources
+	 * @param targetPath
+	 * @throws IOException
+	 */
+	protected void restoreAllLink(ModelSet modelSet, Map<URI, URI> constructInternalMapping, IResource copyResources, IPath targetPath) throws IOException {
+		URI uri = URI.createPlatformResourceURI(targetPath.toString(), Boolean.TRUE);
+		Resource resource = modelSet.getResource(uri, Boolean.TRUE);
+
+		// restore external links
+		MoveFileURIReplacementStrategy iURIReplacementStrategy = new MoveFileURIReplacementStrategy(new HashMap<URI, URI>(), copyResources.getFullPath().removeLastSegments(1), targetPath.removeLastSegments(1));
+		RestoreDependencyHelper restoreDependencyHelper = new RestoreDependencyHelper(iURIReplacementStrategy);
+		restoreDependencyHelper.restoreDependencies(resource);
+
+		// restore internal links
+		for(Entry<URI, URI> oneInternalCopyMapping : constructInternalMapping.entrySet()) {
+			DependencyManagementHelper.updateDependencies(oneInternalCopyMapping.getKey(), oneInternalCopyMapping.getValue(), resource);
+		}
+		resource.save(ResourceUtils.getSaveOptions());
+	}
+
+
+	/**
+	 * Construct an URI mapping from source to target
+	 * @param copyResources
+	 * @return
+	 */
+	protected Map<URI, URI> constructInternalMapping(IResource[] copyResources) {
+		Map<URI, URI> internalCopyMapping = new HashMap<URI, URI>();
+		for(int j = 0; j < copyResources.length; j++) {
+			IPath targetPath = destinationPaths[j];
+			IResource sourceResource = copyResources[j];
+			URI targetURI = URI.createPlatformResourceURI(targetPath.toString(), true);
+			URI sourceURI = URI.createPlatformResourceURI(sourceResource.getFullPath().toString(), true);
+			internalCopyMapping.put(sourceURI, targetURI);
+		}
+		return internalCopyMapping;
+	}
+
 }
