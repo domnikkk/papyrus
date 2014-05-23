@@ -94,7 +94,7 @@ public class WorkspaceThemesHelper {
 
 		// Get current resource of workspace theme preferences
 		Resource currentThemefile = findThemeFile();
-		WorkspaceThemes workspaceThemes = (WorkspaceThemes)EcoreUtil.getObjectByType(currentThemefile.getContents(), StylesheetsPackage.Literals.WORKSPACE_THEMES);
+		WorkspaceThemes workspaceThemes = getWorspaceThemesRoot(currentThemefile);
 
 		// Handle edited  themes
 		for(Theme editedTheme : editedThemesArray) {
@@ -153,7 +153,7 @@ public class WorkspaceThemesHelper {
 	public void saveWorkspaceThemesPreferenceResource(Theme editedTheme) {
 		// Get current resource of workspace theme preferences
 		Resource currentThemefile = findThemeFile();
-		WorkspaceThemes workspaceThemes = (WorkspaceThemes)EcoreUtil.getObjectByType(currentThemefile.getContents(), StylesheetsPackage.Literals.WORKSPACE_THEMES);
+		WorkspaceThemes workspaceThemes = getWorspaceThemesRoot(currentThemefile);
 
 		updateWorkspaceTheme(editedTheme, workspaceThemes);
 
@@ -222,13 +222,7 @@ public class WorkspaceThemesHelper {
 		}
 
 		// Get workspace themes
-		WorkspaceThemes workspaceThemes = (WorkspaceThemes)EcoreUtil.getObjectByType(themeFile.getContents(), StylesheetsPackage.eINSTANCE.getWorkspaceThemes());
-
-		// Create a workspace themes root 
-		if(workspaceThemes == null) {
-			workspaceThemes = StylesheetsFactory.eINSTANCE.createWorkspaceThemes();
-			themeFile.getContents().add(workspaceThemes);
-		}
+		WorkspaceThemes workspaceThemes = getWorspaceThemesRoot(themeFile);
 
 		// Add created theme 
 		workspaceThemes.getThemes().add(theme);
@@ -298,5 +292,27 @@ public class WorkspaceThemesHelper {
 		// Build preference file path
 		IPath themeFilePath = pluginStatePath.append("theme.xmi");
 		return themeFilePath;
+	}
+
+	/**
+	 * Get root element of an workspace themes resource.
+	 * 
+	 * @param workspaceThemesResource
+	 *        The resource to inspect
+	 * @return The existing root of type {@link WorkspaceThemes}, otherwise create and add to resource
+	 */
+	private WorkspaceThemes getWorspaceThemesRoot(Resource workspaceThemesResource) {
+
+		//Verify if root element exit
+		WorkspaceThemes workspaceThemesRoot = (WorkspaceThemes)EcoreUtil.getObjectByType(workspaceThemesResource.getContents(), StylesheetsPackage.Literals.WORKSPACE_THEMES);
+
+		if(workspaceThemesRoot == null) {
+
+			// Create a root element if there is not
+			workspaceThemesRoot = StylesheetsFactory.eINSTANCE.createWorkspaceThemes();
+			workspaceThemesResource.getContents().add(workspaceThemesRoot);
+		}
+
+		return workspaceThemesRoot;
 	}
 }
