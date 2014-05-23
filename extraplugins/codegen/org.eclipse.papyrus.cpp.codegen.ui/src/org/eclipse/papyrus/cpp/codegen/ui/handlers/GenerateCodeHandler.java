@@ -40,6 +40,8 @@ import org.eclipse.uml2.uml.PackageableElement;
  */
 public class GenerateCodeHandler extends CmdHandler {
 
+	private static final boolean Headless = Boolean.getBoolean("papyrus.run-headless");
+
 	// ------------------------------------------------------------------------
 	// Execution
 	// ------------------------------------------------------------------------
@@ -128,7 +130,7 @@ public class GenerateCodeHandler extends CmdHandler {
 			CppModelElementsCreator mec = new CppModelElementsCreator(modelProject);
 			generate(mec, pe, new BasicEList<PackageableElement>(), true);
 			
-			if (AcceleoDriver.hasErrors()) {
+			if (AcceleoDriver.hasErrors() && !Headless) {
 				MessageDialog.openInformation(new Shell(), "Errors during code generation", //$NON-NLS-1$
 						"Errors occured during code generation. Please check the error log"); //$NON-NLS-1$
 			}	
