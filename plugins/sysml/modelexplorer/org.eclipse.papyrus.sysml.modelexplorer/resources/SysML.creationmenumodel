@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementCreationMenuModel:Folder xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ElementCreationMenuModel="http://www.eclipse.org/papyrus/infra/newchild/elementcreationmenumodel" xmi:id="_R2sjUOJYEeOKT_prO3j7bg" label="New SysML Child">
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJAOJbEeOKdcZwTkb3kA" label="ActorPart" elementTypeIdRef="org.eclipse.papyrus.sysml.ActorPartProperty" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJAeJbEeOKdcZwTkb3kA" label="Allocate" elementTypeIdRef="org.eclipse.papyrus.sysml.Allocate" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJCeJbEeOKdcZwTkb3kA" label="Block" elementTypeIdRef="org.eclipse.papyrus.sysml.Block" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJCuJbEeOKdcZwTkb3kA" label="Conform" elementTypeIdRef="org.eclipse.papyrus.sysml.Conform" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJC-JbEeOKdcZwTkb3kA" label="ConstraintBlock" elementTypeIdRef="org.eclipse.papyrus.sysml.ConstraintBlock" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJDOJbEeOKdcZwTkb3kA" label="ConstraintProperty" elementTypeIdRef="org.eclipse.papyrus.sysml.ConstraintProperty" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJDeJbEeOKdcZwTkb3kA" label="Copy" elementTypeIdRef="org.eclipse.papyrus.sysml.Copy" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJDuJbEeOKdcZwTkb3kA" label="DeriveReqt" elementTypeIdRef="org.eclipse.papyrus.sysml.DeriveReqt" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJD-JbEeOKdcZwTkb3kA" label="Dimension" elementTypeIdRef="org.eclipse.papyrus.sysml.Dimension" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJEOJbEeOKdcZwTkb3kA" label="FlowPort" elementTypeIdRef="org.eclipse.papyrus.sysml.FlowPort" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJEeJbEeOKdcZwTkb3kA" label="FlowPort In" elementTypeIdRef="org.eclipse.papyrus.sysml.FlowPort_In" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJFOJbEeOKdcZwTkb3kA" label="FlowPort Out" elementTypeIdRef="org.eclipse.papyrus.sysml.FlowPort_Out" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJEuJbEeOKdcZwTkb3kA" label="FlowPort InOut" elementTypeIdRef="org.eclipse.papyrus.sysml.FlowPort_InOut" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJE-JbEeOKdcZwTkb3kA" label="FlowPort (non atomic)" elementTypeIdRef="org.eclipse.papyrus.sysml.FlowPort_NA" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJFeJbEeOKdcZwTkb3kA" label="FlowProperty" elementTypeIdRef="org.eclipse.papyrus.sysml.FlowProperty" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJFuJbEeOKdcZwTkb3kA" label="FlowSpecification" elementTypeIdRef="org.eclipse.papyrus.sysml.FlowSpecification" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJF-JbEeOKdcZwTkb3kA" label="ItemFlow" elementTypeIdRef="org.eclipse.papyrus.sysml.ItemFlow" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_0BGyoOJiEeOfp_s9yPC7Ww" label="Parameter" icon="" elementTypeIdRef="org.eclipse.papyrus.sysml.ConstraintBlockParameter" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJGOJbEeOKdcZwTkb3kA" label="Part" elementTypeIdRef="org.eclipse.papyrus.sysml.PartProperty" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJGeJbEeOKdcZwTkb3kA" label="Problem" elementTypeIdRef="org.eclipse.papyrus.sysml.Problem" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJGuJbEeOKdcZwTkb3kA" label="Rationale" elementTypeIdRef="org.eclipse.papyrus.sysml.Rationale" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJG-JbEeOKdcZwTkb3kA" label="Reference" elementTypeIdRef="org.eclipse.papyrus.sysml.ReferenceProperty" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJHOJbEeOKdcZwTkb3kA" label="Requirement" elementTypeIdRef="org.eclipse.papyrus.sysml.Requirement" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJHeJbEeOKdcZwTkb3kA" label="Satisfy" elementTypeIdRef="org.eclipse.papyrus.sysml.Satisfy" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJHuJbEeOKdcZwTkb3kA" label="Unit" elementTypeIdRef="org.eclipse.papyrus.sysml.Unit" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJH-JbEeOKdcZwTkb3kA" label="Value" elementTypeIdRef="org.eclipse.papyrus.sysml.ValueProperty" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJIOJbEeOKdcZwTkb3kA" label="ValueType" elementTypeIdRef="org.eclipse.papyrus.sysml.ValueType" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJI-JbEeOKdcZwTkb3kA" label="Verify" elementTypeIdRef="org.eclipse.papyrus.sysml.Verify" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJJOJbEeOKdcZwTkb3kA" label="View" elementTypeIdRef="org.eclipse.papyrus.sysml.View" displayAllRoles="false"/>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" xmi:id="_ENmJJeJbEeOKdcZwTkb3kA" label="ViewPoint" elementTypeIdRef="org.eclipse.papyrus.sysml.ViewPoint" displayAllRoles="false"/>
+</ElementCreationMenuModel:Folder>

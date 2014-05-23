@@ -713,4 +713,10 @@
    </key>
    
 </extension>
+<extension
+      point="org.eclipse.papyrus.infra.newchild">
+   <menuCreationModel
+         model="resources/SysML.creationmenumodel">
+   </menuCreationModel>
+</extension>
 </plugin>
