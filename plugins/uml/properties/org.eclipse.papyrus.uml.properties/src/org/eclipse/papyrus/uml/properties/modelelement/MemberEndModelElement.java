@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
+ *  Christian W. Damus (CEA) - bug 417409
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
@@ -45,9 +46,9 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class MemberEndModelElement extends AbstractModelElement {
 
-	private EObject source;
+	protected EObject source;
 
-	private EditingDomain domain;
+	protected EditingDomain domain;
 
 	/**
 	 * The "multiplicity" virtual property

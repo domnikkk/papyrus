@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2013 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - Use URIs to support non-URL-compatible storage (CDO)
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.editor.preview;
 
@@ -327,6 +329,11 @@ public class Preview extends ViewPart implements ISelectionChangedListener, IPar
 
 		setPreviewError(null);
 
+		if(displayEngine != null) {
+			// Dispose of the old engine before employing a new one
+			displayEngine.dispose();
+		}
+		
 		displayEngine = new DefaultDisplayEngine();
 		Map<Tab, Composite> tabs = new HashMap<Tab, Composite>();
 

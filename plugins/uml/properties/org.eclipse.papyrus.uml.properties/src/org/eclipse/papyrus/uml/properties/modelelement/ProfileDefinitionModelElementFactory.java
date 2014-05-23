@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST. and others
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,21 +8,23 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFactory;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Profile;
 
 
-public class ProfileDefinitionModelElementFactory implements ModelElementFactory {
+public class ProfileDefinitionModelElementFactory extends AbstractModelElementFactory<ProfileDefinitionModelElement> {
 
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	@Override
+	protected ProfileDefinitionModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		Element umlSource = UMLUtil.resolveUMLElement(sourceElement);
 		if(umlSource instanceof Profile) {
 			//EditingDomain domain = EMFHelper.resolveEditingDomain(umlSource);
@@ -33,4 +35,12 @@ public class ProfileDefinitionModelElementFactory implements ModelElementFactory
 		return null;
 	}
 
+	@Override
+	protected void updateModelElement(ProfileDefinitionModelElement modelElement, Object newSourceElement) {
+		Element element = org.eclipse.papyrus.uml.tools.utils.UMLUtil.resolveUMLElement(newSourceElement);
+		if(!(element instanceof Profile)) {
+			throw new IllegalArgumentException("Cannot resolve UML Profile selection: " + newSourceElement);
+		}
+		modelElement.profile = (Profile)element;
+	}
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -16,8 +18,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFactory;
 
 /**
  * A Factory for building ModelElements for specific UML properties
@@ -25,9 +26,10 @@ import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
  * 
  * @author Camille Letavernier
  */
-public class UMLEditorFactory implements ModelElementFactory {
+public class UMLEditorFactory extends AbstractModelElementFactory<MemberEndModelElement> {
 
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	@Override
+	protected MemberEndModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		EObject source = EMFHelper.getEObject(sourceElement);
 		if(source == null) {
 			Activator.log.warn("Unable to resolve the selected element to an EObject"); //$NON-NLS-1$
@@ -39,4 +41,13 @@ public class UMLEditorFactory implements ModelElementFactory {
 		return new MemberEndModelElement(source, domain);
 	}
 
+	@Override
+	protected void updateModelElement(MemberEndModelElement modelElement, Object newSourceElement) {
+		EObject eObject = EMFHelper.getEObject(newSourceElement);
+		if(eObject == null) {
+			throw new IllegalArgumentException("Cannot resolve EObject selection: " + newSourceElement);
+		}
+		modelElement.source = eObject;
+		modelElement.domain = EMFHelper.resolveEditingDomain(eObject);
+	}
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA
+ * Copyright (c) 2013, 2014 CEA and others
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 417409
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.util;
@@ -36,10 +37,9 @@ import org.eclipse.papyrus.infra.widgets.providers.EmptyContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
 import org.eclipse.papyrus.views.properties.modelelement.AnnotationModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AnnotationModelElementFactory;
 
-public class LinkRouteModelElementFactory implements ModelElementFactory {
+public class LinkRouteModelElementFactory extends AnnotationModelElementFactory {
 
 	public static final String STYLE = "style";
 
@@ -51,7 +51,8 @@ public class LinkRouteModelElementFactory implements ModelElementFactory {
 
 	public static final Map<Object, LinkRouteModelElement> elements = new HashMap<Object, LinkRouteModelElement>();
 
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	@Override
+	protected AnnotationModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		View view = NotationHelper.findView(sourceElement);
 		if(view != null && view instanceof Edge) {
 			EditingDomain domain = EMFHelper.resolveEditingDomain(view);

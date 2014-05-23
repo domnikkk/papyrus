@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -7,8 +7,9 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
- *		CEA LIST - Initial API and implementation
+ *
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.properties.modelelement;
@@ -47,12 +48,12 @@ public class RulerAndGridModelElement extends AbstractModelElement {
 	/**
 	 * the diagram for which we are editing preferences
 	 */
-	private Diagram diagram;
+	protected Diagram diagram;
 
 	/**
 	 * the edited preference store
 	 */
-	private IPreferenceStore store;
+	protected IPreferenceStore store;
 
 	/**
 	 * 

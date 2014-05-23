@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 440108
+ *  Christian W. Damus (CEA) - bug 417409
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.databinding;
@@ -33,6 +34,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.infra.tools.databinding.AggregatedObservable;
+import org.eclipse.papyrus.infra.tools.databinding.ReferenceCountedObservable;
 import org.eclipse.papyrus.uml.tools.Activator;
 
 /**
@@ -42,7 +44,9 @@ import org.eclipse.papyrus.uml.tools.Activator;
  * @author Camille Letavernier
  * 
  */
-public class PapyrusObservableValue extends EMFObservableValue implements AggregatedObservable, CommandBasedObservableValue {
+public class PapyrusObservableValue extends EMFObservableValue implements AggregatedObservable, CommandBasedObservableValue, ReferenceCountedObservable {
+
+	private final ReferenceCountedObservable.Support refCount = new ReferenceCountedObservable.Support(this);
 
 	/**
 	 * 
@@ -119,7 +123,7 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 
 		return UnexecutableCommand.INSTANCE;
 	}
-	
+
 	protected IEditCommandRequest createSetRequest(TransactionalEditingDomain domain, EObject owner, EStructuralFeature feature, Object value) {
 		return new SetRequest(domain, owner, feature, value);
 	}
@@ -150,5 +154,17 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 
 	public boolean hasDifferentValues() {
 		return false; //The value is not aggregated yet
+	}
+	
+	public void retain() {
+		refCount.retain();
+	}
+	
+	public void release() {
+		refCount.release();
+	}
+	
+	public void autorelease() {
+		refCount.autorelease();
 	}
 }

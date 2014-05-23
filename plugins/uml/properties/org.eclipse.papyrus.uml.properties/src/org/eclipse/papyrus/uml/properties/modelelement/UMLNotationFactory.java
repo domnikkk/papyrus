@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,13 +8,14 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFactory;
 
 /**
  * A ModelElementFactory for handling UML-specific appearance properties
@@ -22,13 +23,21 @@ import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
  * @author Camille Letavernier
  * 
  */
-public class UMLNotationFactory implements ModelElementFactory {
+public class UMLNotationFactory extends AbstractModelElementFactory<UMLNotationModelElement> {
 
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	@Override
+	protected UMLNotationModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		if(sourceElement instanceof EditPart) {
 			return new UMLNotationModelElement((EditPart)sourceElement);
 		}
 		return null;
 	}
 
+	@Override
+	protected void updateModelElement(UMLNotationModelElement modelElement, Object newSourceElement) {
+		if(!(newSourceElement instanceof EditPart)) {
+			throw new IllegalArgumentException("Cannot resolve EditPart selection: " + newSourceElement);
+		}
+		modelElement.sourceElement = (EditPart)newSourceElement;
+	}
 }

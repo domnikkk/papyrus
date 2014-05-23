@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 435103
+ *  Christian W. Damus (CEA) - bug 417409
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.modelelement;
@@ -107,12 +108,18 @@ public class DataSourceFactory {
 	 * @return The model element corresponding to the given contextElement and
 	 *         selection
 	 */
-	private ModelElement createModelElement(DataContextElement contextElement, IStructuredSelection selection) {
+	private ModelElement createModelElement(final DataContextElement contextElement, IStructuredSelection selection) {
 		if(selection.size() == 1) { // Single Selection
 			ModelElement modelElement = createFromSource(selection.getFirstElement(), contextElement);
 			return modelElement;
 		} else { // MultiSelection
-			CompositeModelElement composite = new CompositeModelElement();
+			// Bind the context element in a factory for the composite to create sub-elements
+			CompositeModelElement composite = new CompositeModelElement(new CompositeModelElement.BoundModelElementFactory() {
+				
+				public ModelElement createModelElement(Object sourceElement) {
+					return createFromSource(sourceElement, contextElement);
+				}
+			});
 
 			Iterator<?> it = selection.iterator();
 			while(it.hasNext()) {

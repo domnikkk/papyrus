@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,13 +8,15 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.databinding;
 
 import org.eclipse.core.databinding.observable.IObservable;
-import org.eclipse.core.databinding.observable.value.AbstractObservableValue;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.tools.databinding.AggregatedObservable;
+import org.eclipse.papyrus.infra.tools.databinding.ReferenceCountedObservable;
 
 /**
  * An Abstract Class for Papyrus Command-based observable values
@@ -22,7 +24,7 @@ import org.eclipse.papyrus.infra.tools.databinding.AggregatedObservable;
  * @author Camille Letavernier
  * 
  */
-public abstract class AbstractUMLAggregatedObservableValue extends AbstractObservableValue implements AggregatedObservable, CommandBasedObservableValue {
+public abstract class AbstractUMLAggregatedObservableValue extends ReferenceCountedObservable.Value implements AggregatedObservable, CommandBasedObservableValue {
 
 	protected EditingDomain domain;
 

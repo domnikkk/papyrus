@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
+ *  Christian W. Damus (CEA) - bug 417409
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
@@ -68,7 +69,7 @@ public class UMLNotationModelElement extends AbstractModelElement {
 	/**
 	 * The GMF EditPart represented by this ModelElement
 	 */
-	private EditPart sourceElement;
+	protected EditPart sourceElement;
 
 	/**
 	 * 
