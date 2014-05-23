@@ -88,7 +88,6 @@ public class FunctionBehaviorCompositeCompartmentEditPartCN extends ShapeCompart
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

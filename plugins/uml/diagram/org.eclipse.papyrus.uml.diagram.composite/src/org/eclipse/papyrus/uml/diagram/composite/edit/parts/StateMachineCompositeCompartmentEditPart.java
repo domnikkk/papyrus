@@ -88,7 +88,6 @@ public class StateMachineCompositeCompartmentEditPart extends ShapeCompartmentEd
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

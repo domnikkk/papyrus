@@ -66,21 +66,16 @@ public class FunctionBehaviorCompositeCreateCommandCN extends EditElementCommand
 	 * @generated
 	 */
 	public boolean canExecute() {
-
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getFunctionBehavior());
 		return data.isPermitted();
-
-
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-
 		FunctionBehavior newElement = UMLFactory.eINSTANCE.createFunctionBehavior();
-
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if(data.isPermitted()) {
@@ -88,20 +83,14 @@ public class FunctionBehaviorCompositeCreateCommandCN extends EditElementCommand
 				if(!data.execute(target, newElement))
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 			} else {
-
 				Class qualifiedTarget = (Class)target;
 				qualifiedTarget.getNestedClassifiers().add(newElement);
-
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
-
-
 		ElementInitializers.getInstance().init_FunctionBehavior_3076(newElement);
-
 		doConfigure(newElement, monitor, info);
-
 		((CreateElementRequest)getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

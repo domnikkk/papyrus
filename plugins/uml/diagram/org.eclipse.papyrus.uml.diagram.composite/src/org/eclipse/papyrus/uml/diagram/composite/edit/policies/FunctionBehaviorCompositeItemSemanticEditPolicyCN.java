@@ -91,17 +91,11 @@ public class FunctionBehaviorCompositeItemSemanticEditPolicyCN extends UMLBaseIt
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Port_3069 == requestElementType) {
-
 			return getGEFWrapper(new PortCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Parameter_3088 == requestElementType) {
-
 			return getGEFWrapper(new ParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}
@@ -115,7 +109,6 @@ public class FunctionBehaviorCompositeItemSemanticEditPolicyCN extends UMLBaseIt
 		if(provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
-
 			if(deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}

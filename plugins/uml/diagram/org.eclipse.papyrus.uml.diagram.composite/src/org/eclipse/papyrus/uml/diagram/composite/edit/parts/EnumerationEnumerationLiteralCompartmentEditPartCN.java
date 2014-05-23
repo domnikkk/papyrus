@@ -91,7 +91,6 @@ public class EnumerationEnumerationLiteralCompartmentEditPartCN extends ListComp
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

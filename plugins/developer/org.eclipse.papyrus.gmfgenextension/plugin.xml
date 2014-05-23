@@ -257,6 +257,40 @@
                                  </or>
                               </enablement>
                            </action>
+                           <action
+                                 class="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.DisplayReport"
+                                 enablesFor="*"
+                                 id="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.TopNodeRepor"
+                                 label="Display TopNodeReport"
+                                 menubarPath="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.MenuPapyrus/TopNodeReport">
+                              <enablement>
+                                 <or>
+                                    <objectClass
+                                          name="org.eclipse.gmf.codegen.gmfgen.GenEditorGenerator">
+                                    </objectClass>
+                                    <objectClass
+                                          name="org.eclipse.gmf.codegen.gmfgen.GenDiagram">
+                                    </objectClass>
+                                 </or>
+                              </enablement>
+                           </action>
+                           <action
+                                 class="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.TestCodeSetGeneration"
+                                 enablesFor="*"
+                                 id="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.TopNodeRepor"
+                                 label="Display test subsetCode"
+                                 menubarPath="org.eclipse.papyrus.papyrusgmfgenextension.popupaction.MenuPapyrus/testSubsetCode">
+                              <enablement>
+                                 <or>
+                                    <objectClass
+                                          name="org.eclipse.gmf.codegen.gmfgen.GenEditorGenerator">
+                                    </objectClass>
+                                    <objectClass
+                                          name="org.eclipse.gmf.codegen.gmfgen.GenDiagram">
+                                    </objectClass>
+                                 </or>
+                              </enablement>
+                           </action>
       </objectContribution>
    </extension>
 

@@ -90,7 +90,6 @@ public class PropertyPartCompartmentEditPartCN extends ShapeCompartmentEditPart 
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

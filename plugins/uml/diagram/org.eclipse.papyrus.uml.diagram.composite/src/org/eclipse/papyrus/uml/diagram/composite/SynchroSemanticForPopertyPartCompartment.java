@@ -10,7 +10,6 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *****************************************************************************/
-
 package org.eclipse.papyrus.uml.diagram.composite;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ import org.eclipse.papyrus.uml.diagram.synchronizeview.customization.ISynchroSem
 import org.eclipse.uml2.uml.Property;
 
 /**
- *This class is used to precise semantic element that could be displayed in compartment of parts  
+ * This class is used to precise semantic element that could be displayed in compartment of parts
  */
 public class SynchroSemanticForPopertyPartCompartment implements ISynchroSemanticChild {
 
@@ -30,20 +29,19 @@ public class SynchroSemanticForPopertyPartCompartment implements ISynchroSemanti
 
 	@Override
 	public List<EObject> getSynchroSemanticChild(EObject semanticFromEditPart) {
-		ArrayList<EObject> result=new ArrayList<EObject>();
-		if( semanticFromEditPart instanceof Property){
-			if (((Property)semanticFromEditPart).getType()!=null){
+		ArrayList<EObject> result = new ArrayList<EObject>();
+		if(semanticFromEditPart instanceof Property) {
+			if(((Property)semanticFromEditPart).getType() != null) {
 				result.addAll(((Property)semanticFromEditPart).getType().getOwnedElements());
 			}
 		}
 		return result;
 	}
-	
-	
+
 	@Override
 	public EObject getSemanticEObjectToListen(EObject semanticFromEditPart) {
-		if( semanticFromEditPart instanceof Property){
-			if (((Property)semanticFromEditPart).getType()!=null){
+		if(semanticFromEditPart instanceof Property) {
+			if(((Property)semanticFromEditPart).getType() != null) {
 				return ((Property)semanticFromEditPart).getType();
 			}
 		}
