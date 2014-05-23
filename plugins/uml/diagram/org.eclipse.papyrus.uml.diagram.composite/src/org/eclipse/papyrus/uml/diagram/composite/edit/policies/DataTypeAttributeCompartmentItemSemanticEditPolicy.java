@@ -38,12 +38,8 @@ public class DataTypeAttributeCompartmentItemSemanticEditPolicy extends UMLBaseI
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Property_3101 == requestElementType) {
-
 			return getGEFWrapper(new PropertyCreateCommandCLN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}

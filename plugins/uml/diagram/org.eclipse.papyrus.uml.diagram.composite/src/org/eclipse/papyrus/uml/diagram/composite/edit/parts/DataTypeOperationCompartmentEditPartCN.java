@@ -91,7 +91,6 @@ public class DataTypeOperationCompartmentEditPartCN extends ListCompartmentEditP
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

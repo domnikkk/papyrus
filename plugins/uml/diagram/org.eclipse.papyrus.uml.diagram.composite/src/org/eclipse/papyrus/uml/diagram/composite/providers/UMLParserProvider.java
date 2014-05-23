@@ -2316,339 +2316,242 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch(visualID) {
 		case ActivityCompositeNameEditPart.VISUAL_ID:
 			return getActivityName_5112Parser();
-
 		case InteractionCompositeNameEditPart.VISUAL_ID:
 			return getInteractionName_5113Parser();
-
 		case ProtocolStateMachineCompositeNameEditPart.VISUAL_ID:
 			return getProtocolStateMachineName_5114Parser();
-
 		case StateMachineCompositeNameEditPart.VISUAL_ID:
 			return getStateMachineName_5115Parser();
-
 		case FunctionBehaviorCompositeNameEditPart.VISUAL_ID:
 			return getFunctionBehaviorName_5116Parser();
-
 		case OpaqueBehaviorCompositeNameEditPart.VISUAL_ID:
 			return getOpaqueBehaviorName_5117Parser();
-
 		case ComponentCompositeNameEditPart.VISUAL_ID:
 			return getComponentName_5121Parser();
-
 		case DeviceCompositeNameEditPart.VISUAL_ID:
 			return getDeviceName_5122Parser();
-
 		case ExecutionEnvironmentCompositeNameEditPart.VISUAL_ID:
 			return getExecutionEnvironmentName_5123Parser();
-
 		case NodeCompositeNameEditPart.VISUAL_ID:
 			return getNodeName_5124Parser();
-
 		case ClassCompositeNameEditPart.VISUAL_ID:
 			return getClassName_5156Parser();
-
 		case CollaborationCompositeNameEditPart.VISUAL_ID:
 			return getCollaborationName_5158Parser();
-
 		case InterfaceNameEditPart.VISUAL_ID:
 			return getInterfaceName_5159Parser();
-
 		case PrimitiveTypeNameEditPart.VISUAL_ID:
 			return getPrimitiveTypeName_5118Parser();
-
 		case EnumerationNameEditPart.VISUAL_ID:
 			return getEnumerationName_5119Parser();
-
 		case DataTypeNameEditPart.VISUAL_ID:
 			return getDataTypeName_5120Parser();
-
 		case ActorNameEditPart.VISUAL_ID:
 			return getActorName_5160Parser();
-
 		case DeploymentSpecificationNameEditPart.VISUAL_ID:
 			return getDeploymentSpecificationName_5161Parser();
-
 		case ArtifactNameEditPart.VISUAL_ID:
 			return getArtifactName_5162Parser();
-
 		case InformationItemNameEditPart.VISUAL_ID:
 			return getInformationItemName_5163Parser();
-
 		case SignalNameEditPart.VISUAL_ID:
 			return getSignalName_5164Parser();
-
 		case UseCaseNameEditPart.VISUAL_ID:
 			return getUseCaseName_5165Parser();
-
 		case SignalEventNameEditPart.VISUAL_ID:
 			return getSignalEventName_5166Parser();
-
 		case CallEventNameEditPart.VISUAL_ID:
 			return getCallEventName_5167Parser();
-
 		case AnyReceiveEventNameEditPart.VISUAL_ID:
 			return getAnyReceiveEventName_5168Parser();
-
 		case ChangeEventNameEditPart.VISUAL_ID:
 			return getChangeEventName_5171Parser();
-
 		case TimeEventNameEditPart.VISUAL_ID:
 			return getTimeEventName_5172Parser();
-
 		case DurationObservationNameEditPart.VISUAL_ID:
 			return getDurationObservationName_5151Parser();
 		case DurationObservationStereotypeLabelEditPart.VISUAL_ID:
 			return getDurationObservationName_5152Parser();
-
 		case TimeObservationNameEditPart.VISUAL_ID:
 			return getTimeObservationName_5142Parser();
 		case TimeObservationStereotypeLabelEditPart.VISUAL_ID:
 			return getTimeObservationName_5143Parser();
-
 		case LiteralBooleanNameEditPart.VISUAL_ID:
 			return getLiteralBooleanName_5178Parser();
-
 		case LiteralIntegerNameEditPart.VISUAL_ID:
 			return getLiteralIntegerName_5179Parser();
-
 		case LiteralNullNameEditPart.VISUAL_ID:
 			return getLiteralNullName_5180Parser();
-
 		case LiteralStringNameEditPart.VISUAL_ID:
 			return getLiteralStringName_5181Parser();
-
 		case LiteralUnlimitedNaturalNameEditPart.VISUAL_ID:
 			return getLiteralUnlimitedNaturalName_5182Parser();
-
 		case StringExpressionNameEditPart.VISUAL_ID:
 			return getStringExpressionName_5183Parser();
-
 		case OpaqueExpressionNameEditPart.VISUAL_ID:
 			return getOpaqueExpressionName_5184Parser();
-
 		case TimeExpressionNameEditPart.VISUAL_ID:
 			return getTimeExpressionName_5185Parser();
-
 		case ExpressionNameEditPart.VISUAL_ID:
 			return getExpressionName_5186Parser();
-
 		case DurationNameEditPart.VISUAL_ID:
 			return getDurationName_5187Parser();
-
 		case TimeIntervalNameEditPart.VISUAL_ID:
 			return getTimeIntervalName_5188Parser();
-
 		case DurationIntervalNameEditPart.VISUAL_ID:
 			return getDurationIntervalName_5189Parser();
-
 		case IntervalNameEditPart.VISUAL_ID:
 			return getIntervalName_5190Parser();
-
 		case InstanceValueNameEditPart.VISUAL_ID:
 			return getInstanceValueName_5191Parser();
-
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_5192Parser();
-
 		case DurationConstraintNameEditPart.VISUAL_ID:
 			return getDurationConstraintName_5193Parser();
 		case DurationConstraintSpecificationEditPart.VISUAL_ID:
 			return getDurationConstraintSpecification_6035Parser();
-
 		case TimeConstraintNameEditPart.VISUAL_ID:
 			return getTimeConstraintName_5194Parser();
 		case TimeConstraintSpecificationEditPart.VISUAL_ID:
 			return getTimeConstraintSpecification_6036Parser();
-
 		case IntervalConstraintNameEditPart.VISUAL_ID:
 			return getIntervalConstraintName_5195Parser();
 		case IntervalConstraintSpecificationEditPart.VISUAL_ID:
 			return getIntervalConstraintSpecification_6037Parser();
-
 		case InteractionConstraintNameEditPart.VISUAL_ID:
 			return getInteractionConstraintName_5196Parser();
 		case InteractionConstraintSpecificationEditPart.VISUAL_ID:
 			return getInteractionConstraintSpecification_6038Parser();
-
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5197Parser();
 		case ConstraintSpecificationEditPart.VISUAL_ID:
 			return getConstraintSpecification_6039Parser();
-
-
 		case PortNameEditPart.VISUAL_ID:
 			return getPortName_5125Parser();
 		case PortAppliedStereotypeEditPart.VISUAL_ID:
 			return getPortName_6029Parser();
-
 		case ParameterNameEditPart.VISUAL_ID:
 			return getParameterName_6033Parser();
 		case ParameterAppliedStereotypeEditPart.VISUAL_ID:
 			return getParameterName_6034Parser();
-
 		case PropertyPartNameEditPartCN.VISUAL_ID:
 			return getPropertyName_5126Parser();
-
 		case CollaborationRoleNameEditPartCN.VISUAL_ID:
 			return getConnectableElementName_5198Parser();
-
 		case CollaborationUseNameEditPart.VISUAL_ID:
 			return getCollaborationUseName_5127Parser();
-
 		case ActivityCompositeNameEditPartCN.VISUAL_ID:
 			return getActivityName_5128Parser();
-
 		case InteractionCompositeNameEditPartCN.VISUAL_ID:
 			return getInteractionName_5129Parser();
-
 		case ProtocolStateMachineCompositeNameEditPartCN.VISUAL_ID:
 			return getProtocolStateMachineName_5130Parser();
-
 		case StateMachineCompositeNameEditPartCN.VISUAL_ID:
 			return getStateMachineName_5131Parser();
-
 		case FunctionBehaviorCompositeNameEditPartCN.VISUAL_ID:
 			return getFunctionBehaviorName_5132Parser();
-
 		case OpaqueBehaviorCompositeNameEditPartCN.VISUAL_ID:
 			return getOpaqueBehaviorName_5133Parser();
-
 		case ComponentCompositeNameEditPartCN.VISUAL_ID:
 			return getComponentName_5137Parser();
-
 		case DeviceCompositeNameEditPartCN.VISUAL_ID:
 			return getDeviceName_5138Parser();
-
 		case ExecutionEnvironmentCompositeNameEditPartCN.VISUAL_ID:
 			return getExecutionEnvironmentName_5139Parser();
-
 		case NodeCompositeNameEditPartCN.VISUAL_ID:
 			return getNodeName_5140Parser();
-
 		case ClassCompositeNameEditPartCN.VISUAL_ID:
 			return getClassName_5155Parser();
-
 		case CollaborationCompositeNameEditPartCN.VISUAL_ID:
 			return getCollaborationName_5141Parser();
-
 		case InterfaceNameEditPartCN.VISUAL_ID:
 			return getInterfaceName_5154Parser();
-
 		case PrimitiveTypeNameEditPartCN.VISUAL_ID:
 			return getPrimitiveTypeName_5134Parser();
-
 		case EnumerationNameEditPartCN.VISUAL_ID:
 			return getEnumerationName_5135Parser();
-
 		case DataTypeNameEditPartCN.VISUAL_ID:
 			return getDataTypeName_5136Parser();
-
 		case ActorNameEditPartCN.VISUAL_ID:
 			return getActorName_5144Parser();
-
 		case DeploymentSpecificationNameEditPartCN.VISUAL_ID:
 			return getDeploymentSpecificationName_5145Parser();
-
 		case ArtifactNameEditPartCN.VISUAL_ID:
 			return getArtifactName_5146Parser();
-
 		case InformationItemNameEditPartCN.VISUAL_ID:
 			return getInformationItemName_5147Parser();
-
 		case SignalNameEditPartCN.VISUAL_ID:
 			return getSignalName_5148Parser();
-
 		case UseCaseNameEditPartCN.VISUAL_ID:
 			return getUseCaseName_5149Parser();
-
 		case CommentBodyEditPartCN.VISUAL_ID:
 			return getCommentBody_5150Parser();
-
 		case DurationConstraintNameEditPartCN.VISUAL_ID:
 			return getDurationConstraintName_6040Parser();
 		case DurationConstraintSpecificationEditPartCN.VISUAL_ID:
 			return getDurationConstraintSpecification_6041Parser();
-
 		case TimeConstraintNameEditPartCN.VISUAL_ID:
 			return getTimeConstraintName_6042Parser();
 		case TimeConstraintSpecificationEditPartCN.VISUAL_ID:
 			return getTimeConstraintSpecification_6043Parser();
-
 		case IntervalConstraintNameEditPartCN.VISUAL_ID:
 			return getIntervalConstraintName_6044Parser();
 		case IntervalConstraintSpecificationEditPartCN.VISUAL_ID:
 			return getIntervalConstraintSpecification_6045Parser();
-
 		case InteractionConstraintNameEditPartCN.VISUAL_ID:
 			return getInteractionConstraintName_6046Parser();
 		case InteractionConstraintSpecificationEditPartCN.VISUAL_ID:
 			return getInteractionConstraintSpecification_6047Parser();
-
 		case ConstraintNameEditPartCN.VISUAL_ID:
 			return getConstraintName_6048Parser();
 		case ConstraintSpecificationEditPartCN.VISUAL_ID:
 			return getConstraintSpecification_6049Parser();
-
 		case PropertyEditPartCLN.VISUAL_ID:
 			return getProperty_3101Parser();
 		case OperationEditPartCLN.VISUAL_ID:
 			return getOperation_3102Parser();
 		case EnumerationLiteralEditPartCLN.VISUAL_ID:
 			return getEnumerationLiteral_3066Parser();
-
-
-
-
 		case ComponentRealizationNameEditPart.VISUAL_ID:
 			return getComponentRealizationName_6001Parser();
 		case ComponentRealizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getComponentRealizationName_6015Parser();
-
 		case InterfaceRealizationNameEditPart.VISUAL_ID:
 			return getInterfaceRealizationName_6002Parser();
 		case InterfaceRealizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getInterfaceRealizationName_6016Parser();
-
 		case SubstitutionNameEditPart.VISUAL_ID:
 			return getSubstitutionName_6003Parser();
 		case SubstitutionAppliedStereotypeEditPart.VISUAL_ID:
 			return getSubstitutionName_6017Parser();
-
 		case RealizationNameEditPart.VISUAL_ID:
 			return getRealizationName_6004Parser();
 		case RealizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getRealizationName_6018Parser();
-
 		case ManifestationNameEditPart.VISUAL_ID:
 			return getManifestationName_6005Parser();
 		case ManifestationAppliedStereotypeEditPart.VISUAL_ID:
 			return getManifestationName_6019Parser();
-
 		case AbstractionNameEditPart.VISUAL_ID:
 			return getAbstractionName_6006Parser();
 		case AbstractionAppliedStereotypeEditPart.VISUAL_ID:
 			return getAbstractionName_6020Parser();
-
 		case UsageNameEditPart.VISUAL_ID:
 			return getUsageName_6007Parser();
 		case UsageAppliedStereotypeEditPart.VISUAL_ID:
 			return getUsageName_6021Parser();
-
 		case DeploymentNameEditPart.VISUAL_ID:
 			return getDeploymentName_6008Parser();
 		case DeploymentAppliedStereotypeEditPart.VISUAL_ID:
 			return getDeploymentName_6022Parser();
-
 		case RoleBindingRoleNameEditPart.VISUAL_ID:
 			return getDependencyName_6027Parser();
 		case RoleBindingAppliedStereotypeEditPart.VISUAL_ID:
 			return getDependencyName_6028Parser();
-
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6009Parser();
 		case DependencyAppliedStereotypeEditPart.VISUAL_ID:
 			return getDependencyName_6023Parser();
-
 		case ConnectorAppliedStereotypeEditPart.VISUAL_ID:
 			return getConnectorName_6025Parser();
 		case ConnectorNameEditPart.VISUAL_ID:
@@ -2657,16 +2560,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConnectorName_6051Parser();
 		case ConnectorMultiplicityTargetEditPart.VISUAL_ID:
 			return getConnectorName_6052Parser();
-
 		case GeneralizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getGeneralizationIsSubstitutable_6024Parser();
-
-
-
-
 		case InformationFlowAppliedStereotypeEditPart.VISUAL_ID:
 			return getInformationFlowName_6032Parser();
-
 		}
 		return null;
 	}

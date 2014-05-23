@@ -90,12 +90,8 @@ public class EnumerationItemSemanticEditPolicyCN extends UMLBaseItemSemanticEdit
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.EnumerationLiteral_3066 == requestElementType) {
-
 			return getGEFWrapper(new EnumerationLiteralCreateCommandCLN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}
@@ -109,7 +105,6 @@ public class EnumerationItemSemanticEditPolicyCN extends UMLBaseItemSemanticEdit
 		if(provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
-
 			if(deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}

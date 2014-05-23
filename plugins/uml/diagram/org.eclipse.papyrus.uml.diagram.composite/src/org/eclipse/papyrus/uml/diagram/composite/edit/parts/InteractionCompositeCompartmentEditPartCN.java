@@ -88,7 +88,6 @@ public class InteractionCompositeCompartmentEditPartCN extends ShapeCompartmentE
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

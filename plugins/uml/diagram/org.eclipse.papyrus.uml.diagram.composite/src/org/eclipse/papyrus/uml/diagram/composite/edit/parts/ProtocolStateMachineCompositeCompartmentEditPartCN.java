@@ -88,7 +88,6 @@ public class ProtocolStateMachineCompositeCompartmentEditPartCN extends ShapeCom
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

@@ -5765,7 +5765,6 @@ public class UMLVisualIDRegistry {
 				return false;
 			}
 		}
-
 		// General case : no restriction
 		return true;
 	}

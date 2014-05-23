@@ -46,52 +46,32 @@ public class CollaborationCompositeCompartmentItemSemanticEditPolicyCN extends U
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Property_3070 == requestElementType) {
-
 			return getGEFWrapper(new PropertyPartCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.CollaborationUse_3071 == requestElementType) {
-
 			return getGEFWrapper(new CollaborationUseCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Comment_3097 == requestElementType) {
-
 			return getGEFWrapper(new CommentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.ConnectableElement_3115 == requestElementType) {
-
 			return getGEFWrapper(new CollaborationRoleCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.DurationConstraint_3116 == requestElementType) {
-
 			return getGEFWrapper(new DurationConstraintCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.TimeConstraint_3117 == requestElementType) {
-
 			return getGEFWrapper(new TimeConstraintCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.IntervalConstraint_3118 == requestElementType) {
-
 			return getGEFWrapper(new IntervalConstraintCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.InteractionConstraint_3119 == requestElementType) {
-
 			return getGEFWrapper(new InteractionConstraintCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Constraint_3120 == requestElementType) {
-
 			return getGEFWrapper(new ConstraintCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}

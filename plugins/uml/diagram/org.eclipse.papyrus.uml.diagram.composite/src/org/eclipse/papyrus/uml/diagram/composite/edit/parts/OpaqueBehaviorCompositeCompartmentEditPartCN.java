@@ -88,7 +88,6 @@ public class OpaqueBehaviorCompositeCompartmentEditPartCN extends ShapeCompartme
 	 * @generated
 	 */
 	public EditPart getTargetEditPart(Request request) {
-
 		return super.getTargetEditPart(request);
 	}
 

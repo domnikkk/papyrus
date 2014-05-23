@@ -66,21 +66,16 @@ public class ExecutionEnvironmentCompositeCreateCommandCN extends EditElementCom
 	 * @generated
 	 */
 	public boolean canExecute() {
-
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getExecutionEnvironment());
 		return data.isPermitted();
-
-
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-
 		ExecutionEnvironment newElement = UMLFactory.eINSTANCE.createExecutionEnvironment();
-
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if(data.isPermitted()) {
@@ -88,20 +83,14 @@ public class ExecutionEnvironmentCompositeCreateCommandCN extends EditElementCom
 				if(!data.execute(target, newElement))
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 			} else {
-
 				Class qualifiedTarget = (Class)target;
 				qualifiedTarget.getNestedClassifiers().add(newElement);
-
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
-
-
 		ElementInitializers.getInstance().init_ExecutionEnvironment_3083(newElement);
-
 		doConfigure(newElement, monitor, info);
-
 		((CreateElementRequest)getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

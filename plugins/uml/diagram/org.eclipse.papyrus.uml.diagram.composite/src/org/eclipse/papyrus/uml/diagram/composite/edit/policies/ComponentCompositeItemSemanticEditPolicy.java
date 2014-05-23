@@ -90,12 +90,8 @@ public class ComponentCompositeItemSemanticEditPolicy extends UMLBaseItemSemanti
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Port_3069 == requestElementType) {
-
 			return getGEFWrapper(new PortCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}
@@ -109,7 +105,6 @@ public class ComponentCompositeItemSemanticEditPolicy extends UMLBaseItemSemanti
 		if(provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
-
 			if(deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}

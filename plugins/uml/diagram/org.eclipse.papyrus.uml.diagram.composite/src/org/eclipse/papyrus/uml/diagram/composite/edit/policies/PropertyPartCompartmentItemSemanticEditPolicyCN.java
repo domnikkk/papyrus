@@ -39,17 +39,11 @@ public class PropertyPartCompartmentItemSemanticEditPolicyCN extends UMLBaseItem
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.Property_3070 == requestElementType) {
-
 			return getGEFWrapper(new PropertyPartCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		if(UMLElementTypes.Comment_3097 == requestElementType) {
-
 			return getGEFWrapper(new CommentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}
