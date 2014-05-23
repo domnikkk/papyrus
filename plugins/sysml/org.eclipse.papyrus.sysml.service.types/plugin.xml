@@ -1300,5 +1300,36 @@
 
 		</image>
 </extension>
+<extension
+      point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+   <metamodel
+         nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+      <specializationType
+            edithelperadvice="org.eclipse.papyrus.sysml.service.types.helper.ConstraintParameterEditHelperAdvice"
+            icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"
+            id="org.eclipse.papyrus.sysml.ConstraintBlockParameter"
+            name="SysML::ConstraintBlockParameter">
+         <matcher
+               class="org.eclipse.papyrus.sysml.service.types.matcher.NoMatcher">
+         </matcher>
+         <param
+               name="semanticHint"
+               value="SysML::ConstraintBlockParameter">
+         </param>
+         <specializes
+               id="org.eclipse.papyrus.uml.Property">
+         </specializes>
+      </specializationType>
+   </metamodel>
+</extension>
+<extension
+      point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+   <binding
+         context="org.eclipse.papyrus.infra.services.edit.TypeContext">
+      <elementType
+            ref="org.eclipse.papyrus.sysml.ConstraintBlockParameter">
+      </elementType>
+   </binding>
+</extension>
 </plugin>
 

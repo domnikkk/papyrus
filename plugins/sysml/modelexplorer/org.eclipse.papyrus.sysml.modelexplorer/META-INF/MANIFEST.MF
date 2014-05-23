@@ -24,7 +24,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.papyrus.emf.facet.query.java.core;bundle-version="1.0.0",
  org.eclipse.papyrus.emf.facet.custom.ui;bundle-version="1.0.0",
  org.eclipse.papyrus.emf.facet.custom.metamodel;bundle-version="1.0.0",
- org.eclipse.emf.edit.ui
+ org.eclipse.emf.edit.ui,
+ org.eclipse.papyrus.infra.newchild
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
