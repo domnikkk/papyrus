@@ -168,10 +168,6 @@
        <visibleWhen checkEnabled="true">
        </visibleWhen>
     </command>
-    <command commandId="org.eclipse.papyrus.views.modelexplorer.duplicate.command" icon="icons/etool16/duplicate.png" id="org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup.duplicate" label="&amp;Duplicate" style="push" tooltip="Duplicate the element">
-       <visibleWhen checkEnabled="true">
-       </visibleWhen>
-    </command>
     <separator name="edition" visible="true">
     </separator>
     <command commandId="org.eclipse.ui.edit.cut" id="org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup.cut" label="Cu&amp;t" style="push">
