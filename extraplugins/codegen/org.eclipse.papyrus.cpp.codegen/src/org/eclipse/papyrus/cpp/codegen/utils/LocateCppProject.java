@@ -30,6 +30,8 @@ import org.eclipse.uml2.uml.PackageableElement;
 public class LocateCppProject {
 	public static final String LANGUAGE_NAME = "C++"; //$NON-NLS-1$
 
+	private static final boolean Headless = Boolean.getBoolean("papyrus.run-headless");
+
 	/**
 	 * Locate and return the target project for the given packageable element.  Return null if
 	 * no target project can be found.
@@ -38,10 +40,10 @@ public class LocateCppProject {
 	 * not create a new project, but may modify existing ones.
 	 * 
 	 * @param pe a packageable element within a model
-	 * @param interactive if true, ask the user to apply the C++ nature if required.
+	 * @param createIfMissing if true, ask the user to apply the C++ nature if required.
 	 * @return the associated project, if the C++ nature is applied.
 	 */
-	public static IProject getTargetProject(PackageableElement pe, boolean interactive) {
+	public static IProject getTargetProject(PackageableElement pe, boolean createIfMissing) {
 		// URI uri = pe.eResource().getURI();
 		Package rootPkg = PackageUtil.getRootPackage(pe);
 		
@@ -57,30 +59,56 @@ public class LocateCppProject {
 		String projectName = prefix + rootPkg.getName();
 		IProject modelProject = root.getProject(projectName);
 		if(!modelProject.exists()) {
-			boolean create = interactive && MessageDialog.openQuestion(new Shell(),
-					Messages.LocateCppProject_CreateTargetProjectTitle,
-					String.format(Messages.LocateCppProject_CreateTargetProjectDesc, projectName));
-			if (create) {
-				ILangSupport langSupport = LanguageSupport.getLangSupport(LANGUAGE_NAME);
-				if (langSupport != null) {
-					langSupport.resetConfigurationData();
-					modelProject = langSupport.createProject(projectName, null);
+			if (Headless)
+			{
+				try
+				{
+					modelProject.create(null);
+				}
+				catch( CoreException e )
+				{
+					return null;
+				}
+			}
+			else
+			{
+				boolean create = createIfMissing && MessageDialog.openQuestion(new Shell(),
+						Messages.LocateCppProject_CreateTargetProjectTitle,
+						String.format(Messages.LocateCppProject_CreateTargetProjectDesc, projectName));
+				if (create) {
+					ILangSupport langSupport = LanguageSupport.getLangSupport(LANGUAGE_NAME);
+					if (langSupport != null) {
+						langSupport.resetConfigurationData();
+						modelProject = langSupport.createProject(projectName, null);
+					}
+					else {
+						return null;
+					}
 				}
 				else {
 					return null;
 				}
 			}
-			else {
+		}
+
+		// Make sure the target project is open.  If it was just created then it is likely open,
+		// however if it is an old project then it could have been closed.
+		if( ! modelProject.isOpen() )
+			try
+			{
+				modelProject.open( null );
+			}
+			catch( CoreException e )
+			{
 				return null;
 			}
-		}
-	
+
 		// Make sure the target project has the C and C++ build natures.
 		try {
 			if(!modelProject.hasNature(CCProjectNature.CC_NATURE_ID)) {
-				boolean apply = interactive && MessageDialog.openQuestion(new Shell(),
+				boolean apply = createIfMissing && (Headless || MessageDialog.openQuestion(new Shell(),
 						Messages.LocateCppProject_ApplyCNatureTitle,
-						Messages.LocateCppProject_ApplyCNatureDesc);
+						Messages.LocateCppProject_ApplyCNatureDesc));
 				if (!apply) {
 					return null;
 				}
