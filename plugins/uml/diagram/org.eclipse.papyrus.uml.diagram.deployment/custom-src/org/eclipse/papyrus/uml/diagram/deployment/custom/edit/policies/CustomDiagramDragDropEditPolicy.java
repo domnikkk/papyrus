@@ -106,23 +106,12 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 		Set<Integer> droppableElementsVisualId = new HashSet<Integer>();
 
 		// Class CN
-		droppableElementsVisualId.add(PackageEditPartCN.VISUAL_ID);
-		droppableElementsVisualId.add(ModelEditPartCN.VISUAL_ID);
-		droppableElementsVisualId.add(ArtifactEditPartCN.VISUAL_ID);
-		droppableElementsVisualId.add(ArtifactEditPartACN.VISUAL_ID);
-		droppableElementsVisualId.add(NodeEditPartCN.VISUAL_ID);
-		droppableElementsVisualId.add(DeviceEditPartCN.VISUAL_ID);
-		droppableElementsVisualId.add(ExecutionEnvironmentEditPartCN.VISUAL_ID);
 		droppableElementsVisualId.add(CommentEditPartCN.VISUAL_ID);
 		droppableElementsVisualId.add(ConstraintEditPartCN.VISUAL_ID);
-
+		
 		// TopLevelNodes
 		droppableElementsVisualId.add(DependencyNodeEditPart.VISUAL_ID);
 		droppableElementsVisualId.add(ModelEditPart.VISUAL_ID);
-		droppableElementsVisualId.add(PackageEditPart.VISUAL_ID);
-		droppableElementsVisualId.add(NodeEditPart.VISUAL_ID);
-		droppableElementsVisualId.add(DeviceEditPart.VISUAL_ID);
-		droppableElementsVisualId.add(ExecutionEnvironmentEditPart.VISUAL_ID);
 		droppableElementsVisualId.add(ArtifactEditPart.VISUAL_ID);
 		droppableElementsVisualId.add(CommentEditPart.VISUAL_ID);
 		droppableElementsVisualId.add(ConstraintEditPart.VISUAL_ID);
@@ -436,11 +425,11 @@ public class CustomDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEdi
 
 		GraphicalEditPart graphicalParentEditPart = (GraphicalEditPart)getHost();
 		EObject graphicalParentObject = graphicalParentEditPart.resolveSemanticElement();
-		if(graphicalParentObject instanceof org.eclipse.uml2.uml.Package) {
+		//if(graphicalParentObject instanceof org.eclipse.uml2.uml.Package) {
 			return new ICommandProxy(getDefaultDropNodeCommand(nodeVISUALID, dropRequest.getLocation(), semanticElement));
-		}
+		//}
 
-		return UnexecutableCommand.INSTANCE;
+		//return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
