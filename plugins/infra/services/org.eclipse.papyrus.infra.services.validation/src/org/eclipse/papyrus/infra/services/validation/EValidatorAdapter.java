@@ -84,6 +84,11 @@ public class EValidatorAdapter
 		// first, do whatever the basic EcoreValidator does
 		super.validate(eClass, eObject, diagnostics, context);
 		
+		return batchValidate(eObject, diagnostics, context);
+	}
+
+	protected boolean batchValidate(EObject eObject,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		IStatus status = Status.OK_STATUS;
 		
 		// no point in validating if we can't report results

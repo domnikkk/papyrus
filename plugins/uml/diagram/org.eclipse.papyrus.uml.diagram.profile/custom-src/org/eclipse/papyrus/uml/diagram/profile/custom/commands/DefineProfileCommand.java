@@ -125,7 +125,7 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 
 		List<EPackage> result = new LinkedList<EPackage>();
 
-		// we wants to define
+		// we want to define
 		if(thePackage instanceof Profile) {
 			EPackage profileDefinition = ((Profile)thePackage).define(options, null, null);
 			result.add(profileDefinition);

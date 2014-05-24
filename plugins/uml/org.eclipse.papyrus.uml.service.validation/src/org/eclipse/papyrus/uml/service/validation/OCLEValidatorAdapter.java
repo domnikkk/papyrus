@@ -65,17 +65,15 @@ public class OCLEValidatorAdapter
 								eObject },
 							context));
 				}
-				return false;
-			} else {
-				return true;
 			}
 		} else if (eClass.eContainer() == getEPackage()) {
-			return validate(eClass.getClassifierID(), eObject, diagnostics, context);
+			validate(eClass.getClassifierID(), eObject, diagnostics, context);
 		} else {
-			return new OCLDelegateValidator(this) {
+			new OCLDelegateValidator(this) {
 				// Ensure that the class loader for this class will be used downstream.
 			}.validate(eClass, eObject, diagnostics, context);
 		}
+		return batchValidate(eObject, diagnostics, context);
 	}
 	
 	@Override
