@@ -106,7 +106,8 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 		}
 		
 		// Inform the clipboard of the element created (used by strategies)	
-		papyrusClipboard.addAllInternalToTargetCopy(transtypeCopier(copier));
+		Map<Object, EObject> transtypeCopier = transtypeCopier(copier);
+		papyrusClipboard.addAllInternalToTargetCopy(transtypeCopier);
 		List<EObject> semanticRootList = EcoreUtil.filterDescendants(semanticList);
 		MoveRequest moveRequest = new MoveRequest(container.getElement(), semanticRootList);
 		
@@ -278,7 +279,7 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 		Map<Object, EObject> map = new HashMap<Object, EObject>();
 		Set<Entry<EObject, EObject>> entrySet = copier.entrySet();
 		for(Entry<EObject, EObject> entry : entrySet) {
-			map.put(entry.getValue(), entry.getValue());
+			map.put(entry.getKey(), entry.getValue());
 		}
 		return map;
 	}

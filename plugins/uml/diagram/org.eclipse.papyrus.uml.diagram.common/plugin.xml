@@ -606,6 +606,9 @@
    <strategy
          strategy="org.eclipse.papyrus.uml.diagram.common.strategy.paste.RenamePasteStrategy">
    </strategy>
+   <strategy
+         strategy="org.eclipse.papyrus.uml.diagram.common.strategy.paste.ConstraintPasteStrategy">
+   </strategy>
 </extension>
 <extension
       point="org.eclipse.papyrus.infra.gmfdiag.common.copyStrategy">
