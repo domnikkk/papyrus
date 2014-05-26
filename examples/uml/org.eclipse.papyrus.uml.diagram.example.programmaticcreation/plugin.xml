@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+	<menuContribution
+		allPopups="true"
+		locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup">
+		<menu
+			id="org.eclipse.papyrus.views.modelexplorer.popup.testSequenceDiag"
+			label="Test diagram creation">
+		</menu>
+	</menuContribution>
+	<menuContribution
+		allPopups="true"
+		locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu?after=filtersMenu">
+		<menu
+			id="org.eclipse.papyrus.views.modelexplorer.popup.testSequenceDiag"
+			label="Test diagram creation">
+		</menu>
+	</menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="org.eclipse.papyrus.uml.diagram.example.programmaticcreation.CreateCompositeDiagramElementsHandler"
+            id="org.eclipse.papyrus.example.programmaticsequence.createCU"
+            name="dummy">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="org.eclipse.papyrus.uml.diagram.example.programmaticcreation.CreateSequenceDiagramElementsHandler"
+            id="org.eclipse.papyrus.example.programmaticsequence.createLifeLine"
+            name="dummy">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+	<menuContribution
+		allPopups="false"
+		locationURI="popup:org.eclipse.papyrus.views.modelexplorer.popup.testSequenceDiag">
+		<command
+               commandId="org.eclipse.papyrus.example.programmaticsequence.createCU"
+               id="org.eclipse.papyrus.example.programmaticsequence.createCU.ID"
+               label="Create collaboration use"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+		<command
+               commandId="org.eclipse.papyrus.example.programmaticsequence.createLifeLine"
+               id="org.eclipse.papyrus.example.programmaticsequence.createLifeLine.ID"
+               label="Create lifelines and message"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+	</menuContribution>
+	</extension>
+</plugin>

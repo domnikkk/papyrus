@@ -1,0 +1,17 @@
+Bundle-ManifestVersion: 2
+Bundle-Name: Programmaticsequence
+Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.example.programmaticcreation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.example.programmaticcreation.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;bundle-version="2.9.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="0.10.0",
+ org.eclipse.papyrus.uml.diagram.composite;bundle-version="0.10.0",
+ org.eclipse.papyrus.uml.diagram.sequence;bundle-version="0.10.0",
+ org.eclipse.uml2.uml;bundle-version="4.1.0",
+ org.eclipse.gmf.runtime.notation;bundle-version="1.7.0",
+ org.eclipse.gmf.runtime.diagram.core;bundle-version="1.7.0",
+ org.eclipse.papyrus.infra.core;bundle-version="0.10.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
