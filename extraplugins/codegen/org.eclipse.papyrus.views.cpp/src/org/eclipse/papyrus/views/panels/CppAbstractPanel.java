@@ -429,4 +429,14 @@ public abstract class CppAbstractPanel extends Composite {
 			newElement.eAdapters().add(umlListener);
 		}
 	}
+
+	protected static void openInformation( final String title, final String message )
+	{
+		Display.getDefault().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				MessageDialog.openInformation( Display.getCurrent().getActiveShell(), title, message );
+			}
+		});
+	}
 }

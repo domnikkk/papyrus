@@ -23,7 +23,7 @@ import org.eclipse.papyrus.codegen.extensionpoints.LanguageSupport;
 import org.eclipse.papyrus.cpp.codegen.Activator;
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenConstants;
 import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 
@@ -72,7 +72,7 @@ public class LocateCppProject {
 			}
 			else
 			{
-				boolean create = createIfMissing && MessageDialog.openQuestion(new Shell(),
+				boolean create = createIfMissing && openQuestion(
 						Messages.LocateCppProject_CreateTargetProjectTitle,
 						String.format(Messages.LocateCppProject_CreateTargetProjectDesc, projectName));
 				if (create) {
@@ -106,7 +106,7 @@ public class LocateCppProject {
 		// Make sure the target project has the C and C++ build natures.
 		try {
 			if(!modelProject.hasNature(CCProjectNature.CC_NATURE_ID)) {
-				boolean apply = createIfMissing && (Headless || MessageDialog.openQuestion(new Shell(),
+				boolean apply = createIfMissing && (Headless || openQuestion(
 						Messages.LocateCppProject_ApplyCNatureTitle,
 						Messages.LocateCppProject_ApplyCNatureDesc));
 				if (!apply) {
@@ -120,5 +120,17 @@ public class LocateCppProject {
 			Activator.log.error(e);
 		}
 		return modelProject;
+	}
+
+	private static boolean openQuestion( final String title, final String message )
+	{
+		final boolean[] ret = new boolean[]{ false };
+		Display.getDefault().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				ret[0] = MessageDialog.openQuestion(Display.getCurrent().getActiveShell(), title, message );
+			}
+		});
+		return ret[0];
 	}
 }

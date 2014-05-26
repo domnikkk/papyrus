@@ -11,7 +11,6 @@
 
 package org.eclipse.papyrus.views.panels;
 
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.papyrus.C_Cpp.Virtual;
 import org.eclipse.papyrus.acceleo.AcceleoDriver;
@@ -27,7 +26,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
@@ -112,10 +110,10 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 			public void widgetSelected(SelectionEvent e) {
 				try {
 					AcceleoDriver.evaluate(docBody.get(), selectedBehavior, null);
-					MessageDialog.openInformation(new Shell(), "Validation information", "no errors");
+					openInformation("Validation information", "no errors");
 				}
 				catch (AcceleoException err) {
-					MessageDialog.openInformation(new Shell(), "Validation information", err.getMessage());
+					openInformation("Validation information", err.getMessage());
 				}
 			}
 		});
