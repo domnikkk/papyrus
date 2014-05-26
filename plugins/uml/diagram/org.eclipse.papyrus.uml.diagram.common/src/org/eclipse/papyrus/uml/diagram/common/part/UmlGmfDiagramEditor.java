@@ -4,6 +4,7 @@
 package org.eclipse.papyrus.uml.diagram.common.part;
 
 import org.eclipse.core.commands.operations.IUndoContext;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -15,6 +16,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.gmfdiag.common.SynchronizableGmfDiagramEditor;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.contexts.IContextService;
 
 /**
@@ -64,6 +66,14 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 		saveAndDirtyService.registerIsaveablePart(this);
 	}
 
+	@Override
+	public void doSetInput(IEditorInput input, boolean releaseEditorContents) throws CoreException {
+		super.doSetInput(input, releaseEditorContents);
+		if(getDiagram() != null) {
+			new ReconcileHelper(getEditingDomain()).reconcileDiagram(getDiagram());
+		}
+	}
+
 	/**
 	 * Dispose services used in this part.
 	 * 
@@ -82,8 +92,8 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 				return false;
 			}
 
-		}); //Avoid disposing the shared UndoContext when this nestedEditor is dispose
-		//Super.dispose() will try to dispose the IUndoContext
+		}); // Avoid disposing the shared UndoContext when this nestedEditor is dispose
+		// Super.dispose() will try to dispose the IUndoContext
 
 		super.dispose();
 
@@ -222,8 +232,8 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 	@Override
 	public void createPartControl(Composite parent) {
 		IContextService contextService = (IContextService)getSite().getService(IContextService.class);
-		//FIXME : before Eclipse Juno, this line was not necessary
-		//see bug 367816 and bug 382218
+		// FIXME : before Eclipse Juno, this line was not necessary
+		// see bug 367816 and bug 382218
 		contextService.activateContext("org.eclipse.gmf.runtime.diagram.ui.diagramContext"); //$NON-NLS-1$
 		super.createPartControl(parent);
 

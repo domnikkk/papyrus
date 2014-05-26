@@ -238,6 +238,7 @@ import xpt.editor.VisualIDRegistry
 			@SuppressWarnings("unchecked")
 			public org.eclipse.gmf.runtime.notation.Diagram createDiagram(org.eclipse.core.runtime.IAdaptable semanticAdapter, String diagramKind, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint preferencesHint) {
 				org.eclipse.gmf.runtime.notation.Diagram diagram = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createDiagram();«/* FIXME instantiate diagramRunTimeClass instead */»
+				org.eclipse.papyrus.infra.gmfdiag.common.reconciler.DiagramVersioningUtils.stampCurrentVersion(diagram);«/* Papyrus specific diagram versioning */»
 				diagram.getStyles().add(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createDiagramStyle());
 				«xptViewStyles.addCustomStyles(it, 'diagram.getStyles()')»
 				diagram.setType(«VisualIDRegistry::modelID(it)»);
