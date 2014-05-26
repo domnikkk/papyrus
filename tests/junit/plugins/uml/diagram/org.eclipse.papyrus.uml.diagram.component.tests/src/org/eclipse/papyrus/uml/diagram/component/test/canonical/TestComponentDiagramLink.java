@@ -12,11 +12,14 @@
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.component.test.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
 import org.eclipse.papyrus.uml.diagram.component.CreateComponentDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.component.test.IComponentDiagramTestsConstants;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -24,6 +27,11 @@ import org.junit.Test;
  */
 public class TestComponentDiagramLink extends TestLink {
 
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
+	
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateComponentDiagramCommand();
@@ -53,6 +61,7 @@ public class TestComponentDiagramLink extends TestLink {
 	@Test
 	public void testToManageDependency() {
 		testToManageLink(UMLElementTypes.Component_2002, UMLElementTypes.Component_2002, UMLElementTypes.Dependency_4010, UMLElementTypes.Package_3200, true);
+
 	}
 
 	/**

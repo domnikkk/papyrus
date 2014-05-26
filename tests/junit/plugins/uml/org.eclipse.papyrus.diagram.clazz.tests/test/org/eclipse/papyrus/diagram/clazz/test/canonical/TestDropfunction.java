@@ -32,10 +32,12 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.clazz.test.IClassDiagramTestsConstants;
 import org.eclipse.papyrus.diagram.tests.canonical.TestChildLabel;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.EnumerationEnumerationLiteralCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Element;
@@ -49,6 +51,10 @@ import org.junit.Test;
  */
 public class TestDropfunction extends TestChildLabel {
 
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return CustomUMLDiagramUpdater.INSTANCE;
+	}
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateClassDiagramCommand();

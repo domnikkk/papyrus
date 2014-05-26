@@ -13,8 +13,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.activity.tests.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
+import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.activity.tests.IActivityDiagramTestsConstants;
 
 
@@ -28,7 +30,10 @@ public class TestActivityDiagramLink extends TestLink {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.TYPED_INSTANCE;
+	}
 	@Override
 	protected String getProjectName() {
 		return IActivityDiagramTestsConstants.PROJECT_NAME;

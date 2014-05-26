@@ -22,9 +22,11 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLinkWithParent;
 import org.eclipse.papyrus.uml.diagram.composite.CreateCompositeDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.composite.test.ICompositeDiagramTestsConstants;
 import org.junit.Before;
@@ -36,7 +38,11 @@ import org.junit.Test;
  */
 public class TestCompositeDiagramElementWithDifferentParentLink extends TestLinkWithParent {
 
-
+@Override
+public DiagramUpdater getDiagramUpdater() {
+	return UMLDiagramUpdater.INSTANCE;
+}
+	
 	/** The target parent. */
 	private GraphicalEditPart targetParent;
 

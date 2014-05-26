@@ -14,6 +14,8 @@
 package org.eclipse.papyrus.uml.diagram.activity.tests.canonical;
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.activity.tests.IActivityDiagramTestsConstants;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -30,7 +32,10 @@ public class TestActivityDiagramChildWithOtherCreationNode extends AbstractTestA
 	protected String getProjectName() {
 		return IActivityDiagramTestsConstants.PROJECT_NAME;
 	}
-
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.TYPED_INSTANCE;
+	}
 	@Override
 	protected String getFileName() {
 		return IActivityDiagramTestsConstants.FILE_NAME;

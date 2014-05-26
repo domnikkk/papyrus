@@ -14,6 +14,8 @@
 package org.eclipse.papyrus.uml.diagram.activity.tests.canonical;
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.activity.tests.IActivityDiagramTestsConstants;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -30,8 +32,17 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	}
 
 	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.TYPED_INSTANCE;
+	}
+	@Override
 	protected String getFileName() {
 		return IActivityDiagramTestsConstants.FILE_NAME;
+	}
+	@Override
+	protected boolean isSemanticTest() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 	
 	/**
@@ -119,7 +130,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageSendObjectAction() {
-		testToManageNode(UMLElementTypes.SendObjectAction_3042,  UMLPackage.eINSTANCE.getSendObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.SendObjectAction_3042,  UMLPackage.eINSTANCE.getSendObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true,2);
 	}
 
 	/**
@@ -215,7 +226,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageReadStructuralFeatureAction() {
-		testToManageNode(UMLElementTypes.ReadStructuralFeatureAction_3088, UMLPackage.eINSTANCE.getReadStructuralFeatureAction(),  UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.ReadStructuralFeatureAction_3088, UMLPackage.eINSTANCE.getReadStructuralFeatureAction(),  UMLElementTypes.StructuredActivityNode_3065, true,2);
 	}
 
 	/**
@@ -223,7 +234,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageDestroyObjectAction() {
-		testToManageNode(UMLElementTypes.DestroyObjectAction_3095,  UMLPackage.eINSTANCE.getDestroyObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.DestroyObjectAction_3095,  UMLPackage.eINSTANCE.getDestroyObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true,1);
 	}
 
 	/**
@@ -231,7 +242,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageReadVariableAction() {
-		testToManageNode(UMLElementTypes.ReadVariableAction_3097,  UMLPackage.eINSTANCE.getReadVariableAction(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.ReadVariableAction_3097,  UMLPackage.eINSTANCE.getReadVariableAction(), UMLElementTypes.StructuredActivityNode_3065, true,1);
 	}
 
 	/**
@@ -247,7 +258,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageCreateObjectAction() {
-		testToManageNode(UMLElementTypes.CreateObjectAction_3086,  UMLPackage.eINSTANCE.getCreateObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.CreateObjectAction_3086,  UMLPackage.eINSTANCE.getCreateObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true,1);
 	}
 
 	/**
@@ -255,7 +266,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageAddVariableValueAction() {
-		testToManageNode(UMLElementTypes.AddVariableValueAction_3099, UMLPackage.eINSTANCE.getAddVariableValueAction(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.AddVariableValueAction_3099, UMLPackage.eINSTANCE.getAddVariableValueAction(), UMLElementTypes.StructuredActivityNode_3065, true,2);
 	}
 
 	/**

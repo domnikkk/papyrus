@@ -51,6 +51,7 @@ import org.eclipse.gmf.runtime.diagram.ui.util.INotationType;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase;
 import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
@@ -73,6 +74,11 @@ import org.eclipse.uml2.uml.NamedElement;
 
 public class AbstractInteractionOverviewDiagramTestCase extends TestChildNode {
 
+	
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramUpdater.INSTANCE;
+	}
 	private CustomActivityEditPartTN activityEditPartTN;
 
 	private ActivityActivityContentCompartmentEditPart activityCompartmentEditPart;

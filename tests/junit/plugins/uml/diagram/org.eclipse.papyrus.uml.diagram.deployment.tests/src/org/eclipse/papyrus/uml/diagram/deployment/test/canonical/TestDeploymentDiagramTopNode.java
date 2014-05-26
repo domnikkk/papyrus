@@ -14,9 +14,11 @@ package org.eclipse.papyrus.uml.diagram.deployment.test.canonical;
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestTopNode;
 import org.eclipse.papyrus.uml.diagram.deployment.CreateDeploymentDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.deployment.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.deployment.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.deployment.test.IDeploymentDiagramTestsConstants;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -27,6 +29,10 @@ import org.junit.Test;
  */
 public class TestDeploymentDiagramTopNode extends TestTopNode {
 
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateDeploymentDiagramCommand();
@@ -110,5 +116,6 @@ public class TestDeploymentDiagramTopNode extends TestTopNode {
 	public void testToManageConstraint() {
 		testToManageNode(UMLElementTypes.Constraint_2005, UMLPackage.eINSTANCE.getConstraint(), UMLElementTypes.Package_2009, true);
 	}
+
 
 }

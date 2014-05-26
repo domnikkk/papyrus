@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2009 CEA LIST.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -8,20 +8,28 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Nizar GUEDIDI (CEA LIST) - Initial API and implementation
- /*****************************************************************************/
+ *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.component.test.canonical;
 
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestConstraintLink;
+import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
 import org.eclipse.papyrus.uml.diagram.component.CreateComponentDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.component.test.IComponentDiagramTestsConstants;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Test;
 
-public class TestComponentDiagramConstraintLink extends TestConstraintLink {
+/**
+ * The Class TestComponentDiagramChildNode.
+ */
+
+public class TestComponentDiagramComponentChildNode extends TestChildNode {
 
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
@@ -31,7 +39,11 @@ public class TestComponentDiagramConstraintLink extends TestConstraintLink {
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateComponentDiagramCommand();
 	}
-	
+	@Override
+	protected CreateViewRequest createViewRequestShapeContainer() {
+		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.Component_2002, getDiagramEditPart().getDiagramPreferencesHint());
+	}
+
 	@Override
 	protected String getProjectName() {
 		return IComponentDiagramTestsConstants.PROJECT_NAME;
@@ -42,11 +54,21 @@ public class TestComponentDiagramConstraintLink extends TestConstraintLink {
 		return IComponentDiagramTestsConstants.FILE_NAME;
 	}
 
+
 	/**
 	 * Test to manage Constraint
 	 */
 	@Test
-	public void testToManageConstraint() {
-		testToManageLink(UMLElementTypes.Constraint_3199, UMLElementTypes.Package_3200, UMLElementTypes.ConstraintConstrainedElement_4009, UMLElementTypes.Package_3200, true);
+	public void testToManagePropertyPart() {
+		testToManageNodeWithMask(UMLElementTypes.Property_3079, UMLPackage.eINSTANCE.getProperty(), UMLElementTypes.Component_2002, false, "Attribute",0);
+	}
+	/**
+	 * Test to manage Constraint
+	 */
+	@Test
+	public void testToManagePort() {
+		setTestAffixedNode(true);
+		testToManageNode(UMLElementTypes.Port_3069, UMLPackage.eINSTANCE.getPort(), UMLElementTypes.Component_2002, false,3,0,1,1,true, null,0);
+		setTestAffixedNode(false);
 	}
 }

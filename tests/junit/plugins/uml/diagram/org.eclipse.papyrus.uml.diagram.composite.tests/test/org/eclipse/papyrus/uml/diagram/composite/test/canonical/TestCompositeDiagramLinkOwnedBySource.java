@@ -13,9 +13,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.composite.test.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLinkOwnedBySource;
+import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.composite.CreateCompositeDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.composite.test.ICompositeDiagramTestsConstants;
 import org.junit.Test;
@@ -24,7 +27,10 @@ import org.junit.Test;
  * The Class TestCompositeDiagramLinkOwnedBySource use to test link that are contained by the owner of the target and the source.
  */
 public class TestCompositeDiagramLinkOwnedBySource extends TestLinkOwnedBySource {
-
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
 	/**
 	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getDiagramCommandCreation()
 	 *
@@ -81,6 +87,14 @@ public class TestCompositeDiagramLinkOwnedBySource extends TestLinkOwnedBySource
 	@Test
 	public void testCollaborationToClassGeneralization() {
 		testToManageLink(UMLElementTypes.Collaboration_2075, UMLElementTypes.Class_2073, UMLElementTypes.Generalization_4015, UMLElementTypes.Package_1000, true);
-	}		
+	}	
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	@InvalidTest
+	public void testToComponentRealization() {
+	testToManageLink(UMLElementTypes.Component_2069, UMLElementTypes.Interface_2076, UMLElementTypes.ComponentRealization_4004, UMLElementTypes.Package_1000, true);
+	}
 	
 }

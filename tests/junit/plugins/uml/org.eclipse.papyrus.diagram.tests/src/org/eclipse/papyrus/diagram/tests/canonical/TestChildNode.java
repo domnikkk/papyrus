@@ -19,13 +19,16 @@ import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
 
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.Element;
 import org.junit.Before;
 
 /**
@@ -37,6 +40,18 @@ public abstract class TestChildNode extends AbstractTestNode {
 
 	/** The root compartment. */
 	protected ShapeCompartmentEditPart rootCompartment = null;
+	protected boolean testAffixedNode=false;
+
+
+
+	public boolean isTestAffixedNode() {
+		return testAffixedNode;
+	}
+
+
+	public void setTestAffixedNode(boolean testAffixedNode) {
+		this.testAffixedNode = testAffixedNode;
+	}
 
 	/**
 	 * @see org.eclipse.papyrus.diagram.clazz.test.canonical.AbstractPapyrusTestCase#setUp()
@@ -74,6 +89,9 @@ public abstract class TestChildNode extends AbstractTestNode {
 	 */
 	@Override
 	protected IGraphicalEditPart getContainerEditPart() {
+		if(testAffixedNode){
+			return (IGraphicalEditPart)rootCompartment.getParent();
+		}
 		return rootCompartment;
 	}
 
@@ -84,6 +102,27 @@ public abstract class TestChildNode extends AbstractTestNode {
 	 */
 	@Override
 	protected View getRootView() {
-		return (View)rootCompartment.getModel();
+		return (View)getContainerEditPart().getModel();
+	}
+
+	public void testToManageNode(IElementType type, EClass eClass, IElementType containerType, boolean containerMove, int expectedGraphicalChildren, int expectedSemanticChildren, int addedGraphicalChildren, int addedSemanticChildren, boolean maskmanaged, String initialName,int  numberSemanticChildreen) {
+		// create a node
+		testToCreateANode(type, expectedGraphicalChildren, expectedSemanticChildren, addedGraphicalChildren, addedSemanticChildren, maskmanaged,null, numberSemanticChildreen);
+		// creates a second one
+		testToCreateANode(type, expectedGraphicalChildren+1, expectedSemanticChildren+1, addedGraphicalChildren, addedSemanticChildren, maskmanaged,null,numberSemanticChildreen);
+		// destroy the first element
+		testDestroy(type, expectedGraphicalChildren+2*addedGraphicalChildren, 2, 1, 1);
+		// destroy the second one
+		testDestroy(type,  expectedGraphicalChildren+addedGraphicalChildren, 1, 1, 1);
+		// the node has been destroyed, the UML element also. restore one element
+		undoOnUIThread();
+		// the node and the UML element are present
+		testViewDeletion(type,expectedGraphicalChildren+addedGraphicalChildren, 1, 1);
+		// The node has been deleted, the uml element is still present
+		testDrop(type, eClass,expectedGraphicalChildren,addedGraphicalChildren,addedSemanticChildren);
+		// the node and element are present
+		if(containerMove) {
+			testChangeContainer(type, containerType);
+		}
 	}
 }

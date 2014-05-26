@@ -14,9 +14,11 @@ package org.eclipse.papyrus.diagram.profile.tests.canonical;
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestTopNode;
 import org.eclipse.papyrus.uml.diagram.profile.CreateProfileDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.profile.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Test;
@@ -24,6 +26,11 @@ import org.junit.Test;
 
 public class TestProfileDiagramTopNode extends TestTopNode {
 
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
+	
 	@Override
 	protected CreateViewRequest createViewRequestShapeContainer() {
 		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.Package_2007, getDiagramEditPart().getDiagramPreferencesHint());

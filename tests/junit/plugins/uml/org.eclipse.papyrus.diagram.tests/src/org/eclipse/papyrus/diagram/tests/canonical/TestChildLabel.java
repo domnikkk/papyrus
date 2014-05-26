@@ -26,16 +26,24 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.GroupRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ResizableCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.uml2.uml.Element;
+import org.junit.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -85,6 +93,8 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.diagram.tests.c
 	/** The top node. */
 	protected GraphicalEditPart topNode;
 
+	public abstract DiagramUpdater getDiagramUpdater();
+	
 	/**
 	 * Test view deletion.
 	 *
@@ -268,8 +278,9 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.diagram.tests.c
 	 *        the type
 	 * @param containerType
 	 *        the container type
+	 * @param maskmanaged used to test if the editpart must have a mask managed edit policy
 	 */
-	public void testToCreateANode(IElementType type, int containerType) {
+	public void testToCreateANode(IElementType type, int containerType, boolean maskmanaged, String initialName) {
 		ListCompartmentEditPart compartment = null;
 		int index = 0;
 		while(compartment == null && index < getTopEditPart().getChildren().size()) {
@@ -289,11 +300,50 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.diagram.tests.c
 		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		assertTrue(CREATION + TEST_THE_EXECUTION, compartment.getChildren().size() == 1);
+		Assert.assertTrue("Node must be org.eclipse.gmf.runtime.notation.Shape",((EditPart)compartment.getChildren().get(0)).getModel() instanceof Shape);
+		EditPart createdEditPart= (EditPart)compartment.getChildren().get(0);
+		testNodeEditPart(maskmanaged, createdEditPart, initialName);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		assertTrue(CREATION + TEST_THE_UNDO, compartment.getChildren().size() == 0);
 		assertTrue(CREATION + TEST_THE_UNDO, ((Element)((View)getTopEditPart().getModel()).getElement()).getOwnedElements().size() == 0);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
 		assertTrue("CREATION: " + TEST_THE_REDO, compartment.getChildren().size() == 1);
+		
+		Assert.assertNotEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(getRootView()).size());
+		Assert.assertEquals("Diagram updater must detect that no link has been created",0,getDiagramUpdater().getContainedLinks(getRootView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks(((GraphicalEditPart) compartment.getChildren().get(0)).getNotationView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks(((GraphicalEditPart) compartment.getChildren().get(0)).getNotationView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",0,getDiagramUpdater().getSemanticChildren(((GraphicalEditPart) compartment.getChildren().get(0)).getNotationView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks(((GraphicalEditPart) compartment.getChildren().get(0)).getNotationView()).size());
+		
+		
+		
+	}
+	/**
+	 * this method is used to test the created editpart
+	 * @param maskmanaged
+	 * @param createdEditPart
+	 */
+	protected void testNodeEditPart(boolean maskmanaged, EditPart createdEditPart, String initialName) {
+		Assert.assertNotNull("The editpart must be created", createdEditPart);
+		if( maskmanaged){
+			Assert.assertNotNull("the created editpolicy must have as MASK_MANAGED_LABEL_EDIT_POLICY", createdEditPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY));
+		}
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart",createdEditPart instanceof ITextAwareEditPart);
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart",createdEditPart instanceof GraphicalEditPart);
+		String name=((GraphicalEditPart)createdEditPart).resolveSemanticElement().eClass().getName();
+		if(initialName!=null){
+			name= initialName;
+		}
+		if(name.length()<((ITextAwareEditPart)createdEditPart).getEditText().length()){
+			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)createdEditPart).getEditText().substring(0,name.length()));
+		}
+		else{
+			//not the same it sure but display the mistake is important
+			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)createdEditPart).getEditText());
+		}
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart",createdEditPart instanceof CompartmentEditPart);
+		Assert.assertTrue("namelabelEditpart must be editable",((CompartmentEditPart)createdEditPart).isEditModeEnabled());
 	}
 
 	/**
@@ -346,9 +396,43 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.diagram.tests.c
 	 * @param containerType
 	 *        the container type
 	 */
-	public void testToManageTopNode(IElementType topNodeType, IElementType type, int containerType) {
+	public void testToManageTopNode(IElementType topNodeType, IElementType type, int containerType,String initialName) {
 		testToCreateATopNode(topNodeType);
-		testToCreateANode(type, containerType);
+		testToCreateANode(type, containerType, false, initialName);
+		testDestroy(type, containerType);
+		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
+		testViewDeletion(type, containerType);
+		testDrop(type, containerType);
+		testChangeContainer(topNodeType, type, containerType);
+	}
+	
+	/**
+	 * Test to manage top node.
+	 *
+	 * @param topNodeType
+	 *        the top node type
+	 * @param type
+	 *        the type
+	 * @param containerType
+	 *        the container type
+	 */
+	public void testToManageTopNode(IElementType topNodeType, IElementType type, int containerType) {
+		testToManageTopNode(topNodeType, type, containerType, null);
+	}
+
+	/**
+	 * Test to manage top node and test if an editpolicy mask managed is applied.
+	 *
+	 * @param topNodeType
+	 *        the top node type
+	 * @param type
+	 *        the type
+	 * @param containerType
+	 *        the container type
+	 */
+	public void testToManageTopNodeWithMask(IElementType topNodeType, IElementType type, int containerType,String initialName) {
+		testToCreateATopNode(topNodeType);
+		testToCreateANode(type, containerType, true, initialName);
 		testDestroy(type, containerType);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		testViewDeletion(type, containerType);

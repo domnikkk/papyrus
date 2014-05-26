@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.usecase.tests.canonical;
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
 import org.eclipse.papyrus.uml.diagram.usecase.CreateUseCaseDiagramCommand;
@@ -30,6 +31,10 @@ import org.junit.Test;
  */
 public class TestUseCaseChildNodeForPackage extends TestChildNode {
 	
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater.INSTANCE;
+	}
 	@Override
 	protected CreateViewRequest createViewRequestShapeContainer() {
 		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.Package_2016, getDiagramEditPart().getDiagramPreferencesHint());

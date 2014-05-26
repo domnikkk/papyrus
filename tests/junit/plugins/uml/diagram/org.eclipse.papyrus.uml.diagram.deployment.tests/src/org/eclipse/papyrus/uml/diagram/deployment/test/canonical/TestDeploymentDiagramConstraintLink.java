@@ -12,15 +12,21 @@
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.deployment.test.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestConstraintLink;
 import org.eclipse.papyrus.uml.diagram.deployment.CreateDeploymentDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.deployment.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.deployment.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.deployment.test.IDeploymentDiagramTestsConstants;
 import org.junit.Test;
 
 public class TestDeploymentDiagramConstraintLink extends TestConstraintLink {
 
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateDeploymentDiagramCommand();

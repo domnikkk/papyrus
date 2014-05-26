@@ -24,7 +24,11 @@ import org.junit.runners.Suite.SuiteClasses;
 // Top Node
 TestComponentDiagramTopNode.class,
 // Child Node
-TestComponenetDiagramChildNode.class,
+TestComponentDiagramPackageChildNode.class,
+//child nodes in components
+TestComponentDiagramComponentChildNode.class,
+//child nodes in interface
+TestComponentDiagramChildLabel.class,
 // Link
 TestComponentDiagramLink.class,
 //Link owned by source 
@@ -33,6 +37,8 @@ TestComponentDiagramLinkOwnedBySource.class,
 TestComponentDiagramCommentLink.class,
 // Constraint Link
 TestComponentDiagramConstraintLink.class
+
+
 // End
 })
 public class AllCanonicalTests {

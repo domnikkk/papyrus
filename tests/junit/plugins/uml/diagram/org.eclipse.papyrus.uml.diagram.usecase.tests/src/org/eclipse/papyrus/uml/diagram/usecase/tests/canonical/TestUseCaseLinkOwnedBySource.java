@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.usecase.tests.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLinkOwnedBySource;
 import org.eclipse.papyrus.uml.diagram.usecase.CreateUseCaseDiagramCommand;
@@ -26,6 +27,10 @@ import org.junit.Test;
  */
 public class TestUseCaseLinkOwnedBySource extends TestLinkOwnedBySource {
 
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater.INSTANCE;
+	}
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateUseCaseDiagramCommand();

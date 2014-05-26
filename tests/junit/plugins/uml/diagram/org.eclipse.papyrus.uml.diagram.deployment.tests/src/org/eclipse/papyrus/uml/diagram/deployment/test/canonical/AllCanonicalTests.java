@@ -24,7 +24,8 @@ import org.junit.runners.Suite.SuiteClasses;
 // Top Node
 TestDeploymentDiagramTopNode.class,
 // Child Node
-TestDeploymentDiagramChildNode.class,
+TestDeploymentDiagramForPackageChildNode.class,
+TestDeploymentDiagramForNodeChildNode.class,
 // Deployment Link
 TestDeploymentDiagramDeploymentLink.class,
 // Link by owned source 

@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
 import org.eclipse.papyrus.uml.diagram.usecase.CreateUseCaseDiagramCommand;
@@ -34,6 +35,10 @@ import org.junit.Test;
  */
 public class TestUseCaseChildNodeForClassSubject extends TestChildNode {
 	
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater.INSTANCE;
+	}
 	@Override
 	protected CreateViewRequest createViewRequestShapeContainer() {
 		CreateElementRequest semanticRequest=new CreateElementRequest(UMLElementTypes.Classifier_2015);

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2009 CEA LIST.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -8,27 +8,28 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Nizar GUEDIDI (CEA LIST) - Initial API and implementation
- /*****************************************************************************/
+ *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.component.test.canonical;
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.diagram.tests.canonical.TestTopNode;
+import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
 import org.eclipse.papyrus.uml.diagram.component.CreateComponentDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.component.test.IComponentDiagramTestsConstants;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * The Class TestComponentDiagramTopNode.
+ * The Class TestComponentDiagramChildNode.
  */
-public class TestComponentDiagramTopNode extends TestTopNode {
+
+public class TestComponentDiagramPackageChildNode extends TestChildNode {
 
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
@@ -39,11 +40,12 @@ public class TestComponentDiagramTopNode extends TestTopNode {
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateComponentDiagramCommand();
 	}
-	@Override
-	protected boolean isSemanticTest() {
-		return true;
-	}
 
+	@Override
+	protected CreateViewRequest createViewRequestShapeContainer() {
+		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.Package_3200, getDiagramEditPart().getDiagramPreferencesHint());
+	}
+	
 	@Override
 	protected String getProjectName() {
 		return IComponentDiagramTestsConstants.PROJECT_NAME;
@@ -53,18 +55,13 @@ public class TestComponentDiagramTopNode extends TestTopNode {
 	protected String getFileName() {
 		return IComponentDiagramTestsConstants.FILE_NAME;
 	}
-	
-	@Override
-	protected CreateViewRequest createViewRequestShapeContainer() {
-		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.Package_3200, getDiagramEditPart().getDiagramPreferencesHint());
-	}
 
 	/**
-	 * Test to manage Package
+	 * Test to manage i package.
 	 */
 	@Test
 	public void testToManagePackage() {
-		testToManageNode(UMLElementTypes.Package_3200, UMLPackage.eINSTANCE.getPackage(), UMLElementTypes.Package_3200, true);
+		testToManageNode(UMLElementTypes.Package_3076, UMLPackage.eINSTANCE.getPackage(), UMLElementTypes.Package_3076, true);
 	}
 
 	/**
@@ -72,7 +69,7 @@ public class TestComponentDiagramTopNode extends TestTopNode {
 	 */
 	@Test
 	public void testToManageModel() {
-		testToManageNode(UMLElementTypes.Model_3202, UMLPackage.eINSTANCE.getModel(), UMLElementTypes.Package_3200, true);
+		testToManageNode(UMLElementTypes.Model_3077, UMLPackage.eINSTANCE.getModel(), UMLElementTypes.Package_3076, true);
 	}
 
 	/**
@@ -80,8 +77,7 @@ public class TestComponentDiagramTopNode extends TestTopNode {
 	 */
 	@Test
 	public void testToManageComponent() {
-		testToManageNode(UMLElementTypes.Component_2002, UMLPackage.eINSTANCE.getComponent(), UMLElementTypes.Package_3200, true);
-
+		testToManageNode(UMLElementTypes.Component_3071, UMLPackage.eINSTANCE.getComponent(), UMLElementTypes.Package_3076, true);
 	}
 
 	/**
@@ -89,17 +85,16 @@ public class TestComponentDiagramTopNode extends TestTopNode {
 	 */
 	@Test
 	public void testToManageInterface() {
-		testToManageNode(UMLElementTypes.Interface_3205, UMLPackage.eINSTANCE.getInterface(), UMLElementTypes.Package_3200, true);
-
+		testToManageNode(UMLElementTypes.Interface_3078, UMLPackage.eINSTANCE.getInterface(), UMLElementTypes.Package_3076, true);
 	}
+	
 
 	/**
 	 * Test to manage Comment
 	 */
 	@Test
 	public void testToManageComment() {
-		testToManageNode(UMLElementTypes.Comment_3201, UMLPackage.eINSTANCE.getComment(), UMLElementTypes.Package_3200, true);
-
+		testToManageNode(UMLElementTypes.Comment_3074, UMLPackage.eINSTANCE.getComment(), UMLElementTypes.Package_3076, true);
 	}
 
 	/**
@@ -107,10 +102,6 @@ public class TestComponentDiagramTopNode extends TestTopNode {
 	 */
 	@Test
 	public void testToManageConstraint() {
-		testToManageNode(UMLElementTypes.Constraint_3199, UMLPackage.eINSTANCE.getConstraint(), UMLElementTypes.Package_3200, true);
-
+		testToManageNode(UMLElementTypes.Constraint_3075, UMLPackage.eINSTANCE.getConstraint(), UMLElementTypes.Package_3076, true);
 	}
-	
-	
-
 }

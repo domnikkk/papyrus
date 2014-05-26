@@ -12,9 +12,12 @@
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.deployment.test.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
+import org.eclipse.papyrus.junit.utils.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.deployment.CreateDeploymentDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.deployment.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.deployment.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.deployment.test.IDeploymentDiagramTestsConstants;
 import org.junit.Test;
@@ -24,6 +27,10 @@ import org.junit.Test;
  */
 public class TestDeploymentDiagramLink extends TestLink {
 
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateDeploymentDiagramCommand();
@@ -44,8 +51,17 @@ public class TestDeploymentDiagramLink extends TestLink {
 	 */
 
 	@Test
+	@FailingTest
 	public void testToManageDependency() {
 		testToManageLink(UMLElementTypes.Node_2008, UMLElementTypes.Node_2008, UMLElementTypes.Dependency_4004, UMLElementTypes.Package_2009, true);
+	}
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	@FailingTest
+	public void testToManifestation() {
+	testToManageLink(UMLElementTypes.Package_2009, UMLElementTypes.Package_2009, UMLElementTypes.Manifestation_4002, UMLElementTypes.Package_2009, true);
 	}
 
 }

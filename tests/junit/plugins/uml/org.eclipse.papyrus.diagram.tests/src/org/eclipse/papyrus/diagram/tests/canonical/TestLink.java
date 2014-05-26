@@ -18,11 +18,13 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.ConnectionEditPart;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
@@ -30,8 +32,10 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gef.requests.ReconnectRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
@@ -41,10 +45,14 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
+import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.uml2.uml.Element;
+import org.junit.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -73,6 +81,7 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 
 	protected GraphicalEditPart targetPlayer = null;
 
+	public abstract DiagramUpdater getDiagramUpdater();
 	/**
 	 * Test view deletion.
 	 *
@@ -236,7 +245,7 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 	 * @param linkType
 	 *        the type
 	 */
-	public void testToCreateALink(IElementType linkType) {
+	public void testToCreateALink(IElementType linkType,String initialName) {
 		assertTrue(CREATION + INITIALIZATION_TEST, getDiagramEditPart().getChildren().size() == 4);
 		assertTrue(CREATION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == 4);
 		Command command = target.getCommand(createConnectionViewRequest(linkType, source, target));
@@ -251,6 +260,60 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
 		assertTrue(CREATION + TEST_THE_REDO, ((Diagram)getRootView()).getEdges().size() == 1);
 		assertTrue(CREATION + TEST_THE_REDO, getRootSemanticModel().getOwnedElements().size() == 5);
+		ConnectionEditPart linkEditPart= (ConnectionEditPart)getDiagramEditPart().getConnections().get(0);
+		testLinkEditPart(linkEditPart, initialName);
+		
+		Assert.assertEquals("Diagram updater must detect that node children has been created",4,getDiagramUpdater().getSemanticChildren(getRootView()).size());
+		Assert.assertEquals("Diagram updater must detect that no link has been created",1,getDiagramUpdater().getContainedLinks(getRootView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)((Diagram)getRootView()).getEdges().get(0)).size());
+		Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)((Diagram)getRootView()).getEdges().get(0)).size());
+		Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",0,getDiagramUpdater().getSemanticChildren(((View)((Diagram)getRootView()).getEdges().get(0))).size());
+		Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks(((View)((Diagram)getRootView()).getEdges().get(0))).size());
+
+		Assert.assertEquals ("Diagram updater must detect that no link are incoming",1,getDiagramUpdater().getIncomingLinks(target.getNotationView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no link are OutgoingLinks",0,getDiagramUpdater().getOutgoingLinks(target.getNotationView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no link are IncomingLinks",0,getDiagramUpdater().getIncomingLinks(source.getNotationView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no link are OutgoingLinks",1,getDiagramUpdater().getOutgoingLinks(source.getNotationView()).size());
+		
+		
+	}
+
+	/**
+	 * htis method is used to test the created link editpart
+	 * @param linkEditPart
+	 */
+	protected void testLinkEditPart(ConnectionEditPart linkEditPart, String initialName) {
+		Assert.assertNotNull("the editpart of the link must exist",linkEditPart);
+		EditPolicy policy=linkEditPart.getEditPolicy(org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy.SHOW_HIDE_LABEL_ROLE);
+		Assert.assertNotNull("the link must have an edipolicy that to show or hide label",policy);
+		Assert.assertTrue("the policy of the link must be an instance of ShowHideLabelEditPolicy", policy instanceof org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy);
+		//get text aware
+		ITextAwareEditPart namedEditPart=null;
+		for(Iterator iteratorChildren = linkEditPart.getChildren().iterator(); iteratorChildren.hasNext();) {
+			Object children = iteratorChildren.next();
+			if (children instanceof ITextAwareEditPart&&(((ITextAwareEditPart)children).getEditText()!=null)&&(!((ITextAwareEditPart)children).getEditText().trim().equals(""))){
+				namedEditPart=(ITextAwareEditPart)children;
+			}
+		}
+		if(namedEditPart!=null){
+			testNameLabel(namedEditPart,initialName);
+		}
+
+	}
+
+	protected void testNameLabel(ITextAwareEditPart namedEditPart, String initialName) {
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof GraphicalEditPart);
+		String name=((GraphicalEditPart)namedEditPart).resolveSemanticElement().eClass().getName();
+		if( initialName!=null){
+			name=initialName;
+		}
+		if(name.length()<((ITextAwareEditPart)namedEditPart).getEditText().length()){
+			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length()));
+		}
+		else{
+			//not the same it sure but display the mistake is important
+			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText());
+		}
 	}
 
 	public void installEnvironment(IElementType sourceType, IElementType targetType) {
@@ -360,9 +423,9 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 	 * @param containerType
 	 *        the container type
 	 */
-	public void testToManageLink(IElementType sourceType, IElementType targetType, IElementType linkType, IElementType containerType, boolean allowedOntheSame) {
+	public void testToManageLink(IElementType sourceType, IElementType targetType, IElementType linkType, IElementType containerType, boolean allowedOntheSame, String initialName) {
 		installEnvironment(sourceType, targetType);
-		testToCreateALink(linkType);
+		testToCreateALink(linkType, initialName);
 		testDestroy(linkType);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		testViewDeletion(linkType);
@@ -372,6 +435,17 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 		testTargetReconnectAMultiLink(linkType);
 		testToCreateAlinkOnTheSame(linkType, allowedOntheSame);
 		testToDropAlinkOnTheSame(linkType, allowedOntheSame);
+	}
+	/**
+	 * Test to manage top node.
+	 *
+	 * @param type
+	 *        the type
+	 * @param containerType
+	 *        the container type
+	 */
+	public void testToManageLink(IElementType sourceType, IElementType targetType, IElementType linkType, IElementType containerType, boolean allowedOntheSame) {
+	testToManageLink(sourceType, targetType, linkType, containerType, allowedOntheSame, null);
 	}
 
 	/**

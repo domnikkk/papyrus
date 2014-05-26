@@ -15,10 +15,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.clazz.test.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.clazz.test.IClassDiagramTestsConstants;
 import org.eclipse.papyrus.diagram.tests.canonical.TestChildLabel;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassAttributeCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassNestedClassifierCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassOperationCompartmentEditPart;
@@ -36,12 +38,15 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalAttributeCompartme
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.junit.Test;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class TestClassDiagramChildLabel.
  */
 public class TestClassDiagramChildLabel extends TestChildLabel {
-
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return CustomUMLDiagramUpdater.INSTANCE;
+	}
+	
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
 		return new CreateClassDiagramCommand();
@@ -60,13 +65,13 @@ public class TestClassDiagramChildLabel extends TestChildLabel {
 	@Test
 	public void testToManageInstanceSlot() {
 		//instance specification
-		testToManageTopNode(UMLElementTypes.InstanceSpecification_2001, UMLElementTypes.Slot_3030, InstanceSpecificationSlotCompartmentEditPart.VISUAL_ID);
+		testToManageTopNode(UMLElementTypes.InstanceSpecification_2001, UMLElementTypes.Slot_3030, InstanceSpecificationSlotCompartmentEditPart.VISUAL_ID, "<UNDEFINED>");
 	}
 
 	@Test
 	public void testToManageComponentProperty() {
 		//instance specification
-		testToManageTopNode(UMLElementTypes.Component_2002, UMLElementTypes.Property_3002, ComponentAttributeCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.Component_2002, UMLElementTypes.Property_3002, ComponentAttributeCompartmentEditPart.VISUAL_ID,"Attribute");
 	}
 
 	@Test
@@ -108,25 +113,25 @@ public class TestClassDiagramChildLabel extends TestChildLabel {
 	@Test
 	public void testToManageComponentOperation() {
 		//instance specification
-		testToManageTopNode(UMLElementTypes.Component_2002, UMLElementTypes.Operation_3003, ComponentOperationCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.Component_2002, UMLElementTypes.Operation_3003, ComponentOperationCompartmentEditPart.VISUAL_ID,null);
 	}
 
 	@Test
 	public void testToManageSignalProperty() {
 		//instance specification
-		testToManageTopNode(UMLElementTypes.Signal_2003, UMLElementTypes.Property_3005, SignalAttributeCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.Signal_2003, UMLElementTypes.Property_3005, SignalAttributeCompartmentEditPart.VISUAL_ID,"Attribute");
 	}
 
 	@Test
 	public void testToManageInterfaceProperty() {
 		//interface
-		testToManageTopNode(UMLElementTypes.Interface_2004, UMLElementTypes.Property_3006, InterfaceAttributeCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.Interface_2004, UMLElementTypes.Property_3006, InterfaceAttributeCompartmentEditPart.VISUAL_ID,"Attribute");
 	}
 
 	@Test
 	public void testToManageInterfaceOperation() {
 		//interface
-		testToManageTopNode(UMLElementTypes.Interface_2004, UMLElementTypes.Operation_3007, InterfaceOperationCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.Interface_2004, UMLElementTypes.Operation_3007, InterfaceOperationCompartmentEditPart.VISUAL_ID,null);
 	}
 
 	@Test
@@ -174,7 +179,7 @@ public class TestClassDiagramChildLabel extends TestChildLabel {
 	@Test
 	public void testToManageClassProperty() {
 		//Enumeration
-		testToManageTopNode(UMLElementTypes.Class_2008, UMLElementTypes.Property_3012, ClassAttributeCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.Class_2008, UMLElementTypes.Property_3012, ClassAttributeCompartmentEditPart.VISUAL_ID,"Attribute");
 	}
 
 	@Test
@@ -186,7 +191,7 @@ public class TestClassDiagramChildLabel extends TestChildLabel {
 	@Test
 	public void testToManageClassOperation() {
 		//Enumeration
-		testToManageTopNode(UMLElementTypes.Class_2008, UMLElementTypes.Operation_3013, ClassOperationCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.Class_2008, UMLElementTypes.Operation_3013, ClassOperationCompartmentEditPart.VISUAL_ID,null);
 	}
 
 	@Test
@@ -240,12 +245,12 @@ public class TestClassDiagramChildLabel extends TestChildLabel {
 	@Test
 	public void testToManagePrimitiveTypeProperty() {
 		//class
-		testToManageTopNode(UMLElementTypes.PrimitiveType_2009, UMLElementTypes.Property_3041, PrimitiveTypeAttributeCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.PrimitiveType_2009, UMLElementTypes.Property_3041, PrimitiveTypeAttributeCompartmentEditPart.VISUAL_ID,"Attribute");
 	}
 
 	@Test
 	public void testToManagePrimitiveTypeOperation() {
 		//class
-		testToManageTopNode(UMLElementTypes.PrimitiveType_2009, UMLElementTypes.Operation_3042, PrimitiveTypeOperationCompartmentEditPart.VISUAL_ID);
+		testToManageTopNodeWithMask(UMLElementTypes.PrimitiveType_2009, UMLElementTypes.Operation_3042, PrimitiveTypeOperationCompartmentEditPart.VISUAL_ID,null);
 	}
 }

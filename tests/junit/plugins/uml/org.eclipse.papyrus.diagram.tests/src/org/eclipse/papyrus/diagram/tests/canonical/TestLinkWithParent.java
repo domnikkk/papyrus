@@ -160,7 +160,7 @@ public abstract class TestLinkWithParent extends TestLink {
 	@Override
 	public void testToManageLink(IElementType sourceType, IElementType targetType, IElementType linkType, IElementType containerType, boolean allowedOntheSame) {
 		installEnvironment(sourceType, targetType);
-		testToCreateALink(linkType);
+		testToCreateALink(linkType,null);
 		testDestroy(linkType);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		testViewDeletion(linkType);
@@ -197,7 +197,7 @@ public abstract class TestLinkWithParent extends TestLink {
 	 */
 
 	@Override
-	public void testToCreateALink(IElementType linkType) {
+	public void testToCreateALink(IElementType linkType, String initialName) {
 		assertEquals(CREATION + INITIALIZATION_TEST, beginDiagramEditPartChildrenSize, getDiagramEditPart().getChildren().size());
 		assertTrue(CREATION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == beginRootSemanticOwnedElementSize);
 		assertTrue(CREATION + INITIALIZATION_TEST, source.getSourceConnections().size() == beginSourceConnectionsSize);

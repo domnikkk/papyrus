@@ -146,7 +146,7 @@ public abstract class TestLinkOwnedBySource extends TestLink {
 	 *        the type
 	 */
 	@Override
-	public void testToCreateALink(IElementType linkType) {
+	public void testToCreateALink(IElementType linkType, String initialName) {
 		assertTrue(CREATION + INITIALIZATION_TEST, getDiagramEditPart().getChildren().size() == 4);
 		assertTrue(CREATION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == 4);
 		assertTrue(CREATION + INITIALIZATION_TEST, ((Element)source.resolveSemanticElement()).getOwnedElements().size() == 0);

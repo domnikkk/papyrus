@@ -13,9 +13,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.composite.test.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
+import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.composite.CreateCompositeDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.composite.test.ICompositeDiagramTestsConstants;
 import org.junit.Test;
@@ -24,7 +27,10 @@ import org.junit.Test;
  * The Class TestCompositeDiagramLink use to test link.
  */
 public class TestCompositeDiagramSimpleLink extends TestLink {
-
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
 	/**
 	 * @see org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase#getDiagramCommandCreation()
 	 *
@@ -224,5 +230,64 @@ public class TestCompositeDiagramSimpleLink extends TestLink {
 		testToManageLink(UMLElementTypes.Collaboration_2075, UMLElementTypes.Collaboration_2075, UMLElementTypes.Realization_4006, UMLElementTypes.Package_1000, true);
 	}	
 	
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	public void testToInterfaceRealization() {
+	testToManageLink(UMLElementTypes.Class_2073, UMLElementTypes.Interface_2076, UMLElementTypes.InterfaceRealization_4005, UMLElementTypes.Package_1000, true);
+	}
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	public void testToSubstitution() {
+	testToManageLink(UMLElementTypes.Class_2073, UMLElementTypes.Class_2073, UMLElementTypes.Substitution_4011, UMLElementTypes.Package_1000, true);
+	}
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	public void testToRealization() {
+	testToManageLink(UMLElementTypes.Class_2073, UMLElementTypes.Class_2073, UMLElementTypes.Realization_4006, UMLElementTypes.Package_1000, true);
+	}
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	public void testToManifestation() {
+	testToManageLink(UMLElementTypes.Class_2073, UMLElementTypes.Class_2073, UMLElementTypes.Manifestation_4012, UMLElementTypes.Package_1000, true);
+	}
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	public void testToAbstraction() {
+	testToManageLink(UMLElementTypes.Class_2073, UMLElementTypes.Class_2073, UMLElementTypes.Abstraction_4007, UMLElementTypes.Package_1000, true);
+	}
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	public void testToUsage() {
+	testToManageLink(UMLElementTypes.Class_2073, UMLElementTypes.Class_2073, UMLElementTypes.Usage_4008, UMLElementTypes.Package_1000, true);
+	}
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	public void testToDeployment() {
+	testToManageLink(UMLElementTypes.Node_2072, UMLElementTypes.Class_2073, UMLElementTypes.Deployment_4009, UMLElementTypes.Package_1000, true);
+	}
+	
+	/**
+	* Test to manage component.
+	*/
+	@Test
+	@InvalidTest
+	public void testToInformationFlow() {
+	testToManageLink(UMLElementTypes.Class_2073, UMLElementTypes.Class_2073, UMLElementTypes.InformationFlow_4021, UMLElementTypes.Package_1000, true);
+	}
+
 	
 }

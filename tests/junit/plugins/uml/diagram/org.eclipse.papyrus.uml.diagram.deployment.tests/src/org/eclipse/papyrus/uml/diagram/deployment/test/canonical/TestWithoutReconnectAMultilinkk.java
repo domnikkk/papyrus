@@ -29,11 +29,17 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
+import org.eclipse.papyrus.uml.diagram.deployment.part.UMLDiagramUpdater;
 import org.eclipse.uml2.uml.Element;
 
 public abstract class TestWithoutReconnectAMultilinkk extends TestLink {
 
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return UMLDiagramUpdater.INSTANCE;
+	}
 	/**
 	 * Test view deletion.
 	 *
@@ -124,7 +130,7 @@ public abstract class TestWithoutReconnectAMultilinkk extends TestLink {
 	 *        the type
 	 */
 	@Override
-	public void testToCreateALink(IElementType linkType) {
+	public void testToCreateALink(IElementType linkType,String initialName) {
 		assertTrue(CREATION + INITIALIZATION_TEST, getDiagramEditPart().getChildren().size() == 4);
 		assertTrue(CREATION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == 4);
 		assertTrue(CREATION + INITIALIZATION_TEST, ((Element)source.resolveSemanticElement()).getOwnedElements().size() == 0);
