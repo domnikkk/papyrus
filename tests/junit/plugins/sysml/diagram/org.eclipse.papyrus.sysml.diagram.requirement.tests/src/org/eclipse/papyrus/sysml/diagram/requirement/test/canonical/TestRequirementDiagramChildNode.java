@@ -14,12 +14,14 @@ package org.eclipse.papyrus.sysml.diagram.requirement.test.canonical;
 
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
 import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.sysml.diagram.requirement.RequirementDiagramCreateCommand;
 import org.eclipse.papyrus.sysml.diagram.requirement.provider.ElementTypes;
 import org.eclipse.papyrus.sysml.diagram.requirement.test.IRequirementDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Test;
 
@@ -84,5 +86,10 @@ public class TestRequirementDiagramChildNode extends TestChildNode {
 	@Test
 	public void testToManageConstraint() {
 		testToManageNode(ElementTypes.CONSTRAINT_CN, UMLPackage.eINSTANCE.getConstraint(), ElementTypes.PACKAGE_CN, true);
+	}
+
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return CustomUMLDiagramUpdater.INSTANCE;
 	}
 }

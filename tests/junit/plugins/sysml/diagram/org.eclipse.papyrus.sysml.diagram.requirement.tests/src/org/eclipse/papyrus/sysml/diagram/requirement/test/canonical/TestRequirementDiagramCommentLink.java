@@ -12,12 +12,14 @@
  /*****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.requirement.test.canonical;
 
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestCommentLink;
 import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.sysml.diagram.requirement.RequirementDiagramCreateCommand;
 import org.eclipse.papyrus.sysml.diagram.requirement.provider.ElementTypes;
 import org.eclipse.papyrus.sysml.diagram.requirement.test.IRequirementDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
 import org.junit.Test;
 
 @InvalidTest("UML Diagram Canonical Tests are not compatible with profiled models")
@@ -49,5 +51,9 @@ public class TestRequirementDiagramCommentLink extends TestCommentLink {
 	@Test
 	public void testToManageComment() {
 		testToManageLink(ElementTypes.COMMENT, ElementTypes.CLASS, ElementTypes.COMMENT_ANNOTATED_ELEMENT, ElementTypes.PACKAGE, true);
+	}
+	@Override
+	public DiagramUpdater getDiagramUpdater() {
+		return CustomUMLDiagramUpdater.INSTANCE;
 	}
 }
