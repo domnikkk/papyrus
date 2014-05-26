@@ -16,7 +16,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.papyrus.acceleo.debug.dialogs.TestAcceleoDialog;
 import org.eclipse.papyrus.acceleo.ui.handlers.CmdHandler;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
@@ -43,10 +43,12 @@ public class TestAcceleoHandler extends CmdHandler {
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		if(selectedEObject instanceof NamedElement) {
-			NamedElement selectedNE = (NamedElement)selectedEObject;
-
-			TestAcceleoDialog tag = new TestAcceleoDialog(new Shell(), selectedNE);
-			tag.open();
+			Display.getDefault().syncExec(new Runnable() {
+				@Override
+				public void run() {
+					new TestAcceleoDialog(Display.getCurrent().getActiveShell(), (NamedElement)selectedEObject).open();
+				}
+			});
 		}
 		return null;
 	}

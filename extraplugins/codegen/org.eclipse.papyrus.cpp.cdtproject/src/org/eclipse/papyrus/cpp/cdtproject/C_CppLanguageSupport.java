@@ -29,7 +29,6 @@ import org.eclipse.papyrus.C_Cpp.ExternLibrary;
 import org.eclipse.papyrus.codegen.extensionpoints.ILangSupport;
 import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Class;
@@ -75,8 +74,7 @@ public class C_CppLanguageSupport implements ILangSupport {
 			Display.getDefault().syncExec(new Runnable() {
 
 				public void run() {
-					Shell shell = new Shell();
-					WizardDialog wizDiag = new WizardDialog(shell, wiz);
+					WizardDialog wizDiag = new WizardDialog(Display.getCurrent().getActiveShell(), wiz);
 
 					wizDiag.create();
 					wizDiag.open();

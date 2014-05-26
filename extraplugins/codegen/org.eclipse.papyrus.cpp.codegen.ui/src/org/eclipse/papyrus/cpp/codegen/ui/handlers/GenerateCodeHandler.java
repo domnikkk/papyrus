@@ -30,7 +30,7 @@ import org.eclipse.papyrus.cpp.codegen.transformation.CppModelElementsCreator;
 import org.eclipse.papyrus.cpp.codegen.ui.Activator;
 import org.eclipse.papyrus.cpp.codegen.utils.ClassUtils;
 import org.eclipse.papyrus.cpp.codegen.utils.LocateCppProject;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
@@ -131,8 +131,14 @@ public class GenerateCodeHandler extends CmdHandler {
 			generate(mec, pe, new BasicEList<PackageableElement>(), true);
 			
 			if (AcceleoDriver.hasErrors() && !Headless) {
-				MessageDialog.openInformation(new Shell(), "Errors during code generation", //$NON-NLS-1$
-						"Errors occured during code generation. Please check the error log"); //$NON-NLS-1$
+				Display.getDefault().syncExec(new Runnable() {
+					@Override
+					public void run() {
+						MessageDialog.openInformation(Display.getCurrent().getActiveShell(),
+								"Errors during code generation", //$NON-NLS-1$
+								"Errors occured during code generation. Please check the error log"); //$NON-NLS-1$
+					}
+				});
 			}	
 		}
 		return null;
