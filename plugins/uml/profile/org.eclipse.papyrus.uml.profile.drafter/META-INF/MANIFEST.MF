@@ -18,7 +18,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.uml.tools,
  org.eclipse.papyrus.uml.profile,
  org.eclipse.papyrus.emf.facet.custom.metamodel,
- org.eclipse.papyrus.uml.tools.utils
+ org.eclipse.papyrus.uml.tools.utils,
+ org.eclipse.papyrus.infra.widgets,
+ org.eclipse.papyrus.infra.services.labelprovider,
+ org.eclipse.papyrus.infra.core.log
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.uml.profile.drafter.exceptions,

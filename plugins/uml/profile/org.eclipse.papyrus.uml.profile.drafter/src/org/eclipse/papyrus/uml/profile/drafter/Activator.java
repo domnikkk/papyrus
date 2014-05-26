@@ -1,5 +1,6 @@
 package org.eclipse.papyrus.uml.profile.drafter;
 
+import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -11,7 +12,10 @@ public class Activator extends AbstractUIPlugin {
 	// The plug-in ID
 	public static final String PLUGIN_ID = "org.eclipse.papyrus.uml.profile.drafter"; //$NON-NLS-1$
 
-	// The shared instance
+	 /** Logging helper */
+    public static LogHelper log;
+
+    // The shared instance
 	private static Activator plugin;
 	
 	/**
@@ -27,6 +31,8 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		// register the login helper
+        log = new LogHelper(this);
 	}
 
 	/*

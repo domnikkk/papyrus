@@ -23,6 +23,11 @@ package org.eclipse.papyrus.uml.profile.drafter.exceptions;
 public class DraftProfileException extends Exception {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * Constructor.
 	 *
 	 */

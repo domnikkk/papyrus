@@ -65,6 +65,8 @@ import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.uml2.uml.Class;
 
 /**
+ * Handler used to update a {@link Profile}.
+ * This Handler request data to user with the help of a IStereotypeUpdateDialog.
  * 
  * @author cedric dumoulin
  *
