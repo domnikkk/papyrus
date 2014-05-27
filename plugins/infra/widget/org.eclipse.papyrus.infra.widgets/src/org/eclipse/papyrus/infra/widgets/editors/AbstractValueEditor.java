@@ -10,10 +10,10 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 402525
+ *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - bug 435415
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
-
 
 import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.conversion.IConverter;
@@ -75,7 +75,6 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 
 	protected ControlDecoration controlDecoration;
 
-
 	protected static final Color VALID = new Color(Display.getCurrent(), 144, 238, 144); //CSS LightGreen
 
 	protected static final Color DEFAULT = Display.getCurrent().getSystemColor(SWT.COLOR_WHITE);
@@ -125,14 +124,12 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 */
 	protected void setWidgetObservable(IObservableValue widgetObservable, boolean commitOnChange) {
 		this.widgetObservable = widgetObservable;
-
 		if(commitOnChange) {
 			this.widgetObservable.addChangeListener(new IChangeListener() {
 
 				@Override
 				public void handleChange(ChangeEvent event) {
 					commit();
-
 				}
 			});
 		}
@@ -145,7 +142,6 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 */
 	protected void setWidgetObservable(IObservableValue widgetObservable) {
 		setWidgetObservable(widgetObservable, false);
-
 	}
 
 	/**
@@ -157,7 +153,6 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	public void setModelObservable(IObservableValue modelProperty) {
 		this.modelProperty = modelProperty;
 		doBinding();
-
 	}
 
 	/**
@@ -171,7 +166,6 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 		if(modelToTargetStrategy == null) {
 			modelToTargetStrategy = new UpdateValueStrategy();
 		}
-
 		targetToModelStrategy.setConverter(targetToModel);
 		modelToTargetStrategy.setConverter(modelToTarget);
 	}
@@ -203,7 +197,6 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 		if(modelProperty == null || widgetObservable == null) {
 			return;
 		}
-
 		setBinding();
 	}
 
@@ -218,28 +211,23 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	/**
 	 * Initialize binding
 	 */
-
 	private void setBinding() {
 		binding = getBindingContext().bindValue(widgetObservable, modelProperty, targetToModelStrategy, modelToTargetStrategy);
 		binding.getValidationStatus().addValueChangeListener(new IValueChangeListener() {
 
 			@Override
 			public void handleValueChange(ValueChangeEvent event) {
-				IStatus status = (IStatus)binding.getValidationStatus().getValue();
-				updateStatus(status);
-
-				if(!isReadOnly() && !AbstractValueEditor.this.isDisposed()) { //Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
+				//Check if the widget is disposed before isReadOnly() to avoid NPE
+				if(!AbstractValueEditor.this.isDisposed() && !isReadOnly()) { //Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
+					IStatus status = (IStatus)binding.getValidationStatus().getValue(); //Bug 435415 : Update the status only if the widget isn't disposed
+					updateStatus(status);
 					changeColorField();
 				}
 			}
-
 		});
-
-
 	}
 
 	public void updateStatus(IStatus status) {
-
 	}
 
 	/**
@@ -247,7 +235,6 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 *
 	 * @param targetToModelValidator
 	 */
-
 	public void setTargetAfterGetValidator(AbstractValidator targetToModelValidator) {
 		if(targetToModelValidator != null) {
 			targetToModelStrategy.setAfterGetValidator(targetToModelValidator);
@@ -260,20 +247,17 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 *
 	 * @param modelValidator
 	 */
-
 	public void setModelValidator(IValidator targetToModelValidator) {
 		if(targetToModelValidator != null) {
 			this.modelValidator = targetToModelValidator;
 			targetToModelStrategy.setBeforeSetValidator(targetToModelValidator);
 			modelToTargetStrategy.setAfterGetValidator(targetToModelValidator);
-
 		}
 	}
 
 	/**
 	 * Initialize both strategies with default values
 	 */
-
 	public void setStrategies() {
 		if(modelToTargetStrategy == null) {
 			modelToTargetStrategy = new UpdateValueStrategy();
@@ -281,9 +265,7 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 		if(targetToModelStrategy == null) {
 			targetToModelStrategy = new UpdateValueStrategy();
 		}
-
 	}
-
 
 	@Override
 	protected Object getContextElement() {
@@ -291,5 +273,4 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 		// the observe the value of the object's feature
 		return (modelProperty instanceof IObserving) ? ((IObserving)modelProperty).getObserved() : null;
 	}
-
 }
