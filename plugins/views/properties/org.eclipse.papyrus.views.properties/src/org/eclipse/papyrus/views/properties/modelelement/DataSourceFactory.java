@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 435103
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.modelelement;
 
@@ -15,6 +17,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.tools.util.ClassLoaderHelper;
 import org.eclipse.papyrus.infra.widgets.Activator;
@@ -140,6 +143,10 @@ public class DataSourceFactory {
 
 		if(factoryDescriptor == null) {
 			Activator.log.warn("No ModelElementFactory is attached to DataContextElement " + getQualifiedName(context)); //$NON-NLS-1$
+			return null;
+		}
+		if(factoryDescriptor.eIsProxy()) {
+			Activator.log.warn("Unresolved reference to the ModelElementFactory: " + EcoreUtil.getURI(factoryDescriptor)); //$NON-NLS-1$
 			return null;
 		}
 
