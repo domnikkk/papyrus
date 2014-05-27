@@ -9,11 +9,17 @@
  ******************************************************************************/
 package org.eclipse.papyrus.infra.services.controlmode.ui;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.ui.dialogs.ResourceDialog;
+import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
@@ -44,6 +50,23 @@ public class CreateModelFragmentDialog extends ResourceDialog {
 		super(parent, EMFEditUIPlugin.INSTANCE.getString("_UI_ControlDialog_title"), SWT.SAVE); //$NON-NLS-1$
 		this.currentResource = theCurrentResource;
 		this.defaultName = defaultName;
+	}
+
+	@Override
+	protected void prepareBrowseWorkspaceButton(Button browseWorkspaceButton) {
+		browseWorkspaceButton.addSelectionListener(new SelectionAdapter() {
+
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				IFile file = null;
+				String path = URI.createURI(computeDefaultURI()).lastSegment();
+				file = WorkspaceResourceDialog.openNewFile(getShell(), null, null, path != null ? new Path(path) : null, null);
+				if(file != null) {
+					uriField.setText(URI.createPlatformResourceURI(file.getFullPath().toString(), true).toString());
+				}
+			}
+
+		});
 	}
 
 	public String computeDefaultURI() {
