@@ -490,12 +490,12 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 			if( initialName!=null){
 				name=initialName;
 			}
-			if(name.length()<((ITextAwareEditPart)createdEditPart).getEditText().length()){
-				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)createdEditPart).getEditText().substring(0,name.length()));
+			if(name.length()<((ITextAwareEditPart)namedEditPart).getEditText().length()){
+				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length()));
 			}
 			else{
 				//not the same it sure but display the mistake is important
-				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)createdEditPart).getEditText());
+				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText());
 			}
 			if(namedEditPart instanceof CompartmentEditPart ){
 				Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof CompartmentEditPart);

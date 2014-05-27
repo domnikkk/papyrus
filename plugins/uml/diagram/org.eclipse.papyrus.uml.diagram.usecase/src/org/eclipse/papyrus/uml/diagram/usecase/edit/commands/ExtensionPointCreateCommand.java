@@ -66,21 +66,16 @@ public class ExtensionPointCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getExtensionPoint());
 		return data.isPermitted();
-
-
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-
 		ExtensionPoint newElement = UMLFactory.eINSTANCE.createExtensionPoint();
-
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
 		if(data.isPermitted()) {
@@ -88,20 +83,14 @@ public class ExtensionPointCreateCommand extends EditElementCommand {
 				if(!data.execute(target, newElement))
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 			} else {
-
 				UseCase qualifiedTarget = (UseCase)target;
 				qualifiedTarget.getExtensionPoints().add(newElement);
-
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
 		}
-
-
 		ElementInitializers.getInstance().init_ExtensionPoint_3007(newElement);
-
 		doConfigure(newElement, monitor, info);
-
 		((CreateElementRequest)getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}

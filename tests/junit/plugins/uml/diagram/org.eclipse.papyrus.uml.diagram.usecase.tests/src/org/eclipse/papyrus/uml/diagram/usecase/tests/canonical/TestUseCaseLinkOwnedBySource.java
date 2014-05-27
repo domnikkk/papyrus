@@ -29,7 +29,7 @@ public class TestUseCaseLinkOwnedBySource extends TestLinkOwnedBySource {
 
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
-		return org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater.INSTANCE;
+		return org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUMLDiagramUpdater.INSTANCE;
 	}
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {

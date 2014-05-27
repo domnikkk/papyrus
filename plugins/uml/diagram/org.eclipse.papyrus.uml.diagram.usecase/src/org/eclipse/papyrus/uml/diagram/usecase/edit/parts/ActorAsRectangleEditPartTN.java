@@ -24,6 +24,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.NodeEditPart;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.ActorAsRectangleItemSemanticEditPolicyTN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
@@ -73,7 +74,6 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-
 		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
@@ -112,8 +112,6 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 			((ActorAsRectangleNameEditPartTN)childEditPart).setLabel(getPrimaryShape().getActorAsRectangleFigure_name());
 			return true;
 		}
-
-
 		return false;
 	}
 
@@ -172,7 +170,6 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 	 */
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
-
 	}
 
 	/**
@@ -222,8 +219,8 @@ public class ActorAsRectangleEditPartTN extends NodeEditPart {
 	 * @generated
 	 */
 	protected void setLineType(int style) {
-		if(primaryShape instanceof NodeFigure) {
-			((NodeFigure)primaryShape).setLineStyle(style);
+		if(primaryShape instanceof IPapyrusNodeFigure) {
+			((IPapyrusNodeFigure)primaryShape).setLineStyle(style);
 		}
 	}
 

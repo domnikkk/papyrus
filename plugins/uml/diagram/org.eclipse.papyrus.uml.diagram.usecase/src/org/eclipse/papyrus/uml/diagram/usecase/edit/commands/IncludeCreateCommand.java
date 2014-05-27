@@ -87,7 +87,6 @@ public class IncludeCreateCommand extends EditElementCommand {
 		if(!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-
 		Include newElement = UMLFactory.eINSTANCE.createInclude();
 		getContainer().getIncludes().add(newElement);
 		newElement.setIncludingCase(getSource());
@@ -95,7 +94,6 @@ public class IncludeCreateCommand extends EditElementCommand {
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest)getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
-
 	}
 
 	/**
