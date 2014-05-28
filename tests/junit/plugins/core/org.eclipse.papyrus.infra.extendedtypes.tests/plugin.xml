@@ -18,6 +18,7 @@
             model="model/TestMenu.xmi">
       </menuCreationModel>
    </extension>
+   <!--
    <extension
          point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
       <paletteDefinition
@@ -34,5 +35,14 @@
                id="org.eclipse.papyrus.sysml.diagram.blockdefinition">
          </editor>
       </paletteDefinition>
+   </extension>
+   -->
+   <extension
+         point="org.eclipse.papyrus.infra.extendedtypes.extendedElementTypeSet">
+      <extendedTypesSet
+            id="org.eclipse.papyrus.infra.extendedtypes.tests.tests"
+            name="Tests Element Types for ExtendedType plugin"
+            path="model/Test.extendedtypes">
+      </extendedTypesSet>
    </extension>
 </plugin>

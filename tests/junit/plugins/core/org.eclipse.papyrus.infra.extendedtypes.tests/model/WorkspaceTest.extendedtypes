@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extendedtypes:ExtendedElementTypeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:extendedtypes="http://www.eclipse.org/papyrus/infra/extendedtypes/1.0" xmlns:setvaluesactionconfiguration="http://www.eclipse.org/papyrus/infra/extendedtypes/emf/setvaluesaction/1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="WorkspaceTypeTests" identifier="org.eclipse.papyrus.infra.extendedtypes.tests.workspacetype">
+  <elementType xsi:type="extendedtypes:AspectSemanticTypeConfiguration" name="WorkspaceType_AbstractClass" identifier="org.eclipse.papyrus.infra.extendedtypes.tests.tool">
+    <specializedTypesID>org.eclipse.papyrus.uml.Class</specializedTypesID>
+    <actionConfiguration xsi:type="setvaluesactionconfiguration:SetValuesActionConfiguration">
+      <featuresToSet featureName="isAbstract">
+        <value xsi:type="setvaluesactionconfiguration:ConstantValue">
+          <valueInstance xsi:type="uml:LiteralBoolean" value="true"/>
+        </value>
+      </featuresToSet>
+    </actionConfiguration>
+  </elementType>
+</extendedtypes:ExtendedElementTypeSet>

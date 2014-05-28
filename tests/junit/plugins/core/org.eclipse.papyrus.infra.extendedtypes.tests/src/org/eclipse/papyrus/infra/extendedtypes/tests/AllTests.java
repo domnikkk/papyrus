@@ -20,7 +20,7 @@ import org.junit.runners.Suite.SuiteClasses;
  * All tests for this fragment
  */
 @RunWith(Suite.class)
-@SuiteClasses({ ExtendedTypesRegistryTests.class,  })
+@SuiteClasses({ ExtendedTypesRegistryTests.class, ExtendedEditHelperAdviceTests.class })
 public class AllTests {
 
 }

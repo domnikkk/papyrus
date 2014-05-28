@@ -14,163 +14,83 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.extendedtypes.tests;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
-import java.io.IOException;
-
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
-import org.eclipse.papyrus.infra.core.resource.ModelSet;
-import org.eclipse.papyrus.infra.core.resource.ModelUtils;
-import org.eclipse.papyrus.infra.core.resource.NotFoundException;
-import org.eclipse.papyrus.infra.core.services.ServiceException;
-import org.eclipse.papyrus.junit.utils.EditorUtils;
-import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
-import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
-import org.eclipse.papyrus.uml.tools.model.UmlModel;
-import org.eclipse.papyrus.uml.tools.model.UmlUtils;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.uml2.uml.Activity;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Model;
-import org.junit.After;
+import org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSetRegistry;
+import org.eclipse.papyrus.infra.extendedtypes.preferences.ExtendedTypesPreferences;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.ClassRule;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.osgi.framework.Bundle;
 
 
 /**
  * Tests for {@link ExtendedTypesRegistry}
  */
-public class ExtendedTypesRegistryTests implements ITestConstants {
-
-	@ClassRule
-	public static HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
-	
-	private static IProject createProject;
-
-	private static IFile copyPapyrusModel;
-
-	private static IMultiDiagramEditor openPapyrusEditor;
-
-	private static ModelSet modelset;
-
-	private static UmlModel umlIModel;
-
-	private static Model rootModel;
-
-	private static Activity testActivity;
-
-	private static TransactionalEditingDomain transactionalEditingDomain;
-
-	private static Class testClass;
-
-	private static Activity testActivityWithNode;
+public class ExtendedTypesRegistryTests extends AbstractElementTypeTests implements ITestConstants {
 
 	/**
-	 * Init test class
-	 */
-	@BeforeClass
-	public static void initCreateElementTest() {
-
-		// create Project
-		createProject = houseKeeper.createProject("ExtendedTypes");
-
-		// import test model and profile
-		try {
-			Bundle bundle = Platform.getBundle("org.eclipse.papyrus.infra.extendedtypes.tests");
-			copyPapyrusModel = PapyrusProjectUtils.copyPapyrusModel(createProject, bundle, "/model/", "model");
-			PapyrusProjectUtils.copyPapyrusModel(createProject, bundle, "/model/", "ExtendedTypesTestsProfile.profile");
-		} catch (CoreException e) {
-			fail(e.getMessage());
-		} catch (IOException e) {
-			fail(e.getMessage());
-		}
-
-		// open project
-		Display.getDefault().syncExec(new Runnable() {
-
-			public void run() {
-				try {
-					openPapyrusEditor = houseKeeper.cleanUpLater(EditorUtils.openPapyrusEditor(copyPapyrusModel));
-				} catch (PartInitException e) {
-					fail(e.getMessage());
-				}
-			}
-		});
-
-		transactionalEditingDomain = (TransactionalEditingDomain)openPapyrusEditor.getAdapter(TransactionalEditingDomain.class);
-		assertTrue("Impossible to init editing domain", transactionalEditingDomain instanceof TransactionalEditingDomain);
-
-		// retrieve UML model from this editor
-		try {
-			modelset = ModelUtils.getModelSetChecked(openPapyrusEditor.getServicesRegistry());
-			umlIModel = UmlUtils.getUmlModel(modelset);
-			rootModel = (Model)umlIModel.lookupRoot();
-			
-			Assert.assertNotNull("root model should not be null", rootModel);
-			
-		} catch (ServiceException e) {
-			fail(e.getMessage());
-		} catch (NotFoundException e) {
-			fail(e.getMessage());
-		} catch (ClassCastException e) {
-			fail(e.getMessage());
-		}
-		try {
-			initExistingElements();
-		} catch (Exception e) {
-			fail(e.getMessage());
-		}
-
-	}
-	
-	/**
-	 * Init fields corresponding to element in the test model
-	 */
-	private static void initExistingElements() throws Exception {
-		
-		
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	/**
-	 * Test method for {@link org.eclipse.papyrus.infra.extendedtypes.tests.ExtendedTypesRegistry#createResourceSet()}.
+	 * Test registration based on plugin declaration
 	 */
 	@Test
-	@Ignore
 	public final void testGetTypeRegisteredInplugin() {
 		// check standard class
-		IElementType classType = ElementTypeRegistry.getInstance().getType("org.eclipse.papyrus.uml.Class");
+		IElementType classType = ElementTypeRegistry.getInstance().getType(ORG_ECLIPSE_PAPYRUS_UML_CLASS);
 		Assert.assertNotNull("Element type should be registered", classType);
-		
-		IElementType restrictedClassType = ElementTypeRegistry.getInstance().getType(CLASS_ONLY_IN_MODEL_ID);
-		Assert.assertNotNull("Element type should be registered", restrictedClassType);
+
+		IElementType abstractClassType = ElementTypeRegistry.getInstance().getType(ABSTRACT_CLASS_TOOL);
+		Assert.assertNotNull("Element type should be registered", abstractClassType);
 	}
 
+	/**
+	 * Test workspace registration. Element type in the workspace, but element type set is not loaded
+	 */
+	@Test
+	public final void testGetTypeRegisteredInWorkspaceNotLoaded() {
+		checkPluginTypes();
+
+		// no preference should be set for this test
+		ExtendedTypesPreferences.unregisterWorkspaceDefinition(WORKSPACE_ELEMENT_TYPE_ID);
+		
+		// this should not be defined yet
+		IElementType workspaceType = ElementTypeRegistry.getInstance().getType(WORKSPACE_ELEMENT_TYPE_TOOL);
+		Assert.assertNull("Element type should not be registered yet", workspaceType);
+
+	}
+
+	/**
+	 * Test workspace registration. Element type in the workspace, but element type set is not loaded
+	 */
+	@Test
+	public final void testLoadUnloadWorkspaceSet() {
+		// this should not be defined yet
+		IElementType workspaceType = ElementTypeRegistry.getInstance().getType(WORKSPACE_ELEMENT_TYPE_TOOL);
+		Assert.assertNull("Element type should not be registered yet", workspaceType);
+		checkPluginTypes();
+
+		// register
+		ExtendedTypesPreferences.registerWorkspaceDefinition(WORKSPACE_ELEMENT_TYPE_ID, workspaceTestFile.getFullPath().toString());
+		ExtendedElementTypeSetRegistry.getInstance().loadExtendedElementTypeSet(WORKSPACE_ELEMENT_TYPE_ID);
+
+		workspaceType = ElementTypeRegistry.getInstance().getType(WORKSPACE_ELEMENT_TYPE_TOOL);
+		Assert.assertNotNull("Element type should be registered", workspaceType);
+		checkPluginTypes();
+		
+		// unregister
+		ExtendedTypesPreferences.unregisterWorkspaceDefinition(WORKSPACE_ELEMENT_TYPE_ID);
+		ExtendedElementTypeSetRegistry.getInstance().unload(WORKSPACE_ELEMENT_TYPE_ID);
+
+		workspaceType = ElementTypeRegistry.getInstance().getType(WORKSPACE_ELEMENT_TYPE_TOOL);
+		Assert.assertNull("Element type should not be registered anymore", workspaceType);
+		checkPluginTypes();
+
+	}
+
+	/**
+	 * Check always present element types are registered
+	 */
+	private void checkPluginTypes() {
+		IElementType classType = ElementTypeRegistry.getInstance().getType(ORG_ECLIPSE_PAPYRUS_UML_CLASS);
+		Assert.assertNotNull("Element type should be registered", classType);
+		IElementType abstractClassType = ElementTypeRegistry.getInstance().getType(ABSTRACT_CLASS_TOOL);
+		Assert.assertNotNull("Element type should be registered", abstractClassType);
+	}
 }
