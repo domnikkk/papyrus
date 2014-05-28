@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 435420
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.xwt;
 
@@ -21,6 +23,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.constraints.ConstraintDescriptor;
 import org.eclipse.papyrus.infra.constraints.constraints.Constraint;
 import org.eclipse.papyrus.infra.constraints.runtime.ConstraintFactory;
+import org.eclipse.papyrus.infra.widgets.editors.EditorParentComposite;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.Section;
 import org.eclipse.papyrus.views.properties.contexts.View;
@@ -74,7 +77,7 @@ public class XWTSection extends AbstractPropertySection implements IChangeListen
 
 	@Override
 	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-		self = new Composite(parent, SWT.NONE);
+		self = new EditorParentComposite(parent, SWT.NONE);
 
 		GridLayout layout = new GridLayout(1, false);
 		layout.marginHeight = 0;
