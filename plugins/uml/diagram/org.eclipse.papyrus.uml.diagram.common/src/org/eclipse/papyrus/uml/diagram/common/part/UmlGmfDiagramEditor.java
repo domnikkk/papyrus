@@ -15,6 +15,7 @@ import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.gmfdiag.common.SynchronizableGmfDiagramEditor;
+import org.eclipse.papyrus.infra.gmfdiag.common.reconciler.DiagramVersioningUtils;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.contexts.IContextService;
@@ -69,7 +70,7 @@ public class UmlGmfDiagramEditor extends SynchronizableGmfDiagramEditor {
 	@Override
 	public void doSetInput(IEditorInput input, boolean releaseEditorContents) throws CoreException {
 		super.doSetInput(input, releaseEditorContents);
-		if(getDiagram() != null) {
+		if(getDiagram() != null && !DiagramVersioningUtils.isOfCurrentPapyrusVersion(getDiagram())) {
 			new ReconcileHelper(getEditingDomain()).reconcileDiagram(getDiagram());
 		}
 	}
