@@ -1,0 +1,71 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.moka.ui.launch;
+
+import java.util.Iterator;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.uml2.uml.Activity;
+import org.eclipse.uml2.uml.AssociationClass;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Node;
+import org.eclipse.uml2.uml.OpaqueBehavior;
+import org.eclipse.uml2.uml.StateMachine;
+import org.eclipse.uml2.uml.Stereotype;
+
+public class MokaTriggerComboPopulation implements ModifyListener {
+
+	protected transient MokaUMLComboBox list;
+		
+	public MokaTriggerComboPopulation(MokaUMLComboBox combo){
+		this.list = combo;
+	}
+	
+	public void modifyText(ModifyEvent e) {
+		this.list.removeAll();
+		Text text = (Text)e.widget;
+		URI projectUri = URI.createURI(text.getText());
+		ResourceSet resourceSet = new ResourceSetImpl();
+		Resource resource = resourceSet.getResource(projectUri, true);
+		Iterator<EObject> contentIterator = resource.getAllContents();
+		while(contentIterator.hasNext()){
+			EObject eObject = contentIterator.next(); 
+			if(eObject instanceof Behavior){
+				if(eObject instanceof Activity ||
+					eObject instanceof OpaqueBehavior ||
+						eObject instanceof StateMachine){
+					 this.list.add((NamedElement)eObject);
+				}
+			}
+			else if(eObject instanceof Class){
+				if(!(eObject instanceof Node)
+						|| !(eObject instanceof Stereotype)
+							|| !(eObject instanceof AssociationClass)){
+					//if(((Class)eObject).isActive()){
+						this.list.add((NamedElement)eObject);
+					//}
+				}
+			}
+		}
+		this.list.selectFirst();
+		
+	}
+}
