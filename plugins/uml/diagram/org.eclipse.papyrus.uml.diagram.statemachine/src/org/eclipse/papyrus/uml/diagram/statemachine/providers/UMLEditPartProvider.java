@@ -20,12 +20,11 @@ import org.eclipse.papyrus.uml.diagram.statemachine.part.UMLVisualIDRegistry;
  * @generated
  */
 public class UMLEditPartProvider extends DefaultEditPartProvider {
+
 	/**
 	 * @generated
 	 */
 	public UMLEditPartProvider() {
-		super(new UMLEditPartFactory(),
-				UMLVisualIDRegistry.TYPED_INSTANCE,
-				PackageEditPart.MODEL_ID);
+		super(new UMLEditPartFactory(), UMLVisualIDRegistry.TYPED_INSTANCE, PackageEditPart.MODEL_ID);
 	}
 }

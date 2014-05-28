@@ -231,7 +231,7 @@ public class SashWindowsEventsProvider {
 	 */
 	private void activeContainerChanged(ISashWindowsContainer newContainer) {
 		// Detach listener from the old container
-		if(currentContainer != null)
+		if(currentContainer != null && !currentContainer.isDisposed())
 			currentContainer.removePageChangedListener(sashPageChangedListener);
 
 		// record new container

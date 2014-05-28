@@ -77,7 +77,7 @@ public class AbstractInteractionOverviewDiagramTestCase extends TestChildNode {
 	
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
-		return org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramUpdater.INSTANCE;
+		return null;
 	}
 	private CustomActivityEditPartTN activityEditPartTN;
 

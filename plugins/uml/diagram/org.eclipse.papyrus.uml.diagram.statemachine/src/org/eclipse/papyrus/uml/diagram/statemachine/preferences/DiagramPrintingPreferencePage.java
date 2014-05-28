@@ -17,8 +17,8 @@ import org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
-public class DiagramPrintingPreferencePage extends PrintingPreferencePage
-{
+public class DiagramPrintingPreferencePage extends PrintingPreferencePage {
+
 	/**
 	 * @generated
 	 */

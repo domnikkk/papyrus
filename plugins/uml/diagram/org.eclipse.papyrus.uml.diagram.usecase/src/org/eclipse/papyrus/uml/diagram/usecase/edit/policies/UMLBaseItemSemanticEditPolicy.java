@@ -351,7 +351,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		} else {
 			return getGEFWrapper(new MoveElementsCommand(req));
 		}
-
 	}
 
 	/**
@@ -459,7 +458,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-
 			return canExistConstraintConstrainedElement_4012(source, target);
 		}
 
@@ -479,7 +477,6 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-
 			return canExistCommentAnnotatedElement_4014(source, target);
 		}
 
@@ -571,10 +568,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					if((target instanceof Class) || (target instanceof Component) || (target instanceof Actor) || (target instanceof UseCase)) {
 						if((source instanceof UseCase) && (target instanceof UseCase)) {
 							return (Collections.disjoint(((UseCase)source).getSubjects(), ((UseCase)target).getSubjects()));
-
 						}
 						return true;
-
 					}
 				} else {
 					return false;
@@ -583,10 +578,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					if((target instanceof Class) || (target instanceof Component) || (target instanceof Actor) || (target instanceof UseCase)) {
 						if((source instanceof UseCase) && (target instanceof UseCase)) {
 							return (Collections.disjoint(((UseCase)source).getSubjects(), ((UseCase)target).getSubjects()));
-
 						}
 						return true;
-
 					}
 				} else {
 					return false;

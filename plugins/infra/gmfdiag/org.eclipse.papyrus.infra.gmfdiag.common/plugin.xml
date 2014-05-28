@@ -10,6 +10,7 @@
    <extension-point id="pasteCommandProvider" name="pasteCommandProvider" schema="schema/pasteCommandProvider.exsd"/>
    <extension-point id="pasteStrategy" name="pasteStrategy" schema="schema/pasteStrategy.exsd"/>
    <extension-point id="copyStrategy" name="copyStrategy" schema="schema/copyStrategy.exsd"/>
+   <extension-point id="diagramReconciler" name="diagramReconciler" schema="schema/diagramReconciler.exsd"/>
 
 <extension
       point="org.eclipse.ui.handlers">

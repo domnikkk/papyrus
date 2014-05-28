@@ -37,7 +37,7 @@ public class TestUseCaseChildNodeForClassSubject extends TestChildNode {
 	
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
-		return org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater.INSTANCE;
+		return org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUMLDiagramUpdater.INSTANCE;
 	}
 	@Override
 	protected CreateViewRequest createViewRequestShapeContainer() {

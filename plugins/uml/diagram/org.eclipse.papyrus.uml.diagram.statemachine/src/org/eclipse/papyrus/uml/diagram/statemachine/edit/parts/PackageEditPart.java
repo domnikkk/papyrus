@@ -26,12 +26,13 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.policies.PackageItemSem
 /**
  * @generated
  */
-public class PackageEditPart extends PapyrusDiagramEditPart
-{
+public class PackageEditPart extends PapyrusDiagramEditPart {
+
 	/**
 	 * @generated
 	 */
 	public final static String MODEL_ID = "PapyrusUMLStateMachineDiagram"; //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */

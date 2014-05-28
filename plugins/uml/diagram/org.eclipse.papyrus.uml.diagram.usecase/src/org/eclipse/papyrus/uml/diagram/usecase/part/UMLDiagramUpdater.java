@@ -100,11 +100,6 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static final org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater INSTANCE = new UMLDiagramUpdater();
-
-	/**
-	 * @generated
-	 */
 	protected UMLDiagramUpdater() {
 		//to prevent instantiation allowing the override
 	}
@@ -2545,7 +2540,6 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			}
 			Namespace container = (Namespace)link.eContainer();
 			result.add(new UMLLinkDescriptor(container, target, link, UMLElementTypes.PackageImport_4019, PackageImportEditPart.VISUAL_ID));
-
 		}
 		return result;
 	}

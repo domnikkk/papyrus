@@ -38,12 +38,8 @@ public class UseCasePointsItemSemanticEditPolicyTN extends UMLBaseItemSemanticEd
 		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-
-
 		if(UMLElementTypes.ExtensionPoint_3007 == requestElementType) {
-
 			return getGEFWrapper(new ExtensionPointCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
-
 		}
 		return super.getCreateCommand(req);
 	}

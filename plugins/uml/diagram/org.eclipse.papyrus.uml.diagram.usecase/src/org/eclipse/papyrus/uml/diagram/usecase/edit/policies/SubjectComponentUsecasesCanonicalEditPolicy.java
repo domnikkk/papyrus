@@ -36,7 +36,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.CommentEditPartCN;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.ConstraintInComponentEditPart;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.parts.UseCaseInComponentEditPart;
-import org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.usecase.part.UMLNodeDescriptor;
 import org.eclipse.papyrus.uml.diagram.usecase.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -82,7 +81,7 @@ public class SubjectComponentUsecasesCanonicalEditPolicy extends CanonicalEditPo
 	protected List<EObject> getSemanticChildrenList() {
 		View viewObject = (View)getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getClassifierUsecases_7011SemanticChildren(viewObject);
+		List<UMLNodeDescriptor> childDescriptors = org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUMLDiagramUpdater.INSTANCE.getClassifierUsecases_7011SemanticChildren(viewObject);
 		for(UMLNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -112,7 +111,7 @@ public class SubjectComponentUsecasesCanonicalEditPolicy extends CanonicalEditPo
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<UMLNodeDescriptor> childDescriptors = UMLDiagramUpdater.INSTANCE.getClassifierUsecases_7011SemanticChildren((View)getHost().getModel());
+		List<UMLNodeDescriptor> childDescriptors = org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUMLDiagramUpdater.INSTANCE.getClassifierUsecases_7011SemanticChildren((View)getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -158,7 +157,6 @@ public class SubjectComponentUsecasesCanonicalEditPolicy extends CanonicalEditPo
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
-
 		boolean changed = deleteViews(orphaned.iterator());
 		//
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
@@ -178,7 +176,6 @@ public class SubjectComponentUsecasesCanonicalEditPolicy extends CanonicalEditPo
 			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
-
 		makeViewsImmutable(createdViews);
 	}
 }

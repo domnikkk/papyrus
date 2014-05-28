@@ -131,10 +131,10 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		testViewDeletion(type,1, 1, 1);
 		// The node has been deleted, the uml element is still present
 		testDrop(type, eClass,0,1,1);
-		
+
 		// The element can be dropped several time in the diagrams
 		testDrop(type, eClass,1,1,1);
-		
+
 		// undo the second drop
 		undoOnUIThread();
 		// the node and element are present
@@ -154,7 +154,7 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 	public void testToManageNode(IElementType type, EClass eClass, IElementType containerType, boolean containerMove, int numberSemanticChildreen) {
 		testToManageNode(type, eClass, containerType, containerMove, null, numberSemanticChildreen);
 	}
-	
+
 	/**
 	 * Test to manage child node.
 	 *
@@ -189,9 +189,9 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		testViewDeletion(type,1, 1, 1);
 		// The node has been deleted, the uml element is still present
 		testDrop(type, eClass,0,1,1);
-		
+
 		// The element can be dropped several time in the diagrams
-				testDrop(type, eClass,1,1,1);
+		testDrop(type, eClass,1,1,1);
 		// the node and element are present
 		if(containerMove) {
 			testChangeContainer(type, containerType);
@@ -325,7 +325,7 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		}
 		// redo the drop
 		redoOnUIThread();
-		assertTrue(DROP + TEST_THE_REDO,getRootView().getChildren().size() != 0);
+		Assert.assertEquals(DROP + TEST_THE_REDO,expectedGraphicalChildren+addedGraphicalChildren,getRootView().getChildren().size());
 		if(testSemantic) {
 			assertTrue(DROP + TEST_THE_REDO, getRootSemanticModel().getOwnedElements().size() != 0);
 		}
@@ -402,7 +402,9 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		assertEquals(CREATION + INITIALIZATION_TEST, expectedGraphicalChildren, getRootView().getChildren().size());
 		Element root = getRootSemanticModel();
 		List<Element> ownedElements = root.getOwnedElements();
-		assertEquals(CREATION + INITIALIZATION_TEST, expectedSemanticChildren, ownedElements.size());
+		if( isSemanticTest()){
+			assertEquals(CREATION + INITIALIZATION_TEST, expectedSemanticChildren, ownedElements.size());
+		}
 		final CreateViewRequest requestcreation = CreateViewRequestFactory.getCreateShapeRequest(type, getContainerEditPart().getDiagramPreferencesHint());
 		Display.getDefault().syncExec(new Runnable() {
 
@@ -419,7 +421,7 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		if(addedGraphicalChildren>=1){
 			Assert.assertTrue("Node must be  org.eclipse.gmf.runtime.notation.Shape",getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1) instanceof Shape);
 		}
-		
+
 		if(testSemantic) {
 			assertEquals(CREATION + TEST_THE_EXECUTION, expectedSemanticChildren + addedSemanticChildren, getRootSemanticModel().getOwnedElements().size());
 		}
@@ -439,23 +441,24 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		EditPart createdEditPart= (EditPart)getContainerEditPart().getChildren().get((getContainerEditPart().getChildren().size()-1));
 		Assert.assertNotNull("The editpart must be created", createdEditPart);
 		testNodeEditPart(maskmanaged, createdEditPart, initialName);
-		
-		
+
+
 		// test diagram updater
-		Assert.assertNotEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(getRootView()).size());
-		Assert.assertEquals("Diagram updater must detect that no link has been created",0,getDiagramUpdater().getContainedLinks(getRootView()).size());
-		Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
-		Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
-		Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",numberSemanticChildreen,getDiagramUpdater().getSemanticChildren((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
-		Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
-		
+		if(getDiagramUpdater()!=null){
+			Assert.assertNotEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(getRootView()).size());
+			Assert.assertEquals("Diagram updater must detect that no link has been created",0,getDiagramUpdater().getContainedLinks(getRootView()).size());
+			Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
+			Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
+			Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",numberSemanticChildreen,getDiagramUpdater().getSemanticChildren((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
+			Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
+		}
 		createdEditPart.getChildren();
 		for(Iterator<?> iteratorEditPart = createdEditPart.getChildren().iterator(); iteratorEditPart.hasNext();) {
 			Object subEditPart = iteratorEditPart.next();
 			if( subEditPart instanceof UMLCompartmentEditPart){
 				Assert.assertEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(((CompartmentEditPart)subEditPart).getNotationView()).size());
 			}
-			
+
 		}
 	}
 
@@ -487,13 +490,19 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 			if( initialName!=null){
 				name=initialName;
 			}
-			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length()));
+			if(name.length()<((ITextAwareEditPart)namedEditPart).getEditText().length()){
+				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length()));
+			}
+			else{
+				//not the same it sure but display the mistake is important
+				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText());
+			}
 			if(namedEditPart instanceof CompartmentEditPart ){
-			Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof CompartmentEditPart);
-			Assert.assertTrue("namelabelEditpart must be editable",((CompartmentEditPart)namedEditPart).isEditModeEnabled());}
+				Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof CompartmentEditPart);
+				Assert.assertTrue("namelabelEditpart must be editable",((CompartmentEditPart)namedEditPart).isEditModeEnabled());}
 			else{
 				Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof LabelEditPart);
-				
+
 			}
 		}
 	}

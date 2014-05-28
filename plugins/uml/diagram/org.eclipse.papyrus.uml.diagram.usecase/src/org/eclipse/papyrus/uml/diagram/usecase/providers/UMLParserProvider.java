@@ -783,120 +783,88 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getActorName_5014Parser();
 		case ActorAppliedStereotypeEditPartTN.VISUAL_ID:
 			return getActorLabel_6029Parser();
-
 		case ActorAsRectangleNameEditPartTN.VISUAL_ID:
 			return getActorName_5015Parser();
-
 		case UseCaseNameEditPartTN.VISUAL_ID:
 			return getUseCaseName_5016Parser();
-
 		case UseCaseAsRectangleNameEditPartTN.VISUAL_ID:
 			return getUseCaseName_5017Parser();
-
 		case SubjectClassifierNameEditPartTN.VISUAL_ID:
 			return getClassifierName_5019Parser();
-
 		case PackageNameEditPartTN.VISUAL_ID:
 			return getPackageName_5025Parser();
-
 		case ConstraintNameEditPartTN.VISUAL_ID:
 			return getConstraintName_5026Parser();
 		case ConstraintBodyEditPart.VISUAL_ID:
 			return getConstraintSpecification_6042Parser();
-
 		case CommentBodyEditPartTN.VISUAL_ID:
 			return getCommentBody_5027Parser();
-
 		case DefaultNamedElementNameEditPart.VISUAL_ID:
 			return getNamedElementName_6039Parser();
-
 		case DiagramNameEditPart.VISUAL_ID:
 			return getDiagramName_5032Parser();
-
 		case ExtensionPointEditPart.VISUAL_ID:
 			return getExtensionPoint_3007Parser();
 		case ExtensionPointInRectangleEditPart.VISUAL_ID:
 			return getExtensionPoint_3008Parser();
 		case UseCaseInComponentNameEditPart.VISUAL_ID:
 			return getUseCaseName_5018Parser();
-
 		case ComponentInComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5030Parser();
-
 		case CommentBodyEditPartCN.VISUAL_ID:
 			return getCommentBody_5028Parser();
-
 		case ConstraintInComponentNameEditPart.VISUAL_ID:
 			return getConstraintName_5029Parser();
 		case ConstraintBodyInCEditPart.VISUAL_ID:
 			return getConstraintSpecification_6043Parser();
-
 		case ActorInComponentNameEditPart.VISUAL_ID:
 			return getActorName_5031Parser();
 		case ActorInComponentAppliedStereotypeEditPart.VISUAL_ID:
 			return getActorLabel_6027Parser();
-
 		case ConstraintInPackageNameEditPart.VISUAL_ID:
 			return getConstraintName_5020Parser();
 		case ConstraintBodyInPEditPart.VISUAL_ID:
 			return getConstraintSpecification_6044Parser();
-
 		case ActorInPackageNameEditPart.VISUAL_ID:
 			return getActorName_5021Parser();
 		case ActorInPackageAppliedStereotypeEditPart.VISUAL_ID:
 			return getActorLabel_6028Parser();
-
 		case UseCaseInPackageNameEditPart.VISUAL_ID:
 			return getUseCaseName_5022Parser();
-
 		case ComponentInPackageNameEditPart.VISUAL_ID:
 			return getComponentName_5023Parser();
-
 		case PackageNameEditPartCN.VISUAL_ID:
 			return getPackageName_5024Parser();
-
 		case IncludeAppliedStereotypeEditPart.VISUAL_ID:
 			return getIncludeLabel_6030Parser();
-
 		case ExtendAppliedStereotypeEditPart.VISUAL_ID:
 			return getExtendLabel_6031Parser();
-
 		case GeneralizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getGeneralizationLabel_6032Parser();
-
 		case AssociationNameEditPart.VISUAL_ID:
 			return getAssociationName_6008Parser();
 		case AssociationAppliedStereotypeEditPart.VISUAL_ID:
 			return getAssociationLabel_6033Parser();
-
-
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6010Parser();
 		case DependencyAppliedStereotypeEditPart.VISUAL_ID:
 			return getDependencyLabel_6034Parser();
-
-
 		case AbstractionNameEditPart.VISUAL_ID:
 			return getAbstractionName_6011Parser();
 		case AppliedStereotypeAbstractionEditPart.VISUAL_ID:
 			return getAbstractionLabel_6014Parser();
-
 		case UsageNameEditPart.VISUAL_ID:
 			return getUsageName_6012Parser();
 		case AppliedStereotypeUsageEditPart.VISUAL_ID:
 			return getUsageLabel_6013Parser();
-
 		case RealizationNameEditPart.VISUAL_ID:
 			return getRealizationName_6015Parser();
 		case RealizationAppliedStereotypeEditPart.VISUAL_ID:
 			return getRealizationLabel_6035Parser();
-
 		case AppliedStereotypePackageMergeEditPart.VISUAL_ID:
 			return getPackageMergeLabel_0Parser();
-
 		case PackageImportAppliedStereotypeEditPart.VISUAL_ID:
 			return getPackageImportLabel_6036Parser();
-
 		}
 		return null;
 	}

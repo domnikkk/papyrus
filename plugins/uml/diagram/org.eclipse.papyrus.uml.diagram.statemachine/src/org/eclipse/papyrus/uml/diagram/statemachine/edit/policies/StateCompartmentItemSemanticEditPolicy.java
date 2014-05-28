@@ -23,6 +23,7 @@ import org.eclipse.papyrus.uml.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 public class StateCompartmentItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+
 	/**
 	 * @generated
 	 */
@@ -35,13 +36,13 @@ public class StateCompartmentItemSemanticEditPolicy extends UMLBaseItemSemanticE
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if (requestElementType == null) {
+		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		if (UMLElementTypes.Region_3000 == requestElementType) {
+		if(UMLElementTypes.Region_3000 == requestElementType) {
 			return getGEFWrapper(new RegionCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.ConnectionPointReference_18000 == requestElementType) {
+		if(UMLElementTypes.ConnectionPointReference_18000 == requestElementType) {
 			return getGEFWrapper(new ConnectionPointReferenceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

@@ -18,8 +18,8 @@ import org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
-public class DiagramGeneralPreferencePage extends DiagramPreferencePage
-{
+public class DiagramGeneralPreferencePage extends DiagramPreferencePage {
+
 	/**
 	 * @generated
 	 */

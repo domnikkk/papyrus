@@ -29,7 +29,7 @@ public class TestUseCaseLink extends TestLink {
 
 	@Override
 	public DiagramUpdater getDiagramUpdater() {
-		return org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater.INSTANCE;
+		return org.eclipse.papyrus.uml.diagram.usecase.custom.edit.parts.CustomUMLDiagramUpdater.INSTANCE;
 	}
 	@Override
 	protected ICreationCommand getDiagramCommandCreation() {
@@ -62,11 +62,11 @@ public class TestUseCaseLink extends TestLink {
 	}
 	@Test
 	public void testToManageAssociationUseCase_UseCase() {
-		testToManageLink(UMLElementTypes.UseCase_2013,UMLElementTypes.UseCase_2013,UMLElementTypes.Association_4011,UMLElementTypes.Package_2016,true);
+		testToManageLink(UMLElementTypes.UseCase_2013,UMLElementTypes.UseCase_2013,UMLElementTypes.Association_4011,UMLElementTypes.Package_2016,true,"A_usecase1_usecase");
 	}
 	@Test
 	public void testToManageAssociationUseCase_Actor() {
-		testToManageLink(UMLElementTypes.UseCase_2013,UMLElementTypes.Actor_2011,UMLElementTypes.Association_4011,UMLElementTypes.Package_2016,true);
+		testToManageLink(UMLElementTypes.UseCase_2013,UMLElementTypes.Actor_2011,UMLElementTypes.Association_4011,UMLElementTypes.Package_2016,true,"A_usecase1_actor");
 	}
 	
 	@Test

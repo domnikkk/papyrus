@@ -57,6 +57,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class UMLElementTypes {
+
 	/**
 	 * @generated
 	 */
@@ -67,114 +68,142 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	private static Map<IElementType, ENamedElement> elements;
+
 	/**
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+
 	/**
 	 * @generated
 	 */
 	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Package_1000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Package_1000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType StateMachine_2000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.StateMachine_2000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Region_3000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Region_3000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType FinalState_5000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.FinalState_5000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType State_6000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.State_6000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_8000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_8000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_9000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_9000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_10000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_10000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_11000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_11000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_12000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_12000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_13000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_13000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_14000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_14000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_15000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_15000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_16000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_16000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Pseudostate_17000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Pseudostate_17000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType ConnectionPointReference_18000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.ConnectionPointReference_18000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Comment_666 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.StateMachineComment"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Constraint_668 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Constraint_668"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Transition_680 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.InternalTransition_680"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Behavior_690 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.EntryStateBehavior_690"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Behavior_691 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.DoActivityStateBehavior_691"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Behavior_692 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.ExitStateBehavior_692"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Transition_7000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Transition_7000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Generalization_19000 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.Generalization_19000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType CommentAnnotatedElement_667 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.CommentAnnotatedElement_667"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -215,7 +244,7 @@ public class UMLElementTypes {
 	 */
 	public static synchronized ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
-		if (elements == null) {
+		if(elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 			elements.put(Package_1000, UMLPackage.eINSTANCE.getPackage());
 			elements.put(StateMachine_2000, UMLPackage.eINSTANCE.getStateMachine());
@@ -244,7 +273,7 @@ public class UMLElementTypes {
 			elements.put(CommentAnnotatedElement_667, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 			elements.put(ConstraintConstrainedElement_670, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 		}
-		return (ENamedElement) elements.get(type);
+		return (ENamedElement)elements.get(type);
 	}
 
 	/**
@@ -258,7 +287,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static synchronized boolean isKnownElementType(IElementType elementType) {
-		if (KNOWN_ELEMENT_TYPES == null) {
+		if(KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Package_1000);
 			KNOWN_ELEMENT_TYPES.add(StateMachine_2000);
@@ -294,7 +323,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static IElementType getElementType(int visualID) {
-		switch (visualID) {
+		switch(visualID) {
 		case PackageEditPart.VISUAL_ID:
 			return Package_1000;
 		case StateMachineEditPart.VISUAL_ID:
@@ -355,6 +384,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
+
 		/**
 		 * @generated
 		 */

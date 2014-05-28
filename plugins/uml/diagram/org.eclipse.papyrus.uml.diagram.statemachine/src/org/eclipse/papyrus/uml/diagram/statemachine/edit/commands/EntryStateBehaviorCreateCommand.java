@@ -33,6 +33,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class EntryStateBehaviorCreateCommand extends EditElementCommand {
+
 	/**
 	 * @generated
 	 */
@@ -48,12 +49,13 @@ public class EntryStateBehaviorCreateCommand extends EditElementCommand {
 
 	/**
 	 * FIXME: replace with setElementToEdit()
+	 * 
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest()).getContainer();
-		if (container instanceof View) {
-			container = ((View) container).getElement();
+		EObject container = ((CreateElementRequest)getRequest()).getContainer();
+		if(container instanceof View) {
+			container = ((View)container).getElement();
 		}
 		return container;
 	}
@@ -62,9 +64,8 @@ public class EntryStateBehaviorCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		State container = (State) getElementToEdit();
-		if (container.getEntry()
-				!= null) {
+		State container = (State)getElementToEdit();
+		if(container.getEntry() != null) {
 			return false;
 		}
 		EObject target = getElementToEdit();
@@ -83,12 +84,12 @@ public class EntryStateBehaviorCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(Behavior newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if (configureCommand != null && configureCommand.canExecute()) {
+		if(configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}

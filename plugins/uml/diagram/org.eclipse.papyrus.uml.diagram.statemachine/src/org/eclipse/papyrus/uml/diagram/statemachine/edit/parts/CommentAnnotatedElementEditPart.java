@@ -12,10 +12,8 @@
 package org.eclipse.papyrus.uml.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.ConnectionEditPart;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.SimpleDashedEdgeFigure;
@@ -24,9 +22,8 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.policies.CommentAnnotat
 /**
  * @generated
  */
-public class CommentAnnotatedElementEditPart extends ConnectionEditPart
-		implements ITreeBranchEditPart
-{
+public class CommentAnnotatedElementEditPart extends ConnectionEditPart implements ITreeBranchEditPart {
+
 	/**
 	 * @generated
 	 */
@@ -63,6 +60,6 @@ public class CommentAnnotatedElementEditPart extends ConnectionEditPart
 	 * @generated
 	 */
 	public SimpleDashedEdgeFigure getPrimaryShape() {
-		return (SimpleDashedEdgeFigure) getFigure();
+		return (SimpleDashedEdgeFigure)getFigure();
 	}
 }
