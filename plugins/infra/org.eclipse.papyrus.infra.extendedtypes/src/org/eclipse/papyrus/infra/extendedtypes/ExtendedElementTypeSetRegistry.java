@@ -202,6 +202,8 @@ public class ExtendedElementTypeSetRegistry {
 		}
 		ExtendedElementTypeSet elementTypeSet = extendedTypeSets.get(identifier);
 		if(elementTypeSet==null) {
+			// there is an entry in the map for this extended type set, it should be removed...
+			extendedTypeSets.remove(identifier);
 			return;
 		}
 		
@@ -250,11 +252,13 @@ public class ExtendedElementTypeSetRegistry {
 				}
 			}
 		}
-		
-		elementTypeSet.eResource().unload();
-		if(extendedTypesResourceSet!=null) {
-			extendedTypesResourceSet.getResources().remove(elementTypeSet.eResource());
+		if(elementTypeSet.eResource()!=null) {
+			elementTypeSet.eResource().unload();	
+			if(extendedTypesResourceSet!=null) {
+				extendedTypesResourceSet.getResources().remove(elementTypeSet.eResource());
+			}
 		}
+		extendedTypeSets.remove(identifier);
 	}
 	
 	protected void removeAdviceFromBindings(SpecializationTypeRegistry registry, String adviceDescriptorId, IEditHelperAdviceDescriptor adviceDescriptor) {
