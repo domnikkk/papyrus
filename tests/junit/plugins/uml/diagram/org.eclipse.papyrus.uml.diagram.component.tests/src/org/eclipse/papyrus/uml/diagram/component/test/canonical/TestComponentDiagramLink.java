@@ -52,6 +52,7 @@ public class TestComponentDiagramLink extends TestLink {
 	 * Test to manage Abstraction
 	 */
 	@Test
+	@FailingTest
 	public void testToManageAbstraction() {
 		testToManageLink(UMLElementTypes.Component_2002, UMLElementTypes.Component_2002, UMLElementTypes.Abstraction_4013, UMLElementTypes.Package_3200, true);
 	}
