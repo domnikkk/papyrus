@@ -10,6 +10,7 @@
  * Contributors:
  *  Arnaud Cuccuru (CEA LIST) - Initial API and implementation
  *  Vincent Lorenzo   (CEA LIST)
+ *  Benoit Maggi (CEA LIST) - Bug 431629 Patch to avoid loop on imported packages 
  *****************************************************************************/
 
 package org.eclipse.papyrus.uml.tools.utils;
@@ -93,7 +94,7 @@ public class NameResolutionHelper {
 				this.allNames.put(model.getName(), l);
 			}
 		}
-		computeNames(model.getName() + "::", model, false);
+		computeNames(model.getName() +  NamedElementUtil.QUALIFIED_NAME_SEPARATOR, model, false); 
 
 		// Build names corresponding to other available UML resources in the workspace 
 		List<Resource> resources = new ArrayList<Resource>(scope.eResource().getResourceSet().getResources());//we duplicate the resource to avoid concurrent modification
@@ -130,11 +131,22 @@ public class NameResolutionHelper {
 		}
 	}
 
-
 	/**
 	 * TODO
 	 */
 	protected void computeNames(String prefix, Namespace scope, boolean ignoreAlreadyFoundNames) {
+		computeNames(prefix,scope,ignoreAlreadyFoundNames, new HashSet<Namespace>()) ;
+	}
+	
+	/**
+	 * 
+	 * @param prefix
+	 * @param scope
+	 * @param ignoreAlreadyFoundNames
+	 * @param alreadyComputedNamespace list of already visited Namespace to avoid loop on imported packages
+	 */
+	protected void computeNames(String prefix, Namespace scope, boolean ignoreAlreadyFoundNames, Set<Namespace> alreadyComputedNamespace) {
+		alreadyComputedNamespace.add(scope);
 		Set<String> preExistingKeys;
 		if(ignoreAlreadyFoundNames)
 			preExistingKeys = new HashSet<String>();
@@ -151,8 +163,9 @@ public class NameResolutionHelper {
 					l.add(member);
 					this.allNames.put(prefix + memberName, l);
 				}
-				if(member instanceof Namespace) { // Recursive call on the current member
-					computeNames(prefix + memberName + NamedElementUtil.QUALIFIED_NAME_SEPARATOR, (Namespace)member, true);
+				if(member instanceof Namespace && ! alreadyComputedNamespace.contains(member)) { // avoid loop on imported packages
+					// Recursive call on the current member
+					computeNames(prefix + memberName + NamedElementUtil.QUALIFIED_NAME_SEPARATOR, (Namespace)member, false , alreadyComputedNamespace);
 				}
 			}
 		}

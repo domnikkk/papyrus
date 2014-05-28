@@ -33,7 +33,6 @@ import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.facet.common.ui.internal.views.AbstractTreeView;
 import org.eclipse.emf.workspace.EMFCommandOperation;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
@@ -46,6 +45,7 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.emf.facet.common.ui.internal.views.AbstractTreeView;
 
 public class CommandStackView extends AbstractTreeView {
 
@@ -69,7 +69,6 @@ public class CommandStackView extends AbstractTreeView {
 						IUndoableOperation removedOperation = CommandStackView.this.commandList.remove(CommandStackView.this.maxSize - 1);
 						dates.remove(removedOperation);
 					}
-
 					CommandStackView.this.commandList.add(0, event.getOperation());
 					final DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 					final Calendar cal = Calendar.getInstance();
@@ -124,7 +123,6 @@ public class CommandStackView extends AbstractTreeView {
 			public String getText() {
 				return "Clear the view";
 			}
-
 		});
 	}
 
@@ -210,7 +208,6 @@ public class CommandStackView extends AbstractTreeView {
 					return ((Collection<?>)inputElement).toArray();
 				}
 				return new Object[0];
-
 			}
 
 			public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
@@ -260,7 +257,6 @@ public class CommandStackView extends AbstractTreeView {
 	@Override
 	protected void openElement(final Object element) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -286,5 +282,4 @@ public class CommandStackView extends AbstractTreeView {
 		this.commandList.clear();
 		this.dates.clear();
 	}
-
 }

@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) - Bug 359270
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.helper;
@@ -30,7 +31,7 @@ import org.eclipse.uml2.uml.Operation;
 public class OperationLabelHelper extends StereotypedElementLabelHelper {
 
 	/**
-	 * singelton instance
+	 * singleton instance
 	 */
 	private static OperationLabelHelper labelHelper;
 
@@ -60,6 +61,7 @@ public class OperationLabelHelper extends StereotypedElementLabelHelper {
 		masks.put(ICustomAppearance.DISP_PARAMETER_DIRECTION, "Parameters Direction");
 		masks.put(ICustomAppearance.DISP_PARAMETER_TYPE, "Parameters Type");
 		masks.put(ICustomAppearance.DISP_RT_TYPE, "Return Type");
+		masks.put(ICustomAppearance.DISP_RT_MULTIPLICITY, "Return Multiplicity");
 		masks.put(ICustomAppearance.DISP_PARAMETER_MULTIPLICITY, "Parameters Multiplicity");
 		masks.put(ICustomAppearance.DISP_PARAMETER_DEFAULT, "Parameters Default Value");
 		masks.put(ICustomAppearance.DISP_PARAMETER_MODIFIERS, "Parameters Modifiers");
