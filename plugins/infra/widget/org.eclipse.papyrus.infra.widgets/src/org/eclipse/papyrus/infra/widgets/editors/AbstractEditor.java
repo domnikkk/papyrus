@@ -426,22 +426,22 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 		// On SWT/Cocoa, veto attempts to give focus to any other control for the current event-loop iteration
 		FocusVeto.vetoFocus(this);
 	}
-	
+
 	/**
 	 * Queries the model element that I edit.
 	 *
 	 * @return the contextual model element
 	 */
 	protected abstract Object getContextElement();
-	
+
 	//
 	// Nested types
 	//
-	
+
 	/**
 	 * A utility that implements a bug in the SWT implementation on Cocoa, in which responder-chain management
 	 * while a {@link CCombo} is trying to accept focus in a Property Sheet that currently does not have focus
-	 * results in the text contents of some unrelated {@link Text} widget being presented in the {@code CCombo'}
+	 * results in the text contents of some unrelated {@link Text} widget being presented in the {@code CCombo}'s
 	 * text field.
 	 * 
 	 * @see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=435420">bug 435420</a>
@@ -465,6 +465,10 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 				public void run() {
 
 					removeFocusVeto(shell, FocusVeto.this);
+
+					if(!FocusVeto.this.focusControl.isDisposed() && !FocusVeto.this.focusControl.isFocusControl()) {
+						FocusVeto.this.focusControl.setFocus();
+					}
 				}
 			});
 		}
