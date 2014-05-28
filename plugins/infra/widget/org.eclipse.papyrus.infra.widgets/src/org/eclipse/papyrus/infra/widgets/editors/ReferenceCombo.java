@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
+ *  Christian W. Damus (CEA) - bug 435420
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
 
@@ -30,6 +32,8 @@ import org.eclipse.papyrus.infra.widgets.providers.UnchangedObject;
 import org.eclipse.papyrus.infra.widgets.providers.UnsetObject;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
+import org.eclipse.swt.events.FocusAdapter;
+import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -109,6 +113,14 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 		GridData gridData = getDefaultLayoutData();
 		combo.setLayoutData(gridData);
 		gridData.horizontalIndent = FieldDecorationRegistry.getDefault().getMaximumDecorationWidth();
+
+		combo.addFocusListener(new FocusAdapter() {
+
+			@Override
+			public void focusGained(FocusEvent paramFocusEvent) {
+				acceptingFocus();
+			}
+		});
 	}
 
 	/**
@@ -267,7 +279,7 @@ public class ReferenceCombo extends AbstractValueEditor { //implements Selection
 		this.combo = viewer.getCCombo();
 	}
 
-	//FIXME error avec multiplicité nulllpointerexception l285
+	//FIXME error avec multiplicitï¿½ nulllpointerexception l285
 	@Override
 	public void updateStatus(IStatus status) {
 		switch(status.getSeverity()) {

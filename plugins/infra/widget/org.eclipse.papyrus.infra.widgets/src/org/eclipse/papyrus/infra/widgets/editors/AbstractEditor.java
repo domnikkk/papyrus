@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 402525
+ *  Christian W. Damus (CEA) - bug 435420
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
@@ -24,15 +25,18 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.papyrus.infra.widgets.creation.IAtomicOperationExecutor;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
+import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
-import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 /**
@@ -309,13 +313,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 *        to notify the CommitListeners
 	 */
 	protected void setCommitOnFocusLost(Control control) {
-		control.addFocusListener(new FocusListener() {
-
-			@Override
-			public void focusGained(FocusEvent e) {
-				// Nothing
-
-			}
+		control.addFocusListener(new FocusAdapter() {
 
 			@Override
 			public void focusLost(FocusEvent e) {
@@ -419,9 +417,89 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	}
 
 	/**
+	 * A hook to call when a control is accepting a focus that is sensitive to glitches in focus management
+	 * on the current SWT platform.
+	 * 
+	 * @see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=435420">bug 435420</a>
+	 */
+	protected final void acceptingFocus() {
+		// On SWT/Cocoa, veto attempts to give focus to any other control for the current event-loop iteration
+		FocusVeto.vetoFocus(this);
+	}
+	
+	/**
 	 * Queries the model element that I edit.
 	 *
 	 * @return the contextual model element
 	 */
 	protected abstract Object getContextElement();
+	
+	//
+	// Nested types
+	//
+	
+	/**
+	 * A utility that implements a bug in the SWT implementation on Cocoa, in which responder-chain management
+	 * while a {@link CCombo} is trying to accept focus in a Property Sheet that currently does not have focus
+	 * results in the text contents of some unrelated {@link Text} widget being presented in the {@code CCombo'}
+	 * text field.
+	 * 
+	 * @see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=435420">bug 435420</a>
+	 */
+	static class FocusVeto {
+
+		// Only engage this work-around on the Cocoa implementation of SWT because it actually results in
+		// editable CCombos not getting keyboard focus when initially clicked if the Property Sheet is not
+		// yet active
+		private static final boolean IS_SWT_COCOA = Platform.WS_COCOA.equals(Platform.getWS());
+
+		private final Control focusControl;
+
+		private FocusVeto(Control focusControl) {
+			this.focusControl = focusControl;
+			final Shell shell = focusControl.getShell();
+
+			focusControl.getDisplay().asyncExec(new Runnable() {
+
+				@Override
+				public void run() {
+
+					removeFocusVeto(shell, FocusVeto.this);
+				}
+			});
+		}
+
+		Control getFocusControl() {
+			return focusControl;
+		}
+
+		static Control getFocusVetoControl(Control context) {
+			FocusVeto veto = IS_SWT_COCOA ? getFocusVeto(context.getShell()) : null;
+			return (veto == null) ? null : veto.getFocusControl();
+		}
+
+		static void vetoFocus(Control focusControl) {
+			if(IS_SWT_COCOA) {
+				Shell shell = focusControl.getShell();
+				FocusVeto current = getFocusVeto(shell);
+				if(current == null) {
+					setFocusVeto(shell, new FocusVeto(focusControl));
+				}
+			}
+		}
+
+		static FocusVeto getFocusVeto(Shell shell) {
+			return (FocusVeto)shell.getData(FocusVeto.class.getName());
+		}
+
+		static void setFocusVeto(Shell shell, FocusVeto focusVeto) {
+			shell.setData(FocusVeto.class.getName(), focusVeto);
+		}
+
+		static void removeFocusVeto(Shell shell, FocusVeto focusVeto) {
+			if(getFocusVeto(shell) == focusVeto) {
+				shell.setData(FocusVeto.class.getName(), null);
+			}
+		}
+	}
 }
