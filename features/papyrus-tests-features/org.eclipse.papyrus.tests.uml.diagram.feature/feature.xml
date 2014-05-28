@@ -55,7 +55,7 @@ Content may contain encryption software. The country in which you are currently 
 Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in the United States, other countries, or both.
    </license>
 
-   <!--plugin
+   <plugin
          id="org.eclipse.papyrus.diagram.common.tests"
          download-size="0"
          install-size="0"
@@ -118,7 +118,7 @@ Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in t
          install-size="0"
          version="0.0.0"
          unpack="false"/>
--->
+
    <plugin
          id="org.eclipse.papyrus.uml.diagram.composite.tests"
          download-size="0"
@@ -126,7 +126,7 @@ Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in t
          version="0.0.0"
          unpack="false"/>
 
-   <!--plugin
+   <plugin
          id="org.eclipse.papyrus.uml.diagram.wizards.tests"
          download-size="0"
          install-size="0"
@@ -138,6 +138,6 @@ Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in t
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/-->
+         unpack="false"/>
 
 </feature>

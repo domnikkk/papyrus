@@ -24,7 +24,7 @@ http://www.eclipse.org/legal/epl-v10.html
          id="org.eclipse.papyrus.tests.uml.diagram.feature"
          version="0.0.0"/>
 
-   <!--includes
+   <includes
          id="org.eclipse.papyrus.tests.infra.services.feature"
          version="0.0.0"/>
 
@@ -100,6 +100,6 @@ http://www.eclipse.org/legal/epl-v10.html
          id="org.eclipse.papyrus.infra.gmfdiag.css.tests"
          download-size="0"
          install-size="0"
-         version="0.0.0"/-->
+         version="0.0.0"/>
 
 </feature>
