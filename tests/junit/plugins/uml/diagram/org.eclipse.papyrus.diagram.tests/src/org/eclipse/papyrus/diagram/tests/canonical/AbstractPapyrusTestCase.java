@@ -48,7 +48,10 @@ import org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor;
 import org.eclipse.papyrus.uml.diagram.profile.CreateProfileModelCommand;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.intro.IIntroPart;
 import org.eclipse.uml2.uml.Element;
@@ -67,7 +70,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
 	@Rule
 	public final HouseKeeper houseKeeper = new HouseKeeper();
-	
+
 	protected boolean operationFailed = false;
 
 	/** The Constant CREATION. */
@@ -127,6 +130,8 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	/** The diagram edit part. */
 	protected DiagramEditPart diagramEditPart;
 
+
+	
 	/**
 	 * @see junit.framework.TestCase#setUp()
 	 *
@@ -135,6 +140,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	@Before
 	public void setUp() throws Exception {
 		projectCreation();
+		
 	}
 
 	/**
@@ -172,7 +178,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 					}
 
 					// diResourceSet.save( new NullProgressMonitor());
-					// diagramEditor.close(true);
+					diagramEditor.close(true);
 					papyrusEditor = null;
 					diagramEditPart = null;
 					diagramEditor = null;
@@ -312,7 +318,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			command.createDiagram(diResourceSet, null, "DiagramToTest");
 			diResourceSet.save(new NullProgressMonitor());
 		}
-		
+
 		papyrusEditor = houseKeeper.openPapyrusEditor(file);
 		Assert.assertNotNull("Failed to open the editor", papyrusEditor);
 	}

@@ -19,6 +19,7 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.clazz.test.IClassDiagramTestsConstants;
 import org.eclipse.papyrus.diagram.tests.canonical.TestChildNode;
+import org.eclipse.papyrus.junit.utils.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
@@ -89,6 +90,7 @@ public class TestClassDiagramChildNode extends TestChildNode {
 	 * Test to manage model.
 	 */
 	@Test
+	@FailingTest
 	public void testToManageModel() {
 		testToManageNode(UMLElementTypes.Model_3024, UMLPackage.eINSTANCE.getModel(), UMLElementTypes.Package_3009, true);
 	}
@@ -105,6 +107,7 @@ public class TestClassDiagramChildNode extends TestChildNode {
 	 * Test to manage i package.
 	 */
 	@Test
+	@FailingTest
 	public void testToManageIPackage() {
 		testToManageNode(UMLElementTypes.Package_3009, UMLPackage.eINSTANCE.getPackage(), UMLElementTypes.Package_3009, true);
 	}

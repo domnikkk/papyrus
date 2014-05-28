@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.component.test.canonical;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.TestLink;
+import org.eclipse.papyrus.junit.utils.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.component.CreateComponentDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
@@ -59,6 +60,7 @@ public class TestComponentDiagramLink extends TestLink {
 	 * Test to manage Dependency
 	 */
 	@Test
+	@FailingTest
 	public void testToManageDependency() {
 		testToManageLink(UMLElementTypes.Component_2002, UMLElementTypes.Component_2002, UMLElementTypes.Dependency_4010, UMLElementTypes.Package_3200, true);
 
@@ -68,6 +70,7 @@ public class TestComponentDiagramLink extends TestLink {
 	 * Test to manage Manifestation
 	 */
 	@Test
+	@FailingTest
 	public void testToManageManifestation() {
 		testToManageLink(UMLElementTypes.Component_2002, UMLElementTypes.Component_2002, UMLElementTypes.Manifestation_4014, UMLElementTypes.Package_3200, true);
 	}
@@ -76,6 +79,7 @@ public class TestComponentDiagramLink extends TestLink {
 	 * Test to manage Usage
 	 */
 	@Test
+	@FailingTest
 	public void testToManageUsage() {
 		testToManageLink(UMLElementTypes.Component_2002, UMLElementTypes.Interface_3205, UMLElementTypes.Usage_4001, UMLElementTypes.Package_3200, true);
 	}
@@ -84,6 +88,7 @@ public class TestComponentDiagramLink extends TestLink {
 	 * Test to manage Interface Realization
 	 */
 	@Test
+	@FailingTest
 	public void testToManageInterfaceRealization() {
 		testToManageLink(UMLElementTypes.Component_2002, UMLElementTypes.Interface_3205, UMLElementTypes.InterfaceRealization_4006, UMLElementTypes.Package_3200, true);
 	}
@@ -92,6 +97,7 @@ public class TestComponentDiagramLink extends TestLink {
 	 * Test to manage Component Realization
 	 */
 	@Test
+	@FailingTest
 	public void testToManageComponentRealization() {
 		testToManageLink(UMLElementTypes.Component_2002, UMLElementTypes.Component_2002, UMLElementTypes.ComponentRealization_4007, UMLElementTypes.Package_3200, true);
 	}
