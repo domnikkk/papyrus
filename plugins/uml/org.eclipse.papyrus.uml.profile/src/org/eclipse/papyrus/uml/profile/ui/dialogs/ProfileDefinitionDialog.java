@@ -25,10 +25,10 @@ import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.papyrus.uml.profile.Activator;
 import org.eclipse.papyrus.uml.profile.ImageManager;
-import org.eclipse.papyrus.uml.profile.definition.PapyrusDefinitionAnnotation;
-import org.eclipse.papyrus.uml.profile.definition.Version;
 import org.eclipse.papyrus.uml.profile.preference.ProfileDefinitionPreferenceConstants;
 import org.eclipse.papyrus.uml.profile.utils.Util;
+import org.eclipse.papyrus.uml.tools.profile.definition.PapyrusDefinitionAnnotation;
+import org.eclipse.papyrus.uml.tools.profile.definition.Version;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
@@ -108,7 +108,8 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/** check button for preference store */
 	private Button savePreferencesButton;
-	protected boolean saveConstraint=false;
+
+	protected boolean saveConstraint = false;
 
 	/** list of previous definition annotations */
 	List<PapyrusDefinitionAnnotation> oldVersionAnnotations = new ArrayList<PapyrusDefinitionAnnotation>();
@@ -157,16 +158,17 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 		// creates the new Papyrus Definition Annotation
 		papyrusDefinitionAnnotation = new PapyrusDefinitionAnnotation(newVersionValue, commentText.getText(), copyrightText.getText(), dateText.getText(), authorText.getText());
-		if(constraintCheck!=null){
-			saveConstraint= constraintCheck.getSelection();
+		if(constraintCheck != null) {
+			saveConstraint = constraintCheck.getSelection();
 		}
-		
+
 		super.okPressed();
 	}
 
-	public boolean saveConstraintInDefinition(){
+	public boolean saveConstraintInDefinition() {
 		return saveConstraint;
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -199,7 +201,7 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 		// 4. date
 		// 5. copyright
 		// 6. save constraint into the definition
-		
+
 		GridData gd;
 
 		Composite versionArea = createVersionArea(composite);
@@ -264,14 +266,15 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 		// Enable button by default, see bug #411256
 		constraintCheck.setSelection(true);
 		// should look 
-		constraintCheck.setText("Save OCL constraints, if any, into the profile definition");	//$NON-NLS-1$
+		constraintCheck.setText("Save OCL constraints, if any, into the profile definition"); //$NON-NLS-1$
 		Button writeToPlugin = new Button(group, SWT.RADIO);
-		writeToPlugin.setText("Ignore OCL constraints, if any. (use validation plugin generator instead)");	//$NON-NLS-1$
+		writeToPlugin.setText("Ignore OCL constraints, if any. (use validation plugin generator instead)"); //$NON-NLS-1$
 		GridData gd = new GridData(SWT.FILL, SWT.CENTER, true, true);
 		gd.heightHint = 60;
 		group.setLayoutData(gd);
 		return group;
 	}
+
 	/**
 	 * Creates and returns the content of the copyright area.
 	 * 

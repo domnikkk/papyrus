@@ -222,6 +222,7 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 
 		commands.add(command);
 
+
 		return wrappedList.add(o);
 	}
 
@@ -333,5 +334,4 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	public Object remove(int index) {
 		throw new UnsupportedOperationException();
 	}
-
 }

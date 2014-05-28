@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 434302
- *  
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Bug 435995
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.service;
 

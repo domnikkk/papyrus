@@ -8,6 +8,7 @@ Export-Package: org.eclipse.papyrus.uml.tools,
  org.eclipse.papyrus.uml.tools.listeners,
  org.eclipse.papyrus.uml.tools.model,
  org.eclipse.papyrus.uml.tools.namereferences,
+ org.eclipse.papyrus.uml.tools.profile.definition,
  org.eclipse.papyrus.uml.tools.providers,
  org.eclipse.papyrus.uml.tools.util
 Require-Bundle: org.eclipse.ui,
