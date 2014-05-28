@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
+ *  Christian W. Damus (CEA) - bug 436072
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
 
@@ -124,27 +126,36 @@ public class StringCombo extends ReferenceCombo {
 			if(modelProperty instanceof AggregatedObservable && ((AggregatedObservable)modelProperty).hasDifferentValues()) {
 				combo.setText(UnchangedObject.instance.toString());
 			} else if(value instanceof String) {
-				previousValue = combo.getText();
-				combo.setText((String)value);
+				// This is the new baseline value (coming from the model) against which to compare a future edit by the user
+				previousValue = (String)value;
+				combo.setText(previousValue);
 			}
 		}
 
 		//Enter pressed
 		public void keyReleased(KeyEvent e) {
 			if((e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) && e.stateMask == SWT.NONE) {
-				doFireChange();
+				maybeFireChange();
 				e.doit = false; //Stops the propagation of the event
 			}
 		}
 
 		//Selection change
 		public void widgetSelected(SelectionEvent e) {
-			doFireChange();
+			maybeFireChange();
 		}
 
 		//Focus lost
 		public void focusLost(FocusEvent e) {
-			doFireChange();
+			maybeFireChange();
+		}
+
+		void maybeFireChange() {
+			// Only report a change if there is actually a change, otherwise we get a no-op command that dirties the editor
+			final String currentValue = doGetValue();
+			if((currentValue == null) ? previousValue != null : !currentValue.equals(previousValue)) {
+				doFireChange();
+			}
 		}
 
 		private void doFireChange() {
