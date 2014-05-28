@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
@@ -38,16 +39,18 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class RegionEditPart extends NamedElementEditPart
-{
+public class RegionEditPart extends NamedElementEditPart {
+
 	/**
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 3000;
+
 	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
+
 	/**
 	 * @generated
 	 */
@@ -79,9 +82,10 @@ public class RegionEditPart extends NamedElementEditPart
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
+				if(result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -99,8 +103,9 @@ public class RegionEditPart extends NamedElementEditPart
 	}
 
 	/**
-	 *Papyrus codeGen
-	 *@generated
+	 * Papyrus codeGen
+	 *
+	 * @generated
 	 **/
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
@@ -115,20 +120,21 @@ public class RegionEditPart extends NamedElementEditPart
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.statemachine.custom.figures.RegionFigure
+	 * 
 	 * @generated
 	 */
 	public RegionFigure getPrimaryShape() {
-		return (RegionFigure) primaryShape;
+		return (RegionFigure)primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof RegionCompartmentEditPart) {
+		if(childEditPart instanceof RegionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getRegionCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((RegionCompartmentEditPart) childEditPart).getFigure());
+			pane.add(((RegionCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -138,9 +144,9 @@ public class RegionEditPart extends NamedElementEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof RegionCompartmentEditPart) {
+		if(childEditPart instanceof RegionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getRegionCompartmentFigure();
-			pane.remove(((RegionCompartmentEditPart) childEditPart).getFigure());
+			pane.remove(((RegionCompartmentEditPart)childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -150,7 +156,7 @@ public class RegionEditPart extends NamedElementEditPart
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
+		if(addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -160,7 +166,7 @@ public class RegionEditPart extends NamedElementEditPart
 	 * @generated
 	 */
 	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
+		if(removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -170,7 +176,7 @@ public class RegionEditPart extends NamedElementEditPart
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof RegionCompartmentEditPart) {
+		if(editPart instanceof RegionCompartmentEditPart) {
 			return getPrimaryShape().getRegionCompartmentFigure();
 		}
 		return getContentPane();
@@ -199,11 +205,13 @@ public class RegionEditPart extends NamedElementEditPart
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * 
+	 * @param nodeShape
+	 *        instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
+		if(nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -215,7 +223,7 @@ public class RegionEditPart extends NamedElementEditPart
 	 * @generated
 	 */
 	public IFigure getContentPane() {
-		if (contentPane != null) {
+		if(contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -225,7 +233,7 @@ public class RegionEditPart extends NamedElementEditPart
 	 * @generated
 	 */
 	protected void setForegroundColor(Color color) {
-		if (primaryShape != null) {
+		if(primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -241,8 +249,8 @@ public class RegionEditPart extends NamedElementEditPart
 	 * @generated
 	 */
 	protected void setLineType(int style) {
-		if (primaryShape instanceof NodeFigure) {
-			((NodeFigure) primaryShape).setLineStyle(style);
+		if(primaryShape instanceof IPapyrusNodeFigure) {
+			((IPapyrusNodeFigure)primaryShape).setLineStyle(style);
 		}
 	}
 }

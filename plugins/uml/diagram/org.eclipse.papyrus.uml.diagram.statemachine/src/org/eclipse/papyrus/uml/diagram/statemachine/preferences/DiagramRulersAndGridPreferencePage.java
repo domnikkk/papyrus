@@ -17,8 +17,8 @@ import org.eclipse.papyrus.uml.diagram.statemachine.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
-public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage
-{
+public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage {
+
 	/**
 	 * @generated
 	 */

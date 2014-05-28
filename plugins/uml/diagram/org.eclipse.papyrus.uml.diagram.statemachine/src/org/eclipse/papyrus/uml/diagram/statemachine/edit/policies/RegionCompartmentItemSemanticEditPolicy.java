@@ -35,6 +35,7 @@ import org.eclipse.papyrus.uml.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 public class RegionCompartmentItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+
 	/**
 	 * @generated
 	 */
@@ -47,49 +48,49 @@ public class RegionCompartmentItemSemanticEditPolicy extends UMLBaseItemSemantic
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if (requestElementType == null) {
+		if(requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		if (UMLElementTypes.Pseudostate_8000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_8000 == requestElementType) {
 			return getGEFWrapper(new PseudostateInitialCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_9000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_9000 == requestElementType) {
 			return getGEFWrapper(new PseudostateJoinCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_10000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_10000 == requestElementType) {
 			return getGEFWrapper(new PseudostateForkCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_11000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_11000 == requestElementType) {
 			return getGEFWrapper(new PseudostateChoiceCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_12000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_12000 == requestElementType) {
 			return getGEFWrapper(new PseudostateJunctionCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_13000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_13000 == requestElementType) {
 			return getGEFWrapper(new PseudostateShallowHistoryCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_14000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_14000 == requestElementType) {
 			return getGEFWrapper(new PseudostateDeepHistoryCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_15000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_15000 == requestElementType) {
 			return getGEFWrapper(new PseudostateTerminateCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.FinalState_5000 == requestElementType) {
+		if(UMLElementTypes.FinalState_5000 == requestElementType) {
 			return getGEFWrapper(new FinalStateCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.State_6000 == requestElementType) {
+		if(UMLElementTypes.State_6000 == requestElementType) {
 			return getGEFWrapper(new StateCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_16000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_16000 == requestElementType) {
 			return getGEFWrapper(new PseudostateEntryPointCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Pseudostate_17000 == requestElementType) {
+		if(UMLElementTypes.Pseudostate_17000 == requestElementType) {
 			return getGEFWrapper(new PseudostateExitPointCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Comment_666 == requestElementType) {
+		if(UMLElementTypes.Comment_666 == requestElementType) {
 			return getGEFWrapper(new CommentCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if (UMLElementTypes.Constraint_668 == requestElementType) {
+		if(UMLElementTypes.Constraint_668 == requestElementType) {
 			return getGEFWrapper(new ConstraintCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);
