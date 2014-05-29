@@ -32,9 +32,6 @@ import org.eclipse.core.commands.operations.OperationHistoryEvent;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.draw2d.FigureCanvas;
@@ -218,20 +215,12 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	protected abstract ICreationCommand getDiagramCommandCreation();
 
 	protected void projectCreation() throws Exception {
-		final IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		final IWorkspaceRoot root = workspace.getRoot();
 		final String timestamp = Long.toString(System.currentTimeMillis());
-		this.project = root.getProject("DiagramTestProject_" + timestamp);
+		this.project = houseKeeper.createProject("DiagramTestProject_" + timestamp);
 		this.file = this.project.getFile("DiagramTest_" + timestamp + ".di"); //$NON-NLS-2$
 		this.diResourceSet = new DiResourceSet();
-		// at this point, no resources have been created
-		if(!this.project.exists()) {
-			this.project.create(null);
-		}
-		if(!this.project.isOpen()) {
-			this.project.open(null);
-		}
 
+		// at this point, no resources have been created
 		if(this.file.exists()) {
 			this.file.delete(true, new NullProgressMonitor());
 		}
