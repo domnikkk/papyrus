@@ -1,6 +1,16 @@
-/**
+/*****************************************************************************
+ * Copyright (c) 2010, 2014 LIFL, CEA, and others.
  *
- */
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  LIFL - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 436047
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
 import static org.junit.Assert.assertEquals;
@@ -20,9 +30,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource.ModelKind;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 
@@ -34,6 +46,9 @@ import org.junit.Test;
  */
 public class AbstractModelWithSharedResourceTest extends AbstractPapyrusTest {
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -62,7 +77,7 @@ public class AbstractModelWithSharedResourceTest extends AbstractPapyrusTest {
 		FakeModelWithSharedResource<EPackage> model1 = new FakeModelWithSharedResource<EPackage>(ModelKind.master, model1Key, EPackage.class);
 		FakeModelWithSharedResource<EClass> model2 = new FakeModelWithSharedResource<EClass>(model2Key, EClass.class);
 
-		ModelSet modelSet = new ModelSet();
+		ModelSet modelSet = houseKeeper.cleanUpLater(new ModelSet());
 		modelSet.registerModel(model1);
 		modelSet.registerModel(model2);
 
@@ -92,7 +107,7 @@ public class AbstractModelWithSharedResourceTest extends AbstractPapyrusTest {
 		FakeModelWithSharedResource<EPackage> model1 = new FakeModelWithSharedResource<EPackage>(ModelKind.master, model1Key, EPackage.class);
 		FakeModelWithSharedResource<EClass> model2 = new FakeModelWithSharedResource<EClass>(model2Key, EClass.class);
 
-		ModelSet modelSet = new ModelSet();
+		ModelSet modelSet = houseKeeper.cleanUpLater(new ModelSet());
 		modelSet.registerModel(model1);
 		modelSet.registerModel(model2);
 
@@ -131,7 +146,7 @@ public class AbstractModelWithSharedResourceTest extends AbstractPapyrusTest {
 		FakeModelWithSharedResource<EPackage> model1 = new FakeModelWithSharedResource<EPackage>(ModelKind.master, model1Key, EPackage.class);
 		FakeModelWithSharedResource<EClass> model2 = new FakeModelWithSharedResource<EClass>(model2Key, EClass.class);
 
-		ModelSet modelSet = new ModelSet();
+		ModelSet modelSet = houseKeeper.cleanUpLater(new ModelSet());
 		modelSet.registerModel(model1);
 		modelSet.registerModel(model2);
 
@@ -162,7 +177,7 @@ public class AbstractModelWithSharedResourceTest extends AbstractPapyrusTest {
 		FakeModelWithSharedResource<EPackage> model1 = new FakeModelWithSharedResource<EPackage>(ModelKind.master, model1Key, EPackage.class);
 		FakeModelWithSharedResource<EClass> model2 = new FakeModelWithSharedResource<EClass>(model2Key, EClass.class);
 
-		ModelSet modelSet = new ModelSet();
+		ModelSet modelSet = houseKeeper.cleanUpLater(new ModelSet());
 		modelSet.registerModel(model1);
 		modelSet.registerModel(model2);
 
@@ -202,7 +217,7 @@ public class AbstractModelWithSharedResourceTest extends AbstractPapyrusTest {
 		FakeModelWithSharedResource<EPackage> model1 = new FakeModelWithSharedResource<EPackage>(ModelKind.master, model1Key, EPackage.class);
 		FakeModelWithSharedResource<EClass> model2 = new FakeModelWithSharedResource<EClass>(model2Key, EClass.class);
 
-		ModelSet modelSet = new ModelSet();
+		ModelSet modelSet = houseKeeper.cleanUpLater(new ModelSet());
 		modelSet.registerModel(model1);
 		modelSet.registerModel(model2);
 
@@ -235,7 +250,7 @@ public class AbstractModelWithSharedResourceTest extends AbstractPapyrusTest {
 		FakeModelWithSharedResource<EPackage> model1 = new FakeModelWithSharedResource<EPackage>(ModelKind.master, model1Key, EPackage.class);
 		FakeModelWithSharedResource<EClass> model2 = new FakeModelWithSharedResource<EClass>(model2Key, EClass.class);
 
-		ModelSet modelSet = new ModelSet();
+		ModelSet modelSet = houseKeeper.cleanUpLater(new ModelSet());
 		modelSet.registerModel(model1);
 		modelSet.registerModel(model2);
 
@@ -288,7 +303,7 @@ public class AbstractModelWithSharedResourceTest extends AbstractPapyrusTest {
 		FakeModelWithSharedResource<EPackage> model1 = new FakeModelWithSharedResource<EPackage>(ModelKind.master, model1Key, EPackage.class);
 		FakeModelWithSharedResource<EClass> model2 = new FakeModelWithSharedResource<EClass>(model2Key, EClass.class);
 
-		ModelSet modelSet = new ModelSet();
+		ModelSet modelSet = houseKeeper.cleanUpLater(new ModelSet());
 		modelSet.registerModel(model1);
 		modelSet.registerModel(model2);
 

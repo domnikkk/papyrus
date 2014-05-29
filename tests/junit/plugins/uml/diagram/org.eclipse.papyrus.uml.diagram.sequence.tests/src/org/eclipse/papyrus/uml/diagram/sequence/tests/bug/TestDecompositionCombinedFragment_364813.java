@@ -10,6 +10,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 434993
+ *   Christian W. Damus (CEA) - bug 436047
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -24,7 +25,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -100,7 +103,10 @@ public class TestDecompositionCombinedFragment_364813 extends TestTopNode {
 			}
 
 			if(!file.exists()) {
-				file.create(new ByteArrayInputStream(new byte[0]), true, new NullProgressMonitor());
+				// Don't create a zero-byte file. Create an empty XMI document
+				Resource diResource = diResourceSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
+				diResource.save(null);
+				diResource.unload();
 				diResourceSet.createsModels(file);
 				new CreateUMLModelCommand().createModel(this.diResourceSet);
 				ServicesRegistry registry = new ExtensionServicesRegistry(org.eclipse.papyrus.infra.core.Activator.PLUGIN_ID);

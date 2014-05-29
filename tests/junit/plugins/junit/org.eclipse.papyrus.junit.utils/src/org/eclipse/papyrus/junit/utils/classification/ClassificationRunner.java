@@ -11,19 +11,27 @@
  *  Christian W. Damus (CEA) - add support for conditional tests
  *  Christian W. Damus (CEA) - bug 432813
  *  Christian W. Damus (CEA) - bug 434993
+ *  Christian W. Damus (CEA) - bug 436047
  *
  *****************************************************************************/
 package org.eclipse.papyrus.junit.utils.classification;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
+import org.eclipse.core.commands.operations.DefaultOperationHistory;
+import org.eclipse.core.runtime.ListenerList;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.papyrus.infra.tools.util.ListHelper;
 import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
 import org.eclipse.papyrus.junit.utils.rules.Conditional;
 import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
@@ -38,6 +46,7 @@ import com.google.common.base.Predicates;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
 
 /**
  * A Test Runner which is aware of Classification-related annotations and {@link Conditional @Conditional} tests.
@@ -181,14 +190,39 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 
 								@Override
 								protected void finished(Description description) {
+									final Display display = Display.getCurrent();
+									if(display == null) {
+										// Can't do UI manipulations and history listener hacking except on the UI thread
+										return;
+									}
+									
 									// Flush the UI thread's pending events
-									for(Display display = Display.getCurrent(); (display != null) && !display.isDisposed();) {
+									while(!display.isDisposed()) {
 										try {
 											if(!display.readAndDispatch()) {
 												break;
 											}
 										} catch (Exception e) {
 											// Ignore it
+										}
+									}
+
+									// If there are no editors open any longer, then all of the action handlers currently
+									// listening to the operation history are leaked, so remove them. This ensures that we
+									// do not end up wasting time in notifying thousands of dead/broken/useless listeners
+									// every time a test case executes an operation on the history (which happens *a lot*)
+									IWorkbench bench = PlatformUI.getWorkbench();
+									IWorkbenchWindow window = (bench == null) ? null : bench.getActiveWorkbenchWindow();
+									if((window == null) && (bench != null) && (bench.getWorkbenchWindowCount() > 0)) {
+										window = bench.getWorkbenchWindows()[0];
+									}
+									if(window != null && window.getActivePage().getEditorReferences().length == 0) {
+										final ListenerList historyListeners = OperationHistoryHelper.getOperationHistoryListeners();
+										final Object[] listeners = historyListeners.getListeners();
+										for(int i = 0; i < listeners.length; i++) {
+											if(OperationHistoryHelper.shouldRemoveHistoryListener(listeners[i])) {
+												historyListeners.remove(listeners[i]);
+											}
 										}
 									}
 								}
@@ -204,5 +238,55 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 		}
 
 		return result;
+	}
+	
+	//
+	// Nested types
+	//
+	
+	static class OperationHistoryHelper {
+
+		static final Field listenersField;
+
+		static final Set<Class<?>> historyListenerClasses;
+		static {
+			try {
+				listenersField = DefaultOperationHistory.class.getDeclaredField("listeners");
+				listenersField.setAccessible(true);
+
+				historyListenerClasses = Sets.<Class<?>> newHashSet( //
+				Platform.getBundle("org.eclipse.gmf.runtime.diagram.ui.actions").loadClass("org.eclipse.gmf.runtime.diagram.ui.actions.internal.PropertyChangeContributionItem"), //
+					Platform.getBundle("org.eclipse.ui.workbench").loadClass("org.eclipse.ui.operations.OperationHistoryActionHandler$HistoryListener"));
+			} catch (Exception e) {
+				throw new ExceptionInInitializerError(e);
+			}
+		}
+
+		static ListenerList getOperationHistoryListeners() {
+			try {
+				return (ListenerList)listenersField.get(PlatformUI.getWorkbench().getOperationSupport().getOperationHistory());
+			} catch (Exception e) {
+				org.junit.Assert.fail(e.getLocalizedMessage());
+				return null; // Unreachable
+			}
+		}
+
+		static boolean shouldRemoveHistoryListener(Object listener) {
+			boolean result = historyListenerClasses.contains(listener.getClass().getName());
+
+			if(!result) {
+				// Maybe it's a subclass
+				for(Class<?> next : historyListenerClasses) {
+					if(next.isInstance(listener)) {
+						// Remember this
+						historyListenerClasses.add(listener.getClass());
+						result = true;
+						break;
+					}
+				}
+			}
+
+			return result;
+		}
 	}
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,7 +8,8 @@
  *
  * Contributors:
  *		
- *		CEA LIST - Initial API and implementation
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 436047
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.parametric.tests.utils;
@@ -749,25 +750,29 @@ public class TestUtils {
 			}
 		};
 		history.addOperationHistoryListener(historyChange);
-		// Test execution
-		historyEventType = OperationHistoryEvent.DONE;
-		EditorUtils.getCommandStack().execute(new GEFtoEMFCommandWrapper(command));
-		if(historyEventType == OperationHistoryEvent.OPERATION_NOT_OK) {
-			fail("Command execution failed ()");
+		
+		try {
+			// Test execution
+			historyEventType = OperationHistoryEvent.DONE;
+			EditorUtils.getCommandStack().execute(new GEFtoEMFCommandWrapper(command));
+			if(historyEventType == OperationHistoryEvent.OPERATION_NOT_OK) {
+				fail("Command execution failed ()");
+			}
+			// Test undo
+			historyEventType = OperationHistoryEvent.DONE;
+			EditorUtils.getCommandStack().undo();
+			if(historyEventType == OperationHistoryEvent.OPERATION_NOT_OK) {
+				fail("Command undo failed ()");
+			}
+			// Test redo
+			historyEventType = OperationHistoryEvent.DONE;
+			EditorUtils.getCommandStack().redo();
+			if(historyEventType == OperationHistoryEvent.OPERATION_NOT_OK) {
+				fail("Command redo failed ()");
+			}
+		} finally {
+			// Remove listener.
+			history.removeOperationHistoryListener(historyChange);
 		}
-		// Test undo
-		historyEventType = OperationHistoryEvent.DONE;
-		EditorUtils.getCommandStack().undo();
-		if(historyEventType == OperationHistoryEvent.OPERATION_NOT_OK) {
-			fail("Command undo failed ()");
-		}
-		// Test redo
-		historyEventType = OperationHistoryEvent.DONE;
-		EditorUtils.getCommandStack().redo();
-		if(historyEventType == OperationHistoryEvent.OPERATION_NOT_OK) {
-			fail("Command redo failed ()");
-		}
-		// Remove listener.
-		history.removeOperationHistoryListener(historyChange);
 	}
 }

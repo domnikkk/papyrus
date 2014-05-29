@@ -9,6 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 434993
+ *   Christian W. Damus (CEA) - bug 436047
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -27,7 +28,9 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.Transaction;
@@ -228,7 +231,10 @@ public class TestLifelineAutoResize_383723 extends TestTopNode {
 			}
 
 			if(!file.exists()) {
-				file.create(new ByteArrayInputStream(new byte[0]), true, new NullProgressMonitor());
+				// Don't create a zero-byte file. Create an empty XMI document
+				Resource diResource = diResourceSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
+				diResource.save(null);
+				diResource.unload();
 				diResourceSet.createsModels(file);
 				new CreateUMLModelCommand().createModel(this.diResourceSet);
 				ICreationCommand command = getDiagramCommandCreation();

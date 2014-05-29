@@ -23,9 +23,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
@@ -444,7 +447,9 @@ public abstract class AbstractHouseKeeperRule {
 		Class<?> type = field.getType();
 		return EObject.class.isAssignableFrom(type) || Resource.class.isAssignableFrom(type) //
 			|| ResourceSet.class.isAssignableFrom(type) || EditingDomain.class.isAssignableFrom(type) //
-			|| EditPart.class.isAssignableFrom(type);
+			|| EditPart.class.isAssignableFrom(type) //
+			|| Command.class.isAssignableFrom(type) || org.eclipse.gef.commands.Command.class.isAssignableFrom(type) //
+			|| IUndoableOperation.class.isAssignableFrom(type) || ICommand.class.isAssignableFrom(type);
 	}
 
 	//

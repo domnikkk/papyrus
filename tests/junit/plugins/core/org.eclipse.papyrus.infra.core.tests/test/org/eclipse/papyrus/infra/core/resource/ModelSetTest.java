@@ -9,6 +9,7 @@
  * Contributors:
  *  LIFL - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
+ *  Christian W. Damus (CEA) - bug 436047
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
@@ -31,10 +32,11 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 /**
@@ -51,6 +53,9 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	final protected String PLUGIN_PROJECT_NAME = "org.eclipse.papyrus.infra.core";
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	/**
 	 *
 	 * @throws Exception
@@ -72,7 +77,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testRegisterModel() {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		FakeModel model1 = new FakeModel("model1");
 
@@ -87,7 +92,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testGetModel() {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		FakeModel model1 = new FakeModel("model1");
 		FakeModel model2 = new FakeModel("model2");
@@ -104,7 +109,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testGetTransactionalEditingDomain() {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		assertNotNull("editing domain created", mngr.getTransactionalEditingDomain());
 	}
@@ -114,7 +119,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testCreatesModels() throws IOException, CoreException {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		String model1Key = "ecore";
 		String model2Key = "genmodel";
@@ -148,7 +153,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 		testSave();
 
 		// Now do load
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		String model1Key = "ecore";
 		String model2Key = "genmodel";
@@ -179,7 +184,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testSave() throws CoreException, IOException {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		String model1Key = "ecore";
 		String model2Key = "genmodel";
@@ -224,25 +229,15 @@ public class ModelSetTest extends AbstractPapyrusTest {
 		}
 		p.open(new NullProgressMonitor());
 
-		ResourceSet resourceSet = new ResourceSetImpl();
+		ResourceSet resourceSet = houseKeeper.createResourceSet();
 
-		try {
-			for(String filename : filenames) {
-				createResource(p, resourceSet, filename);
-			}
+		for(String filename : filenames) {
+			createResource(p, resourceSet, filename);
+		}
 
-			// Save created resources
-			for(Resource resource : resourceSet.getResources()) {
-				resource.save(null);
-			}
-		} finally {
-			// Clean up
-			for(Resource next : resourceSet.getResources()) {
-				next.unload();
-				next.eAdapters().clear();
-			}
-			resourceSet.getResources().clear();
-			resourceSet.eAdapters().clear();
+		// Save created resources
+		for(Resource resource : resourceSet.getResources()) {
+			resource.save(null);
 		}
 	}
 
@@ -270,7 +265,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testSaveAs() throws CoreException, IOException {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		String model1Key = "ecore";
 		String model2Key = "genmodel";
@@ -314,7 +309,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testUnload() {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		String model1Key = "ecore";
 		String model2Key = "genmodel";
@@ -342,7 +337,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testAddModelSetSnippet() {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		// Add snippets
 		TestTrace trace = new TestTrace();
@@ -365,7 +360,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void testSnippetCalledAfterCreateModels() {
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		// Add snippets
 		TestTrace trace = new TestTrace();
@@ -401,7 +396,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 		testSnippetCalledAfterCreateModels();
 
 		// now  do load.
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		// Add snippets
 		TestTrace trace = new TestTrace();
@@ -468,7 +463,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 		createResources("tmp/model1." + model1Key, "tmp/model1." + model2Key, "tmp/model1." + model3Key);
 
 		// Now do registration
-		ModelSet mngr = new ModelSet();
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
 
 		FakeModel model1 = new FakeModel(model1Key);
 		FakeModel model2 = new FakeModel(model2Key);

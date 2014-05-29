@@ -9,11 +9,11 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 434993
+ *  Christian W. Damus (CEA) - bug 436047
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.tests.canonical;
 
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -23,8 +23,10 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.command.CommandStack;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
@@ -48,10 +50,7 @@ import org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor;
 import org.eclipse.papyrus.uml.diagram.profile.CreateProfileModelCommand;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.intro.IIntroPart;
 import org.eclipse.uml2.uml.Element;
@@ -261,7 +260,10 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			file.delete(true, new NullProgressMonitor());
 		}
 		if(!file.exists()) {
-			file.create(new ByteArrayInputStream(new byte[0]), true, new NullProgressMonitor());
+			// Don't create a zero-byte file. Create an empty XMI document
+			Resource diResource = diResourceSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
+			diResource.save(null);
+			diResource.unload();
 			diResourceSet.createsModels(file);
 			if(!file.getName().endsWith(".profile.di")) {
 

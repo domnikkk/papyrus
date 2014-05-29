@@ -9,15 +9,16 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 434993
+ *  Christian W. Damus (CEA) - bug 436047
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.stereotypeproperty;
 
-import java.io.ByteArrayInputStream;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.ICreationCommand;
@@ -180,7 +181,10 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		}
 
 		if(!file.exists()) {
-			file.create(new ByteArrayInputStream(new byte[0]), true, new NullProgressMonitor());
+			// Don't create a zero-byte file. Create an empty XMI document
+			Resource diResource = diResourceSet.createResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
+			diResource.save(null);
+			diResource.unload();
 			diResourceSet.createsModels(file);
 			new CreateUMLModelCommand().createModel(this.diResourceSet);
 			ServicesRegistry registry = new ExtensionServicesRegistry(org.eclipse.papyrus.infra.core.Activator.PLUGIN_ID);
