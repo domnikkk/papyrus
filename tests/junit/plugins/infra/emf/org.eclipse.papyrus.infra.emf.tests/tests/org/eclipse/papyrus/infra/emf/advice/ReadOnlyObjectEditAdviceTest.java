@@ -31,8 +31,6 @@ import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.command.Command;
@@ -71,11 +69,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
-import org.eclipse.papyrus.infra.core.resource.ResourceAdapter;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.junit.utils.rules.Condition;
 import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
 import org.eclipse.papyrus.junit.utils.rules.Conditional;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Dependency;
@@ -119,6 +117,9 @@ public class ReadOnlyObjectEditAdviceTest {
 
 	@Rule
 	public final ConditionRule condition = new ConditionRule();
+
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
 
 	@Rule
 	public final TemporaryFolder tmp = new TemporaryFolder();
@@ -463,9 +464,7 @@ public class ReadOnlyObjectEditAdviceTest {
 
 	@Before
 	public void createFixture() throws Exception {
-		project = ResourcesPlugin.getWorkspace().getRoot().getProject(String.format("%s_%d", getClass().getSimpleName(), resourceMode.ordinal())); //$NON-NLS-1$
-		project.create(null);
-		project.open(null);
+		project = houseKeeper.createProject(String.format("%s_%d", getClass().getSimpleName(), resourceMode.ordinal())); //$NON-NLS-1$
 
 		IFile writableFile = project.getFile("writable.uml"); //$NON-NLS-1$
 		writablePackage = loadPackage(URI.createPlatformResourceURI(writableFile.getFullPath().toString(), true));
@@ -513,31 +512,26 @@ public class ReadOnlyObjectEditAdviceTest {
 		if(domain == null) {
 			// Use an editing domain that doesn't implement its own read-only checking in order not
 			// to interfere with the advice's read-only check
-			domain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain(new ResourceSetImpl());
-			((AdapterFactoryEditingDomain)domain).setResourceToReadOnlyMap(null);
+			domain = houseKeeper.cleanUpLater(WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain(new ResourceSetImpl()), new HouseKeeper.Disposer<TransactionalEditingDomain>() {
 
-			// Make sure that we flush undo contexts in a timely fashion so that our commands and the
-			// resources they retain may be reclaimed
-			if(domain.getCommandStack() instanceof IWorkspaceCommandStack) {
-				domain.getResourceSet().eAdapters().add(new ResourceAdapter() {
+				public void dispose(TransactionalEditingDomain object) throws Exception {
+					// Make sure that we flush undo contexts so that our commands and the resources they retain may be reclaimed
+					ResourceSet rset = object.getResourceSet();
+					IOperationHistory history = ((IWorkspaceCommandStack)object.getCommandStack()).getOperationHistory();
 
-					private final TransactionalEditingDomain domain;
-
-					private final IOperationHistory history;
-
-					{
-						domain = ReadOnlyObjectEditAdviceTest.this.domain;
-						history = ((IWorkspaceCommandStack)domain.getCommandStack()).getOperationHistory();
-					}
-
-					@Override
-					protected void handleResourceUnloaded(Resource resource) {
+					for(Resource next : rset.getResources()) {
 						// Purge the resource undo context
-						IUndoContext resourceContext = new ResourceUndoContext(domain, resource);
+						IUndoContext resourceContext = new ResourceUndoContext(object, next);
 						history.dispose(resourceContext, true, true, true);
 					}
-				});
-			}
+
+					object.dispose();
+					EMFHelper.unload(rset);
+				}
+			});
+
+			// Disable the EMF default read-only tracking
+			((AdapterFactoryEditingDomain)domain).setResourceToReadOnlyMap(null);
 		}
 
 		Resource res = domain.getResourceSet().createResource(uri);
@@ -567,21 +561,6 @@ public class ReadOnlyObjectEditAdviceTest {
 		if(domain.getCommandStack() instanceof IWorkspaceCommandStack) {
 			IWorkspaceCommandStack stack = (IWorkspaceCommandStack)domain.getCommandStack();
 			stack.getOperationHistory().dispose(stack.getDefaultUndoContext(), true, true, true);
-		}
-
-		ResourceSet rset = domain.getResourceSet();
-		domain.dispose();
-		domain = null;
-
-		EMFHelper.unload(rset);
-		
-		writablePackage = null;
-		readOnlyPackage = null;
-
-		try {
-			project.delete(true, true, null);
-		} catch (CoreException e) {
-			e.printStackTrace();
 		}
 	}
 

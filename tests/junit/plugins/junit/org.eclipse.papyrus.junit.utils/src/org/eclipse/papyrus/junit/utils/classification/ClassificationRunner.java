@@ -25,6 +25,10 @@ import java.util.Set;
 import org.eclipse.core.commands.operations.DefaultOperationHistory;
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.viewers.BaseLabelProvider;
+import org.eclipse.jface.viewers.IBaseLabelProvider;
+import org.eclipse.jface.viewers.ILabelProviderListener;
+import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.papyrus.infra.tools.util.ListHelper;
 import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
 import org.eclipse.papyrus.junit.utils.rules.Conditional;
@@ -63,6 +67,10 @@ import com.google.common.collect.Sets;
  *
  */
 public class ClassificationRunner extends BlockJUnit4ClassRunner {
+
+	private final static long EVENT_LOOP_TIMEOUT = 2L * 60L * 1000L; // 2 minutes in millis
+
+	private final static long ONE_MB = 1024L * 1024L; // a megabyte, in bytes
 
 	private static final Supplier<TestRule> uiFlusherRuleSupplier = createURIFlusherRuleSupplier();
 
@@ -187,9 +195,7 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 					public TestRule get() {
 						if(Display.getCurrent() != null) {
 							return new TestWatcher() {
-								final static long EVENT_LOOP_TIMEOUT = 2L * 60L * 1000L; // 2 minutes in millis
-								final static long ONE_MB = 1024L * 1024L;  // a megabyte, in bytes
-								
+
 								@Override
 								protected void finished(Description description) {
 									final Display display = Display.getCurrent();
@@ -197,48 +203,12 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 										// Can't do UI manipulations and history listener hacking except on the UI thread
 										return;
 									}
-									
-									long base = System.currentTimeMillis();
-									long timeout = EVENT_LOOP_TIMEOUT;
-									
-									// Flush the UI thread's pending events
-									while(!display.isDisposed()) {
-										try {
-											if(!display.readAndDispatch()) {
-												break;
-											}
-										} catch (Exception e) {
-											// Ignore it
-										}
-										
-										long now = System.currentTimeMillis();
-										if((now - base) > timeout) {
-											// This seems to be taking a really long time. What's up?
-											base = now;
-											timeout = timeout * 3L / 2L; // Exponential back-off to avoid over-reporting
-											int freeMB = (int)(Runtime.getRuntime().freeMemory() / ONE_MB);
-											System.err.printf("========%nUI event queue clean-up seems to be running long.%nCurrent free memory: %d MB%n========%n%n", freeMB);
-										}
-									}
 
-									// If there are no editors open any longer, then all of the action handlers currently
-									// listening to the operation history are leaked, so remove them. This ensures that we
-									// do not end up wasting time in notifying thousands of dead/broken/useless listeners
-									// every time a test case executes an operation on the history (which happens *a lot*)
-									IWorkbench bench = PlatformUI.getWorkbench();
-									IWorkbenchWindow window = (bench == null) ? null : bench.getActiveWorkbenchWindow();
-									if((window == null) && (bench != null) && (bench.getWorkbenchWindowCount() > 0)) {
-										window = bench.getWorkbenchWindows()[0];
-									}
-									if(window != null && window.getActivePage().getEditorReferences().length == 0) {
-										final ListenerList historyListeners = OperationHistoryHelper.getOperationHistoryListeners();
-										final Object[] listeners = historyListeners.getListeners();
-										for(int i = 0; i < listeners.length; i++) {
-											if(OperationHistoryHelper.shouldRemoveHistoryListener(listeners[i])) {
-												historyListeners.remove(listeners[i]);
-											}
-										}
-									}
+									flushUIEventQueue(display);
+
+									purgeZombieHistoryListeners();
+
+									clearDecorationScheduler();
 								}
 							};
 						}
@@ -253,11 +223,72 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 
 		return result;
 	}
-	
+
+	private static void flushUIEventQueue(Display display) {
+		long base = System.currentTimeMillis();
+		long timeout = EVENT_LOOP_TIMEOUT;
+
+		// Flush the UI thread's pending events
+		while(!display.isDisposed()) {
+			try {
+				if(!display.readAndDispatch()) {
+					break;
+				}
+			} catch (Exception e) {
+				// Ignore it
+			}
+
+			long now = System.currentTimeMillis();
+			if((now - base) > timeout) {
+				// This seems to be taking a really long time. What's up?
+				base = now;
+				timeout = timeout * 3L / 2L; // Exponential back-off to avoid over-reporting
+				int freeMB = (int)(Runtime.getRuntime().freeMemory() / ONE_MB);
+				System.err.printf("========%nUI event queue clean-up seems to be running long.%nCurrent free memory: %d MB%n========%n%n", freeMB);
+			}
+		}
+	}
+
+	private static void purgeZombieHistoryListeners() {
+		// If there are no editors open any longer, then all of the action handlers currently
+		// listening to the operation history are leaked, so remove them. This ensures that we
+		// do not end up wasting time in notifying thousands of dead/broken/useless listeners
+		// every time a test case executes an operation on the history (which happens *a lot*)
+		IWorkbench bench = PlatformUI.getWorkbench();
+		IWorkbenchWindow window = (bench == null) ? null : bench.getActiveWorkbenchWindow();
+		if((window == null) && (bench != null) && (bench.getWorkbenchWindowCount() > 0)) {
+			window = bench.getWorkbenchWindows()[0];
+		}
+		if(window != null && window.getActivePage().getEditorReferences().length == 0) {
+			final ListenerList historyListeners = OperationHistoryHelper.getOperationHistoryListeners();
+			final Object[] listeners = historyListeners.getListeners();
+			for(int i = 0; i < listeners.length; i++) {
+				if(OperationHistoryHelper.shouldRemoveHistoryListener(listeners[i])) {
+					historyListeners.remove(listeners[i]);
+				}
+			}
+		}
+	}
+
+	private static void clearDecorationScheduler() {
+		IWorkbench bench = PlatformUI.getWorkbench();
+		if(bench != null) {
+			IBaseLabelProvider bogusProvider = new BaseLabelProvider();
+
+			try {
+				// The DecoratorManager is a label-provider listener and
+				// it clears the scheduler on label-provider change events
+				((ILabelProviderListener)bench.getDecoratorManager()).labelProviderChanged(new LabelProviderChangedEvent(bogusProvider));
+			} finally {
+				bogusProvider.dispose();
+			}
+		}
+	}
+
 	//
 	// Nested types
 	//
-	
+
 	static class OperationHistoryHelper {
 
 		static final Field listenersField;
