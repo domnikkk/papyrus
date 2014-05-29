@@ -187,7 +187,9 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 					public TestRule get() {
 						if(Display.getCurrent() != null) {
 							return new TestWatcher() {
-
+								final static long EVENT_LOOP_TIMEOUT = 2L * 60L * 1000L; // 2 minutes in millis
+								final static long ONE_MB = 1024L * 1024L;  // a megabyte, in bytes
+								
 								@Override
 								protected void finished(Description description) {
 									final Display display = Display.getCurrent();
@@ -195,6 +197,9 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 										// Can't do UI manipulations and history listener hacking except on the UI thread
 										return;
 									}
+									
+									long base = System.currentTimeMillis();
+									long timeout = EVENT_LOOP_TIMEOUT;
 									
 									// Flush the UI thread's pending events
 									while(!display.isDisposed()) {
@@ -204,6 +209,15 @@ public class ClassificationRunner extends BlockJUnit4ClassRunner {
 											}
 										} catch (Exception e) {
 											// Ignore it
+										}
+										
+										long now = System.currentTimeMillis();
+										if((now - base) > timeout) {
+											// This seems to be taking a really long time. What's up?
+											base = now;
+											timeout = timeout * 3L / 2L; // Exponential back-off to avoid over-reporting
+											int freeMB = (int)(Runtime.getRuntime().freeMemory() / ONE_MB);
+											System.err.printf("========%nUI event queue clean-up seems to be running long.%nCurrent free memory: %d MB%n========%n%n", freeMB);
 										}
 									}
 
