@@ -52,6 +52,11 @@ public class UpdateProfileHandler extends AbstractProfileBaseHandler {
 	
 	private String stereotypeNameInput;
 	private String profileNameInput;
+	
+	/**
+	 * Object used to hold the update values.
+	 */
+	private IStereotypeUpdateArgs updateArgs;
 
 	private String taggedValeNameInput;
 	
@@ -103,7 +108,6 @@ public class UpdateProfileHandler extends AbstractProfileBaseHandler {
 //		String inputName = null;
 
 		// PRofileDialog
-		IStereotypeUpdateArgs updateArgs;
 		StereotypeUpdateDialog newDialog = new StereotypeUpdateDialog(Display.getCurrent().getActiveShell(), "Update Stereotype", 
 				selected.get(0), new ArrayList<Class>(  getSelectedElementMetaclasses(context)) );
 		if(newDialog.open() == Window.OK) {
@@ -177,7 +181,8 @@ public class UpdateProfileHandler extends AbstractProfileBaseHandler {
 		// Try to apply the stereotype
 		ProfileApplicator profileApplicator = new ProfileApplicator(selected.get(0));
 		try {
-			profileApplicator.applyStereotype2(profileNameInput, stereotypeNameInput);
+//			profileApplicator.applyStereotype2(profileNameInput, stereotypeNameInput);
+			profileApplicator.updateStereotype(updateArgs);
 		} catch (DraftProfileException e) {
 			e.printStackTrace();
 		}

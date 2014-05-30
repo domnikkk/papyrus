@@ -1,5 +1,7 @@
 package org.eclipse.papyrus.uml.profile.drafter.ui.dialog;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.jface.dialogs.Dialog;
@@ -186,6 +188,13 @@ public class StereotypeUpdateDialog extends Dialog {
 		value = new StereotypeUpdateArgs();
 		value.setProfileName(profileText.getText());
 		value.setStereotypeName(stereotypeText.getText());
+		
+		// Copy the result (to bypass cast pb)
+		List<Class> result = new ArrayList<Class>();
+		for(Object obj : extendedMetaclassSelector.getResult()) {
+			result.add((Class)obj);	
+		}
+		value.setExtendedMetaclasses(result);
 		
 	}
 

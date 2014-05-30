@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -44,8 +45,11 @@ import org.eclipse.papyrus.uml.profile.definition.ProfileRedefinition;
 import org.eclipse.papyrus.uml.profile.definition.Version;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
+import org.eclipse.papyrus.uml.profile.drafter.ui.dialog.IStereotypeUpdateArgs;
 import org.eclipse.papyrus.uml.profile.utils.Util;
+import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Extension;
@@ -61,8 +65,6 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.eclipse.uml2.uml.util.UMLUtil.Profile2EPackageConverter;
 import org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter;
-import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
-import org.eclipse.uml2.uml.Class;
 
 /**
  * Handler used to update a {@link Profile}.
@@ -75,7 +77,7 @@ public class ProfileApplicator {
 
 	/**
 	 * Uml Element target of the applicator.
-	 * 
+	 * This is the element for which we create/update a Profile ans stereotype
 	 */
 	protected NamedElement umlElement;
 	
@@ -97,11 +99,131 @@ public class ProfileApplicator {
 	}
 
 
+	/**
+	 * Return the Profiles applied to the nearest package of the umlElement.
+	 * @return A list of profiles applied to the nearest package of the umlElement.
+	 * 
+	 * @unused
+	 */
 	public List<Profile> getAppliedProfiles() {
 		return umlElement.getNearestPackage().getAppliedProfiles();
-		
 	}
 	
+	/**
+	 * Update or create the specified stereotype according to the provided {@link IStereotypeUpdateArgs}.
+	 * 
+	 * @param updateArgs Arguments used to update or create a Stereotype.
+	 * 
+	 * @throws DraftProfileException If an error occur during update.
+	 */
+	public void updateStereotype(IStereotypeUpdateArgs updateArgs) throws DraftProfileException {
+		
+		String profileName = updateArgs.getProfileName(); 
+		String stereotypeName = updateArgs.getStereotypeName();
+		
+		boolean isProfileModified = false;
+		// The package to which the corresponding Profile is attached
+		Package applicantPackage = null;
+		
+		PapyrusDefinitionAnnotation annotations = null;
+		Stereotype stereotype = null;
+		// lookup profile
+		Profile profile = umlElement.getNearestPackage().getAppliedProfile(profileName, true);
+		if( profile == null ) {
+			// ask creation confirmation
+			profile = createProfile(profileName);
+			// Create the stereotype
+			stereotype = createStereotype(profile, stereotypeName);
+
+//			applyProfileToUmlElement( profile);
+			// TODO change next behavior
+//			throw new DraftProfileException("Profile '" + profileName + "' not applied on nesting packages. Apply profile first.");
+
+			// We will apply profile in nearest PAckage 
+			// TODO let choose between nearest, root or choosen
+			applicantPackage = umlElement.getNearestPackage();
+			annotations = createPapyrusDefinitionAnnotation(0, 0, 1);
+			isProfileModified = true;
+		}
+		else {
+			// Profile already exist
+			// Lookup for the stereotype
+			stereotype = profile.getOwnedStereotype(stereotypeName, true);
+			if( stereotype == null ) {
+				// We need to create the stereotype
+				// ask creation confirmation
+				// TODO change next behavior
+				stereotype = createStereotype(profile, stereotypeName);
+				applicantPackage = getApplicantPackage(profile);
+				annotations = createUpdatedPapyrusDefinitionAnnotation(profile, 0, 0, 1);
+				isProfileModified = true;
+			}
+		}
+		
+		// update metaclasses by adding missing metaclasses
+		if( ! updateArgs.getExtendedMetaclasses().isEmpty() ) {
+			updateStereotypeMetaclasses( stereotype, updateArgs.getExtendedMetaclasses());
+			isProfileModified = true;
+		}
+		
+		// Do we need to reapply the profile ?
+		if( isProfileModified) {
+			definesAllProfiles( profile );
+			redefineAllProfiles( profile, annotations );
+			cleanAllProfiles( profile );
+//			validateAllProfiles(profile, Arrays.asList((EPackage)profile) );
+			applyProfile( applicantPackage, profile);
+		}
+		
+		// Apply stereotype to element
+		applyStereotype( stereotype );
+		
+	}
+
+	/**
+	 * Add metaclasses to the specified {@link Stereotype}. Only add metaclasses that are not alread attached.
+	 * Also create any required {@link ElementImport}
+	 * 
+	 * @param stereotype
+	 * @param extendedMetaclasses
+	 */
+	private void updateStereotypeMetaclasses(Stereotype stereotype, List<Class> extendedMetaclasses) {
+
+		for( Class metaclass : extendedMetaclasses ) {
+				// add the metaclass to stereotype
+				addMetaclassToStereotype( stereotype, metaclass);
+		}
+		
+	}
+
+	/**
+	 * Add the specified metaclass to the stereotype. Do nothing if the metaclass already exist.
+	 * This implies creating an {@link Extension} between the {@link Stereotype} and the Metaclass.
+	 * Also create any required {@link ElementImport}.
+	 * 
+	 * @param stereotype The stereotype to which the metaclass should be added
+	 * @param metaclass The metaclass to add.
+	 */
+	@SuppressWarnings("unused")
+	private void addMetaclassToStereotype(Stereotype stereotype, Class metaclass) {
+		
+		if( stereotype.getExtendedMetaclasses().contains(metaclass) ) {
+			return;
+		}
+		
+		// Ensure that a corresponding ElementImport exists in one of te 
+		// stereotype container.
+		ElementImport target = stereotype.getProfile().getMetaclassReference(metaclass, true);
+//		ElementImport target = getMetaclassElementImport(stereotype, metaclass);
+		
+		// Create extension
+		Extension extension = stereotype.createExtension(metaclass, false);
+//		Extension extension = createExtension(stereotype, (Type)target.getImportedElement());
+//		extension.setName("Ext_" + stereotype.getName() + "_" + metaclass.getName());
+		// Add the extension to the profile package owning this stereotype
+//		stereotype.getProfile().getPackagedElements().add(extension);
+	}
+
 	/**
 	 * Apply the specified stereotype from the specified profile to the umlElement.
 	 * Create any missing element.
@@ -109,6 +231,8 @@ public class ProfileApplicator {
 	 * @param profileName
 	 * @param stereotypeName
 	 * @throws DraftProfileException 
+	 * 
+	 * @{@link Deprecated} use {@link #updateStereotype(IStereotypeUpdateArgs)} or {@link #applyStereotype2(String, String)}
 	 */
 	public void applyStereotype( String profileName, String stereotypeName) throws DraftProfileException {
 		
@@ -137,7 +261,7 @@ public class ProfileApplicator {
 
 	/**
 	 * Apply the specified stereotype from the specified profile to the umlElement.
-	 * Create any missing element.
+	 * Create any missing elements ( {@link Profile}, {@link ElementImport} ...).
 	 * 
 	 * @param profileName
 	 * @param stereotypeName
@@ -283,6 +407,7 @@ public class ProfileApplicator {
 	 * 
 	 * @param profile
 	 * @throws DraftProfileException 
+	 * @deprecated Only used by deprecated methods.
 	 */
 	private void applyProfileToUmlElement(Profile profile) throws DraftProfileException {
 
@@ -298,7 +423,8 @@ public class ProfileApplicator {
 
 	/**
 	 * Create the specified Profile
-	 * @param profileName
+	 * @param profileName The name of the Profile to create.
+	 * 
 	 */
 	private Profile createProfile(String profileName) {
 		Profile profile = UMLFactory.eINSTANCE.createProfile();
@@ -316,6 +442,24 @@ public class ProfileApplicator {
 	}
 	
 	/**
+	 * Create a new Stereotype in the provided Profile. 
+	 * 
+	 * @param profile
+	 * @param stereotypeName
+	 * @return
+	 */
+	protected Stereotype createStereotype( Profile profile, String stereotypeName)  {
+		
+		// Create a new stereotype
+		Stereotype stereotype = UMLFactory.eINSTANCE.createStereotype();
+		stereotype.setName(stereotypeName);
+		// Add the stereotype to the profile
+		profile.getPackagedElements().add(stereotype);
+				
+		return stereotype;
+	}
+
+	/**
 	 * Create a new Stereotype in the provided Profile
 	 * 
 	 * @param profile
@@ -325,15 +469,12 @@ public class ProfileApplicator {
 	 */
 	protected Stereotype createStereotype( Profile profile, String stereotypeName, String metaclassName) throws NotFoundException {
 		
-		System.err.println("Try to create stereotype");
 		// Create a new stereotype
-		Stereotype stereotype = UMLFactory.eINSTANCE.createStereotype();
-		stereotype.setName(stereotypeName);
-		profile.getPackagedElements().add(stereotype);
+		Stereotype stereotype = createStereotype(profile, stereotypeName);
 		
 		// If a metaclass name is specified, create an extension to its import.
 		if( metaclassName != null) {
-			ElementImport target = getMetaclassElementImport(umlElement, metaclassName);
+			ElementImport target = getElementImportByName(umlElement, metaclassName);
 			Extension extension = createExtension(stereotype, (Type)target.getImportedElement());
 			extension.setName("E_" + stereotype.getName());
 			profile.getPackagedElements().add(extension);
@@ -348,6 +489,7 @@ public class ProfileApplicator {
 	 * @param profile
 	 * @param stereotypeName
 	 * @return
+	 * @deprecated
 	 */
 	protected Stereotype createStereotypeAndRedefineProfile( Profile profile, String stereotypeName) {
 		
@@ -361,7 +503,7 @@ public class ProfileApplicator {
 		profile.getPackagedElements().add(stereotype);
 		
 		// TODO : set application
-		ElementImport target = lookupMetaclassElementImport(profile, "Class");
+		ElementImport target = lookupElementImportByName(profile, "Class");
 		Extension extension = createExtension(stereotype, (Type)target.getImportedElement());
 		extension.setName("E_" + stereotype.getName());
 		profile.getPackagedElements().add(extension);
@@ -428,25 +570,6 @@ public class ProfileApplicator {
 	}
 	
 	/**
-	 * 
-	 * @param metaclassName
-	 * @return
-	 */
-	public ElementImport getMetaClassImport( Profile profile, String metaclassName ) {
-		
-		ElementImport metaclass = lookupMetaclassElementImport(profile, "Class");
-
-		if( metaclass !=null ) {
-			return metaclass;
-		}
-		
-		// Not found, create the import
-		// TODO
-		throw new UnsupportedOperationException("Not yet implemented");
-//		return null;
-	}
-	
-	/**
 	 * Lookup the {@link Package} applying the specified profile. Start lookup from the umlElement.
 	 * 
 	 * @param profile
@@ -486,17 +609,38 @@ public class ProfileApplicator {
 
 	/**
 	 * Get the metaclass {@link ElementImport} for requested type. Lookup if the import already exist in Profile. Return it if found.
-	 * Create it otherwise.
+	 * Create it otherwise, by using the aliasName as a hint for the imported metaclass (ie: name ='Class'==> type=Class).
 	 * 
-	 * @param umlMetamodelLocator An uml Element used to locate the uml:metamodel throw the ResourceSet.
+	 * @param fromElement Uml:Element used as a starting point to lookup for the {@link ElementImport}. This element
+	 *    is also used to lookup the rootContainer where the ElementImport will be created
 	 * @return The requested metaclass
 	 * @throws NotFoundException If the uml::metaclass can't be found
 	 */
-	private ElementImport getMetaclassElementImport(Element umlMetamodelLocator, String aliasName) throws NotFoundException {
+	private ElementImport getElementImportByName(Element fromElement, String aliasName) throws NotFoundException {
 		
-		ElementImport elementImport = lookupMetaclassElementImport(umlMetamodelLocator, aliasName);
+		ElementImport elementImport = lookupElementImportByName(fromElement, aliasName);
 		if(elementImport == null) {
-			elementImport = createMetaclassElementImport(umlMetamodelLocator, aliasName);
+			elementImport = createMetaclassElementImport(fromElement, aliasName);
+		}
+		
+		return elementImport;
+	}
+
+	/**
+	 * Get the metaclass {@link ElementImport} for requested type. Lookup if the import already exist in Profile. Return it if found.
+	 * Create it otherwise.
+	 * 
+	 * @param fromElement Uml:Element used as a starting point to lookup for the {@link ElementImport}. This element
+	 *    is also used to lookup the rootContainer where the ElementImport will be created
+	 * @return The Metaclass for which an element import is requested.
+	 * 
+	 * @throws NotFoundException If the uml::metaclass can't be found
+	 */
+	private ElementImport getMetaclassElementImport(Element fromElement, Class metaclass)  {
+		
+		ElementImport elementImport = lookupElementImportByName(fromElement, metaclass.getName());
+		if(elementImport == null) {
+			elementImport = createMetaclassElementImport(fromElement, metaclass);
 		}
 		
 		return elementImport;
@@ -510,16 +654,42 @@ public class ProfileApplicator {
 	 * @return
 	 * @throws NotFoundException If the metaclass can't be found
 	 */
-	private ElementImport createMetaclassElementImport(Element umlMetamodelLocator, String aliasName) throws NotFoundException {
-		ElementImport elementImport = null;
+	private ElementImport createMetaclassElementImport(Element fromElement, String aliasName) throws NotFoundException {
+
+		// Get the corresponding metaclass
+		Class metaclass = getUmlMetaClass(aliasName, fromElement);
+		// Create the elementImport
+		return createMetaclassElementImport(fromElement, metaclass);
+	}
+
+	/**
+	 * Create the {@link ElementImport} for the specified uml:metaClass name.
+	 * 
+	 * @param umlMetamodelLocator An uml Element used to locate the uml:metamodel throw the ResourceSet.
+	 * @param aliasName
+	 * @return
+	 * @throws NotFoundException If the metaclass can't be found
+	 */
+	private ElementImport createMetaclassElementImport(Element fromElement, Class metaclass) {
+//		ElementImport elementImport = UMLFactory.eINSTANCE.createElementImport();
+//		elementImport.setAlias(metaclass.getName());
+//		elementImport.setImportedElement(metaclass);
+//		// Add it to the root of the Profile model
+//		getResourceRoot().creategetImportedElements().add(elementImport);
 		
-		Class metaclass = getUmlMetaClass(aliasName, umlMetamodelLocator);
-		
-		elementImport = UMLFactory.eINSTANCE.createElementImport();
-		elementImport.setAlias(aliasName);
-		elementImport.setImportedElement(metaclass);
-		
+		ElementImport elementImport = getRootPackageContainer(fromElement).createElementImport(metaclass);
+		elementImport.setAlias(metaclass.getName());
 		return elementImport;
+	}
+
+	/**
+	 * Get the {@link Package} root container to which the specified element belong.
+	 * 
+	 * @return
+	 */
+	private Package getRootPackageContainer(Element element) {
+		// This is the root container
+		return (Package)EcoreUtil.getRootContainer(element);
 	}
 
 	/**
@@ -546,28 +716,41 @@ public class ProfileApplicator {
 	}
 	
 	/**
-	 * Lookup the {@link ElementImport} for the specified aliasName. Search in nesting {@link Package}s of 
-	 * the specified element
+	 * Lookup the {@link ElementImport} for the specified aliasName. Start lookup from the specified fromelement.
 	 * 
-	 * @param element The element from which we are looking for an {@link ElementImport}
+	 * @param fromElement Uml:Element used as a starting point to lookup for the {@link ElementImport}. This element
+	 *    is also used to lookup the rootContainer where the ElementImport will be created
+	 * @param aliasName The name of the requested {@link ElementImport}.
 	 * @return the {@link ElementImport} or null if not found.
 	 */
-	private ElementImport lookupMetaclassElementImport(Element element, String aliasName) {
+	private ElementImport lookupElementImportByName(Element fromElement, String aliasName) {
+		
+		if( fromElement == null) {
+			return null;
+		}
+		
 		//
-		if( element instanceof Package ) {
-			Package container = (Package)element;
+		if( fromElement instanceof Package ) {
+			Package container = (Package)fromElement;
 			for( ElementImport ele : container.getElementImports() ) {
 				if(aliasName.equals(ele.getAlias() ) ) {
 					return ele;
 				}
 			}
 			// Not found in package, search nesting packages
-			lookupMetaclassElementImport(container.getNestingPackage(), aliasName );
+			return lookupElementImportByName(container.getNestingPackage(), aliasName );
 		}
-		// Not found;
-		return null;
+		// Lookup from the nearest package of the element.
+		return lookupElementImportByName(fromElement.getNearestPackage(), aliasName );
 	}
 
+	/**
+	 * Create an extension between the specified {@link Stereotype} and the specified {@link Type}.
+	 * 
+	 * @param source
+	 * @param target
+	 * @return
+	 */
 	protected Extension createExtension( Stereotype source,  Type target) {
 		//create the extension
 		Extension newExtension = UMLFactory.eINSTANCE.createExtension();
