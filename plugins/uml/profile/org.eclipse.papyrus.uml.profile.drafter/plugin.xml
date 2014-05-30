@@ -165,5 +165,16 @@
          </dependsOn>
       </service>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.emf.readonly.readOnlyHandler">
+      <readOnlyHandler
+            class="org.eclipse.papyrus.uml.profile.AppliedProfileReadOptionalyWriteHandler"
+            id="org.eclipse.papyrus.uml.profile.readonly.AppliedProfileReadOnlyHandler"
+            priority="20">
+         <affinity
+               axis="discretion">
+         </affinity>
+      </readOnlyHandler>
+   </extension>
 
 </plugin>
