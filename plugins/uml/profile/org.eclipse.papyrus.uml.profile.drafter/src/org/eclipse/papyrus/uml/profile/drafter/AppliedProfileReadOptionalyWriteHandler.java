@@ -12,7 +12,7 @@
  *  Camille Letavernier (CEA LIST) - Bug 430118
  *
  *****************************************************************************/
-package org.eclipse.papyrus.uml.profile;
+package org.eclipse.papyrus.uml.profile.drafter;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;

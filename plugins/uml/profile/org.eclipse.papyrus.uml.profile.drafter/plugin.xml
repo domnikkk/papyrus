@@ -168,7 +168,7 @@
    <extension
          point="org.eclipse.papyrus.infra.emf.readonly.readOnlyHandler">
       <readOnlyHandler
-            class="org.eclipse.papyrus.uml.profile.AppliedProfileReadOptionalyWriteHandler"
+            class="org.eclipse.papyrus.uml.profile.drafter.AppliedProfileReadOptionalyWriteHandler"
             id="org.eclipse.papyrus.uml.profile.readonly.AppliedProfileReadOnlyHandler"
             priority="20">
          <affinity
