@@ -2218,7 +2218,7 @@
         <modelFacet>
           <metaClass href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ConditionalNode"/>
           <containmentMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
-          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
+          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/structuredNode"/>
           <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
             <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="/0/@expressionProviders/@providers.0/@expressions.66">
               <feature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -2243,7 +2243,7 @@
         <modelFacet>
           <metaClass href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExpansionRegion"/>
           <containmentMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
-          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
+          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/structuredNode"/>
           <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
             <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="/0/@expressionProviders/@providers.0/@expressions.67">
               <feature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -2310,7 +2310,7 @@
         <modelFacet>
           <metaClass href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LoopNode"/>
           <containmentMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
-          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
+          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/structuredNode"/>
           <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
             <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="/0/@expressionProviders/@providers.0/@expressions.70">
               <feature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -2425,7 +2425,7 @@
         <modelFacet>
           <metaClass href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/SequenceNode"/>
           <containmentMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
-          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
+          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/structuredNode"/>
           <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
             <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="/0/@expressionProviders/@providers.0/@expressions.71">
               <feature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -2450,7 +2450,7 @@
         <modelFacet>
           <metaClass href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode"/>
           <containmentMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
-          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/ownedGroup"/>
+          <childMetaFeature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity/structuredNode"/>
           <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
             <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="/0/@expressionProviders/@providers.0/@expressions.72">
               <feature href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>

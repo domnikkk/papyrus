@@ -263,7 +263,7 @@ public class ActivityActivityContentCompartmentItemSemanticEditPolicy extends UM
 		}
 		if(UMLElementTypes.ConditionalNode_3069 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedGroup();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -272,7 +272,7 @@ public class ActivityActivityContentCompartmentItemSemanticEditPolicy extends UM
 		}
 		if(UMLElementTypes.ExpansionRegion_3070 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedGroup();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -281,7 +281,7 @@ public class ActivityActivityContentCompartmentItemSemanticEditPolicy extends UM
 		}
 		if(UMLElementTypes.LoopNode_3071 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedGroup();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -290,7 +290,7 @@ public class ActivityActivityContentCompartmentItemSemanticEditPolicy extends UM
 		}
 		if(UMLElementTypes.SequenceNode_3073 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedGroup();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -299,7 +299,7 @@ public class ActivityActivityContentCompartmentItemSemanticEditPolicy extends UM
 		}
 		if(UMLElementTypes.StructuredActivityNode_3065 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedGroup();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);

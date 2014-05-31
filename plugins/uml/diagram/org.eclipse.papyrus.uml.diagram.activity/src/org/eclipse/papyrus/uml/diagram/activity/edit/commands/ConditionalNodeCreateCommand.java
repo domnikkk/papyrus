@@ -17,7 +17,6 @@ package org.eclipse.papyrus.uml.diagram.activity.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -30,7 +29,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.viewpoints.policy.ModelAddData;
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.uml.diagram.activity.providers.ElementInitializers;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ConditionalNode;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -113,7 +111,7 @@ public class ConditionalNodeCreateCommand extends EditElementCommand {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
 			} else {
 				Activity qualifiedTarget = (Activity)target;
-				qualifiedTarget.getOwnedGroups().add(newElement);
+				qualifiedTarget.getStructuredNodes().add(newElement);
 			}
 		} else {
 			return CommandResult.newErrorCommandResult("The active policy restricts the addition of this element");
