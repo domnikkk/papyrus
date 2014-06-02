@@ -40,8 +40,11 @@
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.uml.ui</module>
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.validation.problems</module>
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.validation.problems.edit</module>
+		<module>../extraplugins/codegen/org.eclipse.papyrus.codegen.extensionpoints</module>
+		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.cdtproject</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.codegen</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.codegen.ui</module>
+		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.examples</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.profile</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization</module>
 		<module>../extraplugins/diagramtemplate/org.eclipse.papyrus.diagramtemplate</module>
@@ -93,7 +96,6 @@
 		<module>../extraplugins/marte/org.eclipse.papyrus.marte.vsl.ui</module>
 		<module>../extraplugins/migration/org.eclipse.papyrus.migration.properties.model</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.core</module>
-		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.cpp</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.doc</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.ui</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.validation</module>

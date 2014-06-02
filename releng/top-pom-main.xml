@@ -210,7 +210,6 @@
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.css</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.deployment</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.dnd</module>
-		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.synchronizeview</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.icons</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.interactionoverview</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.menu</module>
@@ -225,6 +224,7 @@
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.stereotype.edition</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.symbols</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.symbols.properties</module>
+		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.synchronizeview</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.timing</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.usecase</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.wizards</module>
@@ -287,13 +287,13 @@
 		<module>../plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.resourceloading</module>
 		<module>../plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.widgets</module>
 		<module>../plugins/views/properties/org.eclipse.papyrus.views.properties</module>
+		<module>../plugins/doc/org.eclipse.papyrus.views.properties.doc</module>
 		<module>../plugins/views/properties/org.eclipse.papyrus.views.properties.model</module>
 		<module>../plugins/views/properties/org.eclipse.papyrus.views.properties.model.edit</module>
 		<module>../plugins/views/properties/org.eclipse.papyrus.views.properties.model.editor</module>
 		<module>../plugins/views/org.eclipse.papyrus.views.search</module>
 		<module>../plugins/views/validation/org.eclipse.papyrus.views.validation</module>
 		<module>../plugins/xwt/org.eclipse.papyrus.xwt</module>
-		<module>../plugins/doc/org.eclipse.papyrus.views.properties.doc</module>
 		<module>main</module>
 	</modules>
 	<properties>
@@ -521,21 +521,21 @@
 				</executions>
 			</plugin>
 			<plugin>
-	            <groupId>org.codehaus.mojo</groupId>
-	            <artifactId>findbugs-maven-plugin</artifactId>
-	            <version>${findbugs.version}</version>
-	            <configuration>
-	               <findbugsXmlOutput>true</findbugsXmlOutput>
-	               <failOnError>false</failOnError>
-	            </configuration>
-	            <executions>
-	               <execution>
-	                  <goals>
-	                     <goal>check</goal>
-	                  </goals>
-	               </execution>
-	            </executions>
-	         </plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.version}</version>
+				<configuration>
+					<findbugsXmlOutput>true</findbugsXmlOutput>
+					<failOnError>false</failOnError>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
