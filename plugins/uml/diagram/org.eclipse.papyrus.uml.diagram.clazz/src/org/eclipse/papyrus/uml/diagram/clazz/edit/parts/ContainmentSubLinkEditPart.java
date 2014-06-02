@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.uml.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.Connection;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -50,6 +51,16 @@ public class ContainmentSubLinkEditPart extends ConnectionEditPart implements IT
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomContainmentSubLinkItemSemanticEditPolicy());
 	}
 
+	@Override
+	public Object getAdapter(Class key) {
+		// TODO Auto-generated method stub
+		if( EObject.class.isAssignableFrom(key)){
+			if(getTarget()!=null){
+				return   getTarget().getAdapter(key);
+			}
+		}
+		return super.getAdapter(key);
+	}
 	/**
 	 * Creates figure for this edit part.
 	 * 
