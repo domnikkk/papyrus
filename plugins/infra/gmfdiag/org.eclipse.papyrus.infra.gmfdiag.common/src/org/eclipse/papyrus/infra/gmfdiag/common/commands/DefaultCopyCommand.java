@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.AbstractOverrideableCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
+import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
+import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PastePreferencesPage;
 
 /**
  * Command that puts a list of object in the clipboard, and that copy them.
@@ -45,7 +47,8 @@ public class DefaultCopyCommand extends AbstractOverrideableCommand implements N
 	public DefaultCopyCommand(EditingDomain domain, PapyrusClipboard papyrusClipboard, Collection<EObject> pObjectsToPutInClipboard) {
 		super(domain);
 		objectsToPutInClipboard = new ArrayList<Object>();
-		EcoreUtil.Copier copier = new EcoreUtil.Copier();
+		Boolean keepReferences = Activator.getInstance().getPreferenceStore().getBoolean(PastePreferencesPage.KEEP_EXTERNAL_REFERENCES);	
+		EcoreUtil.Copier copier = new EcoreUtil.Copier(Boolean.TRUE, keepReferences);
 		copier.copyAll(pObjectsToPutInClipboard);
 		copier.copyReferences();
 		papyrusClipboard.addAllInternalCopyInClipboard(copier);

@@ -11,13 +11,14 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.preferences;
 
-import org.eclipse.jface.preference.PreferencePage;
+import org.eclipse.jface.preference.BooleanFieldEditor;
+import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
+import org.eclipse.papyrus.infra.gmfdiag.common.messages.Messages;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.StrategyEditor;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.PasteStrategyManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.IWorkbench;
@@ -26,24 +27,31 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 /**
  * Allow to select strategies for Papyrus paste
  */
-public class PastePreferencesPage extends PreferencePage implements IWorkbenchPreferencePage {
-
+public class PastePreferencesPage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
+	
+	/**
+	 * Keep the references 
+	 */
+	public final static String KEEP_EXTERNAL_REFERENCES = "KEEP_EXTERNAL_REFERENCES"; //$NON-NLS-1$	
+	
+	/**
+	 * Editor for managing paste strategies
+	 */
 	private StrategyEditor editor;
 
 	public PastePreferencesPage() {
-		super("Paste preferences", org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageDescriptor("/icons/papyrus.png"));
+		super(Messages.PastePreferencesPage_PageTitle, org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageDescriptor("/icons/papyrus.png"), FLAT); //$NON-NLS-1$
 	}
 
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(Activator.getInstance().getPreferenceStore());
-		setDescription("Papyrus paste configuration.\nSelect the paste strategies you wish to activate.");
+		setDescription(Messages.PastePreferencesPage_PageDescription);
 	}
 
 	@Override
 	protected Control createContents(Composite parent) {
-		Composite self = new Composite(parent, SWT.NONE);
-		self.setLayout(new GridLayout(1, true));
-		editor =  new StrategyEditor(self, SWT.NONE, PasteStrategyManager.getInstance());
+		Control self = super.createContents(parent);
+		editor = new StrategyEditor((Composite)self, SWT.NONE, PasteStrategyManager.getInstance(), Messages.PastePreferencesPage_StrategiesDescription);
 		editor.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		return self;
 	}
@@ -57,4 +65,9 @@ public class PastePreferencesPage extends PreferencePage implements IWorkbenchPr
 		super.performDefaults();
 	}
 
+	@Override
+	protected void createFieldEditors() {
+		addField(new BooleanFieldEditor(KEEP_EXTERNAL_REFERENCES, Messages.PastePreferencesPage_KeepReferenceDescription, getFieldEditorParent()));
+	}
+	
 }

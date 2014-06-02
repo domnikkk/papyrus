@@ -53,8 +53,13 @@ public class StrategyEditor extends MultipleReferenceEditor {
 
 	protected IStrategyManager instance;
 	
+	
 	public StrategyEditor(Composite parent, int style, IStrategyManager instance2) {
-		super(parent, style, true, true, STRATEGIES);
+		this(parent, style, instance2, STRATEGIES);
+	}
+	
+	public StrategyEditor(Composite parent, int style, IStrategyManager instance2, String label) {
+		super(parent, style, true, true, label);
 		instance = instance2;
 		
 		List<IStrategy> values = getStrategyManager().getAllStrategies();

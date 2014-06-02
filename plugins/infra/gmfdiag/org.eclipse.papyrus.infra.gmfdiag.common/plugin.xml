@@ -299,4 +299,10 @@
          strategy="org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.DiagramPasteStrategy">
    </strategy>
 </extension>
+<extension
+      point="org.eclipse.core.runtime.preferences">
+   <initializer
+         class="org.eclipse.papyrus.infra.gmfdiag.common.preferences.PastePreferenceInitializer">
+   </initializer>
+</extension>
 </plugin>
