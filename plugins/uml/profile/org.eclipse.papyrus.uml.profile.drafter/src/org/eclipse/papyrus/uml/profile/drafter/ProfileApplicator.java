@@ -33,16 +33,19 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.profile.Activator;
 import org.eclipse.papyrus.uml.profile.definition.PapyrusDefinitionAnnotation;
 import org.eclipse.papyrus.uml.profile.definition.ProfileRedefinition;
 import org.eclipse.papyrus.uml.profile.definition.Version;
+import org.eclipse.papyrus.uml.profile.drafter.commands.CreateProfileAndProfileResourceCommand;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
 import org.eclipse.papyrus.uml.profile.drafter.ui.dialog.IStereotypeUpdateArgs;
@@ -427,10 +430,29 @@ public class ProfileApplicator {
 	 * 
 	 */
 	private Profile createProfile(String profileName) {
-		Profile profile = UMLFactory.eINSTANCE.createProfile();
-		profile.setName(profileName);
+//		Profile profile = UMLFactory.eINSTANCE.createProfile();
+//		profile.setName(profileName);
+//		
+//		return profile;
 		
-		return profile;
+		CreateProfileAndProfileResourceCommand createCmd = new CreateProfileAndProfileResourceCommand(profileName, getModelSet());
+		
+		createCmd.execute();
+		
+		return createCmd.getResultProfile();
+	}
+
+	/**
+	 * Get the modelSet owning the uml model owning the umlElement.
+	 * 
+	 * @return
+	 */
+	private ModelSet getModelSet() {
+		
+		ResourceSet rs = umlElement.eResource().getResourceSet();
+		// In Papyrus, The ResourceSet is an ModelSet.
+		return (ModelSet)rs;
+		
 	}
 
 	/**
