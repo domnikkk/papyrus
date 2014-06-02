@@ -20,6 +20,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.IHandler;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.ConnectionEditPart;
@@ -51,6 +53,8 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.uml2.uml.Element;
 import org.junit.Assert;
 
@@ -140,6 +144,7 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 		assertNotNull(DESTROY_DELETION + COMMAND_NULL, command);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		testEnableForDeleteFromModel();
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		assertTrue(DESTROY_DELETION + TEST_THE_EXECUTION, ((Diagram)getRootView()).getEdges().size() == 0);
 		assertTrue(DESTROY_DELETION + TEST_THE_EXECUTION, source.getSourceConnections().size() == 0);
@@ -507,5 +512,18 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 			assertTrue(CREATION + TEST_THE_REDO, ((Diagram)getRootView()).getEdges().size() == 2);
 			assertTrue(CREATION + TEST_THE_REDO, getRootSemanticModel().getOwnedElements().size() == 6);
 		}
+	}
+	/**
+	 * test id the handler delete from model is enable
+	 */
+	protected void testEnableForDeleteFromModel() {
+		ICommandService commandService = (ICommandService)PlatformUI.getWorkbench().getService(ICommandService.class);
+		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete");
+		IHandler handler = cmd.getHandler();
+		if(handler instanceof AbstractHandler) {
+			((AbstractHandler)handler).setEnabled("org.eclipse.ui.edit.delete");
+		}
+		boolean res = handler.isEnabled();
+		assertTrue("Delete from model handler must be enable",res);
 	}
 }
