@@ -86,7 +86,8 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 		if (editedObject instanceof Constraint) {
 			Constraint constraint = (Constraint) editedObject;
 			if (!(constraint.getSpecification() instanceof OpaqueExpression)) {
-				if (constraint.getSpecification().stringValue().length() > 0) {
+				String stringValue = constraint.getSpecification().stringValue();
+				if ((stringValue != null) && (stringValue.length() > 0)) {
 					MessageDialog.openWarning(new Shell(),
 						Messages.EssentialOCLEditorConfiguration_ExistingSpecification,
 						Messages.EssentialOCLEditorConfiguration_AlreadyContainsNonEmpty);
