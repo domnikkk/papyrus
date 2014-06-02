@@ -25,6 +25,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.papyrus.dsml.validation.model.profilenames.Utils;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Profile;
 
@@ -66,6 +67,7 @@ public class JavaContentGenerator {
 
 				try {
 					IContainer target = project.getFolder("src");
+					Utils.setPluginID(project.getName());
 					ClassesGenerator generator = new ClassesGenerator(modelURI,	target, getArguments());
 					generator.doGenerate(monitor);
 				} catch (IOException e) {

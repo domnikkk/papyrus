@@ -260,14 +260,16 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 		group.setLayout(layout);
 
 		// new copyright area
-		constraintCheck = new Button(group, SWT.CHECK);
+		constraintCheck = new Button(group, SWT.RADIO);
 		// Enable button by default, see bug #411256
 		constraintCheck.setSelection(true);
 		// should look 
-		constraintCheck.setText("Save OCL constraints into the definition");	//$NON-NLS-1$
+		constraintCheck.setText("Save constraints into the definition (OCL only)");	//$NON-NLS-1$
+		Button writeToPlugin = new Button(group, SWT.RADIO);
+		writeToPlugin.setText("Ignore. Use this option, if you use (a generated) plugin that embeds the constraints");	//$NON-NLS-1$
 		GridData gd = new GridData(SWT.FILL, SWT.CENTER, true, true);
 		gd.heightHint = 60;
-		constraintCheck.setLayoutData(gd);
+		group.setLayoutData(gd);
 		return group;
 	}
 	/**

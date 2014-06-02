@@ -20,9 +20,9 @@ import java.util.jar.Attributes;
 import java.util.jar.Attributes.Name;
 import java.util.jar.Manifest;
 
-import org.eclipse.core.internal.resources.Folder;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -53,6 +53,16 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 
 	/**
 	 * 
+	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IManifestEditor#initOk()
+	 * 
+	 *      {@inheritDoc}
+	 */
+	public boolean initOk() {
+		return (manifest != null) && (manifestFile != null);
+	}
+	
+	/**
+	 * 
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IManifestEditor#addDependency(java.lang.String)
 	 * 
 	 *      {@inheritDoc}
@@ -81,8 +91,12 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 				this.manifest = new Manifest(this.manifestFile.getContents());
 			} catch (final IOException e) {
 				Activator.log.error(e);
+				// assure that exception is not silently captured (for users not examining the error log)
+				throw new RuntimeException(e);
 			} catch (final CoreException e) {
 				Activator.log.error(e);
+				// assure that exception is not silently captured (for users not examining the error log)
+				throw new RuntimeException(e);
 			}
 		}
 
@@ -275,9 +289,9 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 					final String input = "Manifest-Version: 1.0\n"; //without the "/n", it doesn't work!!!!! //$NON-NLS-1$
 					if(!this.manifestFile.getParent().exists()) {
 						final IContainer parent = this.manifestFile.getParent();
-						if(parent instanceof Folder) {
+						if(parent instanceof IFolder) {
 							if(!parent.exists()) {
-								((Folder)parent).create(true, false, null);
+								((IFolder)parent).create(true, false, null);
 							}
 						}
 					}
@@ -286,13 +300,12 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 
 					this.manifest = new Manifest(this.manifestFile.getContents());
 
-					final int i;
-					//					InputStream is = this.manifestFile.getContents();
-					//					while((i = is.read()) > 0) {
-
-					//						System.out.println(i);
-					//					}
-					//					this.manifest = new Manifest(this.manifestFile.getContents());
+					//	final int i;
+					//	InputStream is = this.manifestFile.getContents();
+					//	while((i = is.read()) > 0) {
+					//		System.out.println(i);
+					//	}
+					//	this.manifest = new Manifest(this.manifestFile.getContents());
 
 				} catch (final CoreException ex) {
 					Activator.log.error(ex);
@@ -336,7 +349,13 @@ public class ManifestEditor extends ProjectEditor implements IManifestEditor {
 		if(this.manifest != null) {
 			final Name symbolicName = new Name(BUNDLE_SYMBOLIC_NAME);
 			final String name = this.manifest.getMainAttributes().getValue(symbolicName);
-			return name;
+			int semiColon = name.indexOf(";"); //$NON-NLS-1$
+			if (semiColon != -1) {
+				return name.substring(0, semiColon);
+			}
+			else {
+				return name;
+			}
 		}
 		return null;
 	}

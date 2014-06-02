@@ -18,7 +18,7 @@
         <acceleoCompiler 
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
-            dependencies="${target.folder}/../../org.eclipse.papyrus.dsml.validation.model;${target.folder}/../../org.eclipse.papyrus.infra.core;${target.folder}/../../org.eclipse.papyrus.infra.core.sasheditor;${target.folder}/../../org.eclipse.papyrus.infra.core.log;${target.folder}/../../org.eclipse.papyrus.infra.core.sasheditor.di;${target.folder}/../../org.eclipse.papyrus.infra.tools;${target.folder}/../../org.eclipse.papyrus.dsml.validation;"
+            dependencies="${target.folder}/../../org.eclipse.papyrus.dsml.validation.model;${target.folder}/../../org.eclipse.papyrus.infra.core;${target.folder}/../../org.eclipse.papyrus.dsml.validation;"
             binaryResource="false"
             packagesToRegister="">
         </acceleoCompiler>

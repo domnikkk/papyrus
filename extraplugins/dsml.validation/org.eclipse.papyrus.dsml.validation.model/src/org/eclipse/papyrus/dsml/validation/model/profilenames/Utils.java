@@ -229,4 +229,14 @@ public class Utils {
 		Map<String, String> constraintToItsPackage) {
 		Utils.constraintToItsPackage = constraintToItsPackage;
 	}
+	
+	public static String getPluginID() {
+		return pluginID;
+	}
+	
+	public static void setPluginID(String ID) {
+		pluginID = ID;
+	}
+	
+	private static String pluginID;
 }

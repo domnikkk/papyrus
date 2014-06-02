@@ -1,20 +1,21 @@
- [comment encoding = UTF-8 /]
- [module generate('http://www.eclipse.org/uml2/5.0.0/UML', 'http://www.eclipse.org/emf/2009/Validation', 'http://www.eclipse.org/emf/2002/Ecore')/] 
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/uml2/5.0.0/UML')/] 
 
 [query public getPackageForConstraint(cstr : Constraint) : String = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'getPackageForConstraint(org.eclipse.uml2.uml.Constraint)', Sequence{cstr}) /]
 [query public getJavaConstraintBody(valueSpecificatoin : ValueSpecification) : String = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'getJavaConstraintBody(org.eclipse.uml2.uml.ValueSpecification)', Sequence{valueSpecificatoin}) /]
 [query public hasSpecificationForJava(constraint : Constraint) : Boolean   = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'hasSpecificationForJava(org.eclipse.uml2.uml.Constraint)', Sequence{constraint}) /]
 [query public isConstraintForStereotype(constraint : Constraint) : Boolean = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'isConstraintForStereotype(org.eclipse.uml2.uml.Constraint)',  Sequence{constraint}) /]
 [query public getConstraintForStereotype(constraint : Constraint) : String = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'getConstraintForStereotype(org.eclipse.uml2.uml.Constraint)', Sequence{constraint}) /]
+[query public getPluginID(dummy : Element) : String = invoke('org.eclipse.papyrus.dsml.validation.model.profilenames.Utils', 'getPluginID()', Sequence{}) /]
 
 
 [template public generateConstraint(constraint : Constraint)]
 [comment @main/]
 
 [if (hasSpecificationForJava(constraint) and getPackageForConstraint(constraint) <> null)]
-[file('/org/eclipse/papyrus/validation/' + getPackageForConstraint(constraint).replaceAll('\\.','/') + '/' + constraint.name + 'Constraint.java', false)]
+[file(getPluginID(constraint).replaceAll('\\.', '/') + '/' + getPackageForConstraint(constraint).replaceAll('\\.','/') + '/' + constraint.name + 'Constraint.java', false)]
 	
-package org.eclipse.papyrus.validation.[getPackageForConstraint(constraint)/];
+package [getPluginID(constraint)/].[getPackageForConstraint(constraint)/];
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.AbstractModelConstraint;
@@ -83,12 +84,13 @@ public class [constraint.name.toUpperFirst() + 'Constraint'/] extends AbstractMo
 [/template]
 
 [template public generateValidationContext(stereotype : Stereotype)]
-[file ('/org/eclipse/papyrus/validation/'+stereotype.name +'ClientSelector.java', false)]
+[file (getPluginID(stereotype).replaceAll('\\.', '/') + '/selectors/' + stereotype.name +'ClientSelector.java', false)]
 [comment @main/]
-package org.eclipse.papyrus.validation;
+package [getPluginID(stereotype)/].selectors;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.model.IClientSelector;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -111,13 +113,22 @@ public class [stereotype.name/]ClientSelector implements IClientSelector {
 			return false;
 		}
 
-		if("[stereotype.name/]".equals(stereotype.getName())) {
-			return true;
-		}
-
-		return false;
+		return checkStereotype(stereotype, "[stereotype.name/]"); //$NON-NLS-1$
 	}
 
+	public boolean checkStereotype(Stereotype stereotype, String stereoName) {
+		if(stereoName.equals(stereotype.getName())) {
+			return true;
+		}
+		for (Class superStereo : stereotype.getSuperClasses()) {
+			if (superStereo instanceof Stereotype) {
+				if (checkStereotype((Stereotype) superStereo, stereoName)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }
 
 [/file]

@@ -15,9 +15,13 @@ package org.eclipse.papyrus.dsml.validation.generation.ui;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.dsml.validation.model.elements.impl.ConstraintManagerImpl;
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraintProvider;
@@ -26,8 +30,12 @@ import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraint
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IValidationRule;
 import org.eclipse.papyrus.dsml.validation.model.profilenames.Utils;
 import org.eclipse.papyrus.dsml.validation.wizard.CreateEMFValidationProject;
+import org.eclipse.papyrus.dsml.validation.wizard.JavaContentGenerator;
+import org.eclipse.papyrus.dsml.validation.wizard.ValidationPluginGenerator;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.NotificationBuilder;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Profile;
 
@@ -72,8 +80,6 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 	}
 
 
-
-
 	/**
 	 * 
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
@@ -106,12 +112,43 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 				if(definition == null) {
 					NotificationBuilder errorDialog = NotificationBuilder.createErrorPopup("The profile must be defined in order to generate OCL Constraints");
 					errorDialog.run();
-					//finish by displaying a message for the user to informa that it need to define it before to launch it.
+					//finish by displaying a message for the user to inform that it need to define it before to launch it.
 					return null;
 				}
 			}
-			CreateEMFValidationProject wizard = new CreateEMFValidationProject(profileSelection, constraintsManager, definition);
-			wizard.openDialog();
+			IProject existingProject = null;
+			URI uri = profileSelection.eResource().getURI();
+
+			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+			if(uri.segmentCount() >= 2) {
+				existingProject = root.getProject(uri.segment(1));
+			}
+			int question = 0;
+			Shell shell = Display.getDefault().getActiveShell();
+			if ((existingProject != null) && existingProject.exists()) {
+				MessageDialog dialog = new MessageDialog(shell,
+					"Choose plugin generation", null,
+					"How should the plugin be generated?", MessageDialog.QUESTION,
+					new String[] {"Create a new plugin", "write to plugin hosting the model or profile"}, 1);
+				question = dialog.open();
+			}
+			
+			if (question == 1) {
+				
+				//generate java code
+				JavaContentGenerator generateAllJava = new JavaContentGenerator(existingProject, profileSelection);
+				generateAllJava.run();
+				//generate plugin + extension point
+				try {
+					ValidationPluginGenerator.instance.generate(existingProject, constraintsManager, definition);
+				} catch (Exception e) {
+					MessageDialog.openInformation(shell, "Exception occured during plugin generation", e.getMessage());
+				}
+			}
+			else {
+				CreateEMFValidationProject wizard = new CreateEMFValidationProject(profileSelection, constraintsManager, definition);
+				wizard.openDialog();
+			}
 		}
 		return null;
 	}

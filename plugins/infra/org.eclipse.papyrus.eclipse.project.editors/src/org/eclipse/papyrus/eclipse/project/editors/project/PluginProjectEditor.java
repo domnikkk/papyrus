@@ -229,13 +229,16 @@ public class PluginProjectEditor extends ProjectEditor implements IPluginProject
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();
 				Transformer transformer = transformerFactory.newTransformer();
 				transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8"); //$NON-NLS-1$
+				transformer.setOutputProperty(OutputKeys.INDENT, "yes"); //$NON-NLS-1$
+	            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", //$NON-NLS-1$
+	            		"3"); //$NON-NLS-1$
 				StreamResult result = new StreamResult(new StringWriter());
 				DOMSource source = new DOMSource(this.pluginXML);
 				transformer.transform(source, result);
 
 				String resultAsString = result.getWriter().toString();
-				if(!resultAsString.endsWith("\n")) {
-					resultAsString += "\n";
+				if(!resultAsString.endsWith("\n")) { //$NON-NLS-1$
+					resultAsString += "\n"; //$NON-NLS-1$
 				}
 				InputStream inputStream = getInputStream(resultAsString);
 				this.pluginFile.setContents(inputStream, true, true, null);

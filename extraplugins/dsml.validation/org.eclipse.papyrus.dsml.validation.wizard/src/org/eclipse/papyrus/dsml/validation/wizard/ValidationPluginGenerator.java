@@ -33,12 +33,12 @@ import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IConstraint
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IValidationRule;
 import org.eclipse.papyrus.dsml.validation.model.profilenames.Utils;
 import org.eclipse.papyrus.eclipse.project.editors.interfaces.IPluginProjectEditor;
-import org.eclipse.pde.internal.ui.wizards.plugin.NewPluginProjectWizard;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Stereotype;
 import org.w3c.dom.CDATASection;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
 /**
@@ -49,21 +49,41 @@ import org.xml.sax.SAXException;
  */
 public class ValidationPluginGenerator {
 
-	private static final String SEPARATOR = ".";
+	private static final String XML_CONSTRAINT_TARGET = "target";  //$NON-NLS-1$
 
-	private static final String EMF_VALIDATION_CONSTRAINT_CHILD = "constraint";
+	private static final String XML_CONSTRAINT_MESSAGE = "message";  //$NON-NLS-1$
 
-	private static final String ID = "id";
+	private static final String XML_CONSTRAINT_CLASS = "class";  //$NON-NLS-1$
 
-	private static final String OCL_LANGUAGE = "OCL";
+	private static final String XML_CONSTRAINT_IS_ENABLED_BY_DEFAULT = "isEnabledByDefault";  //$NON-NLS-1$
 
-	private static final String EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT = "org.eclipse.emf.validation.constraintProviders";
+	private static final String JAVA_LANGUAGE = "Java"; //$NON-NLS-1$
 
-	private static final String UML_PLUGIN = "org.eclipse.uml2.uml";
+	private static final String OCL_LANGUAGE = "OCL";  //$NON-NLS-1$
+	
+	private static final String XML_CONSTRAINT_MODE = "mode"; //$NON-NLS-1$
 
-	private static final String EMF_VALIDATION_PLUGIN = "org.eclipse.emf.validation";
+	private static final String XML_CONSTRAINT_SEVERITY = "severity";  //$NON-NLS-1$
 
-	private static final String UML_URL = "http://www.eclipse.org/uml2/5.0.0/UML";
+	private static final String XML_CONSTRAINT_STATUS_CODE = "statusCode";  //$NON-NLS-1$
+
+	private static final String XML_CONSTRAINT_LANG = "lang"; //$NON-NLS-1$
+
+	private static final String XML_CONSTRAINT_NAME = "name"; //$NON-NLS-1$
+
+	private static final String SEPARATOR = ".";  //$NON-NLS-1$
+
+	private static final String EMF_VALIDATION_CONSTRAINT_CHILD = "constraint";  //$NON-NLS-1$
+	
+	private static final String ID = "id";  //$NON-NLS-1$
+
+	private static final String EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT = "org.eclipse.emf.validation.constraintProviders";  //$NON-NLS-1$
+
+	private static final String UML_PLUGIN = "org.eclipse.uml2.uml";  //$NON-NLS-1$
+
+	private static final String EMF_VALIDATION_PLUGIN = "org.eclipse.emf.validation";  //$NON-NLS-1$
+
+	private static final String UML_URL = "http://www.eclipse.org/uml2/5.0.0/UML";  //$NON-NLS-1$
 
 
 	/**
@@ -85,17 +105,20 @@ public class ValidationPluginGenerator {
 	 * @throws SAXException
 	 * @throws ParserConfigurationException
 	 */
-	public void generate(IProject project, NewPluginProjectWizard wizard, IConstraintsManager constraintsManager, EPackage definition) throws CoreException,
+	public void generate(IProject project, IConstraintsManager constraintsManager, EPackage definition) throws CoreException,
 	IOException, SAXException, ParserConfigurationException {
 		PluginEditor editor;
 
-		
 		this.constraintsManager = constraintsManager;
 
-		//prepare the plugin
+		// prepare the plugin
 		editor = new PluginEditor(project);
-		editor.setBundleName(editor.getSymbolicBundleName());
-		String pluginID= editor.getSymbolicBundleName();
+		// it's possible that editor.getManifestEditor() logs an exception due to resource out of sync.
+		String pluginID = editor.getSymbolicBundleName();
+		if (editor.getBundleName() == null) {
+			// initialize bundle name with symbolic name, if not name is given
+			editor.setBundleName(pluginID);
+		}
 		editor.setSingleton(true);
 		editor.getBuildEditor().addToBuild(IPluginProjectEditor.PLUGIN_XML_FILE);
 		Set<String> natures = new HashSet<String>();
@@ -105,16 +128,17 @@ public class ValidationPluginGenerator {
 		editor.getManifestEditor().addDependency(EMF_VALIDATION_PLUGIN);
 		editor.getManifestEditor().addDependency(UML_PLUGIN);
 
-		Element extension = editor.getPluginEditor().addExtension(EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT);
-
-		//creation of categories extension point
-		//that correspond to  profile and sub-profiles 
-		this.createHierarchyOfCategories(pluginID,this.constraintsManager.getPrimeCategory(), extension, editor);
+		Element constraintProviderExtension =
+				createOrCleanExtension(editor, EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT);
+		
+		// creation of categories extension point
+		// that corresponds to  profile and sub-profiles 
+		this.createHierarchyOfCategories(pluginID,this.constraintsManager.getPrimeCategory(), constraintProviderExtension, editor);
 
 		//add the constraint provider extension point, normally it exist only per profile so per category
 		for (IConstraintProvider constraintProvider : constraintsManager.getConstraintsProviders()) {
 			//create the extension point for the provider
-			Element extElForConstraintsProvider = createExtensionForConstraintsProvider(constraintProvider, extension, editor, definition);
+			Element extElForConstraintsProvider = createExtensionForConstraintsProvider(constraintProvider, constraintProviderExtension, editor, definition);
 			// go though category  (profile)
 			for (IConstraintsCategory constraintCategory : constraintProvider.getConstraintsCategories()) {
 
@@ -123,24 +147,23 @@ public class ValidationPluginGenerator {
 
 				for (IValidationRule constraint : constraintCategory.getConstraints()) {
 
-					//this is a java constraint?
+					// is this a Java constraint?
 					if (Utils.hasSpecificationForJava(constraint.getConstraint())) {
-						createExtensionForConstraint(pluginID,constraint,extElForConstraintsCategory, editor);
+						createExtensionForConstraint(pluginID,constraint, extElForConstraintsCategory, editor);
 					}
 
-					//this is an OCL constraint?
+					// is this an OCL constraint?
 					if (Utils.hasSpecificationForOCL(constraint.getConstraint())) {
-						createOCLExtensionForConstraint(constraint,extElForConstraintsCategory, editor);
+						createOCLExtensionForConstraint(constraint, extElForConstraintsCategory, editor);
 					}
 					//((ValidationRuleImpl) constraint).setParentID();
-
 				}
 
 			}
 		}
 
-		generateBindings(pluginID,editor, this.constraintsManager);
-
+		generateBindings(pluginID, editor, this.constraintsManager);
+		
 		editor.getProject().refreshLocal(0, null);
 
 		try {
@@ -151,43 +174,43 @@ public class ValidationPluginGenerator {
 		}
 	}
 
-	private Element createExtensionForConstraint(String pluginID,IValidationRule constraint,
+	@SuppressWarnings("nls")
+	private Element createExtensionForConstraint(String pluginID, IValidationRule constraint,
 		Element parentElement, PluginEditor editor) {
 
 		Element extElForConstraint = editor.getPluginEditor().addChild(
 			parentElement, EMF_VALIDATION_CONSTRAINT_CHILD);
 
 		extElForConstraint.setAttribute(ID, constraint.getID());
-		extElForConstraint.setAttribute("name", constraint.getName());
-		extElForConstraint.setAttribute("lang", "Java");
-		extElForConstraint.setAttribute("statusCode", constraint.getStatusCode().toString());
-		extElForConstraint.setAttribute("severity", constraint.getSeverity().name());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_NAME, constraint.getName());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_LANG, JAVA_LANGUAGE);
+		extElForConstraint.setAttribute(XML_CONSTRAINT_STATUS_CODE, constraint.getStatusCode().toString());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_SEVERITY, constraint.getSeverity().name());
 
-		extElForConstraint.setAttribute("class",pluginID+SEPARATOR+constraint.getImplementingClass());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_CLASS, pluginID + SEPARATOR + constraint.getImplementingClass());
 
-		extElForConstraint.setAttribute("mode", constraint.getMode().name());
-		extElForConstraint.setAttribute("isEnabledByDefault",
+		extElForConstraint.setAttribute(XML_CONSTRAINT_MODE, constraint.getMode().name());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_IS_ENABLED_BY_DEFAULT,
 			String.valueOf(constraint.isEnabledByDefault()));
 
 		if (constraint.getTargets() != null) {
 			for (String target : constraint.getTargets()) {
-				Element targetExtension = editor.addChild(extElForConstraint,"target");
-				targetExtension.setAttribute("class", target);
+				Element targetExtension = editor.addChild(extElForConstraint, XML_CONSTRAINT_TARGET);
+				targetExtension.setAttribute(XML_CONSTRAINT_CLASS, target);
 			}
 		}
 
 		if (constraint.getMessage() != null) {
-			Element message = editor.addChild(extElForConstraint, "message");
+			Element message = editor.addChild(extElForConstraint, XML_CONSTRAINT_MESSAGE);
 			message.setTextContent(constraint.getMessage());
 		}
 		else{
-			Element message = editor.addChild(extElForConstraint, "message");
-			message.setTextContent(constraint.getName() +" not validated");
+			Element message = editor.addChild(extElForConstraint, XML_CONSTRAINT_MESSAGE);
+			message.setTextContent(constraint.getName() + " not validated");
 		}
 
 		if (constraint.getDescription() != null) {
-			Element description = editor.addChild(extElForConstraint,
-				"description");
+			Element description = editor.addChild(extElForConstraint, "description");
 			description.setTextContent(constraint.getDescription());
 		}
 
@@ -209,27 +232,27 @@ public class ValidationPluginGenerator {
 			parentElement, EMF_VALIDATION_CONSTRAINT_CHILD);
 
 		extElForConstraint.setAttribute(ID, validation.getID());
-		extElForConstraint.setAttribute("name", validation.getName());
-		extElForConstraint.setAttribute("lang", OCL_LANGUAGE);
-		extElForConstraint.setAttribute("statusCode", validation
+		extElForConstraint.setAttribute(XML_CONSTRAINT_NAME, validation.getName());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_LANG, OCL_LANGUAGE);
+		extElForConstraint.setAttribute(XML_CONSTRAINT_STATUS_CODE, validation
 			.getStatusCode().toString());
-		extElForConstraint.setAttribute("severity", validation.getSeverity()
+		extElForConstraint.setAttribute(XML_CONSTRAINT_SEVERITY, validation.getSeverity()
 			.name());
 
-		extElForConstraint.setAttribute("mode", validation.getMode().name());
-		extElForConstraint.setAttribute("isEnabledByDefault",
+		extElForConstraint.setAttribute(XML_CONSTRAINT_MODE, validation.getMode().name());
+		extElForConstraint.setAttribute(XML_CONSTRAINT_IS_ENABLED_BY_DEFAULT,
 			String.valueOf(validation.isEnabledByDefault()));
 
 		if (validation.getTargets() != null) {
 			for (String target : validation.getTargets()) {
 				Element targetExtension = editor.addChild(extElForConstraint,
-					"target");
-				targetExtension.setAttribute("class", target);
+					XML_CONSTRAINT_TARGET);
+				targetExtension.setAttribute(XML_CONSTRAINT_CLASS, target);
 			}
 		}
 
 		if (validation.getMessage() != null) {
-			Element message = editor.addChild(extElForConstraint, "message");
+			Element message = editor.addChild(extElForConstraint, XML_CONSTRAINT_MESSAGE);
 			message.setTextContent(validation.getMessage());
 		}
 
@@ -276,13 +299,13 @@ public class ValidationPluginGenerator {
 		Element parentElement, PluginEditor editor) {
 
 		Element extElForCategory = editor.getPluginEditor().addChild(
-			parentElement, "category");
+			parentElement, "category"); //$NON-NLS-1$
 
 		extElForCategory.setAttribute(ID, pluginID+SEPARATOR+category.getID());
 
-		extElForCategory.setAttribute("name",pluginID+SEPARATOR+ category.getName());
+		extElForCategory.setAttribute(XML_CONSTRAINT_NAME, pluginID + SEPARATOR + category.getName());
 
-		extElForCategory.setAttribute("mandatory",String.valueOf(category.isMandatory()));
+		extElForCategory.setAttribute("mandatory", String.valueOf(category.isMandatory())); //$NON-NLS-1$
 
 		return extElForCategory;
 
@@ -295,66 +318,99 @@ public class ValidationPluginGenerator {
 	 * @param editor
 	 * @return the extension point
 	 */
+	@SuppressWarnings("nls")
 	private Element createExtensionForConstraintsProvider(
 		IConstraintProvider constraintProvider, Element parentElement,
 		PluginEditor editor, EPackage definition) {
 
 		Element extElForConstraintsProvider = editor.getPluginEditor().addChild(parentElement, "constraintProvider");
 
-		extElForConstraintsProvider.setAttribute("mode", constraintProvider.getMode().name());
+		extElForConstraintsProvider.setAttribute(XML_CONSTRAINT_MODE, constraintProvider.getMode().name());
 
-		extElForConstraintsProvider.setAttribute("cache",String.valueOf(constraintProvider.getCache()));
+		extElForConstraintsProvider.setAttribute("cache", String.valueOf(constraintProvider.getCache()));
 
 		Element pcg = editor.addChild(extElForConstraintsProvider, "package");
 		
 		if(constraintProvider.getEPackage()==null){
-			pcg.setAttribute("namespaceUri",UML_URL);
+			pcg.setAttribute("namespaceUri", UML_URL);
 		}
 		else{
-			pcg.setAttribute("namespaceUri",constraintProvider.getEPackage().getNsURI());
+			pcg.setAttribute("namespaceUri", constraintProvider.getEPackage().getNsURI());
 			
 		}
 
 		return extElForConstraintsProvider;
-
 	}
 
-	private Element createExtensionForConstraintsCategory(String pluginID,IConstraintsCategory constraintsCategory, Element parentElement,PluginEditor editor, IConstraintsManager constraintManager) {
-
-		Element extElForConstraintsCategory = editor.getPluginEditor().addChild(parentElement, "constraints");
-		extElForConstraintsCategory.setAttribute("categories",pluginID+SEPARATOR+constraintManager.getPrimeCategory().getName());
+	@SuppressWarnings("nls")
+	private Element createExtensionForConstraintsCategory(String pluginID,IConstraintsCategory constraintsCategory, Element parentElement,PluginEditor editor, IConstraintsManager constraintManager)
+	{
+		Element extElForConstraintsCategory = editor.getPluginEditor().addChild(parentElement, "constraints"); //$NON-NLS-1$
+		extElForConstraintsCategory.setAttribute("categories", pluginID + SEPARATOR + constraintManager.getPrimeCategory().getName());
 		return extElForConstraintsCategory;
 
 	}
 
-	private void generateBindings(String pluginID,PluginEditor editor, IConstraintsManager constraintsManager) {
-		Element extension = editor.getPluginEditor().addExtension("org.eclipse.emf.validation.constraintBindings");
-		//create a client context per stereotypes
+
+	@SuppressWarnings("nls")
+	private void generateBindings(String pluginID, PluginEditor editor, IConstraintsManager constraintsManager)
+	{
+		Element extension = createOrCleanExtension(editor, "org.eclipse.emf.validation.constraintBindings");
+		
+		// create a client context per stereotype
 		Set<Stereotype>constrainedStereotype=constraintsManager.getConstraintsOfStereotype().keySet();
 		for(Iterator<Stereotype> iterator = constrainedStereotype.iterator(); iterator.hasNext();) {
 			Stereotype stereotype = (Stereotype)iterator.next();
-			//("+--> create clientContext for the stereotype "+stereotype.getName());
-			Element clientContextElement = editor.getPluginEditor().addChild(extension,"clientContext");
-			clientContextElement.setAttribute(ID,stereotype.getName()+"ClientContext");
+			// ("+--> create clientContext for the stereotype "+stereotype.getName());
+			Element clientContextElement = editor.getPluginEditor().addChild(extension, "clientContext");
+			clientContextElement.setAttribute(ID, stereotype.getName() + "ClientContext");
 			Element selectorElement = editor.addChild(clientContextElement, "selector");
-			selectorElement.setAttribute("class","org.eclipse.papyrus.validation."+stereotype.getName()+"ClientSelector");
+			selectorElement.setAttribute(XML_CONSTRAINT_CLASS, pluginID + ".selectors." + stereotype.getName() + "ClientSelector");
 			
-			//create binding
+			// create binding
 			List<Constraint> constraints=constraintsManager.getConstraintsOfStereotype().get(stereotype);
 			Element bindingelement = editor.getPluginEditor().addChild(extension, "binding");
-			bindingelement.setAttribute("context",	stereotype.getName()+"ClientContext");
+			bindingelement.setAttribute("context",	stereotype.getName() + "ClientContext");
+			Element category = editor.addChild(bindingelement, "category");
+			category.setAttribute("ref", pluginID + SEPARATOR +
+					constraintsManager.getPrimeCategory().getName());
 			for(Iterator<Constraint> iteratorConstraint = constraints.iterator(); iteratorConstraint.hasNext();) {
 				Constraint constraint = (Constraint)iteratorConstraint.next();
 				constraintsManager.getValidationRuleMap().get(constraint).getID();
-				Element subElement = editor.addChild(bindingelement, "constraint");
-				subElement.setAttribute("ref",pluginID+SEPARATOR+constraintsManager.getValidationRuleMap().get(constraint).getID());
-				//("+----> create binding for the constraint "+constraintsManager.getValidationRuleMap().get(constraint).getID());
+				Element constraintElement = editor.addChild(bindingelement, "constraint");
+				constraintElement.setAttribute("ref", constraintsManager.getValidationRuleMap().get(constraint).getID());
+				// ("+----> create binding for the constraint "+constraintsManager.getValidationRuleMap().get(constraint).getID());
 			}
 		}
-		
 	}
 
-
+	/**
+	 * Create a new extension with a given name or reuse an existing extension if an extension with the given
+	 * name already exists. In case of the latter, the existing extensions will be clean first, i.e. all of its
+	 * children are removed. This function enables the multiple generation phases without duplicating elements.
+	 * @param editor the plugin editor
+	 * @param extensionName the name of the extension
+	 * @return
+	 */
+	protected Element createOrCleanExtension(PluginEditor editor, String extensionName) {
+		List<Node> existingExtensions = editor.getPluginEditor().getExtensions(extensionName);
+		if ((existingExtensions.size() > 0) && (existingExtensions.get(0) instanceof Element)) {
+			Element extension = (Element) existingExtensions.get(0);
+			// reuse extension and remove all children
+			for (;;) {
+				Node child = extension.getFirstChild();
+				if (child == null) {
+					break;
+				}
+				extension.removeChild(child);
+			}
+			return extension;
+		}
+		else {
+			return editor.getPluginEditor().addExtension(EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT);
+		}
+	}
+	
 	/**
 	 * create the extension point categories
 	 * @param projectName the name of the project
@@ -365,12 +421,9 @@ public class ValidationPluginGenerator {
 	private void createHierarchyOfCategories(String projectName, Category category,Element parentElement, PluginEditor editor) {
 
 		this.createExtensionForCategory(projectName, category,parentElement, editor);
-
-
 	}
 
-
 	public static String getContextprefix() {
-		return "";
+		return ""; //$NON-NLS-1$
 	}
 }

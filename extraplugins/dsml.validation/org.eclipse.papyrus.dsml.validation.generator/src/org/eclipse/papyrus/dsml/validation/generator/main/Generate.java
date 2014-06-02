@@ -343,12 +343,6 @@ public class Generate extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
         }
-        if (!isInWorkspace(org.eclipse.emf.validation.internal.modeled.model.validation.ValidationPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.emf.validation.internal.modeled.model.validation.ValidationPackage.eINSTANCE.getNsURI(), org.eclipse.emf.validation.internal.modeled.model.validation.ValidationPackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.eclipse.emf.ecore.EcorePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getNsURI(), org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
-        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

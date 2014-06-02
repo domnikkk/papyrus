@@ -15,17 +15,14 @@ package org.eclipse.papyrus.dsml.validation.model.elements.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.papyrus.dsml.validation.IDSMLValidation;
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Category;
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.IValidationRule;
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Mode;
 import org.eclipse.papyrus.dsml.validation.model.elements.interfaces.Severity;
-import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
@@ -148,19 +145,20 @@ public class ValidationRuleImpl implements IValidationRule {
 	private Integer statusCode;
 
 	public Severity getSeverity() {
-		// TODO Auto-generated method stub
-		EnumerationLiteral severity = (EnumerationLiteral)constraint.getValue(stereotype, "severity");
+		Object severityObj = constraint.getValue(stereotype, "severity"); //$NON-NLS-1$
+		if (severityObj instanceof Enumerator) {
+			Enumerator severity = (Enumerator)severityObj;
 
-		String severityType = severity.getName();
+			String severityType = severity.getName();
 
-		if(severityType.compareTo(Severity.INFO.name()) == 0) {
-			return Severity.INFO;
-		} else if(severityType.compareTo(Severity.WARNING.name()) == 0) {
-			return Severity.WARNING;
-		} else if(severityType.compareTo(Severity.CANCEL.name()) == 0) {
-			return Severity.CANCEL;
+			if(severityType.compareTo(Severity.INFO.name()) == 0) {
+				return Severity.INFO;
+			} else if(severityType.compareTo(Severity.WARNING.name()) == 0) {
+				return Severity.WARNING;
+			} else if(severityType.compareTo(Severity.CANCEL.name()) == 0) {
+				return Severity.CANCEL;
+			}
 		}
-
 		return Severity.ERROR;
 
 	}
@@ -172,17 +170,18 @@ public class ValidationRuleImpl implements IValidationRule {
 	private String implementingClass;
 
 	public Mode getMode() {
-		// TODO Auto-generated method stub
-		EnumerationLiteral mode = (EnumerationLiteral)constraint.getValue(stereotype, "mode");
+		Object modeObj = constraint.getValue(stereotype, "mode");  //$NON-NLS-1$
+		if (modeObj instanceof Enumerator) {
+			Enumerator mode = (Enumerator) modeObj;
 
-		String modeType = mode.getName();
+			String modeType = mode.getName();
 
-		if(modeType.compareTo(Mode.Batch.name()) == 0) {
-			return Mode.Batch;
-		} else if(modeType.compareTo(Mode.Live.name()) == 0) {
-			return Mode.Live;
+			if(modeType.compareTo(Mode.Batch.name()) == 0) {
+				return Mode.Batch;
+			} else if(modeType.compareTo(Mode.Live.name()) == 0) {
+				return Mode.Live;
+			}
 		}
-
 		return Mode.Batch;
 	}
 
