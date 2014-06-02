@@ -40,8 +40,11 @@
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.uml.ui</module>
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.validation.problems</module>
 		<module>../extraplugins/cdo/org.eclipse.papyrus.cdo.validation.problems.edit</module>
+		<module>../extraplugins/codegen/org.eclipse.papyrus.codegen.extensionpoints</module>
+		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.cdtproject</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.codegen</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.codegen.ui</module>
+		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.examples</module>
 		<module>../extraplugins/codegen/org.eclipse.papyrus.cpp.profile</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization</module>
 		<module>../extraplugins/diagramtemplate/org.eclipse.papyrus.diagramtemplate</module>
@@ -93,7 +96,6 @@
 		<module>../extraplugins/marte/org.eclipse.papyrus.marte.vsl.ui</module>
 		<module>../extraplugins/migration/org.eclipse.papyrus.migration.properties.model</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.core</module>
-		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.cpp</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.doc</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.ui</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.validation</module>
@@ -153,12 +155,12 @@
 		<repository>
 			<id>emf-cdo</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/cdo/drops/S20140312-0256</url>
+			<url>http://download.eclipse.org/modeling/emf/cdo/drops/S20140527-0307</url>
 		</repository>
 		<repository>
 			<id>emf-compare</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201403111515</url>
+			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201405271400</url>
 		</repository>
 		<repository>
 			<id>emf-emf</id>
@@ -168,12 +170,12 @@
 		<repository>
 			<id>emft-emffacet</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/facet/updates/integration/0.4.0/I201402271523/</url>
+			<url>http://download.eclipse.org/facet/updates/integration/0.4.0/I201405190853/</url>
 		</repository>
 		<repository>
 			<id>emft-mwe</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201403111231/mwe</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201405200714/mwe</url>
 		</repository>
 		<repository>
 			<id>emf-transaction</id>
@@ -188,7 +190,7 @@
 		<repository>
 			<id>ep</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/S-4.4M6-201403061200/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/S-4.4RC3-201405282000/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
@@ -208,7 +210,7 @@
 		<repository>
 			<id>gmf-tooling</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.M6a</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.M7</url>
 		</repository>
 		<repository>
 			<id>m2m-atl</id>
@@ -218,32 +220,32 @@
 		<repository>
 			<id>m2t-acceleo</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201403120947</url>
+			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201405271356</url>
 		</repository>
 		<repository>
 			<id>m2t-xpand</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201403111353/</url>
+			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201405200738/</url>
 		</repository>
 		<repository>
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/interim/5.0.0</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.0.0/S201405261444</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0-I-builds</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0milestones</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201403110437</url>
+			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201405271532</url>
 		</repository>
 		<repository>
 			<id>mylyn</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/mylyn/snapshots/3.11</url>
+			<url>http://download.eclipse.org/mylyn/snapshots/3.12</url>
 		</repository>
 		<repository>
 			<id>nattable</id>
@@ -263,12 +265,12 @@
 		<repository>
 			<id>tmf-xtext</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201403111428/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/head/R201405210727/</url>
 		</repository>
 		<repository>
 			<id>webtools</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/S-3.6.0M6-20140310170306/repository/</url>
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/S-3.6.0RC2-20140525171527/repository/</url>
 		</repository>
 	</repositories>
 	<build>

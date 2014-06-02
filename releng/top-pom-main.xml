@@ -210,7 +210,6 @@
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.css</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.deployment</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.dnd</module>
-		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.synchronizeview</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.icons</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.interactionoverview</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.menu</module>
@@ -225,6 +224,7 @@
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.stereotype.edition</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.symbols</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.symbols.properties</module>
+		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.synchronizeview</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.timing</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.usecase</module>
 		<module>../plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.wizards</module>
@@ -287,13 +287,13 @@
 		<module>../plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.resourceloading</module>
 		<module>../plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.widgets</module>
 		<module>../plugins/views/properties/org.eclipse.papyrus.views.properties</module>
+		<module>../plugins/doc/org.eclipse.papyrus.views.properties.doc</module>
 		<module>../plugins/views/properties/org.eclipse.papyrus.views.properties.model</module>
 		<module>../plugins/views/properties/org.eclipse.papyrus.views.properties.model.edit</module>
 		<module>../plugins/views/properties/org.eclipse.papyrus.views.properties.model.editor</module>
 		<module>../plugins/views/org.eclipse.papyrus.views.search</module>
 		<module>../plugins/views/validation/org.eclipse.papyrus.views.validation</module>
 		<module>../plugins/xwt/org.eclipse.papyrus.xwt</module>
-		<module>../plugins/doc/org.eclipse.papyrus.views.properties.doc</module>
 		<module>main</module>
 	</modules>
 	<properties>
@@ -315,7 +315,7 @@
 		<repository>
 			<id>emf-compare</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201403111515</url>
+			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201405271400</url>
 		</repository>
 		<repository>
 			<id>emf-emf</id>
@@ -325,17 +325,17 @@
 		<repository>
 			<id>emft-emffacet</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/facet/updates/integration/0.4.0/I201402271523/</url>
+			<url>http://download.eclipse.org/facet/updates/integration/0.4.0/I201405190853/</url>
 		</repository>
 		<repository>
 			<id>emft-mwe[0]</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201403111231/mwe</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201405200714/mwe</url>
 		</repository>
 		<repository>
 			<id>emft-mwe[1]</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201403111450/mwe2lang</url>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201405200939/mwe2lang</url>
 		</repository>
 		<repository>
 			<id>emf-transaction</id>
@@ -350,7 +350,7 @@
 		<repository>
 			<id>ep</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/S-4.4M6-201403061200/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/S-4.4RC3-201405282000/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
@@ -370,7 +370,7 @@
 		<repository>
 			<id>gmf-tooling</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.M6a</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.M7</url>
 		</repository>
 		<repository>
 			<id>m2m-atl</id>
@@ -380,32 +380,32 @@
 		<repository>
 			<id>m2t-acceleo</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201403120947</url>
+			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201405271356</url>
 		</repository>
 		<repository>
 			<id>m2t-xpand</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201403111353/</url>
+			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201405200738/</url>
 		</repository>
 		<repository>
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/interim/5.0.0</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.0.0/S201405261444</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0-I-builds</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0milestones</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201403110437</url>
+			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201405271532</url>
 		</repository>
 		<repository>
 			<id>mylyn</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/mylyn/snapshots/3.11</url>
+			<url>http://download.eclipse.org/mylyn/snapshots/3.12</url>
 		</repository>
 		<repository>
 			<id>nattable</id>
@@ -425,12 +425,12 @@
 		<repository>
 			<id>tmf-xtext</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201403111428/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/head/R201405210727/</url>
 		</repository>
 		<repository>
 			<id>webtools</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/S-3.6.0M6-20140310170306/repository/</url>
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/S-3.6.0RC2-20140525171527/repository/</url>
 		</repository>
 	</repositories>
 	<build>
@@ -521,21 +521,21 @@
 				</executions>
 			</plugin>
 			<plugin>
-	            <groupId>org.codehaus.mojo</groupId>
-	            <artifactId>findbugs-maven-plugin</artifactId>
-	            <version>${findbugs.version}</version>
-	            <configuration>
-	               <findbugsXmlOutput>true</findbugsXmlOutput>
-	               <failOnError>false</failOnError>
-	            </configuration>
-	            <executions>
-	               <execution>
-	                  <goals>
-	                     <goal>check</goal>
-	                  </goals>
-	               </execution>
-	            </executions>
-	         </plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.version}</version>
+				<configuration>
+					<findbugsXmlOutput>true</findbugsXmlOutput>
+					<failOnError>false</failOnError>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>

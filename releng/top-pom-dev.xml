@@ -8,7 +8,6 @@
 	<modules>
 		<module>../features/papyrus-dev-features/org.eclipse.papyrus.dev.feature</module>
 		<module>../plugins/developer/org.eclipse.papyrus.codegen</module>
-		<module>../plugins/developer/org.eclipse.papyrus.def</module>
 		<module>../plugins/developer/org.eclipse.papyrus.dev.view.services.edit.request</module>
 		<module>../plugins/developer/org.eclipse.papyrus.documentation.plugin</module>
 		<module>../plugins/developer/org.eclipse.papyrus.documentation.plugin.edit</module>
