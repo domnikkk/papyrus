@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.constraints.runtime;
 
@@ -15,6 +17,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.constraints.Activator;
@@ -31,6 +34,8 @@ import org.eclipse.papyrus.infra.constraints.constraints.Constraint;
  */
 public abstract class DefaultConstraintEngine<E extends DisplayUnit> implements ConstraintEngine<E> {
 
+	private final ListenerList listeners = new ListenerList(ListenerList.IDENTITY);
+	
 	/**
 	 * The constraints instantiated by this Engine
 	 */
@@ -126,5 +131,27 @@ public abstract class DefaultConstraintEngine<E extends DisplayUnit> implements 
 			displayUnits.add((E)c.getDescriptor().getDisplay());
 		}
 		return displayUnits;
+	}
+	
+	public void addConstraintEngineListener(ConstraintEngineListener listener) {
+		listeners.add(listener);
+	}
+
+	public void removeConstraintEngineListener(ConstraintEngineListener listener) {
+		listeners.remove(listener);
+	}
+
+	protected void fireConstraintsChanged() {
+		if(!listeners.isEmpty()) {
+			Object[] toNotify = listeners.getListeners();
+			ConstraintsChangedEvent event = new ConstraintsChangedEvent(this);
+			for(int i = 0; i < toNotify.length; i++) {
+				try {
+					((ConstraintEngineListener)toNotify[i]).constraintsChanged(event);
+				} catch (Exception e) {
+					Activator.log.error("Uncaught exception in constraints-changed listener.", e); //$NON-NLS-1$
+				}
+			}
+		}
 	}
 }

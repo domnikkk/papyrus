@@ -138,6 +138,15 @@ public class DefaultDisplayEngine implements DisplayEngine {
 	public void dispose() {
 		disposeControls();
 	}
+	
+	/**
+	 * Invalidates any caches that I may have because the displayed property UI contexts, constraints, or views have
+	 * changed in some way.
+	 */
+	public void invalidate() {
+		// Forget the cached XML property definitions because they may have changed
+		xmlCache = null;
+	}
 
 	public Control createSection(Composite parent, Section section, DataSource source) {
 		if(source == null) {

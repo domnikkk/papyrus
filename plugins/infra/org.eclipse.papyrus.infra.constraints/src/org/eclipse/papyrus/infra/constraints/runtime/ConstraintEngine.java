@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.constraints.runtime;
 
@@ -49,4 +51,7 @@ public interface ConstraintEngine<E extends DisplayUnit> {
 	 */
 	public void refresh();
 
+	void addConstraintEngineListener(ConstraintEngineListener listener);
+	
+	void removeConstraintEngineListener(ConstraintEngineListener listener);
 }
