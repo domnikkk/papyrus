@@ -11,19 +11,16 @@
  */
 package org.eclipse.papyrus.uml.diagram.statemachine.custom.figures;
 
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PolylineDecoration;
-import org.eclipse.papyrus.uml.diagram.common.figure.edge.DashedEdgeFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 
-public class TransitionFigure extends DashedEdgeFigure {
+public class TransitionFigure extends UMLEdgeFigure {
 
 	/**
 	 * Creates a new UMLEdgeFigure.
 	 */
 	public TransitionFigure() {
 		super();
-		setupDefaultStyle();
-		arrow = true;
 	}
 
 	/**
@@ -34,11 +31,6 @@ public class TransitionFigure extends DashedEdgeFigure {
 		PolylineDecoration dec = new PolylineDecoration();
 		dec.setScale(15, 5);
 		dec.setLineWidth(1);
-		if (arrow) {
-			this.setTargetDecoration(dec);
-		} else {
-			this.setTargetDecoration(null);
-		}// arrow at target endpoint
-		this.setLineStyle(Graphics.LINE_CUSTOM); // line drawing style
+		this.setTargetDecoration(dec);
 	}
 }
