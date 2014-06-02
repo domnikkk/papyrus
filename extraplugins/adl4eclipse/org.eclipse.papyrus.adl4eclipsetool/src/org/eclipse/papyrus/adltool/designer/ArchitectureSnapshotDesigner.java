@@ -368,7 +368,7 @@ public abstract class ArchitectureSnapshotDesigner{
 	 * Ensure that the profile ADL4 eclipse has been applied
 	 */
 	protected void initModel(){
-		RegisteredProfile registeredProfile=RegisteredProfile.getRegisteredProfile("ADL4Eclipse");
+		RegisteredProfile registeredProfile=(RegisteredProfile)RegisteredProfile.getRegisteredProfile("ADL4Eclipse");
 		if(registeredProfile!=null){
 			URI modelUri = registeredProfile.uri;
 			final Resource modelResource = Util.getResourceSet(rootPackage).getResource(modelUri, true);
