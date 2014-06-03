@@ -15,18 +15,12 @@
 package org.eclipse.papyrus.uml.profile.drafter.commands;
 
 
-import java.io.IOException;
-
-import org.eclipse.core.internal.resources.Workspace;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
-import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
+import org.eclipse.papyrus.uml.profile.drafter.model.CreatedPapyrusProfileModel;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
-import org.eclipse.ui.internal.Workbench;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLFactory;
 
@@ -110,7 +104,7 @@ public class CreateProfileAndProfileResourceCommand {
 		URI baseURI = modelSet.getURIWithoutExtension().trimSegments(1);
 		System.err.println("baseURI =" + baseURI.toString());
 		
-		baseURI = baseURI.appendSegment(profileName).appendFileExtension("profile").appendFileExtension("uml");
+		baseURI = baseURI.appendSegment(profileName).appendFileExtension("profile");
 		System.err.println("baseURI =" + baseURI.toString());
 		
 		return baseURI;
@@ -146,10 +140,16 @@ public class CreateProfileAndProfileResourceCommand {
 	 */
 	public void execute() {
 
-		createProfile();
-		createResource();
+		CreatedPapyrusProfileModel profileModel = new CreatedPapyrusProfileModel(modelSet, resourceURI, true);
 		
-		resultResource.getContents().add(resultProfile);
+		resultProfile = profileModel.getProfile();
+		resultProfile.setName(profileName);
+		resultResource = profileModel.getProfileResource();
+		
+//		createProfile();
+//		createResource();
+//		
+//		resultResource.getContents().add(resultProfile);
 		
 //		try {
 //			resultResource.save(null);
@@ -176,7 +176,7 @@ public class CreateProfileAndProfileResourceCommand {
 	 */
 	private Resource createResource() {
 		
-		resultResource = modelSet.createResource(resourceURI, null);
+		resultResource = modelSet.createResource(resourceURI.appendFileExtension("uml"), null);
 		// Register the resource with UML model
 		UmlModel umlModel = UmlUtils.getUmlModel(modelSet);
 		umlModel.handle(resultResource);
