@@ -59,6 +59,10 @@ Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in t
          id="org.eclipse.papyrus.tests.extra.cdo.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import plugin="com.google.guava" version="15" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="org.eclipse.papyrus.tests.extra"
          download-size="0"
