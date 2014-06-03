@@ -24,3 +24,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Bundle-Vendor: %providerName
+Export-Package: org.eclipse.papyrus.uml.diagram.communication.tests,
+ org.eclipse.papyrus.uml.diagram.communication.tests.canonical
