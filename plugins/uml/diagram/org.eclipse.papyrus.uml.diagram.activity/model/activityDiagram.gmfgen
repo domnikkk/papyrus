@@ -3727,7 +3727,7 @@
           <entries xsi:type="gmfgen:ToolEntry" title="Opaque Action" description="Create an Opaque Action node" largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif" smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif" genNodes="/0/@diagram/@childNodes.6"/>
           <entries xsi:type="gmfgen:ToolEntry" title="Value Specification Action" description="Create a Value Specification Action node" largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif" smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ValueSpecificationAction.gif" genNodes="/0/@diagram/@childNodes.54"/>
         </groups>
-        <groups title="AcceptEventActions" description="AcceptEventActions" largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" stack="true" collapse="true">
+        <groups title="AcceptEventActions" description="AcceptEventActions" largeIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" smallIconPath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif" stack="false" collapse="false">
           <entries xsi:type="gmfgen:ToolEntry" title="Accept Event Action" description="Create an Accept Event Action node" largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif" smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/AcceptEventAction.gif" genNodes="/0/@diagram/@childNodes.52"/>
         </groups>
       </palette>

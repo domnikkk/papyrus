@@ -3831,6 +3831,10 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
        </expand>
     </entry>
     <predefinedEntry
+          id="createAcceptEventAction1CreationTool"
+          path="/createNodes3Group">
+    </predefinedEntry>
+    <predefinedEntry
           id="createActivity1CreationTool"
           path="/createNodes3Group">
     </predefinedEntry>
@@ -4176,24 +4180,6 @@ self.structuralFeature.oclAsType(Property).opposite.type = self.object.type]]>
  	<predefinedEntry
           id="createValueSpecificationAction2CreationTool"
           path="/createNodes3Group/createOtherActionsGroup">
-    </predefinedEntry>
-
-	<entry
-       description="AcceptEventActions"
-       id="createAcceptEventActions14Group"
-       kind="stack"
-       label="AcceptEventActions"
-       large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
-       path="/createNodes3Group"
-       small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
-       <expand
-              force="true">
-       </expand>
- 	</entry>
- 	 
- 	 	<predefinedEntry
-          id="createAcceptEventAction1CreationTool"
-          path="/createNodes3Group/createAcceptEventActions14Group">
     </predefinedEntry>
  <predefinedEntry
        id="createConstraint6CreationTool"
