@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.papyrus.tests.extra.feature"
-      label="Papyrus extra-plugins tests Feature"
+      id="org.eclipse.papyrus.tests.extra.codegen.cpp.feature"
+      label="Papyrus extra-plugins cpp codegen test feature"
       version="1.0.0.qualifier"
       provider-name="Eclipse Modeling Project">
 
@@ -55,30 +55,10 @@ Content may contain encryption software. The country in which you are currently 
 Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in the United States, other countries, or both.
    </license>
 
-   <includes
-         id="org.eclipse.papyrus.tests.extra.cdo.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.papyrus.tests.extra.codegen.cpp.feature"
-         version="0.0.0"/>
-
-   <requires>
-      <import plugin="com.google.guava" version="15" match="greaterOrEqual"/>
-   </requires>
-
    <plugin
-         id="org.eclipse.papyrus.tests.extra"
+         id="org.eclipse.papyrus.cpp.codegen.tests"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.papyrus.bundles.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>
