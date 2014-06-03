@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.xwt;
 
@@ -23,6 +25,8 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.papyrus.infra.constraints.runtime.ConstraintEngineListener;
+import org.eclipse.papyrus.infra.constraints.runtime.ConstraintsChangedEvent;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.View;
 import org.eclipse.papyrus.views.properties.runtime.ConfigurationManager;
@@ -53,6 +57,20 @@ public class XWTTabDescriptorProvider implements ITabDescriptorProvider {
 
 	private final Map<IWorkbenchPart, DisplayEngine> displays = new HashMap<IWorkbenchPart, DisplayEngine>();
 
+
+	public XWTTabDescriptorProvider() {
+		ConfigurationManager.getInstance().getConstraintEngine().addConstraintEngineListener(new ConstraintEngineListener() {
+
+			public void constraintsChanged(ConstraintsChangedEvent event) {
+				// Purge the caches of all display engines because the XML view descriptions
+				// they cached are out of date
+				for(DisplayEngine next : displays.values()) {
+					((DefaultDisplayEngine)next).invalidate();
+				}
+			}
+		});
+	}
+	
 	private DisplayEngine getDisplay(final IWorkbenchPart part) {
 		if(!displays.containsKey(part)) {
 			displays.put(part, new DefaultDisplayEngine());
