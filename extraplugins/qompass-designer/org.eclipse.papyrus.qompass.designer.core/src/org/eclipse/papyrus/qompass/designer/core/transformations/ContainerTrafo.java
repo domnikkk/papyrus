@@ -704,6 +704,20 @@ public class ContainerTrafo extends AbstractContainerTrafo {
 	}
 	
 	/**
+	 * Utility function to retrieve the executor slot, when given the container instance.
+	 * Needs to be called, after a container instance has been created.
+	 * @param containerInstance the instance of a container specification
+	 * @return the associated executor slot, or null, if it cannot be found
+	 */
+	public static Slot getExecutorSlot(InstanceSpecification containerInstance) {
+		for (Slot slot : containerInstance.getSlots()) {
+			if (slot.getDefiningFeature().getName().equals(ContainerTrafo.executorPartName)) {
+				return slot;
+			}
+		}
+		return null;
+	}
+	/**
 	 * Return the port that is intercepted when given a part
 	 * @param containerPart a part that participates in a port interception
 	 * @return intercepted port

@@ -268,13 +268,32 @@ public class PortUtils {
 			return true;
 		}
 		// no match found, try weaker condition: find 1st match for provided ...
-		// TODO: check not only for identical interfaces but allow a superclass on the required interface
 		if(isAssembly) {
-			return (PortUtils.getProvided(portA) == PortUtils.getRequired(portB)) &&
-				(PortUtils.getProvided(portB) == PortUtils.getRequired(portA));
-		} else {
+			Interface reqA = PortUtils.getRequired(portA);
+			Interface reqB = PortUtils.getRequired(portB);
+			Interface prodA = PortUtils.getProvided(portA);
+			Interface prodB = PortUtils.getProvided(portB);
+			return (
+					((reqA == null) && isSubInterface(prodA, reqB))
+					|| ((reqB == null) && isSubInterface(prodB, reqA))
+					|| (isSubInterface(prodA, reqB) && isSubInterface(prodB, reqA))
+				);
+		}
+		else {
 			return (PortUtils.getProvided(portA) == PortUtils.getProvided(portB)) &&
 				(PortUtils.getRequired(portB) == PortUtils.getRequired(portA));
 		}
+	}
+	
+	/**
+	 * return true, if intfA is a sub-interface of intfB, i.e. either both interfaces are identical or one of the
+	 * superclasses (generalizations of intfA) is identical to B.
+	 * more general than interfaceB.
+	 * @param intfA
+	 * @param intfB
+	 * @return
+	 */
+	public static boolean isSubInterface(Interface intfA, Interface intfB) {
+		return (intfA == intfB) || (intfA.getGeneralizations().contains(intfB));
 	}
 }
