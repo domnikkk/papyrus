@@ -32,10 +32,10 @@ import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
-import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog;
 import org.eclipse.papyrus.uml.diagram.activity.part.CustomMessages;
@@ -45,7 +45,6 @@ import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.actions.LabelHelper;
 import org.eclipse.papyrus.uml.diagram.common.ui.helper.HelpComponentFactory;
 import org.eclipse.papyrus.uml.tools.providers.UMLContentProvider;
-import org.eclipse.papyrus.uml.tools.providers.UMLLabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -69,6 +68,7 @@ import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.uml2.uml.Activity;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InvocationAction;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -558,17 +558,18 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 	 * 
 	 */
 	private void handleChooseParent() {
-		/*
-		 * TODO BACKPORT
-		 */
-		//		UMLMultiEClassifierTreeSelectorDialog dialog = new UMLMultiEClassifierTreeSelectorDialog(getShell(), actionParent, getPossibleInvokedParents(actionParent),true);
-		//		dialog.setMessage(CustomMessages.UMLModelingAssistantProviderMessage);
-		//		dialog.setTitle(CustomMessages.UMLModelingAssistantProviderTitle);
-		//		if(dialog.open() == Window.OK) {
-		//			setInvokedParent((EObject)dialog.getTheResult());
-		//		}
+		GetObjectsOfTypeListSelectionDialog dialog = new GetObjectsOfTypeListSelectionDialog(getParentShell(), labelProvider, actionParent, false);
+		for (EClassifier type : getPossibleInvokedParents(actionParent)) {
+			dialog.addElementsOfType(type);
+		}
+		if(dialog.open() == Window.OK) {
+			Object firstResult = dialog.getFirstResult();
+			if(firstResult instanceof EObject) {
+				setInvokedParent((EObject)dialog.getFirstResult());
+			}
+		}
 	}
-
+	
 	/**
 	 * Define the object in which invoked object will be created (if creation
 	 * mode is chosen)
