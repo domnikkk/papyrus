@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 Atos Origin - CEA LIST.
+ * Copyright (c) 2009, 2014 Atos Origin, CEA LIST, and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,8 @@
  * Contributors:
  *  <a href="mailto:thomas.szadel@atosorigin.com">Thomas Szadel</a> - Initial API and implementation
  *	Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
+ *  Christian W. Damus (CEA) - bug 436377
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.ui.resources.refactoring;
 
@@ -51,6 +53,8 @@ public class RenameModelParticipant extends RenameParticipant {
 	private IFile newFile;
 
 	private Collection<? extends IResource> impacted;
+	
+	private boolean cancelled;
 
 	/**
 	 * @see org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant#createPreChange(org.eclipse.core.runtime.IProgressMonitor)
@@ -77,6 +81,10 @@ public class RenameModelParticipant extends RenameParticipant {
 	 */
 	@Override
 	public RefactoringStatus checkConditions(IProgressMonitor pm, CheckConditionsContext context) throws OperationCanceledException {
+		if(cancelled) {
+			throw new OperationCanceledException();
+		}
+		
 		if(isDiFile(fileToRename) && DiModel.DI_FILE_EXTENSION.equals(newFile.getFileExtension())) {
 			Collection<IResource> conflictingFiles = findConflictingFiles();
 			if(!conflictingFiles.isEmpty()) {
@@ -202,6 +210,8 @@ public class RenameModelParticipant extends RenameParticipant {
 	 */
 	@Override
 	protected boolean initialize(Object element) {
+		cancelled = false;
+		
 		if(!(element instanceof IFile)) {
 			return false;
 		}
@@ -243,7 +253,13 @@ public class RenameModelParticipant extends RenameParticipant {
 			IPath newDiPath = fileToRename.getFullPath().removeLastSegments(1);
 			newDiPath = newDiPath.append(newName).addFileExtension(ext);
 			newFile = parent.getFile(newDiPath.makeRelativeTo(parent.getFullPath()));
-			impacted = ModelParticipantHelpers.getResourceToFix(fileToRename);
+			
+			try {
+				impacted = ModelParticipantHelpers.getResourceToFix(fileToRename);
+			} catch (OperationCanceledException e) {
+				cancelled = true;
+			}
+			
 			return true;
 		} else {
 			return false;

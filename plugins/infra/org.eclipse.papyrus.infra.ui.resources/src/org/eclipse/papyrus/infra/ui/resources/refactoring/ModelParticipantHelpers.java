@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 Atos Origin.
+ * Copyright (c) 2010, 2014 Atos Origin, CEA, and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  <a href="mailto:thomas.szadel@atosorigin.com">Thomas Szadel</a> - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 436377
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.ui.resources.refactoring;
@@ -23,6 +24,8 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModel;
 import org.eclipse.papyrus.infra.ui.resources.refactoring.ui.RenameParticipantsDialog;
 import org.eclipse.swt.widgets.Display;
@@ -35,11 +38,19 @@ public class ModelParticipantHelpers {
 	 * 
 	 * @param initialFile
 	 * @return a list of related files. Does not include initialFile.
+	 * 
+	 * @throws OperationCanceledException
+	 *         if user interaction is required to determine the resources to fix and the user elects to cancel that analysis
 	 */
-	public static Set<IResource> getResourceToFix(final IFile initialFile) {
+	public static Set<IResource> getResourceToFix(final IFile initialFile) throws OperationCanceledException {
 
 		RenameDialogRunnable runnable = new RenameDialogRunnable(initialFile);
 		Display.getDefault().syncExec(runnable);
+		
+		if(runnable.wasCancelled()) {
+			throw new OperationCanceledException();
+		}
+		
 		return new HashSet<IResource>(runnable.getFiles());
 	}
 
@@ -106,6 +117,10 @@ public class ModelParticipantHelpers {
 
 		public Collection<? extends IResource> getFiles() {
 			return renameParticipantsDialog.getFiles();
+		}
+		
+		public boolean wasCancelled() {
+			return renameParticipantsDialog.getReturnCode() != Window.OK;
 		}
 	}
 }
