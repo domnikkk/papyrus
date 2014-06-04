@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.css.xtext;bundle-version="1.0.
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: CSS Editor UI (Incubation)
+Bundle-Name: CSS Editor UI
 Bundle-Activator: org.eclipse.papyrus.infra.gmfdiag.ui.internal.CSSAct
  ivator
 Bundle-ManifestVersion: 2

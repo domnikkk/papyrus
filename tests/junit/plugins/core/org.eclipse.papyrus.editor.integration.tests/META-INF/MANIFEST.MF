@@ -35,7 +35,7 @@ Export-Package: org.eclipse.papyrus.editor.integration.tests,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: Papyrus Editor Integration Tests (Incubation)
+Bundle-Name: Papyrus Editor Integration Tests
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.editor.integration.tests.Activat
  or

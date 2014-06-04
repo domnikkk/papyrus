@@ -9099,7 +9099,7 @@
     </diagram>
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.composite"
-        name="Papyrus Composite Structure Diagram (Incubation)"
+        name="Papyrus Composite Structure Diagram "
         provider="Eclipse Modeling Project">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>

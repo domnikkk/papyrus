@@ -25,7 +25,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: EML Editor (Incubation)
+Bundle-Name: EML Editor
 Bundle-Activator: org.eclipse.papyrus.infra.emf.embeddededitor.Activat
  or
 Bundle-ManifestVersion: 2

@@ -3015,7 +3015,7 @@
     </diagram>
     <plugin
         iD="org.eclipse.papyrus.uml.diagram.component"
-        name="Papyrus Component Diagram (Incubation)"
+        name="Papyrus Component Diagram "
         provider="Eclipse Modeling Project">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>

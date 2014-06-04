@@ -6,7 +6,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: UML Generic Table Config (Incubation)
+Bundle-Name: UML Generic Table Config
 Bundle-Activator: org.eclipse.papyrus.uml.nattable.generic.config.Acti
  vator
 Bundle-ManifestVersion: 2

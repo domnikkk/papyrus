@@ -19,7 +19,7 @@ Export-Package: org.eclipse.papyrus.uml.diagram.timing.tests
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: Papyrus Timing Diagram Tests (Incubation)
+Bundle-Name: Papyrus Timing Diagram Tests
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.uml.diagram.timing.tests.Activat
  or

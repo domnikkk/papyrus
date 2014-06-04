@@ -23,7 +23,7 @@ Export-Package: org.eclipse.papyrus.sysml.diagram.requirement.test,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: SysML Requirements Diagram Tests (Incubation)
+Bundle-Name: SysML Requirements Diagram Tests
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.sysml.diagram.requirement.test.A
  ctivator

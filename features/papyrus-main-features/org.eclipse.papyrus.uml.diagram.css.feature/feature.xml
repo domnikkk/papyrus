@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.papyrus.uml.diagram.css.feature"
-      label="Papyrus CSS UML Feature (Incubation)"
+      label="Papyrus CSS UML Feature"
       version="1.0.0.qualifier"
       provider-name="Eclipse Modeling Project">
 
