@@ -1316,7 +1316,7 @@
 	</MarkerNavigationProvider>
 </extension>
 
-<extension id="diagnostic" name="Block Definition Diagram (Incubation) problems" point="org.eclipse.core.resources.markers">
+<extension id="diagnostic" name="Block Definition Diagram problems" point="org.eclipse.core.resources.markers">
 	<super type="org.eclipse.core.resources.problemmarker"/>
 	<super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
 	<persistent value="true"/>

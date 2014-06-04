@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Properties view Documentation (Incubation)
+Bundle-Name: Properties view Documentation
 Bundle-SymbolicName: org.eclipse.papyrus.views.properties.doc;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project

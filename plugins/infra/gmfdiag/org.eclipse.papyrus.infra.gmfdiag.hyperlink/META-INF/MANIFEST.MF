@@ -22,7 +22,7 @@ Export-Package: org.eclipse.papyrus.infra.gmfdiag.hyperlink,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: GMF Diagram Hyperlink (Incubation)
+Bundle-Name: GMF Diagram Hyperlink
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.infra.gmfdiag.hyperlink.Activato
  r

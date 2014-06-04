@@ -17,7 +17,7 @@ Export-Package: org.eclipse.papyrus.infra.services.labelprovider.tests
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: LabelProvider Service Tests (Incubation)
+Bundle-Name: LabelProvider Service Tests
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.infra.services.labelprovider.tes
  ts.Activator

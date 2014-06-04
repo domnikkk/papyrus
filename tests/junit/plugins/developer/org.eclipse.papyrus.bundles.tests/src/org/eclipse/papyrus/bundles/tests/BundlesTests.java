@@ -25,6 +25,8 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.junit.utils.classification.NotImplemented;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.pde.internal.core.feature.Feature;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
 import org.junit.Assert;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
@@ -42,7 +44,10 @@ public class BundlesTests extends AbstractPapyrusTest {
 	// Adds .* (Valid version numbers are e.g. 0.10.1.qualifier)
 	private static final String REGEX_VERSION_NUMBER = BundleTestsUtils.PAPYRUS_VERSION.replaceAll("\\.", "\\\\.") + "\\..*"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
-	private static final String REGEX_INCUBATION = ".*\\(Incubation\\)"; //$NON-NLS-1$
+	//Indicates that the bundle name must contain the (Incubation) string
+	//private static final String REGEX_INCUBATION = ".*\\(Incubation\\)"; //$NON-NLS-1$
+	
+	private static final String INCUBATION_KEYWORD = "(Incubation)"; //$NON-NLS-1$
 
 	private static final String BATIK_VERSION = "[1.6.0,1.7.0)"; //$NON-NLS-1$
 
@@ -75,7 +80,17 @@ public class BundlesTests extends AbstractPapyrusTest {
 	 */
 	@Test
 	public void incubationTest() {
-		testManifestProperty(BundleTestsUtils.BUNDLE_NAME, REGEX_INCUBATION, false, false);
+		org.hamcrest.Matcher<String> matcher = new BaseMatcher<String>() {
+			public boolean matches(Object item) {
+				return item instanceof String && ! ((String)item).contains(INCUBATION_KEYWORD);
+			}
+			
+			public void describeTo(Description description) {
+				description.appendText("Does not contain ");
+				description.appendText(INCUBATION_KEYWORD);
+			}
+		};
+		testManifestProperty(BundleTestsUtils.BUNDLE_NAME, matcher, false, false);
 	}
 
 	/**
@@ -173,6 +188,24 @@ public class BundlesTests extends AbstractPapyrusTest {
 	 *        JavaProject
 	 */
 	private void testManifestProperty(final String property, final String regex, final boolean mustBeNull, final boolean onlyOnJavaProject) {
+		org.hamcrest.Matcher<String> regexMatcher = new org.hamcrest.BaseMatcher<String>(){
+
+			public boolean matches(Object item) {
+				return item instanceof String && ((String)item).matches(regex);
+			}
+
+			public void describeTo(Description description) {
+				description.appendText("Matching regex(");
+				description.appendValue(regex);
+				description.appendText(")");
+			}
+			
+		};
+		
+		testManifestProperty(property, regexMatcher, mustBeNull, onlyOnJavaProject);
+	}
+	
+	private void testManifestProperty(final String property, final org.hamcrest.Matcher<String> matcher, final boolean mustBeNull, final boolean onlyOnJavaProject){
 		String message = null;
 		int nb = 0;
 		for(final Bundle current : BundleTestsUtils.getPapyrusBundles()) {
@@ -184,7 +217,7 @@ public class BundlesTests extends AbstractPapyrusTest {
 			if(mustBeNull) {
 				result = (value == null);
 			} else if(value != null) {
-				result = value.matches(regex);
+				result = matcher.matches(value); //Don't fail yet if invalid
 			}
 			if(!result) {
 				if(message == null) {

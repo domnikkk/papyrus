@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: UML Drag and Drop (Incubation)
+Bundle-Name: UML Drag and Drop
 Bundle-Activator: org.eclipse.papyrus.uml.diagram.dnd.Activator
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.dnd;singleton:=tr

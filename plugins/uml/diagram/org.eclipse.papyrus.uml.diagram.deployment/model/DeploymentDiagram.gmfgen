@@ -1049,7 +1049,7 @@
         <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.eclipse.uml2.uml.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
       </preferencePages>
     </diagram>
-    <plugin iD="org.eclipse.papyrus.uml.diagram.deployment" name="Papyrus Deployment Diagram (Incubation)" provider="Eclipse Modeling Project">
+    <plugin iD="org.eclipse.papyrus.uml.diagram.deployment" name="Papyrus Deployment Diagram " provider="Eclipse Modeling Project">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     </plugin>

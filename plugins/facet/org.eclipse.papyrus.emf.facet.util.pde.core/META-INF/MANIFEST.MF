@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: EMF Facet PDE Core Utils (Incubation)
+Bundle-Name: EMF Facet PDE Core Utils
 Bundle-Activator: org.eclipse.papyrus.emf.facet.util.pde.core.internal
  .Activator
 Bundle-ManifestVersion: 2

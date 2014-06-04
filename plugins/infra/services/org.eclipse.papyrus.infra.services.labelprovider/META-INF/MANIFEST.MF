@@ -10,7 +10,7 @@ Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
-Bundle-Name: LabelProvider service (Incubation)
+Bundle-Name: LabelProvider service
 Bundle-Activator: org.eclipse.papyrus.infra.services.labelprovider.Act
  ivator
 Bundle-ManifestVersion: 2

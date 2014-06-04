@@ -33,7 +33,7 @@
 				      </MarkerNavigationProvider>
 				   </extension>
 
-   <extension id="diagnostic" name="Papyrus Timing Diagram (Incubation) problems" point="org.eclipse.core.resources.markers">
+   <extension id="diagnostic" name="Papyrus Timing Diagram  problems" point="org.eclipse.core.resources.markers">
 				      <?gmfgen generated="true"?>
 				      <super type="org.eclipse.core.resources.problemmarker"/>
 				      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
@@ -916,8 +916,8 @@
       </menuContribution -->
    </extension>
 <extension
-			id="Papyrus Timing Diagram (Incubation).palettedefinition"
-			name="Papyrus Timing Diagram (Incubation) Predefined Entries"
+			id="Papyrus Timing Diagram .palettedefinition"
+			name="Papyrus Timing Diagram  Predefined Entries"
 			point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
 			
 			<?gmfgen generated="false"?>	
@@ -1116,8 +1116,8 @@
 		</extension>
 
 <extension
-	id="Papyrus Timing Diagram (Incubation).standard"
-	name="Papyrus Timing Diagram (Incubation) Standard Palette"
+	id="Papyrus Timing Diagram .standard"
+	name="Papyrus Timing Diagram  Standard Palette"
 	point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
 	
 	<?gmfgen generated="false"?>	

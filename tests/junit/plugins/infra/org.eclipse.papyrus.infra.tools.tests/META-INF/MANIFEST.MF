@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus Infrastructure Tools Tests (Incubation)
+Bundle-Name: Papyrus Infrastructure Tools Tests
 Bundle-SymbolicName: org.eclipse.papyrus.infra.tools.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project

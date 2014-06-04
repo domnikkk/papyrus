@@ -9,7 +9,7 @@ Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
-Bundle-Name: Semantic Service (Incubation)
+Bundle-Name: Semantic Service
 Bundle-Activator: org.eclipse.papyrus.infra.services.semantic.Activato
  r
 Bundle-ManifestVersion: 2

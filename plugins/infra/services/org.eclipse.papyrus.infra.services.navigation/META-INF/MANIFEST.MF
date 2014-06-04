@@ -11,7 +11,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: Navigation Service (Incubation)
+Bundle-Name: Navigation Service
 Bundle-Activator: org.eclipse.papyrus.infra.services.navigation.Activa
  tor
 Bundle-ManifestVersion: 2

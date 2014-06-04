@@ -697,7 +697,7 @@
         <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.eclipse.uml2.uml.diagram.pathmaps" name="Pathmaps" kind="Pathmaps"/>
       </preferencePages>
     </diagram>
-    <plugin iD="org.eclipse.papyrus.uml.diagram.timing" name="Papyrus Timing Diagram (Incubation)" provider="Eclipse Modeling Project">
+    <plugin iD="org.eclipse.papyrus.uml.diagram.timing" name="Papyrus Timing Diagram " provider="Eclipse Modeling Project">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     </plugin>

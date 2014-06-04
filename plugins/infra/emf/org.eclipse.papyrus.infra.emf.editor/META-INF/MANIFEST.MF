@@ -22,7 +22,7 @@ Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
 Eclipse-BuddyPolicy: dependent
-Bundle-Name: Papyrus EMF Editor (Incubation)
+Bundle-Name: Papyrus EMF Editor
 Bundle-Activator: org.eclipse.papyrus.infra.emf.editor.Activator
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.infra.emf.editor;singleton:=t

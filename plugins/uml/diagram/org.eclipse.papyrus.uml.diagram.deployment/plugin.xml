@@ -150,8 +150,8 @@
    </extension>
 
 <extension
-			id="Papyrus Deployment Diagram (Incubation).palettedefinition"
-			name="Papyrus Deployment Diagram (Incubation) Predefined Entries"
+			id="Papyrus Deployment Diagram .palettedefinition"
+			name="Papyrus Deployment Diagram  Predefined Entries"
 			point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
 			
 			<?gmfgen generated="true"?>	
@@ -310,8 +310,8 @@
 		</extension>
 
 <extension
-	id="Papyrus Deployment Diagram (Incubation).standard"
-	name="Papyrus Deployment Diagram (Incubation) Standard Palette"
+	id="Papyrus Deployment Diagram .standard"
+	name="Papyrus Deployment Diagram  Standard Palette"
 	point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders"> 
 	
 	<?gmfgen generated="true"?>	
@@ -889,7 +889,7 @@
 				      </MarkerNavigationProvider>
 				   </extension>
 
-<extension id="diagnostic" name="Papyrus Deployment Diagram (Incubation) problems" point="org.eclipse.core.resources.markers">
+<extension id="diagnostic" name="Papyrus Deployment Diagram  problems" point="org.eclipse.core.resources.markers">
 				      <?gmfgen generated="true"?>
 				      <super type="org.eclipse.core.resources.problemmarker"/>
 				      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>

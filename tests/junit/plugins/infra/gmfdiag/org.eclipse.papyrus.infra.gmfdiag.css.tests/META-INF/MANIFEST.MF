@@ -24,7 +24,7 @@ Export-Package: org.eclipse.papyrus.infra.gmfdiag.css.tests,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: CSS Tests (Incubation)
+Bundle-Name: CSS Tests
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.infra.gmfdiag.css.tests.Activato
  r

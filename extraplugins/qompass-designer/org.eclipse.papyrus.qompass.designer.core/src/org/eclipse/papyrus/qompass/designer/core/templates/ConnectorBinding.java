@@ -85,8 +85,8 @@ public class ConnectorBinding {
 		// with whom this port is connected, i.e. examine all connectorEnds
 		// The type of the connected port determines the binding.
 		Log.log(Status.INFO, Log.TEMPLATE_BINDING, String.format(
-				"", port.getName())); //$NON-NLS-1$
-
+					"", port.getName())); //$NON-NLS-1$
+		boolean found = false;
 		for(ConnectorEnd connEnd : connector.getEnds()) {
 			// the connector end targets a port of a part or the composite (in case of delegation)
 			ConnectableElement connElem = connEnd.getRole();
@@ -105,20 +105,25 @@ public class ConnectorBinding {
 				}
 				Log.log(Status.INFO, Log.TEMPLATE_BINDING, String.format(Messages.ConnectorBinding_ConnectorsPort, otherInterface));
 				if(otherInterface != null) {
-					if(actual == null) {
+					if(actual == null || actual == otherInterface) {
 						actual = otherInterface;
 						Log.log(Status.INFO, Log.TEMPLATE_BINDING, String.format(
 							Messages.ConnectorBinding_InfoActualReturnIntfIs, actual.getQualifiedName()));
+						found = true;
 					} else if(actual != otherInterface) {
-						throw new TransformationException(String.format(
-							Messages.ConnectorBinding_CannotFindConsistentBinding,
-							port.getName(), connector.getName(), connector.getNamespace().getName(), actual.getName()));
+						continue;
 					}
 				}
 			}
 		}
-		return actual;
+		if (!found) {
+			throw new TransformationException(String.format(
+					Messages.ConnectorBinding_CannotFindConsistentBinding,
+					port.getName(), connector.getName(), connector.getNamespace().getName(), actual.getName()));
+		}
+		return actual;		
 	}
+
 
 	private static Type matchOtherEnd(Port port, Property partConnector, Type actual, boolean isProvided)
 		throws TransformationException {

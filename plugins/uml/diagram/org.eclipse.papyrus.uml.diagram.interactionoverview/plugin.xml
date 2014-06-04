@@ -699,7 +699,7 @@
    </extension>
    <extension
 		id="org.eclipse.papyrus.uml.diagram.timing.palettedefinition"
-		name="Papyrus Interaction Overview Diagram (Incubation) Predefined Entries"
+		name="Papyrus Interaction Overview Diagram  Predefined Entries"
           point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
        <paletteProvider
              class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">

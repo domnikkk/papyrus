@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.papyrus.infra.emf.Activator;
 
 /**
  * 
@@ -86,7 +87,7 @@ public class RemoveFromResourcecommand extends RecordingCommand {
 	 *        the list of the elements to remove
 	 */
 	protected RemoveFromResourcecommand(final TransactionalEditingDomain domain, final Resource resource, final EObject toRemove, final Collection<EObject> elementsToRemove) {
-		super(domain, "Remove an EObject from a resource");
+		super(domain, "Remove an EObject from a resource"); 
 		this.resource = resource;
 		this.toRemove = toRemove;
 		this.elementsToRemove = elementsToRemove;
@@ -108,8 +109,7 @@ public class RemoveFromResourcecommand extends RecordingCommand {
 				this.resource.getContents().removeAll(elementsToRemove);
 			}
 		} catch (Exception e) {
-			int i = 0;
-			i++;
+			Activator.log.error(e);
 		}
 	}
 

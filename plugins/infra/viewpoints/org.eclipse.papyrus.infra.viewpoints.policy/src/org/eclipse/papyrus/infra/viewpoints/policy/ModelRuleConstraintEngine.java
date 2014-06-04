@@ -1,6 +1,16 @@
-/**
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST and others.
  * 
- */
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.viewpoints.policy;
 
 import java.util.ArrayList;
@@ -36,6 +46,7 @@ public class ModelRuleConstraintEngine extends DefaultConstraintEngine<ModelRule
 	 */
 	public void refresh() {
 		modelRule2Constraints.clear();
+		fireConstraintsChanged();
 	}
 
 	public boolean matchesRule(ModelRule rule, EObject element) {

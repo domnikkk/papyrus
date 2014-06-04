@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: OpenElement Service (Incubation)
+Bundle-Name: OpenElement Service
 Bundle-Activator: org.eclipse.papyrus.infra.services.openelement.Activ
  ator
 Bundle-ManifestVersion: 2

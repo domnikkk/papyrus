@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: GMF-specific control mode behavior (Incubation)
+Bundle-Name: GMF-specific control mode behavior
 Bundle-Activator: org.eclipse.papyrus.infra.gmfdiag.controlmode.Activa
  tor
 Bundle-ManifestVersion: 2

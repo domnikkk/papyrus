@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: Customizable Drag and Drop (Incubation)
+Bundle-Name: Customizable Drag and Drop
 Bundle-Activator: org.eclipse.papyrus.infra.gmfdiag.dnd.Activator
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.dnd;singleton:=

@@ -29,8 +29,10 @@ public interface IInstanceConfigurator {
 	 *        the property that represents the component within the enclosing composite. May be null, if the instance
 	 *        that should be configured is the main instance.
 	 * @param parentInstance
-	 *        additional information, if the element that should be configured is part of a container, e.g. an interceptor
-	 *        or an extension within the container.
+	 *        the instance specification of the parent, i.e. the enclosing composite. If the instance that should be
+	 *        configured has a container, the parent instance corresponds to the instance specification of this
+	 *        container. This instance specification provides thus access to additional infromation available on the
+	 *        container level.
 	 */
 	public void configureInstance(InstanceSpecification instance, Property componentPart, InstanceSpecification parentInstance);
 }

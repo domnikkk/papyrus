@@ -19,7 +19,7 @@ Export-Package: org.eclipse.papyrus.uml.diagram.interactionoverview.te
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: IODiagram Tests (Incubation)
+Bundle-Name: IODiagram Tests
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.uml.diagram.interactionoverview.
  tests.Activator
