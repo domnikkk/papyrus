@@ -28,7 +28,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.uml.Element;
 import org.junit.Before;
 
 /**
@@ -81,7 +80,7 @@ public abstract class TestChildNode extends AbstractTestNode {
 			}
 			index++;
 		}
-		assertNotNull("There should be at least one container for the node tests", rootCompartment);
+		assertNotNull("There should be at least one container for the node tests", rootCompartment); //$NON-NLS-1$
 	}
 
 	/**

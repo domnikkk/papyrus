@@ -24,7 +24,7 @@ import xpt.Common
 
 
 	override implementsList(GenLinkLabel it) '''
-	implements org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart
+	implements org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart, org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit
 	«««	BEGIN: PapyrusGenCode
 	«IF it.eResource.allContents.filter(typeof (LabelVisibilityPreference)).filter[v |v.externalNodeLabels.contains(it)].size != 0»
 	, org.eclipse.papyrus.uml.diagram.common.editparts.ILabelRoleProvider

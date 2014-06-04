@@ -15,6 +15,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_seSb0GP6EeOq0pDGL_YBMA" name="Edit Grid and Ruler Property"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_uKPAQGP6EeOq0pDGL_YBMA" name="Snap To Grid Behavior"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_UzjXQOGuEeO_JM12vRgWBQ" name="DropDromModelExplorer"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_dQjtQOvJEeOv4v5t8d2cOg" name="DiagramVersion"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_V0CKUHaNEeKemeMpJaVA3A">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V1EsIHaNEeKemeMpJaVA3A" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -30,4 +31,5 @@
   <Requirements:Requirement xmi:id="_tDokkGP6EeOq0pDGL_YBMA" text="The user must be able to change the Diagram Viewer properties (Snap To Grid/To Geometry, Show Rulers, Show Grid, Grid Style, Grid Color, Grid Order, Ruler Units, Grid Spacing )" id="Req_005" base_Class="_seSb0GP6EeOq0pDGL_YBMA"/>
   <Requirements:Requirement xmi:id="_u_1LgGP6EeOq0pDGL_YBMA" text="Snap To Grid must be able to snap on : &#xD;&#xA;- 4 corners of rectangle&#xD;&#xA;- 4 middles of side of a rectangle&#xD;&#xA;- anchors of link&#xD;&#xA;- bendpoints" id="Req_005" base_Class="_uKPAQGP6EeOq0pDGL_YBMA"/>
   <Requirements:Requirement xmi:id="_Uzo20OGuEeO_JM12vRgWBQ" text="Its possible to drop the seame element several time on the canva" id="Req006" base_Class="_UzjXQOGuEeO_JM12vRgWBQ"/>
+  <Requirements:Requirement xmi:id="_dQusYOvJEeOv4v5t8d2cOg" text="Each diagram must have a version  inorder to able possble migration" id="Req007" base_Class="_dQjtQOvJEeOv4v5t8d2cOg"/>
 </xmi:XMI>

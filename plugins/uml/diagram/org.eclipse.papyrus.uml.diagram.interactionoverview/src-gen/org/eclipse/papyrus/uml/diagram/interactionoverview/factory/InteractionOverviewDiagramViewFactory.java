@@ -11,7 +11,9 @@
 package org.eclipse.papyrus.uml.diagram.interactionoverview.factory;
 
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.DiagramViewFactory;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
+import org.eclipse.papyrus.infra.gmfdiag.common.reconciler.DiagramVersioningUtils;
 
 public class InteractionOverviewDiagramViewFactory extends DiagramViewFactory {
 
@@ -24,5 +26,12 @@ public class InteractionOverviewDiagramViewFactory extends DiagramViewFactory {
 	@Override
 	protected MeasurementUnit getMeasurementUnit() {
 		return MeasurementUnit.PIXEL_LITERAL;
+	}
+	@Override
+	protected Diagram createDiagramView() {
+		// TODO Auto-generated method stub
+		Diagram diagram= super.createDiagramView();
+		DiagramVersioningUtils.stampCurrentVersion(diagram);
+		return diagram;
 	}
 }

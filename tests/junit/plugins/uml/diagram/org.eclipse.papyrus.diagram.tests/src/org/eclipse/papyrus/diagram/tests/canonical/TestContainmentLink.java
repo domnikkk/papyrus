@@ -48,7 +48,7 @@ public abstract class TestContainmentLink extends TestLink {
 		assertTrue(VIEW_DELETION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == 3);
 		assertTrue(VIEW_DELETION + INITIALIZATION_TEST, ((Element)source.resolveSemanticElement()).getOwnedElements().size() == 1);
 		Request deleteViewRequest = new GroupRequest(RequestConstants.REQ_DELETE);
-		Command command = ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)).getCommand(deleteViewRequest);
+		Command command = ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)).getCommand(deleteViewRequest); //$NON-NLS-1$
 		assertNotNull(VIEW_DELETION + COMMAND_NULL, command);
 		assertTrue(VIEW_DELETION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
 		assertTrue(VIEW_DELETION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
@@ -79,7 +79,7 @@ public abstract class TestContainmentLink extends TestLink {
 		assertTrue(CREATION + INITIALIZATION_TEST, ((Element)source.resolveSemanticElement()).getOwnedElements().size() == 1);
 		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == 3);
 		Request deleteViewRequest = new EditCommandRequestWrapper(new DestroyElementRequest(false));
-		Command command = ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)).getCommand(deleteViewRequest);
+		Command command = ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)).getCommand(deleteViewRequest); //$NON-NLS-1$
 		assertNotNull(DESTROY_DELETION + COMMAND_NULL, command);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
@@ -148,7 +148,7 @@ public abstract class TestContainmentLink extends TestLink {
 		Command command = getDiagramEditPart().getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		//create the source player to test reconnect
 		requestcreation = CreateViewRequestFactory.getCreateShapeRequest(sourceType, getDiagramEditPart().getDiagramPreferencesHint());
@@ -156,7 +156,7 @@ public abstract class TestContainmentLink extends TestLink {
 		command = getDiagramEditPart().getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		//create the target
 		requestcreation = CreateViewRequestFactory.getCreateShapeRequest(targetType, getDiagramEditPart().getDiagramPreferencesHint());
@@ -164,7 +164,7 @@ public abstract class TestContainmentLink extends TestLink {
 		command = getDiagramEditPart().getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		//create the target player to test reconnect
 		requestcreation = CreateViewRequestFactory.getCreateShapeRequest(targetType, getDiagramEditPart().getDiagramPreferencesHint());
@@ -172,7 +172,7 @@ public abstract class TestContainmentLink extends TestLink {
 		command = getDiagramEditPart().getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		source = (GraphicalEditPart)getDiagramEditPart().getChildren().get(0);
 		sourcePlayer = (GraphicalEditPart)getDiagramEditPart().getChildren().get(1);
@@ -184,8 +184,8 @@ public abstract class TestContainmentLink extends TestLink {
 	public void testTargetReconnectAMultiLink(IElementType type) {
 		//target reconnection
 		ReconnectRequest reconnectRequest = new ReconnectRequest();
-		assertTrue(THE_LINK_RECONNECT_EXISTS, ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)) != null);
-		ConnectionEditPart binaryLink = ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0));
+		assertTrue(THE_LINK_RECONNECT_EXISTS, ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)) != null); //$NON-NLS-1$
+		ConnectionEditPart binaryLink = ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)); //$NON-NLS-1$
 		reconnectRequest.setConnectionEditPart(binaryLink);
 		reconnectRequest.setTargetEditPart(targetPlayer);
 		reconnectRequest.setType(RequestConstants.REQ_RECONNECT_TARGET);
@@ -208,8 +208,8 @@ public abstract class TestContainmentLink extends TestLink {
 	public void testSourceReconnectAMultiLink(IElementType type) {
 		//target reconnection
 		ReconnectRequest reconnectRequest = new ReconnectRequest();
-		assertTrue(THE_LINK_TO_RECONNECT_EXISTS, ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)) != null);
-		ConnectionEditPart branch = ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0));
+		assertTrue(THE_LINK_TO_RECONNECT_EXISTS, ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)) != null); //$NON-NLS-1$
+		ConnectionEditPart branch = ((ConnectionEditPart)source.getChildBySemanticHint("3032").getSourceConnections().get(0)); //$NON-NLS-1$
 		reconnectRequest.setConnectionEditPart(branch);
 		reconnectRequest.setTargetEditPart(sourcePlayer);
 		reconnectRequest.setType(RequestConstants.REQ_RECONNECT_SOURCE);

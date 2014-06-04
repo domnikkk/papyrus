@@ -16,8 +16,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -33,14 +31,12 @@ import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
-import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ResizableCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
@@ -55,12 +51,9 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLCompartmentEditPart;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
-import org.eclipse.papyrus.uml.diagram.common.handlers.DeleteFromModelCommandHandler;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
-import org.eclipse.ui.internal.e4.compatibility.SelectionService;
 import org.eclipse.uml2.uml.Element;
 import org.junit.Assert;
 import org.junit.Before;
@@ -298,13 +291,13 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 	 */
 	protected void testEnableForDeleteFromModel() {
 		ICommandService commandService = (ICommandService)PlatformUI.getWorkbench().getService(ICommandService.class);
-		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete");
+		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete"); //$NON-NLS-1$
 		IHandler handler = cmd.getHandler();
 		if(handler instanceof AbstractHandler) {
-			((AbstractHandler)handler).setEnabled("org.eclipse.ui.edit.delete");
+			((AbstractHandler)handler).setEnabled("org.eclipse.ui.edit.delete"); //$NON-NLS-1$
 		}
 		boolean res = handler.isEnabled();
-		assertTrue("Delete from model handler must be enable",res);
+		assertTrue("Delete from model handler must be enable",res); //$NON-NLS-1$
 	}
 
 	/**
@@ -389,7 +382,7 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		command = compartment.getCommand(changeBoundsRequest);
 		assertNotNull(CHANGE_CONTAINER, command);
 		assertTrue(CHANGE_CONTAINER + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
@@ -435,12 +428,12 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		});
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute());
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute()); //$NON-NLS-1$
 		// execute the creation
 		executeOnUIThread(command);
 		assertEquals(CREATION + TEST_THE_EXECUTION, expectedGraphicalChildren + addedGraphicalChildren, getRootView().getChildren().size());
 		if(addedGraphicalChildren>=1){
-			Assert.assertTrue("Node must be  org.eclipse.gmf.runtime.notation.Shape",getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1) instanceof Shape);
+			Assert.assertTrue("Node must be  org.eclipse.gmf.runtime.notation.Shape",getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1) instanceof Shape); //$NON-NLS-1$
 		}
 
 		if(testSemantic) {
@@ -460,24 +453,24 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		}
 
 		EditPart createdEditPart= (EditPart)getContainerEditPart().getChildren().get((getContainerEditPart().getChildren().size()-1));
-		Assert.assertNotNull("The editpart must be created", createdEditPart);
+		Assert.assertNotNull("The editpart must be created", createdEditPart); //$NON-NLS-1$
 		testNodeEditPart(maskmanaged, createdEditPart, initialName);
 
 
 		// test diagram updater
 		if(getDiagramUpdater()!=null){
-			Assert.assertNotEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(getRootView()).size());
-			Assert.assertEquals("Diagram updater must detect that no link has been created",0,getDiagramUpdater().getContainedLinks(getRootView()).size());
-			Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
-			Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
-			Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",numberSemanticChildreen,getDiagramUpdater().getSemanticChildren((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
-			Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size());
+			Assert.assertNotEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(getRootView()).size()); //$NON-NLS-1$
+			Assert.assertEquals("Diagram updater must detect that no link has been created",0,getDiagramUpdater().getContainedLinks(getRootView()).size()); //$NON-NLS-1$
+			Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
+			Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
+			Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",numberSemanticChildreen,getDiagramUpdater().getSemanticChildren((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
+			Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
 		}
 		createdEditPart.getChildren();
 		for(Iterator<?> iteratorEditPart = createdEditPart.getChildren().iterator(); iteratorEditPart.hasNext();) {
 			Object subEditPart = iteratorEditPart.next();
 			if( subEditPart instanceof UMLCompartmentEditPart){
-				Assert.assertEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(((CompartmentEditPart)subEditPart).getNotationView()).size());
+				Assert.assertEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(((CompartmentEditPart)subEditPart).getNotationView()).size()); //$NON-NLS-1$
 			}
 
 		}
@@ -490,13 +483,13 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 	 */
 	protected void testNodeEditPart(boolean maskmanaged, EditPart createdEditPart,String initialName) {
 		if( maskmanaged){
-			Assert.assertNotNull("the created editpolicy must have as MASK_MANAGED_LABEL_EDIT_POLICY", createdEditPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY));
+			Assert.assertNotNull("the created editpolicy must have as MASK_MANAGED_LABEL_EDIT_POLICY", createdEditPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY)); //$NON-NLS-1$
 		}
 		int index=0;
 		while(index < createdEditPart.getChildren().size()) {
 			if((createdEditPart.getChildren().get(index)) instanceof ResizableCompartmentEditPart ) {
 				ResizableCompartmentEditPart compartment = (ResizableCompartmentEditPart)(createdEditPart.getChildren().get(index));
-				Assert.assertFalse("compartment must not be selectable",compartment.isSelectable());
+				Assert.assertFalse("compartment must not be selectable",compartment.isSelectable()); //$NON-NLS-1$
 			}
 			index++;
 		}
@@ -506,23 +499,23 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 	protected void testNameLabel(EditPart createdEditPart, String initialName) {
 		if( createdEditPart instanceof NamedElementEditPart){
 			GraphicalEditPart namedEditPart=(GraphicalEditPart)((NamedElementEditPart)createdEditPart).getPrimaryChildEditPart();
-			Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof ITextAwareEditPart);
+			Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof ITextAwareEditPart); //$NON-NLS-1$
 			String name=namedEditPart.resolveSemanticElement().eClass().getName();
 			if( initialName!=null){
 				name=initialName;
 			}
 			if(name.length()<((ITextAwareEditPart)namedEditPart).getEditText().length()){
-				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length()));
+				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length())); //$NON-NLS-1$
 			}
 			else{
 				//not the same it sure but display the mistake is important
-				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText());
+				Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText()); //$NON-NLS-1$
 			}
 			if(namedEditPart instanceof CompartmentEditPart ){
-				Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof CompartmentEditPart);
-				Assert.assertTrue("namelabelEditpart must be editable",((CompartmentEditPart)namedEditPart).isEditModeEnabled());}
+				Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof CompartmentEditPart); //$NON-NLS-1$
+				Assert.assertTrue("namelabelEditpart must be editable",((CompartmentEditPart)namedEditPart).isEditModeEnabled());} //$NON-NLS-1$
 			else{
-				Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof LabelEditPart);
+				Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof LabelEditPart); //$NON-NLS-1$
 
 			}
 		}
@@ -547,8 +540,7 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 	public void testViewDeletion(IElementType type, int expectedGraphicalChildren, int expectedSemanticChildren, int removedGraphicalChildren) {
 		//DELETION OF THE VIEW
 		assertEquals(VIEW_DELETION + INITIALIZATION_TEST, expectedGraphicalChildren, getRootView().getChildren().size());
-		if(testSemantic) {
-		}
+		
 		Request deleteViewRequest = new GroupRequest(RequestConstants.REQ_DELETE);
 		Command command = ((IGraphicalEditPart)getContainerEditPart().getChildren().get(getContainerEditPart().getChildren().size()-1)).getCommand(deleteViewRequest);
 		assertNotNull(VIEW_DELETION + COMMAND_NULL, command);

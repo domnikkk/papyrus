@@ -51,15 +51,15 @@ import org.junit.Before;
  */
 public abstract class AbstractTestMultiLink extends AbstractPapyrusTestCase {
 
-	protected static final String THE_BRANCH_TO_RECONNECT_EXISTS = "the branch to reconnect exists";
+	protected static final String THE_BRANCH_TO_RECONNECT_EXISTS = "the branch to reconnect exists"; //$NON-NLS-1$
 
-	protected static final String BRANCH_EXISTS_RECONNECTION_ON_TARGET = "branch exists reconnection on target ";
+	protected static final String BRANCH_EXISTS_RECONNECTION_ON_TARGET = "branch exists reconnection on target "; //$NON-NLS-1$
 
-	protected static final String RECONNECTION_TARGET = "Reconnection target ";
+	protected static final String RECONNECTION_TARGET = "Reconnection target "; //$NON-NLS-1$
 
-	protected static final String BRANCH_EXISTS_RECONNECTION_ON_SOURCE = "branch exists reconnection on Source ";
+	protected static final String BRANCH_EXISTS_RECONNECTION_ON_SOURCE = "branch exists reconnection on Source "; //$NON-NLS-1$
 
-	protected static final String RECONNECTION_SOURCE = "Reconnection Source ";
+	protected static final String RECONNECTION_SOURCE = "Reconnection Source "; //$NON-NLS-1$
 
 	GraphicalEditPart source = null;
 
@@ -76,43 +76,43 @@ public abstract class AbstractTestMultiLink extends AbstractPapyrusTestCase {
 	ShapeNodeEditPart linkNode = null;
 
 	/** The Constant CREATION. */
-	protected static final String CREATION = "CREATION:";
+	protected static final String CREATION = "CREATION:"; //$NON-NLS-1$
 
 	/** The Constant CONTAINER_CREATION. */
-	protected static final String CONTAINER_CREATION = "CONTAINER CREATION: ";
+	protected static final String CONTAINER_CREATION = "CONTAINER CREATION: "; //$NON-NLS-1$
 
 	/** The Constant DROP. */
-	protected static final String DROP = "DROP: ";
+	protected static final String DROP = "DROP: "; //$NON-NLS-1$
 
 	/** The Constant DESTROY_DELETION. */
-	protected static final String DESTROY_DELETION = "DESTROY DELETION: ";
+	protected static final String DESTROY_DELETION = "DESTROY DELETION: "; //$NON-NLS-1$
 
 	/** The Constant COMMAND_NULL. */
-	protected static final String COMMAND_NULL = " command null";
+	protected static final String COMMAND_NULL = " command null"; //$NON-NLS-1$
 
 	/** The Constant VIEW_DELETION. */
-	protected static final String VIEW_DELETION = "VIEW DELETION: ";
+	protected static final String VIEW_DELETION = "VIEW DELETION: "; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_REDO. */
-	protected static final String TEST_THE_REDO = "test the redo";
+	protected static final String TEST_THE_REDO = "test the redo"; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_UNDO. */
-	protected static final String TEST_THE_UNDO = "test the undo";
+	protected static final String TEST_THE_UNDO = "test the undo"; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_EXECUTION. */
-	protected static final String TEST_THE_EXECUTION = "test the execution";
+	protected static final String TEST_THE_EXECUTION = "test the execution"; //$NON-NLS-1$
 
 	/** The Constant TEST_IF_THE_COMMAND_CAN_BE_EXECUTED. */
-	protected static final String TEST_IF_THE_COMMAND_CAN_BE_EXECUTED = "test if the command can be executed";
+	protected static final String TEST_IF_THE_COMMAND_CAN_BE_EXECUTED = "test if the command can be executed"; //$NON-NLS-1$
 
 	/** The Constant TEST_IF_THE_COMMAND_IS_CREATED. */
-	protected static final String TEST_IF_THE_COMMAND_IS_CREATED = "test if the command is created";
+	protected static final String TEST_IF_THE_COMMAND_IS_CREATED = "test if the command is created"; //$NON-NLS-1$
 
 	/** The Constant INITIALIZATION_TEST. */
-	protected static final String INITIALIZATION_TEST = "Intitial State";
+	protected static final String INITIALIZATION_TEST = "Intitial State"; //$NON-NLS-1$
 
 	/** The Constant CHANGE_CONTAINER. */
-	protected static final String CHANGE_CONTAINER = "CHANGE CONTAINER";
+	protected static final String CHANGE_CONTAINER = "CHANGE CONTAINER"; //$NON-NLS-1$
 
 	/** The root compartment. */
 	protected ShapeCompartmentEditPart rootCompartment = null;

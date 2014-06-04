@@ -33,6 +33,9 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.StringValueStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
@@ -43,6 +46,7 @@ import org.eclipse.papyrus.infra.core.services.ExtensionServicesRegistry;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
+import org.eclipse.papyrus.infra.gmfdiag.common.reconciler.DiagramVersioningUtils;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.diagram.common.commands.CreateUMLModelCommand;
@@ -73,43 +77,43 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	protected boolean operationFailed = false;
 
 	/** The Constant CREATION. */
-	protected static final String CREATION = "CREATION:";
+	protected static final String CREATION = "CREATION:"; //$NON-NLS-1$
 
 	/** The Constant CONTAINER_CREATION. */
-	protected static final String CONTAINER_CREATION = "CONTAINER CREATION: ";
+	protected static final String CONTAINER_CREATION = "CONTAINER CREATION: "; //$NON-NLS-1$
 
 	/** The Constant DROP. */
-	protected static final String DROP = "DROP: ";
+	protected static final String DROP = "DROP: "; //$NON-NLS-1$
 
 	/** The Constant DESTROY_DELETION. */
-	protected static final String DESTROY_DELETION = "DESTROY DELETION: ";
+	protected static final String DESTROY_DELETION = "DESTROY DELETION: "; //$NON-NLS-1$
 
 	/** The Constant COMMAND_NULL. */
-	protected static final String COMMAND_NULL = " command null";
+	protected static final String COMMAND_NULL = " command null"; //$NON-NLS-1$
 
 	/** The Constant VIEW_DELETION. */
-	protected static final String VIEW_DELETION = "VIEW DELETION: ";
+	protected static final String VIEW_DELETION = "VIEW DELETION: "; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_REDO. */
-	protected static final String TEST_THE_REDO = "test the redo";
+	protected static final String TEST_THE_REDO = "test the redo"; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_UNDO. */
-	protected static final String TEST_THE_UNDO = "test the undo";
+	protected static final String TEST_THE_UNDO = "test the undo"; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_EXECUTION. */
-	protected static final String TEST_THE_EXECUTION = "test the execution";
+	protected static final String TEST_THE_EXECUTION = "test the execution"; //$NON-NLS-1$
 
 	/** The Constant TEST_IF_THE_COMMAND_CAN_BE_EXECUTED. */
-	protected static final String TEST_IF_THE_COMMAND_CAN_BE_EXECUTED = "test if the command can be executed";
+	protected static final String TEST_IF_THE_COMMAND_CAN_BE_EXECUTED = "test if the command can be executed"; //$NON-NLS-1$
 
 	/** The Constant TEST_IF_THE_COMMAND_IS_CREATED. */
-	protected static final String TEST_IF_THE_COMMAND_IS_CREATED = "test if the command is created";
+	protected static final String TEST_IF_THE_COMMAND_IS_CREATED = "test if the command is created"; //$NON-NLS-1$
 
 	/** The Constant INITIALIZATION_TEST. */
-	protected static final String INITIALIZATION_TEST = "Intitial State";
+	protected static final String INITIALIZATION_TEST = "Intitial State"; //$NON-NLS-1$
 
 	/** The Constant CHANGE_CONTAINER. */
-	protected static final String CHANGE_CONTAINER = "CHANGE CONTAINER";
+	protected static final String CHANGE_CONTAINER = "CHANGE CONTAINER"; //$NON-NLS-1$
 
 	/** The papyrus editor. */
 	protected IMultiDiagramEditor papyrusEditor;
@@ -172,7 +176,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			public void run() {
 				try {
 					//if the diagram is a Profile we dont save it because we dont need to define it
-					if(!diagramEditPart.getDiagramView().getType().equals("PapyrusUMLProfileDiagram")) {
+					if(!diagramEditPart.getDiagramView().getType().equals("PapyrusUMLProfileDiagram")) { //$NON-NLS-1$
 						papyrusEditor.doSave(new NullProgressMonitor());
 					}
 
@@ -190,7 +194,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		};
 		Display.getDefault().syncExec(runnable);
 		if(!runnable.getResult()) {
-			Assert.fail("Cannot close the editor and delete the project");
+			Assert.fail("Cannot close the editor and delete the project"); //$NON-NLS-1$
 		}
 	}
 
@@ -203,8 +207,11 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		if(diagramEditPart == null) {
 			diagramEditor = (UmlGmfDiagramEditor)papyrusEditor.getActiveEditor();
 			diagramEditPart = (DiagramEditPart)papyrusEditor.getAdapter(DiagramEditPart.class);
-			Assert.assertNotNull("Cannot find the diagram editor", diagramEditor);
-			Assert.assertNotNull("Cannot find the Diagram edit part", diagramEditPart);
+			Assert.assertNotNull("Cannot find the diagram editor", diagramEditor); //$NON-NLS-1$
+			Assert.assertNotNull("Cannot find the Diagram edit part", diagramEditPart); //$NON-NLS-1$
+			StringValueStyle style=(StringValueStyle)diagramEditPart.getNotationView().getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), DiagramVersioningUtils.COMPATIBILITY_VERSION);
+			Assert.assertNotNull("A version lust be associated to a each diagram", style); //$NON-NLS-1$
+			Assert.assertTrue("The created diagram has not a good version",DiagramVersioningUtils.isOfCurrentPapyrusVersion((Diagram)diagramEditPart.getNotationView())); //$NON-NLS-1$
 		}
 		return diagramEditPart;
 	}
@@ -265,7 +272,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			diResource.save(null);
 			diResource.unload();
 			diResourceSet.createsModels(file);
-			if(!file.getName().endsWith(".profile.di")) {
+			if(!file.getName().endsWith(".profile.di")) { //$NON-NLS-1$
 
 				new CreateUMLModelCommand().createModel(this.diResourceSet);
 
@@ -280,7 +287,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 				// Apply the required profiles
 				ArrayList<IFile> modifiedFiles = new ArrayList<IFile>();
 				modifiedFiles.add(file);
-				ICommand commandProfiles = new AbstractTransactionalCommand(diResourceSet.getTransactionalEditingDomain(), "Apply profiles", modifiedFiles) {
+				ICommand commandProfiles = new AbstractTransactionalCommand(diResourceSet.getTransactionalEditingDomain(), "Apply profiles", modifiedFiles) { //$NON-NLS-1$
 
 					@Override
 					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -317,12 +324,12 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 				}
 			}
 			ICreationCommand command = getDiagramCommandCreation();
-			command.createDiagram(diResourceSet, null, "DiagramToTest");
+			command.createDiagram(diResourceSet, null, "DiagramToTest"); //$NON-NLS-1$
 			diResourceSet.save(new NullProgressMonitor());
 		}
 
 		papyrusEditor = houseKeeper.openPapyrusEditor(file);
-		Assert.assertNotNull("Failed to open the editor", papyrusEditor);
+		Assert.assertNotNull("Failed to open the editor", papyrusEditor); //$NON-NLS-1$
 	}
 
 	/**
@@ -359,7 +366,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	}
 
 	protected void assertLastOperationSuccessful() {
-		Assert.assertFalse("The operation failed. Look at the log, or put a breakpoint on ExecutionException or DefaultOperationHistory#notifyNotOK to find the cause.", this.operationFailed);
+		Assert.assertFalse("The operation failed. Look at the log, or put a breakpoint on ExecutionException or DefaultOperationHistory#notifyNotOK to find the cause.", this.operationFailed); //$NON-NLS-1$
 	}
 
 	/**
@@ -381,7 +388,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	protected void undo() {
 		resetLastOperationFailedState();
 		final CommandStack commandStack = getCommandStack();
-		Assert.assertTrue("We should be able to undo", commandStack.canUndo());
+		Assert.assertTrue("We should be able to undo", commandStack.canUndo()); //$NON-NLS-1$
 		commandStack.undo();
 		assertLastOperationSuccessful();
 	}
@@ -390,7 +397,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	protected void redo() {
 		resetLastOperationFailedState();
 		final CommandStack commandStack = getCommandStack();
-		Assert.assertTrue("We should be able to redo", commandStack.canRedo());
+		Assert.assertTrue("We should be able to redo", commandStack.canRedo()); //$NON-NLS-1$
 		commandStack.redo();
 		assertLastOperationSuccessful();
 	}

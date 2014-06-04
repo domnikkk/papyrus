@@ -34,7 +34,6 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gef.requests.ReconnectRequest;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -52,7 +51,6 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.uml2.uml.Element;
@@ -65,17 +63,17 @@ import org.junit.Assert;
  */
 public abstract class TestLink extends AbstractPapyrusTestCase {
 
-	protected static final String THE_LINK_RECONNECT_EXISTS = "The Link exist";
+	protected static final String THE_LINK_RECONNECT_EXISTS = "The Link exist"; //$NON-NLS-1$
 
-	protected static final String RECONNECTION_TARGET = "Reconnection of target";
+	protected static final String RECONNECTION_TARGET = "Reconnection of target"; //$NON-NLS-1$
 
-	protected static final String LINK_EXISTS_RECONNECTION_ON_TARGET = "Link exist on the target";
+	protected static final String LINK_EXISTS_RECONNECTION_ON_TARGET = "Link exist on the target"; //$NON-NLS-1$
 
-	protected static final String THE_LINK_TO_RECONNECT_EXISTS = "The Link exist";
+	protected static final String THE_LINK_TO_RECONNECT_EXISTS = "The Link exist"; //$NON-NLS-1$
 
-	protected static final String RECONNECTION_SOURCE = "Reconnection of source";
+	protected static final String RECONNECTION_SOURCE = "Reconnection of source"; //$NON-NLS-1$
 
-	protected static final String LINK_EXISTS_RECONNECTION_ON_SOURCE = "Link exist on the source";
+	protected static final String LINK_EXISTS_RECONNECTION_ON_SOURCE = "Link exist on the source"; //$NON-NLS-1$
 
 	protected GraphicalEditPart source = null;
 
@@ -225,7 +223,7 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		command = compartment.getCommand(changeBoundsRequest);
 		assertNotNull(CHANGE_CONTAINER, command);
 		assertTrue(CHANGE_CONTAINER + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
@@ -268,17 +266,17 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 		ConnectionEditPart linkEditPart= (ConnectionEditPart)getDiagramEditPart().getConnections().get(0);
 		testLinkEditPart(linkEditPart, initialName);
 		
-		Assert.assertEquals("Diagram updater must detect that node children has been created",4,getDiagramUpdater().getSemanticChildren(getRootView()).size());
-		Assert.assertEquals("Diagram updater must detect that no link has been created",1,getDiagramUpdater().getContainedLinks(getRootView()).size());
-		Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)((Diagram)getRootView()).getEdges().get(0)).size());
-		Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)((Diagram)getRootView()).getEdges().get(0)).size());
-		Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",0,getDiagramUpdater().getSemanticChildren(((View)((Diagram)getRootView()).getEdges().get(0))).size());
-		Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks(((View)((Diagram)getRootView()).getEdges().get(0))).size());
+		Assert.assertEquals("Diagram updater must detect that node children has been created",4,getDiagramUpdater().getSemanticChildren(getRootView()).size()); //$NON-NLS-1$
+		Assert.assertEquals("Diagram updater must detect that no link has been created",1,getDiagramUpdater().getContainedLinks(getRootView()).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)((Diagram)getRootView()).getEdges().get(0)).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)((Diagram)getRootView()).getEdges().get(0)).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",0,getDiagramUpdater().getSemanticChildren(((View)((Diagram)getRootView()).getEdges().get(0))).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks(((View)((Diagram)getRootView()).getEdges().get(0))).size()); //$NON-NLS-1$
 
-		Assert.assertEquals ("Diagram updater must detect that no link are incoming",1,getDiagramUpdater().getIncomingLinks(target.getNotationView()).size());
-		Assert.assertEquals ("Diagram updater must detect that no link are OutgoingLinks",0,getDiagramUpdater().getOutgoingLinks(target.getNotationView()).size());
-		Assert.assertEquals ("Diagram updater must detect that no link are IncomingLinks",0,getDiagramUpdater().getIncomingLinks(source.getNotationView()).size());
-		Assert.assertEquals ("Diagram updater must detect that no link are OutgoingLinks",1,getDiagramUpdater().getOutgoingLinks(source.getNotationView()).size());
+		Assert.assertEquals ("Diagram updater must detect that no link are incoming",1,getDiagramUpdater().getIncomingLinks(target.getNotationView()).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link are OutgoingLinks",0,getDiagramUpdater().getOutgoingLinks(target.getNotationView()).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link are IncomingLinks",0,getDiagramUpdater().getIncomingLinks(source.getNotationView()).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link are OutgoingLinks",1,getDiagramUpdater().getOutgoingLinks(source.getNotationView()).size()); //$NON-NLS-1$
 		
 		
 	}
@@ -288,15 +286,15 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 	 * @param linkEditPart
 	 */
 	protected void testLinkEditPart(ConnectionEditPart linkEditPart, String initialName) {
-		Assert.assertNotNull("the editpart of the link must exist",linkEditPart);
+		Assert.assertNotNull("the editpart of the link must exist",linkEditPart); //$NON-NLS-1$
 		EditPolicy policy=linkEditPart.getEditPolicy(org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy.SHOW_HIDE_LABEL_ROLE);
-		Assert.assertNotNull("the link must have an edipolicy that to show or hide label",policy);
-		Assert.assertTrue("the policy of the link must be an instance of ShowHideLabelEditPolicy", policy instanceof org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy);
+		Assert.assertNotNull("the link must have an edipolicy that to show or hide label",policy); //$NON-NLS-1$
+		Assert.assertTrue("the policy of the link must be an instance of ShowHideLabelEditPolicy", policy instanceof org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy); //$NON-NLS-1$
 		//get text aware
 		ITextAwareEditPart namedEditPart=null;
 		for(Iterator iteratorChildren = linkEditPart.getChildren().iterator(); iteratorChildren.hasNext();) {
 			Object children = iteratorChildren.next();
-			if (children instanceof ITextAwareEditPart&&(((ITextAwareEditPart)children).getEditText()!=null)&&(!((ITextAwareEditPart)children).getEditText().trim().equals(""))){
+			if (children instanceof ITextAwareEditPart&&(((ITextAwareEditPart)children).getEditText()!=null)&&(!((ITextAwareEditPart)children).getEditText().trim().equals(""))){ //$NON-NLS-1$
 				namedEditPart=(ITextAwareEditPart)children;
 			}
 		}
@@ -307,17 +305,17 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 	}
 
 	protected void testNameLabel(ITextAwareEditPart namedEditPart, String initialName) {
-		Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof GraphicalEditPart);
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof GraphicalEditPart); //$NON-NLS-1$
 		String name=((GraphicalEditPart)namedEditPart).resolveSemanticElement().eClass().getName();
 		if( initialName!=null){
 			name=initialName;
 		}
 		if(name.length()<((ITextAwareEditPart)namedEditPart).getEditText().length()){
-			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length()));
+			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length())); //$NON-NLS-1$
 		}
 		else{
 			//not the same it sure but display the mistake is important
-			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText());
+			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText()); //$NON-NLS-1$
 		}
 	}
 
@@ -330,7 +328,7 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 		Command command = getDiagramEditPart().getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		//create the source player to test reconnect
 		requestcreation = CreateViewRequestFactory.getCreateShapeRequest(sourceType, getDiagramEditPart().getDiagramPreferencesHint());
@@ -338,7 +336,7 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 		command = getDiagramEditPart().getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		//create the target
 		requestcreation = CreateViewRequestFactory.getCreateShapeRequest(targetType, getDiagramEditPart().getDiagramPreferencesHint());
@@ -346,7 +344,7 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 		command = getDiagramEditPart().getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		//create the target player to test reconnect
 		requestcreation = CreateViewRequestFactory.getCreateShapeRequest(targetType, getDiagramEditPart().getDiagramPreferencesHint());
@@ -354,7 +352,7 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 		command = getDiagramEditPart().getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		source = (GraphicalEditPart)getDiagramEditPart().getChildren().get(0);
 		sourcePlayer = (GraphicalEditPart)getDiagramEditPart().getChildren().get(1);
@@ -518,12 +516,12 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 	 */
 	protected void testEnableForDeleteFromModel() {
 		ICommandService commandService = (ICommandService)PlatformUI.getWorkbench().getService(ICommandService.class);
-		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete");
+		org.eclipse.core.commands.Command cmd = commandService.getCommand("org.eclipse.ui.edit.delete"); //$NON-NLS-1$
 		IHandler handler = cmd.getHandler();
 		if(handler instanceof AbstractHandler) {
-			((AbstractHandler)handler).setEnabled("org.eclipse.ui.edit.delete");
+			((AbstractHandler)handler).setEnabled("org.eclipse.ui.edit.delete"); //$NON-NLS-1$
 		}
 		boolean res = handler.isEnabled();
-		assertTrue("Delete from model handler must be enable",res);
+		assertTrue("Delete from model handler must be enable",res); //$NON-NLS-1$
 	}
 }
