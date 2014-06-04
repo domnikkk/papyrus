@@ -56,7 +56,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.InitialNode_3004 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -65,7 +65,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.ActivityFinalNode_3005 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -74,7 +74,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.FlowFinalNode_3006 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -83,7 +83,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.OpaqueAction_3007 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -92,7 +92,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.CallBehaviorAction_3008 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -101,7 +101,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.CallOperationAction_3010 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -110,7 +110,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.DecisionNode_3038 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -119,7 +119,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.MergeNode_3039 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -128,7 +128,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.ForkNode_3040 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -137,7 +137,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.JoinNode_3041 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -146,7 +146,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.DataStoreNode_3078 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -155,7 +155,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.SendObjectAction_3042 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -164,7 +164,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.SendSignalAction_3052 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -173,7 +173,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.AcceptEventAction_3063 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -182,7 +182,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.ValueSpecificationAction_3076 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -191,7 +191,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.ConditionalNode_3069 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -200,7 +200,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.ExpansionRegion_3070 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -209,7 +209,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.LoopNode_3071 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -218,7 +218,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.SequenceNode_3073 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -227,7 +227,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.StructuredActivityNode_3065 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_StructuredNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -236,7 +236,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.ReadSelfAction_3081 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -317,7 +317,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.CreateObjectAction_3086 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -326,7 +326,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.ReadStructuralFeatureAction_3088 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -335,7 +335,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.AddStructuralFeatureValueAction_3091 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -344,7 +344,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.DestroyObjectAction_3095 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -353,7 +353,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.ReadVariableAction_3097 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -362,7 +362,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.AddVariableValueAction_3099 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -371,7 +371,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.BroadcastSignalAction_3102 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
@@ -380,7 +380,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 		}
 		if(UMLElementTypes.CentralBufferNode_3104 == baseElementType) {
 			// adjust the containment feature
-			EReference containmentFeature = UMLPackage.eINSTANCE.getActivity_OwnedNode();
+			EReference containmentFeature = UMLPackage.eINSTANCE.getStructuredActivityNode_Node();
 			req.setContainmentFeature(containmentFeature);
 			if(isExtendedType) {
 				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
