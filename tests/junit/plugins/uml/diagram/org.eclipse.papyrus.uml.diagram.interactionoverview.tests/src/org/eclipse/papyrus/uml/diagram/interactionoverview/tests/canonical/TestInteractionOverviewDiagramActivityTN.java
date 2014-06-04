@@ -16,6 +16,7 @@ import static org.junit.Assert.assertTrue;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase;
+import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ActivityNameEditPart;
 import org.eclipse.papyrus.uml.diagram.interactionoverview.edit.part.CustomActivityEditPartTN;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.EditPartUtils;
@@ -83,6 +84,7 @@ public class TestInteractionOverviewDiagramActivityTN extends AbstractInteractio
 		assertTrue("The third interaction should be found in the diagram", getDiagramEditPart().getChildren().contains(activity3));
 	}
 
+	@InvalidTest("To be verified")
 	@Test
 	public void testEditInteractionName() {
 		final CustomActivityEditPartTN activityEditPart = createActivity();
