@@ -21,7 +21,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.diagram.activity.parser.custom.CallBehaviorActionParser;
 import org.eclipse.uml2.uml.CallBehaviorAction;
-import org.eclipse.uml2.uml.Interaction;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class CustomCallBehaviorActionParser extends CallBehaviorActionParser {
@@ -76,8 +76,8 @@ public class CustomCallBehaviorActionParser extends CallBehaviorActionParser {
 		}
 		final CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Values"); //$NON-NLS-1$
 		if(element instanceof CallBehaviorAction) {
-			final Interaction interactionUse = (Interaction)(((CallBehaviorAction)element).getBehavior());
-			command.compose(getModificationCommand(interactionUse, UMLPackage.eINSTANCE.getNamedElement_Name(), newString));
+			final NamedElement namedElement = (((CallBehaviorAction)element).getBehavior());
+			command.compose(getModificationCommand(namedElement, UMLPackage.eINSTANCE.getNamedElement_Name(), newString));
 		}
 		return command;
 	}
