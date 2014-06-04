@@ -17,6 +17,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.diagram.tests.canonical.AbstractPapyrusTestCase;
+import org.eclipse.papyrus.junit.utils.classification.InteractiveTest;
 import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.interactionoverview.InteractionOverviewDiagramCreateCommand;
@@ -57,7 +58,8 @@ public class TestInteractionOverviewDiagramChildNode extends AbstractInteraction
 	}
 
 	@Test
-	@InvalidTest
+	@InvalidTest("To be verified")
+	@InteractiveTest("Opens a dialog")
 	public void testToManageCallBehaviorAction() {
 		testToManageNode(UMLElementTypes.CallBehaviorAction_3008, UMLPackage.eINSTANCE.getCallBehaviorAction(), UMLElementTypes.StructuredActivityNode_3065, false);
 	}
