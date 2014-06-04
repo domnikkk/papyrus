@@ -35,7 +35,7 @@ public class StructuredActivityNodeStructuredActivityNodeContentCompartmentItemS
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
