@@ -26,6 +26,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
+import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
+import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PastePreferencesPage;
 
 /**
  * Command that puts a list of object in the clipboard
@@ -51,7 +53,8 @@ public class DefaultDiagramCopyCommand extends AbstractOverrideableCommand imple
 	public DefaultDiagramCopyCommand(EditingDomain domain, PapyrusClipboard<Object> papyrusClipboard, Collection<IGraphicalEditPart> pObjectsToPutInClipboard) {
 		super(domain);
 		objectsToPutInClipboard = new ArrayList<Object>();
-		EcoreUtil.Copier copier = new EcoreUtil.Copier();
+		Boolean keepReferences = Activator.getInstance().getPreferenceStore().getBoolean(PastePreferencesPage.KEEP_EXTERNAL_REFERENCES);	
+		EcoreUtil.Copier copier = new EcoreUtil.Copier(Boolean.TRUE, keepReferences);
 		List<EObject> objectToCopy = new ArrayList<EObject>();
 
 		for(IGraphicalEditPart iGraphicalEditPart : pObjectsToPutInClipboard) {

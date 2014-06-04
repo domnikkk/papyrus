@@ -39,6 +39,58 @@ public class Messages extends NLS {
 
 	public static String UnitsUtils_Pixels;
 	
+	public static String MultiPagesEditorActionBarContributor_PapyrusMenu;
+
+	public static String AbstractPapyrusGmfCreateDiagramCommandHandler_CreateDiagramCommandLabel;
+
+	public static String AbstractPapyrusGmfCreateDiagramCommandHandler_NewDiagramName;
+
+	public static String AbstractPapyrusGmfCreateDiagramCommandHandler_NotSupportedEditor;
+
+	public static String AbstractPapyrusGmfCreateDiagramCommandHandler_SelectNewDiagramName;
+
+	public static String AbstractPapyrusGmfCreateDiagramCommandHandler_UnableCreateModelAndDiagram;
+
+	public static String GmfEditorFactory_ErrorCreatingEditorPart;
+
+	public static String GmfEditorFactory_ErrorRetrievingDiagram;
+
+	public static String GmfMultiDiagramDocumentProvider_isModifiable;
+
+	public static String GmfMultiDiagramDocumentProvider_handleElementContentChanged;
+
+	public static String GmfMultiDiagramDocumentProvider_IncorrectInputError;
+
+	public static String GmfMultiDiagramDocumentProvider_NoDiagramInResourceError;
+
+	public static String GmfMultiDiagramDocumentProvider_DiagramLoadingError;
+
+	public static String GmfMultiDiagramDocumentProvider_UnsynchronizedFileSaveError;
+
+	public static String GmfMultiDiagramDocumentProvider_SaveDiagramTask;
+
+	public static String GmfMultiDiagramDocumentProvider_SaveNextResourceTask;
+
+	public static String GmfMultiDiagramDocumentProvider_SaveAsOperation;
+
+	public static String ModelManagerEditor_SavingDeletedFile;
+
+	public static String ModelManagerEditor_SaveAsErrorTitle;
+
+	public static String ModelManagerEditor_SaveAsErrorMessage;
+
+	public static String ModelManagerEditor_SaveErrorTitle;
+
+	public static String ModelManagerEditor_SaveErrorMessage;
+
+	public static String PastePreferencesPage_StrategiesDescription;
+
+	public static String PastePreferencesPage_PageTitle;
+
+	public static String PastePreferencesPage_PageDescription;
+
+	public static String PastePreferencesPage_KeepReferenceDescription;
+	
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
