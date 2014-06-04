@@ -60,6 +60,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.ISequenceDiagramTestsConstants;
 import org.eclipse.swt.graphics.Image;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -254,34 +255,42 @@ public class TestElementIcon_396799 extends AbstractNodeTest {
 		testElementIcon(editPart.getFigure(), constraint.getNotationView(), true);
 	}
 
+	@Ignore("Not implemented")
 	@Test
 	public void testDurationConstraint() {
 	}
 
+	@Ignore("Not implemented")
 	@Test
 	public void testDestructionEvent() {
 	}
 
+	@Ignore("Not implemented")
 	@Test
 	public void testTimeConstraint() {
 	}
 
+	@Ignore("Not implemented")
 	@Test
 	public void testCoRegion() {
 	}
 
+	@Ignore("Not implemented")
 	@Test
 	public void testDurationObservation() {
 	}
 
+	@Ignore("Not implemented")
 	@Test
 	public void testTimeObservation() {
 	}
 
+	@Ignore("Not implemented")
 	@Test
 	public void testExecutionSpecifications() {
 	}
 
+	@Ignore("Not implemented")
 	@Test
 	public void testMessages() {
 	}

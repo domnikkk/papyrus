@@ -63,7 +63,6 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.junit.After;
 import org.junit.Test;
 
 
@@ -286,14 +285,6 @@ public class TestDecompositionMove_364812 extends TestTopNode {
 		f.translateToAbsolute(b);
 		Point p = b.getRight();
 		return p;
-	}
-
-	@After
-	@Override
-	public void tearDown() throws Exception {
-		super.tearDown();
-		waitForComplete();
-		PopupUtil.removeDialogCloseHandler();
 	}
 
 	protected void changeRepresents(LifelineEditPart p, Object value) {

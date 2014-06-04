@@ -27,7 +27,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -134,7 +133,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	protected DiagramEditPart diagramEditPart;
 
 
-	
+
 	/**
 	 * @see junit.framework.TestCase#setUp()
 	 *
@@ -143,7 +142,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	@Before
 	public void setUp() throws Exception {
 		projectCreation();
-		
+
 	}
 
 	/**
@@ -171,31 +170,24 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		RunnableWithResult<Boolean> runnable = new RunnableWithResult.Impl<Boolean>() {
+		Runnable runnable = new Runnable() {
 
 			public void run() {
-				try {
-					//if the diagram is a Profile we dont save it because we dont need to define it
-					if(!diagramEditPart.getDiagramView().getType().equals("PapyrusUMLProfileDiagram")) { //$NON-NLS-1$
-						papyrusEditor.doSave(new NullProgressMonitor());
-					}
-
-					// diResourceSet.save( new NullProgressMonitor());
-					diagramEditor.close(true);
-					papyrusEditor = null;
-					diagramEditPart = null;
-					diagramEditor = null;
-					setResult(true);
-				} catch (Exception ex) {
-					ex.printStackTrace(System.out);
-					setResult(false);
+				//if the diagram is a Profile we dont save it because we dont need to define it
+				if(diagramEditPart == null || !diagramEditPart.getDiagramView().getType().equals("PapyrusUMLProfileDiagram")) { //$NON-NLS-1$
+					papyrusEditor.doSave(new NullProgressMonitor());
 				}
+
+				// diResourceSet.save( new NullProgressMonitor());
+				if(diagramEditor != null) {
+					diagramEditor.close(true);
+				}
+				papyrusEditor = null;
+				diagramEditPart = null;
+				diagramEditor = null;
 			}
 		};
 		Display.getDefault().syncExec(runnable);
-		if(!runnable.getResult()) {
-			Assert.fail("Cannot close the editor and delete the project"); //$NON-NLS-1$
-		}
 	}
 
 	/**
@@ -209,9 +201,9 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 			diagramEditPart = (DiagramEditPart)papyrusEditor.getAdapter(DiagramEditPart.class);
 			Assert.assertNotNull("Cannot find the diagram editor", diagramEditor); //$NON-NLS-1$
 			Assert.assertNotNull("Cannot find the Diagram edit part", diagramEditPart); //$NON-NLS-1$
-			StringValueStyle style=(StringValueStyle)diagramEditPart.getNotationView().getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), DiagramVersioningUtils.COMPATIBILITY_VERSION);
+			StringValueStyle style = (StringValueStyle)diagramEditPart.getNotationView().getNamedStyle(NotationPackage.eINSTANCE.getStringValueStyle(), DiagramVersioningUtils.COMPATIBILITY_VERSION);
 			Assert.assertNotNull("A version lust be associated to a each diagram", style); //$NON-NLS-1$
-			Assert.assertTrue("The created diagram has not a good version",DiagramVersioningUtils.isOfCurrentPapyrusVersion((Diagram)diagramEditPart.getNotationView())); //$NON-NLS-1$
+			Assert.assertTrue("The created diagram has not a good version", DiagramVersioningUtils.isOfCurrentPapyrusVersion((Diagram)diagramEditPart.getNotationView())); //$NON-NLS-1$
 		}
 		return diagramEditPart;
 	}
@@ -254,7 +246,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 		Display.getDefault().syncExec(closeIntroRunnable);
 		/*
 		 * final String timestamp = Long.toString(System.currentTimeMillis());
-		 * 
+		 *
 		 * project = root.getProject("DiagramTestProject_" + timestamp); file =
 		 * project.getFile("DiagramTest_" + timestamp + ".di"); //$NON-NLS-2$
 		 */

@@ -82,6 +82,15 @@ public class ClassificationConfig {
 	});
 	
 	/**
+	 * This tests configuration is meant to execute all tests in an automated environment
+	 * It includes all tests which are known to be failing, but excludes tests which
+	 * require a user interaction
+	 */
+	public static final Set<TestCategory> FULL_CI_TESTS_CONFIG = ImmutableSet.copyOf(new TestCategory[]{
+		InteractiveTest
+	});
+	
+	/**
 	 * Executes all tests
 	 */
 	public static final Set<TestCategory> FULL_TESTS_CONFIG = Collections.emptySet();

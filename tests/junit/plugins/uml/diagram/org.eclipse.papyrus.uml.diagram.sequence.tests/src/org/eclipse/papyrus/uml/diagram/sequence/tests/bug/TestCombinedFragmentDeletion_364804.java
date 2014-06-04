@@ -40,7 +40,6 @@ import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.ISequenceDiagramTestsConstants;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.CreateSequenceDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.TestTopNode;
-import org.junit.After;
 import org.junit.Test;
 
 /**
@@ -214,16 +213,6 @@ public class TestCombinedFragmentDeletion_364804 extends TestTopNode {
 			assertTrue(VIEW_DELETION + TEST_THE_REDO, getRootEditPart().getChildren().size() == 2);
 		}
 	}
-
-	@After
-	@Override
-	public void tearDown() throws Exception {
-		papyrusEditor = null;
-
-		waitForComplete();
-		PopupUtil.removeMenuListener();
-	}
-
 
 	public void createNode(IElementType type, EditPart parentPart, Point location, Dimension size) {
 		// CREATION

@@ -42,7 +42,6 @@ import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.CreateSequenceDi
 import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.TestLink;
 import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Message;
-import org.junit.After;
 import org.junit.Test;
 
 /**
@@ -173,14 +172,6 @@ public class TestCombinedFragmentGates_364816 extends TestLink {
 		getDiagramCommandStack().redo();
 		assertTrue(CREATION + TEST_THE_REDO, source.getSourceConnections().size() == 2);
 		assertTrue(CREATION + TEST_THE_REDO, cf.getCfragmentGates().size() == 1);
-	}
-
-	@After
-	@Override
-	public void tearDown() throws Exception {
-		super.tearDown();
-		waitForComplete();
-		PopupUtil.removeDialogCloseHandler();
 	}
 
 	public void createLink(IElementType linkType, EditPart source, EditPart target, Point sourcePoint, Point targetPoint) {

@@ -59,7 +59,6 @@ import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.junit.After;
 import org.junit.Test;
 
 
@@ -171,14 +170,6 @@ public class TestDecompositionCombinedFragment_364813 extends TestTopNode {
 		assertTrue(CREATION + TEST_THE_EXECUTION, cf.getCovereds().size() == 3);
 		assertTrue(CREATION + TEST_THE_EXECUTION, cf2.getCovereds().size() == 2);
 		assertTrue(CREATION + TEST_THE_EXECUTION, !cf2.getCovereds().contains(childLifeline.resolveSemanticElement()));
-	}
-
-	@After
-	@Override
-	public void tearDown() throws Exception {
-		super.tearDown();
-		waitForComplete();
-		PopupUtil.removeDialogCloseHandler();
 	}
 
 	protected void changeRepresents(LifelineEditPart p, Object value) {

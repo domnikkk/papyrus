@@ -39,7 +39,6 @@ import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.ISequenceDiagramTestsConstants;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.CreateSequenceDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.TestLink;
-import org.junit.After;
 import org.junit.Test;
 
 /**
@@ -117,14 +116,6 @@ public class TestSynchronousMessageCreation_364827 extends TestLink {
 		getDiagramCommandStack().redo();
 		assertTrue(CREATION + TEST_THE_REDO, source.getSourceConnections().size() == 1);
 		assertTrue(CREATION + TEST_THE_REDO, target.getTargetConnections().size() == 1);
-	}
-
-	@After
-	@Override
-	public void tearDown() throws Exception {
-		super.tearDown();
-		waitForComplete();
-		PopupUtil.removeMenuListener();
 	}
 
 	@Test
