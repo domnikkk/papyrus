@@ -109,4 +109,14 @@
               name="Simple Features architecture snapshot">
         </wizard>
      </extension>
+     <extension
+           point="org.eclipse.papyrus.uml.diagram.wizards.templates">
+        <template
+              file="resources/model.uml"
+              id="org.eclipse.papyrus.adl4eclipsetool.assistant.templateWithProfiles"
+              language="uml"
+              name="An Architecure Model (with OSGi and ADL profiles)"
+              notation_file="resources/model.notation">
+        </template>
+     </extension>
 </plugin>

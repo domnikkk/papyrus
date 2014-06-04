@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_dwpjEOqLEeO3GfcVE7U8Ug" name="Architecture">
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_gXbYEOqLEeO3GfcVE7U8Ug">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gXbYEeqLEeO3GfcVE7U8Ug" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://ADL4ECLIPSE_PROFILES/adl4eclipse.profile.uml#_rlFYwOqKEeOfTcbrnCq2oQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://ADL4ECLIPSE_PROFILES/adl4eclipse.profile.uml#_nE1m0Hz7EeKfO4elN3J5Fw"/>
+  </profileApplication>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_gXbYEuqLEeO3GfcVE7U8Ug">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gXbYE-qLEeO3GfcVE7U8Ug" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://OSGI_PROFILES/osgi.profile.uml#_0xHxUYDEEeKQG4TlBAn6bg"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://OSGI_PROFILES/osgi.profile.uml#_OKU8EHtxEeKcL-wrhM9ICg"/>
+  </profileApplication>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_gXbYFOqLEeO3GfcVE7U8Ug">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gXbYFeqLEeO3GfcVE7U8Ug" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://OSGI_PROFILES/osgi.profile.uml#_0xRiUIDEEeKQG4TlBAn6bg"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://OSGI_PROFILES/osgi.profile.uml#_YbhfEHtxEeKcL-wrhM9ICg"/>
+  </profileApplication>
+</uml:Model>
