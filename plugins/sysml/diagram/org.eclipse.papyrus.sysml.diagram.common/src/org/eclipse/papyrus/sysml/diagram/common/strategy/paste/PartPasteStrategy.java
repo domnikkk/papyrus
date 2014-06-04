@@ -248,7 +248,10 @@ public class PartPasteStrategy implements IPasteStrategy {
 				IClipboardAdditionalData clipboardAdditionalData = null;
 				if(elementSource instanceof Property && UMLUtil.getStereotypeApplication(elementSource.getOwner(), Block.class) != null) { // is part 
 					Property propertySource = (Property)elementSource;
-					clipboardAdditionalData = new PartAdditionalData(propertySource.getAssociation());
+					Association association = propertySource.getAssociation();
+					if (association != null){
+						clipboardAdditionalData = new PartAdditionalData(association);
+					}
 				} else if(elementSource instanceof Classifier && UMLUtil.getStereotypeApplication(elementSource, Block.class) != null) {// is Block
 					Classifier block = (Classifier)elementSource;
 					clipboardAdditionalData = new PartBlockAdditionalData(block);

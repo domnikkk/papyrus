@@ -16,7 +16,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.0",
  org.eclipse.papyrus.views.modelexplorer;bundle-version="1.0.0",
  org.eclipse.papyrus.sysml.modelexplorer;bundle-version="1.0.0",
- org.eclipse.papyrus.sysml.service.types;bundle-version="1.0.0"
+ org.eclipse.papyrus.sysml.service.types;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.0.0",
+ org.eclipse.papyrus.sysml.diagram.common;bundle-version="1.0.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
