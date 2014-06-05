@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009-2014 CEA LIST and others.
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +10,7 @@
  * 	Cedric Dumoulin (LIFL) cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Rewrite the sash model - store in the plugin's PreferenceStore (Bug 429239)
  *  Christian W. Damus (CEA) - bug 429242
+ *  Christian W. Damus (CEA) - bug 436468
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource.sasheditor;
@@ -215,6 +216,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 
 		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.FALSE);
 		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.FALSE);
+		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 
 		return saveOptions;
 	}
