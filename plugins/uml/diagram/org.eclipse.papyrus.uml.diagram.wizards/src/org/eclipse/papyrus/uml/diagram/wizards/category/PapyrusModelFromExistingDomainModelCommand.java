@@ -42,7 +42,7 @@ public class PapyrusModelFromExistingDomainModelCommand extends RecordingCommand
 
 	/**
 	 * Instantiates a new papyrus model from existing domain model command.
-	 * 
+	 *
 	 * @param diResourceSet
 	 *        the di resource set
 	 * @param newURI
@@ -55,13 +55,13 @@ public class PapyrusModelFromExistingDomainModelCommand extends RecordingCommand
 		myDiResourceSet = modelSet;
 		myURIWithoutExtension = newURI.trimFileExtension();
 		// Bug 339504 - [Wizard] NPE when init diagram from an existing model
-		modelSet.getInternal().setPrimaryModelResourceURI(myURIWithoutExtension);
+		modelSet.getInternal().setPrimaryModelResourceURI(newURI);
 		myRoot = root;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
 	 */
 	@Override

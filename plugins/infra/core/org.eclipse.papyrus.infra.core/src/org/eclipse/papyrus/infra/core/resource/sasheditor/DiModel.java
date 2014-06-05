@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource;
 import org.eclipse.papyrus.infra.core.resource.IEMFModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
@@ -136,7 +137,6 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 			return;
 		}
 
-
 		//If the parameter resource is already a di resource, nothing to do
 		if(!isRelatedResource(resource)) {
 			URI diUri = resource.getURI().trimFileExtension().appendFileExtension(DI_FILE_EXTENSION);
@@ -150,12 +150,23 @@ public class DiModel extends AbstractModelWithSharedResource<EObject> implements
 				}
 			}
 
-			if(resourceSet != null && !diAlreadyLoaded && resourceSet.getURIConverter() != null) {
+			if(!diAlreadyLoaded && resourceSet.getURIConverter() != null) {
 				URIConverter converter = resourceSet.getURIConverter();
+
+				//If the di resource associated to the parameter resource exists, load it
 				if(converter.exists(diUri, Collections.emptyMap())) {
-					//If the di resource associated to the parameter resource exists, load it
-					loadModel(diUri.trimFileExtension());
+
+					//loadModel writes this.resource and this.resourceUri. In this case, when only want to load
+					//the resource, but it should not become the main resource
+
+					//Load with try/catch to remain consistent with loadModel()
+					try {
+						resourceSet.getResource(diUri, true);
+					} catch (Exception ex) {
+						Activator.log.error(ex);
+					}
 				}
+
 			}
 		}
 	}

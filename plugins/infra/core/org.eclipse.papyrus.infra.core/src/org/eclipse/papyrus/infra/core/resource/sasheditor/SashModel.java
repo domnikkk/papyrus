@@ -105,11 +105,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 
 	@Override
 	protected boolean isRelatedResource(Resource resource) {
-		if(resource == null) {
-			return false;
-		}
-		String fileExtension = resource.getURI().fileExtension();
-		return DiModel.MODEL_FILE_EXTENSION.equals(fileExtension) || SASH_MODEL_FILE_EXTENSION.equals(fileExtension);
+		return resource != null && this.resource == resource; //We only handle the main Sash resource. Imported *.sash are not relevant
 	}
 
 	/**
@@ -209,7 +205,8 @@ public class SashModel extends EMFLogicalModel implements IModel {
 	}
 
 	protected URI getSashModelStoreURI(URI uriWithoutExtension) {
-		return providerManager.getSashModelProvider(uriWithoutExtension).getSashModelURI(uriWithoutExtension);
+		URI fullURI = uriWithoutExtension.appendFileExtension(SASH_MODEL_FILE_EXTENSION);
+		return providerManager.getSashModelProvider(fullURI).getSashModelURI(fullURI);
 	}
 
 	@Override
