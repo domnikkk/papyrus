@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA
+ * Copyright (c) 2013, 2014 Soyatec, CEA, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - don't maximize the workbench window
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug.m7;
@@ -296,10 +297,10 @@ public class TestGraphicalGate_389531 extends AbstractNodeTest {
 	 */
 	@Test
 	public void testGateCreateWithMessageAsyncOnCombinedFragment() {
-		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 100), new Dimension(100, 400));
+		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(10, 100), new Dimension(75, 400));
 		// the lifeline2 should be covered by the CombinedFragment.
-		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(350, 100), new Dimension(100, 400));
-		CombinedFragmentEditPart cf = (CombinedFragmentEditPart)createNode(UMLElementTypes.CombinedFragment_3004, getRootEditPart(), new Point(300, 100), new Dimension(200, 200));
+		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(120, 100), new Dimension(75, 400));
+		CombinedFragmentEditPart cf = (CombinedFragmentEditPart)createNode(UMLElementTypes.CombinedFragment_3004, getRootEditPart(), new Point(90, 100), new Dimension(120, 200));
 		//create CombinedFragment
 		CombinedFragment combinedFragment = (CombinedFragment)cf.resolveSemanticElement();
 		Lifeline covered = (Lifeline)lifeline2.resolveSemanticElement();
@@ -330,7 +331,7 @@ public class TestGraphicalGate_389531 extends AbstractNodeTest {
 		//		assertEquals("Suggestion name of outer gate", "in_m1", getGateName(message1EndGate));
 		//		assertEquals("Suggestion name of inner gate", "in_m1", getGateName(message1EndGateInner));
 		//3. Message from CombinedFragment to Lifeline3.
-		LifelineEditPart lifeline3 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(700, 100), new Dimension(100, 400));
+		LifelineEditPart lifeline3 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(230, 100), new Dimension(75, 400));
 		assertNotNull(lifeline3);
 		waitForComplete();
 		startLocation = new Point(getAbsoluteBounds(cf).right() - 2, getAbsoluteBounds(cf).getCenter().y);

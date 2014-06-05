@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA
+ * Copyright (c) 2013, 2014 Soyatec, CEA, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - don't maximize the workbench window
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug.m7;
@@ -276,7 +277,7 @@ public class TestDurationConstraint_402967 extends AbstractNodeTest {
 
 	@Test
 	public void testDurationRotate() {
-		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(400, 200), null);
+		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(100, 200), null);
 		assertNotNull(dc);
 		assertTrue(CREATION + TEST_THE_EXECUTION, getRootEditPart().getChildren().size() == 1);
 		assertTrue(CREATION + TEST_THE_EXECUTION, getBorderSides(dc) == (PositionConstants.TOP | PositionConstants.BOTTOM));
@@ -434,17 +435,17 @@ public class TestDurationConstraint_402967 extends AbstractNodeTest {
 	@Test
 	// link to different execution specification on two lifeline
 	public void testLinkingExecutionOnTwoLifeline() {
-		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(200, 100), null);
+		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(10, 100), null);
 		assertNotNull(lifeline1);
-		AbstractExecutionSpecificationEditPart es1 = createExecutionSpecification(lifeline1, new Point(231, 150), null);
+		AbstractExecutionSpecificationEditPart es1 = createExecutionSpecification(lifeline1, new Point(41, 150), null);
 		assertNotNull(es1);
 
-		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(400, 100), null);
+		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 100), null);
 		assertNotNull(lifeline2);
-		AbstractExecutionSpecificationEditPart es2 = createExecutionSpecification(lifeline2, new Point(431, 150), null);
+		AbstractExecutionSpecificationEditPart es2 = createExecutionSpecification(lifeline2, new Point(131, 150), null);
 		assertNotNull(es2);
 
-		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(350, 150), null);
+		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(50, 150), null);
 		assertNotNull(dc);
 
 		Point fromLocation = getAbsoluteBounds(dc).getTop();
@@ -470,13 +471,13 @@ public class TestDurationConstraint_402967 extends AbstractNodeTest {
 	// link to different messages on two lifeline
 	@Test
 	public void testLinkingMessageOnTwoLifeline() {
-		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(200, 80), null);
+		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(10, 80), null);
 		assertNotNull(lifeline1);
 
-		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(400, 80), null);
+		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 80), null);
 		assertNotNull(lifeline2);
 
-		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(300, 150), null);
+		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(50, 150), null);
 		assertNotNull(dc);
 		waitForComplete();
 
@@ -517,13 +518,13 @@ public class TestDurationConstraint_402967 extends AbstractNodeTest {
 	@Test
 	// duration link to message and execution
 	public void testLinkingExecutionMessageOnTwoLifeline() {
-		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(200, 80), null);
+		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(10, 80), null);
 		assertNotNull(lifeline1);
 
-		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(400, 80), null);
+		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 80), null);
 		assertNotNull(lifeline2);
 
-		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(300, 150), null);
+		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(50, 150), null);
 		assertNotNull(dc);
 		waitForComplete();
 
@@ -532,7 +533,7 @@ public class TestDurationConstraint_402967 extends AbstractNodeTest {
 		Point toLocation = getAbsoluteBounds(lifeline2).getCenter().translate(0, -offset);
 		createConnection(lifeline1.getViewer(), fromLocation, toLocation);
 
-		AbstractExecutionSpecificationEditPart es = createExecutionSpecification(lifeline2, new Point(231, 150), null);
+		AbstractExecutionSpecificationEditPart es = createExecutionSpecification(lifeline2, new Point(41, 150), null);
 		assertNotNull(es);
 
 		{ // link duration top

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA
+ * Copyright (c) 2010, 2014 Soyatec, CEA, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - don't maximize the workbench window
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug.m7;
@@ -109,9 +110,8 @@ public abstract class AbstractNodeTest extends TestTopNode {
 
 			public void run() {
 				try {
-					//Max shell
 					IWorkbench workbench = PlatformUI.getWorkbench();
-					workbench.getActiveWorkbenchWindow().getShell().setMaximized(true);
+					
 					//close intro
 					IIntroManager introManager = workbench.getIntroManager();
 					IIntroPart intro = introManager.getIntro();
