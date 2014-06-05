@@ -17,13 +17,12 @@ Require-Bundle: org.eclipse.papyrus.infra.onefile;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.gmfdiag.commands;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.0"
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.0",
+ com.google.guava;bundle-version="11.0.0"
 Bundle-Vendor: %providerName
 Bundle-Version: 1.0.0.qualifier
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.infra.emf.readonly.Activator
-Import-Package: com.google.common.base;version="11.0.0",
- com.google.common.collect;version="11.0.0"
 Bundle-SymbolicName: org.eclipse.papyrus.infra.emf.readonly;singleton:
  =true
 
