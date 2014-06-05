@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA
+ * Copyright (c) 2010, 2014 Soyatec, CEA, and others
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - fixing issues in sequence diagram test execution
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug.m7;
@@ -33,6 +34,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomInteractionOper
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionOperandEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.ISequenceDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.sequence.tests.bug.PopupUtil;
 import org.eclipse.papyrus.uml.diagram.sequence.util.InteractionOperandModelElementFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
@@ -71,17 +73,27 @@ public class TestGuardVisibility_402966 extends AbstractNodeTest {
 	@Test
 	public void testPreferencePage() {
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-		PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(shell, "org.eclipse.papyrus.uml.diagram.sequence.preferences.InteractionOperandPreferencePage", null, null);
-		dialog.setBlockOnOpen(false);
-		dialog.open();
-		IPreferencePage page = (IPreferencePage)dialog.getSelectedPage();
-		Control control = page.getControl();
-		Control group = getControl((Composite)control, Group.class, "Guard", SWT.NONE);
-		assertNotNull("Preference Item Guard Group: ", group);
-		Button checkbox = (Button)getControl((Composite)group, Button.class, "Show", SWT.CHECK);
-		assertNotNull("Preference Item Visibility CheckBox: ", checkbox);
-		assertEquals("Default value of Guard Visibility: ", true, checkbox.getSelection());
-		dialog.close();
+		final PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(shell, "org.eclipse.papyrus.uml.diagram.sequence.preferences.InteractionOperandPreferencePage", null, null);
+
+		PopupUtil.runWithDialogs(new Runnable() {
+
+			public void run() {
+				dialog.setBlockOnOpen(false);
+				dialog.open();
+
+				try {
+					IPreferencePage page = (IPreferencePage)dialog.getSelectedPage();
+					Control control = page.getControl();
+					Control group = getControl((Composite)control, Group.class, "Guard", SWT.NONE);
+					assertNotNull("Preference Item Guard Group: ", group);
+					Button checkbox = (Button)getControl((Composite)group, Button.class, "Show", SWT.CHECK);
+					assertNotNull("Preference Item Visibility CheckBox: ", checkbox);
+					assertEquals("Default value of Guard Visibility: ", true, checkbox.getSelection());
+				} finally {
+					dialog.close();
+				}
+			}
+		});
 	}
 
 	private Control getControl(Composite parent, Class<?> controlType, String name, int style) {

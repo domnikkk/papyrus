@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - fixing issues in sequence diagram test execution
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
@@ -124,9 +126,9 @@ public class PopupUtil {
 					currentContextMenu = menu;
 					click(menu, clickMenuIndex);
 					menuPopup = true;
-				}
-				if(event.type == SWT.Hide) {
+				} else if((event.type == SWT.Hide) && (menu == currentContextMenu)) {
 					currentContextMenu = null;
+					menuPopup = false;
 				}
 			}
 		}
@@ -169,19 +171,28 @@ public class PopupUtil {
 		public void handleEvent(Event event) {
 			if(event.widget instanceof Shell) {
 				Shell shell = (Shell)event.widget;
+				Button defaultButton = shell.isDisposed() ? null : shell.getDefaultButton();
 				waitForComplete();
-				notifyEvent(shell.getDefaultButton(), SWT.Selection);
+
+				if((defaultButton != null) && !defaultButton.isDisposed()) {
+					notifyEvent(defaultButton, SWT.Selection);
+				}
 			}
 		}
 	};
 
-	public static void addDialogCloseHandler() {
-		Display.getDefault().syncExec(new Runnable() {
+	private static volatile boolean dialogCloseHandlerEngaged = false;
 
-			public void run() {
-				Display.getDefault().addFilter(SWT.Show, dialogCloseHandler);
-			}
-		});
+	public static void addDialogCloseHandler() {
+		if(!dialogCloseHandlerEngaged) {
+			Display.getDefault().syncExec(new Runnable() {
+
+				public void run() {
+					Display.getDefault().addFilter(SWT.Show, dialogCloseHandler);
+					dialogCloseHandlerEngaged = true;
+				}
+			});
+		}
 	}
 
 	public static void removeDialogCloseHandler() {
@@ -189,7 +200,32 @@ public class PopupUtil {
 
 			public void run() {
 				Display.getDefault().removeFilter(SWT.Show, dialogCloseHandler);
+				dialogCloseHandlerEngaged = false;
 			}
 		});
+	}
+
+	/**
+	 * Runs the specified {@code runnable}, ensuring that during its execution any dialogs that are opened are not automatically closed
+	 * but are managed from within the {@code runnable}.
+	 * 
+	 * @param runnable
+	 *        a runnable that deliberately opens and manages dialogs
+	 */
+	public static void runWithDialogs(Runnable runnable) {
+		if(!dialogCloseHandlerEngaged) {
+			// Just run it
+			runnable.run();
+		} else {
+			// First, disengage the dialog close handler
+			removeDialogCloseHandler();
+
+			try {
+				runnable.run();
+			} finally {
+				// Re-engage the handler
+				addDialogCloseHandler();
+			}
+		}
 	}
 }
