@@ -264,9 +264,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 		// Enable button by default, see bug #411256
 		constraintCheck.setSelection(true);
 		// should look 
-		constraintCheck.setText("Save constraints into the definition (OCL only)");	//$NON-NLS-1$
+		constraintCheck.setText("Save OCL constraints, if any, into the profile definition");	//$NON-NLS-1$
 		Button writeToPlugin = new Button(group, SWT.RADIO);
-		writeToPlugin.setText("Ignore. Use this option, if you use (a generated) plugin that embeds the constraints");	//$NON-NLS-1$
+		writeToPlugin.setText("Ignore OCL constraints, if any. (use validation plugin generator instead)");	//$NON-NLS-1$
 		GridData gd = new GridData(SWT.FILL, SWT.CENTER, true, true);
 		gd.heightHint = 60;
 		group.setLayoutData(gd);

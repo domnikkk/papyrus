@@ -79,6 +79,8 @@ public class ValidationPluginGenerator {
 
 	private static final String EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT = "org.eclipse.emf.validation.constraintProviders";  //$NON-NLS-1$
 
+	private static final String EMF_VALIDATION_CONSTRAINT_BINDINGS_EXTENSIONPOINT =  "org.eclipse.emf.validation.constraintBindings"; //$NON-NLS-1$
+	
 	private static final String UML_PLUGIN = "org.eclipse.uml2.uml";  //$NON-NLS-1$
 
 	private static final String EMF_VALIDATION_PLUGIN = "org.eclipse.emf.validation";  //$NON-NLS-1$
@@ -355,7 +357,7 @@ public class ValidationPluginGenerator {
 	@SuppressWarnings("nls")
 	private void generateBindings(String pluginID, PluginEditor editor, IConstraintsManager constraintsManager)
 	{
-		Element extension = createOrCleanExtension(editor, "org.eclipse.emf.validation.constraintBindings");
+		Element extension = createOrCleanExtension(editor, EMF_VALIDATION_CONSTRAINT_BINDINGS_EXTENSIONPOINT);
 		
 		// create a client context per stereotype
 		Set<Stereotype>constrainedStereotype=constraintsManager.getConstraintsOfStereotype().keySet();
@@ -407,7 +409,7 @@ public class ValidationPluginGenerator {
 			return extension;
 		}
 		else {
-			return editor.getPluginEditor().addExtension(EMF_VALIDATION_CONSTRAINT_PROVIDERS_EXTENSIONPOINT);
+			return editor.getPluginEditor().addExtension(extensionName);
 		}
 	}
 	
