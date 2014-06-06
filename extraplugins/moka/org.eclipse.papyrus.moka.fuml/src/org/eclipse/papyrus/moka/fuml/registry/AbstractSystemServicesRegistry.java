@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.uml2.uml.Class ;
@@ -82,14 +83,14 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 */
 	protected List<Object_> instantiateServices(String libraryName, List<String> serviceQualifiedNames) {
 		List<Object_> serviceInstances = new ArrayList<Object_>() ;
-		RegisteredLibrary[] libraries = RegisteredLibrary.getRegisteredLibraries();
-		RegisteredLibrary library = null;
-		for(RegisteredLibrary l : libraries) {
+		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
+		IRegisteredLibrary library = null;
+		for(IRegisteredLibrary l : libraries) {
 			if(l.getName().equals(libraryName))
 				library = l;
 		}
 		if(library != null) {
-			URI libraryUri = library.uri;
+			URI libraryUri = library.getUri();
 			ResourceSet resourceSet = Util.getResourceSet(contextEObject);
 			Resource libraryResource = resourceSet.getResource(libraryUri, true);
 			for(Iterator<EObject> i = libraryResource.getAllContents(); i.hasNext();) {

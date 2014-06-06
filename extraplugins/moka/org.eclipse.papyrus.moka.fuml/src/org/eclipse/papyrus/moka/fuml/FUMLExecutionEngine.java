@@ -40,6 +40,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL3.ExecutionFactoryL3;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.registry.IOpaqueBehaviorExecutionRegistry;
 import org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry;
+import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.uml2.uml.Behavior;
@@ -179,11 +180,11 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 *        the locus
 	 */
 	protected void initializeBuiltInPrimitiveTypes(Locus locus) {
-		RegisteredLibrary[] libraries = RegisteredLibrary.getRegisteredLibraries();
+		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
-		for(RegisteredLibrary l : libraries) {
+		for(IRegisteredLibrary l : libraries) {
 			if(l.getName().equals("UMLPrimitiveTypes")) {
-				URI libraryUri = l.uri;
+				URI libraryUri = l.getUri();
 				Resource libraryResource = resourceSet.getResource(libraryUri, true);
 				Iterator<EObject> libElementIterator = libraryResource.getAllContents();
 				while(libElementIterator.hasNext()) {

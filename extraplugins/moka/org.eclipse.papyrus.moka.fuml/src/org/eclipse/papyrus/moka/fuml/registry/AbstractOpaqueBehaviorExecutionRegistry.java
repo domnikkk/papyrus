@@ -15,6 +15,7 @@ package org.eclipse.papyrus.moka.fuml.registry;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.uml2.uml.OpaqueBehavior;
@@ -48,15 +50,15 @@ public abstract class AbstractOpaqueBehaviorExecutionRegistry implements IOpaque
 
 	protected void buildOpaqueBehaviorsMap(final String LIBRARY_NAME) {
 		opaqueBehaviorsMap = new HashMap<String, OpaqueBehavior>();
-		RegisteredLibrary[] libraries = RegisteredLibrary.getRegisteredLibraries();
-		RegisteredLibrary library = null;
-		for(RegisteredLibrary l : libraries) {
+		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
+		IRegisteredLibrary library = null;
+		for(IRegisteredLibrary l : libraries) {
 			if(l.getName().equals(LIBRARY_NAME)) {
 				library = l;
 			}
 		}
 		if(library != null) {
-			URI libraryUri = library.uri;
+			URI libraryUri = library.getUri();
 			ResourceSet resourceSet = Util.getResourceSet(contextEObject);
 			Resource libraryResource = resourceSet.getResource(libraryUri, true);
 			for(Iterator<EObject> i = libraryResource.getAllContents(); i.hasNext();) {
