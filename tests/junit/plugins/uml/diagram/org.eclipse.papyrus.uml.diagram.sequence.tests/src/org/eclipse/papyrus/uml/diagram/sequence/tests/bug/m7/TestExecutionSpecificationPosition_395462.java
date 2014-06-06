@@ -45,7 +45,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
-import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractExecutionSpecificationEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomLifelineEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineEditPart;
@@ -188,7 +187,6 @@ public class TestExecutionSpecificationPosition_395462 extends AbstractNodeTest 
 		assertTrue(CHECK_ES_POSITION, newLifelineBounds2.getCenter().x == newEsBounds2.getCenter().x);
 	}
 
-	@InvalidTest("To be verified (freeze? infinite loop in UI thread?")
 	@Test
 	public void testOnPartDecomposition() {
 		LifelineEditPart host = createLifeline(null, new Point(200, 100), new Dimension(240, 200));
