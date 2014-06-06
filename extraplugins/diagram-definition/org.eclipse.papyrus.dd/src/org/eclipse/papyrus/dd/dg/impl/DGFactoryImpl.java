@@ -94,8 +94,8 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 			return createStyleSelector();
 		case DGPackage.ELLIPSE:
 			return createEllipse();
-		case DGPackage.ELLIPTICAL_CURVE_TO:
-			return createEllipticalCurveTo();
+		case DGPackage.ELLIPTICAL_ARC_TO:
+			return createEllipticalArcTo();
 		case DGPackage.QUADRATIC_CURVE_TO:
 			return createQuadraticCurveTo();
 		case DGPackage.GRADIENT_STOP:
@@ -154,6 +154,8 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 		switch (eDataType.getClassifierID()) {
 		case DGPackage.FONT_DECORATION:
 			return createFontDecorationFromString(eDataType, initialValue);
+		case DGPackage.ELEMENT_KIND:
+			return createElementKindFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '"
 					+ eDataType.getName() + "' is not a valid classifier");
@@ -170,6 +172,8 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 		switch (eDataType.getClassifierID()) {
 		case DGPackage.FONT_DECORATION:
 			return convertFontDecorationToString(eDataType, instanceValue);
+		case DGPackage.ELEMENT_KIND:
+			return convertElementKindToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '"
 					+ eDataType.getName() + "' is not a valid classifier");
@@ -321,9 +325,9 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 	 * 
 	 * @generated
 	 */
-	public EllipticalCurveTo createEllipticalCurveTo() {
-		EllipticalCurveToImpl ellipticalCurveTo = new EllipticalCurveToImpl();
-		return ellipticalCurveTo;
+	public EllipticalArcTo createEllipticalArcTo() {
+		EllipticalArcToImpl ellipticalArcTo = new EllipticalArcToImpl();
+		return ellipticalArcTo;
 	}
 
 	/**
@@ -557,6 +561,31 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 	 * @generated
 	 */
 	public String convertFontDecorationToString(EDataType eDataType,
+			Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ElementKind createElementKindFromString(EDataType eDataType,
+			String initialValue) {
+		ElementKind result = ElementKind.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertElementKindToString(EDataType eDataType,
 			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}

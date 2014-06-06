@@ -35,7 +35,7 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl#getRule <em>Rule
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl#getRules <em>Rule
  * </em>}</li>
  * </ul>
  * </p>
@@ -45,14 +45,14 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
 public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 		StyleSheet {
 	/**
-	 * The cached value of the '{@link #getRule() <em>Rule</em>}' containment
+	 * The cached value of the '{@link #getRules() <em>Rule</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getRule()
+	 * @see #getRules()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<StyleRule> rule;
+	protected EList<StyleRule> rules;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -78,12 +78,12 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
-	public EList<StyleRule> getRule() {
-		if (rule == null) {
-			rule = new EObjectContainmentEList<StyleRule>(StyleRule.class,
+	public EList<StyleRule> getRules() {
+		if (rules == null) {
+			rules = new EObjectContainmentEList<StyleRule>(StyleRule.class,
 					this, DGPackage.STYLE_SHEET__RULE);
 		}
-		return rule;
+		return rules;
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
-			return ((InternalEList<?>) getRule()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getRules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -110,7 +110,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
-			return getRule();
+			return getRules();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,8 +125,8 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
-			getRule().clear();
-			getRule().addAll((Collection<? extends StyleRule>) newValue);
+			getRules().clear();
+			getRules().addAll((Collection<? extends StyleRule>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,7 +141,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
-			getRule().clear();
+			getRules().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -156,7 +156,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
-			return rule != null && !rule.isEmpty();
+			return rules != null && !rules.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

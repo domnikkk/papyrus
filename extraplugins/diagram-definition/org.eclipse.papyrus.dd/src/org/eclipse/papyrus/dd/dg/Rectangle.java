@@ -11,6 +11,8 @@
  */
 package org.eclipse.papyrus.dd.dg;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.papyrus.dd.dc.Bounds;
 
 /**
@@ -69,10 +71,12 @@ public interface Rectangle extends GraphicalElement {
 	 * corners. <!-- end-model-doc -->
 	 * 
 	 * @return the value of the '<em>Corner Radius</em>' attribute.
+	 * @see #isSetCornerRadius()
+	 * @see #unsetCornerRadius()
 	 * @see #setCornerRadius(double)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getRectangle_CornerRadius()
-	 * @model default="0" dataType="org.eclipse.papyrus.dd.dc.Real"
-	 *        required="true" ordered="false"
+	 * @model default="0" unsettable="true"
+	 *        dataType="org.eclipse.papyrus.dd.dc.Real" ordered="false"
 	 * @generated
 	 */
 	double getCornerRadius();
@@ -85,9 +89,54 @@ public interface Rectangle extends GraphicalElement {
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Corner Radius</em>' attribute.
+	 * @see #isSetCornerRadius()
+	 * @see #unsetCornerRadius()
 	 * @see #getCornerRadius()
 	 * @generated
 	 */
 	void setCornerRadius(double value);
+
+	/**
+	 * Unsets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.Rectangle#getCornerRadius
+	 * <em>Corner Radius</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #isSetCornerRadius()
+	 * @see #getCornerRadius()
+	 * @see #setCornerRadius(double)
+	 * @generated
+	 */
+	void unsetCornerRadius();
+
+	/**
+	 * Returns whether the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.Rectangle#getCornerRadius
+	 * <em>Corner Radius</em>}' attribute is set. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return whether the value of the '<em>Corner Radius</em>' attribute is
+	 *         set.
+	 * @see #unsetCornerRadius()
+	 * @see #getCornerRadius()
+	 * @see #setCornerRadius(double)
+	 * @generated
+	 */
+	boolean isSetCornerRadius();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='cornerRadius >= 0'"
+	 * @generated
+	 */
+	boolean nonNegativeCornerRadius(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
 
 } // Rectangle

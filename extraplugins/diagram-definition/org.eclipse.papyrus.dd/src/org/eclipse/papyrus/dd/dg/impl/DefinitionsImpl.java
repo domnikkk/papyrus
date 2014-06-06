@@ -38,7 +38,7 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl#getDefnition <em>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl#getDefnitions <em>
  * Defnition</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl#getStyleSheet <em>
  * Style Sheet</em>}</li>
@@ -50,14 +50,14 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
 public class DefinitionsImpl extends MinimalEObjectImpl.Container implements
 		Definitions {
 	/**
-	 * The cached value of the '{@link #getDefnition() <em>Defnition</em>}'
+	 * The cached value of the '{@link #getDefnitions() <em>Defnition</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getDefnition()
+	 * @see #getDefnitions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Definition> defnition;
+	protected EList<Definition> defnitions;
 
 	/**
 	 * The cached value of the '{@link #getStyleSheet() <em>Style Sheet</em>}'
@@ -93,12 +93,12 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
-	public EList<Definition> getDefnition() {
-		if (defnition == null) {
-			defnition = new EObjectContainmentEList<Definition>(
+	public EList<Definition> getDefnitions() {
+		if (defnitions == null) {
+			defnitions = new EObjectContainmentEList<Definition>(
 					Definition.class, this, DGPackage.DEFINITIONS__DEFNITION);
 		}
-		return defnition;
+		return defnitions;
 	}
 
 	/**
@@ -168,7 +168,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DGPackage.DEFINITIONS__DEFNITION:
-			return ((InternalEList<?>) getDefnition()).basicRemove(otherEnd,
+			return ((InternalEList<?>) getDefnitions()).basicRemove(otherEnd,
 					msgs);
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			return basicSetStyleSheet(null, msgs);
@@ -185,7 +185,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DGPackage.DEFINITIONS__DEFNITION:
-			return getDefnition();
+			return getDefnitions();
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			return getStyleSheet();
 		}
@@ -202,8 +202,8 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DGPackage.DEFINITIONS__DEFNITION:
-			getDefnition().clear();
-			getDefnition().addAll((Collection<? extends Definition>) newValue);
+			getDefnitions().clear();
+			getDefnitions().addAll((Collection<? extends Definition>) newValue);
 			return;
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			setStyleSheet((StyleSheet) newValue);
@@ -221,7 +221,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DGPackage.DEFINITIONS__DEFNITION:
-			getDefnition().clear();
+			getDefnitions().clear();
 			return;
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			setStyleSheet((StyleSheet) null);
@@ -239,7 +239,7 @@ public class DefinitionsImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DGPackage.DEFINITIONS__DEFNITION:
-			return defnition != null && !defnition.isEmpty();
+			return defnitions != null && !defnitions.isEmpty();
 		case DGPackage.DEFINITIONS__STYLE_SHEET:
 			return styleSheet != null;
 		}

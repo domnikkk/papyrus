@@ -42,8 +42,9 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <em>Background Color</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.RootCanvasImpl#getDefinitions <em>
  * Definitions</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.RootCanvasImpl#getStyleSheet <em>
- * Style Sheet</em>}</li>
+ * <li>
+ * {@link org.eclipse.papyrus.dd.dg.impl.RootCanvasImpl#getExternalStyleSheets
+ * <em>External Style Sheet</em>}</li>
  * </ul>
  * </p>
  * 
@@ -92,14 +93,15 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	protected Definitions definitions;
 
 	/**
-	 * The cached value of the '{@link #getStyleSheet() <em>Style Sheet</em>}'
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getExternalStyleSheets()
+	 * <em>External Style Sheet</em>}' reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
-	 * @see #getStyleSheet()
+	 * @see #getExternalStyleSheets()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<StyleSheet> styleSheet;
+	protected EList<StyleSheet> externalStyleSheets;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -234,12 +236,13 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 	 * 
 	 * @generated
 	 */
-	public EList<StyleSheet> getStyleSheet() {
-		if (styleSheet == null) {
-			styleSheet = new EObjectResolvingEList<StyleSheet>(
-					StyleSheet.class, this, DGPackage.ROOT_CANVAS__STYLE_SHEET);
+	public EList<StyleSheet> getExternalStyleSheets() {
+		if (externalStyleSheets == null) {
+			externalStyleSheets = new EObjectResolvingEList<StyleSheet>(
+					StyleSheet.class, this,
+					DGPackage.ROOT_CANVAS__EXTERNAL_STYLE_SHEET);
 		}
-		return styleSheet;
+		return externalStyleSheets;
 	}
 
 	/**
@@ -269,8 +272,8 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 			return getBackgroundColor();
 		case DGPackage.ROOT_CANVAS__DEFINITIONS:
 			return getDefinitions();
-		case DGPackage.ROOT_CANVAS__STYLE_SHEET:
-			return getStyleSheet();
+		case DGPackage.ROOT_CANVAS__EXTERNAL_STYLE_SHEET:
+			return getExternalStyleSheets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -290,9 +293,10 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 		case DGPackage.ROOT_CANVAS__DEFINITIONS:
 			setDefinitions((Definitions) newValue);
 			return;
-		case DGPackage.ROOT_CANVAS__STYLE_SHEET:
-			getStyleSheet().clear();
-			getStyleSheet().addAll((Collection<? extends StyleSheet>) newValue);
+		case DGPackage.ROOT_CANVAS__EXTERNAL_STYLE_SHEET:
+			getExternalStyleSheets().clear();
+			getExternalStyleSheets().addAll(
+					(Collection<? extends StyleSheet>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -312,8 +316,8 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 		case DGPackage.ROOT_CANVAS__DEFINITIONS:
 			setDefinitions((Definitions) null);
 			return;
-		case DGPackage.ROOT_CANVAS__STYLE_SHEET:
-			getStyleSheet().clear();
+		case DGPackage.ROOT_CANVAS__EXTERNAL_STYLE_SHEET:
+			getExternalStyleSheets().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -331,8 +335,9 @@ public class RootCanvasImpl extends CanvasImpl implements RootCanvas {
 			return isSetBackgroundColor();
 		case DGPackage.ROOT_CANVAS__DEFINITIONS:
 			return definitions != null;
-		case DGPackage.ROOT_CANVAS__STYLE_SHEET:
-			return styleSheet != null && !styleSheet.isEmpty();
+		case DGPackage.ROOT_CANVAS__EXTERNAL_STYLE_SHEET:
+			return externalStyleSheets != null
+					&& !externalStyleSheets.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

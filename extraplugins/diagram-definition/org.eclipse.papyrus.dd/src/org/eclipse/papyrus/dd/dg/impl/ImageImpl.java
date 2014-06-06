@@ -11,9 +11,14 @@
  */
 package org.eclipse.papyrus.dd.dg.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -23,6 +28,7 @@ import org.eclipse.papyrus.dd.dc.Bounds;
 
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Image;
+import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -213,6 +219,39 @@ public class ImageImpl extends GraphicalElementImpl implements Image {
 	}
 
 	/**
+	 * The cached validation expression for the '
+	 * {@link #sourceCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Source Cannot Be Empty</em>}' invariant operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #sourceCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SOURCE_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "source->notEmpty() implies source.size() > 0";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean sourceCannotBeEmpty(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.IMAGE,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.IMAGE___SOURCE_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP,
+						SOURCE_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.IMAGE__SOURCE_CANNOT_BE_EMPTY);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -304,6 +343,23 @@ public class ImageImpl extends GraphicalElementImpl implements Image {
 			return isAspectRatioPreserved != IS_ASPECT_RATIO_PRESERVED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case DGPackage.IMAGE___SOURCE_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP:
+			return sourceCannotBeEmpty((DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

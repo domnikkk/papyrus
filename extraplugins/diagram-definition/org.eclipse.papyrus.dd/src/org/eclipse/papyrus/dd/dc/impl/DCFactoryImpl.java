@@ -91,8 +91,6 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 		switch (eDataType.getClassifierID()) {
 		case DCPackage.KNOWN_COLOR:
 			return createKnownColorFromString(eDataType, initialValue);
-		case DCPackage.ALIGNMENT_KIND:
-			return createAlignmentKindFromString(eDataType, initialValue);
 		case DCPackage.BOOLEAN:
 			return createBooleanFromString(eDataType, initialValue);
 		case DCPackage.INTEGER:
@@ -119,8 +117,6 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 		switch (eDataType.getClassifierID()) {
 		case DCPackage.KNOWN_COLOR:
 			return convertKnownColorToString(eDataType, instanceValue);
-		case DCPackage.ALIGNMENT_KIND:
-			return convertAlignmentKindToString(eDataType, instanceValue);
 		case DCPackage.BOOLEAN:
 			return convertBooleanToString(eDataType, instanceValue);
 		case DCPackage.INTEGER:
@@ -188,31 +184,6 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * @generated
 	 */
 	public String convertKnownColorToString(EDataType eDataType,
-			Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public AlignmentKind createAlignmentKindFromString(EDataType eDataType,
-			String initialValue) {
-		AlignmentKind result = AlignmentKind.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String convertAlignmentKindToString(EDataType eDataType,
 			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}

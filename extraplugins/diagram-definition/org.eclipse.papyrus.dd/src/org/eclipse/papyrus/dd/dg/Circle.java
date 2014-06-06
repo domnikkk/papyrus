@@ -64,16 +64,16 @@ public interface Circle extends GraphicalElement {
 	void setCenter(Point value);
 
 	/**
-	 * Returns the value of the '<em><b>Radius</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a real
-	 * number (>=0) that represents the radius of the circle. <!-- end-model-doc
-	 * -->
+	 * Returns the value of the '<em><b>Radius</b></em>' attribute. The default
+	 * value is <code>"0"</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc --> a real number (>=0) that represents the radius
+	 * of the circle. <!-- end-model-doc -->
 	 * 
 	 * @return the value of the '<em>Radius</em>' attribute.
 	 * @see #setRadius(double)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getCircle_Radius()
-	 * @model dataType="org.eclipse.papyrus.dd.dc.Real" required="true"
-	 *        ordered="false"
+	 * @model default="0" dataType="org.eclipse.papyrus.dd.dc.Real"
+	 *        required="true" ordered="false"
 	 * @generated
 	 */
 	double getRadius();
@@ -92,7 +92,7 @@ public interface Circle extends GraphicalElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
-	 * the radius cannot be negative
+	 * The radius of a circle cannot be negative
 	 * 
 	 * @param diagnostics
 	 *            The chain of diagnostics to which problems are to be appended.

@@ -38,10 +38,9 @@ import org.eclipse.papyrus.dd.dg.Definition;
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.Definition} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Definition} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class DefinitionItemProvider extends ItemProviderAdapter implements
@@ -75,42 +74,46 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature. <!-- begin-user-doc
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Definition_id_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Definition_id_feature", "_UI_Definition_type"),
-				DGPackage.Literals.DEFINITION__ID, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Definition_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Definition_id_feature", "_UI_Definition_type"),
+				 DGPackage.Literals.DEFINITION__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Definition) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Definition_type")
-				: getString("_UI_Definition_type") + " " + label;
+		String label = ((Definition)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Definition_type") :
+			getString("_UI_Definition_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -118,10 +121,9 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Definition.class)) {
-		case DGPackage.DEFINITION__ID:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case DGPackage.DEFINITION__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

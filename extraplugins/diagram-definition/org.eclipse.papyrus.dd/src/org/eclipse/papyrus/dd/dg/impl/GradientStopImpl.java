@@ -73,6 +73,15 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	protected Color color = COLOR_EDEFAULT;
 
 	/**
+	 * This is true if the Color attribute has been set. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean colorESet;
+
+	/**
 	 * The default value of the '{@link #getOffset() <em>Offset</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -93,6 +102,15 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	protected double offset = OFFSET_EDEFAULT;
 
 	/**
+	 * This is true if the Offset attribute has been set. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean offsetESet;
+
+	/**
 	 * The default value of the '{@link #getOpacity() <em>Opacity</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -100,7 +118,7 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double OPACITY_EDEFAULT = 1.0;
+	protected static final double OPACITY_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getOpacity() <em>Opacity</em>}'
@@ -111,6 +129,15 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected double opacity = OPACITY_EDEFAULT;
+
+	/**
+	 * This is true if the Opacity attribute has been set. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean opacityESet;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -148,9 +175,37 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	public void setColor(Color newColor) {
 		Color oldColor = color;
 		color = newColor;
+		boolean oldColorESet = colorESet;
+		colorESet = true;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.GRADIENT_STOP__COLOR, oldColor, color));
+					DGPackage.GRADIENT_STOP__COLOR, oldColor, color,
+					!oldColorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void unsetColor() {
+		Color oldColor = color;
+		boolean oldColorESet = colorESet;
+		color = COLOR_EDEFAULT;
+		colorESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET,
+					DGPackage.GRADIENT_STOP__COLOR, oldColor, COLOR_EDEFAULT,
+					oldColorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isSetColor() {
+		return colorESet;
 	}
 
 	/**
@@ -170,9 +225,37 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	public void setOffset(double newOffset) {
 		double oldOffset = offset;
 		offset = newOffset;
+		boolean oldOffsetESet = offsetESet;
+		offsetESet = true;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.GRADIENT_STOP__OFFSET, oldOffset, offset));
+					DGPackage.GRADIENT_STOP__OFFSET, oldOffset, offset,
+					!oldOffsetESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void unsetOffset() {
+		double oldOffset = offset;
+		boolean oldOffsetESet = offsetESet;
+		offset = OFFSET_EDEFAULT;
+		offsetESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET,
+					DGPackage.GRADIENT_STOP__OFFSET, oldOffset,
+					OFFSET_EDEFAULT, oldOffsetESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isSetOffset() {
+		return offsetESet;
 	}
 
 	/**
@@ -192,9 +275,37 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	public void setOpacity(double newOpacity) {
 		double oldOpacity = opacity;
 		opacity = newOpacity;
+		boolean oldOpacityESet = opacityESet;
+		opacityESet = true;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.GRADIENT_STOP__OPACITY, oldOpacity, opacity));
+					DGPackage.GRADIENT_STOP__OPACITY, oldOpacity, opacity,
+					!oldOpacityESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void unsetOpacity() {
+		double oldOpacity = opacity;
+		boolean oldOpacityESet = opacityESet;
+		opacity = OPACITY_EDEFAULT;
+		opacityESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET,
+					DGPackage.GRADIENT_STOP__OPACITY, oldOpacity,
+					OPACITY_EDEFAULT, oldOpacityESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isSetOpacity() {
+		return opacityESet;
 	}
 
 	/**
@@ -311,13 +422,13 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DGPackage.GRADIENT_STOP__COLOR:
-			setColor(COLOR_EDEFAULT);
+			unsetColor();
 			return;
 		case DGPackage.GRADIENT_STOP__OFFSET:
-			setOffset(OFFSET_EDEFAULT);
+			unsetOffset();
 			return;
 		case DGPackage.GRADIENT_STOP__OPACITY:
-			setOpacity(OPACITY_EDEFAULT);
+			unsetOpacity();
 			return;
 		}
 		super.eUnset(featureID);
@@ -332,12 +443,11 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DGPackage.GRADIENT_STOP__COLOR:
-			return COLOR_EDEFAULT == null ? color != null : !COLOR_EDEFAULT
-					.equals(color);
+			return isSetColor();
 		case DGPackage.GRADIENT_STOP__OFFSET:
-			return offset != OFFSET_EDEFAULT;
+			return isSetOffset();
 		case DGPackage.GRADIENT_STOP__OPACITY:
-			return opacity != OPACITY_EDEFAULT;
+			return isSetOpacity();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,11 +484,20 @@ public class GradientStopImpl extends MinimalEObjectImpl.Container implements
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (color: ");
-		result.append(color);
+		if (colorESet)
+			result.append(color);
+		else
+			result.append("<unset>");
 		result.append(", offset: ");
-		result.append(offset);
+		if (offsetESet)
+			result.append(offset);
+		else
+			result.append("<unset>");
 		result.append(", opacity: ");
-		result.append(opacity);
+		if (opacityESet)
+			result.append(opacity);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

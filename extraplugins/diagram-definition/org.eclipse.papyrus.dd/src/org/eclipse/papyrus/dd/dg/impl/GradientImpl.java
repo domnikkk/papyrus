@@ -28,8 +28,8 @@ import org.eclipse.papyrus.dd.dg.GradientStop;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.GradientImpl#getStop <em>Stop</em>}
- * </li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.GradientImpl#getStops <em>Stop
+ * </em>}</li>
  * </ul>
  * </p>
  * 
@@ -37,14 +37,14 @@ import org.eclipse.papyrus.dd.dg.GradientStop;
  */
 public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	/**
-	 * The cached value of the '{@link #getStop() <em>Stop</em>}' containment
+	 * The cached value of the '{@link #getStops() <em>Stop</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getStop()
+	 * @see #getStops()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<GradientStop> stop;
+	protected EList<GradientStop> stops;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -70,12 +70,12 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	 * 
 	 * @generated
 	 */
-	public EList<GradientStop> getStop() {
-		if (stop == null) {
-			stop = new EObjectContainmentEList<GradientStop>(
+	public EList<GradientStop> getStops() {
+		if (stops == null) {
+			stops = new EObjectContainmentEList<GradientStop>(
 					GradientStop.class, this, DGPackage.GRADIENT__STOP);
 		}
-		return stop;
+		return stops;
 	}
 
 	/**
@@ -88,7 +88,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
-			return ((InternalEList<?>) getStop()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getStops()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -102,7 +102,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
-			return getStop();
+			return getStops();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,8 +117,8 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
-			getStop().clear();
-			getStop().addAll((Collection<? extends GradientStop>) newValue);
+			getStops().clear();
+			getStops().addAll((Collection<? extends GradientStop>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +133,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
-			getStop().clear();
+			getStops().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -148,7 +148,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
-			return stop != null && !stop.isEmpty();
+			return stops != null && !stops.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

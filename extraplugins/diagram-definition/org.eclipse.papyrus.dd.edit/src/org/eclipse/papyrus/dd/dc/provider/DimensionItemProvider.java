@@ -36,10 +36,9 @@ import org.eclipse.papyrus.dd.dc.Dimension;
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dc.Dimension} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dc.Dimension} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class DimensionItemProvider extends ItemProviderAdapter implements
@@ -80,15 +79,19 @@ public class DimensionItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addWidthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Dimension_width_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Dimension_width_feature", "_UI_Dimension_type"),
-				DCPackage.Literals.DIMENSION__WIDTH, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Dimension_width_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Dimension_width_feature", "_UI_Dimension_type"),
+				 DCPackage.Literals.DIMENSION__WIDTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -98,46 +101,49 @@ public class DimensionItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addHeightPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Dimension_height_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Dimension_height_feature", "_UI_Dimension_type"),
-				DCPackage.Literals.DIMENSION__HEIGHT, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Dimension_height_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Dimension_height_feature", "_UI_Dimension_type"),
+				 DCPackage.Literals.DIMENSION__HEIGHT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns Dimension.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Dimension.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Dimension"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Dimension"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		Dimension dimension = (Dimension) object;
-		return getString("_UI_Dimension_type") + " " + dimension.getWidth();
+		return getString("_UI_Dimension_type") + " " + dimension.getWidth()
+				+ ", " + dimension.getHeight();
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,11 +151,10 @@ public class DimensionItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Dimension.class)) {
-		case DCPackage.DIMENSION__WIDTH:
-		case DCPackage.DIMENSION__HEIGHT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case DCPackage.DIMENSION__WIDTH:
+			case DCPackage.DIMENSION__HEIGHT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

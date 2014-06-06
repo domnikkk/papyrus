@@ -11,8 +11,13 @@
  */
 package org.eclipse.papyrus.dd.dg.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -21,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.MarkedElement;
 import org.eclipse.papyrus.dd.dg.Marker;
+import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -217,6 +223,108 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements
 	}
 
 	/**
+	 * The cached validation expression for the '
+	 * {@link #referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Start Marker Has Id</em>}' invariant operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REFERENCED_START_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "startMarker->notEmpty() implies startMarker.id->notEmpty()";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean referencedStartMarkerHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.MARKED_ELEMENT,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP,
+						REFERENCED_START_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR,
+						DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.MARKED_ELEMENT__REFERENCED_START_MARKER_HAS_ID);
+	}
+
+	/**
+	 * The cached validation expression for the '
+	 * {@link #referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Mid Marker Has Id</em>}' invariant operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REFERENCED_MID_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "midMarker->notEmpty() implies midMarker.id->notEmpty()";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean referencedMidMarkerHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.MARKED_ELEMENT,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP,
+						REFERENCED_MID_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR,
+						DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.MARKED_ELEMENT__REFERENCED_MID_MARKER_HAS_ID);
+	}
+
+	/**
+	 * The cached validation expression for the '
+	 * {@link #referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced End Marker Has Id</em>}' invariant operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REFERENCED_END_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "endMarker->notEmpty() implies endMarker.id->notEmpty()";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean referencedEndMarkerHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.MARKED_ELEMENT,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP,
+						REFERENCED_END_MARKER_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR,
+						DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.MARKED_ELEMENT__REFERENCED_END_MARKER_HAS_ID);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -298,6 +406,30 @@ public abstract class MarkedElementImpl extends GraphicalElementImpl implements
 			return startMarker != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case DGPackage.MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP:
+			return referencedStartMarkerHasId(
+					(DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		case DGPackage.MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP:
+			return referencedMidMarkerHasId((DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		case DGPackage.MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP:
+			return referencedEndMarkerHasId((DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } // MarkedElementImpl

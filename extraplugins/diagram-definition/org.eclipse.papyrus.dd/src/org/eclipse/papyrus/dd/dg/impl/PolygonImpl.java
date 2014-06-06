@@ -34,7 +34,7 @@ import org.eclipse.papyrus.dd.dg.Polygon;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.PolygonImpl#getPoint <em>Point
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.PolygonImpl#getPoints <em>Point
  * </em>}</li>
  * </ul>
  * </p>
@@ -43,14 +43,14 @@ import org.eclipse.papyrus.dd.dg.Polygon;
  */
 public class PolygonImpl extends MarkedElementImpl implements Polygon {
 	/**
-	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment
+	 * The cached value of the '{@link #getPoints() <em>Point</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getPoint()
+	 * @see #getPoints()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Point> point;
+	protected EList<Point> points;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -76,12 +76,12 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 	 * 
 	 * @generated
 	 */
-	public EList<Point> getPoint() {
-		if (point == null) {
-			point = new EObjectContainmentEList<Point>(Point.class, this,
+	public EList<Point> getPoints() {
+		if (points == null) {
+			points = new EObjectContainmentEList<Point>(Point.class, this,
 					DGPackage.POLYGON__POINT);
 		}
-		return point;
+		return points;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DGPackage.POLYGON__POINT:
-			return ((InternalEList<?>) getPoint()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getPoints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -108,7 +108,7 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DGPackage.POLYGON__POINT:
-			return getPoint();
+			return getPoints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,8 +123,8 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DGPackage.POLYGON__POINT:
-			getPoint().clear();
-			getPoint().addAll((Collection<? extends Point>) newValue);
+			getPoints().clear();
+			getPoints().addAll((Collection<? extends Point>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,7 +139,7 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DGPackage.POLYGON__POINT:
-			getPoint().clear();
+			getPoints().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -154,7 +154,7 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DGPackage.POLYGON__POINT:
-			return point != null && !point.isEmpty();
+			return points != null && !points.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

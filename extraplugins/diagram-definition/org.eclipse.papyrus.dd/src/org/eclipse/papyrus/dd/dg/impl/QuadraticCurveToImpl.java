@@ -30,10 +30,10 @@ import org.eclipse.papyrus.dd.dg.QuadraticCurveTo;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl#getPoint <em>
- * Point</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl#getControl
  * <em>Control</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl#getPoint <em>
+ * Point</em>}</li>
  * </ul>
  * </p>
  * 
@@ -41,16 +41,6 @@ import org.eclipse.papyrus.dd.dg.QuadraticCurveTo;
  */
 public class QuadraticCurveToImpl extends PathCommandImpl implements
 		QuadraticCurveTo {
-	/**
-	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getPoint()
-	 * @generated
-	 * @ordered
-	 */
-	protected Point point;
-
 	/**
 	 * The cached value of the '{@link #getControl() <em>Control</em>}'
 	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -60,6 +50,16 @@ public class QuadraticCurveToImpl extends PathCommandImpl implements
 	 * @ordered
 	 */
 	protected Point control;
+
+	/**
+	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected Point point;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -202,10 +202,10 @@ public class QuadraticCurveToImpl extends PathCommandImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DGPackage.QUADRATIC_CURVE_TO__POINT:
-			return basicSetPoint(null, msgs);
 		case DGPackage.QUADRATIC_CURVE_TO__CONTROL:
 			return basicSetControl(null, msgs);
+		case DGPackage.QUADRATIC_CURVE_TO__POINT:
+			return basicSetPoint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -218,10 +218,10 @@ public class QuadraticCurveToImpl extends PathCommandImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DGPackage.QUADRATIC_CURVE_TO__POINT:
-			return getPoint();
 		case DGPackage.QUADRATIC_CURVE_TO__CONTROL:
 			return getControl();
+		case DGPackage.QUADRATIC_CURVE_TO__POINT:
+			return getPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,11 +234,11 @@ public class QuadraticCurveToImpl extends PathCommandImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DGPackage.QUADRATIC_CURVE_TO__POINT:
-			setPoint((Point) newValue);
-			return;
 		case DGPackage.QUADRATIC_CURVE_TO__CONTROL:
 			setControl((Point) newValue);
+			return;
+		case DGPackage.QUADRATIC_CURVE_TO__POINT:
+			setPoint((Point) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -252,11 +252,11 @@ public class QuadraticCurveToImpl extends PathCommandImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DGPackage.QUADRATIC_CURVE_TO__POINT:
-			setPoint((Point) null);
-			return;
 		case DGPackage.QUADRATIC_CURVE_TO__CONTROL:
 			setControl((Point) null);
+			return;
+		case DGPackage.QUADRATIC_CURVE_TO__POINT:
+			setPoint((Point) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -270,10 +270,10 @@ public class QuadraticCurveToImpl extends PathCommandImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DGPackage.QUADRATIC_CURVE_TO__POINT:
-			return point != null;
 		case DGPackage.QUADRATIC_CURVE_TO__CONTROL:
 			return control != null;
+		case DGPackage.QUADRATIC_CURVE_TO__POINT:
+			return point != null;
 		}
 		return super.eIsSet(featureID);
 	}

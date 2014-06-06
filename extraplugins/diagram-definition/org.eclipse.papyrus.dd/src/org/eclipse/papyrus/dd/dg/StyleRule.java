@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getSelector <em>Selector</em>}
- * </li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getSelectors <em>Selector
+ * </em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
@@ -45,7 +45,7 @@ public interface StyleRule extends EObject {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<StyleSelector> getSelector();
+	EList<StyleSelector> getSelectors();
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference.

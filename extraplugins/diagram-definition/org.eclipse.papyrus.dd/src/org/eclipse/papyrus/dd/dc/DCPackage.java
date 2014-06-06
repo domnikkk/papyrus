@@ -154,13 +154,22 @@ public interface DCPackage extends EPackage {
 	int DIMENSION_FEATURE_COUNT = 2;
 
 	/**
-	 * The operation id for the '<em>Non Negative Dimension</em>' operation.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The operation id for the '<em>Non Negative Width</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DIMENSION___NON_NEGATIVE_DIMENSION__DIAGNOSTICCHAIN_MAP = 0;
+	int DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
+	 * The operation id for the '<em>Non Negative Height</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The number of operations of the '<em>Dimension</em>' class. <!--
@@ -169,7 +178,7 @@ public interface DCPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIMENSION_OPERATION_COUNT = 1;
+	int DIMENSION_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '
@@ -228,13 +237,22 @@ public interface DCPackage extends EPackage {
 	int BOUNDS_FEATURE_COUNT = 4;
 
 	/**
-	 * The operation id for the '<em>Non Negative Size</em>' operation. <!--
+	 * The operation id for the '<em>Non Negative Width</em>' operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int BOUNDS___NON_NEGATIVE_SIZE__DIAGNOSTICCHAIN_MAP = 0;
+	int BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
+	 * The operation id for the '<em>Non Negative Height</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The number of operations of the '<em>Bounds</em>' class. <!--
@@ -243,7 +261,7 @@ public interface DCPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOUNDS_OPERATION_COUNT = 1;
+	int BOUNDS_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dc.KnownColor
@@ -257,24 +275,13 @@ public interface DCPackage extends EPackage {
 	int KNOWN_COLOR = 3;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dc.AlignmentKind <em>Alignment Kind</em>}'
-	 * enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see org.eclipse.papyrus.dd.dc.AlignmentKind
-	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getAlignmentKind()
-	 * @generated
-	 */
-	int ALIGNMENT_KIND = 4;
-
-	/**
 	 * The meta object id for the '<em>Boolean</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getBoolean()
 	 * @generated
 	 */
-	int BOOLEAN = 5;
+	int BOOLEAN = 4;
 
 	/**
 	 * The meta object id for the '<em>Integer</em>' data type. <!--
@@ -283,7 +290,7 @@ public interface DCPackage extends EPackage {
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 6;
+	int INTEGER = 5;
 
 	/**
 	 * The meta object id for the '<em>Real</em>' data type. <!-- begin-user-doc
@@ -292,7 +299,7 @@ public interface DCPackage extends EPackage {
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getReal()
 	 * @generated
 	 */
-	int REAL = 7;
+	int REAL = 6;
 
 	/**
 	 * The meta object id for the '<em>String</em>' data type. <!--
@@ -302,7 +309,7 @@ public interface DCPackage extends EPackage {
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 8;
+	int STRING = 7;
 
 	/**
 	 * The meta object id for the '<em>Color</em>' data type. <!--
@@ -312,7 +319,7 @@ public interface DCPackage extends EPackage {
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getColor()
 	 * @generated
 	 */
-	int COLOR = 9;
+	int COLOR = 8;
 
 	/**
 	 * Returns the meta object for class '
@@ -386,17 +393,29 @@ public interface DCPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeDimension(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Non Negative Dimension</em>}' operation. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Non Negative Width</em>}' operation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @return the meta object for the '<em>Non Negative Dimension</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeDimension(org.eclipse.emf.common.util.DiagnosticChain,
+	 * @return the meta object for the '<em>Non Negative Width</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain,
 	 *      java.util.Map)
 	 * @generated
 	 */
-	EOperation getDimension__NonNegativeDimension__DiagnosticChain_Map();
+	EOperation getDimension__NonNegativeWidth__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Non Negative Height</em>}' operation. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Non Negative Height</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getDimension__NonNegativeHeight__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '
@@ -459,16 +478,29 @@ public interface DCPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Non Negative Size</em>} ' operation. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Non Negative Width</em>}' operation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @return the meta object for the '<em>Non Negative Size</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeSize(org.eclipse.emf.common.util.DiagnosticChain,
+	 * @return the meta object for the '<em>Non Negative Width</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain,
 	 *      java.util.Map)
 	 * @generated
 	 */
-	EOperation getBounds__NonNegativeSize__DiagnosticChain_Map();
+	EOperation getBounds__NonNegativeWidth__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Non Negative Height</em>}' operation. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Non Negative Height</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getBounds__NonNegativeHeight__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for enum '
@@ -480,17 +512,6 @@ public interface DCPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getKnownColor();
-
-	/**
-	 * Returns the meta object for enum '
-	 * {@link org.eclipse.papyrus.dd.dc.AlignmentKind <em>Alignment Kind</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for enum '<em>Alignment Kind</em>'.
-	 * @see org.eclipse.papyrus.dd.dc.AlignmentKind
-	 * @generated
-	 */
-	EEnum getAlignmentKind();
 
 	/**
 	 * Returns the meta object for data type '<em>Boolean</em>'. <!--
@@ -625,14 +646,22 @@ public interface DCPackage extends EPackage {
 		EAttribute DIMENSION__HEIGHT = eINSTANCE.getDimension_Height();
 
 		/**
-		 * The meta object literal for the '
-		 * <em><b>Non Negative Dimension</b></em>' operation. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Non Negative Width</b></em>'
+		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EOperation DIMENSION___NON_NEGATIVE_DIMENSION__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getDimension__NonNegativeDimension__DiagnosticChain_Map();
+		EOperation DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getDimension__NonNegativeWidth__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Non Negative Height</b></em>'
+		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getDimension__NonNegativeHeight__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -678,13 +707,22 @@ public interface DCPackage extends EPackage {
 		EAttribute BOUNDS__HEIGHT = eINSTANCE.getBounds_Height();
 
 		/**
-		 * The meta object literal for the '<em><b>Non Negative Size</b></em>'
+		 * The meta object literal for the '<em><b>Non Negative Width</b></em>'
 		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EOperation BOUNDS___NON_NEGATIVE_SIZE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getBounds__NonNegativeSize__DiagnosticChain_Map();
+		EOperation BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getBounds__NonNegativeWidth__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Non Negative Height</b></em>'
+		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getBounds__NonNegativeHeight__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -696,18 +734,6 @@ public interface DCPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum KNOWN_COLOR = eINSTANCE.getKnownColor();
-
-		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dc.AlignmentKind
-		 * <em>Alignment Kind</em>}' enum. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * 
-		 * @see org.eclipse.papyrus.dd.dc.AlignmentKind
-		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getAlignmentKind()
-		 * @generated
-		 */
-		EEnum ALIGNMENT_KIND = eINSTANCE.getAlignmentKind();
 
 		/**
 		 * The meta object literal for the '<em>Boolean</em>' data type. <!--

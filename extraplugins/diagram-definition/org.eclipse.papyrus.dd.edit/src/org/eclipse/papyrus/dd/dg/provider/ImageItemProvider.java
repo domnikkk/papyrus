@@ -37,10 +37,9 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Image;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.Image} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Image} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class ImageItemProvider extends GraphicalElementItemProvider implements
@@ -81,45 +80,47 @@ public class ImageItemProvider extends GraphicalElementItemProvider implements
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Image_source_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Image_source_feature", "_UI_Image_type"),
-				DGPackage.Literals.IMAGE__SOURCE, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Image_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Image_source_feature", "_UI_Image_type"),
+				 DGPackage.Literals.IMAGE__SOURCE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Aspect Ratio Preserved
-	 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Is Aspect Ratio Preserved feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addIsAspectRatioPreservedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Image_isAspectRatioPreserved_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Image_isAspectRatioPreserved_feature",
-						"_UI_Image_type"),
-				DGPackage.Literals.IMAGE__IS_ASPECT_RATIO_PRESERVED, true,
-				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Image_isAspectRatioPreserved_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Image_isAspectRatioPreserved_feature", "_UI_Image_type"),
+				 DGPackage.Literals.IMAGE__IS_ASPECT_RATIO_PRESERVED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -134,48 +135,45 @@ public class ImageItemProvider extends GraphicalElementItemProvider implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns Image.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Image.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Image"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Image"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Image) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Image_type")
-				: getString("_UI_Image_type") + " " + label;
+		String label = ((Image)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Image_type") :
+			getString("_UI_Image_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -183,15 +181,13 @@ public class ImageItemProvider extends GraphicalElementItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Image.class)) {
-		case DGPackage.IMAGE__SOURCE:
-		case DGPackage.IMAGE__IS_ASPECT_RATIO_PRESERVED:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DGPackage.IMAGE__BOUNDS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.IMAGE__SOURCE:
+			case DGPackage.IMAGE__IS_ASPECT_RATIO_PRESERVED:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case DGPackage.IMAGE__BOUNDS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -208,9 +204,10 @@ public class ImageItemProvider extends GraphicalElementItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.IMAGE__BOUNDS,
-				DCFactory.eINSTANCE.createBounds()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.IMAGE__BOUNDS,
+				 DCFactory.eINSTANCE.createBounds()));
 	}
 
 }

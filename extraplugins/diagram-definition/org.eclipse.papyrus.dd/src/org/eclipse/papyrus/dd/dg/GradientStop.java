@@ -47,9 +47,11 @@ public interface GradientStop extends EObject {
 	 * color to use at this gradient stop. <!-- end-model-doc -->
 	 * 
 	 * @return the value of the '<em>Color</em>' attribute.
+	 * @see #isSetColor()
+	 * @see #unsetColor()
 	 * @see #setColor(Color)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGradientStop_Color()
-	 * @model dataType="org.eclipse.papyrus.dd.dc.Color" required="true"
+	 * @model unsettable="true" dataType="org.eclipse.papyrus.dd.dc.Color"
 	 *        ordered="false"
 	 * @generated
 	 */
@@ -62,10 +64,37 @@ public interface GradientStop extends EObject {
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Color</em>' attribute.
+	 * @see #isSetColor()
+	 * @see #unsetColor()
 	 * @see #getColor()
 	 * @generated
 	 */
 	void setColor(Color value);
+
+	/**
+	 * Unsets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #isSetColor()
+	 * @see #getColor()
+	 * @see #setColor(Color)
+	 * @generated
+	 */
+	void unsetColor();
+
+	/**
+	 * Returns whether the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}'
+	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return whether the value of the '<em>Color</em>' attribute is set.
+	 * @see #unsetColor()
+	 * @see #getColor()
+	 * @see #setColor(Color)
+	 * @generated
+	 */
+	boolean isSetColor();
 
 	/**
 	 * Returns the value of the '<em><b>Offset</b></em>' attribute. <!--
@@ -75,9 +104,11 @@ public interface GradientStop extends EObject {
 	 * axes. <!-- end-model-doc -->
 	 * 
 	 * @return the value of the '<em>Offset</em>' attribute.
+	 * @see #isSetOffset()
+	 * @see #unsetOffset()
 	 * @see #setOffset(double)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGradientStop_Offset()
-	 * @model dataType="org.eclipse.papyrus.dd.dc.Real" required="true"
+	 * @model unsettable="true" dataType="org.eclipse.papyrus.dd.dc.Real"
 	 *        ordered="false"
 	 * @generated
 	 */
@@ -90,23 +121,52 @@ public interface GradientStop extends EObject {
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Offset</em>' attribute.
+	 * @see #isSetOffset()
+	 * @see #unsetOffset()
 	 * @see #getOffset()
 	 * @generated
 	 */
 	void setOffset(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Opacity</b></em>' attribute. The default
-	 * value is <code>"1"</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * <!-- begin-model-doc --> a real number (>=0 and<=1) representing the
-	 * opacity of the color at the stop. A value of 0 means totally transparent,
-	 * while a value of 1 means totally opaque. <!-- end-model-doc -->
+	 * Unsets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #isSetOffset()
+	 * @see #getOffset()
+	 * @see #setOffset(double)
+	 * @generated
+	 */
+	void unsetOffset();
+
+	/**
+	 * Returns whether the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}'
+	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return whether the value of the '<em>Offset</em>' attribute is set.
+	 * @see #unsetOffset()
+	 * @see #getOffset()
+	 * @see #setOffset(double)
+	 * @generated
+	 */
+	boolean isSetOffset();
+
+	/**
+	 * Returns the value of the '<em><b>Opacity</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a real
+	 * number (>=0 and<=1) representing the opacity of the color at the stop. A
+	 * value of 0 means totally transparent, while a value of 1 means totally
+	 * opaque. <!-- end-model-doc -->
 	 * 
 	 * @return the value of the '<em>Opacity</em>' attribute.
+	 * @see #isSetOpacity()
+	 * @see #unsetOpacity()
 	 * @see #setOpacity(double)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGradientStop_Opacity()
-	 * @model default="1" dataType="org.eclipse.papyrus.dd.dc.Real"
-	 *        required="true" ordered="false"
+	 * @model unsettable="true" dataType="org.eclipse.papyrus.dd.dc.Real"
+	 *        ordered="false"
 	 * @generated
 	 */
 	double getOpacity();
@@ -119,10 +179,39 @@ public interface GradientStop extends EObject {
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Opacity</em>' attribute.
+	 * @see #isSetOpacity()
+	 * @see #unsetOpacity()
 	 * @see #getOpacity()
 	 * @generated
 	 */
 	void setOpacity(double value);
+
+	/**
+	 * Unsets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity
+	 * <em>Opacity</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @see #isSetOpacity()
+	 * @see #getOpacity()
+	 * @see #setOpacity(double)
+	 * @generated
+	 */
+	void unsetOpacity();
+
+	/**
+	 * Returns whether the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity
+	 * <em>Opacity</em>}' attribute is set. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return whether the value of the '<em>Opacity</em>' attribute is set.
+	 * @see #unsetOpacity()
+	 * @see #getOpacity()
+	 * @see #setOpacity(double)
+	 * @generated
+	 */
+	boolean isSetOpacity();
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->

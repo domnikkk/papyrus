@@ -11,6 +11,8 @@
  */
 package org.eclipse.papyrus.dd.dg;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -38,7 +40,7 @@ public interface Definition extends EObject {
 	 * @see #setId(String)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getDefinition_Id()
 	 * @model id="true" dataType="org.eclipse.papyrus.dd.dc.String"
-	 *        required="true" ordered="false"
+	 *        ordered="false"
 	 * @generated
 	 */
 	String getId();
@@ -53,5 +55,20 @@ public interface Definition extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='id->notEmpty() implies id.size() > 0'"
+	 * @generated
+	 */
+	boolean idCannotBeEmpty(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
 
 } // Definition

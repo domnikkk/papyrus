@@ -38,7 +38,7 @@ import org.eclipse.papyrus.dd.dg.StyleSelector;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl#getSelector <em>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl#getSelectors <em>
  * Selector</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl#getStyle <em>Style
  * </em>}</li>
@@ -50,14 +50,14 @@ import org.eclipse.papyrus.dd.dg.StyleSelector;
 public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 		StyleRule {
 	/**
-	 * The cached value of the '{@link #getSelector() <em>Selector</em>}'
+	 * The cached value of the '{@link #getSelectors() <em>Selector</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getSelector()
+	 * @see #getSelectors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<StyleSelector> selector;
+	protected EList<StyleSelector> selectors;
 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment
@@ -93,12 +93,12 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
-	public EList<StyleSelector> getSelector() {
-		if (selector == null) {
-			selector = new EObjectContainmentEList<StyleSelector>(
+	public EList<StyleSelector> getSelectors() {
+		if (selectors == null) {
+			selectors = new EObjectContainmentEList<StyleSelector>(
 					StyleSelector.class, this, DGPackage.STYLE_RULE__SELECTOR);
 		}
-		return selector;
+		return selectors;
 	}
 
 	/**
@@ -165,7 +165,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DGPackage.STYLE_RULE__SELECTOR:
-			return ((InternalEList<?>) getSelector()).basicRemove(otherEnd,
+			return ((InternalEList<?>) getSelectors()).basicRemove(otherEnd,
 					msgs);
 		case DGPackage.STYLE_RULE__STYLE:
 			return basicSetStyle(null, msgs);
@@ -182,7 +182,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DGPackage.STYLE_RULE__SELECTOR:
-			return getSelector();
+			return getSelectors();
 		case DGPackage.STYLE_RULE__STYLE:
 			return getStyle();
 		}
@@ -199,9 +199,9 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DGPackage.STYLE_RULE__SELECTOR:
-			getSelector().clear();
-			getSelector()
-					.addAll((Collection<? extends StyleSelector>) newValue);
+			getSelectors().clear();
+			getSelectors().addAll(
+					(Collection<? extends StyleSelector>) newValue);
 			return;
 		case DGPackage.STYLE_RULE__STYLE:
 			setStyle((Style) newValue);
@@ -219,7 +219,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DGPackage.STYLE_RULE__SELECTOR:
-			getSelector().clear();
+			getSelectors().clear();
 			return;
 		case DGPackage.STYLE_RULE__STYLE:
 			setStyle((Style) null);
@@ -237,7 +237,7 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DGPackage.STYLE_RULE__SELECTOR:
-			return selector != null && !selector.isEmpty();
+			return selectors != null && !selectors.isEmpty();
 		case DGPackage.STYLE_RULE__STYLE:
 			return style != null;
 		}

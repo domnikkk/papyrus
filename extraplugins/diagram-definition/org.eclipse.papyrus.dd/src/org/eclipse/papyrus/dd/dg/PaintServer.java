@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.PaintServer#getTransform <em>Transform
+ * <li>{@link org.eclipse.papyrus.dd.dg.PaintServer#getTransforms <em>Transform
  * </em>}</li>
  * </ul>
  * </p>
@@ -45,6 +45,6 @@ public interface PaintServer extends Definition {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Transform> getTransform();
+	EList<Transform> getTransforms();
 
 } // PaintServer

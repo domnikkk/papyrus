@@ -34,10 +34,9 @@ import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Edge;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.di.Edge} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.di.Edge} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class EdgeItemProvider extends DiagramElementItemProvider implements
@@ -78,15 +77,19 @@ public class EdgeItemProvider extends DiagramElementItemProvider implements
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Edge_source_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Edge_source_feature", "_UI_Edge_type"),
-				DIPackage.Literals.EDGE__SOURCE, false, false, false, null,
-				null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Edge_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Edge_source_feature", "_UI_Edge_type"),
+				 DIPackage.Literals.EDGE__SOURCE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -96,25 +99,26 @@ public class EdgeItemProvider extends DiagramElementItemProvider implements
 	 * @generated
 	 */
 	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Edge_target_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Edge_target_feature", "_UI_Edge_type"),
-				DIPackage.Literals.EDGE__TARGET, false, false, false, null,
-				null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Edge_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Edge_target_feature", "_UI_Edge_type"),
+				 DIPackage.Literals.EDGE__TARGET,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -129,22 +133,20 @@ public class EdgeItemProvider extends DiagramElementItemProvider implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,11 +155,10 @@ public class EdgeItemProvider extends DiagramElementItemProvider implements
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -165,10 +166,9 @@ public class EdgeItemProvider extends DiagramElementItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Edge.class)) {
-		case DIPackage.EDGE__WAYPOINT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DIPackage.EDGE__WAYPOINT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -185,9 +185,10 @@ public class EdgeItemProvider extends DiagramElementItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DIPackage.Literals.EDGE__WAYPOINT,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DIPackage.Literals.EDGE__WAYPOINT,
+				 DCFactory.eINSTANCE.createPoint()));
 	}
 
 }
