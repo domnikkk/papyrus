@@ -74,7 +74,7 @@ public class ExtendedElementTypeSetRegistry {
 	 * @return the singleton instance of this registry
 	 */
 	public static synchronized ExtendedElementTypeSetRegistry getInstance() {
-		if(registry == null) {
+		if (registry == null) {
 			registry = new ExtendedElementTypeSetRegistry();
 			registry.init();
 		}
@@ -94,15 +94,18 @@ public class ExtendedElementTypeSetRegistry {
 		// 2. creates the list only when registry is acceded for the first time, (or on reload?)
 		extendedTypeSets = loadExtendedTypeSets();
 	}
-	
+
 	/**
 	 * Dispose this registry, i.e. remove all contribution on the element type registry
 	 */
 	public void dispose() {
-		if(extendedTypeSets == null){
+		if (extendedTypeSets == null) {
 			return;
 		}
-		for(Entry<String, ExtendedElementTypeSet> entry: extendedTypeSets.entrySet()) {
+		// copy set of entries to iterate and unload them one by one
+		List<Entry<String, ExtendedElementTypeSet>> entriesToDispose = new ArrayList<Entry<String, ExtendedElementTypeSet>>(extendedTypeSets.entrySet());
+
+		for (Entry<String, ExtendedElementTypeSet> entry : entriesToDispose) {
 			unload(entry.getKey());
 		}
 		extendedTypesResourceSet = null;
@@ -113,41 +116,41 @@ public class ExtendedElementTypeSetRegistry {
 		registry = null;
 	}
 
-	
+
 	/**
 	 * Loads a given extended type set from a given identifier
 	 */
 	public void loadExtendedElementTypeSet(String identifier) {
-		if(getExtendedTypeSets()==null) {
+		if (getExtendedTypeSets() == null) {
 			return;
 		}
-		
+
 		// retrieve the path from the identifier
 		String path = ExtendedTypesPreferences.getLocalExtendedTypesDefinitions().get(identifier);
-		if(path==null) {
+		if (path == null) {
 			return;
 		}
-		
+
 		URI localURI = URI.createPlatformResourceURI(path, true);
 		Resource resource = extendedTypesResourceSet.createResource(localURI);
 		try {
 			resource.load(null);
 			EObject content = resource.getContents().get(0);
-			if(content instanceof ExtendedElementTypeSet) {
-				getExtendedTypeSets().put(identifier, (ExtendedElementTypeSet)content);
-				loadExtendedElementTypeSet((ExtendedElementTypeSet)content);
+			if (content instanceof ExtendedElementTypeSet) {
+				getExtendedTypeSets().put(identifier, (ExtendedElementTypeSet) content);
+				loadExtendedElementTypeSet((ExtendedElementTypeSet) content);
 			}
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
 	}
-	
+
 	/**
 	 * Loads the specified extended element type set.
 	 * This does not take care to unload a similar set (a set with the same id) before loading. This should be handled before calling this method.
 	 * 
 	 * @param extendedElementTypeSet
-	 *        {@link ExtendedElementTypeSet} to load.
+	 *            {@link ExtendedElementTypeSet} to load.
 	 */
 	public void loadExtendedElementTypeSet(ExtendedElementTypeSet extendedElementTypeSet) {
 		IClientContext context;
@@ -158,24 +161,24 @@ public class ExtendedElementTypeSetRegistry {
 			return;
 		}
 		List<ElementTypeConfiguration> elementTypeConfigurations = extendedElementTypeSet.getElementType();
-		for(ElementTypeConfiguration configuration : elementTypeConfigurations) {
-			// load class associated to the configuration model => read extension point that defines this kind of configuration. 
+		for (ElementTypeConfiguration configuration : elementTypeConfigurations) {
+			// load class associated to the configuration model => read extension point that defines this kind of configuration.
 			String configurationType = configuration.eClass().getInstanceTypeName();
 			// retrieve the factory for a given kind of configuration
 			IExtendedElementTypeFactory<ElementTypeConfiguration> factory = configurationTypeToElementTypeFactory.get(configurationType);
 			// check factory is not on the exception table
-			if(factory == null && isNotInFactoryExceptionList(configurationType)) {
+			if (factory == null && isNotInFactoryExceptionList(configurationType)) {
 				Class<IExtendedElementTypeFactory<ElementTypeConfiguration>> factoryClass = retrieveFactoryClassFromExtensionPoint(configurationType);
-				if(factoryClass != null) {
+				if (factoryClass != null) {
 					try {
 						factory = factoryClass.newInstance();
 					} catch (InstantiationException e) {
-						if(configurationTypeFactoryExceptions == null) {
+						if (configurationTypeFactoryExceptions == null) {
 							configurationTypeFactoryExceptions = new ArrayList<String>();
 						}
 						configurationTypeFactoryExceptions.add(configurationType);
 					} catch (IllegalAccessException e) {
-						if(configurationTypeFactoryExceptions == null) {
+						if (configurationTypeFactoryExceptions == null) {
 							configurationTypeFactoryExceptions = new ArrayList<String>();
 						}
 						configurationTypeFactoryExceptions.add(configurationType);
@@ -183,7 +186,7 @@ public class ExtendedElementTypeSetRegistry {
 					configurationTypeToElementTypeFactory.put(configurationType, factory);
 				}
 			}
-			if(factory != null) {
+			if (factory != null) {
 				IExtendedHintedElementType type = factory.createElementType(configuration);
 				// register element Type
 				ElementTypeRegistry.getInstance().register(type);
@@ -191,22 +194,24 @@ public class ExtendedElementTypeSetRegistry {
 			}
 		}
 	}
-	
+
 	/**
 	 * Unloads a given {@link ExtendedElementTypeSet}
-	 * @param elementTypeSet the element type set to unload
+	 * 
+	 * @param elementTypeSet
+	 *            the element type set to unload
 	 */
 	public void unload(String identifier) {
-		if(extendedTypeSets==null) {
+		if (extendedTypeSets == null) {
 			return;
 		}
 		ExtendedElementTypeSet elementTypeSet = extendedTypeSets.get(identifier);
-		if(elementTypeSet==null) {
+		if (elementTypeSet == null) {
 			// there is an entry in the map for this extended type set, it should be removed...
 			extendedTypeSets.remove(identifier);
 			return;
 		}
-		
+
 		// retrieve the specializationTypeRegistry to remove all contribution from the given element type set
 		Field declaredField = null;
 		try {
@@ -218,49 +223,49 @@ public class ExtendedElementTypeSetRegistry {
 			Activator.log.error(e1);
 			return;
 		}
-		if(declaredField==null) {
+		if (declaredField == null) {
 			Activator.log.error("impossible to find specializationTypeRegistry", null);
 			return;
 		}
 		declaredField.setAccessible(true);
 		SpecializationTypeRegistry registry = null;
 		try {
-			registry = (SpecializationTypeRegistry)declaredField.get(ElementTypeRegistry.getInstance());
+			registry = (SpecializationTypeRegistry) declaredField.get(ElementTypeRegistry.getInstance());
 		} catch (IllegalArgumentException e) {
 			Activator.log.error(e);
 		} catch (IllegalAccessException e) {
 			Activator.log.error(e);
 		}
-		
-		if(registry == null) {
+
+		if (registry == null) {
 			return;
 		}
-		
-		for(ElementTypeConfiguration configuration : elementTypeSet.getElementType()) {
-			if(configuration!=null && configuration.getIdentifier()!=null) {
+
+		for (ElementTypeConfiguration configuration : elementTypeSet.getElementType()) {
+			if (configuration != null && configuration.getIdentifier() != null) {
 				String configIdentifier = configuration.getIdentifier();
 				// retrieve descriptor
 				SpecializationTypeDescriptor descriptor = registry.getSpecializationTypeDescriptor(configIdentifier);
-				if(descriptor!=null) {
+				if (descriptor != null) {
 					// remove also advice bindings specific to this descriptor
 					IEditHelperAdviceDescriptor adviceDescriptor = descriptor.getEditHelperAdviceDescriptor();
 					String targetId = adviceDescriptor.getTypeId();
 					removeAdviceFromBindings(registry, targetId, adviceDescriptor);
-					
+
 					registry.removeSpecializationType(descriptor);
-					
+
 				}
 			}
 		}
-		if(elementTypeSet.eResource()!=null) {
-			elementTypeSet.eResource().unload();	
-			if(extendedTypesResourceSet!=null) {
+		if (elementTypeSet.eResource() != null) {
+			elementTypeSet.eResource().unload();
+			if (extendedTypesResourceSet != null) {
 				extendedTypesResourceSet.getResources().remove(elementTypeSet.eResource());
 			}
 		}
 		extendedTypeSets.remove(identifier);
 	}
-	
+
 	protected void removeAdviceFromBindings(SpecializationTypeRegistry registry, String adviceDescriptorId, IEditHelperAdviceDescriptor adviceDescriptor) {
 		// retrieve the specializationTypeRegistry to remove all contribution from the given element type set
 		Map<?, ?> adviceBindings = null;
@@ -274,29 +279,29 @@ public class ExtendedElementTypeSetRegistry {
 			Activator.log.error(e1);
 			return;
 		}
-		if(adviceBindingsField==null) {
+		if (adviceBindingsField == null) {
 			Activator.log.error("impossible to find adviceBindings", null);
 			return;
 		}
 		adviceBindingsField.setAccessible(true);
 		try {
-			adviceBindings = (Map<?,?>)adviceBindingsField.get(registry);
+			adviceBindings = (Map<?, ?>) adviceBindingsField.get(registry);
 		} catch (IllegalArgumentException e) {
 			Activator.log.error(e);
 		} catch (IllegalAccessException e) {
 			Activator.log.error(e);
 		}
-		if(adviceBindings!=null) {
-			Set<?> bindings = (Set<?>)adviceBindings.get(adviceDescriptorId);
-			if(bindings!=null) {
+		if (adviceBindings != null) {
+			Set<?> bindings = (Set<?>) adviceBindings.get(adviceDescriptorId);
+			if (bindings != null) {
 				bindings.remove(adviceDescriptor);
 			}
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	/**
 	 * check this configuration type has not already caused issues du
 	 * 
@@ -304,7 +309,7 @@ public class ExtendedElementTypeSetRegistry {
 	 * @return
 	 */
 	protected boolean isNotInFactoryExceptionList(String configurationType) {
-		if(configurationTypeFactoryExceptions == null) {
+		if (configurationTypeFactoryExceptions == null) {
 			return true;
 		}
 		// this is not null, check the configuration type is not in the list
@@ -319,12 +324,12 @@ public class ExtendedElementTypeSetRegistry {
 	@SuppressWarnings("unchecked")
 	protected Class<IExtendedElementTypeFactory<ElementTypeConfiguration>> retrieveFactoryClassFromExtensionPoint(String configurationType) {
 		IConfigurationElement[] elements = Platform.getExtensionRegistry().getConfigurationElementsFor(IExtendedTypeConfigurationExtensionPoint.EXTENSION_POINT_ID);
-		for(IConfigurationElement configurationElement : elements) {
+		for (IConfigurationElement configurationElement : elements) {
 			String eCoreClassName = configurationElement.getAttribute(IExtendedTypeConfigurationExtensionPoint.CONFIGURATION_CLASS);
-			if(configurationType.equals(eCoreClassName)) {
+			if (configurationType.equals(eCoreClassName)) {
 				// retrieve factory to load
 				String factoryClassName = configurationElement.getAttribute(IExtendedTypeConfigurationExtensionPoint.FACTORY_CLASS);
-				return (Class<IExtendedElementTypeFactory<ElementTypeConfiguration>>)loadClass(factoryClassName, configurationElement.getContributor().getName());
+				return (Class<IExtendedElementTypeFactory<ElementTypeConfiguration>>) loadClass(factoryClassName, configurationElement.getContributor().getName());
 			}
 		}
 		return null;
@@ -337,17 +342,17 @@ public class ExtendedElementTypeSetRegistry {
 		Map<String, ExtendedElementTypeSet> extendedElementTypeSets = new HashMap<String, ExtendedElementTypeSet>();
 		// 1. retrieve from the workspace
 		Map<String, ExtendedElementTypeSet> localSets = loadExtendedTypeSetsFromWorkspace();
-		if(localSets != null && !localSets.isEmpty()) {
+		if (localSets != null && !localSets.isEmpty()) {
 			extendedElementTypeSets.putAll(localSets);
 		}
-		
+
 		// 2. retrieve from the platform. If already in workspace (id), do not load the platform ones
 		Map<String, ExtendedElementTypeSet> registeredSets = loadExtendedTypeSetsFromPlatform(localSets.keySet());
-		if(registeredSets != null && !registeredSets.isEmpty()) {
+		if (registeredSets != null && !registeredSets.isEmpty()) {
 			extendedElementTypeSets.putAll(registeredSets);
 		}
 		// load each extended element type set
-		for(Entry<String, ExtendedElementTypeSet> entry : extendedElementTypeSets.entrySet()) {
+		for (Entry<String, ExtendedElementTypeSet> entry : extendedElementTypeSets.entrySet()) {
 			loadExtendedElementTypeSet(entry.getValue());
 		}
 		return extendedElementTypeSets;
@@ -359,18 +364,18 @@ public class ExtendedElementTypeSetRegistry {
 	protected Map<String, ExtendedElementTypeSet> loadExtendedTypeSetsFromWorkspace() {
 		Map<String, String> localFilesPath = ExtendedTypesPreferences.getLocalExtendedTypesDefinitions();
 		Map<String, ExtendedElementTypeSet> workspaceElementTypeSets = new HashMap<String, ExtendedElementTypeSet>();
-		if(localFilesPath != null && !localFilesPath.isEmpty()) {
-			for(Entry<String, String> idToPath : localFilesPath.entrySet()) {
+		if (localFilesPath != null && !localFilesPath.isEmpty()) {
+			for (Entry<String, String> idToPath : localFilesPath.entrySet()) {
 				String filePath = idToPath.getValue();
 				String id = idToPath.getKey();
-				
+
 				URI localURI = URI.createPlatformResourceURI(filePath, true);
 				Resource resource = extendedTypesResourceSet.createResource(localURI);
 				try {
 					resource.load(null);
 					EObject content = resource.getContents().get(0);
-					if(content instanceof ExtendedElementTypeSet) {
-						workspaceElementTypeSets.put(id, (ExtendedElementTypeSet)content);
+					if (content instanceof ExtendedElementTypeSet) {
+						workspaceElementTypeSets.put(id, (ExtendedElementTypeSet) content);
 					}
 				} catch (IOException e) {
 					Activator.log.error(e);
@@ -388,19 +393,19 @@ public class ExtendedElementTypeSetRegistry {
 	protected Map<String, ExtendedElementTypeSet> loadExtendedTypeSetsFromPlatform(Set<String> workspaceDefinitions) {
 		Map<String, ExtendedElementTypeSet> platformElementTypeSets = new HashMap<String, ExtendedElementTypeSet>();
 		IConfigurationElement[] elements = Platform.getExtensionRegistry().getConfigurationElementsFor(IExtendedElementTypeSetExtensionPoint.EXTENSION_POINT_ID);
-		// for each element, parses and retrieve the model file. then loads it and returns the root element 
-		for(IConfigurationElement element : elements) {
+		// for each element, parses and retrieve the model file. then loads it and returns the root element
+		for (IConfigurationElement element : elements) {
 			String modelPath = element.getAttribute(IExtendedElementTypeSetExtensionPoint.PATH);
 			String extendedTypeSetId = element.getAttribute(IExtendedElementTypeSetExtensionPoint.ID);
 			String contributorID = element.getContributor().getName();
-			if(Platform.inDebugMode()) {
+			if (Platform.inDebugMode()) {
 				Activator.log.debug("[Reading extension point]");
 				Activator.log.debug("-  Path to the model: " + modelPath);
 				Activator.log.debug("-  id of the container bundle: " + contributorID);
 				Activator.log.debug("-  id of the extended type set: " + extendedTypeSetId);
 			}
 			ExtendedElementTypeSet set = getExtendedElementTypeSet(extendedTypeSetId, modelPath, contributorID);
-			if(set != null && !workspaceDefinitions.contains(extendedTypeSetId)) { // do not add if it is locally redefined
+			if (set != null && !workspaceDefinitions.contains(extendedTypeSetId)) { // do not add if it is locally redefined
 				platformElementTypeSets.put(extendedTypeSetId, set);
 			}
 		}
@@ -417,32 +422,32 @@ public class ExtendedElementTypeSetRegistry {
 	 * </p>
 	 * 
 	 * @param extendedTypesID
-	 *        id of the extended type set to load
+	 *            id of the extended type set to load
 	 * @param modelPath
-	 *        path of the model in the bundle
+	 *            path of the model in the bundle
 	 * @param bundleId
-	 *        id of the bundle containing the model file
+	 *            id of the bundle containing the model file
 	 * @return the loaded file or <code>null</code> if some problem occured during loading
 	 */
 	protected ExtendedElementTypeSet getExtendedElementTypeSet(String extendedTypesID, String modelPath, String bundleId) {
 		// 1. look in preferences.
 		String filePath = ExtendedTypesPreferences.getExtendedTypesRedefinition(extendedTypesID);
-		if(filePath != null) {
+		if (filePath != null) {
 			getExtendedElementTypeSetInPluginStateArea(extendedTypesID);
 		}
 		// 2. no local redefinition. Load extended type set from plugin definition
 		Bundle bundle = Platform.getBundle(bundleId);
-		if(Platform.isFragment(bundle)) {
+		if (Platform.isFragment(bundle)) {
 			return getExtendedElementTypeSetInBundle(modelPath, bundleId);
 		} else { // this is a plugin. Search in sub fragments, then in the plugin
 			Bundle[] fragments = Platform.getFragments(bundle);
 			// no fragment, so the file should be in the plugin itself
-			if(fragments == null) {
+			if (fragments == null) {
 				return getExtendedElementTypeSetInBundle(modelPath, bundleId);
 			} else {
-				for(Bundle fragment : fragments) {
+				for (Bundle fragment : fragments) {
 					ExtendedElementTypeSet extendedElementTypeSet = getExtendedElementTypeSetInBundle(modelPath, fragment.getSymbolicName());
-					if(extendedElementTypeSet != null) {
+					if (extendedElementTypeSet != null) {
 						return extendedElementTypeSet;
 					}
 				}
@@ -456,13 +461,13 @@ public class ExtendedElementTypeSetRegistry {
 	 * Retrieves the contribution in the plugin area
 	 * 
 	 * @param path
-	 *        the path of the element type set to load in the plugin area
+	 *            the path of the element type set to load in the plugin area
 	 */
 	protected ExtendedElementTypeSet getExtendedElementTypeSetInPluginStateArea(String path) {
 		// read in preferences area
 		IPath resourcePath = Activator.getDefault().getStateLocation().append(path);
 		URI uri = URI.createFileURI(resourcePath.toOSString());
-		if(uri != null && uri.isFile()) {
+		if (uri != null && uri.isFile()) {
 			Resource resource = extendedTypesResourceSet.createResource(uri);
 			try {
 				resource.load(null);
@@ -470,8 +475,8 @@ public class ExtendedElementTypeSetRegistry {
 				return null;
 			}
 			EObject content = resource.getContents().get(0);
-			if(content instanceof ExtendedElementTypeSet) {
-				return (ExtendedElementTypeSet)content;
+			if (content instanceof ExtendedElementTypeSet) {
+				return (ExtendedElementTypeSet) content;
 			}
 			Activator.log.error("Impossible to cast the object into an ExtendedElementTypeSet: " + content, null);
 			return null;
@@ -482,9 +487,9 @@ public class ExtendedElementTypeSetRegistry {
 	/**
 	 * 
 	 * @param modelPath
-	 *        path of the model in the bundle
+	 *            path of the model in the bundle
 	 * @param bundleId
-	 *        id of the bundle containing the model file
+	 *            id of the bundle containing the model file
 	 * @return the loaded file or <code>null</code> if some problem occured during loading
 	 */
 	protected ExtendedElementTypeSet getExtendedElementTypeSetInBundle(String modelPath, String bundleID) {
@@ -495,8 +500,8 @@ public class ExtendedElementTypeSetRegistry {
 			return null;
 		}
 		EObject content = resource.getContents().get(0);
-		if(content instanceof ExtendedElementTypeSet) {
-			return (ExtendedElementTypeSet)content;
+		if (content instanceof ExtendedElementTypeSet) {
+			return (ExtendedElementTypeSet) content;
 		}
 		Activator.log.error("Impossible to cast the object into an ExtendedElementTypeSet: " + content, null);
 		return null;
@@ -512,9 +517,9 @@ public class ExtendedElementTypeSetRegistry {
 		return set;
 	}
 
-	///////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////
 	// loading resource
-	///////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////
 	/** A map of classes that have been successfully loaded, keyed on the class name optionally prepended by the plugin ID, if specified. */
 	private static Map<String, WeakReference<Class<?>>> successLookupTable = new HashMap<String, WeakReference<Class<?>>>();
 
@@ -528,9 +533,9 @@ public class ExtendedElementTypeSetRegistry {
 	 * A utility method to load a class using its name and a given class loader.
 	 * 
 	 * @param className
-	 *        The class name
+	 *            The class name
 	 * @param bundle
-	 *        The class loader
+	 *            The class loader
 	 * @return The loaded class or <code>null</code> if could not be loaded
 	 */
 	protected static Class<?> loadClass(String className, String pluginId) {
@@ -541,21 +546,21 @@ public class ExtendedElementTypeSetRegistry {
 		String keyString = keyStringBuf.toString();
 		WeakReference<Class<?>> ref = successLookupTable.get(keyString);
 		Class<?> found = (ref != null) ? ref.get() : null;
-		if(found == null) {
-			if(ref != null)
+		if (found == null) {
+			if (ref != null)
 				successLookupTable.remove(keyString);
-			if(!failureLookupTable.contains(keyString)) {
+			if (!failureLookupTable.contains(keyString)) {
 				try {
 					Bundle bundle = basicGetPluginBundle(pluginId);
-					if(bundle != null) {
+					if (bundle != null) {
 						// never load the class if the bundle is not active other wise
 						// we will cause the plugin to load
 						// unless the class is in the exception list
 						int state = bundle.getState();
-						if(state == org.osgi.framework.Bundle.ACTIVE || isInExceptionList(bundle, className)) {
+						if (state == org.osgi.framework.Bundle.ACTIVE || isInExceptionList(bundle, className)) {
 							found = bundle.loadClass(className);
 							successLookupTable.put(keyString, new WeakReference<Class<?>>(found));
-							if(state == org.osgi.framework.Bundle.ACTIVE) {
+							if (state == org.osgi.framework.Bundle.ACTIVE) {
 								bundleToExceptionsSetMap.remove(bundle);
 							}
 						}
@@ -575,12 +580,12 @@ public class ExtendedElementTypeSetRegistry {
 	 * is, the method returns the bundle, otherwise it returns <code>null</code>.
 	 * 
 	 * @param pluginId
-	 *        the bundle ID
+	 *            the bundle ID
 	 * @return the bundle, if found
 	 */
 	protected static Bundle getPluginBundle(String pluginId) {
 		Bundle bundle = basicGetPluginBundle(pluginId);
-		if(null != bundle && bundle.getState() == org.osgi.framework.Bundle.ACTIVE)
+		if (null != bundle && bundle.getState() == org.osgi.framework.Bundle.ACTIVE)
 			return bundle;
 		return null;
 	}
@@ -592,23 +597,23 @@ public class ExtendedElementTypeSetRegistry {
 	private static boolean isInExceptionList(Bundle bundle, String className) {
 		String packageName = className.substring(0, className.lastIndexOf('.'));
 		Set<String> exceptionSet = bundleToExceptionsSetMap.get(bundle);
-		if(exceptionSet == null) {
+		if (exceptionSet == null) {
 			Dictionary<String, String> dict = bundle.getHeaders();
 			String value = dict.get("Eclipse-LazyStart"); //$NON-NLS-1$
-			if(value != null) {
+			if (value != null) {
 				int index = value.indexOf("exceptions"); //$NON-NLS-1$
-				if(index != -1) {
+				if (index != -1) {
 					try {
 						int start = value.indexOf('"', index + 1);
 						int end = value.indexOf('"', start + 1);
 						String exceptions = value.substring(start + 1, end);
 						exceptionSet = new HashSet<String>(2);
 						StringTokenizer tokenizer = new StringTokenizer(exceptions, ","); //$NON-NLS-1$
-						while(tokenizer.hasMoreTokens()) {
+						while (tokenizer.hasMoreTokens()) {
 							exceptionSet.add(tokenizer.nextToken().trim());
 						}
 					} catch (IndexOutOfBoundsException exception) {
-						// this means the MF did not follow the documented format for the exceptions list  so i'll consider it empty
+						// this means the MF did not follow the documented format for the exceptions list so i'll consider it empty
 						exceptionSet = Collections.emptySet();
 					}
 				} else {
