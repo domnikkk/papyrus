@@ -10,6 +10,7 @@
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 434993
  *   Christian W. Damus (CEA) - bug 436047
+ *   Christian W. Damus (CEA) - Decompositions need more room on Linux
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -222,7 +223,7 @@ public class TestDecompositionMove_364812 extends TestTopNode {
 	}
 
 	protected LifelineEditPart setupDecomposition() {
-		createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 100), new Dimension(240, 200));
+		createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 100), new Dimension(300, 200));
 
 		Interaction interaction = (Interaction)getRootSemanticModel();
 		CustomLifelineEditPart lifeline1 = (CustomLifelineEditPart)getRootEditPart().getChildren().get(0);
@@ -234,7 +235,7 @@ public class TestDecompositionMove_364812 extends TestTopNode {
 		waitForComplete();
 		PopupUtil.addDialogCloseHandler();
 		createNode(UMLElementTypes.Lifeline_3001, lifeline1, new Point(100, 120), new Dimension(62, 200));
-		createNode(UMLElementTypes.Lifeline_3001, lifeline1, new Point(200, 120), new Dimension(62, 200));
+		createNode(UMLElementTypes.Lifeline_3001, lifeline1, new Point(250, 120), new Dimension(62, 200));
 
 		assertTrue(CREATION + TEST_THE_EXECUTION, lifeline1.getChildren().size() == 3);
 		assertTrue(CREATION + TEST_THE_EXECUTION, lifeline1.getChildren().get(1) instanceof LifelineEditPart);

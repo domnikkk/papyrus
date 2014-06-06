@@ -10,6 +10,7 @@
  * Contributors:
  *   Soyatec - Initial API and implementation
  *   Christian W. Damus (CEA) - don't maximize the workbench window
+ *   Christian W. Damus (CEA) - fix messages for misaligned lifelines on Linux
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug.m7;
@@ -474,20 +475,24 @@ public class TestDurationConstraint_402967 extends AbstractNodeTest {
 		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(10, 80), null);
 		assertNotNull(lifeline1);
 
-		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 80), null);
+		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(150, 80), null);
 		assertNotNull(lifeline2);
 
-		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(50, 150), null);
+		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(80, 170), null);
 		assertNotNull(dc);
 		waitForComplete();
 
 		int offset = 40;
 		Point fromLocation = getAbsoluteBounds(lifeline1).getCenter().translate(0, -offset);
 		Point toLocation = getAbsoluteBounds(lifeline2).getCenter().translate(0, -offset);
+		// on Linux, the lifelines are not aligned vertically, so neither are their centres
+		alignVertically(fromLocation, toLocation);
 		createConnection(lifeline1.getViewer(), fromLocation, toLocation);
 
 		fromLocation = getAbsoluteBounds(lifeline1).getCenter().translate(0, offset);
 		toLocation = getAbsoluteBounds(lifeline2).getCenter().translate(0, offset);
+		// on Linux, the lifelines are not aligned vertically, so neither are their centres
+		alignVertically(fromLocation, toLocation);
 		createConnection(lifeline1.getViewer(), fromLocation, toLocation);
 
 		{ // link duration top
@@ -521,16 +526,18 @@ public class TestDurationConstraint_402967 extends AbstractNodeTest {
 		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(10, 80), null);
 		assertNotNull(lifeline1);
 
-		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 80), null);
+		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(150, 80), null);
 		assertNotNull(lifeline2);
 
-		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(50, 150), null);
+		DurationConstraintEditPart dc = (DurationConstraintEditPart)createNode(UMLElementTypes.DurationConstraint_3021, getRootEditPart(), new Point(80, 150), null);
 		assertNotNull(dc);
 		waitForComplete();
 
 		int offset = 40;
 		Point fromLocation = getAbsoluteBounds(lifeline1).getCenter().translate(0, -offset);
 		Point toLocation = getAbsoluteBounds(lifeline2).getCenter().translate(0, -offset);
+		// on Linux, the lifelines are not aligned vertically, so neither are their centres
+		alignVertically(fromLocation, toLocation);
 		createConnection(lifeline1.getViewer(), fromLocation, toLocation);
 
 		AbstractExecutionSpecificationEditPart es = createExecutionSpecification(lifeline2, new Point(41, 150), null);
@@ -558,6 +565,14 @@ public class TestDurationConstraint_402967 extends AbstractNodeTest {
 		assertTrue("the target is not finish end", os.getName().contains("Finish"));
 	}
 
+	private void alignVertically(Point p1, Point p2) {
+		if(p1.y != p2.y) {
+			int y = (p1.y + p2.y) / 2;
+			p1.y = y;
+			p2.y = y;
+		}
+	}
+	
 	private void createConnection(EditPartViewer viewer, Point fromLocation, Point toLocation) {
 		EditPart sourceEditPart = null;
 		EditPart targetEditPart = null;

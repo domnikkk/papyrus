@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA
+ * Copyright (c) 2013, 2014 Soyatec, CEA, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - fix lost message so that it doesn't get bent out of shape
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug.pro20130916;
@@ -18,6 +19,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.FigureCanvas;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -27,6 +29,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.commands.SetPropertyCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractExecutionSpecificationEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractMessageEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentCombinedFragmentCompartmentEditPart;
@@ -137,7 +140,7 @@ public class Fixbug_LifelineManagement_417365 extends BaseStereotypesTest {
 		y += 20;
 		message7 = (AbstractMessageEditPart)createLink(UMLElementTypes.Message_4009, lifeline1.getViewer(), SequenceUtil.getAbsoluteBounds(lifeline3).getCenter().setY(y).getTranslated(-80, 0), interaction, SequenceUtil.getAbsoluteBounds(lifeline3).getCenter().setY(y), lifeline3);
 		y += 20;
-		message8 = (AbstractMessageEditPart)createLink(UMLElementTypes.Message_4008, lifeline1.getViewer(), SequenceUtil.getAbsoluteBounds(lifeline3).getCenter().setY(y), lifeline3, SequenceUtil.getAbsoluteBounds(lifeline3).getCenter().setY(y).getTranslated(80, 1), interaction);
+		message8 = (AbstractMessageEditPart)createLink(UMLElementTypes.Message_4008, lifeline1.getViewer(), SequenceUtil.getAbsoluteBounds(lifeline3).getCenter().setY(y), lifeline3, SequenceUtil.getAbsoluteBounds(lifeline3).getCenter().setY(y).getTranslated(250, 1), interaction);
 
 		//Create CombinedFragment
 		CombinedFragmentEditPart combinedFragment = (CombinedFragmentEditPart)createNode(UMLElementTypes.CombinedFragment_3004, getRootEditPart(), new Point(50, 300), new Dimension(500, 200));
@@ -216,8 +219,8 @@ public class Fixbug_LifelineManagement_417365 extends BaseStereotypesTest {
 		int b1 = getLifelineHeadBottom(lifeline1);
 		int b2 = getLifelineHeadBottom(lifeline2);
 		int b3 = getLifelineHeadBottom(lifeline3);
-		assertTrue("Lifeline head bottom", Math.abs(b1 - b2) <= 1);
-		assertTrue("Lifeline head bottom", Math.abs(b1 - b3) <= 1);
+		assertTrue("Lifeline head bottom", Math.abs(b1 - b2) <= 2); // off by one on Linux
+		assertTrue("Lifeline head bottom", Math.abs(b1 - b3) <= 2); // off by one on Linux
 	}
 
 	private int getLifelineHeadBottom(LifelineEditPart lifeline) {
@@ -228,45 +231,55 @@ public class Fixbug_LifelineManagement_417365 extends BaseStereotypesTest {
 
 	@Test
 	public void testFontChanged() {
-		//Increase height of font for lifeline1
-		for(int i = 1; i < FONT_HEIGHTS.length; i++) {
-			int height = FONT_HEIGHTS[i];
-			testChangeFontHeight(lifeline1, height);
-		}
-		//Decrease height of font for lifeline1
-		for(int i = FONT_HEIGHTS.length - 2; i >= 0; i--) {
-			int height = FONT_HEIGHTS[i];
-			testChangeFontHeight(lifeline1, height);
-		}
-		//Increase height of font for lifeline2
-		for(int i = 1; i < FONT_HEIGHTS.length; i++) {
-			int height = FONT_HEIGHTS[i];
-			testChangeFontHeight(lifeline2, height);
-		}
-		//Decrease height of font for lifeline2
-		for(int i = FONT_HEIGHTS.length - 2; i >= 0; i--) {
-			int height = FONT_HEIGHTS[i];
-			testChangeFontHeight(lifeline2, height);
-		}
-		//Increase height of font for lifeline3
-		for(int i = 1; i < FONT_HEIGHTS.length; i++) {
-			int height = FONT_HEIGHTS[i];
-			testChangeFontHeight(lifeline3, height);
-		}
-		//Decrease height of font for lifeline3
-		for(int i = FONT_HEIGHTS.length - 2; i >= 0; i--) {
-			int height = FONT_HEIGHTS[i];
-			testChangeFontHeight(lifeline3, height);
-		}
-		//Increase height of font for lifeline4
-		for(int i = 1; i < FONT_HEIGHTS.length; i++) {
-			int height = FONT_HEIGHTS[i];
-			testChangeFontHeight(lifeline4, height);
-		}
-		//Decrease height of font for lifeline4
-		for(int i = FONT_HEIGHTS.length - 2; i >= 0; i--) {
-			int height = FONT_HEIGHTS[i];
-			testChangeFontHeight(lifeline4, height);
+		try {
+			//Increase height of font for lifeline1
+			for(int i = 1; i < FONT_HEIGHTS.length; i++) {
+				int height = FONT_HEIGHTS[i];
+				testChangeFontHeight(lifeline1, height);
+			}
+			//Decrease height of font for lifeline1
+			for(int i = FONT_HEIGHTS.length - 2; i >= 0; i--) {
+				int height = FONT_HEIGHTS[i];
+				testChangeFontHeight(lifeline1, height);
+			}
+
+			panViewerTo(lifeline2);
+			//Increase height of font for lifeline2
+			for(int i = 1; i < FONT_HEIGHTS.length; i++) {
+				int height = FONT_HEIGHTS[i];
+				testChangeFontHeight(lifeline2, height);
+			}
+			//Decrease height of font for lifeline2
+			for(int i = FONT_HEIGHTS.length - 2; i >= 0; i--) {
+				int height = FONT_HEIGHTS[i];
+				testChangeFontHeight(lifeline2, height);
+			}
+
+			panViewerTo(lifeline3);
+			//Increase height of font for lifeline3
+			for(int i = 1; i < FONT_HEIGHTS.length; i++) {
+				int height = FONT_HEIGHTS[i];
+				testChangeFontHeight(lifeline3, height);
+			}
+			//Decrease height of font for lifeline3
+			for(int i = FONT_HEIGHTS.length - 2; i >= 0; i--) {
+				int height = FONT_HEIGHTS[i];
+				testChangeFontHeight(lifeline3, height);
+			}
+
+			panViewerTo(lifeline4);
+			//Increase height of font for lifeline4
+			for(int i = 1; i < FONT_HEIGHTS.length; i++) {
+				int height = FONT_HEIGHTS[i];
+				testChangeFontHeight(lifeline4, height);
+			}
+			//Decrease height of font for lifeline4
+			for(int i = FONT_HEIGHTS.length - 2; i >= 0; i--) {
+				int height = FONT_HEIGHTS[i];
+				testChangeFontHeight(lifeline4, height);
+			}
+		} finally {
+			resetViewer(lifeline1);
 		}
 	}
 
@@ -317,5 +330,18 @@ public class Fixbug_LifelineManagement_417365 extends BaseStereotypesTest {
 		resize(lifeline4, SequenceUtil.getAbsoluteBounds(lifeline4).getLocation(), PositionConstants.WEST, new Dimension(30, 0));
 		//resize east
 		resize(lifeline4, SequenceUtil.getAbsoluteBounds(lifeline4).getLocation(), PositionConstants.EAST, new Dimension(30, 0));
+	}
+
+	private void panViewerTo(IGraphicalEditPart editPart) {
+		FigureCanvas canvas = (FigureCanvas)editPart.getViewer().getControl();
+		int width = canvas.getViewport().getBounds().width;
+		int centre = getAbsoluteCenter(editPart).x;
+		canvas.scrollToX(centre - (width / 2));
+		waitForComplete();
+	}
+
+	private void resetViewer(IGraphicalEditPart editPart) {
+		FigureCanvas canvas = (FigureCanvas)editPart.getViewer().getControl();
+		canvas.scrollTo(0, 0);
 	}
 }
