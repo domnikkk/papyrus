@@ -12,6 +12,9 @@
 package org.eclipse.papyrus.moka.ui.launch;
 
 
+import java.util.List;
+
+import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -31,8 +34,8 @@ public class MokaAdditionalSemanticsSelectionComponent extends
 	public void createComboBox(){
 		this.registeredLibraries = new MokaLibrariesComboBox(this.group, SWT.NONE);
 		this.registeredLibraries.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
-		RegisteredLibrary[] libraries = RegisteredLibrary.getRegisteredLibraries();
-		for(RegisteredLibrary lib : libraries){
+		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
+		for(IRegisteredLibrary lib : libraries){
 			this.registeredLibraries.add(lib);
 		}
 		if(this.registeredLibraries.getItemCount() > 0){

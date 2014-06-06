@@ -13,33 +13,34 @@ package org.eclipse.papyrus.moka.ui.launch;
 
 import java.util.Iterator;
 
+import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.swt.widgets.Composite;
 
-public class MokaLibrariesComboBox extends MokaComboBox<String, RegisteredLibrary> {
+public class MokaLibrariesComboBox extends MokaComboBox<String, IRegisteredLibrary> {
 
 	public MokaLibrariesComboBox(Composite parent, int style) {
 		super(parent, style);
 	}
 
 	@Override
-	public void add(RegisteredLibrary element) {
+	public void add(IRegisteredLibrary element) {
 		String label = this.generateLabel(element);
 		this.population.put(label, element);
 		this.add(label);
 	}
 
 	@Override
-	protected String generateLabel(RegisteredLibrary e) {
+	protected String generateLabel(IRegisteredLibrary e) {
 		return "["+e.getName()+"] - "+e.getDescription();
 	}
 	
 	public void selectByUri(String libraryUri){
-		Iterator<RegisteredLibrary> librariesIterator = this.population.values().iterator();
-		RegisteredLibrary targetLib = null;
+		Iterator<IRegisteredLibrary> librariesIterator = this.population.values().iterator();
+		IRegisteredLibrary targetLib = null;
 		while(targetLib==null && librariesIterator.hasNext()){
-			RegisteredLibrary current = librariesIterator.next();
-			if(current.uri.toString().equals(libraryUri)){
+			IRegisteredLibrary current = librariesIterator.next();
+			if(current.getUri().toString().equals(libraryUri)){
 				targetLib = current;
 			}
 		}
