@@ -11,7 +11,7 @@
    <extension
          point="org.eclipse.uml2.uml.generated_package">
       <profile
-            location="pathmap://PAPYRUS_DOCUMENTATION/Papyrus.profile.uml#_O1Qs0AEYEeCIz8iAxBJnfA"
+            location="pathmap://PAPYRUS_DOCUMENTATION/Papyrus.profile.uml#_H9068AEYEeCIz8iAxBJnfA"
             uri="http://www.eclipse.org/papyrus/documentation">
       </profile>
    </extension>
