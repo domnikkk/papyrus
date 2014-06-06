@@ -1,6 +1,16 @@
-/**
+/*****************************************************************************
+ * Copyright (c) 2013, 2014 CEA LIST and others.
+ *
  * 
- */
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Remi Schnekenburger remi.schnekenburger@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.viewpoints.policy.query;
 
 import org.eclipse.emf.ecore.EClass;
@@ -10,9 +20,11 @@ import org.eclipse.papyrus.infra.constraints.constraints.JavaQuery;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
- * query to check that an element is contained directly or indirectly by a profile
+ * Query to check that an element is contained directly or indirectly by a profile
+ * 
+ * @author Remi Schnekenburger
  */
-public class isContainedByProfileQuery implements JavaQuery {
+public class IsContainedByProfileQuery implements JavaQuery {
 
 	/**
 	 * {@inheritDoc}

@@ -214,7 +214,7 @@
       <modelRules xmi:id="_7wM0s9xhEeOqHvRyiN87hA">
         <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_rd91gN9EEeOOpcSm0dG8Kg" name="">
           <constraintType href="platform:/plugin/org.eclipse.papyrus.infra.constraints/Model/ConstraintEnvironment.xmi#//@constraintTypes.4"/>
-          <properties xsi:type="constraints:ValueProperty" xmi:id="_iic2kN9FEeOOpcSm0dG8Kg" name="className" value="org.eclipse.papyrus.infra.viewpoints.policy.query.isContainedByProfileQuery"/>
+          <properties xsi:type="constraints:ValueProperty" xmi:id="_iic2kN9FEeOOpcSm0dG8Kg" name="className" value="org.eclipse.papyrus.infra.viewpoints.policy.query.IsContainedByProfileQuery"/>
         </constraints>
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </modelRules>
