@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_W0ffYOviEeOcMebkujJNBQ" name="model">
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_cadpYOviEeOcMebkujJNBQ" name="ProfileCreation"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_qQHxoOviEeOcMebkujJNBQ" name="ProfileApplication">
+    <generalization xmi:type="uml:Generalization" xmi:id="_0tz4gOviEeOcMebkujJNBQ" general="_sJE3UOviEeOcMebkujJNBQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_sJE3UOviEeOcMebkujJNBQ" name="PSTApplicationAndSetting"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_uCWGEOviEeOcMebkujJNBQ" name="StereotypeApplication">
+    <generalization xmi:type="uml:Generalization" xmi:id="_1O_6AOviEeOcMebkujJNBQ" general="_sJE3UOviEeOcMebkujJNBQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_vxV-gOviEeOcMebkujJNBQ" name="TaggedValue application">
+    <generalization xmi:type="uml:Generalization" xmi:id="_1qPEgOviEeOcMebkujJNBQ" general="_sJE3UOviEeOcMebkujJNBQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_yAn5gOviEeOcMebkujJNBQ" name="TaggedValue setting">
+    <generalization xmi:type="uml:Generalization" xmi:id="_2IvlcOviEeOcMebkujJNBQ" general="_sJE3UOviEeOcMebkujJNBQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_27yzAOviEeOcMebkujJNBQ" name="PSTEdition"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_CJQJ8OvjEeOcMebkujJNBQ" name="user"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_DG2aoOvjEeOcMebkujJNBQ" name="A_user_pstedition" memberEnd="_DG2aoevjEeOcMebkujJNBQ _DG2apOvjEeOcMebkujJNBQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DG2aoevjEeOcMebkujJNBQ" name="user" type="_CJQJ8OvjEeOcMebkujJNBQ" association="_DG2aoOvjEeOcMebkujJNBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DG2aouvjEeOcMebkujJNBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DG2ao-vjEeOcMebkujJNBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DG2apOvjEeOcMebkujJNBQ" name="pstedition" type="_27yzAOviEeOcMebkujJNBQ" association="_DG2aoOvjEeOcMebkujJNBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DG2apevjEeOcMebkujJNBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DG2apuvjEeOcMebkujJNBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_DxHfoOvjEeOcMebkujJNBQ" name="A_user_pstapplicationandsetting" memberEnd="_DxHfoevjEeOcMebkujJNBQ _DxHfpOvjEeOcMebkujJNBQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DxHfoevjEeOcMebkujJNBQ" name="user" type="_CJQJ8OvjEeOcMebkujJNBQ" association="_DxHfoOvjEeOcMebkujJNBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DxHfouvjEeOcMebkujJNBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DxHfo-vjEeOcMebkujJNBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DxHfpOvjEeOcMebkujJNBQ" name="pstapplicationandsetting" type="_sJE3UOviEeOcMebkujJNBQ" association="_DxHfoOvjEeOcMebkujJNBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DxHfpevjEeOcMebkujJNBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DxHfpuvjEeOcMebkujJNBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_c-PcIOvzEeOcMebkujJNBQ" name="use cases v2">
+    <packagedElement xmi:type="uml:Actor" xmi:id="_iWXXYOvzEeOcMebkujJNBQ" name="user"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_jOKiEOvzEeOcMebkujJNBQ" name="CreateProfile">
+      <generalization xmi:type="uml:Generalization" xmi:id="_BgPZcOv0EeOcMebkujJNBQ" general="__f-K0OvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_lK1qIOvzEeOcMebkujJNBQ" name="CreateStereotype">
+      <generalization xmi:type="uml:Generalization" xmi:id="_C1XZUOv0EeOcMebkujJNBQ" general="_9keHcOvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_mxzn8OvzEeOcMebkujJNBQ" name="UpdateStereotype">
+      <generalization xmi:type="uml:Generalization" xmi:id="_DKD28Ov0EeOcMebkujJNBQ" general="_9keHcOvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_n_ne4OvzEeOcMebkujJNBQ" name="RenameStereotype">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ENUqwOv0EeOcMebkujJNBQ" general="_9keHcOvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_pOoPsOvzEeOcMebkujJNBQ" name="DeleteStereotype">
+      <generalization xmi:type="uml:Generalization" xmi:id="_D22EcOv0EeOcMebkujJNBQ" general="_9keHcOvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_thLqAOvzEeOcMebkujJNBQ" name="DeleteProfile">
+      <generalization xmi:type="uml:Generalization" xmi:id="_B8EZ0Ov0EeOcMebkujJNBQ" general="__f-K0OvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_vfiNEOvzEeOcMebkujJNBQ" name="RenameProfile">
+      <generalization xmi:type="uml:Generalization" xmi:id="_CWRCgOv0EeOcMebkujJNBQ" general="__f-K0OvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_yixUkOvzEeOcMebkujJNBQ" name="ManageTaggedValue"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_00ITMOvzEeOcMebkujJNBQ" name="CreateTaggedValue">
+      <generalization xmi:type="uml:Generalization" xmi:id="_EsbBkOv0EeOcMebkujJNBQ" general="_yixUkOvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_2misAOvzEeOcMebkujJNBQ" name="RenameTaggedValue">
+      <generalization xmi:type="uml:Generalization" xmi:id="_F6unwOv0EeOcMebkujJNBQ" general="_yixUkOvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_4gsrkOvzEeOcMebkujJNBQ" name="DeleteTaggedValue">
+      <generalization xmi:type="uml:Generalization" xmi:id="_GV-ZUOv0EeOcMebkujJNBQ" general="_yixUkOvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_7himYOvzEeOcMebkujJNBQ" name="UpdateTaggedValue">
+      <generalization xmi:type="uml:Generalization" xmi:id="_WUUP4Ov1EeOcMebkujJNBQ" general="_yixUkOvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_9keHcOvzEeOcMebkujJNBQ" name="ManageStereotype"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="__f-K0OvzEeOcMebkujJNBQ" name="ManageProfile"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ID7v8Ov0EeOcMebkujJNBQ" name="A_user_managestereotype" memberEnd="_ID7v8ev0EeOcMebkujJNBQ _ID7v9Ov0EeOcMebkujJNBQ">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ID7v8ev0EeOcMebkujJNBQ" name="user" type="_iWXXYOvzEeOcMebkujJNBQ" association="_ID7v8Ov0EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ID7v8uv0EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ID7v8-v0EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ID7v9Ov0EeOcMebkujJNBQ" name="managestereotype" type="_9keHcOvzEeOcMebkujJNBQ" association="_ID7v8Ov0EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ID7v9ev0EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ID7v9uv0EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Itd1IOv0EeOcMebkujJNBQ" name="A_user_managetaggedvalue" memberEnd="_Itd1Iev0EeOcMebkujJNBQ _Itd1JOv0EeOcMebkujJNBQ">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Itd1Iev0EeOcMebkujJNBQ" name="user" type="_iWXXYOvzEeOcMebkujJNBQ" association="_Itd1IOv0EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Itd1Iuv0EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Itd1I-v0EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Itd1JOv0EeOcMebkujJNBQ" name="managetaggedvalue" type="_yixUkOvzEeOcMebkujJNBQ" association="_Itd1IOv0EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Itd1Jev0EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Itd1Juv0EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_J04wMOv0EeOcMebkujJNBQ" name="A_user_manageprofile" memberEnd="_J04wMev0EeOcMebkujJNBQ _J04wNOv0EeOcMebkujJNBQ">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_J04wMev0EeOcMebkujJNBQ" name="user" type="_iWXXYOvzEeOcMebkujJNBQ" association="_J04wMOv0EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J04wMuv0EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J04wM-v0EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_J04wNOv0EeOcMebkujJNBQ" name="manageprofile" type="__f-K0OvzEeOcMebkujJNBQ" association="_J04wMOv0EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J04wNev0EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J04wNuv0EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_S30JQOv0EeOcMebkujJNBQ" name="ManageCatalog"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_T9mFkOv0EeOcMebkujJNBQ" name="AddProfile">
+      <generalization xmi:type="uml:Generalization" xmi:id="_cwUfcOv0EeOcMebkujJNBQ" general="_S30JQOv0EeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_YM9pAOv0EeOcMebkujJNBQ" name="RemoveProfile">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dMJf0Ov0EeOcMebkujJNBQ" general="_S30JQOv0EeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Zk5sUOv0EeOcMebkujJNBQ" name="ExportCatalog">
+      <generalization xmi:type="uml:Generalization" xmi:id="_dobMIOv0EeOcMebkujJNBQ" general="_S30JQOv0EeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_aseYYOv0EeOcMebkujJNBQ" name="ImportCatalog">
+      <generalization xmi:type="uml:Generalization" xmi:id="_eE2pcOv0EeOcMebkujJNBQ" general="_S30JQOv0EeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_f21kcOv0EeOcMebkujJNBQ" name="A_user_managecatalog" memberEnd="_f21kcev0EeOcMebkujJNBQ _f21kdOv0EeOcMebkujJNBQ">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_f21kcev0EeOcMebkujJNBQ" name="user" type="_iWXXYOvzEeOcMebkujJNBQ" association="_f21kcOv0EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f21kcuv0EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f21kc-v0EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_f21kdOv0EeOcMebkujJNBQ" name="managecatalog" type="_S30JQOv0EeOcMebkujJNBQ" association="_f21kcOv0EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f21kdev0EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f21kduv0EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_qAkcMOyyEeOcMebkujJNBQ" name="SaveProfile">
+      <generalization xmi:type="uml:Generalization" xmi:id="_tHw2oOyyEeOcMebkujJNBQ" general="__f-K0OvzEeOcMebkujJNBQ"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

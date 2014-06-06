@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_TbtgcOy4EeOcMebkujJNBQ" name="model">
+  <packagedElement xmi:type="uml:Model" xmi:id="_cLZNYOy4EeOcMebkujJNBQ" name="generated">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cMuqLOy4EeOcMebkujJNBQ" name="com">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cMuqLey4EeOcMebkujJNBQ" name="google">
+        <packagedElement xmi:type="uml:Package" xmi:id="_cMuqLuy4EeOcMebkujJNBQ" name="common">
+          <packagedElement xmi:type="uml:Package" xmi:id="_cMuqL-y4EeOcMebkujJNBQ" name="base">
+            <packagedElement xmi:type="uml:Class" xmi:id="_cMuqMOy4EeOcMebkujJNBQ" name="Optional"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_cMic4Oy4EeOcMebkujJNBQ" name="uml">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cMic4ey4EeOcMebkujJNBQ" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cMic4uy4EeOcMebkujJNBQ" name="eclipse">
+        <packagedElement xmi:type="uml:Package" xmi:id="_cMic4-y4EeOcMebkujJNBQ" name="papyrus">
+          <packagedElement xmi:type="uml:Package" xmi:id="_cMic5Oy4EeOcMebkujJNBQ" name="uml">
+            <packagedElement xmi:type="uml:Package" xmi:id="_cMic5ey4EeOcMebkujJNBQ" name="profile">
+              <packagedElement xmi:type="uml:Package" xmi:id="_cMic5uy4EeOcMebkujJNBQ" name="drafter">
+                <packagedElement xmi:type="uml:Class" xmi:id="_cMojgOy4EeOcMebkujJNBQ" name="AppliedProfileReadOptionalyWriteHandler">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_cMojgey4EeOcMebkujJNBQ">
+                    <body>&#xD;
+ * Discretion-based read-only handler for applied profiles.&#xD;
+ </body>
+                  </ownedComment>
+                  <generalization xmi:type="uml:Generalization" xmi:id="_cMojiuy4EeOcMebkujJNBQ" general="_cMojiey4EeOcMebkujJNBQ"/>
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_cMuqK-y4EeOcMebkujJNBQ" name="anyReadOnly" visibility="public">
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_cMuqMey4EeOcMebkujJNBQ" type="_cMuqMOy4EeOcMebkujJNBQ" direction="return"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_cMuqMuy4EeOcMebkujJNBQ" name="axes" type="_cMuqI-y4EeOcMebkujJNBQ"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_cMuqM-y4EeOcMebkujJNBQ" name="uris" type="_cMuqKuy4EeOcMebkujJNBQ">
+                      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cMuqNOy4EeOcMebkujJNBQ"/>
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cMuqNey4EeOcMebkujJNBQ" value="*"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_cM0wwOy4EeOcMebkujJNBQ" name="isProfileResource" visibility="private">
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_cM0wxOy4EeOcMebkujJNBQ" type="_cM0ww-y4EeOcMebkujJNBQ" direction="return"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_cM0wxey4EeOcMebkujJNBQ" name="resource" type="_cMuqOOy4EeOcMebkujJNBQ"/>
+                  </ownedOperation>
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_cM0wxuy4EeOcMebkujJNBQ" name="makeWritable" visibility="public">
+                    <ownedComment xmi:type="uml:Comment" xmi:id="_cM0wx-y4EeOcMebkujJNBQ">
+                      <body>&#xD;
+	 * We want to be able to modify existing profiles.&#xD;
+	 * &#xD;
+	 * @see org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2#makeWritable(java.util.Set, org.eclipse.emf.common.util.URI[])&#xD;
+	 *&#xD;
+	 * @param axes&#xD;
+	 * @param uris&#xD;
+	 * @return&#xD;
+	 </body>
+                    </ownedComment>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_cM0wyOy4EeOcMebkujJNBQ" type="_cMuqMOy4EeOcMebkujJNBQ" direction="return"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_cM0wyey4EeOcMebkujJNBQ" name="axes" type="_cMuqI-y4EeOcMebkujJNBQ"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_cM0wyuy4EeOcMebkujJNBQ" name="uris" type="_cMuqKuy4EeOcMebkujJNBQ">
+                      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cM0wy-y4EeOcMebkujJNBQ"/>
+                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cM0wzOy4EeOcMebkujJNBQ" value="*"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                </packagedElement>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_cMojguy4EeOcMebkujJNBQ" name="infra">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cMojg-y4EeOcMebkujJNBQ" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cMojhOy4EeOcMebkujJNBQ" name="eclipse">
+        <packagedElement xmi:type="uml:Package" xmi:id="_cMojhey4EeOcMebkujJNBQ" name="papyrus">
+          <packagedElement xmi:type="uml:Package" xmi:id="_cMojhuy4EeOcMebkujJNBQ" name="infra">
+            <packagedElement xmi:type="uml:Package" xmi:id="_cMojh-y4EeOcMebkujJNBQ" name="core">
+              <packagedElement xmi:type="uml:Package" xmi:id="_cMojiOy4EeOcMebkujJNBQ" name="resource">
+                <packagedElement xmi:type="uml:Class" xmi:id="_cMojiey4EeOcMebkujJNBQ" name="AbstractReadOnlyHandler"/>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_cMuqIOy4EeOcMebkujJNBQ" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cMuqIey4EeOcMebkujJNBQ" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cMuqIuy4EeOcMebkujJNBQ" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_cMuqI-y4EeOcMebkujJNBQ" name="Set"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_cMuqJOy4EeOcMebkujJNBQ" name="emf">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cMuqJey4EeOcMebkujJNBQ" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_cMuqJuy4EeOcMebkujJNBQ" name="eclipse">
+        <packagedElement xmi:type="uml:Package" xmi:id="_cMuqJ-y4EeOcMebkujJNBQ" name="emf">
+          <packagedElement xmi:type="uml:Package" xmi:id="_cMuqKOy4EeOcMebkujJNBQ" name="common">
+            <packagedElement xmi:type="uml:Package" xmi:id="_cMuqKey4EeOcMebkujJNBQ" name="util">
+              <packagedElement xmi:type="uml:Class" xmi:id="_cMuqKuy4EeOcMebkujJNBQ" name="URI"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_cMuqNuy4EeOcMebkujJNBQ" name="ecore">
+            <packagedElement xmi:type="uml:Package" xmi:id="_cMuqN-y4EeOcMebkujJNBQ" name="resource">
+              <packagedElement xmi:type="uml:Class" xmi:id="_cMuqOOy4EeOcMebkujJNBQ" name="Resource"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_cM0wwey4EeOcMebkujJNBQ" name="datatype">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cM0wwuy4EeOcMebkujJNBQ" name="datatype">
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_cM0ww-y4EeOcMebkujJNBQ" name="Boolean"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_O_LY0Oy6EeOcMebkujJNBQ" name="architecture">
+    <packagedElement xmi:type="uml:Package" xmi:id="_VcD8sOy6EeOcMebkujJNBQ" name="handler">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_pknmYOy6EeOcMebkujJNBQ" name="Dependency1" client="_VcD8sOy6EeOcMebkujJNBQ" supplier="_XpF08Oy6EeOcMebkujJNBQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_qVXG0Oy6EeOcMebkujJNBQ" name="Dependency2" client="_VcD8sOy6EeOcMebkujJNBQ" supplier="_bkBZcOy6EeOcMebkujJNBQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_SWTawOy8EeOcMebkujJNBQ" name="Dependency3" client="_VcD8sOy6EeOcMebkujJNBQ" supplier="_OGRwAOy8EeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_XpF08Oy6EeOcMebkujJNBQ" name="dialog"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_bkBZcOy6EeOcMebkujJNBQ" name="command"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ld7d0Oy6EeOcMebkujJNBQ" name="ROWriteHandler"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_12Di0-y6EeOcMebkujJNBQ" name="A_profileDrafterService_profileCatalog_1" memberEnd="_12Di1Oy6EeOcMebkujJNBQ _12Di0Oy6EeOcMebkujJNBQ">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_12Di1Oy6EeOcMebkujJNBQ" name="profileDrafterService" type="_wPnewOy6EeOcMebkujJNBQ" association="_12Di0-y6EeOcMebkujJNBQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_12Di1ey6EeOcMebkujJNBQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_12Di1uy6EeOcMebkujJNBQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_OGRwAOy8EeOcMebkujJNBQ" name="helper">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_S3yXMOy8EeOcMebkujJNBQ" name="Dependency1" client="_OGRwAOy8EeOcMebkujJNBQ" supplier="_bkBZcOy6EeOcMebkujJNBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_UQDxsOy8EeOcMebkujJNBQ" name="service">
+      <packagedElement xmi:type="uml:Class" xmi:id="_wPnewOy6EeOcMebkujJNBQ" name="ProfileDrafterService">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_12Di0Oy6EeOcMebkujJNBQ" name="profileCatalog" type="_y3ZZUOy6EeOcMebkujJNBQ" aggregation="composite" association="_12Di0-y6EeOcMebkujJNBQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_12Di0ey6EeOcMebkujJNBQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_12Di0uy6EeOcMebkujJNBQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_aNtb4Oy8EeOcMebkujJNBQ" name="catalog">
+      <packagedElement xmi:type="uml:Class" xmi:id="_y3ZZUOy6EeOcMebkujJNBQ" name="ProfileCatalog"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
