@@ -11,6 +11,7 @@
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 434993
  *   Christian W. Damus (CEA) - bug 436047
+ *   Christian W. Damus (CEA) - fixing issues in sequence diagram test execution
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -151,7 +152,7 @@ public class TestDecompositionCombinedFragment_364813 extends TestTopNode {
 		assertTrue(CREATION + INITIALIZATION_TEST, lifeline1.getChildren().size() == 1);
 
 		waitForComplete();
-		PopupUtil.addDialogCloseHandler();
+		new PopupUtil(houseKeeper).addDialogCloseHandler();
 		createNode(UMLElementTypes.Lifeline_3001, lifeline1, new Point(100, 120), new Dimension(62, 200));
 		createNode(UMLElementTypes.Lifeline_3001, lifeline1, new Point(200, 120), new Dimension(62, 200));
 

@@ -34,7 +34,6 @@ import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomInteractionOper
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionOperandEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.ISequenceDiagramTestsConstants;
-import org.eclipse.papyrus.uml.diagram.sequence.tests.bug.PopupUtil;
 import org.eclipse.papyrus.uml.diagram.sequence.util.InteractionOperandModelElementFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
@@ -75,25 +74,20 @@ public class TestGuardVisibility_402966 extends AbstractNodeTest {
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		final PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(shell, "org.eclipse.papyrus.uml.diagram.sequence.preferences.InteractionOperandPreferencePage", null, null);
 
-		PopupUtil.runWithDialogs(new Runnable() {
+		dialog.setBlockOnOpen(false);
+		dialog.open();
 
-			public void run() {
-				dialog.setBlockOnOpen(false);
-				dialog.open();
-
-				try {
-					IPreferencePage page = (IPreferencePage)dialog.getSelectedPage();
-					Control control = page.getControl();
-					Control group = getControl((Composite)control, Group.class, "Guard", SWT.NONE);
-					assertNotNull("Preference Item Guard Group: ", group);
-					Button checkbox = (Button)getControl((Composite)group, Button.class, "Show", SWT.CHECK);
-					assertNotNull("Preference Item Visibility CheckBox: ", checkbox);
-					assertEquals("Default value of Guard Visibility: ", true, checkbox.getSelection());
-				} finally {
-					dialog.close();
-				}
-			}
-		});
+		try {
+			IPreferencePage page = (IPreferencePage)dialog.getSelectedPage();
+			Control control = page.getControl();
+			Control group = getControl((Composite)control, Group.class, "Guard", SWT.NONE);
+			assertNotNull("Preference Item Guard Group: ", group);
+			Button checkbox = (Button)getControl((Composite)group, Button.class, "Show", SWT.CHECK);
+			assertNotNull("Preference Item Visibility CheckBox: ", checkbox);
+			assertEquals("Default value of Guard Visibility: ", true, checkbox.getSelection());
+		} finally {
+			dialog.close();
+		}
 	}
 
 	private Control getControl(Composite parent, Class<?> controlType, String name, int style) {

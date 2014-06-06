@@ -233,7 +233,7 @@ public class TestDecompositionMove_364812 extends TestTopNode {
 		assertTrue(CREATION + INITIALIZATION_TEST, lifeline1.getChildren().size() == 1);
 
 		waitForComplete();
-		PopupUtil.addDialogCloseHandler();
+		new PopupUtil(houseKeeper).addDialogCloseHandler();
 		createNode(UMLElementTypes.Lifeline_3001, lifeline1, new Point(100, 120), new Dimension(62, 200));
 		createNode(UMLElementTypes.Lifeline_3001, lifeline1, new Point(250, 120), new Dimension(62, 200));
 

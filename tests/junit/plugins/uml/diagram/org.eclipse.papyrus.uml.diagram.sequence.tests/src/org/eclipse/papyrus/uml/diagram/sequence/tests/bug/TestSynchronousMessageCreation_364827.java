@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - fixing issues in sequence diagram test execution
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -72,7 +73,7 @@ public class TestSynchronousMessageCreation_364827 extends TestLink {
 
 		//		assertTrue(CREATION + INITIALIZATION_TEST, target.getChildren().size() == 1);
 		waitForComplete();
-		PopupUtil.addMenuListener(0);
+		new PopupUtil(houseKeeper).addMenuListener(0);
 		createLink(linkType, source, target, getAbsoluteCenter(source), getAbsoluteCenter(target).translate(0, 60));
 
 		assertTrue(CREATION + TEST_THE_EXECUTION, source.getSourceConnections().size() == 1);
@@ -99,7 +100,7 @@ public class TestSynchronousMessageCreation_364827 extends TestLink {
 
 		//		assertTrue(CREATION + INITIALIZATION_TEST, target.getChildren().size() == 1);
 		waitForComplete();
-		PopupUtil.addMenuListener(1);
+		new PopupUtil(houseKeeper).addMenuListener(1);
 		createLink(linkType, source, target, getAbsoluteCenter(source), getAbsoluteCenter(target).translate(0, 60));
 
 		assertTrue(CREATION + TEST_THE_EXECUTION, source.getSourceConnections().size() == 1);

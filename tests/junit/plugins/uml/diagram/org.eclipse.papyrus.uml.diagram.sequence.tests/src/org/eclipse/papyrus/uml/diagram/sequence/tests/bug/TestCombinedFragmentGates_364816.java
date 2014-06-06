@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
+ * Copyright (c) 2012, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - fixing issues in sequence diagram test execution
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -81,7 +82,7 @@ public class TestCombinedFragmentGates_364816 extends TestLink {
 		assertTrue(CREATION + INITIALIZATION_TEST, cf.getCfragmentGates().size() == 1);
 
 		// check reuse of gate
-		PopupUtil.addDialogCloseHandler();
+		new PopupUtil(houseKeeper).addDialogCloseHandler();
 		createLink(UMLElementTypes.Message_4004, source, target, getAbsoluteCenter(source).translate(0, 40), getLeft(target).translate(0, 40));
 		waitForComplete();
 		assertTrue(CREATION + TEST_THE_EXECUTION, source.getSourceConnections().size() == 2);
@@ -117,7 +118,7 @@ public class TestCombinedFragmentGates_364816 extends TestLink {
 		assertTrue(CREATION + INITIALIZATION_TEST, cf.getCfragmentGates().size() == 1);
 
 		// check reuse of gate
-		PopupUtil.addDialogCloseHandler();
+		new PopupUtil(houseKeeper).addDialogCloseHandler();
 		createLink(UMLElementTypes.Message_4009, source, target, new Point(0, 20), getLeft(target).translate(0, 40));
 		waitForComplete();
 		assertTrue(CREATION + TEST_THE_EXECUTION, source.getSourceConnections().size() == 2);
@@ -153,7 +154,7 @@ public class TestCombinedFragmentGates_364816 extends TestLink {
 		assertTrue(CREATION + INITIALIZATION_TEST, cf.getCfragmentGates().size() == 1);
 
 		// check reuse of gate
-		PopupUtil.addDialogCloseHandler();
+		new PopupUtil(houseKeeper).addDialogCloseHandler();
 		createLink(UMLElementTypes.Message_4008, source, target, getLeft(source), new Point(0, 200));
 		waitForComplete();
 		assertTrue(CREATION + TEST_THE_EXECUTION, source.getSourceConnections().size() == 2);

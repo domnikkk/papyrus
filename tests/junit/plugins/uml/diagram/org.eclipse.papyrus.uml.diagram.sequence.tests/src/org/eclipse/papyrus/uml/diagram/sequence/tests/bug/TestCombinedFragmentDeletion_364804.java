@@ -10,6 +10,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 434993
+ *   Christian W. Damus (CEA) - fixing issues in sequence diagram test execution
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
@@ -107,7 +108,7 @@ public class TestCombinedFragmentDeletion_364804 extends TestTopNode {
 		waitForComplete();
 		assertTrue(CREATION + TEST_THE_EXECUTION, lifelineEP.getChildren().size() == 2);
 
-		PopupUtil.addMenuListener(0);
+		new PopupUtil(houseKeeper).addMenuListener(0);
 
 		{ // destroy semantic
 			Request deleteViewRequest = new EditCommandRequestWrapper(new DestroyElementRequest(false));
@@ -171,7 +172,7 @@ public class TestCombinedFragmentDeletion_364804 extends TestTopNode {
 		waitForComplete();
 		assertTrue(CREATION + TEST_THE_EXECUTION, lifelineEP.getChildren().size() == 2);
 
-		PopupUtil.addMenuListener(1);
+		new PopupUtil(houseKeeper).addMenuListener(1);
 
 		{ // destroy semantic
 			Request deleteViewRequest = new EditCommandRequestWrapper(new DestroyElementRequest(false));

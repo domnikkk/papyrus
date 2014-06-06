@@ -17,6 +17,7 @@ package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.junit.utils.rules.AbstractHouseKeeperRule;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
@@ -30,41 +31,57 @@ import org.eclipse.swt.widgets.Widget;
 
 public class PopupUtil {
 
-	static boolean menuPopup = false;
+	private final AbstractHouseKeeperRule houseKeeper;
 
-	static int clickMenuIndex = 0;
+	private boolean menuPopup = false;
 
-	public static boolean isMenuPopup() {
+	private int clickMenuIndex = 0;
+
+	private volatile boolean menuListenerEngaged;
+
+	public PopupUtil(AbstractHouseKeeperRule houseKeeper) {
+		this.houseKeeper = houseKeeper;
+	}
+
+	public boolean isMenuPopup() {
 		return menuPopup;
 	}
 
-	public static void addMenuListener(int clickIndex) {
-		menuPopup = false;
-		clickMenuIndex = clickIndex;
-		Display.getDefault().syncExec(new Runnable() {
+	public void addMenuListener(int clickIndex) {
+		if(!menuListenerEngaged) {
+			menuPopup = false;
+			clickMenuIndex = clickIndex;
+			Display.getDefault().syncExec(new Runnable() {
 
-			public void run() {
-				Display.getDefault().addFilter(SWT.Show, menuListener);
-				Display.getDefault().addFilter(SWT.Hide, menuListener);
-			}
-		});
+				public void run() {
+					Display.getDefault().addFilter(SWT.Show, menuListener);
+					Display.getDefault().addFilter(SWT.Hide, menuListener);
+				}
+			});
+
+			menuListenerEngaged = true;
+			
+			houseKeeper.cleanUpLater(this, "removeMenuListener"); //$NON-NLS-1$
+		}
 	}
 
-	public static void removeMenuListener() {
+	public void removeMenuListener() {
 		Display.getDefault().syncExec(new Runnable() {
 
 			public void run() {
 				Display.getDefault().removeFilter(SWT.Show, menuListener);
 				Display.getDefault().removeFilter(SWT.Hide, menuListener);
+				menuListenerEngaged = false;
+				menuPopup = false;
 			}
 		});
 	}
 
-	public static void click(final Menu bar) {
+	public void click(final Menu bar) {
 		click(bar, 0);
 	}
 
-	public static void click(final Menu bar, int index) {
+	public void click(final Menu bar, int index) {
 		MenuItem[] items = bar.getItems();
 		if(items != null && index < items.length) {
 			notifyEvent(items[index], SWT.Selection);
@@ -75,7 +92,7 @@ public class PopupUtil {
 		waitForComplete();
 	}
 
-	protected static void waitForComplete() {
+	protected void waitForComplete() {
 		boolean run = true;
 		while(run) {
 			try {
@@ -86,7 +103,7 @@ public class PopupUtil {
 		}
 	}
 
-	public static void notifyEvent(final Widget menuItem, final int eventType) {
+	public void notifyEvent(final Widget menuItem, final int eventType) {
 		final Event event = new Event();
 		event.time = (int)System.currentTimeMillis();
 		event.widget = menuItem;
@@ -106,7 +123,7 @@ public class PopupUtil {
 	/**
 	 * A private class to listen for the show/hide events.
 	 */
-	static class ShowHideListener implements Listener {
+	private class ShowHideListener implements Listener {
 
 		/**
 		 * Handles the event by checking if it is the proper event. If it is a show, then the current context menu is
@@ -162,11 +179,11 @@ public class PopupUtil {
 		return list.get(0);
 	}
 
-	private static Menu currentContextMenu;
+	private Menu currentContextMenu;
 
-	private static Listener menuListener = new ShowHideListener();
+	private Listener menuListener = new ShowHideListener();
 
-	private static Listener dialogCloseHandler = new Listener() {
+	private Listener dialogCloseHandler = new Listener() {
 
 		public void handleEvent(Event event) {
 			if(event.widget instanceof Shell) {
@@ -181,9 +198,9 @@ public class PopupUtil {
 		}
 	};
 
-	private static volatile boolean dialogCloseHandlerEngaged = false;
+	private volatile boolean dialogCloseHandlerEngaged = false;
 
-	public static void addDialogCloseHandler() {
+	public void addDialogCloseHandler() {
 		if(!dialogCloseHandlerEngaged) {
 			Display.getDefault().syncExec(new Runnable() {
 
@@ -192,10 +209,12 @@ public class PopupUtil {
 					dialogCloseHandlerEngaged = true;
 				}
 			});
+			
+			houseKeeper.cleanUpLater(this, "removeDialogCloseHandler"); //$NON-NLS-1$
 		}
 	}
 
-	public static void removeDialogCloseHandler() {
+	public void removeDialogCloseHandler() {
 		Display.getDefault().syncExec(new Runnable() {
 
 			public void run() {
@@ -212,7 +231,7 @@ public class PopupUtil {
 	 * @param runnable
 	 *        a runnable that deliberately opens and manages dialogs
 	 */
-	public static void runWithDialogs(Runnable runnable) {
+	public void runWithDialogs(Runnable runnable) {
 		if(!dialogCloseHandlerEngaged) {
 			// Just run it
 			runnable.run();

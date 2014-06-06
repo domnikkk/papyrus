@@ -599,7 +599,7 @@ public abstract class AbstractHouseKeeperRule {
 
 	private static final class ReflectiveDisposer implements Disposer<Object> {
 
-		static final ReflectiveDisposer INSTANCE = new ReflectiveDisposer("dispose");
+		static final ReflectiveDisposer INSTANCE = new ReflectiveDisposer("dispose"); //$NON-NLS-1$
 
 		private final String disposeMethod;
 
@@ -622,7 +622,7 @@ public abstract class AbstractHouseKeeperRule {
 		}
 
 		public void dispose(Object object) throws Exception {
-			new Duck(object).quack("dispose", arguments);
+			new Duck(object).quack(disposeMethod, arguments);
 		}
 	}
 }
