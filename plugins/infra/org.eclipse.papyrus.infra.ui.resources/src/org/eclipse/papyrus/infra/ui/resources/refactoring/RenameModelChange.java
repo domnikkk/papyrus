@@ -10,7 +10,7 @@
  * Contributors:
  *  <a href="mailto:thomas.szadel@atosorigin.com">Thomas Szadel</a> - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
- *
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Save only modified resources and delete only old version of renamed resources 
  *****************************************************************************/
 package org.eclipse.papyrus.infra.ui.resources.refactoring;
 
@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -61,6 +63,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.infra.emf.readonly.ReadOnlyManager;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.papyrus.infra.emf.utils.ResourceUtils;
 import org.eclipse.papyrus.infra.services.controlmode.mm.history.ControledResource;
 import org.eclipse.papyrus.infra.services.controlmode.mm.history.historyPackage;
 import org.eclipse.papyrus.infra.ui.resources.Activator;
@@ -109,14 +112,15 @@ public class RenameModelChange extends Change {
 		this.oldFile = oldFile;
 		this.newFile = newFile;
 		this.impacted = impacted;
-
+		
 		IPath newPathWithoutExt = newFile.getFullPath().removeFileExtension();
 
 		// Create the map of URI that are being modified in the resource set
 		relatedFiles = ModelParticipantHelpers.getRelatedFiles(oldFile);
 		relatedFiles.add(oldFile);
-		for(IResource file : relatedFiles) {
-			IPath path = file.getFullPath();
+		
+		for(IResource iResource : relatedFiles) {
+			IPath path = iResource.getFullPath();
 			URI oldURI = getPlatformURI(path);
 			URI newURI = getPlatformURI(newPathWithoutExt.addFileExtension(path.getFileExtension()));
 			uriMap.put(oldURI, newURI);
@@ -238,8 +242,7 @@ public class RenameModelChange extends Change {
 	private URI getPlatformURI(IPath path) {
 		return URI.createPlatformResourceURI(path.toString(), true);
 	}
-
-
+	
 	/**
 	 * Overrides perform.
 	 * 
@@ -268,7 +271,9 @@ public class RenameModelChange extends Change {
 			for(Resource res : resourceSet.getResources()) {
 				if(res.getURI().isPlatformResource()) {
 					try {
-						res.save(null);
+						if (res.isModified()){
+							res.save(ResourceUtils.getSaveOptions());
+						}
 					} catch (Exception e) {
 						log.error(Messages.bind(Messages.RenameModelChange_ErrorLoading, res.getURI()), e);
 					}
@@ -308,9 +313,15 @@ public class RenameModelChange extends Change {
 
 			// Then, remove the old model files
 			pm.subTask(Messages.RenameModelChange_RemoveOldFile);
-			for(IResource file : relatedFiles) {
-				if(file.exists()) {
-					file.delete(true, new NullProgressMonitor());
+			for(IResource iResource : relatedFiles) {
+				if(iResource.exists()) {
+					IPath path = iResource.getFullPath();
+					URI oldURI = getPlatformURI(path);
+					URI newURI = uriMap.get(oldURI);
+					URIConverter uriConverter = resourceSet.getURIConverter();
+					if (uriConverter.exists(newURI, Collections.EMPTY_MAP)){
+						iResource.delete(true, new NullProgressMonitor());						
+					}
 				}
 			}
 			pm.worked(4);
@@ -411,7 +422,7 @@ public class RenameModelChange extends Change {
 		// if read only => error to the user
 		if(!readOnlies.isEmpty()) {
 			ReadOnlyManager readOnlyManager = new ReadOnlyManager(domain);
-			ArrayList<URI> uris = new ArrayList<URI>();
+			Collection<URI> uris = new ArrayList<URI>();
 			for(Iterator<Resource> iterator = readOnlies.iterator(); iterator.hasNext();) {
 				Resource r = (Resource)iterator.next();
 				uris.add(r.getURI());
