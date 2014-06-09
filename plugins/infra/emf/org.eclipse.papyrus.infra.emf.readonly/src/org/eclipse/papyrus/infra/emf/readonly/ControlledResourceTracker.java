@@ -40,9 +40,9 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
  */
 class ControlledResourceTracker extends AdapterImpl implements TransactionalEditingDomainListener {
 
-	private Map<URI, URI> unitMap = new HashMap<URI, URI>();
+	private volatile Map<URI, URI> unitMap = new HashMap<URI, URI>();
 
-	private Map<URI, URI> pending;
+	private volatile Map<URI, URI> pending;
 
 	/**
 	 * Obtains the single tracker instance associated with the specified editing {@code domain}.
@@ -185,6 +185,21 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 					map(resource.getURI(), parentURI);
 				}
 			}
+		}
+	}
+
+	/**
+	 * Discover an existing parent-unit relationship from a cross-resource-contained object.
+	 * 
+	 * @param crossResourceContained
+	 *        an object that is in the contents list of a resource and also has a container
+	 */
+	protected void handleCrossResourceContainment(InternalEObject crossResourceContained) {
+		URI resourceURI = crossResourceContained.eIsProxy() ? crossResourceContained.eProxyURI().trimFragment() : crossResourceContained.eDirectResource().getURI();
+		EObject container = crossResourceContained.eInternalContainer();
+		URI parentURI = container.eIsProxy() ? ((InternalEObject)container).eProxyURI().trimFragment() : container.eResource().getURI();
+		if(parentURI != null) {
+			map(resourceURI, parentURI);
 		}
 	}
 

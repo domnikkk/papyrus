@@ -9,6 +9,8 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 323802
+ *   Christian W. Damus (CEA) - bug 415639
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource;
 
@@ -52,6 +54,9 @@ public class CDOAwareTransactionalEditingDomain extends PapyrusROTransactionalEd
 				if(!NotificationFilter.READ.matches(notification)) {
 					// Check whether we are modifying a read-only object
 					assertNotReadOnly(notification.getNotifier());
+				} else {
+					// Maybe we resolved a cross-resource containment proxy
+					handleCrossResourceContainmentProxy(notification);
 				}
 			}
 		};
