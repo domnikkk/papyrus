@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 Atos.
+ * Copyright (c) 2011, 2014 Atos, CEA, and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Hemery (Atos) vincent.hemery@atos.net - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 415639
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer.resourceloading.handler;
@@ -20,6 +21,7 @@ import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.command.UnexecutableCommand;
+import org.eclipse.emf.common.command.AbstractCommand.NonDirtying;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -50,7 +52,10 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 		List<EObject> selection = getSelectedElements();
 		if(editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
 			final ModelSet set = (ModelSet)editingDomain.getResourceSet();
-			CompoundCommand command = new CompoundCommand();
+			class NonDirtyingCompound extends CompoundCommand implements NonDirtying {
+				// Empty
+			}
+			CompoundCommand command = new NonDirtyingCompound();
 			List<URI> handledURI = new ArrayList<URI>();
 			// ensure main URI is never unloaded
 			URI mainURI = SashModelUtils.getSashModel(set).getResourceURI().trimFileExtension();
@@ -60,7 +65,7 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 					final URI uriTrim = sel.eResource().getURI().trimFileExtension();
 					if(!handledURI.contains(uriTrim)) {
 						handledURI.add(uriTrim);
-						Command cmd = new AbstractCommand() {
+						class UnloadCommand extends AbstractCommand implements NonDirtying {
 
 							public void redo() {
 								LoadingUtils.unloadResourcesFromModelSet(set, uriTrim);
@@ -75,7 +80,7 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 								return true;
 							}
 						};
-						command.append(cmd);
+						command.append(new UnloadCommand());
 					}
 				}
 			}
