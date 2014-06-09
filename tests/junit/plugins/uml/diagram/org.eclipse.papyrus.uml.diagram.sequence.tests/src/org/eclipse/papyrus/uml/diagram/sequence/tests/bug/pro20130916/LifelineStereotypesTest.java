@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA
+ * Copyright (c) 2013, 2014 Soyatec, CEA, and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - fix test execution on Linux platform
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug.pro20130916;
@@ -46,7 +47,10 @@ public class LifelineStereotypesTest extends BaseStereotypesTest {
 		assertNotNull(lifeline);
 
 		LifelineEditPart lifeline2 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(400, 100), null);
-		link = (AbstractMessageEditPart)createLink(UMLElementTypes.Message_4004, lifeline2.getViewer(), SequenceUtil.getAbsoluteBounds(lifeline).getCenter(), lifeline, SequenceUtil.getAbsoluteBounds(lifeline2).getCenter(), lifeline2);
+		Point start = SequenceUtil.getAbsoluteBounds(lifeline).getCenter();
+		Point end = SequenceUtil.getAbsoluteBounds(lifeline2).getCenter();
+		alignVertically(start, end);
+		link = (AbstractMessageEditPart)createLink(UMLElementTypes.Message_4004, lifeline2.getViewer(), start, lifeline, end, lifeline2);
 		assertNotNull("link", link);
 	}
 
@@ -67,6 +71,14 @@ public class LifelineStereotypesTest extends BaseStereotypesTest {
 		checkConnectionHorizontally(link, 1);
 		doTestDisplayStereotypeWithBrace(lifeline, lifeline);
 		checkConnectionHorizontally(link, 2);
+	}
+
+	static void alignVertically(Point a, Point b) {
+		if(a.y != b.y) {
+			int y = (a.y + b.y) / 2;
+			a.y = y;
+			b.y = y;
+		}
 	}
 
 }
