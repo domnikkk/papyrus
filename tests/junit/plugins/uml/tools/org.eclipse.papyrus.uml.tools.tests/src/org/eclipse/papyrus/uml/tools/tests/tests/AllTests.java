@@ -19,10 +19,10 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ ContentProviderTest.class, UMLStereotypePropertyContentProviderTest.class, DependencyManagementTest.class, //
-NamedElementValidatorTest.class
+@SuiteClasses({ ContentProviderTest.class, UMLStereotypePropertyContentProviderTest.class, DependencyManagementTest.class,
+		NamedElementValidatorTest.class, StereotypeElementListenerTest.class
 
 })
 public class AllTests {
-	//Test suite
+	// Test suite
 }
