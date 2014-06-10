@@ -12,3 +12,4 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: CEA LIST
+Export-Package: org.eclipse.papyrus.moka.fuml.assertionlibrary.utils

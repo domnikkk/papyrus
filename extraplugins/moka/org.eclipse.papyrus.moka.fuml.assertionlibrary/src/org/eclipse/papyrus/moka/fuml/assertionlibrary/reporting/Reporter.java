@@ -18,6 +18,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.eclipse.papyrus.moka.fuml.assertionlibrary.utils.ReportNameSingleton;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -41,7 +42,9 @@ public class Reporter {
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		Document xmlReport = builder.newDocument();
 		Element testSuiteNode = xmlReport.createElement(JUnit.TEST_SUITE);
-		testSuiteNode.setAttribute(JUnit.NAME, "Unknown"); //TODO
+		ReportNameSingleton reportNameSingleton = ReportNameSingleton.getInstance();
+		String reportName = reportNameSingleton.getExecutedActivityName() + reportNameSingleton.getEngineName();
+		testSuiteNode.setAttribute(JUnit.NAME, reportName); //TODO
 		for(TestReport t : this.testReports) {
 			testSuiteNode.appendChild(this.toDOMElement(t, xmlReport));
 		}

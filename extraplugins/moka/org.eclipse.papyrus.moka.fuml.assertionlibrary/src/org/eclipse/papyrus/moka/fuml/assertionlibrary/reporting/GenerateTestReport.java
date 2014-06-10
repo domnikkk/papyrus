@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.assertionlibrary.utils.ReportNameSingleton;
 import org.w3c.dom.Document;
 
 
@@ -39,6 +40,9 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 		Document report = null;
 		Transformer transformer = null;
 		TransformerFactory factory = TransformerFactory.newInstance();
+		ReportNameSingleton reportNameSingleton = ReportNameSingleton.getInstance();
+		String reportName = reportNameSingleton.getExecutedActivityName() + reportNameSingleton.getEngineName();
+		
 		try {
 			report = Reporter.INSTANCE.getReport();
 		} catch (ParserConfigurationException e) {
@@ -53,13 +57,13 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 			e.printStackTrace();
 		}
 		if(transformer != null) {
-			this.writeReport(transformer, report, Platform.getInstanceLocation().getURL());
+			this.writeReport(transformer, report, Platform.getInstanceLocation().getURL(), reportName);
 			System.out.println(Platform.getInstanceLocation().getURL());
 		}
 	}
 
-	protected boolean writeReport(Transformer transformer, Document report, URL location) {
-		File file = new File(location.getPath() + "/mokatests.xml");
+	protected boolean writeReport(Transformer transformer, Document report, URL location, String reportName) {
+		File file = new File(location.getPath() + "/" + reportName + ".xml");
 		FileOutputStream out = null;
 		try {
 			out = new FileOutputStream(file, false);
