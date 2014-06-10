@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<toc label="Search" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
-   <topic href="resource/css.html" label="Diagram Stylesheets">
-      <link toc="resource/css-toc.xml"/>
+<toc label="CSS Stylesheets" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
+   <topic href="resource/css.html" label="CSS Stylesheets">
       <anchor id="CSS"/>
+      <link toc="resource/css-toc.xml"/>
    </topic>	
 </toc>
