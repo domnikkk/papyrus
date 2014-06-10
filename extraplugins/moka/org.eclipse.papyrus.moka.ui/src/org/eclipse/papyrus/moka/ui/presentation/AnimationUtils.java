@@ -90,6 +90,11 @@ public class AnimationUtils {
 		eObjectToDiagrams = new ConcurrentHashMap<EObject, List<Diagram> >() ;
 	}
 	
+	public static void init(EObject eobject) {
+		init() ;
+		getInstance().getDiagrams(eobject) ;
+	}
+	
 	/**
 	 * Typically called on engine termination. This methods removes all 
 	 * markers used to enable semantic elements animation at runtime

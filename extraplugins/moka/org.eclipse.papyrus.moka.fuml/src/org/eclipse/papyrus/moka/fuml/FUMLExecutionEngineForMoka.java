@@ -50,7 +50,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/** The control delegate. */
 	protected ControlDelegate controlDelegate;
-
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -65,7 +65,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 			this.debugTarget = debugTarget;
 			this.debugTarget.setName("FUML Execution Engine");
 			FUMLPresentationUtils.init(eObjectToExecute);
-			AnimationUtils.init();
+			AnimationUtils.init(eObjectToExecute);
 			FUMLExecutionEngine.eInstance = this;
 		}
 	}
