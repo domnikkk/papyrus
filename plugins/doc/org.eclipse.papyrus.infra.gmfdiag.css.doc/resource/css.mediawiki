@@ -1,45 +1,79 @@
+__TOC__
+
 = Introduction  =
 
 The standard UML specification provides a few hints to represent graphical elements. However, it only focuses on the general representation of these elements (e.g. A Class is a rectangle, with optional compartments for its attributes and operations, and its name should be displayed in italic if the Class is abstract). 
 
-Nevertheless, for a better readability (and even esthetic), the user has a certain freedom for changing some graphical properties, such as an Element’s color. Until now, in Papyrus, this customization could be done by two complement means: 
+Nevertheless, for a better readability (and even esthetic), the user has a certain freedom for changing some graphical properties, such as an Element's color. Until now, in Papyrus, this customization could be done by two complement means: 
 
 *Appearance tab (Properties view): change the appearance of the selected element(s) 
 *Preferences page: change the initial appearance of all newly created element(s)
 
 While this allows defining a custom theme for our diagrams, this mechanism suffers from a few limitations: 
 
-*It is not possible to create different categories of appearance for the same semantic Element (e.g. “Blue Class” and “Green class”). We’d have to create “Blue classes” and change some of them to “Green” manually. 
-*If we wanted to change the current theme, we’d have either to change each object’s appearance one by one, or to write an automatic transformation, which could be really complicated. 
+*It is not possible to create different categories of appearance for the same semantic Element (e.g. "Blue Class" and "Green class"). We'd have to create "Blue classes" and change some of them to "Green"manually. 
+*If we wanted to change the current theme, we'd have either to change each object's appearance one by one, or to write an automatic transformation, which could be really complicated. 
 *It is not easy to export a Theme, as they are stored in the Eclipse preferences. It is almost impossible to ship a ready-to-use distribution of Papyrus with a custom theme.
 
-The release of Eclipse 4 gave us the opportunity to rely on their CSS Engine to support Cascading StyleSheets in Papyrus diagrams. Just like in web pages, the CSS format is used to separate the contents of our diagrams from their appearance. It becomes possible to change the appearance of a whole diagram, or even a set of diagrams, independently of the number of represented elements, in a single click.<br> 
+The Cascading StyleSheets (CSS) component adds the capacity to define some Stylesheets for your diagrams. Just like in web pages, the CSS format is used to separate the contents of our diagrams from their appearance. It becomes possible to change the appearance of a whole diagram, or even a set of diagrams, independently of the number of represented elements, in a single click.<br>
 
 = Installation  =
+The CSS Stylesheet support is now shipped in the base installation of Papyrus. It doesn't require any specific installation step anymore.
 
-Since Papyrus 1.0 / Luna, the CSS Stylesheet support is now shipped in the base installation of Papyrus. It doesn't require any specific installation step anymore.
+Without the CSS component, or with the "Black & White" CSS Theme, your diagrams look like: 
 
-Your diagrams should now look like the following: 
+[[Image:Papyrus CSS no theme.png|Papyrus diagram without CSS Theme]]<br>
 
-[[Image:Papyrus CSS no theme.png|Papyrus diagram without CSS Theme]]<br> 
+With the default "Papyrus" CSS Theme, your diagrams look like:
 
 [[Image:Papyrus CSS theme.png|Papyrus Diagram with CSS Theme]]<br>
 
-Note: If you opened a diagram which has been created without the CSS Support, it may still have a custom appearance, e.g. without Element icons. This might or might not be a problem, as this may conflict with the CSS Theme. You can reset all custom appearances by pressing the “Default style” button in the Style tab of the Diagram’s properties view. 
+Note: If you opened a diagram which has been created without the CSS Support, it may still have a user-defined appearance, e.g. without Element icons. This might or might not be a problem, as this may conflict with the CSS Theme. You can reset all custom appearances by pressing the "Default style" button in the Style tab of the Diagram's properties view.
 
-= Using StyleSheets  =
+= Using StyleSheets =
+To define a custom style, the first step is to create a Stylesheet. The creation is really straightforward: a Stylesheet is a text file with the .css extension. You can create such a file using the "New > File" wizard.<br> There are several options for using stylesheets.
+== Diagram Stylesheets ==
+You can define a particular style for a diagram.
+# Select a diagram
+# Go to the Style tab of the properties view
+# Add a new "Diagram style sheet". There isn't currently any style sheet available from the diagram, so you need to create a new "Stylesheet reference".<br/>[[Image:Papyrus CSS Import stylesheet.png|Import stylesheet in Papyrus]] 
+# Browse your workspace to find your css file, and press OK. Your stylesheet is now associated to your diagram.
+== Model StyleSheet ==
+Similarily to "Diagram Stylesheet" you can define a particular style for a Model.
+# Select a model
+# Go to the Style tab of the properties view
+# Add a new "Model style sheet"
+# Browse your workspace to find your css file, and press OK. Your stylesheet is now associated to your Model.
+== Project Stylesheets ==
+You can associate to a project specific stylesheets.
+# Select a project in "Project Explorer" view
+# Open project preference properties: "Right click > properties"
+# Go to CSS stylesheets page: "Papyrus > Style sheets"
+# Add a new "Project style sheet". There isn't currently any style sheet available from project, so you need to create a new "Stylesheet reference".<br/>[[Image:Papyrus_CSS_project.png|Style sheets project properties in Papyrus]]
+# Browse your workspace to find your css file, and press OK. Now, your stylesheet is associated with the project.
+= Deploying a CSS Theme  =
 
-To define a custom style, the first step is to create a Stylesheet. The creation is really straightforward: a Stylesheet is a text file with the .css extension. You can create such a file using the “New &gt; File” wizard.<br> 
+Once you have defined your style sheets, you may want to export it to create a new theme (Or to extend an existing theme). To do so, Papyrus provides two ways to define a theme.
 
-Then, you need to associate this file with your diagram. Select a diagram, and then go to the Style tab of the properties view, and add a new “Diagram style sheet”. There isn’t currently any style sheet available from the diagram, so you need to create a new “Stylesheet reference”.<br> 
+== With extension point == 
+Papyrus provides an extension point: org.eclipse.papyrus.infra.gmfdiag.css.theme. 
 
-[[Image:Papyrus CSS Import stylesheet.png|Import stylesheet in Papyrus]]<br> 
+This extension point needs two entries: a Theme Definition (ID, Label and icon of the Theme), and Theme contributions (A set of style sheets which will compose the Theme). More than one plug-in can contribute to the same Theme, which makes it possible to extend a Theme. 
 
-Browse your workspace to find your css file, and then validate. Your stylesheet is now associated to your diagram.<br> 
+The Theme can be modified from the Papyrus preferences page "CSS Theme". Only one theme can be activated at the same time. A Theme applies to all Papyrus Diagrams from the workspace.<br> 
+== In workspace preference ==
+You can define theme in workspace preferences. A theme is defined by style sheets.
+# Go to the Papyrus preference: "Window > Preferences > Papyrus > CSS Theme"
+# Add a new theme. There are currently two existing themes: "Papyrus Theme" and "Black & White".<br/>[[Image:Papyrus_CSS_theme_creation.png|Creation of theme in Papyrus]]
+# Write a name for this new theme
+# (optional) Choose an icon
+# Associate one or more style sheets with this theme
+# Press OK to finish creation
+You can edit or create a theme with a selection of CSS files in Project Explorer view. For this, select the CSS files, right click and select "CSS Theme"
 
 = Editing a StyleSheet  =
 
-Papyrus Stylesheets are stored in text files with the “.css” extension (e.g. stylesheet.css).<br> 
+Papyrus Stylesheets are stored in text files with the ".css" extension (e.g. stylesheet.css).<br> 
 
 == Manually: The CSS Syntax  ==
 
@@ -53,74 +87,84 @@ The CSS syntax is a list of rules, which associates selectors and properties.<br
 Eclipse implements the 2.1 version of the CSS syntax. The available selectors are:<br> 
 
 *'''*''': Matches all elements<br> 
-*'''ElementType''': Matches the elements of type “ElementType”<br> 
-*'''.myStyle''': Matches the elements on which the style “myStyle” is applied<br> 
-*'''#myID''': Matches the element with the CSS ID “myID”. The CSS ID must be unique among a diagram. To avoid confusing the users, and because this selector doesn’t make much sense on diagrams, this selector has been disabled in Papyrus.<br> 
-*'''[property=value]''': Matches the elements which have a property “property” with the value “value”. It can also match the properties of Stereotypes<br>
-*'''[appliedStereotypes~="MyStereotype"]''': Matches the elements on which the Stereotype "MyStereotype" is applied. You can use either the Stereotype's name or qualified name (MyProfile::MyPackage::MyStereotype). Note: always use the "~=" operator (Which means "contains"), because elements can have more than one applied stereotype.
-
-The pseudo-selectors are currently not used in Papyrus.<br> 
+*'''ElementType''': Matches the elements of type "ElementType"<br> 
+*'''.myStyle''': Matches the elements on which the style "myStyle" is applied<br> 
+*'''#myID''': Matches the element with the CSS ID "myID". The CSS ID must be unique among a diagram. To avoid confusing the users, and because this selector doesn't make much sense on diagrams, this selector has been disabled in Papyrus.<br> 
+*'''<nowiki>[property=value]</nowiki>''': Matches the elements which have a property "property" with the value "value". It can also match the properties of Stereotypes<br>
+*'''<nowiki>[appliedStereotypes~="MyStereotype"]</nowiki>''': Matches the elements on which the Stereotype "MyStereotype" is applied. You can use either the Stereotype's name or qualified name (MyProfile::MyPackage::MyStereotype). Note: always use the "~=" operator (Which means "contains"), because UML elements can have more than one applied stereotype.
+* ''':pseudo''': Matches the element on which the pseudo-selector "pseudo" is applied. Pseudo-selectors are typically used for dynamic events, and for filtering some non-semantic properties. In Papyrus, they are used for identifying more precisely the floating labels (When an element has more than one label: see the [#Mask_Label Mask Label] chapter below), and they are also used by the animation framework to specify events (See the Moka documentation)
 
 These selectors can be combined using one of the following combinators:<br> 
 
 *'''Selector1 Selector2''': Descendant selector. Matches the elements which match Selector2 and are contained in an element matching Selector1<br> 
-*'''Selector1 &gt; Selector2''': Child selector. Matches the elements which match Selector2 and are directly contained in an element matching Selector2<br> 
+*'''Selector1 > Selector2''': Child selector. Matches the elements which match Selector2 and are directly contained in an element matching Selector2<br> 
 *'''Selector1 + Selector2''': Sibling selector. Matches the elements which match Selector2 and are immediately preceded by a Sibling element which match Selector1.<br> 
 *'''Selector1, Selector2''': Alternative selector. Matches elements matching either Selector1 or Selector2<br>
 
 A rule also contains a list of properties, in the form property:value; 
 
-In Papyrus, the selectors apply to semantic elements and properties (i.e. UML Elements), and the properties apply to the appearance properties (i.e. GMF Appearance properties). A few custom properties (Independent from the GMF Appearance model) are also available.<br> 
+In Papyrus, the selectors apply to semantic elements and properties (i.e. UML Elements), and the properties apply to the appearance properties (i.e. GMF Appearance properties). A few custom properties (Independent from the GMF Appearance model) are also available (See "Supported properties" below).<br> 
 
 === Examples  ===
 
 <source lang="css">* {
-	fillColor: red;
-	fontColor: #0000FF;
+    fillColor: red;
+    fontColor: #0000FF;
 }</source> 
 
 Meaning: all elements should be filled in red, and all texts should be blue (RGB Color #0000FF)<br> 
 
 <source lang="css">Class {
-	gradient: white vertical;
-	elementIcon:true;
-	shadow:true;
-	qualifiedNameDepth:full;
+    gradient: white vertical;
+    elementIcon:true;
+    shadow:true;
+    qualifiedNameDepth:full;
 }</source> 
 
 Meaning: this style applies to all UML Classes. They will have a white and vertical gradient. The Element icon and the shadow will be displayed, as well as their fully qualified name.<br> 
 
 <source lang="css">ClassDiagram Class>Property {
-	fontColor: red;
+    fontColor: red;
 }</source> 
 
 Meaning: The properties directly contained in a Class, which is drawn on a ClassDiagram (Either as a root element of the diagram, or in a Package) will be displayed in red.<br> 
 
 <source lang="css">[appliedStereotypes~="Block"]{
-	bold:true;
+    bold:true;
 }
 
 /* Equivalent: qualified name */
 [appliedStereotypes~="SysML::Blocks::Block"]{
-	bold:true;
+    bold:true;
 }</source>
 
 Meaning: The elements with the "Block" stereotype must be displayed in bold.
 
 <source lang="css">[appliedStereotypes~=Block][isEncapsulated=true]{
-	fontColor:red;
+    fontColor:red;
 }</source>
 
 Meaning: The elements with the "Block" stereotype, and the stereotype property "isEncapsulated" set to true, must be displayed in red.
+
+All these rules can be combined:
+
+<source lang="css">Class[appliedStereotypes~=Block][appliedStereotypes~=MyCustomStereotype][isEncapsulated=true][myCustomProperty=SomeValue][isAbstract=false]{
+	/* A class on which the stereotypes "Block" and "MyCustomStereotype" are applied, 
+	*  and on which the stereotype property "isEncapsulated" is set to true, 
+	*  the stereotype property "myCustomProperty" is set to "SomeValue", and 
+	*  the UML Property "isAbstract" is set to false */
+	
+	fillColor:red;
+}</source>
 
 
 == With the Papyrus tooling  ==
 
 Papyrus also provides a tool to generate a CSS Rule from an element displayed in the diagram. You need to create a stylesheet before you can edit it with the Create style tool, and it is recommended (Although not required) to associate this style sheet with your current diagram. 
 
-To use it, create an element and change its appearance via the “Appearance” tab of the properties view. Then, right click on the element, and select “Format”, “Create a new style”. The dialog box contains three tabs:<br> 
+To use it, create an element and change its appearance via the "Appearance" tab of the properties view. Then, right click on the element, and select "Format", "Create a new style". The dialog box contains three tabs:<br> 
 
-*Conditions: The conditions under which the style will be applied (Corresponds to the “CSS Selectors”) 
+*Conditions: The conditions under which the style will be applied (Corresponds to the "CSS Selectors") 
 *Properties: The graphical properties to export to the style sheet 
 *Stylesheet: The style sheet to edit<br>
 
@@ -128,12 +172,12 @@ To use it, create an element and change its appearance via the “Appearance” tab 
 
 In the Stylesheet tab, select your stylesheet:<br> 
 
-*If you have already associated the style sheet to your diagram, you can use the “Applies stylesheet” button. 
-*Otherwise, you need to select “External stylesheet”, and browse your workspace to retrieve the file. Note that in this case, as the edited stylesheet might not be applied to your diagram, you won’t be able to see the changes in the current diagram.<br>
+*If you have already associated the style sheet to your diagram, you can use the "Applies stylesheet" button. 
+*Otherwise, you need to select "External stylesheet", and browse your workspace to retrieve the file. Note that in this case, as the edited stylesheet might not be applied to your diagram, you won't be able to see the changes in the current diagram.<br>
 
 In the conditions tab, there are three groups of options:<br> 
 
-*The kind of element to which the style applies (e.g. the style will be applied to “Class” elements, or to any kind of elements). It can be restricted to a specific diagram. 
+*The kind of element to which the style applies (e.g. the style will be applied to "Class" elements, or to any kind of elements). It can be restricted to a specific diagram. 
 *You can add restrictions on the current value(s) of the element (e.g. the style will be applied to concrete classes). Only primitive type and enumerated attributes are supported here. 
 *The style name is used to apply a style manually.<br>
 
@@ -145,32 +189,37 @@ The properties tab contains all the graphical properties that can be applied to 
 
 Selector properties are semantic element properties. They can be used with one of the following syntaxes:
 
-'''[isAbstract=true]'''
+'''<nowiki>[isAbstract=true]</nowiki>'''
 
-'''Class[isAbstract=true]'''
+'''<nowiki>Class[isAbstract=true]</nowiki>'''
 
 The supported semantic element properties are:
 
-* Strings: '''[name=MyName]''', '''[name="My name"]''' (Quotes are required for complex Strings)<br/>
-* Integers: '''[size="12"]''' (Quotes are required) <br/>
-* Booleans: '''[isAbstract=true]''' (Quotes are optional)<br/>
-* Enumerations: '''[visibility=visible]''' (Quotes are optional)<br />
-* References to named elements (UML NamedElement or Ecore ENamedElement): '''[type=String]'''<br/>
+* Strings: '''<nowiki>[name=MyName]</nowiki>''', '''<nowiki>[name="My name"]</nowiki>''' (Quotes are required for complex Strings)<br/>
+* Integers: '''<nowiki>[size="12"]</nowiki>''' (Quotes are required) <br/>
+* Booleans: '''<nowiki>[isAbstract=true]</nowiki>''' (Quotes are optional)<br/>
+* Enumerations: '''<nowiki>[visibility=visible]</nowiki>''' (Quotes are optional)<br/>
+* References to named elements (UML NamedElement or Ecore ENamedElement): '''[<nowiki>type=String</nowiki>]'''<br/>
+
+The supported properties are the semantic properties of the UML element (e.g. isAbstract, name, type, ...), as well as the semantic properties of the stereotypes applied to the UML element (e.g. isEncapsulated for a SysML Block)
 
 Some selectors can also be used to represent some specific parts of an element. For example, it is possible to hide a specific compartment:
 
 <source lang="css">Class > Compartment[kind="attribute"] {
-	visible:false;
+    visible:false;
 }
 
 Class > Compartment[kind="symbol"] {
-	visible:true;
+    visible:true;
 }
 
 Compartment[kind="structure"]{
-	collapsed:true;
+    collapsed:true;
 }
-</source>
+
+Port > Label {
+    visible: false;
+}</source>
 
 == Style properties ==
 
@@ -180,82 +229,210 @@ The CSS Supports all GMF Notation properties, as well as a few Papyrus-specific 
 
 The simplest way to discover new style properties is to use the Appearance tab of the Properties view in Papyrus. When hovering one of the appearance properties, the tooltip indicates the name of the corresponding CSS property
 
-[[Image:Papyrus CSS tooltip.png|CSS Property in tooltip]]<br> 
+[[Image:Papyrus_CSS_tooltip.png|CSS Property in tooltip]]<br>
 
-The following custom properties are supported:
+This table lists the most common properties:
 
-displayBorder: true | false<br/>
-displayName: true | false<br/>
-maintainSymbolRatio: true | false<br/>
-<br/>
-elementIcon: true | false<br/>
-shadow: true | false<br/>
-<br/>
-qualifiedNameDepth: full | none | [int]<br/>
+{| class="wikitable"
+|-
+! Property name !! Value type !! Initial Value !! Applies to !! Comment
+|-
+| fillColor || ''Color'' || white || Shapes || In the default "Papyrus Theme", the fill color depends on the type of element. The used colors are #C3D1D5 (Light blue, Default), #C3D7DD (Lighter blue, Class), #FFFFCC (Yellow, Comment), #C8FFE6 (Teal, Constraints)
+|-
+| transparency || ''integer'' || 0 || Shapes || Value is a percentage: values in the range (0, 100) are supported. Transparency works only if the gradient is activated: [https://bugs.eclipse.org/bugs/show_bug.cgi?id=419320 Bug 419320]
+|-
+| gradient || <nowiki>[</nowiki>''Color''&nbsp;''Color''&nbsp;<nowiki>[</nowiki>''horizontal&nbsp;|&nbsp;vertical''<nowiki>]</nowiki>&nbsp;| ''none''<nowiki>]</nowiki> || none || Shapes || Examples: "white blue horizontal" or "none"
+|-
+| fontColor || ''Color'' || black || Shapes,&nbsp;floating&nbsp;labels || Comments support HTML syntax. Most style-properties have no effect on comments
+|-
+| fontName || ''String'' || "Segoe UI" || Shapes,&nbsp;floating&nbsp;labels || Most fonts are platform-specific. The list of available Fonts can be found in the "Appearance" tab of the properties view
+|-
+| fontSize || ''integer'' || 9 || Shapes,&nbsp;floating&nbsp;labels ||&nbsp;
+|-
+| bold || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels ||&nbsp; 
+|-
+| italic || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels || In UML, "italic" means "isAbstract=true". This property is disabled for all elements which can be abstract (e.g. Class)
+|-
+| underline || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels || In UML, "underline" means "isStatic=true". This property is disabled for all elements which can be static (e.g. Property)
+|-
+| strikeThrough || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels ||&nbsp; 
+|-
+| visible || ''boolean'' || true || All elements || Although this property will work for any diagram elements, it is probably a bad idea to use it with anything else than a Compartment or a Label 
+|-
+| collapsed || ''boolean'' || false || Compartments || &nbsp;
+|-
+| showTitle || ''boolean'' || false || Compartments || &nbsp;
+|-
+| lineColor || ''Color'' || black || Shapes, Connectors || &nbsp;
+|-
+| lineWidth || ''integer'' || -1 || Shapes, Connectors || -1 means "default", and typically corresponds to 1px
+|-
+| routing || <nowiki>[</nowiki>''Manual&nbsp;|&nbsp;Rectilinear&nbsp;|&nbsp;Tree''<nowiki>]</nowiki> || Manual || Connectors || The value is case-sensitive: don't forget the initial Capital
+|-
+| roundedBendpointsRadius || ''integer'' || 0 || Connectors || Applies to connectors with routingStyle = Rectilinear or Tree
+|-
+| smoothness || <nowiki>[</nowiki>''None&nbsp;|&nbsp;Normal&nbsp;|&nbsp;Less&nbsp;|&nbsp;More''<nowiki>]</nowiki> || None || Connectors || &nbsp; 
+|-
+| avoidObstructions || ''boolean'' || false || Connectors || &nbsp;
+|-
+| closestDistance || ''boolean'' || false || Connectors || &nbsp;
+|-
+| jumpLinkStatus || <nowiki>[</nowiki>''None&nbsp;|&nbsp;All&nbsp;|&nbsp;Below&nbsp;|&nbsp;Above''<nowiki>]</nowiki> || None || Connectors || It is not recommended to use jump links via CSS, as it gives strange results for overlapping connectors
+|-
+| jumpLinkType || <nowiki>[</nowiki>''Semicircle&nbsp;|&nbsp;Square&nbsp;|&nbsp;Chamfered''<nowiki>]</nowiki> || Semicircle || Connectors || &nbsp;
+|-
+| jumpLinkReverse || ''boolean'' || false || Connectors || &nbsp;
+|}
+
+The following properties can be used to bypass the standard UML notation. They can typically be used for pure DSML notations:
+
+{| class="wikitable"
+|-
+! Property name !! Value type !! Initial Value !! Applies to !! Comment
+|-
+| displayBorder || ''boolean'' || true || Shapes || If set to false, the borders of the Shape will be hidden.
+|-
+| displayName || ''boolean'' || true || Shapes || If set to false, the name of the Shape will be hidden
+|-
+| displayTag || ''boolean'' || true || Shapes,&nbsp;connectors || If set to false, the tags (e.g. Â« component Â») of the element will be hidden 
+|-
+| maintainSymbolRatio || ''boolean'' || true || Shapes || If the shape is represented with a Symbol, specifies whether the ratio should be maintained or not. If the Symbol is displayed in a compartment, it is usually a good idea to maintain the ratio. If the symbol is the only representation (e.g. when the name, border and compartments are hidden), it is recommended to not maintain the ratio
+|-
+| elementIcon || ''boolean'' || false || Shapes,&nbsp;floating&nbsp;labels || Whether the icon should be displayed next to the label of the element. In the default "Papyrus Theme", the icon is displayed by default
+|-
+| shadow || ''boolean'' || false || Shapes || Display a shadow under the shape
+|-
+| qualifiedNameDepth || <nowiki>[</nowiki>''full&nbsp;|&nbsp;none&nbsp;|&nbsp;integer''<nowiki>]</nowiki> || none || Shapes,&nbsp;floating&nbsp;labels || The depth of the qualified name to display. Applies to UML::NamedElement
+|-
+| lineStyle || <nowiki>[</nowiki>''solid&nbsp;|&nbsp;dashed&nbsp;|&nbsp;dotted&nbsp;| hidden&nbsp;|&nbsp;double''<nowiki>]</nowiki> || N/A || Connectors || In UML, the line type depends on the semantic element (e.g. solid line for associations, dashed line for dependencies...). In most cases, you should avoid using this property, as this would change the well-known UML notation. However, it can be useful for creating pure DSML, where the UML notation should be hidden.
+|-
+| lineDashLength || ''integer'' || N/A || Connectors || When the lineStyle is set to "Dash", specifies the length of the dash
+|-
+| lineDashGap || ''integer'' || N/A || Connectors || When the lineStyle is set to "Dash", specifies the gap between the dashes
+|-
+| targetDecoration || <nowiki>[</nowiki>''none''<nowiki>]</nowiki> || N/A || Connectors || If "targetDecoration" is set to None, hides the target decoration of the Connector (e.g. the arrow)
+|-
+| sourceDecoration || <nowiki>[</nowiki>''none''<nowiki>]</nowiki> || N/A || Connectors || If "sourceDecoration" is set to None, hides the source decoration of the Connector (e.g. the arrow)
+|-
+| maskLabel || ''string<nowiki>[</nowiki><nowiki>]</nowiki>'' || N/A || Labels, floating labels || This property can be used to configure the display of complex labels (e.g. properties). See examples in the <nowiki>[</nowiki>#Mask_Label Mask Label<nowiki>]</nowiki> chapter below
+|-
+| svgFile || ''path'' || N/A || Shapes || The path to an SVG file, which should be used as a symbol for the element. It will be displayed in the "symbol" compartment of the shape
+|-
+| followSVGSymbol || ''boolean'' || false || Shapes || If the SVG file has a path with the ID "papyrusPath", this path will be used to connect edges
+|-
+| svgCssFile || ''path'' || N/A || Shapes || The path to a CSS file which will be applied to the SVG symbol (If an SVG symbol is used). Can be used to dynamically change the appearance of the SVG image (e.g. change color, ...)
+|-
+| svgCssClass || ''string'' || N/A || Shapes || The CSS Class to be applied at the root of the SVG document (If an SVG symbol is used). Can be used to dynamically change the appearance of the SVG image
+|-
+|}
+
+===Value types===
+
+'''String:''' Simple (Ascii) strings can be written without quotes: ''property:value''. Complex strings must be written with quotes: ''property:&nbsp;"my value"''; ''path:&nbsp;"platform:/plugin/my.example.plugin/resources/myFile.ext";''<br/>
+'''Integer:''' Quotes are optional: ''size: 18''<br/>
+'''Boolean:''' Quotes are optional: ''bold: true''<br/>
+'''Color:''' There are three ways for using colors. The simplest one is to use the list of predefined [http://www.w3.org/TR/css3-color/#svg-color CSS Color names]: ''fillColor: teal''. It is also possible to use the Hexadecimal RGB notation: ''fillColor: #008080''. The last option is to use the rgb() function: ''fillColor: rgb(0, 128, 128)''
+
+===Mask Label===
+
+Some labels can be configured with a "Mask": in the appearance tab of the properties view, some elements have a list of checkboxes which are used to select which parts of the label should be displayed (e.g. visibility, type, name, multiplicity...)
+
+The CSS property "maskLabel" has the same purpose. The value of this property is the list of labels to display. For example, if you want to display only the name of the Ports, write:
+
+<source lang="css">Port > Label {
+	maskLabel: name;
+}</source>
+
+If you want to display the name, type and multiplicity of a Property, write:
+
+<source lang="css">Property {
+	maskLabel: name type multiplicity;
+}</source>
+
+Note that the order of the values doesn't matter. It is also important to understand the difference between the port and the property: the rule to match the port's label is different than the one for the property, because the Port is represented with two graphical elements: a square for the Port, and a floating text for its label. The Property is represented with a single text element. It is especially important for Associations, as Association have six different labels: one label for the Association itself, two labels for each association end (Source and target), and one label for the Association's stereotypes. The rules for configuring associations thus needs to be more precise. For example:
+
+<source lang="css">Association > Label:sourceMultiplicity {
+	visible:false;
+}
+
+Association > Label:targetMultiplicity {
+	visible:false;
+}
+
+Association > Label:sourceRole {
+	maskLabel: name multiplicity;
+}
+
+Association > Label:targetRole {
+	maskLabel: name multiplicity;
+}
+
+Association > Label:name {
+	visible:false;
+}</source>
+
+These rules result in:
+
+[[Image:Papyrus_CSS_maskLabel_association.png|Association labels result]]<br>
+
+
+The list of accepted values depends on the element. To find the list of values, select an element in a Diagram (e.g. a Property), go to the Appearance tab of the properties view, and find the list of checkboxes named "Label customization". Hover the checkboxes, and look at the tooltip to find the value:
+
+[[Image:Papyrus_CSS_maskLabel.png|Mask label]]<br>
+
+To obtain the result shown in this screenshot, write:
+
+<source lang="css">Property {
+	maskLabel: name type defaultValue;
+}</source>
+
+Which results in:
+
+[[Image:Papyrus_CSS_maskLabel_result.png|Mask label result]]<br>
 
 = Manipulating styles  =
 
-The computed styles will be applied automatically. For example, if your stylesheet tells that all your abstract classes must be red, the classes color will change automatically according to the value of their “isAbstract” property. 
+The computed styles will be applied automatically. For example, if your stylesheet tells that all your abstract classes must be red, the classes color will change automatically according to the value of their "isAbstract" property. 
 
-In some other cases, however, you may want to specify manually the style that should be applied to your objects. For this case, you can use the “Applied styles” property in the “Style” tab of the properties view.<br> 
+In some other cases, however, you may want to specify manually the style that should be applied to your objects. For this case, you can use the "Applied styles" property in the "Style" tab of the properties view.<br> 
 
 <source lang="css">.myOwnStyle {
-	fillColor: #A6C198;
-	gradient:white horizontal;
+    fillColor: #A6C198;
+    gradient:white horizontal;
 }</source> 
 
 [[Image:Papyrus CSS CustomStyle.png|Result]]<br> 
 
-Once a style is applied on an object, the object will be refreshed each time the style definition changes. For example, changing the style “myOwnStyle” to the following declaration:<br> 
+Once a style is applied on an object, the object will be refreshed each time the style definition changes. For example, changing the style "myOwnStyle" to the following declaration:<br> 
 
 <source lang="css">.myOwnStyle {
-	 fillColor: #E3A49C;
-	 gradient: #FFFFFF horizontal;
+     fillColor: #E3A49C;
+     gradient: #FFFFFF horizontal;
 }</source> 
 
-All the green classes will become red.<br> 
-
-= Deploying a CSS Theme  =
-
-Once you have defined your style sheet, you may want to export it to create a new theme (Or to extend an existing theme). To do so, Papyrus provides an extension point: org.eclipse.papyrus.infra.gmfdiag.css.theme. 
-
-This extension point needs two entries: a Theme Definition (ID, Label and icon of the Theme), and Theme contributions (A set of style sheets which will compose the Theme). More than one plug-in can contribute to the same Theme, which makes it possible to extend a Theme. 
-
-The Theme can be modified from the Papyrus preferences page “CSS Theme”. Only one theme can be activated at the same time. A Theme applies to all Papyrus Diagrams from the workspace.<br> 
+All the green classes will become red.<br>
 
 = Limitations and issues  =
 
-There are currently a few identified limitations to the Stylesheet framework, as well as a few minor bugs.<br> 
+There are currently a few identified limitations to the Stylesheet framework, as well as a few minor bugs:<br> 
 
 == Selectors  ==
 
-Currently, some complex selectors are not supported in the Papyrus stylesheets.<br> 
+Currently, some complex selectors are not supported in the Papyrus stylesheets. Especially, the following are not supported yet:<br> 
 
 === Selector inheritance  ===
 
 It is not possible to apply a style to all descendant of a given Metaclass. For example, a Behavior will not inherit styles from a Class, although a Behavior actually is a Class.<br>  
 
-=== Labels ===
-
-It is currently not possible to customize labels from the Stylesheets (e.g. show/hide type for all properties). 
-
 === Events support  ===
 
 Selectors based on user events are not yet implemented. For example, the CSS specification defines the&nbsp;:hover pseudo-selector to represent an element hovered by the mouse, which is not yet supported in Papyrus.<br> 
 
-== Stylesheets  ==
-
-=== Model stylesheets  ===
-
-Currently, stylesheets can only be applied to a Diagram. It is not yet possible to apply a stylesheet on a Model or a Project.<br> 
-
-=== Workspace stylesheets  ===
-
-The only way to define a workspace theme is through the use of a plug-in which defines a new extension. It is not yet possible to create a new local theme from the preferences page.<br> 
-
-== Bugs  ==
+== Known bugs  ==
 
 The following bugs have been identified:<br> 
 
-*[https://bugs.eclipse.org/bugs/show_bug.cgi?id=372322 Bug 372322]: [Diagram - Refresh] The refresh action is not correctly binded to F5<br> 
-*[https://bugs.eclipse.org/bugs/show_bug.cgi?id=386574 Bug 386574]: [CSS - Refresh] Only the active diagram is refresh when the stylesheets change<br> 
+*[https://bugs.eclipse.org/bugs/show_bug.cgi?id=372322 Bug 372322]: <nowiki>[Diagram - Refresh] The refresh action is not correctly binded to F5</nowiki><br> 
+*[https://bugs.eclipse.org/bugs/show_bug.cgi?id=386574 Bug 386574]: <nowiki>[CSS - Refresh]  Only the active diagram is refresh when the stylesheets change</nowiki><br>
+*[https://bugs.eclipse.org/bugs/show_bug.cgi?id=436665 Bug 436665]: <nowiki>[CSS] Refresh issue when an element is moved to a different owner</nowiki>
+
