@@ -42,7 +42,8 @@ public class MokaUMLComboBox extends MokaComboBox<String, NamedElement> {
 	@Override
 	protected String generateLabel(NamedElement e) {
 		String label ="["+e.getClass().getSimpleName().replace("Impl","")+"] ";
-		label += e.getQualifiedName();
+		String s = e == null ? "" : (e.getQualifiedName() == null ? "" : e.getQualifiedName()) ;
+		label += s;
 		return label;
 	}
 }

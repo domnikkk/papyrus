@@ -11,7 +11,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.ui.launch;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -34,12 +38,13 @@ import org.eclipse.uml2.uml.Stereotype;
 public class MokaTriggerComboPopulation implements ModifyListener {
 
 	protected transient MokaUMLComboBox list;
-		
+
 	public MokaTriggerComboPopulation(MokaUMLComboBox combo){
 		this.list = combo;
 	}
-	
+
 	public void modifyText(ModifyEvent e) {
+		List<NamedElement> namedElements = new ArrayList<NamedElement>() ;
 		this.list.removeAll();
 		Text text = (Text)e.widget;
 		URI projectUri = URI.createURI(text.getText());
@@ -50,22 +55,36 @@ public class MokaTriggerComboPopulation implements ModifyListener {
 			EObject eObject = contentIterator.next(); 
 			if(eObject instanceof Behavior){
 				if(eObject instanceof Activity ||
-					eObject instanceof OpaqueBehavior ||
+						eObject instanceof OpaqueBehavior ||
 						eObject instanceof StateMachine){
-					 this.list.add((NamedElement)eObject);
+					namedElements.add((NamedElement)eObject) ;
 				}
 			}
 			else if(eObject instanceof Class){
 				if(!(eObject instanceof Node)
 						|| !(eObject instanceof Stereotype)
-							|| !(eObject instanceof AssociationClass)){
+						|| !(eObject instanceof AssociationClass)){
 					//if(((Class)eObject).isActive()){
-						this.list.add((NamedElement)eObject);
+					namedElements.add((NamedElement)eObject) ;
 					//}
 				}
 			}
 		}
-		this.list.selectFirst();
 		
+		Comparator<NamedElement> comp = new Comparator<NamedElement>() {
+			public int compare(NamedElement o1, NamedElement o2) {
+				String s1 = list.generateLabel(o1) ;
+				String s2 = list.generateLabel(o2) ;
+				return s1.compareTo(s2) ;
+			}
+		} ;
+		
+		Collections.sort(namedElements, comp) ;
+		
+		for (NamedElement n : namedElements) {
+			this.list.add(n) ;
+		}
+		this.list.selectFirst();
+
 	}
 }
