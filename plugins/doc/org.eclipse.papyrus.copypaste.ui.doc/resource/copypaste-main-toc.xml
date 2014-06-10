@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="Copy/Paste" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
+   <topic href="resource/copypaste.html" label="Using Copy/paste">
+      <link toc="resource/copypaste-toc.xml"/>
+      <anchor id="copypaste"/>
+   </topic>	
+</toc>

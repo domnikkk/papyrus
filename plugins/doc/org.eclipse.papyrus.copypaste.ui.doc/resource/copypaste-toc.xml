@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="resource/copypaste.html" label="copypaste">
+	<topic href="resource/copypaste.html" label="Copying/Cutting/Pasting in Papyrus">
+		<topic href="resource/copypaste.html#Introduction" label="Introduction"></topic>
+		<topic href="resource/copypaste.html#User_Interface" label="User Interface">
+			<topic href="resource/copypaste.html#Model_Explorer_Menu" label="Model Explorer Menu"></topic>
+			<topic href="resource/copypaste.html#Model_Explorer_KeyBinding" label="Model Explorer KeyBinding"></topic>
+			<topic href="resource/copypaste.html#Diagram_Menu" label="Diagram Menu"></topic>
+			<topic href="resource/copypaste.html#Diagram_KeyBinding" label="Diagram KeyBinding"></topic>
+			<topic href="resource/copypaste.html#Preferences" label="Preferences"></topic>
+		</topic>
+		<topic href="resource/copypaste.html#List_of_Paste_strategies" label="List of Paste strategies">
+			<topic href="resource/copypaste.html#Common_Strategies" label="Common Strategies">
+				<topic href="resource/copypaste.html#Default_Paste_Strategy" label="Default Paste Strategy"></topic>
+				<topic href="resource/copypaste.html#SterotypeStrategy" label="SterotypeStrategy">
+					<topic href="resource/copypaste.html#Preferences_2" label="Preferences"></topic>
+				</topic>
+				<topic href="resource/copypaste.html#Rename_Strategy" label="Rename Strategy"></topic>
+				<topic href="resource/copypaste.html#Diagram_in_model_Explorer_Strategy" label="Diagram in model Explorer Strategy"></topic>
+				<topic href="resource/copypaste.html#Table_in_model_Explorer_Strategy" label="Table in model Explorer Strategy"></topic>
+			</topic>
+			<topic href="resource/copypaste.html#Uml_Strategies" label="Uml Strategies">
+				<topic href="resource/copypaste.html#Constraint_Paste_Strategy" label="Constraint Paste Strategy"></topic>
+			</topic>
+			<topic href="resource/copypaste.html#Sysml_Strategies" label="Sysml Strategies">
+				<topic href="resource/copypaste.html#Part_Paste_Strategy" label="Part Paste Strategy"></topic>
+			</topic>
+		</topic>
+	</topic>
+</toc>

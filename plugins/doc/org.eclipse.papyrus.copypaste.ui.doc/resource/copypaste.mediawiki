@@ -1,0 +1,106 @@
+<!--
+ Copyright (c) 2014 CEA LIST.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial Documentation
+-->
+
+=Copying/Cutting/Pasting in Papyrus=
+==Introduction==
+
+Papyrus's policy is to ensure consistency between models and diagrams, so by default the cut/copy/paste functionalities act both on diagram and model elements.
+The Copy/Cut/Paste functionalities are available between models and diagrams but not between eclipse instances.  
+The Cut/Paste functionalities are disable on root and read only elements.
+
+==User Interface== 
+===Model Explorer Menu===
+Right click on a model explorer element
+
+[[Image:images/ModelExplorerMenus.png]]
+
+===Model Explorer KeyBinding===
+*Type M1+C for Papyrus copy
+*Type M1+X for Papyrus cut
+*Type M1+V for Papyrus paste
+
+ M1 is the COMMAND key on MacOS X, and the CTRL key on most other platforms.
+ M2 is the SHIFT key.
+
+===Diagram Menu===
+On a Diagram element '''Right Click>EDIT''' 
+
+[[Image:images/DiagramMenus.png]]
+
+===Diagram KeyBinding===
+*Type M1+C for Papyrus copy
+*Type M1+X for Papyrus cut
+*Type M1+V for Papyrus paste
+
+*Type M1+M2+C for Graphical copy
+*Type M1+M2+X for Graphical cut
+*Type M1+M2+V for Graphical paste
+
+===Preferences===
+
+Papyrus copy/paste/cut preferences is accessible on '''Window>Preferences>Papyrus>Paste'''
+The preference page lists all the available strategies and the checkbox to select whether the references should be kept.
+
+[[Image:images/PastePreferences.png]]
+
+<!--== Copy with external files ==
+This paragraph will list all '''available''' interaction with external files.
+
+=== Copy in Diagram Paste in External Files ===
+The copied Diagram elements will be paste as an Image.
+-->
+
+== List of Paste strategies ==
+
+=== Common Strategies ===
+
+==== Default Paste Strategy  ====
+The strategy paste all copied elements in the selected place.
+It is required for all other strategies.
+
+==== SterotypeStrategy ====
+The strategy reapply profiles and stereotypes on the newly copied elements.
+
+===== Preferences =====
+* Always apply missing profiles: missing profiles will be applied to the root of the target model
+* Never apply missing profiles: stereotypes referencing missing profiles will not be paste
+<!-- * Featured :  Ask user : a popup will list all the missing profiles and ask the user which one to import -->
+
+[[Image:images/StereotypeStrategy.png]]
+
+==== Rename Strategy ====
+
+* Only the duplications of the '''roots elements''' will be renamed
+* An element is renamed only if there is already an element with the '''same name''' on the paste selection
+* The element will be renamed in CopyOf_%NameOfTheElement%_%id%. The id will be incremented for each ''same'' copy/paste. Example: a Class1 will become CopyOf_Class1_1 then CopyOf_Class1_2…
+<!-- Featured : It will have two preferences, one for the prefix “copy_of” and one checkbox to disable the increment. -->
+
+[[Image:images/RenameExample.png]]
+
+==== Diagram in model Explorer Strategy ====
+The strategy allows copy/paste for diagrams in model explorer. 
+
+==== Table in model Explorer Strategy ====
+The strategy allows copy/paste for tables in model explorer. 
+
+=== Uml Strategies ===
+The following strategies will only apply on uml models
+
+==== Constraint Paste Strategy ====
+This strategy works only on uml class diagrams. It draws the constraint "context" link after a paste. 
+
+[[Image:images/ConstraintExample.png]]
+
+=== Sysml Strategies ===
+The following strategies will only apply on sysml models
+==== Part Paste Strategy ====
+This strategy duplicates the linked association for each property pasted. 
+
