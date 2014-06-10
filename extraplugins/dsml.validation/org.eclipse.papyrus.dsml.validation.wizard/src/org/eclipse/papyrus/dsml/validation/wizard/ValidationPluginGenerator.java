@@ -373,14 +373,13 @@ public class ValidationPluginGenerator {
 			List<Constraint> constraints=constraintsManager.getConstraintsOfStereotype().get(stereotype);
 			Element bindingelement = editor.getPluginEditor().addChild(extension, "binding");
 			bindingelement.setAttribute("context",	stereotype.getName() + "ClientContext");
-			Element category = editor.addChild(bindingelement, "category");
-			category.setAttribute("ref", pluginID + SEPARATOR +
-					constraintsManager.getPrimeCategory().getName());
+		
 			for(Iterator<Constraint> iteratorConstraint = constraints.iterator(); iteratorConstraint.hasNext();) {
 				Constraint constraint = (Constraint)iteratorConstraint.next();
 				constraintsManager.getValidationRuleMap().get(constraint).getID();
 				Element constraintElement = editor.addChild(bindingelement, "constraint");
-				constraintElement.setAttribute("ref", constraintsManager.getValidationRuleMap().get(constraint).getID());
+				// The pluginID must be part of the fully qualified constraint reference
+				constraintElement.setAttribute("ref", pluginID + SEPARATOR + constraintsManager.getValidationRuleMap().get(constraint).getID());
 				// ("+----> create binding for the constraint "+constraintsManager.getValidationRuleMap().get(constraint).getID());
 			}
 		}
