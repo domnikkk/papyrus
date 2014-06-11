@@ -11,6 +11,9 @@
          <popupeditor
                editorConfiguration="org.eclipse.papyrus.uml.textedit.constraintwithessentialocl.xtext.EssentialOCLEditorConfiguration">
          </popupeditor>
+         <Priority
+               name="High">
+         </Priority>
       </DirectEditor>
       <DirectEditor
             contributor="Eclipse Modeling Project"
@@ -20,6 +23,9 @@
          <popupeditor
                editorConfiguration="org.eclipse.papyrus.uml.textedit.constraintwithessentialocl.xtext.EssentialOCLEditorConfiguration">
          </popupeditor>
+         <Priority
+               name="High">
+         </Priority>
       </DirectEditor>
    </extension>
 </plugin>
