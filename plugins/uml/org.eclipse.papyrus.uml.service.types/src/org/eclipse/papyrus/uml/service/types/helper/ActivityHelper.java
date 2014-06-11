@@ -13,27 +13,17 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.helper;
 
-import java.util.Collections;
-
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.edit.command.CreateChildCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.internal.EMFTypePlugin;
-import org.eclipse.gmf.runtime.emf.type.core.internal.l10n.EMFTypeCoreMessages;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
+import org.eclipse.papyrus.uml.service.types.command.PartitionMoveCommand;
 
 
 public class ActivityHelper extends ElementEditHelper {
+
+	@Override
+	protected ICommand getMoveCommand(MoveRequest req) {
+		return new PartitionMoveCommand(req);
+	}
 	
 //	{
 //		getDefaultContainmentFeatures().put(UMLPackage.eINSTANCE.getCentralBufferNode(), UMLPackage.eINSTANCE.getActivity_OwnedNode());

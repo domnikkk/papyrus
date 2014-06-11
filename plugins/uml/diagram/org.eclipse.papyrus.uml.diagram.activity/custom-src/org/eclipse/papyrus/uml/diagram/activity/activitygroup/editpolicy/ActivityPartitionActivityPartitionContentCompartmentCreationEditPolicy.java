@@ -24,6 +24,10 @@ import org.eclipse.papyrus.uml.diagram.activity.activitygroup.IContainerNodeDesc
  */
 public class ActivityPartitionActivityPartitionContentCompartmentCreationEditPolicy extends GroupCreationEditPolicy {
 
+	/** 
+	 * Elements graphically shown inside partitions are semantically owned by the activity. 
+	 * So default reparenting check (of different semantic containers) should be skipped for partition contents. 
+	 */
 	public ActivityPartitionActivityPartitionContentCompartmentCreationEditPolicy(IContainerNodeDescriptor groupDescriptor) {
 		super(groupDescriptor);
 	}

@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.DefaultCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Activity;
 
 /**
  * This class provide customization of the CreationEditPolicy to support the
@@ -96,5 +97,14 @@ public class ActivityParameterNodeInCompartmentCreationEditPolicy extends Defaul
 			}
 		}
 		return cc.isEmpty() ? null : new ICommandProxy(cc.reduce());
+	}
+	
+	
+	@Override
+	protected boolean shouldReparent(EObject element, EObject newContext) {
+		if (element.eContainer() instanceof Activity && newContext instanceof Activity)
+			return element != null &&
+				element != newContext;
+		return super.shouldReparent(element, newContext);
 	}
 }
