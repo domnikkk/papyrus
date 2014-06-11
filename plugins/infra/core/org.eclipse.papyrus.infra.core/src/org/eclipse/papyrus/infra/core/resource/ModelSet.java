@@ -16,6 +16,7 @@
  *  Christian W. Damus (CEA LIST) - Controlled resources in CDO repositories
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 432813
+ *  Christian W. Damus (CEA) - bug 437052
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
@@ -252,6 +253,36 @@ public class ModelSet extends ResourceSetImpl {
 
 	public boolean isTrackingModification() {
 		return modificationTrackingAdapter != null;
+	}
+
+	/**
+	 * Queries whether a {@code resource} managed by me is either known to be or assumed to be needing to be saved.
+	 * Generally this is true for resources that have been modified since the last save and that are saveable
+	 * (not read-only and correctly and completely loaded in the first place).
+	 * 
+	 * @param resource
+	 *        a resource that I manage
+	 * 
+	 * @return whether the {@code resource} currently needs to be saved
+	 */
+	public boolean shouldSave(Resource resource) {
+		boolean result;
+
+		if(getTransactionalEditingDomain().isReadOnly(resource) || ModelUtils.resourceFailedOnLoad(resource)) {
+			result = false;
+		} else if(!getURIConverter().exists(resource.getURI(), null)) {
+			// If the resource needs to be created, it needs to be saved
+			result = true;
+		} else if(modificationTrackingAdapter instanceof ProxyModificationTrackingAdapter) {
+			result = ((ProxyModificationTrackingAdapter)modificationTrackingAdapter).shouldSave(resource);
+		} else if(modificationTrackingAdapter != null) {
+			result = !resource.isTrackingModification() || resource.isModified();
+		} else {
+			// Assume that the resource is modified since the last save
+			result = true;
+		}
+
+		return result;
 	}
 
 	/**
@@ -938,7 +969,7 @@ public class ModelSet extends ResourceSetImpl {
 		if(packageRegistry != null) {
 			packageRegistry.clear();
 		}
-		
+
 		// Dispose Editing Domain
 		if(transactionalEditingDomain != null) {
 			transactionalEditingDomain.dispose();

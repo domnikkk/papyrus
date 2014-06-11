@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2013 CEA LIST and others.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -10,6 +10,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - manage models by URI, not IFile (CDO)
+ *  Christian W. Damus (CEA) - bug 437052
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
@@ -223,7 +224,7 @@ public abstract class AbstractBaseModel extends AbstractModel implements IVersio
 	 */
 	@Override
 	public void saveModel() throws IOException {
-		if(!getModelManager().getTransactionalEditingDomain().isReadOnly(resource) && !ModelUtils.resourceFailedOnLoad(resource)) {
+		if(getModelManager().shouldSave(resource)) {
 			resource.save(null);
 		}
 	}

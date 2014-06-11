@@ -10,6 +10,7 @@
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
  *   Christian W. Damus (CEA) - bug 422257
+ *   Christian W. Damus (CEA) - bug 437052
  *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource;
@@ -77,10 +78,12 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 		super();
 
 		this.resources = new SafeResourceList();
-
-		setTrackingModification(false);
-
 		this.repositoryManager = repositoryManager;
+	}
+
+	@Override
+	protected Adapter createModificationTrackingAdapter() {
+		return new CDOAwareProxyModificationTrackingAdapter();
 	}
 
 	@Override
