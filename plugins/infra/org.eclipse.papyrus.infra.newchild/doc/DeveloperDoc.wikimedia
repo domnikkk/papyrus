@@ -1,0 +1,70 @@
+__TOC__= New Child Menu into the model explorer ===Requirements==
+- AddNewChild (id=newChild001): 
+ Papyrus shall add in the menu new child for new customized elements by using extended type
+- HideElement (id=newChild002): 
+ Papyrus shall not display all UML or SysML element creation
+- newChildFromProfile (id=newChild003): 
+ Papyrus shall add the creation of new element from a subset of profile
+- newChildMenuDisplay (id=newChild004): 
+ Papyrus shall be able to associated icons to folder or creation menu
+- RoleAndElementCreation (id=newChild005): 
+ When an element can created from several  roles for a container, Papyrus shall let the possibility to choose the role or to let to the possibility to be created from all role.==Use Cases==[[Image:C:/git/org.eclipse.papyrus/plugins/infra/org.eclipse.papyrus.infra.newchild/doc/imgDOC/UseCaseDiagram.png|UseCaseDiagram]]<br>===UseCreateMenu===
+The Papyrus User shall use this functionality from the model explorer in order to create elements in the model. It can decide to display or not this element creation====How to====
+A user can create an element by  select element in the model explorer, click on it ant then click on the diagram.
+In order to not display a menu,  a user can edit the model that represent the creation menu and set the attribute visibility to false. [[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\EnableCreationMenu.png|EnableCreationMenu]]<br>===Create or modify ElementCreationModel===
+An advanced User is able to create of modify creation menu. This menu is a model that can be edited ====How to====
+An advanced user can contribuate to the menu by adding a new plugin that contains:
+	-a xmi file that represents a creation menu. The model must be a instance of org.eclipse.papyrus.infra.newchild/resource/elementCreationMenuModel.ecore. It contains
+		•	CreationMenu
+			o	It correspond to a menu
+			o	The ElemenTypeIDRef correspond a reference to the element Type.
+			o	The role can be filled in order to specify the role play by the element.
+			o	If displayAllRole is set to true, it displays all roles played by the element if the number of roles is greater than 1. By default this property is true;
+		•	Folder
+			o	It is possible to add owns label an icon.
+			o  Visibilty to specify if the folder is visible.
+	-a reference to an extension point, to specify that papyrus must take in account this file display the menu
+<code>
+<extension
+         point="org.eclipse.papyrus.infra.newchild">
+      <menuCreationModel
+            model="YourCreationMenu.xmi">
+      </menuCreationModel>
+</extension>
+</code>
+In the following example, a menu creation for a package is presented. This menu is contained in the folder SimpleUMLTest. We have associated a image for this menu.[[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\PackageWithIconO.png|Creation menu for a package with a specific icon]]<br>[[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\PackageWithIconOIllustration.png|Result for this menu]]<br>
+In this following example, a creation menu will be specify  to allow creation of nested classifier. That 's why the role "nestedClassifier" is precised. The label for this creation is "nestedClass"[[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\NestedClassifierIllustration.png|Result for the menu nestedClass]]<br>[[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\NestedClassifier.png|Creation menu model for nested class]]<br>
+In the followin examplen a creation menu is created for activities. In this case, all roles are displayed. Thanks to this, when we want to associate an activity to a state, 3 roles are proposed. [[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\AllPossibleActivities.png|Creation menu model for activity]]<br>[[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\AllPossibleActivitiesIllustration.png|Result for this menu activity]]<br>===Generate "ElementCreationModel" from a profile===
+From a stereotyped profile, a model of new child menu can be generated.
+For example a user after designing a profile, want to have a dedicated menu  from this profile/
+For the moment this function is not implemented.===Hide, change order or add submenus===
+The User can modify the creation menu by adding submenus: order about new child menu, precise if the role must be displayed.====How to====
+test===Create or modify ElementCreationModel at runtime thanks to a GUI===
+A user  can edit a the model that represent the creation menu  at runtime for papyrus thanks to a dedicated UI.==Design==[[Image:C:/git/org.eclipse.papyrus/plugins/infra/org.eclipse.papyrus.infra.newchild/doc/imgDOC/Architecture.png|Architecture]]<br>
+The system is done by two plugins:
+	•	org.eclipse.papyrus.infra.newchild
+	It has in charge to provide and construct swt.Menu from the ecore model. To do that the developer has to:
+		o	instantiate a CreationMenuFactory, 
+		o	ask to get all Root model and populate it
+	<code>
+		CreationMenuFactory creationMenuFactory= new CreationMenuFactory(editingDomain);
+		ArrayList<Folder> folders= creationMenuRegistry.getRootFolder();
+		Iterator<Folder> iterFolder= folders.iterator();
+		while (iterFolder.hasNext()) {
+			Folder currentFolder= iterFolder.next();
+			creationMenuFactory.populateMenu(menu, currentFolder,eObject);
+		}
+</code>
+	•	org.eclipse.papyrus.views.modelexplorer.newchild
+	It has in charge to add menu in the model explorer of papyrus.
+[[Image:C:/git/org.eclipse.papyrus/plugins/infra/org.eclipse.papyrus.infra.newchild/doc/imgDOC/NewDiagram.png|NewDiagram]]<br>
+This the structure of EMF model for model
+	•	CreationMenu
+		o	It correspond to a menu
+		o	The ElemenTypeIDRef correspond a reference to the element Type.
+		o	The role can be filled in order to specify the role play by the element.
+		o	If displayAllRole is set to true, it displays all roles played by the element if the number of roles is greater than 1. By default this property is true;
+	•	Folder
+		o	It is possible to add owns label an icon.
+[[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\MenuExample.png|Example of obtained Menu]]<br>[[Image:C:\git\org.eclipse.papyrus\plugins\infra\org.eclipse.papyrus.infra.newchild\doc\imgDOC\codeXML.PNG|Example of xml for a creation menu]]<br>
+Here an example of xml of creation menu.==Tests=====Create a model without nothing======createa model with only a root======create a model with elementType as String======Use a menu from a model without ElementType model======Use a menu with elementType model======Use a menu with stereotyped element===</html>

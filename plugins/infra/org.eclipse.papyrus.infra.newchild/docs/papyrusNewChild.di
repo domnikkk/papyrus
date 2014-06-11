@@ -4,9 +4,7 @@
     <availablePage>
       <emfPageIdentifier href="papyrusNewChild.notation#_Py2DcFOFEeOuspyO4PzXCg"/>
     </availablePage>
-    <availablePage>
-      <emfPageIdentifier href="papyrusNewChild.notation#_hb3voFOFEeOuspyO4PzXCg"/>
-    </availablePage>
+    <availablePage/>
     <availablePage>
       <emfPageIdentifier href="papyrusNewChild.notation#_swsygFOIEeOuspyO4PzXCg"/>
     </availablePage>
@@ -30,28 +28,22 @@
           <emfPageIdentifier href="papyrusNewChild.notation#_Py2DcFOFEeOuspyO4PzXCg"/>
         </children>
         <children>
-          <emfPageIdentifier href="papyrusNewChild.notation#_hb3voFOFEeOuspyO4PzXCg"/>
+          <emfPageIdentifier href="papyrusNewChild.notation#_uhdN0FgPEeOKQOyOw2l5lw"/>
         </children>
         <children>
           <emfPageIdentifier href="papyrusNewChild.notation#_swsygFOIEeOuspyO4PzXCg"/>
         </children>
         <children>
-          <emfPageIdentifier href="papyrusNewChild.notation#_uB23AFW6EeOhVe6k7yzS3A"/>
+          <emfPageIdentifier href="papyrusNewChild.notation#_PhuW0PCMEeOEP-VOZrQAkw"/>
         </children>
         <children>
-          <emfPageIdentifier href="papyrusNewChild.notation#_uhdN0FgPEeOKQOyOw2l5lw"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="papyrusNewChild.notation#_Fo2BgFXeEeOW-JPqZK_EZg"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="papyrusNewChild.notation#_v4laILXYEeOcibS9c7ohwg"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="papyrusNewChild.notation#_tJT7ALXZEeOcibS9c7ohwg"/>
+          <emfPageIdentifier href="papyrusNewChild.notation#_y6tAIPCYEeOEP-VOZrQAkw"/>
         </children>
         <children>
           <emfPageIdentifier href="ElementCreationMenuModel.notation#_VJWf0FXPEeOhVe6k7yzS3A"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="papyrusNewChild.notation#_JdFvgPC7EeOQTc9S_J6Sug"/>
         </children>
       </children>
     </windows>
