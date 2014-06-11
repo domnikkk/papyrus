@@ -1,97 +1,181 @@
+= Constraint validation =
 
-= Validate OCL Constraints of a Profile =
+Currently, Papyrus supports two different ways to validate whether constraints are respected by application models. Both offer the option to refine constraint validation: by default,
+a user will see which constraints are violated. While this is an important information, it is better to have a customized message what is wrong. It's also useful to specify the severity, in particular whether a constraint violation is an error or warning.
 
-Papyrus supports an additional profile for defining Domain Specific Modeling Languages (DSML) that refines how constraints are validated. 
-The additional profile enables a more precise specification of validation properties, for example:
+Do one of the following:
+
+== Generate constraints directly into the profile definition ==
+
+Constraints written in OCL within a UML profile can be generated into the definition of the profile. They are taken into account during the validation of models that apply the profile. This method is only applicable for OCL constraints.
+
+How to embed the constraint definitions into a UML Profile:
+
+*1. Save the profile
+*2. Papyrus asks: "Would you like to define it" (the profile), select Yes
+*3. Ensure "Save OCL constraints, if any, into the profile definition" is selected (this is checked by default). Please note that you should not embed constraints into the profile, if you plan to generate a plugin (see next section)<br/>
+<center>
+[[image:PapyrusDSML-ConstraintDefinition.png]]<br>
+Save OCL Constraints in the Profile Definition
+</center>
+
+=== Refine constraint validation ===
+
+The OCL pivot delegate supports a specific way to encode a customized message and severity in the OCL constraint: The constraint needs to be written in form of a tuple, as shown here for an example.
+
+<pre>
+Tuple{
+  status=base_Class.isActive,
+  message='\'' + base_Class.name + '\' is not active',
+  severity=-5
+}.status
+</pre>
+
+The original constraint expression is defined in the status field of the tuple, message and severity are further fields. Whereas only the status field is returned for evaluation, OCL evaluation with the Pivot delegate will also evaluate the custom message and severity.
+
+In the moment, there is no specific support in Papyrus to facilitate entering OCL expressions in this way. Since the whole tuple is a "normal" OCL expression, syntax validation and completion is supported by the xtext based expression editor. But it is currently not clear whether Papyrus will offer a way to edit this tuple in a user friendly way, e.g. by synchronizing message and severity with information from the DSML stereotype and only showing the original OCL constraint to the user.
+
+=== Summary ===
+
+If you only deal with OCL constraints, this method is simple and straightforward. But it is not possible to select whether constraints defined in this way are included for validation or not (they are always included).
+
+
+
+== Generate a plugin that embeds the constraints ==
+
+The user can generate a plugin from a profile that embeds the constraints, expressed either in OCL or Java. OCL constraints are embedded into the plugin.xml while Java constraints can directly be compiled into code. This is supported by the EMF validation framework.
+
+CAVEAT: The validation of OCL rules within a plugin is a rather old mechanism. It does not take the user preference of an OCL validation delegate into account. Therefore, validation is done with the classical LPG mechanism whereas the constraint editor within Papyrus validates the constraint itself (not whether other parts of the model respect the constraint) using the Pivot OCL mechanism. In particular, the qualified name of UML meta classes in LPG must start with uml:: whereas Pivot requires UML:: (upper case). Papyrus will offer a way to assure that Pivot will be used for OCL contraints within the plugin as well, but this has not been implemented yet.
+
+=== How to embed the generate constraints into a plugin ===
+
+*1. Install the DSML validation support from the Papyrus extensions
+
+Help->Install New Software, select Papyrus update site, deselect "group items by category" and search for DSML.
+
+*2. Select the UML Profile element in the Model Explorer
+*3. Right click UML Profile element
+*4. Select "create validation plugin for this DSML" from the context menu
+<center>
+[[image:PapyrusDSML-PluginValidationGeneration.png]]<br/>
+Starting the validation plugin creation process
+</center>
+
+*5. Choose whether you want to create a new plugin or generate into the plugin hosting the model. The latter is the default.
+<center>
+[[image:PapyrusDSML-GenPluginQuestion.png]]<br>
+Running the constraint validation creation wizard
+</center>
+*6. [Only in case of new plugin]: Enter a Project name when prompted by the wizard, complete the wizard and select Finish
+
+<center>
+[[image:PapyrusDSML-PluginWizard.png]]<br>
+Running the constraint validation creation wizard
+</center>
+
+*7. Install or deploy the plugin with associated profile
+
+
+=== Refine constraint validation ===
+
+Papyrus supports a UML profile that enables a developer to refine how constraints are violated. This profile is called Domain Specific Modeling Language (DSML), since it is often used in the context of profiles that adds domain specific concepts to UML.
+
+The additional profile enables a specification of the following properties:
 * Mode: Defines if the validation of the constraint is done in “batch” or “live” mode
 * Severity: Defines the severity of the constraint violation. It can be one of INFORMATION, WARNING or ERROR. The latter is the default severity (if none is specified). The CANCEL severity should be used with caution, as it causes the validation operation to be interrupted, possibly resulting in the loss of valuable diagnostic information from other constraints.
 * Message: Defines the message that will be displayed if the constraint is violated
-* Description: Provides a description of the constraint •Enabled by default: Defined if this constraint should be enabled by default or not
+* Description: Provides a description of the constraint 
+* Enabled by default: Defined if this constraint should be enabled by default or not
 
-CAVEAT: The information added via the profile using the DSML profile is not currently taken into account during OCL validation. The support will be added soon.
+The attributes of the profile correspond quite closely to the possibilities that the EMF validation framework offers when constraints are specified in the plugin.xml of a profile.
 
 Advanced users can also define:
-* Id: The constraint id
 * Status code: The plug-in unique status code, useful for logging. 
-* The target of validation, the element to be validated
+* Target: The element to be validated (normally not required since generated context selectors take care of that, see section below)
 
-How to apply the DSML validation profile:
+Please note that the additional constraint information via the profile is only taken into account, if you plan to generate a plugin embedded the constraints into the plugin.xml, as discussed above.
 
-*1. Select the profile root
+=== How to apply the DSML validation profile ===
 
-*2. Select the profile tab in the property view
+*1. Install the DSML profile from the Papyrus extensions
 
-*3. Click on the registered profile button
+Help->Install New Software, select Papyrus update site, deselect "group items by category" and search for DSML
 
-*4. Select the "DSML Validation" profile
+*2. Select the UML Profile element in the Model Explorer
+
+*3. Select the Profile tab in the Properties View
+
+*4. Click on the "Apply registered profile" button
+
+*5. Select the "DSML Validation" profile
 
 <center>
 [[Image:PapyrusDSML-profileApplication.png]]<br>
-Open the specification via the property view
+Applying the DSML Validation Profile
 </center>
 
-*5. Select the constraint
+*5. Select the UML Constraint element in the Model Explorer or diagram
 
-*6. Select the profile tab of the property view
+*6. Select the Profile tab of the Properties View
 
-*7. Click on the apply profile button
+*7. Click on the "Apply stereotype" button
 
 *8. Select the ValidationRule stereotype
 
 <center>
 [[Image:PapyrusDSML-stereotypeApplication.png]]<br>
-Open the specification via the property view
+Applying the ValidationRule Stereotype
 </center>
 
-*9. Edit stereotype attributes
+*9. Edit the stereotype properties to define information about the behavior of the validation
 
 <center>
 [[Image:PapyrusDSML-AnnotationEdition.png]]<br>
-Edit DSML stereotype attributes<br/>
+Editing the DSML Stereotype Properties<br/>
 </center>
 
-You can then edit the stereotype attribute to define information about the behavior of the validation.
+=== Summary ===
 
-= Generation from Constraints =
-
-<center>
-[[image:PapyrusDSML-UseCaseGeneration.png]]<br/>
-</center>
-
-Constraints expressed in OCL can be validated directly in the tool. This is not the case for Java constraints which must be placed in a suitable plugin. However, Papyrus supports the generation of this plugin.
-
-==Generate constraints directly into the definition==
-
-Constraints written in OCL within the profile can be generated into the definition of the profile and read during the validation of the model.
-
-===How to===
-When you save the profile,Papyrus asks to you if want to define the profile.<br/>
-Click on yes and then do not forget to check save OCL constraint in the definition (recently, the box is checked by default)<br/>
-<center>
-[[image:PapyrusDSML-ConstraintDefinition.png]]<br>
-Save OCL constraints in the definition
-</center>
-
-==Generate constraints as EMF validation plugins==
-The user can generate plugins that wrap constraint and can be used in the EMF plugin validation.<br>
-The constraint can be generated in Java code, or directly from OCL.<br>
-
-===How to===
-Select the root profile<br/>
-
-<center>
-Click right on the model explorer-> create validation plugin for this DSML<br>
-[[image:PapyrusDSML-PluginValidationGeneration.png]]<br/>
-</center>
-
-Then a wizard to create the validation is launched. You have to give a name for you validation plugin.<br>
-
-<center>
-[[image:PapyrusDSML-PluginWizard.png]]<br>
-Wizard of constraint validation creation
-</center>
-
-Then you need to install the created plugin.<br>
+This method is a bit more complicated than the first, but also more powerful. It works for both OCL and Java. The constraints are grouped in a category that can be included in the validation or not. A message and severity specified via the DSML validation profile is taken into account, it is also possible to distinguish between Live and Batch constraints. Currently, it is of limited use in case of OCL constraints, since different OCL backends are used during constraint definition and validation.
 
 
-[[Category:Papyrus]]
+=== Information about generated code ===
+
+This section contains information about the code in the generated plugin. It is intended for readers that want to understand how the generated plugin works.<br>
+
+The EMF validation framework supports constraints by means of a suitable definition in the plugin.xml file that embeds OCL or Java constraints, as shown here (example taken from the [http://help.eclipse.org/helios/index.jsp?topic=%2Forg.eclipse.emf.validation.doc%2Ftutorials%2FoclValidationTutorial.html OCL tutorial]).
+
+First define a category
+<pre>
+<extension point="org.eclipse.emf.validation.constraintProviders">
+   <category
+         name="Your category" id="emf-validation-example/ocl">
+      Category description
+   </category>
+</pre>
+
+Then define constraints within the category
+<pre>
+   <constraint lang="OCL" severity="WARNING" mode="Batch" name="An example" id="example1" statusCode="101">
+      <description>Describe it</description>
+      <message>Write the message</message>
+      <target class="Writer"/>
+      <![CDATA[
+         self.books->collect(b : Book | b.category)->asSet()->size() <= 2
+      ]]>
+   </constraint>
+</pre>
+
+Constraint validation needs to be done on the context element. Therefore, the plug-in definition needs to associate constraints with the elements that should be validated. This is called constraint binding. The following snipped shows an example of such a binding.
+
+<pre>
+  <extension point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext id="MyContextID">
+         <selector class=myplugin.selectors.ConstraintSelector"/>
+      </clientContext>
+      <binding context="MyContextID">
+         <constraint ref="myplugin.example1"/>
+      </binding>
+</pre>
+
+The generator creates a selector for each context element (typically a stereotype). The selector checks the element to be validated and selects those typed with the context element or a sub-types thereof. The constraint binding associates a list of constraints with the selector: those that share the same context element.
