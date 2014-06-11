@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: new child Documentation
+Bundle-Name: New Child Documentation
 Bundle-SymbolicName: org.eclipse.papyrus.infra.newchild.doc;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.help;bundle-version="3.6.0",
