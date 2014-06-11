@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Moka Composites Tests
+Bundle-SymbolicName: org.eclipse.papyrus.moka.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.moka.tests.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.junit.utils,
+ org.junit;bundle-version="4.11.0",
+ org.eclipse.uml2.uml,
+ org.eclipse.papyrus.views.modelexplorer,
+ org.eclipse.ui.navigator;bundle-version="3.5.400",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
+ org.eclipse.emf.transaction;bundle-version="1.8.0",
+ org.eclipse.papyrus.moka,
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
+ org.eclipse.debug.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.papyrus.moka.composites;bundle-version="0.11.0",
+ org.eclipse.papyrus.moka.async.fuml;bundle-version="0.0.1",
+ org.eclipse.papyrus.moka.fuml;bundle-version="0.11.0",
+ org.eclipse.papyrus.moka.fuml.assertionlibrary
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.papyrus.moka.tests
+Bundle-Vendor: %Bundle-Vendor
