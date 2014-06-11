@@ -1,15 +1,15 @@
 = Constraint validation =
 
-Currently, Papyrus supports two different ways to validate whether constraints are respected by application models. Both offer the option to refine constraint validation: by default,
-a user will see which constraints are violated. While this is an important information, it is better to have a customized message what is wrong. It's also useful to specify the severity, in particular whether a constraint violation is an error or warning.
+Papyrus supports two alternative ways of validating whether constraints are respected by models. Both ways provide the option to augment the information presented to the user when a given constraint fails. The user is always presented a list of constraints that failed. While this is an important information, it is better to have a customized message describing what is wrong. It's also useful to specify the severity, in particular, whether a constraint violation is an error or warning.
 
-Do one of the following:
+To augment the default constraint failure information you can either generate the constraints directly into the profile definition or generate a plugin that embeds the constraints. Both approaches are described below.
 
 == Generate constraints directly into the profile definition ==
 
-Constraints written in OCL within a UML profile can be generated into the definition of the profile. They are taken into account during the validation of models that apply the profile. This method is only applicable for OCL constraints.
+=== Embedding Basic OCL Constraint Definitions=== 
+Constraints written in OCL within a UML profile can be generated into the definition of the profile. The constraint definition is taken into account during the validation of models that have applied the profile. This method is only applicable for OCL constraints.
 
-How to embed the constraint definitions into a UML Profile:
+How to embed the constraints definitions into a UML Profile:
 
 *1. Save the profile
 *2. Papyrus asks: "Would you like to define it" (the profile), select Yes
@@ -21,7 +21,7 @@ Save OCL Constraints in the Profile Definition
 
 === Refine constraint validation ===
 
-The OCL pivot delegate supports a specific way to encode a customized message and severity in the OCL constraint: The constraint needs to be written in form of a tuple, as shown here for an example.
+The OCL pivot delegate supports a specific way to define a customized message and severity in the OCL constraint: The constraint needs to be written in form of a tuple, as shown here for an example.
 
 <pre>
 Tuple{
@@ -31,21 +31,20 @@ Tuple{
 }.status
 </pre>
 
-The original constraint expression is defined in the status field of the tuple, message and severity are further fields. Whereas only the status field is returned for evaluation, OCL evaluation with the Pivot delegate will also evaluate the custom message and severity.
+The original constraint expression is defined in the status field of the tuple, as well as the message and severity fields. Whereas only the status field is returned during evaluation, OCL evaluation with the Pivot delegate will also evaluate the custom message and severity.
 
-In the moment, there is no specific support in Papyrus to facilitate entering OCL expressions in this way. Since the whole tuple is a "normal" OCL expression, syntax validation and completion is supported by the xtext based expression editor. But it is currently not clear whether Papyrus will offer a way to edit this tuple in a user friendly way, e.g. by synchronizing message and severity with information from the DSML stereotype and only showing the original OCL constraint to the user.
+Please note that this is just a different way to write OCL constraints, they are put into the profile definition in the same way as described above.
+At the moment, there is no specific support in Papyrus to facilitate entering OCL expressions in this way. Since the whole tuple is a "normal" OCL expression, syntax validation and completion is supported by the xtext based expression editor. But it is currently not clear whether Papyrus will offer a way to edit this tuple in a user friendly way, e.g. by synchronizing message and severity with information from the DSML stereotype and only showing the original OCL constraint to the user.
 
-=== Summary ===
+=== Summary === 
 
 If you only deal with OCL constraints, this method is simple and straightforward. But it is not possible to select whether constraints defined in this way are included for validation or not (they are always included).
 
-
-
 == Generate a plugin that embeds the constraints ==
 
-The user can generate a plugin from a profile that embeds the constraints, expressed either in OCL or Java. OCL constraints are embedded into the plugin.xml while Java constraints can directly be compiled into code. This is supported by the EMF validation framework.
+Users can generate a plugin from a profile that embeds the constraints, which are expressed either in OCL or Java. OCL constraints are embedded into the plugin.xml while Java constraints can directly be compiled into code. This is supported by the EMF validation framework.
 
-CAVEAT: The validation of OCL rules within a plugin is a rather old mechanism. It does not take the user preference of an OCL validation delegate into account. Therefore, validation is done with the classical LPG mechanism whereas the constraint editor within Papyrus validates the constraint itself (not whether other parts of the model respect the constraint) using the Pivot OCL mechanism. In particular, the qualified name of UML meta classes in LPG must start with uml:: whereas Pivot requires UML:: (upper case). Papyrus will offer a way to assure that Pivot will be used for OCL contraints within the plugin as well, but this has not been implemented yet.
+CAVEAT: The validation of OCL rules within a plugin is a rather old mechanism. It does not take the user preference of an OCL validation delegate into account. Therefore, validation is done with the classical LPG mechanism whereas the constraint editor within Papyrus validates the constraint itself (not whether other parts of the model respect the constraint) using the Pivot OCL mechanism. In particular, the qualified name of UML meta classes in LPG must start with uml:: whereas Pivot requires UML:: (upper case). In the future Papyrus will offer a way to ensure that the Pivot will be used for OCL contraints within plugins.
 
 === How to embed the generate constraints into a plugin ===
 
@@ -55,13 +54,13 @@ Help->Install New Software, select Papyrus update site, deselect "group items by
 
 *2. Select the UML Profile element in the Model Explorer
 *3. Right click UML Profile element
-*4. Select "create validation plugin for this DSML" from the context menu
+*4. Select "Create validation plugin for this DSML" from the context menu
 <center>
 [[image:PapyrusDSML-PluginValidationGeneration.png]]<br/>
 Starting the validation plugin creation process
 </center>
 
-*5. Choose whether you want to create a new plugin or generate into the plugin hosting the model. The latter is the default.
+*5. Choose whether you want to create a new plugin or generate the code into the plugin containing the profile. The latter is the default.
 <center>
 [[image:PapyrusDSML-GenPluginQuestion.png]]<br>
 Running the constraint validation creation wizard
@@ -93,7 +92,7 @@ Advanced users can also define:
 * Status code: The plug-in unique status code, useful for logging. 
 * Target: The element to be validated (normally not required since generated context selectors take care of that, see section below)
 
-Please note that the additional constraint information via the profile is only taken into account, if you plan to generate a plugin embedded the constraints into the plugin.xml, as discussed above.
+Please note that the additional constraint information is only taken in to account if you generate a plugin embedding the constraints into the plugin.xml, as discussed above.
 
 === How to apply the DSML validation profile ===
 
@@ -136,7 +135,7 @@ Editing the DSML Stereotype Properties<br/>
 
 === Summary ===
 
-This method is a bit more complicated than the first, but also more powerful. It works for both OCL and Java. The constraints are grouped in a category that can be included in the validation or not. A message and severity specified via the DSML validation profile is taken into account, it is also possible to distinguish between Live and Batch constraints. Currently, it is of limited use in case of OCL constraints, since different OCL backends are used during constraint definition and validation.
+This method is a bit more complicated than the first, but also more powerful. It works for both OCL and Java. The constraints are grouped in a category that can be included in the validation or not. A message and severity specified via the DSML validation profile is taken into account. It is also possible to distinguish between Live and Batch constraints. Note that this approach is currently of limited use in the case of OCL constraints as different OCL backends are used during constraint definition and validation.
 
 
 === Information about generated code ===
