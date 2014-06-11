@@ -5,7 +5,7 @@
          point="org.eclipse.papyrus.moka.engine">
       <engine
             class="org.eclipse.papyrus.moka.composites.CompositeStructuresExecutionEngine"
-            description="Standard fUML Interpreter Enhanced with Composite Structures"
+            description="PSCS Execution Engine (single-threaded implementation)"
       >
       </engine>
    </extension>

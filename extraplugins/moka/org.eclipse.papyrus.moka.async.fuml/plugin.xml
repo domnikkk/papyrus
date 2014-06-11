@@ -5,7 +5,7 @@
          point="org.eclipse.papyrus.moka.engine">
       <engine
             class="org.eclipse.papyrus.moka.async.fuml.FUMLAsyncExecutionEngine"
-            description="Standard fUML Interpreter Enhanced with Composite Structures (Asynchronous Version)"
+            description="PSCS Execution Engine (multi-threaded implementation)"
       >
       </engine>
    </extension>
