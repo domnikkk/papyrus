@@ -16,6 +16,7 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -25,6 +26,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
+import org.eclipse.papyrus.infra.viewpoints.configuration.EClassPropertyDescriptor;
+import org.eclipse.papyrus.infra.viewpoints.configuration.StereotypePropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule} object.
@@ -66,11 +69,12 @@ public class ChildRuleItemProvider
 	 * This adds a property descriptor for the Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new EClassPropertyDescriptor(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ChildRule_element_feature"),
@@ -81,18 +85,19 @@ public class ChildRuleItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null)));
 	}
 
 	/**
 	 * This adds a property descriptor for the Stereotypes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
 	protected void addStereotypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new StereotypePropertyDescriptor(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ChildRule_stereotypes_feature"),
@@ -103,18 +108,18 @@ public class ChildRuleItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null)));
 	}
 
 	/**
 	 * This adds a property descriptor for the Origin feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOriginPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new EClassPropertyDescriptor(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ChildRule_origin_feature"),
@@ -125,7 +130,7 @@ public class ChildRuleItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null)));
 	}
 
 	/**

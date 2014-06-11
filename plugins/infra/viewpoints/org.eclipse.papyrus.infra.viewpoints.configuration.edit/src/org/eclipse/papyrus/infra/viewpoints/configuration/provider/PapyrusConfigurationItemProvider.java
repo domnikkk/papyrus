@@ -16,6 +16,7 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -93,6 +94,8 @@ public class PapyrusConfigurationItemProvider
 	 * This adds a property descriptor for the Metamodel feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	protected void addMetamodelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
