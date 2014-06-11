@@ -295,6 +295,7 @@
 		<module>../plugins/views/validation/org.eclipse.papyrus.views.validation</module>
 		<module>../plugins/xwt/org.eclipse.papyrus.xwt</module>
 		<module>../plugins/doc/org.eclipse.papyrus.copypaste.ui.doc</module>
+		<module>../plugins/doc/org.eclipse.papyrus.infra.newchild.doc</module>
 		<module>main</module>
 	</modules>
 	<properties>
