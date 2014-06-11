@@ -30,11 +30,11 @@ import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 
 public class ExecutionFactoryL1 extends ExecutionFactory {
-	
-	public ExecutionFactoryL1(){
+
+	public ExecutionFactoryL1() {
 		super();
 	}
-	
+
 	public SemanticVisitor instantiateVisitor(Element element) {
 		// Instantiate a visitor object for the given element (at Conformance
 		// Level 1)

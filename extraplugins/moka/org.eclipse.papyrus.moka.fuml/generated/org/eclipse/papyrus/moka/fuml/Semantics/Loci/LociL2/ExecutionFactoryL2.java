@@ -72,11 +72,11 @@ import org.eclipse.uml2.uml.TestIdentityAction;
 import org.eclipse.uml2.uml.ValueSpecificationAction;
 
 public class ExecutionFactoryL2 extends ExecutionFactoryL1 {
-	
-	public ExecutionFactoryL2(){
+
+	public ExecutionFactoryL2() {
 		super();
 	}
-	
+
 	public SemanticVisitor instantiateVisitor(Element element) {
 		// Instantiate a visitor object for the given element (at Conformance
 		// Level 2)

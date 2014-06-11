@@ -29,22 +29,24 @@ public class OpenPapyrusEditorRunnable implements Runnable {
 	/**
 	 * The file editor input from which an IEditorPart has to be constructed and added to the workbench
 	 */
-	protected FileEditorInput input ;
-	
-	protected IEditorPart part ; 
-	
+	protected FileEditorInput input;
+
+	protected IEditorPart part;
+
 	public OpenPapyrusEditorRunnable(FileEditorInput input) {
-		this.input = input ;
+		this.input = input;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Runnable#run()
 	 */
 	public void run() {
 		try {
-			this.part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(input, MokaConstants.PAPYRUS_EDITOR_ID) ;
+			this.part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(input, MokaConstants.PAPYRUS_EDITOR_ID);
 		} catch (PartInitException e) {
-			Activator.log.error(e) ;
+			Activator.log.error(e);
 		}
 	}
 
@@ -55,7 +57,7 @@ public class OpenPapyrusEditorRunnable implements Runnable {
 	 * @return The created IEditorPart
 	 */
 	public IEditorPart getEditorPart() {
-		return this.part ;
+		return this.part;
 	}
-	
+
 }

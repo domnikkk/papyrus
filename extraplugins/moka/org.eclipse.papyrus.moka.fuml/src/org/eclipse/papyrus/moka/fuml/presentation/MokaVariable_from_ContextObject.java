@@ -19,12 +19,12 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class MokaVariable_from_ContextObject extends MokaVariable_for_fUML {
 
-	protected Object_ contextObject ;
-	
+	protected Object_ contextObject;
+
 	public MokaVariable_from_ContextObject(Object_ contextObject) {
 		super();
-		this.name = "context" ;
-		this.contextObject = contextObject ;
+		this.name = "context";
+		this.contextObject = contextObject;
 	}
 
 	//////////////////////////////////
@@ -33,7 +33,7 @@ public class MokaVariable_from_ContextObject extends MokaVariable_for_fUML {
 
 	public Image getImage() {
 		// not used for variables
-		return FUMLPresentationUtils.getImage(UMLPackage.eINSTANCE.getInstanceSpecification()) ;
+		return FUMLPresentationUtils.getImage(UMLPackage.eINSTANCE.getInstanceSpecification());
 	}
 
 	//////////////////////////////////
@@ -41,7 +41,7 @@ public class MokaVariable_from_ContextObject extends MokaVariable_for_fUML {
 	//////////////////////////////////
 	@Override
 	public IValue getValue() throws DebugException {
-		return new MokaValue_from_Value(contextObject) ;
+		return new MokaValue_from_Value(contextObject);
 	}
 
 }

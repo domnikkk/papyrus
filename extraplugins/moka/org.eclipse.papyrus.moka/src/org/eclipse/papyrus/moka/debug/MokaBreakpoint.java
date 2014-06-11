@@ -48,19 +48,21 @@ public class MokaBreakpoint extends Breakpoint {
 	/**
 	 * The model element to which this breakpoint is attached
 	 */
-	protected EObject modelElement ;
+	protected EObject modelElement;
 
 	/**
 	 * A default resource set which should, ideally, never be used
 	 */
-	protected static ResourceSet defaultResourceSet ;
+	protected static ResourceSet defaultResourceSet;
 
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IBreakpoint#getModelIdentifier()
 	 */
 	public String getModelIdentifier() {
-		return MokaConstants.MOKA_DEBUG_MODEL_ID ;
+		return MokaConstants.MOKA_DEBUG_MODEL_ID;
 	}
 
 	/**
@@ -69,45 +71,47 @@ public class MokaBreakpoint extends Breakpoint {
 	 * @return The model element to which this breakpoint is attached
 	 */
 	public EObject getModelElement() {
-		return this.modelElement ;
+		return this.modelElement;
 	}
 
 	/**
 	 * Toggles a breakpoint on the given model element
 	 * 
-	 * @param modelElement The model element to which a breakpoint has to be attached
+	 * @param modelElement
+	 *        The model element to which a breakpoint has to be attached
 	 */
 	public void toggleBreakpoint(EObject modelElement) {
-		String uri = modelElement.eResource().getURI().toString() ;
-		String fragment = modelElement.eResource().getURIFragment(modelElement) ;
-		IResource iresource = getIResource(modelElement.eResource()) ;
-		this.modelElement = modelElement ;
+		String uri = modelElement.eResource().getURI().toString();
+		String fragment = modelElement.eResource().getURIFragment(modelElement);
+		IResource iresource = getIResource(modelElement.eResource());
+		this.modelElement = modelElement;
 		try {
-			if (iresource != null) {
+			if(iresource != null) {
 				IMarker marker = iresource.createMarker(MokaConstants.MOKA_BREAKPOINT_MARKER_ID);
-				marker.setAttribute(EValidator.URI_ATTRIBUTE, uri + "#" + fragment) ;
-				marker.setAttribute(IBreakpoint.ID, this.getModelIdentifier()) ;
-				this.setMarker(marker) ;
-				this.setEnabled(true) ;
-				this.setPersisted(true) ;
+				marker.setAttribute(EValidator.URI_ATTRIBUTE, uri + "#" + fragment);
+				marker.setAttribute(IBreakpoint.ID, this.getModelIdentifier());
+				this.setMarker(marker);
+				this.setEnabled(true);
+				this.setPersisted(true);
 			}
 		} catch (CoreException ce) {
-			Activator.log.error(ce) ;
+			Activator.log.error(ce);
 		}
 	}
 
 	/**
 	 * Convenience method returning the IResource corresponding to a Resource
 	 * 
-	 * @param resource The Resource from which the corresponding IResource has to be retrieved
+	 * @param resource
+	 *        The Resource from which the corresponding IResource has to be retrieved
 	 * @return the IResource corresponding to the Resource
 	 */
 	public static IResource getIResource(Resource resource) {
-		if (resource == null)
-			return null ;
+		if(resource == null)
+			return null;
 		String uriPath = resource.getURI().toPlatformString(true);
-		if (uriPath == null) // FIXME this is not a Platform scheme
-			return null ;
+		if(uriPath == null) // FIXME this is not a Platform scheme
+			return null;
 		IResource iresource = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uriPath));
 		if(iresource != null) {
 			if(iresource.exists()) {
@@ -123,20 +127,22 @@ public class MokaBreakpoint extends Breakpoint {
 	 * @return A label for this breakpoint
 	 */
 	public String getLabel() {
-		String label = "" ;
-		if (this.modelElement instanceof NamedElement) {
-			return ((NamedElement)this.modelElement).getQualifiedName() ;
+		String label = "";
+		if(this.modelElement instanceof NamedElement) {
+			return ((NamedElement)this.modelElement).getQualifiedName();
 		}
-		return label ;
+		return label;
 	}
 
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.Breakpoint#setMarker(org.eclipse.core.resources.IMarker)
 	 */
 	public void setMarker(IMarker marker) throws CoreException {
-		if (this.modelElement == null)
-			this.modelElement = getEObjectOfMarker(marker) ;
+		if(this.modelElement == null)
+			this.modelElement = getEObjectOfMarker(marker);
 		super.setMarker(marker);
 	}
 
@@ -151,23 +157,23 @@ public class MokaBreakpoint extends Breakpoint {
 		URI uriOfMarker = getURI(marker);
 		if(uriOfMarker != null) {
 			try {
-				EObject modelElement = null ;
-				IEditorPart part = EditorUtils.getEditorPart(uriOfMarker.trimFragment().toString()) ;
-				if (part != null) {
+				EObject modelElement = null;
+				IEditorPart part = EditorUtils.getEditorPart(uriOfMarker.trimFragment().toString());
+				if(part != null) {
 					ServicesRegistry servicesRegistry = (ServicesRegistry)part.getAdapter(ServicesRegistry.class);
-					if (servicesRegistry != null) {
+					if(servicesRegistry != null) {
 						try {
-							ResourceSet resourceSet = servicesRegistry.getService(ModelSet.class) ;
+							ResourceSet resourceSet = servicesRegistry.getService(ModelSet.class);
 							modelElement = resourceSet.getEObject(uriOfMarker, true);
-							if (modelElement != null)
-								return modelElement ;
+							if(modelElement != null)
+								return modelElement;
 						} catch (ServiceException e) {
-							Activator.log.error(e) ;
+							Activator.log.error(e);
 						}
 					}
 				}
 
-				if (defaultResourceSet == null)
+				if(defaultResourceSet == null)
 					defaultResourceSet = new ResourceSetImpl();
 				defaultResourceSet.getResource(uriOfMarker.trimFragment(), true);
 				return defaultResourceSet.getEObject(uriOfMarker, true);

@@ -23,7 +23,9 @@ import org.eclipse.papyrus.moka.communication.request.RequestMessage;
  */
 public class Disconnect_Request extends RequestMessage {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {

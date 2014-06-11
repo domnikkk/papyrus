@@ -23,7 +23,9 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
  */
 public abstract class AsyncGetNextEventStrategy extends SemanticStrategy {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy#getName()
 	 */
 	@Override
@@ -34,7 +36,8 @@ public abstract class AsyncGetNextEventStrategy extends SemanticStrategy {
 	/**
 	 * Gets the next event.
 	 *
-	 * @param eventPool the event pool
+	 * @param eventPool
+	 *        the event pool
 	 * @return the next event
 	 */
 	public abstract SignalInstance getNextEvent(AsyncEventPool eventPool);

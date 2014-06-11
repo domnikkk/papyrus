@@ -25,11 +25,12 @@ import org.eclipse.uml2.uml.Class;
  * @author CEA LIST (jt605650)
  */
 public class AsyncLocus extends CS_Locus {
-	
+
 	/**
 	 * Instantiate method now create AsyncObject_ instead of Object_.
 	 *
-	 * @param type the type
+	 * @param type
+	 *        the type
 	 * @return the object_
 	 */
 	public Object_ instantiate(Class type) {
@@ -46,7 +47,9 @@ public class AsyncLocus extends CS_Locus {
 		return object;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus#remove(org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue)
 	 */
 	@Override
@@ -55,5 +58,5 @@ public class AsyncLocus extends CS_Locus {
 			super.remove(value);
 		}
 	}
-		
+
 }

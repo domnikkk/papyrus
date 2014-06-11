@@ -20,28 +20,29 @@ import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.UMLFactory;
 
 public class SystemServicesRegistryUtils {
-	
-	protected static SystemServicesRegistryUtils eInstance ;
-	
-	private SystemServicesRegistryUtils() {} ;
-	
+
+	protected static SystemServicesRegistryUtils eInstance;
+
+	private SystemServicesRegistryUtils() {
+	};
+
 	public static SystemServicesRegistryUtils getInstance() {
-		if (eInstance == null)
-			eInstance = new SystemServicesRegistryUtils() ;
-		return eInstance ;
+		if(eInstance == null)
+			eInstance = new SystemServicesRegistryUtils();
+		return eInstance;
 	}
-	
+
 	public OpaqueBehavior generateOpaqueBehaviorSignature(Operation operation) {
-		OpaqueBehavior method = UMLFactory.eINSTANCE.createOpaqueBehavior() ;
-		method.setName(operation.getName() + "Method") ;
-		for (Parameter p : operation.getOwnedParameters()) {
-			Parameter behaviorParameter = method.createOwnedParameter(p.getName(), p.getType()) ;
-			behaviorParameter.setDirection(p.getDirection()) ;
-			behaviorParameter.setLower(p.getLower()) ;
-			behaviorParameter.setUpper(p.getUpper()) ;
+		OpaqueBehavior method = UMLFactory.eINSTANCE.createOpaqueBehavior();
+		method.setName(operation.getName() + "Method");
+		for(Parameter p : operation.getOwnedParameters()) {
+			Parameter behaviorParameter = method.createOwnedParameter(p.getName(), p.getType());
+			behaviorParameter.setDirection(p.getDirection());
+			behaviorParameter.setLower(p.getLower());
+			behaviorParameter.setUpper(p.getUpper());
 		}
-		return method ;
+		return method;
 	}
-	
+
 	// TODO may be useful to do something similar for activities
 }

@@ -27,7 +27,7 @@ public class IntegerValue extends PrimitiveValue {
 	public Object getUnderlying() {
 		return this.value;
 	}
-	
+
 	public ValueSpecification specify() {
 		// Return a literal integer with the value of this integer value.
 		LiteralInteger literal = UMLFactory.eINSTANCE.createLiteralInteger();
@@ -99,7 +99,7 @@ public class IntegerValue extends PrimitiveValue {
 		}
 		return stringValue;
 	}
-	
+
 	public Object getValue() {
 		return this.value;
 	}

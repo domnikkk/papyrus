@@ -16,11 +16,11 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
 import org.eclipse.uml2.uml.Class;
 
-public abstract class CreateObjectActionStrategy extends SemanticStrategy{
-	
+public abstract class CreateObjectActionStrategy extends SemanticStrategy {
+
 	public abstract Object_ instantiate(Class type, Locus locus);
-	
-	public String getName(){
+
+	public String getName() {
 		return "CreateObjectActionStrategy";
 	}
 }

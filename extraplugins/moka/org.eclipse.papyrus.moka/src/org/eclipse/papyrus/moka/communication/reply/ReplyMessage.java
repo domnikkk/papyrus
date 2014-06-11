@@ -18,13 +18,13 @@ package org.eclipse.papyrus.moka.communication.reply;
  * 
  */
 public abstract class ReplyMessage {
-	
+
 	/**
 	 * Marshal this Reply message, so that it can be communicated between
 	 * the debug target and the actual execution engine
 	 * 
 	 * @return A String encoding of this reply message
 	 */
-	public abstract String marshal() ;
-	
+	public abstract String marshal();
+
 }

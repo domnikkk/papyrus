@@ -11,10 +11,8 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses ;
+package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses;
 
 public enum CS_LinkKind {
-ToEnvironment,
-ToInternal,
-None;
+	ToEnvironment, ToInternal, None;
 }

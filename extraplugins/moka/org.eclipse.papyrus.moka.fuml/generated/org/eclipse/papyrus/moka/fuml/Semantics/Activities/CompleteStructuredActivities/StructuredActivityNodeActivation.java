@@ -203,7 +203,7 @@ public class StructuredActivityNodeActivation extends ActionActivation {
 		// then finish its resumption.
 		List<Token> incomingTokens = super.completeAction();
 		if(incomingTokens.size() > 0) {
-			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) // Added for connection with debug API
+			if(FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) // Added for connection with debug API
 				this.fire(incomingTokens);
 		}
 		if(!this.isSuspended()) {

@@ -54,12 +54,11 @@ public class CS_ClearStructuralFeatureValueActionActivation extends ClearStructu
 			// any change is made.
 			if(!(value instanceof Reference)) {
 				value = value.copy();
-			}
-			else {
+			} else {
 				// extension to fUML
-				List<CS_Link> linksToDestroy = this.getLinksToDestroy((StructuredValue)value, feature) ;
-				for (int i = 0 ; i < linksToDestroy.size() ; i++) {
-					linksToDestroy.get(i).destroy() ;
+				List<CS_Link> linksToDestroy = this.getLinksToDestroy((StructuredValue)value, feature);
+				for(int i = 0; i < linksToDestroy.size(); i++) {
+					linksToDestroy.get(i).destroy();
 				}
 				//
 			}
@@ -71,71 +70,69 @@ public class CS_ClearStructuralFeatureValueActionActivation extends ClearStructu
 	}
 
 	public List<CS_Link> getLinksToDestroy(StructuredValue value, StructuralFeature feature) {
-		List<CS_Link> linksToDestroy = new ArrayList<CS_Link>() ;
-		if (value instanceof CS_Reference) {
-			CS_Reference context = (CS_Reference)value ;
+		List<CS_Link> linksToDestroy = new ArrayList<CS_Link>();
+		if(value instanceof CS_Reference) {
+			CS_Reference context = (CS_Reference)value;
 			// Retrieves the feature values for the structural feature associated with this action,
 			// in the context of this reference 
-			FeatureValue featureValue = context.getFeatureValue(feature) ;
-			if (feature instanceof Port) {
+			FeatureValue featureValue = context.getFeatureValue(feature);
+			if(feature instanceof Port) {
 				// all values are interaction points
 				// any link targeting this interaction point must be destroyed
-				for (int i = 0 ; i < featureValue.values.size() ; i++) {
-					CS_InteractionPoint interactionPoint = (CS_InteractionPoint)featureValue.values.get(i) ;
-					List<CS_Link> connectorInstances = context.compositeReferent.getLinks(interactionPoint) ;
-					for (int j = 0 ; j < connectorInstances.size() ; j++) {
-						CS_Link link = connectorInstances.get(j) ;
-						linksToDestroy.add(link) ;
+				for(int i = 0; i < featureValue.values.size(); i++) {
+					CS_InteractionPoint interactionPoint = (CS_InteractionPoint)featureValue.values.get(i);
+					List<CS_Link> connectorInstances = context.compositeReferent.getLinks(interactionPoint);
+					for(int j = 0; j < connectorInstances.size(); j++) {
+						CS_Link link = connectorInstances.get(j);
+						linksToDestroy.add(link);
 					}
 				}
-			}
-			else { // feature is an attribute
-				// Retrieve all potential link ends,
-				// separating potential link ends corresponding to the given feature,
-				// and potential link ends corresponding to other features.
-				// By "potential link ends", we refer to the values of a given feature,
-				// as well as interaction points associated with this value, if any.
-				List<Value> allValuesForFeature = new ArrayList<Value>() ;
-				List<Value> allOtherValues = new ArrayList<Value>() ;
-				for (int i = 0 ; i < context.referent.featureValues.size() ; i++) {
-					StructuralFeature currentFeature = context.referent.featureValues.get(i).feature ;
-					List<Value> values = this.getPotentialLinkEnds(context, currentFeature) ;
-					for (int j = 0 ; j < values.size() ; j++) {
-						Value v = values.get(j) ;
-						if (currentFeature != feature) {
-							allOtherValues.add(v) ;
-						}
-						else {
-							allValuesForFeature.add(v) ;
+			} else { // feature is an attribute
+						// Retrieve all potential link ends,
+						// separating potential link ends corresponding to the given feature,
+						// and potential link ends corresponding to other features.
+						// By "potential link ends", we refer to the values of a given feature,
+						// as well as interaction points associated with this value, if any.
+				List<Value> allValuesForFeature = new ArrayList<Value>();
+				List<Value> allOtherValues = new ArrayList<Value>();
+				for(int i = 0; i < context.referent.featureValues.size(); i++) {
+					StructuralFeature currentFeature = context.referent.featureValues.get(i).feature;
+					List<Value> values = this.getPotentialLinkEnds(context, currentFeature);
+					for(int j = 0; j < values.size(); j++) {
+						Value v = values.get(j);
+						if(currentFeature != feature) {
+							allOtherValues.add(v);
+						} else {
+							allValuesForFeature.add(v);
 						}
 					}
 				}
 				// Retrieves all links available at the locus
-				List<ExtensionalValue> extensionalValues = this.getExecutionLocus().extensionalValues ;
-				List<CS_Link> allLinks = new ArrayList<CS_Link>() ;
-				for (int i = 0 ; i < extensionalValues.size() ; i ++) {
-					ExtensionalValue extensionalValue = extensionalValues.get(i) ;
-					if (extensionalValue instanceof CS_Link) {
-						allLinks.add((CS_Link)extensionalValue) ;
+				List<ExtensionalValue> extensionalValues = this.getExecutionLocus().extensionalValues;
+				List<CS_Link> allLinks = new ArrayList<CS_Link>();
+				for(int i = 0; i < extensionalValues.size(); i++) {
+					ExtensionalValue extensionalValue = extensionalValues.get(i);
+					if(extensionalValue instanceof CS_Link) {
+						allLinks.add((CS_Link)extensionalValue);
 					}
 				}
 				// Retrieves links representing connector instances in the context object 
-				for (int i = 0 ; i < allLinks.size() ; i++) {
-					CS_Link link = allLinks.get(i) ;
-					boolean linkHasToBeDestroyed = false ;
-					for (int j = 0 ; j < allValuesForFeature.size() && !linkHasToBeDestroyed; j++) {
-						Value v = allValuesForFeature.get(j) ;
-						StructuralFeature featureForV = link.getFeature(v) ;
-						if (featureForV != null) {
+				for(int i = 0; i < allLinks.size(); i++) {
+					CS_Link link = allLinks.get(i);
+					boolean linkHasToBeDestroyed = false;
+					for(int j = 0; j < allValuesForFeature.size() && !linkHasToBeDestroyed; j++) {
+						Value v = allValuesForFeature.get(j);
+						StructuralFeature featureForV = link.getFeature(v);
+						if(featureForV != null) {
 							// Check if feature values of this link for other features
 							// contains elements identified in allOtherValue
-							for (int k = 0 ; k < link.featureValues.size() && !linkHasToBeDestroyed ; k++) {
-								FeatureValue otherFeatureValue = link.featureValues.get(k) ;
-								if (otherFeatureValue.feature != featureForV) {
-									for (int l = 0 ; l < otherFeatureValue.values.size() && !linkHasToBeDestroyed ; l++) {
-										for (int m = 0 ; m < allOtherValues.size() && !linkHasToBeDestroyed ; m++) {
-											if (otherFeatureValue.values.get(l) == allOtherValues.get(m)) {
-												linkHasToBeDestroyed = true ;
+							for(int k = 0; k < link.featureValues.size() && !linkHasToBeDestroyed; k++) {
+								FeatureValue otherFeatureValue = link.featureValues.get(k);
+								if(otherFeatureValue.feature != featureForV) {
+									for(int l = 0; l < otherFeatureValue.values.size() && !linkHasToBeDestroyed; l++) {
+										for(int m = 0; m < allOtherValues.size() && !linkHasToBeDestroyed; m++) {
+											if(otherFeatureValue.values.get(l) == allOtherValues.get(m)) {
+												linkHasToBeDestroyed = true;
 											}
 										}
 									}
@@ -143,35 +140,35 @@ public class CS_ClearStructuralFeatureValueActionActivation extends ClearStructu
 							}
 						}
 					}
-					if (linkHasToBeDestroyed) {
-						linksToDestroy.add(link) ;
+					if(linkHasToBeDestroyed) {
+						linksToDestroy.add(link);
 					}
 				}
 			}
 		}
-		return linksToDestroy ;
+		return linksToDestroy;
 	}
 
 	public List<Value> getPotentialLinkEnds(CS_Reference context, StructuralFeature feature) {
 		// Retrieves all feature values for the context object for the given feature,
 		// as well as all interaction point for these values
-		List<Value> potentialLinkEnds = new ArrayList<Value>() ;
-		FeatureValue featureValue = context.getFeatureValue(feature) ;
-		for (int i = 0 ; i < featureValue.values.size() ; i++) {
-			Value v = featureValue.values.get(i) ;
-			potentialLinkEnds.add(v) ;
-			if (v instanceof CS_Reference) {
+		List<Value> potentialLinkEnds = new ArrayList<Value>();
+		FeatureValue featureValue = context.getFeatureValue(feature);
+		for(int i = 0; i < featureValue.values.size(); i++) {
+			Value v = featureValue.values.get(i);
+			potentialLinkEnds.add(v);
+			if(v instanceof CS_Reference) {
 				// add all interaction points associated with v
-				for (int j = 0 ; j < ((CS_Reference)v).referent.featureValues.size() ; j++) {
-					if (((CS_Reference)v).referent.featureValues.get(j).feature instanceof Port) {
-						List<Value> interactionPoints = (((CS_Reference)v).referent.featureValues.get(j)).values ;
-						for (int k = 0 ; k < interactionPoints.size() ; k++) {
-							potentialLinkEnds.add(interactionPoints.get(k)) ;
+				for(int j = 0; j < ((CS_Reference)v).referent.featureValues.size(); j++) {
+					if(((CS_Reference)v).referent.featureValues.get(j).feature instanceof Port) {
+						List<Value> interactionPoints = (((CS_Reference)v).referent.featureValues.get(j)).values;
+						for(int k = 0; k < interactionPoints.size(); k++) {
+							potentialLinkEnds.add(interactionPoints.get(k));
 						}
 					}
 				}
 			}
 		}
-		return potentialLinkEnds ;
+		return potentialLinkEnds;
 	}
 }

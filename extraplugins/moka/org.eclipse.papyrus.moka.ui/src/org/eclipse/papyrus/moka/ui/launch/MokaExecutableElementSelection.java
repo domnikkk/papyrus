@@ -15,13 +15,13 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 
 public class MokaExecutableElementSelection extends SelectionAdapter {
-	
+
 	protected transient MokaRunConfigurationTab launchConfigTab;
-	
-	public MokaExecutableElementSelection(MokaRunConfigurationTab tab){
+
+	public MokaExecutableElementSelection(MokaRunConfigurationTab tab) {
 		this.launchConfigTab = tab;
 	}
-	
+
 	public void widgetSelected(SelectionEvent event) {
 		this.launchConfigTab.updateLaunchConfigurationDialog();
 	}

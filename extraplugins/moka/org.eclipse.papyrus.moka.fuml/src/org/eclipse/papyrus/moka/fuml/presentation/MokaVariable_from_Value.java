@@ -19,11 +19,11 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class MokaVariable_from_Value extends MokaVariable_for_fUML {
 
-	protected Value fUMLValue ;
-	
+	protected Value fUMLValue;
+
 	public MokaVariable_from_Value(Value value) {
 		super();
-		this.fUMLValue = value ;
+		this.fUMLValue = value;
 	}
 
 	//////////////////////////////////
@@ -32,7 +32,7 @@ public class MokaVariable_from_Value extends MokaVariable_for_fUML {
 
 	public Image getImage() {
 		// not used for variables
-		return FUMLPresentationUtils.getImage(UMLPackage.eINSTANCE.getInstanceSpecification()) ;
+		return FUMLPresentationUtils.getImage(UMLPackage.eINSTANCE.getInstanceSpecification());
 	}
 
 	//////////////////////////////////
@@ -40,7 +40,7 @@ public class MokaVariable_from_Value extends MokaVariable_for_fUML {
 	//////////////////////////////////
 	@Override
 	public IValue getValue() throws DebugException {
-		return new MokaValue_from_Value(fUMLValue) ;
+		return new MokaValue_from_Value(fUMLValue);
 	}
 
 }

@@ -17,7 +17,7 @@ import org.eclipse.uml2.uml.LiteralBoolean;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class BooleanValue extends PrimitiveValue{
+public class BooleanValue extends PrimitiveValue {
 
 	/*
 	 * The actual Boolean value.
@@ -27,7 +27,7 @@ public class BooleanValue extends PrimitiveValue{
 	public Object getUnderlying() {
 		return this.value;
 	}
-	
+
 	public ValueSpecification specify() {
 		// Return a literal boolean with the value of this boolean value.
 		LiteralBoolean literal = UMLFactory.eINSTANCE.createLiteralBoolean();

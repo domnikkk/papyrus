@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions;
 
 // Imports
 import java.util.ArrayList;
@@ -22,21 +22,21 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticVisitor;
 
 
-public class CS_DefaultRequestPropagationStrategy extends CS_RequestPropagationStrategy  {
+public class CS_DefaultRequestPropagationStrategy extends CS_RequestPropagationStrategy {
 
-public List<Reference> select(List<Reference> potentialTargets,SemanticVisitor context) {
+	public List<Reference> select(List<Reference> potentialTargets, SemanticVisitor context) {
 		// returns all potential targets in the case where the context is a SendSignalActionActivation
 		// returns the first potential target in the case where the context is anything else
-		List<Reference> selectedTargets = new ArrayList<Reference>() ;
-		if (context instanceof SendSignalActionActivation) {
-			for (int i = 0 ; i < potentialTargets.size() ; i++) {
-				selectedTargets.add(potentialTargets.get(i)) ;
+		List<Reference> selectedTargets = new ArrayList<Reference>();
+		if(context instanceof SendSignalActionActivation) {
+			for(int i = 0; i < potentialTargets.size(); i++) {
+				selectedTargets.add(potentialTargets.get(i));
+			}
+		} else {
+			if(potentialTargets.size() >= 1) {
+				selectedTargets.add(potentialTargets.get(0));
 			}
 		}
-		else { 
-			if (potentialTargets.size() >= 1) {
-				selectedTargets.add(potentialTargets.get(0)) ;
-			}
-		}
-		return selectedTargets;}
+		return selectedTargets;
+	}
 }

@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.Actions.IntermediateActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.Actions.IntermediateActions;
 
 // Imports
 import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.CS_Object;
@@ -21,9 +21,9 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadSelfAction;
 
 
-public class CS_ReadSelfActionActivation extends ReadSelfActionActivation  {
+public class CS_ReadSelfActionActivation extends ReadSelfActionActivation {
 
-public void doAction() {
+	public void doAction() {
 		// Get the context object of the activity execution containing this
 		// action activation and place a reference to it on the result output
 		// pin.
@@ -34,14 +34,14 @@ public void doAction() {
 
 		CS_Reference context = new CS_Reference();
 		context.referent = this.getExecutionContext();
-		if (context.referent instanceof CS_Object) {// i.e. alternatively, it can be an execution
-			context.compositeReferent = (CS_Object)context.referent ;
+		if(context.referent instanceof CS_Object) {// i.e. alternatively, it can be an execution
+			context.compositeReferent = (CS_Object)context.referent;
 		}
 
 		// Debug.println("[ReadSelfActionActivation] context object = " +
 		// context.referent);
 
-		OutputPin resultPin = ((ReadSelfAction) (this.node)).getResult();
+		OutputPin resultPin = ((ReadSelfAction)(this.node)).getResult();
 		this.putToken(resultPin, context);
-}
+	}
 }

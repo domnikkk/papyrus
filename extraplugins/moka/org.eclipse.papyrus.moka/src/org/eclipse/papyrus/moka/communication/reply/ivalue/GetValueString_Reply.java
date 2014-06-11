@@ -26,16 +26,17 @@ public class GetValueString_Reply extends ReplyMessage {
 	/**
 	 * The textual value representation associated with this reply message
 	 */
-	protected String textualRepresentation ;
-	
+	protected String textualRepresentation;
+
 	/**
 	 * Constructs a reply message from a string
 	 * 
-	 * @param textualRepresentation The textual value representation associated with this reply message
+	 * @param textualRepresentation
+	 *        The textual value representation associated with this reply message
 	 */
 	public GetValueString_Reply(String textualRepresentation) {
 		super();
-		this.textualRepresentation = textualRepresentation ;
+		this.textualRepresentation = textualRepresentation;
 	}
 
 	/**
@@ -44,10 +45,12 @@ public class GetValueString_Reply extends ReplyMessage {
 	 * @return The textual value representation associated with this reply message
 	 */
 	public String getValueString() {
-		return this.textualRepresentation ;
+		return this.textualRepresentation;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
 	public String marshal() {

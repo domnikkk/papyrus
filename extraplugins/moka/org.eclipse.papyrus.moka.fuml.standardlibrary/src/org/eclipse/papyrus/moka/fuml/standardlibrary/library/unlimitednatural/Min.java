@@ -31,17 +31,15 @@ public class Min extends OpaqueBehaviorExecution {
 			Integer x = ((UnlimitedNaturalValue)inputParameters.get(0).values.get(0)).value;
 			Integer y = ((UnlimitedNaturalValue)inputParameters.get(1).values.get(0)).value;
 			UnlimitedNaturalValue result = new UnlimitedNaturalValue();
-			if (x < 0) {
-				result.value = y ;
-			}
-			else if (y < 0) {
-				result.value = x ;
-			}
-			else {
-				result.value = Math.min(x, y) ;
+			if(x < 0) {
+				result.value = y;
+			} else if(y < 0) {
+				result.value = x;
+			} else {
+				result.value = Math.min(x, y);
 			}
 			List<Value> outputs = new ArrayList<Value>();
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("UnlimitedNatural");
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("UnlimitedNatural");
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {

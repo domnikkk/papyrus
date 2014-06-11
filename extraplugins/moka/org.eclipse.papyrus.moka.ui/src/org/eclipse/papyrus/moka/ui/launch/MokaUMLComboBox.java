@@ -26,13 +26,11 @@ public class MokaUMLComboBox extends MokaComboBox<String, NamedElement> {
 		this.add(this.generateLabel(element));
 		this.population.put(label, element);
 	}
-	
-	public void selectByURIFragment(String fragment){
-		for(String id : this.population.keySet()){
-			String uriFrag = this.population.get(id).eResource().
-					getURIFragment(this.population.get(id));
-			if(uriFrag != null
-					&& uriFrag.equals(fragment)){
+
+	public void selectByURIFragment(String fragment) {
+		for(String id : this.population.keySet()) {
+			String uriFrag = this.population.get(id).eResource().getURIFragment(this.population.get(id));
+			if(uriFrag != null && uriFrag.equals(fragment)) {
 				this.selectById(id);
 				break;
 			}
@@ -41,8 +39,8 @@ public class MokaUMLComboBox extends MokaComboBox<String, NamedElement> {
 
 	@Override
 	protected String generateLabel(NamedElement e) {
-		String label ="["+e.getClass().getSimpleName().replace("Impl","")+"] ";
-		String s = e == null ? "" : (e.getQualifiedName() == null ? "" : e.getQualifiedName()) ;
+		String label = "[" + e.getClass().getSimpleName().replace("Impl", "") + "] ";
+		String s = e == null ? "" : (e.getQualifiedName() == null ? "" : e.getQualifiedName());
 		label += s;
 		return label;
 	}

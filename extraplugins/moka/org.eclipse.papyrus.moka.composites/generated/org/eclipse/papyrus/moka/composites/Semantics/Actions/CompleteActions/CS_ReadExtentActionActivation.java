@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.Actions.CompleteActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.Actions.CompleteActions;
 
 // Imports
 import java.util.ArrayList;
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.uml2.uml.ReadExtentAction;
 
-public class CS_ReadExtentActionActivation extends ReadExtentActionActivation  {
+public class CS_ReadExtentActionActivation extends ReadExtentActionActivation {
 
-public void doAction() {
+	public void doAction() {
 		// Get the extent, at the current execution locus, of the classifier
 		// (which must be a class) identified in the action.
 		// Place references to the resulting set of objects on the result pin.
@@ -36,28 +36,26 @@ public void doAction() {
 		// CS_References instead of References, in the case where the object is a
 		// CS_Object
 
-		ReadExtentAction action = (ReadExtentAction) (this.node);
-		List<ExtensionalValue> objects = this.getExecutionLocus().getExtent(
-				action.getClassifier());
+		ReadExtentAction action = (ReadExtentAction)(this.node);
+		List<ExtensionalValue> objects = this.getExecutionLocus().getExtent(action.getClassifier());
 
 		// Debug.println("[doAction] " + action.classifier.name + " has " +
 		// objects.size() + " instance(s).");
 
 		List<Value> references = new ArrayList<Value>();
-		for (int i = 0; i < objects.size(); i++) {
+		for(int i = 0; i < objects.size(); i++) {
 			Value object = objects.get(i);
-			Reference reference = null ;
-			if (object instanceof CS_Object) {
-				reference = new CS_Reference() ;
-				((CS_Reference)reference).compositeReferent = (CS_Object)object ;
+			Reference reference = null;
+			if(object instanceof CS_Object) {
+				reference = new CS_Reference();
+				((CS_Reference)reference).compositeReferent = (CS_Object)object;
+			} else {
+				reference = new Reference();
 			}
-			else {
-				reference = new Reference() ;
-			}
-			reference.referent = (Object_) object;
+			reference.referent = (Object_)object;
 			references.add(reference);
 		}
 
 		this.putTokens(action.getResult(), references);
-}
+	}
 }

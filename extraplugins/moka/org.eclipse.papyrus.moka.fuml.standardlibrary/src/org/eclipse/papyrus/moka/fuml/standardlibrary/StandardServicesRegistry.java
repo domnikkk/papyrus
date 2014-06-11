@@ -31,34 +31,39 @@ import org.eclipse.uml2.uml.Class;
 public class StandardServicesRegistry extends AbstractSystemServicesRegistry {
 
 	protected final static String FUML_LIBRARY_NAME = "FoundationalModelLibrary";
-	protected final static String STANDARD_INPUT_CHANNEL_SERVICE_NAME = "FoundationalModelLibrary::BasicInputOutput::StandardInputChannel" ; 
-	protected final static String STANDARD_OUTPUT_CHANNEL_SERVICE_NAME = "FoundationalModelLibrary::BasicInputOutput::StandardOutputChannel" ;
 
-	/* (non-Javadoc)
+	protected final static String STANDARD_INPUT_CHANNEL_SERVICE_NAME = "FoundationalModelLibrary::BasicInputOutput::StandardInputChannel";
+
+	protected final static String STANDARD_OUTPUT_CHANNEL_SERVICE_NAME = "FoundationalModelLibrary::BasicInputOutput::StandardOutputChannel";
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry#instantiateServices()
 	 */
 	@Override
 	public List<Object_> instantiateServices() {
-		List<String> serviceQualifiedNames = new ArrayList<String>() ;
-		serviceQualifiedNames.add(STANDARD_INPUT_CHANNEL_SERVICE_NAME) ;
-		serviceQualifiedNames.add(STANDARD_OUTPUT_CHANNEL_SERVICE_NAME) ;
+		List<String> serviceQualifiedNames = new ArrayList<String>();
+		serviceQualifiedNames.add(STANDARD_INPUT_CHANNEL_SERVICE_NAME);
+		serviceQualifiedNames.add(STANDARD_OUTPUT_CHANNEL_SERVICE_NAME);
 		return this.instantiateServices(FUML_LIBRARY_NAME, serviceQualifiedNames);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry#instantiateService(org.eclipse.uml2.uml.Class)
 	 */
 	@Override
 	protected Object_ instantiateService(Class service) {
-		if (service.getQualifiedName().equals(STANDARD_INPUT_CHANNEL_SERVICE_NAME)) {
-			return new StandardInputChannelImpl(service) ;
-		}
-		else if (service.getQualifiedName().equals(STANDARD_OUTPUT_CHANNEL_SERVICE_NAME)) {
-			return new StandardOutputChannelImpl(service) ;
+		if(service.getQualifiedName().equals(STANDARD_INPUT_CHANNEL_SERVICE_NAME)) {
+			return new StandardInputChannelImpl(service);
+		} else if(service.getQualifiedName().equals(STANDARD_OUTPUT_CHANNEL_SERVICE_NAME)) {
+			return new StandardOutputChannelImpl(service);
 		}
 		return null;
 	}
-	
-	
+
+
 
 }

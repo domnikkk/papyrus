@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.Actions.IntermediateActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.Actions.IntermediateActions;
 
 // Imports
 import java.util.ArrayList;
@@ -35,37 +35,35 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuralFeature;
 
 
-public class CS_AddStructuralFeatureValueActionActivation extends AddStructuralFeatureValueActionActivation  {
+public class CS_AddStructuralFeatureValueActionActivation extends AddStructuralFeatureValueActionActivation {
 
-public void doAction() {
+	public void doAction() {
 		// If the feature is a port and the input value to be added is a
 		// Reference,
 		// Replaces this Reference by an InteractionPoint, and then behaves
 		// as usual.
 		// If the feature is not a port, behaves as usual
 
-		AddStructuralFeatureValueAction action = (AddStructuralFeatureValueAction) (this.node);
+		AddStructuralFeatureValueAction action = (AddStructuralFeatureValueAction)(this.node);
 		StructuralFeature feature = action.getStructuralFeature();
 
-		if (!(feature instanceof Port)) {
+		if(!(feature instanceof Port)) {
 			// Behaves as usual
-			this.doActionDefault() ;
-		} 
-		else {
+			this.doActionDefault();
+		} else {
 			List<Value> inputValues = this.takeTokens(action.getValue());
 			// NOTE: Multiplicity of the value input pin is required to be 1..1.
 			Value inputValue = inputValues.get(0);
-			if (inputValue instanceof Reference) {
+			if(inputValue instanceof Reference) {
 				// First constructs an InteractionPoint from the inputValue
-				Reference reference = (Reference) inputValue;
+				Reference reference = (Reference)inputValue;
 				CS_InteractionPoint interactionPoint = new CS_InteractionPoint();
 				interactionPoint.referent = reference.referent;
-				interactionPoint.definingPort = (Port) feature;
+				interactionPoint.definingPort = (Port)feature;
 				// The value on action.object is necessarily instanceof
 				// ReferenceToCompositeStructure (otherwise, the feature cannot
 				// be a port)
-				CS_Reference owner = (CS_Reference) this.takeTokens(
-						action.getObject()).get(0);
+				CS_Reference owner = (CS_Reference)this.takeTokens(action.getObject()).get(0);
 				interactionPoint.owner = owner;
 				// Then replaces the Reference by an InteractionPoint
 				// in the inputValues
@@ -76,38 +74,34 @@ public void doAction() {
 				// when
 				// the value on action.object pin is a StructuredValue)
 				Integer insertAt = 0;
-				if (action.getInsertAt() != null) {
-					insertAt = ((UnlimitedNaturalValue) this.takeTokens(
-							action.getInsertAt()).get(0)).value ;
+				if(action.getInsertAt() != null) {
+					insertAt = ((UnlimitedNaturalValue)this.takeTokens(action.getInsertAt()).get(0)).value;
 				}
-				if (action.isReplaceAll()) {
+				if(action.isReplaceAll()) {
 					owner.setFeatureValue(feature, inputValues, 0);
-				} 
-				else {
+				} else {
 					FeatureValue featureValue = owner.getFeatureValue(feature);
 
-					if (featureValue.values.size() > 0 & insertAt == 0) {
+					if(featureValue.values.size() > 0 & insertAt == 0) {
 						// If there is no insertAt pin, then the structural
 						// feature must
 						// be unordered, and the insertion position is
 						// immaterial.
-						insertAt = ((ChoiceStrategy) this.getExecutionLocus().factory
-								.getStrategy("choice"))
-								.choose(featureValue.values.size());
+						insertAt = ((ChoiceStrategy)this.getExecutionLocus().factory.getStrategy("choice")).choose(featureValue.values.size());
 					}
-					if (feature.isUnique()) {
+					if(feature.isUnique()) {
 						// Remove any existing value that duplicates the input
 						// value
 						Integer j = position(interactionPoint, featureValue.values, 1);
-						if (j > 0) {
+						if(j > 0) {
 							featureValue.values.remove(j - 1);
-							if (insertAt > 0 & j < insertAt) {
+							if(insertAt > 0 & j < insertAt) {
 								insertAt = insertAt - 1;
 							}
 						}
 					}
 
-					if (insertAt <= 0) {
+					if(insertAt <= 0) {
 						// Note: insertAt = -1 indicates an unlimited value of
 						// "*"
 						featureValue.values.add(interactionPoint);
@@ -115,16 +109,17 @@ public void doAction() {
 						featureValue.values.add(insertAt - 1, interactionPoint);
 					}
 				}
-				if (action.getResult() != null) {
+				if(action.getResult() != null) {
 					this.putToken(action.getResult(), owner);
 				}
-			} 
-			else {
+			} else {
 				// behaves as usual
-				this.doActionDefault() ;
+				this.doActionDefault();
 			}
-		}}
-public void doActionDefault() {
+		}
+	}
+
+	public void doActionDefault() {
 		// Get the values of the object and value input pins.
 		// If the given feature is an association end, then create a link
 		// between the object and value inputs.
@@ -139,7 +134,7 @@ public void doActionDefault() {
 		// when the feature is an association end, a CS_Link will be created instead
 		// of a Link
 
-		AddStructuralFeatureValueAction action = (AddStructuralFeatureValueAction) (this.node);
+		AddStructuralFeatureValueAction action = (AddStructuralFeatureValueAction)(this.node);
 		StructuralFeature feature = action.getStructuralFeature();
 		Association association = this.getAssociation(feature);
 
@@ -150,32 +145,31 @@ public void doActionDefault() {
 		Value inputValue = inputValues.get(0);
 
 		int insertAt = 0;
-		if (action.getInsertAt() != null) {
-			insertAt = ((UnlimitedNaturalValue) this
-					.takeTokens(action.getInsertAt()).get(0)).value ;
+		if(action.getInsertAt() != null) {
+			insertAt = ((UnlimitedNaturalValue)this.takeTokens(action.getInsertAt()).get(0)).value;
 		}
 
-		if (association != null) {
+		if(association != null) {
 			List<Link> links = this.getMatchingLinks(association, feature, value);
 
 			Property oppositeEnd = this.getOppositeEnd(association, feature);
 			int position = 0;
-			if (oppositeEnd.isOrdered()) {
+			if(oppositeEnd.isOrdered()) {
 				position = -1;
 			}
 
-			if (action.isReplaceAll()) {
-				for (int i = 0; i < links.size(); i++) {
+			if(action.isReplaceAll()) {
+				for(int i = 0; i < links.size(); i++) {
 					Link link = links.get(i);
 					link.destroy();
 				}
-			} else if (feature.isUnique()) {
-				for (int i = 0; i < links.size(); i++) {
+			} else if(feature.isUnique()) {
+				for(int i = 0; i < links.size(); i++) {
 					Link link = links.get(i);
 					FeatureValue featureValue = link.getFeatureValue(feature);
-					if (featureValue.values.get(0).equals(inputValue)) {
+					if(featureValue.values.get(0).equals(inputValue)) {
 						position = link.getFeatureValue(oppositeEnd).position;
-						if (insertAt > 0 & featureValue.position < insertAt) {
+						if(insertAt > 0 & featureValue.position < insertAt) {
 							insertAt = insertAt - 1;
 						}
 						link.destroy();
@@ -198,36 +192,33 @@ public void doActionDefault() {
 
 			newLink.locus.add(newLink);
 
-		} else if (value instanceof StructuredValue) {
-			StructuredValue structuredValue = (StructuredValue) value;
+		} else if(value instanceof StructuredValue) {
+			StructuredValue structuredValue = (StructuredValue)value;
 
-			if (action.isReplaceAll()) {
+			if(action.isReplaceAll()) {
 				structuredValue.setFeatureValue(feature, inputValues, 0);
 			} else {
-				FeatureValue featureValue = structuredValue
-						.getFeatureValue(feature);
+				FeatureValue featureValue = structuredValue.getFeatureValue(feature);
 
-				if (featureValue.values.size() > 0 & insertAt == 0) {
+				if(featureValue.values.size() > 0 & insertAt == 0) {
 					// *** If there is no insertAt pin, then the structural
 					// feature must be unordered, and the insertion position is
 					// immaterial. ***
-					insertAt = ((ChoiceStrategy) this.getExecutionLocus().factory
-							.getStrategy("choice")).choose(featureValue.values
-									.size());
+					insertAt = ((ChoiceStrategy)this.getExecutionLocus().factory.getStrategy("choice")).choose(featureValue.values.size());
 				}
 
-				if (feature.isUnique()) {
+				if(feature.isUnique()) {
 					// Remove any existing value that duplicates the input value
 					int j = position(inputValue, featureValue.values, 1);
-					if (j > 0) {
+					if(j > 0) {
 						featureValue.values.remove(j - 1);
-						if (insertAt > 0 & j < insertAt) {
+						if(insertAt > 0 & j < insertAt) {
 							insertAt = insertAt - 1;
 						}
 					}
 				}
 
-				if (insertAt <= 0) { // Note: insertAt = -1 indicates an
+				if(insertAt <= 0) { // Note: insertAt = -1 indicates an
 					// unlimited value of "*"
 					featureValue.values.add(inputValue);
 				} else {
@@ -236,7 +227,8 @@ public void doActionDefault() {
 			}
 		}
 
-		if (action.getResult() != null) {
+		if(action.getResult() != null) {
 			this.putToken(action.getResult(), value);
-		}}
+		}
+	}
 }

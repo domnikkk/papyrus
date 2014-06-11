@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions;
 
 // Imports
 import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.CS_Object;
@@ -19,13 +19,13 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
 import org.eclipse.uml2.uml.Operation;
 
-public abstract class CS_ConstructStrategy extends SemanticStrategy  {
+public abstract class CS_ConstructStrategy extends SemanticStrategy {
 
 	public String getName() {
 		// a CS_ConstructionStrategy is always named "constructStrategy"
 		return "constructStrategy";
 	}
-	
-	public abstract Object_ construct(Operation constructor, CS_Object context) ;
+
+	public abstract Object_ construct(Operation constructor, CS_Object context);
 
 }

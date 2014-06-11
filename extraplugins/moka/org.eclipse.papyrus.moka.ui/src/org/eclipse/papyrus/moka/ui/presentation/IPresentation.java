@@ -30,8 +30,8 @@ public interface IPresentation {
 	 * 
 	 * @return The label for this element
 	 */
-	public String getLabel() ;
-	
+	public String getLabel();
+
 	/**
 	 * Returns the details corresponding to this element.
 	 * Details are displayed in the Variable panel of the Debug perspective.
@@ -40,8 +40,8 @@ public interface IPresentation {
 	 * 
 	 * @return Returns the details corresponding to this element.
 	 */
-	public String getDetails() ;
-	
+	public String getDetails();
+
 	/**
 	 * Returns the image for this element.
 	 * This is effective for the following kind of element:
@@ -50,6 +50,6 @@ public interface IPresentation {
 	 * 
 	 * @return The image for this element.
 	 */
-	public Image getImage() ;
-	
+	public Image getImage();
+
 }

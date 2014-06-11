@@ -32,6 +32,6 @@ public abstract class MokaVariable_for_fUML extends MokaVariable implements IPre
 		return "";
 	}
 
-	public abstract Image getImage() ;
-	
+	public abstract Image getImage();
+
 }

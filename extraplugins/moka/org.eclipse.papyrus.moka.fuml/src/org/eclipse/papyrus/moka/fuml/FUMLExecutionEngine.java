@@ -256,13 +256,13 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * @return The ControlDelegate object associated with this engine
 	 */
 	public abstract ControlDelegate getControlDelegate();
-	
+
 	/**
 	 * Returns the fUML locus associated with this engine
 	 * 
-	 * @return the fUML locus associated with this engine 
+	 * @return the fUML locus associated with this engine
 	 */
 	public Locus getLocus() {
-		return this.locus ;
+		return this.locus;
 	}
 }

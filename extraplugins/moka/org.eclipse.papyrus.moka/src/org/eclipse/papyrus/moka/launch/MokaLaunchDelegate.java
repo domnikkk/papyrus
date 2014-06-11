@@ -155,11 +155,10 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 		try {
 			IConfigurationElement e = null;
 			String selectedExecutionEngine = "" + Activator.getDefault().getPreferenceStore().getString(MokaConstants.MOKA_DEFAULT_EXECUTION_ENGINE_PREF);
-			if (selectedExecutionEngine == null || selectedExecutionEngine.equals("")) {
+			if(selectedExecutionEngine == null || selectedExecutionEngine.equals("")) {
 				// This situation happens when the preferences for the default moka execution engine have never been changed
-				e = config[0] ;
-			}
-			else {
+				e = config[0];
+			} else {
 				for(int i = 0; i < config.length; i++) {
 					if(config[i].getNamespaceIdentifier().equals(selectedExecutionEngine)) {
 						e = config[i];

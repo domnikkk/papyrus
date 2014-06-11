@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.Actions.IntermediateActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.Actions.IntermediateActions;
 
 // Imports
 import java.util.ArrayList;
@@ -28,9 +28,9 @@ import org.eclipse.uml2.uml.LinkEndCreationData;
 import org.eclipse.uml2.uml.LinkEndData;
 
 
-public class CS_CreateLinkActionActivation extends CreateLinkActionActivation  {
+public class CS_CreateLinkActionActivation extends CreateLinkActionActivation {
 
-public void doAction() {
+	public void doAction() {
 		// Get the extent at the current execution locus of the association for
 		// which a link is being created.
 		// Destroy all links that have a value for any end for which
@@ -40,10 +40,10 @@ public void doAction() {
 		// inserted at the given insertAt position (for ordered ends).
 		// fUML semantics is extended in the sense that a CS_Link is created instead of
 		// a Link
-		CreateLinkAction action = (CreateLinkAction) (this.node);
+		CreateLinkAction action = (CreateLinkAction)(this.node);
 		List<LinkEndCreationData> endDataList = new ArrayList<LinkEndCreationData>();
-		for (LinkEndData data : action.getEndData()) {
-			endDataList.add((LinkEndCreationData)data) ;
+		for(LinkEndData data : action.getEndData()) {
+			endDataList.add((LinkEndCreationData)data);
 		}
 		Association linkAssociation = this.getAssociation();
 		List<ExtensionalValue> extent = this.getExecutionLocus().getExtent(linkAssociation);

@@ -79,7 +79,7 @@ public class ActivityExecution extends Execution {
 	public void terminate() {
 		// Terminate all node activations (which will ultimately result in the
 		// activity execution completing).
-		if (this.activationGroup != null) {
+		if(this.activationGroup != null) {
 			this.activationGroup.terminateAll();
 		}
 	}

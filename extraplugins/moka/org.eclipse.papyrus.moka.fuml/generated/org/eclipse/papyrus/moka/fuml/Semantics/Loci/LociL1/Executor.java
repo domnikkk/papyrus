@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class Executor implements Cloneable{
+public class Executor implements Cloneable {
 
 	/*
 	 * The locus at which this executor resides.
@@ -71,8 +71,8 @@ public class Executor implements Cloneable{
 		reference.referent = object;
 		return reference;
 	}
-	
-	public Executor clone(){
+
+	public Executor clone() {
 		Executor clone = null;
 		try {
 			clone = (Executor)super.clone();

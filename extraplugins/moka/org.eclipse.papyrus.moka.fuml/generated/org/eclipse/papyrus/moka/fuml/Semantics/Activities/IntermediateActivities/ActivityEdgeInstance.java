@@ -53,8 +53,8 @@ public class ActivityEdgeInstance {
 		// Keep the offered tokens until taken by the target.
 		// (Note that any one edge should only be handling either all object
 		// tokens or all control tokens.)
-		if (! FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) { // Added for connection with the debug API
-			return ;
+		if(!FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) { // Added for connection with the debug API
+			return;
 		}
 		Offer offer = new Offer();
 		for(int i = 0; i < tokens.size(); i++) {

@@ -28,18 +28,19 @@ public class GetReferenceTypeName_Request extends RequestMessage {
 	 * The debug element from which the reference type name is requested.
 	 * This can be a variable or a value.
 	 */
-	protected IDebugElement debugElement ;
-	
+	protected IDebugElement debugElement;
+
 	/**
 	 * Constructs a request message from the given debug element.
 	 * This debug element can be a variable or a value
 	 * 
-	 * @param debugElement The debug element from which the reference type name is requested
+	 * @param debugElement
+	 *        The debug element from which the reference type name is requested
 	 */
 	public GetReferenceTypeName_Request(IDebugElement debugElement) {
-		this.debugElement = debugElement ;
+		this.debugElement = debugElement;
 	}
-	
+
 	/**
 	 * Returns the debug element from which the reference type name is requested
 	 * 
@@ -49,7 +50,9 @@ public class GetReferenceTypeName_Request extends RequestMessage {
 		return debugElement;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {

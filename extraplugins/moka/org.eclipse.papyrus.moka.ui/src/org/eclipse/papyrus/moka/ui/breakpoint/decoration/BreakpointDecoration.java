@@ -33,8 +33,11 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 
 	public static final String inActiveBreakpoint16 = "icons/brkpd_16x16.gif";
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getImageDescriptorForGE(org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getImageDescriptorForGE(org.eclipse.papyrus.infra.services.
+	 * markerlistener.IPapyrusMarker)
 	 */
 	public ImageDescriptor getImageDescriptorForGE(IPapyrusMarker marker) {
 		org.eclipse.papyrus.infra.widgets.Activator widgetsActivator = org.eclipse.papyrus.infra.widgets.Activator.getDefault();
@@ -42,16 +45,18 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 		boolean isEnabled = marker.getAttribute(IBreakpoint.ENABLED, false);
 		if(isEnabled) {
 			overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeBreakpoint16);
-		}
-		else {
+		} else {
 			overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveBreakpoint16);
 		}
 
 		return overlay;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getImageDescriptorForME(org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getImageDescriptorForME(org.eclipse.papyrus.infra.services.
+	 * markerlistener.IPapyrusMarker)
 	 */
 	public ImageDescriptor getImageDescriptorForME(IPapyrusMarker marker) {
 		org.eclipse.papyrus.infra.widgets.Activator widgetsActivator = org.eclipse.papyrus.infra.widgets.Activator.getDefault();
@@ -59,44 +64,57 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 		boolean isEnabled = marker.getAttribute(IBreakpoint.ENABLED, false);
 		if(isEnabled) {
 			overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeBreakpoint16);
-		}
-		else {
+		} else {
 			overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveBreakpoint16);
 		}
 
 		return overlay;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getPreferedPosition(org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getPreferedPosition(org.eclipse.papyrus.infra.services.markerlistener
+	 * .IPapyrusMarker)
 	 */
 	public PreferedPosition getPreferedPosition(IPapyrusMarker marker) {
 		return PreferedPosition.SOUTH_EAST;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getMessage(org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getMessage(org.eclipse.papyrus.infra.services.markerlistener.
+	 * IPapyrusMarker)
 	 */
 	public String getMessage(IPapyrusMarker marker) {
-		boolean isEnabled = marker.getAttribute(IBreakpoint.ENABLED, false) ;
-		return (isEnabled ? "" : "disabled ") + "breakpoint" ;
+		boolean isEnabled = marker.getAttribute(IBreakpoint.ENABLED, false);
+		return (isEnabled ? "" : "disabled ") + "breakpoint";
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getPriority(org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getPriority(org.eclipse.papyrus.infra.services.markerlistener.
+	 * IPapyrusMarker)
 	 */
 	public int getPriority(IPapyrusMarker marker) {
 		return 0; // all markers have same priority (and we should not have multiple markers on the same model element).
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#supportsMarkerPropagation()
 	 */
 	public MarkChildren supportsMarkerPropagation() {
 		return MarkChildren.NO;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#markerPropagation(org.eclipse.emf.common.util.EList)
 	 */
 	public IPapyrusDecoration markerPropagation(EList<IPapyrusDecoration> childDecorations) {

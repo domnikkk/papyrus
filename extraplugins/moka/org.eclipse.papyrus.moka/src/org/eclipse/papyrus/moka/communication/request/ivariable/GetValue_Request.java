@@ -27,17 +27,18 @@ public class GetValue_Request extends RequestMessage {
 	/**
 	 * The variable for which associated value is requested
 	 */
-	protected IVariable variable ;
-	
+	protected IVariable variable;
+
 	/**
 	 * Constructs a request message from the given variable.
 	 * 
-	 * @param variable The variable for which associated value is requested
+	 * @param variable
+	 *        The variable for which associated value is requested
 	 */
 	public GetValue_Request(IVariable variable) {
-		this.variable = variable ;
+		this.variable = variable;
 	}
-	
+
 	/**
 	 * Returns the variable for which associated value is requested
 	 * 
@@ -47,7 +48,9 @@ public class GetValue_Request extends RequestMessage {
 		return variable;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {

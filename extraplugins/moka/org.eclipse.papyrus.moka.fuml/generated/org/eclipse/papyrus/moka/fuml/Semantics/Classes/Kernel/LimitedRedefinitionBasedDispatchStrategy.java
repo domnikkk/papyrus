@@ -17,18 +17,17 @@ import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.Operation;
 
 //EXTENSION
-public class LimitedRedefinitionBasedDispatchStrategy extends
-		RedefinitionBasedDispatchStrategy {
-		
+public class LimitedRedefinitionBasedDispatchStrategy extends RedefinitionBasedDispatchStrategy {
+
 	public String getName() {
 		// Dispatch strategies are always named "dispatch".
 		return "limited_dispatch";
 	}
-	
+
 	public Execution dispatch(Object_ object, Operation operation) {
 		Execution execution = null;
 		Behavior behavior = this.getMethod(object, operation);
-		if(behavior != null && !(behavior instanceof OpaqueBehavior)){
+		if(behavior != null && !(behavior instanceof OpaqueBehavior)) {
 			execution = object.locus.factory.createExecution(this.getMethod(object, operation), object);
 		}
 		return execution;

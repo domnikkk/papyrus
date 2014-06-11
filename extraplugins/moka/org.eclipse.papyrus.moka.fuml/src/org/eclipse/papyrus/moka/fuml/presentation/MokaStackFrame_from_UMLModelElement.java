@@ -21,22 +21,26 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Element;
 
 public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame implements IPresentation {
-	
+
 	public MokaStackFrame_from_UMLModelElement(Element modelElement) {
 		super(FUMLExecutionEngine.eInstance.getDebugTarget());
-		this.modelElement = modelElement ;
+		this.modelElement = modelElement;
 	}
 
 	///////////////////////////////
 	// Presentation
 	///////////////////////////////
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getLabel()
 	 */
-	abstract public String getLabel() ;
+	abstract public String getLabel();
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getDetails()
 	 */
 	public String getDetails() {
@@ -44,47 +48,52 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 		return "";
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getImage()
 	 */
 	public Image getImage() {
-		return FUMLPresentationUtils.getImage(modelElement) ;
+		return FUMLPresentationUtils.getImage(modelElement);
 	}
 
 	///////////////////////////////
 	// Debug
 	///////////////////////////////
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.debug.MokaStackFrame#hasVariables()
 	 */
 	@Override
 	public boolean hasVariables() throws DebugException {
-		return true ;
+		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.debug.MokaStackFrame#getVariables()
 	 */
 	@Override
 	public IVariable[] getVariables() throws DebugException {
-		Object_ contextObject = this.getContextObject() ;
-		IVariable[] variables ;
-		if (contextObject == null) { 
+		Object_ contextObject = this.getContextObject();
+		IVariable[] variables;
+		if(contextObject == null) {
 			variables = new IVariable[]{};
+		} else {
+			MokaVariable_from_ContextObject var = new MokaVariable_from_ContextObject(contextObject);
+			variables = new IVariable[]{ var };
 		}
-		else {
-			MokaVariable_from_ContextObject var = new MokaVariable_from_ContextObject(contextObject) ;
-			variables = new IVariable[]{var} ;
-		}
-		return variables ;
+		return variables;
 	}
-	
+
 	/**
-	 * Returns the context fUML Object_ for this stack frame 
+	 * Returns the context fUML Object_ for this stack frame
 	 * 
 	 * @return the context fUML Object_ for this stack frame
 	 */
-	protected abstract Object_ getContextObject() ;
-	
+	protected abstract Object_ getContextObject();
+
 }

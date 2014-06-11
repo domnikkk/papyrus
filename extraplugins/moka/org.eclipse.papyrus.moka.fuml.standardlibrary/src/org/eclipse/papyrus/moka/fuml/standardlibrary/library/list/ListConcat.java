@@ -29,8 +29,8 @@ public class ListConcat extends OpaqueBehaviorExecution {
 			List<Value> list1 = inputParameters.get(0).values;
 			List<Value> list2 = inputParameters.get(1).values;
 			List<Value> result = new ArrayList<Value>();
-			result.addAll(list1) ;
-			result.addAll(list2) ;
+			result.addAll(list1);
+			result.addAll(list2);
 			outputParameters.get(0).values = result;
 		} catch (Exception e) {
 			Debug.println("An error occured during the execution of ListConcat " + e.getMessage());

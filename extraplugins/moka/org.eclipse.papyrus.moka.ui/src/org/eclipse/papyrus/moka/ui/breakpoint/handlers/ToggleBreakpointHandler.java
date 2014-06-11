@@ -33,43 +33,44 @@ import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
  */
 public class ToggleBreakpointHandler extends MokaAbstractHandler implements IHandler {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		EObject selectedElement = this.getSelectedElement() ;
-		String selectedElementURI = EcoreUtil.getURI(selectedElement).toString() ;
-		if (selectedElement != null) {
-			IBreakpointManager breakpointManager = DebugPlugin.getDefault().getBreakpointManager() ;
-			IBreakpoint[] breakpoints = breakpointManager.getBreakpoints(MokaConstants.MOKA_DEBUG_MODEL_ID) ;
-			IBreakpoint alreadyDefinedBreakpoint = null ;
-			for (int i = 0 ; i < breakpoints.length && alreadyDefinedBreakpoint == null ; i++) {
-				MokaBreakpoint breakpoint = (MokaBreakpoint)breakpoints[i] ;
-				String eObjectOfBreakpointUri = null ;
+		EObject selectedElement = this.getSelectedElement();
+		String selectedElementURI = EcoreUtil.getURI(selectedElement).toString();
+		if(selectedElement != null) {
+			IBreakpointManager breakpointManager = DebugPlugin.getDefault().getBreakpointManager();
+			IBreakpoint[] breakpoints = breakpointManager.getBreakpoints(MokaConstants.MOKA_DEBUG_MODEL_ID);
+			IBreakpoint alreadyDefinedBreakpoint = null;
+			for(int i = 0; i < breakpoints.length && alreadyDefinedBreakpoint == null; i++) {
+				MokaBreakpoint breakpoint = (MokaBreakpoint)breakpoints[i];
+				String eObjectOfBreakpointUri = null;
 				try {
 					eObjectOfBreakpointUri = (String)breakpoint.getMarker().getAttribute(EValidator.URI_ATTRIBUTE);
 				} catch (CoreException e) {
 					Activator.log.error(e);
 				}
-				if (eObjectOfBreakpointUri.equals(selectedElementURI)) {
-					alreadyDefinedBreakpoint = breakpoint ;
+				if(eObjectOfBreakpointUri.equals(selectedElementURI)) {
+					alreadyDefinedBreakpoint = breakpoint;
 				}
 			}
 			try {
-				if (alreadyDefinedBreakpoint != null) {
-					breakpointManager.removeBreakpoint(alreadyDefinedBreakpoint, true) ;
-				}
-				else {
-					MokaBreakpoint breakpoint = new MokaBreakpoint() ;
-					breakpoint.toggleBreakpoint(selectedElement) ;
-					breakpointManager.addBreakpoint(breakpoint) ;
+				if(alreadyDefinedBreakpoint != null) {
+					breakpointManager.removeBreakpoint(alreadyDefinedBreakpoint, true);
+				} else {
+					MokaBreakpoint breakpoint = new MokaBreakpoint();
+					breakpoint.toggleBreakpoint(selectedElement);
+					breakpointManager.addBreakpoint(breakpoint);
 				}
 			} catch (CoreException e) {
 				Activator.log.error(e);
 			}
 			return null;
 		}
-		
+
 		return null;
 	}
 

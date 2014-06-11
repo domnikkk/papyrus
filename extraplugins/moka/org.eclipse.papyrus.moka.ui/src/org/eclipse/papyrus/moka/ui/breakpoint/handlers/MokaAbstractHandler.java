@@ -61,5 +61,5 @@ public abstract class MokaAbstractHandler extends AbstractHandler {
 		}
 		return eObject;
 	}
-	
+
 }

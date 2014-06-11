@@ -16,7 +16,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
 
 public abstract class GetNextEventStrategy extends SemanticStrategy {
-	
+
 	public String getName() {
 		// Get next event strategies are always named "getNextEvent".
 		return "getNextEvent";

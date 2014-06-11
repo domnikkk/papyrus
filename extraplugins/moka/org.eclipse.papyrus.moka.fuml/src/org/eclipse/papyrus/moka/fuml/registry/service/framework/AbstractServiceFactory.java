@@ -11,6 +11,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.registry.service.framework;
 
-public abstract class AbstractServiceFactory implements IServiceFactory{
+public abstract class AbstractServiceFactory implements IServiceFactory {
 
 }

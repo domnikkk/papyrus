@@ -27,12 +27,13 @@ public class GetStackFrames_Request extends RequestMessage {
 	/**
 	 * The thread for which available stack frames are requested
 	 */
-	protected IThread thread ;
-	
+	protected IThread thread;
+
 	/**
 	 * Constructs a request message from the given thread.
 	 * 
-	 * @param thread The thread for which available stack frames are requested
+	 * @param thread
+	 *        The thread for which available stack frames are requested
 	 */
 	public GetStackFrames_Request(IThread thread) {
 		this.thread = thread;
@@ -47,7 +48,9 @@ public class GetStackFrames_Request extends RequestMessage {
 		return thread;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {

@@ -19,7 +19,7 @@ import java.util.List;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.PrimitiveType;
 
-public abstract class PrimitiveValue extends Value{
+public abstract class PrimitiveValue extends Value {
 
 	public PrimitiveType type;
 

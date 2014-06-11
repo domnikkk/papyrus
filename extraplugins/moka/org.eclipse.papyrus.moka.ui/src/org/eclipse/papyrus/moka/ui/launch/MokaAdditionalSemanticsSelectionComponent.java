@@ -20,25 +20,23 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
-public class MokaAdditionalSemanticsSelectionComponent extends
-		MokaGroupComponent {
-		
+public class MokaAdditionalSemanticsSelectionComponent extends MokaGroupComponent {
+
 	public MokaLibrariesComboBox registeredLibraries;
-	
-	public MokaAdditionalSemanticsSelectionComponent(Composite parent,
-			int style, String name, int columns) {
+
+	public MokaAdditionalSemanticsSelectionComponent(Composite parent, int style, String name, int columns) {
 		super(parent, style, name, columns);
 		this.createComboBox();
 	}
-	
-	public void createComboBox(){
+
+	public void createComboBox() {
 		this.registeredLibraries = new MokaLibrariesComboBox(this.group, SWT.NONE);
 		this.registeredLibraries.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
-		for(IRegisteredLibrary lib : libraries){
+		for(IRegisteredLibrary lib : libraries) {
 			this.registeredLibraries.add(lib);
 		}
-		if(this.registeredLibraries.getItemCount() > 0){
+		if(this.registeredLibraries.getItemCount() > 0) {
 			this.registeredLibraries.select(1);
 		}
 	}

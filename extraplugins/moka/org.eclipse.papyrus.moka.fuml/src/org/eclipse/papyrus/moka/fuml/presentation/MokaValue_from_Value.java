@@ -18,15 +18,15 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 
 public class MokaValue_from_Value extends MokaValue_for_fUML {
 
-	protected Value value ;
-	
-	protected IVariable[] variables ;
-	
+	protected Value value;
+
+	protected IVariable[] variables;
+
 	public MokaValue_from_Value(Value value) {
 		super();
-		this.value = value ;
+		this.value = value;
 	}
-	
+
 	//////////////////////////////////
 	// Presentation
 	//////////////////////////////////
@@ -34,31 +34,29 @@ public class MokaValue_from_Value extends MokaValue_for_fUML {
 	public String getDetails() {
 		return value.toString();
 	}
-	
+
 	//////////////////////////////////
 	// Debug
 	//////////////////////////////////
-	
+
 	@Override
 	public String getValueString() throws DebugException {
-		return FUMLPresentationUtils.getValueString(value) ;
+		return FUMLPresentationUtils.getValueString(value);
 	}
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
-		if (variables == null) {
-			if (! (value instanceof CompoundValue)) {
-				variables = new IVariable[]{} ;
-			}
-			else if (((CompoundValue)value).featureValues.isEmpty()) {
-				variables = new IVariable[]{} ;
-			}
-			else {
-				CompoundValue compound = (CompoundValue)value ;
-				variables = new IVariable[compound.featureValues.size()] ;
-				for (int i = 0 ; i < variables.length ; i++) {
-					IVariable featureValueVariable = new MokaVariable_from_FeatureValue(compound.featureValues.get(i)) ;
-					variables[i] = featureValueVariable ;
+		if(variables == null) {
+			if(!(value instanceof CompoundValue)) {
+				variables = new IVariable[]{};
+			} else if(((CompoundValue)value).featureValues.isEmpty()) {
+				variables = new IVariable[]{};
+			} else {
+				CompoundValue compound = (CompoundValue)value;
+				variables = new IVariable[compound.featureValues.size()];
+				for(int i = 0; i < variables.length; i++) {
+					IVariable featureValueVariable = new MokaVariable_from_FeatureValue(compound.featureValues.get(i));
+					variables[i] = featureValueVariable;
 				}
 			}
 		}
@@ -70,6 +68,6 @@ public class MokaValue_from_Value extends MokaValue_for_fUML {
 		return getVariables().length > 0;
 	}
 
-	
-	
+
+
 }

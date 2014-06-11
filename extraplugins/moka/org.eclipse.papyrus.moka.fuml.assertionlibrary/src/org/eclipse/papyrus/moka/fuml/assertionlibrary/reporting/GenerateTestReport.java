@@ -42,7 +42,7 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 		TransformerFactory factory = TransformerFactory.newInstance();
 		ReportNameSingleton reportNameSingleton = ReportNameSingleton.getInstance();
 		String reportName = reportNameSingleton.getExecutedActivityName() + reportNameSingleton.getEngineName();
-		
+
 		try {
 			report = Reporter.INSTANCE.getReport();
 		} catch (ParserConfigurationException e) {

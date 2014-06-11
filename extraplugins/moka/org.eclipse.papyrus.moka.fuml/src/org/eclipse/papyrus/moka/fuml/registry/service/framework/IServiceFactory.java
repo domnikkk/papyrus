@@ -15,5 +15,6 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 
 public interface IServiceFactory {
+
 	public Object_ instantiate(Class service);
 }

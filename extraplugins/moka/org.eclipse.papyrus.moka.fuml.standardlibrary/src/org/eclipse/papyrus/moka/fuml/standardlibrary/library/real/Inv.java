@@ -26,30 +26,28 @@ public class Inv extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-	        Double inv = 0.0;
+			Double inv = 0.0;
 			Double x = ((RealValue)inputParameters.get(0).values.get(0)).value;
-			if (x == inv)
-				throw new ArithmeticException("(arg == 0)") ;
+			if(x == inv)
+				throw new ArithmeticException("(arg == 0)");
 			else {
 				inv = 1 / x;
 			}
 			RealValue result = new RealValue();
 			result.value = inv;
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
-	    	List<Value> outputs = new ArrayList<Value>();
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Real");
+			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
-		}
-		catch (ArithmeticException a) {
+		} catch (ArithmeticException a) {
 			Activator.log.error("An error occured during the execution of Inv " + a.getMessage(), a);
 			RealValue result = new RealValue();
 			result.value = 0.0;
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
-	    	List<Value> outputs = new ArrayList<Value>();
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Real");
+			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			Activator.log.error("An error occured during the execution of Inv " + e.getMessage(), e);
 		}
 	}

@@ -30,63 +30,71 @@ public class MokaValue extends MokaDebugElement implements IValue {
 	///////////////////////////
 	// Implementation of IValue
 	///////////////////////////
-	
+
 	/**
 	 * The reference type name of this value
 	 */
-	protected String referenceTypeName = null ;
-	
+	protected String referenceTypeName = null;
+
 	/**
 	 * The textual representation of this value
 	 */
-	protected String textualRepresentation = null ;
-	
+	protected String textualRepresentation = null;
+
 	/**
 	 * The variables contained in this value
 	 */
-	protected MokaVariable[] nestedVariables = null ;
-	
-	/* (non-Javadoc)
+	protected MokaVariable[] nestedVariables = null;
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IValue#getReferenceTypeName()
 	 */
 	public String getReferenceTypeName() throws DebugException {
-		if (this.referenceTypeName != null)
-			return this.referenceTypeName ;
+		if(this.referenceTypeName != null)
+			return this.referenceTypeName;
 		// Delegates retrieval of the reference type name to the owning debug target
-		this.referenceTypeName = this.debugTarget.getReferenceTypeName(this) ;
-		return this.referenceTypeName ;
+		this.referenceTypeName = this.debugTarget.getReferenceTypeName(this);
+		return this.referenceTypeName;
 	}
 
 	/**
 	 * Convenience method for setting the reference type name of this value
 	 * 
-	 * @param referenceTypeName The new reference type name for this value
+	 * @param referenceTypeName
+	 *        The new reference type name for this value
 	 */
 	public void setReferenceTypeName(String referenceTypeName) {
-		this.referenceTypeName = referenceTypeName != null ? referenceTypeName : "" ;
+		this.referenceTypeName = referenceTypeName != null ? referenceTypeName : "";
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IValue#getValueString()
 	 */
 	public String getValueString() throws DebugException {
-		if (this.textualRepresentation != null)
-			return this.textualRepresentation ;
+		if(this.textualRepresentation != null)
+			return this.textualRepresentation;
 		// Delegates retrieval of the textual representation of this value to the owning debug target
-		this.textualRepresentation = this.debugTarget.getValueString(this) ;
-		return this.textualRepresentation ;
+		this.textualRepresentation = this.debugTarget.getValueString(this);
+		return this.textualRepresentation;
 	}
 
 	/**
 	 * Convenience method for setting the textual representation of a MokaValue
 	 * 
-	 * @param textualRepresentation The new textual representation for this value
+	 * @param textualRepresentation
+	 *        The new textual representation for this value
 	 */
 	public void setValueString(String textualRepresentation) {
-		this.textualRepresentation = textualRepresentation != null ? textualRepresentation : "" ;
+		this.textualRepresentation = textualRepresentation != null ? textualRepresentation : "";
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IValue#isAllocated()
 	 */
 	public boolean isAllocated() throws DebugException {
@@ -94,31 +102,36 @@ public class MokaValue extends MokaDebugElement implements IValue {
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IValue#getVariables()
 	 */
 	public IVariable[] getVariables() throws DebugException {
-		if (this.nestedVariables != null)
-			return this.nestedVariables ;
+		if(this.nestedVariables != null)
+			return this.nestedVariables;
 		// Delegates retrieval of variables to the owning debug target
-		this.nestedVariables = this.debugTarget.getVariables(this) ;
-		return this.nestedVariables ;
+		this.nestedVariables = this.debugTarget.getVariables(this);
+		return this.nestedVariables;
 	}
 
 	/**
 	 * Convenience method for setting the nested variables of a MokaVariable
 	 * 
-	 * @param nestedVariables The nested variables for this value
+	 * @param nestedVariables
+	 *        The nested variables for this value
 	 */
 	public void setVariables(MokaVariable[] nestedVariables) {
-		this.nestedVariables = (nestedVariables != null ? nestedVariables : new MokaVariable[]{}) ;
+		this.nestedVariables = (nestedVariables != null ? nestedVariables : new MokaVariable[]{});
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IValue#hasVariables()
 	 */
 	public boolean hasVariables() throws DebugException {
-		return this.getVariables().length > 0 ;
+		return this.getVariables().length > 0;
 	}
 
 }

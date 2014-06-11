@@ -28,34 +28,33 @@ public class CS_OpaqueExpressionEvaluation extends Evaluation {
 		// Execute the behavior associated with the context OpaqueExpression, if any.
 		// If multiple return values are computed, then return the first one.
 		// If no value are computed, return null
-		List<Value> evaluation = this.executeExpressionBehavior() ;
-		if (evaluation.size() > 0) {
-			return evaluation.get(0) ;
-		}
-		else {
-			return null ;
+		List<Value> evaluation = this.executeExpressionBehavior();
+		if(evaluation.size() > 0) {
+			return evaluation.get(0);
+		} else {
+			return null;
 		}
 	}
-	
+
 	public List<Value> executeExpressionBehavior() {
 		// If a behavior is associated with the context OpaqueExpression,
 		// then execute this behavior, and return computed values.
 		// Otherwise, return an empty list of values.
-		List<Value> evaluation = new ArrayList<Value>() ;
-		OpaqueExpression expression = (OpaqueExpression)this.specification ;
-		Behavior behavior = expression.getBehavior() ;
-		if (behavior != null) {
-			List<ParameterValue> inputs = new ArrayList<ParameterValue>() ;
-			List<ParameterValue> results = this.locus.executor.execute(behavior, null, inputs) ;
-			for (int i = 0 ; i < results.size() ; i++) { // results.size should be 1
-				ParameterValue parameterValue = results.get(i) ;
-				List<Value> values = parameterValue.values ;
-				for (int j = 0 ; j < values.size() ; j++) {
-					evaluation.add(values.get(j)) ;
+		List<Value> evaluation = new ArrayList<Value>();
+		OpaqueExpression expression = (OpaqueExpression)this.specification;
+		Behavior behavior = expression.getBehavior();
+		if(behavior != null) {
+			List<ParameterValue> inputs = new ArrayList<ParameterValue>();
+			List<ParameterValue> results = this.locus.executor.execute(behavior, null, inputs);
+			for(int i = 0; i < results.size(); i++) { // results.size should be 1
+				ParameterValue parameterValue = results.get(i);
+				List<Value> values = parameterValue.values;
+				for(int j = 0; j < values.size(); j++) {
+					evaluation.add(values.get(j));
 				}
 			}
 		}
-		return evaluation ;
+		return evaluation;
 	}
 
 }

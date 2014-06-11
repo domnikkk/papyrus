@@ -21,13 +21,9 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ 
-	CompositeRunAllTestsButTestSuite4.class,
-	CompositeRunTestSuite4.class,
-	AsyncRunAllTestsButTestSuite4.class,
-	AsyncRunTestSuite4.class
-})
+@SuiteClasses({ CompositeRunAllTestsButTestSuite4.class, CompositeRunTestSuite4.class, AsyncRunAllTestsButTestSuite4.class, AsyncRunTestSuite4.class })
 public class AllTests {
+
 	public AllTests() {
 		super();
 	}

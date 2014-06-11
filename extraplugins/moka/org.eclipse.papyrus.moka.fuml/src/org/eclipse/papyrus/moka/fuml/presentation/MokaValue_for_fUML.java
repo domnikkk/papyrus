@@ -27,23 +27,23 @@ public abstract class MokaValue_for_fUML extends MokaValue implements IPresentat
 	//////////////////////////////////
 	// Presentation
 	//////////////////////////////////
-	
+
 	public String getLabel() {
 		// Not used
 		return "";
 	}
 
-	public abstract String getDetails() ;
+	public abstract String getDetails();
 
 	public Image getImage() {
 		// Not used
-		return null ;
+		return null;
 	}
-	
+
 	//////////////////////////////////
 	// Debug
 	//////////////////////////////////
-	
+
 	@Override
 	public IVariable[] getVariables() throws DebugException {
 		return new IVariable[]{};
@@ -51,7 +51,7 @@ public abstract class MokaValue_for_fUML extends MokaValue implements IPresentat
 
 	@Override
 	public boolean hasVariables() throws DebugException {
-		return false ;
+		return false;
 	}
-	
+
 }

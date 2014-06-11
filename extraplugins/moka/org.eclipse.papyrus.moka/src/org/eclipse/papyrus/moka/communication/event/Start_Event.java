@@ -21,20 +21,20 @@ import org.eclipse.papyrus.moka.debug.MokaThread;
 /**
  * An event message representing a Start event.
  * This message is emitted by the AbstractExecution engine,
- * to inform the debug target that it is properly started and that it 
+ * to inform the debug target that it is properly started and that it
  * is ready to handle requests.
  *
  */
 public class Start_Event extends EventMessage {
-	
+
 	/**
 	 * The threads available at the execution engine when the start_event message was emitted
 	 */
-	protected MokaThread[] threads ;
-	
+	protected MokaThread[] threads;
+
 	/**
 	 * Constructs a Start_Event message from a source and an array of threads.
-	 * source is usually the debug target. The idea is that, while this message is 
+	 * source is usually the debug target. The idea is that, while this message is
 	 * emitted from the execution engine to the debug target, the debug target then
 	 * notifies the debug framework that a message occurred.
 	 * From the debug framework standpoint, the source of the start event is therefore
@@ -42,38 +42,44 @@ public class Start_Event extends EventMessage {
 	 * threads represent the threads available at the execution engine when
 	 * it is ready to start.
 	 * 
-	 * @param source The source for the debug event
-	 * @param threads The threads available when the execution is started
+	 * @param source
+	 *        The source for the debug event
+	 * @param threads
+	 *        The threads available when the execution is started
 	 */
 	public Start_Event(IDebugElement source, MokaThread[] threads) {
 		this.source = source;
-		this.threads = threads ;
-		this.eventKind = DebugEvent.CREATE ;
+		this.threads = threads;
+		this.eventKind = DebugEvent.CREATE;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.event.Event#marshal()
 	 */
 	public String marshal() {
 		return Marshaller.getInstance().start_event_marshal(this);
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.event.Event#getDebugEvent()
 	 */
 	public DebugEvent getDebugEvent() {
-		if (this.debugEvent == null)
-			this.debugEvent = new DebugEvent(source, eventKind) ;
+		if(this.debugEvent == null)
+			this.debugEvent = new DebugEvent(source, eventKind);
 		return this.debugEvent;
 	}
-	
+
 	/**
 	 * Returns the threads available at the execution engine when the start_event message was emitted
-	 *  
+	 * 
 	 * @return the threads available at the execution engine when the start_event message was emitted
 	 */
 	public MokaThread[] getThreads() {
-		return this.threads ;
+		return this.threads;
 	}
 
 }

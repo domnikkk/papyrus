@@ -18,7 +18,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
 
 
 /**
- * The main entry point for the org.eclipse.papyrus.moka.services extension point, 
+ * The main entry point for the org.eclipse.papyrus.moka.services extension point,
  * which enables to pre-instantiate services objects at the locus before any execution starts.
  * Contributing to this extension point simply consists in implementing this interface.
  *
@@ -31,16 +31,18 @@ public interface ISystemServicesRegistry {
 	 * Performs some initializations on the context ISystemServicesRegistry.
 	 * This method should be called before calling registerSystemServices.
 	 * 
-	 * @param parameters The object representing the initialization parameters for the context ISystemServicesRegistry
+	 * @param parameters
+	 *        The object representing the initialization parameters for the context ISystemServicesRegistry
 	 * @return The initialized ISystemServicesRegistry
 	 */
 	public ISystemServicesRegistry init(Object parameters);
-	
+
 	/**
 	 * Register specific system services at the given locus
 	 * 
-	 * @param locus The locus where services have to be registered
+	 * @param locus
+	 *        The locus where services have to be registered
 	 */
-	public void registerSystemServices(Locus locus) ;
-	
+	public void registerSystemServices(Locus locus);
+
 }

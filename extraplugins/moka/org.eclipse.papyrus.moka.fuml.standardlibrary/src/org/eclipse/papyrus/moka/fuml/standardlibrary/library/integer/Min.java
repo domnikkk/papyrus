@@ -33,7 +33,7 @@ public class Min extends OpaqueBehaviorExecution {
 			IntegerValue result = new IntegerValue();
 			result.value = Math.min(x, y);
 			List<Value> outputs = new ArrayList<Value>();
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Integer"); // ADDED
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Integer"); // ADDED
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {

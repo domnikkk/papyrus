@@ -22,8 +22,8 @@ import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;
 
 public class AsyncFUMLEngineLaunchDelegate extends AbstractMokaLaunchConfigurationDelegate {
 
-	final protected static String selectedExecutionEngine = "org.eclipse.papyrus.moka.async.fuml" ; 
-	
+	final protected static String selectedExecutionEngine = "org.eclipse.papyrus.moka.async.fuml";
+
 	/**
 	 * Instantiate the Async fUML execution engine.
 	 *

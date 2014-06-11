@@ -24,7 +24,7 @@ public class StringValue extends PrimitiveValue {
 	public Object getUnderlying() {
 		return this.value;
 	}
-	
+
 	public ValueSpecification specify() {
 		// Return a literal string with the value of this string value.
 		LiteralString literal = UMLFactory.eINSTANCE.createLiteralString();
@@ -59,7 +59,7 @@ public class StringValue extends PrimitiveValue {
 	public String toString() {
 		return value;
 	}
-	
+
 	public Object getValue() {
 		return this.value;
 	}

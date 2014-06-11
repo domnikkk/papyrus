@@ -68,11 +68,12 @@ public class AcceptEventActionActivation extends ActionActivation {
 		}
 		return ready;
 	}
-	
+
 	// ADDED:
 	public Boolean isWaiting() {
-		return this.waiting == null? false: this.waiting;
+		return this.waiting == null ? false : this.waiting;
 	}
+
 	//
 
 	public void doAction() {

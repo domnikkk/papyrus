@@ -20,15 +20,16 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.Si
  * @author CEA LIST (t605650)
  */
 public interface IAsyncEventPool {
-	
+
 	/**
 	 * Send.
 	 *
-	 * @param signalInstance the signal instance
+	 * @param signalInstance
+	 *        the signal instance
 	 * @return true, if successful
 	 */
 	public boolean send(SignalInstance signalInstance);
-	
+
 	/**
 	 * Gets the next event.
 	 *

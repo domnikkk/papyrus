@@ -33,16 +33,16 @@ import org.eclipse.debug.core.model.ITerminate;
 import org.eclipse.papyrus.moka.engine.MokaExecutionEngineJob;
 
 /**
- * An IProcess is an abstraction of a running program (in our case, the actual execution engine). 
- * The Eclipse debug plugin provides a default implementation for java.lang.Process. 
- * Such a Process can then be started by running a command line. In the case where the target 
- * program is itself implemented as an Eclipse plug-in, providing the appropriate command line 
- * is complex, especially regarding the appropriate class path. 
- * In order to simplify this, Moka provides MokaProcess, an implementation of IProcess 
- * simulating a process with a job. The job is provided as a parameter of the constructor, 
- * and encapsulates execution of an IExecutionEngine. When the constructor is called, 
- * a MokaJobChangeListener is added to the given Job, so that when the Job terminates 
- * (which means that Job.done() is called), the MokaProcess is notified of the termination 
+ * An IProcess is an abstraction of a running program (in our case, the actual execution engine).
+ * The Eclipse debug plugin provides a default implementation for java.lang.Process.
+ * Such a Process can then be started by running a command line. In the case where the target
+ * program is itself implemented as an Eclipse plug-in, providing the appropriate command line
+ * is complex, especially regarding the appropriate class path.
+ * In order to simplify this, Moka provides MokaProcess, an implementation of IProcess
+ * simulating a process with a job. The job is provided as a parameter of the constructor,
+ * and encapsulates execution of an IExecutionEngine. When the constructor is called,
+ * a MokaJobChangeListener is added to the given Job, so that when the Job terminates
+ * (which means that Job.done() is called), the MokaProcess is notified of the termination
  * and terminates itself (i.e., MokaJobChangeListener.done() calls MokaProcess.terminated()).
  * 
  */
@@ -71,7 +71,7 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	/**
 	 * Whether this process is terminated
 	 */
-	protected boolean isTerminated = false ;
+	protected boolean isTerminated = false;
 
 	/**
 	 * Table of client defined attributes
@@ -82,34 +82,39 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	/**
 	 * Constructs a MokaRuntimeProcess on the given job, adding this process to the given launch.
 	 * 
-	 * @param launch the parent launch of this process
-	 * @param process underlying system process
-	 * @param label the label used for this process
-	 * @param attributes map of attributes used to initialize the attributes of this process, or null if none
+	 * @param launch
+	 *        the parent launch of this process
+	 * @param process
+	 *        underlying system process
+	 * @param label
+	 *        the label used for this process
+	 * @param attributes
+	 *        map of attributes used to initialize the attributes of this process, or null if none
 	 */
 	public MokaProcess(ILaunch launch, Job job, String label, Map<String, String> attributes) {
 		this.launch = launch;
 		initializeAttributes(attributes);
-		this.job = (MokaExecutionEngineJob)job ;
-		this.job.addJobChangeListener(new MokaJobChangeListener(this)) ;
+		this.job = (MokaExecutionEngineJob)job;
+		this.job.addJobChangeListener(new MokaJobChangeListener(this));
 		this.label = label;
-		isTerminated= false ;
+		isTerminated = false;
 		launch.addProcess(this);
 		fireCreationEvent();
 	}
-	
+
 	/**
 	 * Initialize the attributes of this process to those in the given map.
 	 * 
-	 * @param attributes attribute map or <code>null</code> if none
+	 * @param attributes
+	 *        attribute map or <code>null</code> if none
 	 */
 	protected void initializeAttributes(Map<String, String> attributes) {
-		if (attributes != null) {
+		if(attributes != null) {
 			Iterator<String> keys = attributes.keySet().iterator();
-			while (keys.hasNext()) {
+			while(keys.hasNext()) {
 				String key = (String)keys.next();
 				setAttribute(key, (String)attributes.get(key));
-			}	
+			}
 		}
 	}
 
@@ -145,9 +150,9 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	 * @see ITerminate#terminate()
 	 */
 	public void terminate() throws DebugException {
-		if (!isTerminated()) {			
+		if(!isTerminated()) {
 			//Job job = getExecutionEngineJob();
-			if (this.job != null) {
+			if(this.job != null) {
 				this.job.getDebugTarget().terminate();
 			}
 		}
@@ -166,12 +171,12 @@ public class MokaProcess extends PlatformObject implements IProcess {
 			running = true;
 		}
 
-		synchronized (this) {
-			isTerminated= true;
-			if (!running) {
+		synchronized(this) {
+			isTerminated = true;
+			if(!running) {
 				this.exitValue = exitValue;
 			}
-			this.job= null;
+			this.job = null;
 		}
 		this.fireTerminateEvent();
 	}
@@ -193,12 +198,13 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	/**
 	 * Fires the given debug event.
 	 * 
-	 * @param event debug event to fire
+	 * @param event
+	 *        debug event to fire
 	 */
 	protected void fireEvent(DebugEvent event) {
-		DebugPlugin manager= DebugPlugin.getDefault();
-		if (manager != null) {
-			manager.fireDebugEventSet(new DebugEvent[]{event});
+		DebugPlugin manager = DebugPlugin.getDefault();
+		if(manager != null) {
+			manager.fireDebugEventSet(new DebugEvent[]{ event });
 		}
 	}
 
@@ -211,7 +217,7 @@ public class MokaProcess extends PlatformObject implements IProcess {
 
 	/**
 	 * Fires a change event.
-	 */	
+	 */
 	protected void fireChangeEvent() {
 		fireEvent(new DebugEvent(this, DebugEvent.CHANGE));
 	}
@@ -220,11 +226,11 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	 * @see IProcess#setAttribute(String, String)
 	 */
 	public void setAttribute(String key, String value) {
-		if (attributes == null) {
-			attributes = new HashMap<String,String>();
+		if(attributes == null) {
+			attributes = new HashMap<String, String>();
 		}
 		Object origVal = attributes.get(key);
-		if (origVal != null && origVal.equals(value)) {
+		if(origVal != null && origVal.equals(value)) {
 			return; //nothing changed.
 		}
 
@@ -236,30 +242,32 @@ public class MokaProcess extends PlatformObject implements IProcess {
 	 * @see IProcess#getAttribute(String)
 	 */
 	public String getAttribute(String key) {
-		if (attributes == null) {
+		if(attributes == null) {
 			return null;
 		}
 		return (String)attributes.get(key);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-		if (adapter.equals(IProcess.class)) {
+		if(adapter.equals(IProcess.class)) {
 			return this;
 		}
-		if (adapter.equals(IDebugTarget.class)) {
+		if(adapter.equals(IDebugTarget.class)) {
 			ILaunch launch = getLaunch();
 			IDebugTarget[] targets = launch.getDebugTargets();
-			for (int i = 0; i < targets.length; i++) {
-				if (this.equals(targets[i].getProcess())) {
+			for(int i = 0; i < targets.length; i++) {
+				if(this.equals(targets[i].getProcess())) {
 					return targets[i];
 				}
 			}
 			return null;
 		}
-		if (adapter.equals(ILaunch.class)) {
+		if(adapter.equals(ILaunch.class)) {
 			return getLaunch();
 		}
 		//CONTEXTLAUNCHING
@@ -268,14 +276,15 @@ public class MokaProcess extends PlatformObject implements IProcess {
 		}
 		return super.getAdapter(adapter);
 	}
+
 	/**
 	 * @see IProcess#getExitValue()
 	 */
 	public synchronized int getExitValue() throws DebugException {
-		if (isTerminated()) {
+		if(isTerminated()) {
 			return exitValue;
-		} 
-		throw new DebugException(new Status(IStatus.ERROR, DebugPlugin.getUniqueIdentifier(), DebugException.TARGET_REQUEST_FAILED, "Exit value not available until process terminates.", null)); 
+		}
+		throw new DebugException(new Status(IStatus.ERROR, DebugPlugin.getUniqueIdentifier(), DebugException.TARGET_REQUEST_FAILED, "Exit value not available until process terminates.", null));
 	}
 
 }

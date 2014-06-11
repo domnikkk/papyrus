@@ -85,10 +85,7 @@ public class Link extends ExtensionalValue {
 		int i = 1;
 		while(matches & i <= ends.size()) {
 			Property otherEnd = ends.get(i - 1);
-			if(otherEnd != end 
-					&& !this.getFeatureValue(otherEnd).values.isEmpty() 
-						&& !link.getFeatureValue(otherEnd).values.isEmpty()
-							&& !this.getFeatureValue(otherEnd).values.get(0).equals(link.getFeatureValue(otherEnd).values.get(0))) {
+			if(otherEnd != end && !this.getFeatureValue(otherEnd).values.isEmpty() && !link.getFeatureValue(otherEnd).values.isEmpty() && !this.getFeatureValue(otherEnd).values.get(0).equals(link.getFeatureValue(otherEnd).values.get(0))) {
 				matches = false;
 			}
 			i = i + 1;

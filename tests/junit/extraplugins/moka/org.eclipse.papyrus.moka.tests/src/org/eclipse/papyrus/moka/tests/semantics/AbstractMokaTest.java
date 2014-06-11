@@ -65,8 +65,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 	public void initModelForTestReport() {
 		try {
 			MokaConstants.MOKA_AUTOMATIC_ANIMATION = false;
-			initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault()
-					.getBundle()); //$NON-NLS-1$ //$NON-NLS-2$
+			initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault().getBundle()); //$NON-NLS-1$ //$NON-NLS-2$
 		} catch (Exception e) {
 			Assert.fail(e.getMessage());
 		}
@@ -88,7 +87,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 	 * @throws CoreException
 	 * @throws InterruptedException
 	 */
-	public void runTest() throws CoreException, InterruptedException{
+	public void runTest() throws CoreException, InterruptedException {
 		/* 1. Get Activity to Execute */
 		//get the rootModel
 		Assert.assertNotNull("RootModel is null", getRootUMLModel()); //$NON-NLS-1$
@@ -106,11 +105,11 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 		// Run Moka Execution with launch configuration
 		AbstractMokaLaunchConfigurationDelegate mokaExecution = this.getLaunchDelegate();
 		mokaExecution.launch(configurations[0], "debug", launch, new NullProgressMonitor());
-		
+
 		// Wait till moka execution thread is terminated
-		while (! launch.isTerminated()){
-			if (Display.getCurrent() != null){
-				if (! Display.getCurrent().readAndDispatch()){
+		while(!launch.isTerminated()) {
+			if(Display.getCurrent() != null) {
+				if(!Display.getCurrent().readAndDispatch()) {
 					Thread.sleep(100);
 				}
 			} else {
@@ -126,22 +125,18 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 	protected Package getRootUMLModel() {
 		IModel umlIModel;
 		try {
-			umlIModel = getModelSet().getModel(
-					"org.eclipse.papyrus.infra.core.resource.uml.UmlModel");
+			umlIModel = getModelSet().getModel("org.eclipse.papyrus.infra.core.resource.uml.UmlModel");
 
 			AbstractBaseModel umlModel = null;
-			if (umlIModel instanceof AbstractBaseModel) {
-				umlModel = (AbstractBaseModel) umlIModel;
+			if(umlIModel instanceof AbstractBaseModel) {
+				umlModel = (AbstractBaseModel)umlIModel;
 			}
 
-			Assert.assertFalse("umlRessource contains nothing", umlModel
-					.getResource().getContents().size() < 1);
+			Assert.assertFalse("umlRessource contains nothing", umlModel.getResource().getContents().size() < 1);
 			Object root = umlModel.getResource().getContents().get(0);
-			Assert.assertFalse("the root of UML model is not a package",
-					root instanceof Stereotype);
-			Assert.assertTrue("the root of UML model is not a stereotype",
-					root instanceof Package);
-			return (org.eclipse.uml2.uml.Package) root;
+			Assert.assertFalse("the root of UML model is not a package", root instanceof Stereotype);
+			Assert.assertTrue("the root of UML model is not a stereotype", root instanceof Package);
+			return (org.eclipse.uml2.uml.Package)root;
 		} catch (ServiceException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -153,45 +148,40 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 	/**
 	 * This method create a launch configuration for selected model
 	 * 
-	 * @param resource : the model
+	 * @param resource
+	 *        : the model
 	 * @return list of launch configuration
 	 * @throws CoreException
 	 */
-	protected ILaunchConfiguration[] getLaunchConfgurations(IResource resource)
-			throws CoreException {
+	protected ILaunchConfiguration[] getLaunchConfgurations(IResource resource) throws CoreException {
 		ILaunchConfiguration configurations[];
 		ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
-		ILaunchConfigurationType type = manager
-				.getLaunchConfigurationType("org.eclipse.papyrus.moka.launchConfiguration");
+		ILaunchConfigurationType type = manager.getLaunchConfigurationType("org.eclipse.papyrus.moka.launchConfiguration");
 
-		ILaunchConfigurationWorkingCopy configuration = type.newInstance(null,
-				"MOKA JUNIT TESTS");
-		configuration.setAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, model
-				.eResource().getURI().toString());
-		configuration.setAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME,
-				activity.eResource().getURIFragment(activity));
+		ILaunchConfigurationWorkingCopy configuration = type.newInstance(null, "MOKA JUNIT TESTS");
+		configuration.setAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, model.eResource().getURI().toString());
+		configuration.setAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, activity.eResource().getURIFragment(activity));
 		configuration.setAttribute(MokaLaunchDelegate.ARGS_ATTRIBUTE_NAME, "");
 
 		// save and return new configuration
 		configuration.doSave();
-		configurations = new ILaunchConfiguration[] { configuration };
+		configurations = new ILaunchConfiguration[]{ configuration };
 
 		return configurations;
 	}
-	
+
 	/**
 	 * Returns the name of the main activity to execute
 	 * 
 	 * @return the name of the main activity to execute
 	 */
-	public abstract String getActivityName() ;
-	
-	
+	public abstract String getActivityName();
+
+
 	/**
 	 * Returns the launch configuration delegate to be used for this test
 	 * 
 	 * @return the launch configuration delegate to be used for this test
 	 */
-	public abstract AbstractMokaLaunchConfigurationDelegate getLaunchDelegate() ;
+	public abstract AbstractMokaLaunchConfigurationDelegate getLaunchDelegate();
 }
-

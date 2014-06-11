@@ -24,16 +24,13 @@ import org.eclipse.debug.ui.ILaunchConfigurationTab;
  */
 public class MokaLaunchConfigurationTabGroup extends AbstractLaunchConfigurationTabGroup {
 
-	public MokaLaunchConfigurationTabGroup(){
+	public MokaLaunchConfigurationTabGroup() {
 		super();
 	}
-	
+
 	public void createTabs(ILaunchConfigurationDialog dialog, String mode) {
-		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] { 
-				new MokaRunConfigurationTab(),
-				new CommonTab()
-		};
+		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[]{ new MokaRunConfigurationTab(), new CommonTab() };
 		setTabs(tabs);
 	}
-	
+
 }

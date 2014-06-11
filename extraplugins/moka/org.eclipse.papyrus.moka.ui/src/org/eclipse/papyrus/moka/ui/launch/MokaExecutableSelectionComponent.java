@@ -15,16 +15,16 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
-public final class MokaExecutableSelectionComponent extends MokaGroupComponent{
+public final class MokaExecutableSelectionComponent extends MokaGroupComponent {
 
 	public MokaUMLComboBox eligibleExecutableElement;
-			
+
 	public MokaExecutableSelectionComponent(Composite parent, int style, String name, int columns) {
 		super(parent, style, name, columns);
 		this.createCombo();
 	}
-	
-	private void createCombo(){
+
+	private void createCombo() {
 		this.eligibleExecutableElement = new MokaUMLComboBox(this.group, SWT.FILL);
 		this.eligibleExecutableElement.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 	}

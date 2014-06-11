@@ -32,37 +32,39 @@ import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
  */
 public class ToggleBreakpointActivationHandler extends MokaAbstractHandler implements IHandler {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		EObject selectedElement = this.getSelectedElement() ;
-		String selectedElementURI = EcoreUtil.getURI(selectedElement).toString() ;
-		if (selectedElement != null) {
-			IBreakpointManager breakpointManager = DebugPlugin.getDefault().getBreakpointManager() ;
-			IBreakpoint[] breakpoints = breakpointManager.getBreakpoints(MokaConstants.MOKA_DEBUG_MODEL_ID) ;
-			IBreakpoint alreadyDefinedBreakpoint = null ;
-			for (int i = 0 ; i < breakpoints.length && alreadyDefinedBreakpoint == null ; i++) {
-				MokaBreakpoint breakpoint = (MokaBreakpoint)breakpoints[i] ;
-				EObject eObjectOfBreakpoint = breakpoint.getModelElement() ;
-				if (eObjectOfBreakpoint != null && EcoreUtil.getURI(eObjectOfBreakpoint).toString().equals(selectedElementURI)) {
-					alreadyDefinedBreakpoint = breakpoint ;
+		EObject selectedElement = this.getSelectedElement();
+		String selectedElementURI = EcoreUtil.getURI(selectedElement).toString();
+		if(selectedElement != null) {
+			IBreakpointManager breakpointManager = DebugPlugin.getDefault().getBreakpointManager();
+			IBreakpoint[] breakpoints = breakpointManager.getBreakpoints(MokaConstants.MOKA_DEBUG_MODEL_ID);
+			IBreakpoint alreadyDefinedBreakpoint = null;
+			for(int i = 0; i < breakpoints.length && alreadyDefinedBreakpoint == null; i++) {
+				MokaBreakpoint breakpoint = (MokaBreakpoint)breakpoints[i];
+				EObject eObjectOfBreakpoint = breakpoint.getModelElement();
+				if(eObjectOfBreakpoint != null && EcoreUtil.getURI(eObjectOfBreakpoint).toString().equals(selectedElementURI)) {
+					alreadyDefinedBreakpoint = breakpoint;
 				}
 			}
 
-			if (alreadyDefinedBreakpoint != null) {
+			if(alreadyDefinedBreakpoint != null) {
 				try {
-					boolean enabledOrDisabled = !alreadyDefinedBreakpoint.isEnabled() ;
-					alreadyDefinedBreakpoint.setEnabled(enabledOrDisabled) ;
-					DebugPlugin.getDefault().getBreakpointManager().fireBreakpointChanged(alreadyDefinedBreakpoint) ;
+					boolean enabledOrDisabled = !alreadyDefinedBreakpoint.isEnabled();
+					alreadyDefinedBreakpoint.setEnabled(enabledOrDisabled);
+					DebugPlugin.getDefault().getBreakpointManager().fireBreakpointChanged(alreadyDefinedBreakpoint);
 				} catch (CoreException e) {
 					Activator.log.error(e);
 				}
 			}
 			return null;
 		}
-		
+
 		return null;
 	}
-	
+
 }

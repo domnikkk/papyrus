@@ -45,21 +45,27 @@ import org.eclipse.ui.part.FileEditorInput;
  */
 public class MokaDebugModelPresentation implements IDebugModelPresentation, IDebugEditorPresentation {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 */
 	public void addListener(ILabelProviderListener listener) {
 		// Do nothing
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
 	 */
 	public void dispose() {
 		// Do nothing
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
 	 */
 	public boolean isLabelProperty(Object element, String property) {
@@ -67,113 +73,130 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 */
 	public void removeListener(ILabelProviderListener listener) {
 		// Do nothing
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.ui.ISourcePresentation#getEditorInput(java.lang.Object)
 	 */
 	public IEditorInput getEditorInput(Object element) {
-		EObject modelElement = null ;
-		if (element instanceof MokaBreakpoint) {
-			modelElement = ((MokaBreakpoint)element).getModelElement() ;	
+		EObject modelElement = null;
+		if(element instanceof MokaBreakpoint) {
+			modelElement = ((MokaBreakpoint)element).getModelElement();
+		} else if(element instanceof EObject) {
+			modelElement = (EObject)element;
 		}
-		else if (element instanceof EObject) {
-			modelElement = (EObject)element ;
+		if(modelElement == null) {
+			return null;
 		}
-		if (modelElement == null) {
-			return null ;
-		}
-		FileEditorInput input = EditorUtils.getFileEditorInput(modelElement) ;
-		return input ;
+		FileEditorInput input = EditorUtils.getFileEditorInput(modelElement);
+		return input;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.ui.ISourcePresentation#getEditorId(org.eclipse.ui.IEditorInput, java.lang.Object)
 	 */
 	public String getEditorId(IEditorInput input, Object element) {
-		return MokaConstants.PAPYRUS_EDITOR_ID ;
+		return MokaConstants.PAPYRUS_EDITOR_ID;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#setAttribute(java.lang.String, java.lang.Object)
 	 */
 	public void setAttribute(String attribute, Object value) {
 		// Do nothing
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#getImage(java.lang.Object)
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof IPresentation) {
-			return ((IPresentation)element).getImage() ;
+		if(element instanceof IPresentation) {
+			return ((IPresentation)element).getImage();
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#getText(java.lang.Object)
 	 */
 	public String getText(Object element) {
-		if (element instanceof IPresentation) {
-			return ((IPresentation)element).getLabel() ;
+		if(element instanceof IPresentation) {
+			return ((IPresentation)element).getLabel();
 		}
-		if (element instanceof MokaBreakpoint) {
-			return ((MokaBreakpoint)element).getLabel() ;
+		if(element instanceof MokaBreakpoint) {
+			return ((MokaBreakpoint)element).getLabel();
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#computeDetail(org.eclipse.debug.core.model.IValue, org.eclipse.debug.ui.IValueDetailListener)
 	 */
 	public void computeDetail(IValue value, IValueDetailListener listener) {
-		if (value instanceof IPresentation) {
-			String detail = ((IPresentation)value).getDetails() ;
-			if (detail != null) {
-				listener.detailComputed(value, detail) ;
+		if(value instanceof IPresentation) {
+			String detail = ((IPresentation)value).getDetails();
+			if(detail != null) {
+				listener.detailComputed(value, detail);
 			}
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.ui.IDebugEditorPresentation#addAnnotations(org.eclipse.ui.IEditorPart, org.eclipse.debug.core.model.IStackFrame)
 	 */
 	public boolean addAnnotations(IEditorPart editorPart, IStackFrame frame) {
-		if (frame instanceof MokaStackFrame) {
-			MokaStackFrame stackFrame = (MokaStackFrame)frame ;
-			EObject modelElement = stackFrame.getModelElement() ;
+		if(frame instanceof MokaStackFrame) {
+			MokaStackFrame stackFrame = (MokaStackFrame)frame;
+			EObject modelElement = stackFrame.getModelElement();
 			if(modelElement.eIsProxy()) {
-				AnimationUtils.getInstance().resetDiagrams(modelElement) ;
-				ServicesRegistry servicesRegistry = (ServicesRegistry)editorPart.getAdapter(ServicesRegistry.class) ;
-				ResourceSet resourceSet = null ;
+				AnimationUtils.getInstance().resetDiagrams(modelElement);
+				ServicesRegistry servicesRegistry = (ServicesRegistry)editorPart.getAdapter(ServicesRegistry.class);
+				ResourceSet resourceSet = null;
 				try {
-					resourceSet = servicesRegistry.getService(ModelSet.class) ;
+					resourceSet = servicesRegistry.getService(ModelSet.class);
 				} catch (ServiceException e) {
-					resourceSet = new ResourceSetImpl() ;
+					resourceSet = new ResourceSetImpl();
 				}
-				modelElement = (EcoreUtil.resolve(modelElement, resourceSet)) ;
+				modelElement = (EcoreUtil.resolve(modelElement, resourceSet));
 			}
-			List<Diagram> diagrams = AnimationUtils.getInstance().getDiagrams(modelElement) ;
-			for (Diagram diagram : diagrams) {
-				AnimationUtils.getInstance().openDiagram(diagram, false) ;
+			List<Diagram> diagrams = AnimationUtils.getInstance().getDiagrams(modelElement);
+			for(Diagram diagram : diagrams) {
+				AnimationUtils.getInstance().openDiagram(diagram, false);
 			}
-			AnimationUtils.getInstance().addSuspendedMarker(modelElement) ;
-			return true ;
+			AnimationUtils.getInstance().addSuspendedMarker(modelElement);
+			return true;
 		}
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.ui.IDebugEditorPresentation#removeAnnotations(org.eclipse.ui.IEditorPart, org.eclipse.debug.core.model.IThread)
 	 */
 	public void removeAnnotations(IEditorPart editorPart, IThread thread) {
-		AnimationUtils.getInstance().removeSuspendedMarker(thread) ;
+		AnimationUtils.getInstance().removeSuspendedMarker(thread);
 	}
 
 }

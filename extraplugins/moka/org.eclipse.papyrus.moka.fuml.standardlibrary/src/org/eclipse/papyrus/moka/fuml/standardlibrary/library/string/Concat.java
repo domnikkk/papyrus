@@ -32,7 +32,7 @@ public class Concat extends OpaqueBehaviorExecution {
 			String rightValue = ((StringValue)inputParameters.get(1).values.get(0)).value;
 			StringValue result = new StringValue();
 			result.value = "" + leftValue + rightValue;
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("String"); // ADDED
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("String"); // ADDED
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

@@ -30,7 +30,7 @@ public abstract class Execution extends Object_ {
 	 * the execution.
 	 */
 	public Object_ context;
-	
+
 	/*
 	 * The parameterValues for this execution. All parameterValues must have a
 	 * parameter that is a parameter of the type of this execution. The values
@@ -78,19 +78,19 @@ public abstract class Execution extends Object_ {
 		}
 	}
 
-	public ParameterValue getReturnParameterValue(){
+	public ParameterValue getReturnParameterValue() {
 		ParameterValue value = null;
 		int i = 0;
-		while(value==null && i < this.parameterValues.size()){
+		while(value == null && i < this.parameterValues.size()) {
 			Parameter parameter = this.parameterValues.get(i).parameter;
-			if(parameter.getDirection()==ParameterDirectionKind.RETURN_LITERAL){
+			if(parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 				value = this.parameterValues.get(i);
 			}
 			i++;
 		}
 		return value;
 	}
-	
+
 	public ParameterValue getParameterValue(Parameter parameter) {
 		// Get the parameter value of this execution corresponding to the given
 		// parameter (if any).
@@ -113,9 +113,7 @@ public abstract class Execution extends Object_ {
 		for(int i = 0; i < parameterValues.size(); i++) {
 			ParameterValue parameterValue = parameterValues.get(i);
 			Parameter parameter = parameterValue.parameter;
-			if((parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) | 
-					(parameter.getDirection() == ParameterDirectionKind.OUT_LITERAL) | 
-					(parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL)) {
+			if((parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.OUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL)) {
 				outputs.add(parameterValue);
 			}
 		}

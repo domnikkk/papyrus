@@ -16,7 +16,7 @@ import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;
 import org.eclipse.papyrus.moka.tests.semantics.AbstractMokaTest;
 
 /**
- * Tests execution of normative PSCS Test suite 4, with the Moka synchronous implementation 
+ * Tests execution of normative PSCS Test suite 4, with the Moka synchronous implementation
  * of the normative PSCS specification.
  *
  */
@@ -33,6 +33,5 @@ public class CompositeRunTestSuite4 extends AbstractMokaTest {
 	public AbstractMokaLaunchConfigurationDelegate getLaunchDelegate() {
 		return new CompositesEngineLaunchDelegate();
 	}
-	
-}
 
+}

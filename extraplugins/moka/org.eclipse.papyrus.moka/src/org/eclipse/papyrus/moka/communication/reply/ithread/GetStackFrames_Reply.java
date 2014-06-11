@@ -27,19 +27,20 @@ public class GetStackFrames_Reply extends ReplyMessage {
 	/**
 	 * The stack associated with this reply message
 	 */
-	protected IStackFrame[] stackFrames ;
-	
+	protected IStackFrame[] stackFrames;
+
 	/**
 	 * Constructs a reply message from an array of stack frames
 	 * 
-	 * @param stackFrames The stack associated with this reply message
+	 * @param stackFrames
+	 *        The stack associated with this reply message
 	 */
 	public GetStackFrames_Reply(IStackFrame[] stackFrames) {
 		this.stackFrames = stackFrames;
-		if (this.stackFrames == null)
-			this.stackFrames = new IStackFrame[]{} ;
+		if(this.stackFrames == null)
+			this.stackFrames = new IStackFrame[]{};
 	}
-	
+
 	/**
 	 * Returns the stack associated with this reply message
 	 * 
@@ -49,7 +50,9 @@ public class GetStackFrames_Reply extends ReplyMessage {
 		return stackFrames;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
 	public String marshal() {

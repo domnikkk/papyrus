@@ -27,22 +27,25 @@ public class RemoveBreakpoint_Request extends RequestMessage {
 	/**
 	 * The breakpoint associated with this request message
 	 */
-	protected MokaBreakpoint breakpoint ;
-	
+	protected MokaBreakpoint breakpoint;
+
 	/**
 	 * Constructs a request message from the given breakpoint
 	 * 
-	 * @param breakpoint The breakpoint associated with this request message
+	 * @param breakpoint
+	 *        The breakpoint associated with this request message
 	 */
 	public RemoveBreakpoint_Request(MokaBreakpoint breakpoint) {
-		this.breakpoint = breakpoint ;
+		this.breakpoint = breakpoint;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {
-		return Marshaller.getInstance().removeBreakpoint_request_marshal(this); 
+		return Marshaller.getInstance().removeBreakpoint_request_marshal(this);
 	}
 
 	/**
@@ -51,6 +54,6 @@ public class RemoveBreakpoint_Request extends RequestMessage {
 	 * @return The breakpoint associated with this request message
 	 */
 	public MokaBreakpoint getBreakpoint() {
-		return this.breakpoint ;
+		return this.breakpoint;
 	}
 }

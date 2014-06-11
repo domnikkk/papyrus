@@ -32,9 +32,9 @@ public class LowerOrEqual extends OpaqueBehaviorExecution {
 			Integer x = ((UnlimitedNaturalValue)inputParameters.get(0).values.get(0)).value;
 			Integer y = ((UnlimitedNaturalValue)inputParameters.get(1).values.get(0)).value;
 			BooleanValue result = new BooleanValue();
-			result.value = x == y || y < 0 || x >= 0 && x < y ;
+			result.value = x == y || y < 0 || x >= 0 && x < y;
 			List<Value> outputs = new ArrayList<Value>();
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Boolean");
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Boolean");
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {

@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3 ;
+package org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3;
 
 // Imports
 import java.util.List;
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Class;
 
 
-public class CS_Executor extends Executor  {
+public class CS_Executor extends Executor {
 
-public Reference start(Class type,List<ParameterValue> inputs) {
+	public Reference start(Class type, List<ParameterValue> inputs) {
 		// Instantiate the given class and start any behavior of the resulting
 		// object.
 		// (The behavior of an object includes any classifier behaviors for an
@@ -44,16 +44,15 @@ public Reference start(Class type,List<ParameterValue> inputs) {
 		Debug.println("[start] Object = " + object);
 		object.startBehavior(type, inputs);
 
-		Reference reference ;
-		if (object instanceof CS_Object) {
+		Reference reference;
+		if(object instanceof CS_Object) {
 			reference = new CS_Reference();
-			((CS_Reference)reference).compositeReferent = (CS_Object)object ;
-		}
-		else {
-			reference = new Reference() ;
+			((CS_Reference)reference).compositeReferent = (CS_Object)object;
+		} else {
+			reference = new Reference();
 		}
 		reference.referent = object;
 
 		return reference;
-}
+	}
 }

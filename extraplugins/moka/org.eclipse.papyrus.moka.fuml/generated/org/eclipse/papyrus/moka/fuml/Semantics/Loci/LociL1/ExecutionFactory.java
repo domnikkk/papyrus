@@ -27,7 +27,8 @@ import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public abstract class ExecutionFactory implements Cloneable{	
+public abstract class ExecutionFactory implements Cloneable {
+
 	/*
 	 * The locus at which this factory resides.
 	 */
@@ -54,21 +55,22 @@ public abstract class ExecutionFactory implements Cloneable{
 	 */
 	//FIXME: Sounds better to have a list of Type because built in types can only be classes  
 	//public List<PrimitiveType> builtInTypes = new ArrayList<PrimitiveType>();
-	
+
 	public List<Type> builtInTypes;
+
 	/*
 	 * The set of semantic strategies currently registered with this execution
 	 * factory.
 	 */
 	public List<SemanticStrategy> strategies;
-	
-	public ExecutionFactory(){
+
+	public ExecutionFactory() {
 		super();
 		this.builtInTypes = new ArrayList<Type>();
 		this.strategies = new ArrayList<SemanticStrategy>();
 		this.primitiveBehaviorPrototypes = new ArrayList<OpaqueBehaviorExecution>();
 	}
-	
+
 	public Execution createExecution(Behavior behavior, Object_ context) {
 		// Create an execution object for a given behavior.
 		// The execution will take place at the locus of the factory in the
@@ -112,7 +114,7 @@ public abstract class ExecutionFactory implements Cloneable{
 			// Debug.println("[instantiateOpaqueExecution] Checking " +
 			// this.primitiveBehaviorPrototypes.get(i).objectId() + "...");
 			OpaqueBehaviorExecution prototype = this.primitiveBehaviorPrototypes.get(i - 1);
-			if (prototype.getBehavior() == behavior) {
+			if(prototype.getBehavior() == behavior) {
 				execution = (OpaqueBehaviorExecution)(prototype.copy());
 			}
 			i = i + 1;
@@ -131,31 +133,35 @@ public abstract class ExecutionFactory implements Cloneable{
 		this.primitiveBehaviorPrototypes.add(execution);
 	}
 
-	/*public void addBuiltInType(PrimitiveType type) {
-		// Add the given primitive type as a built-in type.
-		// Precondition: No built-in type with the same name should already
-		// exist.
-		this.builtInTypes.add(type);
-	}*/
-	
+	/*
+	 * public void addBuiltInType(PrimitiveType type) {
+	 * // Add the given primitive type as a built-in type.
+	 * // Precondition: No built-in type with the same name should already
+	 * // exist.
+	 * this.builtInTypes.add(type);
+	 * }
+	 */
+
 	public void addBuiltInType(Type type) {
 		this.builtInTypes.add(type);
 	}
 
-	/*public PrimitiveType getBuiltInType(String name) {
-		// Return the built-in type with the given name.
-		PrimitiveType type = null;
-		int i = 1;
-		while(type == null & i <= this.builtInTypes.size()) {
-			PrimitiveType primitiveType = this.builtInTypes.get(i - 1);
-			if(primitiveType.getName().equals(name)) {
-				type = primitiveType;
-			}
-			i = i + 1;
-		}
-		return type;
-	}*/
-	
+	/*
+	 * public PrimitiveType getBuiltInType(String name) {
+	 * // Return the built-in type with the given name.
+	 * PrimitiveType type = null;
+	 * int i = 1;
+	 * while(type == null & i <= this.builtInTypes.size()) {
+	 * PrimitiveType primitiveType = this.builtInTypes.get(i - 1);
+	 * if(primitiveType.getName().equals(name)) {
+	 * type = primitiveType;
+	 * }
+	 * i = i + 1;
+	 * }
+	 * return type;
+	 * }
+	 */
+
 	public Type getBuiltInType(String name) {
 		// Return the built-in type with the given name.
 		Type type = null;
@@ -205,8 +211,8 @@ public abstract class ExecutionFactory implements Cloneable{
 		}
 		return i;
 	}
-	
-	public ExecutionFactory clone(){
+
+	public ExecutionFactory clone() {
 		ExecutionFactory clone = null;
 		try {
 			clone = (ExecutionFactory)super.clone();

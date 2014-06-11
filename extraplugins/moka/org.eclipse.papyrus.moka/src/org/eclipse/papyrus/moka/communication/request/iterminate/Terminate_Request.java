@@ -27,12 +27,13 @@ public class Terminate_Request extends RequestMessage {
 	/**
 	 * The element from which the execution engine shall terminate execution
 	 */
-	protected IDebugElement debugElement; 
-	
+	protected IDebugElement debugElement;
+
 	/**
 	 * Constructs a request message from the given debug element.
 	 * 
-	 * @param debugElement The element from which the execution engine shall terminate execution
+	 * @param debugElement
+	 *        The element from which the execution engine shall terminate execution
 	 */
 	public Terminate_Request(IDebugElement debugElement) {
 		this.debugElement = debugElement;
@@ -47,7 +48,9 @@ public class Terminate_Request extends RequestMessage {
 		return debugElement;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {

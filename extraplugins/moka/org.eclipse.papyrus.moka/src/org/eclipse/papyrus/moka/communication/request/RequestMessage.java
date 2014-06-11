@@ -25,6 +25,6 @@ public abstract class RequestMessage {
 	 * 
 	 * @return A String encoding of this request message
 	 */
-	public abstract String marshall() ;
-	
+	public abstract String marshall();
+
 }

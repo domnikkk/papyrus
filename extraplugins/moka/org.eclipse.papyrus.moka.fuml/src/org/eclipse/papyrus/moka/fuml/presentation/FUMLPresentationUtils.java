@@ -36,104 +36,98 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.StructuralFeature;
 
 public class FUMLPresentationUtils {
-	
-	protected static ServicesRegistry servicesRegistry ;
 
-	protected static ILabelProvider labelProvider ;
-	
-	protected static EObject contextEObject ;
-	
+	protected static ServicesRegistry servicesRegistry;
+
+	protected static ILabelProvider labelProvider;
+
+	protected static EObject contextEObject;
+
 	public static void init(EObject eObject) {
-		contextEObject = eObject ;
-		labelProvider = null ;
-		servicesRegistry = null ;
+		contextEObject = eObject;
+		labelProvider = null;
+		servicesRegistry = null;
 	}
 
 	public static Image getImage(Object element) {
 		try {
-			if (element instanceof EObject && ((EObject)element).eIsProxy()) {
-				labelProvider = null ;
-				servicesRegistry = null ;
+			if(element instanceof EObject && ((EObject)element).eIsProxy()) {
+				labelProvider = null;
+				servicesRegistry = null;
 			}
-			if (labelProvider == null) {
-				if (servicesRegistry == null) {
-					if (contextEObject.eIsProxy()) {
-						IEditorPart part = EditorUtils.getEditorPart(contextEObject) ;
-						ServicesRegistry servicesRegistry =  (ServicesRegistry)part.getAdapter(ServicesRegistry.class);
-						ResourceSet resourceSet = null ;
+			if(labelProvider == null) {
+				if(servicesRegistry == null) {
+					if(contextEObject.eIsProxy()) {
+						IEditorPart part = EditorUtils.getEditorPart(contextEObject);
+						ServicesRegistry servicesRegistry = (ServicesRegistry)part.getAdapter(ServicesRegistry.class);
+						ResourceSet resourceSet = null;
 						try {
-							resourceSet = servicesRegistry.getService(ModelSet.class) ;
+							resourceSet = servicesRegistry.getService(ModelSet.class);
 						} catch (ServiceException e1) {
-							resourceSet = new ResourceSetImpl() ;
+							resourceSet = new ResourceSetImpl();
 							Activator.log.error(e1);
 						}
-						contextEObject = (Behavior) EcoreUtil.resolve(contextEObject, resourceSet) ;
-					}
-					else {
+						contextEObject = (Behavior)EcoreUtil.resolve(contextEObject, resourceSet);
+					} else {
 						servicesRegistry = ServiceUtilsForResource.getInstance().getServiceRegistry(contextEObject.eResource());
 					}
 				}
 				LabelProviderService labelProviderService = servicesRegistry.getService(LabelProviderService.class);
-				labelProvider = labelProviderService.getLabelProvider() ;
-				labelProvider.getImage(element) ;
+				labelProvider = labelProviderService.getLabelProvider();
+				labelProvider.getImage(element);
 			}
-			return labelProvider.getImage(element) ;
-		}
-		catch (Exception e) {
-			Activator.log.error(e) ;
-			return null ;
+			return labelProvider.getImage(element);
+		} catch (Exception e) {
+			Activator.log.error(e);
+			return null;
 		}
 	}
 
 	public static MokaStackFrame getMokaStackFrame(Object baseElement) {
-		if (baseElement instanceof ActivityNodeActivation)
-			return getMokaStackFrame((ActivityNodeActivation)baseElement) ;
-		else if (baseElement instanceof ActivityEdgeInstance) {
-			return getMokaStackFrame((ActivityEdgeInstance)baseElement) ;
-		}
-		else {
-			Activator.log.error(new Exception("Unexpected base element for construction of a MokaStackFrame")) ;
-			return null ;
+		if(baseElement instanceof ActivityNodeActivation)
+			return getMokaStackFrame((ActivityNodeActivation)baseElement);
+		else if(baseElement instanceof ActivityEdgeInstance) {
+			return getMokaStackFrame((ActivityEdgeInstance)baseElement);
+		} else {
+			Activator.log.error(new Exception("Unexpected base element for construction of a MokaStackFrame"));
+			return null;
 		}
 	}
-	
+
 	public static MokaStackFrame getMokaStackFrame(ActivityNodeActivation activityNodeActivation) {
-		return new MokaStackFrame_from_ActivityNodeActivation(activityNodeActivation) ;
+		return new MokaStackFrame_from_ActivityNodeActivation(activityNodeActivation);
 	}
 
 	public static MokaStackFrame getMokaStackFrame(ActivityEdgeInstance activityEdgeInstance) {
-		return new MokaStackFrame_from_ActivityEdgeInstance(activityEdgeInstance) ;
+		return new MokaStackFrame_from_ActivityEdgeInstance(activityEdgeInstance);
 	}
 
 	public static String getValueString(Value value) {
-		if (value == null)
-			return "null" ;
-		if (value instanceof Object_ || value instanceof Reference) {
-			String className = value.getClass().getSimpleName() ;
-			String id = "" + value.hashCode() ;
-			return className + " (id=" + id + ")" ;
+		if(value == null)
+			return "null";
+		if(value instanceof Object_ || value instanceof Reference) {
+			String className = value.getClass().getSimpleName();
+			String id = "" + value.hashCode();
+			return className + " (id=" + id + ")";
 		}
-		return value.toString() ;
+		return value.toString();
 	}
-	
+
 	public static String getValueString(FeatureValue featureValue) {
-		StructuralFeature f = featureValue.feature ;
-		String valueString = "" ;
-		if (isCollection(featureValue)) {
-			valueString += f.getType() != null ? f.getType().getName() : "any" ;
+		StructuralFeature f = featureValue.feature;
+		String valueString = "";
+		if(isCollection(featureValue)) {
+			valueString += f.getType() != null ? f.getType().getName() : "any";
 			valueString += "[] (size=" + featureValue.values.size();
-			valueString += (")") ;
+			valueString += (")");
+		} else {
+			Value value = featureValue.values.size() == 1 ? featureValue.values.get(0) : null;
+			return getValueString(value);
 		}
-		else {
-			Value value = featureValue.values.size() == 1 ? featureValue.values.get(0) : null ;
-			return getValueString(value) ;
-		}
-		return valueString ;
+		return valueString;
 	}
-	
+
 	public static boolean isCollection(FeatureValue featureValue) {
-		return featureValue.feature.getUpper() == -1 ||
-			   featureValue.feature.getUpper() > 1 ||
-			   featureValue.values.size() > 1 ;
+		return featureValue.feature.getUpper() == -1 || featureValue.feature.getUpper() > 1 || featureValue.values.size() > 1;
 	}
 }

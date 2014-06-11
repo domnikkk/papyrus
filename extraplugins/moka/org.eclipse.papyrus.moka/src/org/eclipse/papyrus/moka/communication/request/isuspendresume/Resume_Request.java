@@ -27,20 +27,22 @@ public class Resume_Request extends RequestMessage {
 	/**
 	 * The element from which the execution engine shall resume execution
 	 */
-	protected IDebugElement debugElement; 
-	
+	protected IDebugElement debugElement;
+
 	/**
 	 * The reason for resuming (e.g. Resume, step over, step into, etc.)
 	 */
-	protected int resumeDetail ;
-	
+	protected int resumeDetail;
+
 	/**
 	 * Constructs a request message from the given debug element and resume details.
 	 * debugElement represents the element from which the execution engine shall resume execution
 	 * resumeDetail provides information about the reason for resuming (e.g. Resume, step over, step into, etc.)
 	 * 
-	 * @param debugElement The element from which the execution engine shall resume execution
-	 * @param resumeDetail The reason for resuming (e.g. Resume, step over, step into, etc.)
+	 * @param debugElement
+	 *        The element from which the execution engine shall resume execution
+	 * @param resumeDetail
+	 *        The reason for resuming (e.g. Resume, step over, step into, etc.)
 	 */
 	public Resume_Request(IDebugElement debugElement, int resumeDetail) {
 		this.debugElement = debugElement;
@@ -65,7 +67,9 @@ public class Resume_Request extends RequestMessage {
 		return resumeDetail;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {

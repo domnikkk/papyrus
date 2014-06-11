@@ -13,13 +13,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 
-public abstract class SemanticVisitor{
+public abstract class SemanticVisitor {
 
-	public void _endIsolation(){
+	public void _endIsolation() {
 		//System.out.println("_endIsolation");
 	}
 
-	public void _beginIsolation(){
+	public void _beginIsolation() {
 		//System.out.println("_beginIsolation");
 	}
 }

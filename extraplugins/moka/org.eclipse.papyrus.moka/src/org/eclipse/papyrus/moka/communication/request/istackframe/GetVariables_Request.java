@@ -28,20 +28,21 @@ public class GetVariables_Request extends RequestMessage {
 	 * The debug element from which variables have to be retrieved.
 	 * It can be a stack frame or a value
 	 */
-	protected IDebugElement stackFrameOrValue ;
-	
+	protected IDebugElement stackFrameOrValue;
+
 	/**
 	 * Constructs a request message from the given debug element.
 	 * This debug element can be:
 	 * - A stack frame
 	 * - A value
 	 * 
-	 * @param stackFrameOrValue The debug element from which variables have to be retrieved
+	 * @param stackFrameOrValue
+	 *        The debug element from which variables have to be retrieved
 	 */
 	public GetVariables_Request(IDebugElement stackFrameOrValue) {
 		this.stackFrameOrValue = stackFrameOrValue;
 	}
-	
+
 	/**
 	 * Returns the debug element from which variables have to be retrieved.
 	 * 
@@ -51,7 +52,9 @@ public class GetVariables_Request extends RequestMessage {
 		return stackFrameOrValue;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {

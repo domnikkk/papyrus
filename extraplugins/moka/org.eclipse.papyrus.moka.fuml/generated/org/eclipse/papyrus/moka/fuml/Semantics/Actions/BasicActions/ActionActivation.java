@@ -90,7 +90,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 			InputPin pin = i.next();
 			PinActivation pinActivation = this.getPinActivation(pin);
 			List<Token> tokens = pinActivation.takeOfferedTokens();
-			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(pinActivation)) // Added for connection with debug API
+			if(FUMLExecutionEngine.eInstance.getControlDelegate().control(pinActivation)) // Added for connection with debug API
 				pinActivation.fire(tokens);
 			for(int j = 0; j < tokens.size(); j++) {
 				Token token = tokens.get(j);
@@ -166,7 +166,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 
 	public Boolean isFiring() {
 		// Indicate whether this action activation is currently firing or not.
-		return this.firing == null? false: this.firing; // ADDED check for null
+		return this.firing == null ? false : this.firing; // ADDED check for null
 	}
 
 	public abstract void doAction();
@@ -355,17 +355,14 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		booleanLiteral.setValue(value);
 		return (BooleanValue)(this.getExecutionLocus().executor.evaluate(booleanLiteral));
 	}
-	
+
 	// ADDED:
 	protected static List<InputPin> getInputs(Action action) {
-		return action instanceof LoopNode? ((LoopNode)action).getLoopVariableInputs():
-			   action.getInputs();
+		return action instanceof LoopNode ? ((LoopNode)action).getLoopVariableInputs() : action.getInputs();
 	}
-	
+
 	protected static List<OutputPin> getOutputs(Action action) {
-		return action instanceof LoopNode? ((LoopNode)action).getResults():
-			   action instanceof ConditionalNode? ((ConditionalNode)action).getResults():
-			   action.getOutputs();
+		return action instanceof LoopNode ? ((LoopNode)action).getResults() : action instanceof ConditionalNode ? ((ConditionalNode)action).getResults() : action.getOutputs();
 	}
 	//
 }

@@ -31,7 +31,7 @@ public class ToInteger extends OpaqueBehaviorExecution {
 			String y = x.toString();
 			IntegerValue result = new IntegerValue();
 			result.value = new Integer(y);
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Real");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

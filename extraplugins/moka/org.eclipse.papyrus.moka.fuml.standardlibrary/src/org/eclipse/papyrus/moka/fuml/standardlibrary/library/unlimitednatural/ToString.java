@@ -31,11 +31,11 @@ public class ToString extends OpaqueBehaviorExecution {
 		try {
 			Integer x = ((UnlimitedNaturalValue)inputParameters.get(0).values.get(0)).value;
 			StringValue result = new StringValue();
-			if (x == -1)
-				result.value = "*" ;
+			if(x == -1)
+				result.value = "*";
 			else
 				result.value = x.toString();
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("String");
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("String");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

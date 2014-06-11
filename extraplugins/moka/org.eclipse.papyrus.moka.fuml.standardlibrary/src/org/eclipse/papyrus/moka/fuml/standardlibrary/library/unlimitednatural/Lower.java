@@ -34,7 +34,7 @@ public class Lower extends OpaqueBehaviorExecution {
 			BooleanValue result = new BooleanValue();
 			result.value = x >= 0 && (y < 0 || x < y);
 			List<Value> outputs = new ArrayList<Value>();
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Boolean"); // ADDED
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Boolean"); // ADDED
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {
@@ -46,5 +46,5 @@ public class Lower extends OpaqueBehaviorExecution {
 	public Value new_() {
 		return new Lower();
 	}
-	
+
 }

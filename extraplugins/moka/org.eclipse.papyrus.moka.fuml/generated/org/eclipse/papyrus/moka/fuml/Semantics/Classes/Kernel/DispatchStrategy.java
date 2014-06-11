@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Operation;
 
 public abstract class DispatchStrategy extends SemanticStrategy {
-	
+
 	public String getName() {
 		// Dispatch strategies are always named "dispatch".
 		return "dispatch";

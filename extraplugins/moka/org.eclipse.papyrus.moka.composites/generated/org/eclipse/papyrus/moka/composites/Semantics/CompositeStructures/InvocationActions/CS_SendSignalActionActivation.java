@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions;
 
 // Imports
 import java.util.List;
@@ -27,9 +27,9 @@ import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.Signal;
 
 
-public class CS_SendSignalActionActivation extends SendSignalActionActivation  {
+public class CS_SendSignalActionActivation extends SendSignalActionActivation {
 
-public void doAction() {
+	public void doAction() {
 		// If onPort is not specified, behaves like in fUML
 		// If onPort is specified,
 		// Get the value from the target pin. If the value is not a reference, 
@@ -48,14 +48,13 @@ public void doAction() {
 
 		SendSignalAction action = (SendSignalAction)(this.node);
 
-		if (action.getOnPort() == null) {
+		if(action.getOnPort() == null) {
 			// Behaves like in fUML
-			this.doActionDefault() ;
-		}
-		else {
-			Value target = this.takeTokens(action.getTarget()).get(0) ;
+			this.doActionDefault();
+		} else {
+			Value target = this.takeTokens(action.getTarget()).get(0);
 
-			if (target instanceof CS_Reference) {
+			if(target instanceof CS_Reference) {
 				// Constructs the signal instance
 				Signal signal = action.getSignal();
 				CS_SignalInstance signalInstance = new CS_SignalInstance();
@@ -63,31 +62,31 @@ public void doAction() {
 
 				List<Property> attributes = signal.getOwnedAttributes();
 				List<InputPin> argumentPins = action.getArguments();
-				Integer i = 0 ;
-				while ( i < attributes.size()) {
+				Integer i = 0;
+				while(i < attributes.size()) {
 					Property attribute = attributes.get(i);
 					InputPin argumentPin = argumentPins.get(i);
 					List<Value> values = this.takeTokens(argumentPin);
 					signalInstance.setFeatureValue(attribute, values, 0);
-					i = i + 1 ;
+					i = i + 1;
 				}
 
 				// Tries to determine if the signal has to be
 				// sent to the environment or to the internals of
 				// target, through onPort
-				CS_Reference targetReference = (CS_Reference)target ;
+				CS_Reference targetReference = (CS_Reference)target;
 				//Port onPort = action.onPort ;
-				Object_ executionContext = this.group.activityExecution.context ;
-				if (executionContext == targetReference.referent 
-						|| targetReference.compositeReferent.contains(executionContext)) {
+				Object_ executionContext = this.group.activityExecution.context;
+				if(executionContext == targetReference.referent || targetReference.compositeReferent.contains(executionContext)) {
 					targetReference.sendOut(signalInstance, action.getOnPort());
-				}
-				else {
+				} else {
 					targetReference.sendIn(signalInstance, action.getOnPort());
 				}
 			}
-		}}
-public void doActionDefault() {
+		}
+	}
+
+	public void doActionDefault() {
 		// Get the value from the target pin. If the value is not a reference,
 		// then do nothing.
 		// Otherwise, construct a signal using the values from the argument pins
@@ -96,10 +95,10 @@ public void doActionDefault() {
 		// SendSignalActionActivation.doAction() except that it constructs
 		// a CS_SignalInstance instead of a SignalInstance
 
-		SendSignalAction action = (SendSignalAction) (this.node);
+		SendSignalAction action = (SendSignalAction)(this.node);
 		Value target = this.takeTokens(action.getTarget()).get(0);
 
-		if (target instanceof Reference) {
+		if(target instanceof Reference) {
 			Signal signal = action.getSignal();
 
 			CS_SignalInstance signalInstance = new CS_SignalInstance();
@@ -107,13 +106,14 @@ public void doActionDefault() {
 
 			List<Property> attributes = signal.getOwnedAttributes();
 			List<InputPin> argumentPins = action.getArguments();
-			for (int i = 0; i < attributes.size(); i++) {
+			for(int i = 0; i < attributes.size(); i++) {
 				Property attribute = attributes.get(i);
 				InputPin argumentPin = argumentPins.get(i);
 				List<Value> values = this.takeTokens(argumentPin);
 				signalInstance.setFeatureValue(attribute, values, 0);
 			}
 
-			((Reference) target).send(signalInstance);
-		}}
+			((Reference)target).send(signalInstance);
+		}
+	}
 }

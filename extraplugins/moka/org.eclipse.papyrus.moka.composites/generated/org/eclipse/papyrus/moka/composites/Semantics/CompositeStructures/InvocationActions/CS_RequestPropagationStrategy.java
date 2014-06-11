@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions;
 
 // Imports
 import java.util.List;
@@ -21,11 +21,12 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticVisitor;
 
 
-public abstract class CS_RequestPropagationStrategy extends SemanticStrategy  {
+public abstract class CS_RequestPropagationStrategy extends SemanticStrategy {
 
-public String getName() {
+	public String getName() {
 		// a CS_RequestPropagationStrategy are always named "requestPropagation"
 		return "requestPropagation";
-}
-public abstract List<Reference> select(List<Reference> potentialTargets,SemanticVisitor context) ;
+	}
+
+	public abstract List<Reference> select(List<Reference> potentialTargets, SemanticVisitor context);
 }

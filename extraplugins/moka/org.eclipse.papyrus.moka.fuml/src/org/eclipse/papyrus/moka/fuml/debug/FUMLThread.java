@@ -24,58 +24,58 @@ public class FUMLThread extends MokaThread implements IPresentation {
 	/**
 	 * Determines if this thread is terminated
 	 */
-	protected boolean isTerminated = false ;
-	
+	protected boolean isTerminated = false;
+
 	/**
 	 * Determines if this thread is waiting
 	 */
-	protected boolean isWaiting = false ;
+	protected boolean isWaiting = false;
 
 	/**
 	 * The reason for suspending this thread,
 	 * where -1 means that there is no reason to suspend this thread
 	 */
-	protected int reasonForSuspending = -1 ;
+	protected int reasonForSuspending = -1;
 
 	/**
 	 * The reason for resuming this thread
 	 */
-	protected int reasonForResuming = DebugEvent.CLIENT_REQUEST ;
+	protected int reasonForResuming = DebugEvent.CLIENT_REQUEST;
 
 	public FUMLThread(MokaDebugTarget debugTarget) {
 		super(debugTarget);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getLabel()
 	 */
 	public String getLabel() {
-		String label = "" ;
+		String label = "";
 		try {
 			label = this.getName() + " [";
-			if (this.isTerminated()) {
-				label += "TERMINATED]" ;
-			}
-			else if (this.isWaiting()) {
-				label += "WAITING]" ;
-			}
-			else if (this.isStepping()) {
-				label += "STEPPING]" ;
-			}
-			else if (this.isSuspended()) {
-				label += "SUSPENDED]" ;
-			}
-			else {
-				label += "RUNNING]" ;
+			if(this.isTerminated()) {
+				label += "TERMINATED]";
+			} else if(this.isWaiting()) {
+				label += "WAITING]";
+			} else if(this.isStepping()) {
+				label += "STEPPING]";
+			} else if(this.isSuspended()) {
+				label += "SUSPENDED]";
+			} else {
+				label += "RUNNING]";
 			}
 		} catch (DebugException e) {
 			Activator.log.error(e);
-			label += "Default" ;
+			label += "Default";
 		}
-		return label ;
+		return label;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getDetails()
 	 */
 	public String getDetails() {
@@ -83,7 +83,9 @@ public class FUMLThread extends MokaThread implements IPresentation {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getImage()
 	 */
 	public Image getImage() {
@@ -91,12 +93,14 @@ public class FUMLThread extends MokaThread implements IPresentation {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.debug.MokaThread#isTerminated()
 	 */
 	@Override
 	public boolean isTerminated() {
-		return this.isTerminated ;
+		return this.isTerminated;
 	}
 
 	/**
@@ -105,20 +109,20 @@ public class FUMLThread extends MokaThread implements IPresentation {
 	 * @return true if is thread is in the Waiting state, false otherwise
 	 */
 	public boolean isWaiting() {
-		return this.isWaiting ;
+		return this.isWaiting;
 	}
-	
+
 	/**
 	 * Convenience method for determining if this thread terminated
 	 * 
 	 * @param isTerminated
 	 */
 	public void setIsTerminated(boolean isTerminated) {
-		this.isTerminated = isTerminated ;
+		this.isTerminated = isTerminated;
 	}
 
 	/**
-	 * Returns any reason for suspending this thread (e.g., CLIENT_REQUEST, BREAKPOINT, etc.), 
+	 * Returns any reason for suspending this thread (e.g., CLIENT_REQUEST, BREAKPOINT, etc.),
 	 * or -1 if no reason to suspend.
 	 * 
 	 * @return any reason for suspending this thread, or -1 if no reason to suspend
@@ -160,28 +164,29 @@ public class FUMLThread extends MokaThread implements IPresentation {
 	 * @param isWaiting
 	 */
 	public void setIsWaiting(boolean isWaiting) {
-		this.isWaiting = isWaiting ;
+		this.isWaiting = isWaiting;
 	}
-	
+
 	/**
 	 * Convenience method for determining if this thread is stepping
 	 * 
 	 * @param isStepping
 	 */
 	public void setIsStepping(boolean isStepping) {
-		this.isStepping = isStepping ;
+		this.isStepping = isStepping;
 	}
 
-	/** 
+	/**
 	 * Extended to account for the waiting state.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.debug.MokaThread#canResume()
 	 */
 	@Override
 	public boolean canResume() {
-		if (this.isWaiting)
-			return false ;
+		if(this.isWaiting)
+			return false;
 		return super.canResume();
 	}
 
@@ -189,12 +194,13 @@ public class FUMLThread extends MokaThread implements IPresentation {
 	 * Extended to account for the waiting state.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.debug.MokaThread#canSuspend()
 	 */
 	@Override
 	public boolean canSuspend() {
-		if (this.isWaiting || this.isTerminated)
-			return false ;
+		if(this.isWaiting || this.isTerminated)
+			return false;
 		return super.canSuspend();
 	}
 
@@ -202,12 +208,13 @@ public class FUMLThread extends MokaThread implements IPresentation {
 	 * Extended to account for the waiting state.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.debug.MokaThread#canStepInto()
 	 */
 	@Override
 	public boolean canStepInto() {
-		if (this.isWaiting)
-			return false ;
+		if(this.isWaiting)
+			return false;
 		return super.canStepInto();
 	}
 
@@ -215,28 +222,30 @@ public class FUMLThread extends MokaThread implements IPresentation {
 	 * Extended to account for the waiting state.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.debug.MokaThread#canStepOver()
 	 */
 	@Override
 	public boolean canStepOver() {
-		if (this.isWaiting)
-			return false ;
+		if(this.isWaiting)
+			return false;
 		return super.canStepOver();
 	}
 
 	/**
 	 * Extended to account for the waiting state.
 	 * 
-	 *  (non-Javadoc)
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.debug.MokaThread#canStepReturn()
 	 */
 	@Override
 	public boolean canStepReturn() {
-		if (this.isWaiting)
-			return false ;
+		if(this.isWaiting)
+			return false;
 		return super.canStepReturn();
 	}
-	
-	
-	
+
+
+
 }

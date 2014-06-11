@@ -81,7 +81,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 		}
 		_endIsolation();
 		if(ready) {
-			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) // Added for connection with debug API
+			if(FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) // Added for connection with debug API
 				this.fire(tokens);
 		}
 	}

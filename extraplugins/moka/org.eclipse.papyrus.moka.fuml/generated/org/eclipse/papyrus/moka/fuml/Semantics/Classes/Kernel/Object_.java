@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Operation;
 
-public class Object_ extends ExtensionalValue{
+public class Object_ extends ExtensionalValue {
 
 	/*
 	 * The classes under which this object is currently classified. (A destroyed
@@ -39,10 +39,10 @@ public class Object_ extends ExtensionalValue{
 	 */
 	public ObjectActivation objectActivation;
 
-	public void addType(Class type){
+	public void addType(Class type) {
 		this.types.add(type);
 	}
-	
+
 	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
 		// Create an object activation for this object (if one does not already
 		// exist) and start its behavior(s).

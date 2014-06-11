@@ -22,11 +22,11 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 
-public class Locus implements Cloneable{
+public class Locus implements Cloneable {
 
 	//FIXME : To be removed
 	public Behavior currentModelToBeExecuted;
-	
+
 	/*
 	 * The executor to be used at this locus.
 	 */
@@ -41,7 +41,7 @@ public class Locus implements Cloneable{
 	 * The set of values that are members of classifier extents at this locus.
 	 */
 	public List<ExtensionalValue> extensionalValues = new ArrayList<ExtensionalValue>();
-	
+
 	public void setExecutor(Executor executor) {
 		// Set the executor for this locus.
 		this.executor = executor;
@@ -108,7 +108,7 @@ public class Locus implements Cloneable{
 		}
 		return object;
 	}
-	
+
 	public Boolean conforms(Classifier type, Classifier classifier) {
 		// Test if a type conforms to a given classifier, that is, the type is
 		// equal to or a descendant of the classifier.
@@ -124,22 +124,21 @@ public class Locus implements Cloneable{
 		}
 		return doesConform;
 	}
-	
+
 	/**
-	 * Perform a deep copy for every attributes of this class except for 
-	 * {@link ExtensionalValues}
+	 * Perform a deep copy for every attributes of this class except for {@link ExtensionalValues}
 	 */
-	public Locus clone(){
+	public Locus clone() {
 		Locus copy = null;
 		try {
-			copy = (Locus) super.clone();
+			copy = (Locus)super.clone();
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 			return null;
 		}
-		if(this.executor!=null)
+		if(this.executor != null)
 			copy.executor = this.executor.clone();
-		if(this.factory!=null)
+		if(this.factory != null)
 			copy.factory = this.factory.clone();
 		return copy;
 	}

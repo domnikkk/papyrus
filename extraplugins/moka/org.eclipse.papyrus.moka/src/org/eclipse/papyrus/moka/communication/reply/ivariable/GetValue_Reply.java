@@ -27,16 +27,17 @@ public class GetValue_Reply extends ReplyMessage {
 	/**
 	 * The value associated with this reply message
 	 */
-	protected MokaValue value ;
-		
+	protected MokaValue value;
+
 	/**
 	 * Constructs a GetValue_Reply from the given value
 	 * 
-	 * @param value The value associated with this reply message
+	 * @param value
+	 *        The value associated with this reply message
 	 */
 	public GetValue_Reply(MokaValue value) {
 		super();
-		this.value = value ;
+		this.value = value;
 	}
 
 	/**
@@ -48,7 +49,9 @@ public class GetValue_Reply extends ReplyMessage {
 		return value;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
 	public String marshal() {

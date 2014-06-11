@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3 ;
+package org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3;
 
 // Imports
 import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.CS_Object;
@@ -21,23 +21,24 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 
 
-public class CS_Locus extends Locus  {
+public class CS_Locus extends Locus {
 
-public Object_ instantiate(Class type) {
+	public Object_ instantiate(Class type) {
 		// Extends fUML semantics by instantiating a CS_Object
 		// in the case where type is not a Behavior.
 		// Otherwise behaves like in fUML
 
 		Object_ object = null;
 
-		if (type instanceof Behavior) {
+		if(type instanceof Behavior) {
 			object = super.instantiate(type);
 		} else {
-			object = new CS_Object() ;
+			object = new CS_Object();
 			object.types.add(type);
 			object.createFeatureValues();
 			this.add(object);
 		}
 
-		return object;}
+		return object;
+	}
 }

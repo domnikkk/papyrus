@@ -30,7 +30,7 @@ public class Reference extends StructuredValue {
 	public Object getUnderlying() {
 		return this.referent;
 	}
-	
+
 	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
 		// Asynchronously start the behavior of the given classifier for the
 		// referent object.

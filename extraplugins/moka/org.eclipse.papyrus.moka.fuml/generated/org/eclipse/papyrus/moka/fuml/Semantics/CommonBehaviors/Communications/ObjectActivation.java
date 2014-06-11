@@ -163,12 +163,13 @@ public class ObjectActivation {
 		}
 	}
 
-	
+
 	int signalCount = 0;
+
 	public void _startObjectBehavior() {
 		// *** This should start the EventDispatchLoop ***
 
-		while (this.signalCount > 0) {
+		while(this.signalCount > 0) {
 			this.dispatchNextEvent();
 			signalCount = signalCount - 1;
 		}
@@ -177,9 +178,9 @@ public class ObjectActivation {
 	public void _send(ArrivalSignal signal) {
 		// Signal the arrival of a new signal instance in the event pool.
 		// *** This should send an ArrivalSignal to the EventDispatchLoop. ***
-		
+
 		this.signalCount = this.signalCount + 1;
-		if (this.signalCount == 1) {
+		if(this.signalCount == 1) {
 			this._startObjectBehavior();
 		}
 	} // _send

@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CommonBehaviors.Communications ;
+package org.eclipse.papyrus.moka.composites.Semantics.CommonBehaviors.Communications;
 
 // Imports
 import java.util.ArrayList;
@@ -22,47 +22,47 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.uml2.uml.StructuralFeature;
 
-public class CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy extends CS_StructuralFeatureOfInterfaceAccessStrategy  {
+public class CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy extends CS_StructuralFeatureOfInterfaceAccessStrategy {
 
-public FeatureValue read(CS_Object cs_Object,StructuralFeature feature) {
+	public FeatureValue read(CS_Object cs_Object, StructuralFeature feature) {
 		// returns the a copy of the first feature value of cs_Object where the name of the corresponding feature
 		// matches the name of the feature given as a parameter
 		// Otherwise, returns an empty feature value
-		List<FeatureValue> featureValues = cs_Object.featureValues ;
-		FeatureValue matchingFeatureValue = null ;
-		for (int i = 0 ; i < featureValues.size() && matchingFeatureValue == null ; i++) {
-			FeatureValue featureValue = featureValues.get(i) ; 
-			if (featureValue.feature.getName().equals(feature.getName())) {
-				matchingFeatureValue = featureValue ;
+		List<FeatureValue> featureValues = cs_Object.featureValues;
+		FeatureValue matchingFeatureValue = null;
+		for(int i = 0; i < featureValues.size() && matchingFeatureValue == null; i++) {
+			FeatureValue featureValue = featureValues.get(i);
+			if(featureValue.feature.getName().equals(feature.getName())) {
+				matchingFeatureValue = featureValue;
 			}
 		}
-		if (matchingFeatureValue != null) {
-			matchingFeatureValue = matchingFeatureValue.copy() ;
-			matchingFeatureValue.feature = feature ;
+		if(matchingFeatureValue != null) {
+			matchingFeatureValue = matchingFeatureValue.copy();
+			matchingFeatureValue.feature = feature;
+		} else {
+			matchingFeatureValue = new FeatureValue();
+			matchingFeatureValue.feature = feature;
+			matchingFeatureValue.values = new ArrayList<Value>();
+			matchingFeatureValue.position = 0;
 		}
-		else {
-			matchingFeatureValue = new FeatureValue() ;
-			matchingFeatureValue.feature = feature ;
-			matchingFeatureValue.values = new ArrayList<Value>() ;
-			matchingFeatureValue.position = 0 ;
+
+		return matchingFeatureValue;
+	}
+
+	public void write(CS_Object cs_Object, StructuralFeature feature, List<Value> values, Integer position) {
+		// Retrieves the first feature value of cs_Object where the name of the corresponding feature
+		// matches the name of the feature given as a parameter
+		// Then updates the values for this feature value
+		List<FeatureValue> featureValues = cs_Object.featureValues;
+		FeatureValue matchingFeatureValue = null;
+		for(int i = 0; i < featureValues.size() && matchingFeatureValue == null; i++) {
+			FeatureValue featureValue = featureValues.get(i);
+			if(featureValue.feature.getName().equals(feature.getName())) {
+				matchingFeatureValue = featureValue;
+			}
 		}
-		
-		return matchingFeatureValue ;
-}
-public void write(CS_Object cs_Object,StructuralFeature feature,List<Value> values,Integer position) {
-	// Retrieves the first feature value of cs_Object where the name of the corresponding feature
-	// matches the name of the feature given as a parameter
-	// Then updates the values for this feature value
-	List<FeatureValue> featureValues = cs_Object.featureValues ;
-	FeatureValue matchingFeatureValue = null ;
-	for (int i = 0 ; i < featureValues.size() && matchingFeatureValue == null ; i++) {
-		FeatureValue featureValue = featureValues.get(i) ; 
-		if (featureValue.feature.getName().equals(feature.getName())) {
-			matchingFeatureValue = featureValue ;
+		if(matchingFeatureValue != null) {
+			cs_Object.setFeatureValue(matchingFeatureValue.feature, values, position);
 		}
 	}
-	if (matchingFeatureValue != null) {
-		cs_Object.setFeatureValue(matchingFeatureValue.feature, values, position) ;
-	}
-}
 }

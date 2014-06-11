@@ -22,17 +22,17 @@ import org.eclipse.uml2.uml.UMLFactory;
 public class TerminateSignalInstance extends SignalInstance {
 
 	/** The terminate signal. */
-	protected static Signal terminateSignal ; 
-	
+	protected static Signal terminateSignal;
+
 	/**
 	 * Instantiates a new terminate signal instance.
 	 */
 	public TerminateSignalInstance() {
-		if (terminateSignal == null) {
-			terminateSignal = UMLFactory.eINSTANCE.createSignal() ;
-			terminateSignal.setName("TerminateSignal") ;
+		if(terminateSignal == null) {
+			terminateSignal = UMLFactory.eINSTANCE.createSignal();
+			terminateSignal.setName("TerminateSignal");
 		}
-		this.type = terminateSignal ;
+		this.type = terminateSignal;
 	}
-	
+
 }

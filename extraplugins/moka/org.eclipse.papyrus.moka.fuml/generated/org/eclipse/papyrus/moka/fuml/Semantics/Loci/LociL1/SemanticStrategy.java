@@ -15,6 +15,6 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 
 
 public abstract class SemanticStrategy {
-	
+
 	public abstract String getName();
 }

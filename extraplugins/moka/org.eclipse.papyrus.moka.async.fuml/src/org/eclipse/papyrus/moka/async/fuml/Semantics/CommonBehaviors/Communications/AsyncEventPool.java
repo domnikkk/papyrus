@@ -31,27 +31,29 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
  * use the send method to offer a new SignalInstance 
  * @author CEA LIST (jt605650)
  */
-public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implements IAsyncEventPool{
+public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implements IAsyncEventPool {
 
-	/*Event pool owner*/
+	/* Event pool owner */
 	/** The object activation. */
 	private ObjectActivation objectActivation;
-	
+
 	/**
 	 * Constructor.
 	 *
-	 * @param activation that owns the event pool
+	 * @param activation
+	 *        that owns the event pool
 	 */
-	public AsyncEventPool(ObjectActivation activation){
+	public AsyncEventPool(ObjectActivation activation) {
 		super();
 		this.objectActivation = activation;
 	}
-	
+
 	/**
 	 * Offers the given signal instance to the Queue. Since the eventPool is unbounded
 	 * offer always deliver the SignalInstance to the event pool
 	 *
-	 * @param signalInstance that need to be added to the event pool
+	 * @param signalInstance
+	 *        that need to be added to the event pool
 	 * @return true, if successful
 	 */
 	public boolean send(SignalInstance signalInstance) {
@@ -64,8 +66,8 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	 * @return the next event
 	 */
 	public SignalInstance getNextEvent() {
-		SemanticStrategy strategy = this.objectActivation.object.locus.factory.getStrategy("getNextEvent"); 
-		return ((AsyncGetNextEventStrategy)strategy).getNextEvent(this); 	
+		SemanticStrategy strategy = this.objectActivation.object.locus.factory.getStrategy("getNextEvent");
+		return ((AsyncGetNextEventStrategy)strategy).getNextEvent(this);
 	}
 
 	/**
@@ -80,7 +82,8 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	/**
 	 * Modify the owner of the current event pool.
 	 *
-	 * @param objectActivation new owner of the current event pool
+	 * @param objectActivation
+	 *        new owner of the current event pool
 	 */
 	public synchronized void setObjectActivation(ObjectActivation objectActivation) {
 		this.objectActivation = objectActivation;

@@ -74,7 +74,7 @@ public class ExpansionRegionActivation extends ActionActivation {
 		for(int i = 0; i < inputElements.size(); i++) {
 			ExpansionNode inputElement = inputElements.get(i);
 			ExpansionNodeActivation expansionNodeActivation = this.getExpansionNodeActivation(inputElement);
-			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(expansionNodeActivation)) // Added for connection with debug API
+			if(FUMLExecutionEngine.eInstance.getControlDelegate().control(expansionNodeActivation)) // Added for connection with debug API
 				expansionNodeActivation.fire(expansionNodeActivation.takeOfferedTokens());
 			List<Token> tokens = expansionNodeActivation.takeTokens();
 			TokenSet tokenSet = new TokenSet();
@@ -208,7 +208,7 @@ public class ExpansionRegionActivation extends ActionActivation {
 			_beginIsolation();
 			for(int j = 0; j < groupOutputs.size(); j++) {
 				OutputPinActivation groupOutput = groupOutputs.get(j);
-				if (FUMLExecutionEngine.eInstance.getControlDelegate().control(groupOutput)) // Added for connection with debug API
+				if(FUMLExecutionEngine.eInstance.getControlDelegate().control(groupOutput)) // Added for connection with debug API
 					groupOutput.fire(groupOutput.takeOfferedTokens());
 			}
 			activationGroup.terminateAll();
@@ -266,7 +266,7 @@ public class ExpansionRegionActivation extends ActionActivation {
 			List<OutputPinActivation> groupOutputs = activationGroup.groupOutputs;
 			for(int i = 0; i < groupOutputs.size(); i++) {
 				OutputPinActivation groupOutput = groupOutputs.get(i);
-				if (FUMLExecutionEngine.eInstance.getControlDelegate().control(groupOutput)) // Added for connection with debug API
+				if(FUMLExecutionEngine.eInstance.getControlDelegate().control(groupOutput)) // Added for connection with debug API
 					groupOutput.fire(groupOutput.takeOfferedTokens());
 			}
 			activationGroup.terminateAll();

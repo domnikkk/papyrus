@@ -32,19 +32,19 @@ public class MokaLibrariesComboBox extends MokaComboBox<String, IRegisteredLibra
 
 	@Override
 	protected String generateLabel(IRegisteredLibrary e) {
-		return "["+e.getName()+"] - "+e.getDescription();
+		return "[" + e.getName() + "] - " + e.getDescription();
 	}
-	
-	public void selectByUri(String libraryUri){
+
+	public void selectByUri(String libraryUri) {
 		Iterator<IRegisteredLibrary> librariesIterator = this.population.values().iterator();
 		IRegisteredLibrary targetLib = null;
-		while(targetLib==null && librariesIterator.hasNext()){
+		while(targetLib == null && librariesIterator.hasNext()) {
 			IRegisteredLibrary current = librariesIterator.next();
-			if(current.getUri().toString().equals(libraryUri)){
+			if(current.getUri().toString().equals(libraryUri)) {
 				targetLib = current;
 			}
 		}
-		if(targetLib != null){
+		if(targetLib != null) {
 			this.selectById(this.generateLabel(targetLib));
 		}
 	}

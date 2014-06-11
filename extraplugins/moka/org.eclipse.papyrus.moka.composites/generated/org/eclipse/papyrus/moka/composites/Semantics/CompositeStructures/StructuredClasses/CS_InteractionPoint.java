@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses ;
+package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses;
 
 // Imports
 import java.util.List;
@@ -26,15 +26,19 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Port;
 
 
-public class CS_InteractionPoint extends Reference  {
+public class CS_InteractionPoint extends Reference {
+
 	/*
-	 * Represents the Reference to the CompositeObject owning this InteractionPort. NOTE: This is introduced to address requirement R3 (It represents the "link from that instance to the instance of the owning classifier [...] through which communication is forwarded to the instance of the owning classifier or through which the owning classifier communicates)
+	 * Represents the Reference to the CompositeObject owning this InteractionPort. NOTE: This is introduced to address requirement R3 (It represents
+	 * the "link from that instance to the instance of the owning classifier [...] through which communication is forwarded to the instance of the
+	 * owning classifier or through which the owning classifier communicates)
 	 */
-	public CS_Reference owner ;
+	public CS_Reference owner;
+
 	/*
 	 * The Port for which this InteractionPoint is a runtime manifestation
 	 */
-	public Port definingPort ;
+	public Port definingPort;
 
 	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
 		// Overriden to do nothing
@@ -42,12 +46,12 @@ public class CS_InteractionPoint extends Reference  {
 
 	public Execution dispatch(Operation operation) {
 		// Delegates dispatching to the owning object
-		return this.owner.dispatchIn(operation, this) ;
+		return this.owner.dispatchIn(operation, this);
 	}
 
 	public void send(SignalInstance signalInstance) {
 		// Delegates sending to the owning object
-		this.owner.sendIn(signalInstance, this) ;
+		this.owner.sendIn(signalInstance, this);
 	}
 
 	public Value copy() {

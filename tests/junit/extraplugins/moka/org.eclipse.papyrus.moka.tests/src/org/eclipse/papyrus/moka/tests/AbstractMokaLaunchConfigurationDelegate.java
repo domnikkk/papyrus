@@ -47,8 +47,8 @@ import org.eclipse.uml2.uml.Activity;
 
 public abstract class AbstractMokaLaunchConfigurationDelegate extends LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
-	protected IExecutionEngine engine ;
-	
+	protected IExecutionEngine engine;
+
 	@Override
 	/*
 	 * (non-Javadoc)
@@ -89,9 +89,9 @@ public abstract class AbstractMokaLaunchConfigurationDelegate extends LaunchConf
 		//ResourceSet resourceSet = new ResourceSetImpl() ;
 		Resource resource = resourceSet.getResource(URI.createURI(resourceURI), true);
 		final EObject eObjectToExecute = resource.getEObject(uriFragment);
-		
+
 		ReportNameSingleton reportNameSingleton = ReportNameSingleton.getInstance();
-		
+
 		reportNameSingleton.setEngineName(engine.getClass().getSimpleName());
 		reportNameSingleton.setExecutedActivityName(((Activity)eObjectToExecute).getName());
 
@@ -110,7 +110,7 @@ public abstract class AbstractMokaLaunchConfigurationDelegate extends LaunchConf
 		IProcess process = new MokaProcess(launch, engineJob, "Moka runtime process", new HashMap<String, String>());
 		// Initializes the engine as well as the debug target
 		MokaDebugTarget target = new MokaDebugTarget(launch, process);
-		try { 
+		try {
 			engine.init(eObjectToExecute, args, target, requestPort, replyPort, eventPort);
 			target.connect(requestPort, replyPort, eventPort);
 			launch.addDebugTarget(target);
@@ -128,10 +128,10 @@ public abstract class AbstractMokaLaunchConfigurationDelegate extends LaunchConf
 	 *
 	 * @return
 	 */
-	public abstract IExecutionEngine instantiateExecutionEngine() ;
+	public abstract IExecutionEngine instantiateExecutionEngine();
 
 	public IExecutionEngine getExecutionEngine() {
-		return this.engine ;
+		return this.engine;
 	}
 
 	/**

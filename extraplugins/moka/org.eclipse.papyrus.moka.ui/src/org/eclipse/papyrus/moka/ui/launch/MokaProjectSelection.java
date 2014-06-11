@@ -22,38 +22,38 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
-public class MokaProjectSelection extends SelectionAdapter{
-	
+public class MokaProjectSelection extends SelectionAdapter {
+
 	private static final String DIALOG_NAME = "Please select an fUML model";
-	
+
 	protected transient Text projectSelection;
-		
+
 	protected transient IFile currentSelection;
-	
+
 	protected transient MokaRunConfigurationTab launchConfigTab;
-	
-	public MokaProjectSelection(Text projectSelection,  MokaRunConfigurationTab tab){
+
+	public MokaProjectSelection(Text projectSelection, MokaRunConfigurationTab tab) {
 		this.projectSelection = projectSelection;
 		this.launchConfigTab = tab;
 	}
-	
+
 	public void widgetSelected(SelectionEvent event) {
 		TreeSelectorDialog dialog = new TreeSelectorDialog(Display.getCurrent().getActiveShell());
 		dialog.setTitle(DIALOG_NAME);
 		dialog.setContentProvider(new WorkspaceContentProvider());
 		dialog.setLabelProvider(WorkbenchLabelProvider.getDecoratingWorkbenchLabelProvider());
-		
+
 		if(this.currentSelection != null && this.currentSelection.exists()) {
 			dialog.setInitialSelections(new IFile[]{ this.currentSelection });
 		}
-		
-		dialog.open() ;
-		Object[] selection = dialog.getResult() ;
-		if (dialog.getReturnCode() == Dialog.OK && selection.length > 0 && (selection[0] instanceof IFile)) {
-			this.currentSelection = (IFile)selection[0] ;
-			URI fileURI = URI.createPlatformResourceURI(this.currentSelection.getFullPath().toString(), true) ;
-			this.projectSelection.setText(fileURI.toString()) ;
-			if(this.launchConfigTab!=null){
+
+		dialog.open();
+		Object[] selection = dialog.getResult();
+		if(dialog.getReturnCode() == Dialog.OK && selection.length > 0 && (selection[0] instanceof IFile)) {
+			this.currentSelection = (IFile)selection[0];
+			URI fileURI = URI.createPlatformResourceURI(this.currentSelection.getFullPath().toString(), true);
+			this.projectSelection.setText(fileURI.toString());
+			if(this.launchConfigTab != null) {
 				this.launchConfigTab.updateLaunchConfigurationDialog();
 			}
 		}

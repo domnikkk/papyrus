@@ -32,16 +32,16 @@ public class Substring extends OpaqueBehaviorExecution {
 			String x = ((StringValue)inputParameters.get(0).values.get(0)).value;
 			Integer lower = ((IntegerValue)inputParameters.get(1).values.get(0)).value;
 			Integer upper = ((IntegerValue)inputParameters.get(2).values.get(0)).value;
-			
+
 			// ADDED if statement
 			List<Value> outputs = new ArrayList<Value>();
-			if (lower >= 1 && lower <= x.length() && upper >= 1 && upper <= x.length() && lower <= upper) {
+			if(lower >= 1 && lower <= x.length() && upper >= 1 && upper <= x.length() && lower <= upper) {
 				StringValue result = new StringValue();
-				result.value = x.substring(lower-1, upper); // CHANGED "lower" to "lower-1"
-		    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("String"); // ADDED
+				result.value = x.substring(lower - 1, upper); // CHANGED "lower" to "lower-1"
+				result.type = (PrimitiveType)this.locus.factory.getBuiltInType("String"); // ADDED
 				outputs.add(result);
 			}
-			
+
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {
 			Debug.println("An error occured during the execution of Substring " + e.getMessage());

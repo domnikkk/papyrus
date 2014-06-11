@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Operation;
 
 public class RedefinitionBasedDispatchStrategy extends DispatchStrategy {
-	
+
 	public Behavior getMethod(Object_ object, Operation operation) {
 		// Get the method that corresponds to the given operation for the given
 		// object.

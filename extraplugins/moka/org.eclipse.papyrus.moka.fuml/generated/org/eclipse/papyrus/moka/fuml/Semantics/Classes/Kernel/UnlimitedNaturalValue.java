@@ -27,7 +27,7 @@ public class UnlimitedNaturalValue extends PrimitiveValue {
 	public Object getUnderlying() {
 		return this.value;
 	}
-	
+
 	public ValueSpecification specify() {
 		// Return a literal unlimited natural with the value of this unlimited
 		// natural value.
@@ -70,7 +70,7 @@ public class UnlimitedNaturalValue extends PrimitiveValue {
 		}
 		return stringValue;
 	}
-	
+
 	public Object getValue() {
 		return this.value;
 	}

@@ -33,59 +33,69 @@ import org.eclipse.papyrus.moka.MokaConstants;
 public abstract class MokaDebugElement extends PlatformObject implements IDebugElement {
 
 	/**
-	 *  The moka debug target associated with this debug element 
+	 * The moka debug target associated with this debug element
 	 */
 	protected MokaDebugTarget debugTarget;
 
 	/**
 	 * Constructs a new debug element contained in the given moka debug target.
 	 * 
-	 * @param target Moka debug target
+	 * @param target
+	 *        Moka debug target
 	 */
 	public MokaDebugElement(MokaDebugTarget target) {
 		this.debugTarget = target;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IDebugElement#getModelIdentifier()
 	 */
 	public String getModelIdentifier() {
 		return MokaConstants.MOKA_DEBUG_MODEL_ID;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IDebugElement#getDebugTarget()
 	 */
 	public IDebugTarget getDebugTarget() {
 		return this.debugTarget;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.debug.core.model.IDebugElement#getLaunch()
 	 */
 	public ILaunch getLaunch() {
 		return this.debugTarget.getLaunch();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-		if (adapter == IDebugElement.class) {
+		if(adapter == IDebugElement.class) {
 			return this;
 		}
 		return super.getAdapter(adapter);
 	}
-	
+
 	/**
 	 * Convenience method for the setting the debug target of this debug element
 	 * 
-	 * @param debugTarget The debug target for this debug element
+	 * @param debugTarget
+	 *        The debug target for this debug element
 	 */
 	public void setDebugTarget(MokaDebugTarget debugTarget) {
-		this.debugTarget = debugTarget ;
+		this.debugTarget = debugTarget;
 	}
-	
+
 	/**
 	 * Convenience method for aborting execution
 	 * 
@@ -100,10 +110,11 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 	/**
 	 * Convenience method for firing a debug event to the debug plugin
 	 * 
-	 * @param event the event to be fired
+	 * @param event
+	 *        the event to be fired
 	 */
 	protected void fireEvent(DebugEvent event) {
-		DebugPlugin.getDefault().fireDebugEventSet(new DebugEvent[] {event});
+		DebugPlugin.getDefault().fireDebugEventSet(new DebugEvent[]{ event });
 	}
 
 }

@@ -23,7 +23,7 @@ import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;
 public class CompositesEngineLaunchDelegate extends AbstractMokaLaunchConfigurationDelegate {
 
 	final protected static String selectedExecutionEngine = "org.eclipse.papyrus.moka.composites";
-	
+
 	/**
 	 * Instantiate the PSCS execution engine.
 	 *

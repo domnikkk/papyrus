@@ -29,9 +29,9 @@ public class Round extends OpaqueBehaviorExecution {
 		try {
 			Double x = ((RealValue)inputParameters.get(0).values.get(0)).value;
 			IntegerValue result = new IntegerValue();
-			result.value = (int) Math.round(x);
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
-	    	List<Value> outputs = new ArrayList<Value>();
+			result.value = (int)Math.round(x);
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Real");
+			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {

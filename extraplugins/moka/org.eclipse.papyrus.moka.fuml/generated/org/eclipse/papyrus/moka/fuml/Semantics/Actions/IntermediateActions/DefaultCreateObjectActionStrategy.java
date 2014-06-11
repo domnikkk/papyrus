@@ -15,8 +15,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
 import org.eclipse.uml2.uml.Class;
 
-public class DefaultCreateObjectActionStrategy extends
-		CreateObjectActionStrategy {
+public class DefaultCreateObjectActionStrategy extends CreateObjectActionStrategy {
 
 	@Override
 	public Object_ instantiate(Class type, Locus locus) {

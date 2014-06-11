@@ -22,11 +22,13 @@ import org.eclipse.papyrus.moka.MokaConstants;
  */
 public class Ack extends ReplyMessage {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
 	public String marshal() {
-		return MokaConstants.ack ;
+		return MokaConstants.ack;
 	}
 
 }

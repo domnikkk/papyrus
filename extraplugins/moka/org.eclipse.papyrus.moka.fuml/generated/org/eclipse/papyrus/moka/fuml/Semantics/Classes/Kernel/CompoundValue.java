@@ -19,7 +19,7 @@ import java.util.List;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.StructuralFeature;
 
-public abstract class CompoundValue extends StructuredValue{
+public abstract class CompoundValue extends StructuredValue {
 
 	public List<FeatureValue> featureValues = new ArrayList<FeatureValue>();
 
@@ -128,12 +128,12 @@ public abstract class CompoundValue extends StructuredValue{
 			int j = 1;
 			while(j <= featureValue.values.size()) {
 				Value value = featureValue.values.get(j - 1);
-				if (value instanceof Reference) {
+				if(value instanceof Reference) {
 					Object_ object = ((Reference)value).referent;
 					buffer = buffer + " Reference to (" + object.objectId() + ":";
 					types = object.getTypes();
 					int n = 1;
-					while (n <= types.size()) {
+					while(n <= types.size()) {
 						buffer = buffer + " " + types.get(n - 1).getName();
 						n = n + 1;
 					}

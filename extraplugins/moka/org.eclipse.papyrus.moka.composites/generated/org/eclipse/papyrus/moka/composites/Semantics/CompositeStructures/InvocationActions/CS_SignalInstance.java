@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions;
 
 // Imports
 import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.CS_InteractionPoint;
@@ -19,20 +19,23 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
 
 
-public class CS_SignalInstance extends SignalInstance  {
-/*
-* The InteractionPoint on which this signal instance occured.
-*/
-public CS_InteractionPoint interactionPoint ;
+public class CS_SignalInstance extends SignalInstance {
 
-public Value copy() {
+	/*
+	 * The InteractionPoint on which this signal instance occured.
+	 */
+	public CS_InteractionPoint interactionPoint;
+
+	public Value copy() {
 		// Create a new signal instance with the same type, interaction point and feature values as this signal instance.
-		CS_SignalInstance newValue = (CS_SignalInstance) (super.copy());
-		newValue.type = this.type  ;
-		newValue.interactionPoint = this.interactionPoint ;
-		return newValue;}
-public Value new_() {
+		CS_SignalInstance newValue = (CS_SignalInstance)(super.copy());
+		newValue.type = this.type;
+		newValue.interactionPoint = this.interactionPoint;
+		return newValue;
+	}
+
+	public Value new_() {
 		// Create a new signal instance with no type or feature values.
 		return new CS_SignalInstance();
-}
+	}
 }

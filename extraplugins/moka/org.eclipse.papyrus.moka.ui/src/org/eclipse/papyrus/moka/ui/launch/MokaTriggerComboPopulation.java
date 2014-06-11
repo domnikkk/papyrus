@@ -39,50 +39,46 @@ public class MokaTriggerComboPopulation implements ModifyListener {
 
 	protected transient MokaUMLComboBox list;
 
-	public MokaTriggerComboPopulation(MokaUMLComboBox combo){
+	public MokaTriggerComboPopulation(MokaUMLComboBox combo) {
 		this.list = combo;
 	}
 
 	public void modifyText(ModifyEvent e) {
-		List<NamedElement> namedElements = new ArrayList<NamedElement>() ;
+		List<NamedElement> namedElements = new ArrayList<NamedElement>();
 		this.list.removeAll();
 		Text text = (Text)e.widget;
 		URI projectUri = URI.createURI(text.getText());
 		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource resource = resourceSet.getResource(projectUri, true);
 		Iterator<EObject> contentIterator = resource.getAllContents();
-		while(contentIterator.hasNext()){
-			EObject eObject = contentIterator.next(); 
-			if(eObject instanceof Behavior){
-				if(eObject instanceof Activity ||
-						eObject instanceof OpaqueBehavior ||
-						eObject instanceof StateMachine){
-					namedElements.add((NamedElement)eObject) ;
+		while(contentIterator.hasNext()) {
+			EObject eObject = contentIterator.next();
+			if(eObject instanceof Behavior) {
+				if(eObject instanceof Activity || eObject instanceof OpaqueBehavior || eObject instanceof StateMachine) {
+					namedElements.add((NamedElement)eObject);
 				}
-			}
-			else if(eObject instanceof Class){
-				if(!(eObject instanceof Node)
-						|| !(eObject instanceof Stereotype)
-						|| !(eObject instanceof AssociationClass)){
+			} else if(eObject instanceof Class) {
+				if(!(eObject instanceof Node) || !(eObject instanceof Stereotype) || !(eObject instanceof AssociationClass)) {
 					//if(((Class)eObject).isActive()){
-					namedElements.add((NamedElement)eObject) ;
+					namedElements.add((NamedElement)eObject);
 					//}
 				}
 			}
 		}
-		
+
 		Comparator<NamedElement> comp = new Comparator<NamedElement>() {
+
 			public int compare(NamedElement o1, NamedElement o2) {
-				String s1 = list.generateLabel(o1) ;
-				String s2 = list.generateLabel(o2) ;
-				return s1.compareTo(s2) ;
+				String s1 = list.generateLabel(o1);
+				String s2 = list.generateLabel(o2);
+				return s1.compareTo(s2);
 			}
-		} ;
-		
-		Collections.sort(namedElements, comp) ;
-		
-		for (NamedElement n : namedElements) {
-			this.list.add(n) ;
+		};
+
+		Collections.sort(namedElements, comp);
+
+		for(NamedElement n : namedElements) {
+			this.list.add(n);
 		}
 		this.list.selectFirst();
 

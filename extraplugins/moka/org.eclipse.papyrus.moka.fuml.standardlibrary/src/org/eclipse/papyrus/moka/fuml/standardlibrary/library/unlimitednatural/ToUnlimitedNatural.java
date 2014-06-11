@@ -31,20 +31,19 @@ public class ToUnlimitedNatural extends OpaqueBehaviorExecution {
 		try {
 			String x = ((StringValue)inputParameters.get(0).values.get(0)).value;
 			UnlimitedNaturalValue result = new UnlimitedNaturalValue();
-			Integer value = null ;
-			if (x.equals("*")) {
-				result.value = -1 ;
-			}
-			else {
+			Integer value = null;
+			if(x.equals("*")) {
+				result.value = -1;
+			} else {
 				try {
 					value = new Integer(x);
+				} catch (NumberFormatException badFormat) {
 				}
-				catch (NumberFormatException badFormat) {}
-				if (value != null && value >= 0) {
-					result.value = value ;
+				if(value != null && value >= 0) {
+					result.value = value;
 				}
 			}
-			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("UnlimitedNatural");
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("UnlimitedNatural");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

@@ -27,17 +27,18 @@ public class GetValueString_Request extends RequestMessage {
 	/**
 	 * The value for which a string representation is requested
 	 */
-	protected IValue value ;
-	
+	protected IValue value;
+
 	/**
 	 * Constructs a request message from the given value.
 	 * 
-	 * @param value The value for which a string representation is requested
+	 * @param value
+	 *        The value for which a string representation is requested
 	 */
 	public GetValueString_Request(IValue value) {
-		this.value = value ;
+		this.value = value;
 	}
-	
+
 	/**
 	 * Returns the value for which a string representation is requested
 	 * 
@@ -47,7 +48,9 @@ public class GetValueString_Request extends RequestMessage {
 		return value;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	public String marshall() {

@@ -30,7 +30,7 @@ public class ListGet extends OpaqueBehaviorExecution {
 			Integer index = ((IntegerValue)inputParameters.get(1).values.get(0)).value;
 			List<Value> list = inputParameters.get(0).values; // CORRECTED "get(1)" to "get(0)"
 			List<Value> outputs = new ArrayList<Value>();
-			if (index > 0 && index <= list.size()) { // ADDED if statement
+			if(index > 0 && index <= list.size()) { // ADDED if statement
 				outputs.add(list.get(index - 1));
 			}
 			outputParameters.get(0).values = outputs;

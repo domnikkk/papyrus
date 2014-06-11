@@ -32,7 +32,7 @@ public class Mod extends OpaqueBehaviorExecution {
 			Integer y = ((IntegerValue)inputParameters.get(1).values.get(0)).value;
 			IntegerValue result = new IntegerValue();
 			result.value = x % y;
-	    	result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Integer"); // ADDED
+			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Integer"); // ADDED
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

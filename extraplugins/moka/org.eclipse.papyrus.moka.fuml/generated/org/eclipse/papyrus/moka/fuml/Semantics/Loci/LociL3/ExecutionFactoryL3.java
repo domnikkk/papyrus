@@ -42,11 +42,11 @@ import org.eclipse.uml2.uml.StartObjectBehaviorAction;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 
 public class ExecutionFactoryL3 extends ExecutionFactoryL2 {
-	
-	public ExecutionFactoryL3(){
+
+	public ExecutionFactoryL3() {
 		super();
 	}
-	
+
 	public SemanticVisitor instantiateVisitor(Element element) {
 		// Instantiate a visitor object for the given element (at Conformance
 		// Level 3)

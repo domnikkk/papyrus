@@ -28,8 +28,7 @@ public class CreateObjectActionActivation extends ActionActivation {
 		CreateObjectAction action = (CreateObjectAction)(this.node);
 		Reference reference = new Reference();
 		Locus locus = this.getExecutionLocus();
-		reference.referent = ((CreateObjectActionStrategy)locus.factory.getStrategy("CreateObjectActionStrategy")).
-			instantiate((Class)(action.getClassifier()), locus);
+		reference.referent = ((CreateObjectActionStrategy)locus.factory.getStrategy("CreateObjectActionStrategy")).instantiate((Class)(action.getClassifier()), locus);
 		this.putToken(action.getResult(), reference);
 	}
 }

@@ -31,8 +31,9 @@ import org.eclipse.uml2.uml.Pin;
 public class LoopNodeActivation extends StructuredActivityNodeActivation {
 
 	public List<Values> bodyOutputLists = new ArrayList<Values>();
+
 	public Boolean isTerminateAll;
-	
+
 	public void doStructuredActivity() {
 		// Set the initial values for the body outputs to the values of the loop
 		// variable input pins.
@@ -49,9 +50,9 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 		// consumed when running the test for the last time.]
 		LoopNode loopNode = (LoopNode)(this.node);
 		List<InputPin> loopVariableInputs = loopNode.getLoopVariableInputs();
-		
+
 		this.bodyOutputLists.clear(); // Added
-		
+
 		for(int i = 0; i < loopVariableInputs.size(); i++) {
 			InputPin loopVariableInput = loopVariableInputs.get(i);
 			Values bodyOutputList = new Values();
@@ -168,7 +169,7 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 	public void createNodeActivations() {
 		// In addition to creating activations for contained nodes, create
 		// activations for any loop variables.
-		
+
 		super.createNodeActivations();
 		this.activationGroup.createNodeActivations(this.makeLoopVariableList());
 	}
@@ -189,11 +190,11 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 	public void terminateAll() {
 		// Copy the values of the body outputs to the loop outputs, and then
 		// terminate all activations in the loop.
-		this.isTerminateAll = true;		
-		LoopNode loopNode = (LoopNode) this.node;
+		this.isTerminateAll = true;
+		LoopNode loopNode = (LoopNode)this.node;
 		List<OutputPin> bodyOutputs = loopNode.getBodyOutputs();
 		List<OutputPin> resultPins = this.getResults();
-		for (int i = 0; i < bodyOutputs.size(); i++) {
+		for(int i = 0; i < bodyOutputs.size(); i++) {
 			OutputPin bodyOutput = bodyOutputs.get(i);
 			OutputPin resultPin = resultPins.get(i);
 			this.putTokens(resultPin, this.getPinValues(bodyOutput));
@@ -207,7 +208,7 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 		// without being suspended again, complete the action.
 		LoopNode loopNode = (LoopNode)(this.node);
 		this.saveBodyOutputs();
-		if (!this.isTerminateAll) {
+		if(!this.isTerminateAll) {
 			if(loopNode.isMustIsolate()) {
 				_beginIsolation();
 				this.continueLoop();
@@ -243,7 +244,7 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 			this.doLoop(continuing);
 		}
 	}
-	
+
 	// ADDED:
 	private List<OutputPin> getResults() {
 		LoopNode node = (LoopNode)this.node;

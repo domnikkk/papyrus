@@ -50,7 +50,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/** The control delegate. */
 	protected ControlDelegate controlDelegate;
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 

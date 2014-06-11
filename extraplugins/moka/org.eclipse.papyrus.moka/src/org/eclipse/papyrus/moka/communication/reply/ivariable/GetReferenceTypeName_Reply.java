@@ -26,16 +26,17 @@ public class GetReferenceTypeName_Reply extends ReplyMessage {
 	/**
 	 * The string representing the reference type name
 	 */
-	protected String referenceTypeName ;
-	
+	protected String referenceTypeName;
+
 	/**
 	 * Constructs a reply message from a string
 	 * 
-	 * @param referenceTypeName a string representing the reference type name
+	 * @param referenceTypeName
+	 *        a string representing the reference type name
 	 */
 	public GetReferenceTypeName_Reply(String referenceTypeName) {
 		super();
-		this.referenceTypeName = referenceTypeName ;
+		this.referenceTypeName = referenceTypeName;
 	}
 
 	/**
@@ -44,10 +45,12 @@ public class GetReferenceTypeName_Reply extends ReplyMessage {
 	 * @return the string representing the reference type name associated with this message
 	 */
 	public String getReferenceTypeName() {
-		return this.referenceTypeName ;
+		return this.referenceTypeName;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
 	public String marshal() {

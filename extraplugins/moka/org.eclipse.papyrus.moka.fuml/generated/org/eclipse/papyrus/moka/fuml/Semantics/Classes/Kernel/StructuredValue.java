@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public abstract class StructuredValue extends Value{
+public abstract class StructuredValue extends Value {
 
 	public ValueSpecification specify() {
 		// Return an instance value that specifies this structured value.
@@ -68,8 +68,8 @@ public abstract class StructuredValue extends Value{
 			Classifier type = types.get(i);
 			this.createFeatureValuesFromType(type); // REPLACED body of loop
 		}
-	}	
-	
+	}
+
 	// ADDED
 	public void createFeatureValuesFromType(Classifier type) {
 		// Create empty feature values for all structural features from the
@@ -84,9 +84,9 @@ public abstract class StructuredValue extends Value{
 				this.setFeatureValue((StructuralFeature)member, new ArrayList<Value>(), 0);
 			}
 		}
-		
+
 		List<Classifier> generals = type.getGenerals();
-		for (int i = 0; i < generals.size(); i++) {
+		for(int i = 0; i < generals.size(); i++) {
 			Classifier general = generals.get(i);
 			this.createFeatureValuesFromType(general);
 		}

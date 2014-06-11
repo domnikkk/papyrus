@@ -21,35 +21,35 @@ import org.eclipse.debug.core.model.IDebugElement;
  * 
  */
 public abstract class EventMessage {
-	
+
 	/**
 	 * the debug element from which this event originated
 	 */
-	protected IDebugElement source ;
-	
+	protected IDebugElement source;
+
 	/**
 	 * the kind of event
 	 */
-	protected int eventKind ;
-		
+	protected int eventKind;
+
 	/**
 	 * the actual debug event
 	 */
-	protected DebugEvent debugEvent ;
-	
+	protected DebugEvent debugEvent;
+
 	/**
 	 * Marshal this Event message, so that it can be communicated between
 	 * the debug target and the actual execution engine
 	 * 
 	 * @return A String encoding of this event message
 	 */
-	public abstract String marshal() ;
-	
+	public abstract String marshal();
+
 	/**
 	 * Returns the actual debug event associated with this message
 	 * 
 	 * @return the actual debug event associated with this message
 	 */
-	public abstract DebugEvent getDebugEvent() ;
-	
+	public abstract DebugEvent getDebugEvent();
+
 }

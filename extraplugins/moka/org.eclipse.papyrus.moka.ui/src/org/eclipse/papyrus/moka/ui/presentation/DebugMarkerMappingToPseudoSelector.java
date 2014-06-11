@@ -27,26 +27,28 @@ import org.eclipse.papyrus.moka.MokaConstants;
  *
  */
 public class DebugMarkerMappingToPseudoSelector implements IMarkerToPseudoSelectorMappingProvider {
-	
-	protected Map<String, String> mappings ;
-	
-	protected final static String BREAKPOINT_MARKER_PSEUDO_SELECTOR = "breakpoint" ;
-	protected final static String SUSPENDED_MARKER_PSEUDO_SELECTOR = "suspended" ;
-	protected final static String ANIMATION_MARKER_PSEUDO_SELECTOR = "animation" ;
+
+	protected Map<String, String> mappings;
+
+	protected final static String BREAKPOINT_MARKER_PSEUDO_SELECTOR = "breakpoint";
+
+	protected final static String SUSPENDED_MARKER_PSEUDO_SELECTOR = "suspended";
+
+	protected final static String ANIMATION_MARKER_PSEUDO_SELECTOR = "animation";
 
 	public DebugMarkerMappingToPseudoSelector() {
 		// Do nothing
 	}
 
 	public Map<String, String> getMappings() {
-		if (this.mappings == null) {
-			this.mappings = new HashMap<String, String>() ;
+		if(this.mappings == null) {
+			this.mappings = new HashMap<String, String>();
 			// Adds pseudo selectors for 'breakpoint', 'suspended' and 'animation' markers
-			this.mappings.put(MokaConstants.MOKA_BREAKPOINT_MARKER_ID, BREAKPOINT_MARKER_PSEUDO_SELECTOR) ;
-			this.mappings.put(MokaConstants.MOKA_SUSPENDED_MARKER_ID, SUSPENDED_MARKER_PSEUDO_SELECTOR) ;
-			this.mappings.put(MokaConstants.MOKA_ANIMATION_MARKER_ID, ANIMATION_MARKER_PSEUDO_SELECTOR) ;
+			this.mappings.put(MokaConstants.MOKA_BREAKPOINT_MARKER_ID, BREAKPOINT_MARKER_PSEUDO_SELECTOR);
+			this.mappings.put(MokaConstants.MOKA_SUSPENDED_MARKER_ID, SUSPENDED_MARKER_PSEUDO_SELECTOR);
+			this.mappings.put(MokaConstants.MOKA_ANIMATION_MARKER_ID, ANIMATION_MARKER_PSEUDO_SELECTOR);
 		}
-		return this.mappings ;
+		return this.mappings;
 	}
 
 }

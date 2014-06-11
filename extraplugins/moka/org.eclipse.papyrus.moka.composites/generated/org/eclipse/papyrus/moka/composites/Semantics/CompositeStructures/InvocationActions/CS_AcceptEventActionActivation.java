@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions ;
+package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions;
 
 // Imports
 import java.util.List;
@@ -25,9 +25,9 @@ import org.eclipse.uml2.uml.SignalEvent;
 import org.eclipse.uml2.uml.Trigger;
 
 
-public class CS_AcceptEventActionActivation extends AcceptEventActionActivation  {
+public class CS_AcceptEventActionActivation extends AcceptEventActionActivation {
 
-public Boolean match(SignalInstance signalInstance) {
+	public Boolean match(SignalInstance signalInstance) {
 		// Return true if the given signal instance matches a trigger of the accept 
 		// event action of this activation.
 		// Matching implies that the type of the signalInstance matches the Signal 
@@ -37,29 +37,29 @@ public Boolean match(SignalInstance signalInstance) {
 		// the signalInstance matches the trigger only if it occurred on a port 
 		// identified in the list.
 
-		AcceptEventAction action = (AcceptEventAction)(this.node) ;
-		List<Trigger> triggers = action.getTriggers() ;
-		Signal signal = signalInstance.type ;
+		AcceptEventAction action = (AcceptEventAction)(this.node);
+		List<Trigger> triggers = action.getTriggers();
+		Signal signal = signalInstance.type;
 
 		Boolean matches = false;
 		Integer i = 1;
-		while (!matches & i <= triggers.size()) {
-			Trigger t = triggers.get(i-1) ;
-			matches = ((SignalEvent)t.getEvent()).getSignal() == signal ;
-			if (matches && t.getPorts().size()>0 ) {
-				List<Port> portsOfTrigger = t.getPorts() ;
-				Port onPort =  
-						((CS_SignalInstance)signalInstance).interactionPoint.definingPort ;
-				Boolean portMatches = false ;
-				Integer j = 1 ;
-				while (! portMatches & j <= portsOfTrigger.size() ) {
-					portMatches = onPort == portsOfTrigger.get(j-1) ;
-					j = j + 1 ;
+		while(!matches & i <= triggers.size()) {
+			Trigger t = triggers.get(i - 1);
+			matches = ((SignalEvent)t.getEvent()).getSignal() == signal;
+			if(matches && t.getPorts().size() > 0) {
+				List<Port> portsOfTrigger = t.getPorts();
+				Port onPort = ((CS_SignalInstance)signalInstance).interactionPoint.definingPort;
+				Boolean portMatches = false;
+				Integer j = 1;
+				while(!portMatches & j <= portsOfTrigger.size()) {
+					portMatches = onPort == portsOfTrigger.get(j - 1);
+					j = j + 1;
 				}
-				matches = portMatches ;
+				matches = portMatches;
 			}
 			i = i + 1;
 		}
 
-		return matches;}
+		return matches;
+	}
 }

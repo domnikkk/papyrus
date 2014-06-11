@@ -102,13 +102,13 @@ public class FeatureValue {
 		}
 		return newValue;
 	}
-	
-	public List<Value> getValues(){
+
+	public List<Value> getValues() {
 		return this.values;
 	}
-	
-	public void setValues(List<Value> values){
-		if(values!=null){
+
+	public void setValues(List<Value> values) {
+		if(values != null) {
 			this.values = values;
 		}
 	}

@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.composites.Semantics.Classes.Kernel ;
+package org.eclipse.papyrus.moka.composites.Semantics.Classes.Kernel;
 
 // Imports
 import java.util.ArrayList;
@@ -39,9 +39,9 @@ import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 
-public class CS_InstanceValueEvaluation extends InstanceValueEvaluation  {
+public class CS_InstanceValueEvaluation extends InstanceValueEvaluation {
 
-public Value evaluate() {
+	public Value evaluate() {
 		// If the instance specification is for an enumeration, then return the
 		// identified enumeration literal.
 		// If the instance specification is for a data type (but not a primitive
@@ -57,54 +57,49 @@ public Value evaluate() {
 
 		// Debug.println("[evaluate] InstanceValueEvaluation...");
 
-		InstanceSpecification instance = ((InstanceValue) this.specification).getInstance();
+		InstanceSpecification instance = ((InstanceValue)this.specification).getInstance();
 		List<Classifier> types = instance.getClassifiers();
 		Classifier myType = types.get(0);
 
 		Debug.println("[evaluate] type = " + myType.getName());
 
 		Value value;
-		if (instance instanceof EnumerationLiteral) {
+		if(instance instanceof EnumerationLiteral) {
 			// Debug.println("[evaluate] Type is an enumeration.");
 			EnumerationValue enumerationValue = new EnumerationValue();
-			enumerationValue.type = (Enumeration) myType;
-			enumerationValue.literal = (EnumerationLiteral) instance;
+			enumerationValue.type = (Enumeration)myType;
+			enumerationValue.literal = (EnumerationLiteral)instance;
 			value = enumerationValue;
-		} 
-		else {
+		} else {
 			StructuredValue structuredValue = null;
 
-			if (myType instanceof DataType) {
+			if(myType instanceof DataType) {
 				// Debug.println("[evaluate] Type is a data type.");
 				DataValue dataValue = new DataValue();
-				dataValue.type = (DataType) myType;
+				dataValue.type = (DataType)myType;
 				structuredValue = dataValue;
-			} 
-			else {
+			} else {
 				Object_ object = null;
-				if (myType instanceof Behavior) {
+				if(myType instanceof Behavior) {
 					// Debug.println("[evaluate] Type is a behavior.");
-					object = this.locus.factory.createExecution(
-							(Behavior) myType, null);
-				} 
-				else {
+					object = this.locus.factory.createExecution((Behavior)myType, null);
+				} else {
 					// Debug.println("[evaluate] Type is a class.");
 					object = new CS_Object();
-					for (int i = 0; i < types.size(); i++) {
+					for(int i = 0; i < types.size(); i++) {
 						Classifier type = types.get(i);
-						object.types.add((Class) type);
+						object.types.add((Class)type);
 					}
 				}
 
 				this.locus.add(object);
 
-				Reference reference ;
-				if (object instanceof CS_Object) {
+				Reference reference;
+				if(object instanceof CS_Object) {
 					reference = new CS_Reference();
-					((CS_Reference)reference).compositeReferent = (CS_Object)object ;
-				}
-				else {
-					reference = new Reference() ;
+					((CS_Reference)reference).compositeReferent = (CS_Object)object;
+				} else {
+					reference = new Reference();
 				}
 				reference.referent = object;
 				structuredValue = reference;
@@ -116,7 +111,7 @@ public Value evaluate() {
 			// " slot(s).");
 
 			List<Slot> instanceSlots = instance.getSlots();
-			for (int i = 0; i < instanceSlots.size(); i++) {
+			for(int i = 0; i < instanceSlots.size(); i++) {
 				Slot slot = instanceSlots.get(i);
 				List<Value> values = new ArrayList<Value>();
 
@@ -124,7 +119,7 @@ public Value evaluate() {
 				// slot.definingFeature.name + ", " + slot.value.size() +
 				// " value(s).");
 				List<ValueSpecification> slotValues = slot.getValues();
-				for (int j = 0; j < slotValues.size(); j++) {
+				for(int j = 0; j < slotValues.size(); j++) {
 					ValueSpecification slotValue = slotValues.get(j);
 					// Debug.println("[evaluate] Value = " +
 					// slotValue.getClass().getName());
@@ -136,5 +131,6 @@ public Value evaluate() {
 			value = structuredValue;
 		}
 
-		return value;}
+		return value;
+	}
 }

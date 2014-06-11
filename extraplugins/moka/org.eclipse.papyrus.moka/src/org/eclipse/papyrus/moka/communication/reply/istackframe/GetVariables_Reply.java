@@ -27,12 +27,13 @@ public class GetVariables_Reply extends ReplyMessage {
 	/**
 	 * The variables associated with this reply message
 	 */
-	protected MokaVariable[] variables ;
-		
+	protected MokaVariable[] variables;
+
 	/**
 	 * Constructs a reply message from an array of Variables
 	 * 
-	 * @param variables The variables associated with this reply message
+	 * @param variables
+	 *        The variables associated with this reply message
 	 */
 	public GetVariables_Reply(MokaVariable[] variables) {
 		super();
@@ -48,7 +49,9 @@ public class GetVariables_Reply extends ReplyMessage {
 		return variables;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
 	public String marshal() {

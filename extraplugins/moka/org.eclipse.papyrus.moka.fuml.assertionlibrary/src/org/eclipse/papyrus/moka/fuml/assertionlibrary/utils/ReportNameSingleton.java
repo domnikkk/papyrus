@@ -1,23 +1,24 @@
 package org.eclipse.papyrus.moka.fuml.assertionlibrary.utils;
 
 public class ReportNameSingleton {
-	
+
 	private String engineName = "";
-	
+
 	private String executedActivityName = "";
-	
-	/** Private constructor
+
+	/**
+	 * Private constructor
 	 */
 	private ReportNameSingleton() {
-		
+
 	}
-	
+
 	/** Unique instance not initialized */
 	private static ReportNameSingleton INSTANCE = null;
-	
+
 	/** Access for the unique instance of ReportNameSingleton */
 	public static ReportNameSingleton getInstance() {
-		if (INSTANCE == null) {
+		if(INSTANCE == null) {
 			INSTANCE = new ReportNameSingleton();
 		}
 		return INSTANCE;

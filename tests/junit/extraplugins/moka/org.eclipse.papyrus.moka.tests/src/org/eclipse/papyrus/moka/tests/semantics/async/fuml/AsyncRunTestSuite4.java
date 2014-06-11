@@ -16,7 +16,7 @@ import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;
 import org.eclipse.papyrus.moka.tests.semantics.AbstractMokaTest;
 
 /**
- * Tests execution of normative PSCS Test suite 4, with the Moka MULTI-THREADED implementation 
+ * Tests execution of normative PSCS Test suite 4, with the Moka MULTI-THREADED implementation
  * of the normative PSCS specification.
  *
  */
@@ -31,8 +31,7 @@ public class AsyncRunTestSuite4 extends AbstractMokaTest {
 
 	@Override
 	public AbstractMokaLaunchConfigurationDelegate getLaunchDelegate() {
-		return new AsyncFUMLEngineLaunchDelegate() ;
+		return new AsyncFUMLEngineLaunchDelegate();
 	}
-	
-}
 
+}
