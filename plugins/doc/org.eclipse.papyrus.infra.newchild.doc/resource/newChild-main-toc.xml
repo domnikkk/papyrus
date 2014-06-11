@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="CSS Stylesheets" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
+   <topic href="resource/newChild.html" label="Menu new child">
+      <anchor id="new Child"/>
+      <link toc="resource/newChild-toc.xml"/>
+   </topic>	
+</toc>
