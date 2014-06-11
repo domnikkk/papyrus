@@ -30,12 +30,24 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Stereotype;
 
-
+/***
+ * This class is an engine to traduce a document model into files
+ *
+ */
 public class TranscriptionEngine {
+	protected static final String INTERNAL_DIRECTORY = "doc/"; //$NON-NLS-1$
 	Model model=null;
 	IProject project;
 	ITranscription transcription=null;
 	
+	/**
+	 * 
+	 * Constructor.
+	 *
+	 * @param model the root model
+	 * @param project the project where we want to put the new file
+	 * @param transcription the object in charge to do the transcription
+	 */
 	public TranscriptionEngine(Model model, IProject project, ITranscription transcription) {
 		super();
 		this.model = model;
@@ -43,8 +55,11 @@ public class TranscriptionEngine {
 		this.transcription = transcription;
 	}
 
+	/**
+	 * execute the transcription
+	 */
 	public void traduce() {
-		IFile file = project.getFile(transcription.getNameFile());
+		IFile file = project.getFile(INTERNAL_DIRECTORY+transcription.getNameFile());
 		//at this point, no resources have been created
 		if (!project.isOpen())
 			try {
@@ -71,6 +86,11 @@ public class TranscriptionEngine {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param model that will be traduced
+	 * @return the stringBuffer that will be obtained from the transcription
+	 */
 	public StringBuffer getText(Model model){
 
 		StringBuffer out = new StringBuffer();
@@ -91,6 +111,12 @@ public class TranscriptionEngine {
 		return out;
 	}
 
+	/**
+	 * create a content from a package
+	 * @param out the result
+	 * @param documentModel the package where its content will be translated
+	 * @param level the depth of  the current package
+	 */
 	public void writeContent(StringBuffer out, Package documentModel, int level) {
 		for(Iterator<Element> iteComment = (documentModel).getOwnedElements().iterator(); iteComment.hasNext();) {
 			Element packageableElement = (Element)iteComment.next();

@@ -21,11 +21,10 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * this class is a specialization to generate html files.
- * @author PT202707
+ * this class is a specialization to generate mediawiki files.
  *
  */
-public class HTMLTranscription implements ITranscription {
+public class WikiTranscription implements ITranscription {
 
 
 
@@ -36,7 +35,6 @@ public class HTMLTranscription implements ITranscription {
 	 */
 	
 	public void writeEndingDocument(StringBuffer out) {
-		out.append("</html>"); //$NON-NLS-1$
 	}
 
 
@@ -48,8 +46,7 @@ public class HTMLTranscription implements ITranscription {
 	 */
 	
 	public StringBuffer writeBeginningDocument(StringBuffer out) {
-		out.append("<html>"); //$NON-NLS-1$
-		out.append("<link rel=\"stylesheet\" href=\"default.css\" type=\"text/css\">"); //$NON-NLS-1$
+		out.append("\n__TOC__"); //$NON-NLS-1$
 		return out;
 	}
 
@@ -62,7 +59,7 @@ public class HTMLTranscription implements ITranscription {
 	 */
 	
 	public void writeDocumentTitle(StringBuffer out, Model documentModel) {
-		out.append("<H1>"+documentModel.getName()+"</H1>"); //$NON-NLS-1$ //$NON-NLS-2$
+		out.append("\n= "+documentModel.getName()+" ="); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	
@@ -77,7 +74,13 @@ public class HTMLTranscription implements ITranscription {
 	 */
 	
 	public void writesectionTitle(StringBuffer out, int level, Element packageableElement) {
-		out.append("<H"+level+">"+((Package)packageableElement).getName()+"</H"+level+">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		if(level==2){
+		out.append("\n=="+((Package)packageableElement).getName()+"==");} //$NON-NLS-1$ //$NON-NLS-2$
+		if(level==3){
+			out.append("\n==="+((Package)packageableElement).getName()+"===");} //$NON-NLS-1$ //$NON-NLS-2$
+		if(level==4){
+			out.append("\n===="+((Package)packageableElement).getName()+"====");} //$NON-NLS-1$ //$NON-NLS-2$
+		
 	}
 
 
@@ -90,9 +93,7 @@ public class HTMLTranscription implements ITranscription {
 	 */
 	
 	public void writeImageRef(StringBuffer out, Element packageableElement, Stereotype imgRefStereotype) {
-		out.append("<P align=\"middle\"><img src="+((Element)packageableElement).getValue(imgRefStereotype, I_DocumentStereotype.IMAGEREF_REF_ATT)+" alt="+((Comment)packageableElement).getBody()+ " ></P>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		out.append("<P align=\"middle\">"+((Comment)packageableElement).getBody()+"</P>"); //$NON-NLS-1$ //$NON-NLS-2$
-		out.append("</BR>"); //$NON-NLS-1$
+		out.append("\n[[Image:"+((Element)packageableElement).getValue(imgRefStereotype, I_DocumentStereotype.IMAGEREF_REF_ATT)+"|"+((Comment)packageableElement).getBody()+"]]<br>");  //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 
@@ -104,13 +105,13 @@ public class HTMLTranscription implements ITranscription {
 	 */
 	
 	public void writeParagraph(StringBuffer out, Element packageableElement) {
-		out.append("<pre>"+((Comment)packageableElement).getBody().replaceAll("\n", "<BR/>")+"</pre>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		out.append("\n"+((Comment)packageableElement).getBody()); //$NON-NLS-1$
 	}
 
 
 	public String getNameFile() {
 		
-		return "DeveloperDoc.html"; //$NON-NLS-1$
+		return "DeveloperDoc.mediawiki"; //$NON-NLS-1$
 	}
 
 

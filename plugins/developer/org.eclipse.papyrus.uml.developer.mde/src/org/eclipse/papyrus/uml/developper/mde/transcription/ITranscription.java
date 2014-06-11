@@ -33,6 +33,7 @@ public interface ITranscription {
 	/**
 	 * init the document
 	 * @param out
+	 *  @return the string buffer after adding the prefix for the document
 	 */
 	public abstract StringBuffer writeBeginningDocument(StringBuffer out);
 
@@ -54,7 +55,8 @@ public interface ITranscription {
 	/**
 	 * write a image
 	 * @param out
-	 * @param packageableElement form a comment that contains the ref to the image
+	 * @param packageableElement form a comment that contains the ref to the 
+	 * @param imgRefStereotype the stereotype in charge to reference the image
 	 */
 	public abstract void writeImageRef(StringBuffer out, Element packageableElement, Stereotype imgRefStereotype);
 	/**

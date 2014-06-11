@@ -61,7 +61,7 @@ public abstract class IDMAbstractHandler extends AbstractHandler {
 			papyrusEditor =(PapyrusMultiDiagramEditor)ServiceUtilsForHandlers.getInstance().getService(IMultiDiagramEditor.class, event);
 			transactionalEditingDomain =ServiceUtilsForHandlers.getInstance().getService(org.eclipse.emf.transaction.TransactionalEditingDomain.class, event);
 		} catch (Exception e) {
-			System.err.println("impossible to get the Transactional Editing Domain "+e);
+			System.err.println("impossible to get the Transactional Editing Domain "+e); //$NON-NLS-1$
 		}
 		return null;
 	}

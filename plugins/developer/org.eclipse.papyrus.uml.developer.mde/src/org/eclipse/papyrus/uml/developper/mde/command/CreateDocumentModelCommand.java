@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 import org.eclipse.papyrus.infra.hyperlink.helper.AbstractHyperLinkHelper;
 import org.eclipse.papyrus.infra.hyperlink.helper.HyperLinkHelperFactory;
+import org.eclipse.papyrus.infra.hyperlink.object.HyperLinkDocument;
 import org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject;
 import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkException;
 import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkHelpersRegistrationUtil;
@@ -56,10 +57,24 @@ import org.eclipse.uml2.uml.UseCase;
  */
 public class CreateDocumentModelCommand extends RecordingCommand {
 
+	protected static final String TESTS = "Tests"; //$NON-NLS-1$
+	protected static final String DESIGN = "Design"; //$NON-NLS-1$
+	protected static final String HOW_TO = "How to"; //$NON-NLS-1$
+	protected static final String USE_CASES = "Use Cases"; //$NON-NLS-1$
+	private static final String SYS_ML_REQUIREMENTS_REQUIREMENT = "SysML::Requirements::Requirement"; //$NON-NLS-1$
+	protected static final String REQUIREMENTS = "Requirements"; //$NON-NLS-1$
 	protected org.eclipse.uml2.uml.Package topModel;
 	protected String directoryPath=null;
 	protected HyperLinkHelperFactory hyperlinkHelperFactory;
 
+	/**
+	 * 
+	 * Constructor to transform model into document model
+	 *
+	 * @param domain
+	 * @param topModel the root model
+	 * @param directoryPath the directory where image will be stored, pay attention directory must exist
+	 */
 	public CreateDocumentModelCommand(TransactionalEditingDomain domain, org.eclipse.uml2.uml.Package topModel, String directoryPath) {
 		super(domain);
 		this.topModel=topModel;
@@ -116,14 +131,14 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			documentModel.getPackagedElements().add(requirementsOUT);
 			Stereotype sectionStereotype= requirementsOUT.getApplicableStereotype(I_DocumentStereotype.SECTION_STEREOTYPE);
 			requirementsOUT.applyStereotype(sectionStereotype);
-			requirementsOUT.setName("Requirements");
+			requirementsOUT.setName(REQUIREMENTS);
 
 			for(Iterator<Element> itereq = (requirementsIn).getOwnedElements().iterator(); itereq.hasNext();) {
 				Element currentReq = (Element)itereq.next();
-				Stereotype reqStereotype=currentReq.getApplicableStereotype("SysML::Requirements::Requirement");
+				Stereotype reqStereotype=currentReq.getApplicableStereotype(SYS_ML_REQUIREMENTS_REQUIREMENT);
 				if(reqStereotype!=null){
-					String out="- "+((org.eclipse.uml2.uml.Class)currentReq).getName()+" (id="+currentReq.getValue(reqStereotype, "id")+"): ";
-					out=out+"\n "+currentReq.getValue(reqStereotype, "text");
+					String out="- "+((org.eclipse.uml2.uml.Class)currentReq).getName()+" (id="+currentReq.getValue(reqStereotype, "id")+"): "; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+					out=out+"\n "+currentReq.getValue(reqStereotype, "text"); //$NON-NLS-1$ //$NON-NLS-2$
 
 					Comment comment=requirementsOUT.createOwnedComment();
 					Stereotype contentStereotype= comment.getApplicableStereotype(I_DocumentStereotype.CONTENT_STEREOTYPE);
@@ -144,12 +159,13 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		}
 
 		if (useCaseIN!= null){
-			Package useCaseModelOUT = createSection(documentModel, "Use Cases");
+			Package useCaseModelOUT = createSection(documentModel, USE_CASES);
 
 			//createRef diagram
-			Diagram currentDiagram= containedDiagrams(useCaseIN).get(0);
-			generateImg(copyImageUtil, useCaseModelOUT, currentDiagram);
-
+			if(containedDiagrams(useCaseIN).size()>0){
+				Diagram currentDiagram= containedDiagrams(useCaseIN).get(0);
+				generateImg(copyImageUtil, useCaseModelOUT, currentDiagram);
+			}
 			for(Iterator<Comment> iteComment = (useCaseIN).getOwnedComments().iterator(); iteComment.hasNext();) {
 				Comment currentComment = (Comment)iteComment.next();
 				transformToContentComment(useCaseModelOUT, currentComment);
@@ -163,13 +179,27 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 					for(Iterator<Comment> iteComment = ((UseCase)packageableElement).getOwnedComments().iterator(); iteComment.hasNext();) {
 						Comment currentComment = (Comment)iteComment.next();
-						transformToContentComment(useCaseSectionOUT, currentComment);
+						transformToContentWithUser(copyImageUtil, useCaseSectionOUT, currentComment);
 					}
 				}
 			}
 
 		}
 		return useCaseIN;
+	}
+
+	protected void transformToContentWithUser(CopyToImageUtil copyImageUtil, Package useCaseSectionOUT, Comment currentComment) {
+		Stereotype isUser= currentComment.getAppliedStereotype(I_DeveloperIDMStereotype.USERDOC_STEREOTYPE);
+		if(isUser!=null){
+			Package HowToSection=(Package)useCaseSectionOUT.getPackagedElement(HOW_TO);
+			if( HowToSection==null){
+				HowToSection= createSection(useCaseSectionOUT, HOW_TO);}
+			transformToContentComment(HowToSection, currentComment);
+			createImageFromHyperLink(copyImageUtil, HowToSection, currentComment);
+		}
+		else{
+			transformToContentComment(useCaseSectionOUT, currentComment);
+		}
 	}
 
 	protected void generateDesign(CopyToImageUtil copyImageUtil, Model documentModel) {
@@ -182,11 +212,12 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			}
 		}
 		if(designPackageIn!=null){
-			Package designPackageOUT= createSection(documentModel, "Design");
+			Package designPackageOUT= createSection(documentModel, DESIGN);
 			//createRef diagram
-			Diagram currentDiagram= containedDiagrams(designPackageIn).get(0);
-			generateImg(copyImageUtil, designPackageOUT, currentDiagram);
-
+			if(containedDiagrams(designPackageIn).size()>0){
+				Diagram currentDiagram= containedDiagrams(designPackageIn).get(0);
+				generateImg(copyImageUtil, designPackageOUT, currentDiagram);
+			}
 			for(Iterator<Comment> iteComment = (designPackageIn).getOwnedComments().iterator(); iteComment.hasNext();) {
 				Comment currentComment = (Comment)iteComment.next();
 				createImageFromHyperLink(copyImageUtil, designPackageOUT, currentComment);
@@ -208,12 +239,13 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		}
 
 		if (testIN!= null){
-			Package testModelOUT = createSection(documentModel, "Tests");
+			Package testModelOUT = createSection(documentModel, TESTS);
 
 			//createRef diagram
-			Diagram currentDiagram= containedDiagrams(testIN).get(0);
-			generateImg(copyImageUtil, testModelOUT, currentDiagram);
-
+			if(containedDiagrams(testIN).size()>0){
+				Diagram currentDiagram= containedDiagrams(testIN).get(0);
+				generateImg(copyImageUtil, testModelOUT, currentDiagram);
+			}
 			for(Iterator<Comment> iteComment = (testIN).getOwnedComments().iterator(); iteComment.hasNext();) {
 				Comment currentComment = (Comment)iteComment.next();
 				transformToContentComment(testModelOUT, currentComment);
@@ -242,6 +274,12 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 		return testIN;
 	}
 
+	/**
+	 * 
+	 * @param namedElement
+	 * @param topModel
+	 * @return the list of elements that depends of the given named element (never null, empty list)
+	 */
 	public ArrayList<NamedElement> getAllDependentElement(NamedElement namedElement, Package topModel){
 		ArrayList<NamedElement> result= new ArrayList<NamedElement>();
 		Iterator<EObject> iteratorEObject= topModel.eAllContents();
@@ -250,7 +288,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 			if(eObject instanceof Dependency){
 				if(((Dependency)eObject).getSuppliers().contains(namedElement)){
 					result.addAll(((Dependency)eObject).getClients());
-					}
+				}
 			}
 
 		}
@@ -259,6 +297,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 	}
 
 
+	@SuppressWarnings("unchecked")
 	protected void createImageFromHyperLink(CopyToImageUtil copyImageUtil, Package designPackageOUT, Comment currentComment) {
 		List<Object>referedViews=NavigatorUtils.getEObjectViews(currentComment);
 		if(referedViews.size()!=0){
@@ -277,6 +316,14 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 						System.err.println(hyperLinkObject.getObject());
 						if(hyperLinkObject.getObject() instanceof Diagram){
 							generateImg(copyImageUtil, designPackageOUT, ((Diagram)hyperLinkObject.getObject()));
+						}
+						if(hyperLinkObject instanceof HyperLinkDocument ){
+							String IMGpath=((HyperLinkDocument)hyperLinkObject).getHyperlinkDocument();
+							Comment commentImg=designPackageOUT.createOwnedComment();
+							Stereotype refStereotype= commentImg.getApplicableStereotype(I_DocumentStereotype.IMAGEREF_STEREOTYPE);
+							commentImg.applyStereotype(refStereotype);
+							commentImg.setValue(refStereotype, I_DocumentStereotype.IMAGEREF_REF_ATT, IMGpath.toString());
+							commentImg.setBody(hyperLinkObject.getTooltipText());
 						}
 					}
 				}
@@ -319,7 +366,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 	 * @param currentDiagram
 	 */
 	protected void generateImg(CopyToImageUtil copyImageUtil, Package currentModel, Diagram currentDiagram) {
-		Path imagePath= new Path(""+directoryPath+ File.separator +"imgDOC"+File.separator+ currentDiagram.getName().replaceAll(" ", "_")+".png");
+		Path imagePath= new Path(""+directoryPath+ File.separator +"imgDOC"+File.separator+ currentDiagram.getName().replaceAll(" ", "_")+".png"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
 		try {
 
 			copyImageUtil.copyToImage(currentDiagram,

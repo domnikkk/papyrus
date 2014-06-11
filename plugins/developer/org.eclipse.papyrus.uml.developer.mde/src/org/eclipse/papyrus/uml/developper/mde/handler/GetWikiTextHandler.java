@@ -21,20 +21,17 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.papyrus.uml.developper.mde.I_DeveloperIDMStereotype;
 import org.eclipse.papyrus.uml.developper.mde.command.CreateDocumentModelCommand;
-import org.eclipse.papyrus.uml.developper.mde.transcription.HTMLTranscription;
 import org.eclipse.papyrus.uml.developper.mde.transcription.TranscriptionEngine;
+import org.eclipse.papyrus.uml.developper.mde.transcription.WikiTranscription;
 import org.eclipse.uml2.uml.Model;
 
 /**
- * This class is used to create and html developper doc file.
+ * This class is used to create and wiki  developper doc file.
  *
  */
-public class GetHTMLTextHandler extends IDMAbstractHandler {
+public class GetWikiTextHandler extends IDMAbstractHandler {
 
 	protected static final String INTERNAL_DIRECTORY_NAME = "/doc"; //$NON-NLS-1$
-
-
-
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		super.execute(event);
@@ -42,7 +39,7 @@ public class GetHTMLTextHandler extends IDMAbstractHandler {
 		CreateDocumentModelCommand createDocumentModelCommand= new CreateDocumentModelCommand(transactionalEditingDomain,(Model)getSelection(), getCurrentProject().getLocationURI().getPath()+INTERNAL_DIRECTORY_NAME );
 		transactionalEditingDomain.getCommandStack().execute(createDocumentModelCommand);
 		IProject project = getCurrentProject();
-		TranscriptionEngine engine= new TranscriptionEngine((Model)getSelection(), project, new HTMLTranscription());
+		TranscriptionEngine engine= new TranscriptionEngine((Model)getSelection(), project, new WikiTranscription());
 		engine.traduce();
 		return null;
 	}

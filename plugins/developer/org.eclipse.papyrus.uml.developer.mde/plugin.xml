@@ -62,6 +62,15 @@
                      checkEnabled="true">
                </visibleWhen>
             </command>
+            <command
+                  commandId="org.eclipse.papyrus.uml.developper.mde.handler.GetWikiTextHandler"
+                  id="org.eclipse.papyrus.uml.developper.mde.handler.GetWikiTextMenu"
+                  label="generate wiki page"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="true">
+               </visibleWhen>
+            </command>
          </menu>
       </menuContribution>
    </extension>
@@ -71,6 +80,11 @@
             defaultHandler="org.eclipse.papyrus.uml.developper.mde.handler.GetHTMLTextHandler"
             id="org.eclipse.papyrus.uml.developper.mde.handler.GetHTMLTextHandler"
             name="generate HTML page">
+      </command>
+      <command
+            defaultHandler="org.eclipse.papyrus.uml.developper.mde.handler.GetWikiTextHandler"
+            id="org.eclipse.papyrus.uml.developper.mde.handler.GetWikiTextHandler"
+            name="generate wiki page">
       </command>
    </extension>
 </plugin>

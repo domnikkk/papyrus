@@ -4,9 +4,7 @@
     <availablePage>
       <emfPageIdentifier href="GenericDiagramFucntion.notation#_vrwWQHaNEeKemeMpJaVA3A"/>
     </availablePage>
-    <availablePage>
-      <emfPageIdentifier href="GenericDiagramFucntion.notation#_-p5JgHaNEeKemeMpJaVA3A"/>
-    </availablePage>
+    <availablePage/>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -15,10 +13,13 @@
           <emfPageIdentifier href="GenericDiagramFucntion.notation#_vrwWQHaNEeKemeMpJaVA3A"/>
         </children>
         <children>
-          <emfPageIdentifier href="GenericDiagramFucntion.notation#_-p5JgHaNEeKemeMpJaVA3A"/>
+          <emfPageIdentifier href="GenericDiagramFucntion.notation#_5VTQ4Oy6EeOTppRa5YYcIg"/>
         </children>
         <children>
-          <emfPageIdentifier href="GenericDiagramFucntion.notation#_BX9hQOGuEeO_JM12vRgWBQ"/>
+          <emfPageIdentifier href="GenericDiagramFucntion.notation#_7KbmgOy6EeOTppRa5YYcIg"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="GenericDiagramFucntion.notation#_8nLRUOy6EeOTppRa5YYcIg"/>
         </children>
       </children>
     </windows>

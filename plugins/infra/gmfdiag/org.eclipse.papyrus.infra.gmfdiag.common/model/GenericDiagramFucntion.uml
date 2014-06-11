@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Document="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:structure="http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Document/_qR4REMn0EeO9CYUoXDRplw/0 pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements http://DeveloperProcess/schemas/structure/_VA9p4McPEeO9CYUoXDRplw/1 pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw">
   <uml:Model xmi:id="_v2A68HaMEeKemeMpJaVA3A" name="DiagramEditorFunctionalities">
     <ownedComment xmi:type="uml:Comment" xmi:id="_xpU2MHaNEeKemeMpJaVA3A" annotatedElement="_v2A68HaMEeKemeMpJaVA3A">
       <body>The purpose of this document is to explain basic functionalities intra diagram, i.e. how element in the diagram can be manipulated without taking in account link with model explorer, and properties view </body>
@@ -7,7 +7,7 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_v2A68XaMEeKemeMpJaVA3A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_2hdp0HaNEeKemeMpJaVA3A" name="Requirements">
+    <packagedElement xmi:type="uml:Model" xmi:id="_sz15QOyrEeOTppRa5YYcIg" name="Requirements">
       <packagedElement xmi:type="uml:Class" xmi:id="_6udOsHaNEeKemeMpJaVA3A" name="DisplayElementAtFirstLevel"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_u6MhAHaOEeKemeMpJaVA3A" name="DisplayElementAtFirstLevel_+1"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_4PBJEHaTEeKemeMpJaVA3A" name="MoveElementIntoAnother"/>
@@ -17,11 +17,98 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_UzjXQOGuEeO_JM12vRgWBQ" name="DropDromModelExplorer"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_dQjtQOvJEeOv4v5t8d2cOg" name="DiagramVersion"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_tEgNoOy6EeOTppRa5YYcIg" name="UseCases"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="_tqyKgOy6EeOTppRa5YYcIg" name="Design"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="_uA3IMOy6EeOTppRa5YYcIg" name="test"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="_vpPJUOy8EeOTppRa5YYcIg" name="Generic function of a Papyrus diagram editor">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_vpSzsOy8EeOTppRa5YYcIg">
+        <body>The purpose of this document is to explain basic functionalities intra diagram, i.e. how element in the diagram can be manipulated without taking in account link with model explorer, and properties view </body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Package" xmi:id="_vpWeEOy8EeOTppRa5YYcIg" name="Requirements">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vpcksOy8EeOTppRa5YYcIg">
+          <body>- DisplayElementAtFirstLevel (id=Req_001): 
+ Papyrus shall let display every elements at first layer even if the namespace is not respected</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vpfoAOy8EeOTppRa5YYcIg">
+          <body>- DisplayElementAtFirstLevel_+1 (id=Req_002): 
+ Papyrus shall display element by respected namespace when they are contained graphically by other elements </body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vpirUOy8EeOTppRa5YYcIg">
+          <body>- MoveElementIntoAnother (id=Req_003): 
+ When an element is moved into another element, the container has to change, i.e. the qualified name change</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vpluoOy8EeOTppRa5YYcIg">
+          <body>- MoveElementIntoADiagram (id=Req_004): 
+ When an element move from an element to the diagram, two options can be applied:&#xD;
+- The container change and the namespace has to be adapted, so a clean into diagrams has to be done to respect Req_002&#xD;
+- The container does not change; this is only a graphical move, as described by the req_001</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vpoK4Oy8EeOTppRa5YYcIg">
+          <body>- Edit Grid and Ruler Property (id=Req_005): 
+ The user must be able to change the Diagram Viewer properties (Snap To Grid/To Geometry, Show Rulers, Show Grid, Grid Style, Grid Color, Grid Order, Ruler Units, Grid Spacing )</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vprOMOy8EeOTppRa5YYcIg">
+          <body>- Snap To Grid Behavior (id=Req_005): 
+ Snap To Grid must be able to snap on : &#xD;
+- 4 corners of rectangle&#xD;
+- 4 middles of side of a rectangle&#xD;
+- anchors of link&#xD;
+- bendpoints</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vpuRgOy8EeOTppRa5YYcIg">
+          <body>- DropDromModelExplorer (id=Req006): 
+ Its possible to drop the seame element several time on the canva</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vpwtwOy8EeOTppRa5YYcIg">
+          <body>- DiagramVersion (id=Req007): 
+ Each diagram must have a version  inorder to able possble migration</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_vpyi8Oy8EeOTppRa5YYcIg" name="Use Cases">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vp6ewOy8EeOTppRa5YYcIg">
+          <body>UseCaseDiagram</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_vp87AOy8EeOTppRa5YYcIg" name="Design">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vqE20Oy8EeOTppRa5YYcIg">
+          <body>ClassDiagram</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_vqHTEOy8EeOTppRa5YYcIg" name="Tests">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vqOn0Oy8EeOTppRa5YYcIg">
+          <body>UseCaseDiagram</body>
+        </ownedComment>
+      </packagedElement>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_V0CKUHaNEeKemeMpJaVA3A">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V1EsIHaNEeKemeMpJaVA3A" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_7ilaIOvxEeOTppRa5YYcIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7jjDcOvxEeOTppRa5YYcIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA6mkMcPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_kWqjAMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_7jpKEOvxEeOTppRa5YYcIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7kZYAOvxEeOTppRa5YYcIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VA-4AMcPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_qCT3MMbXEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_7kbNMOvxEeOTppRa5YYcIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7lJl8OvxEeOTppRa5YYcIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_VBAtMccPEeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/developerprocess.profile.uml#_2LNtQMbYEeO09JBvNFZRNw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_U92EwOy8EeOTppRa5YYcIg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_U--tMOy8EeOTppRa5YYcIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_qR44IMn0EeO9CYUoXDRplw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DEVELOPER_PROFILES/Document.profile.uml#_D0JcUMnzEeO9CYUoXDRplw"/>
     </profileApplication>
   </uml:Model>
   <Requirements:Requirement xmi:id="_6u56oHaNEeKemeMpJaVA3A" text="Papyrus shall let display every elements at first layer even if the namespace is not respected" id="Req_001" base_Class="_6udOsHaNEeKemeMpJaVA3A"/>
@@ -32,4 +119,26 @@
   <Requirements:Requirement xmi:id="_u_1LgGP6EeOq0pDGL_YBMA" text="Snap To Grid must be able to snap on : &#xD;&#xA;- 4 corners of rectangle&#xD;&#xA;- 4 middles of side of a rectangle&#xD;&#xA;- anchors of link&#xD;&#xA;- bendpoints" id="Req_005" base_Class="_uKPAQGP6EeOq0pDGL_YBMA"/>
   <Requirements:Requirement xmi:id="_Uzo20OGuEeO_JM12vRgWBQ" text="Its possible to drop the seame element several time on the canva" id="Req006" base_Class="_UzjXQOGuEeO_JM12vRgWBQ"/>
   <Requirements:Requirement xmi:id="_dQusYOvJEeOv4v5t8d2cOg" text="Each diagram must have a version  inorder to able possble migration" id="Req007" base_Class="_dQjtQOvJEeOv4v5t8d2cOg"/>
+  <structure:Project xmi:id="_q9KrgOyrEeOTppRa5YYcIg" author="CEA LIST" version="1.0.0" base_Model="_v2A68HaMEeKemeMpJaVA3A" title="Generic function of a Papyrus diagram editor"/>
+  <structure:Requirements xmi:id="_ybsUwOy6EeOTppRa5YYcIg" base_Model="_sz15QOyrEeOTppRa5YYcIg"/>
+  <structure:UseCases xmi:id="_za0PcOy6EeOTppRa5YYcIg" base_Model="_tEgNoOy6EeOTppRa5YYcIg"/>
+  <structure:Design xmi:id="_0dIBAOy6EeOTppRa5YYcIg" base_Model="_tqyKgOy6EeOTppRa5YYcIg"/>
+  <structure:Tests xmi:id="_1R33sOy6EeOTppRa5YYcIg" base_Model="_uA3IMOy6EeOTppRa5YYcIg"/>
+  <Document:Document xmi:id="_vpRlkOy8EeOTppRa5YYcIg" base_Model="_vpPJUOy8EeOTppRa5YYcIg" author="CEA LIST" version="1.0.0"/>
+  <Document:Content xmi:id="_vpV3AOy8EeOTppRa5YYcIg" base_Comment="_vpSzsOy8EeOTppRa5YYcIg"/>
+  <Document:Section xmi:id="_vpZhYOy8EeOTppRa5YYcIg" base_Package="_vpWeEOy8EeOTppRa5YYcIg"/>
+  <Document:Content xmi:id="_vpdy0Oy8EeOTppRa5YYcIg" base_Comment="_vpcksOy8EeOTppRa5YYcIg"/>
+  <Document:Content xmi:id="_vpg2IOy8EeOTppRa5YYcIg" base_Comment="_vpfoAOy8EeOTppRa5YYcIg"/>
+  <Document:Content xmi:id="_vpj5cOy8EeOTppRa5YYcIg" base_Comment="_vpirUOy8EeOTppRa5YYcIg"/>
+  <Document:Content xmi:id="_vpm8wOy8EeOTppRa5YYcIg" base_Comment="_vpluoOy8EeOTppRa5YYcIg"/>
+  <Document:Content xmi:id="_vppZAOy8EeOTppRa5YYcIg" base_Comment="_vpoK4Oy8EeOTppRa5YYcIg"/>
+  <Document:Content xmi:id="_vpscUOy8EeOTppRa5YYcIg" base_Comment="_vprOMOy8EeOTppRa5YYcIg"/>
+  <Document:Content xmi:id="_vpvfoOy8EeOTppRa5YYcIg" base_Comment="_vpuRgOy8EeOTppRa5YYcIg"/>
+  <Document:Content xmi:id="_vpx74Oy8EeOTppRa5YYcIg" base_Comment="_vpwtwOy8EeOTppRa5YYcIg"/>
+  <Document:Section xmi:id="_vpzxEOy8EeOTppRa5YYcIg" base_Package="_vpyi8Oy8EeOTppRa5YYcIg"/>
+  <Document:ImageRef xmi:id="_vp8T8Oy8EeOTppRa5YYcIg" base_Comment="_vp6ewOy8EeOTppRa5YYcIg" ref="C:/git/org.eclipse.papyrus/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common/imgDOC/UseCaseDiagram.png"/>
+  <Document:Section xmi:id="_vp-JIOy8EeOTppRa5YYcIg" base_Package="_vp87AOy8EeOTppRa5YYcIg"/>
+  <Document:ImageRef xmi:id="_vqGE8Oy8EeOTppRa5YYcIg" base_Comment="_vqE20Oy8EeOTppRa5YYcIg" ref="C:/git/org.eclipse.papyrus/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common/imgDOC/ClassDiagram.png"/>
+  <Document:Section xmi:id="_vqIhMOy8EeOTppRa5YYcIg" base_Package="_vqHTEOy8EeOTppRa5YYcIg"/>
+  <Document:ImageRef xmi:id="_vqP18Oy8EeOTppRa5YYcIg" base_Comment="_vqOn0Oy8EeOTppRa5YYcIg" ref="C:/git/org.eclipse.papyrus/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common/imgDOC/UseCaseDiagram.png"/>
 </xmi:XMI>
