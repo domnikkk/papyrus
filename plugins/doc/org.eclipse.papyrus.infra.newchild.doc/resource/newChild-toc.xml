@@ -1,19 +1,17 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <toc topic="resource/newChild.html" label="newChild">
-	<topic href="resource/newChild.html" label="New Child Menu into the model explorer">
-		<topic href="resource/newChild.html#Requirements" label="Requirements"></topic>
-		<topic href="resource/newChild.html#Use_Cases" label="Use Cases">
-			<topic href="resource/newChild.html#UseCreateMenu" label="UseCreateMenu">
-				<topic href="resource/newChild.html#How_to" label="How to"></topic>
-			</topic>
-			<topic href="resource/newChild.html#Create_or_modify_ElementCreationModel" label="Create or modify ElementCreationModel">
-				<topic href="resource/newChild.html#How_to_2" label="How to"></topic>
-			</topic>
-			<topic href="resource/newChild.html#Generate_.22ElementCreationModel.22_from_a_profile" label="Generate &quot;ElementCreationModel&quot; from a profile"></topic>
-			<topic href="resource/newChild.html#Hide.2C_change_order_or_add_submenus" label="Hide, change order or add submenus">
-				<topic href="resource/newChild.html#How_to_3" label="How to"></topic>
-			</topic>
-			<topic href="resource/newChild.html#Create_or_modify_ElementCreationModel_at_runtime_thanks_to_a_GUI" label="Create or modify ElementCreationModel at runtime thanks to a GUI"></topic>
+	<topic href="resource/newChild.html" label="Requirements"></topic>
+	<topic href="resource/newChild.html#Use_Cases" label="Use Cases">
+		<topic href="resource/newChild.html#UseCreateMenu" label="UseCreateMenu">
+			<topic href="resource/newChild.html#How_to" label="How to"></topic>
 		</topic>
+		<topic href="resource/newChild.html#Create_or_modify_ElementCreationModel" label="Create or modify ElementCreationModel">
+			<topic href="resource/newChild.html#How_to_2" label="How to"></topic>
+		</topic>
+		<topic href="resource/newChild.html#Generate_.22ElementCreationModel.22_from_a_profile" label="Generate &quot;ElementCreationModel&quot; from a profile"></topic>
+		<topic href="resource/newChild.html#Hide.2C_change_order_or_add_submenus" label="Hide, change order or add submenus">
+			<topic href="resource/newChild.html#How_to_3" label="How to"></topic>
+		</topic>
+		<topic href="resource/newChild.html#Create_or_modify_ElementCreationModel_at_runtime_thanks_to_a_GUI" label="Create or modify ElementCreationModel at runtime thanks to a GUI"></topic>
 	</topic>
 </toc>
