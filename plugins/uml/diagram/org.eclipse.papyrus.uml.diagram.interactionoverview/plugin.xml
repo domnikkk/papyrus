@@ -536,155 +536,41 @@
         </page>
 
         <!-- Element Preference pages declaration -->
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ActivityFinalNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ActivityFinalNodePreferencePage"
-            name="ActivityFinalNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.CallBehaviorActionPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.CallBehaviorActionPreferencePage"
-            name="CallBehaviorAction">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.CommentPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.CommentPreferencePage"
-            name="Comment">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ConditionalNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ConditionalNodePreferencePage"
-            name="ConditionalNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.DecisionNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.DecisionNodePreferencePage"
-            name="DecisionNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.FlowFinalNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.FlowFinalNodePreferencePage"
-            name="FlowFinalNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ForkNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ForkNodePreferencePage"
-            name="ForkNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.InitialNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.InitialNodePreferencePage"
-            name="InitialNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.JoinNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.JoinNodePreferencePage"
-            name="JoinNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.LoopNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.LoopNodePreferencePage"
-            name="LoopNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.MergeNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.MergeNodePreferencePage"
-            name="MergeNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.NamedElementPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.NamedElementPreferencePage"
-            name="NamedElement">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ActivityPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ActivityPreferencePage"
-            name="Activity">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.SequenceNodePreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.SequenceNodePreferencePage"
-            name="SequenceNode">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ConstraintPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ConstraintPreferencePage"
-            name="Constraint">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.CommentAnnotatedElementPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.CommentAnnotatedElementPreferencePage"
-            name="CommentAnnotatedElement">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ControlFlowPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ControlFlowPreferencePage"
-            name="ControlFlow">
-        </page>
 
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ParameterPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ParameterPreferencePage"
-            name="Parameter">
-        </page>
 
-        <page
-            category="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences"
-            class="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ConstraintPreferencePage"
-            id="org.eclipse.papyrus.uml.diagram.interactionoverview.preferences.ConstraintPreferencePage"
-            name="Constraint">
-        </page>
 
 
     </extension>
