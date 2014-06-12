@@ -43,6 +43,7 @@
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.views.validation.feature</module>
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.xwt.feature</module>
 		<module>../plugins/doc/org.eclipse.papyrus.cdo.ui.doc</module>
+		<module>../plugins/doc/org.eclipse.papyrus.copypaste.ui.doc</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.palette</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.paletteconfiguration</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.properties</module>
@@ -143,6 +144,7 @@
 		<module>../plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.config</module>
 		<module>../plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.editor</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.newchild</module>
+		<module>../plugins/doc/org.eclipse.papyrus.infra.newchild.doc</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.newchild.edit</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.onefile</module>
 		<module>../plugins/infra/org.eclipse.papyrus.infra.psf</module>
@@ -294,8 +296,6 @@
 		<module>../plugins/views/org.eclipse.papyrus.views.search</module>
 		<module>../plugins/views/validation/org.eclipse.papyrus.views.validation</module>
 		<module>../plugins/xwt/org.eclipse.papyrus.xwt</module>
-		<module>../plugins/doc/org.eclipse.papyrus.copypaste.ui.doc</module>
-		<module>../plugins/doc/org.eclipse.papyrus.infra.newchild.doc</module>
 		<module>main</module>
 	</modules>
 	<properties>
