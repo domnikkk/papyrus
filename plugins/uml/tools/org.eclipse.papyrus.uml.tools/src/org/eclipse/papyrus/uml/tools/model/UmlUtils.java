@@ -1,8 +1,27 @@
-/**
- * 
- */
+/*****************************************************************************
+ * Copyright (c) 2011, 2014 LIFL, CEA, and others.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  LIFL - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 431618
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.model;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.ModelUtils;
@@ -19,7 +38,8 @@ import org.eclipse.papyrus.uml.tools.Activator;
  * 
  */
 public class UmlUtils {
-
+	private static final String ANNOTATION_SUBSETS = "subsets"; //$NON-NLS-1$
+	
 	/**
 	 * Gets the UmlModel for the currently selected editor. <br>
 	 * Warning: This method is designed to be call from ui.handlers. It is not
@@ -126,4 +146,65 @@ public class UmlUtils {
 		return null;
 	}
 
+	public static Collection<EReference> getAllChangeableSupersets(EReference subset) {
+		Collection<EReference> result = null;
+		
+		// null has no supersets
+		EAnnotation supersets = (subset == null) ? null : subset.getEAnnotation(ANNOTATION_SUBSETS);
+		if(supersets != null) {
+			result = collectChangeableSupersets(supersets.getReferences(), new HashSet<EReference>());
+		}
+		
+		return (result == null) ? Collections.<EReference>emptyList() : result;
+	}
+	
+	private static Collection<EReference> collectChangeableSupersets(Collection<EObject> supersets, Set<EReference> result) {
+		for(EObject next : supersets) {
+			if(next instanceof EReference) {
+				EReference superset = (EReference)next;
+				if(superset.isChangeable() && result.add(superset)) {
+					EAnnotation recursive = (superset == null) ? null : superset.getEAnnotation(ANNOTATION_SUBSETS);
+					if(recursive != null) {
+						collectChangeableSupersets(recursive.getReferences(), result);
+					}
+				}
+			}
+		}
+		
+		return result;
+	}
+	
+	public static boolean isSubset(EReference subset) {
+		boolean result = false;
+		
+		// null is not a subset of anything
+		EAnnotation supersets = (subset == null) ? null : subset.getEAnnotation(ANNOTATION_SUBSETS);
+		if(supersets != null) {
+			result = !supersets.getReferences().isEmpty();
+		}
+		
+		return result;
+	}
+	
+	public static boolean isSubsetOf(EReference subset, EReference superset) {
+		boolean result = false;
+		
+		// null is not a subset of anything
+		EAnnotation supersets = (subset == null) ? null : subset.getEAnnotation(ANNOTATION_SUBSETS);
+		if(supersets != null) {
+			result = supersets.getReferences().contains(superset);
+			if(!result) {
+				// Look for transitive subset, which is at least plausible
+				// considering that we do have some superset
+				for(Iterator<EObject> iter = supersets.getReferences().iterator(); !result && iter.hasNext();) {
+					EObject next = iter.next();
+					if(next instanceof EReference) {
+						result = isSubsetOf((EReference)next, superset);
+					}
+				}
+			}
+		}
+		
+		return result;
+	}
 }

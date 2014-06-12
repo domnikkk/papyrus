@@ -12,23 +12,34 @@
  */
 package org.eclipse.papyrus.junit.utils.rules;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
+
+import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
+import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModel;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
@@ -50,6 +61,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.runner.Description;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
+
+import com.google.common.base.Optional;
+import com.google.common.collect.Iterables;
 
 
 /**
@@ -267,6 +281,49 @@ public class PapyrusEditorFixture extends AbstractModelFixture<TransactionalEdit
 			fail("Failed to get page manager from Papyrus editor: " + e.getLocalizedMessage());
 			return null; // Unreachable
 		}
+	}
+
+	public PapyrusEditorFixture activateDiagram(String name) {
+		for(Diagram diagram : Iterables.filter(getPageManager().allPages(), Diagram.class)) {
+			if(name.equals(diagram.getName())) {
+				getPageManager().selectPage(diagram);
+				break;
+			}
+		}
+
+		return this;
+	}
+
+	public EditPart findEditPart(EObject modelElement) {
+		IEditorPart activeEditor = getEditor().getActiveEditor();
+		assertThat("No diagram active", activeEditor, instanceOf(IDiagramWorkbenchPart.class));
+		DiagramEditPart diagram = ((IDiagramWorkbenchPart)activeEditor).getDiagramEditPart();
+		return findEditPart(diagram, modelElement);
+	}
+
+	private EditPart findEditPart(EditPart editPart, EObject modelElement) {
+		EditPart result = null;
+
+		Optional<View> view = AdapterUtils.adapt(editPart, View.class);
+		if(view.isPresent() && (view.get().getElement() == modelElement)) {
+			result = editPart;
+		}
+
+		if(result == null) {
+			// Search children
+			for(Iterator<?> iter = editPart.getChildren().iterator(); (result == null) && iter.hasNext();) {
+				result = findEditPart((EditPart)iter.next(), modelElement);
+			}
+		}
+
+		if((result == null) && (editPart instanceof GraphicalEditPart)) {
+			// Search edges
+			for(Iterator<?> iter = ((GraphicalEditPart)editPart).getSourceConnections().iterator(); (result == null) && iter.hasNext();) {
+				result = findEditPart((EditPart)iter.next(), modelElement);
+			}
+		}
+
+		return result;
 	}
 
 	public void flushDisplayEvents() {

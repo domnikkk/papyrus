@@ -27,6 +27,21 @@
 
 </extension>
 
+<extension
+      point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+   <metamodel
+         nsURI="http://www.eclipse.org/emf/2002/Ecore">
+         
+      <!-- Delete markers attached to objects being deleted. -->
+      <adviceBinding
+            id="org.eclipse.papyrus.infra.services.edit.markerDeletionAdvice"
+            class="org.eclipse.papyrus.infra.services.edit.internal.advice.MarkerDeletionAdvice"
+            typeId="*"
+            inheritance="none">
+      </adviceBinding>
+   </metamodel>
+</extension>
+
 <!-- Binds general (non-UML specific) advices
 
      The notation dependant advice add a View deletion command for any View that references
@@ -56,7 +71,20 @@
 
         <!-- Check for attempts to edit read-only objects that cannot reasonably be made writeable. -->		
         <advice ref="org.eclipse.papyrus.infra.emf.readOnlyAdvice" />
+        
+        <!-- Delete markers attached to objects being deleted. -->
+        <advice ref="org.eclipse.papyrus.infra.services.edit.markerDeletionAdvice" />
 	</binding>
+	
+	<!-- 
+	     In the default context, we also want to remove Papyrus Markers from deleted elements.
+	     This is necessarily especially to ensure the advice is used in the deletion of dependent
+	     elements (such as associations of which a member end is being deleted).
+	-->
+    <binding context="org.eclipse.gmf.runtime.emf.type.core.defaultContext">
+        <!-- Delete markers attached to objects being deleted. -->
+        <advice ref="org.eclipse.papyrus.infra.services.edit.markerDeletionAdvice" />
+    </binding>
 
 </extension>
 
