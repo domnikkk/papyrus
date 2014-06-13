@@ -990,11 +990,11 @@ public class PolicyChecker {
 	 *            The stereotypes applied on <code>element</code>
 	 * @return The check result
 	 */
-	private int allows(ChildRule rule, EObject origin, EObject element, Collection<EClass> stereotypes) {
+	private int allows(ChildRule rule, EClass origin, EClass element, Collection<EClass> stereotypes) {
 		EClass ce = rule.getElement();
 		EClass co = rule.getOrigin();
-		if ((ce == null || ce.isSuperTypeOf(element.eClass()))
-				&& (co == null || co.isSuperTypeOf(origin.eClass()))) {
+		if ((ce == null || ce.isSuperTypeOf(element))
+				&& (co == null || co.isSuperTypeOf(origin))) {
 			// matching type => check the application of the required stereotypes
 			for (EClass stereotype : rule.getStereotypes())
 				if (!stereotypes.contains(stereotype))
