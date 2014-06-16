@@ -73,7 +73,7 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            category="org.eclipse.papyrus.preferences.generalcategory"
+            category="org.eclipse.papyrus.infra.core.sasheditor.preferences.generalcategory"
             class="org.eclipse.papyrus.java.generator.ui.preference.PreferencePage"
             id="org.eclipse.papyrus.java.generator.ui.preference.PreferencePage"
             name="Java Classes Generation">
