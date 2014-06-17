@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncControlDelegate;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
@@ -98,10 +99,32 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 		/* 1. The current object activation is in the running state */
 		this.currentState = ObjectActivationState.RUNNING;
 		/* 2. Execute behavior(s) associated to the given classifier */
-		this.startBehavior(this.classifier, this.inputs);
+		try {
+			this.startBehavior(this.classifier, this.inputs);
+		}
+		catch (Exception e) {
+			Activator.log.error(e) ;
+			Display.getDefault().syncExec(new Runnable() {
+				public void run() {
+					MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+				}
+			}) ;
+			((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
+		}
 		/* 3. While current object activation is running then dispatch events */
 		while(!FUMLExecutionEngine.eInstance.isTerminated() && this.currentState.equals(ObjectActivationState.RUNNING)) {
-			this.dispatchNextEvent(); /* Dispatch is blocking if no SignalInstance available */
+			try {
+				this.dispatchNextEvent(); /* Dispatch is blocking if no SignalInstance available */
+			}
+			catch (Exception e) {
+				Activator.log.error(e) ;
+				Display.getDefault().syncExec(new Runnable() {
+					public void run() {
+						MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+					}
+				}) ;
+				((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
+			}
 			if(this.waitingEventAccepters.isEmpty()) {
 				this.currentState = ObjectActivationState.STOPPED;
 			}

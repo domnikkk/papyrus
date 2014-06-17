@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.moka.async.fuml;
 
 import org.eclipse.debug.core.DebugException;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncFIFOGetNextEventStrategy;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.Loci.LociL1.AsyncLocus;
@@ -29,6 +30,7 @@ import org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3.CS_Executor;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Behavior;
 
 // TODO: Auto-generated Javadoc
@@ -115,7 +117,18 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 
 				public void run() {
 					if(main != null) {
-						start(main);
+						try {
+							start(main);
+						}
+						catch (Exception e) {
+							Activator.log.error(e) ;
+							Display.getDefault().syncExec(new Runnable() {
+								public void run() {
+									MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+								}
+							}) ;
+							setIsTerminated(true) ;
+						}
 						// Waits for termination. i.e., the main thread is terminated, but object activations may still be running
 						FUMLExecutionEngine.eInstance.getControlDelegate().waitForTermination();
 						try {

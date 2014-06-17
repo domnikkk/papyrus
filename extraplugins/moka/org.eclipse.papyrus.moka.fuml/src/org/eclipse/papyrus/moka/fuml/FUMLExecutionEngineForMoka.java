@@ -20,6 +20,7 @@ import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.debug.core.model.IThread;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request;
@@ -36,6 +37,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Pa
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
 import org.eclipse.papyrus.moka.ui.presentation.AnimationUtils;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
@@ -206,7 +208,17 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 				public void run() {
 					if(main != null) {
-						start(main);
+						try {
+							start(main);
+						}
+						catch (Exception e) {
+							Activator.log.error(e) ;
+							Display.getDefault().syncExec(new Runnable() {
+								public void run() {
+									MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+								}
+							}) ;
+						}
 						if(!isTerminated()) {
 							try {
 								getDebugTarget().terminate();
