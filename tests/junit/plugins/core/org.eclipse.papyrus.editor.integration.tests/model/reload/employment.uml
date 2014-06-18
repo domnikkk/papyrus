@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_6iAasPJDEeOWJr1T78jdJA" name="employment">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_6iAasfJDEeOWJr1T78jdJA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YCTP0PJEEeOWJr1T78jdJA" name="Person">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mLn68PJEEeOWJr1T78jdJA" name="ssn" visibility="public" isUnique="false">
+      <type xmi:type="uml:DataType" href="library.uml#_AtaNAPJEEeOWJr1T78jdJA"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_opwxUPJEEeOWJr1T78jdJA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_op4tIPJEEeOWJr1T78jdJA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_SDT0YPlAEeOEp7Wro2yWpw" name="name" visibility="public" isUnique="false">
+      <type xmi:type="uml:DataType" href="library.uml#_vCcKoPJEEeOWJr1T78jdJA"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S4X0IPlAEeOEp7Wro2yWpw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S4izQPlAEeOEp7Wro2yWpw" value="1"/>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_2W4uAPJXEeOWJr1T78jdJA" name="Activity" node="_6IKnQPJXEeOWJr1T78jdJA _x5npMPlBEeOEp7Wro2yWpw _2X-D0PlBEeOEp7Wro2yWpw" group="_6IKnQPJXEeOWJr1T78jdJA">
+      <edge xmi:type="uml:ControlFlow" xmi:id="_zIVfEPlBEeOEp7Wro2yWpw" name="ControlFlow" target="_6IKnQPJXEeOWJr1T78jdJA" source="_x5npMPlBEeOEp7Wro2yWpw"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_4Sgd4PlBEeOEp7Wro2yWpw" name="ControlFlow1" target="_2X-D0PlBEeOEp7Wro2yWpw" source="_6IKnQPJXEeOWJr1T78jdJA"/>
+      <structuredNode xmi:type="uml:LoopNode" xmi:id="_6IKnQPJXEeOWJr1T78jdJA" name="work" incoming="_zIVfEPlBEeOEp7Wro2yWpw" outgoing="_4Sgd4PlBEeOEp7Wro2yWpw">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_DupxEPlCEeOEp7Wro2yWpw" name="do work"/>
+      </structuredNode>
+      <node xmi:type="uml:InitialNode" xmi:id="_x5npMPlBEeOEp7Wro2yWpw" name="InitialNode" outgoing="_zIVfEPlBEeOEp7Wro2yWpw"/>
+      <node xmi:type="uml:FlowFinalNode" xmi:id="_2X-D0PlBEeOEp7Wro2yWpw" name="FlowFinalNode" incoming="_4Sgd4PlBEeOEp7Wro2yWpw"/>
+    </ownedBehavior>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__JZpQPMXEeOa2u9_4wMSZA" name="Company">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_AsHZMPMYEeOa2u9_4wMSZA" name="employee" type="_YCTP0PJEEeOWJr1T78jdJA" subsettedProperty="_mLn68PJEEeOWJr1T78jdJA" association="_AsIAQPMYEeOa2u9_4wMSZA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AsHZMfMYEeOa2u9_4wMSZA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AsHZMvMYEeOa2u9_4wMSZA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_M1fEoPlAEeOEp7Wro2yWpw" name="name" visibility="public" isUnique="false">
+      <type xmi:type="uml:DataType" href="library.uml#_vCcKoPJEEeOWJr1T78jdJA"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q5IgQPlAEeOEp7Wro2yWpw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q5YX4PlAEeOEp7Wro2yWpw" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_AsIAQPMYEeOa2u9_4wMSZA" name="A_company_person_1" memberEnd="_AsIAQfMYEeOa2u9_4wMSZA _AsHZMPMYEeOa2u9_4wMSZA">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_AsIAQfMYEeOa2u9_4wMSZA" name="employer" visibility="public" type="__JZpQPMXEeOa2u9_4wMSZA" association="_AsIAQPMYEeOa2u9_4wMSZA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AsIAQvMYEeOa2u9_4wMSZA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AsIAQ_MYEeOa2u9_4wMSZA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

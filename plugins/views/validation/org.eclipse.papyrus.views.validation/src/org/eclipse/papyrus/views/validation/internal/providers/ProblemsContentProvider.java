@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 437217
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.views.validation.internal.providers;
 
@@ -31,8 +33,7 @@ import com.google.common.collect.Iterables;
 /**
  * This is the ProblemsContentProvider type. Enjoy.
  */
-public class ProblemsContentProvider
-		implements IStructuredContentProvider {
+public class ProblemsContentProvider implements IStructuredContentProvider {
 
 	private static final Object[] NONE = {};
 
@@ -53,31 +54,30 @@ public class ProblemsContentProvider
 	}
 
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		this.viewer = (AbstractTableViewer) viewer;
+		this.viewer = (AbstractTableViewer)viewer;
 
-		if (oldInput instanceof ValidationMarkersService) {
-			ValidationMarkersService service = (ValidationMarkersService) oldInput;
+		if(oldInput instanceof ValidationMarkersService) {
+			ValidationMarkersService service = (ValidationMarkersService)oldInput;
 			unhookMarkers(service);
-			unhookResourceSet(service.getModelSet()
-				.getTransactionalEditingDomain());
+
+			// The old service may have been disposed if its editor was closed
+			if(service.getModelSet() != null) {
+				unhookResourceSet(service.getModelSet().getTransactionalEditingDomain());
+			}
+
 			this.service = null;
 		}
 
-		if (newInput instanceof ValidationMarkersService) {
-			ValidationMarkersService service = (ValidationMarkersService) newInput;
+		if(newInput instanceof ValidationMarkersService) {
+			ValidationMarkersService service = (ValidationMarkersService)newInput;
 			this.service = service;
 			hookMarkers(service);
-			hookResourceSet(service.getModelSet()
-				.getTransactionalEditingDomain());
+			hookResourceSet(service.getModelSet().getTransactionalEditingDomain());
 		}
 	}
 
 	public Object[] getElements(Object inputElement) {
-		return (inputElement instanceof ValidationMarkersService)
-			? Iterables.toArray(
-				((ValidationMarkersService) inputElement).getMarkers(),
-				IPapyrusMarker.class)
-			: NONE;
+		return (inputElement instanceof ValidationMarkersService) ? Iterables.toArray(((ValidationMarkersService)inputElement).getMarkers(), IPapyrusMarker.class) : NONE;
 	}
 
 	protected void hookMarkers(ValidationMarkersService service) {
@@ -89,19 +89,18 @@ public class ProblemsContentProvider
 	}
 
 	private IValidationMarkerListener getValidationMarkerListener() {
-		if (listener == null) {
+		if(listener == null) {
 			listener = new IValidationMarkerListener() {
 
-				public void notifyMarkerChange(IPapyrusMarker marker,
-						MarkerChangeKind kind) {
-					if (viewer != null) {
-						switch (kind) {
-							case ADDED :
-								viewer.add(marker);
-								break;
-							case REMOVED :
-								viewer.remove(marker);
-								break;
+				public void notifyMarkerChange(IPapyrusMarker marker, MarkerChangeKind kind) {
+					if(viewer != null) {
+						switch(kind) {
+						case ADDED:
+							viewer.add(marker);
+							break;
+						case REMOVED:
+							viewer.remove(marker);
+							break;
 						}
 					}
 				}
@@ -120,42 +119,36 @@ public class ProblemsContentProvider
 	}
 
 	private ResourceSetListener getResourceSetListener() {
-		if (resourceSetListener == null) {
+		if(resourceSetListener == null) {
 			resourceSetListener = new DemultiplexingListener() {
 
 				@Override
-				protected void handleNotification(
-						TransactionalEditingDomain domain,
-						Notification notification) {
+				protected void handleNotification(TransactionalEditingDomain domain, Notification notification) {
 
 					// handle containment changes of problem elements to update
 					// labels
 					Object feature = notification.getFeature();
-					if ((feature instanceof EReference)
-						&& ((EReference) feature).isContainment()) {
+					if((feature instanceof EReference) && ((EReference)feature).isContainment()) {
 
-						switch (notification.getEventType()) {
-							case Notification.ADD :
-								handleContainment((EObject) notification
-									.getNewValue());
-								break;
-							case Notification.ADD_MANY :
-								for (Object next : (Collection<?>) notification
-									.getNewValue()) {
-									handleContainment((EObject) next);
-								}
-								break;
-							case Notification.SET :
-								handleContainment((EObject) notification
-									.getNewValue());
-								break;
+						switch(notification.getEventType()) {
+						case Notification.ADD:
+							handleContainment((EObject)notification.getNewValue());
+							break;
+						case Notification.ADD_MANY:
+							for(Object next : (Collection<?>)notification.getNewValue()) {
+								handleContainment((EObject)next);
+							}
+							break;
+						case Notification.SET:
+							handleContainment((EObject)notification.getNewValue());
+							break;
 						}
 					}
 				}
 
 				private void handleContainment(EObject object) {
 					Object[] markers = service.getMarkers(object).toArray();
-					if (markers.length > 0) {
+					if(markers.length > 0) {
 						viewer.update(markers, null);
 					}
 				}

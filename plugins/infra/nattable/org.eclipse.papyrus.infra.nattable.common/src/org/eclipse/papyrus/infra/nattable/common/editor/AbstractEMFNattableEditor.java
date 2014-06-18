@@ -11,6 +11,7 @@
  *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA-LIST) vincent.lorenzo@cea.fr
  *  Christian W. Damus (CEA) - bug 430880
+ *  Christian W. Damus (CEA) - bug 437217
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.common.editor;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.preference.PreferenceStore;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.infra.core.editor.reload.IReloadContextProvider;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
@@ -227,6 +229,10 @@ public abstract class AbstractEMFNattableEditor extends EditorPart {
 			if(tableManager != null) {
 				return this.tableManager.getTable();
 			}
+		}
+		
+		if(adapter == IReloadContextProvider.class) {
+			return new NattableReloadContextProvider(this);
 		}
 
 		return super.getAdapter(adapter);

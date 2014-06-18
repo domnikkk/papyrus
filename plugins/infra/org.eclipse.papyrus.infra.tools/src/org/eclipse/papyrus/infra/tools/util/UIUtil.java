@@ -27,6 +27,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IMemento;
 
 
 /**
@@ -52,6 +53,16 @@ public class UIUtil {
 	 */
 	public static ExecutorService createUIExecutor(Display display) {
 		return new UIExecutorService(display);
+	}
+
+	/**
+	 * Creates a local memento that is not persistable and is not based on an XML document. This is useful for capturing the
+	 * state of UI elements locally in cases where persistence of the memento is not required.
+	 * 
+	 * @return the memento
+	 */
+	public static IMemento createLocalMemento() {
+		return LocalMemento.createMemento("__anonymous__", null); //$NON-NLS-1$
 	}
 
 	//

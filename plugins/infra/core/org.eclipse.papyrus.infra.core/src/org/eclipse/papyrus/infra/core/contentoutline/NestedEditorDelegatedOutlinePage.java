@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and other.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.contentoutline;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -24,15 +26,25 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.PlatformObject;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.editor.IReloadableEditor;
+import org.eclipse.papyrus.infra.core.editor.reload.EditorReloadEvent;
+import org.eclipse.papyrus.infra.core.editor.reload.IEditorReloadListener;
+import org.eclipse.papyrus.infra.core.editor.reload.IReloadContextProvider;
+import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IEditorPage;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IPage;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageLifeCycleEventsListener;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.ISashWindowsContainer;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -50,10 +62,15 @@ import org.eclipse.ui.part.PageBook;
 import org.eclipse.ui.part.PageSite;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 
+import com.google.common.collect.Lists;
+
 /**
  * Page for Papyrus outline when active nested editor is a GMF editor
  */
-public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusContentOutlinePage, IPageLifeCycleEventsListener {
+public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusContentOutlinePage, IPageLifeCycleEventsListener, IEditorReloadListener {
+
+	/** The editor for which I am a slave. */
+	private IMultiDiagramEditor multiEditor;
 
 	/** Sash window container to listen for page changes inside the same editor */
 	private ISashWindowsContainer sashWindowsContainer;
@@ -82,7 +99,16 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 * {@inheritDoc}
 	 */
 	public void init(IMultiDiagramEditor multiEditor) {
+		this.multiEditor = multiEditor;
+
+		internalInit(multiEditor);
+
+		IReloadableEditor.Adapter.getAdapter(multiEditor).addEditorReloadListener(this);
+	}
+
+	private void internalInit(IMultiDiagramEditor multiEditor) {
 		sashWindowsContainer = (ISashWindowsContainer)multiEditor.getAdapter(ISashWindowsContainer.class);
+		sashWindowsContainer.addPageLifeCycleListener(this);
 	}
 
 	/**
@@ -103,6 +129,19 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 */
 	@Override
 	public void dispose() {
+		if(multiEditor != null) {
+			IReloadableEditor.Adapter.getAdapter(multiEditor).removeEditorReloadListener(this);
+		}
+
+		internalDispose();
+
+		multiEditor = null;
+
+		// Run super.
+		super.dispose();
+	}
+
+	private void internalDispose() {
 		// Deref all of the pages.
 		activeRec = null;
 		if(defaultPageRec != null) {
@@ -122,9 +161,6 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		// remove listener and all refs to editor
 		sashWindowsContainer.removePageLifeCycleListener(this);
-
-		// Run super.
-		super.dispose();
 	}
 
 	/**
@@ -182,10 +218,12 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 */
 	@Override
 	public void createControl(Composite parent) {
-		sashWindowsContainer.addPageLifeCycleListener(this);
-
 		sashEditorPageBook = new PageBook(parent, SWT.BORDER);
 
+		createContents();
+	}
+
+	protected void createContents() {
 		// Create the default page rec.
 		IContentOutlinePage defaultPage = createDefaultPage(sashEditorPageBook);
 		defaultPageRec = new OutlinePageRec(null, defaultPage);
@@ -274,11 +312,8 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 */
 	public void pageActivated(IPage page) {
 		// Activator.log.debug("Activated");
-		// Create a page for the part.
-		OutlinePageRec rec = getOutlinePageRec(page);
-		if(rec == null) {
-			rec = createPage(page);
-		}
+		// Create a page for the partm, if necessary.
+		OutlinePageRec rec = getOutlinePageRec(page, true);
 
 		// Show the page, if it was successfully created
 		if(rec != null) {
@@ -307,6 +342,21 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 */
 	public void pageAboutToBeClosed(IPage page) {
 		//throw new UnsupportedOperationException("pageAboutToBeClosed not implemented " + page);
+	}
+
+	@Override
+	public void editorAboutToReload(EditorReloadEvent event) {
+		event.putContext(new OutlineContext());
+
+		internalDispose();
+	}
+
+	@Override
+	public void editorReloaded(EditorReloadEvent event) {
+		internalInit(event.getEditor());
+		createContents();
+
+		((OutlineContext)event.getContext()).restore();
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -537,6 +587,14 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		return mapIPapyrusPageToOutlineRec.get(papyrusPage);
 	}
 
+	OutlinePageRec getOutlinePageRec(IPage papyrusPage, boolean create) {
+		OutlinePageRec result = getOutlinePageRec(papyrusPage);
+		if(result == null) {
+			result = createPage(papyrusPage);
+		}
+		return result;
+	}
+
 	/**
 	 * Returns the page record for the given page of this view.
 	 * 
@@ -572,14 +630,15 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 			control.dispose();
 		}
 
-		// free the page
-		doDestroyPage(rec.papyrusPage, rec);
-
+		// Do this before destroying the page, otherwise we won't be able to retrieve the page site (it will be null)
 		IPageSite site = rec.getPageSite();
 		if(site instanceof PageSite) { // test null pointer and PageSite
 			((SubActionBars)((PageSite)site).getActionBars()).deactivate();
 			((SubActionBars)((PageSite)site).getActionBars()).dispose();
 		}
+
+		// Free the page
+		doDestroyPage(rec.papyrusPage, rec);
 	}
 
 	/*
@@ -951,5 +1010,68 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 			this.site = site;
 		}
 
+	}
+
+	private class OutlineContext {
+
+		private List<PageContext> pages = Lists.newArrayListWithCapacity(mapIPapyrusPageToOutlineRec.size());
+
+		OutlineContext() {
+			for(OutlinePageRec next : mapIPapyrusPageToOutlineRec.values()) {
+				pages.add(new PageContext(next));
+			}
+		}
+
+		public void restore() {
+			for(PageContext next : pages) {
+				next.restore();
+			}
+		}
+
+		//
+		// Nested types
+		//
+
+		private class PageContext {
+
+			final URI diagramToken;
+
+			final Object context;
+
+			PageContext(OutlinePageRec outlinePage) {
+				Object diagram = outlinePage.papyrusPage.getRawModel();
+				diagramToken = (diagram instanceof EObject) ? EcoreUtil.getURI((EObject)diagram) : null;
+
+				// Can only sensibly manage restoring the state of the page if we can find it again
+				if(diagramToken == null) {
+					context = null;
+				} else {
+					IReloadContextProvider provider = AdapterUtils.adapt(outlinePage.contentOutlinePage, IReloadContextProvider.class, null);
+					context = (provider == null) ? null : provider.createReloadContext();
+				}
+			}
+
+			void restore() {
+				if(diagramToken != null) {
+					try {
+						ModelSet modelSet = multiEditor.getServicesRegistry().getService(ModelSet.class);
+
+						Object diagram = modelSet.getEObject(diagramToken, true);
+						if(diagram != null) {
+							IPage page = sashWindowsContainer.lookupModelPage(diagram);
+							if(page != null) {
+								OutlinePageRec outlinePage = getOutlinePageRec(page, true);
+								if((outlinePage != null) && (context != null)) {
+									// Restore it. We know it adapts if it provided the reload state in the first place
+									AdapterUtils.adapt(outlinePage.contentOutlinePage, IReloadContextProvider.class, null).restore(context);
+								}
+							}
+						}
+					} catch (ServiceException e) {
+						Activator.log.error(e);
+					}
+				}
+			}
+		}
 	}
 }
