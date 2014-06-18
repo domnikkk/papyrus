@@ -35,7 +35,7 @@
             locationURI="menu:org.eclipse.papyrus.ui.menu">
          <menu
                id="org.eclipse.papyrus.java.ui.menu"
-               label="java">
+               label="Java">
             <command
                   commandId="org.eclipse.papyrus.java.generator.ui.generateCodeCommand"
                   icon="icons/generation.png"
@@ -60,7 +60,7 @@
             locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup">
          <menu
                id="org.eclipse.papyrus.views.modelexplorer.popup.java"
-               label="Java ...">
+               label="Java">
             <command
                   commandId="org.eclipse.papyrus.java.generator.ui.generateCodeCommand"
                   icon="icons/generation.png"
