@@ -22,6 +22,7 @@ import org.eclipse.debug.core.model.IThread;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
+import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request;
 import org.eclipse.papyrus.moka.communication.request.iterminate.Terminate_Request;
@@ -213,11 +214,13 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 						}
 						catch (Exception e) {
 							Activator.log.error(e) ;
-							Display.getDefault().syncExec(new Runnable() {
-								public void run() {
-									MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
-								}
-							}) ;
+							if (! MokaConstants.SILENT_MODE) {
+								Display.getDefault().syncExec(new Runnable() {
+									public void run() {
+										MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+									}
+								}) ;
+							}
 						}
 						if(!isTerminated()) {
 							try {

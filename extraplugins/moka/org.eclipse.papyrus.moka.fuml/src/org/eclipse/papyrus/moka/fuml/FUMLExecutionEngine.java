@@ -47,7 +47,6 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Type;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class FUMLExecutionEngine.
  */

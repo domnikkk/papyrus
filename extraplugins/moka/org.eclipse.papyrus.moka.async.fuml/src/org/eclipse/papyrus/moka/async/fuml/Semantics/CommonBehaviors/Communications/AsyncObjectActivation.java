@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
+import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncControlDelegate;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
@@ -104,11 +105,13 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 		}
 		catch (Exception e) {
 			Activator.log.error(e) ;
-			Display.getDefault().syncExec(new Runnable() {
-				public void run() {
-					MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
-				}
-			}) ;
+			if (! MokaConstants.SILENT_MODE) {
+				Display.getDefault().syncExec(new Runnable() {
+					public void run() {
+						MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+					}
+				}) ;
+			}
 			((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
 		}
 		/* 3. While current object activation is running then dispatch events */
@@ -118,11 +121,13 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 			}
 			catch (Exception e) {
 				Activator.log.error(e) ;
-				Display.getDefault().syncExec(new Runnable() {
-					public void run() {
-						MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
-					}
-				}) ;
+				if (! MokaConstants.SILENT_MODE) {
+					Display.getDefault().syncExec(new Runnable() {
+						public void run() {
+							MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+						}
+					}) ;
+				}
 				((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
 			}
 			if(this.waitingEventAccepters.isEmpty()) {

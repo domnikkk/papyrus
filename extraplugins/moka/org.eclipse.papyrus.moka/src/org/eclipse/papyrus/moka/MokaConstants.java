@@ -19,6 +19,9 @@ package org.eclipse.papyrus.moka;
  */
 public class MokaConstants {
 
+	/** For testing/debugging purposes */
+	public static boolean SILENT_MODE = false ;
+	
 	/** The Constant PAPYRUS_EDITOR_ID. */
 	public final static String PAPYRUS_EDITOR_ID = "org.eclipse.papyrus.infra.core.papyrusEditor";
 

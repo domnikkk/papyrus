@@ -27,6 +27,7 @@ import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.launch.MokaLaunchDelegate;
 import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;
 import org.eclipse.papyrus.moka.tests.Activator;
@@ -65,6 +66,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 	public void initModelForTestReport() {
 		try {
 			MokaConstants.MOKA_AUTOMATIC_ANIMATION = false;
+			MokaConstants.SILENT_MODE = true ;
 			initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault().getBundle()); //$NON-NLS-1$ //$NON-NLS-2$
 		} catch (Exception e) {
 			Assert.fail(e.getMessage());
