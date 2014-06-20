@@ -20,7 +20,9 @@ import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.AssociationEndTarg
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CAssociationClassEndSourceEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CAssociationClassEndTargetEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CAssociationNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CComponentEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CContainmentCircleEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CDataTypeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CDependencyBranchEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CDependencyNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CModelEditPart;
@@ -34,9 +36,11 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationClassRoleTarg
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationSourceNameEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.AssociationTargetNameEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPartCN;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ContainmentCircleEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyBranchEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DependencyNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartCN;
@@ -58,6 +62,10 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 			// redefined classes to modify the method createNodePlate
 			case PackageEditPart.VISUAL_ID:
 				return new CPackageEditPart(view);
+			case DataTypeEditPart.VISUAL_ID:
+				return new CDataTypeEditPart(view);
+			case ComponentEditPart.VISUAL_ID:
+				return new CComponentEditPart(view);
 			case PackageEditPartCN.VISUAL_ID:
 				return new CPackageEditPartCN(view);
 			case ModelEditPartTN.VISUAL_ID:

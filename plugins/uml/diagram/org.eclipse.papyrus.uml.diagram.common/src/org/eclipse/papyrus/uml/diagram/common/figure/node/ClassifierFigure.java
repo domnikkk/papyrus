@@ -24,7 +24,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 /**
  * Represents a classifier.
  */
-public class ClassifierFigure extends CompartmentFigure {
+public class ClassifierFigure extends RoundedCompartmentFigure {
 
 	protected static final int SPACE_FOR_ACTIVE_CLASS = 4;
 
@@ -94,7 +94,7 @@ public class ClassifierFigure extends CompartmentFigure {
 			graphics.popState();
 		}
 	}
-	
+
 	/**
 	 * Get the attribute's compartment figure
 	 * 

@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * 
  * @author tlandre
  */
-public abstract class ClassifierEditPart extends NamedElementEditPart {
+public abstract class ClassifierEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * isAbstract Classifier property
@@ -81,9 +81,7 @@ public abstract class ClassifierEditPart extends NamedElementEditPart {
 		if(getUMLElement() instanceof Classifier) {
 			isAbstract = ((Classifier)getUMLElement()).isAbstract();
 			refreshFont();
-
 		}
-
 	}
 
 	/**
@@ -99,5 +97,4 @@ public abstract class ClassifierEditPart extends NamedElementEditPart {
 		}
 		return data;
 	}
-
 }

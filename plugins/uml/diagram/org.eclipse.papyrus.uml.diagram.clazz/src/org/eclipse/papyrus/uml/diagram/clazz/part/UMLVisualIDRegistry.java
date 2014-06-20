@@ -850,6 +850,9 @@ public class UMLVisualIDRegistry {
 			if(ComponentNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if(ComponentFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if(ComponentAttributeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -965,6 +968,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case DataTypeEditPart.VISUAL_ID:
 			if(DataTypeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if(DataTypeFloatingNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if(DataTypeAttributeCompartmentEditPart.VISUAL_ID == nodeVisualID) {

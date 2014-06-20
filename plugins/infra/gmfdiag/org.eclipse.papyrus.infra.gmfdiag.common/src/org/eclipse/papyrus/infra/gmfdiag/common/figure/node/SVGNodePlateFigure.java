@@ -10,6 +10,8 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Laurent Wouters (CEA LIST) laurent.wouters@cea.fr - Refactoring, cleanup, added support for PapyrusLabel element
+ *  Mickael ADAM (ALL4TEC) mickael.adam@all4tec.net - Add IRoundedRectangleFigure use case(436547)
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.figure.node;
 
@@ -114,7 +116,6 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 
 	protected DefaultSizeNodeFigure defaultNodePlate;
 
-
 	/**
 	 * Initializes the figure.
 	 *
@@ -126,7 +127,6 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	public SVGNodePlateFigure(int width, int height) {
 		super(width, height);
 	}
-
 
 	/**
 	 * Associates the given SVG document to this figure
@@ -200,7 +200,6 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 */
 	private List<PrecisionPoint> toDraw2DPoints(SVGPathSegList segments) {
 		ArrayList<PrecisionPoint> pointList = new ArrayList<PrecisionPoint>();
-
 		// current coordinates
 		double currentX = 0;
 		double currentY = 0;
@@ -232,7 +231,6 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 				System.err.println("Unsupported SVG segment in PapyrusPath at index " + i + " in SVG document");
 			}
 		}
-
 		return pointList;
 	}
 
@@ -261,14 +259,8 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 * @return The equivalent Draw2D rectangle
 	 */
 	private PrecisionRectangle toDraw2DRectangle(SVGRectElement element) {
-		return new PrecisionRectangle(
-			getValueOf(element.getX()),
-			getValueOf(element.getY()),
-			getValueOf(element.getWidth()),
-			getValueOf(element.getHeight()));
+		return new PrecisionRectangle(getValueOf(element.getX()), getValueOf(element.getY()), getValueOf(element.getWidth()), getValueOf(element.getHeight()));
 	}
-
-
 
 	/**
 	 * Sets the node plate that is wrapped by it.
@@ -298,11 +290,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 	 */
 	private SvgToDraw2DTransform getTransform(double innerWidth, double innerHeight, Rectangle anchor) {
 		PrecisionDimension maxDim = new PrecisionDimension(Math.max(svgDimension.preciseWidth(), innerWidth), Math.max(svgDimension.preciseHeight(), innerHeight));
-		return new SvgToDraw2DTransform(
-			anchor.width / maxDim.preciseWidth(),
-			anchor.height / maxDim.preciseHeight(),
-			anchor.x,
-			anchor.y);
+		return new SvgToDraw2DTransform(anchor.width / maxDim.preciseWidth(), anchor.height / maxDim.preciseHeight(), anchor.x, anchor.y);
 	}
 
 	/**
@@ -322,27 +310,37 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 		return getHandleBounds();
 	}
 
-
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
 	 */
 	protected ConnectionAnchor createAnchor(PrecisionPoint p) {
 		if(this.outlinePoints == null) {
 			if(defaultNodePlate instanceof IOvalAnchorableFigure) {
 				defaultNodePlate.setBounds(this.getBounds());
-				if (p!=null){
+				if(p != null) {
 					// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
 					// PrecisionPoint will passed in - this is handled here
 					return new SlidableEllipseAnchor(this, p);
 				}
 			}
+			if(defaultNodePlate instanceof IRoundedRectangleFigure) {
+				defaultNodePlate.setBounds(this.getBounds());
+				if(p != null) {
+					// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
+					// PrecisionPoint will passed in - this is handled here
+					return new SlidableRoundedRectangleAnchor(this, p);
+				}
+			}
 			return super.createAnchor(p);
 		}
-
 		return super.createAnchor(p);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
 	protected ConnectionAnchor createDefaultAnchor() {
@@ -351,10 +349,13 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 				defaultNodePlate.setBounds(this.getBounds());
 				return new SlidableEllipseAnchor(this);
 			}
+			if(defaultNodePlate instanceof IRoundedRectangleFigure) {
+				defaultNodePlate.setBounds(this.getBounds());
+				return new SlidableRoundedRectangleAnchor(this);
+			}
 		}
 		return super.createDefaultAnchor();
 	}
-
 
 	/**
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getPolygonPoints()
@@ -368,7 +369,6 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 			}
 			return super.getPolygonPoints();
 		}
-
 		SvgToDraw2DTransform transform = getTransform(outlineDimension.preciseWidth(), outlineDimension.preciseHeight(), getDraw2DAnchor());
 		PointList points = new PointList(5);
 		for(PrecisionPoint point : outlinePoints) {

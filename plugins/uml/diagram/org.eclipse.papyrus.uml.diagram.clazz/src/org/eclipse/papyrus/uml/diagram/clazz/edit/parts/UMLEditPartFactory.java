@@ -57,6 +57,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new ComponentEditPart(view);
 			case ComponentNameEditPart.VISUAL_ID:
 				return new ComponentNameEditPart(view);
+			case ComponentFloatingNameEditPart.VISUAL_ID:
+				return new ComponentFloatingNameEditPart(view);
 			case SignalEditPart.VISUAL_ID:
 				return new SignalEditPart(view);
 			case SignalNameEditPart.VISUAL_ID:
@@ -93,6 +95,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new DataTypeEditPart(view);
 			case DataTypeNameEditPart.VISUAL_ID:
 				return new DataTypeNameEditPart(view);
+			case DataTypeFloatingNameEditPart.VISUAL_ID:
+				return new DataTypeFloatingNameEditPart(view);
 			case ConstraintEditPart.VISUAL_ID:
 				return new ConstraintEditPart(view);
 			case ConstraintNameEditPart.VISUAL_ID:

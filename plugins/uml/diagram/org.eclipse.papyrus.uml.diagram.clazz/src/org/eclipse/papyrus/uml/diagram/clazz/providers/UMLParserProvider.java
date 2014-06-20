@@ -114,6 +114,23 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser componentName_8503Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentName_8503Parser() {
+		if(componentName_8503Parser == null) {
+			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			componentName_8503Parser = parser;
+		}
+		return componentName_8503Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser signalName_5008Parser;
 
 	/**
@@ -262,6 +279,23 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			dataTypeName_5035Parser = parser;
 		}
 		return dataTypeName_5035Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser dataTypeName_8502Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDataTypeName_8502Parser() {
+		if(dataTypeName_8502Parser == null) {
+			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			dataTypeName_8502Parser = parser;
+		}
+		return dataTypeName_8502Parser;
 	}
 
 	/**
@@ -1796,6 +1830,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInstanceSpecificationName_5002Parser();
 		case ComponentNameEditPart.VISUAL_ID:
 			return getComponentName_5005Parser();
+		case ComponentFloatingNameEditPart.VISUAL_ID:
+			return getComponentName_8503Parser();
 		case SignalNameEditPart.VISUAL_ID:
 			return getSignalName_5008Parser();
 		case InterfaceNameEditPart.VISUAL_ID:
@@ -1814,6 +1850,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPrimitiveTypeName_5032Parser();
 		case DataTypeNameEditPart.VISUAL_ID:
 			return getDataTypeName_5035Parser();
+		case DataTypeFloatingNameEditPart.VISUAL_ID:
+			return getDataTypeName_8502Parser();
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5037Parser();
 		case ConstraintBodyEditPart.VISUAL_ID:

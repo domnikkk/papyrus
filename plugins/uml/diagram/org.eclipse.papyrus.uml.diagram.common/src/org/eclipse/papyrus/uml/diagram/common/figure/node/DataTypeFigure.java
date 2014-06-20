@@ -21,7 +21,7 @@ import org.eclipse.draw2d.IFigure;
 /**
  * Represents a datatype
  */
-public class DataTypeFigure extends CompartmentFigure {
+public class DataTypeFigure extends RoundedCompartmentFigure {
 
 	/** Attribute Compartment */
 	private final static String ATTRIBUTE_COMPARTMENT = "attributeCompartment";
@@ -33,7 +33,6 @@ public class DataTypeFigure extends CompartmentFigure {
 	private final static List<String> COMPARTMENT = new ArrayList<String>() {
 
 		private static final long serialVersionUID = -2841645169151618170L;
-
 		{
 			add(ATTRIBUTE_COMPARTMENT);
 			add(OPERATION_COMPARTMENT);

@@ -80,8 +80,19 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 		collectInformation(container);
 		int minimumWith = 0;
 		int minimumHeight = 0;
+		//CompartementFigure shall be replace by RoundedCompartmentFigure and this condition may be remove
 		if(container instanceof CompartmentFigure) {
 			CompartmentFigure cf = (CompartmentFigure)container;
+			WrappingLabel wl = cf.getNameLabel();
+			// display name
+			if(wl != null && container.getChildren().contains(wl)) {
+				if(wl.getPreferredSize().width > minimumWith) {
+					minimumWith = wl.getPreferredSize().width;
+				}
+			}
+		}
+		if(container instanceof RoundedCompartmentFigure) {
+			RoundedCompartmentFigure cf = (RoundedCompartmentFigure)container;
 			WrappingLabel wl = cf.getNameLabel();
 			// display name
 			if(wl != null && container.getChildren().contains(wl)) {
@@ -166,16 +177,15 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 		for(IFigure child : visibleOthers) {
 			totalHeight += child.getPreferredSize(50, -1).height;
 		}
-
 		IFigure previous = null;
 		for(IFigure child : visibleOthers) {
 			Rectangle bound = new Rectangle();
-			if (child instanceof WrappingLabel) {
+			if(child instanceof WrappingLabel) {
 				//((WrappingLabel) child).setTextWrap(false);
-				((WrappingLabel) child).setTextJustification(PositionConstants.CENTER);
+				((WrappingLabel)child).setTextJustification(PositionConstants.CENTER);
 				bound.setSize(child.getPreferredSize(container.width, -1));
 			} else {
-				bound.setSize(getPreferedSize(child,container.width));
+				bound.setSize(getPreferedSize(child, container.width));
 			}
 			if(previous != null) {
 				bound.y = previous.getBounds().getBottomLeft().y + 1;
@@ -185,9 +195,9 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 				bound.x = container.x + 3;
 				// in the case where the content is grater than the container
 				// it is forbidden to change the y coordinate
-				if(((container.height - totalHeight) / 2)>0 ){
-					bound.y = container.y + ((container.height - totalHeight) / 2);}
-				else{
+				if(((container.height - totalHeight) / 2) > 0) {
+					bound.y = container.y + ((container.height - totalHeight) / 2);
+				} else {
 					bound.y = container.y;
 				}
 				bound.width = container.width;
@@ -204,12 +214,12 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 	 *        A figure that contains a GMF compartment
 	 * @return The figure's preferred size
 	 */
-	private Dimension getPreferedSize(IFigure figure,int width) {
+	private Dimension getPreferedSize(IFigure figure, int width) {
 		Dimension dim = figure.getPreferredSize(width, -1);
 		if(!figure.getChildren().isEmpty()) {
 			Object compartment = figure.getChildren().get(0);
 			if(compartment instanceof ResizableCompartmentFigure) {
-				dim.height = ((ResizableCompartmentFigure)compartment).getPreferredSize(width,-1).height + 10;
+				dim.height = ((ResizableCompartmentFigure)compartment).getPreferredSize(width, -1).height + 10;
 				if(dim.height < MINIMUM_COMPARTMENT_HEIGHT) {
 					dim.height = MINIMUM_COMPARTMENT_HEIGHT;
 				}
@@ -230,7 +240,6 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 		List<IFigure> visibles = new ArrayList<IFigure>();
 		visibles.addAll(visibleOthers);
 		visibles.addAll(visibleCompartments);
-
 		List<Rectangle> bounds = buildInitialsBounds(container, visibles);
 		double notCompartmentsHeight = getTotalHeight(bounds, 0, visibleOthers.size());
 		double compartmentsHeight = getTotalHeight(bounds, visibleOthers.size(), visibleCompartments.size());
@@ -241,7 +250,6 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 		remainingspace -= visibleCompartments.size();
 		// adjustment ratio for the height of the compartments
 		double ratio = compartmentsHeight / remainingspace;
-
 		for(int i = 0; i != bounds.size(); i++) {
 			Rectangle bound = bounds.get(i);
 			if(i < visibleOthers.size()) {
@@ -364,7 +372,6 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 		container.getChildren().removeAll(visibleOthers);
 		// add them at the end
 		container.getChildren().addAll(visibleOthers);
-
 		List<Rectangle> bounds = buildInitialsBounds(container, visibleCompartments);
 		double compartmentsHeight = getTotalHeight(bounds, 0, visibleCompartments.size());
 		double remainingspace = container.getBounds().height;
@@ -372,7 +379,6 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 		remainingspace -= visibleCompartments.size();
 		// adjustment ratio for the height of the compartments
 		double ratio = compartmentsHeight / remainingspace;
-
 		IFigure shapeCompartment = null;
 		for(int i = 0; i != visibleCompartments.size(); i++) {
 			Rectangle bound = bounds.get(i);
@@ -383,7 +389,6 @@ public class AutomaticCompartmentLayoutManager extends AbstractLayout {
 				shapeCompartment = compartment;
 			}
 		}
-
 		Rectangle otherBounds = container.getBounds();
 		if(shapeCompartment != null) {
 			otherBounds = ((SVGNodePlateFigure)container.getParent()).getLabelBounds(shapeCompartment.getBounds());
