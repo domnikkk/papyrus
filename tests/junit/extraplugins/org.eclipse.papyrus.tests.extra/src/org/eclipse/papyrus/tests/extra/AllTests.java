@@ -38,6 +38,9 @@ public class AllTests {
 
 		/* CPP Codegen tests */
 		suiteClasses.add(new PluginTestSuiteClass(AllPapyrusCPPCodegenTests.class));
+		
+		/* MOKA COMPOSITES tests */
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.moka.tests.AllTests.class));
 
 		/* UML Compare tests */
 		/**

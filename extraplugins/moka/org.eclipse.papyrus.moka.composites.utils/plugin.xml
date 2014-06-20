@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension 
+   		point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.popup.moka">
+       		<menu
+               icon="icons/PapyrusLogo16x16.png"
+               id="org.eclipse.papyrus.views.modelexplorer.popup.moka.utils"
+               label="Modeling Utils">
+         </menu> 
+      </menuContribution>
+       <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.popup.moka.utils">
+       		<command
+               commandId="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateFactoryHandlerCommand"
+               icon="icons/Activity.gif"
+               id="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateFactoryHandlerMenu"
+               label="Generate Factory"
+               style="push"
+               tooltip="Generate Factory">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         	</command>
+         	<command
+                commandId="org.eclipse.papyrus.moka.composites.utils.generatorconstructorusingfieldscommand"
+                icon="icons/Operation.gif"
+                label="Generate Constructor Using Fields"
+                style="push"
+                tooltip="Generate Constructor Using Fields">
+             <visibleWhen
+                   checkEnabled="false">
+             </visibleWhen>
+         	</command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu.moka">
+         <menu
+               icon="icons/PapyrusLogo16x16.png"
+               id="org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu.moka.utils"
+               label="Modeling Utils">
+         </menu>
+      </menuContribution>
+       <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu.moka.utils">
+       		<command
+               commandId="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateFactoryHandlerCommand"
+               icon="icons/Activity.gif"
+               id="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateFactoryHandlerMenu"
+               label="Generate Factory"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         	</command>
+         	<command
+                commandId="org.eclipse.papyrus.moka.composites.utils.generatorconstructorusingfieldscommand"
+                icon="icons/Operation.gif"
+                label="Generate Constructor Using Fields"
+                style="push"
+                tooltip="Generate Constructor Using Fields">
+             <visibleWhen
+                   checkEnabled="false">
+             </visibleWhen>
+         	</command>
+      </menuContribution>
+   </extension>   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateFactoryHandler"
+            description="Generate Factory"
+            id="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateFactoryHandlerCommand"
+            name="Generate Factory">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateConstructorUsingFieldsHandler"
+            description="Generate Constructor Using Fields"
+            id="org.eclipse.papyrus.moka.composites.utils.generatorconstructorusingfieldscommand"
+            name="Generate Constructor Using Fields">
+      </command>
+   </extension>
+     <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.eclipse.papyrus.moka.composites.utils.Activator"></startup>
+   </extension>
+   
+</plugin>
