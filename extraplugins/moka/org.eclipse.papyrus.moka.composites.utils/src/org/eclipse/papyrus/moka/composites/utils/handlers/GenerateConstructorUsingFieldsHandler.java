@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.composites.utils.handlers;
 
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -8,7 +19,7 @@ import org.eclipse.uml2.uml.Class;
 
 
 public class GenerateConstructorUsingFieldsHandler extends AbstractCompositeUtilsHandler {
-	
+
 	@Override
 	public RecordingCommand getUpdateCommand(Class context, TransactionalEditingDomain domain) {
 		return new GenerateConstructorUsingFieldsCommand(context, domain);
@@ -16,21 +27,22 @@ public class GenerateConstructorUsingFieldsHandler extends AbstractCompositeUtil
 
 	/**
 	 * A command that generates a Constructor for a Class, from a dialog box.
+	 *
 	 * @see GenerateConstructorUsingFieldsDialog
 	 *
 	 */
 	protected class GenerateConstructorUsingFieldsCommand extends RecordingCommand {
 
-		protected Class context ;
-		
+		protected Class context;
+
 		public GenerateConstructorUsingFieldsCommand(Class context, TransactionalEditingDomain domain) {
-			super(domain) ;
-			this.context = context ;
+			super(domain);
+			this.context = context;
 		}
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor
 		 * , org.eclipse.core.runtime.IAdaptable)

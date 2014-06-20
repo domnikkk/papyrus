@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.composites.utils.handlers;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -18,17 +29,18 @@ import org.eclipse.uml2.uml.NamedElement;
 
 public abstract class AbstractCompositeUtilsHandler extends AbstractHandler {
 
-	
+
 	/**
 	 * Moka Modeling Utils menu are enable only if selected object refer as a Class
-	 *  
+	 *
 	 * (non-Javadoc)
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#isEnabled()
 	 */
 	@Override
 	public boolean isEnabled() {
 		Element selectedElement = Utils.getSelection();
-		if (selectedElement != null) {
+		if(selectedElement != null) {
 			return selectedElement instanceof Class && !(selectedElement instanceof Behavior);
 		}
 		return false;
@@ -37,7 +49,7 @@ public abstract class AbstractCompositeUtilsHandler extends AbstractHandler {
 	/**
 	 * Return the class associated with the selection object or null whether
 	 * no class could have been found
-	 * 
+	 *
 	 * @param selected
 	 * @return Class
 	 */
@@ -53,7 +65,8 @@ public abstract class AbstractCompositeUtilsHandler extends AbstractHandler {
 			return nElem instanceof Class ? (Class)nElem : null;
 		}
 	}
-	
+
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		Class context = null;
 		context = this.getClassFromSelection(HandlerUtil.getCurrentSelection(event));
@@ -62,17 +75,19 @@ public abstract class AbstractCompositeUtilsHandler extends AbstractHandler {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Launch the ConstructorBehaviorCreationCompiler
-	 * @param myClass which is the class who need to create the constructor
-	 * 
+	 *
+	 * @param myClass
+	 *        which is the class who need to create the constructor
+	 *
 	 */
 	public void start(Class myClass) {
-		TransactionalEditingDomain domain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(myClass) ;
+		TransactionalEditingDomain domain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(myClass);
 		RecordingCommand updateCommand = this.getUpdateCommand(myClass, domain);
-		domain.getCommandStack().execute(updateCommand) ;
+		domain.getCommandStack().execute(updateCommand);
 	}
-	
+
 	public abstract RecordingCommand getUpdateCommand(Class myClass, TransactionalEditingDomain domain);
 }
