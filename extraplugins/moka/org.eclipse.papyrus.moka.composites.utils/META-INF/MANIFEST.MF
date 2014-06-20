@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Utils
+Bundle-Name: Moka Composite Utils (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.moka.composites.utils;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.composites.utils.Activator
@@ -21,4 +21,5 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.jdt.internal.ui.actions,
  org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions
+Bundle-Vendor: Eclipse Modeling Project
 

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.eclipse.papyrus.moka.incubation
+Bundle-Name: Moka (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.moka;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.Activator
@@ -34,4 +34,4 @@ Export-Package: org.eclipse.papyrus.moka,
  org.eclipse.papyrus.moka.debug,
  org.eclipse.papyrus.moka.engine,
  org.eclipse.papyrus.moka.launch
-Bundle-Vendor: CEA LIST
+Bundle-Vendor: Eclipse Modeling Project

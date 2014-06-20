@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.eclipse.papyrus.moka.ui.incubation
+Bundle-Name: Moka UI (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.moka.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.ui.Activator
@@ -30,4 +30,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.papyrus.moka.ui.launch,
  org.eclipse.papyrus.moka.ui.presentation
-Bundle-Vendor: CEA LIST
+Bundle-Vendor: Eclipse Modeling Project
