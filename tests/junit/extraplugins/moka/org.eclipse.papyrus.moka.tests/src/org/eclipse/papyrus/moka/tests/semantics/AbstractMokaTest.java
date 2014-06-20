@@ -27,7 +27,6 @@ import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.launch.MokaLaunchDelegate;
 import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;
 import org.eclipse.papyrus.moka.tests.Activator;
@@ -60,14 +59,14 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 	 * This method initialize the model element from the project.
 	 * First, it creates a new project and copy papyrus file (.di, .notation, .uml).
 	 * Then, it opens the model.
-	 * 
+	 *
 	 */
 	@Before
 	public void initModelForTestReport() {
 		try {
 			MokaConstants.MOKA_AUTOMATIC_ANIMATION = false;
-			MokaConstants.SILENT_MODE = true ;
-			initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault().getBundle()); //$NON-NLS-1$ //$NON-NLS-2$
+			MokaConstants.SILENT_MODE = true;
+			initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault().getBundle());
 		} catch (Exception e) {
 			Assert.fail(e.getMessage());
 		}
@@ -81,11 +80,11 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 
 	@Test
 	/**
-	 * This is the "@Test" method. 
-	 * First, gets the model loaded in the model explorer, 
+	 * This is the "@Test" method.
+	 * First, gets the model loaded in the model explorer,
 	 * Then, gets the activity to execute,
 	 * At the end, creates a launch configuration and executes it by the Moka engine.
-	 * 
+	 *
 	 * @throws CoreException
 	 * @throws InterruptedException
 	 */
@@ -111,9 +110,16 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 		// Wait till moka execution thread is terminated
 		while(!launch.isTerminated()) {
 			if(Display.getCurrent() != null) {
-				if(!Display.getCurrent().readAndDispatch()) {
-					Thread.sleep(100);
+				try {
+					if(!Display.getCurrent().readAndDispatch()) {
+						Thread.sleep(100);
+					}
+				} catch (InterruptedException ex) {
+					throw ex;
+				} catch (Exception ex) {
+					Activator.log.error(ex); //Exception in a runnable. Log and keep going
 				}
+
 			} else {
 				Thread.sleep(100);
 			}
@@ -122,8 +128,9 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 
 	/**
 	 * This method returns the root package element of the model.
-	 * 
+	 *
 	 */
+	@Override
 	protected Package getRootUMLModel() {
 		IModel umlIModel;
 		try {
@@ -149,7 +156,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 
 	/**
 	 * This method create a launch configuration for selected model
-	 * 
+	 *
 	 * @param resource
 	 *        : the model
 	 * @return list of launch configuration
@@ -174,7 +181,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 
 	/**
 	 * Returns the name of the main activity to execute
-	 * 
+	 *
 	 * @return the name of the main activity to execute
 	 */
 	public abstract String getActivityName();
@@ -182,7 +189,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 
 	/**
 	 * Returns the launch configuration delegate to be used for this test
-	 * 
+	 *
 	 * @return the launch configuration delegate to be used for this test
 	 */
 	public abstract AbstractMokaLaunchConfigurationDelegate getLaunchDelegate();
