@@ -45,4 +45,12 @@ public class TestReport {
 	public Class<?> getAssertionType() {
 		return this.assertionType;
 	}
+
+	@Override
+	public String toString() {
+		String contextName = context == null ? "NULL" : (context.getQualifiedName() == null ? "NULL" : context.getQualifiedName()) ;
+		String s = "[TEST] " + this.label + " in " + contextName + " => " + verdict.toString() ;
+		return s;
+	}
+	
 }

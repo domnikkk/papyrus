@@ -34,6 +34,7 @@ public class Reporter {
 	public static Reporter INSTANCE = new Reporter();
 
 	public boolean add(TestReport report) {
+		System.out.println(report);
 		return this.testReports.add(report);
 	}
 
