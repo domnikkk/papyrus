@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml;bundle-version="5.0.0",
  org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.0",
  org.eclipse.ui.workbench
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: CEA LIST
 Export-Package: org.eclipse.papyrus.moka.fuml.assertionlibrary.utils
