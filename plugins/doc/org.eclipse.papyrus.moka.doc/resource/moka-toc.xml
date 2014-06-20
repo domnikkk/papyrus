@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="resource/moka.html" label="moka">
+	<topic href="resource/moka.html" label="MOKA">
+		<topic href="resource/moka.html#Installation" label="Installation"></topic>
+		<topic href="resource/moka.html#Features" label="Features">
+			<topic href="resource/moka.html#Execution_based_on_standard_specification" label="Execution based on standard specification"></topic>
+			<topic href="resource/moka.html#Animation" label="Animation"></topic>
+			<topic href="resource/moka.html#Debugging" label="Debugging"></topic>
+		</topic>
+		<topic href="resource/moka.html#Getting_started" label="Getting started"></topic>
+	</topic>
+</toc>

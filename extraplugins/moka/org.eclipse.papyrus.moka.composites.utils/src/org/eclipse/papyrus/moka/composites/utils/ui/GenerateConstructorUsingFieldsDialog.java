@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.composites.utils.ui;
 
 import java.util.ArrayList;
@@ -366,15 +377,15 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 	@Override
 	protected void okPressed() {
 		//System.err.println("Ok pressed");
-		
+
 		// Check if the right profile is applied.
 		//List<Profile> appliedProfiles = context.getModel().getAppliedProfiles();
 		//for(int i = 0; i < appliedProfiles.size(); i++) {
-			//System.out.println(appliedProfiles.get(i).getQualifiedName());
+		//System.out.println(appliedProfiles.get(i).getQualifiedName());
 		//}
 
 		if(!Utils.isStandardProfileApplied(context)) {
-			PackageUtil.applyProfile((org.eclipse.uml2.uml.Package)context.getModel(), Utils.standardProfile, true);
+			PackageUtil.applyProfile(context.getModel(), Utils.standardProfile, true);
 		}
 
 		// Creating operation and method with "Create" stereotype

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc:Documentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:doc="http://www.eclipse.org/papyrus/documentation/plugin/documentation" description="End-user documentation for MOKA.">
+  <referent firstName="Arnaud" lastName="Cuccuru" eMail="arnaud.cuccuru@cea.fr" currentCompany="CEA"/>
+  <referent firstName="Jeremie" lastName="Tatibouet" eMail="jeremie.tatibouet@cea.fr" currentCompany="CEA"/>
+  <referent firstName="Bruno" lastName="Marquès" eMail="bruno.marques@cea.fr" currentCompany="CEA"/>
+</doc:Documentation>

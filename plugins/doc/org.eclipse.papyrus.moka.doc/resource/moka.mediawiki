@@ -1,0 +1,27 @@
+= MOKA =
+
+Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide  control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains. 
+
+== Installation ==
+
+'''Under construction'''
+
+== Features ==
+
+'''Under construction'''
+
+=== Execution based on standards specifications === 
+
+'''Under construction'''
+
+=== Animation ===
+
+'''Under construction'''
+
+=== Debugging ===
+
+'''Under construction'''
+
+== Getting started ==
+
+'''Under construction'''
