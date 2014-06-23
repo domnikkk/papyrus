@@ -11,6 +11,8 @@
  */
 package org.eclipse.papyrus.dd.dg;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -24,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Path#getCommand <em>Command</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Path#getCommands <em>Command</em>}</li>
  * </ul>
  * </p>
  * 
@@ -42,9 +44,24 @@ public interface Path extends MarkedElement {
 	 * 
 	 * @return the value of the '<em>Command</em>' containment reference list.
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getPath_Command()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<PathCommand> getCommand();
+	EList<PathCommand> getCommands();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='command->first().oclIsKindOf(MoveTo)'"
+	 * @generated
+	 */
+	boolean firstCommandMustBeMove(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
 
 } // Path

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getDefnition <em>Defnition
+ * <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getDefnitions <em>Defnition
  * </em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet <em>Style
  * Sheet</em>}</li>
@@ -47,7 +47,7 @@ public interface Definitions extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Definition> getDefnition();
+	EList<Definition> getDefnitions();
 
 	/**
 	 * Returns the value of the '<em><b>Style Sheet</b></em>' containment

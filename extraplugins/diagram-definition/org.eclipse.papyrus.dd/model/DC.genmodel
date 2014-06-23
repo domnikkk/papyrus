@@ -48,11 +48,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DC.ecore#//KnownColor/silver"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DC.ecore#//KnownColor/gray"/>
     </genEnums>
-    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="DC.ecore#//AlignmentKind">
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DC.ecore#//AlignmentKind/start"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DC.ecore#//AlignmentKind/end"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DC.ecore#//AlignmentKind/center"/>
-    </genEnums>
     <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="DC.ecore#//Boolean"/>
     <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="DC.ecore#//Integer"/>
     <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="DC.ecore#//Real"/>
@@ -65,9 +60,13 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="DC.ecore#//Dimension">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DC.ecore#//Dimension/width"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DC.ecore#//Dimension/height"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DC.ecore#//Dimension/nonNegativeDimension">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Dimension/nonNegativeDimension/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Dimension/nonNegativeDimension/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DC.ecore#//Dimension/nonNegativeWidth">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Dimension/nonNegativeWidth/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Dimension/nonNegativeWidth/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DC.ecore#//Dimension/nonNegativeHeight">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Dimension/nonNegativeHeight/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Dimension/nonNegativeHeight/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="DC.ecore#//Bounds">
@@ -75,9 +74,13 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DC.ecore#//Bounds/y"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DC.ecore#//Bounds/width"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DC.ecore#//Bounds/height"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DC.ecore#//Bounds/nonNegativeSize">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Bounds/nonNegativeSize/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Bounds/nonNegativeSize/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DC.ecore#//Bounds/nonNegativeWidth">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Bounds/nonNegativeWidth/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Bounds/nonNegativeWidth/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DC.ecore#//Bounds/nonNegativeHeight">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Bounds/nonNegativeHeight/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DC.ecore#//Bounds/nonNegativeHeight/context"/>
       </genOperations>
     </genClasses>
   </genPackages>

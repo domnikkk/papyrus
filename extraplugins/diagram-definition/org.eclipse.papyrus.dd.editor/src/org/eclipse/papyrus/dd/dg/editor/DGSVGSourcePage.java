@@ -14,7 +14,7 @@ package org.eclipse.papyrus.dd.dg.editor;
 import java.io.StringReader;
 import java.io.StringWriter;
 
-import org.apache.batik.dom.svg.SVGOMDocument;
+import org.apache.batik.dom.GenericDOMImplementation;
 import org.apache.batik.dom.util.DOMUtilities;
 import org.apache.batik.transcoder.svg2svg.PrettyPrinter;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -27,6 +27,7 @@ import org.eclipse.papyrus.dd.editor.DDEditorPage;
 import org.eclipse.papyrus.dd.editor.DDEditorPlugin;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
+import org.w3c.dom.DOMImplementation;
 
 /**
  * This is a page that shows the source of the corresponding SVG for a DG model
@@ -68,25 +69,29 @@ public class DGSVGSourcePage extends DDEditorPage {
 				.get(0);
 
 		// (re)generate the SVG document
-		SVGOMDocument svgDocument = getConverter().convert(resource);
+		org.w3c.dom.Document svgDocument = getConverter().convert(resource);
 
-		StringWriter out = new StringWriter();
+		String contents;
 		try {
 			StringWriter writer = new StringWriter();
 			DOMUtilities.writeDocument(svgDocument, writer);
-			writer.close();
+
+			StringWriter formatted = new StringWriter();
 			PrettyPrinter printer = new PrettyPrinter();
 			printer.setTabulationWidth(4);
 			printer.setDocumentWidth(2000);
-			printer.print(new StringReader(writer.toString()), out);
-			out.close();
+			printer.print(new StringReader(writer.toString()), formatted);
+
+			contents = formatted.toString().substring(1);
+			writer.close();
 		} catch (Exception e) {
 			DDEditorPlugin.INSTANCE.log(e);
+			return;
 		}
 
 		// update the input of the viewer
 		IDocument document = new Document();
-		document.set(out.toString().substring(1));
+		document.set(contents);
 		viewer.setDocument(document);
 	}
 
@@ -96,7 +101,12 @@ public class DGSVGSourcePage extends DDEditorPage {
 	 * @return DGToSVGConverter
 	 */
 	protected DGToSVGConverter getConverter() {
-		return new DGToSVGConverter();
+		return new DGToSVGConverter() {
+			@Override
+			protected DOMImplementation getDOMImplementation() {
+				return GenericDOMImplementation.getDOMImplementation();
+			}
+		};
 	}
 
 }

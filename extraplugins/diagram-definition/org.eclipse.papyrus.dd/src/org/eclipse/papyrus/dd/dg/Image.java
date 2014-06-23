@@ -11,6 +11,8 @@
  */
 package org.eclipse.papyrus.dd.dg;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.papyrus.dd.dc.Bounds;
 
 /**
@@ -116,5 +118,20 @@ public interface Image extends GraphicalElement {
 	 * @generated
 	 */
 	void setIsAspectRatioPreserved(boolean value);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='source->notEmpty() implies source.size() > 0'"
+	 * @generated
+	 */
+	boolean sourceCannotBeEmpty(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
 
 } // Image

@@ -26,9 +26,9 @@ import org.eclipse.papyrus.dd.dc.Point;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getPoint <em>Point
- * </em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getControl <em>Control
+ * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getPoint <em>Point
  * </em>}</li>
  * </ul>
  * </p>

@@ -71,13 +71,10 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -85,58 +82,52 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DGPackage.Literals.QUADRATIC_CURVE_TO__CONTROL);
 			childrenFeatures.add(DGPackage.Literals.QUADRATIC_CURVE_TO__POINT);
-			childrenFeatures
-					.add(DGPackage.Literals.QUADRATIC_CURVE_TO__CONTROL);
 		}
 		return childrenFeatures;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns QuadraticCurveTo.gif. <!-- begin-user-doc --> <!--
+	 * This returns QuadraticCurveTo.gif.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/QuadraticCurveTo"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/QuadraticCurveTo"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		QuadraticCurveTo quadraticCurveTo = (QuadraticCurveTo) object;
-		return getString("_UI_QuadraticCurveTo_type") + " "
-				+ quadraticCurveTo.isRelative();
+		QuadraticCurveTo quadraticCurveTo = (QuadraticCurveTo)object;
+		return getString("_UI_QuadraticCurveTo_type") + " " + quadraticCurveTo.isRelative();
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,11 +135,10 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QuadraticCurveTo.class)) {
-		case DGPackage.QUADRATIC_CURVE_TO__POINT:
-		case DGPackage.QUADRATIC_CURVE_TO__CONTROL:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.QUADRATIC_CURVE_TO__CONTROL:
+			case DGPackage.QUADRATIC_CURVE_TO__POINT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -165,13 +155,15 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.QUADRATIC_CURVE_TO__POINT,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.QUADRATIC_CURVE_TO__CONTROL,
+				 DCFactory.eINSTANCE.createPoint()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.QUADRATIC_CURVE_TO__CONTROL,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.QUADRATIC_CURVE_TO__POINT,
+				 DCFactory.eINSTANCE.createPoint()));
 	}
 
 	/**
@@ -187,13 +179,14 @@ public class QuadraticCurveToItemProvider extends PathCommandItemProvider
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == DGPackage.Literals.QUADRATIC_CURVE_TO__POINT
-				|| childFeature == DGPackage.Literals.QUADRATIC_CURVE_TO__CONTROL;
+		boolean qualify =
+			childFeature == DGPackage.Literals.QUADRATIC_CURVE_TO__CONTROL ||
+			childFeature == DGPackage.Literals.QUADRATIC_CURVE_TO__POINT;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

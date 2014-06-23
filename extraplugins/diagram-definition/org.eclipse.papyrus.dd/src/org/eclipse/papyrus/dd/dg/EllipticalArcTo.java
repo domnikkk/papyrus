@@ -16,56 +16,29 @@ import org.eclipse.papyrus.dd.dc.Point;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Elliptical Curve To</b></em>'. <!-- end-user-doc -->
+ * <em><b>Elliptical Arc To</b></em>'. <!-- end-user-doc -->
  * 
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getPoint <em>Point
+ * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRadii <em>Radii</em>}
+ * </li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRotation <em>Rotation
  * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getRadii <em>Radii
+ * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isLargeArc <em>Is Large
+ * Arc</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isSweep <em>Is Sweep
  * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getRotation <em>
- * Rotation</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#isLargeArc <em>Is
- * Large Arc</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#isSweep <em>Is Sweep
- * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getPoint <em>Point</em>}
+ * </li>
  * </ul>
  * </p>
  * 
- * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalCurveTo()
+ * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalArcTo()
  * @model
  * @generated
  */
-public interface EllipticalCurveTo extends PathCommand {
-	/**
-	 * Returns the value of the '<em><b>Point</b></em>' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a
-	 * point to draw an elliptical arc to from the current point in the
-	 * coordinate system. <!-- end-model-doc -->
-	 * 
-	 * @return the value of the '<em>Point</em>' containment reference.
-	 * @see #setPoint(Point)
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalCurveTo_Point()
-	 * @model containment="true" required="true" ordered="false"
-	 * @generated
-	 */
-	Point getPoint();
-
-	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getPoint
-	 * <em>Point</em>}' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Point</em>' containment reference.
-	 * @see #getPoint()
-	 * @generated
-	 */
-	void setPoint(Point value);
-
+public interface EllipticalArcTo extends PathCommand {
 	/**
 	 * Returns the value of the '<em><b>Radii</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
@@ -74,7 +47,7 @@ public interface EllipticalCurveTo extends PathCommand {
 	 * 
 	 * @return the value of the '<em>Radii</em>' containment reference.
 	 * @see #setRadii(Dimension)
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalCurveTo_Radii()
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalArcTo_Radii()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
@@ -82,9 +55,8 @@ public interface EllipticalCurveTo extends PathCommand {
 
 	/**
 	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getRadii
-	 * <em>Radii</em>}' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRadii <em>Radii</em>}
+	 * ' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Radii</em>' containment reference.
@@ -101,7 +73,7 @@ public interface EllipticalCurveTo extends PathCommand {
 	 * 
 	 * @return the value of the '<em>Rotation</em>' attribute.
 	 * @see #setRotation(double)
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalCurveTo_Rotation()
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalArcTo_Rotation()
 	 * @model dataType="org.eclipse.papyrus.dd.dc.Real" required="true"
 	 *        ordered="false"
 	 * @generated
@@ -110,7 +82,7 @@ public interface EllipticalCurveTo extends PathCommand {
 
 	/**
 	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getRotation
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRotation
 	 * <em>Rotation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
@@ -129,7 +101,7 @@ public interface EllipticalCurveTo extends PathCommand {
 	 * 
 	 * @return the value of the '<em>Is Large Arc</em>' attribute.
 	 * @see #setIsLargeArc(boolean)
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalCurveTo_IsLargeArc()
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalArcTo_IsLargeArc()
 	 * @model dataType="org.eclipse.papyrus.dd.dc.Boolean" required="true"
 	 *        ordered="false"
 	 * @generated
@@ -138,7 +110,7 @@ public interface EllipticalCurveTo extends PathCommand {
 
 	/**
 	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#isLargeArc
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isLargeArc
 	 * <em>Is Large Arc</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -156,7 +128,7 @@ public interface EllipticalCurveTo extends PathCommand {
 	 * 
 	 * @return the value of the '<em>Is Sweep</em>' attribute.
 	 * @see #setIsSweep(boolean)
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalCurveTo_IsSweep()
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalArcTo_IsSweep()
 	 * @model dataType="org.eclipse.papyrus.dd.dc.Boolean" required="true"
 	 *        ordered="false"
 	 * @generated
@@ -165,7 +137,7 @@ public interface EllipticalCurveTo extends PathCommand {
 
 	/**
 	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#isSweep
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isSweep
 	 * <em>Is Sweep</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
@@ -176,4 +148,30 @@ public interface EllipticalCurveTo extends PathCommand {
 	 */
 	void setIsSweep(boolean value);
 
-} // EllipticalCurveTo
+	/**
+	 * Returns the value of the '<em><b>Point</b></em>' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a
+	 * point to draw an elliptical arc to from the current point in the
+	 * coordinate system. <!-- end-model-doc -->
+	 * 
+	 * @return the value of the '<em>Point</em>' containment reference.
+	 * @see #setPoint(Point)
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getEllipticalArcTo_Point()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	Point getPoint();
+
+	/**
+	 * Sets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getPoint <em>Point</em>}
+	 * ' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Point</em>' containment reference.
+	 * @see #getPoint()
+	 * @generated
+	 */
+	void setPoint(Point value);
+
+} // EllipticalArcTo

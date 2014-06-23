@@ -11,8 +11,27 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Canvas is a kind of group that has bounds."/>
     </eAnnotations>
+    <eOperations name="canvasCannotHaveTransforms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="transform->isEmpty()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bounds" ordered="false"
-        lowerBound="1" eType="ecore:EClass DC.ecore#//Bounds" containment="true">
+        eType="ecore:EClass DC.ecore#//Bounds" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="the bounds of the canvas in the x-y coordinate system."/>
       </eAnnotations>
@@ -33,6 +52,25 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="GraphicalElement is the abstract superclass of all graphical elements that can be nested in a canvas."/>
     </eAnnotations>
+    <eOperations name="referencedClippathHasId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="clipPath->notEmpty() implies clipPath.id->notEmpty()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="clipPath" ordered="false"
         eType="#//ClipPath">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -45,10 +83,10 @@
         <details key="documentation" value="The group that owns this graphical element."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" upperBound="-1"
         eType="ecore:EDataType DC.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A list of strings representing keywords of the graphical element."/>
+        <details key="documentation" value="A list of strings representing classes of the graphical element."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//Style"
@@ -65,8 +103,27 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Definition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
-        eType="ecore:EDataType DC.ecore#//String" iD="true">
+    <eOperations name="idCannotBeEmpty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="id->notEmpty() implies id.size() > 0"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType DC.ecore#//String"
+        iD="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a point to move to in the coordinate system"/>
       </eAnnotations>
@@ -281,6 +338,25 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Paint">
+    <eOperations name="referencedPaintServerHasId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="paintServer->notEmpty() implies paintServer.id->notEmpty()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" ordered="false"
         eType="ecore:EDataType DC.ecore#//Color">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -324,7 +400,7 @@
         <details key="body" value="radius >= 0"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="the radius cannot be negative"/>
+        <details key="documentation" value="The radius of a circle cannot be negative"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -348,7 +424,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="radius" ordered="false"
-        lowerBound="1" eType="ecore:EDataType DC.ecore#//Real">
+        lowerBound="1" eType="ecore:EDataType DC.ecore#//Real" defaultValueLiteral="0">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (>=0) that represents the radius of the circle."/>
       </eAnnotations>
@@ -363,12 +439,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="CubicCurveTo is a kind of path command that draws a cubic bézier curve from the current point to a new point using a start and an end control points.&#xA;Definitions nests definitions that are commonly referenced in the containing canvas. It can also nest an embedded stylesheet.&#xA;EllipticalArcTo is a kind of path command that draws an elliptical arc from the current point to a new point in the coordinate system.&#xA;QuadraticCurveTo is a kind of path command that draws a quadratic bézier curve from the current point to a new point using a single control point."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
-        lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="a point to draw a cubic bézier curve to from the current point in the coordinate system."/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="startControl" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -379,6 +449,12 @@
         lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="the end control point of the cubic bézier curve."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
+        lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a point to draw a cubic bézier curve to from the current point in the coordinate system."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -419,17 +495,34 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StyleSelector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" eType="#//ElementKind"
+        unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A non-abstract type that is a subtype of GraphicalElement. Elements having this type are selected."/>
+        <details key="documentation" value="The kind of graphical element to select."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" upperBound="-1"
         eType="ecore:EDataType DC.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A list of strings representing keywords of graphical elements. Elements having these keywords are selected."/>
+        <details key="documentation" value="A set of strings representing classes of graphical elements to select. Selected elements must have all those classes."/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ElementKind">
+    <eLiterals name="canvas"/>
+    <eLiterals name="circle" value="1"/>
+    <eLiterals name="clipPath" value="2"/>
+    <eLiterals name="ellipse" value="3"/>
+    <eLiterals name="group" value="4"/>
+    <eLiterals name="image" value="5"/>
+    <eLiterals name="line" value="6"/>
+    <eLiterals name="marker" value="7"/>
+    <eLiterals name="path" value="8"/>
+    <eLiterals name="polygon" value="9"/>
+    <eLiterals name="polyline" value="10"/>
+    <eLiterals name="rectangle" value="11"/>
+    <eLiterals name="text" value="12"/>
+    <eLiterals name="use" value="13"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ellipse" eSuperTypes="#//GraphicalElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -448,13 +541,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EllipticalCurveTo" eSuperTypes="#//PathCommand">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
-        lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="a point to draw an elliptical arc to from the current point in the coordinate system."/>
-      </eAnnotations>
-    </eStructuralFeatures>
+  <eClassifiers xsi:type="ecore:EClass" name="EllipticalArcTo" eSuperTypes="#//PathCommand">
     <eStructuralFeatures xsi:type="ecore:EReference" name="radii" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Dimension" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -479,21 +566,27 @@
         <details key="documentation" value="whether the arc is drawn in a positive-angle direction"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
+        lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a point to draw an elliptical arc to from the current point in the coordinate system."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuadraticCurveTo" eSuperTypes="#//PathCommand">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="QuadraticCurveTo is a kind of path command that draws a quadratic bézier curve from the current point to a new point using a single control point.&#xA;EllipticalArcTo is a kind of path command that draws an elliptical arc from the current point to a new point in the coordinate system."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
-        lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="a point to draw a quadratic bézier curve to from the current point in the coordinate system."/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="control" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="the control point of the quadratic bézier curve."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
+        lowerBound="1" eType="ecore:EClass DC.ecore#//Point" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="a point to draw a quadratic bézier curve to from the current point in the coordinate system."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -557,19 +650,19 @@
       </eParameters>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" ordered="false"
-        lowerBound="1" eType="ecore:EDataType DC.ecore#//Color">
+        eType="ecore:EDataType DC.ecore#//Color" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="the color to use at this gradient stop."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" ordered="false"
-        lowerBound="1" eType="ecore:EDataType DC.ecore#//Real">
+        eType="ecore:EDataType DC.ecore#//Real" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="an offset of this gradient stop represented as a percentage of the distance between the start and end positions of the gradient along the x and y axes."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" ordered="false"
-        lowerBound="1" eType="ecore:EDataType DC.ecore#//Real" defaultValueLiteral="1">
+        eType="ecore:EDataType DC.ecore#//Real" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (>=0 and&lt;=1) representing the opacity of the color at the stop. A value of 0 means totally transparent, while a value of 1 means totally opaque."/>
       </eAnnotations>
@@ -579,6 +672,25 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Image is a graphical element that defines a shape that paints an image with a given URL within given bounds."/>
     </eAnnotations>
+    <eOperations name="sourceCannotBeEmpty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="source->notEmpty() implies source.size() > 0"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" ordered="false"
         lowerBound="1" eType="ecore:EDataType DC.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -592,7 +704,8 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAspectRatioPreserved"
-        ordered="false" lowerBound="1" eType="ecore:EDataType DC.ecore#//Boolean">
+        ordered="false" lowerBound="1" eType="ecore:EDataType DC.ecore#//Boolean"
+        defaultValueLiteral="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="wether to preserve the aspect ratio of the image upon scaling, i.e. the same scale factor for width and height."/>
       </eAnnotations>
@@ -619,6 +732,63 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="MarkedElement is a graphic element that can be decorated at its vertices with markers (e.g. arrowheads)."/>
     </eAnnotations>
+    <eOperations name="referencedStartMarkerHasId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="startMarker->notEmpty() implies startMarker.id->notEmpty()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="referencedMidMarkerHasId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="midMarker->notEmpty() implies midMarker.id->notEmpty()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="referencedEndMarkerHasId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="endMarker->notEmpty() implies endMarker.id->notEmpty()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endMarker" ordered="false"
         eType="#//Marker">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -750,8 +920,27 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Path is a marked element that defines a custom shape whose geometry is specified with a sequence of path commands."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="command" upperBound="-1"
-        eType="#//PathCommand" containment="true">
+    <eOperations name="firstCommandMustBeMove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="command->first().oclIsKindOf(MoveTo)"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command" lowerBound="1"
+        upperBound="-1" eType="#//PathCommand" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a list of path commands that define the geometry of the custom shape."/>
       </eAnnotations>
@@ -889,6 +1078,25 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Rectangle is a graphical element that defines a rectangular shape with given bounds. A rectangle may be given rounded corners by setting its corner radius."/>
     </eAnnotations>
+    <eOperations name="nonNegativeCornerRadius" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="cornerRadius >= 0"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bounds" ordered="false"
         lowerBound="1" eType="ecore:EClass DC.ecore#//Bounds" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -896,7 +1104,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cornerRadius" ordered="false"
-        lowerBound="1" eType="ecore:EDataType DC.ecore#//Real" defaultValueLiteral="0">
+        eType="ecore:EDataType DC.ecore#//Real" defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a radius for the rectangle's rounded corners. When the radius is 0, the rectangle is drawn with sharp corners."/>
       </eAnnotations>
@@ -918,7 +1126,7 @@
         <details key="documentation" value="An optional definitions element to hold objects commonly referenced by the canvas."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="styleSheet" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalStyleSheet" upperBound="-1"
         eType="#//StyleSheet">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A list of external style sheets that are imported by the canvas."/>
@@ -1002,6 +1210,25 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Text is a graphical element that defines a shape that renders a character string at a given position."/>
     </eAnnotations>
+    <eOperations name="dataCannotBeEmpty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="data->notEmpty() implies data.size() > 0"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" ordered="false" lowerBound="1"
         eType="ecore:EDataType DC.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1036,10 +1263,35 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Rectangle is a graphical element that defines a rectangular shape with given bounds. A rectangle may be given rounded corners by setting its corner radius."/>
     </eAnnotations>
+    <eOperations name="referencedElementHasId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="referencedElement->notEmpty() implies referencedElement.id->notEmpty()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bounds" ordered="false"
-        lowerBound="1" eType="ecore:EClass DC.ecore#//Bounds" containment="true">
+        eType="ecore:EClass DC.ecore#//Bounds" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="the bounds of the rectangle in the x-y coordinate system."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedElement" lowerBound="1"
+        eType="#//GraphicalElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A list of graphical elements that are members of this group."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

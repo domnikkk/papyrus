@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Group#getMember <em>Member</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}</li>
  * </ul>
  * </p>
  * 
@@ -48,6 +48,6 @@ public interface Group extends GraphicalElement {
 	 * @model opposite="group" containment="true"
 	 * @generated
 	 */
-	EList<GraphicalElement> getMember();
+	EList<GraphicalElement> getMembers();
 
 } // Group

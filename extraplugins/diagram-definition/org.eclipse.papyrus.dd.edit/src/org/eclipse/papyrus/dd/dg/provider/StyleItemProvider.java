@@ -41,10 +41,9 @@ import org.eclipse.papyrus.dd.dg.Style;
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.Style} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Style} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class StyleItemProvider extends ItemProviderAdapter implements
@@ -88,21 +87,25 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Fill feature. <!-- begin-user-doc
+	 * This adds a property descriptor for the Fill feature.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addFillPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_fill_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_fill_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__FILL, true, false, false, null, null,
-				null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_fill_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_fill_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__FILL,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -112,15 +115,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addFillOpacityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_fillOpacity_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_fillOpacity_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__FILL_OPACITY, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_fillOpacity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_fillOpacity_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__FILL_OPACITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -130,15 +137,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addStrokePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_stroke_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_stroke_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__STROKE, true, false, false, null,
-				null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_stroke_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_stroke_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__STROKE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -148,15 +159,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addStrokeWidthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_strokeWidth_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_strokeWidth_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__STROKE_WIDTH, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_strokeWidth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeWidth_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__STROKE_WIDTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -166,15 +181,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addStrokeOpacityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_strokeOpacity_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_strokeOpacity_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__STROKE_OPACITY, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_strokeOpacity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeOpacity_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__STROKE_OPACITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -184,18 +203,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addStrokeDashLengthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Style_strokeDashLength_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Style_strokeDashLength_feature",
-								"_UI_Style_type"),
-						DGPackage.Literals.STYLE__STROKE_DASH_LENGTH, true,
-						false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-						null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_strokeDashLength_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_strokeDashLength_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__STROKE_DASH_LENGTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -205,15 +225,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addFontSizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_fontSize_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_fontSize_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__FONT_SIZE, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_fontSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_fontSize_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__FONT_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -223,15 +247,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addFontNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_fontName_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_fontName_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__FONT_NAME, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_fontName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_fontName_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__FONT_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -241,15 +269,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addFontItalicPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_fontItalic_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_fontItalic_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__FONT_ITALIC, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_fontItalic_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_fontItalic_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__FONT_ITALIC,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -259,15 +291,19 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addFontBoldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_fontBold_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_fontBold_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__FONT_BOLD, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_fontBold_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_fontBold_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__FONT_BOLD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -277,25 +313,26 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addFontDecorationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Style_fontDecoration_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Style_fontDecoration_feature", "_UI_Style_type"),
-				DGPackage.Literals.STYLE__FONT_DECORATION, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Style_fontDecoration_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Style_fontDecoration_feature", "_UI_Style_type"),
+				 DGPackage.Literals.STYLE__FONT_DECORATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -311,48 +348,45 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns Style.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Style.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Style"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Style"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Style) object).getFontName();
-		return label == null || label.length() == 0 ? getString("_UI_Style_type")
-				: getString("_UI_Style_type") + " " + label;
+		String label = ((Style)object).getFontName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Style_type") :
+			getString("_UI_Style_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -360,23 +394,21 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Style.class)) {
-		case DGPackage.STYLE__FILL_OPACITY:
-		case DGPackage.STYLE__STROKE_WIDTH:
-		case DGPackage.STYLE__STROKE_OPACITY:
-		case DGPackage.STYLE__STROKE_DASH_LENGTH:
-		case DGPackage.STYLE__FONT_SIZE:
-		case DGPackage.STYLE__FONT_NAME:
-		case DGPackage.STYLE__FONT_ITALIC:
-		case DGPackage.STYLE__FONT_BOLD:
-		case DGPackage.STYLE__FONT_DECORATION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DGPackage.STYLE__FILL:
-		case DGPackage.STYLE__STROKE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.STYLE__FILL_OPACITY:
+			case DGPackage.STYLE__STROKE_WIDTH:
+			case DGPackage.STYLE__STROKE_OPACITY:
+			case DGPackage.STYLE__STROKE_DASH_LENGTH:
+			case DGPackage.STYLE__FONT_SIZE:
+			case DGPackage.STYLE__FONT_NAME:
+			case DGPackage.STYLE__FONT_ITALIC:
+			case DGPackage.STYLE__FONT_BOLD:
+			case DGPackage.STYLE__FONT_DECORATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case DGPackage.STYLE__FILL:
+			case DGPackage.STYLE__STROKE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -393,13 +425,15 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.STYLE__FILL,
-				DGFactory.eINSTANCE.createPaint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.STYLE__FILL,
+				 DGFactory.eINSTANCE.createPaint()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.STYLE__STROKE,
-				DGFactory.eINSTANCE.createPaint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.STYLE__STROKE,
+				 DGFactory.eINSTANCE.createPaint()));
 	}
 
 	/**
@@ -415,13 +449,14 @@ public class StyleItemProvider extends ItemProviderAdapter implements
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == DGPackage.Literals.STYLE__FILL
-				|| childFeature == DGPackage.Literals.STYLE__STROKE;
+		boolean qualify =
+			childFeature == DGPackage.Literals.STYLE__FILL ||
+			childFeature == DGPackage.Literals.STYLE__STROKE;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

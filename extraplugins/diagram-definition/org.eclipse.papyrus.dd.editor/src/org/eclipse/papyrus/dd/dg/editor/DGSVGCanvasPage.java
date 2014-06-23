@@ -15,7 +15,6 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Frame;
 
-import org.apache.batik.dom.svg.SVGOMDocument;
 import org.apache.batik.swing.JSVGCanvas;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -68,7 +67,7 @@ public class DGSVGCanvasPage extends DDEditorPage {
 				.get(0);
 
 		// (re)generate the SVG document
-		SVGOMDocument svgDocument = getConverter().convert(resource);
+		Document svgDocument = getConverter().convert(resource);
 
 		// update the input of the viewer
 		viewer.setInput(svgDocument);

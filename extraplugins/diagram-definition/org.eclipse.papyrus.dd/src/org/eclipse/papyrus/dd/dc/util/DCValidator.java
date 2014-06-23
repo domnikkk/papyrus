@@ -57,21 +57,39 @@ public class DCValidator extends EObjectValidator {
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for
-	 * constraint 'Non Negative Dimension' of 'Dimension'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * constraint 'Non Negative Width' of 'Dimension'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int DIMENSION__NON_NEGATIVE_DIMENSION = 1;
+	public static final int DIMENSION__NON_NEGATIVE_WIDTH = 1;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for
-	 * constraint 'Non Negative Size' of 'Bounds'. <!-- begin-user-doc --> <!--
+	 * constraint 'Non Negative Height' of 'Dimension'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int DIMENSION__NON_NEGATIVE_HEIGHT = 2;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for
+	 * constraint 'Non Negative Width' of 'Bounds'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int BOUNDS__NON_NEGATIVE_SIZE = 2;
+	public static final int BOUNDS__NON_NEGATIVE_WIDTH = 3;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for
+	 * constraint 'Non Negative Height' of 'Bounds'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int BOUNDS__NON_NEGATIVE_HEIGHT = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for
@@ -80,7 +98,7 @@ public class DCValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 2;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for
@@ -145,9 +163,6 @@ public class DCValidator extends EObjectValidator {
 			return validateBounds((Bounds) value, diagnostics, context);
 		case DCPackage.KNOWN_COLOR:
 			return validateKnownColor((KnownColor) value, diagnostics, context);
-		case DCPackage.ALIGNMENT_KIND:
-			return validateAlignmentKind((AlignmentKind) value, diagnostics,
-					context);
 		case DCPackage.BOOLEAN:
 			return validateBoolean((Boolean) value, diagnostics, context);
 		case DCPackage.INTEGER:
@@ -204,20 +219,34 @@ public class DCValidator extends EObjectValidator {
 			result &= validate_EveryMapEntryUnique(dimension, diagnostics,
 					context);
 		if (result || diagnostics != null)
-			result &= validateDimension_nonNegativeDimension(dimension,
+			result &= validateDimension_nonNegativeWidth(dimension,
+					diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateDimension_nonNegativeHeight(dimension,
 					diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the nonNegativeDimension constraint of '<em>Dimension</em>'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Validates the nonNegativeWidth constraint of '<em>Dimension</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public boolean validateDimension_nonNegativeDimension(Dimension dimension,
+	public boolean validateDimension_nonNegativeWidth(Dimension dimension,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return dimension.nonNegativeDimension(diagnostics, context);
+		return dimension.nonNegativeWidth(diagnostics, context);
+	}
+
+	/**
+	 * Validates the nonNegativeHeight constraint of '<em>Dimension</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean validateDimension_nonNegativeHeight(Dimension dimension,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dimension.nonNegativeHeight(diagnostics, context);
 	}
 
 	/**
@@ -249,20 +278,34 @@ public class DCValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(bounds, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateBounds_nonNegativeSize(bounds, diagnostics,
+			result &= validateBounds_nonNegativeWidth(bounds, diagnostics,
+					context);
+		if (result || diagnostics != null)
+			result &= validateBounds_nonNegativeHeight(bounds, diagnostics,
 					context);
 		return result;
 	}
 
 	/**
-	 * Validates the nonNegativeSize constraint of '<em>Bounds</em>'. <!--
+	 * Validates the nonNegativeWidth constraint of '<em>Bounds</em>'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public boolean validateBounds_nonNegativeSize(Bounds bounds,
+	public boolean validateBounds_nonNegativeWidth(Bounds bounds,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return bounds.nonNegativeSize(diagnostics, context);
+		return bounds.nonNegativeWidth(diagnostics, context);
+	}
+
+	/**
+	 * Validates the nonNegativeHeight constraint of '<em>Bounds</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean validateBounds_nonNegativeHeight(Bounds bounds,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return bounds.nonNegativeHeight(diagnostics, context);
 	}
 
 	/**
@@ -271,16 +314,6 @@ public class DCValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateKnownColor(KnownColor knownColor,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public boolean validateAlignmentKind(AlignmentKind alignmentKind,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}

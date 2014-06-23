@@ -11,6 +11,8 @@
  */
 package org.eclipse.papyrus.dd.dg;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.papyrus.dd.dc.Bounds;
 
 /**
@@ -25,6 +27,8 @@ import org.eclipse.papyrus.dd.dc.Bounds;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.papyrus.dd.dg.Use#getBounds <em>Bounds</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Use#getReferencedElement <em>Referenced
+ * Element</em>}</li>
  * </ul>
  * </p>
  * 
@@ -42,7 +46,7 @@ public interface Use extends GraphicalElement {
 	 * @return the value of the '<em>Bounds</em>' containment reference.
 	 * @see #setBounds(Bounds)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getUse_Bounds()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	Bounds getBounds();
@@ -58,5 +62,47 @@ public interface Use extends GraphicalElement {
 	 * @generated
 	 */
 	void setBounds(Bounds value);
+
+	/**
+	 * Returns the value of the '<em><b>Referenced Element</b></em>' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> A
+	 * list of graphical elements that are members of this group. <!--
+	 * end-model-doc -->
+	 * 
+	 * @return the value of the '<em>Referenced Element</em>' reference.
+	 * @see #setReferencedElement(GraphicalElement)
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getUse_ReferencedElement()
+	 * @model required="true"
+	 * @generated
+	 */
+	GraphicalElement getReferencedElement();
+
+	/**
+	 * Sets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.Use#getReferencedElement
+	 * <em>Referenced Element</em>}' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Referenced Element</em>' reference.
+	 * @see #getReferencedElement()
+	 * @generated
+	 */
+	void setReferencedElement(GraphicalElement value);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='referencedElement->notEmpty() implies referencedElement.id->notEmpty()'"
+	 * @generated
+	 */
+	boolean referencedElementHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
 
 } // Use

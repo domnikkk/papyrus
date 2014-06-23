@@ -11,9 +11,14 @@
  */
 package org.eclipse.papyrus.dd.dg.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -23,6 +28,7 @@ import org.eclipse.papyrus.dd.dc.Bounds;
 
 import org.eclipse.papyrus.dd.dg.Canvas;
 import org.eclipse.papyrus.dd.dg.DGPackage;
+import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -122,6 +128,39 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 	}
 
 	/**
+	 * The cached validation expression for the '
+	 * {@link #canvasCannotHaveTransforms(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Canvas Cannot Have Transforms</em>}' invariant operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #canvasCannotHaveTransforms(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CANVAS_CANNOT_HAVE_TRANSFORMS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "transform->isEmpty()";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean canvasCannotHaveTransforms(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.CANVAS,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP,
+						CANVAS_CANNOT_HAVE_TRANSFORMS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.CANVAS__CANVAS_CANNOT_HAVE_TRANSFORMS);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -192,6 +231,24 @@ public class CanvasImpl extends GroupImpl implements Canvas {
 			return bounds != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case DGPackage.CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP:
+			return canvasCannotHaveTransforms(
+					(DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } // CanvasImpl

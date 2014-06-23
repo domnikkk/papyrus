@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleSheet#getRule <em>Rule</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.StyleSheet#getRules <em>Rule</em>}</li>
  * </ul>
  * </p>
  * 
@@ -43,6 +43,6 @@ public interface StyleSheet extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<StyleRule> getRule();
+	EList<StyleRule> getRules();
 
 } // StyleSheet

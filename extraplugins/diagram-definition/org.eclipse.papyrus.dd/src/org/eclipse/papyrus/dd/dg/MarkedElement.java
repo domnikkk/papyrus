@@ -11,6 +11,9 @@
  */
 package org.eclipse.papyrus.dd.dg;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Marked Element</b></em>'. <!-- end-user-doc -->
@@ -116,5 +119,50 @@ public interface MarkedElement extends GraphicalElement {
 	 * @generated
 	 */
 	void setStartMarker(Marker value);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='startMarker->notEmpty() implies startMarker.id->notEmpty()'"
+	 * @generated
+	 */
+	boolean referencedStartMarkerHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='midMarker->notEmpty() implies midMarker.id->notEmpty()'"
+	 * @generated
+	 */
+	boolean referencedMidMarkerHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='endMarker->notEmpty() implies endMarker.id->notEmpty()'"
+	 * @generated
+	 */
+	boolean referencedEndMarkerHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
 
 } // MarkedElement

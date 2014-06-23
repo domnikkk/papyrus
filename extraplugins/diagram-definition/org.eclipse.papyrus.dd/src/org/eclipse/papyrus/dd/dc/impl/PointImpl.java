@@ -57,6 +57,15 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	protected double x = X_EDEFAULT;
 
 	/**
+	 * This is true if the X attribute has been set. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean xESet;
+
+	/**
 	 * The default value of the '{@link #getY() <em>Y</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -75,6 +84,15 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * @ordered
 	 */
 	protected double y = Y_EDEFAULT;
+
+	/**
+	 * This is true if the Y attribute has been set. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean yESet;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -112,9 +130,35 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	public void setX(double newX) {
 		double oldX = x;
 		x = newX;
+		boolean oldXESet = xESet;
+		xESet = true;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DCPackage.POINT__X, oldX, x));
+					DCPackage.POINT__X, oldX, x, !oldXESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void unsetX() {
+		double oldX = x;
+		boolean oldXESet = xESet;
+		x = X_EDEFAULT;
+		xESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET,
+					DCPackage.POINT__X, oldX, X_EDEFAULT, oldXESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isSetX() {
+		return xESet;
 	}
 
 	/**
@@ -134,9 +178,35 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	public void setY(double newY) {
 		double oldY = y;
 		y = newY;
+		boolean oldYESet = yESet;
+		yESet = true;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DCPackage.POINT__Y, oldY, y));
+					DCPackage.POINT__Y, oldY, y, !oldYESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void unsetY() {
+		double oldY = y;
+		boolean oldYESet = yESet;
+		y = Y_EDEFAULT;
+		yESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET,
+					DCPackage.POINT__Y, oldY, Y_EDEFAULT, oldYESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isSetY() {
+		return yESet;
 	}
 
 	/**
@@ -182,10 +252,10 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DCPackage.POINT__X:
-			setX(X_EDEFAULT);
+			unsetX();
 			return;
 		case DCPackage.POINT__Y:
-			setY(Y_EDEFAULT);
+			unsetY();
 			return;
 		}
 		super.eUnset(featureID);
@@ -200,9 +270,9 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DCPackage.POINT__X:
-			return x != X_EDEFAULT;
+			return isSetX();
 		case DCPackage.POINT__Y:
-			return y != Y_EDEFAULT;
+			return isSetY();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,9 +289,15 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (x: ");
-		result.append(x);
+		if (xESet)
+			result.append(x);
+		else
+			result.append("<unset>");
 		result.append(", y: ");
-		result.append(y);
+		if (yESet)
+			result.append(y);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

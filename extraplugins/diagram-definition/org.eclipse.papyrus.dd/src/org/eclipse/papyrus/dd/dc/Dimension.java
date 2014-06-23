@@ -60,10 +60,37 @@ public interface Dimension extends EObject {
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Width</em>' attribute.
+	 * @see #isSetWidth()
+	 * @see #unsetWidth()
 	 * @see #getWidth()
 	 * @generated
 	 */
 	void setWidth(double value);
+
+	/**
+	 * Unsets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #isSetWidth()
+	 * @see #getWidth()
+	 * @see #setWidth(double)
+	 * @generated
+	 */
+	void unsetWidth();
+
+	/**
+	 * Returns whether the value of the '
+	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}'
+	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return whether the value of the '<em>Width</em>' attribute is set.
+	 * @see #unsetWidth()
+	 * @see #getWidth()
+	 * @see #setWidth(double)
+	 * @generated
+	 */
+	boolean isSetWidth();
 
 	/**
 	 * Returns the value of the '<em><b>Height</b></em>' attribute. <!--
@@ -87,25 +114,68 @@ public interface Dimension extends EObject {
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Height</em>' attribute.
+	 * @see #isSetHeight()
+	 * @see #unsetHeight()
 	 * @see #getHeight()
 	 * @generated
 	 */
 	void setHeight(double value);
 
 	/**
+	 * Unsets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #isSetHeight()
+	 * @see #getHeight()
+	 * @see #setHeight(double)
+	 * @generated
+	 */
+	void unsetHeight();
+
+	/**
+	 * Returns whether the value of the '
+	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}'
+	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return whether the value of the '<em>Height</em>' attribute is set.
+	 * @see #unsetHeight()
+	 * @see #getHeight()
+	 * @see #setHeight(double)
+	 * @generated
+	 */
+	boolean isSetHeight();
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
-	 * the width and height of a dimension cannot be negative
+	 * the width of a dimension cannot be negative
 	 * 
 	 * @param diagnostics
 	 *            The chain of diagnostics to which problems are to be appended.
 	 * @param context
 	 *            The cache of context-specific information. <!-- end-model-doc
 	 *            -->
-	 * @model annotation=
-	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='width >= 0 and height >=0'"
+	 * @model 
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='width >=0'"
 	 * @generated
 	 */
-	boolean nonNegativeDimension(DiagnosticChain diagnostics,
+	boolean nonNegativeWidth(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * the height of a dimension cannot be negative
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model 
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='height >=0'"
+	 * @generated
+	 */
+	boolean nonNegativeHeight(DiagnosticChain diagnostics,
 			Map<Object, Object> context);
 
 } // Dimension

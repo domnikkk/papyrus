@@ -11,7 +11,13 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="Canvas-_ownedComment.0" annotatedElement="Canvas">
         <body>Canvas is a kind of group that has bounds.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="_loGuQNTkEeO3TMM_EGdzeA" name="bounds" visibility="public">
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_roVmMOjLEeO6TvQHODg78w" name="canvas_cannot_have_transforms" constrainedElement="Canvas" namespace="Canvas">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_roVmMejLEeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>transform->isEmpty()</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="_loGuQNTkEeO3TMM_EGdzeA" name="bounds" visibility="public" lower="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="_loGuQdTkEeO3TMM_EGdzeA" annotatedElement="_loGuQNTkEeO3TMM_EGdzeA">
           <body>the bounds of the canvas in the x-y coordinate system.</body>
         </ownedComment>
@@ -24,7 +30,7 @@
       </ownedComment>
       <ownedRule xmi:type="cmof:Constraint" xmi:id="Circle-non_negative_radius" name="non_negative_radius" constrainedElement="Circle" namespace="Circle">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Circle-non_negative_radius-_ownedComment.0" annotatedElement="Circle-non_negative_radius">
-          <body>the radius cannot be negative</body>
+          <body>The radius of a circle cannot be negative</body>
         </ownedComment>
         <specification xmi:type="cmof:OpaqueExpression" xmi:id="Circle-non_negative_radius-_specification">
           <language>OCL</language>
@@ -37,7 +43,7 @@
         </ownedComment>
         <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Circle-radius" name="radius" visibility="public">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Circle-radius" name="radius" visibility="public" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Circle-radius-_ownedComment.0" annotatedElement="Circle-radius">
           <body>a real number (>=0) that represents the radius of the circle.</body>
         </ownedComment>
@@ -58,12 +64,6 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="CubicCurveTo-_ownedComment.0" annotatedElement="CubicCurveTo">
         <body>CubicCurveTo is a kind of path command that draws a cubic bézier curve from the current point to a new point using a start and an end control points.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="CubicCurveTo-point" name="point" visibility="public">
-        <ownedComment xmi:type="cmof:Comment" xmi:id="CubicCurveTo-point-_ownedComment.0" annotatedElement="CubicCurveTo-point">
-          <body>a point to draw a cubic bézier curve to from the current point in the coordinate system.</body>
-        </ownedComment>
-        <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="CubicCurveTo-startControl" name="startControl" visibility="public">
         <ownedComment xmi:type="cmof:Comment" xmi:id="CubicCurveTo-startControl-_ownedComment.0" annotatedElement="CubicCurveTo-startControl">
           <body>the start control point of the cubic bézier curve.</body>
@@ -76,12 +76,24 @@
         </ownedComment>
         <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="CubicCurveTo-point" name="point" visibility="public">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="CubicCurveTo-point-_ownedComment.0" annotatedElement="CubicCurveTo-point">
+          <body>a point to draw a cubic bézier curve to from the current point in the coordinate system.</body>
+        </ownedComment>
+        <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
+      </ownedAttribute>
     </ownedMember>
     <ownedMember xmi:type="cmof:Class" xmi:id="_CwockM6jEeOqlr8E3pzO9g" name="Definition" isAbstract="true">
       <ownedComment xmi:type="cmof:Comment" xmi:id="_k77BMM6jEeOqlr8E3pzO9g" annotatedElement="MoveTo">
         <body>Definition is an object with an id that can be nested under Definitions.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="_3JUlwM6jEeOqlr8E3pzO9g" name="id" visibility="public" isID="true">
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_0yDOEO08EeOCPtJ2AfZp5A" name="id_cannot_be_empty" constrainedElement="_CwockM6jEeOqlr8E3pzO9g" namespace="_CwockM6jEeOqlr8E3pzO9g">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_0yDOEe08EeOCPtJ2AfZp5A">
+          <language>OCL</language>
+          <body>id->notEmpty() implies id.size() > 0</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="_3JUlwM6jEeOqlr8E3pzO9g" name="id" visibility="public" lower="0" isID="true">
         <ownedComment xmi:type="cmof:Comment" xmi:id="_3JUlwc6jEeOqlr8E3pzO9g" annotatedElement="_3JUlwM6jEeOqlr8E3pzO9g">
           <body>a point to move to in the coordinate system</body>
         </ownedComment>
@@ -120,16 +132,10 @@
         <type xmi:type="cmof:DataType" href="DC.cmof#Dimension"/>
       </ownedAttribute>
     </ownedMember>
-    <ownedMember xmi:type="cmof:Class" xmi:id="EllipticalArcTo" name="EllipticalCurveTo" superClass="PathCommand">
+    <ownedMember xmi:type="cmof:Class" xmi:id="EllipticalArcTo" name="EllipticalArcTo" superClass="PathCommand">
       <ownedComment xmi:type="cmof:Comment" xmi:id="EllipticalArcTo-_ownedComment.0" annotatedElement="CubicCurveTo QuadraticCurveTo">
         <body>EllipticalArcTo is a kind of path command that draws an elliptical arc from the current point to a new point in the coordinate system.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="EllipticalArcTo-point" name="point" visibility="public">
-        <ownedComment xmi:type="cmof:Comment" xmi:id="EllipticalArcTo-point-_ownedComment.0" annotatedElement="EllipticalArcTo-point">
-          <body>a point to draw an elliptical arc to from the current point in the coordinate system.</body>
-        </ownedComment>
-        <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="EllipticalArcTo-radii" name="radii" visibility="public">
         <ownedComment xmi:type="cmof:Comment" xmi:id="EllipticalArcTo-radii-_ownedComment.0" annotatedElement="EllipticalArcTo-radii">
           <body>the two radii of the ellipse from which the arc is created.</body>
@@ -153,6 +159,12 @@
           <body>whether the arc is drawn in a positive-angle direction</body>
         </ownedComment>
         <type xmi:type="cmof:PrimitiveType" href="DC.cmof#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="EllipticalArcTo-point" name="point" visibility="public">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="EllipticalArcTo-point-_ownedComment.0" annotatedElement="EllipticalArcTo-point">
+          <body>a point to draw an elliptical arc to from the current point in the coordinate system.</body>
+        </ownedComment>
+        <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
       </ownedAttribute>
     </ownedMember>
     <ownedMember xmi:type="cmof:Class" xmi:id="Gradient" name="Gradient" isAbstract="true" superClass="Fill">
@@ -187,19 +199,19 @@
           <body>opacity>=0 and opacity&lt;=1</body>
         </specification>
       </ownedRule>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="GradientStop-color" name="color" visibility="public">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="GradientStop-color" name="color" visibility="public" lower="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="GradientStop-color-_ownedComment.0" annotatedElement="GradientStop-color">
           <body>the color to use at this gradient stop.</body>
         </ownedComment>
         <type xmi:type="cmof:PrimitiveType" href="DC.cmof#Color"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="GradientStop-offset" name="offset" visibility="public">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="GradientStop-offset" name="offset" visibility="public" lower="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="GradientStop-offset-_ownedComment.0" annotatedElement="GradientStop-offset">
           <body>an offset of this gradient stop represented as a percentage of the distance between the start and end positions of the gradient along the x and y axes.</body>
         </ownedComment>
         <type xmi:type="cmof:PrimitiveType" href="DC.cmof#Real"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="GradientStop-opacity" name="opacity" visibility="public" default="1">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="GradientStop-opacity" name="opacity" visibility="public" lower="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="GradientStop-opacity-_ownedComment.0" annotatedElement="GradientStop-opacity">
           <body>a real number (>=0 and&lt;=1) representing the opacity of the color at the stop. A value of 0 means totally transparent, while a value of 1 means totally opaque.</body>
         </ownedComment>
@@ -210,6 +222,12 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="GraphicalElement-_ownedComment.0" annotatedElement="GraphicalElement">
         <body>GraphicalElement is the abstract superclass of all graphical elements that can be nested in a canvas.</body>
       </ownedComment>
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_-a2yAOhzEeO6TvQHODg78w" name="referenced_clippath_has_id" constrainedElement="GraphicalElement" namespace="GraphicalElement">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_I9m_EOh0EeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>clipPath->notEmpty() implies clipPath.id->notEmpty()</body>
+        </specification>
+      </ownedRule>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="GraphicalElement-clipPath" name="clipPath" visibility="public" type="ClipPath" lower="0" association="A_clipPath_clippedElement">
         <ownedComment xmi:type="cmof:Comment" xmi:id="GraphicalElement-clipPath-_ownedComment.0" annotatedElement="GraphicalElement-clipPath">
           <body>A clip path that masks the painting of this graphical element.</body>
@@ -220,9 +238,9 @@
           <body>The group that owns this graphical element.</body>
         </ownedComment>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="_yyXeMM2TEeOtK5GsJlm5Mw" name="keyword" visibility="public" isOrdered="true" lower="0" upper="*">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="_yyXeMM2TEeOtK5GsJlm5Mw" name="class" visibility="public" isOrdered="true" lower="0" upper="*">
         <ownedComment xmi:type="cmof:Comment" xmi:id="_yyXeMc2TEeOtK5GsJlm5Mw" annotatedElement="_yyXeMM2TEeOtK5GsJlm5Mw">
-          <body>A list of strings representing keywords of the graphical element.</body>
+          <body>A list of strings representing classes of the graphical element.</body>
         </ownedComment>
         <type xmi:type="cmof:PrimitiveType" href="DC.cmof#String"/>
       </ownedAttribute>
@@ -251,6 +269,12 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="Image-_ownedComment.0" annotatedElement="Image">
         <body>Image is a graphical element that defines a shape that paints an image with a given URL within given bounds.</body>
       </ownedComment>
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_6903kOjNEeO6TvQHODg78w" name="source_cannot_be_empty" constrainedElement="Image" namespace="Image">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_6903kejNEeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>source->notEmpty() implies source.size() > 0</body>
+        </specification>
+      </ownedRule>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="Image-source" name="source" visibility="public">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Image-source-_ownedComment.0" annotatedElement="Image-source">
           <body>the URL of a referenced image file.</body>
@@ -263,7 +287,7 @@
         </ownedComment>
         <type xmi:type="cmof:DataType" href="DC.cmof#Bounds"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Image-isAspectRatioPreserved" name="isAspectRatioPreserved" visibility="public">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Image-isAspectRatioPreserved" name="isAspectRatioPreserved" visibility="public" default="false">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Image-isAspectRatioPreserved-_ownedComment.0" annotatedElement="Image-isAspectRatioPreserved">
           <body>wether to preserve the aspect ratio of the image upon scaling, i.e. the same scale factor for width and height.</body>
         </ownedComment>
@@ -328,6 +352,24 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="MarkedElement-_ownedComment.0" annotatedElement="MarkedElement">
         <body>MarkedElement is a graphic element that can be decorated at its vertices with markers (e.g. arrowheads).</body>
       </ownedComment>
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_wycJoOh1EeO6TvQHODg78w" name="referenced_start_marker_has_id" constrainedElement="MarkedElement" namespace="MarkedElement">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_wycJoeh1EeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>startMarker->notEmpty() implies startMarker.id->notEmpty()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_8rYGgOh1EeO6TvQHODg78w" name="referenced_mid_marker_has_id" constrainedElement="MarkedElement" namespace="MarkedElement">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_8rYGgeh1EeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>midMarker->notEmpty() implies midMarker.id->notEmpty()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_B10LEOh2EeO6TvQHODg78w" name="referenced_end_marker_has_id" constrainedElement="MarkedElement" namespace="MarkedElement">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_B10LEeh2EeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>endMarker->notEmpty() implies endMarker.id->notEmpty()</body>
+        </specification>
+      </ownedRule>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="MarkedElement-endMarker" name="endMarker" visibility="public" type="Marker" lower="0" association="A_endMarker_markedElement">
         <ownedComment xmi:type="cmof:Comment" xmi:id="MarkedElement-endMarker-_ownedComment.0" annotatedElement="MarkedElement-endMarker">
           <body>an optional end marker that aligns with the last vertex of the marked element.</body>
@@ -417,6 +459,12 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="_C_Q0gM2dEeOtK5GsJlm5Mw">
         <body>Paint is used to fill or stroke a graphical element.</body>
       </ownedComment>
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_R3fe8Oh2EeO6TvQHODg78w" name="referenced_paint_server_has_id" constrainedElement="_wz9hsM2cEeOtK5GsJlm5Mw" namespace="_wz9hsM2cEeOtK5GsJlm5Mw">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_R3fe8eh2EeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>paintServer->notEmpty() implies paintServer.id->notEmpty()</body>
+        </specification>
+      </ownedRule>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="_Mg5i0M2dEeOtK5GsJlm5Mw" name="color" visibility="public" lower="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="_Mg5i0c2dEeOtK5GsJlm5Mw" annotatedElement="_Mg5i0M2dEeOtK5GsJlm5Mw">
           <body>A solid color to use in painting.</body>
@@ -443,7 +491,13 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="Path-_ownedComment.0" annotatedElement="Path">
         <body>Path is a marked element that defines a custom shape whose geometry is specified with a sequence of path commands.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Path-command" name="command" visibility="public" type="PathCommand" isOrdered="true" lower="0" upper="*" isComposite="true" association="_-INckM55EeOqlr8E3pzO9g">
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_uJDzUOjHEeO6TvQHODg78w" name="first_command_must_be_move" constrainedElement="Path" namespace="Path">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_Omo48OjIEeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>command->first().oclIsKindOf(MoveTo)</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Path-command" name="command" visibility="public" type="PathCommand" isOrdered="true" upper="*" isComposite="true" association="_-INckM55EeOqlr8E3pzO9g">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Path-command-_ownedComment.0" annotatedElement="Path-command">
           <body>a list of path commands that define the geometry of the custom shape.</body>
         </ownedComment>
@@ -502,15 +556,15 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="QuadraticCurveTo-_ownedComment.0" annotatedElement="CubicCurveTo QuadraticCurveTo">
         <body>QuadraticCurveTo is a kind of path command that draws a quadratic bézier curve from the current point to a new point using a single control point.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="QuadraticCurveTo-point" name="point" visibility="public">
-        <ownedComment xmi:type="cmof:Comment" xmi:id="QuadraticCurveTo-point-_ownedComment.0" annotatedElement="QuadraticCurveTo-point">
-          <body>a point to draw a quadratic bézier curve to from the current point in the coordinate system.</body>
-        </ownedComment>
-        <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="QuadraticCurveTo-control" name="control" visibility="public">
         <ownedComment xmi:type="cmof:Comment" xmi:id="QuadraticCurveTo-control-_ownedComment.0" annotatedElement="QuadraticCurveTo-control">
           <body>the control point of the quadratic bézier curve.</body>
+        </ownedComment>
+        <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="QuadraticCurveTo-point" name="point" visibility="public">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="QuadraticCurveTo-point-_ownedComment.0" annotatedElement="QuadraticCurveTo-point">
+          <body>a point to draw a quadratic bézier curve to from the current point in the coordinate system.</body>
         </ownedComment>
         <type xmi:type="cmof:DataType" href="DC.cmof#Point"/>
       </ownedAttribute>
@@ -569,13 +623,19 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="Rectangle-_ownedComment.0" annotatedElement="Rectangle">
         <body>Rectangle is a graphical element that defines a rectangular shape with given bounds. A rectangle may be given rounded corners by setting its corner radius.</body>
       </ownedComment>
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_qFi4AOhuEeO6TvQHODg78w" name="non_negative_corner_radius" constrainedElement="Rectangle" namespace="Rectangle">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_qFi4AehuEeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>cornerRadius >= 0</body>
+        </specification>
+      </ownedRule>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="Rectangle-bounds" name="bounds" visibility="public">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Rectangle-bounds-_ownedComment.0" annotatedElement="Rectangle-bounds">
           <body>the bounds of the rectangle in the x-y coordinate system.</body>
         </ownedComment>
         <type xmi:type="cmof:DataType" href="DC.cmof#Bounds"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Rectangle-cornerRadius" name="cornerRadius" visibility="public" default="0">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Rectangle-cornerRadius" name="cornerRadius" visibility="public" lower="0" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Rectangle-cornerRadius-_ownedComment.0" annotatedElement="Rectangle-cornerRadius">
           <body>a radius for the rectangle's rounded corners. When the radius is 0, the rectangle is drawn with sharp corners.</body>
         </ownedComment>
@@ -597,7 +657,7 @@
           <body>An optional definitions element to hold objects commonly referenced by the canvas.</body>
         </ownedComment>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="_jfIkGdesEeOsUY1jE2-lpg" name="styleSheet" visibility="public" type="_4ytfwM2CEeOX1ohrWoozJQ" isOrdered="true" lower="0" upper="*" association="_VJB6MM41EeOqlr8E3pzO9g">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="_jfIkGdesEeOsUY1jE2-lpg" name="externalStyleSheet" visibility="public" type="_4ytfwM2CEeOX1ohrWoozJQ" isOrdered="true" lower="0" upper="*" association="_VJB6MM41EeOqlr8E3pzO9g">
         <ownedComment xmi:type="cmof:Comment" xmi:id="_jfIkGtesEeOsUY1jE2-lpg" annotatedElement="_jfIkGdesEeOsUY1jE2-lpg">
           <body>A list of external style sheets that are imported by the canvas.</body>
         </ownedComment>
@@ -795,15 +855,14 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="_FfB5AM2REeOtK5GsJlm5Mw">
         <body>StyleSelector defines criteria that matches a set of graphical elements.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="_OsgrUM2IEeOX1ohrWoozJQ" name="type" visibility="public" lower="0" association="_KQ3bAM57EeOqlr8E3pzO9g">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="_OsgrUM2IEeOX1ohrWoozJQ" name="kind" visibility="public" type="_6aYm0OgeEeO6TvQHODg78w" lower="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="_OsgrUc2IEeOX1ohrWoozJQ" annotatedElement="_OsgrUM2IEeOX1ohrWoozJQ">
-          <body>A non-abstract type that is a subtype of GraphicalElement. Elements having this type are selected.</body>
+          <body>The kind of graphical element to select.</body>
         </ownedComment>
-        <type xmi:type="cmof:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="_Y03bYM2IEeOX1ohrWoozJQ" name="keyword" visibility="public" isOrdered="true" lower="0" upper="*">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="_Y03bYM2IEeOX1ohrWoozJQ" name="class" visibility="public" isOrdered="true" lower="0" upper="*">
         <ownedComment xmi:type="cmof:Comment" xmi:id="_Y03bYc2IEeOX1ohrWoozJQ" annotatedElement="_Y03bYM2IEeOX1ohrWoozJQ">
-          <body>A list of strings representing keywords of graphical elements. Elements having these keywords are selected.</body>
+          <body>A set of strings representing classes of graphical elements to select. Selected elements must have all those classes.</body>
         </ownedComment>
         <type xmi:type="cmof:PrimitiveType" href="DC.cmof#String"/>
       </ownedAttribute>
@@ -822,6 +881,12 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="Text-_ownedComment.0" annotatedElement="Text">
         <body>Text is a graphical element that defines a shape that renders a character string at a given position.</body>
       </ownedComment>
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_dPn0oO0zEeOCPtJ2AfZp5A" name="data_cannot_be_empty" constrainedElement="Text" namespace="Text">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_dPn0oe0zEeOCPtJ2AfZp5A">
+          <language>OCL</language>
+          <body>data->notEmpty() implies data.size() > 0</body>
+        </specification>
+      </ownedRule>
       <ownedAttribute xmi:type="cmof:Property" xmi:id="Text-data" name="data" visibility="public">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Text-data-_ownedComment.0" annotatedElement="Text-data">
           <body>the text as a string of characters.</body>
@@ -861,11 +926,22 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="_wGwIsdeoEeOgmPOh7kSfHA" annotatedElement="_wGwIsNeoEeOgmPOh7kSfHA">
         <body>Rectangle is a graphical element that defines a rectangular shape with given bounds. A rectangle may be given rounded corners by setting its corner radius.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="_wGwIs9eoEeOgmPOh7kSfHA" name="bounds" visibility="public">
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_oxx7UOh0EeO6TvQHODg78w" name="referenced_element_has_id" constrainedElement="_wGwIsNeoEeOgmPOh7kSfHA" namespace="_wGwIsNeoEeOgmPOh7kSfHA">
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_oxx7Ueh0EeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>referencedElement->notEmpty() implies referencedElement.id->notEmpty()</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="_wGwIs9eoEeOgmPOh7kSfHA" name="bounds" visibility="public" lower="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="_wGwItNeoEeOgmPOh7kSfHA" annotatedElement="_wGwIs9eoEeOgmPOh7kSfHA">
           <body>the bounds of the rectangle in the x-y coordinate system.</body>
         </ownedComment>
         <type xmi:type="cmof:DataType" href="DC.cmof#Bounds"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="_im5DIOHhEeO71tdCkM4EDw" name="referencedElement" visibility="public" type="GraphicalElement" isOrdered="true" association="_zbtccOHnEeO71tdCkM4EDw">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_im5DIeHhEeO71tdCkM4EDw" annotatedElement="_im5DIOHhEeO71tdCkM4EDw">
+          <body>A list of graphical elements that are members of this group.</body>
+        </ownedComment>
       </ownedAttribute>
     </ownedMember>
     <ownedMember xmi:type="cmof:Enumeration" xmi:id="_wgzj4M2WEeOtK5GsJlm5Mw" name="FontDecoration">
@@ -888,10 +964,85 @@
         </ownedComment>
       </ownedLiteral>
     </ownedMember>
+    <ownedMember xmi:type="cmof:Enumeration" xmi:id="_6aYm0OgeEeO6TvQHODg78w" name="ElementKind">
+      <ownedComment xmi:type="cmof:Comment" xmi:id="_6aYm0egeEeO6TvQHODg78w">
+        <body>The kind of graphical element.</body>
+      </ownedComment>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_6aYm0ugeEeO6TvQHODg78w" name="canvas" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_6aYm0-geEeO6TvQHODg78w">
+          <body>The Canvas element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_TObvQOgfEeO6TvQHODg78w" name="circle" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_TObvQegfEeO6TvQHODg78w">
+          <body>The Circle element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_XmBakOgfEeO6TvQHODg78w" name="clipPath" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_XmBakegfEeO6TvQHODg78w">
+          <body>The ClipPath element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_iEuOEOgfEeO6TvQHODg78w" name="ellipse" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_iEuOEegfEeO6TvQHODg78w">
+          <body>The Ellipse element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_nqm4gOgfEeO6TvQHODg78w" name="group" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_nqm4gegfEeO6TvQHODg78w">
+          <body>The Group element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_n3HqgOgfEeO6TvQHODg78w" name="image" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_n3IRkOgfEeO6TvQHODg78w">
+          <body>The Image element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_n9h0gOgfEeO6TvQHODg78w" name="line" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_n9h0gegfEeO6TvQHODg78w">
+          <body>The Line element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_oEA3AOgfEeO6TvQHODg78w" name="marker" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_oEA3AegfEeO6TvQHODg78w">
+          <body>The Marker element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_oJbigOgfEeO6TvQHODg78w" name="path" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_oJbigegfEeO6TvQHODg78w">
+          <body>The Path element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_oO2OAOgfEeO6TvQHODg78w" name="polygon" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_oO2OAegfEeO6TvQHODg78w">
+          <body>The Polygon element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_oXUNgOgfEeO6TvQHODg78w" name="polyline" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_oXUNgegfEeO6TvQHODg78w">
+          <body>The Polyline element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_ofLJAOgfEeO6TvQHODg78w" name="rectangle" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_ofLJAegfEeO6TvQHODg78w">
+          <body>The Rectangle element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_oluc8OgfEeO6TvQHODg78w" name="text" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_oluc8egfEeO6TvQHODg78w">
+          <body>The Text element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="_oz2_kOgfEeO6TvQHODg78w" name="use" classifier="#_6aYm0OgeEeO6TvQHODg78w" enumeration="_6aYm0OgeEeO6TvQHODg78w">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_oz2_kegfEeO6TvQHODg78w">
+          <body>The Use element kind</body>
+        </ownedComment>
+      </ownedLiteral>
+    </ownedMember>
     <ownedMember xmi:type="cmof:Association" xmi:id="_qUuAwM51EeOqlr8E3pzO9g" name="A_definitions_canvas" memberEnd="_jfIkFtesEeOsUY1jE2-lpg _qUuAwc51EeOqlr8E3pzO9g">
       <ownedEnd xmi:type="cmof:Property" xmi:id="_qUuAwc51EeOqlr8E3pzO9g" name="canvas" visibility="public" type="_jfIkENesEeOsUY1jE2-lpg" owningAssociation="_qUuAwM51EeOqlr8E3pzO9g" association="_qUuAwM51EeOqlr8E3pzO9g"/>
     </ownedMember>
-    <ownedMember xmi:type="cmof:Association" xmi:id="_VJB6MM41EeOqlr8E3pzO9g" name="A_styleSheet_canvas" memberEnd="_jfIkGdesEeOsUY1jE2-lpg _VJB6Mc41EeOqlr8E3pzO9g">
+    <ownedMember xmi:type="cmof:Association" xmi:id="_VJB6MM41EeOqlr8E3pzO9g" name="A_externalStyleSheet_canvas" memberEnd="_jfIkGdesEeOsUY1jE2-lpg _VJB6Mc41EeOqlr8E3pzO9g">
       <ownedEnd xmi:type="cmof:Property" xmi:id="_VJB6Mc41EeOqlr8E3pzO9g" name="canvas" visibility="public" type="_jfIkENesEeOsUY1jE2-lpg" lower="0" upper="*" owningAssociation="_VJB6MM41EeOqlr8E3pzO9g" association="_VJB6MM41EeOqlr8E3pzO9g"/>
     </ownedMember>
     <ownedMember xmi:type="cmof:Association" xmi:id="_Nti6EM53EeOqlr8E3pzO9g" name="A_definition_definitions" memberEnd="_zSdxIM5wEeOqlr8E3pzO9g _Nti6Ec53EeOqlr8E3pzO9g">
@@ -946,11 +1097,11 @@
     <ownedMember xmi:type="cmof:Association" xmi:id="_vnz5oM2GEeOX1ohrWoozJQ" name="A_style_styleRule" memberEnd="_DFi6IM2GEeOX1ohrWoozJQ _vnz5oc2GEeOX1ohrWoozJQ">
       <ownedEnd xmi:type="cmof:Property" xmi:id="_vnz5oc2GEeOX1ohrWoozJQ" name="styleRule" visibility="public" type="_9z_BQM2CEeOX1ohrWoozJQ" lower="0" owningAssociation="_vnz5oM2GEeOX1ohrWoozJQ" association="_vnz5oM2GEeOX1ohrWoozJQ"/>
     </ownedMember>
-    <ownedMember xmi:type="cmof:Association" xmi:id="_KQ3bAM57EeOqlr8E3pzO9g" name="A_type_styleSelector" memberEnd="_OsgrUM2IEeOX1ohrWoozJQ _KQ3bAc57EeOqlr8E3pzO9g">
-      <ownedEnd xmi:type="cmof:Property" xmi:id="_KQ3bAc57EeOqlr8E3pzO9g" name="styleSelector" visibility="public" type="_ClirwM2DEeOX1ohrWoozJQ" lower="0" upper="*" owningAssociation="_KQ3bAM57EeOqlr8E3pzO9g" association="_KQ3bAM57EeOqlr8E3pzO9g"/>
-    </ownedMember>
     <ownedMember xmi:type="cmof:Association" xmi:id="_QZkcUM2DEeOX1ohrWoozJQ" name="A_rule_styleSheet" memberEnd="_TqPtcM2EEeOX1ohrWoozJQ _ZfKSYM2EEeOX1ohrWoozJQ">
       <ownedEnd xmi:type="cmof:Property" xmi:id="_ZfKSYM2EEeOX1ohrWoozJQ" name="styleSheet" visibility="public" type="_4ytfwM2CEeOX1ohrWoozJQ" owningAssociation="_QZkcUM2DEeOX1ohrWoozJQ" association="_QZkcUM2DEeOX1ohrWoozJQ"/>
+    </ownedMember>
+    <ownedMember xmi:type="cmof:Association" xmi:id="_zbtccOHnEeO71tdCkM4EDw" name="A_referencedElement_use" memberEnd="_im5DIOHhEeO71tdCkM4EDw _zbtcceHnEeO71tdCkM4EDw">
+      <ownedEnd xmi:type="cmof:Property" xmi:id="_zbtcceHnEeO71tdCkM4EDw" name="use" visibility="public" type="_wGwIsNeoEeOgmPOh7kSfHA" lower="0" upper="*" owningAssociation="_zbtccOHnEeO71tdCkM4EDw" association="_zbtccOHnEeO71tdCkM4EDw"/>
     </ownedMember>
     <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
       <profileApplication xmi:type="cmof:ProfileApplication" xmi:id="_mgdyEM1vEeOX1ohrWoozJQ" applyingPackage="_0">
@@ -1014,6 +1165,21 @@
   <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
     <Ecore:EAttribute xmi:id="_huN4sNevEeOsUY1jE2-lpg" isUnsettable="true" base_Property="_jfIkE9esEeOsUY1jE2-lpg"/>
   </xmi:Extension>
-  <cmof:Tag xmi:id="_18" name="org.omg.xmi.nsPrefix" value="dg" element="_0"/>
-  <cmof:Tag xmi:id="_19" name="org.omg.xmi.nsURI" value="http://www.omg.org/spec/DD/20110901/DG" element="_0"/>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_4NBHoOgvEeO6TvQHODg78w" isUnsettable="true" base_Property="_OsgrUM2IEeOX1ohrWoozJQ"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_Vs_CQOhUEeO6TvQHODg78w" isUnsettable="true" base_Property="GradientStop-offset"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_jGzjEOhUEeO6TvQHODg78w" isUnsettable="true" base_Property="GradientStop-opacity"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="__K6HAOhUEeO6TvQHODg78w" isUnsettable="true" base_Property="GradientStop-color"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_dpXEIOhuEeO6TvQHODg78w" isUnsettable="true" base_Property="Rectangle-cornerRadius"/>
+  </xmi:Extension>
+  <cmof:Tag xmi:id="_23" name="org.omg.xmi.nsPrefix" value="dg" element="_0"/>
+  <cmof:Tag xmi:id="_24" name="org.omg.xmi.nsURI" value="http://www.omg.org/spec/DD/20110901/DG" element="_0"/>
 </xmi:XMI>

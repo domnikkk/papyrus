@@ -30,11 +30,11 @@ import org.eclipse.papyrus.dd.dc.Point;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getPoint <em>Point</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getStartControl <em>Start
  * Control</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getEndControl <em>End
  * Control</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getPoint <em>Point</em>}</li>
  * </ul>
  * </p>
  * 

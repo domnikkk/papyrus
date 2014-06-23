@@ -36,10 +36,9 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.RootCanvas;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.RootCanvas} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.RootCanvas} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class RootCanvasItemProvider extends CanvasItemProvider implements
@@ -68,7 +67,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 			super.getPropertyDescriptors(object);
 
 			addBackgroundColorPropertyDescriptor(object);
-			addStyleSheetPropertyDescriptor(object);
+			addExternalStyleSheetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,45 +79,47 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 	 * @generated
 	 */
 	protected void addBackgroundColorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_RootCanvas_backgroundColor_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_RootCanvas_backgroundColor_feature",
-						"_UI_RootCanvas_type"),
-				DGPackage.Literals.ROOT_CANVAS__BACKGROUND_COLOR, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RootCanvas_backgroundColor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_backgroundColor_feature", "_UI_RootCanvas_type"),
+				 DGPackage.Literals.ROOT_CANVAS__BACKGROUND_COLOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Style Sheet feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the External Style Sheet feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStyleSheetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_RootCanvas_styleSheet_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_RootCanvas_styleSheet_feature",
-						"_UI_RootCanvas_type"),
-				DGPackage.Literals.ROOT_CANVAS__STYLE_SHEET, true, false, true,
-				null, null, null));
+	protected void addExternalStyleSheetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RootCanvas_externalStyleSheet_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_externalStyleSheet_feature", "_UI_RootCanvas_type"),
+				 DGPackage.Literals.ROOT_CANVAS__EXTERNAL_STYLE_SHEET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -133,13 +134,11 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
@@ -153,29 +152,28 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/RootCanvas"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RootCanvas"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RootCanvas) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_RootCanvas_type")
-				: getString("_UI_RootCanvas_type") + " " + label;
+		String label = ((RootCanvas)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_RootCanvas_type") :
+			getString("_UI_RootCanvas_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -183,14 +181,12 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RootCanvas.class)) {
-		case DGPackage.ROOT_CANVAS__BACKGROUND_COLOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DGPackage.ROOT_CANVAS__DEFINITIONS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.ROOT_CANVAS__BACKGROUND_COLOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case DGPackage.ROOT_CANVAS__DEFINITIONS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -207,9 +203,10 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.ROOT_CANVAS__DEFINITIONS,
-				DGFactory.eINSTANCE.createDefinitions()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.ROOT_CANVAS__DEFINITIONS,
+				 DGFactory.eINSTANCE.createDefinitions()));
 	}
 
 }

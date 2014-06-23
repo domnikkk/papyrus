@@ -30,8 +30,8 @@ import org.eclipse.emf.common.util.EList;
  * Background Color</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.RootCanvas#getDefinitions <em>
  * Definitions</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.RootCanvas#getStyleSheet <em>Style Sheet
- * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.RootCanvas#getExternalStyleSheets <em>
+ * External Style Sheet</em>}</li>
  * </ul>
  * </p>
  * 
@@ -128,17 +128,17 @@ public interface RootCanvas extends Canvas {
 	void setDefinitions(Definitions value);
 
 	/**
-	 * Returns the value of the '<em><b>Style Sheet</b></em>' reference list.
-	 * The list contents are of type
+	 * Returns the value of the '<em><b>External Style Sheet</b></em>' reference
+	 * list. The list contents are of type
 	 * {@link org.eclipse.papyrus.dd.dg.StyleSheet}. <!-- begin-user-doc -->
 	 * <!-- end-user-doc --> <!-- begin-model-doc --> A list of external style
 	 * sheets that are imported by the canvas. <!-- end-model-doc -->
 	 * 
-	 * @return the value of the '<em>Style Sheet</em>' reference list.
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getRootCanvas_StyleSheet()
+	 * @return the value of the '<em>External Style Sheet</em>' reference list.
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getRootCanvas_ExternalStyleSheet()
 	 * @model
 	 * @generated
 	 */
-	EList<StyleSheet> getStyleSheet();
+	EList<StyleSheet> getExternalStyleSheets();
 
 } // RootCanvas

@@ -18,7 +18,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -32,15 +31,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.dd.dc.DCFactory;
-
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.RadialGradient;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.RadialGradient} object. <!-- begin-user-doc
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.RadialGradient} object.
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public class RadialGradientItemProvider extends GradientItemProvider implements
@@ -80,26 +77,26 @@ public class RadialGradientItemProvider extends GradientItemProvider implements
 	 * @generated
 	 */
 	protected void addRadiusPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_RadialGradient_radius_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_RadialGradient_radius_feature",
-						"_UI_RadialGradient_type"),
-				DGPackage.Literals.RADIAL_GRADIENT__RADIUS, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RadialGradient_radius_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RadialGradient_radius_feature", "_UI_RadialGradient_type"),
+				 DGPackage.Literals.RADIAL_GRADIENT__RADIUS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -115,49 +112,46 @@ public class RadialGradientItemProvider extends GradientItemProvider implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns RadialGradient.gif. <!-- begin-user-doc --> <!--
+	 * This returns RadialGradient.gif.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/RadialGradient"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RadialGradient"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RadialGradient) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_RadialGradient_type")
-				: getString("_UI_RadialGradient_type") + " " + label;
+		String label = ((RadialGradient)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_RadialGradient_type") :
+			getString("_UI_RadialGradient_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -165,15 +159,13 @@ public class RadialGradientItemProvider extends GradientItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RadialGradient.class)) {
-		case DGPackage.RADIAL_GRADIENT__RADIUS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DGPackage.RADIAL_GRADIENT__CENTER:
-		case DGPackage.RADIAL_GRADIENT__FOCUS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.RADIAL_GRADIENT__RADIUS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case DGPackage.RADIAL_GRADIENT__CENTER:
+			case DGPackage.RADIAL_GRADIENT__FOCUS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -190,13 +182,15 @@ public class RadialGradientItemProvider extends GradientItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.RADIAL_GRADIENT__CENTER,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.RADIAL_GRADIENT__CENTER,
+				 DCFactory.eINSTANCE.createPoint()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.RADIAL_GRADIENT__FOCUS,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.RADIAL_GRADIENT__FOCUS,
+				 DCFactory.eINSTANCE.createPoint()));
 	}
 
 	/**
@@ -212,13 +206,14 @@ public class RadialGradientItemProvider extends GradientItemProvider implements
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == DGPackage.Literals.RADIAL_GRADIENT__CENTER
-				|| childFeature == DGPackage.Literals.RADIAL_GRADIENT__FOCUS;
+		boolean qualify =
+			childFeature == DGPackage.Literals.RADIAL_GRADIENT__CENTER ||
+			childFeature == DGPackage.Literals.RADIAL_GRADIENT__FOCUS;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

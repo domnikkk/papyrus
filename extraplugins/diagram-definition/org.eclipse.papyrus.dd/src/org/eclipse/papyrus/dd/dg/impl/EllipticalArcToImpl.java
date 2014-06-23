@@ -23,41 +23,31 @@ import org.eclipse.papyrus.dd.dc.Dimension;
 import org.eclipse.papyrus.dd.dc.Point;
 
 import org.eclipse.papyrus.dd.dg.DGPackage;
-import org.eclipse.papyrus.dd.dg.EllipticalCurveTo;
+import org.eclipse.papyrus.dd.dg.EllipticalArcTo;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Elliptical Curve To</b></em>'. <!-- end-user-doc -->
+ * <em><b>Elliptical Arc To</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl#getPoint <em>
- * Point</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl#getRadii <em>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl#getRadii <em>
  * Radii</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl#getRotation
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl#getRotation
  * <em>Rotation</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl#isLargeArc
- * <em>Is Large Arc</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl#isSweep <em>
- * Is Sweep</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl#isLargeArc <em>
+ * Is Large Arc</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl#isSweep <em>Is
+ * Sweep</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl#getPoint <em>
+ * Point</em>}</li>
  * </ul>
  * </p>
  * 
  * @generated
  */
-public class EllipticalCurveToImpl extends PathCommandImpl implements
-		EllipticalCurveTo {
-	/**
-	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getPoint()
-	 * @generated
-	 * @ordered
-	 */
-	protected Point point;
-
+public class EllipticalArcToImpl extends PathCommandImpl implements
+		EllipticalArcTo {
 	/**
 	 * The cached value of the '{@link #getRadii() <em>Radii</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -129,11 +119,21 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 	protected boolean isSweep = IS_SWEEP_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected Point point;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected EllipticalCurveToImpl() {
+	protected EllipticalArcToImpl() {
 		super();
 	}
 
@@ -144,63 +144,7 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DGPackage.Literals.ELLIPTICAL_CURVE_TO;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public Point getPoint() {
-		return point;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public NotificationChain basicSetPoint(Point newPoint,
-			NotificationChain msgs) {
-		Point oldPoint = point;
-		point = newPoint;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, DGPackage.ELLIPTICAL_CURVE_TO__POINT,
-					oldPoint, newPoint);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setPoint(Point newPoint) {
-		if (newPoint != point) {
-			NotificationChain msgs = null;
-			if (point != null)
-				msgs = ((InternalEObject) point).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE
-								- DGPackage.ELLIPTICAL_CURVE_TO__POINT, null,
-						msgs);
-			if (newPoint != null)
-				msgs = ((InternalEObject) newPoint).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE
-								- DGPackage.ELLIPTICAL_CURVE_TO__POINT, null,
-						msgs);
-			msgs = basicSetPoint(newPoint, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.ELLIPTICAL_CURVE_TO__POINT, newPoint, newPoint));
+		return DGPackage.Literals.ELLIPTICAL_ARC_TO;
 	}
 
 	/**
@@ -223,7 +167,7 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 		radii = newRadii;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, DGPackage.ELLIPTICAL_CURVE_TO__RADII,
+					Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__RADII,
 					oldRadii, newRadii);
 			if (msgs == null)
 				msgs = notification;
@@ -244,19 +188,19 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 			if (radii != null)
 				msgs = ((InternalEObject) radii).eInverseRemove(this,
 						EOPPOSITE_FEATURE_BASE
-								- DGPackage.ELLIPTICAL_CURVE_TO__RADII, null,
+								- DGPackage.ELLIPTICAL_ARC_TO__RADII, null,
 						msgs);
 			if (newRadii != null)
 				msgs = ((InternalEObject) newRadii).eInverseAdd(this,
 						EOPPOSITE_FEATURE_BASE
-								- DGPackage.ELLIPTICAL_CURVE_TO__RADII, null,
+								- DGPackage.ELLIPTICAL_ARC_TO__RADII, null,
 						msgs);
 			msgs = basicSetRadii(newRadii, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.ELLIPTICAL_CURVE_TO__RADII, newRadii, newRadii));
+					DGPackage.ELLIPTICAL_ARC_TO__RADII, newRadii, newRadii));
 	}
 
 	/**
@@ -278,7 +222,7 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 		rotation = newRotation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.ELLIPTICAL_CURVE_TO__ROTATION, oldRotation,
+					DGPackage.ELLIPTICAL_ARC_TO__ROTATION, oldRotation,
 					rotation));
 	}
 
@@ -301,7 +245,7 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 		isLargeArc = newIsLargeArc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.ELLIPTICAL_CURVE_TO__IS_LARGE_ARC, oldIsLargeArc,
+					DGPackage.ELLIPTICAL_ARC_TO__IS_LARGE_ARC, oldIsLargeArc,
 					isLargeArc));
 	}
 
@@ -324,8 +268,63 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 		isSweep = newIsSweep;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.ELLIPTICAL_CURVE_TO__IS_SWEEP, oldIsSweep,
-					isSweep));
+					DGPackage.ELLIPTICAL_ARC_TO__IS_SWEEP, oldIsSweep, isSweep));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Point getPoint() {
+		return point;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public NotificationChain basicSetPoint(Point newPoint,
+			NotificationChain msgs) {
+		Point oldPoint = point;
+		point = newPoint;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET, DGPackage.ELLIPTICAL_ARC_TO__POINT,
+					oldPoint, newPoint);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setPoint(Point newPoint) {
+		if (newPoint != point) {
+			NotificationChain msgs = null;
+			if (point != null)
+				msgs = ((InternalEObject) point).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE
+								- DGPackage.ELLIPTICAL_ARC_TO__POINT, null,
+						msgs);
+			if (newPoint != null)
+				msgs = ((InternalEObject) newPoint).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE
+								- DGPackage.ELLIPTICAL_ARC_TO__POINT, null,
+						msgs);
+			msgs = basicSetPoint(newPoint, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DGPackage.ELLIPTICAL_ARC_TO__POINT, newPoint, newPoint));
 	}
 
 	/**
@@ -337,10 +336,10 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DGPackage.ELLIPTICAL_CURVE_TO__POINT:
-			return basicSetPoint(null, msgs);
-		case DGPackage.ELLIPTICAL_CURVE_TO__RADII:
+		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
 			return basicSetRadii(null, msgs);
+		case DGPackage.ELLIPTICAL_ARC_TO__POINT:
+			return basicSetPoint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -353,16 +352,16 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DGPackage.ELLIPTICAL_CURVE_TO__POINT:
-			return getPoint();
-		case DGPackage.ELLIPTICAL_CURVE_TO__RADII:
+		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
 			return getRadii();
-		case DGPackage.ELLIPTICAL_CURVE_TO__ROTATION:
+		case DGPackage.ELLIPTICAL_ARC_TO__ROTATION:
 			return getRotation();
-		case DGPackage.ELLIPTICAL_CURVE_TO__IS_LARGE_ARC:
+		case DGPackage.ELLIPTICAL_ARC_TO__IS_LARGE_ARC:
 			return isLargeArc();
-		case DGPackage.ELLIPTICAL_CURVE_TO__IS_SWEEP:
+		case DGPackage.ELLIPTICAL_ARC_TO__IS_SWEEP:
 			return isSweep();
+		case DGPackage.ELLIPTICAL_ARC_TO__POINT:
+			return getPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -375,20 +374,20 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DGPackage.ELLIPTICAL_CURVE_TO__POINT:
-			setPoint((Point) newValue);
-			return;
-		case DGPackage.ELLIPTICAL_CURVE_TO__RADII:
+		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
 			setRadii((Dimension) newValue);
 			return;
-		case DGPackage.ELLIPTICAL_CURVE_TO__ROTATION:
+		case DGPackage.ELLIPTICAL_ARC_TO__ROTATION:
 			setRotation((Double) newValue);
 			return;
-		case DGPackage.ELLIPTICAL_CURVE_TO__IS_LARGE_ARC:
+		case DGPackage.ELLIPTICAL_ARC_TO__IS_LARGE_ARC:
 			setIsLargeArc((Boolean) newValue);
 			return;
-		case DGPackage.ELLIPTICAL_CURVE_TO__IS_SWEEP:
+		case DGPackage.ELLIPTICAL_ARC_TO__IS_SWEEP:
 			setIsSweep((Boolean) newValue);
+			return;
+		case DGPackage.ELLIPTICAL_ARC_TO__POINT:
+			setPoint((Point) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -402,20 +401,20 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DGPackage.ELLIPTICAL_CURVE_TO__POINT:
-			setPoint((Point) null);
-			return;
-		case DGPackage.ELLIPTICAL_CURVE_TO__RADII:
+		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
 			setRadii((Dimension) null);
 			return;
-		case DGPackage.ELLIPTICAL_CURVE_TO__ROTATION:
+		case DGPackage.ELLIPTICAL_ARC_TO__ROTATION:
 			setRotation(ROTATION_EDEFAULT);
 			return;
-		case DGPackage.ELLIPTICAL_CURVE_TO__IS_LARGE_ARC:
+		case DGPackage.ELLIPTICAL_ARC_TO__IS_LARGE_ARC:
 			setIsLargeArc(IS_LARGE_ARC_EDEFAULT);
 			return;
-		case DGPackage.ELLIPTICAL_CURVE_TO__IS_SWEEP:
+		case DGPackage.ELLIPTICAL_ARC_TO__IS_SWEEP:
 			setIsSweep(IS_SWEEP_EDEFAULT);
+			return;
+		case DGPackage.ELLIPTICAL_ARC_TO__POINT:
+			setPoint((Point) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -429,16 +428,16 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DGPackage.ELLIPTICAL_CURVE_TO__POINT:
-			return point != null;
-		case DGPackage.ELLIPTICAL_CURVE_TO__RADII:
+		case DGPackage.ELLIPTICAL_ARC_TO__RADII:
 			return radii != null;
-		case DGPackage.ELLIPTICAL_CURVE_TO__ROTATION:
+		case DGPackage.ELLIPTICAL_ARC_TO__ROTATION:
 			return rotation != ROTATION_EDEFAULT;
-		case DGPackage.ELLIPTICAL_CURVE_TO__IS_LARGE_ARC:
+		case DGPackage.ELLIPTICAL_ARC_TO__IS_LARGE_ARC:
 			return isLargeArc != IS_LARGE_ARC_EDEFAULT;
-		case DGPackage.ELLIPTICAL_CURVE_TO__IS_SWEEP:
+		case DGPackage.ELLIPTICAL_ARC_TO__IS_SWEEP:
 			return isSweep != IS_SWEEP_EDEFAULT;
+		case DGPackage.ELLIPTICAL_ARC_TO__POINT:
+			return point != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -464,4 +463,4 @@ public class EllipticalCurveToImpl extends PathCommandImpl implements
 		return result.toString();
 	}
 
-} // EllipticalCurveToImpl
+} // EllipticalArcToImpl

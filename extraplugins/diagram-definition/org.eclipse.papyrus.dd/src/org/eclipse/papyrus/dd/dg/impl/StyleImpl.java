@@ -54,7 +54,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * Width</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleImpl#getStrokeOpacity <em>
  * Stroke Opacity</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleImpl#getStrokeDashLength <em>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleImpl#getStrokeDashLengths <em>
  * Stroke Dash Length</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleImpl#getFontSize <em>Font Size
  * </em>}</li>
@@ -200,15 +200,15 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 	protected boolean strokeOpacityESet;
 
 	/**
-	 * The cached value of the '{@link #getStrokeDashLength()
+	 * The cached value of the '{@link #getStrokeDashLengths()
 	 * <em>Stroke Dash Length</em>}' attribute list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @see #getStrokeDashLength()
+	 * @see #getStrokeDashLengths()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Double> strokeDashLength;
+	protected EList<Double> strokeDashLengths;
 
 	/**
 	 * The default value of the '{@link #getFontSize() <em>Font Size</em>}'
@@ -758,12 +758,12 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 	 * 
 	 * @generated
 	 */
-	public EList<Double> getStrokeDashLength() {
-		if (strokeDashLength == null) {
-			strokeDashLength = new EDataTypeEList.Unsettable<Double>(
+	public EList<Double> getStrokeDashLengths() {
+		if (strokeDashLengths == null) {
+			strokeDashLengths = new EDataTypeEList.Unsettable<Double>(
 					Double.class, this, DGPackage.STYLE__STROKE_DASH_LENGTH);
 		}
-		return strokeDashLength;
+		return strokeDashLengths;
 	}
 
 	/**
@@ -771,9 +771,9 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 	 * 
 	 * @generated
 	 */
-	public void unsetStrokeDashLength() {
-		if (strokeDashLength != null)
-			((InternalEList.Unsettable<?>) strokeDashLength).unset();
+	public void unsetStrokeDashLengths() {
+		if (strokeDashLengths != null)
+			((InternalEList.Unsettable<?>) strokeDashLengths).unset();
 	}
 
 	/**
@@ -781,9 +781,9 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 	 * 
 	 * @generated
 	 */
-	public boolean isSetStrokeDashLength() {
-		return strokeDashLength != null
-				&& ((InternalEList.Unsettable<?>) strokeDashLength).isSet();
+	public boolean isSetStrokeDashLengths() {
+		return strokeDashLengths != null
+				&& ((InternalEList.Unsettable<?>) strokeDashLengths).isSet();
 	}
 
 	/**
@@ -1238,7 +1238,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 		case DGPackage.STYLE__STROKE_OPACITY:
 			return getStrokeOpacity();
 		case DGPackage.STYLE__STROKE_DASH_LENGTH:
-			return getStrokeDashLength();
+			return getStrokeDashLengths();
 		case DGPackage.STYLE__FONT_SIZE:
 			return getFontSize();
 		case DGPackage.STYLE__FONT_NAME:
@@ -1278,8 +1278,8 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 			setStrokeOpacity((Double) newValue);
 			return;
 		case DGPackage.STYLE__STROKE_DASH_LENGTH:
-			getStrokeDashLength().clear();
-			getStrokeDashLength().addAll(
+			getStrokeDashLengths().clear();
+			getStrokeDashLengths().addAll(
 					(Collection<? extends Double>) newValue);
 			return;
 		case DGPackage.STYLE__FONT_SIZE:
@@ -1325,7 +1325,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 			unsetStrokeOpacity();
 			return;
 		case DGPackage.STYLE__STROKE_DASH_LENGTH:
-			unsetStrokeDashLength();
+			unsetStrokeDashLengths();
 			return;
 		case DGPackage.STYLE__FONT_SIZE:
 			unsetFontSize();
@@ -1365,7 +1365,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 		case DGPackage.STYLE__STROKE_OPACITY:
 			return isSetStrokeOpacity();
 		case DGPackage.STYLE__STROKE_DASH_LENGTH:
-			return isSetStrokeDashLength();
+			return isSetStrokeDashLengths();
 		case DGPackage.STYLE__FONT_SIZE:
 			return isSetFontSize();
 		case DGPackage.STYLE__FONT_NAME:
@@ -1436,7 +1436,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 		else
 			result.append("<unset>");
 		result.append(", strokeDashLength: ");
-		result.append(strokeDashLength);
+		result.append(strokeDashLengths);
 		result.append(", fontSize: ");
 		if (fontSizeESet)
 			result.append(fontSize);

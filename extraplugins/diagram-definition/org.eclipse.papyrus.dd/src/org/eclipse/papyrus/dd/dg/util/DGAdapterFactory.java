@@ -172,8 +172,8 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseEllipticalCurveTo(EllipticalCurveTo object) {
-			return createEllipticalCurveToAdapter();
+		public Adapter caseEllipticalArcTo(EllipticalArcTo object) {
+			return createEllipticalArcToAdapter();
 		}
 
 		@Override
@@ -599,17 +599,17 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo
-	 * <em>Elliptical Curve To</em>}'. <!-- begin-user-doc --> This default
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo
+	 * <em>Elliptical Arc To</em>}'. <!-- begin-user-doc --> This default
 	 * implementation returns null so that we can easily ignore cases; it's
 	 * useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.dd.dg.EllipticalCurveTo
+	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo
 	 * @generated
 	 */
-	public Adapter createEllipticalCurveToAdapter() {
+	public Adapter createEllipticalArcToAdapter() {
 		return null;
 	}
 
