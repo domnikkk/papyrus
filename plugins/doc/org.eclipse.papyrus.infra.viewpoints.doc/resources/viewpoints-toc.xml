@@ -2,27 +2,12 @@
 <toc label="viewpoints" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser" topic="resources/viewpoints.html">
 	<topic href="resources/viewpoints.html" label="Viewpoints in Papyrus">
 		<topic href="resources/viewpoints.html#Introduction" label="Introduction"></topic>
-		<topic href="resources/viewpoints.html#Impacts_of_Viewpoints_in_the_Papyrus_Interface" label="Impacts of Viewpoints in the Papyrus Interface">
-			<topic href="resources/viewpoints.html#Contextual_Menus" label="Contextual Menus"></topic>
-			<topic href="resources/viewpoints.html#Toolbar_Elements" label="Toolbar Elements"></topic>
-			<topic href="resources/viewpoints.html#Diagram_Properties" label="Diagram Properties"></topic>
-		</topic>
-		<topic href="resources/viewpoints.html#Changing_the_Applied_Viewpoint" label="Changing the Applied Viewpoint">
-			<topic href="resources/viewpoints.html#Configuration_Kinds" label="Configuration Kinds">
-				<topic href="resources/viewpoints.html#Built-in_Configurations" label="Built-in Configurations"></topic>
-				<topic href="resources/viewpoints.html#Extension_Point-Defined_Configuration" label="Extension Point-Defined Configuration"></topic>
-				<topic href="resources/viewpoints.html#Custom_Configuration" label="Custom Configuration"></topic>
-			</topic>
-			<topic href="resources/viewpoints.html#Stakeholder_and_Viewpoint_Selection" label="Stakeholder and Viewpoint Selection"></topic>
-		</topic>
-		<topic href="resources/viewpoints.html#Defining_New_Viewpoints" label="Defining New Viewpoints">
-			<topic href="resources/viewpoints.html#Available_Concepts" label="Available Concepts"></topic>
-			<topic href="resources/viewpoints.html#Building_a_Configuration" label="Building a Configuration">
-				<topic href="resources/viewpoints.html#Configuration_element" label="Configuration element"></topic>
-				<topic href="resources/viewpoints.html#Stakeholders_and_Viewpoints" label="Stakeholders and Viewpoints"></topic>
-				<topic href="resources/viewpoints.html#Diagram_element" label="Diagram element"></topic>
-				<topic href="resources/viewpoints.html#Viewpoint_Enforcement_Principles" label="Viewpoint Enforcement Principles"></topic>
-			</topic>
+		<topic href="resources/viewpoints.html#Configuration_Options_for_Viewpoints" label="Configuration Options for Viewpoints"></topic>
+		<topic href="resources/viewpoints.html#Viewpoints-Related_UI_Elements" label="Viewpoints-Related UI Elements"></topic>
+		<topic href="resources/viewpoints.html#Definition_of_New_Viewpoints" label="Definition of New Viewpoints">
+			<topic href="resources/viewpoints.html#Basic_Concepts" label="Basic Concepts"></topic>
+			<topic href="resources/viewpoints.html#Walkthrough" label="Walkthrough"></topic>
+			<topic href="resources/viewpoints.html#Diagram_Specification" label="Diagram Specification"></topic>
 		</topic>
 	</topic>
 </toc>
