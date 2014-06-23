@@ -36,7 +36,6 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.CreateObjectAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.InputPin;
-import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.ObjectFlow;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.OutputPin;
@@ -218,8 +217,7 @@ public class Utils {
 		if(standardProfile == null) {
 			IRegisteredProfile registeredProfile = RegisteredProfile.getRegisteredProfile(STANDARD_PROFILE_NAME);
 			URI modelUri = registeredProfile.getUri();
-			Model root = element.getModel();
-			Resource modelResource = Util.getResourceSet(root).getResource(modelUri, true);
+			Resource modelResource = Util.createTemporaryResourceSet().getResource(modelUri, true);
 			if(modelResource.getContents().get(0) instanceof Profile) {
 				standardProfile = (Profile)modelResource.getContents().get(0);
 			}
