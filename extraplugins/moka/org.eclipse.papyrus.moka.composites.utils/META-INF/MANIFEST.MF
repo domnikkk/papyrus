@@ -9,18 +9,17 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml;bundle-version="4.0.1",
  org.junit,
  org.eclipse.emf.transaction;bundle-version="1.4.0",
- org.eclipse.papyrus.uml.tools.utils;bundle-version="0.9.1",
- org.eclipse.papyrus.uml.extensionpoints;bundle-version="0.9.1",
- org.eclipse.papyrus.infra.emf;bundle-version="0.9.1",
- org.eclipse.papyrus.infra.core.log;bundle-version="0.9.1",
- org.eclipse.papyrus.moka.fuml;bundle-version="0.10.0",
+ org.eclipse.papyrus.uml.tools.utils;bundle-version="1.0.0",
+ org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
+ org.eclipse.papyrus.moka.fuml;bundle-version="1.0.0",
  org.eclipse.ui;bundle-version="3.106.0",
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.papyrus.uml.icons;bundle-version="1.0.0",
- org.eclipse.papyrus.editor;bundle-version="1.0.0"
+ org.eclipse.papyrus.editor;bundle-version="1.0.0",
+ org.eclipse.papyrus.moka.composites;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.eclipse.jdt.internal.ui.actions,
- org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions
 Bundle-Vendor: Eclipse Modeling Project
 
