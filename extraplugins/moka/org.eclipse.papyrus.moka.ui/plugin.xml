@@ -11,7 +11,20 @@
                id="org.eclipse.papyrus.views.modelexplorer.popup.moka"
                label="Moka">
             <visibleWhen
-                  checkEnabled="true">
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false"
+                        operator="and">
+                     <adapt
+                           type="org.eclipse.emf.ecore.EObject">
+                        <instanceof
+                              value="org.eclipse.uml2.uml.Element">
+                        </instanceof>
+                     </adapt>
+                  </iterate>
+               </with>
             </visibleWhen>
          </menu>
       </menuContribution>
