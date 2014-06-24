@@ -376,7 +376,10 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 *            the id of the property that changed
 	 */
 	private void handlePropertyChange(int propertyId) {
+		// cedric : old fashion, deprecated ?
 		getSashWindowContainer().firePropertyChange(propertyId);
+		// relay the event to the page lifecycle event notifier
+		getSashWindowContainer().getLifeCycleEventProvider().firePageFirePropertyChangeEvent(this,  propertyId);
 	}
 
 	/**
