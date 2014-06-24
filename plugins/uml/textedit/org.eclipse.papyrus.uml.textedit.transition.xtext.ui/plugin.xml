@@ -204,6 +204,9 @@
                editorConfiguration="org.eclipse.papyrus.uml.textedit.transition.xtext.ui.contributions.TransitionEditorConfigurationContribution">
          </popupeditor>
       </DirectEditor>
+         <Priority
+               name="Medium">
+         </Priority>      
    </extension>
 
 </plugin>

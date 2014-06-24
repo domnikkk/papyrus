@@ -10,6 +10,9 @@
          <simpleeditor
                editorConfiguration="org.eclipse.papyrus.uml.textedit.javaconstraint.JavaDirectEditorConfiguration">
          </simpleeditor>
+         <Priority
+               name="Medium">
+         </Priority>         
       </DirectEditor>
    </extension>
 

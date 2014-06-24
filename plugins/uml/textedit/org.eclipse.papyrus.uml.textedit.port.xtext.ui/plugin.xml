@@ -350,6 +350,9 @@
           <popupeditor
                 editorConfiguration="org.eclipse.papyrus.uml.textedit.port.xtext.ui.contribution.PortXtextDirectEditorConfiguration">
           </popupeditor>
+         <Priority
+               name="Medium">
+         </Priority>          
        </DirectEditor>
     </extension>
 

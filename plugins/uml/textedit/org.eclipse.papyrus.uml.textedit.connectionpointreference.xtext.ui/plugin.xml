@@ -191,6 +191,9 @@
          <popupeditor
                editorConfiguration="org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.ui.contributions.ConnectionPointReferenceEditorConfiguration">
          </popupeditor>
+         <Priority
+               name="Medium">
+         </Priority>         
       </DirectEditor>
    </extension>
 

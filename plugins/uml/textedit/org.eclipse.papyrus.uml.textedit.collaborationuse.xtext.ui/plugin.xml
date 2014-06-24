@@ -191,6 +191,9 @@
          <popupeditor
                editorConfiguration="org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.ui.contributions.CollaborationUseEditor">
          </popupeditor>
+         <Priority
+               name="Medium">
+         </Priority>
       </DirectEditor>
    </extension>
 

@@ -234,7 +234,11 @@
             objectToEdit="org.eclipse.uml2.uml.Message">
          <popupeditor
                editorConfiguration="org.eclipse.papyrus.uml.textedit.message.xtext.ui.contributions.MessagePopupEditor"></popupeditor>
+         <Priority
+               name="Medium">
+         </Priority>               
       </DirectEditor>
+      
    </extension>
 
 </plugin>

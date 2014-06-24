@@ -190,6 +190,8 @@
          <popupeditor
                editorConfiguration="org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.contributions.ConstraintWithVSLPopupEditorConfiguration">
          </popupeditor>
+		<Priority name="Lowest">
+		</Priority>
       </DirectEditor>
    </extension>
 

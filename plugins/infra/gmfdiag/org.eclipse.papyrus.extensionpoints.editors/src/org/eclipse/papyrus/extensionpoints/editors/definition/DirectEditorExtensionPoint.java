@@ -253,9 +253,17 @@ public class DirectEditorExtensionPoint {
 		return javaQuery;
 	}
 
-
+	/**
+	 * This priority policy has been defined so that:
+	 *   - an external contribution is NOT the default editor with the classic configuration (LOW)
+	 *   - an external contribution can be set to default editor(use High or Highest)
+	 *   
+	 * To achieve that:   
+	 *  - the default priority is set to low 
+	 *  - Papyrus editors priority is set to medium
+	 *  - Papyrus editors, defined to be the default ones, their priority is set at medium
+	 */
 	protected static Integer getPriority(IConfigurationElement configElement) {
-		IAdvancedEditorConfiguration configuration = null;
 		try {
 			for(IConfigurationElement childConfigElement : configElement.getChildren(IDirectEditorConfigurationIds.ATT_PRIORITY)) {
 
@@ -275,14 +283,11 @@ public class DirectEditorExtensionPoint {
 				if(config.equals(IDirectEditorConfigurationIds.PRIORITY_LOWEST)) {
 					return new Integer(4);
 				}
-				System.out.println(config);
 			}
-
 		} catch (Exception e) {
 			Activator.log.error(e);
-			configuration = null;
 		}
-		return new Integer(5);
+		return new Integer(3); // PRIORITY_LOW
 	}
 
 
@@ -359,7 +364,7 @@ public class DirectEditorExtensionPoint {
 		}
 
 		if(isRequired) {
-			throw new IllegalArgumentException("Missing " + name + " attribute");
+			throw new IllegalArgumentException("Missing " + name + " attribute"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		return null;

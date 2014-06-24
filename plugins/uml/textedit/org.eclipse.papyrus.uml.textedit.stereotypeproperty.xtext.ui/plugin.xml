@@ -236,6 +236,9 @@
          <popupeditor
                editorConfiguration="org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.ui.contributions.StereotypePropertyEditorConfigurationContribution">
          </popupeditor>
+         <Priority
+               name="Medium">
+         </Priority>         
       </DirectEditor>
    </extension>
 

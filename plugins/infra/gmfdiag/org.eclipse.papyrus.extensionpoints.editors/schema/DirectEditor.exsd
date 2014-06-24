@@ -156,7 +156,7 @@
          </documentation>
       </annotation>
       <complexType>
-         <attribute name="name" use="required">
+         <attribute name="name" use="default" value="Low">
             <annotation>
                <documentation>
                   The priority of the provider. It can be one of the following values:
