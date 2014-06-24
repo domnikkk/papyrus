@@ -100,6 +100,7 @@
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.alf.resources</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.async.fuml</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.composites</module>
+		<module>../plugins/doc/org.eclipse.papyrus.moka.doc</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml.assertionlibrary</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml.standardlibrary</module>
