@@ -22,7 +22,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
-import org.eclipse.ui.IWorkbenchPartConstants;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.internal.util.Util;
 import org.eclipse.ui.part.EditorPart;
@@ -44,35 +43,6 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	 * Synchronizer in charge of synchronizing tab names with IEditorPart title.
 	 */
 	private SashTabDecorationSynchronizer tabsSynchronizer;
-	
-	/**
-	 * Listener on editor internal pages.
-	 * Used to relay the firePropertyChange() event.
-	 */
-	private IPageLifeCycleEventsListener2 pageLifeCycleEventListener = new DefaultPageLifeCycleEventListener() {
-		
-		public void pageFirePropertyChange(IPage page, int propertyId) {
-			// relay the event.
-			System.err.println("pageFirePropertyChange " + propertyId);
-			firePropertyChange(propertyId);
-		};
-		
-		/**
-		 * 	Calling getActiveEditor().getEditorInput() will return a different value since the
-		 * active editor has now changed.  Notify the Eclipse Platform listeners by firing an
-		 * appropriate notification.
-		 * 
-		 * @see org.eclipse.papyrus.infra.core.sasheditor.editor.DefaultPageLifeCycleEventListener#pageChanged(org.eclipse.papyrus.infra.core.sasheditor.editor.IPage)
-		 *
-		 * @param newPage
-		 */
-		public void pageActivated(IPage newPage) {
-			System.err.println("pageChanged " + IWorkbenchPartConstants.PROP_INPUT);
-			firePropertyChange(IWorkbenchPartConstants.PROP_INPUT);
-		};
-		
-
-	};
 
 	/**
 	 * Listener on double click events from {@link ISashWindowsContainer}'tabs.
@@ -174,11 +144,6 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	protected void activate() {
 
 		tabsSynchronizer = new SashTabDecorationSynchronizer(sashContainer);
-		
-		// Listen on page life cycle to relay property change events
-		// we don't need to remove the handler from sashContainer on dispose, because sashContainer
-		// is disposed itself.
-		sashContainer.addPageLifeCycleListener(pageLifeCycleEventListener);
 	}
 
 	/**
