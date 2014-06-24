@@ -13,7 +13,7 @@
 [comment C++ parameter. Default values are added, if parameter showDefault is true (implementation signature
 	may not repeat default value)/]
 [template public CppParameter(parameter : Parameter, showDefault : Boolean)]
-[modConst()/][parameter.type.cppQualifiedName()/][modPtr()/][modRef()/] [parameter.name/][modArray()/][if (showDefault)][defaultValue()/][/if]
+[modCVQualifier()/][parameter.type.cppQualifiedName()/][modPtr()/][modRef()/] [parameter.name/][modArray()/][if (showDefault)][defaultValue()/][/if]
 [/template]
 
 
