@@ -82,7 +82,7 @@
       </expression>
       <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Query" name="modConst" visibility="Public">
+    <ownedModuleElement xsi:type="mtl:Query" name="modCVQualifier" visibility="Public">
       <parameter name="propertyOrParameter">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
       </parameter>
@@ -94,13 +94,13 @@
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.cpp.codegen.utils.Modifier">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="modConst(org.eclipse.uml2.uml.Element)">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="modCVQualifier(org.eclipse.uml2.uml.Element)">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
         <argument xsi:type="ocl.ecore:CollectionLiteralExp" eType="/4/Sequence(Element)" kind="Sequence">
           <part xsi:type="ocl.ecore:CollectionItem">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
-            <item xsi:type="ocl.ecore:VariableExp" name="propertyOrParameter" referredVariable="/0/modConst/propertyOrParameter">
+            <item xsi:type="ocl.ecore:VariableExp" name="propertyOrParameter" referredVariable="/0/modCVQualifier/propertyOrParameter">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
             </item>
           </part>
@@ -159,11 +159,11 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
         </eParameters>
       </eOperations>
-      <eOperations name="modConst">
+      <eOperations name="modCVQualifier">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/modConst"/>
+        <eAnnotations source="MTL" references="/0/modCVQualifier"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="propertyOrParameter">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
@@ -377,44 +377,44 @@
       <details key="end" value="675"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/modConst">
+    <eAnnotations source="positions.24" references="/0/modCVQualifier">
       <details key="start" value="682"/>
-      <details key="end" value="880"/>
+      <details key="end" value="892"/>
       <details key="line" value="13"/>
     </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/modConst/propertyOrParameter">
-      <details key="start" value="705"/>
-      <details key="end" value="734"/>
+    <eAnnotations source="positions.25" references="/0/modCVQualifier/propertyOrParameter">
+      <details key="start" value="711"/>
+      <details key="end" value="740"/>
       <details key="line" value="13"/>
     </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/modConst/%">
-      <details key="start" value="748"/>
-      <details key="end" value="877"/>
+    <eAnnotations source="positions.26" references="/0/modCVQualifier/%">
+      <details key="start" value="754"/>
+      <details key="end" value="889"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/modConst/%/self">
+    <eAnnotations source="positions.27" references="/0/modCVQualifier/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/modConst/%/%">
-      <details key="start" value="755"/>
-      <details key="end" value="803"/>
+    <eAnnotations source="positions.28" references="/0/modCVQualifier/%/%">
+      <details key="start" value="761"/>
+      <details key="end" value="809"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/modConst/%/%.1">
-      <details key="start" value="805"/>
-      <details key="end" value="845"/>
+    <eAnnotations source="positions.29" references="/0/modCVQualifier/%/%.1">
+      <details key="start" value="811"/>
+      <details key="end" value="857"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/modConst/%/%.2">
-      <details key="start" value="847"/>
-      <details key="end" value="876"/>
+    <eAnnotations source="positions.30" references="/0/modCVQualifier/%/%.2">
+      <details key="start" value="859"/>
+      <details key="end" value="888"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/modConst/%/%.2/%/propertyOrParameter">
-      <details key="start" value="856"/>
-      <details key="end" value="875"/>
+    <eAnnotations source="positions.31" references="/0/modCVQualifier/%/%.2/%/propertyOrParameter">
+      <details key="start" value="868"/>
+      <details key="end" value="887"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

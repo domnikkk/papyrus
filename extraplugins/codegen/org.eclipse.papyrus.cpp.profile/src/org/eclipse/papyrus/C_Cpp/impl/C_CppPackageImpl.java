@@ -48,6 +48,7 @@ import org.eclipse.papyrus.C_Cpp.Virtual;
 import org.eclipse.papyrus.C_Cpp.Visibility;
 import org.eclipse.papyrus.C_Cpp.VisibilityKind;
 
+import org.eclipse.papyrus.C_Cpp.Volatile;
 import org.eclipse.uml2.types.TypesPackage;
 
 import org.eclipse.uml2.uml.UMLPackage;
@@ -212,6 +213,13 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	 * @generated
 	 */
 	private EClass storageClassEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass volatileEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -951,8 +959,8 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStorageClass_Base_Parameter() {
-		return (EReference)storageClassEClass.getEStructuralFeatures().get(1);
+	public EClass getVolatile() {
+		return volatileEClass;
 	}
 
 	/**
@@ -960,8 +968,26 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStorageClass_Base_Property() {
-		return (EReference)storageClassEClass.getEStructuralFeatures().get(2);
+	public EReference getVolatile_Base_parameter() {
+		return (EReference)volatileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVolatile_Base_property() {
+		return (EReference)volatileEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVolatile_Base_operation() {
+		return (EReference)volatileEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1112,8 +1138,11 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 
 		storageClassEClass = createEClass(STORAGE_CLASS);
 		createEAttribute(storageClassEClass, STORAGE_CLASS__STORAGE_CLASS);
-		createEReference(storageClassEClass, STORAGE_CLASS__BASE_PARAMETER);
-		createEReference(storageClassEClass, STORAGE_CLASS__BASE_PROPERTY);
+
+		volatileEClass = createEClass(VOLATILE);
+		createEReference(volatileEClass, VOLATILE__BASE_PARAMETER);
+		createEReference(volatileEClass, VOLATILE__BASE_PROPERTY);
+		createEReference(volatileEClass, VOLATILE__BASE_OPERATION);
 
 		// Create enums
 		visibilityKindEEnum = createEEnum(VISIBILITY_KIND);
@@ -1248,8 +1277,11 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 
 		initEClass(storageClassEClass, StorageClass.class, "StorageClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getStorageClass_StorageClass(), this.getEStorageClass(), "storageClass", null, 1, 1, StorageClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEReference(getStorageClass_Base_Parameter(), theUMLPackage.getParameter(), null, "base_Parameter", null, 0, 1, StorageClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEReference(getStorageClass_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 0, 1, StorageClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(volatileEClass, Volatile.class, "Volatile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getVolatile_Base_parameter(), theUMLPackage.getParameter(), null, "base_parameter", null, 1, 1, Volatile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVolatile_Base_property(), theUMLPackage.getProperty(), null, "base_property", null, 1, 1, Volatile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getVolatile_Base_operation(), theUMLPackage.getOperation(), null, "base_operation", null, 1, 1, Volatile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(visibilityKindEEnum, VisibilityKind.class, "VisibilityKind"); //$NON-NLS-1$

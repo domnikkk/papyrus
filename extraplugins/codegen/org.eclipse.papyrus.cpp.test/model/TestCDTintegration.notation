@@ -170,8 +170,7 @@
   </notation:Diagram>
   <texteditormodel:TextEditorModel xmi:id="_EItkYEG6EeOMv8cdTsw5Zg" type="CDTEditorInPapyrus" name="CDT Class3">
     <editedObject xmi:type="uml:Class" href="TestCDTintegration.uml#_K8FLcB0LEeKlYLZOWTi6uw"/>
-    <selectedObject xmi:type="uml:Class" href="TestCDTintegration.uml#_K8FLcB0LEeKlYLZOWTi6uw"/>
-  </texteditormodel:TextEditorModel>
+    <selectedObject xmi:type="uml:Class" href="TestCDTintegration.uml#_K8FLcB0LEeKlYLZOWTi6uw"/></texteditormodel:TextEditorModel>
   <notation:Diagram xmi:id="_6nABcFG7EeOLNIKOajeerQ" type="PapyrusUMLStateMachineDiagram" name="SmDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_6nABcVG7EeOLNIKOajeerQ" type="2000" fontName="Sans Serif" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6nABclG7EeOLNIKOajeerQ" source="ShadowFigure">
@@ -280,6 +279,5 @@
   </notation:Diagram>
   <texteditormodel:TextEditorModel xmi:id="_rGh10FG-EeOLNIKOajeerQ" type="CDTEditorInPapyrus" name="CDT Class2">
     <editedObject xmi:type="uml:Class" href="TestCDTintegration.uml#_419y0A7hEeKpbseGaEy1LA"/>
-    <selectedObject xmi:type="uml:Transition" href="TestCDTintegration.uml#_Z2_5oFG8EeOLNIKOajeerQ"/>
-  </texteditormodel:TextEditorModel>
+    <selectedObject xmi:type="uml:Transition" href="TestCDTintegration.uml#_Z2_5oFG8EeOLNIKOajeerQ"/></texteditormodel:TextEditorModel>
 </xmi:XMI>

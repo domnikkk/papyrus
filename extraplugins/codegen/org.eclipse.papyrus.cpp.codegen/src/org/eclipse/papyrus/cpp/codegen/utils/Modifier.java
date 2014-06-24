@@ -15,6 +15,7 @@ import org.eclipse.papyrus.C_Cpp.Array;
 import org.eclipse.papyrus.C_Cpp.Const;
 import org.eclipse.papyrus.C_Cpp.Ptr;
 import org.eclipse.papyrus.C_Cpp.Ref;
+import org.eclipse.papyrus.C_Cpp.Volatile;
 import org.eclipse.papyrus.acceleo.GenUtils;
 import org.eclipse.papyrus.cpp.codegen.preferences.CppCodeGenUtils;
 import org.eclipse.uml2.uml.AggregationKind;
@@ -42,7 +43,7 @@ public class Modifier {
 
 	public static String array;
 
-	public static String isConst;
+	public static String cvQualifier;
 
 	public static String modPtr(Element propertyOrParameter) {
 		update(propertyOrParameter);
@@ -59,9 +60,9 @@ public class Modifier {
 		return array;
 	}
 
-	public static String modConst(Element propertyOrParameter) {
+	public static String modCVQualifier(Element propertyOrParameter) {
 		update(propertyOrParameter);
-		return isConst;
+		return cvQualifier;
 	}
 
 	/**
@@ -126,14 +127,36 @@ public class Modifier {
 				}
 			}
 		}
-		// Const
-		if (GenUtils.hasStereotype(propertyOperationOrParameter, Const.class)) {
-			isConst = (propertyOperationOrParameter instanceof Operation) ?
-				" const" :	// added at the end of operation, prefix with " " //$NON-NLS-1$
-				"const ";	// before operation or parameter, postfix with " " //$NON-NLS-1$
+
+		// CVQualifiers cannot be used with static functions
+		if (propertyOperationOrParameter instanceof Operation
+		 && ( (Operation)propertyOperationOrParameter ).isStatic() ) {
+			cvQualifier = new String();
 		}
+		// Const
+		else if (GenUtils.hasStereotype(propertyOperationOrParameter, Const.class)) {
+			// Volatile with const
+			if (GenUtils.hasStereotype(propertyOperationOrParameter, Volatile.class)) {
+				cvQualifier = (propertyOperationOrParameter instanceof Operation) ?
+					" const volatile" :	// added at the end of operation, prefix with " " //$NON-NLS-1$
+					"const volatile ";	// before operation or parameter, postfix with " " //$NON-NLS-1$
+			}
+			// Const without Volatile
+			else {
+				cvQualifier = (propertyOperationOrParameter instanceof Operation) ?
+					" const" :	// added at the end of operation, prefix with " " //$NON-NLS-1$
+					"const ";	// before operation or parameter, postfix with " " //$NON-NLS-1$
+			}
+		}
+		// Volatile without const
+		else if (GenUtils.hasStereotype(propertyOperationOrParameter, Volatile.class)) {
+			cvQualifier = (propertyOperationOrParameter instanceof Operation) ?
+				" volatile" :	// added at the end of operation, prefix with " " //$NON-NLS-1$
+				"volatile ";	// before operation or parameter, postfix with " " //$NON-NLS-1$
+		}
+		// No CV qualifiers
 		else {
-			isConst = ""; //$NON-NLS-1$
+			cvQualifier = ""; //$NON-NLS-1$
 		}
 	}
 }

@@ -1115,31 +1115,13 @@ public interface C_CppPackage extends EPackage {
 	int STORAGE_CLASS__STORAGE_CLASS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Base Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORAGE_CLASS__BASE_PARAMETER = 1;
-
-	/**
-	 * The feature id for the '<em><b>Base Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORAGE_CLASS__BASE_PROPERTY = 2;
-
-	/**
 	 * The number of structural features of the '<em>Storage Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORAGE_CLASS_FEATURE_COUNT = 3;
+	int STORAGE_CLASS_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Storage Class</em>' class.
@@ -1151,6 +1133,61 @@ public interface C_CppPackage extends EPackage {
 	int STORAGE_CLASS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.VolatileImpl <em>Volatile</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.C_Cpp.impl.VolatileImpl
+	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVolatile()
+	 * @generated
+	 */
+	int VOLATILE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Base parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOLATILE__BASE_PARAMETER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Base property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOLATILE__BASE_PROPERTY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Base operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOLATILE__BASE_OPERATION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Volatile</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOLATILE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Volatile</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOLATILE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.VisibilityKind <em>Visibility Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1158,7 +1195,7 @@ public interface C_CppPackage extends EPackage {
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVisibilityKind()
 	 * @generated
 	 */
-	int VISIBILITY_KIND = 22;
+	int VISIBILITY_KIND = 23;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.EAccessKind <em>EAccess Kind</em>}' enum.
@@ -1168,7 +1205,7 @@ public interface C_CppPackage extends EPackage {
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getEAccessKind()
 	 * @generated
 	 */
-	int EACCESS_KIND = 23;
+	int EACCESS_KIND = 24;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.EStorageClass <em>EStorage Class</em>}' enum.
@@ -1178,7 +1215,7 @@ public interface C_CppPackage extends EPackage {
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getEStorageClass()
 	 * @generated
 	 */
-	int ESTORAGE_CLASS = 24;
+	int ESTORAGE_CLASS = 25;
 
 
 	/**
@@ -1952,26 +1989,47 @@ public interface C_CppPackage extends EPackage {
 	EAttribute getStorageClass_StorageClass();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.StorageClass#getBase_Parameter <em>Base Parameter</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Volatile <em>Volatile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Parameter</em>'.
-	 * @see org.eclipse.papyrus.C_Cpp.StorageClass#getBase_Parameter()
-	 * @see #getStorageClass()
+	 * @return the meta object for class '<em>Volatile</em>'.
+	 * @see org.eclipse.papyrus.C_Cpp.Volatile
 	 * @generated
 	 */
-	EReference getStorageClass_Base_Parameter();
+	EClass getVolatile();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.StorageClass#getBase_Property <em>Base Property</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Volatile#getBase_parameter <em>Base parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Property</em>'.
-	 * @see org.eclipse.papyrus.C_Cpp.StorageClass#getBase_Property()
-	 * @see #getStorageClass()
+	 * @return the meta object for the reference '<em>Base parameter</em>'.
+	 * @see org.eclipse.papyrus.C_Cpp.Volatile#getBase_parameter()
+	 * @see #getVolatile()
 	 * @generated
 	 */
-	EReference getStorageClass_Base_Property();
+	EReference getVolatile_Base_parameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Volatile#getBase_property <em>Base property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base property</em>'.
+	 * @see org.eclipse.papyrus.C_Cpp.Volatile#getBase_property()
+	 * @see #getVolatile()
+	 * @generated
+	 */
+	EReference getVolatile_Base_property();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Volatile#getBase_operation <em>Base operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base operation</em>'.
+	 * @see org.eclipse.papyrus.C_Cpp.Volatile#getBase_operation()
+	 * @see #getVolatile()
+	 * @generated
+	 */
+	EReference getVolatile_Base_operation();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.C_Cpp.VisibilityKind <em>Visibility Kind</em>}'.
@@ -2646,20 +2704,38 @@ public interface C_CppPackage extends EPackage {
 		EAttribute STORAGE_CLASS__STORAGE_CLASS = eINSTANCE.getStorageClass_StorageClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Parameter</b></em>' reference feature.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.VolatileImpl <em>Volatile</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.C_Cpp.impl.VolatileImpl
+		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVolatile()
 		 * @generated
 		 */
-		EReference STORAGE_CLASS__BASE_PARAMETER = eINSTANCE.getStorageClass_Base_Parameter();
+		EClass VOLATILE = eINSTANCE.getVolatile();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Base parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORAGE_CLASS__BASE_PROPERTY = eINSTANCE.getStorageClass_Base_Property();
+		EReference VOLATILE__BASE_PARAMETER = eINSTANCE.getVolatile_Base_parameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Base property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VOLATILE__BASE_PROPERTY = eINSTANCE.getVolatile_Base_property();
+
+		/**
+		 * The meta object literal for the '<em><b>Base operation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VOLATILE__BASE_OPERATION = eINSTANCE.getVolatile_Base_operation();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.VisibilityKind <em>Visibility Kind</em>}' enum.

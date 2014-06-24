@@ -89,6 +89,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 			case C_CppPackage.TEMPLATE_PARAMETER: return createTemplateParameter();
 			case C_CppPackage.UNION: return createUnion();
 			case C_CppPackage.STORAGE_CLASS: return createStorageClass();
+			case C_CppPackage.VOLATILE: return createVolatile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -350,6 +351,16 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	public StorageClass createStorageClass() {
 		StorageClassImpl storageClass = new StorageClassImpl();
 		return storageClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Volatile createVolatile() {
+		VolatileImpl volatile_ = new VolatileImpl();
+		return volatile_;
 	}
 
 	/**

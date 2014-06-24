@@ -18,13 +18,13 @@
 
 [template public CppAttributeDeclaration(attribute : Property)]
 [CppElementDoc()/]
-[staticValue()/][modConst()/][attribute.type.cppQualifiedName()/][modPtr()/][modRef()/] [attribute.name/][modArray()/][if (hasStereotype(C_Cpp::Const))][defaultValue()/][/if];
+[staticValue()/][modCVQualifier()/][attribute.type.cppQualifiedName()/][modPtr()/][modRef()/] [attribute.name/][modArray()/][if (hasStereotype(C_Cpp::Const))][defaultValue()/][/if];
 [/template]
 
 
 [template public CppAttributeImplementation(attribute : Property)]
 	[CppElementDoc()/]
-	[modConst()/][attribute.type.cppQualifiedName()/][modPtr()/][modRef()/] [attribute.name/][modArray()/];
+	[modCVQualifier()/][attribute.type.cppQualifiedName()/][modPtr()/][modRef()/] [attribute.name/][modArray()/];
 [/template]
 
 [template public CppStaticAttributeImplementation(attribute : Property)]
