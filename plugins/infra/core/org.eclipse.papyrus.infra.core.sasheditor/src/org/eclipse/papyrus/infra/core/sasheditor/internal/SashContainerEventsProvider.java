@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageLifeCycleEventsListener;
+import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageLifeCycleEventsListener2;
 
 
 /**
@@ -107,6 +108,21 @@ public class SashContainerEventsProvider {
 		// Fire events to internal listeners
 		for(IPageLifeCycleEventsListener listener : listeners) {
 			listener.pageDeactivated(page);
+		}
+	}
+
+	/**
+	 * Notify all listener with event.
+	 * @param page The page that has receive the event.
+	 * @param propertyId the propertyId received by the page
+	 */
+	public void firePageFirePropertyChangeEvent(PagePart page, int propertyId) {
+		// Fire events to internal listeners
+		for(IPageLifeCycleEventsListener listener : listeners) {
+			if( listener instanceof IPageLifeCycleEventsListener2 ) {
+				((IPageLifeCycleEventsListener2)listener).pageFirePropertyChange(page, propertyId);
+			}
+			
 		}
 	}
 
