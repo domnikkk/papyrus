@@ -70,8 +70,8 @@ import org.eclipse.uml2.uml.util.UMLUtil.Profile2EPackageConverter;
 import org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter;
 
 /**
- * Handler used to update a {@link Profile}.
- * This Handler request data to user with the help of a IStereotypeUpdateDialog.
+ * This class hold a {@link NamedElement} and provides utility methods to manage {@link Stereotype} on this
+ * element.
  * 
  * @author cedric dumoulin
  *
@@ -152,12 +152,12 @@ public class ProfileApplicator {
 			// Profile already exist
 			// Lookup for the stereotype
 			stereotype = profile.getOwnedStereotype(stereotypeName, true);
+			applicantPackage = getApplicantPackage(profile);
 			if( stereotype == null ) {
 				// We need to create the stereotype
 				// ask creation confirmation
 				// TODO change next behavior
 				stereotype = createStereotype(profile, stereotypeName);
-				applicantPackage = getApplicantPackage(profile);
 				annotations = createUpdatedPapyrusDefinitionAnnotation(profile, 0, 0, 1);
 				isProfileModified = true;
 			}
@@ -165,11 +165,11 @@ public class ProfileApplicator {
 		
 		// update metaclasses by adding missing metaclasses
 		if( ! updateArgs.getExtendedMetaclasses().isEmpty() ) {
-			updateStereotypeMetaclasses( stereotype, updateArgs.getExtendedMetaclasses());
-			isProfileModified = true;
+			isProfileModified = isProfileModified || updateStereotypeMetaclasses( stereotype, updateArgs.getExtendedMetaclasses());
 		}
 		
 		// Do we need to reapply the profile ?
+		// We do it only if the profile is modified
 		if( isProfileModified) {
 			definesAllProfiles( profile );
 			redefineAllProfiles( profile, annotations );
@@ -189,14 +189,16 @@ public class ProfileApplicator {
 	 * 
 	 * @param stereotype
 	 * @param extendedMetaclasses
+	 * @return True if the Stereotype is updated by adding one of the specified metaclass, false if the stereotype is not modified (the metaclass was already attached).
 	 */
-	private void updateStereotypeMetaclasses(Stereotype stereotype, List<Class> extendedMetaclasses) {
+	private boolean updateStereotypeMetaclasses(Stereotype stereotype, List<Class> extendedMetaclasses) {
 
+		boolean updated = false;
 		for( Class metaclass : extendedMetaclasses ) {
 				// add the metaclass to stereotype
-				addMetaclassToStereotype( stereotype, metaclass);
+			updated = updated || updateMetaclassToStereotype( stereotype, metaclass);
 		}
-		
+		return updated;
 	}
 
 	/**
@@ -206,12 +208,14 @@ public class ProfileApplicator {
 	 * 
 	 * @param stereotype The stereotype to which the metaclass should be added
 	 * @param metaclass The metaclass to add.
+	 * @return True if the Stereotype is modified by adding the specified metaclass, false if the stereotype is not modified (the metaclass was already attached).
+	 * 
 	 */
 	@SuppressWarnings("unused")
-	private void addMetaclassToStereotype(Stereotype stereotype, Class metaclass) {
+	private boolean updateMetaclassToStereotype(Stereotype stereotype, Class metaclass) {
 		
 		if( stereotype.getExtendedMetaclasses().contains(metaclass) ) {
-			return;
+			return false;
 		}
 		
 		// Ensure that a corresponding ElementImport exists in one of te 
@@ -225,6 +229,7 @@ public class ProfileApplicator {
 //		extension.setName("Ext_" + stereotype.getName() + "_" + metaclass.getName());
 		// Add the extension to the profile package owning this stereotype
 //		stereotype.getProfile().getPackagedElements().add(extension);
+		return true;
 	}
 
 	/**
@@ -460,6 +465,11 @@ public class ProfileApplicator {
 	 * @param stereotype
 	 */
 	public void applyStereotype(Stereotype stereotype) {
+		// Check application
+		if (umlElement.getStereotypeApplication(stereotype) != null) {
+		  return;
+		}
+		// not applied : do it !
 		umlElement.applyStereotype(stereotype);
 	}
 	
@@ -578,7 +588,7 @@ public class ProfileApplicator {
 	/**
 	 * Create a  new {@link PapyrusDefinitionAnnotation} with the specified values. 
 	 * 
-	 * @param profile
+	 * @param stereotype
 	 * @param majorInc
 	 * @param minorInc
 	 * @param microInc

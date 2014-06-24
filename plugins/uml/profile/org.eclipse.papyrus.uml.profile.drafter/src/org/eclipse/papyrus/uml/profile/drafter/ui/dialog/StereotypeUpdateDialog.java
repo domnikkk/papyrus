@@ -24,6 +24,8 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Stereotype;
 
 public class StereotypeUpdateDialog extends Dialog {
 	private Text quickSetText;
@@ -98,7 +100,17 @@ public class StereotypeUpdateDialog extends Dialog {
 		Composite extendedStereotypeContainer = new Composite(container, SWT.NONE);
 		extendedStereotypeContainer.setLayout(new GridLayout(1, false));
 		extendedStereotypeContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
+		Composite taggedValuesContainer = new Composite(container, SWT.NONE);
+		taggedValuesContainer.setLayout(new GridLayout(1, false));
+		taggedValuesContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
+		// Use the first applied stereotype for tests
+		Stereotype stereotype;
+		List<Stereotype> appliedStereotypes = anyUmlElement.getAppliedStereotypes();
+		if( !appliedStereotypes.isEmpty()) {
+			TaggedValuesEditorWidget taggedValuesEditorWidget = new TaggedValuesEditorWidget(taggedValuesContainer, appliedStereotypes.get(0), (NamedElement)anyUmlElement);
+		}
 		return container;
 	}
 
