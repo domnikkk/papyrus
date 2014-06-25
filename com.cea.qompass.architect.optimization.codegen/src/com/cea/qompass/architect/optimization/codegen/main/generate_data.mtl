@@ -1,0 +1,55 @@
+[comment encoding = UTF-8 /]
+[comment]
+/******************************************************************************
+PapyrusQompass Optimizer
+ *****************************************************************************/
+[/comment]
+
+[module generate_data('http://www.eclipse.org/uml2/4.0.0/UML', 'http:///MARTE_Library/MeasurementUnits.ecore', 'http:///MARTE_Library/GRM_BasicTypes.ecore', 'http:///MARTE_Library/MARTE_DataTypes.ecore', 'http:///MARTE_Library/MARTE_PrimitivesTypes.ecore', 'http:///MARTE_Library/RS_Library.ecore', 'http:///MARTE_Library/TimeTypesLibrary.ecore', 'http:///MARTE_Library/BasicNFP_Types.ecore')]
+[import  com::cea::qompass::architect::optimization::codegen::common::common::ArchitectureQueries/]
+
+ 
+[template public generatedata(myClass : Class)]
+[comment @main/]
+//owner =  myClass.getOwner
+
+	[file ('onestep.dat', false, 'UTF-8')]
+	
+	param nbFct:= [countOccurenceFunction(myClass)/];
+	param nbsig:= [countNumberSignals(myClass)/];
+	param nbCpu:= [countNumberCpu(myClass)/];
+	param nbBus:= [countNumberBus(myClass)/];
+	param nbPath:= [countNumberPath(myClass)/];
+	param M:= 1000;
+	param CS:= 0.5;
+
+	[for (constraint : Constraint | getListOfConstraints(myClass)) ]
+	set CPU4FCT[constraint.getValue(constraint.getAppliedStereotype('OptimizationProfile::DeploymentConstraint'), 'source')/]] := [constraint.getValue(constraint.getAppliedStereotype('OptimizationProfile::DeploymentConstraint'), 'target')/]
+	[/for]
+
+	[comment][for (function : Action | getListOfFunctions(myClass)) ]
+	set CPU4FCT[function/]] :=  [getFunctionConstraint(function,myClass)/];
+	[/for][/comment]
+
+	[comment][for (counter : Integer | Sequence{1..countNumberSignals(myClass)}) ]
+	set DEST[counter/]] :=  [getSignaldestination(counter)/];
+	[/for]
+
+	[for (counter : Integer | Sequence{1..countOccurenceFunction(myClass)}) ]
+	set CPU4FCT[counter/]] :=  [getFunctionWCET(counter)/];
+	[/for]
+
+	[for (counter : Integer | Sequence{1..countNumberSignals(myClass)}) ]
+	set DEST[counter/]] :=  [getSignalWCTT(counter)/];
+	[/for]
+
+	[for (counter : Integer | Sequence{1..countOccurenceFunction(myClass)}) ]
+	set CPU4FCT[counter/]] :=  [getFunctionPer(myClass)/];
+	[/for][/comment]
+	[comment][for (fct : Integer |getListOfCpu(myClass))] 	   [setFunctionConstraint(myClass)/]
+	set CPU4FCT[fct/] := ;	
+	[comment][/for][/comment][/comment]
+	end;
+	[/file]
+
+[/template]

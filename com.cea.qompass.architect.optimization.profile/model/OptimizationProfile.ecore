@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="qompassOpt" nsURI="http:///OptimizationProfile.ecore" nsPrefix="OptimizationProfile">
+  <eClassifiers xsi:type="ecore:EClass" name="OptimizationContext">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformResources" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_AnalysisModel/GQAM/GaResourcesPlatform"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimizationMethods" ordered="false"
+        lowerBound="1" eType="#//OptimizationMethods"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objectivePackage" ordered="false"
+        lowerBound="1" eType="#//OptimizationObjectives"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="problem" ordered="false"
+        lowerBound="1" eType="#//OptimizationProblems"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" ordered="false"
+        lowerBound="1" eType="#//OptimizationConstraints"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimizationMethods">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimizationMethods" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//OptimizationMethod"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimizationMethod" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimizationObjectives">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objectives" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Objective"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Objective">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metric" ordered="false"
+        lowerBound="1" eType="#//Metric"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="objectiveWeight" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Real"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Real"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optimiaztiongoal" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//OptimizationGoal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="saEndtoEndFlows" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_AnalysisModel/SAM/SaEndtoEndFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformElements" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_Foundations/GRM/Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationElements" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_AnalysisModel/GQAM/GaScenario"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Metric">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_PrimitiveType" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//PrimitiveType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" ordered="false"
+        unique="false" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_Foundations/NFPs/Dimension"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OptimizationGoal">
+    <eLiterals name="Minimization"/>
+    <eLiterals name="Maximization" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimizationProblems">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="problems" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Problem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Problem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Constraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimizationMethod" ordered="false"
+        lowerBound="1" eType="#//OptimizationMethod"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformElements" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_Foundations/GRM/Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationElements" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_AnalysisModel/GQAM/GaScenario"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Constraint" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimizationConstraints">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" ordered="false"
+        upperBound="-1" eType="#//Constraint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentConstraint" eSuperTypes="#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_Foundations/GRM/Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_AnalysisModel/GQAM/GaScenario"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Deployment" eSuperTypes="#//Problem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetElements" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_Foundations/GRM/Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceElements" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_AnalysisModel/GQAM/GaScenario"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneticAlgorithm" eSuperTypes="#//OptimizationMethod">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfGeneration" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfIndividuals" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mutationOperator" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Enumeration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="crossoverOperator" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MILP" eSuperTypes="#//OptimizationMethod">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="solver" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundConstraint" eSuperTypes="#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE_Library.ecore#//BasicNFP_Types/NFP_CommonType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" ordered="false"
+        unique="false" eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE_Library.ecore#//BasicNFP_Types/NFP_CommonType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resource" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_Foundations/GRM/Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="saEndtoEndFlow" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_AnalysisModel/SAM/SaEndtoEndFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.papyrus.marte.static.profile/resources/MARTE.ecore#//MARTE_AnalysisModel/GQAM/GaScenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metric" ordered="false"
+        lowerBound="1" eType="#//Metric"/>
+  </eClassifiers>
+</ecore:EPackage>

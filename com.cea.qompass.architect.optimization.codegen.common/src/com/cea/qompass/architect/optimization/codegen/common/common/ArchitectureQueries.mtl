@@ -1,0 +1,73 @@
+[comment encoding = UTF-8 /]
+[comment]
+/*****************************************************************************
+ * Copyright (c) 2013 PROTEUS Project consortium.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Nicolas DU LAC (INTEMPORA) - Initial API and implementation
+ *
+ *****************************************************************************/
+[/comment]
+[module ArchitectureQueries('http://www.eclipse.org/uml2/3.0.0/UML')]
+  
+
+
+[query public countOccurenceFunction(class : Class) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','countOccurenceFunction(org.eclipse.uml2.uml.Class)', Sequence{class})	
+/]
+
+[query public getDeploymentFunctions(pack : Package) : Sequence(Class) =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getDeploymentFunctions(org.eclipse.uml2.uml.Package)', Sequence{pack})	
+/]
+
+[query public countNumberSignals(class : Class) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','countNumberSignals(org.eclipse.uml2.uml.Class)', Sequence{class})	
+/]
+
+[query public countNumberCpu(class : Class) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','countNumberCpu(org.eclipse.uml2.uml.Class)', Sequence{class})	
+/]
+
+[query public getListOfCpu(class : Class) : Sequence(Class) =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getListOfCpu(org.eclipse.uml2.uml.Class)', Sequence{class})	
+/]
+
+[query public getListOfFunctions(class : Class) : Sequence(Action) =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getListOfFunctions(org.eclipse.uml2.uml.Class)', Sequence{class})	
+/]
+
+[query public getListOfConstraints(class : Class) : Sequence(Constraint) =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getListOfConstraints(org.eclipse.uml2.uml.Class)', Sequence{class})	
+/]
+
+[query public countNumberBus(class : Class) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','countNumberBus(org.eclipse.uml2.uml.Class)', Sequence{class})	
+/]
+
+[query public countNumberPath(class : Class) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','countNumberPath(org.eclipse.uml2.uml.Class)', Sequence{class})	
+/]
+
+[query public getFunctionConstraint(action: Action, class : Class) : Sequence(Integer) =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getFunctionConstraint(org.eclipse.uml2.uml.Action,org.eclipse.uml2.uml.Class)', Sequence{action,class})	
+/]
+[query public getSignaldestination(Integer: Integer) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getSignaldestination(Integer)', Sequence{Integer})	
+/]
+[query public getFunctionWCET(Integer: Integer) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getFunctionWCET(Integer)', Sequence{Integer})	
+/]
+
+[query public getSignalWCTT(Integer: Integer) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getSignalWCTT(Integer)', Sequence{Integer})	
+/]
+
+[query public getFunctionPer(class : Class) : Integer =
+	invoke('com.cea.qompass.architect.optimization.codegen.common.common.ArchitectureQueries','getFunctionPer(Integer)', Sequence{class})	
+/]

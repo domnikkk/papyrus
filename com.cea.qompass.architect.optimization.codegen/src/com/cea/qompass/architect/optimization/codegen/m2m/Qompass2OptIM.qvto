@@ -1,0 +1,251 @@
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/4.0.0/UML');
+modeltype MARTE uses 'http://www.eclipse.org/papyrus/MARTE/1';
+modeltype SAM uses 'http://www.eclipse.org/papyrus/SAM/1';
+
+
+//Temporary removal of input model for the qvto transformation
+//in optimizationProfile : UML
+transformation optimization2intermediateModel(in input : UML,  out output : UML);
+ 
+main() {
+	input.rootObjects()[UML::Class]->map systemModel2IntermediateModel();
+} 
+ 
+mapping UML::Class::systemModel2IntermediateModel() : UML::Model{
+	var deploymentStereotype := self.getAppliedStereotype("OptimizationProfile::Deployment");
+	var optimizationModelData :=  object UML::Class
+	{
+		 	name := "OptimizationModelData";
+		 	
+		 	ownedAttribute := Set{
+		 	/*
+		 	object Property{
+		 		name := "functionName";
+		 		//type := getUmlClassifier("Integer");
+		 		upper := -1;
+		 		lower := 0;
+		 	},	*/	
+			object Property{
+				name := "nbFct";
+				//type := getUmlClassifier("Integer");
+				defaultValue :=  self.getNumberOfFunctions();
+			},
+			object Property{
+				name := "nbSig";
+				//type := getUmlClassifier("Integer");
+				defaultValue := self.getNumberOfSignals();
+			},
+			object Property{
+				name := "nbCpu";
+				defaultValue := self.getNumberOfFunctions();
+			},
+			object Property{ 
+				name := "nbBus";
+				defaultValue := self.getNumberOfBus();
+			},
+			object Property{
+				name := "nbPath";
+				defaultValue := self.getNumberOfFunctions();
+			}
+		
+		 	
+		 };
+		
+		 /*
+		 
+	var instSpec := object UML::InstanceSpecification 
+		{
+		 	classifier := matrix;
+		 	slot :=Set{
+		 	
+		 	
+		 	};
+		 };
+		  packagedElement := Set {matrix,instSpec} ; 
+		  */
+	};
+	
+	
+	
+	var functionMapEntry := object Class{
+		name := "FunctionMapEntryClass";
+		ownedAttribute := Set{
+			/*
+			object Property {
+				name := "function"
+			},
+			*/
+			object Property {
+				name := "functionIndex"
+			},
+			object Property{
+				name := "functionName"
+			}
+		}
+	};
+	var functions  := self.getFunctions()->asSet();
+	name := self.name + "_IntermediateModel----" + self.getValue(deploymentStereotype, "applicationElements").toString();
+	
+	var functionMatrix : Set(InstanceSpecification) := functions->collect(function : SaStep | object InstanceSpecification{
+			
+			classifier := functionMapEntry;
+			slot := Set{
+				/*
+				object Slot{
+					definingFeature := functionMapEntry.ownedAttribute->select(p : Property | p.name = "function")->any(true);
+					value := object InstanceValue { function};
+				},
+				*/
+				object Slot{
+					definingFeature := functionMapEntry.ownedAttribute->select(p : Property | p.name = "functionIndex")->any(true);
+					value := function.map function2Integer();
+				},
+				object Slot{
+					definingFeature := functionMapEntry.ownedAttribute->select(p : Property | p.name = "functionName")->any(true);
+					value := object LiteralString{value := function.base_Behavior.name}
+				}
+				
+			}
+		})->asSet();
+	
+	
+	
+	
+	
+	var slot : Slot := object Slot{};
+	var allPackagedElements : Set(PackageableElement) := Set {optimizationModelData,functionMapEntry };
+	allPackagedElements := allPackagedElements->union(functionMatrix.oclAsType(PackageableElement)->asSet())->asSet();
+	//allPackagedElements := allPackagedElements->union(functions->collect(gaScenario : MARTE::GQAM::GaScenario | gaScenario.base_Behavior).oclAsType(PackageableElement)->asSet())->asSet();
+	
+	//allPackagedElements := allPackagedElements->union(self.getValue(deploymentStereotype, "applicationElements")->collect(activity : OclAny | activity.oclAsType(UML::Activity))->asSet())->asSet();
+	packagedElement := allPackagedElements;
+	/*
+	log(self.toString());
+	name := self.name + "_IntermediateModel";
+	var deploymentStereotype := self.getAppliedStereotype("OptimizationProfile::Deployment");
+	var optimizationModelData : uml::Class := object UML::Class{
+		ownedAttribute := Set{
+			object Property{
+				name := "nbFct";
+				defaultValue := object LiteralInteger{value := self.getValue(deploymentStereotype, "applicationElements")->size()};
+			},
+			object Property{
+				name := "nbSig";
+				defaultValue := self.getNumberOfSignals();
+			},
+			object Property{
+				name := "nbCpu";
+				//defaultValue := self.getNumberOfCPUs();
+			},
+			object Property{
+				name := "nbBus";
+				//defaultValue := self.getNumberOfBus();
+			},
+			object Property{
+				name := "nbPath";
+				//defaultValue := self.getNumberOfPaths();
+			}
+		}
+	}*/	
+
+}
+
+
+
+property functionIndex = 1;
+
+query UML::Class::getFunctions() : Set(SaStep){
+	var deploymentStereotype := self.getAppliedStereotype("OptimizationProfile::Deployment");
+	return self.getValue(deploymentStereotype, "applicationElements")->collect(oclAsType(SaStep))->asSet();
+}
+
+/*
+query UML::Class::getFunctions() : Set(ActivityNode){
+	var topLevelPackage : UML::Package := self.getTopContainer().oclAsType(UML::Package);
+	var packagedElements : Set(PackageableElement) := topLevelPackage.packagedElement;
+	var gaAnalysisContext : UML::Package := packagedElements->select
+	(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaAnalysisContext") != null)->any(true).oclAsType(UML::Package);
+	var genericWorkloadBehavior : UML::Activity := gaAnalysisContext.packagedElement->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaWorkloadBehavior") != null)->any(true).oclAsType(UML::Activity);
+	var functions := genericWorkloadBehavior.node->select(controlNode : ActivityNode | controlNode.getAppliedStereotype("MARTE::MARTE_AnalysisModel::SAM::SaStep") != null);
+	return functions;
+}*/
+
+mapping SaStep::function2Integer () : UML::LiteralInteger{
+	result.value := functionIndex;
+	functionIndex := functionIndex + 1;
+}
+
+helper UML::Class::getNumberOfSignals() : UML::LiteralInteger{
+	var topLevelPackage : UML::Package := self.getTopContainer().oclAsType(UML::Package); // getTop return elt then we should make a cast to package
+	var packagedElements : Set(PackageableElement) := topLevelPackage.packagedElement; //set all PackagedeElement in packaged ements (PackageableElement type) 
+	var gaAnalysisContext : UML::Package := packagedElements->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaAnalysisContext") != null)
+	->any(true).oclAsType(UML::Package); //select package which stereotyped with GaAnalysiscont
+	var genericWorkloadBehavior : UML::Activity := gaAnalysisContext.packagedElement->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaWorkloadBehavior") != null)->any(true).oclAsType(UML::Activity);
+	var signals := genericWorkloadBehavior.edge->select(controlFlow : ActivityEdge | controlFlow.getAppliedStereotype("MARTE::MARTE_AnalysisModel::SAM::SaCommStep") != null);
+	//selectaall control flows with the Sacomstep stereotype
+	var saComCount := object UML::LiteralInteger{ value := signals->size()}; //taille de la collection
+	return saComCount;	
+}
+
+
+helper UML::Class::getNumberOfFunctions() : UML::LiteralInteger{
+	var topLevelPackage : UML::Package := self.getTopContainer().oclAsType(UML::Package);
+	var packagedElements : Set(PackageableElement) := topLevelPackage.packagedElement;
+	var gaAnalysisContext : UML::Package := packagedElements->select
+	(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaAnalysisContext") != null)->any(true).oclAsType(UML::Package);
+	var genericWorkloadBehavior : UML::Activity := gaAnalysisContext.packagedElement->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaWorkloadBehavior") != null)->any(true).oclAsType(UML::Activity);
+	var functions := genericWorkloadBehavior.node->select(controlNode : ActivityNode | controlNode.getAppliedStereotype("MARTE::MARTE_AnalysisModel::SAM::SaStep") != null);
+	var saComCount := object UML::LiteralInteger{ value := functions->size()};
+	return saComCount;	
+}
+
+helper UML::Class::getNumberOfCpu() : UML::LiteralInteger{
+	var topLevelPackage : UML::Package := self.getTopContainer().oclAsType(UML::Package);
+	var packagedElements : Set(PackageableElement) := topLevelPackage.packagedElement;
+	var gaAnalysisContext : UML::Package := packagedElements->select
+	(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaAnalysisContext") != null)->any(true).oclAsType(UML::Package);
+	var genericWorkloadBehavior : UML::Activity := gaAnalysisContext.packagedElement->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaWorkloadBehavior") != null)->any(true).oclAsType(UML::Activity);
+	var signals := genericWorkloadBehavior.edge->select(controlFlow : ActivityEdge | controlFlow.getAppliedStereotype("MARTE::MARTE_AnalysisModel::SAM::SaCommStep") != null);
+	var saComCount := object UML::LiteralInteger{ value := signals->size()};
+	return saComCount;	
+}
+
+helper UML::Class::getNumberOfBus() : UML::LiteralInteger{
+	var topLevelPackage : UML::Package := self.getTopContainer().oclAsType(UML::Package);
+	var packagedElements : Set(PackageableElement) := topLevelPackage.packagedElement;
+	var gaAnalysisContext : UML::Package := packagedElements->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaAnalysisContext") != null)->any(true).oclAsType(UML::Package);
+	var genericWorkloadBehavior : UML::Activity := gaAnalysisContext.packagedElement->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaWorkloadBehavior") != null)->any(true).oclAsType(UML::Activity);
+	var signals := genericWorkloadBehavior.edge->select(controlFlow : ActivityEdge | controlFlow.getAppliedStereotype("MARTE::MARTE_AnalysisModel::SAM::SaCommStep") != null);
+	var saComCount := object UML::LiteralInteger{ value := signals->size()};
+	return saComCount;	
+}
+
+helper UML::Class::getNumberOfPath() : UML::LiteralInteger{
+	var topLevelPackage : UML::Package := self.getTopContainer().oclAsType(UML::Package);
+	var packagedElements : Set(PackageableElement) := topLevelPackage.packagedElement;
+	var gaAnalysisContext : UML::Package := packagedElements->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaAnalysisContext") != null)->any(true).oclAsType(UML::Package);
+	var genericWorkloadBehavior : UML::Activity := gaAnalysisContext.packagedElement->select(pe : PackageableElement | pe.getAppliedStereotype("MARTE::MARTE_AnalysisModel::GQAM::GaWorkloadBehavior") != null)->any(true).oclAsType(UML::Activity);
+	var signals := genericWorkloadBehavior.edge->select(controlFlow : ActivityEdge | controlFlow.getAppliedStereotype("MARTE::MARTE_AnalysisModel::SAM::SaCommStep") != null);
+	var saComCount := object UML::LiteralInteger{ value := signals->size()};
+	return saComCount;	
+}
+
+helper uml::Element::getTopContainer() : UML::Element{
+	var eContainer : UML::Element := self.owner;
+	var currentTopLevelContainer : UML::Element := null;
+	while (eContainer != null) {
+		log('eContainer = ' + eContainer.toString());
+		currentTopLevelContainer := eContainer;
+		eContainer := eContainer.owner;
+	};
+	var topLevelPackage : UML::Element := currentTopLevelContainer;
+	return topLevelPackage;
+}
+
+query getUmlClassifier(name : String) : Classifier{
+	
+	var classifiers : Collection(Classifier) := input.rootObjects()[Model].importedMember.allOwnedElements()->selectByKind(Classifier);
+	return classifiers->any(classifier : Classifier | classifier.name = name);
+
+}
