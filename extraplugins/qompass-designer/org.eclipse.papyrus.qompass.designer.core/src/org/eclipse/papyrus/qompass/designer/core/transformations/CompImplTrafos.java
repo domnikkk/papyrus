@@ -15,7 +15,6 @@
 package org.eclipse.papyrus.qompass.designer.core.transformations;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -45,6 +44,7 @@ import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuralFeature;
+import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -561,16 +561,21 @@ public class CompImplTrafos {
 		return ""; //$NON-NLS-1$
 	}
 
+	/**
+	 * Recursively delete all connectors in a given package package
+	 * @param pkg the package in which connector deletion starts
+	 */
 	public static void deleteConnectors(Package pkg) {
-		Iterator<PackageableElement> elements = pkg.getPackagedElements()
-				.iterator();
-		while (elements.hasNext()) {
-			PackageableElement element = elements.next();
+		for (PackageableElement element : pkg.getPackagedElements()) {
 			if (element instanceof Package) {
 				deleteConnectors((Package) element);
-			} else if (element instanceof Class) {
-				Class implementation = (Class) element;
-				implementation.getOwnedConnectors().clear();
+			} else if (element instanceof StructuredClassifier) {
+				StructuredClassifier sc = (StructuredClassifier) element;
+				EList<Connector> connectors = new BasicEList<Connector>();
+				connectors.addAll(sc.getOwnedConnectors());
+				for (Connector connector : connectors) {
+					connector.destroy();
+				}
 			}
 		}
 	}
