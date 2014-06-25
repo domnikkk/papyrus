@@ -51,6 +51,8 @@ public class C_CppLanguageSupport implements ILangSupport {
 
 	private static final String CPP = "cpp"; //$NON-NLS-1$
 
+	private int dialogStatus;
+	
 	/**
 	 * Caller should test before calling, whether the project exists already
 	 * 
@@ -62,6 +64,7 @@ public class C_CppLanguageSupport implements ILangSupport {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
 		IProject project = root.getProject(projectName);
+		dialogStatus = 0;
 		try {
 			IWorkbench wb = PlatformUI.getWorkbench();
 
@@ -77,15 +80,19 @@ public class C_CppLanguageSupport implements ILangSupport {
 					WizardDialog wizDiag = new WizardDialog(Display.getCurrent().getActiveShell(), wiz);
 
 					wizDiag.create();
-					wizDiag.open();
+					dialogStatus = wizDiag.open();
 				}
 			});
 		} catch (Exception e) {
 			e.printStackTrace();
 			project = null;
 		}
+		if (dialogStatus == 1) {
+			// corresponds to Cancel
+			return null;
+		}
 		if((project == null) || !project.exists()) {
-			throw new RuntimeException("could not create CDT project ..."); //$NON-NLS-1$
+			throw new RuntimeException("Could not create CDT project. This might indicate that there is a problem with your CDT installation."); //$NON-NLS-1$
 		}
 		setProject(project);
 		setSettings(targetOS);

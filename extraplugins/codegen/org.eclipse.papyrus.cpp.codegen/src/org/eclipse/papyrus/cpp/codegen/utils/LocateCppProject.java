@@ -80,6 +80,9 @@ public class LocateCppProject {
 					if (langSupport != null) {
 						langSupport.resetConfigurationData();
 						modelProject = langSupport.createProject(projectName, null);
+						if (modelProject == null) {
+							return null;
+						}
 					}
 					else {
 						return null;
