@@ -77,11 +77,11 @@ class GenerateOptimizationTargetWorkflow extends XtendWorkflow {
 		 
 		
 		 
+		 */
 		components += new CodeGeneratorComponent => [
 			tempSrcPath = 'C:/Dev/eclipse-modeling-kepler-R-win32-x86_64/runtime-New_configuration/TestFunAlloc/MILP-generated-files'
 			modelSlot = 'optIntermediateModel'
 		]
-		 */
 		  
 		 super.run(context)
 	}

@@ -14,6 +14,10 @@ main() {
  
 mapping UML::Class::systemModel2IntermediateModel() : UML::Model{
 	var deploymentStereotype := self.getAppliedStereotype("OptimizationProfile::Deployment");
+	var testStereotypeElements := self.getValue(deploymentStereotype, "applicationElements")->flatten()->collect(oclAsType(SAM::SaStep));
+	name := self.name + "_IntermediateModel" + testStereotypeElements->any(true).toString();
+	
+	
 	var optimizationModelData :=  object UML::Class
 	{
 		 	name := "OptimizationModelData";
@@ -84,10 +88,9 @@ mapping UML::Class::systemModel2IntermediateModel() : UML::Model{
 			}
 		}
 	};
-	var functions  := self.getFunctions()->asSet();
-	name := self.name + "_IntermediateModel----" + self.getValue(deploymentStereotype, "applicationElements").toString();
+	var functions  := self.getFunctions();
 	
-	var functionMatrix : Set(InstanceSpecification) := functions->collect(function : SaStep | object InstanceSpecification{
+	var functionMatrix : Set(InstanceSpecification) := functions->flatten()->collect(function : SaStep | object InstanceSpecification{
 			
 			classifier := functionMapEntry;
 			slot := Set{
@@ -100,11 +103,14 @@ mapping UML::Class::systemModel2IntermediateModel() : UML::Model{
 				object Slot{
 					definingFeature := functionMapEntry.ownedAttribute->select(p : Property | p.name = "functionIndex")->any(true);
 					value := function.map function2Integer();
-				},
+				}
+				
+				,
 				object Slot{
 					definingFeature := functionMapEntry.ownedAttribute->select(p : Property | p.name = "functionName")->any(true);
-					value := object LiteralString{value := function.base_Behavior.name}
+					value := object LiteralString{value := function.base_Action.name}
 				}
+				
 				
 			}
 		})->asSet();
@@ -157,7 +163,7 @@ property functionIndex = 1;
 
 query UML::Class::getFunctions() : Set(SaStep){
 	var deploymentStereotype := self.getAppliedStereotype("OptimizationProfile::Deployment");
-	return self.getValue(deploymentStereotype, "applicationElements")->collect(oclAsType(SaStep))->asSet();
+	return self.getValue(deploymentStereotype, "applicationElements")->flatten()->collect(oclAsType(SaStep))->asSet()->flatten();
 }
 
 /*
@@ -171,7 +177,7 @@ query UML::Class::getFunctions() : Set(ActivityNode){
 	return functions;
 }*/
 
-mapping SaStep::function2Integer () : UML::LiteralInteger{
+mapping OclAny::function2Integer () : UML::LiteralInteger{
 	result.value := functionIndex;
 	functionIndex := functionIndex + 1;
 }
