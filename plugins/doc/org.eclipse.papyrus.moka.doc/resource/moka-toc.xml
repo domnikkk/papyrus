@@ -1,12 +1,16 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <toc topic="resource/moka.html" label="moka">
-	<topic href="resource/moka.html" label="MOKA">
-		<topic href="resource/moka.html#Installation" label="Installation"></topic>
-		<topic href="resource/moka.html#Features" label="Features">
-			<topic href="resource/moka.html#Execution_based_on_standard_specification" label="Execution based on standard specification"></topic>
-			<topic href="resource/moka.html#Animation" label="Animation"></topic>
-			<topic href="resource/moka.html#Debugging" label="Debugging"></topic>
-		</topic>
-		<topic href="resource/moka.html#Getting_started" label="Getting started"></topic>
+	<topic href="resource/moka.html" label="Moka Overview">
+		<topic href="resource/moka.html#Based_on_standards" label="Based on standards"></topic>
+		<topic href="resource/moka.html#Interactive_executions" label="Interactive executions"></topic>
+		<topic href="resource/moka.html#Extensible_framework" label="Extensible framework"></topic>
+	</topic>
+	<topic href="resource/moka.html#Getting_started_with_Moka" label="Getting started with Moka">
+		<topic href="resource/moka.html#Your_first_executable_model" label="Your first executable model"></topic>
+		<topic href="resource/moka.html#Selecting_the_execution_engine" label="Selecting the execution engine"></topic>
+		<topic href="resource/moka.html#Starting_an_execution_with_a_launch_configuration" label="Starting an execution with a launch configuration"></topic>
+		<topic href="resource/moka.html#Managing_breakpoints" label="Managing breakpoints"></topic>
+		<topic href="resource/moka.html#Controlling_Executions" label="Controlling Executions"></topic>
+		<topic href="resource/moka.html#Configuring_animation" label="Configuring animation"></topic>
 	</topic>
 </toc>
