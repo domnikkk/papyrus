@@ -18,10 +18,13 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
+ * Catalog used to lookup a {@link Profile} from user namespace.
+ * User can register Profile in this Catalog.
+ * 
  * @author cedric dumoulin
  *
  */
-public class ProfileCatalog {
+public class UserProfileCatalog {
 
 	
 	/**

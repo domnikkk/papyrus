@@ -1,7 +1,6 @@
 package org.eclipse.papyrus.uml.profile.drafter.ui.dialog;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.jface.dialogs.Dialog;
@@ -12,6 +11,7 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.widgets.selectors.ReferenceSelector;
 import org.eclipse.papyrus.uml.profile.drafter.Activator;
+import org.eclipse.papyrus.uml.profile.drafter.utils.ProfileCatalog;
 import org.eclipse.papyrus.uml.tools.providers.UMLMetaclassContentProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
@@ -26,21 +26,43 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.core.databinding.beans.PojoProperties;
+import org.eclipse.core.databinding.Binding;
+import org.eclipse.core.databinding.beans.BeanProperties;
+import org.eclipse.core.databinding.UpdateValueStrategy;
 
+/**
+ * 
+ * @author cedric dumoulin
+ *
+ */
 public class StereotypeUpdateDialog extends Dialog {
+	private Binding stereotypeNameBinding;
+	private Binding profileNameBinding;
+	private Binding stereotypeBinding;
+	private DataBindingContext m_bindingContext;
+	private org.eclipse.core.databinding.Binding profileBinding;
 	private Text quickSetText;
 	private Text stereotypeText;
 	private Text profileText;
 	private String title;
 	private StereotypeUpdateArgs value;
 	private MultipleValueSelectorWidget extendedMetaclassSelector;
+	private TaggedValuesEditorWidget taggedValuesEditorWidget;
 	
 	/**
 	 * An UML Element used to get the associated Resource.
 	 */
 	private Element anyUmlElement;
 	private List<Class> selectedMetaclasses;
+	
+	private StereotypeNameToProfileSynchronizer stereotypeNameToProfileSynchronizer;
 
+	private ProfileCatalog profileCatalog;
+	
 	/**
 	 * Create the dialog.
 	 * @param parentShell
@@ -55,6 +77,9 @@ public class StereotypeUpdateDialog extends Dialog {
 		this.title = title;
 		this.anyUmlElement = selectedElement;
 		this.selectedMetaclasses = metaclassesToSelect;
+		this.profileCatalog = new ProfileCatalog(selectedElement);
+		stereotypeNameToProfileSynchronizer = new StereotypeNameToProfileSynchronizer(profileCatalog);
+		
 	}
 
 	/**
@@ -109,7 +134,7 @@ public class StereotypeUpdateDialog extends Dialog {
 		Stereotype stereotype;
 		List<Stereotype> appliedStereotypes = anyUmlElement.getAppliedStereotypes();
 		if( !appliedStereotypes.isEmpty()) {
-			TaggedValuesEditorWidget taggedValuesEditorWidget = new TaggedValuesEditorWidget(taggedValuesContainer, appliedStereotypes.get(0), (NamedElement)anyUmlElement);
+			taggedValuesEditorWidget = new TaggedValuesEditorWidget(taggedValuesContainer, appliedStereotypes.get(0), (NamedElement)anyUmlElement);
 		}
 		return container;
 	}
@@ -155,6 +180,7 @@ public class StereotypeUpdateDialog extends Dialog {
 				true);
 		createButton(parent, IDialogConstants.CANCEL_ID,
 				IDialogConstants.CANCEL_LABEL, false);
+		m_bindingContext = initDataBindings();
 	}
 	
     /**
@@ -217,5 +243,21 @@ public class StereotypeUpdateDialog extends Dialog {
 	public IStereotypeUpdateArgs getUpdateArgs() {
 		return value;
 	}
-
+	protected DataBindingContext initDataBindings() {
+		DataBindingContext bindingContext = new DataBindingContext();
+		//
+		IObservableValue observeTextProfileTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(profileText);
+		IObservableValue profileNameStereotypeNameToProfileSynchronizerObserveValue = BeanProperties.value("profileName").observe(stereotypeNameToProfileSynchronizer);
+		profileNameBinding = bindingContext.bindValue(observeTextProfileTextObserveWidget, profileNameStereotypeNameToProfileSynchronizerObserveValue, null, null);
+		//
+		IObservableValue observeTextStereotypeTextObserveWidget = WidgetProperties.text(SWT.Modify).observe(stereotypeText);
+		IObservableValue stereotypeNameStereotypeNameToProfileSynchronizerObserveValue = BeanProperties.value("stereotypeName").observe(stereotypeNameToProfileSynchronizer);
+		stereotypeNameBinding = bindingContext.bindValue(observeTextStereotypeTextObserveWidget, stereotypeNameStereotypeNameToProfileSynchronizerObserveValue, null, null);
+		//
+		IObservableValue stereotypeTaggedValuesEditorWidgetObserveValue = PojoProperties.value("stereotype").observe(taggedValuesEditorWidget);
+		IObservableValue stereotypeStereotypeNameToProfileSynchronizerObserveValue = BeanProperties.value("stereotype").observe(stereotypeNameToProfileSynchronizer);
+		bindingContext.bindValue(stereotypeTaggedValuesEditorWidgetObserveValue, stereotypeStereotypeNameToProfileSynchronizerObserveValue, new UpdateValueStrategy(UpdateValueStrategy.POLICY_NEVER), null);
+		//
+		return bindingContext;
+	}
 }

@@ -1,8 +1,5 @@
 package org.eclipse.papyrus.uml.profile.drafter.ui.dialog;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -39,6 +36,27 @@ public class TaggedValuesEditorWidget {
 		this.stereotype = stereotype;
 		this.selectedElement = selectedElement;
 		createContent(parent);
+	}
+
+
+	
+	/**
+	 * @return the stereotype
+	 */
+	public Stereotype getStereotype() {
+		return stereotype;
+	}
+
+
+	
+	/**
+	 * @param stereotype the stereotype to set
+	 */
+	public void setStereotype(Stereotype stereotype) {
+		System.err.println(this.getClass().getSimpleName() 
+				+ ".setStereotype(" + (stereotype!=null?stereotype.getName():"null") + ")");
+		this.stereotype = stereotype;
+		treeViewer.setInput(stereotype);
 	}
 
 
@@ -117,6 +135,11 @@ public class TaggedValuesEditorWidget {
 		
 	}
 
+	/**
+	 * Get the name of the taggedValue
+	 * @author dumoulin
+	 *
+	 */
 	public class TaggedValueNameColumnLabelProvider extends ColumnLabelProvider {
 		
 		@Override
@@ -127,6 +150,10 @@ public class TaggedValuesEditorWidget {
 		}
 	}
 	
+	/**
+	 * Get the value of the taggedValue
+	 *
+	 */
 	public class TaggedValueValueColumnLabelProvider extends ColumnLabelProvider {
 		
 		@Override
@@ -145,6 +172,10 @@ public class TaggedValuesEditorWidget {
 		}
 	}
 	
+	/**
+	 * Content Provider for TaggedValues hierarchy
+	 *
+	 */
 	private class MyContentProvider implements ITreeContentProvider {
 
 		private Object[] EMPTY_ARRAY = new Object[]{};

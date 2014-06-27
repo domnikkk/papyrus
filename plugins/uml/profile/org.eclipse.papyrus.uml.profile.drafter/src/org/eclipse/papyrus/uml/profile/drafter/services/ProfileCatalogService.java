@@ -18,7 +18,7 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
-import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
+import org.eclipse.papyrus.uml.profile.drafter.UserProfileCatalog;
 
 /**
  * @author dumoulin
@@ -34,7 +34,7 @@ public class ProfileCatalogService implements IService {
 	/**
 	 * The associated ProfileCatalog.
 	 */
-	protected ProfileCatalog profileCatalog;
+	protected UserProfileCatalog profileCatalog;
 	
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
@@ -74,7 +74,7 @@ public class ProfileCatalogService implements IService {
 	 * Get the ProfileCatalog owned by the service.
 	 * @return
 	 */
-	public ProfileCatalog getProfileCatalog() {
+	public UserProfileCatalog getProfileCatalog() {
 		// TODO Auto-generated method stub
 		return profileCatalog;
 	}

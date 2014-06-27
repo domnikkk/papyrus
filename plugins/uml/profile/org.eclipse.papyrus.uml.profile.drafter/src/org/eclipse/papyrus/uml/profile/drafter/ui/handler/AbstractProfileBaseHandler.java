@@ -18,14 +18,14 @@ import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForIEvaluationContext;
-import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
+import org.eclipse.papyrus.uml.profile.drafter.UserProfileCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.DraftProfileException;
 import org.eclipse.papyrus.uml.profile.drafter.services.ProfileCatalogService;
 import org.eclipse.papyrus.uml.profile.drafter.utils.UMLMetamodelUtils;
 
 /**
  * Base class for handlers wishing to deal with ProfileCatalog.
- * This class provides miscellaneous methods to get the {@link ProfileCatalog} and {@link ProfileCatalogService}.
+ * This class provides miscellaneous methods to get the {@link UserProfileCatalog} and {@link ProfileCatalogService}.
  * 
  * @author cedric dumoulin
  *
@@ -63,12 +63,12 @@ public abstract class AbstractProfileBaseHandler extends AbstractBaseHandler {
 	}
 	
 	/**
-	 * Lookup the {@link ProfileCatalog}.
+	 * Lookup the {@link UserProfileCatalog}.
 	 * 
 	 * @return
 	 * @throws ServiceException If the Editing domain can't be found.
 	 */
-	protected ProfileCatalog getProfileCatalog(IEvaluationContext context) throws ServiceException {
+	protected UserProfileCatalog getProfileCatalog(IEvaluationContext context) throws ServiceException {
 
 		ProfileCatalogService service = getProfileCatalogService(context);
 		return service.getProfileCatalog();
