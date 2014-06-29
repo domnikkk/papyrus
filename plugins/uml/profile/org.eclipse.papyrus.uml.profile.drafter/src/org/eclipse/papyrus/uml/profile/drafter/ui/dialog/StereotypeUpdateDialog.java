@@ -3,14 +3,26 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.dialog;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.databinding.Binding;
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.UpdateValueStrategy;
+import org.eclipse.core.databinding.beans.BeanProperties;
+import org.eclipse.core.databinding.beans.PojoProperties;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.jface.bindings.keys.KeyStroke;
+import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
+import org.eclipse.jface.fieldassist.ContentProposalAdapter;
+import org.eclipse.jface.fieldassist.IContentProposalProvider;
+import org.eclipse.jface.fieldassist.TextContentAdapter;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.infra.widgets.selectors.ReferenceSelector;
 import org.eclipse.papyrus.uml.profile.drafter.Activator;
+import org.eclipse.papyrus.uml.profile.drafter.ui.contentassist.StereotypeContentProposalProvider;
 import org.eclipse.papyrus.uml.profile.drafter.utils.ProfileCatalog;
 import org.eclipse.papyrus.uml.tools.providers.UMLMetaclassContentProvider;
 import org.eclipse.swt.SWT;
@@ -26,13 +38,6 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.core.databinding.DataBindingContext;
-import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.jface.databinding.swt.WidgetProperties;
-import org.eclipse.core.databinding.beans.PojoProperties;
-import org.eclipse.core.databinding.Binding;
-import org.eclipse.core.databinding.beans.BeanProperties;
-import org.eclipse.core.databinding.UpdateValueStrategy;
 
 /**
  * 
@@ -88,6 +93,9 @@ public class StereotypeUpdateDialog extends Dialog {
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
+		Stereotype stereotype;
+		List<Stereotype> appliedStereotypes = anyUmlElement.getAppliedStereotypes();
+
 		Composite container = (Composite) super.createDialogArea(parent);
 		
 		Composite namesContainer = new Composite(container, SWT.NONE);
@@ -116,6 +124,7 @@ public class StereotypeUpdateDialog extends Dialog {
 		
 		stereotypeText = new Text(namesContainer, SWT.BORDER);
 		stereotypeText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		installContentAssistantProvider(stereotypeText, new StereotypeContentProposalProvider(anyUmlElement.getApplicableStereotypes()));
 		
 //		Composite extendedMetaclassesContainer = new Composite(container, SWT.NONE);
 //		extendedMetaclassesContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
@@ -131,14 +140,46 @@ public class StereotypeUpdateDialog extends Dialog {
 		taggedValuesContainer.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 
 		// Use the first applied stereotype for tests
-		Stereotype stereotype;
-		List<Stereotype> appliedStereotypes = anyUmlElement.getAppliedStereotypes();
 		if( !appliedStereotypes.isEmpty()) {
 			taggedValuesEditorWidget = new TaggedValuesEditorWidget(taggedValuesContainer, appliedStereotypes.get(0), (NamedElement)anyUmlElement);
 		}
 		return container;
 	}
 
+	/**
+	 * Install content assistant provider.
+	 * 
+	 * @param control The control to which content assist is installed.
+	 *
+	 * @param contentProposalProvider The associated {@link ContentProposalAdapter}.
+	 */
+	protected void installContentAssistantProvider(Text control, IContentProposalProvider contentProposalProvider) {
+//		KeyStroke keyStroke = KeyStroke.getInstance("Ctrl+Space");
+		KeyStroke keyStroke = null;
+		char[] autoActivationCharacters = null;
+		int autoActivationDelay = 500;
+
+		ContentProposalAdapter adapter = new ContentProposalAdapter(control, new TextContentAdapter(), contentProposalProvider, keyStroke, autoActivationCharacters);
+		adapter.setAutoActivationDelay(autoActivationDelay);
+
+		// filter proposals as keys are pressed and proposals popup is present
+		adapter.setFilterStyle(ContentProposalAdapter.FILTER_NONE);
+
+		// replace all text
+		adapter.setProposalAcceptanceStyle(ContentProposalAdapter.PROPOSAL_REPLACE);
+
+		//this listener is activated when a stereotype item in popup menu is selected and
+		//the popup menu is closed. It is used to add the selected stereotype in to the right hand side part
+		//of the dialog, so that uers can economize one key hit.
+		//cf. proposalAccepted() operation in KeyTextListener
+//		adapter.addContentProposalListener(keyTextListener);
+
+	}
+
+	/**
+	 * 
+	 * @param parent
+	 */
 	private void createExtendedMetaclassArea(Composite parent) {
 		// TODO Auto-generated method stub
 		ReferenceSelector selector = new ReferenceSelector(true);
