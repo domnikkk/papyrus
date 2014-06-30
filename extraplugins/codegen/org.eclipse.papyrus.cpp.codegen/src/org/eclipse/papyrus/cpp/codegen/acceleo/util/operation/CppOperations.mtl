@@ -55,12 +55,12 @@ else
 endif/]
 
 [template public CppReturnSpec(operation : Operation)]
-[if (type = null) or isConsOrDestructor()][ConsDestructorOrVoid()/][else][returnResult().modConst()/] [type.cppQualifiedName()/][returnResult().modPtr()/][returnResult().modRef()/] [/if]
+[if (type = null) or isConsOrDestructor()][ConsDestructorOrVoid()/][else][returnResult().modCVQualifier()/] [type.cppQualifiedName()/][returnResult().modPtr()/][returnResult().modRef()/] [/if]
 [/template]
 
 
 [template public CppReturnSpec(behavior : Behavior)]
-[if (returnResult() = null)]void [else][returnResult().modConst()/] [returnResult().type.cppQualifiedName()/][returnResult().modPtr()/][returnResult().modRef()/] [/if]
+[if (returnResult() = null)]void [else][returnResult().modCVQualifier()/] [returnResult().type.cppQualifiedName()/][returnResult().modPtr()/][returnResult().modRef()/] [/if]
 [/template]
 
 
@@ -75,12 +75,12 @@ endif/]
 
 [template public CppOperationDeclaration(operation : Operation)]
 [CppOperationDoc()/]
-[InlineTxt()/][virtualTxt()/][staticTxt()/][CppReturnSpec()/][destructor()/][operation.name/]([CppOperationParameters(true)/])[modConst()/][virtualSuffix()/];
+[InlineTxt()/][virtualTxt()/][staticTxt()/][CppReturnSpec()/][destructor()/][operation.name/]([CppOperationParameters(true)/])[modCVQualifier()/][virtualSuffix()/];
 [/template]
 
 [template public CppBehaviorDeclaration(behavior : Behavior)]
 [CppBehaviorDoc()/]
-[InlineTxt()/][CppReturnSpec()/][behavior.name/]([CppBehaviorParameters(true)/])[modConst()/];
+[InlineTxt()/][CppReturnSpec()/][behavior.name/]([CppBehaviorParameters(true)/])[modCVQualifier()/];
 [/template]
 
 [template public CppConstInit(operation : Operation)]
@@ -108,7 +108,7 @@ throws [for (raisedException) separator(',')][name/][/for]
 	[getBody('C/C++')/]
 }
 [else]
-[templateSignature()/][InlineTxt()/][CppReturnSpec()/][operation.featuringClassifier.name/][templateShortSignature()/]::[destructor()/][operation.name/]([CppOperationParameters(false)/])[throws()/][modConst()/][CppConstInit()/] {
+[templateSignature()/][InlineTxt()/][CppReturnSpec()/][operation.featuringClassifier.name/][templateShortSignature()/]::[destructor()/][operation.name/]([CppOperationParameters(false)/])[throws()/][modCVQualifier()/][CppConstInit()/] {
 	[getBodyInTemplate('C/C++')/]
 }
 [/if]
@@ -117,7 +117,7 @@ throws [for (raisedException) separator(',')][name/][/for]
 
 [template public CppBehaviorImplementation(behavior : OpaqueBehavior)]
 [CppBehaviorDoc()/]
-[CppReturnSpec()/][behavior._context.name/]::[behavior.name/]([CppBehaviorParameters(false)/])[modConst()/] {
+[CppReturnSpec()/][behavior._context.name/]::[behavior.name/]([CppBehaviorParameters(false)/])[modCVQualifier()/] {
 	[getBodyFromOB('C/C++')/]
 }
 [/template]

@@ -11,29 +11,28 @@
  */
 package org.eclipse.papyrus.dd.dg.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.dd.dg.ClipPath;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.GraphicalElement;
 import org.eclipse.papyrus.dd.dg.Group;
 import org.eclipse.papyrus.dd.dg.Style;
 import org.eclipse.papyrus.dd.dg.Transform;
+import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -45,11 +44,11 @@ import org.eclipse.papyrus.dd.dg.Transform;
  * <em>Clip Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl#getGroup <em>
  * Group</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl#getKeyword
- * <em>Keyword</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl#getClasses
+ * <em>Class</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl#getStyle <em>
  * Style</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl#getTransform
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl#getTransforms
  * <em>Transform</em>}</li>
  * </ul>
  * </p>
@@ -69,14 +68,14 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 	protected ClipPath clipPath;
 
 	/**
-	 * The cached value of the '{@link #getKeyword() <em>Keyword</em>}'
-	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getClasses() <em>Class</em>}' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getKeyword()
+	 * @see #getClasses()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> keyword;
+	protected EList<String> classes;
 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment
@@ -89,14 +88,14 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 	protected Style style;
 
 	/**
-	 * The cached value of the '{@link #getTransform() <em>Transform</em>}'
+	 * The cached value of the '{@link #getTransforms() <em>Transform</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getTransform()
+	 * @see #getTransforms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Transform> transform;
+	protected EList<Transform> transforms;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -212,12 +211,12 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 	 * 
 	 * @generated
 	 */
-	public EList<String> getKeyword() {
-		if (keyword == null) {
-			keyword = new EDataTypeUniqueEList<String>(String.class, this,
-					DGPackage.GRAPHICAL_ELEMENT__KEYWORD);
+	public EList<String> getClasses() {
+		if (classes == null) {
+			classes = new EDataTypeUniqueEList<String>(String.class, this,
+					DGPackage.GRAPHICAL_ELEMENT__CLASS);
 		}
-		return keyword;
+		return classes;
 	}
 
 	/**
@@ -281,12 +280,47 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 	 * 
 	 * @generated
 	 */
-	public EList<Transform> getTransform() {
-		if (transform == null) {
-			transform = new EObjectContainmentEList<Transform>(Transform.class,
-					this, DGPackage.GRAPHICAL_ELEMENT__TRANSFORM);
+	public EList<Transform> getTransforms() {
+		if (transforms == null) {
+			transforms = new EObjectContainmentEList<Transform>(
+					Transform.class, this,
+					DGPackage.GRAPHICAL_ELEMENT__TRANSFORM);
 		}
-		return transform;
+		return transforms;
+	}
+
+	/**
+	 * The cached validation expression for the '
+	 * {@link #referencedClippathHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Clippath Has Id</em>}' invariant operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #referencedClippathHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REFERENCED_CLIPPATH_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "clipPath->notEmpty() implies clipPath.id->notEmpty()";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean referencedClippathHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.GRAPHICAL_ELEMENT,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP,
+						REFERENCED_CLIPPATH_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR,
+						DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.GRAPHICAL_ELEMENT__REFERENCED_CLIPPATH_HAS_ID);
 	}
 
 	/**
@@ -320,7 +354,7 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 		case DGPackage.GRAPHICAL_ELEMENT__STYLE:
 			return basicSetStyle(null, msgs);
 		case DGPackage.GRAPHICAL_ELEMENT__TRANSFORM:
-			return ((InternalEList<?>) getTransform()).basicRemove(otherEnd,
+			return ((InternalEList<?>) getTransforms()).basicRemove(otherEnd,
 					msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -356,12 +390,12 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 			return basicGetClipPath();
 		case DGPackage.GRAPHICAL_ELEMENT__GROUP:
 			return getGroup();
-		case DGPackage.GRAPHICAL_ELEMENT__KEYWORD:
-			return getKeyword();
+		case DGPackage.GRAPHICAL_ELEMENT__CLASS:
+			return getClasses();
 		case DGPackage.GRAPHICAL_ELEMENT__STYLE:
 			return getStyle();
 		case DGPackage.GRAPHICAL_ELEMENT__TRANSFORM:
-			return getTransform();
+			return getTransforms();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -381,16 +415,16 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 		case DGPackage.GRAPHICAL_ELEMENT__GROUP:
 			setGroup((Group) newValue);
 			return;
-		case DGPackage.GRAPHICAL_ELEMENT__KEYWORD:
-			getKeyword().clear();
-			getKeyword().addAll((Collection<? extends String>) newValue);
+		case DGPackage.GRAPHICAL_ELEMENT__CLASS:
+			getClasses().clear();
+			getClasses().addAll((Collection<? extends String>) newValue);
 			return;
 		case DGPackage.GRAPHICAL_ELEMENT__STYLE:
 			setStyle((Style) newValue);
 			return;
 		case DGPackage.GRAPHICAL_ELEMENT__TRANSFORM:
-			getTransform().clear();
-			getTransform().addAll((Collection<? extends Transform>) newValue);
+			getTransforms().clear();
+			getTransforms().addAll((Collection<? extends Transform>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -410,14 +444,14 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 		case DGPackage.GRAPHICAL_ELEMENT__GROUP:
 			setGroup((Group) null);
 			return;
-		case DGPackage.GRAPHICAL_ELEMENT__KEYWORD:
-			getKeyword().clear();
+		case DGPackage.GRAPHICAL_ELEMENT__CLASS:
+			getClasses().clear();
 			return;
 		case DGPackage.GRAPHICAL_ELEMENT__STYLE:
 			setStyle((Style) null);
 			return;
 		case DGPackage.GRAPHICAL_ELEMENT__TRANSFORM:
-			getTransform().clear();
+			getTransforms().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -435,14 +469,31 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 			return clipPath != null;
 		case DGPackage.GRAPHICAL_ELEMENT__GROUP:
 			return getGroup() != null;
-		case DGPackage.GRAPHICAL_ELEMENT__KEYWORD:
-			return keyword != null && !keyword.isEmpty();
+		case DGPackage.GRAPHICAL_ELEMENT__CLASS:
+			return classes != null && !classes.isEmpty();
 		case DGPackage.GRAPHICAL_ELEMENT__STYLE:
 			return style != null;
 		case DGPackage.GRAPHICAL_ELEMENT__TRANSFORM:
-			return transform != null && !transform.isEmpty();
+			return transforms != null && !transforms.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case DGPackage.GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP:
+			return referencedClippathHasId((DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -456,8 +507,8 @@ public abstract class GraphicalElementImpl extends DefinitionImpl implements
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (keyword: ");
-		result.append(keyword);
+		result.append(" (class: ");
+		result.append(classes);
 		result.append(')');
 		return result.toString();
 	}

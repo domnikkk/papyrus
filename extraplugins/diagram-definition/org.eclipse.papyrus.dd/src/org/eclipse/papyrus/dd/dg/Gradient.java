@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Gradient#getStop <em>Stop</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Gradient#getStops <em>Stop</em>}</li>
  * </ul>
  * </p>
  * 
@@ -46,6 +46,6 @@ public interface Gradient extends PaintServer {
 	 * @model containment="true" lower="2"
 	 * @generated
 	 */
-	EList<GradientStop> getStop();
+	EList<GradientStop> getStops();
 
 } // Gradient

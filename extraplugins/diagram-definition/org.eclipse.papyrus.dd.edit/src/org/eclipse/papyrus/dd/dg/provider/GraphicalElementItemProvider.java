@@ -68,7 +68,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addClipPathPropertyDescriptor(object);
-			addKeywordPropertyDescriptor(object);
+			addClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,45 +80,48 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 	 * @generated
 	 */
 	protected void addClipPathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_GraphicalElement_clipPath_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_GraphicalElement_clipPath_feature",
-						"_UI_GraphicalElement_type"),
-				DGPackage.Literals.GRAPHICAL_ELEMENT__CLIP_PATH, true, false,
-				true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GraphicalElement_clipPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_clipPath_feature", "_UI_GraphicalElement_type"),
+				 DGPackage.Literals.GRAPHICAL_ELEMENT__CLIP_PATH,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Keyword feature. <!--
+	 * This adds a property descriptor for the Class feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addKeywordPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_GraphicalElement_keyword_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_GraphicalElement_keyword_feature",
-						"_UI_GraphicalElement_type"),
-				DGPackage.Literals.GRAPHICAL_ELEMENT__KEYWORD, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GraphicalElement_class_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_class_feature", "_UI_GraphicalElement_type"),
+				 DGPackage.Literals.GRAPHICAL_ELEMENT__CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -127,45 +130,42 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.GRAPHICAL_ELEMENT__STYLE);
-			childrenFeatures
-					.add(DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM);
+			childrenFeatures.add(DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM);
 		}
 		return childrenFeatures;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GraphicalElement) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_GraphicalElement_type")
-				: getString("_UI_GraphicalElement_type") + " " + label;
+		String label = ((GraphicalElement)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GraphicalElement_type") :
+			getString("_UI_GraphicalElement_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,15 +173,13 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GraphicalElement.class)) {
-		case DGPackage.GRAPHICAL_ELEMENT__KEYWORD:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DGPackage.GRAPHICAL_ELEMENT__STYLE:
-		case DGPackage.GRAPHICAL_ELEMENT__TRANSFORM:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.GRAPHICAL_ELEMENT__CLASS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case DGPackage.GRAPHICAL_ELEMENT__STYLE:
+			case DGPackage.GRAPHICAL_ELEMENT__TRANSFORM:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -198,29 +196,35 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.GRAPHICAL_ELEMENT__STYLE,
-				DGFactory.eINSTANCE.createStyle()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.GRAPHICAL_ELEMENT__STYLE,
+				 DGFactory.eINSTANCE.createStyle()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
-				DGFactory.eINSTANCE.createMatrix()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
+				 DGFactory.eINSTANCE.createMatrix()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
-				DGFactory.eINSTANCE.createRotate()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
+				 DGFactory.eINSTANCE.createRotate()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
-				DGFactory.eINSTANCE.createScale()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
+				 DGFactory.eINSTANCE.createScale()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
-				DGFactory.eINSTANCE.createSkew()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
+				 DGFactory.eINSTANCE.createSkew()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
-				DGFactory.eINSTANCE.createTranslate()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.GRAPHICAL_ELEMENT__TRANSFORM,
+				 DGFactory.eINSTANCE.createTranslate()));
 	}
 
 }

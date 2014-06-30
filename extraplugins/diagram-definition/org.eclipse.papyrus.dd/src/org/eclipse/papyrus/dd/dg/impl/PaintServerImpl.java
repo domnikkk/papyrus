@@ -33,7 +33,7 @@ import org.eclipse.papyrus.dd.dg.Transform;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.PaintServerImpl#getTransform <em>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.PaintServerImpl#getTransforms <em>
  * Transform</em>}</li>
  * </ul>
  * </p>
@@ -43,14 +43,14 @@ import org.eclipse.papyrus.dd.dg.Transform;
 public abstract class PaintServerImpl extends DefinitionImpl implements
 		PaintServer {
 	/**
-	 * The cached value of the '{@link #getTransform() <em>Transform</em>}'
+	 * The cached value of the '{@link #getTransforms() <em>Transform</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getTransform()
+	 * @see #getTransforms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Transform> transform;
+	protected EList<Transform> transforms;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -76,12 +76,12 @@ public abstract class PaintServerImpl extends DefinitionImpl implements
 	 * 
 	 * @generated
 	 */
-	public EList<Transform> getTransform() {
-		if (transform == null) {
-			transform = new EObjectContainmentEList<Transform>(Transform.class,
-					this, DGPackage.PAINT_SERVER__TRANSFORM);
+	public EList<Transform> getTransforms() {
+		if (transforms == null) {
+			transforms = new EObjectContainmentEList<Transform>(
+					Transform.class, this, DGPackage.PAINT_SERVER__TRANSFORM);
 		}
-		return transform;
+		return transforms;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public abstract class PaintServerImpl extends DefinitionImpl implements
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
-			return ((InternalEList<?>) getTransform()).basicRemove(otherEnd,
+			return ((InternalEList<?>) getTransforms()).basicRemove(otherEnd,
 					msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -109,7 +109,7 @@ public abstract class PaintServerImpl extends DefinitionImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
-			return getTransform();
+			return getTransforms();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,8 +124,8 @@ public abstract class PaintServerImpl extends DefinitionImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
-			getTransform().clear();
-			getTransform().addAll((Collection<? extends Transform>) newValue);
+			getTransforms().clear();
+			getTransforms().addAll((Collection<? extends Transform>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -140,7 +140,7 @@ public abstract class PaintServerImpl extends DefinitionImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
-			getTransform().clear();
+			getTransforms().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -155,7 +155,7 @@ public abstract class PaintServerImpl extends DefinitionImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DGPackage.PAINT_SERVER__TRANSFORM:
-			return transform != null && !transform.isEmpty();
+			return transforms != null && !transforms.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

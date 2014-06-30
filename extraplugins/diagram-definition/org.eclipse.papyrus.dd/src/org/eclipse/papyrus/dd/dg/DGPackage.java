@@ -101,13 +101,22 @@ public interface DGPackage extends EPackage {
 	int DEFINITION_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Definition</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION_OPERATION_COUNT = 0;
+	int DEFINITION_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '
@@ -149,13 +158,13 @@ public interface DGPackage extends EPackage {
 	int GRAPHICAL_ELEMENT__GROUP = DEFINITION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHICAL_ELEMENT__KEYWORD = DEFINITION_FEATURE_COUNT + 2;
+	int GRAPHICAL_ELEMENT__CLASS = DEFINITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -185,13 +194,31 @@ public interface DGPackage extends EPackage {
 	int GRAPHICAL_ELEMENT_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = DEFINITION_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Graphical Element</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHICAL_ELEMENT_OPERATION_COUNT = DEFINITION_OPERATION_COUNT + 0;
+	int GRAPHICAL_ELEMENT_OPERATION_COUNT = DEFINITION_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '
@@ -232,13 +259,13 @@ public interface DGPackage extends EPackage {
 	int GROUP__GROUP = GRAPHICAL_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__KEYWORD = GRAPHICAL_ELEMENT__KEYWORD;
+	int GROUP__CLASS = GRAPHICAL_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -275,6 +302,24 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int GROUP_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Group</em>' class. <!--
@@ -324,13 +369,13 @@ public interface DGPackage extends EPackage {
 	int CANVAS__GROUP = GROUP__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CANVAS__KEYWORD = GROUP__KEYWORD;
+	int CANVAS__CLASS = GROUP__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -378,13 +423,40 @@ public interface DGPackage extends EPackage {
 	int CANVAS_FEATURE_COUNT = GROUP_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CANVAS___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GROUP___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CANVAS___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GROUP___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Canvas Cannot Have Transforms</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP = GROUP_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Canvas</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CANVAS_OPERATION_COUNT = GROUP_OPERATION_COUNT + 0;
+	int CANVAS_OPERATION_COUNT = GROUP_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '
@@ -511,13 +583,13 @@ public interface DGPackage extends EPackage {
 	int CLIP_PATH__GROUP = GROUP__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CLIP_PATH__KEYWORD = GROUP__KEYWORD;
+	int CLIP_PATH__CLASS = GROUP__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -554,6 +626,24 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLIP_PATH_FEATURE_COUNT = GROUP_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLIP_PATH___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GROUP___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLIP_PATH___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GROUP___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Clip Path</em>' class. <!--
@@ -776,13 +866,22 @@ public interface DGPackage extends EPackage {
 	int PAINT_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Referenced Paint Server Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PAINT___REFERENCED_PAINT_SERVER_HAS_ID__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Paint</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int PAINT_OPERATION_COUNT = 0;
+	int PAINT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '
@@ -822,6 +921,15 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAINT_SERVER_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PAINT_SERVER___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Paint Server</em>' class. <!--
@@ -900,13 +1008,13 @@ public interface DGPackage extends EPackage {
 	int CIRCLE__GROUP = GRAPHICAL_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CIRCLE__KEYWORD = GRAPHICAL_ELEMENT__KEYWORD;
+	int CIRCLE__CLASS = GRAPHICAL_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -952,6 +1060,24 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int CIRCLE_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CIRCLE___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CIRCLE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Non Negative Radius</em>' operation. <!--
@@ -1031,22 +1157,13 @@ public interface DGPackage extends EPackage {
 	int CUBIC_CURVE_TO__IS_RELATIVE = PATH_COMMAND__IS_RELATIVE;
 
 	/**
-	 * The feature id for the '<em><b>Point</b></em>' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int CUBIC_CURVE_TO__POINT = PATH_COMMAND_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Start Control</b></em>' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CUBIC_CURVE_TO__START_CONTROL = PATH_COMMAND_FEATURE_COUNT + 1;
+	int CUBIC_CURVE_TO__START_CONTROL = PATH_COMMAND_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>End Control</b></em>' containment
@@ -1055,7 +1172,16 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUBIC_CURVE_TO__END_CONTROL = PATH_COMMAND_FEATURE_COUNT + 2;
+	int CUBIC_CURVE_TO__END_CONTROL = PATH_COMMAND_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Point</b></em>' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CUBIC_CURVE_TO__POINT = PATH_COMMAND_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Cubic Curve To</em>' class.
@@ -1222,22 +1348,22 @@ public interface DGPackage extends EPackage {
 	int STYLE_SELECTOR = 17;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference. <!--
+	 * The feature id for the '<em><b>Kind</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int STYLE_SELECTOR__TYPE = 0;
+	int STYLE_SELECTOR__KIND = 0;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int STYLE_SELECTOR__KEYWORD = 1;
+	int STYLE_SELECTOR__CLASS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Style Selector</em>' class.
@@ -1296,13 +1422,13 @@ public interface DGPackage extends EPackage {
 	int ELLIPSE__GROUP = GRAPHICAL_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__KEYWORD = GRAPHICAL_ELEMENT__KEYWORD;
+	int ELLIPSE__CLASS = GRAPHICAL_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -1350,6 +1476,24 @@ public interface DGPackage extends EPackage {
 	int ELLIPSE_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELLIPSE___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELLIPSE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>Ellipse</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1360,15 +1504,15 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl
-	 * <em>Elliptical Curve To</em>}' class. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl
+	 * <em>Elliptical Arc To</em>}' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @see org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl
-	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getEllipticalCurveTo()
+	 * @see org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl
+	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getEllipticalArcTo()
 	 * @generated
 	 */
-	int ELLIPTICAL_CURVE_TO = 19;
+	int ELLIPTICAL_ARC_TO = 19;
 
 	/**
 	 * The feature id for the '<em><b>Is Relative</b></em>' attribute. <!--
@@ -1377,16 +1521,7 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPTICAL_CURVE_TO__IS_RELATIVE = PATH_COMMAND__IS_RELATIVE;
-
-	/**
-	 * The feature id for the '<em><b>Point</b></em>' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int ELLIPTICAL_CURVE_TO__POINT = PATH_COMMAND_FEATURE_COUNT + 0;
+	int ELLIPTICAL_ARC_TO__IS_RELATIVE = PATH_COMMAND__IS_RELATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Radii</b></em>' containment reference.
@@ -1395,7 +1530,7 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPTICAL_CURVE_TO__RADII = PATH_COMMAND_FEATURE_COUNT + 1;
+	int ELLIPTICAL_ARC_TO__RADII = PATH_COMMAND_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Rotation</b></em>' attribute. <!--
@@ -1404,7 +1539,7 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPTICAL_CURVE_TO__ROTATION = PATH_COMMAND_FEATURE_COUNT + 2;
+	int ELLIPTICAL_ARC_TO__ROTATION = PATH_COMMAND_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Large Arc</b></em>' attribute. <!--
@@ -1413,7 +1548,7 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPTICAL_CURVE_TO__IS_LARGE_ARC = PATH_COMMAND_FEATURE_COUNT + 3;
+	int ELLIPTICAL_ARC_TO__IS_LARGE_ARC = PATH_COMMAND_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Sweep</b></em>' attribute. <!--
@@ -1422,25 +1557,34 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPTICAL_CURVE_TO__IS_SWEEP = PATH_COMMAND_FEATURE_COUNT + 4;
+	int ELLIPTICAL_ARC_TO__IS_SWEEP = PATH_COMMAND_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Elliptical Curve To</em>'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int ELLIPTICAL_CURVE_TO_FEATURE_COUNT = PATH_COMMAND_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Elliptical Curve To</em>' class.
+	 * The feature id for the '<em><b>Point</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPTICAL_CURVE_TO_OPERATION_COUNT = PATH_COMMAND_OPERATION_COUNT + 0;
+	int ELLIPTICAL_ARC_TO__POINT = PATH_COMMAND_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Elliptical Arc To</em>'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELLIPTICAL_ARC_TO_FEATURE_COUNT = PATH_COMMAND_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Elliptical Arc To</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELLIPTICAL_ARC_TO_OPERATION_COUNT = PATH_COMMAND_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '
@@ -1464,22 +1608,22 @@ public interface DGPackage extends EPackage {
 	int QUADRATIC_CURVE_TO__IS_RELATIVE = PATH_COMMAND__IS_RELATIVE;
 
 	/**
-	 * The feature id for the '<em><b>Point</b></em>' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int QUADRATIC_CURVE_TO__POINT = PATH_COMMAND_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Control</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int QUADRATIC_CURVE_TO__CONTROL = PATH_COMMAND_FEATURE_COUNT + 1;
+	int QUADRATIC_CURVE_TO__CONTROL = PATH_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Point</b></em>' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int QUADRATIC_CURVE_TO__POINT = PATH_COMMAND_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Quadratic Curve To</em>'
@@ -1545,6 +1689,15 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int GRADIENT_FEATURE_COUNT = PAINT_SERVER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRADIENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = PAINT_SERVER___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Gradient</em>' class. <!--
@@ -1669,13 +1822,13 @@ public interface DGPackage extends EPackage {
 	int IMAGE__GROUP = GRAPHICAL_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__KEYWORD = GRAPHICAL_ELEMENT__KEYWORD;
+	int IMAGE__CLASS = GRAPHICAL_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -1732,13 +1885,40 @@ public interface DGPackage extends EPackage {
 	int IMAGE_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Source Cannot Be Empty</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE___SOURCE_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Image</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+	int IMAGE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '
@@ -1780,13 +1960,13 @@ public interface DGPackage extends EPackage {
 	int MARKED_ELEMENT__GROUP = GRAPHICAL_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int MARKED_ELEMENT__KEYWORD = GRAPHICAL_ELEMENT__KEYWORD;
+	int MARKED_ELEMENT__CLASS = GRAPHICAL_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -1843,13 +2023,58 @@ public interface DGPackage extends EPackage {
 	int MARKED_ELEMENT_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MARKED_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Marked Element</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int MARKED_ELEMENT_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+	int MARKED_ELEMENT_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '
@@ -1890,13 +2115,13 @@ public interface DGPackage extends EPackage {
 	int LINE__GROUP = MARKED_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__KEYWORD = MARKED_ELEMENT__KEYWORD;
+	int LINE__CLASS = MARKED_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -1971,6 +2196,51 @@ public interface DGPackage extends EPackage {
 	int LINE_FEATURE_COUNT = MARKED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>Line</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2018,13 +2288,13 @@ public interface DGPackage extends EPackage {
 	int MARKER__GROUP = GROUP__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int MARKER__KEYWORD = GROUP__KEYWORD;
+	int MARKER__CLASS = GROUP__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2079,6 +2349,24 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int MARKER_FEATURE_COUNT = GROUP_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MARKER___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GROUP___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MARKER___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GROUP___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Marker</em>' class. <!--
@@ -2154,6 +2442,15 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int LINEAR_GRADIENT_FEATURE_COUNT = GRADIENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINEAR_GRADIENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRADIENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Valid Gradient Vector</em>' operation. <!--
@@ -2342,13 +2639,13 @@ public interface DGPackage extends EPackage {
 	int PATH__GROUP = MARKED_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int PATH__KEYWORD = MARKED_ELEMENT__KEYWORD;
+	int PATH__CLASS = MARKED_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2414,13 +2711,67 @@ public interface DGPackage extends EPackage {
 	int PATH_FEATURE_COUNT = MARKED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>First Command Must Be Move</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___FIRST_COMMAND_MUST_BE_MOVE__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Path</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int PATH_OPERATION_COUNT = MARKED_ELEMENT_OPERATION_COUNT + 0;
+	int PATH_OPERATION_COUNT = MARKED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '
@@ -2479,6 +2830,15 @@ public interface DGPackage extends EPackage {
 	int PATTERN_FEATURE_COUNT = PAINT_SERVER_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = PAINT_SERVER___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>Pattern</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2526,13 +2886,13 @@ public interface DGPackage extends EPackage {
 	int POLYGON__GROUP = MARKED_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int POLYGON__KEYWORD = MARKED_ELEMENT__KEYWORD;
+	int POLYGON__CLASS = MARKED_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2598,6 +2958,51 @@ public interface DGPackage extends EPackage {
 	int POLYGON_FEATURE_COUNT = MARKED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYGON___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYGON___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYGON___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYGON___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYGON___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>Polygon</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2645,13 +3050,13 @@ public interface DGPackage extends EPackage {
 	int POLYLINE__GROUP = MARKED_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int POLYLINE__KEYWORD = MARKED_ELEMENT__KEYWORD;
+	int POLYLINE__CLASS = MARKED_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2715,6 +3120,51 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int POLYLINE_FEATURE_COUNT = MARKED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYLINE___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYLINE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYLINE___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYLINE___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int POLYLINE___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Polyline</em>' class. <!--
@@ -2801,6 +3251,15 @@ public interface DGPackage extends EPackage {
 	int RADIAL_GRADIENT_FEATURE_COUNT = GRADIENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RADIAL_GRADIENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRADIENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The operation id for the '<em>Valid Center Point</em>' operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2875,13 +3334,13 @@ public interface DGPackage extends EPackage {
 	int RECTANGLE__GROUP = GRAPHICAL_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RECTANGLE__KEYWORD = GRAPHICAL_ELEMENT__KEYWORD;
+	int RECTANGLE__CLASS = GRAPHICAL_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2929,13 +3388,40 @@ public interface DGPackage extends EPackage {
 	int RECTANGLE_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RECTANGLE___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RECTANGLE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Non Negative Corner Radius</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Rectangle</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int RECTANGLE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+	int RECTANGLE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '
@@ -2977,13 +3463,13 @@ public interface DGPackage extends EPackage {
 	int ROOT_CANVAS__GROUP = CANVAS__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_CANVAS__KEYWORD = CANVAS__KEYWORD;
+	int ROOT_CANVAS__CLASS = CANVAS__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3040,13 +3526,13 @@ public interface DGPackage extends EPackage {
 	int ROOT_CANVAS__DEFINITIONS = CANVAS_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Style Sheet</b></em>' reference list. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>External Style Sheet</b></em>' reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_CANVAS__STYLE_SHEET = CANVAS_FEATURE_COUNT + 2;
+	int ROOT_CANVAS__EXTERNAL_STYLE_SHEET = CANVAS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Root Canvas</em>' class.
@@ -3056,6 +3542,33 @@ public interface DGPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOT_CANVAS_FEATURE_COUNT = CANVAS_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_CANVAS___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = CANVAS___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_CANVAS___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = CANVAS___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Canvas Cannot Have Transforms</em>'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP = CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Root Canvas</em>' class. <!--
@@ -3255,13 +3768,13 @@ public interface DGPackage extends EPackage {
 	int TEXT__GROUP = GRAPHICAL_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT__KEYWORD = GRAPHICAL_ELEMENT__KEYWORD;
+	int TEXT__CLASS = GRAPHICAL_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3309,13 +3822,40 @@ public interface DGPackage extends EPackage {
 	int TEXT_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Data Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Text</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+	int TEXT_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '
@@ -3403,13 +3943,13 @@ public interface DGPackage extends EPackage {
 	int USE__GROUP = GRAPHICAL_ELEMENT__GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>Class</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int USE__KEYWORD = GRAPHICAL_ELEMENT__KEYWORD;
+	int USE__CLASS = GRAPHICAL_ELEMENT__CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3439,13 +3979,49 @@ public interface DGPackage extends EPackage {
 	int USE__BOUNDS = GRAPHICAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Referenced Element</b></em>' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int USE__REFERENCED_ELEMENT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Use</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int USE_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 1;
+	int USE_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int USE___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int USE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Referenced Element Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Use</em>' class. <!-- begin-user-doc
@@ -3454,7 +4030,7 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
+	int USE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '
@@ -3466,6 +4042,17 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 */
 	int FONT_DECORATION = 43;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.ElementKind
+	 * <em>Element Kind</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @see org.eclipse.papyrus.dd.dg.ElementKind
+	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getElementKind()
+	 * @generated
+	 */
+	int ELEMENT_KIND = 44;
 
 	/**
 	 * Returns the meta object for class '
@@ -3491,6 +4078,20 @@ public interface DGPackage extends EPackage {
 	EReference getCanvas_Bounds();
 
 	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.Canvas#canvasCannotHaveTransforms(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Canvas Cannot Have Transforms</em>}' operation. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Canvas Cannot Have Transforms</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.Canvas#canvasCannotHaveTransforms(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getCanvas__CanvasCannotHaveTransforms__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '
 	 * {@link org.eclipse.papyrus.dd.dg.Group <em>Group</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -3503,12 +4104,12 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Group#getMember <em>Member</em>}'. <!--
+	 * {@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Member</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.Group#getMember()
+	 * @see org.eclipse.papyrus.dd.dg.Group#getMembers()
 	 * @see #getGroup()
 	 * @generated
 	 */
@@ -3552,15 +4153,15 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getKeyword
-	 * <em>Keyword</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses
+	 * <em>Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the attribute list '<em>Keyword</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getKeyword()
+	 * @return the meta object for the attribute list '<em>Class</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses()
 	 * @see #getGraphicalElement()
 	 * @generated
 	 */
-	EAttribute getGraphicalElement_Keyword();
+	EAttribute getGraphicalElement_Class();
 
 	/**
 	 * Returns the meta object for the containment reference '
@@ -3576,16 +4177,30 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransform
+	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms
 	 * <em>Transform</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Transform</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getTransform()
+	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms()
 	 * @see #getGraphicalElement()
 	 * @generated
 	 */
 	EReference getGraphicalElement_Transform();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#referencedClippathHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Clippath Has Id</em>}' operation. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Referenced Clippath Has Id</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#referencedClippathHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getGraphicalElement__ReferencedClippathHasId__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '
@@ -3609,6 +4224,19 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDefinition_Id();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.Definition#idCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Id Cannot Be Empty</em>}' operation. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Id Cannot Be Empty</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Definition#idCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getDefinition__IdCannotBeEmpty__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '
@@ -3740,13 +4368,13 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getStrokeDashLength
+	 * {@link org.eclipse.papyrus.dd.dg.Style#getStrokeDashLengths
 	 * <em>Stroke Dash Length</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
 	 * @return the meta object for the attribute list '
 	 *         <em>Stroke Dash Length</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.Style#getStrokeDashLength()
+	 * @see org.eclipse.papyrus.dd.dg.Style#getStrokeDashLengths()
 	 * @see #getStyle()
 	 * @generated
 	 */
@@ -3915,6 +4543,20 @@ public interface DGPackage extends EPackage {
 	EReference getPaint_PaintServer();
 
 	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.Paint#referencedPaintServerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Paint Server Has Id</em>}' operation. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Referenced Paint Server Has Id</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.Paint#referencedPaintServerHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getPaint__ReferencedPaintServerHasId__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '
 	 * {@link org.eclipse.papyrus.dd.dg.PaintServer <em>Paint Server</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -3927,12 +4569,12 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.PaintServer#getTransform
+	 * {@link org.eclipse.papyrus.dd.dg.PaintServer#getTransforms
 	 * <em>Transform</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Transform</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.PaintServer#getTransform()
+	 * @see org.eclipse.papyrus.dd.dg.PaintServer#getTransforms()
 	 * @see #getPaintServer()
 	 * @generated
 	 */
@@ -4070,12 +4712,12 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Definitions#getDefnition
+	 * {@link org.eclipse.papyrus.dd.dg.Definitions#getDefnitions
 	 * <em>Defnition</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Defnition</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.Definitions#getDefnition()
+	 * @see org.eclipse.papyrus.dd.dg.Definitions#getDefnitions()
 	 * @see #getDefinitions()
 	 * @generated
 	 */
@@ -4107,12 +4749,12 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSheet#getRule <em>Rule</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.StyleSheet#getRules <em>Rule</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '<em>Rule</em>
 	 *         '.
-	 * @see org.eclipse.papyrus.dd.dg.StyleSheet#getRule()
+	 * @see org.eclipse.papyrus.dd.dg.StyleSheet#getRules()
 	 * @see #getStyleSheet()
 	 * @generated
 	 */
@@ -4131,12 +4773,12 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleRule#getSelector <em>Selector</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.StyleRule#getSelectors
+	 * <em>Selector</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Selector</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.StyleRule#getSelector()
+	 * @see org.eclipse.papyrus.dd.dg.StyleRule#getSelectors()
 	 * @see #getStyleRule()
 	 * @generated
 	 */
@@ -4166,28 +4808,28 @@ public interface DGPackage extends EPackage {
 	EClass getStyleSelector();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.StyleSelector#getType()
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.StyleSelector#getKind()
 	 * @see #getStyleSelector()
 	 * @generated
 	 */
-	EReference getStyleSelector_Type();
+	EAttribute getStyleSelector_Kind();
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKeyword
-	 * <em>Keyword</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getClasses <em>Class</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the attribute list '<em>Keyword</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.StyleSelector#getKeyword()
+	 * @return the meta object for the attribute list '<em>Class</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.StyleSelector#getClasses()
 	 * @see #getStyleSelector()
 	 * @generated
 	 */
-	EAttribute getStyleSelector_Keyword();
+	EAttribute getStyleSelector_Class();
 
 	/**
 	 * Returns the meta object for class '
@@ -4226,75 +4868,75 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo
-	 * <em>Elliptical Curve To</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo
+	 * <em>Elliptical Arc To</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
-	 * @return the meta object for class '<em>Elliptical Curve To</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.EllipticalCurveTo
+	 * @return the meta object for class '<em>Elliptical Arc To</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo
 	 * @generated
 	 */
-	EClass getEllipticalCurveTo();
+	EClass getEllipticalArcTo();
 
 	/**
 	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getPoint
-	 * <em>Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getPoint <em>Point</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference '<em>Point</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getPoint()
-	 * @see #getEllipticalCurveTo()
+	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#getPoint()
+	 * @see #getEllipticalArcTo()
 	 * @generated
 	 */
-	EReference getEllipticalCurveTo_Point();
+	EReference getEllipticalArcTo_Point();
 
 	/**
 	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getRadii
-	 * <em>Radii</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRadii <em>Radii</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference '<em>Radii</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getRadii()
-	 * @see #getEllipticalCurveTo()
+	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRadii()
+	 * @see #getEllipticalArcTo()
 	 * @generated
 	 */
-	EReference getEllipticalCurveTo_Radii();
+	EReference getEllipticalArcTo_Radii();
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getRotation
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRotation
 	 * <em>Rotation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Rotation</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.EllipticalCurveTo#getRotation()
-	 * @see #getEllipticalCurveTo()
+	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRotation()
+	 * @see #getEllipticalArcTo()
 	 * @generated
 	 */
-	EAttribute getEllipticalCurveTo_Rotation();
+	EAttribute getEllipticalArcTo_Rotation();
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#isLargeArc
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isLargeArc
 	 * <em>Is Large Arc</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Is Large Arc</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.EllipticalCurveTo#isLargeArc()
-	 * @see #getEllipticalCurveTo()
+	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#isLargeArc()
+	 * @see #getEllipticalArcTo()
 	 * @generated
 	 */
-	EAttribute getEllipticalCurveTo_IsLargeArc();
+	EAttribute getEllipticalArcTo_IsLargeArc();
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalCurveTo#isSweep
+	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isSweep
 	 * <em>Is Sweep</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Is Sweep</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.EllipticalCurveTo#isSweep()
-	 * @see #getEllipticalCurveTo()
+	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#isSweep()
+	 * @see #getEllipticalArcTo()
 	 * @generated
 	 */
-	EAttribute getEllipticalCurveTo_IsSweep();
+	EAttribute getEllipticalArcTo_IsSweep();
 
 	/**
 	 * Returns the meta object for class '
@@ -4345,12 +4987,12 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Gradient#getStop <em>Stop</em>}'. <!--
+	 * {@link org.eclipse.papyrus.dd.dg.Gradient#getStops <em>Stop</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '<em>Stop</em>
 	 *         '.
-	 * @see org.eclipse.papyrus.dd.dg.Gradient#getStop()
+	 * @see org.eclipse.papyrus.dd.dg.Gradient#getStops()
 	 * @see #getGradient()
 	 * @generated
 	 */
@@ -4479,6 +5121,20 @@ public interface DGPackage extends EPackage {
 	EAttribute getImage_IsAspectRatioPreserved();
 
 	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.Image#sourceCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Source Cannot Be Empty</em>}' operation. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Source Cannot Be Empty</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.Image#sourceCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getImage__SourceCannotBeEmpty__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Line
 	 * <em>Line</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -4558,6 +5214,48 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMarkedElement_StartMarker();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Start Marker Has Id</em>}' operation. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Referenced Start Marker Has Id</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getMarkedElement__ReferencedStartMarkerHasId__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Mid Marker Has Id</em>}' operation. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Referenced Mid Marker Has Id</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getMarkedElement__ReferencedMidMarkerHasId__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced End Marker Has Id</em>}' operation. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Referenced End Marker Has Id</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getMarkedElement__ReferencedEndMarkerHasId__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '
@@ -4762,16 +5460,30 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Path#getCommand <em>Command</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.Path#getCommands <em>Command</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Command</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.Path#getCommand()
+	 * @see org.eclipse.papyrus.dd.dg.Path#getCommands()
 	 * @see #getPath()
 	 * @generated
 	 */
 	EReference getPath_Command();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.Path#firstCommandMustBeMove(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>First Command Must Be Move</em>}' operation. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>First Command Must Be Move</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.Path#firstCommandMustBeMove(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getPath__FirstCommandMustBeMove__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '
@@ -4821,12 +5533,12 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Polygon#getPoint <em>Point</em>}'. <!--
+	 * {@link org.eclipse.papyrus.dd.dg.Polygon#getPoints <em>Point</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Point</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.Polygon#getPoint()
+	 * @see org.eclipse.papyrus.dd.dg.Polygon#getPoints()
 	 * @see #getPolygon()
 	 * @generated
 	 */
@@ -4845,12 +5557,12 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Polyline#getPoint <em>Point</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.Polyline#getPoints <em>Point</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Point</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.Polyline#getPoint()
+	 * @see org.eclipse.papyrus.dd.dg.Polyline#getPoints()
 	 * @see #getPolyline()
 	 * @generated
 	 */
@@ -4978,6 +5690,20 @@ public interface DGPackage extends EPackage {
 	EAttribute getRectangle_CornerRadius();
 
 	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.Rectangle#nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Non Negative Corner Radius</em>}' operation. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Non Negative Corner Radius</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.Rectangle#nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getRectangle__NonNegativeCornerRadius__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '
 	 * {@link org.eclipse.papyrus.dd.dg.RootCanvas <em>Root Canvas</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -5016,15 +5742,17 @@ public interface DGPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.RootCanvas#getStyleSheet
-	 * <em>Style Sheet</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.RootCanvas#getExternalStyleSheets
+	 * <em>External Style Sheet</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * @return the meta object for the reference list '<em>Style Sheet</em>'.
-	 * @see org.eclipse.papyrus.dd.dg.RootCanvas#getStyleSheet()
+	 * @return the meta object for the reference list '
+	 *         <em>External Style Sheet</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.RootCanvas#getExternalStyleSheets()
 	 * @see #getRootCanvas()
 	 * @generated
 	 */
-	EReference getRootCanvas_StyleSheet();
+	EReference getRootCanvas_ExternalStyleSheet();
 
 	/**
 	 * Returns the meta object for class '
@@ -5179,6 +5907,20 @@ public interface DGPackage extends EPackage {
 	EReference getText_Position();
 
 	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.Text#dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Data Cannot Be Empty</em>}' operation. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Data Cannot Be Empty</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.Text#dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getText__DataCannotBeEmpty__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '
 	 * {@link org.eclipse.papyrus.dd.dg.Translate <em>Translate</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -5236,6 +5978,33 @@ public interface DGPackage extends EPackage {
 	EReference getUse_Bounds();
 
 	/**
+	 * Returns the meta object for the reference '
+	 * {@link org.eclipse.papyrus.dd.dg.Use#getReferencedElement
+	 * <em>Referenced Element</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the meta object for the reference '<em>Referenced Element</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.Use#getReferencedElement()
+	 * @see #getUse()
+	 * @generated
+	 */
+	EReference getUse_ReferencedElement();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.eclipse.papyrus.dd.dg.Use#referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Element Has Id</em>}' operation. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Referenced Element Has Id</em>'
+	 *         operation.
+	 * @see org.eclipse.papyrus.dd.dg.Use#referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 */
+	EOperation getUse__ReferencedElementHasId__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for enum '
 	 * {@link org.eclipse.papyrus.dd.dg.FontDecoration <em>Font Decoration</em>}
 	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -5245,6 +6014,17 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getFontDecoration();
+
+	/**
+	 * Returns the meta object for enum '
+	 * {@link org.eclipse.papyrus.dd.dg.ElementKind <em>Element Kind</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for enum '<em>Element Kind</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.ElementKind
+	 * @generated
+	 */
+	EEnum getElementKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model. <!--
@@ -5288,6 +6068,16 @@ public interface DGPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CANVAS__BOUNDS = eINSTANCE.getCanvas_Bounds();
+
+		/**
+		 * The meta object literal for the '
+		 * <em><b>Canvas Cannot Have Transforms</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getCanvas__CanvasCannotHaveTransforms__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -5339,13 +6129,13 @@ public interface DGPackage extends EPackage {
 				.getGraphicalElement_Group();
 
 		/**
-		 * The meta object literal for the '<em><b>Keyword</b></em>' attribute
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute
 		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute GRAPHICAL_ELEMENT__KEYWORD = eINSTANCE
-				.getGraphicalElement_Keyword();
+		EAttribute GRAPHICAL_ELEMENT__CLASS = eINSTANCE
+				.getGraphicalElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' containment
@@ -5368,6 +6158,16 @@ public interface DGPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
+		 * <em><b>Referenced Clippath Has Id</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getGraphicalElement__ReferencedClippathHasId__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '
 		 * {@link org.eclipse.papyrus.dd.dg.impl.DefinitionImpl
 		 * <em>Definition</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
@@ -5385,6 +6185,15 @@ public interface DGPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEFINITION__ID = eINSTANCE.getDefinition_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Id Cannot Be Empty</b></em>'
+		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getDefinition__IdCannotBeEmpty__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -5613,6 +6422,16 @@ public interface DGPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
+		 * <em><b>Referenced Paint Server Has Id</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation PAINT___REFERENCED_PAINT_SERVER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getPaint__ReferencedPaintServerHasId__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '
 		 * {@link org.eclipse.papyrus.dd.dg.impl.PaintServerImpl
 		 * <em>Paint Server</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
@@ -5827,21 +6646,20 @@ public interface DGPackage extends EPackage {
 		EClass STYLE_SELECTOR = eINSTANCE.getStyleSelector();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EReference STYLE_SELECTOR__TYPE = eINSTANCE.getStyleSelector_Type();
+		EAttribute STYLE_SELECTOR__KIND = eINSTANCE.getStyleSelector_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Keyword</b></em>' attribute
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute
 		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute STYLE_SELECTOR__KEYWORD = eINSTANCE
-				.getStyleSelector_Keyword();
+		EAttribute STYLE_SELECTOR__CLASS = eINSTANCE.getStyleSelector_Class();
 
 		/**
 		 * The meta object literal for the '
@@ -5872,15 +6690,15 @@ public interface DGPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl
-		 * <em>Elliptical Curve To</em>}' class. <!-- begin-user-doc --> <!--
+		 * {@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl
+		 * <em>Elliptical Arc To</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
 		 * 
-		 * @see org.eclipse.papyrus.dd.dg.impl.EllipticalCurveToImpl
-		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getEllipticalCurveTo()
+		 * @see org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl
+		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getEllipticalArcTo()
 		 * @generated
 		 */
-		EClass ELLIPTICAL_CURVE_TO = eINSTANCE.getEllipticalCurveTo();
+		EClass ELLIPTICAL_ARC_TO = eINSTANCE.getEllipticalArcTo();
 
 		/**
 		 * The meta object literal for the '<em><b>Point</b></em>' containment
@@ -5888,8 +6706,8 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference ELLIPTICAL_CURVE_TO__POINT = eINSTANCE
-				.getEllipticalCurveTo_Point();
+		EReference ELLIPTICAL_ARC_TO__POINT = eINSTANCE
+				.getEllipticalArcTo_Point();
 
 		/**
 		 * The meta object literal for the '<em><b>Radii</b></em>' containment
@@ -5897,8 +6715,8 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference ELLIPTICAL_CURVE_TO__RADII = eINSTANCE
-				.getEllipticalCurveTo_Radii();
+		EReference ELLIPTICAL_ARC_TO__RADII = eINSTANCE
+				.getEllipticalArcTo_Radii();
 
 		/**
 		 * The meta object literal for the '<em><b>Rotation</b></em>' attribute
@@ -5906,8 +6724,8 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute ELLIPTICAL_CURVE_TO__ROTATION = eINSTANCE
-				.getEllipticalCurveTo_Rotation();
+		EAttribute ELLIPTICAL_ARC_TO__ROTATION = eINSTANCE
+				.getEllipticalArcTo_Rotation();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Large Arc</b></em>'
@@ -5915,8 +6733,8 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute ELLIPTICAL_CURVE_TO__IS_LARGE_ARC = eINSTANCE
-				.getEllipticalCurveTo_IsLargeArc();
+		EAttribute ELLIPTICAL_ARC_TO__IS_LARGE_ARC = eINSTANCE
+				.getEllipticalArcTo_IsLargeArc();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Sweep</b></em>' attribute
@@ -5924,8 +6742,8 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute ELLIPTICAL_CURVE_TO__IS_SWEEP = eINSTANCE
-				.getEllipticalCurveTo_IsSweep();
+		EAttribute ELLIPTICAL_ARC_TO__IS_SWEEP = eINSTANCE
+				.getEllipticalArcTo_IsSweep();
 
 		/**
 		 * The meta object literal for the '
@@ -6069,6 +6887,16 @@ public interface DGPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
+		 * <em><b>Source Cannot Be Empty</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation IMAGE___SOURCE_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getImage__SourceCannotBeEmpty__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '
 		 * {@link org.eclipse.papyrus.dd.dg.impl.LineImpl <em>Line</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -6132,6 +6960,36 @@ public interface DGPackage extends EPackage {
 		 */
 		EReference MARKED_ELEMENT__START_MARKER = eINSTANCE
 				.getMarkedElement_StartMarker();
+
+		/**
+		 * The meta object literal for the '
+		 * <em><b>Referenced Start Marker Has Id</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getMarkedElement__ReferencedStartMarkerHasId__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '
+		 * <em><b>Referenced Mid Marker Has Id</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getMarkedElement__ReferencedMidMarkerHasId__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '
+		 * <em><b>Referenced End Marker Has Id</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getMarkedElement__ReferencedEndMarkerHasId__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -6298,6 +7156,16 @@ public interface DGPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
+		 * <em><b>First Command Must Be Move</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation PATH___FIRST_COMMAND_MUST_BE_MOVE__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getPath__FirstCommandMustBeMove__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '
 		 * {@link org.eclipse.papyrus.dd.dg.impl.PatternImpl <em>Pattern</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -6457,6 +7325,16 @@ public interface DGPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
+		 * <em><b>Non Negative Corner Radius</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getRectangle__NonNegativeCornerRadius__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '
 		 * {@link org.eclipse.papyrus.dd.dg.impl.RootCanvasImpl
 		 * <em>Root Canvas</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
@@ -6487,13 +7365,14 @@ public interface DGPackage extends EPackage {
 				.getRootCanvas_Definitions();
 
 		/**
-		 * The meta object literal for the '<em><b>Style Sheet</b></em>'
-		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>External Style Sheet</b></em>
+		 * ' reference list feature. <!-- begin-user-doc --> <!-- end-user-doc
+		 * -->
 		 * 
 		 * @generated
 		 */
-		EReference ROOT_CANVAS__STYLE_SHEET = eINSTANCE
-				.getRootCanvas_StyleSheet();
+		EReference ROOT_CANVAS__EXTERNAL_STYLE_SHEET = eINSTANCE
+				.getRootCanvas_ExternalStyleSheet();
 
 		/**
 		 * The meta object literal for the '
@@ -6614,6 +7493,15 @@ public interface DGPackage extends EPackage {
 		EReference TEXT__POSITION = eINSTANCE.getText_Position();
 
 		/**
+		 * The meta object literal for the '<em><b>Data Cannot Be Empty</b></em>
+		 * ' operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getText__DataCannotBeEmpty__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '
 		 * {@link org.eclipse.papyrus.dd.dg.impl.TranslateImpl
 		 * <em>Translate</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
@@ -6661,6 +7549,25 @@ public interface DGPackage extends EPackage {
 		EReference USE__BOUNDS = eINSTANCE.getUse_Bounds();
 
 		/**
+		 * The meta object literal for the '<em><b>Referenced Element</b></em>'
+		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference USE__REFERENCED_ELEMENT = eINSTANCE
+				.getUse_ReferencedElement();
+
+		/**
+		 * The meta object literal for the '
+		 * <em><b>Referenced Element Has Id</b></em>' operation. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getUse__ReferencedElementHasId__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '
 		 * {@link org.eclipse.papyrus.dd.dg.FontDecoration
 		 * <em>Font Decoration</em>}' enum. <!-- begin-user-doc --> <!--
@@ -6671,6 +7578,17 @@ public interface DGPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FONT_DECORATION = eINSTANCE.getFontDecoration();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.dd.dg.ElementKind <em>Element Kind</em>}'
+		 * enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.eclipse.papyrus.dd.dg.ElementKind
+		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getElementKind()
+		 * @generated
+		 */
+		EEnum ELEMENT_KIND = eINSTANCE.getElementKind();
 
 	}
 

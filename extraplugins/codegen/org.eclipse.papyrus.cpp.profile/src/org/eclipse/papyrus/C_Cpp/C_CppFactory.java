@@ -230,6 +230,15 @@ public interface C_CppFactory extends EFactory {
 	StorageClass createStorageClass();
 
 	/**
+	 * Returns a new object of class '<em>Volatile</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Volatile</em>'.
+	 * @generated
+	 */
+	Volatile createVolatile();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

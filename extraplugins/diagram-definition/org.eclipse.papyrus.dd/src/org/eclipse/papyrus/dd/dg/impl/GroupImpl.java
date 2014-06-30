@@ -33,7 +33,7 @@ import org.eclipse.papyrus.dd.dg.Group;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.GroupImpl#getMember <em>Member
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.GroupImpl#getMembers <em>Member
  * </em>}</li>
  * </ul>
  * </p>
@@ -42,14 +42,14 @@ import org.eclipse.papyrus.dd.dg.Group;
  */
 public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
-	 * The cached value of the '{@link #getMember() <em>Member</em>}'
+	 * The cached value of the '{@link #getMembers() <em>Member</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getMember()
+	 * @see #getMembers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<GraphicalElement> member;
+	protected EList<GraphicalElement> members;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -75,13 +75,13 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	 * 
 	 * @generated
 	 */
-	public EList<GraphicalElement> getMember() {
-		if (member == null) {
-			member = new EObjectContainmentWithInverseEList<GraphicalElement>(
+	public EList<GraphicalElement> getMembers() {
+		if (members == null) {
+			members = new EObjectContainmentWithInverseEList<GraphicalElement>(
 					GraphicalElement.class, this, DGPackage.GROUP__MEMBER,
 					DGPackage.GRAPHICAL_ELEMENT__GROUP);
 		}
-		return member;
+		return members;
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMember())
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMembers())
 					.basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -111,7 +111,8 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
-			return ((InternalEList<?>) getMember()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getMembers())
+					.basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -125,7 +126,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
-			return getMember();
+			return getMembers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -140,8 +141,8 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
-			getMember().clear();
-			getMember().addAll(
+			getMembers().clear();
+			getMembers().addAll(
 					(Collection<? extends GraphicalElement>) newValue);
 			return;
 		}
@@ -157,7 +158,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
-			getMember().clear();
+			getMembers().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -172,7 +173,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
-			return member != null && !member.isEmpty();
+			return members != null && !members.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

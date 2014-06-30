@@ -1,33 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration:PapyrusConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" defaultStakeholder="#//@stakeholders.0" metamodel="http://www.eclipse.org/uml2/5.0.0/UML#/">
-  <stakeholders name="RobotML Modeler"/>
-  <viewpoints xsi:type="configuration:PapyrusViewpoint" name="Default Papyrus Viewpoint">
-    <modelKinds xsi:type="configuration:PapyrusDiagram" name="RobotML Architecture Definition Diagram" icon="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/architecture/architecture.gif" profiles="http://Papyrus/RobotML/1#/" implementationID="CompositeStructure" categories="#//@categories.0" customPalette="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/architecture/architecture.palette.xml" customStyle="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/css/style.css">
-      <modelRules element="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <owningRules element="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <childRules/>
-      <paletteRules permit="false" element="composite.group.*"/>
+<configuration:PapyrusConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmi:id="_0kyH4PL_EeONXPQ2mbw9vA" defaultStakeholder="_0kyu8PL_EeONXPQ2mbw9vA">
+  <stakeholders xmi:id="_0kyu8PL_EeONXPQ2mbw9vA" name="RobotML Modeler"/>
+  <viewpoints xsi:type="configuration:PapyrusViewpoint" xmi:id="_0kyu8fL_EeONXPQ2mbw9vA" name="Default Papyrus Viewpoint">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_0kzWAPL_EeONXPQ2mbw9vA" name="RobotML Architecture Definition Diagram" icon="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/architecture/architecture.gif" implementationID="CompositeStructure" categories="_0kz9GPL_EeONXPQ2mbw9vA" customPalette="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/architecture/architecture.palette.xml" customStyle="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/css/style.css">
+      <profiles href="http://Papyrus/RobotML/1#/"/>
+      <modelRules xmi:id="_0kzWAfL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <owningRules xmi:id="_0kzWAvL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </owningRules>
+      <childRules xmi:id="_0kzWA_L_EeONXPQ2mbw9vA"/>
+      <paletteRules xmi:id="_0kzWBPL_EeONXPQ2mbw9vA" permit="false" element="composite.group.*"/>
     </modelKinds>
-    <modelKinds xsi:type="configuration:PapyrusDiagram" name="RobotML Component Definition Diagram" icon="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/componentdef/componentdef.gif" profiles="http://Papyrus/RobotML/1#/" implementationID="CompositeStructure" categories="#//@categories.0" customPalette="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/componentdef/componentdef.palette.xml" customStyle="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/css/style.css">
-      <modelRules element="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <owningRules element="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <childRules/>
-      <paletteRules permit="false" element="composite.group.*"/>
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_0kzWBfL_EeONXPQ2mbw9vA" name="RobotML Component Definition Diagram" icon="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/componentdef/componentdef.gif" implementationID="CompositeStructure" categories="_0kz9GPL_EeONXPQ2mbw9vA" customPalette="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/componentdef/componentdef.palette.xml" customStyle="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/css/style.css">
+      <profiles href="http://Papyrus/RobotML/1#/"/>
+      <modelRules xmi:id="_0kzWBvL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <owningRules xmi:id="_0kzWB_L_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </owningRules>
+      <childRules xmi:id="_0kzWCPL_EeONXPQ2mbw9vA"/>
+      <paletteRules xmi:id="_0kzWCfL_EeONXPQ2mbw9vA" permit="false" element="composite.group.*"/>
     </modelKinds>
-    <modelKinds xsi:type="configuration:PapyrusDiagram" name="RobotML Datatype Definition Diagram" icon="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/datatypedef/datatypeD.gif" profiles="http://Papyrus/RobotML/1#/" implementationID="PapyrusUMLClassDiagram" categories="#//@categories.0" customPalette="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/datatypedef/datatypedef.palette.xml">
-      <modelRules element="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <owningRules element="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <childRules/>
-      <paletteRules permit="false" element="clazz.group.*"/>
-      <paletteRules permit="false" element="org.eclipse.papyrus.robotml.diagram.clazz"/>
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_0kzWCvL_EeONXPQ2mbw9vA" name="RobotML Datatype Definition Diagram" icon="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/datatypedef/datatypeD.gif" implementationID="PapyrusUMLClassDiagram" categories="_0kz9GPL_EeONXPQ2mbw9vA" customPalette="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/datatypedef/datatypedef.palette.xml">
+      <profiles href="http://Papyrus/RobotML/1#/"/>
+      <modelRules xmi:id="_0kzWC_L_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <owningRules xmi:id="_0kzWDPL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </owningRules>
+      <childRules xmi:id="_0kzWDfL_EeONXPQ2mbw9vA"/>
+      <paletteRules xmi:id="_0kz9EPL_EeONXPQ2mbw9vA" permit="false" element="clazz.group.*"/>
+      <paletteRules xmi:id="_0kz9EfL_EeONXPQ2mbw9vA" permit="false" element="org.eclipse.papyrus.robotml.diagram.clazz"/>
     </modelKinds>
-    <modelKinds xsi:type="configuration:PapyrusDiagram" name="RobotML Interface Definition Diagram" icon="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/interfacedef/interfaceI.gif" profiles="http://Papyrus/RobotML/1#/" implementationID="PapyrusUMLClassDiagram" categories="#//@categories.0" customPalette="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/interfacedef/interfacedef.palette.xml">
-      <modelRules element="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <owningRules element="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <childRules/>
-      <paletteRules permit="false" element="clazz.group.*"/>
-      <paletteRules permit="false" element="org.eclipse.papyrus.robotml.diagram.clazz"/>
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_0kz9EvL_EeONXPQ2mbw9vA" name="RobotML Interface Definition Diagram" icon="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/interfacedef/interfaceI.gif" implementationID="PapyrusUMLClassDiagram" categories="_0kz9GPL_EeONXPQ2mbw9vA" customPalette="platform:/plugin/org.eclipse.papyrus.robotml.diagram.common/diagrams/interfacedef/interfacedef.palette.xml">
+      <profiles href="http://Papyrus/RobotML/1#/"/>
+      <modelRules xmi:id="_0kz9E_L_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <owningRules xmi:id="_0kz9FPL_EeONXPQ2mbw9vA">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </owningRules>
+      <childRules xmi:id="_0kz9FfL_EeONXPQ2mbw9vA"/>
+      <paletteRules xmi:id="_0kz9FvL_EeONXPQ2mbw9vA" permit="false" element="clazz.group.*"/>
+      <paletteRules xmi:id="_0kz9F_L_EeONXPQ2mbw9vA" permit="false" element="org.eclipse.papyrus.robotml.diagram.clazz"/>
     </modelKinds>
   </viewpoints>
-  <categories name="robotML"/>
+  <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+  <categories xmi:id="_0kz9GPL_EeONXPQ2mbw9vA" name="robotML"/>
 </configuration:PapyrusConfiguration>

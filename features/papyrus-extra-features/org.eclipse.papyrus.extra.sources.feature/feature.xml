@@ -99,5 +99,9 @@ http://www.eclipse.org/legal/epl-v10.html
    <includes
          id="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.source.feature"
          version="0.0.0"/>
+	
+	<includes
+         id="org.eclipse.papyrus.extra.moka.source.feature"
+         version="0.0.0"/>
 
 </feature>

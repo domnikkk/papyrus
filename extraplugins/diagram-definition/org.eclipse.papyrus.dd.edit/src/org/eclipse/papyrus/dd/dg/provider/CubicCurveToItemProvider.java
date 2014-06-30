@@ -35,10 +35,9 @@ import org.eclipse.papyrus.dd.dg.CubicCurveTo;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.CubicCurveTo} object. <!-- begin-user-doc
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.CubicCurveTo} object.
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public class CubicCurveToItemProvider extends PathCommandItemProvider implements
@@ -71,13 +70,10 @@ public class CubicCurveToItemProvider extends PathCommandItemProvider implements
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -85,24 +81,20 @@ public class CubicCurveToItemProvider extends PathCommandItemProvider implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DGPackage.Literals.CUBIC_CURVE_TO__START_CONTROL);
+			childrenFeatures.add(DGPackage.Literals.CUBIC_CURVE_TO__END_CONTROL);
 			childrenFeatures.add(DGPackage.Literals.CUBIC_CURVE_TO__POINT);
-			childrenFeatures
-					.add(DGPackage.Literals.CUBIC_CURVE_TO__START_CONTROL);
-			childrenFeatures
-					.add(DGPackage.Literals.CUBIC_CURVE_TO__END_CONTROL);
 		}
 		return childrenFeatures;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
@@ -116,29 +108,26 @@ public class CubicCurveToItemProvider extends PathCommandItemProvider implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/CubicCurveTo"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CubicCurveTo"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		CubicCurveTo cubicCurveTo = (CubicCurveTo) object;
-		return getString("_UI_CubicCurveTo_type") + " "
-				+ cubicCurveTo.isRelative();
+		CubicCurveTo cubicCurveTo = (CubicCurveTo)object;
+		return getString("_UI_CubicCurveTo_type") + " " + cubicCurveTo.isRelative();
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -146,12 +135,11 @@ public class CubicCurveToItemProvider extends PathCommandItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CubicCurveTo.class)) {
-		case DGPackage.CUBIC_CURVE_TO__POINT:
-		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
-		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
+			case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
+			case DGPackage.CUBIC_CURVE_TO__POINT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -168,17 +156,20 @@ public class CubicCurveToItemProvider extends PathCommandItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.CUBIC_CURVE_TO__POINT,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.CUBIC_CURVE_TO__START_CONTROL,
+				 DCFactory.eINSTANCE.createPoint()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.CUBIC_CURVE_TO__START_CONTROL,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.CUBIC_CURVE_TO__END_CONTROL,
+				 DCFactory.eINSTANCE.createPoint()));
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.CUBIC_CURVE_TO__END_CONTROL,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.CUBIC_CURVE_TO__POINT,
+				 DCFactory.eINSTANCE.createPoint()));
 	}
 
 	/**
@@ -194,14 +185,15 @@ public class CubicCurveToItemProvider extends PathCommandItemProvider implements
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == DGPackage.Literals.CUBIC_CURVE_TO__POINT
-				|| childFeature == DGPackage.Literals.CUBIC_CURVE_TO__START_CONTROL
-				|| childFeature == DGPackage.Literals.CUBIC_CURVE_TO__END_CONTROL;
+		boolean qualify =
+			childFeature == DGPackage.Literals.CUBIC_CURVE_TO__START_CONTROL ||
+			childFeature == DGPackage.Literals.CUBIC_CURVE_TO__END_CONTROL ||
+			childFeature == DGPackage.Literals.CUBIC_CURVE_TO__POINT;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

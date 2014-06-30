@@ -12,8 +12,6 @@
 package org.eclipse.papyrus.dd.dg;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,9 +21,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleSelector#getType <em>Type</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleSelector#getKeyword <em>Keyword
- * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.StyleSelector#getClasses <em>Class</em>}
+ * </li>
  * </ul>
  * </p>
  * 
@@ -35,43 +33,74 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface StyleSelector extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> A
-	 * non-abstract type that is a subtype of GraphicalElement. Elements having
-	 * this type are selected. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Kind</b></em>' attribute. The literals
+	 * are from the enumeration {@link org.eclipse.papyrus.dd.dg.ElementKind}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * The kind of graphical element to select. <!-- end-model-doc -->
 	 * 
-	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(EClass)
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleSelector_Type()
-	 * @model ordered="false"
+	 * @return the value of the '<em>Kind</em>' attribute.
+	 * @see org.eclipse.papyrus.dd.dg.ElementKind
+	 * @see #isSetKind()
+	 * @see #unsetKind()
+	 * @see #setKind(ElementKind)
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleSelector_Kind()
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
-	EClass getType();
+	ElementKind getKind();
 
 	/**
 	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getType <em>Type</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Type</em>' reference.
-	 * @see #getType()
+	 *            the new value of the '<em>Kind</em>' attribute.
+	 * @see org.eclipse.papyrus.dd.dg.ElementKind
+	 * @see #isSetKind()
+	 * @see #unsetKind()
+	 * @see #getKind()
 	 * @generated
 	 */
-	void setType(EClass value);
+	void setKind(ElementKind value);
 
 	/**
-	 * Returns the value of the '<em><b>Keyword</b></em>' attribute list. The
-	 * list contents are of type {@link java.lang.String}. <!-- begin-user-doc
-	 * --> <!-- end-user-doc --> <!-- begin-model-doc --> A list of strings
-	 * representing keywords of graphical elements. Elements having these
-	 * keywords are selected. <!-- end-model-doc -->
+	 * Unsets the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the value of the '<em>Keyword</em>' attribute list.
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleSelector_Keyword()
+	 * @see #isSetKind()
+	 * @see #getKind()
+	 * @see #setKind(ElementKind)
+	 * @generated
+	 */
+	void unsetKind();
+
+	/**
+	 * Returns whether the value of the '
+	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'
+	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return whether the value of the '<em>Kind</em>' attribute is set.
+	 * @see #unsetKind()
+	 * @see #getKind()
+	 * @see #setKind(ElementKind)
+	 * @generated
+	 */
+	boolean isSetKind();
+
+	/**
+	 * Returns the value of the '<em><b>Class</b></em>' attribute list. The list
+	 * contents are of type {@link java.lang.String}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc --> <!-- begin-model-doc --> A set of strings
+	 * representing classes of graphical elements to select. Selected elements
+	 * must have all those classes. <!-- end-model-doc -->
+	 * 
+	 * @return the value of the '<em>Class</em>' attribute list.
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleSelector_Class()
 	 * @model dataType="org.eclipse.papyrus.dd.dc.String"
 	 * @generated
 	 */
-	EList<String> getKeyword();
+	EList<String> getClasses();
 
 } // StyleSelector

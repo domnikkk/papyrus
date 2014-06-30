@@ -16,6 +16,7 @@
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.extra.marte.properties.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.extra.marte.textedit.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.extra.migration.feature</module>
+		<module>../features/papyrus-extra-features/org.eclipse.papyrus.extra.moka.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.extra.qompass.designer.basic.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.extra.qompass.designer.tracing.feature</module>
 		<module>../features/papyrus-extra-features/org.eclipse.papyrus.extra.robotml.feature</module>
@@ -95,6 +96,16 @@
 		<module>../extraplugins/marte/org.eclipse.papyrus.marte.vsl</module>
 		<module>../extraplugins/marte/org.eclipse.papyrus.marte.vsl.ui</module>
 		<module>../extraplugins/migration/org.eclipse.papyrus.migration.properties.model</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.alf.resources</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.async.fuml</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.composites</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.composites.utils</module>
+		<module>../plugins/doc/org.eclipse.papyrus.moka.doc</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml.assertionlibrary</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml.standardlibrary</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.ui</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.core</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.doc</module>
 		<module>../extraplugins/qompass-designer/org.eclipse.papyrus.qompass.designer.ui</module>

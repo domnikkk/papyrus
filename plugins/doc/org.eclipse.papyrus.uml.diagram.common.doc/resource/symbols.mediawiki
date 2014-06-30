@@ -1,14 +1,16 @@
+__TOC__
+
 This short documentation will present the support for custom representations available to Papyrus users 
 
 = Introduction  =
 
-The goal of the sympbol support in Papyrus is to give users access to some custom representations. They can use their own representation, i.e. their own svg files, in their diagrams, so the model can be easily read and understood. SVG file format was used, as this vectorial format scales easily. 
+The goal of the symbol support in Papyrus is to give users access to some custom representations. They can use their own representation, i.e. their own svg files, in their diagrams, so the model can be easily read and understood. SVG file format was used, as this vectorial format scales easily. 
 
 [[Image:Symbol Example.png]] 
 
 = Symbol display place in diagrams  =
 
-There are 2 manners to display symbols on the diagrams. 
+There are 2 manners to display symbols on the diagrams, in compartments and as decorators.
 
 == Symbol representation in compartments  ==
 
@@ -36,7 +38,7 @@ For all Nodes in diagrams, it is possible to display the available symbols as de
 The Appearance tab of the properties view allows user to toggle the visibility of decorators, and the location of the display on the figure. There are 9 positions on the figure (north/east/south/west and all valid combinations) 
 
 [[Image:Symbol DecoratorPropertyView.png]] 
-<pre>Hint: if the properties view is not displayed in your Eclipse environnement, you can display it using context menu on a diagram =&gt; show Properties view.
+<pre>Hint: if the properties view is not displayed in your Eclipse environnement, you can display it using context menu on a diagram => show Properties view.
 </pre> 
 = Defining symbols in models  =
 
@@ -44,7 +46,7 @@ This section explains how symbols can be associated to model elements. There are
 
 == Define new symbols in profiles  ==
 
-UML offers the possiblity to associate new icons to stereotyped elements, via the ''image'' Property of Stereotypes. In Papyrus, one of this image can be a shape. This shape will be availalbe for any node representation of a steoretyped element. 
+UML offers the possiblity to associate new icons to stereotyped elements, via the ''image'' Property of Stereotypes. In Papyrus, one of these images can be a shape. This shape will be availalbe for any node representation of a steoretyped element. 
 
 On the property view of a Stereotype, you can associate an image to the stereotype 
 

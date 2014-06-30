@@ -76,7 +76,6 @@ public class DCAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected DCSwitch<Adapter> modelSwitch = new DCSwitch<Adapter>() {
-
 		@Override
 		public Adapter casePoint(Point object) {
 			return createPointAdapter();

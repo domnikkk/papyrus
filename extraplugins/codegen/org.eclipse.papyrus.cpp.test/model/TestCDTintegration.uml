@@ -62,12 +62,12 @@
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_UcSkcFG8EeOLNIKOajeerQ" name="Initial0"/>
         </region>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xe7iUFG-EeOLNIKOajeerQ" name="triggerOp" isReentrant="false" specification="_gixOEFG8EeOLNIKOajeerQ">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xe7iUFG-EeOLNIKOajeerQ" name="triggerOp" specification="_gixOEFG8EeOLNIKOajeerQ" isReentrant="false">
         <language>C/C++</language>
         <body>// Aber hier geht's, oder?
 </body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xe8JYVG-EeOLNIKOajeerQ" name="effectBehavior" isReentrant="false" specification="_xe8JYFG-EeOLNIKOajeerQ">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xe8JYVG-EeOLNIKOajeerQ" name="effectBehavior" specification="_xe8JYFG-EeOLNIKOajeerQ" isReentrant="false">
         <language>C/C++</language>
         <body>// this effect is a C++ np
 // opaque behavior with several lines</body>
@@ -76,7 +76,23 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_xe8JYFG-EeOLNIKOajeerQ" name="effectBehavior" method="_xe8JYVG-EeOLNIKOajeerQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_K8FLcB0LEeKlYLZOWTi6uw" name="Class1">
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_kTVuwP6QEeKlg5tzGV3QVQ" name="Operation1" isReentrant="false" specification="_TY18YB0LEeKlYLZOWTi6uw">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_x0eUMPuWEeObXf7LzGwVbQ" name="constAttr">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_KyTqwPuXEeObXf7LzGwVbQ" name="FIVE" value="5"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5WkzsPuWEeObXf7LzGwVbQ" name="volatileAttr">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_JkS_gPuXEeObXf7LzGwVbQ" name="FIVE" value="5"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5chDoPuWEeObXf7LzGwVbQ" name="constVolatileAttr">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_IEKCcPuXEeObXf7LzGwVbQ" name="FIVE" value="5"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5hUEEPuWEeObXf7LzGwVbQ" name="staticConstVolatileAttr" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_Gph3gPuXEeObXf7LzGwVbQ" name="FIVE" value="5"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_kTVuwP6QEeKlg5tzGV3QVQ" name="Operation1" specification="_TY18YB0LEeKlYLZOWTi6uw" isReentrant="false">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_8cPkcVG-EeOLNIKOajeerQ" name="arg">
           <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
         </ownedParameter>
@@ -84,7 +100,7 @@
         <body>// Now let's add some code
 cout &lt;&lt; &quot;value: &quot; &lt;&lt; arg;</body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pX7DgDcmEeO6UdbIk03c9Q" name="Operation2" isReentrant="false" specification="_jnWMADcmEeO6UdbIk03c9Q">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pX7DgDcmEeO6UdbIk03c9Q" name="Operation2" specification="_jnWMADcmEeO6UdbIk03c9Q" isReentrant="false">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_8cRZoVG-EeOLNIKOajeerQ" name="args">
           <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_5lVhgBydEduyofBvg4RL2w"/>
         </ownedParameter>
@@ -108,6 +124,10 @@ args[0] = 2;</body>
           <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_5lVhgBydEduyofBvg4RL2w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_NJkdEPuXEeObXf7LzGwVbQ" name="constOperation"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_P49bgPuXEeObXf7LzGwVbQ" name="volatileOperation"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QCDGEPuXEeObXf7LzGwVbQ" name="constVolatileOperation"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QGndAPuXEeObXf7LzGwVbQ" name="staticConstVolatileOperation" isStatic="true"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_-2_pQC-IEeObJ6ARx67E0g" name="Package1">
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_DHJ24C-JEeObJ6ARx67E0g" name="Test"/>
@@ -147,4 +167,16 @@ args[0] = 2;</body>
   <C_Cpp:Const xmi:id="_8cVEAFG-EeOLNIKOajeerQ" base_parameter="_8cRZoFG-EeOLNIKOajeerQ"/>
   <C_Cpp:Ptr xmi:id="_8cYuYFG-EeOLNIKOajeerQ" base_parameter="_8cRZoFG-EeOLNIKOajeerQ"/>
   <C_Cpp:Array xmi:id="_8cbxsFG-EeOLNIKOajeerQ" base_parameter="_8cRZoFG-EeOLNIKOajeerQ" definition="[5]"/>
+  <C_Cpp:Const xmi:id="_AwqmsPuXEeObXf7LzGwVbQ" base_property="_5chDoPuWEeObXf7LzGwVbQ"/>
+  <C_Cpp:Volatile xmi:id="_AxE2YPuXEeObXf7LzGwVbQ" base_property="_5chDoPuWEeObXf7LzGwVbQ"/>
+  <C_Cpp:Volatile xmi:id="_BnQ3gPuXEeObXf7LzGwVbQ" base_property="_5WkzsPuWEeObXf7LzGwVbQ"/>
+  <C_Cpp:Const xmi:id="_CrTHYPuXEeObXf7LzGwVbQ" base_property="_x0eUMPuWEeObXf7LzGwVbQ"/>
+  <C_Cpp:Const xmi:id="_ECotwPuXEeObXf7LzGwVbQ" base_property="_5hUEEPuWEeObXf7LzGwVbQ"/>
+  <C_Cpp:Volatile xmi:id="_EC3-UPuXEeObXf7LzGwVbQ" base_property="_5hUEEPuWEeObXf7LzGwVbQ"/>
+  <C_Cpp:Const xmi:id="_WK3ecPuXEeObXf7LzGwVbQ" base_operation="_QGndAPuXEeObXf7LzGwVbQ"/>
+  <C_Cpp:Volatile xmi:id="_WLBPcPuXEeObXf7LzGwVbQ" base_operation="_QGndAPuXEeObXf7LzGwVbQ"/>
+  <C_Cpp:Const xmi:id="_XOookPuXEeObXf7LzGwVbQ" base_operation="_QCDGEPuXEeObXf7LzGwVbQ"/>
+  <C_Cpp:Volatile xmi:id="_XO1c4PuXEeObXf7LzGwVbQ" base_operation="_QCDGEPuXEeObXf7LzGwVbQ"/>
+  <C_Cpp:Volatile xmi:id="_YBPxQPuXEeObXf7LzGwVbQ" base_operation="_P49bgPuXEeObXf7LzGwVbQ"/>
+  <C_Cpp:Const xmi:id="_YyNUIPuXEeObXf7LzGwVbQ" base_operation="_NJkdEPuXEeObXf7LzGwVbQ"/>
 </xmi:XMI>

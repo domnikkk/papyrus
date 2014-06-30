@@ -119,36 +119,16 @@
         </ownedComment>
       </ownedLiteral>
     </ownedMember>
-    <ownedMember xmi:type="cmof:Enumeration" xmi:id="AlignmentKind" name="AlignmentKind">
-      <ownedComment xmi:type="cmof:Comment" xmi:id="AlignmentKind-_ownedComment.0" annotatedElement="AlignmentKind">
-        <body>AlignmentKind enumerates the possible options for alignment for layout purposes.</body>
-      </ownedComment>
-      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="AlignmentKind-start" name="start" classifier="#AlignmentKind" enumeration="AlignmentKind">
-        <ownedComment xmi:type="cmof:Comment" xmi:id="AlignmentKind-start-_ownedComment.0" annotatedElement="AlignmentKind-start">
-          <body>an alignment to the start of a given length.</body>
-        </ownedComment>
-      </ownedLiteral>
-      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="AlignmentKind-end" name="end" classifier="#AlignmentKind" enumeration="AlignmentKind">
-        <ownedComment xmi:type="cmof:Comment" xmi:id="AlignmentKind-end-_ownedComment.0" annotatedElement="AlignmentKind-end">
-          <body>an alignment to the end of a given length</body>
-        </ownedComment>
-      </ownedLiteral>
-      <ownedLiteral xmi:type="cmof:EnumerationLiteral" xmi:id="AlignmentKind-center" name="center" classifier="#AlignmentKind" enumeration="AlignmentKind">
-        <ownedComment xmi:type="cmof:Comment" xmi:id="AlignmentKind-center-_ownedComment.0" annotatedElement="AlignmentKind-center">
-          <body>an alignment to the center of a given length</body>
-        </ownedComment>
-      </ownedLiteral>
-    </ownedMember>
     <ownedMember xmi:type="cmof:DataType" xmi:id="Point" name="Point">
       <ownedComment xmi:type="cmof:Comment" xmi:id="Point-_ownedComment.0" annotatedElement="Point">
         <body>A Point specifies an location in some x-y coordinate system.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Point-x" name="x" visibility="public" type="Real" datatype="Point" default="0">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Point-x" name="x" visibility="public" type="Real" lower="0" datatype="Point" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Point-x-_ownedComment.0" annotatedElement="Point-x">
           <body>a real number (&lt;= 0 or >= 0) that represents the x-coordinate of the point.</body>
         </ownedComment>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Point-y" name="y" visibility="public" type="Real" datatype="Point" default="0">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Point-y" name="y" visibility="public" type="Real" lower="0" datatype="Point" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Point-y-_ownedComment.0" annotatedElement="Point-y">
           <body>a real number (&lt;= 0 or >= 0)  that represents the y-coordinate of the point.</body>
         </ownedComment>
@@ -158,21 +138,30 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="Dimension-_ownedComment.0" annotatedElement="Dimension">
         <body>Dimension specifies two lengths (width and height) along the x and y axes in some x-y coordinate system.</body>
       </ownedComment>
-      <ownedRule xmi:type="cmof:Constraint" xmi:id="Dimension-non_negative_dimension" name="non_negative_dimension" constrainedElement="Bounds" namespace="Dimension">
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="Dimension-non_negative_dimension" name="non_negative_width" constrainedElement="Bounds" namespace="Dimension">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Dimension-non_negative_dimension-_ownedComment.0" annotatedElement="Dimension-non_negative_dimension">
-          <body>the width and height of a dimension cannot be negative</body>
+          <body>the width of a dimension cannot be negative</body>
         </ownedComment>
         <specification xmi:type="cmof:OpaqueExpression" xmi:id="Dimension-non_negative_dimension-_specification">
           <language>OCL</language>
-          <body>width >= 0 and height >=0</body>
+          <body>width >=0</body>
         </specification>
       </ownedRule>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Dimension-width" name="width" visibility="public" type="Real" datatype="Dimension">
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_uRqWUOhyEeO6TvQHODg78w" name="non_negative_height" constrainedElement="Bounds" namespace="Dimension">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_uRqWUehyEeO6TvQHODg78w" annotatedElement="_uRqWUOhyEeO6TvQHODg78w">
+          <body>the height of a dimension cannot be negative</body>
+        </ownedComment>
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_uRqWUuhyEeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>height >=0</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Dimension-width" name="width" visibility="public" type="Real" lower="0" datatype="Dimension" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Dimension-width-_ownedComment.0" annotatedElement="Dimension-width">
           <body>a real number (>=0) that represents a length along the x-axis.</body>
         </ownedComment>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Dimension-height" name="height" visibility="public" type="Real" datatype="Dimension">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Dimension-height" name="height" visibility="public" type="Real" lower="0" datatype="Dimension" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Dimension-height-_ownedComment.0" annotatedElement="Dimension-height">
           <body>a real number (>=0) that represents a length along the y-axis.</body>
         </ownedComment>
@@ -182,31 +171,40 @@
       <ownedComment xmi:type="cmof:Comment" xmi:id="Bounds-_ownedComment.0" annotatedElement="Bounds">
         <body>Bounds specifies a rectangular area in some x-y coordinate system that is defined by a location (x and y) and a size (width and height).</body>
       </ownedComment>
-      <ownedRule xmi:type="cmof:Constraint" xmi:id="Bounds-non_negative_size" name="non_negative_size" constrainedElement="Bounds" namespace="Bounds">
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="Bounds-non_negative_size" name="non_negative_width" constrainedElement="Bounds" namespace="Bounds">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Bounds-non_negative_size-_ownedComment.0" annotatedElement="Bounds-non_negative_size">
-          <body>the width and height of bounds cannot be negative</body>
+          <body>the width of bounds cannot be negative</body>
         </ownedComment>
         <specification xmi:type="cmof:OpaqueExpression" xmi:id="Bounds-non_negative_size-_specification">
           <language>OCL</language>
-          <body>width >= 0 and height >=0</body>
+          <body>width >= 0</body>
         </specification>
       </ownedRule>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Bounds-x" name="x" visibility="public" type="Real" datatype="Bounds" default="0">
+      <ownedRule xmi:type="cmof:Constraint" xmi:id="_fdKnQOhyEeO6TvQHODg78w" name="non_negative_height" constrainedElement="Bounds" namespace="Bounds">
+        <ownedComment xmi:type="cmof:Comment" xmi:id="_fdKnQehyEeO6TvQHODg78w" annotatedElement="_fdKnQOhyEeO6TvQHODg78w">
+          <body>the height of bounds cannot be negative</body>
+        </ownedComment>
+        <specification xmi:type="cmof:OpaqueExpression" xmi:id="_fdKnQuhyEeO6TvQHODg78w">
+          <language>OCL</language>
+          <body>height >=0</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Bounds-x" name="x" visibility="public" type="Real" lower="0" datatype="Bounds" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Bounds-x-_ownedComment.0" annotatedElement="Bounds-x">
           <body>a real number (>=0 or &lt;=0) that represents the x-coordinate of the bounds</body>
         </ownedComment>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Bounds-y" name="y" visibility="public" type="Real" datatype="Bounds" default="0">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Bounds-y" name="y" visibility="public" type="Real" lower="0" datatype="Bounds" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Bounds-y-_ownedComment.0" annotatedElement="Bounds-y">
           <body>a real number (>=0 or &lt;=0) that represents the y-coordinate of the bounds</body>
         </ownedComment>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Bounds-width" name="width" visibility="public" type="Real" datatype="Bounds">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Bounds-width" name="width" visibility="public" type="Real" lower="0" datatype="Bounds" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Bounds-width-_ownedComment.0" annotatedElement="Bounds-width">
           <body>a real number (>=0) that represents the width of the bounds</body>
         </ownedComment>
       </ownedAttribute>
-      <ownedAttribute xmi:type="cmof:Property" xmi:id="Bounds-height" name="height" visibility="public" type="Real" datatype="Bounds">
+      <ownedAttribute xmi:type="cmof:Property" xmi:id="Bounds-height" name="height" visibility="public" type="Real" lower="0" datatype="Bounds" default="0">
         <ownedComment xmi:type="cmof:Comment" xmi:id="Bounds-height-_ownedComment.0" annotatedElement="Bounds-height">
           <body>a real number (>=0) that represents the height of the bounds</body>
         </ownedComment>
@@ -328,9 +326,57 @@
   <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
     <Ecore:EPackage xmi:id="_gItq8NpWEeOltvy1wTDHDA" base_Package="_0" nsPrefix="dc"/>
   </xmi:Extension>
-  <cmof:Tag xmi:id="_36" name="org.omg.xmi.nsPrefix" value="dc" element="_0"/>
-  <cmof:Tag xmi:id="_37" name="org.omg.xmi.nsURI" value="http://www.omg.org/spec/DD/20110901/DC" element="_0"/>
-  <cmof:Tag xmi:id="_38" name="org.omg.xmi.schemaType" value="http://www.w3.org/2001/XMLSchema#boolean" element="Boolean"/>
-  <cmof:Tag xmi:id="_39" name="org.omg.xmi.schemaType" value="http://www.w3.org/2001/XMLSchema#integer" element="Integer"/>
-  <cmof:Tag xmi:id="_40" name="org.omg.xmi.schemaType" value="http://www.w3.org/2001/XMLSchema#double" element="Real"/>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EPackage xmi:id="_ptXHoOHCEeO71tdCkM4EDw" base_Package="_0" nsPrefix="dc"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EPackage xmi:id="_3Y3MsOIiEeO71tdCkM4EDw" base_Package="_0" nsPrefix="dc"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EPackage xmi:id="_qBWzoOgCEeOCQP_PQv7dlg" base_Package="_0" nsPrefix="dc"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_wr5HEOgEEeOCQP_PQv7dlg" isUnsettable="true" base_Property="Point-x"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_ykau8OgEEeOCQP_PQv7dlg" isUnsettable="true" base_Property="Point-y"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_08dkYOgEEeOCQP_PQv7dlg" isUnsettable="true" base_Property="Dimension-width"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_3Ga6gOgEEeOCQP_PQv7dlg" isUnsettable="true" base_Property="Dimension-height"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_5Iff8OgEEeOCQP_PQv7dlg" isUnsettable="true" base_Property="Bounds-x"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_72q9cOgEEeOCQP_PQv7dlg" isUnsettable="true" base_Property="Bounds-y"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_-skzkOgEEeOCQP_PQv7dlg" isUnsettable="true" base_Property="Bounds-width"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EAttribute xmi:id="_AiAEIOgFEeOCQP_PQv7dlg" isUnsettable="true" base_Property="Bounds-height"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EPackage xmi:id="_Yo9QgOgaEeO6TvQHODg78w" base_Package="_0" nsPrefix="dc"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EPackage xmi:id="_4tITcOghEeO6TvQHODg78w" base_Package="_0" nsPrefix="dc"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EPackage xmi:id="_ZLSagOhnEeO6TvQHODg78w" base_Package="_0" nsPrefix="dc"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EPackage xmi:id="_9syAgOhyEeO6TvQHODg78w" base_Package="_0" nsPrefix="dc"/>
+  </xmi:Extension>
+  <xmi:Extension extender="http://www.eclipse.org/uml2/4.0.0/UML">
+    <Ecore:EPackage xmi:id="_MSBV8O0xEeOCPtJ2AfZp5A" base_Package="_0" nsPrefix="dc"/>
+  </xmi:Extension>
+  <cmof:Tag xmi:id="_52" name="org.omg.xmi.nsPrefix" value="dc" element="_0"/>
+  <cmof:Tag xmi:id="_53" name="org.omg.xmi.nsURI" value="http://www.omg.org/spec/DD/20110901/DC" element="_0"/>
+  <cmof:Tag xmi:id="_54" name="org.omg.xmi.schemaType" value="http://www.w3.org/2001/XMLSchema#boolean" element="Boolean"/>
+  <cmof:Tag xmi:id="_55" name="org.omg.xmi.schemaType" value="http://www.w3.org/2001/XMLSchema#integer" element="Integer"/>
+  <cmof:Tag xmi:id="_56" name="org.omg.xmi.schemaType" value="http://www.w3.org/2001/XMLSchema#double" element="Real"/>
 </xmi:XMI>

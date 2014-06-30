@@ -11,9 +11,14 @@
  */
 package org.eclipse.papyrus.dd.dg.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -23,6 +28,7 @@ import org.eclipse.papyrus.dd.dc.Point;
 
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Text;
+import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -165,6 +171,39 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	}
 
 	/**
+	 * The cached validation expression for the '
+	 * {@link #dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Data Cannot Be Empty</em>}' invariant operation. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @see #dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DATA_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "data->notEmpty() implies data.size() > 0";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean dataCannotBeEmpty(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.TEXT,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP,
+						DATA_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.TEXT__DATA_CANNOT_BE_EMPTY);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -246,6 +285,23 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 			return position != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case DGPackage.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP:
+			return dataCannotBeEmpty((DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

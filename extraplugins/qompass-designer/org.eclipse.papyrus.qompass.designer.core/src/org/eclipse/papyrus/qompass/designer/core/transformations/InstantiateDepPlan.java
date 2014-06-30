@@ -331,7 +331,10 @@ public class InstantiateDepPlan {
 
 		ILangSupport langSupport = configureLanguageSupport(mainInstance,
 				existingModel, node);
-
+		if (langSupport == null) {
+			return;
+		}
+		
 		Deploy deployment = new Deploy(targetCopy, langSupport, node,
 				nodeIndex, nodes.size());
 		InstanceSpecification nodeRootIS = deployment
@@ -366,6 +369,14 @@ public class InstantiateDepPlan {
 		genModelManagement.dispose();
 	}
 
+	/**
+	 * 
+	 * @param mainInstance
+	 * @param existingModel
+	 * @param node
+	 * @return null, if no language support is available or no project could be created.
+	 * @throws TransformationException
+	 */
 	private ILangSupport configureLanguageSupport(
 			InstanceSpecification mainInstance, Model existingModel,
 			InstanceSpecification node) throws TransformationException {
@@ -377,6 +388,9 @@ public class InstantiateDepPlan {
 		IProject genProject = ProjectManagement.getNamedProject(modelName);
 		if ((genProject == null) || !genProject.exists()) {
 			genProject = langSupport.createProject(modelName, getTargetOS(node));
+			if (genProject == null) {
+				return null;
+			}
 		} else {
 			langSupport.setProject(genProject);
 			if ((generationOptions & GenerationOptions.REWRITE_SETTINGS) != 0) {

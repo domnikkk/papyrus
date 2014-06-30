@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.dc.impl;
 
 import java.awt.Color;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -21,17 +20,13 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.papyrus.dd.dc.AlignmentKind;
 import org.eclipse.papyrus.dd.dc.Bounds;
 import org.eclipse.papyrus.dd.dc.DCFactory;
 import org.eclipse.papyrus.dd.dc.DCPackage;
 import org.eclipse.papyrus.dd.dc.Dimension;
 import org.eclipse.papyrus.dd.dc.KnownColor;
 import org.eclipse.papyrus.dd.dc.Point;
-
 import org.eclipse.papyrus.dd.dc.util.DCValidator;
 
 /**
@@ -69,13 +64,6 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 * @generated
 	 */
 	private EEnum knownColorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EEnum alignmentKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -174,7 +162,6 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(theDCPackage,
 				new EValidator.Descriptor() {
-
 					public EValidator getEValidator() {
 						return DCValidator.INSTANCE;
 					}
@@ -247,8 +234,17 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 * 
 	 * @generated
 	 */
-	public EOperation getDimension__NonNegativeDimension__DiagnosticChain_Map() {
+	public EOperation getDimension__NonNegativeWidth__DiagnosticChain_Map() {
 		return dimensionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EOperation getDimension__NonNegativeHeight__DiagnosticChain_Map() {
+		return dimensionEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -301,8 +297,17 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 * 
 	 * @generated
 	 */
-	public EOperation getBounds__NonNegativeSize__DiagnosticChain_Map() {
+	public EOperation getBounds__NonNegativeWidth__DiagnosticChain_Map() {
 		return boundsEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EOperation getBounds__NonNegativeHeight__DiagnosticChain_Map() {
+		return boundsEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -312,15 +317,6 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	public EEnum getKnownColor() {
 		return knownColorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EEnum getAlignmentKind() {
-		return alignmentKindEEnum;
 	}
 
 	/**
@@ -405,7 +401,9 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 		createEAttribute(dimensionEClass, DIMENSION__WIDTH);
 		createEAttribute(dimensionEClass, DIMENSION__HEIGHT);
 		createEOperation(dimensionEClass,
-				DIMENSION___NON_NEGATIVE_DIMENSION__DIAGNOSTICCHAIN_MAP);
+				DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP);
+		createEOperation(dimensionEClass,
+				DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP);
 
 		boundsEClass = createEClass(BOUNDS);
 		createEAttribute(boundsEClass, BOUNDS__X);
@@ -413,11 +411,12 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 		createEAttribute(boundsEClass, BOUNDS__WIDTH);
 		createEAttribute(boundsEClass, BOUNDS__HEIGHT);
 		createEOperation(boundsEClass,
-				BOUNDS___NON_NEGATIVE_SIZE__DIAGNOSTICCHAIN_MAP);
+				BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP);
+		createEOperation(boundsEClass,
+				BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP);
 
 		// Create enums
 		knownColorEEnum = createEEnum(KNOWN_COLOR);
-		alignmentKindEEnum = createEEnum(ALIGNMENT_KIND);
 
 		// Create data types
 		booleanEDataType = createEDataType(BOOLEAN);
@@ -460,26 +459,25 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(pointEClass, Point.class, "Point", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPoint_X(), this.getReal(), "x", "0", 1, 1,
+		initEAttribute(getPoint_X(), this.getReal(), "x", "0", 0, 1,
 				Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getPoint_Y(), this.getReal(), "y", "0", 1, 1,
+				IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPoint_Y(), this.getReal(), "y", "0", 0, 1,
 				Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+				IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(dimensionEClass, Dimension.class, "Dimension", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDimension_Width(), this.getReal(), "width", null, 1,
+		initEAttribute(getDimension_Width(), this.getReal(), "width", "0", 0,
 				1, Dimension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDimension_Height(), this.getReal(), "height", null,
-				1, 1, Dimension.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
+				IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDimension_Height(), this.getReal(), "height", "0", 0,
+				1, Dimension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(
-				getDimension__NonNegativeDimension__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "nonNegativeDimension", 0, 1,
+				getDimension__NonNegativeWidth__DiagnosticChain_Map(),
+				ecorePackage.getEBoolean(), "nonNegativeWidth", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0,
 				1, IS_UNIQUE, IS_ORDERED);
@@ -490,24 +488,50 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(
+				getDimension__NonNegativeHeight__DiagnosticChain_Map(),
+				ecorePackage.getEBoolean(), "nonNegativeHeight", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0,
+				1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(boundsEClass, Bounds.class, "Bounds", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBounds_X(), this.getReal(), "x", "0", 1, 1,
+		initEAttribute(getBounds_X(), this.getReal(), "x", "0", 0, 1,
 				Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getBounds_Y(), this.getReal(), "y", "0", 1, 1,
+				IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBounds_Y(), this.getReal(), "y", "0", 0, 1,
 				Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getBounds_Width(), this.getReal(), "width", null, 1, 1,
+				IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBounds_Width(), this.getReal(), "width", "0", 0, 1,
 				Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getBounds_Height(), this.getReal(), "height", null, 1,
-				1, Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+				IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBounds_Height(), this.getReal(), "height", "0", 0, 1,
+				Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getBounds__NonNegativeSize__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "nonNegativeSize", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
+		op = initEOperation(getBounds__NonNegativeWidth__DiagnosticChain_Map(),
+				ecorePackage.getEBoolean(), "nonNegativeWidth", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0,
+				1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(
+				getBounds__NonNegativeHeight__DiagnosticChain_Map(),
+				ecorePackage.getEBoolean(), "nonNegativeHeight", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0,
 				1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -536,11 +560,6 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 		addEEnumLiteral(knownColorEEnum, KnownColor.BLACK);
 		addEEnumLiteral(knownColorEEnum, KnownColor.SILVER);
 		addEEnumLiteral(knownColorEEnum, KnownColor.GRAY);
-
-		initEEnum(alignmentKindEEnum, AlignmentKind.class, "AlignmentKind");
-		addEEnumLiteral(alignmentKindEEnum, AlignmentKind.START);
-		addEEnumLiteral(alignmentKindEEnum, AlignmentKind.END);
-		addEEnumLiteral(alignmentKindEEnum, AlignmentKind.CENTER);
 
 		// Initialize data types
 		initEDataType(booleanEDataType, boolean.class, "Boolean",
@@ -586,11 +605,14 @@ public class DCPackageImpl extends EPackageImpl implements DCPackage {
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation(
-				getDimension__NonNegativeDimension__DiagnosticChain_Map(),
-				source, new String[] { "body", "width >= 0 and height >=0" });
-		addAnnotation(getBounds__NonNegativeSize__DiagnosticChain_Map(),
-				source, new String[] { "body", "width >= 0 and height >=0" });
+		addAnnotation(getDimension__NonNegativeWidth__DiagnosticChain_Map(),
+				source, new String[] { "body", "width >=0" });
+		addAnnotation(getDimension__NonNegativeHeight__DiagnosticChain_Map(),
+				source, new String[] { "body", "height >=0" });
+		addAnnotation(getBounds__NonNegativeWidth__DiagnosticChain_Map(),
+				source, new String[] { "body", "width >= 0" });
+		addAnnotation(getBounds__NonNegativeHeight__DiagnosticChain_Map(),
+				source, new String[] { "body", "height >=0" });
 	}
 
 } // DCPackageImpl

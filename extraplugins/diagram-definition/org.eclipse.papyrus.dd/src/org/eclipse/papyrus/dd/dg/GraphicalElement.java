@@ -11,6 +11,8 @@
  */
 package org.eclipse.papyrus.dd.dg;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -27,11 +29,11 @@ import org.eclipse.emf.common.util.EList;
  * Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup <em>Group
  * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getKeyword <em>Keyword
+ * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses <em>Class
  * </em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle <em>Style
  * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransform <em>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms <em>
  * Transform</em>}</li>
  * </ul>
  * </p>
@@ -71,14 +73,14 @@ public interface GraphicalElement extends Definition {
 	/**
 	 * Returns the value of the '<em><b>Group</b></em>' container reference. It
 	 * is bidirectional and its opposite is '
-	 * {@link org.eclipse.papyrus.dd.dg.Group#getMember <em>Member</em>}'. <!--
+	 * {@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The
 	 * group that owns this graphical element. <!-- end-model-doc -->
 	 * 
 	 * @return the value of the '<em>Group</em>' container reference.
 	 * @see #setGroup(Group)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGraphicalElement_Group()
-	 * @see org.eclipse.papyrus.dd.dg.Group#getMember
+	 * @see org.eclipse.papyrus.dd.dg.Group#getMembers
 	 * @model opposite="member" transient="false" ordered="false"
 	 * @generated
 	 */
@@ -98,17 +100,17 @@ public interface GraphicalElement extends Definition {
 	void setGroup(Group value);
 
 	/**
-	 * Returns the value of the '<em><b>Keyword</b></em>' attribute list. The
-	 * list contents are of type {@link java.lang.String}. <!-- begin-user-doc
-	 * --> <!-- end-user-doc --> <!-- begin-model-doc --> A list of strings
-	 * representing keywords of the graphical element. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Class</b></em>' attribute list. The list
+	 * contents are of type {@link java.lang.String}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc --> <!-- begin-model-doc --> A list of strings
+	 * representing classes of the graphical element. <!-- end-model-doc -->
 	 * 
-	 * @return the value of the '<em>Keyword</em>' attribute list.
-	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGraphicalElement_Keyword()
+	 * @return the value of the '<em>Class</em>' attribute list.
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGraphicalElement_Class()
 	 * @model dataType="org.eclipse.papyrus.dd.dc.String"
 	 * @generated
 	 */
-	EList<String> getKeyword();
+	EList<String> getClasses();
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference.
@@ -149,6 +151,21 @@ public interface GraphicalElement extends Definition {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Transform> getTransform();
+	EList<Transform> getTransforms();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information. <!-- end-model-doc
+	 *            -->
+	 * @model annotation=
+	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='clipPath->notEmpty() implies clipPath.id->notEmpty()'"
+	 * @generated
+	 */
+	boolean referencedClippathHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context);
 
 } // GraphicalElement

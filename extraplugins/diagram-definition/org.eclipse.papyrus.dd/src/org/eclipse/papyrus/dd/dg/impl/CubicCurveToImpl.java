@@ -30,28 +30,18 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl#getPoint <em>Point
- * </em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl#getStartControl
  * <em>Start Control</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl#getEndControl <em>
  * End Control</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl#getPoint <em>Point
+ * </em>}</li>
  * </ul>
  * </p>
  * 
  * @generated
  */
 public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
-	/**
-	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getPoint()
-	 * @generated
-	 * @ordered
-	 */
-	protected Point point;
-
 	/**
 	 * The cached value of the '{@link #getStartControl()
 	 * <em>Start Control</em>}' containment reference. <!-- begin-user-doc -->
@@ -72,6 +62,16 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	 * @ordered
 	 */
 	protected Point endControl;
+
+	/**
+	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected Point point;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -269,12 +269,12 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DGPackage.CUBIC_CURVE_TO__POINT:
-			return basicSetPoint(null, msgs);
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
 			return basicSetStartControl(null, msgs);
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
 			return basicSetEndControl(null, msgs);
+		case DGPackage.CUBIC_CURVE_TO__POINT:
+			return basicSetPoint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -287,12 +287,12 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DGPackage.CUBIC_CURVE_TO__POINT:
-			return getPoint();
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
 			return getStartControl();
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
 			return getEndControl();
+		case DGPackage.CUBIC_CURVE_TO__POINT:
+			return getPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,14 +305,14 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DGPackage.CUBIC_CURVE_TO__POINT:
-			setPoint((Point) newValue);
-			return;
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
 			setStartControl((Point) newValue);
 			return;
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
 			setEndControl((Point) newValue);
+			return;
+		case DGPackage.CUBIC_CURVE_TO__POINT:
+			setPoint((Point) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,14 +326,14 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DGPackage.CUBIC_CURVE_TO__POINT:
-			setPoint((Point) null);
-			return;
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
 			setStartControl((Point) null);
 			return;
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
 			setEndControl((Point) null);
+			return;
+		case DGPackage.CUBIC_CURVE_TO__POINT:
+			setPoint((Point) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -347,12 +347,12 @@ public class CubicCurveToImpl extends PathCommandImpl implements CubicCurveTo {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DGPackage.CUBIC_CURVE_TO__POINT:
-			return point != null;
 		case DGPackage.CUBIC_CURVE_TO__START_CONTROL:
 			return startControl != null;
 		case DGPackage.CUBIC_CURVE_TO__END_CONTROL:
 			return endControl != null;
+		case DGPackage.CUBIC_CURVE_TO__POINT:
+			return point != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -37,10 +37,9 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Rotate;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.Rotate} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Rotate} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class RotateItemProvider extends TransformItemProvider implements
@@ -80,25 +79,26 @@ public class RotateItemProvider extends TransformItemProvider implements
 	 * @generated
 	 */
 	protected void addAnglePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Rotate_angle_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Rotate_angle_feature", "_UI_Rotate_type"),
-				DGPackage.Literals.ROTATE__ANGLE, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rotate_angle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rotate_angle_feature", "_UI_Rotate_type"),
+				 DGPackage.Literals.ROTATE__ANGLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -113,47 +113,43 @@ public class RotateItemProvider extends TransformItemProvider implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns Rotate.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Rotate.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Rotate"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Rotate"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Rotate rotate = (Rotate) object;
+		Rotate rotate = (Rotate)object;
 		return getString("_UI_Rotate_type") + " " + rotate.getAngle();
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,14 +157,12 @@ public class RotateItemProvider extends TransformItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Rotate.class)) {
-		case DGPackage.ROTATE__ANGLE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DGPackage.ROTATE__CENTER:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.ROTATE__ANGLE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case DGPackage.ROTATE__CENTER:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -185,9 +179,10 @@ public class RotateItemProvider extends TransformItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.ROTATE__CENTER,
-				DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.ROTATE__CENTER,
+				 DCFactory.eINSTANCE.createPoint()));
 	}
 
 }

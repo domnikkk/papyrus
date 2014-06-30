@@ -8,13 +8,13 @@
       <emfPageIdentifier href="TestCDTintegration.notation"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="TestCDTintegration.notation#_EItkYEG6EeOMv8cdTsw5Zg"/>
+      <emfPageIdentifier href="TestCDTintegration.notation"/>
     </availablePage>
     <availablePage>
       <emfPageIdentifier href="TestCDTintegration.notation#_6nABcFG7EeOLNIKOajeerQ"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="TestCDTintegration.notation#_rGh10FG-EeOLNIKOajeerQ"/>
+      <emfPageIdentifier href="TestCDTintegration.notation"/>
     </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">

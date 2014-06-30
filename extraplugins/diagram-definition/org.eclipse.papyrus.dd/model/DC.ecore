@@ -122,38 +122,18 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="AlignmentKind">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="AlignmentKind enumerates the possible options for alignment for layout purposes."/>
-    </eAnnotations>
-    <eLiterals name="start">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="an alignment to the start of a given length."/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="end" value="1">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="an alignment to the end of a given length"/>
-      </eAnnotations>
-    </eLiterals>
-    <eLiterals name="center" value="2">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="an alignment to the center of a given length"/>
-      </eAnnotations>
-    </eLiterals>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Point">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A Point specifies an location in some x-y coordinate system."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" ordered="false" lowerBound="1"
-        eType="#//Real" defaultValueLiteral="0">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" ordered="false" eType="#//Real"
+        defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (&lt;= 0 or >= 0) that represents the x-coordinate of the point."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" ordered="false" lowerBound="1"
-        eType="#//Real" defaultValueLiteral="0">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" ordered="false" eType="#//Real"
+        defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (&lt;= 0 or >= 0)  that represents the y-coordinate of the point."/>
       </eAnnotations>
@@ -163,12 +143,34 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Dimension specifies two lengths (width and height) along the x and y axes in some x-y coordinate system."/>
     </eAnnotations>
-    <eOperations name="nonNegativeDimension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="nonNegativeWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="body" value="width >= 0 and height >=0"/>
+        <details key="body" value="width >=0"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="the width and height of a dimension cannot be negative"/>
+        <details key="documentation" value="the width of a dimension cannot be negative"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="nonNegativeHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="height >=0"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the height of a dimension cannot be negative"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -186,13 +188,13 @@
       </eParameters>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" ordered="false"
-        lowerBound="1" eType="#//Real">
+        eType="#//Real" defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (>=0) that represents a length along the x-axis."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" ordered="false"
-        lowerBound="1" eType="#//Real">
+        eType="#//Real" defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (>=0) that represents a length along the y-axis."/>
       </eAnnotations>
@@ -202,12 +204,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Bounds specifies a rectangular area in some x-y coordinate system that is defined by a location (x and y) and a size (width and height)."/>
     </eAnnotations>
-    <eOperations name="nonNegativeSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="nonNegativeWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="body" value="width >= 0 and height >=0"/>
+        <details key="body" value="width >= 0"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="the width and height of bounds cannot be negative"/>
+        <details key="documentation" value="the width of bounds cannot be negative"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -224,26 +226,48 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" ordered="false" lowerBound="1"
-        eType="#//Real" defaultValueLiteral="0">
+    <eOperations name="nonNegativeHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="height >=0"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the height of bounds cannot be negative"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" ordered="false" eType="#//Real"
+        defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (>=0 or &lt;=0) that represents the x-coordinate of the bounds"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" ordered="false" lowerBound="1"
-        eType="#//Real" defaultValueLiteral="0">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" ordered="false" eType="#//Real"
+        defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (>=0 or &lt;=0) that represents the y-coordinate of the bounds"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" ordered="false"
-        lowerBound="1" eType="#//Real">
+        eType="#//Real" defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (>=0) that represents the width of the bounds"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" ordered="false"
-        lowerBound="1" eType="#//Real">
+        eType="#//Real" defaultValueLiteral="0" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="a real number (>=0) that represents the height of the bounds"/>
       </eAnnotations>

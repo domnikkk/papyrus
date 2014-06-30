@@ -40,10 +40,9 @@ import org.eclipse.papyrus.dd.dg.Paint;
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.Paint} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Paint} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class PaintItemProvider extends ItemProviderAdapter implements
@@ -84,15 +83,19 @@ public class PaintItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addColorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Paint_color_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Paint_color_feature", "_UI_Paint_type"),
-				DGPackage.Literals.PAINT__COLOR, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Paint_color_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Paint_color_feature", "_UI_Paint_type"),
+				 DGPackage.Literals.PAINT__COLOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -102,48 +105,51 @@ public class PaintItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addPaintServerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Paint_paintServer_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Paint_paintServer_feature", "_UI_Paint_type"),
-				DGPackage.Literals.PAINT__PAINT_SERVER, true, false, true,
-				null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Paint_paintServer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Paint_paintServer_feature", "_UI_Paint_type"),
+				 DGPackage.Literals.PAINT__PAINT_SERVER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns Paint.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Paint.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Paint"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Paint"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Color labelValue = ((Paint) object).getColor();
+		Color labelValue = ((Paint)object).getColor();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_Paint_type")
-				: getString("_UI_Paint_type") + " " + label;
+		return label == null || label.length() == 0 ?
+			getString("_UI_Paint_type") :
+			getString("_UI_Paint_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,10 +157,9 @@ public class PaintItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Paint.class)) {
-		case DGPackage.PAINT__COLOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case DGPackage.PAINT__COLOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

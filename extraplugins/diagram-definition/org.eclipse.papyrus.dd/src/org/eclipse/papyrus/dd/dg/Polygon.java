@@ -26,7 +26,7 @@ import org.eclipse.papyrus.dd.dc.Point;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Polygon#getPoint <em>Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Polygon#getPoints <em>Point</em>}</li>
  * </ul>
  * </p>
  * 
@@ -47,6 +47,6 @@ public interface Polygon extends MarkedElement {
 	 * @model containment="true" lower="3"
 	 * @generated
 	 */
-	EList<Point> getPoint();
+	EList<Point> getPoints();
 
 } // Polygon

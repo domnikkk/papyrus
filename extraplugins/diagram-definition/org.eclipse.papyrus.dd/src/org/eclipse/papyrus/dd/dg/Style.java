@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.EObject;
  * </em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.Style#getStrokeOpacity <em>Stroke
  * Opacity</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Style#getStrokeDashLength <em>Stroke
+ * <li>{@link org.eclipse.papyrus.dd.dg.Style#getStrokeDashLengths <em>Stroke
  * Dash Length</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.Style#getFontSize <em>Font Size</em>}</li>
  * <li>{@link org.eclipse.papyrus.dd.dg.Style#getFontName <em>Font Name</em>}</li>
@@ -361,40 +361,40 @@ public interface Style extends EObject {
 	 * <!-- end-model-doc -->
 	 * 
 	 * @return the value of the '<em>Stroke Dash Length</em>' attribute list.
-	 * @see #isSetStrokeDashLength()
-	 * @see #unsetStrokeDashLength()
+	 * @see #isSetStrokeDashLengths()
+	 * @see #unsetStrokeDashLengths()
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyle_StrokeDashLength()
 	 * @model unique="false" unsettable="true"
 	 *        dataType="org.eclipse.papyrus.dd.dc.Real"
 	 * @generated
 	 */
-	EList<Double> getStrokeDashLength();
+	EList<Double> getStrokeDashLengths();
 
 	/**
 	 * Unsets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getStrokeDashLength
+	 * {@link org.eclipse.papyrus.dd.dg.Style#getStrokeDashLengths
 	 * <em>Stroke Dash Length</em>}' attribute list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @see #isSetStrokeDashLength()
-	 * @see #getStrokeDashLength()
+	 * @see #isSetStrokeDashLengths()
+	 * @see #getStrokeDashLengths()
 	 * @generated
 	 */
-	void unsetStrokeDashLength();
+	void unsetStrokeDashLengths();
 
 	/**
 	 * Returns whether the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getStrokeDashLength
+	 * {@link org.eclipse.papyrus.dd.dg.Style#getStrokeDashLengths
 	 * <em>Stroke Dash Length</em>}' attribute list is set. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 * 
 	 * @return whether the value of the '<em>Stroke Dash Length</em>' attribute
 	 *         list is set.
-	 * @see #unsetStrokeDashLength()
-	 * @see #getStrokeDashLength()
+	 * @see #unsetStrokeDashLengths()
+	 * @see #getStrokeDashLengths()
 	 * @generated
 	 */
-	boolean isSetStrokeDashLength();
+	boolean isSetStrokeDashLengths();
 
 	/**
 	 * Returns the value of the '<em><b>Font Size</b></em>' attribute. <!--

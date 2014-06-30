@@ -36,6 +36,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.ocl.ecore.EcoreEnvironment;
+import org.eclipse.ocl.ecore.EcoreOCLStandardLibrary;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueBehavior;
@@ -67,6 +69,9 @@ public class AcceleoDriver {
 		});
 		acceleoResourceSet = new AcceleoResourceSetImpl();
 		acceleoResourceSet.createResource(currentURI);
+		acceleoResourceSet.getPackageRegistry().put(
+				EcoreEnvironment.OCL_STANDARD_LIBRARY_NS_URI,
+				new EcoreOCLStandardLibrary().getOCLStdLibPackage());
 	}
 
 	/**

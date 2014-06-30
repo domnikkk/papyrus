@@ -38,10 +38,9 @@ import org.eclipse.papyrus.dd.dg.PathCommand;
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.papyrus.dd.dg.PathCommand} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.PathCommand} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class PathCommandItemProvider extends ItemProviderAdapter implements
@@ -81,37 +80,38 @@ public class PathCommandItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addIsRelativePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_PathCommand_isRelative_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_PathCommand_isRelative_feature",
-						"_UI_PathCommand_type"),
-				DGPackage.Literals.PATH_COMMAND__IS_RELATIVE, true, false,
-				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PathCommand_isRelative_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PathCommand_isRelative_feature", "_UI_PathCommand_type"),
+				 DGPackage.Literals.PATH_COMMAND__IS_RELATIVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		PathCommand pathCommand = (PathCommand) object;
-		return getString("_UI_PathCommand_type") + " "
-				+ pathCommand.isRelative();
+		PathCommand pathCommand = (PathCommand)object;
+		return getString("_UI_PathCommand_type") + " " + pathCommand.isRelative();
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -119,10 +119,9 @@ public class PathCommandItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PathCommand.class)) {
-		case DGPackage.PATH_COMMAND__IS_RELATIVE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case DGPackage.PATH_COMMAND__IS_RELATIVE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

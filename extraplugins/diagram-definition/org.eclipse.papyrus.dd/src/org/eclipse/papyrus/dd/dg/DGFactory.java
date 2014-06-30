@@ -156,13 +156,13 @@ public interface DGFactory extends EFactory {
 	Ellipse createEllipse();
 
 	/**
-	 * Returns a new object of class '<em>Elliptical Curve To</em>'. <!--
+	 * Returns a new object of class '<em>Elliptical Arc To</em>'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return a new object of class '<em>Elliptical Curve To</em>'.
+	 * @return a new object of class '<em>Elliptical Arc To</em>'.
 	 * @generated
 	 */
-	EllipticalCurveTo createEllipticalCurveTo();
+	EllipticalArcTo createEllipticalArcTo();
 
 	/**
 	 * Returns a new object of class '<em>Quadratic Curve To</em>'. <!--

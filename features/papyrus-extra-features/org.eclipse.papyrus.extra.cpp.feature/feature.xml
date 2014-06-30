@@ -26,6 +26,10 @@ http://www.eclipse.org/legal/epl-v10.html
       %license
    </license>
 
+   <requires>
+      <import feature="org.eclipse.cdt" version="8.4.0.201406031009"/>
+   </requires>
+
    <plugin
          id="org.eclipse.papyrus.cpp.codegen"
          download-size="0"

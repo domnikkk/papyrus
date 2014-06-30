@@ -19,6 +19,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -35,9 +36,8 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Use;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Use}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Use} object.
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
 public class UseItemProvider extends GraphicalElementItemProvider implements
@@ -65,18 +65,38 @@ public class UseItemProvider extends GraphicalElementItemProvider implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addReferencedElementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Referenced Element feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @generated
+	 */
+	protected void addReferencedElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Use_referencedElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Use_referencedElement_feature", "_UI_Use_type"),
+				 DGPackage.Literals.USE__REFERENCED_ELEMENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -91,48 +111,45 @@ public class UseItemProvider extends GraphicalElementItemProvider implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns Use.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Use.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Use"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Use"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Use) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Use_type")
-				: getString("_UI_Use_type") + " " + label;
+		String label = ((Use)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Use_type") :
+			getString("_UI_Use_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -140,10 +157,9 @@ public class UseItemProvider extends GraphicalElementItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Use.class)) {
-		case DGPackage.USE__BOUNDS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case DGPackage.USE__BOUNDS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -160,9 +176,10 @@ public class UseItemProvider extends GraphicalElementItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DGPackage.Literals.USE__BOUNDS,
-				DCFactory.eINSTANCE.createBounds()));
+		newChildDescriptors.add
+			(createChildParameter
+				(DGPackage.Literals.USE__BOUNDS,
+				 DCFactory.eINSTANCE.createBounds()));
 	}
 
 }

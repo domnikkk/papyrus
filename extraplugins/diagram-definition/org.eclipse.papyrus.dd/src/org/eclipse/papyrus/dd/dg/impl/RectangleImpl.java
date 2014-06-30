@@ -11,9 +11,14 @@
  */
 package org.eclipse.papyrus.dd.dg.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -23,6 +28,7 @@ import org.eclipse.papyrus.dd.dc.Bounds;
 
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Rectangle;
+import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -71,6 +77,15 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	 * @ordered
 	 */
 	protected double cornerRadius = CORNER_RADIUS_EDEFAULT;
+
+	/**
+	 * This is true if the Corner Radius attribute has been set. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean cornerRadiusESet;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -162,10 +177,70 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 	public void setCornerRadius(double newCornerRadius) {
 		double oldCornerRadius = cornerRadius;
 		cornerRadius = newCornerRadius;
+		boolean oldCornerRadiusESet = cornerRadiusESet;
+		cornerRadiusESet = true;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DGPackage.RECTANGLE__CORNER_RADIUS, oldCornerRadius,
-					cornerRadius));
+					cornerRadius, !oldCornerRadiusESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void unsetCornerRadius() {
+		double oldCornerRadius = cornerRadius;
+		boolean oldCornerRadiusESet = cornerRadiusESet;
+		cornerRadius = CORNER_RADIUS_EDEFAULT;
+		cornerRadiusESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET,
+					DGPackage.RECTANGLE__CORNER_RADIUS, oldCornerRadius,
+					CORNER_RADIUS_EDEFAULT, oldCornerRadiusESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isSetCornerRadius() {
+		return cornerRadiusESet;
+	}
+
+	/**
+	 * The cached validation expression for the '
+	 * {@link #nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Non Negative Corner Radius</em>}' invariant operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NON_NEGATIVE_CORNER_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "cornerRadius >= 0";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean nonNegativeCornerRadius(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.RECTANGLE,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP,
+						NON_NEGATIVE_CORNER_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.RECTANGLE__NON_NEGATIVE_CORNER_RADIUS);
 	}
 
 	/**
@@ -229,7 +304,7 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 			setBounds((Bounds) null);
 			return;
 		case DGPackage.RECTANGLE__CORNER_RADIUS:
-			setCornerRadius(CORNER_RADIUS_EDEFAULT);
+			unsetCornerRadius();
 			return;
 		}
 		super.eUnset(featureID);
@@ -246,9 +321,26 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 		case DGPackage.RECTANGLE__BOUNDS:
 			return bounds != null;
 		case DGPackage.RECTANGLE__CORNER_RADIUS:
-			return cornerRadius != CORNER_RADIUS_EDEFAULT;
+			return isSetCornerRadius();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case DGPackage.RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP:
+			return nonNegativeCornerRadius((DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -263,7 +355,10 @@ public class RectangleImpl extends GraphicalElementImpl implements Rectangle {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cornerRadius: ");
-		result.append(cornerRadius);
+		if (cornerRadiusESet)
+			result.append(cornerRadius);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

@@ -12,16 +12,13 @@
 package org.eclipse.papyrus.dd.dg.editor;
 
 import java.awt.Color;
-import java.net.URL;
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.batik.dom.svg.SVGDOMImplementation;
-import org.apache.batik.dom.svg.SVGOMDocument;
 import org.apache.batik.svggen.SVGSyntax;
 import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -38,7 +35,7 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Definition;
 import org.eclipse.papyrus.dd.dg.Definitions;
 import org.eclipse.papyrus.dd.dg.Ellipse;
-import org.eclipse.papyrus.dd.dg.EllipticalCurveTo;
+import org.eclipse.papyrus.dd.dg.EllipticalArcTo;
 import org.eclipse.papyrus.dd.dg.FontDecoration;
 import org.eclipse.papyrus.dd.dg.Gradient;
 import org.eclipse.papyrus.dd.dg.GradientStop;
@@ -75,10 +72,10 @@ import org.eclipse.papyrus.dd.dg.Transform;
 import org.eclipse.papyrus.dd.dg.Translate;
 import org.eclipse.papyrus.dd.dg.Use;
 import org.eclipse.papyrus.dd.dg.util.DGSwitch;
-import org.eclipse.papyrus.dd.editor.DDEditorPlugin;
 import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.svg.SVGTextElement;
+import org.w3c.dom.ProcessingInstruction;
 
 /**
  * This class converts a DG model resource into a SVG document
@@ -111,9 +108,14 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 	public static final String SVG_MARKER_END_ATTRIBUTE = "marker-end";
 
 	/**
+	 * This is the DG model resource
+	 */
+	private Resource resource;
+
+	/**
 	 * This is the created SVG document
 	 */
-	private SVGOMDocument svgDocument;
+	private Document svgDocument;
 
 	/**
 	 * This is a cache used in the conversion process
@@ -134,19 +136,21 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 	 *            The DG model resource
 	 * @return The SVG document
 	 */
-	public SVGOMDocument convert(Resource resource) {
+	public Document convert(Resource resource) {
 		if (resource == null)
 			return null;
 
+		// set the DG model resource
+		this.resource = resource;
+
 		// create a new SVG document
-		final DOMImplementation impl = SVGDOMImplementation
-				.getDOMImplementation();
-		svgDocument = (SVGOMDocument) impl.createDocument(SVG_NAMESPACE_URI,
+		final DOMImplementation impl = getDOMImplementation();
+		svgDocument = (Document) impl.createDocument(SVG_NAMESPACE_URI,
 				SVG_SVG_TAG, null);
 
 		// establish a base URL for the SVG document to resolve relative links
-		URL url = DDEditorPlugin.getPlugin().getBundle().getEntry("/svg");
-		svgDocument.setURLObject(url);
+		// URL url = DDEditorPlugin.getPlugin().getBundle().getEntry("/svg");
+		svgDocument.setDocumentURI(resource.getURI().toString());
 
 		// iterate over all contents and convert them
 		for (TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
@@ -154,6 +158,13 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			doSwitch(iterator.next());
 
 		return svgDocument;
+	}
+
+	/**
+	 * @return an instance of the DOM Implementation
+	 */
+	protected DOMImplementation getDOMImplementation() {
+		return SVGDOMImplementation.getDOMImplementation();
 	}
 
 	/**
@@ -175,20 +186,35 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 	 *            The double value
 	 * @return The string encoding of the double
 	 */
-	protected static String convertDoubleToString(Double d) {
-		DecimalFormat f = new DecimalFormat("#.00");
-		return f.format(d);
+	protected String convertDoubleToString(Double d) {
+		return String.valueOf(d);
 	}
 
 	/**
-	 * Converts a <code>Double</code> to a string
+	 * Converts a <code>Reference</code> to a URI string
 	 * 
-	 * @param d
-	 *            The double value
-	 * @return The string encoding of the double
+	 * @param reference
+	 *            The EObject reference
+	 * @return The URI encoding of the reference
 	 */
-	protected static String convertReferenceToURI(EObject reference) {
-		return "url(" + EcoreUtil.getURI(reference) + ")";
+	protected String convertReferenceToURI(EObject referenced) {
+		Resource referencedResource = referenced.eResource();
+		URI uri = referencedResource.getURI();
+		String uriFragment = referencedResource.getURIFragment(referenced);
+		if (resource.equals(referencedResource))
+			return '#' + uriFragment;
+		return uri.appendFragment(uriFragment).toString();
+	}
+
+	/**
+	 * Converts a <code>Reference</code> to a URL string
+	 * 
+	 * @param reference
+	 *            The EObject reference
+	 * @return The URL encoding of the reference
+	 */
+	protected String convertReferenceToURL(EObject reference) {
+		return "url(" + convertReferenceToURI(reference) + ")";
 	}
 
 	/**
@@ -287,9 +313,8 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 						convertDoubleToString(center.getY()));
 		}
 
-		if (object.eIsSet(DGPackage.Literals.CIRCLE__RADIUS))
-			circle.setAttribute(SVG_R_ATTRIBUTE,
-					convertDoubleToString(object.getRadius()));
+		circle.setAttribute(SVG_R_ATTRIBUTE,
+				convertDoubleToString(object.getRadius()));
 
 		return super.caseCircle(object);
 	}
@@ -299,6 +324,9 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 		Element clipPath = map(object, svgDocument.createElementNS(
 				SVG_NAMESPACE_URI, SVG_CLIP_PATH_TAG));
 		getParentElement(object).appendChild(clipPath);
+
+		clipPath.setAttribute(SVG_CLIP_PATH_UNITS_ATTRIBUTE,
+				SVG_OBJECT_BOUNDING_BOX_VALUE);
 
 		return super.caseClipPath(object);
 	}
@@ -321,19 +349,22 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			Point start = object.getStartControl();
 			sb.append(convertDoubleToString(start.getX()) + ","
 					+ convertDoubleToString(start.getY()));
-		}
+		} else
+			sb.append("0.0,0.0");
 		sb.append(" ");
 		if (object.getEndControl() != null) {
 			Point end = object.getEndControl();
 			sb.append(convertDoubleToString(end.getX()) + ","
 					+ convertDoubleToString(end.getY()));
-		}
+		} else
+			sb.append("0.0,0.0");
 		sb.append(" ");
 		if (object.getPoint() != null) {
 			Point point = object.getPoint();
 			sb.append(convertDoubleToString(point.getX()) + ","
 					+ convertDoubleToString(point.getY()));
-		}
+		} else
+			sb.append("0.0,0.0");
 
 		return super.caseCubicCurveTo(object);
 	}
@@ -371,24 +402,25 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 						convertDoubleToString(center.getX()));
 			if (center.eIsSet(DCPackage.Literals.POINT__Y))
 				ellipse.setAttribute(SVG_CY_ATTRIBUTE,
-						convertDoubleToString(center.getX()));
+						convertDoubleToString(center.getY()));
 		}
 
 		if (object.getRadii() != null) {
 			Dimension radii = object.getRadii();
-			if (radii.eIsSet(DCPackage.Literals.DIMENSION__WIDTH))
-				ellipse.setAttribute(SVG_RX_ATTRIBUTE,
-						convertDoubleToString(radii.getWidth()));
-			if (radii.eIsSet(DCPackage.Literals.DIMENSION__HEIGHT))
-				ellipse.setAttribute(SVG_RY_ATTRIBUTE,
-						convertDoubleToString(radii.getHeight()));
+			ellipse.setAttribute(SVG_RX_ATTRIBUTE,
+					convertDoubleToString(radii.getWidth()));
+			ellipse.setAttribute(SVG_RY_ATTRIBUTE,
+					convertDoubleToString(radii.getHeight()));
+		} else {
+			ellipse.setAttribute(SVG_RX_ATTRIBUTE, "0.0");
+			ellipse.setAttribute(SVG_RY_ATTRIBUTE, "0.0");
 		}
 
 		return super.caseEllipse(object);
 	}
 
 	@Override
-	public Object caseEllipticalCurveTo(EllipticalCurveTo object) {
+	public Object caseEllipticalArcTo(EllipticalArcTo object) {
 		StringBuffer sb = map(object, new StringBuffer());
 
 		sb.append(object.isRelative() ? "a" : "A");
@@ -396,7 +428,8 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			Dimension radii = object.getRadii();
 			sb.append(convertDoubleToString(radii.getWidth()) + ","
 					+ convertDoubleToString(radii.getHeight()));
-		}
+		} else
+			sb.append("0.0,0.0");
 		sb.append(" ");
 		sb.append(convertDoubleToString(object.getRotation()));
 		sb.append(" ");
@@ -408,13 +441,28 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			Point point = object.getPoint();
 			sb.append(convertDoubleToString(point.getX()) + ","
 					+ convertDoubleToString(point.getY()));
-		}
+		} else
+			sb.append("0.0,0.0");
 
 		return super.casePathCommand(object);
 	}
 
 	@Override
 	public Object caseGradient(Gradient object) {
+		Element gradient = (Element) lookup(object);
+
+		if (gradient != null) {
+			if (object.getTransforms().size() > 0) {
+				String transforms = "";
+				for (Transform transform : object.getTransforms()) {
+					transforms += (transforms.length() > 0) ? " " : "";
+					transforms += (String) doSwitch(transform);
+				}
+				gradient.setAttribute(SVG_GRADIENT_TRANSFORM_ATTRIBUTE,
+						transforms);
+			}
+		}
+
 		return super.caseGradient(object);
 	}
 
@@ -426,7 +474,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 
 		if (object.eIsSet(DGPackage.Literals.GRADIENT_STOP__OFFSET))
 			stop.setAttribute(SVG_OFFSET_ATTRIBUTE,
-					convertDoubleToString(object.getOpacity()));
+					convertDoubleToString(object.getOffset()) + "%");
 
 		if (object.eIsSet(DGPackage.Literals.GRADIENT_STOP__COLOR))
 			stop.setAttribute(SVG_STOP_COLOR_ATTRIBUTE,
@@ -444,17 +492,32 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 		Element element = (Element) lookup(object);
 
 		if (element != null) {
-			String keywords = "";
-			for (String keyword : object.getKeyword()) {
-				keywords += (keywords.length() > 0) ? ", " : "";
-				keywords += keyword;
+			if (object.getClasses().size() > 0) {
+				String classes = "";
+				for (String class_ : object.getClasses()) {
+					classes += (classes.length() > 0) ? ", " : "";
+					classes += class_;
+				}
+				element.setAttribute(SVG_CLASS_ATTRIBUTE, classes);
 			}
-			if (keywords.length() > 0)
-				element.setAttribute(SVG_CLASS_ATTRIBUTE, keywords);
 
 			if (object.getStyle() != null) {
 				String value = (String) doSwitch(object.getStyle());
 				element.setAttribute(SVG_STYLE_ATTRIBUTE, value);
+			}
+
+			if (object.getClipPath() != null) {
+				element.setAttribute(SVG_CLIP_PATH_ATTRIBUTE,
+						convertReferenceToURL(object.getClipPath()));
+			}
+
+			if (object.getTransforms().size() > 0) {
+				String transforms = "";
+				for (Transform transform : object.getTransforms()) {
+					transforms += (transforms.length() > 0) ? " " : "";
+					transforms += (String) doSwitch(transform);
+				}
+				element.setAttribute(SVG_TRANSFORM_ATTRIBUTE, transforms);
 			}
 		}
 
@@ -488,23 +551,25 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__Y))
 				image.setAttribute(SVG_Y_ATTRIBUTE,
 						convertDoubleToString(bounds.getY()));
-			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__WIDTH))
-				image.setAttribute(SVG_WIDTH_ATTRIBUTE,
-						convertDoubleToString(bounds.getWidth()));
-			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__HEIGHT))
-				image.setAttribute(SVG_HEIGHT_ATTRIBUTE,
-						convertDoubleToString(bounds.getHeight()));
+			image.setAttribute(SVG_WIDTH_ATTRIBUTE,
+					convertDoubleToString(bounds.getWidth()));
+			image.setAttribute(SVG_HEIGHT_ATTRIBUTE,
+					convertDoubleToString(bounds.getHeight()));
+		} else {
+			image.setAttribute(SVG_WIDTH_ATTRIBUTE, "0.0");
+			image.setAttribute(SVG_HEIGHT_ATTRIBUTE, "0.0");
 		}
 
-		if (object.getSource() != null) {
-			image.setAttribute(XLINK_HREF_ATTRIBUTE, object.getSource());
-		}
+		if (object.getSource() != null && object.getSource().length() > 0)
+			image.setAttributeNS(XLINK_NAMESPACE_URI, XLINK_HREF_QNAME,
+					object.getSource());
+		else
+			image.setAttributeNS(XLINK_NAMESPACE_URI, XLINK_HREF_QNAME,
+					"http://missing.reference");
 
-		if (object.eIsSet(DGPackage.Literals.IMAGE__IS_ASPECT_RATIO_PRESERVED)) {
-			String preserve = object.isAspectRatioPreserved() ? "xMidYMid meet"
-					: "none";
-			image.setAttribute(SVG_PRESERVE_ASPECT_RATIO_ATTRIBUTE, preserve);
-		}
+		String preserve = object.isAspectRatioPreserved() ? "xMidYMid meet"
+				: "none";
+		image.setAttribute(SVG_PRESERVE_ASPECT_RATIO_ATTRIBUTE, preserve);
 
 		return super.caseImage(object);
 	}
@@ -544,24 +609,27 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				SVG_NAMESPACE_URI, SVG_LINEAR_GRADIENT_TAG));
 		getParentElement(object).appendChild(gradient);
 
+		gradient.setAttribute(SVG_GRADIENT_UNITS_ATTRIBUTE,
+				SVG_OBJECT_BOUNDING_BOX_VALUE);
+
 		if (object.getStart() != null) {
 			Point start = object.getStart();
 			if (start.eIsSet(DCPackage.Literals.POINT__X))
 				gradient.setAttribute(SVG_X1_ATTRIBUTE,
-						convertDoubleToString(start.getX()));
+						convertDoubleToString(start.getX()) + "%");
 			if (start.eIsSet(DCPackage.Literals.POINT__Y))
 				gradient.setAttribute(SVG_Y1_ATTRIBUTE,
-						convertDoubleToString(start.getY()));
+						convertDoubleToString(start.getY()) + "%");
 		}
 
 		if (object.getEnd() != null) {
 			Point end = object.getEnd();
 			if (end.eIsSet(DCPackage.Literals.POINT__X))
 				gradient.setAttribute(SVG_X2_ATTRIBUTE,
-						convertDoubleToString(end.getX()));
+						convertDoubleToString(end.getX()) + "%");
 			if (end.eIsSet(DCPackage.Literals.POINT__Y))
 				gradient.setAttribute(SVG_Y2_ATTRIBUTE,
-						convertDoubleToString(end.getY()));
+						convertDoubleToString(end.getY()) + "%");
 		}
 
 		return super.caseLinearGradient(object);
@@ -576,7 +644,8 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			Point point = object.getPoint();
 			sb.append(convertDoubleToString(point.getX()) + ","
 					+ convertDoubleToString(point.getY()));
-		}
+		} else
+			sb.append("0.0,0.0");
 
 		return super.caseLineTo(object);
 	}
@@ -588,13 +657,13 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 		if (element != null) {
 			if (object.getStartMarker() != null)
 				element.setAttribute(SVG_MARKER_START_ATTRIBUTE,
-						convertReferenceToURI(object.getStartMarker()));
+						convertReferenceToURL(object.getStartMarker()));
 			if (object.getMidMarker() != null)
 				element.setAttribute(SVG_MARKER_MID_ATTRIBUTE,
-						convertReferenceToURI(object.getMidMarker()));
+						convertReferenceToURL(object.getMidMarker()));
 			if (object.getEndMarker() != null)
 				element.setAttribute(SVG_MARKER_END_ATTRIBUTE,
-						convertReferenceToURI(object.getEndMarker()));
+						convertReferenceToURL(object.getEndMarker()));
 		}
 
 		return super.caseMarkedElement(object);
@@ -606,12 +675,50 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_MARKER_TAG));
 		getParentElement(object).appendChild(marker);
 
+		marker.setAttribute(SVG_MARKER_UNITS_ATTRIBUTE, SVG_STROKE_WIDTH_VALUE);
+		marker.setAttribute(SVG_ORIENT_ATTRIBUTE, SVG_AUTO_VALUE);
+
+		if (object.getSize() != null) {
+			Dimension size = object.getSize();
+			if (size.eIsSet(DCPackage.Literals.DIMENSION__WIDTH))
+				marker.setAttribute(SVG_MARKER_WIDTH_ATTRIBUTE,
+						convertDoubleToString(size.getWidth()));
+			if (size.eIsSet(DCPackage.Literals.DIMENSION__HEIGHT))
+				marker.setAttribute(SVG_MARKER_HEIGHT_ATTRIBUTE,
+						convertDoubleToString(size.getHeight()));
+		}
+
+		if (object.getReference() != null) {
+			Point reference = object.getReference();
+			if (reference.eIsSet(DCPackage.Literals.POINT__X))
+				marker.setAttribute(SVG_REF_X_ATTRIBUTE,
+						convertDoubleToString(reference.getX()));
+			if (reference.eIsSet(DCPackage.Literals.POINT__Y))
+				marker.setAttribute(SVG_REF_Y_ATTRIBUTE,
+						convertDoubleToString(reference.getY()));
+		}
+
 		return super.caseMarker(object);
 	}
 
 	@Override
 	public Object caseMatrix(Matrix object) {
-		// TODO Auto-generated method stub
+		StringBuffer sb = map(object, new StringBuffer());
+
+		sb.append("matrix(");
+		sb.append(convertDoubleToString(object.getA()));
+		sb.append(", ");
+		sb.append(convertDoubleToString(object.getB()));
+		sb.append(", ");
+		sb.append(convertDoubleToString(object.getC()));
+		sb.append(", ");
+		sb.append(convertDoubleToString(object.getD()));
+		sb.append(", ");
+		sb.append(convertDoubleToString(object.getE()));
+		sb.append(", ");
+		sb.append(convertDoubleToString(object.getF()));
+		sb.append(")");
+
 		return super.caseMatrix(object);
 	}
 
@@ -624,7 +731,8 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			Point point = object.getPoint();
 			sb.append(convertDoubleToString(point.getX()) + ","
 					+ convertDoubleToString(point.getY()));
-		}
+		} else
+			sb.append("0.0,0.0");
 
 		return super.caseMoveTo(object);
 	}
@@ -636,14 +744,15 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 		if (object.eIsSet(DGPackage.Literals.PAINT__COLOR))
 			sb.append(convertColorToString(object.getColor()));
 		else if (object.getPaintServer() != null)
-			sb.append(convertReferenceToURI(object.getPaintServer()));
+			sb.append(convertReferenceToURL(object.getPaintServer()));
+		else
+			sb.append("none");
 
 		return super.casePaint(object);
 	}
 
 	@Override
 	public Object casePaintServer(PaintServer object) {
-		// TODO Auto-generated method stub
 		return super.casePaintServer(object);
 	}
 
@@ -653,13 +762,15 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_PATH_TAG));
 		getParentElement(object).appendChild(path);
 
-		StringBuffer sb = new StringBuffer();
-		for (PathCommand command : object.getCommand()) {
-			String c = (String) doSwitch(command);
-			sb.append(sb.length() > 0 ? " " : "");
-			sb.append(c);
+		if (!object.getCommands().isEmpty()) {
+			StringBuffer sb = new StringBuffer();
+			for (PathCommand command : object.getCommands()) {
+				String c = (String) doSwitch(command);
+				sb.append(sb.length() > 0 ? " " : "");
+				sb.append(c);
+			}
+			path.setAttribute(SVG_D_ATTRIBUTE, sb.toString());
 		}
-		path.setAttribute(SVG_D_ATTRIBUTE, sb.toString());
 
 		return super.casePath(object);
 	}
@@ -671,7 +782,38 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 
 	@Override
 	public Object casePattern(Pattern object) {
-		// TODO Auto-generated method stub
+		Element pattern = map(object,
+				svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_PATTERN_TAG));
+		getParentElement(object).appendChild(pattern);
+
+		pattern.setAttribute(SVG_PATTERN_UNITS_ATTRIBUTE,
+				SVG_OBJECT_BOUNDING_BOX_VALUE);
+
+		if (object.getBounds() != null) {
+			Bounds bounds = object.getBounds();
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__X))
+				pattern.setAttribute(SVG_X_ATTRIBUTE,
+						convertDoubleToString(bounds.getX()) + "%");
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__Y))
+				pattern.setAttribute(SVG_Y_ATTRIBUTE,
+						convertDoubleToString(bounds.getY()) + "%");
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__WIDTH))
+				pattern.setAttribute(SVG_WIDTH_ATTRIBUTE,
+						convertDoubleToString(bounds.getWidth()) + "%");
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__HEIGHT))
+				pattern.setAttribute(SVG_HEIGHT_ATTRIBUTE,
+						convertDoubleToString(bounds.getHeight()) + "%");
+		}
+
+		if (object.getTransforms().size() > 0) {
+			String transforms = "";
+			for (Transform transform : object.getTransforms()) {
+				transforms += (transforms.length() > 0) ? " " : "";
+				transforms += (String) doSwitch(transform);
+			}
+			pattern.setAttribute(SVG_PATTERN_TRANSFORM_ATTRIBUTE, transforms);
+		}
+
 		return super.casePattern(object);
 	}
 
@@ -681,14 +823,16 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_POLYGON_TAG));
 		getParentElement(object).appendChild(polygon);
 
-		StringBuffer sb = new StringBuffer();
-		for (Point point : object.getPoint()) {
-			sb.append(sb.length() > 0 ? " " : "");
-			sb.append(convertDoubleToString(point.getX()));
-			sb.append(",");
-			sb.append(convertDoubleToString(point.getY()));
+		if (!object.getPoints().isEmpty()) {
+			StringBuffer sb = new StringBuffer();
+			for (Point point : object.getPoints()) {
+				sb.append(sb.length() > 0 ? " " : "");
+				sb.append(convertDoubleToString(point.getX()));
+				sb.append(",");
+				sb.append(convertDoubleToString(point.getY()));
+			}
+			polygon.setAttribute(SVG_POINTS_ATTRIBUTE, sb.toString());
 		}
-		polygon.setAttribute(SVG_POINTS_ATTRIBUTE, sb.toString());
 
 		return super.casePolygon(object);
 	}
@@ -699,14 +843,16 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				SVG_NAMESPACE_URI, SVG_POLYLINE_TAG));
 		getParentElement(object).appendChild(polyline);
 
-		StringBuffer sb = new StringBuffer();
-		for (Point point : object.getPoint()) {
-			sb.append(sb.length() > 0 ? " " : "");
-			sb.append(convertDoubleToString(point.getX()));
-			sb.append(",");
-			sb.append(convertDoubleToString(point.getY()));
+		if (!object.getPoints().isEmpty()) {
+			StringBuffer sb = new StringBuffer();
+			for (Point point : object.getPoints()) {
+				sb.append(sb.length() > 0 ? " " : "");
+				sb.append(convertDoubleToString(point.getX()));
+				sb.append(",");
+				sb.append(convertDoubleToString(point.getY()));
+			}
+			polyline.setAttribute(SVG_POINTS_ATTRIBUTE, sb.toString());
 		}
-		polyline.setAttribute(SVG_POINTS_ATTRIBUTE, sb.toString());
 
 		return super.casePolyline(object);
 	}
@@ -720,13 +866,15 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			Point end = object.getControl();
 			sb.append(convertDoubleToString(end.getX()) + ","
 					+ convertDoubleToString(end.getY()));
-		}
+		} else
+			sb.append("0.0,0.0");
 		sb.append(" ");
 		if (object.getPoint() != null) {
 			Point point = object.getPoint();
 			sb.append(convertDoubleToString(point.getX()) + ","
 					+ convertDoubleToString(point.getY()));
-		}
+		} else
+			sb.append("0.0,0.0");
 
 		return super.caseQuadraticCurveTo(object);
 	}
@@ -737,29 +885,32 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				SVG_NAMESPACE_URI, SVG_RADIAL_GRADIENT_TAG));
 		getParentElement(object).appendChild(gradient);
 
+		gradient.setAttribute(SVG_GRADIENT_UNITS_ATTRIBUTE,
+				SVG_OBJECT_BOUNDING_BOX_VALUE);
+
 		if (object.eIsSet(DGPackage.Literals.RADIAL_GRADIENT__RADIUS)) {
 			gradient.setAttribute(SVG_R_ATTRIBUTE,
-					convertDoubleToString(object.getRadius()));
+					convertDoubleToString(object.getRadius()) + "%");
 		}
 
 		if (object.getCenter() != null) {
 			Point center = object.getCenter();
 			if (center.eIsSet(DCPackage.Literals.POINT__X))
 				gradient.setAttribute(SVG_CX_ATTRIBUTE,
-						convertDoubleToString(center.getX()));
+						convertDoubleToString(center.getX()) + "%");
 			if (center.eIsSet(DCPackage.Literals.POINT__Y))
 				gradient.setAttribute(SVG_CY_ATTRIBUTE,
-						convertDoubleToString(center.getY()));
+						convertDoubleToString(center.getY()) + "%");
 		}
 
 		if (object.getFocus() != null) {
 			Point focus = object.getFocus();
 			if (focus.eIsSet(DCPackage.Literals.POINT__X))
 				gradient.setAttribute(SVG_FX_ATTRIBUTE,
-						convertDoubleToString(focus.getX()));
+						convertDoubleToString(focus.getX()) + "%");
 			if (focus.eIsSet(DCPackage.Literals.POINT__Y))
 				gradient.setAttribute(SVG_FY_ATTRIBUTE,
-						convertDoubleToString(focus.getY()));
+						convertDoubleToString(focus.getY()) + "%");
 		}
 
 		return super.caseRadialGradient(object);
@@ -779,12 +930,13 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__Y))
 				rect.setAttribute(SVG_Y_ATTRIBUTE,
 						convertDoubleToString(bounds.getY()));
-			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__WIDTH))
-				rect.setAttribute(SVG_WIDTH_ATTRIBUTE,
-						convertDoubleToString(bounds.getWidth()));
-			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__HEIGHT))
-				rect.setAttribute(SVG_HEIGHT_ATTRIBUTE,
-						convertDoubleToString(bounds.getHeight()));
+			rect.setAttribute(SVG_WIDTH_ATTRIBUTE,
+					convertDoubleToString(bounds.getWidth()));
+			rect.setAttribute(SVG_HEIGHT_ATTRIBUTE,
+					convertDoubleToString(bounds.getHeight()));
+		} else {
+			rect.setAttribute(SVG_WIDTH_ATTRIBUTE, "0.0");
+			rect.setAttribute(SVG_HEIGHT_ATTRIBUTE, "0.0");
 		}
 
 		if (object.eIsSet(DGPackage.Literals.RECTANGLE__CORNER_RADIUS)) {
@@ -800,10 +952,17 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 	@Override
 	public Object caseRootCanvas(RootCanvas object) {
 		Element svg = map(object, svgDocument.getDocumentElement());
+		svg.setAttribute(XMLNS_PREFIX, SVG_NAMESPACE_URI);
+		svg.setAttribute(XMLNS_PREFIX + ":" + XLINK_PREFIX, XLINK_NAMESPACE_URI);
 
-		// for (StyleSheet externalStyleSheet : object.getStyleSheet()) {
-		// TODO: handle external style sheets
-		// }
+		for (StyleSheet styleSheet : object.getExternalStyleSheets()) {
+			String target = "xml-stylesheet";
+			String data = "type=\"text/css\" href=\""
+					+ styleSheet.eResource().getURI() + ".css\" ?>";
+			ProcessingInstruction pi = svgDocument.createProcessingInstruction(
+					target, data);
+			svgDocument.insertBefore(pi, svgDocument.getDocumentElement());
+		}
 
 		if (object.eIsSet(DGPackage.Literals.ROOT_CANVAS__BACKGROUND_COLOR)) {
 			String background = convertColorToString(object
@@ -820,19 +979,53 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 
 	@Override
 	public Object caseRotate(Rotate object) {
-		// TODO Auto-generated method stub
+		StringBuffer sb = map(object, new StringBuffer());
+
+		sb.append("rotate(");
+		sb.append(convertDoubleToString(object.getAngle()));
+		if (object.getCenter() != null) {
+			Point center = object.getCenter();
+			sb.append(", ");
+			sb.append(convertDoubleToString(center.getX()));
+			sb.append(", ");
+			sb.append(convertDoubleToString(center.getY()));
+		}
+		sb.append(")");
+
 		return super.caseRotate(object);
 	}
 
 	@Override
 	public Object caseScale(Scale object) {
-		// TODO Auto-generated method stub
+		StringBuffer sb = map(object, new StringBuffer());
+
+		sb.append("scale(");
+		sb.append(convertDoubleToString(object.getFactorX()));
+		sb.append(", ");
+		sb.append(convertDoubleToString(object.getFactorY()));
+		sb.append(")");
+
 		return super.caseScale(object);
 	}
 
 	@Override
 	public Object caseSkew(Skew object) {
-		// TODO Auto-generated method stub
+		StringBuffer sb = map(object, new StringBuffer());
+
+		if (object.eIsSet(DGPackage.Literals.SKEW__ANGLE_X)) {
+			sb.append("skewX(");
+			sb.append(convertDoubleToString(object.getAngleX()));
+			sb.append(")");
+		}
+
+		sb.append(sb.length() > 0 ? " " : "");
+
+		if (object.eIsSet(DGPackage.Literals.SKEW__ANGLE_Y)) {
+			sb.append("skewY(");
+			sb.append(convertDoubleToString(object.getAngleY()));
+			sb.append(")");
+		}
+
 		return super.caseSkew(object);
 	}
 
@@ -842,7 +1035,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 
 		if (object.eIsSet(DGPackage.Literals.STYLE__FILL)) {
 			String value = (object.getFill() == null) ? "none"
-					: ((String) doSwitch(object.getFill()));
+					: (String) doSwitch(object.getFill());
 			sb.append(SVG_FILL_ATTRIBUTE + ": " + value + "; ");
 		}
 
@@ -869,7 +1062,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 
 		if (object.eIsSet(DGPackage.Literals.STYLE__STROKE_DASH_LENGTH)) {
 			StringBuffer value = new StringBuffer();
-			for (double d : object.getStrokeDashLength()) {
+			for (double d : object.getStrokeDashLengths()) {
 				value.append(value.length() > 0 ? ", " : "");
 				value.append(convertDoubleToString(d));
 			}
@@ -916,6 +1109,9 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			sb.append(SVG_TEXT_DECORATION_ATTRIBUTE + ": " + value + "; ");
 		}
 
+		if (sb.length() > 0)
+			sb.deleteCharAt(sb.length() - 1);
+
 		return super.caseStyle(object);
 	}
 
@@ -923,14 +1119,16 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 	public Object caseStyleRule(StyleRule object) {
 		StringBuffer sb = map(object, new StringBuffer());
 
-		for (StyleSelector selector : object.getSelector()) {
-			sb.append(sb.length() > 0 ? ", " : "");
-			sb.append((String) doSwitch(selector));
-		}
+		if (!object.getSelectors().isEmpty() && object.getStyle() != null) {
+			for (StyleSelector selector : object.getSelectors()) {
+				sb.append(sb.length() > 0 ? ", " : "");
+				sb.append((String) doSwitch(selector));
+			}
 
-		if (object.getStyle() != null) {
-			String style = (String) doSwitch(object.getStyle());
-			sb.append(" { " + style + "}");
+			if (object.getStyle() != null) {
+				String style = (String) doSwitch(object.getStyle());
+				sb.append(" { " + style + " }");
+			}
 		}
 
 		return super.caseStyleRule(object);
@@ -940,38 +1138,55 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 	public Object caseStyleSelector(StyleSelector object) {
 		StringBuffer sb = map(object, new StringBuffer());
 
-		if (object.getType() != null) {
-			EClass type = object.getType();
-			if (DGPackage.Literals.CANVAS.equals(type))
+		if (object.eIsSet(DGPackage.Literals.STYLE_SELECTOR__KIND)) {
+			switch (object.getKind()) {
+			case CANVAS:
 				sb.append(SVG_SVG_TAG);
-			else if (DGPackage.Literals.GROUP.equals(type))
-				sb.append(SVG_G_TAG);
-			else if (DGPackage.Literals.RECTANGLE.equals(type))
-				sb.append(SVG_RECT_TAG);
-			else if (DGPackage.Literals.CIRCLE.equals(type))
+				break;
+			case CIRCLE:
 				sb.append(SVG_CIRCLE_TAG);
-			else if (DGPackage.Literals.ELLIPSE.equals(type))
-				sb.append(SVG_ELLIPSE_TAG);
-			else if (DGPackage.Literals.TEXT.equals(type))
-				sb.append(SVG_TEXT_TAG);
-			else if (DGPackage.Literals.LINE.equals(type))
-				sb.append(SVG_LINE_TAG);
-			else if (DGPackage.Literals.POLYGON.equals(type))
-				sb.append(SVG_POLYGON_TAG);
-			else if (DGPackage.Literals.POLYLINE.equals(type))
-				sb.append(SVG_POLYLINE_TAG);
-			else if (DGPackage.Literals.CLIP_PATH.equals(type))
+				break;
+			case CLIP_PATH:
 				sb.append(SVG_CLIP_PATH_TAG);
-			else if (DGPackage.Literals.IMAGE.equals(type))
+				break;
+			case ELLIPSE:
+				sb.append(SVG_ELLIPSE_TAG);
+				break;
+			case GROUP:
+				sb.append(SVG_G_TAG);
+				break;
+			case IMAGE:
 				sb.append(SVG_IMAGE_TAG);
-			else if (DGPackage.Literals.MARKER.equals(type))
+				break;
+			case LINE:
+				sb.append(SVG_LINE_TAG);
+				break;
+			case MARKER:
 				sb.append(SVG_MARKER_TAG);
-			else if (DGPackage.Literals.PATH.equals(type))
+				break;
+			case PATH:
 				sb.append(SVG_PATH_TAG);
+				break;
+			case POLYGON:
+				sb.append(SVG_POLYGON_TAG);
+				break;
+			case POLYLINE:
+				sb.append(SVG_POLYLINE_TAG);
+				break;
+			case RECTANGLE:
+				sb.append(SVG_RECT_TAG);
+				break;
+			case TEXT:
+				sb.append(SVG_TEXT_TAG);
+				break;
+			case USE:
+				sb.append(SVG_USE_TAG);
+				break;
+			}
 		}
 
-		for (String keyword : object.getKeyword())
-			sb.append("." + keyword);
+		for (String class_ : object.getClasses())
+			sb.append("." + class_);
 
 		if (sb.length() == 0) {
 			sb.append("*");
@@ -987,7 +1202,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 		getParentElement(object).appendChild(styleSheet);
 
 		StringBuffer sb = new StringBuffer();
-		for (StyleRule rule : object.getRule()) {
+		for (StyleRule rule : object.getRules()) {
 			sb.append("\n\t\t\t" + (String) doSwitch(rule));
 		}
 		styleSheet.setAttribute(SVG_TYPE_ATTRIBUTE, "text/css");
@@ -999,7 +1214,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 
 	@Override
 	public Object caseText(Text object) {
-		SVGTextElement text = (SVGTextElement) map(object,
+		Element text = (Element) map(object,
 				svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_TEXT_TAG));
 		getParentElement(object).appendChild(text);
 
@@ -1022,19 +1237,49 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 
 	@Override
 	public Object caseTransform(Transform object) {
-		// TODO Auto-generated method stub
 		return super.caseTransform(object);
 	}
 
 	@Override
 	public Object caseTranslate(Translate object) {
-		// TODO Auto-generated method stub
+		StringBuffer sb = map(object, new StringBuffer());
+
+		sb.append("translate(");
+		sb.append(convertDoubleToString(object.getDeltaX()));
+		sb.append(", ");
+		sb.append(convertDoubleToString(object.getDeltaY()));
+		sb.append(")");
+
 		return super.caseTranslate(object);
 	}
 
 	@Override
 	public Object caseUse(Use object) {
-		// TODO Auto-generated method stub
+		Element use = map(object,
+				svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_USE_TAG));
+		getParentElement(object).appendChild(use);
+
+		if (object.getReferencedElement() != null) {
+			use.setAttributeNS(XLINK_NAMESPACE_URI, XLINK_HREF_QNAME,
+					convertReferenceToURI(object.getReferencedElement()));
+		}
+
+		if (object.getBounds() != null) {
+			Bounds bounds = object.getBounds();
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__X))
+				use.setAttribute(SVG_X_ATTRIBUTE,
+						convertDoubleToString(bounds.getX()));
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__Y))
+				use.setAttribute(SVG_Y_ATTRIBUTE,
+						convertDoubleToString(bounds.getY()));
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__WIDTH))
+				use.setAttribute(SVG_WIDTH_ATTRIBUTE,
+						convertDoubleToString(bounds.getWidth()));
+			if (bounds.eIsSet(DCPackage.Literals.BOUNDS__HEIGHT))
+				use.setAttribute(SVG_HEIGHT_ATTRIBUTE,
+						convertDoubleToString(bounds.getHeight()));
+		}
+
 		return super.caseUse(object);
 	}
 

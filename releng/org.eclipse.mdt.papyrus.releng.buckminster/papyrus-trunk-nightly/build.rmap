@@ -510,12 +510,16 @@
       </rm:uri>
     </rm:provider>
 
-    <!-- EMF Transaction, EMF Validation -->
+    <!-- EMF Transaction -->
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("EMF TRANSACTION",0) -->
       <rm:uri format="{0}/modeling/emf/transaction/updates/milestones">
         <bc:propertyRef key="eclipse.downloads"/>
       </rm:uri>
+    </rm:provider>
+    
+    <!-- EMF Validation -->
+    <rm:provider componentTypes="eclipse.feature,osgi.bundle" mutable="false" readerType="p2" source="false">
       <!-- updateFrom("EMF VALIDATION",0) -->
       <rm:uri format="{0}/modeling/emf/validation/updates/milestones">
         <bc:propertyRef key="eclipse.downloads"/>

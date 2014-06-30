@@ -11,9 +11,14 @@
  */
 package org.eclipse.papyrus.dd.dg.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -22,7 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.papyrus.dd.dc.Bounds;
 
 import org.eclipse.papyrus.dd.dg.DGPackage;
+import org.eclipse.papyrus.dd.dg.GraphicalElement;
 import org.eclipse.papyrus.dd.dg.Use;
+import org.eclipse.papyrus.dd.dg.util.DGValidator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -31,6 +38,8 @@ import org.eclipse.papyrus.dd.dg.Use;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.UseImpl#getBounds <em>Bounds</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.UseImpl#getReferencedElement <em>
+ * Referenced Element</em>}</li>
  * </ul>
  * </p>
  * 
@@ -46,6 +55,17 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 * @ordered
 	 */
 	protected Bounds bounds;
+
+	/**
+	 * The cached value of the '{@link #getReferencedElement()
+	 * <em>Referenced Element</em>}' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getReferencedElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected GraphicalElement referencedElement;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -125,6 +145,81 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 	 * 
 	 * @generated
 	 */
+	public GraphicalElement getReferencedElement() {
+		if (referencedElement != null && referencedElement.eIsProxy()) {
+			InternalEObject oldReferencedElement = (InternalEObject) referencedElement;
+			referencedElement = (GraphicalElement) eResolveProxy(oldReferencedElement);
+			if (referencedElement != oldReferencedElement) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DGPackage.USE__REFERENCED_ELEMENT,
+							oldReferencedElement, referencedElement));
+			}
+		}
+		return referencedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public GraphicalElement basicGetReferencedElement() {
+		return referencedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setReferencedElement(GraphicalElement newReferencedElement) {
+		GraphicalElement oldReferencedElement = referencedElement;
+		referencedElement = newReferencedElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DGPackage.USE__REFERENCED_ELEMENT, oldReferencedElement,
+					referencedElement));
+	}
+
+	/**
+	 * The cached validation expression for the '
+	 * {@link #referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Referenced Element Has Id</em>}' invariant operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain,
+	 *      java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REFERENCED_ELEMENT_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "referencedElement->notEmpty() implies referencedElement.id->notEmpty()";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean referencedElementHasId(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return DGValidator
+				.validate(
+						DGPackage.Literals.USE,
+						this,
+						diagnostics,
+						context,
+						"http://www.eclipse.org/emf/2002/Ecore/OCL",
+						DGPackage.Literals.USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP,
+						REFERENCED_ELEMENT_HAS_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+						Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE,
+						DGValidator.USE__REFERENCED_ELEMENT_HAS_ID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
@@ -145,6 +240,10 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 		switch (featureID) {
 		case DGPackage.USE__BOUNDS:
 			return getBounds();
+		case DGPackage.USE__REFERENCED_ELEMENT:
+			if (resolve)
+				return getReferencedElement();
+			return basicGetReferencedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,6 +258,9 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 		switch (featureID) {
 		case DGPackage.USE__BOUNDS:
 			setBounds((Bounds) newValue);
+			return;
+		case DGPackage.USE__REFERENCED_ELEMENT:
+			setReferencedElement((GraphicalElement) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -175,6 +277,9 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 		case DGPackage.USE__BOUNDS:
 			setBounds((Bounds) null);
 			return;
+		case DGPackage.USE__REFERENCED_ELEMENT:
+			setReferencedElement((GraphicalElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -189,8 +294,27 @@ public class UseImpl extends GraphicalElementImpl implements Use {
 		switch (featureID) {
 		case DGPackage.USE__BOUNDS:
 			return bounds != null;
+		case DGPackage.USE__REFERENCED_ELEMENT:
+			return referencedElement != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case DGPackage.USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP:
+			return referencedElementHasId((DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } // UseImpl

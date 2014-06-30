@@ -4546,7 +4546,7 @@
     </elements>
     <elements name="Trigger" supertypes="//@dataContexts.0/@elements.4">
       <properties name="event" type="Reference" description="The event that causes the trigger."/>
-      <properties name="port" type="Reference" description="A optional port of the receiver object on which the behavioral feature is invoked."/>
+      <properties name="port" type="Reference" multiplicity="-1" description="A optional port of the receiver object on which the behavioral feature is invoked."/>
     </elements>
     <elements name="Event" supertypes="//@dataContexts.0/@elements.3"/>
     <elements name="Port" supertypes="//@dataContexts.0/@elements.35">

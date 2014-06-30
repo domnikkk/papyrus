@@ -10,6 +10,6 @@
 [query public modArray(propertyOrParameter : Element) : String
 	= invoke('org.eclipse.papyrus.cpp.codegen.utils.Modifier', 'modArray(org.eclipse.uml2.uml.Element)', Sequence{propertyOrParameter}) /]
 
-[query public modConst(propertyOrParameter : Element) : String
-	= invoke('org.eclipse.papyrus.cpp.codegen.utils.Modifier', 'modConst(org.eclipse.uml2.uml.Element)', Sequence{propertyOrParameter}) /]
+[query public modCVQualifier(propertyOrParameter : Element) : String
+	= invoke('org.eclipse.papyrus.cpp.codegen.utils.Modifier', 'modCVQualifier(org.eclipse.uml2.uml.Element)', Sequence{propertyOrParameter}) /]
 

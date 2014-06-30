@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,6 +36,7 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 import org.eclipse.papyrus.infra.viewpoints.style.StylePackage;
+import org.eclipse.papyrus.infra.widgets.providers.EmptyContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableList;
 import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableValue;
@@ -44,16 +45,16 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * A ModelElement to represent an element of the GMF Notation metamodel
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class GMFModelElement extends EMFModelElement {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
 	 *        The source element (from the Notation metamodel)
 	 */
@@ -62,9 +63,9 @@ public class GMFModelElement extends EMFModelElement {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
 	 *        The source element (from the Notation metamodel)
 	 * @param domain
@@ -77,7 +78,7 @@ public class GMFModelElement extends EMFModelElement {
 
 	@Override
 	protected boolean isFeatureEditable(String propertyPath) {
-		if (propertyPath.endsWith("owner")) {
+		if(propertyPath.endsWith("owner")) {
 			return true;
 		}
 		return super.isFeatureEditable(propertyPath);
@@ -85,20 +86,22 @@ public class GMFModelElement extends EMFModelElement {
 
 	@Override
 	protected IObservable doGetObservable(String propertyPath) {
-		if (propertyPath.endsWith("owner")) {
+		if(propertyPath.endsWith("owner")) {
 			Diagram diagram = (Diagram)source;
 			Style style = diagram.getStyle(StylePackage.Literals.PAPYRUS_VIEW_STYLE);
-			if (style != null)
+			if(style != null) {
 				return new PapyrusObservableValue(style, StylePackage.Literals.PAPYRUS_VIEW_STYLE__OWNER, domain);
+			}
 			return new LegacyOwnerObservable(diagram, StylePackage.Literals.PAPYRUS_VIEW_STYLE__OWNER, domain);
-		} else if (propertyPath.endsWith("prototype")) {
+		} else if(propertyPath.endsWith("prototype")) {
 			Diagram diagram = (Diagram)source;
 			Style style = diagram.getStyle(StylePackage.Literals.PAPYRUS_VIEW_STYLE);
-			if (style != null)
+			if(style != null) {
 				return new PapyrusObservableValue(style, StylePackage.Literals.PAPYRUS_VIEW_STYLE__CONFIGURATION, domain);
+			}
 			return new LegacyOwnerObservable(diagram, StylePackage.Literals.PAPYRUS_VIEW_STYLE__CONFIGURATION, domain);
 		}
-		
+
 		FeaturePath featurePath = getFeaturePath(propertyPath);
 		EStructuralFeature feature = getFeature(propertyPath);
 
@@ -121,16 +124,27 @@ public class GMFModelElement extends EMFModelElement {
 
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
-		if (propertyPath.endsWith("prototype")) {
+		if(propertyPath.endsWith("prototype")) {
 			return new ILabelProvider() {
-				public void addListener(ILabelProviderListener listener) { }
-				public void removeListener(ILabelProviderListener listener) { }
-				public void dispose() { }
-				public boolean isLabelProperty(Object element, String property) { return false; }
+
+				public void addListener(ILabelProviderListener listener) {
+				}
+
+				public void removeListener(ILabelProviderListener listener) {
+				}
+
+				public void dispose() {
+				}
+
+				public boolean isLabelProperty(Object element, String property) {
+					return false;
+				}
+
 				public Image getImage(Object element) {
 					ViewPrototype proto = DiagramUtils.getPrototype((Diagram)source);
 					return proto.getIcon();
 				}
+
 				public String getText(Object element) {
 					ViewPrototype proto = DiagramUtils.getPrototype((Diagram)source);
 					return proto.getQualifiedName();
@@ -150,17 +164,23 @@ public class GMFModelElement extends EMFModelElement {
 	 */
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if (propertyPath.endsWith("element")) {
+		if("element".equals(propertyPath)) {
+			if(source instanceof Diagram) {
+				Diagram diagram = (Diagram)source;
+				return new ModelContentProvider(diagram, getRoot(diagram.getElement())) {
+
+					@Override
+					protected boolean isValid(EObject selection, Diagram diagram, ViewPrototype prototype) {
+						return PolicyChecker.getCurrent().canHaveNewView(selection, DiagramUtils.getOwner(diagram), prototype);
+					}
+				};
+			} else {
+				return EmptyContentProvider.instance;
+			}
+		} else if("owner".equals(propertyPath)) {
 			Diagram diagram = (Diagram)source;
 			return new ModelContentProvider(diagram, getRoot(diagram.getElement())) {
-				@Override
-				protected boolean isValid(EObject selection, Diagram diagram, ViewPrototype prototype) {
-					return PolicyChecker.getCurrent().canHaveNewView(selection, DiagramUtils.getOwner(diagram), prototype);
-				}
-			};
-		} else if (propertyPath.endsWith("owner")) {
-			Diagram diagram = (Diagram) source;
-			return new ModelContentProvider(diagram, getRoot(diagram.getElement())) {
+
 				@Override
 				protected boolean isValid(EObject selection, Diagram diagram, ViewPrototype prototype) {
 					return (PolicyChecker.getCurrent().getOwningRuleFor(prototype, selection) != null);
@@ -169,16 +189,18 @@ public class GMFModelElement extends EMFModelElement {
 		}
 		return super.getContentProvider(propertyPath);
 	}
-	
+
 	/**
 	 * Gets the root EObject from the given one
-	 * @param obj An object
+	 *
+	 * @param obj
+	 *        An object
 	 * @return The root object which is an ancestor of the given one
 	 */
 	private EObject getRoot(EObject obj) {
 		EObject current = obj;
 		EObject parent = obj.eContainer();
-		while (parent != null) {
+		while(parent != null) {
 			current = parent;
 			parent = parent.eContainer();
 		}

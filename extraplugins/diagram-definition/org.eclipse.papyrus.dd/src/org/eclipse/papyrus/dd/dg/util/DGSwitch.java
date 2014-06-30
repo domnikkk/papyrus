@@ -242,11 +242,11 @@ public class DGSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DGPackage.ELLIPTICAL_CURVE_TO: {
-			EllipticalCurveTo ellipticalCurveTo = (EllipticalCurveTo) theEObject;
-			T result = caseEllipticalCurveTo(ellipticalCurveTo);
+		case DGPackage.ELLIPTICAL_ARC_TO: {
+			EllipticalArcTo ellipticalArcTo = (EllipticalArcTo) theEObject;
+			T result = caseEllipticalArcTo(ellipticalArcTo);
 			if (result == null)
-				result = casePathCommand(ellipticalCurveTo);
+				result = casePathCommand(ellipticalArcTo);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -834,18 +834,18 @@ public class DGSwitch<T> extends Switch<T> {
 
 	/**
 	 * Returns the result of interpreting the object as an instance of '
-	 * <em>Elliptical Curve To</em>'. <!-- begin-user-doc --> This
-	 * implementation returns null; returning a non-null result will terminate
-	 * the switch. <!-- end-user-doc -->
+	 * <em>Elliptical Arc To</em>'. <!-- begin-user-doc --> This implementation
+	 * returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
 	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
-	 *         <em>Elliptical Curve To</em>'.
+	 *         <em>Elliptical Arc To</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEllipticalCurveTo(EllipticalCurveTo object) {
+	public T caseEllipticalArcTo(EllipticalArcTo object) {
 		return null;
 	}
 

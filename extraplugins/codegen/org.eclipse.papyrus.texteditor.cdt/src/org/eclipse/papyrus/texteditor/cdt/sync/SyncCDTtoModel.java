@@ -47,6 +47,7 @@ import org.eclipse.papyrus.C_Cpp.Const;
 import org.eclipse.papyrus.C_Cpp.Include;
 import org.eclipse.papyrus.C_Cpp.Ptr;
 import org.eclipse.papyrus.C_Cpp.Ref;
+import org.eclipse.papyrus.C_Cpp.Volatile;
 import org.eclipse.papyrus.cpp.codegen.Constants;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.texteditor.cdt.CommandSupport;
@@ -356,6 +357,9 @@ public class SyncCDTtoModel implements Runnable {
 				}
 				if(parameterType.isConst()) {
 					StereotypeUtil.apply(umlParameter, Const.class);
+				}
+				if(parameterType.isVolatile()) {
+					StereotypeUtil.apply(umlParameter, Volatile.class);
 				}
 				if(isPointer) {
 					StereotypeUtil.apply(umlParameter, Ptr.class);
