@@ -15,6 +15,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Activator;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
@@ -78,7 +79,7 @@ public class Executor implements Cloneable {
 			clone = (Executor)super.clone();
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 		return clone;
 	}

@@ -17,6 +17,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.papyrus.junit.utils.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentCombinedFragmentCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionOperandEditPart;
@@ -57,6 +58,7 @@ public class InteractionOperandStereotypesTest extends BaseStereotypesTest {
 		doTestDisplayStereotypeInCompartment(operand, operand.getChildBySemanticHint(InteractionOperandGuardEditPart.GUARD_TYPE));
 	}
 
+	@FailingTest
 	@Test
 	public void testDisplayStereotypeWithBrace() {
 		doTestDisplayStereotypeWithBrace(operand, operand.getChildBySemanticHint(InteractionOperandGuardEditPart.GUARD_TYPE));

@@ -190,7 +190,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 						checkList.add(tmp[i]);
 					}
 				}
-				System.out.println(event.toString());
+				//System.out.println(event.toString());
 			}
 		});
 
@@ -215,7 +215,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 					checkList.removeAll(checkList);
 				}
 
-				System.out.println(event.toString());
+				//System.out.println(event.toString());
 			}
 		});
 
@@ -236,7 +236,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				viewer.setInput(getElementListUP());
-				System.out.println(event.toString());
+				//System.out.println(event.toString());
 			}
 		});
 
@@ -255,7 +255,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				viewer.setInput(getElementListDown());
-				System.out.println(event.toString());
+				//System.out.println(event.toString());
 			}
 		});
 

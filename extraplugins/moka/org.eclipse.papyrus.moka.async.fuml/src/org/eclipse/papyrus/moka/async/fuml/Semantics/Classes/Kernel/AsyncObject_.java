@@ -14,6 +14,7 @@ package org.eclipse.papyrus.moka.async.fuml.Semantics.Classes.Kernel;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.async.fuml.Activator;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncObjectActivation;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncControlDelegate;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
@@ -72,7 +73,7 @@ public class AsyncObject_ extends CS_Object {
 		try {
 			objectactivationThread.join();
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 	}
 }

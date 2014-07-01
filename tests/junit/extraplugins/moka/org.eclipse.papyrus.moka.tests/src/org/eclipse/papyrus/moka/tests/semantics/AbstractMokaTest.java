@@ -147,8 +147,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 			Assert.assertTrue("the root of UML model is not a stereotype", root instanceof Package);
 			return (org.eclipse.uml2.uml.Package)root;
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 		return null;
 

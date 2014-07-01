@@ -16,6 +16,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Activator;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Evaluation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
@@ -217,7 +218,7 @@ public abstract class ExecutionFactory implements Cloneable {
 		try {
 			clone = (ExecutionFactory)super.clone();
 		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 		return clone;
 	}

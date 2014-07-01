@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.assertionlibrary.Activator;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.utils.ReportNameSingleton;
 import org.w3c.dom.Document;
 
@@ -46,19 +47,17 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 		try {
 			report = Reporter.INSTANCE.getReport();
 		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
-		if(report != null) {
 
-		}
 		try {
 			transformer = factory.newTransformer();
 		} catch (TransformerConfigurationException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 		if(transformer != null) {
 			this.writeReport(transformer, report, Platform.getInstanceLocation().getURL(), reportName);
-			System.out.println(Platform.getInstanceLocation().getURL());
+			//System.out.println(Platform.getInstanceLocation().getURL());
 		}
 	}
 
@@ -68,13 +67,13 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 		try {
 			out = new FileOutputStream(file, false);
 		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
+			Activator.log.error(e1);
 			return false;
 		}
 		try {
 			transformer.transform(new DOMSource(report), new StreamResult(out));
 		} catch (TransformerException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 			return false;
 		}
 		return true;

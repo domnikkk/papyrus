@@ -11,6 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications;
 
+import org.eclipse.papyrus.moka.async.fuml.Activator;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
 
@@ -21,7 +22,7 @@ public class AsyncFIFOGetNextEventStrategy extends AsyncGetNextEventStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncGetNextEventStrategy#getNextEvent(org.eclipse.papyrus.moka
 	 * .async.fuml.Semantics.CommonBehaviors.Communications.AsyncEventPool)
@@ -37,7 +38,7 @@ public class AsyncFIFOGetNextEventStrategy extends AsyncGetNextEventStrategy {
 			nextEvent = eventPool.take();
 		} catch (InterruptedException e) {
 			AsyncDebug.println("getNextEvent interrupted while waiting");
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 		return nextEvent;
 	}
