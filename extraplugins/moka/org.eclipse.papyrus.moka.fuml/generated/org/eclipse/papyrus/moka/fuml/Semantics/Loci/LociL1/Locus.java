@@ -16,6 +16,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Activator;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.uml2.uml.Behavior;
@@ -133,7 +134,7 @@ public class Locus implements Cloneable {
 		try {
 			copy = (Locus)super.clone();
 		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 			return null;
 		}
 		if(this.executor != null)

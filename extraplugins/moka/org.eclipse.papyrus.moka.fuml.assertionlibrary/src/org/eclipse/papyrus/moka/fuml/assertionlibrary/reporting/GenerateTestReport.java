@@ -53,7 +53,7 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 		try {
 			transformer = factory.newTransformer();
 		} catch (TransformerConfigurationException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 		if(transformer != null) {
 			this.writeReport(transformer, report, Platform.getInstanceLocation().getURL(), reportName);
@@ -67,13 +67,13 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 		try {
 			out = new FileOutputStream(file, false);
 		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
+			Activator.log.error(e1);
 			return false;
 		}
 		try {
 			transformer.transform(new DOMSource(report), new StreamResult(out));
 		} catch (TransformerException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 			return false;
 		}
 		return true;
