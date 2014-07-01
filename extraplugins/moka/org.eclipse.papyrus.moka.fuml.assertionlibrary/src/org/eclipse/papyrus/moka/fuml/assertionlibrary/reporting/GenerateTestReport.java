@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.assertionlibrary.Activator;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.utils.ReportNameSingleton;
 import org.w3c.dom.Document;
 
@@ -46,11 +47,9 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 		try {
 			report = Reporter.INSTANCE.getReport();
 		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
-		if(report != null) {
 
-		}
 		try {
 			transformer = factory.newTransformer();
 		} catch (TransformerConfigurationException e) {
