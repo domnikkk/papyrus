@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,16 +35,18 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	public DiagramUpdater getDiagramUpdater() {
 		return UMLDiagramUpdater.TYPED_INSTANCE;
 	}
+
 	@Override
 	protected String getFileName() {
 		return IActivityDiagramTestsConstants.FILE_NAME;
 	}
+
 	@Override
 	protected boolean isSemanticTest() {
 		// TODO Auto-generated method stub
 		return true;
 	}
-	
+
 	/**
 	 * Test to manageDecision Node.
 	 */
@@ -58,7 +60,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageOpaqueAction() {
-		testToManageNode(UMLElementTypes.OpaqueAction_3007,  UMLPackage.eINSTANCE.getOpaqueAction(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.OpaqueAction_3007, UMLPackage.eINSTANCE.getOpaqueAction(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -66,7 +68,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageInitialNode() {
-		testToManageNode(UMLElementTypes.InitialNode_3004,  UMLPackage.eINSTANCE.getInitialNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.InitialNode_3004, UMLPackage.eINSTANCE.getInitialNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -74,7 +76,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageActivityFinalNode() {
-		testToManageNode(UMLElementTypes.ActivityFinalNode_3005,  UMLPackage.eINSTANCE.getActivityFinalNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.ActivityFinalNode_3005, UMLPackage.eINSTANCE.getActivityFinalNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -82,7 +84,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageFlowFinalNode() {
-		testToManageNode(UMLElementTypes.FlowFinalNode_3006,  UMLPackage.eINSTANCE.getFlowFinalNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.FlowFinalNode_3006, UMLPackage.eINSTANCE.getFlowFinalNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -90,7 +92,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageDecisionNode() {
-		testToManageNode(UMLElementTypes.DecisionNode_3038,  UMLPackage.eINSTANCE.getDecisionNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.DecisionNode_3038, UMLPackage.eINSTANCE.getDecisionNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -98,7 +100,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageMergeNode() {
-		testToManageNode(UMLElementTypes.MergeNode_3039,  UMLPackage.eINSTANCE.getMergeNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.MergeNode_3039, UMLPackage.eINSTANCE.getMergeNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -106,7 +108,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageJoinNode() {
-		testToManageNode(UMLElementTypes.JoinNode_3041,  UMLPackage.eINSTANCE.getJoinNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.JoinNode_3041, UMLPackage.eINSTANCE.getJoinNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -114,7 +116,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageForkNode() {
-		testToManageNode(UMLElementTypes.ForkNode_3040,  UMLPackage.eINSTANCE.getForkNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.ForkNode_3040, UMLPackage.eINSTANCE.getForkNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -122,7 +124,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageDataStoreNode() {
-		testToManageNode(UMLElementTypes.DataStoreNode_3078,  UMLPackage.eINSTANCE.getDataStoreNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.DataStoreNode_3078, UMLPackage.eINSTANCE.getDataStoreNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -130,7 +132,9 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageSendObjectAction() {
-		testToManageNode(UMLElementTypes.SendObjectAction_3042,  UMLPackage.eINSTANCE.getSendObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true,2);
+		//Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
+		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		testToManageNode(UMLElementTypes.SendObjectAction_3042, UMLPackage.eINSTANCE.getSendObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
 	/**
@@ -138,7 +142,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageAcceptEventAction() {
-		testToManageNode(UMLElementTypes.AcceptEventAction_3063, UMLPackage.eINSTANCE.getAcceptEventAction(),  UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.AcceptEventAction_3063, UMLPackage.eINSTANCE.getAcceptEventAction(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -146,7 +150,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageValueSpecificationAction() {
-		testToManageNode(UMLElementTypes.ValueSpecificationAction_3076, UMLPackage.eINSTANCE.getValueSpecificationAction(),  UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.ValueSpecificationAction_3076, UMLPackage.eINSTANCE.getValueSpecificationAction(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -154,7 +158,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageActivityPartition() {
-		testToManageNode(UMLElementTypes.ActivityPartition_3067,  UMLPackage.eINSTANCE.getActivityPartition(), UMLElementTypes.StructuredActivityNode_3065, false);
+		testToManageNode(UMLElementTypes.ActivityPartition_3067, UMLPackage.eINSTANCE.getActivityPartition(), UMLElementTypes.StructuredActivityNode_3065, false);
 	}
 
 	/**
@@ -162,7 +166,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageInteruptibleActivityRegion() {
-		testToManageNode(UMLElementTypes.InterruptibleActivityRegion_3068,  UMLPackage.eINSTANCE.getInterruptibleActivityRegion(), UMLElementTypes.StructuredActivityNode_3065, false);
+		testToManageNode(UMLElementTypes.InterruptibleActivityRegion_3068, UMLPackage.eINSTANCE.getInterruptibleActivityRegion(), UMLElementTypes.StructuredActivityNode_3065, false);
 	}
 
 	/**
@@ -170,7 +174,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageStructuredActivity() {
-		testToManageNode(UMLElementTypes.StructuredActivityNode_3065,  UMLPackage.eINSTANCE.getStructuredActivityNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.StructuredActivityNode_3065, UMLPackage.eINSTANCE.getStructuredActivityNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -178,7 +182,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageReadSelfAction() {
-		testToManageNode(UMLElementTypes.ReadSelfAction_3081,  UMLPackage.eINSTANCE.getReadSelfAction(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.ReadSelfAction_3081, UMLPackage.eINSTANCE.getReadSelfAction(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -186,7 +190,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageConditionalNode() {
-		testToManageNode(UMLElementTypes.ConditionalNode_3069,  UMLPackage.eINSTANCE.getConditionalNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.ConditionalNode_3069, UMLPackage.eINSTANCE.getConditionalNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -194,7 +198,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageExpansionRegion() {
-		testToManageNode(UMLElementTypes.ExpansionRegion_3070,  UMLPackage.eINSTANCE.getExpansionRegion(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.ExpansionRegion_3070, UMLPackage.eINSTANCE.getExpansionRegion(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -202,7 +206,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageloopNode() {
-		testToManageNode(UMLElementTypes.LoopNode_3071,  UMLPackage.eINSTANCE.getLoopNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.LoopNode_3071, UMLPackage.eINSTANCE.getLoopNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -210,7 +214,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageSequenceNode() {
-		testToManageNode(UMLElementTypes.SequenceNode_3073,  UMLPackage.eINSTANCE.getSequenceNode(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.SequenceNode_3073, UMLPackage.eINSTANCE.getSequenceNode(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -218,7 +222,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageActivity() {
-		testToManageNode(UMLElementTypes.Activity_3083,  UMLPackage.eINSTANCE.getActivity(), UMLElementTypes.StructuredActivityNode_3065, false);
+		testToManageNode(UMLElementTypes.Activity_3083, UMLPackage.eINSTANCE.getActivity(), UMLElementTypes.StructuredActivityNode_3065, false);
 	}
 
 	/**
@@ -226,7 +230,9 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageReadStructuralFeatureAction() {
-		testToManageNode(UMLElementTypes.ReadStructuralFeatureAction_3088, UMLPackage.eINSTANCE.getReadStructuralFeatureAction(),  UMLElementTypes.StructuredActivityNode_3065, true,2);
+		//Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
+		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		testToManageNode(UMLElementTypes.ReadStructuralFeatureAction_3088, UMLPackage.eINSTANCE.getReadStructuralFeatureAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
 	/**
@@ -234,7 +240,9 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageDestroyObjectAction() {
-		testToManageNode(UMLElementTypes.DestroyObjectAction_3095,  UMLPackage.eINSTANCE.getDestroyObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true,1);
+		//Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
+		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		testToManageNode(UMLElementTypes.DestroyObjectAction_3095, UMLPackage.eINSTANCE.getDestroyObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
 	/**
@@ -242,7 +250,9 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageReadVariableAction() {
-		testToManageNode(UMLElementTypes.ReadVariableAction_3097,  UMLPackage.eINSTANCE.getReadVariableAction(), UMLElementTypes.StructuredActivityNode_3065, true,1);
+		//Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
+		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		testToManageNode(UMLElementTypes.ReadVariableAction_3097, UMLPackage.eINSTANCE.getReadVariableAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
 	/**
@@ -250,7 +260,7 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageBroadCastSignalAction() {
-		testToManageNode(UMLElementTypes.BroadcastSignalAction_3102,  UMLPackage.eINSTANCE.getBroadcastSignalAction(), UMLElementTypes.StructuredActivityNode_3065, true);
+		testToManageNode(UMLElementTypes.BroadcastSignalAction_3102, UMLPackage.eINSTANCE.getBroadcastSignalAction(), UMLElementTypes.StructuredActivityNode_3065, true);
 	}
 
 	/**
@@ -258,7 +268,9 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageCreateObjectAction() {
-		testToManageNode(UMLElementTypes.CreateObjectAction_3086,  UMLPackage.eINSTANCE.getCreateObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true,1);
+		//Change for Bug 438560: 1 pin was created by the Live validation actions. These validation actions are not live anymore.
+		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		testToManageNode(UMLElementTypes.CreateObjectAction_3086, UMLPackage.eINSTANCE.getCreateObjectAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
 	/**
@@ -266,12 +278,15 @@ public class TestActivityDiagramChildNode extends AbstractTestActivityChildNode 
 	 */
 	@Test
 	public void testToManageAddVariableValueAction() {
-		testToManageNode(UMLElementTypes.AddVariableValueAction_3099, UMLPackage.eINSTANCE.getAddVariableValueAction(), UMLElementTypes.StructuredActivityNode_3065, true,2);
+		//Change for Bug 438560: 2 pins were created by the Live validation actions. These validation actions are not live anymore.
+		//FIXME: Implement a specific Palette post-action to create the pins automatically (Independently of the validation rules)
+		testToManageNode(UMLElementTypes.AddVariableValueAction_3099, UMLPackage.eINSTANCE.getAddVariableValueAction(), UMLElementTypes.StructuredActivityNode_3065, true, 0);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CreateViewRequest createViewRequestShapeContainer() {
 		// no container, it should be created on the main activity, not the diagram edit part
 		return null;
