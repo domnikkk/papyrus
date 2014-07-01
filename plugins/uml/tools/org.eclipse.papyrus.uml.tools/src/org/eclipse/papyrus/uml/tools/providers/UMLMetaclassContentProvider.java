@@ -13,6 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.providers;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.eclipse.papyrus.infra.widgets.providers.AbstractFilteredContentProvider;
@@ -43,6 +45,22 @@ public class UMLMetaclassContentProvider extends AbstractFilteredContentProvider
 	 */
 	public UMLMetaclassContentProvider(final Element element) {
 		this.possibleMetaclasses = ElementUtil.getPossibleMetaclasses(element);
+		sortPossibleMetaClasses();
+	}
+
+	/**
+	 * Handle MetaClasses list to sort it.
+	 */
+	private void sortPossibleMetaClasses() {
+		Collections.sort(possibleMetaclasses, new Comparator<Class>() {
+
+			public int compare(Class firstClass, Class secondClass) {
+
+				// Use default lexicographically sorter of String based on Class name
+				return firstClass.getName().compareTo(secondClass.getName());
+
+			}
+		});
 	}
 
 	/**
