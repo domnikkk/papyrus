@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.commands.SetPropertyCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractExecutionSpecificationEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractMessageEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentCombinedFragmentCompartmentEditPart;
@@ -229,6 +230,7 @@ public class Fixbug_LifelineManagement_417365 extends BaseStereotypesTest {
 		return figureLifelineNameContainerFigure.getBounds().bottom();
 	}
 
+	@InvalidTest("Platform-specific failure")
 	@Test
 	public void testFontChanged() {
 		try {
@@ -295,6 +297,7 @@ public class Fixbug_LifelineManagement_417365 extends BaseStereotypesTest {
 		validateAll();
 	}
 
+	@InvalidTest("Platform-specific failure")
 	@Test
 	public void testStereotypeChanged() {
 		//Applied stereotype on lifeline1

@@ -24,6 +24,7 @@ import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.IContributionManager;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.ISequenceDiagramTestsConstants;
@@ -52,6 +53,7 @@ public class TestMakeSameHeightForLifelines_402978 extends AbstractNodeTest {
 		return ISequenceDiagramTestsConstants.FILE_NAME;
 	}
 
+	@InvalidTest("Platform-specific failure")
 	@Test
 	public void testLifelinesSameSizeHeight() {
 		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(100, 100), new Dimension(80, 100));
@@ -69,6 +71,7 @@ public class TestMakeSameHeightForLifelines_402978 extends AbstractNodeTest {
 		assertTrue("lifeline2 height", Math.abs(200 - getAbsoluteBounds(lifeline2).height) <= 1);//From CSS plugin, there is 1 pixel missing.
 	}
 
+	@InvalidTest("Platform-specific failure")
 	@Test
 	public void testLifelinesSameSizeBoth() {
 		LifelineEditPart lifeline1 = (LifelineEditPart)createNode(UMLElementTypes.Lifeline_3001, getRootEditPart(), new Point(200, 100), new Dimension(80, 200));
