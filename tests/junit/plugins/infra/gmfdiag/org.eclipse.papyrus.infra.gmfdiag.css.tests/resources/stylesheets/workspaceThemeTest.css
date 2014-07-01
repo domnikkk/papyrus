@@ -1,0 +1,9 @@
+
+* {
+     elementIcon: true;
+}
+
+ClassDiagram Class {
+ lineColor : red;
+ lineWidth : 8;
+}
