@@ -29,6 +29,7 @@
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_7x2SQAH3EeSOr6S9q_OEFA" name="DeriveFrom_AppearenceElement" client="_7xzO8AH3EeSOr6S9q_OEFA" supplier="_n5hc8AH3EeSOr6S9q_OEFA"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_Gy3vsAH4EeSOr6S9q_OEFA" name="AppearanceoNodelabel"/>
       <packagedElement xmi:type="uml:Abstraction" xmi:id="_Gy6L8AH4EeSOr6S9q_OEFA" name="DeriveFrom_AppearanceNodeElement" client="_Gy3vsAH4EeSOr6S9q_OEFA" supplier="_7xzO8AH3EeSOr6S9q_OEFA"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_D-PLQAIAEeSOr6S9q_OEFA" name="EditableElement"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_tEgNoOy6EeOTppRa5YYcIg" name="UseCases"/>
     <packagedElement xmi:type="uml:Model" xmi:id="_tqyKgOy6EeOTppRa5YYcIg" name="Design"/>
@@ -98,4 +99,5 @@
   <Requirements:DeriveReqt xmi:id="_7x4HcAH3EeSOr6S9q_OEFA" base_Abstraction="_7x2SQAH3EeSOr6S9q_OEFA"/>
   <Requirements:Requirement xmi:id="_Gy490AH4EeSOr6S9q_OEFA" text="&#xD;&#xA;&#xD;&#xD;&#xA;Appearence of elements of label node must be modified ( font, color, but not size)" id="Req_018" base_Class="_Gy3vsAH4EeSOr6S9q_OEFA"/>
   <Requirements:DeriveReqt xmi:id="_Gy8BIAH4EeSOr6S9q_OEFA" base_Abstraction="_Gy6L8AH4EeSOr6S9q_OEFA"/>
+  <Requirements:Requirement xmi:id="_D-RngAIAEeSOr6S9q_OEFA" text="Element in papyrus must be editable" id="Req_019" base_Class="_D-PLQAIAEeSOr6S9q_OEFA"/>
 </xmi:XMI>
