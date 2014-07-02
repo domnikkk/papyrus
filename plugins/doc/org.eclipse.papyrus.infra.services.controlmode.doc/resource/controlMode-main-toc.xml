@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="Submodel Creation and Reintegration" link_to="../org.eclipse.papyrus.infra.doc/toc.xml#PapyrusDocUser">
+   <topic href="resource/controlMode.html" label="Submodel Creation and Reintegration">
+      <link toc="resource/controlMode-toc.xml"/>
+      <anchor id="controlMode"/>
+   </topic>	
+</toc>

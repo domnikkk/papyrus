@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="resource/controlMode.html" label="controlMode">
+	<topic href="resource/controlMode.html" label="Creation of submodels and reintegration">
+		<topic href="resource/controlMode.html#What_is_it.3F" label="What is it?"></topic>
+		<topic href="resource/controlMode.html#Create_a_submodel" label="Create a submodel"></topic>
+		<topic href="resource/controlMode.html#Reintegrate_a_submodel_into_the_main_model" label="Reintegrate a submodel into the main model"></topic>
+	</topic>
+</toc>
