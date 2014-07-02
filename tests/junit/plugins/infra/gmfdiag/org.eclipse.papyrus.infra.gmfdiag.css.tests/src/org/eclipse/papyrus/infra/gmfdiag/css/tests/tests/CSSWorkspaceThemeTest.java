@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,6 +26,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsFactory;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.Theme;
 import org.eclipse.papyrus.infra.gmfdiag.css.tests.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.css.theme.ThemeManager;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -34,31 +35,27 @@ import org.junit.Test;
 
 /**
  * Test class for wokspace thme in Papyrus.
- * 
+ *
  * @author Gabriel Pascual
  *
  */
 public class CSSWorkspaceThemeTest extends AbstractCSSStylesheetTest {
 
 	/**
-	 * Executed before any other methods are
-	 * executed within the class.
-	 * 
-	 * @throws java.lang.Exception
+	 * Force the default CSS Theme before and after testing
 	 */
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	@AfterClass
+	public static void restoreDefaultTheme() throws Exception {
 		IPreferenceStore cssThemePreferences = org.eclipse.papyrus.infra.gmfdiag.css.Activator.getDefault().getPreferenceStore();
 		cssThemePreferences.setValue(ThemePreferences.CURRENT_THEME, "org.eclipse.papyrus.css.papyrus_theme");
 		WorkspaceCSSEngine.instance.reset();
 	}
 
-
-
 	/**
 	 * Method will be executed before each test
 	 * method
-	 * 
+	 *
 	 * @throws java.lang.Exception
 	 */
 	@Before
@@ -116,7 +113,5 @@ public class CSSWorkspaceThemeTest extends AbstractCSSStylesheetTest {
 		//Verify theme values with Class5 element
 		Shape fifthClassShape = findShape("Class5");
 		Assert.assertEquals("Invalid color", rgb(255, 0, 0), fifthClassShape.getLineColor());
-
-
 	}
 }
