@@ -339,42 +339,6 @@
 	<page id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" name="Internal Block Diagram" category="org.eclipse.papyrus.infra.gmfdiag.preferences.diagrams" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.InternalBlockDiagramGeneralPreferencePage">
 	</page>
 
-	<!-- Element Preference pages declaration -->
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.CommentPreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.CommentPreferencePage" name="Comment">
-	</page>
-			
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.ConstraintPreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.ConstraintPreferencePage" name="Constraint">
-	</page>
-
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.BlockCompositePreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.BlockCompositePreferencePage" name="Block">
-	</page>
-	
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.BlockPropertyCompositePreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.BlockPropertyCompositePreferencePage" name="PartAndReferences">
-	</page>
-		
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.BlockPropertyCompositePreferencePage" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.CustomBlockPropertyCompositePreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.CustomBlockPropertyCompositePreferencePage" name="block property">
-	</page>
-
-	<!--
-	<page  	category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.BlockPropertyCompositePreferencePage"
-		class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.CustomNestedBlockPropertyCompositePreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.CustomBlockPropertyCompositePreferencePage"
-		name="nested property">
-	</page>
-	-->
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.FlowPortAsBorderItemPreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.FlowPortPreferencePage" name="FlowPort">
-	</page>
-			
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.PortAsBorderItemPreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.PortPreferencePage" name="Port">
-	</page>
-		
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.CustomConnectorPreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.ConnectorPreferencePage" name="Connector">
-	</page>	
-					
-	<page category="org.eclipse.papyrus.sysml.diagram.internalblock.preferences" class="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.DependencyPreferencePage" id="org.eclipse.papyrus.sysml.diagram.internalblock.preferences.DependencyPreferencePage" name="Dependency">
-	</page>
-		
-
 </extension>
 
 <!-- // Start of user code custom extensions 

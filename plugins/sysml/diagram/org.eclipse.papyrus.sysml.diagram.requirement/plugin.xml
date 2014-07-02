@@ -446,11 +446,6 @@
 	</page>
 
 	<!-- Element Preference pages declaration -->
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.PackagePreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.PackagePreferencePage"
-		name="Package">
-	</page>
 	
 	
 	
@@ -459,107 +454,37 @@
 	
 	
 	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.NamedElementPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.NamedElementPreferencePage"
-		name="NamedElement">
-	</page>
-	
-	
-	
-	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.CommentPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.CommentPreferencePage"
-		name="Comment">
-	</page>
-	
-	
-	
-	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.ConstraintPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.ConstraintPreferencePage"
-		name="Constraint">
-	</page>
-	
-	
-	
-	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.AbstractionPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.AbstractionPreferencePage"
-		name="Abstraction">
-	</page>
-	
-	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.ContainmentLinkPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.ContainmentLinkPreferencePage"
-		name="ContainmentLink">
-	</page>
-	
-	
-	
-	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.DependencyPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.DependencyPreferencePage"
-		name="Dependency">
-	</page>
 	
 	
 	
 	
 	
 	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.PropertyPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.PropertyPreferencePage"
-		name="Property">
-	</page>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 			
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.ReceptionPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.ReceptionPreferencePage"
-		name="Reception">
-	</page>
 			
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.OperationPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.OperationPreferencePage"
-		name="Operation">
-	</page>
 			
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.InterfacePreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.InterfacePreferencePage"
-		name="Interface">
-	</page>
 			
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.EnumerationPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.EnumerationPreferencePage"
-		name="Enumeration">
-	</page>
 			
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.PrimitiveTypePreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.PrimitiveTypePreferencePage"
-		name="PrimitiveType">
-	</page>
 			
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.DataTypePreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.DataTypePreferencePage"
-		name="DataType">
-	</page>
 			
-	<page  	category="org.eclipse.papyrus.sysml.diagram.requirement.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.requirement.preferences.SignalPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.requirement.preferences.SignalPreferencePage"
-		name="Signal">
-	</page>
 			
 
 </extension>

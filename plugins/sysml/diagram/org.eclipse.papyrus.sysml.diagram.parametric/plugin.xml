@@ -570,71 +570,21 @@
 	</page>
 
 	<!-- Element Preference pages declaration -->
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.ConstraintPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.ConstraintPreferencePage"
-		name="Constraint">
-	</page>
 	
 	
 	
 	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.CommentPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.CommentPreferencePage"
-		name="Comment">
-	</page>
 	
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.CommentAnnotatedElementPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.CommentAnnotatedElementPreferencePage"
-		name="CommentAnnotatedElement">
-	</page>
 	
 	
 
 
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.BlockCompositePreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.BlockCompositePreferencePage"
-		name="BlockComposite">
-	</page>
 		
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.CustomBlockPropertyCompositePreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.CustomBlockPropertyCompositePreferencePage"
-		name="BlockPropertyComposite">
-	</page>
 		
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.CustomConstraintPropertyCompositePreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.CustomConstraintPropertyCompositePreferencePage"
-		name="ConstraintPropertyComposite">
-	</page>
 		
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.FlowPortPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.FlowPortPreferencePage"
-		name="FlowPort">
-	</page>
 		
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.PortPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.PortPreferencePage"
-		name="Port">
-	</page>
 		
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.ConnectorPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.ConnectorPreferencePage"
-		name="Connector">
-	</page>
 		
-	<page  	category="org.eclipse.papyrus.sysml.diagram.parametric.preferences"
-		class="org.eclipse.papyrus.sysml.diagram.parametric.preferences.DependencyPreferencePage"
-		id="org.eclipse.papyrus.sysml.diagram.parametric.preferences.DependencyPreferencePage"
-		name="Dependency">
-	</page>
 		
 
 </extension>

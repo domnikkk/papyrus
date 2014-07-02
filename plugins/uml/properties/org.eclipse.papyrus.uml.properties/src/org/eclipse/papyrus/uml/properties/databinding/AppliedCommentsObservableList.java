@@ -8,9 +8,11 @@
  *
  * Contributors:
  *  Sebastien Poissonnet (CEA LIST) sebastien.poissonnet@cea.fr
+ *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - bug 435174
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.databinding;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -20,9 +22,14 @@ import java.util.List;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableList;
@@ -39,14 +46,12 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 
 	private static List<Comment> getAppliedCommentsList(Element source) {
 		List<Comment> result = new LinkedList<Comment>();
-
 		Iterator<Setting> it = UML2Util.getNonNavigableInverseReferences(source).iterator();
 		while(it.hasNext()) {
 			Setting setting = it.next();
 			if(setting.getEStructuralFeature() == UMLPackage.Literals.COMMENT__ANNOTATED_ELEMENT) {
 				if(setting.getEObject() instanceof Comment) {
 					Comment comment = (Comment)setting.getEObject();
-
 					// small bugfix...
 					// UML2Util.getNonNavigableInverseReferences returns more element than
 					// needed, especially elements that are not real ones
@@ -58,18 +63,15 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 							isProxy = true;
 						}
 					}
-
 					// this is the real element, not a ghost one. display it in the list
 					if(!isProxy) {
 						if(comment.getAnnotatedElements().contains(source)) {
 							result.add(comment);
 						}
 					}
-
 				}
 			}
 		}
-
 		return result;
 	}
 
@@ -104,13 +106,10 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 	@Override
 	public Command getAddCommand(Object value) {
 		Assert.isTrue(value instanceof Comment);
-
 		Comment comment = (Comment)value;
-
 		//Add the comment to source#ownedComment
 		CompoundCommand addAppliedCommentCommand = new CompoundCommand("Add applied comment");
 		addAppliedCommentCommand.append(super.getAddCommand(value));
-
 		//Add the source element to comment#annotatedElement
 		//		List<Element> values = new LinkedList<Element>(comment.getAnnotatedElements());
 		//		values.add((Element)source);
@@ -119,56 +118,43 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 		//		IElementEditService provider = getProvider();
 		//
 		//		addAppliedCommentCommand.append(getCommandFromRequests(provider, Collections.singletonList(setRequest)));
-
-
 		AddCommand addCommand = new AddCommand(editingDomain, comment, UMLPackage.eINSTANCE.getComment_AnnotatedElement(), source);
 		addAppliedCommentCommand.append(addCommand);
-
 		return addAppliedCommentCommand;
 	}
 
 	@Override
 	public Command getRemoveCommand(Object value) {
 		Assert.isTrue(value instanceof Comment);
-
 		CompoundCommand removeAppliedCommentCommand = new CompoundCommand("Remove applied comment");
 		Comment comment = (Comment)value;
-
 		if(comment.getAnnotatedElements().size() <= 1) {
 			return super.getRemoveCommand(value);
 		}
-
 		//Remove the source element to comment#annotatedElement
 		List<Element> values = new LinkedList<Element>(comment.getAnnotatedElements());
 		values.remove(source);
 		SetRequest setRequest = new SetRequest(comment, UMLPackage.eINSTANCE.getComment_AnnotatedElement(), values);
 		IElementEditService provider = getProvider();
-
 		removeAppliedCommentCommand.append(getCommandFromRequests(provider, Collections.singletonList(setRequest)));
-
-
 		//		if(editingDomain != null) {
 		//			RemoveCommand command = new RemoveCommand(editingDomain, comment, UMLPackage.eINSTANCE.getComment_AnnotatedElement(), source);
 		//			return command;
 		//		}
-
 		return removeAppliedCommentCommand;
 	}
 
 	@Override
 	public Command getRemoveAllCommand(Collection<?> values) {
-
 		Iterator<?> itr = values.iterator();
 		Comment comment;
 		Element value;
 		List<Element> values_;
 		CompoundCommand removeAppliedCommentCommand = new CompoundCommand("Remove applied comment");
-
 		while(itr.hasNext()) {
 			value = (Element)itr.next();
 			Assert.isTrue(value instanceof Comment);
 			comment = (Comment)value;
-
 			if(comment.getAnnotatedElements().size() <= 1) {
 				removeAppliedCommentCommand.append(super.getRemoveCommand(value));
 			} else {
@@ -176,19 +162,49 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 				values_.remove(source);
 				SetRequest setRequest = new SetRequest(comment, UMLPackage.eINSTANCE.getComment_AnnotatedElement(), values_);
 				IElementEditService provider = getProvider();
-
 				removeAppliedCommentCommand.append(getCommandFromRequests(provider, Collections.singletonList(setRequest)));
 			}
-
 		}
-
 		return removeAppliedCommentCommand;
+	}
+
+	//override to patch bug 435174
+	@Override
+	protected Collection<? extends IEditCommandRequest> getRequests(List<Object> newValues, Collection<?> removedValues) {
+		LinkedList<IEditCommandRequest> requests = new LinkedList<IEditCommandRequest>();
+		//DestroyElement request
+		if(feature instanceof EReference && ((EReference)feature).isContainment() && removedValues != null) {
+			for(Object o : removedValues) {
+				if(o instanceof EObject) {
+					requests.add(new DestroyElementRequest((TransactionalEditingDomain)editingDomain, (EObject)o, false));
+				}
+			}
+		}
+		//List to take into account the no annotated owned comment
+		List<Object> ownedComments = new ArrayList<Object>();
+		//Look for all owned comments of the source
+		for(EObject ownedComment : ((Element)source).getOwnedComments()) {
+			//Add comment the list
+			if(removedValues == null || !removedValues.contains(ownedComment)) {
+				ownedComments.add(ownedComment);
+			}
+		}
+		//Add new values
+		for(Object value : newValues) {
+			if(value instanceof Comment) {
+				//Only if the comment isn't owned by an other object
+				if(((Comment)value).eContainer() == null) {
+					ownedComments.add(value);
+				}
+			}
+		}
+		requests.add(new SetRequest((TransactionalEditingDomain)editingDomain, source, feature, ownedComments));
+		return requests;
 	}
 
 	//
 	// Unsupported operations
 	//
-
 	@Override
 	public Command getClearCommand() {
 		throw new UnsupportedOperationException();
@@ -212,7 +228,4 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 		throw new UnsupportedOperationException();
 		//		return super.getSetCommand(index, value);
 	}
-
-
-
 }
