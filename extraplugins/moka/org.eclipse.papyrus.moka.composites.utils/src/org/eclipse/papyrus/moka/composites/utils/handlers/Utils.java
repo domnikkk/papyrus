@@ -36,6 +36,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.CreateObjectAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.InputPin;
+import org.eclipse.uml2.uml.LiteralInteger;
 import org.eclipse.uml2.uml.ObjectFlow;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.OutputPin;
@@ -101,18 +102,30 @@ public class Utils {
 		ActivityParameterNode returnParamNode = (ActivityParameterNode)factory.createOwnedNode("resultParameterNode", UMLPackage.eINSTANCE.getActivityParameterNode());
 		returnParamNode.setParameter(returnParam);
 		returnParamNode.setType(context);
+		LiteralInteger returnParamNodeUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
+		returnParamNodeUpperBound.setValue(1) ;
+		returnParamNode.setUpperBound(returnParamNodeUpperBound) ;
 
 		// Retrieves the default constructor of context
 		Operation defaultConstructor = getDefaultConstructor(context);
 
 		CreateObjectAction createObject = (CreateObjectAction)factory.createOwnedNode("createObject", UMLPackage.eINSTANCE.getCreateObjectAction());
 		OutputPin createObjectResultPin = createObject.createResult("result", context);
+		LiteralInteger createObjectResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
+		createObjectResultPinUpperBound.setValue(1) ;
+		createObjectResultPin.setUpperBound(createObjectResultPinUpperBound) ;
 		createObject.setClassifier(context);
 
 		CallOperationAction callConstructor = (CallOperationAction)factory.createOwnedNode("callConstructor", UMLPackage.eINSTANCE.getCallOperationAction());
 		callConstructor.setOperation(defaultConstructor);
 		InputPin callConstructorTargetPin = callConstructor.createTarget("target", context);
+		LiteralInteger callConstructorTargetPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
+		callConstructorTargetPinUpperBound.setValue(1) ;
+		callConstructorTargetPin.setUpperBound(callConstructorTargetPinUpperBound) ;
 		OutputPin callConstructorResultPin = callConstructor.createResult("result", context);
+		LiteralInteger callConstructorResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
+		callConstructorResultPinUpperBound.setValue(1) ;
+		callConstructorResultPin.setUpperBound(callConstructorResultPinUpperBound) ;
 
 		ObjectFlow createObjectAction_callConstructor = (ObjectFlow)factory.createEdge("createObjectAction to callConstructor", UMLPackage.eINSTANCE.getObjectFlow());
 		createObjectAction_callConstructor.setSource(createObjectResultPin);
@@ -125,7 +138,13 @@ public class Utils {
 		} else {
 			StartObjectBehaviorAction startBehavior = (StartObjectBehaviorAction)factory.createOwnedNode("start classifier behavior", UMLPackage.eINSTANCE.getStartObjectBehaviorAction());
 			InputPin startBehaviorInputPin = startBehavior.createObject("object", context);
+			LiteralInteger startBehaviorInputPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
+			startBehaviorInputPinUpperBound.setValue(1) ;
+			startBehaviorInputPin.setUpperBound(startBehaviorInputPinUpperBound) ;
 			OutputPin startBehaviorResultPin = startBehavior.createResult("result", context);
+			LiteralInteger startBehaviorResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
+			startBehaviorResultPinUpperBound.setValue(1) ;
+			startBehaviorResultPin.setUpperBound(startBehaviorResultPinUpperBound) ;
 			toReturnParamNode.setSource(startBehaviorResultPin);
 			ObjectFlow callConstructor_startBehavior = (ObjectFlow)factory.createEdge("callConstructor to startBehavior", UMLPackage.eINSTANCE.getObjectFlow());
 			callConstructor_startBehavior.setSource(callConstructorResultPin);
