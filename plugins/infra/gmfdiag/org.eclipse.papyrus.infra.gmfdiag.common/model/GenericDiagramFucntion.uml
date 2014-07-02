@@ -21,6 +21,9 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_Ae6f8PLyEeOPiKkVCmnccA" name="StereotypeVisualization"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_ceWhcABHEeSBYd3pg3Jbjg" name="Delete from diagram"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_pn6YsABHEeSBYd3pg3Jbjg" name="HideFromDiagram"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_8etyYAHCEeS8N6Bcc06S3Q" name="ElementCreationFromPalette"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Ne8ZMAHDEeS8N6Bcc06S3Q" name="ElementNodeCreationFromPalette"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_NfCf0AHDEeS8N6Bcc06S3Q" name="DeriveFrom_ElementCreationFromPalette" client="_Ne8ZMAHDEeS8N6Bcc06S3Q" supplier="_8etyYAHCEeS8N6Bcc06S3Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_tEgNoOy6EeOTppRa5YYcIg" name="UseCases"/>
     <packagedElement xmi:type="uml:Model" xmi:id="_tqyKgOy6EeOTppRa5YYcIg" name="Design"/>
@@ -121,9 +124,9 @@
   <Requirements:Requirement xmi:id="_4PBJEXaTEeKemeMpJaVA3A" text="When an element is moved into another element, the container has to change, i.e. the qualified name change" id="Req_003" base_Class="_4PBJEHaTEeKemeMpJaVA3A"/>
   <Requirements:Requirement xmi:id="__iyRoXaTEeKemeMpJaVA3A" text="When an element move from an element to the diagram, two options can be applied:&#xD;&#xA;- The container change and the namespace has to be adapted, so a clean into diagrams has to be done to respect Req_002&#xD;&#xA;- The container does not change; this is only a graphical move, as described by the req_001" id="Req_004" base_Class="__iyRoHaTEeKemeMpJaVA3A"/>
   <Requirements:Requirement xmi:id="_tDokkGP6EeOq0pDGL_YBMA" text="The user must be able to change the Diagram Viewer properties (Snap To Grid/To Geometry, Show Rulers, Show Grid, Grid Style, Grid Color, Grid Order, Ruler Units, Grid Spacing )" id="Req_005" base_Class="_seSb0GP6EeOq0pDGL_YBMA"/>
-  <Requirements:Requirement xmi:id="_u_1LgGP6EeOq0pDGL_YBMA" text="Snap To Grid must be able to snap on : &#xD;&#xA;- 4 corners of rectangle&#xD;&#xA;- 4 middles of side of a rectangle&#xD;&#xA;- anchors of link&#xD;&#xA;- bendpoints" id="Req_005" base_Class="_uKPAQGP6EeOq0pDGL_YBMA"/>
-  <Requirements:Requirement xmi:id="_Uzo20OGuEeO_JM12vRgWBQ" text="Its possible to drop the seame element several time on the canva" id="Req_006" base_Class="_UzjXQOGuEeO_JM12vRgWBQ"/>
-  <Requirements:Requirement xmi:id="_dQusYOvJEeOv4v5t8d2cOg" text="Each diagram must have a version  in order to able possible migration" id="Req_007" base_Class="_dQjtQOvJEeOv4v5t8d2cOg"/>
+  <Requirements:Requirement xmi:id="_u_1LgGP6EeOq0pDGL_YBMA" text="Snap To Grid must be able to snap on : &#xD;&#xA;- 4 corners of rectangle&#xD;&#xA;- 4 middles of side of a rectangle&#xD;&#xA;- anchors of link&#xD;&#xA;- bendpoints" id="Req_006" base_Class="_uKPAQGP6EeOq0pDGL_YBMA"/>
+  <Requirements:Requirement xmi:id="_Uzo20OGuEeO_JM12vRgWBQ" text="Its possible to drop the seame element several time on the canva" id="Req_007" base_Class="_UzjXQOGuEeO_JM12vRgWBQ"/>
+  <Requirements:Requirement xmi:id="_dQusYOvJEeOv4v5t8d2cOg" text="Each diagram must have a version  in order to able possible migration" id="Req_008" base_Class="_dQjtQOvJEeOv4v5t8d2cOg"/>
   <structure:Project xmi:id="_q9KrgOyrEeOTppRa5YYcIg" author="CEA LIST" version="1.0.0" base_Model="_v2A68HaMEeKemeMpJaVA3A" title="Generic function of a Papyrus diagram editor"/>
   <structure:Requirements xmi:id="_ybsUwOy6EeOTppRa5YYcIg" base_Model="_sz15QOyrEeOTppRa5YYcIg"/>
   <structure:UseCases xmi:id="_za0PcOy6EeOTppRa5YYcIg" base_Model="_tEgNoOy6EeOTppRa5YYcIg"/>
@@ -147,8 +150,11 @@
   <Document:Section xmi:id="_vqIhMOy8EeOTppRa5YYcIg" base_Package="_vqHTEOy8EeOTppRa5YYcIg"/>
   <Document:ImageRef xmi:id="_vqP18Oy8EeOTppRa5YYcIg" base_Comment="_vqOn0Oy8EeOTppRa5YYcIg" ref="C:/git/org.eclipse.papyrus/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common/imgDOC/UseCaseDiagram.png"/>
   <Requirements:Requirement xmi:id="_kCAacPLxEeOPiKkVCmnccA" text="Element in the palette must classified by alphabetic order" id="Req_008" base_Class="_kB6T0PLxEeOPiKkVCmnccA"/>
-  <Requirements:Requirement xmi:id="_1WnV0PLxEeOPiKkVCmnccA" text="The palette of adiagram must be customizable" id="Req_009" base_Class="_1WmHsPLxEeOPiKkVCmnccA"/>
-  <Requirements:Requirement xmi:id="_Ae7HAPLyEeOPiKkVCmnccA" text="Applied stereotype must be displayed on diagram element ( brace, icon, text)" id="Req_010" base_Class="_Ae6f8PLyEeOPiKkVCmnccA"/>
-  <Requirements:Requirement xmi:id="_cemZEABHEeSBYd3pg3Jbjg" text="Each element must be deleted from the diagram, the semantic deleteion must be also done" id="Req_011" base_Class="_ceWhcABHEeSBYd3pg3Jbjg"/>
-  <Requirements:Requirement xmi:id="_pn8N4ABHEeSBYd3pg3Jbjg" text="The element can be deleted only form the diagram, the semantic element is not removed" id="Req_012" base_Class="_pn6YsABHEeSBYd3pg3Jbjg"/>
+  <Requirements:Requirement xmi:id="_1WnV0PLxEeOPiKkVCmnccA" text="The palette of adiagram must be customizable" id="Req_010" base_Class="_1WmHsPLxEeOPiKkVCmnccA"/>
+  <Requirements:Requirement xmi:id="_Ae7HAPLyEeOPiKkVCmnccA" text="Applied stereotype must be displayed on diagram element ( brace, icon, text)" id="Req_011" base_Class="_Ae6f8PLyEeOPiKkVCmnccA"/>
+  <Requirements:Requirement xmi:id="_cemZEABHEeSBYd3pg3Jbjg" text="Each element must be deleted from the diagram, the semantic deleteion must be also done" id="Req_012" base_Class="_ceWhcABHEeSBYd3pg3Jbjg"/>
+  <Requirements:Requirement xmi:id="_pn8N4ABHEeSBYd3pg3Jbjg" text="The element can be deleted only form the diagram, the semantic element is not removed" id="Req_013" base_Class="_pn6YsABHEeSBYd3pg3Jbjg"/>
+  <Requirements:Requirement xmi:id="_8e4KcAHCEeS8N6Bcc06S3Q" text="UML element can be created and display in the diagram from the palette" id="Req_014" base_Class="_8etyYAHCEeS8N6Bcc06S3Q"/>
+  <Requirements:Requirement xmi:id="_Ne-OYAHDEeS8N6Bcc06S3Q" text="&#xA;UML element can be created and display in the diagram from the palette" id="Req_015" base_Class="_Ne8ZMAHDEeS8N6Bcc06S3Q"/>
+  <Requirements:DeriveReqt xmi:id="_NfFjIAHDEeS8N6Bcc06S3Q" base_Abstraction="_NfCf0AHDEeS8N6Bcc06S3Q"/>
 </xmi:XMI>
