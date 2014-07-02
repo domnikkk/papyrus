@@ -15,8 +15,14 @@ package org.eclipse.papyrus.tests;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.papyrus.junit.utils.classification.ClassificationConfig;
+import org.eclipse.papyrus.junit.utils.classification.TestCategory;
 import org.eclipse.papyrus.tests.launcher.FragmentTestSuiteClass;
 import org.eclipse.papyrus.tests.launcher.ITestSuiteClass;
 import org.eclipse.papyrus.tests.launcher.PluginTestSuiteClass;
@@ -30,6 +36,16 @@ import org.junit.runners.model.InitializationError;
  */
 @RunWith(AllTests.AllTestsRunner.class)
 public class AllTests {
+
+	static Map<String, Set<TestCategory>> availableConfigs = new HashMap<String, Set<TestCategory>>();
+
+	static {
+		availableConfigs.put("CI_TESTS_CONFIG", ClassificationConfig.CI_TESTS_CONFIG);
+		availableConfigs.put("FAILING_TESTS_CONFIG", ClassificationConfig.FAILING_TESTS_CONFIG);
+		availableConfigs.put("FULL_CI_TESTS_CONFIG", ClassificationConfig.FULL_CI_TESTS_CONFIG);
+		availableConfigs.put("FULL_TESTS_CONFIG", ClassificationConfig.FULL_TESTS_CONFIG);
+		availableConfigs.put("LIGTHWEIGHT_TESTS_CONFIG", ClassificationConfig.LIGTHWEIGHT_TESTS_CONFIG);
+	}
 
 	public static final List<ITestSuiteClass> suiteClasses;
 	/** list of classes to launch */
@@ -130,6 +146,22 @@ public class AllTests {
 		 */
 		public AllTestsRunner(final Class<?> clazz) throws InitializationError {
 			super(clazz, getSuites());
+
+			for(String arg : Platform.getApplicationArgs()) {
+				System.out.println("Arg = " + arg);
+				if(arg.contains("-testConfig=")) {
+					System.out.println("Found testConfig: " + arg);
+					String configName = arg.substring("-testConfig=".length());
+					System.out.println("ConfigName = " + configName);
+					Set<TestCategory> testsConfig = availableConfigs.get(configName);
+					if(testsConfig != null) {
+						ClassificationConfig.setTestsConfiguration(testsConfig);
+					} else {
+						System.out.println("Invalid configName");
+					}
+					break;
+				}
+			}
 		}
 	}
 
