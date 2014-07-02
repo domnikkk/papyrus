@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_IrLIQO13EeOyB8TXBkqZ3A" name="ControlMode">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_098f8O2HEeOyB8TXBkqZ3A" name="PapyrusUser"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="__j9cYO2HEeOyB8TXBkqZ3A" name="Control UML Element">
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_BvaDcO2MEeOyB8TXBkqZ3A" name="ExtensionPoint1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HjL8wO2IEeOyB8TXBkqZ3A" name="A_papyrususer_usecase1" memberEnd="_HjL8we2IEeOyB8TXBkqZ3A _HjL8xO2IEeOyB8TXBkqZ3A">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_HjL8we2IEeOyB8TXBkqZ3A" name="papyrususer" type="_098f8O2HEeOyB8TXBkqZ3A" association="_HjL8wO2IEeOyB8TXBkqZ3A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HjL8wu2IEeOyB8TXBkqZ3A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HjL8w-2IEeOyB8TXBkqZ3A" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_HjL8xO2IEeOyB8TXBkqZ3A" name="usecase1" type="__j9cYO2HEeOyB8TXBkqZ3A" association="_HjL8wO2IEeOyB8TXBkqZ3A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HjL8xe2IEeOyB8TXBkqZ3A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HjL8xu2IEeOyB8TXBkqZ3A" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_aKRFQO2LEeOyB8TXBkqZ3A" name="Uncontrol UML Element">
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_CUQc8O2MEeOyB8TXBkqZ3A" name="ExtensionPoint1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_byx7MO2LEeOyB8TXBkqZ3A" name="Control UML Stereotyped Element">
+    <include xmi:type="uml:Include" xmi:id="_mR6XEO2MEeOyB8TXBkqZ3A" addition="__j9cYO2HEeOyB8TXBkqZ3A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_ucxVIO2LEeOyB8TXBkqZ3A" name="Uncontrol UML Stereotyped Element">
+    <include xmi:type="uml:Include" xmi:id="_YTf7cO2MEeOyB8TXBkqZ3A" name="" addition="_aKRFQO2LEeOyB8TXBkqZ3A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_0v6uMO2LEeOyB8TXBkqZ3A" name="Perform changes on a UML Profile"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-TZPkO2LEeOyB8TXBkqZ3A" name="A_papyrususer_uncontrol uml element" memberEnd="_-TZ2oO2LEeOyB8TXBkqZ3A _-TZ2o-2LEeOyB8TXBkqZ3A">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-TZ2oO2LEeOyB8TXBkqZ3A" name="papyrususer" type="_098f8O2HEeOyB8TXBkqZ3A" association="_-TZPkO2LEeOyB8TXBkqZ3A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-TZ2oe2LEeOyB8TXBkqZ3A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-TZ2ou2LEeOyB8TXBkqZ3A" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-TZ2o-2LEeOyB8TXBkqZ3A" name="uncontrol uml element" type="_aKRFQO2LEeOyB8TXBkqZ3A" association="_-TZPkO2LEeOyB8TXBkqZ3A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-TZ2pO2LEeOyB8TXBkqZ3A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-TZ2pe2LEeOyB8TXBkqZ3A" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__azjkO2LEeOyB8TXBkqZ3A" name="A_papyrususer_perform changes on a uml profile" memberEnd="__azjke2LEeOyB8TXBkqZ3A __azjlO2LEeOyB8TXBkqZ3A">
+    <ownedEnd xmi:type="uml:Property" xmi:id="__azjke2LEeOyB8TXBkqZ3A" name="papyrususer" type="_098f8O2HEeOyB8TXBkqZ3A" association="__azjkO2LEeOyB8TXBkqZ3A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__azjku2LEeOyB8TXBkqZ3A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__azjk-2LEeOyB8TXBkqZ3A" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__azjlO2LEeOyB8TXBkqZ3A" name="perform changes on a uml profile" type="_0v6uMO2LEeOyB8TXBkqZ3A" association="__azjkO2LEeOyB8TXBkqZ3A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__azjle2LEeOyB8TXBkqZ3A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__azjlu2LEeOyB8TXBkqZ3A" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
