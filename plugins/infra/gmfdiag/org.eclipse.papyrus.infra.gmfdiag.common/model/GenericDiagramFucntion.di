@@ -19,9 +19,6 @@
           <emfPageIdentifier href="GenericDiagramFucntion.notation#_7KbmgOy6EeOTppRa5YYcIg"/>
         </children>
         <children>
-          <emfPageIdentifier href="GenericDiagramFucntion.notation#_8nLRUOy6EeOTppRa5YYcIg"/>
-        </children>
-        <children>
           <emfPageIdentifier href="GenericDiagramFucntion.notation#_dqh7APLxEeOPiKkVCmnccA"/>
         </children>
       </children>

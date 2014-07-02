@@ -26,14 +26,6 @@
     </styles>
     <element xmi:type="uml:Model" href="GenericDiagramFucntion.uml#_tqyKgOy6EeOTppRa5YYcIg"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_8nLRUOy6EeOTppRa5YYcIg" type="UseCase" name="UseCaseDiagram" measurementUnit="Pixel">
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_8nL4YOy6EeOTppRa5YYcIg" name="diagram_compatibility_version" stringValue="1.0.0"/>
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_8nL4Yey6EeOTppRa5YYcIg"/>
-    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_8nL4Yuy6EeOTppRa5YYcIg">
-      <owner xmi:type="uml:Model" href="GenericDiagramFucntion.uml#_uA3IMOy6EeOTppRa5YYcIg"/>
-    </styles>
-    <element xmi:type="uml:Model" href="GenericDiagramFucntion.uml#_uA3IMOy6EeOTppRa5YYcIg"/>
-  </notation:Diagram>
   <nattable:Table xmi:id="_dqh7APLxEeOPiKkVCmnccA" name="RequirementTable" currentRowAxisProvider="_dqh7BfLxEeOPiKkVCmnccA" currentColumnAxisProvider="_dqh7AfLxEeOPiKkVCmnccA">
     <context xmi:type="uml:Model" href="GenericDiagramFucntion.uml#_sz15QOyrEeOTppRa5YYcIg"/>
     <owner xmi:type="uml:Model" href="GenericDiagramFucntion.uml#_sz15QOyrEeOTppRa5YYcIg"/>
