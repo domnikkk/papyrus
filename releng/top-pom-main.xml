@@ -44,6 +44,8 @@
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.xwt.feature</module>
 		<module>../plugins/doc/org.eclipse.papyrus.cdo.ui.doc</module>
 		<module>../plugins/doc/org.eclipse.papyrus.copypaste.ui.doc</module>
+		<module>../plugins/doc/org.eclipse.papyrus.moka.doc</module>
+		<module>../plugins/doc/org.eclipse.papyrus.infra.services.controlmode.doc</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.palette</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.paletteconfiguration</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.properties</module>
