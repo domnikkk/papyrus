@@ -150,7 +150,7 @@
 		<repository>
 			<id>birt</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/birt/update-site/luna-interim/</url>
+			<url>http://download.eclipse.org/birt/update-site/4.4/</url>
 		</repository>
 		<repository>
 			<id>cdt</id>
@@ -165,12 +165,12 @@
 		<repository>
 			<id>emf-cdo</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/cdo/drops/S20140527-0307</url>
+			<url>http://download.eclipse.org/modeling/emf/cdo/drops/R20140610-0212</url>
 		</repository>
 		<repository>
 			<id>emf-compare</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201405271400</url>
+			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201406111328</url>
 		</repository>
 		<repository>
 			<id>emf-emf</id>
@@ -200,7 +200,7 @@
 		<repository>
 			<id>ep</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/S-4.4RC3-201405282000/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.4/R-4.4-201406061215/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
@@ -220,7 +220,7 @@
 		<repository>
 			<id>gmf-tooling</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.M7</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.RC4a</url>
 		</repository>
 		<repository>
 			<id>m2m-atl</id>
@@ -230,27 +230,27 @@
 		<repository>
 			<id>m2t-acceleo</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201405271356</url>
+			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201406101309</url>
 		</repository>
 		<repository>
 			<id>m2t-xpand</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/milestones/S201405200738/</url>
+			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/releases/R201406030414/</url>
 		</repository>
 		<repository>
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/5.0.0/S201405261444</url>
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.0</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0milestones</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201405271532</url>
+			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201406101621</url>
 		</repository>
 		<repository>
 			<id>mylyn</id>
@@ -280,7 +280,7 @@
 		<repository>
 			<id>webtools</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/S-3.6.0RC2-20140525171527/repository/</url>
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/R-3.6.0-20140602160322/repository/</url>
 		</repository>
 	</repositories>
 	<build>
