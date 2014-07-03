@@ -40,20 +40,25 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @author AC221913
+ * A generic test class for Moka.
+ * It factorizes mechanisms to start a Moka execution from a launch configuration.
+ * 
+ * @author CEA LIST
  *
  */
 public abstract class AbstractMokaTest extends AbstractEditorTest {
 
-	public static final String RESOURCES_PATH = "/resources"; //$NON-NLS-1$
-
-	public static final String MODEL_NAME = "/TestSuite"; //$NON-NLS-1$
-
 	public static final String PROJECT_NAME = "org.eclipse.papyrus.moka.tests"; //$NON-NLS-1$
 
-	public Model model;
+	/**
+	 * The model containing the test case activity
+	 */
+	protected Model model;
 
-	public Activity activity;
+	/**
+	 * The main test case activity
+	 */
+	protected Activity testCaseActivity;
 
 	/**
 	 * This method initialize the model element from the project.
@@ -66,7 +71,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 		try {
 			MokaConstants.MOKA_AUTOMATIC_ANIMATION = false;
 			MokaConstants.SILENT_MODE = true;
-			initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault().getBundle());
+			initModel(PROJECT_NAME, getModelName(), Activator.getDefault().getBundle());
 		} catch (Exception e) {
 			Assert.fail(e.getMessage());
 		}
@@ -74,8 +79,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 
 	@Override
 	protected String getSourcePath() {
-		// TODO Auto-generated method stub
-		return RESOURCES_PATH;
+		return getResourcesPath();
 	}
 
 	@Test
@@ -96,7 +100,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 		model = (Model)getRootUMLModel();
 
 		//get activity to execute
-		activity = (org.eclipse.uml2.uml.Activity)model.getPackagedElement(this.getActivityName());
+		testCaseActivity = (org.eclipse.uml2.uml.Activity)model.getPackagedElement(this.getActivityName());
 
 		/* 2. Execute it */
 		// define launch configuration
@@ -168,7 +172,7 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 
 		ILaunchConfigurationWorkingCopy configuration = type.newInstance(null, "MOKA JUNIT TESTS");
 		configuration.setAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, model.eResource().getURI().toString());
-		configuration.setAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, activity.eResource().getURIFragment(activity));
+		configuration.setAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, testCaseActivity.eResource().getURIFragment(testCaseActivity));
 		configuration.setAttribute(MokaLaunchDelegate.ARGS_ATTRIBUTE_NAME, "");
 
 		// save and return new configuration
@@ -185,6 +189,19 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 	 */
 	public abstract String getActivityName();
 
+	/**
+	 * Returns the path of the resources folder, which contains the base UML model of the test case 
+	 *
+	 * @return the path of the resources folder
+	 */
+	public abstract String getResourcesPath();
+	
+	/**
+	 * Returns the name of the model
+	 *
+	 * @return the name of the model
+	 */
+	public abstract String getModelName();
 
 	/**
 	 * Returns the launch configuration delegate to be used for this test

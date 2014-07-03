@@ -24,11 +24,25 @@ public class CompositeRunTestSuite4 extends AbstractMokaTest {
 
 	protected final String ACTIVITY_NAME = "Run Test Suite 4"; //$NON-NLS-1$
 
+	protected String RESOURCES_PATH = "/resources/Test Suite"; //$NON-NLS-1$
+
+	protected String MODEL_NAME = "/TestSuite"; //$NON-NLS-1$
+
 	@Override
 	public String getActivityName() {
 		return ACTIVITY_NAME;
 	}
+	
+	@Override
+	public String getResourcesPath() {
+		return RESOURCES_PATH;
+	}
 
+	@Override
+	public String getModelName() {
+		return MODEL_NAME;
+	}
+	
 	@Override
 	public AbstractMokaLaunchConfigurationDelegate getLaunchDelegate() {
 		return new CompositesEngineLaunchDelegate();
