@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.preference.IPreferencePage;
 import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentCombinedFragmentCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomInteractionOperandEditPart;
@@ -69,6 +70,7 @@ public class TestGuardVisibility_402966 extends AbstractNodeTest {
 		return ISequenceDiagramTestsConstants.FILE_NAME;
 	}
 
+	@InvalidTest("Since 1.0.0, the Preferences have been disabled and should not be used to control the appearance of diagrams")
 	@Test
 	public void testPreferencePage() {
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
