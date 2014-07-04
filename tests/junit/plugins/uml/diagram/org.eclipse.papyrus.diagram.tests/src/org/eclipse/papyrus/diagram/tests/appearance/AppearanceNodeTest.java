@@ -15,11 +15,21 @@ package org.eclipse.papyrus.diagram.tests.appearance;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import org.eclipse.draw2d.Figure;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.Shape;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 import org.junit.Assert;
 
@@ -57,18 +67,47 @@ public abstract class AppearanceNodeTest  extends AppearanceElementTest{
 		return  createdEditPart;
 
 	}
-	 public abstract void testBackgroundColor(GraphicalEditPart createdEditpart);
-	 public abstract void testForegroundColor(GraphicalEditPart createdEditpart);
-	 public abstract void testGradient(GraphicalEditPart createdEditpart);
-	 public abstract void testLineWidth(GraphicalEditPart createdEditpart);
-	 public abstract void testTransparency(GraphicalEditPart createdEditpart);
-	 public abstract void testFont(GraphicalEditPart createdEditpart);
-	 public abstract void testFontHeight(GraphicalEditPart createdEditpart);
-	 public abstract void testElementIcon(GraphicalEditPart createdEditpart);
-	 public abstract void testShadow(GraphicalEditPart createdEditpart);
-	
+	public void testBackgroundColor(GraphicalEditPart createdEditpart){
+		View view=createdEditpart.getNotationView();
+		assertTrue("view must be instance of Shape",view instanceof Shape);
+		Shape shape= (Shape)view;
+		command= new EMFtoGEFCommandWrapper(SetCommand.create(createdEditpart.getEditingDomain(), shape, NotationPackage.eINSTANCE.getFillStyle_FillColor(), 0));
+		Assert.assertTrue("the command must be executable", command.canExecute());
+		executeOnUIThread(command);
+		createdEditpart.refresh();
+		IFigure fig=createdEditpart.getFigure();
+		
+		Assert.assertTrue("Figure must be an instance of Nodefigure", fig instanceof NodeFigure);
+		Assert.assertEquals("the background is not refreshed", Display.getDefault().getSystemColor(SWT.COLOR_BLACK),((NodeFigure)fig).getBackgroundColor());
+
+	}
+	public  void testForegroundColor(GraphicalEditPart createdEditpart){
+		testBackgroundColor(createdEditpart);
+	}
+	public  void testGradient(GraphicalEditPart createdEditpart){
+		testBackgroundColor(createdEditpart);
+	}
+	public  void testLineWidth(GraphicalEditPart createdEditpart){
+		testBackgroundColor(createdEditpart);
+	}
+	public  void testTransparency(GraphicalEditPart createdEditpart){
+		testBackgroundColor(createdEditpart);
+	}
+	public  void testFont(GraphicalEditPart createdEditpart){
+		testBackgroundColor(createdEditpart);
+	}
+	public  void testFontHeight(GraphicalEditPart createdEditpart){
+		testBackgroundColor(createdEditpart);
+	}
+	public  void testElementIcon(GraphicalEditPart createdEditpart){
+		testBackgroundColor(createdEditpart);
+	}
+	public  void testShadow(GraphicalEditPart createdEditpart){
+		testBackgroundColor(createdEditpart);
+	}
+
 	@Override
-	void testAppearance(IElementType type) {
+	public void testAppearance(IElementType type) {
 		GraphicalEditPart createdEditpart=createANode(type, getContainerEditPart());
 		testBackgroundColor(createdEditpart);
 		testForegroundColor(createdEditpart);
@@ -79,7 +118,7 @@ public abstract class AppearanceNodeTest  extends AppearanceElementTest{
 		testFontHeight(createdEditpart);
 		testElementIcon(createdEditpart);
 		testShadow(createdEditpart);
-		
-		
+
+
 	}
 }
