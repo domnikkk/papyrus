@@ -17,8 +17,8 @@ package org.eclipse.papyrus.uml.profile.drafter.ui.dialog;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
+import org.eclipse.papyrus.uml.profile.drafter.ProfileCatalog;
 import org.eclipse.papyrus.uml.profile.drafter.exceptions.NotFoundException;
-import org.eclipse.papyrus.uml.profile.drafter.utils.ProfileCatalog;
 import org.eclipse.uml2.uml.Stereotype;
 
 
@@ -34,6 +34,8 @@ import org.eclipse.uml2.uml.Stereotype;
  */
 public class StereotypeNameToProfileSynchronizer {
 
+	
+	protected String qualifiedName;
 	protected String profileName;
 	protected String stereotypeName;
 	
@@ -56,6 +58,35 @@ public class StereotypeNameToProfileSynchronizer {
 		this.profileCatalog = profileCatalog;
 	}
 	
+	
+	/**
+	 * @return the qualifiedName
+	 */
+	public String getQualifiedName() {
+		return qualifiedName;
+	}
+
+	
+	/**
+	 * @param qualifiedName the qualifiedName to set
+	 */
+	public void setQualifiedName(String qualifiedName) {
+		// Compute profile and stereotype name
+		// TODO
+		// doSet profile and stereotype name
+		// TODO
+		
+		doSetQualifiedName(qualifiedName);
+	}
+
+	/**
+	 * @param profileName the profileName to set
+	 */
+	protected void doSetQualifiedName(String qualifiedName) {
+		System.err.println("Qualified name set to '" + qualifiedName + "'");
+		firePropertyChange("profileName", this.qualifiedName, this.qualifiedName = qualifiedName);
+	}
+
 	/**
 	 * @return the profileName
 	 */

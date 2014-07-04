@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_KRbHMAFpEeSZGsrO_8UE3g" name="pets" metaclassReference="_P0UIAAFpEeSZGsrO_8UE3g">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZzBM0AFpEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_d1dnMQFsEeSZGsrO_8UE3g" name="pets" nsURI="http:///schemas/pets/_d1dnMAFsEeSZGsrO_8UE3g/1" nsPrefix="pets">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_d1dnQQFsEeSZGsrO_8UE3g" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d1dnQgFsEeSZGsrO_8UE3g" key="Version" value="0.0.2"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d1dnQwFsEeSZGsrO_8UE3g" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d1dnRAFsEeSZGsrO_8UE3g" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d1dnRQFsEeSZGsrO_8UE3g" key="Date" value="2014-07-02"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_d1dnRgFsEeSZGsrO_8UE3g" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_d1dnMgFsEeSZGsrO_8UE3g" name="Cat">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_d1dnMwFsEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_UPmnkAFpEeSZGsrO_8UE3g"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_d1dnNAFsEeSZGsrO_8UE3g" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_d1dnNgFsEeSZGsrO_8UE3g" name="Dog">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_d1dnNwFsEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_U4howAFpEeSZGsrO_8UE3g"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_d1dnOAFsEeSZGsrO_8UE3g" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_d1dnOgFsEeSZGsrO_8UE3g" name="Bird">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_d1dnOwFsEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VppjsAFpEeSZGsrO_8UE3g"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_d1dnPAFsEeSZGsrO_8UE3g" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_ZzBM0QFpEeSZGsrO_8UE3g" name="profile" nsURI="http:///schemas/profile/_Zy7GMAFpEeSZGsrO_8UE3g/0" nsPrefix="profile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZzBM4QFpEeSZGsrO_8UE3g" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZzBM4gFpEeSZGsrO_8UE3g" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZzBM4wFpEeSZGsrO_8UE3g" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZzBM5AFpEeSZGsrO_8UE3g" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZzBM5QFpEeSZGsrO_8UE3g" key="Date" value="2014-07-01"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZzBM5gFpEeSZGsrO_8UE3g" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ZzBM0gFpEeSZGsrO_8UE3g" name="Cat">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZzBM0wFpEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_UPmnkAFpEeSZGsrO_8UE3g"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_ZzBM1AFpEeSZGsrO_8UE3g" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ZzBM1gFpEeSZGsrO_8UE3g" name="Dog">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZzBM1wFpEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_U4howAFpEeSZGsrO_8UE3g"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_ZzBM2AFpEeSZGsrO_8UE3g" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ZzBM2gFpEeSZGsrO_8UE3g" name="Bird">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZzBM2wFpEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VppjsAFpEeSZGsrO_8UE3g"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_ZzBM3AFpEeSZGsrO_8UE3g" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_P0UIAAFpEeSZGsrO_8UE3g" alias="Class">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_UPmnkAFpEeSZGsrO_8UE3g" name="Cat">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_XbD28AFpEeSZGsrO_8UE3g" name="base_Class" association="_XbD28QFpEeSZGsrO_8UE3g">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_U4howAFpEeSZGsrO_8UE3g" name="Dog">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_X94QIAFpEeSZGsrO_8UE3g" name="base_Class" association="_X94QIQFpEeSZGsrO_8UE3g">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_VppjsAFpEeSZGsrO_8UE3g" name="Bird">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_YhprkAFpEeSZGsrO_8UE3g" name="base_Class" association="_YhprkQFpEeSZGsrO_8UE3g">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_XbD28QFpEeSZGsrO_8UE3g" name="E_Cat_Class1" memberEnd="_XbD28gFpEeSZGsrO_8UE3g _XbD28AFpEeSZGsrO_8UE3g">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_XbD28gFpEeSZGsrO_8UE3g" name="extension_Cat" type="_UPmnkAFpEeSZGsrO_8UE3g" aggregation="composite" association="_XbD28QFpEeSZGsrO_8UE3g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_X94QIQFpEeSZGsrO_8UE3g" name="E_Dog_Class1" memberEnd="_X94QIgFpEeSZGsrO_8UE3g _X94QIAFpEeSZGsrO_8UE3g">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_X94QIgFpEeSZGsrO_8UE3g" name="extension_Dog" type="_U4howAFpEeSZGsrO_8UE3g" aggregation="composite" association="_X94QIQFpEeSZGsrO_8UE3g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_YhprkQFpEeSZGsrO_8UE3g" name="E_Bird_Class1" memberEnd="_YhprkgFpEeSZGsrO_8UE3g _YhprkAFpEeSZGsrO_8UE3g">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_YhprkgFpEeSZGsrO_8UE3g" name="extension_Bird" type="_VppjsAFpEeSZGsrO_8UE3g" aggregation="composite" association="_YhprkQFpEeSZGsrO_8UE3g"/>
+  </packagedElement>
+</uml:Profile>

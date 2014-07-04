@@ -5,3 +5,6 @@ Bundle-SymbolicName: org.eclipse.papyrus.uml.profile.drafter.tests
 Bundle-Version: 1.0.0.qualifier
 Fragment-Host: org.eclipse.papyrus.uml.profile.drafter;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common
+Export-Package: org.eclipse.papyrus.uml.profile.drafter.tests,
+ org.eclipse.papyrus.uml.profile.drafter.tests.exception

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:house="http:///schemas/house/_Kx8fINeMEeOxVfFeCUP2Mg/1" xmlns:pets="http:///schemas/pets/_d1dnMAFsEeSZGsrO_8UE3g/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/house/_Kx8fINeMEeOxVfFeCUP2Mg/1 house.profile.uml#_Kx8fIdeMEeOxVfFeCUP2Mg http:///schemas/pets/_d1dnMAFsEeSZGsrO_8UE3g/1 pets.profile.uml#_d1dnMQFsEeSZGsrO_8UE3g">
+  <uml:Model xmi:id="_ryIDEAEvEeSR--mxHEXKSA" name="model">
+    <packagedElement xmi:type="uml:Package" xmi:id="_FJ8m8AEwEeSR--mxHEXKSA" name="p1">
+      <packagedElement xmi:type="uml:Class" xmi:id="_HEgPIAEwEeSR--mxHEXKSA" name="Class1">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RbB-EAEwEeSR--mxHEXKSA" name="Attribute1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_QU0j8AEwEeSR--mxHEXKSA" name="Operation1"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_MPE2kAEwEeSR--mxHEXKSA" name="Class2"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_nx9tkAFhEeSZGsrO_8UE3g" name="p2">
+      <packagedElement xmi:type="uml:Class" xmi:id="_qOTNIAFhEeSZGsrO_8UE3g" name="ClassWith1Sterotype"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_MmC_wAFqEeSZGsrO_8UE3g" name="ClassWith2Stereotypes"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_wGo5gAFhEeSZGsrO_8UE3g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wHBUAAFhEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="house.profile.uml#_Kx8fIdeMEeOxVfFeCUP2Mg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="house.profile.uml#_BB8hgNeIEeO9b7Ib8OAaeQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KNP8YAFqEeSZGsrO_8UE3g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KN0kIAFqEeSZGsrO_8UE3g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pets.profile.uml#_d1dnMQFsEeSZGsrO_8UE3g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pets.profile.uml#_KRbHMAFpEeSZGsrO_8UE3g"/>
+    </profileApplication>
+  </uml:Model>
+  <house:Building xmi:id="_xnb94AFhEeSZGsrO_8UE3g" base_Class="_qOTNIAFhEeSZGsrO_8UE3g"/>
+  <pets:Cat xmi:id="_Rt8GoAFqEeSZGsrO_8UE3g" base_Class="_MmC_wAFqEeSZGsrO_8UE3g"/>
+  <house:Building xmi:id="_RuIT4AFqEeSZGsrO_8UE3g" base_Class="_MmC_wAFqEeSZGsrO_8UE3g"/>
+</xmi:XMI>
