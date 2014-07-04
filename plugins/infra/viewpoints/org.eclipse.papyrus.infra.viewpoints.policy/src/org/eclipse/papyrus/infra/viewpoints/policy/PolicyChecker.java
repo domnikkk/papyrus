@@ -17,7 +17,6 @@ package org.eclipse.papyrus.infra.viewpoints.policy;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -467,7 +466,7 @@ public class PolicyChecker {
 			return false;
 		if (!matchesProfiles(prototype.configuration, profileHelper.getAppliedProfiles(element)))
 			return false;
-		if (!matchesCreationRoot(prototype.configuration, element, profileHelper.getAppliedStereotypes(element), getViewCountOn(element, prototype)))
+		if (!matchesCreationRoot(prototype.configuration, element, profileHelper.getAppliedStereotypes(element), prototype.getViewCountOn(element)))
 			return false;
 		return true;
 	}
@@ -613,7 +612,7 @@ public class PolicyChecker {
 				ViewPrototype proto = ViewPrototype.get(view);
 				if (proto == null)
 					continue;
-				int count = getOwnedViewCount(element, proto);
+				int count = proto.getOwnedViewCount(element);
 				OwningRule rule = matchesCreationOwner(view, element, stereotypes, count);
 				if (rule == null)
 					continue;
@@ -622,7 +621,7 @@ public class PolicyChecker {
 					result.add(proto);
 				} else {
 					// We have to check if the owner can also be a root
-					count = getViewCountOn(element, proto);
+					count = proto.getViewCountOn(element);
 					if (matchesCreationRoot(view, element, stereotypes, count)) {
 						// The owner can also be the root => OK
 						result.add(proto);
@@ -644,61 +643,9 @@ public class PolicyChecker {
 	 */
 	public OwningRule getOwningRuleFor(ViewPrototype prototype, EObject owner) {
 		Collection<EClass> stereotypes = profileHelper.getAppliedStereotypes(owner);
-		int count = getOwnedViewCount(owner, prototype);
+		int count = prototype.getOwnedViewCount(owner);
 		OwningRule rule = matchesCreationOwner(prototype.configuration, owner, stereotypes, count);
 		return rule;
-	}
-
-	/**
-	 * Gets the number of views of a given type owned by a given object
-	 * 
-	 * @param element
-	 *            The object to count views for
-	 * @param prototype
-	 *            The prototype of view to counts
-	 * @return The number of owned views
-	 */
-	private int getOwnedViewCount(EObject element, ViewPrototype prototype) {
-		int count = 0;
-		Iterator<EObject> roots = NotationUtils.getNotationRoots(element);
-		if (roots == null)
-			return count;
-		while (roots.hasNext()) {
-			EObject view = roots.next();
-			ViewPrototype proto = ViewPrototype.get(view);
-			if (prototype == proto) {
-				EObject owner = proto.getOwnerOf(view);
-				if (EcoreUtil.equals(owner, element))
-					count++;
-			}
-		}
-		return count;
-	}
-
-	/**
-	 * Gets the number of views of a given type on a given object
-	 * 
-	 * @param element
-	 *            The object to count views on
-	 * @param prototype
-	 *            The prototype of view to counts
-	 * @return The number of views on the object
-	 */
-	private int getViewCountOn(EObject element, ViewPrototype prototype) {
-		int count = 0;
-		Iterator<EObject> roots = NotationUtils.getNotationRoots(element);
-		if (roots == null)
-			return count;
-		while (roots.hasNext()) {
-			EObject view = roots.next();
-			ViewPrototype proto = ViewPrototype.get(view);
-			if (prototype == proto) {
-				EObject root = proto.getRootOf(view);
-				if (EcoreUtil.equals(root, element))
-					count++;
-			}
-		}
-		return count;
 	}
 
 	/**

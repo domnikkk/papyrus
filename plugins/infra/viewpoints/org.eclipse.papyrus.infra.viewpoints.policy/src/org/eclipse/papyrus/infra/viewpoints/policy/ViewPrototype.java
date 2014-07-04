@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.core.runtime.CoreException;
@@ -30,6 +31,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule;
@@ -419,5 +421,57 @@ public abstract class ViewPrototype {
 				return p1.compareTo(p2);
 			}
 		}
+	}
+
+	/**
+	 * Gets the number of views of this type owned by a given object
+	 * 
+	 * @param element
+	 *            The object to count views for
+	 * @param prototype
+	 *            The prototype of view to counts
+	 * @return The number of owned views
+	 */
+	public int getOwnedViewCount(EObject element) {
+		int count = 0;
+		Iterator<EObject> roots = NotationUtils.getNotationRoots(element);
+		if (roots == null)
+			return count;
+		while (roots.hasNext()) {
+			EObject view = roots.next();
+			ViewPrototype proto = ViewPrototype.get(view);
+			if (this == proto) {
+				EObject owner = proto.getOwnerOf(view);
+				if (EcoreUtil.equals(owner, element))
+					count++;
+			}
+		}
+		return count;
+	}
+
+	/**
+	 * Gets the number of views of this type on a given object
+	 * 
+	 * @param element
+	 *            The object to count views on
+	 * @param prototype
+	 *            The prototype of view to counts
+	 * @return The number of views on the object
+	 */
+	public int getViewCountOn(EObject element) {
+		int count = 0;
+		Iterator<EObject> roots = NotationUtils.getNotationRoots(element);
+		if (roots == null)
+			return count;
+		while (roots.hasNext()) {
+			EObject view = roots.next();
+			ViewPrototype proto = ViewPrototype.get(view);
+			if (this == proto) {
+				EObject root = proto.getRootOf(view);
+				if (EcoreUtil.equals(root, element))
+					count++;
+			}
+		}
+		return count;
 	}
 }
