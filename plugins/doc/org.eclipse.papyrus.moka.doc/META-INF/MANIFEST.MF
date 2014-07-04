@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Moka Documentation (Incubation)
+Bundle-Name: Moka Documentation
 Bundle-SymbolicName: org.eclipse.papyrus.moka.doc;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.doc.Activator

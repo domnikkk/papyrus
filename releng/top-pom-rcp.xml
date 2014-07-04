@@ -24,12 +24,12 @@
 		<repository>
 			<id>ep</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/S-4.4RC3-201405282000/</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.4/R-4.4-201406061215/</url>
 		</repository>
 		<repository>
 			<id>emf-cdo</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/cdo/drops/S20140527-0307</url>
+			<url>http://download.eclipse.org/modeling/emf/cdo/drops/R20140610-0212</url>
 		</repository>
 		<!-- Papyrus components -->
 		<repository>
@@ -71,7 +71,7 @@
 		<repository>
 			<id>gmf-tooling</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.M7</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.RC4a</url>
 		</repository>
 		<repository>
 			<id>otdt</id>

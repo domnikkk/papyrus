@@ -16,12 +16,13 @@ import org.eclipse.papyrus.moka.tests.semantics.async.fuml.AsyncRunAllTestsButTe
 import org.eclipse.papyrus.moka.tests.semantics.async.fuml.AsyncRunTestSuite4;
 import org.eclipse.papyrus.moka.tests.semantics.composites.CompositeRunAllTestsButTestSuite4;
 import org.eclipse.papyrus.moka.tests.semantics.composites.CompositeRunTestSuite4;
+import org.eclipse.papyrus.moka.tests.semantics.composites.modeling.utils.RunGenerateFactoryTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ CompositeRunAllTestsButTestSuite4.class, CompositeRunTestSuite4.class, AsyncRunAllTestsButTestSuite4.class, AsyncRunTestSuite4.class })
+@SuiteClasses({ CompositeRunAllTestsButTestSuite4.class, CompositeRunTestSuite4.class, AsyncRunAllTestsButTestSuite4.class, AsyncRunTestSuite4.class, RunGenerateFactoryTest.class })
 public class AllTests {
 
 	public AllTests() {

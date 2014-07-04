@@ -22,13 +22,27 @@ import org.eclipse.papyrus.moka.tests.semantics.AbstractMokaTest;
  */
 public class AsyncRunAllTestsButTestSuite4 extends AbstractMokaTest {
 
-	public static final String ACTIVITY_NAME = "RunAllTests"; //$NON-NLS-1$
+	protected static final String ACTIVITY_NAME = "RunAllTests"; //$NON-NLS-1$
+
+	protected String RESOURCES_PATH = "/resources/Test Suite"; //$NON-NLS-1$
+
+	protected String MODEL_NAME = "/TestSuite"; //$NON-NLS-1$
 
 	@Override
 	public String getActivityName() {
 		return ACTIVITY_NAME;
 	}
+	
+	@Override
+	public String getResourcesPath() {
+		return RESOURCES_PATH;
+	}
 
+	@Override
+	public String getModelName() {
+		return MODEL_NAME;
+	}
+	
 	@Override
 	public AbstractMokaLaunchConfigurationDelegate getLaunchDelegate() {
 		return new AsyncFUMLEngineLaunchDelegate();
