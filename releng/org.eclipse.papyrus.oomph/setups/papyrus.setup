@@ -68,7 +68,7 @@
     <repository
         url="${train.url}"/>
     <repository
-        url="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus.git/plain/releng/org.eclipse.papyrus.oomph/patch/papyrus-oomph-patch/1.0.0"/>
+        url="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus.git/plain/releng/org.eclipse.papyrus.oomph/patch/papyrus-oomph-patch/1.0.0/"/>
   </setupTask>
   <setupTask
       xsi:type="setup:EclipseIniTask"
