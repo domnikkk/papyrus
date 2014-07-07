@@ -18,8 +18,10 @@ package org.eclipse.papyrus.java.generator.jdtsynchronizer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.OutputStreamWriter;
 import java.util.List;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -37,7 +39,11 @@ import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.m2m.qvt.oml.util.Log;
+import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.papyrus.java.generator.jdtsynchronizer.impl.SynchJDTJavaModel;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmFactory;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.Options;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
@@ -86,11 +92,14 @@ public class RunGenerator {
 	 * @throws JDTVisitorException
 	 */
 	public void runGeneration(GeneratorPreference preference) throws JDTVisitorException {
+		// Create an options model using the Eclipse Preferences
+		EList<EObject> inOptions = createOptionModelFromEclipsePreferences(preference);
+		
 		// Refer to an existing transformation via URI
 		final URI scriptUri =
 				URI.createURI("platform:/plugin/" + UmltojdtActivator.PLUGIN_ID + UmltojdtActivator.PATH_QVT_FILE);
 
-		List<EObject> outObjects = runTransformation(scriptUri, inObjects);
+		List<EObject> outObjects = runTransformation(scriptUri, inObjects, inOptions);
 
 		if(outObjects.size() == 0) {
 			throw new JDTVisitorException("No classes or packages produced from the transformation. Nothing is generated.");
@@ -124,16 +133,36 @@ public class RunGenerator {
 	}
 
 	/**
+	 * Create a new GeneratorOptions model and inject eclipse preferences on it. 
+	 * @param preference eclipse preferences
+	 * @return a new instance of Options, where options.defaultSourceFolder have been initialized.
+	 */
+	private EList<EObject> createOptionModelFromEclipsePreferences(GeneratorPreference preference) {
+		GeneratoroptionsmmFactory optionsFactory = GeneratoroptionsmmFactory.eINSTANCE;
+		
+		// Create a new Options object and inject the default source folder name from Eclipse preferences
+		Options options = optionsFactory.createOptions();
+		options.setDefaultSourceFolder(preference.defaultSourceFolderName());
+		
+		// Add options to the model
+		EList<EObject> optionsContents = new BasicEList<EObject>(1);
+		optionsContents.add(options);
+		
+		return optionsContents;
+	}
+
+	/**
 	 * Run QVTo transformation using the scriptUri and the inObjects model
 	 * 
 	 * @param scriptUri
 	 *        The script QVTo
 	 * @param inObjects
 	 *        The entry model
+	 * @param inOptions2 
 	 * @return The output model
 	 */
-	private List<EObject> runTransformation(URI scriptUri, EList<EObject> inObjects) {
-		// initialise the transformation		
+	private List<EObject> runTransformation(URI scriptUri, EList<EObject> inObjects, EList<EObject> inOptions) {
+		// initialize the transformation		
 		//First, you need to instantiate a Registry:
 		EPackage.Registry registry = new EPackageRegistryImpl(EPackage.Registry.INSTANCE);
 
@@ -144,13 +173,14 @@ public class RunGenerator {
 
 		// class which allow to execute the transformation
 		TransformationExecutor t = new TransformationExecutor(scriptUri, registry);
-		ExecutionContext executionContext = new ExecutionContextImpl();
+		ExecutionContextImpl executionContext = new ExecutionContextImpl();
 
 		// allow to contains the model uml
 		ModelExtent input = new BasicModelExtent(inObjects);
+		ModelExtent inputOptions = new BasicModelExtent(inOptions);
 		ModelExtent output = new BasicModelExtent();
 		// make the transformation
-		ExecutionDiagnostic executionDiagnostic = t.execute(executionContext, input, output);
+		ExecutionDiagnostic executionDiagnostic = t.execute(executionContext, input, inputOptions, output);
 
 		// the errors
 		System.out.println(executionDiagnostic.getMessage());

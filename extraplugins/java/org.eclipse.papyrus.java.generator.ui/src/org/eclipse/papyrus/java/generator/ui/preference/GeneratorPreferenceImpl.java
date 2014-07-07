@@ -88,4 +88,9 @@ public class GeneratorPreferenceImpl implements GeneratorPreference {
 		return store.getBoolean(PreferenceConstants.P_STOP_ON_FIRST_ERROR);
 	}
 
+	@Override
+	public String defaultSourceFolderName() {
+		return store.getString(PreferenceConstants.P_DEFAULT_SOURCE_FOLDER_NAME);
+	}
+
 }

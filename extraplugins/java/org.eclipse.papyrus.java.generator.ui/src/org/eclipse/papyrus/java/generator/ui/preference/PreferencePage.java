@@ -84,6 +84,13 @@ public class PreferencePage
 				PreferenceConstants.P_GENERIC_CLASS_FOR_MULTIVALUE,
 				"Generic class to use for association * ",
 				getFieldEditorParent()));
+		
+		
+		// text input field for the default source folder name
+		addField(new GenericClassFieldEditor(
+			PreferenceConstants.P_DEFAULT_SOURCE_FOLDER_NAME,
+			PreferenceConstants.LABEL_DEFAULT_SOURCE_FOLDER_NAME,
+			getFieldEditorParent()));
 	}
 
 	/*
