@@ -23,7 +23,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.common.core,
  org.eclipse.papyrus.junit.utils;bundle-version="1.0.0",
  org.eclipse.papyrus.uml.diagram.profile;bundle-version="1.0.0",
- org.eclipse.gmf.tooling.runtime
+ org.eclipse.gmf.tooling.runtime,
+ org.eclipse.papyrus.infra.emf.appearance
 Export-Package: org.eclipse.papyrus.diagram.tests.appearance,
  org.eclipse.papyrus.diagram.tests.canonical
 Bundle-Vendor: %providerName
