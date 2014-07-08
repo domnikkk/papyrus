@@ -19,6 +19,18 @@
   <setupTask
       xsi:type="setup.p2:P2Task">
     <requirement
+        id="org.eclipse.emf.sdk.feature.group"/>
+    <requirement
+        id="org.eclipse.gmf.runtime.notation.sdk.feature.group"/>
+    <requirement
+        id="org.eclipse.gmf.runtime.sdk.feature.group"/>
+    <requirement
+        id="org.eclipse.gmf.sdk.feature.group"/>
+    <requirement
+        id="org.eclipse.uml2.sdk.feature.group"/>
+    <requirement
+        id="org.eclipse.papyrus.sdk.feature.feature.group"/>
+    <requirement
         id="org.eclipse.pde.api.tools.ee.feature.feature.group"/>
     <requirement
         id="org.eclipse.emf.ecoretools.sdk.feature.group"
@@ -57,18 +69,12 @@
         id="org.eclipse.swtbot.generator.feature.feature.group"/>
     <requirement
         id="org.eclipse.m2e.feature.feature.group"/>
-    <requirement
-        id="org.eclipse.papyrus.oomph.patch.feature.feature.group"/>
     <repository
         url="http://download.eclipse.org/tools/buckminster/updates-4.4"/>
     <repository
         url="http://download.eclipse.org/modeling/emft/ecoretools/updates/1.2/201306071421"/>
     <repository
         url="http://download.eclipse.org/technology/swtbot/snapshots"/>
-    <repository
-        url="${train.url}"/>
-    <repository
-        url="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus.git/plain/releng/org.eclipse.papyrus.oomph/patch/papyrus-oomph-patch/1.0.0/"/>
   </setupTask>
   <setupTask
       xsi:type="setup:EclipseIniTask"
@@ -1375,92 +1381,21 @@
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
-      name="train.url"
-      value="http://download.eclipse.org/releases/luna"
-      label="">
-    <description>URL of the Eclipse Release Train from which to install the IDE.</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="train.staging.url"
-      value="http://download.eclipse.org/releases/staging">
-    <description>URL of the Eclipse train from which to install current-stream milestones into the PDE target and/or IDE.</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="git.clone"
-      defaultValue="${user.home/git/org.eclipse.papyrus}"
-      label="">
-    <description>Location of the Papyrus Git clone.</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:StringSubstitutionTask"
-      name="git.clone"
-      value="${git.clone}"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
       type="URI"
       name="base.downloads.url"
       value="http://download.eclipse.org"/>
   <setupTask
       xsi:type="setup:VariableTask"
-      name="papyrus.nightly.repo.luna"
-      value="updates/nightly/luna"
-      storePromptedValue="false"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="papyrus.nightly.repo.mars"
-      value="updates/nightly/mars"
-      storePromptedValue="false"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="papyrus.nightly.repo"
-      value="${papyrus.nightly.repo.${scope.project.stream.name}}"
-      storePromptedValue="false"/>
-  <setupTask
-      xsi:type="setup:StringSubstitutionTask"
-      name="papyrus.nightly.repo"
-      value="${papyrus.nightly.repo}"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="git.checkout.branch.luna"
-      value="master"
-      storePromptedValue="false"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="git.checkout.branch.mars"
-      value="master"
-      storePromptedValue="false"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
       name="git.checkout.branch"
-      value="${git.checkout.branch.${scope.project.stream.name}}"
+      value="${scope.project.stream.name}"
       storePromptedValue="false"/>
   <setupTask
-      xsi:type="setup:StringSubstitutionTask"
-      name="git.checkout.branch"
-      value="${git.checkout.branch}"/>
-  <setupTask
       xsi:type="setup:VariableTask"
-      name="papyrus.bugzilla.version.luna"
-      value="1.0.0"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="papyrus.bugzilla.version.mars"
-      value="1.0.0"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="papyrus.bugzilla.version"
-      value="${papyrus.bugzilla.version.${scope.project.stream.name}}"
+      name="tp.materialization.url"
       storePromptedValue="false"/>
-  <setupTask
-      xsi:type="setup:StringSubstitutionTask"
-      name="papyrus.bugzilla.version"
-      value="${papyrus.bugzilla.version}"/>
   <setupTask
       xsi:type="git:GitCloneTask"
       id="papyrus.git.clone"
-      location="${git.clone}"
       remoteURI="papyrus/org.eclipse.papyrus"
       pushURI=""
       checkoutBranch="${git.checkout.branch}">
@@ -1481,66 +1416,116 @@
     </annotation>
     <description>Papyrus</description>
   </setupTask>
+  <setupTask
+      xsi:type="setup.targlets:TargletTask">
+    <targlet
+        name="Papyrus Main Dependencies"
+        activeRepositoryList="">
+      <requirement
+          id="org.eclipse.sdk.feature.group"/>
+      <requirement
+          id="org.eclipse.acceleo.feature.group"/>
+      <requirement
+          id="org.eclipse.team.svn.feature.group"/>
+      <repositoryList
+          name="Papyrus Main Dependencies">
+        <repository
+            url="${tp.materialization.url}"/>
+        <repository
+            url="${base.downloads.url}/nattable/${dep.nattable.repo}/repository/"/>
+      </repositoryList>
+    </targlet>
+    <targlet
+        name="Papyrus Main Plug-ins"
+        activeRepositoryList="">
+      <requirement
+          id="org.eclipse.papyrus.sdk.feature.feature.group"/>
+      <repositoryList
+          name="Papyrus Nightly Build">
+        <repository
+            url="${base.downloads.url}/modeling/mdt/papyrus/${papyrus.nightly.repo}"/>
+      </repositoryList>
+    </targlet>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="Mylyn Queries">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="papyrus.bugzilla.repository"
+        value="https://bugs.eclipse.org/bugs"/>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="papyrus.bugzilla.prefix"
+        value="/buglist.cgi?classification=Modeling&amp;product=MDT.Papyrus"/>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="papyrus.bugzilla.open"
+        value="bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED"/>
+    <setupTask
+        xsi:type="mylyn:MylynQueriesTask"
+        repositoryURL="${papyrus.bugzilla.repository}">
+      <query
+          summary="Flagged for Review"
+          url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;query_format=advanced&amp;field0-0-0=flagtypes.name&amp;type0-0-0=equals&amp;value0-0-0=review%3F"/>
+      <query
+          summary="Open Bugs"
+          url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_severity=normal&amp;bug_severity=minor&amp;bug_severity=trivial"/>
+      <query
+          summary="Open Enhancement Requests"
+          url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;bug_severity=enhancement"/>
+      <query
+          summary="Resolved Items"
+          url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;bug_status=RESOLVED&amp;resolution=FIXED"/>
+    </setupTask>
+    <setupTask
+        xsi:type="mylyn:MylynQueriesTask"
+        connectorKind="org.eclipse.mylyn.gerrit"
+        repositoryURL="https://git.eclipse.org/r"
+        userID="${bugzilla.id}"
+        password="${eclipse.user.password}">
+      <query
+          summary="Open Gerrit Reviews">
+        <attribute
+            key="gerrit query type"
+            value="custom"/>
+        <attribute
+            key="gerrit query project"
+            value="papyrus/org.eclipse.papyrus"/>
+        <attribute
+            key="gerrit query string"
+            value="project:papyrus/org.eclipse.papyrus status:open branch:${git.checkout.branch}"/>
+      </query>
+    </setupTask>
+    <setupTask
+        xsi:type="mylyn:MylynBuildsTask"
+        serverURL="https://hudson.eclipse.org/hudson/"
+        userID="${bugzilla.id}"
+        password="${eclipse.user.password}">
+      <buildPlan
+          name="papyrus-trunk-nightly"/>
+      <buildPlan
+          name="papyrus-trunk-nightly-tests"/>
+      <buildPlan
+          name="papyrus-trunk-extra-nightly"/>
+      <buildPlan
+          name="papyrus-trunk-extra-nightly-tests"/>
+    </setupTask>
+  </setupTask>
   <project name="papyrus-main"
       label="Main">
     <setupTask
+        xsi:type="projects:ProjectsImportTask"
+        id="papyrus.main.sources">
+      <sourceLocator
+          rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
+        <predicate
+            xsi:type="predicates:NamePredicate"
+            pattern="org\.eclipse\.papyrus\.junit\.utils"/>
+      </sourceLocator>
+    </setupTask>
+    <setupTask
         xsi:type="setup.targlets:TargletTask">
-      <targlet
-          name="Papyrus Main Dependencies"
-          activeRepositoryList="">
-        <requirement
-            id="org.eclipse.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.acceleo.feature.group"/>
-        <requirement
-            id="org.eclipse.team.svn.feature.group"/>
-        <repositoryList
-            name="Papyrus Main Dependencies">
-          <repository
-              url="${base.downloads.url}/eclipse/updates/${dep.eclipse.repo}/"/>
-          <repository
-              url="${base.downloads.url}/tools/orbit/downloads/drops/${dep.orbit.repo}/repository"/>
-          <repository
-              url="${base.downloads.url}/birt/update-site/${dep.birt.repo}/"/>
-          <repository
-              url="${base.downloads.url}/mmt/atl/updates/${dep.atl.repo}/"/>
-          <repository
-              url="${base.downloads.url}/modeling/emft/mwe/updates/${dep.mwe.repo}/mwe"/>
-          <repository
-              url="${base.downloads.url}/mmt/qvto/updates/${dep.qvto.repo}"/>
-          <repository
-              url="${base.downloads.url}/acceleo/updates/${dep.acceleo.repo}"/>
-          <repository
-              url="${base.downloads.url}/modeling/mdt/ocl/updates/${dep.ocl.repo}"/>
-          <repository
-              url="${base.downloads.url}/modeling/mdt/uml2/updates/${dep.uml2.repo}"/>
-          <repository
-              url="${base.downloads.url}/mylyn/${dep.mylyn.repo}"/>
-          <repository
-              url="${base.downloads.url}/modeling/m2t/xpand/updates/${dep.xpand.repo}/"/>
-          <repository
-              url="${base.downloads.url}/modeling/tmf/xtext/updates/${dep.xtext.repo}/"/>
-          <repository
-              url="${base.downloads.url}/modeling/emf/compare/updates/${dep.emfcompare.repo}"/>
-          <repository
-              url="${base.downloads.url}/technology/subversive/${dep.subversive.repo}/"/>
-          <repository
-              url="${base.downloads.url}/webtools/downloads/drops/${dep.wtp.repo}/repository"/>
-          <repository
-              url="${base.downloads.url}/nattable/${dep.nattable.repo}/repository/"/>
-        </repositoryList>
-      </targlet>
-      <targlet
-          name="Papyrus Main Plug-ins"
-          activeRepositoryList="">
-        <requirement
-            id="org.eclipse.papyrus.sdk.feature.feature.group"/>
-        <repositoryList
-            name="Papyrus Nightly Build">
-          <repository
-              url="${base.downloads.url}/modeling/mdt/papyrus/${papyrus.nightly.repo}"/>
-        </repositoryList>
-      </targlet>
       <targlet
           name="Papyrus Test Dependencies"
           activeRepositoryList="">
@@ -1559,729 +1544,838 @@
         </repositoryList>
       </targlet>
     </setupTask>
-    <setupTask
-        xsi:type="projects:ProjectsImportTask"
-        id="papyrus.main.sources">
-      <sourceLocator
-          rootFolder="${git.clone/plugins/infra}">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:OrPredicate">
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.infra\..*"/>
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.eclipse\.project\.editors"/>
-          </operand>
-          <operand
-              xsi:type="predicates:NotPredicate">
+    <project
+        name="papyrus-infra"
+        label="Infra">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/infra}">
+          <predicate
+              xsi:type="predicates:AndPredicate">
             <operand
                 xsi:type="predicates:OrPredicate">
               <operand
                   xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.infra\.emf\.(?:embedded)?editor"/>
+                  pattern="org\.eclipse\.papyrus\.infra\..*"/>
               <operand
                   xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.infra\.emf\.facet\.queries"/>
-              <operand
-                  xsi:type="predicates:NamePredicate"
-                  pattern="org\.eclipse\.papyrus\.infra\.emf\.newchild"/>
+                  pattern="org\.eclipse\.papyrus\.eclipse\.project\.editors"/>
             </operand>
-          </operand>
-        </predicate>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.clone/plugins/facet}">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="org\.eclipse\.papyrus\.emf\.facet\..*"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.clone/plugins/team}"/>
-      <sourceLocator
-          rootFolder="${git.clone/plugins/views}"/>
-      <sourceLocator
-          rootFolder="${git.clone/plugins/editor}"/>
-      <sourceLocator
-          rootFolder="${git.clone/plugins/sysml}"/>
-      <sourceLocator
-          rootFolder="${git.clone/plugins/uml}"/>
-      <sourceLocator
-          rootFolder="${git.clone/plugins/customization}"/>
-      <sourceLocator
-          rootFolder="${git.clone/plugins/doc}"/>
-      <sourceLocator
-          rootFolder="${git.clone/tests/integration/plugins}"/>
-      <sourceLocator
-          rootFolder="${git.clone/tests/junit/plugins}">
-        <predicate
-            xsi:type="predicates:NotPredicate">
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.infra\.core\.sasheditor\.di\.tests"/>
-        </predicate>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.clone/features/papyrus-main-features}"/>
-      <sourceLocator
-          rootFolder="${git.clone/features/papyrus-tests-features}"/>
-      <sourceLocator
-          rootFolder="${git.clone/releng}"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup.workingsets:WorkingSetTask">
-      <workingSet
-          name="Papyrus Infra"
-          id="Infra">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
+            <operand
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:OrPredicate">
+                <operand
+                    xsi:type="predicates:NamePredicate"
+                    pattern="org\.eclipse\.papyrus\.infra\.emf\.(?:embedded)?editor"/>
+                <operand
+                    xsi:type="predicates:NamePredicate"
+                    pattern="org\.eclipse\.papyrus\.infra\.emf\.facet\.queries"/>
+                <operand
+                    xsi:type="predicates:NamePredicate"
+                    pattern="org\.eclipse\.papyrus\.infra\.emf\.newchild"/>
+              </operand>
+            </operand>
+          </predicate>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/editor}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/infra}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/core}">
+          <predicate
+              xsi:type="predicates:NotPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(?:infra\.core\.)?sasheditor\.di\.tests"/>
+          </predicate>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Infra"
+            id="papyrus-infra">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:LocationPredicate"
+                  pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+              <operand
+                  xsi:type="predicates:LocationPredicate"
+                  pattern="${papyrus.git.clone.location/plugins/editor/.*}"/>
+            </operand>
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.infra\..*"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.editor($|\..+)"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.eclipse\.project\.editors"/>
+            </operand>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.2 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.3 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.4"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Infra Diagram"
+            id="papyrus-infra-diagram">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.infra\.gmfdiag($|\..+)"/>
+            </operand>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Infra Nattable"
+            id="papyrus-infra-nattable">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.infra\.(?:emf\.)?nattable($|\..+)"/>
+            </operand>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Infra Services"
+            id="papyrus-infra-services">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.infra\.services($|\..+)"/>
+            </operand>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Infra Viewpoints"
+            id="papyrus-infra-viewpoints">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/infra/.*}"/>
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.infra\.viewpoints($|\..+)"/>
+            </operand>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus Infra Tests"
+            id="papyrus-infra-tests">
+          <predicate
               xsi:type="predicates:OrPredicate">
             <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.infra\..*"/>
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/tests/junit/plugins/core/.*}"/>
             <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.editor($|\..+)"/>
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.eclipse\.project\.editors"/>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.1 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.2 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.3 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.4"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Infra Diagram"
-          id="Infra Diagram">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/tests/junit/plugins/infra/.*}"/>
+          </predicate>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-views"
+        label="Views">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/views}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/xwt}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/views}"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Views"
+            id="papyrus-views">
+          <predicate
               xsi:type="predicates:OrPredicate">
             <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.infra\.gmfdiag($|\..+)"/>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Infra Nattable"
-          id="Infra Nattable">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:OrPredicate">
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/views/.*}"/>
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/xwt/.*}"/>
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/tests/junit/plugins/views/.*}"/>
+          </predicate>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-uml"
+        label="UML">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/uml}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/uml}"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus UML"
+            id="papyrus-uml">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.4 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.3 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.5 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.2"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus UML Diagrams"
+            id="papyrus-uml-diagram">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.infra\.(?:emf\.)?nattable($|\..+)"/>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Infra Services"
-          id="Infra Services">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:OrPredicate">
+                pattern="org\.eclipse\.papyrus\.uml\.diagram.*"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus UML Text Editors"
+            id="papyrus-uml-text">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.infra\.services($|\..+)"/>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Infra Viewpoints"
-          id="Infra Viewpoints">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:OrPredicate">
+                pattern="org\.eclipse\.papyrus\.uml\.textedit.*"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus UML Tables"
+            id="papyrus-uml-table">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.infra\.viewpoints($|\..+)"/>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Views"
-          id="Views">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:OrPredicate">
+                pattern="org\.eclipse\.papyrus\.uml\.nattable.*"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus UML ALF"
+            id="papyrus-uml-alf">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.views\..*"/>
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.xwt\..*"/>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus UML"
-          id="UML">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
+                pattern="org\.eclipse\.papyrus\.uml\.alf.*"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus UML Tests"
+            id="papyrus-uml-tests">
+          <predicate
               xsi:type="predicates:LocationPredicate"
-              pattern="${git.clone/plugins/uml/.*}"/>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus SysML"
-          id="SysML">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
+              pattern="${papyrus.git.clone.location/tests/junit/plugins/uml/.*}"/>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-sysml"
+        label="SysML">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/sysml}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/sysml}"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus SysML"
+            id="papyrus-sysml">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/sysml/.*}"/>
+            <operand
+                xsi:type="workingsets:ExclusionPredicate"
+                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.2 //@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.3"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus SysML Diagrams"
+            id="papyrus-sysml-diagram">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/sysml/.*}"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.sysml\.diagram.*"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus SysML Tables"
+            id="papyrus-sysml-table">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/sysml/.*}"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.sysml\.nattable.*"/>
+          </predicate>
+        </workingSet>
+        <workingSet
+            name="Papyrus SysML Tests"
+            id="papyrus-sysml-tests">
+          <predicate
+              xsi:type="predicates:LocationPredicate"
+              pattern="${papyrus.git.clone.location/tests/junit/plugins/sysml/.*}"/>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-emffacet"
+        label="EMF Facet">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/facet}">
+          <predicate
               xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.sysml($|\..+)"/>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus EMF Facet"
-          id="EMF Facet">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.emf\.facet($|\..+)"/>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Customization"
-          id="Customization">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\.customization($|\..+)"/>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Documentation"
-          id="Documentation">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
+              pattern="org\.eclipse\.papyrus\.emf\.facet\..*"/>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/facet}"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus EMF Facet"
+            id="papyrus-emffacet">
+          <predicate
+              xsi:type="predicates:OrPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/facet/.*}"/>
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/tests/junit/plugins/facet/.*}"/>
+          </predicate>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-customization"
+        label="Customization">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/customization}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/customization}"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Customization"
+            id="papyrus-customization">
+          <predicate
+              xsi:type="predicates:OrPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/customization/.*}"/>
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/tests/junit/plugins/customization/.*}"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.editor(?:$|\..+)"/>
+          </predicate>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-doc"
+        label="Documentation">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/doc}"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Documentation"
+            id="papyrus-doc">
+          <predicate
               xsi:type="predicates:NamePredicate"
               pattern="org\.eclipse\.papyrus\..+\.doc"/>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Rest"
-          id="Rest">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="org\.eclipse\.papyrus\..*"/>
-          <operand
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-integrationtests"
+        label="Integration Tests">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/integration/plugins}"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Integration Tests"
+            id="papyrus-integrationtests">
+          <predicate
+              xsi:type="predicates:LocationPredicate"
+              pattern="${papyrus.git.clone.location/tests/integration/plugins/.*}"/>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-alltests"
+        label="All Tests">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
+          <predicate
               xsi:type="predicates:NotPredicate">
             <operand
-                xsi:type="predicates:OrPredicate">
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.(?:infra\.core\.)?sasheditor\.di\.tests"/>
+          </predicate>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus All Main Tests"
+            id="papyrus-alltests">
+          <predicate
+              xsi:type="predicates:LocationPredicate"
+              pattern="${papyrus.git.clone.location/tests/junit/plugins/.*}"/>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-misc"
+        label="Others">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/team}"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Others"
+            id="papyrus-others">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\..*"/>
+            <operand
+                xsi:type="predicates:NotPredicate">
               <operand
-                  xsi:type="predicates:LocationPredicate"
-                  pattern="${git.clone/(?:tests/.*/)?extraplugins/.*}"/>
-              <operand
-                  xsi:type="predicates:LocationPredicate"
-                  pattern="${git.clone/features/.*-extra-features/.*}"/>
+                  xsi:type="predicates:OrPredicate">
+                <operand
+                    xsi:type="predicates:LocationPredicate"
+                    pattern="${papyrus.git.clone.location/(?:tests/.*/)?extraplugins/.*}"/>
+                <operand
+                    xsi:type="predicates:LocationPredicate"
+                    pattern="${papyrus.git.clone.location/features/.*-extra-features/.*}"/>
+              </operand>
             </operand>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.12 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.14 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.8 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.0 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.7 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.6 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.5 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.9 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.10 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.1 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.2 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.3 //@projects[name='papyrus-main']/@setupTasks.2/@workingSets.4"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Tests"
-          id="Tests">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:OrPredicate">
-            <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${git.clone/tests/junit/plugins/.*}"/>
-            <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${git.clone/tests/integration/plugins/.*}"/>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Features"
-          id="Features">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern="\Q${git.clone/features/papyrus-main-features/}\E.*"/>
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern="\Q${git.clone/features/papyrus-tests-features/}\E.*"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="Papyrus Releng"
-          id="Releng">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:OrPredicate">
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.mdt\.papyrus\.releng\..*"/>
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.oomph($|\..+)"/>
-          </operand>
-          <operand
-              xsi:type="workingsets:ExclusionPredicate"
-              excludedWorkingSet="//@projects[name='papyrus-main']/@setupTasks.2/@workingSets.13"/>
-        </predicate>
-      </workingSet>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="Mylyn Queries">
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="papyrus.bugzilla.repository"
-          value="https://bugs.eclipse.org/bugs"/>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="papyrus.bugzilla.prefix"
-          value="/buglist.cgi?classification=Modeling&amp;product=MDT.Papyrus"/>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="papyrus.bugzilla.open"
-          value="bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED"/>
-      <setupTask
-          xsi:type="mylyn:MylynQueriesTask"
-          repositoryURL="${papyrus.bugzilla.repository}">
-        <query
-            summary="Flagged for Review"
-            url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;query_format=advanced&amp;field0-0-0=flagtypes.name&amp;type0-0-0=equals&amp;value0-0-0=review%3F"/>
-        <query
-            summary="Open Bugs"
-            url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_severity=normal&amp;bug_severity=minor&amp;bug_severity=trivial"/>
-        <query
-            summary="Open Enhancement Requests"
-            url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;${papyrus.bugzilla.open}&amp;bug_severity=enhancement"/>
-        <query
-            summary="Resolved Items"
-            url="${papyrus.bugzilla.prefix}&amp;version=${papyrus.bugzilla.version}&amp;bug_status=RESOLVED&amp;resolution=FIXED"/>
+          </predicate>
+        </workingSet>
       </setupTask>
-      <setupTask
-          xsi:type="mylyn:MylynQueriesTask"
-          connectorKind="org.eclipse.mylyn.gerrit"
-          repositoryURL="https://git.eclipse.org/r"
-          userID="${bugzilla.id}"
-          password="${eclipse.user.password}">
-        <query
-            summary="Open Gerrit Reviews">
-          <attribute
-              key="gerrit query type"
-              value="custom"/>
-          <attribute
-              key="gerrit query project"
-              value="papyrus/org.eclipse.papyrus"/>
-          <attribute
-              key="gerrit query string"
-              value="project:papyrus/org.eclipse.papyrus status:open branch:${git.checkout.branch}"/>
-        </query>
-      </setupTask>
-      <setupTask
-          xsi:type="mylyn:MylynBuildsTask"
-          serverURL="https://hudson.eclipse.org/hudson/"
-          userID="${bugzilla.id}"
-          password="${eclipse.user.password}">
-        <buildPlan
-            name="papyrus-trunk-nightly"/>
-        <buildPlan
-            name="papyrus-trunk-nightly-tests"/>
-        <buildPlan
-            name="papyrus-trunk-extra-nightly"/>
-        <buildPlan
-            name="papyrus-trunk-extra-nightly-tests"/>
-      </setupTask>
-    </setupTask>
-    <stream
-        name="luna"
-        label="maintenance (Luna/1.0.x)">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          mergeDisabled="true">
-        <requirement
-            id="org.eclipse.emf.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.gmf.runtime.notation.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.gmf.runtime.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.gmf.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.uml2.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.papyrus.sdk.feature.feature.group"/>
-        <repository
-            url="${train.url}"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.targlets:TargletTask">
-        <targlet
-            name="Papyrus Stream Dependencies"
-            activeRepositoryList="">
-          <requirement
-              id="org.eclipse.emf.sdk.feature.group"
-              versionRange="[2.10.0,2.11.0)"/>
-          <requirement
-              id="org.eclipse.emf.transaction.sdk.feature.group"
-              versionRange="[1.8.0,1.9.0)"/>
-          <requirement
-              id="org.eclipse.emf.validation.sdk.feature.group"
-              versionRange="[1.8.0,1.9.0)"/>
-          <requirement
-              id="org.eclipse.emf.query.sdk.feature.group"
-              versionRange="[1.8.0,1.9.0)"/>
-          <requirement
-              id="org.eclipse.gef.sdk.feature.group"
-              versionRange="[3.9.100,3.10.0)"/>
-          <requirement
-              id="org.eclipse.gmf.runtime.sdk.feature.group"
-              versionRange="[1.8.0,1.9.0)"/>
-          <requirement
-              id="org.eclipse.gmf.runtime.notation.sdk.feature.group"
-              versionRange="[1.8.0,1.9.0)"/>
-          <requirement
-              id="org.eclipse.gmf.tooling.codegen.xtend2.feature.group"
-              versionRange="[3.2.0,3.3.0)"/>
-          <repositoryList
-              name="Papyrus Stream Dependencies">
-            <repository
-                url="${base.downloads.url}/modeling/emf/emf/updates/${dep.emf.repo}/"/>
-            <repository
-                url="${base.downloads.url}/modeling/emf/transaction/updates/${dep.emftransaction.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/emf/validation/updates/${dep.emfvalidation.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/emf/query/updates/${dep.emfquery.repo}"/>
-            <repository
-                url="${base.downloads.url}/tools/gef/updates/${dep.gef.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/gmp/gmf-runtime/updates/${dep.gmfruntime.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/gmp/gmf-notation/updates/${dep.gmfnotation.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/gmp/gmf-tooling/updates/${dep.gmftooling.repo}"/>
-          </repositoryList>
-        </targlet>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:CompoundTask"
-          name="Dependency versions">
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="dep.eclipse.repo"
-            value="4.4"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.orbit.repo"
-            value="R20140525021250"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.birt.repo"
-            value="4.4"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.atl.repo"
-            value="releases/3.5"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.mwe.repo"
-            value="releases/R201405200714"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.qvto.repo"
-            value="releases/3.4.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.acceleo.repo"
-            value="releases/3.5"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.ocl.repo"
-            value="releases/5.0.1"
-            defaultValue=""/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.uml2.repo"
-            value="5.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.mylyn.repo"
-            value="releases/3.12"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.xpand.repo"
-            value="releases/R201406030414"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.xtext.repo"
-            value="releases/head/R201405210727"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emf.repo"
-            value="releases"
-            defaultValue=""/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emftransaction.repo"
-            value="releases"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emfvalidation.repo"
-            value="releases"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emfquery.repo"
-            value="releases"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emfcompare.repo"
-            value="releases/3.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.gef.repo"
-            value="releases"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.gmfruntime.repo"
-            value="releases"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.gmfnotation.repo"
-            value="releases"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.gmftooling.repo"
-            value="releases"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.subversive.repo"
-            value="2.0/luna-site"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.wtp.repo"
-            value="R3.6.0/R-3.6.0-20140602160322"/>
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
         <setupTask
             xsi:type="setup:VariableTask"
             name="dep.nattable.repo"
             value="releases/1.1.0"/>
-      </setupTask>
-    </stream>
-    <stream
-        name="mars"
-        label="master (Mars/1.1)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-features"
+        label="Features">
       <setupTask
-          xsi:type="setup.p2:P2Task"
-          mergeDisabled="true">
-        <requirement
-            id="org.eclipse.emf.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.gmf.runtime.notation.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.gmf.runtime.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.gmf.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.uml2.sdk.feature.group"/>
-        <requirement
-            id="org.eclipse.papyrus.sdk.feature.feature.group"/>
-        <repository
-            url="${train.staging.url}"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.targlets:TargletTask">
-        <targlet
-            name="Papyrus Stream Dependencies"
-            activeRepositoryList="">
-          <requirement
-              id="org.eclipse.emf.sdk.feature.group"/>
-          <requirement
-              id="org.eclipse.emf.transaction.sdk.feature.group"/>
-          <requirement
-              id="org.eclipse.emf.validation.sdk.feature.group"/>
-          <requirement
-              id="org.eclipse.emf.query.sdk.feature.group"/>
-          <requirement
-              id="org.eclipse.gef.sdk.feature.group"/>
-          <requirement
-              id="org.eclipse.gmf.runtime.sdk.feature.group"/>
-          <requirement
-              id="org.eclipse.gmf.runtime.notation.sdk.feature.group"/>
-          <requirement
-              id="org.eclipse.gmf.tooling.codegen.xtend2.feature.group"/>
-          <repositoryList
-              name="Papyrus Stream Dependencies">
-            <repository
-                url="${base.downloads.url}/modeling/emf/emf/updates/${dep.emf.repo}/"/>
-            <repository
-                url="${base.downloads.url}/modeling/emf/transaction/updates/${dep.emftransaction.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/emf/validation/updates/${dep.emfvalidation.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/emf/query/updates/${dep.emfquery.repo}"/>
-            <repository
-                url="${base.downloads.url}/tools/gef/updates/${dep.gef.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/gmp/gmf-runtime/updates/${dep.gmfruntime.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/gmp/gmf-notation/updates/${dep.gmfnotation.repo}"/>
-            <repository
-                url="${base.downloads.url}/modeling/gmp/gmf-tooling/updates/${dep.gmftooling.repo}"/>
-          </repositoryList>
-        </targlet>
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features/papyrus-main-features}"/>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/features/papyrus-tests-features}"/>
       </setupTask>
       <setupTask
-          xsi:type="setup:CompoundTask"
-          name="Dependency versions">
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Features"
+            id="papyrus-features">
+          <predicate
+              xsi:type="predicates:OrPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="\Q${papyrus.git.clone.location/features/papyrus-main-features/}\E.*"/>
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="\Q${papyrus.git.clone.location/features/papyrus-tests-features/}\E.*"/>
+          </predicate>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="dep.eclipse.repo"
-            value="4.5milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.orbit.repo"
-            value="R20140525021250"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.birt.repo"
-            value="mars-interim"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.atl.repo"
-            value="milestones/3.6"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.mwe.repo"
-            value="releases/R201405200714"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.qvto.repo"
-            value="milestones/3.5.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.acceleo.repo"
-            value="milestones/3.6"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.ocl.repo"
-            value="milestones/5.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.uml2.repo"
-            value="5.1milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.mylyn.repo"
-            value="snapshots/3.12"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.xpand.repo"
-            value="releases/R201406030414"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.xtext.repo"
-            value="releases/head/R201405210727"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emf.repo"
-            value="milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emfcompare.repo"
-            value="milestones/3.0/S201406101309"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emftransaction.repo"
-            value="milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emfvalidation.repo"
-            value="milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.emfquery.repo"
-            value="milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.gef.repo"
-            value="milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.gmfruntime.repo"
-            value="milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.gmfnotation.repo"
-            value="milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.gmftooling.repo"
-            value="milestones"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.subversive.repo"
-            value="2.0/luna-site"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.wtp.repo"
-            value="R3.6.0/R-3.6.0-20140602160322"/>
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
         <setupTask
             xsi:type="setup:VariableTask"
             name="dep.nattable.repo"
             value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
+    <project
+        name="papyrus-releng"
+        label="Releng">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask"
+          id="papyrus.main.sources">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/releng}"/>
       </setupTask>
-    </stream>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus Releng"
+            id="papyrus-releng">
+          <predicate
+              xsi:type="predicates:LocationPredicate"
+              pattern="${papyrus.git.clone.location/releng/.*}"/>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
+    </project>
     <description>Tools, dependencies, and sources for development of the main Papyrus components.  Required for any Papyrus development.</description>
   </project>
   <project name="papyrus-extras"
@@ -2320,20 +2414,26 @@
         xsi:type="projects:ProjectsImportTask"
         id="papyrus.cdo.sources">
       <sourceLocator
-          rootFolder="${git.clone/extraplugins/${papyrus.extraplugins.folder}}"/>
+          rootFolder="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}"/>
       <sourceLocator
-          rootFolder="${git.clone/tests/junit/extraplugins/${papyrus.extratests.folder}}"/>
+          rootFolder="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}"/>
       <sourceLocator
-          rootFolder="${git.clone/features/papyrus-extra-features}">
+          rootFolder="${papyrus.git.clone.location/features/papyrus-extra-features}">
         <predicate
             xsi:type="predicates:NamePredicate"
             pattern="org\.eclipse\.papyrus\.${papyrus.extrafeature}\.feature"/>
       </sourceLocator>
       <sourceLocator
-          rootFolder="${git.clone/features/papyrus-tests-extra-features}">
+          rootFolder="${papyrus.git.clone.location/features/papyrus-tests-extra-features}">
         <predicate
             xsi:type="predicates:NamePredicate"
             pattern="org\.eclipse\.papyrus\.${papyrus.extratestsfeature}\.feature"/>
+      </sourceLocator>
+      <sourceLocator
+          rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
+        <predicate
+            xsi:type="predicates:NamePredicate"
+            pattern="org\.eclipse\.papyrus\.junit\.utils"/>
       </sourceLocator>
     </setupTask>
     <setupTask
@@ -2344,13 +2444,13 @@
             xsi:type="predicates:OrPredicate">
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${git.clone/extraplugins/${papyrus.extraplugins.folder}}"/>
+              pattern="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}"/>
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${git.clone/extraplugins/${papyrus.extraplugins.folder}/}.*"/>
+              pattern="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}/.*"/>
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${git.clone/tests/junit/extraplugins/${papyrus.extratests.folder}/}.*"/>
+              pattern="${papyrus.git.clone.location/tests/junit/extraplugins}/${papyrus.extratests.folder}/.*"/>
           <operand
               xsi:type="predicates:NamePredicate"
               pattern="org\.eclipse\.papyrus\.${papyrus.extrafeature}\.feature"/>
@@ -2383,28 +2483,31 @@
           value="cdo"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)">
+          name="master"
+          label="master (Luna/1.0.x)">
         <setupTask
-            xsi:type="setup:CompoundTask"
-            name="Dependency versions for cdo">
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.cdo.repo"
-              value="R20140610-0212"/>
-        </setupTask>
-      </stream>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)">
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
         <setupTask
-            xsi:type="setup:CompoundTask"
-            name="Dependency versions for cdo">
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.cdo.repo"
-              value="R20140610-0212"/>
-        </setupTask>
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.cdo.repo"
+            value="R20140610-0212"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
       </stream>
     </project>
     <project
@@ -2447,36 +2550,35 @@
           value="tests.extra.codegen.cpp"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)">
+          name="master"
+          label="master (Luna/1.0.x)">
         <setupTask
-            xsi:type="setup:CompoundTask"
-            name="Dependency versions for CPP">
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.cdt.repo"
-              value="luna/milestones"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.emffacet.repo"
-              value="release/0.4.0"/>
-        </setupTask>
-      </stream>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)">
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
         <setupTask
-            xsi:type="setup:CompoundTask"
-            name="Dependency versions for CPP">
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.cdt.repo"
-              value="mars/milestones"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.emffacet.repo"
-              value="integration/0.5.0"/>
-        </setupTask>
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.cdt.repo"
+            value="luna/milestones"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.emffacet.repo"
+            value="release/0.4.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
       </stream>
     </project>
     <project
@@ -2488,11 +2590,28 @@
           value="diagramtemplate"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2504,11 +2623,28 @@
           value="dsml.validation"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2520,11 +2656,28 @@
           value="eastadl"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2559,11 +2712,28 @@
         </targlet>
       </setupTask>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2580,11 +2750,28 @@
           value="layers"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2596,11 +2783,28 @@
           value="marte"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2612,11 +2816,28 @@
           value="moka"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2628,11 +2849,28 @@
           value="robotml"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2649,11 +2887,28 @@
           value="tablemigration"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2670,11 +2925,28 @@
           value="extra.uml.compare"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2691,11 +2963,28 @@
           value="uml.export"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <project
@@ -2707,11 +2996,28 @@
           value="umlrt"
           storePromptedValue="false"/>
       <stream
-          name="luna"
-          label="maintenance (Luna/1.0.x)"/>
-      <stream
-          name="mars"
-          label="master (Mars/1.1)"/>
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="tp.materialization.url"
+            value="${base.downloads.url}/releases/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+      </stream>
       <description></description>
     </project>
     <description>Select sub-projects to import dependencies and sources for Papyrus extra components.</description>
@@ -2722,7 +3028,7 @@
         xsi:type="projects:ProjectsImportTask"
         id="papyrus.main.sources">
       <sourceLocator
-          rootFolder="${git.clone/plugins/developer}">
+          rootFolder="${papyrus.git.clone.location/plugins/developer}">
         <predicate
             xsi:type="predicates:NotPredicate">
           <operand
@@ -2743,7 +3049,9 @@
         </predicate>
       </sourceLocator>
       <sourceLocator
-          rootFolder="${git.clone/features/papyrus-dev-features}"/>
+          rootFolder="${papyrus.git.clone.location/features/papyrus-dev-features}"/>
+      <sourceLocator
+          rootFolder="${papyrus.git.clone.location/tests/junit/plugins/developer}"/>
     </setupTask>
     <setupTask
         xsi:type="setup.workingsets:WorkingSetTask">
@@ -2754,19 +3062,39 @@
             xsi:type="predicates:OrPredicate">
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="\Q${git.clone/plugins/developer/}\E.+"/>
+              pattern="\Q${papyrus.git.clone.location/plugins/developer/}\E.+"/>
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="\Q${git.clone/features/papyrus-dev-features/}\E.*"/>
+              pattern="\Q${papyrus.git.clone.location/features/papyrus-dev-features/}\E.*"/>
+          <operand
+              xsi:type="predicates:LocationPredicate"
+              pattern="\Q${papyrus.git.clone.location/tests/junit/plugins/developer/}\E.+"/>
         </predicate>
       </workingSet>
     </setupTask>
     <stream
-        name="luna"
-        label="maintenance (Luna/1.0.x)"/>
-    <stream
-        name="mars"
-        label="master (Mars/1.1)"/>
+        name="master"
+        label="master (Luna/1.0.x)">
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="tp.materialization.url"
+          value="${base.downloads.url}/releases/luna"
+          storePromptedValue="false"/>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="dep.nattable.repo"
+          value="releases/1.1.0"/>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="papyrus.nightly.repo"
+          value="updates/nightly/luna"
+          storePromptedValue="false"/>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="papyrus.bugzilla.version"
+          value="1.0.0"
+          storePromptedValue="false"/>
+    </stream>
     <description>Sources and tools required for working on the Papyrus developer tools (not part of the product).</description>
   </project>
   <logicalProjectContainer

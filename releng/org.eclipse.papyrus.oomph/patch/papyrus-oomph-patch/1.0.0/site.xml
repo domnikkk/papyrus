@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/org.eclipse.papyrus.oomph.patch.feature_1.0.0.201407061201.jar" id="org.eclipse.papyrus.oomph.patch.feature" version="1.0.0.201407061201" patch="true">
-      <category name="papyrus_oomph_patches"/>
-   </feature>
-   <category-def name="papyrus_oomph_patches" label="Papyrus Oomph Patches"/>
-</site>
