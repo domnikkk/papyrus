@@ -213,7 +213,7 @@
     <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_7wM0stxhEeOqHvRyiN87hA" implementationID="PapyrusUMLProfileDiagram" categories="_7wNb5NxhEeOqHvRyiN87hA">
       <modelRules xmi:id="_7wM0s9xhEeOqHvRyiN87hA">
         <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_rd91gN9EEeOOpcSm0dG8Kg" name="">
-          <constraintType href="platform:/plugin/org.eclipse.papyrus.infra.constraints/Model/ConstraintEnvironment.xmi#//@constraintTypes.4"/>
+          <constraintType href="../../../plugin/org.eclipse.papyrus.infra.constraints/Model/ConstraintEnvironment.xmi#//@constraintTypes.4"/>
           <properties xsi:type="constraints:ValueProperty" xmi:id="_iic2kN9FEeOOpcSm0dG8Kg" name="className" value="org.eclipse.papyrus.infra.viewpoints.policy.query.IsContainedByProfileQuery"/>
         </constraints>
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
@@ -331,10 +331,18 @@
       <modelRules xmi:id="_7wM03txhEeOqHvRyiN87hA">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </modelRules>
+      <modelRules xmi:id="_crHWcAdrEeSVMJ4835ECFQ">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        <stereotypes href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks/Block"/>
+      </modelRules>
       <owningRules xmi:id="_7wM039xhEeOqHvRyiN87hA">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </owningRules>
-      <childRules xmi:id="_7wM04NxhEeOqHvRyiN87hA"/>
+      <owningRules xmi:id="_crHWcQdrEeSVMJ4835ECFQ">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        <stereotypes href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks/Block"/>
+      </owningRules>
+      <childRules xmi:id="_gCM0wAdwEeSVMJ4835ECFQ"/>
     </modelKinds>
     <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_7wM04dxhEeOqHvRyiN87hA" implementationID="InternalBlock" categories="_7wNb49xhEeOqHvRyiN87hA">
       <profiles href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>

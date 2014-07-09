@@ -1336,4 +1336,13 @@
    
           </diagramMappings>
    </extension>
+<extension
+      point="org.eclipse.papyrus.infra.gmfdiag.common.diagramReconciler">
+   <diagramReconciler
+         diagramType="BlockDefinition"
+         reconcilerClass="org.eclipse.papyrus.sysml.diagram.blockdefinition.migration.BDDReconcilier"
+         source="0.9.1"
+         target="1.0.0">
+   </diagramReconciler>      
+</extension>
 </plugin>
