@@ -15,6 +15,7 @@ package org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.Struct
 
 // Imports
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.uml2.uml.Operation;
@@ -68,5 +69,14 @@ public class CS_Reference extends Reference {
 		// Delegates sending (through the interaction point, to the environment) 
 		// to compositeReferent
 		this.compositeReferent.sendOut(signalInstance, interactionPoint);
+	}
+	
+	@Override
+	public Value copy() {
+		// Create a new reference with the same referent and composite referent as this reference.
+		CS_Reference newValue = new CS_Reference() ;
+		newValue.referent = this.referent ;
+		newValue.compositeReferent = this.compositeReferent;
+		return newValue;
 	}
 }
