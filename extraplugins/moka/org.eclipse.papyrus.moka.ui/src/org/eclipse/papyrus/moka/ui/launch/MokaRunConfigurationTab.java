@@ -61,7 +61,7 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 		/* 1. Install the components */
 		this.mainContainer = new Composite(parent, SWT.FILL);
 		this.mainContainer.setLayout(new GridLayout());
-		this.projectSelectionComp = new MokaProjectSelectionComponent(this.mainContainer, SWT.FILL, "fUML Project", 2);
+		this.projectSelectionComp = new MokaProjectSelectionComponent(this.mainContainer, SWT.FILL, "UML Model", 2);
 		this.executableSelectionComp = new MokaExecutableSelectionComponent(this.mainContainer, SWT.FILL, "Element to be executed", 2);
 		/* 2. Register Listeners */
 		MokaProjectSelection listener = new MokaProjectSelection(this.projectSelectionComp.projectSelectionText, this);
