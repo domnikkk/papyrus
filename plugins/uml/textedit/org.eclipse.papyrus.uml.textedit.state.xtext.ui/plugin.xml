@@ -233,7 +233,7 @@
             language="Advanced State Textual Editor"
             objectToEdit="org.eclipse.uml2.uml.State">
          <popupeditor
-               editorConfiguration="org.eclipse.papyrus.uml.textedit.state.xtext.ui.contributions.StatePopupEditorConfigurationContribution">
+               editorConfiguration="org.eclipse.papyrus.uml.textedit.state.xtext.ui.contributions.StateEditorConfigurationContribution">
          </popupeditor>
       </DirectEditor>
    </extension>

@@ -48,10 +48,12 @@ import com.google.inject.Injector;
  *         editor, for States of UML StateMachines.
  * 
  */
-public class StatePopupEditorConfigurationContribution extends DefaultXtextDirectEditorConfiguration implements
+public class StateEditorConfigurationContribution extends DefaultXtextDirectEditorConfiguration implements
 		ICustomDirectEditorConfiguration {
 
-	private State state = null;
+	private static final String EMPTY = ""; //$NON-NLS-1$
+
+	private static final String ACTIVITY = "Activity"; //$NON-NLS-1$
 
 	private StateMachine newSubmachine = null;
 
@@ -101,11 +103,11 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 		}
 		StateRule stateRuleObject = (StateRule) xtextObject;
 		// Retrieves the information to be populated in modelObject
-		newStateName = "" + stateRuleObject.getName();
+		newStateName = stateRuleObject.getName();
 		newSubmachine = null;
-		newEntryName = "";
-		newDoName = "";
-		newExitName = "";
+		newEntryName = EMPTY;
+		newDoName = EMPTY;
+		newExitName = EMPTY;
 
 		if (stateRuleObject.getSubmachine() != null) {
 			newSubmachine = stateRuleObject.getSubmachine().getSubmachine();
@@ -114,7 +116,7 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 		if (stateRuleObject.getEntry() != null) {
 			newEntryKind = stateRuleObject.getEntry().getKind();
 			if (stateRuleObject.getEntry().getBehaviorName() != null) {
-				newEntryName = "" + stateRuleObject.getEntry().getBehaviorName();
+				newEntryName = stateRuleObject.getEntry().getBehaviorName();
 			}
 		}
 
@@ -145,7 +147,7 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 	public String getTextToEdit(Object editedObject) {
 		if (editedObject instanceof State) {
 			State state = (State) editedObject;
-			String textToEdit = "";
+			String textToEdit = EMPTY;
 
 			// name
 			textToEdit = textToEdit + state.getName();
@@ -185,8 +187,16 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 	 */
 	protected class UpdateUMLStateCommand extends AbstractTransactionalCommand {
 
-		private State state;
+		private static final String STATE_UPDATE_CMD = "State Update"; //$NON-NLS-1$
 
+		private State state;
+	
+		public UpdateUMLStateCommand(State state) {
+			super(StateEditorConfigurationContribution.getEditingDomain(state), STATE_UPDATE_CMD,
+					getWorkspaceFiles(state));
+			this.state = state;
+		}
+		
 		/*
 		 * (non-Javadoc)
 		 * 
@@ -206,11 +216,107 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 			return CommandResult.newOKCommandResult(state);
 		}
 
-		public UpdateUMLStateCommand(State state) {
-			super(StatePopupEditorConfigurationContribution.getEditingDomain(state), "State Update",
-					getWorkspaceFiles(state));
-			this.state = state;
+	
+		private Behavior updateOrCreateBehavior(BehaviorRole_Local role, BehaviorKind kind, String behaviorName) {
+			Behavior behavior = null;
+			switch (role) {
+			case DO:
+				behavior = state.getDoActivity();
+				if (behavior != null) {
+					if (behaviorName.equals(EMPTY)) {
+						// behavior needs to be deleted
+						state.setDoActivity(null);
+						behavior.destroy();
+						behavior = null;
+					} else {
+						if (behaviorKindAsBehaviorKind(behavior) != kind) {
+							// behavior needs to deleted, and a new one needs to be
+							// created
+							state.setDoActivity(null);
+							behavior.destroy();
+							behavior = createBehavior(kind, behaviorName);
+						} else {
+							// Behavior simply needs to be renamed
+							behavior.setName(behaviorName);
+						}
+					}
+				} else {
+					if (behaviorName.equals(EMPTY)) {
+						// nothing needs to be done
+					} else {
+						// behavior needs to be created
+						behavior = createBehavior(kind, behaviorName);
+					}
+				}
+				break;
+
+			case ENTRY:
+				behavior = state.getEntry();
+				if (behavior != null) {
+					if (behaviorName.equals(EMPTY)) {
+						// behavior needs to be deleted
+						state.setEntry(null);
+						behavior.destroy();
+						behavior = null;
+					} else {
+						if (behaviorKindAsBehaviorKind(behavior) != kind) {
+							// behavior needs to deleted, and a new one needs to be
+							// created
+							state.setEntry(null);
+							behavior.destroy();
+							behavior = createBehavior(kind, behaviorName);
+						} else {
+							// Behavior simply needs to be renamed
+							behavior.setName(behaviorName);
+						}
+					}
+				} else {
+					if (behaviorName.equals(EMPTY)) {
+						// nothing needs to be done
+					} else {
+						// behavior needs to be created
+						behavior = createBehavior(kind, behaviorName);
+					}
+				}
+				break;
+
+			case EXIT:
+				behavior = state.getExit();
+				if (behavior != null) {
+					if (behaviorName.equals(EMPTY)) {
+						// behavior needs to be deleted
+						state.setExit(null);
+						behavior.destroy();
+						behavior = null;
+					} else {
+						if (behaviorKindAsBehaviorKind(behavior) != kind) {
+							// behavior needs to deleted, and a new one needs to be
+							// created
+							state.setExit(null);
+							behavior.destroy();
+							behavior = createBehavior(kind, behaviorName);
+						} else {
+							// Behavior simply needs to be renamed
+							behavior.setName(behaviorName);
+						}
+					}
+				} else {
+					if (behaviorName.equals(EMPTY)) {
+						// nothing needs to be done
+					} else {
+						// behavior needs to be created
+						behavior = createBehavior(kind, behaviorName);
+					}
+				}
+				break;
+
+			default:
+				break;
+			}
+
+			return behavior;
 		}
+
 	}
 
 	static TransactionalEditingDomain getEditingDomain(EObject context) {
@@ -224,7 +330,7 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 
 	private String behaviorKindAsString(Behavior b) {
 		if (b instanceof Activity) {
-			return "Activity";
+			return ACTIVITY;
 		}
 		if (b instanceof StateMachine) {
 			return "StateMachine";
@@ -232,7 +338,7 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 		if (b instanceof OpaqueBehavior) {
 			return "OpaqueBehavior";
 		}
-		return "";
+		return EMPTY;
 	}
 
 	private BehaviorKind behaviorKindAsBehaviorKind(Behavior b) {
@@ -249,105 +355,6 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 		return BehaviorKind.OPAQUE_BEHAVIOR;
 	}
 
-	private Behavior updateOrCreateBehavior(BehaviorRole_Local role, BehaviorKind kind, String behaviorName) {
-		Behavior behavior = null;
-		switch (role) {
-		case DO:
-			behavior = state.getDoActivity();
-			if (behavior != null) {
-				if (behaviorName.equals("")) {
-					// behavior needs to be deleted
-					state.setDoActivity(null);
-					behavior.destroy();
-					behavior = null;
-				} else {
-					if (behaviorKindAsBehaviorKind(behavior) != kind) {
-						// behavior needs to deleted, and a new one needs to be
-						// created
-						state.setDoActivity(null);
-						behavior.destroy();
-						behavior = createBehavior(kind, behaviorName);
-					} else {
-						// Behavior simply needs to be renamed
-						behavior.setName("" + behaviorName);
-					}
-				}
-			} else {
-				if (behaviorName.equals("")) {
-					// nothing needs to be done
-				} else {
-					// behavior needs to be created
-					behavior = createBehavior(kind, behaviorName);
-				}
-			}
-			break;
-
-		case ENTRY:
-			behavior = state.getEntry();
-			if (behavior != null) {
-				if (behaviorName.equals("")) {
-					// behavior needs to be deleted
-					state.setEntry(null);
-					behavior.destroy();
-					behavior = null;
-				} else {
-					if (behaviorKindAsBehaviorKind(behavior) != kind) {
-						// behavior needs to deleted, and a new one needs to be
-						// created
-						state.setEntry(null);
-						behavior.destroy();
-						behavior = createBehavior(kind, behaviorName);
-					} else {
-						// Behavior simply needs to be renamed
-						behavior.setName("" + behaviorName);
-					}
-				}
-			} else {
-				if (behaviorName.equals("")) {
-					// nothing needs to be done
-				} else {
-					// behavior needs to be created
-					behavior = createBehavior(kind, behaviorName);
-				}
-			}
-			break;
-
-		case EXIT:
-			behavior = state.getExit();
-			if (behavior != null) {
-				if (behaviorName.equals("")) {
-					// behavior needs to be deleted
-					state.setExit(null);
-					behavior.destroy();
-					behavior = null;
-				} else {
-					if (behaviorKindAsBehaviorKind(behavior) != kind) {
-						// behavior needs to deleted, and a new one needs to be
-						// created
-						state.setExit(null);
-						behavior.destroy();
-						behavior = createBehavior(kind, behaviorName);
-					} else {
-						// Behavior simply needs to be renamed
-						behavior.setName("" + behaviorName);
-					}
-				}
-			} else {
-				if (behaviorName.equals("")) {
-					// nothing needs to be done
-				} else {
-					// behavior needs to be created
-					behavior = createBehavior(kind, behaviorName);
-				}
-			}
-			break;
-
-		default:
-			break;
-		}
-
-		return behavior;
-	}
 
 	private Behavior createBehavior(BehaviorKind kind, String name) {
 
@@ -374,7 +381,7 @@ public class StatePopupEditorConfigurationContribution extends DefaultXtextDirec
 			break;
 		}
 
-		behavior.setName("" + name);
+		behavior.setName(name);
 
 		return behavior;
 	}

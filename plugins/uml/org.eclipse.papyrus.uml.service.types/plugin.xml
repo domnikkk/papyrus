@@ -114,7 +114,8 @@
 	<metamodelType id="org.eclipse.papyrus.uml.ActivityPartition" name="UML::ActivityPartition"
 		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActivityPartition.gif"
 		eclass="ActivityPartition"
-		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
+		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" 
+		edithelper="org.eclipse.papyrus.uml.service.types.helper.ActivityPartitionEditHelper">
 			<param name="semanticHint" value="UML::ActivityPartition"/>
 	</metamodelType>
 	

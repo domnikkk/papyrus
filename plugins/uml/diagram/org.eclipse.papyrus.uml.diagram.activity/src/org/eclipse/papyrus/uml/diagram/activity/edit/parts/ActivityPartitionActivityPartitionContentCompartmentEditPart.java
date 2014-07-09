@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.activity.activitygroup.editpolicy.ActivityPartitionCompartmentCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityPartitionActivityPartitionContentCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomActivityPartitionActivityPartitionContentCompartmentItemSemanticEditPolicy;
@@ -90,6 +91,7 @@ public class ActivityPartitionActivityPartitionContentCompartmentEditPart extend
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new ActivityGroupCustomDragAndDropEditPolicy());
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomActivityPartitionActivityPartitionContentCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new ActivityPartitionCompartmentCreationEditPolicy());
 	}
 
 	/**

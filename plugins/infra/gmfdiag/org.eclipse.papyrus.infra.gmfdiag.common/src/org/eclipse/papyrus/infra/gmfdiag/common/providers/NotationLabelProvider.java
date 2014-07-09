@@ -44,15 +44,6 @@ public class NotationLabelProvider extends EMFLabelProvider {
 	}
 
 	@Override
-	public Image getImage(Object element) {
-		EObject eObject = EMFHelper.getEObject(element);
-		if (eObject != null) {
-			return getImage(eObject);
-		}
-		return super.getImage(element);
-	}
-
-	@Override
 	protected Image getImage(EObject element) {
 		if(element instanceof Diagram) {
 			ViewPrototype proto = DiagramUtils.getPrototype((Diagram)element);
