@@ -160,7 +160,7 @@ public class AnimationUtils {
 						EObject cddView = i.next();
 						if(cddView instanceof View) {
 							EObject element = ((View)cddView).getElement();
-							if(element != modelElement) {
+							if(element != modelElement && element != null) {
 								List<Diagram> diags = eObjectToDiagrams.get(element);
 								if(diags == null) {
 									diags = new ArrayList<Diagram>();
