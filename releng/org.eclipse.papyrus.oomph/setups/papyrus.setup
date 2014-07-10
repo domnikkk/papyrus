@@ -1512,11 +1512,10 @@
           name="papyrus-trunk-extra-nightly-tests"/>
     </setupTask>
   </setupTask>
-  <project name="papyrus-main"
+  <project name="main"
       label="Main">
     <setupTask
-        xsi:type="projects:ProjectsImportTask"
-        id="papyrus.main.sources">
+        xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
         <predicate
@@ -1545,7 +1544,7 @@
       </targlet>
     </setupTask>
     <project
-        name="papyrus-infra"
+        name="infra"
         label="Infra">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -1624,7 +1623,7 @@
             </operand>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
-                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.2 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.3 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.4"/>
+                excludedWorkingSet="//@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.3 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.4"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -1730,7 +1729,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-views"
+        name="views"
         label="Views">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -1786,7 +1785,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-uml"
+        name="uml"
         label="UML">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -1808,7 +1807,7 @@
                 pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
-                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.4 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.3 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.5 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.2"/>
+                excludedWorkingSet="//@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.4 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.3 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.5 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.2"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -1896,7 +1895,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-sysml"
+        name="sysml"
         label="SysML">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -1918,7 +1917,7 @@
                 pattern="${papyrus.git.clone.location/plugins/sysml/.*}"/>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
-                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.2 //@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.3"/>
+                excludedWorkingSet="//@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.3"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -1980,7 +1979,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-emffacet"
+        name="emffacet"
         label="EMF Facet">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2035,7 +2034,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-customization"
+        name="customization"
         label="Customization">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2089,7 +2088,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-doc"
+        name="doc"
         label="Documentation">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2132,7 +2131,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-integrationtests"
+        name="integrationtests"
         label="Integration Tests">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2175,7 +2174,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-alltests"
+        name="alltests"
         label="All Tests">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2225,7 +2224,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-misc"
+        name="misc"
         label="Others">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2283,7 +2282,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-features"
+        name="features"
         label="Features">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2334,7 +2333,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-releng"
+        name="releng"
         label="Releng">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2378,7 +2377,7 @@
     </project>
     <description>Tools, dependencies, and sources for development of the main Papyrus components.  Required for any Papyrus development.</description>
   </project>
-  <project name="papyrus-extras"
+  <project name="extras"
       label="Extras">
     <setupTask
         xsi:type="setup:VariableTask"
@@ -2411,8 +2410,7 @@
       </targlet>
     </setupTask>
     <setupTask
-        xsi:type="projects:ProjectsImportTask"
-        id="papyrus.cdo.sources">
+        xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}"/>
       <sourceLocator
@@ -2461,7 +2459,7 @@
       </workingSet>
     </setupTask>
     <project
-        name="papyrus-cdo"
+        name="cdo"
         label="CDO Integration">
       <setupTask
           xsi:type="setup.targlets:TargletTask">
@@ -2511,7 +2509,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-cdt"
+        name="cpp"
         label="C/C++ Codegen">
       <setupTask
           xsi:type="setup.targlets:TargletTask">
@@ -2582,7 +2580,7 @@
       </stream>
     </project>
     <project
-        name="papyrus-diagramtemplate"
+        name="diagramtemplate"
         label="Diagram Template">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2615,7 +2613,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-dsml.validation"
+        name="dsml.validation"
         label="DSML Validation">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2648,7 +2646,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-eastadl"
+        name="eastadl"
         label="East-ADL">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2681,7 +2679,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-java"
+        name="java"
         label="Java">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2737,7 +2735,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-layers"
+        name="layers"
         label="Layers">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2775,7 +2773,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-marte"
+        name="marte"
         label="MARTE">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2808,7 +2806,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-moka"
+        name="moka"
         label="Moka">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2841,7 +2839,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-robotml"
+        name="robotml"
         label="RobotML">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2874,7 +2872,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-tablemigration"
+        name="tablemigration"
         label="Table Migration">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2912,7 +2910,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-umlcompare"
+        name="umlcompare"
         label="UML Compare">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2950,7 +2948,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-umlexport"
+        name="umlexport"
         label="UML Export">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2988,7 +2986,7 @@
       <description></description>
     </project>
     <project
-        name="papyrus-umlrt"
+        name="umlrt"
         label="UML-RT">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -3022,11 +3020,10 @@
     </project>
     <description>Select sub-projects to import dependencies and sources for Papyrus extra components.</description>
   </project>
-  <project name="papyrus-dev"
+  <project name="dev"
       label="Developer">
     <setupTask
-        xsi:type="projects:ProjectsImportTask"
-        id="papyrus.main.sources">
+        xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${papyrus.git.clone.location/plugins/developer}">
         <predicate
@@ -3057,7 +3054,7 @@
         xsi:type="setup.workingsets:WorkingSetTask">
       <workingSet
           name="Papyrus Developer Tools"
-          id="Developer">
+          id="papyrus-dev">
         <predicate
             xsi:type="predicates:OrPredicate">
           <operand
