@@ -35,6 +35,7 @@ import org.eclipse.uml2.uml.CallOperationAction;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.CreateObjectAction;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.ForkNode;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.LiteralInteger;
 import org.eclipse.uml2.uml.ObjectFlow;
@@ -141,14 +142,24 @@ public class Utils {
 			LiteralInteger startBehaviorInputPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
 			startBehaviorInputPinUpperBound.setValue(1) ;
 			startBehaviorInputPin.setUpperBound(startBehaviorInputPinUpperBound) ;
-			OutputPin startBehaviorResultPin = startBehavior.createResult("result", context);
-			LiteralInteger startBehaviorResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
-			startBehaviorResultPinUpperBound.setValue(1) ;
-			startBehaviorResultPin.setUpperBound(startBehaviorResultPinUpperBound) ;
-			toReturnParamNode.setSource(startBehaviorResultPin);
+			/*
+			// 439321: [Moka] The factory generator of oepm.composite.utils is invalid in the case of an Active class
+			// https://bugs.eclipse.org/bugs/show_bug.cgi?id=439321
+			//OutputPin startBehaviorResultPin = startBehavior.createResult("result", context);
+			//LiteralInteger startBehaviorResultPinUpperBound = UMLFactory.eINSTANCE.createLiteralInteger();
+			//startBehaviorResultPinUpperBound.setValue(1) ;
+			//startBehaviorResultPin.setUpperBound(startBehaviorResultPinUpperBound) ;
+			//toReturnParamNode.setSource(startBehaviorResultPin);
+			*/
+			ForkNode fork = (ForkNode)factory.createOwnedNode("forkInstanciatedObject", UMLPackage.eINSTANCE.getForkNode()) ;
+			toReturnParamNode.setSource(fork);
+			ObjectFlow forkToStartBehaviorInputPin = (ObjectFlow)factory.createEdge("fork to startbehavior input pin", UMLPackage.eINSTANCE.getObjectFlow()) ;
+			forkToStartBehaviorInputPin.setSource(fork) ;
+			forkToStartBehaviorInputPin.setTarget(startBehaviorInputPin) ;
+			//
 			ObjectFlow callConstructor_startBehavior = (ObjectFlow)factory.createEdge("callConstructor to startBehavior", UMLPackage.eINSTANCE.getObjectFlow());
 			callConstructor_startBehavior.setSource(callConstructorResultPin);
-			callConstructor_startBehavior.setTarget(startBehaviorInputPin);
+			callConstructor_startBehavior.setTarget(fork);
 		}
 
 		return factory;
