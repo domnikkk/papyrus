@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -44,6 +45,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.RectangularShadowBorde
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 import org.junit.Assert;
 
@@ -232,6 +234,53 @@ public abstract class AppearanceNodeTest  extends AppearanceElementTest{
 
 	}
 	/**
+	 *  test the if the font of the contained label is refreshed on the figure
+	 * @param createdEditpart
+	 */
+	public  void testFont_Italic(GraphicalEditPart createdEditpart){
+		View view=createdEditpart.getNotationView();
+		assertTrue("view must be instance of Shape",view instanceof Shape);
+		Shape shape= (Shape)view;
+		command= new EMFtoGEFCommandWrapper(SetCommand.create(createdEditpart.getEditingDomain(), shape, NotationPackage.eINSTANCE.getFontStyle_Italic(), true));
+		Assert.assertTrue("the command must be executable", command.canExecute());
+		executeOnUIThread(command);
+		createdEditpart.refresh();
+		createdEditpart.isActive();
+		if(!( createdEditpart instanceof ITextAwareEditPart)){
+			EditPart nameEditpart =createdEditpart.getPrimaryChildEditPart();
+			if( nameEditpart instanceof ITextAwareEditPart){
+				IFigure fig = getPrimaryFigure((GraphicalEditPart)nameEditpart);
+				Assert.assertTrue("Figure must be an instance of Nodefigure", fig instanceof WrappingLabel);
+				Assert.assertEquals("the Font police is not refreshed", SWT.ITALIC,((FontData)((WrappingLabel)fig).getFont().getFontData()[0]).getStyle());
+			}
+		}
+
+	}
+	
+	/**
+	 *  test the if the font of the contained label is refreshed on the figure
+	 * @param createdEditpart
+	 */
+	public  void testFont_Bold(GraphicalEditPart createdEditpart){
+		View view=createdEditpart.getNotationView();
+		assertTrue("view must be instance of Shape",view instanceof Shape);
+		Shape shape= (Shape)view;
+		command= new EMFtoGEFCommandWrapper(SetCommand.create(createdEditpart.getEditingDomain(), shape, NotationPackage.eINSTANCE.getFontStyle_Bold(), true));
+		Assert.assertTrue("the command must be executable", command.canExecute());
+		executeOnUIThread(command);
+		createdEditpart.refresh();
+		createdEditpart.isActive();
+		if(!( createdEditpart instanceof ITextAwareEditPart)){
+			EditPart nameEditpart =createdEditpart.getPrimaryChildEditPart();
+			if( nameEditpart instanceof ITextAwareEditPart){
+				IFigure fig = getPrimaryFigure((GraphicalEditPart)nameEditpart);
+				Assert.assertTrue("Figure must be an instance of Nodefigure", fig instanceof WrappingLabel);
+				Assert.assertEquals("the Font police is not refreshed", SWT.BOLD,((FontData)((WrappingLabel)fig).getFont().getFontData()[0]).getStyle());
+			}
+		}
+
+	}
+	/**
 	 *  test the if the font height of the contained label is refreshed on the figure
 	 * @param createdEditpart
 	 */
@@ -250,6 +299,82 @@ public abstract class AppearanceNodeTest  extends AppearanceElementTest{
 		IFigure fig = getPrimaryFigure(createdEditpart);
 		Assert.assertTrue("Figure must be an instance of Nodefigure", fig instanceof NodeFigure);
 		Assert.assertEquals("the transparency is not refreshed", 50,((NodeFigure)fig).getTransparency());
+
+	}
+	
+	/**
+	 *  test the if the font height of the contained label is refreshed on the figure
+	 * @param createdEditpart
+	 */
+	public  void testFont_Underline(GraphicalEditPart createdEditpart){
+		View view=createdEditpart.getNotationView();
+		assertTrue("view must be instance of Shape",view instanceof Shape);
+		Shape shape= (Shape)view;
+		command= new EMFtoGEFCommandWrapper(SetCommand.create(createdEditpart.getEditingDomain(), shape, NotationPackage.eINSTANCE.getFontStyle_Underline(), true));
+		Assert.assertTrue("the command must be executable", command.canExecute());
+		executeOnUIThread(command);
+		createdEditpart.refresh();
+		createdEditpart.isActive();
+		if(!( createdEditpart instanceof ITextAwareEditPart)){
+			EditPart nameEditpart =createdEditpart.getPrimaryChildEditPart();
+			if( nameEditpart instanceof ITextAwareEditPart){
+				IFigure fig = getPrimaryFigure((GraphicalEditPart)nameEditpart);
+				Assert.assertTrue("Figure must be an instance of Wrappinglabel", fig instanceof WrappingLabel);
+				Assert.assertEquals("the Font police is not refreshed", true,((WrappingLabel)fig).isTextUnderlined());
+			}
+		}
+
+
+	}
+	
+	/**
+	 *  test the if the font height of the contained label is refreshed on the figure
+	 * @param createdEditpart
+	 */
+	public  void testFont_StrikeThrough(GraphicalEditPart createdEditpart){
+		View view=createdEditpart.getNotationView();
+		assertTrue("view must be instance of Shape",view instanceof Shape);
+		Shape shape= (Shape)view;
+		command= new EMFtoGEFCommandWrapper(SetCommand.create(createdEditpart.getEditingDomain(), shape, NotationPackage.eINSTANCE.getFontStyle_StrikeThrough(), true));
+		Assert.assertTrue("the command must be executable", command.canExecute());
+		executeOnUIThread(command);
+		createdEditpart.refresh();
+		createdEditpart.isActive();
+		if(!( createdEditpart instanceof ITextAwareEditPart)){
+			EditPart nameEditpart =createdEditpart.getPrimaryChildEditPart();
+			if( nameEditpart instanceof ITextAwareEditPart){
+				IFigure fig = getPrimaryFigure((GraphicalEditPart)nameEditpart);
+				Assert.assertTrue("Figure must be an instance of Wrappinglabel", fig instanceof WrappingLabel);
+				Assert.assertEquals("the Font police is not refreshed", true,((WrappingLabel)fig).isTextStrikedThrough());
+			}
+		}
+
+
+	}
+	
+
+	/**
+	 *  test the if the font height of the contained label is refreshed on the figure
+	 * @param createdEditpart
+	 */
+	public  void testFont_FontColor(GraphicalEditPart createdEditpart){
+		View view=createdEditpart.getNotationView();
+		assertTrue("view must be instance of Shape",view instanceof Shape);
+		Shape shape= (Shape)view;
+		command= new EMFtoGEFCommandWrapper(SetCommand.create(createdEditpart.getEditingDomain(), shape, NotationPackage.eINSTANCE.getFontStyle_FontColor(), FigureUtilities.RGBToInteger(new RGB(0, 255, 0))));
+		Assert.assertTrue("the command must be executable", command.canExecute());
+		executeOnUIThread(command);
+		createdEditpart.refresh();
+		createdEditpart.isActive();
+		if(!( createdEditpart instanceof ITextAwareEditPart)){
+			EditPart nameEditpart =createdEditpart.getPrimaryChildEditPart();
+			if( nameEditpart instanceof ITextAwareEditPart){
+				IFigure fig = getPrimaryFigure((GraphicalEditPart)nameEditpart);
+				Assert.assertTrue("Figure must be an instance of Wrappinglabel", fig instanceof WrappingLabel);
+				Assert.assertEquals("the Font police is not refreshed", Display.getDefault().getSystemColor(SWT.COLOR_GREEN),((WrappingLabel)fig).getForegroundColor());
+			}
+		}
+
 
 	}
 /**
@@ -302,8 +427,13 @@ public abstract class AppearanceNodeTest  extends AppearanceElementTest{
 		testTransparency(createdEditpart);
 		testFont(createdEditpart);
 		testFontHeight(createdEditpart);
+		testFont_FontColor(createdEditpart);
+		testFont_StrikeThrough(createdEditpart);
+		testFont_Underline(createdEditpart);
 		testElementIcon(createdEditpart);
 		testShadow(createdEditpart);
+		testFont_Italic(createdEditpart);
+		testFont_Bold(createdEditpart);
 
 
 	}
