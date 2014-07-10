@@ -278,7 +278,9 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 			this.waitingEventAccepters.remove(selectedEventAccepter);
 			if(this.hasBeenWaiting) {
 				this.hasBeenWaiting = false;
-				((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateExit(this, (AcceptEventActionEventAccepter)selectedEventAccepter);
+				if (selectedEventAccepter instanceof AcceptEventActionEventAccepter) {
+					((AsyncControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateExit(this, (AcceptEventActionEventAccepter)selectedEventAccepter);
+				}
 			}
 			selectedEventAccepter.accept(signalInstance);
 		} else {
