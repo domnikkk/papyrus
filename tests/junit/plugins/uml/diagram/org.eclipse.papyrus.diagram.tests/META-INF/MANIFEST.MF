@@ -27,6 +27,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.emf.appearance
 Export-Package: org.eclipse.papyrus.diagram.tests.appearance,
  org.eclipse.papyrus.diagram.tests.canonical,
+ org.eclipse.papyrus.diagram.tests.createFromPalette,
  org.eclipse.papyrus.diagram.tests.edition
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
