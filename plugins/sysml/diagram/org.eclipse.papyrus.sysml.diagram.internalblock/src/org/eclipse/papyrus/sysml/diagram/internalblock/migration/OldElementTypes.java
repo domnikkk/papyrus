@@ -11,7 +11,7 @@
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.sysml.diagram.internalblock.compatibility;
+package org.eclipse.papyrus.sysml.diagram.internalblock.migration;
 
 import org.eclipse.gmf.runtime.emf.type.core.AbstractElementTypeEnumerator;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
