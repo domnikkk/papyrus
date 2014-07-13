@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2013 Atos Origin, CEA, and others.
- *
+ * Copyright (c) 2010, 2014 Atos Origin, CEA, and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,6 +9,7 @@
  * Contributors:
  *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
  *  Christian W. Damus (CEA) - Work around regression in URI parsing in EMF 2.9
+ *  Christian W. Damus (CEA) - bug 437217 - control-mode strategy changes interfere with later tests
  *
  *****************************************************************************/
 package org.eclipse.papyrus.core.resourceloading.tests.testModel2;
@@ -38,14 +38,16 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.papyrus.core.resourceloading.tests.StrategyChooserFixture;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.services.resourceloading.OnDemandLoadingModelSetServiceFactory;
-import org.eclipse.papyrus.infra.services.resourceloading.preferences.StrategyChooser;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 
@@ -67,6 +69,9 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 
 	private String[] extensions = new String[]{ ".di", ".notation", ".uml" };
 
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	protected ModelSet modelSet;
 
 	private IFile resourceLoaded;
@@ -76,10 +81,11 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 	 */
 	@Before
 	public void setUp() throws Exception {
-		StrategyChooser.setCurrentStrategy(getStrategy());
+		houseKeeper.cleanUpLater(new StrategyChooserFixture(getStrategy()));
+		
 		// first we need to create the test project from the plugin to the workspace test platform
 		IProject project = copyTestModelToThePlatform();
-		modelSet = (ModelSet)new OnDemandLoadingModelSetServiceFactory().createServiceInstance();
+		modelSet = houseKeeper.cleanUpLater((ModelSet)new OnDemandLoadingModelSetServiceFactory().createServiceInstance());
 		if(project != null) {
 			resourceLoaded = getResourceToLoad(project);
 			modelSet.loadModels(resourceLoaded);
