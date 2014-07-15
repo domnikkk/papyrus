@@ -67,7 +67,7 @@ override attrs(GenPlugin it)'''
 	private static «xptActivator.className(it)» instance;
 
 	«generatedMemberComment»
-    private org.eclipse.emf.common.notify.AdapterFactory adapterFactory;    
+	private org.eclipse.emf.common.notify.AdapterFactory adapterFactory;
 
 	«generatedMemberComment»
 	private «xptDocProvider.qualifiedClassName(editorGen.diagram)» documentProvider;
