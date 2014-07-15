@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 CEA LIST.
+ * Copyright (c) 2014 CEA LIST and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,8 @@
  * 
  * Contributors:
  *     Juan Cadavid <juan.cadavid@cea.fr> implementation
+ *     Christian W. Damus (CEA) - bug 437217 - control-mode strategy changes interfere with later tests
+ *     
  ******************************************************************************/
 package org.eclipse.papyrus.infra.services.controlmode.tests.uncontrol;
 
@@ -23,13 +25,13 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService;
 import org.eclipse.papyrus.infra.services.controlmode.tests.Messages;
+import org.eclipse.papyrus.infra.services.controlmode.tests.StrategyChooserFixture;
 import org.eclipse.papyrus.infra.services.controlmode.tests.control.Activator;
-import org.eclipse.papyrus.infra.services.resourceloading.preferences.StrategyChooser;
-import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.junit.utils.GenericUtils;
 import org.eclipse.papyrus.junit.utils.HandlerUtils;
 import org.eclipse.papyrus.junit.utils.ModelExplorerUtils;
 import org.eclipse.papyrus.junit.utils.ProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerView;
 import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
@@ -38,13 +40,12 @@ import org.eclipse.uml2.uml.PackageableElement;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.osgi.framework.Bundle;
 
 public abstract class AbstractUncontrolModelTest extends AbstractPapyrusTest {
 
 	protected static final String COMMAND_ID = "org.eclipse.papyrus.infra.services.controlmode.reintegratesubmodel"; //$NON-NLS-1$
-
-	protected static IMultiDiagramEditor papyrusEditor;
 
 	protected static ModelExplorerView view;
 
@@ -55,6 +56,10 @@ public abstract class AbstractUncontrolModelTest extends AbstractPapyrusTest {
 	protected static SWTWorkbenchBot bot;
 
 	protected static IFile subModelfile;
+	
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
+	
 	protected IMultiDiagramEditor editor = null;
 	protected Model model;
 
@@ -65,7 +70,7 @@ public abstract class AbstractUncontrolModelTest extends AbstractPapyrusTest {
 	@Before
 	public void setUp() {
 		//Set the current resource loading strategy to the default
-		StrategyChooser.setCurrentStrategy(0);
+		houseKeeper.cleanUpLater(new StrategyChooserFixture(0));
 		
 		try {
 			initTests(Activator.getDefault().getBundle());
@@ -87,9 +92,8 @@ public abstract class AbstractUncontrolModelTest extends AbstractPapyrusTest {
 
 	protected PackageableElement selectElementToUncontrol() {
 		try {
-			editor = EditorUtils.openPapyrusEditor(modelFile);
+			editor = houseKeeper.openPapyrusEditor(modelFile);
 			UncontrolModelTest.view = ModelExplorerUtils.openModelExplorerView();
-	
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}

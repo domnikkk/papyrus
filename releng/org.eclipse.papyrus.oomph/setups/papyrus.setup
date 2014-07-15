@@ -1284,10 +1284,6 @@
         value="ignore"/>
     <setupTask
         xsi:type="setup:PreferenceTask"
-        key="instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unclosedCloseable"
-        value="ignore"/>
-    <setupTask
-        xsi:type="setup:PreferenceTask"
         key="instance/org.eclipse.pde/compilers.f.unresolved-features"
         value="2"/>
     <setupTask
@@ -1364,14 +1360,6 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="org.eclipse.jdt.launching">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.PREF_VM_XML"
-          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;vmSettings defaultVM=&quot;57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType23,_Q1orQPv8EeOmzJAm_xmdKA&quot;>&#xA;&lt;vmType id=&quot;org.eclipse.jdt.internal.launching.macosx.MacOSXType&quot;>&#xA;&lt;vm id=&quot;com.oracle.java.7u45.jdk&quot; name=&quot;Java SE 7 [1.7.0_45]&quot; path=&quot;/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home&quot;/>&#xA;&lt;vm id=&quot;com.oracle.java.7u25.jdk&quot; name=&quot;Java SE 7 [1.7.0_25]&quot; path=&quot;/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home&quot;/>&#xA;&lt;vm id=&quot;com.apple.javajdk.1.6.0_33-b03-424&quot; name=&quot;Java SE 6 [1.6.0_33-b03-424]&quot; path=&quot;/Library/Java/JavaVirtualMachines/1.6.0_33-b03-424.jdk/Contents/Home&quot;/>&#xA;&lt;vm id=&quot;com.apple.javajdk.1.6.0_31-b04-415&quot; name=&quot;Java SE 6 [1.6.0_31-b04-415]&quot; path=&quot;/Library/Java/JavaVirtualMachines/1.6.0_31-b04-415.jdk/Contents/Home&quot;/>&#xA;&lt;/vmType>&#xA;&lt;vmType id=&quot;org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType&quot;>&#xA;&lt;vm id=&quot;_vWHSYPv5EeO_nLvEHMBfZg&quot; name=&quot;JRE for J2SE-1.5&quot; path=&quot;/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre&quot;/>&#xA;&lt;vm id=&quot;_Q1orQPv8EeOmzJAm_xmdKA&quot; name=&quot;JRE for J2SE-1.5&quot; path=&quot;/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre&quot;/>&#xA;&lt;/vmType>&#xA;&lt;/vmSettings>&#xA;"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
         name="org.eclipse.pde.api.tools">
       <setupTask
           xsi:type="setup:PreferenceTask"
@@ -1388,10 +1376,6 @@
       xsi:type="setup:VariableTask"
       name="git.checkout.branch"
       value="${scope.project.stream.name}"
-      storePromptedValue="false"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="tp.materialization.url"
       storePromptedValue="false"/>
   <setupTask
       xsi:type="git:GitCloneTask"
@@ -1430,7 +1414,51 @@
       <repositoryList
           name="Papyrus Main Dependencies">
         <repository
-            url="${tp.materialization.url}"/>
+            url="${base.downloads.url}/eclipse/updates/${dep.eclipse.repo}/"/>
+        <repository
+            url="${base.downloads.url}/tools/orbit/downloads/drops/${dep.orbit.repo}/repository"/>
+        <repository
+            url="${base.downloads.url}/modeling/emf/emf/updates/${dep.emf.repo}/"/>
+        <repository
+            url="${base.downloads.url}/modeling/emf/transaction/updates/${dep.emftransaction.repo}"/>
+        <repository
+            url="${base.downloads.url}/modeling/emf/validation/updates/${dep.emfvalidation.repo}"/>
+        <repository
+            url="${base.downloads.url}/modeling/emf/query/updates/${dep.emfquery.repo}"/>
+        <repository
+            url="${base.downloads.url}/tools/gef/updates/${dep.gef.repo}"/>
+        <repository
+            url="${base.downloads.url}/modeling/gmp/gmf-runtime/updates/${dep.gmfruntime.repo}"/>
+        <repository
+            url="${base.downloads.url}/modeling/gmp/gmf-notation/updates/${dep.gmfnotation.repo}"/>
+        <repository
+            url="${base.downloads.url}/modeling/gmp/gmf-tooling/updates/${dep.gmftooling.repo}"/>
+        <repository
+            url="${base.downloads.url}/birt/update-site/${dep.birt.repo}/"/>
+        <repository
+            url="${base.downloads.url}/mmt/atl/updates/${dep.atl.repo}/"/>
+        <repository
+            url="${base.downloads.url}/modeling/emft/mwe/updates/${dep.mwe.repo}/mwe"/>
+        <repository
+            url="${base.downloads.url}/mmt/qvto/updates/${dep.qvto.repo}"/>
+        <repository
+            url="${base.downloads.url}/acceleo/updates/${dep.acceleo.repo}"/>
+        <repository
+            url="${base.downloads.url}/modeling/mdt/ocl/updates/${dep.ocl.repo}"/>
+        <repository
+            url="${base.downloads.url}/modeling/mdt/uml2/updates/${dep.uml2.repo}"/>
+        <repository
+            url="${base.downloads.url}/mylyn/${dep.mylyn.repo}"/>
+        <repository
+            url="${base.downloads.url}/modeling/m2t/xpand/updates/${dep.xpand.repo}/"/>
+        <repository
+            url="${base.downloads.url}/modeling/tmf/xtext/updates/${dep.xtext.repo}/"/>
+        <repository
+            url="${base.downloads.url}/modeling/emf/compare/updates/${dep.emfcompare.repo}"/>
+        <repository
+            url="${base.downloads.url}/technology/subversive/${dep.subversive.repo}/"/>
+        <repository
+            url="${base.downloads.url}/webtools/downloads/drops/${dep.wtp.repo}/repository"/>
         <repository
             url="${base.downloads.url}/nattable/${dep.nattable.repo}/repository/"/>
       </repositoryList>
@@ -1512,11 +1540,10 @@
           name="papyrus-trunk-extra-nightly-tests"/>
     </setupTask>
   </setupTask>
-  <project name="papyrus-main"
+  <project name="main"
       label="Main">
     <setupTask
-        xsi:type="projects:ProjectsImportTask"
-        id="papyrus.main.sources">
+        xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
         <predicate
@@ -1545,7 +1572,7 @@
       </targlet>
     </setupTask>
     <project
-        name="papyrus-infra"
+        name="infra"
         label="Infra">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -1624,7 +1651,7 @@
             </operand>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
-                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.2 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.3 //@projects[name='papyrus-main']/@projects[name='papyrus-infra']/@setupTasks.1/@workingSets.4"/>
+                excludedWorkingSet="//@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.3 //@projects[name='main']/@projects[name='infra']/@setupTasks.1/@workingSets.4"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -1710,15 +1737,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -1727,10 +1745,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-views"
+        name="views"
         label="Views">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -1766,15 +1886,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -1783,10 +1894,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-uml"
+        name="uml"
         label="UML">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -1808,7 +2021,7 @@
                 pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
-                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.4 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.3 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.5 //@projects[name='papyrus-main']/@projects[name='papyrus-uml']/@setupTasks.1/@workingSets.2"/>
+                excludedWorkingSet="//@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.4 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.3 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.5 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.2"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -1876,15 +2089,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -1893,10 +2097,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-sysml"
+        name="sysml"
         label="SysML">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -1918,7 +2224,7 @@
                 pattern="${papyrus.git.clone.location/plugins/sysml/.*}"/>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
-                excludedWorkingSet="//@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.1 //@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.2 //@projects[name='papyrus-main']/@projects[name='papyrus-sysml']/@setupTasks.1/@workingSets.3"/>
+                excludedWorkingSet="//@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='sysml']/@setupTasks.1/@workingSets.3"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -1960,15 +2266,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -1977,10 +2274,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-emffacet"
+        name="emffacet"
         label="EMF Facet">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2015,15 +2414,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2032,10 +2422,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-customization"
+        name="customization"
         label="Customization">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2069,15 +2561,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2086,10 +2569,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-doc"
+        name="doc"
         label="Documentation">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2112,15 +2697,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2129,10 +2705,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-integrationtests"
+        name="integrationtests"
         label="Integration Tests">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2155,15 +2833,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2172,10 +2841,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-alltests"
+        name="alltests"
         label="All Tests">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2205,15 +2976,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2222,10 +2984,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-misc"
+        name="misc"
         label="Others">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2263,15 +3127,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2280,10 +3135,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-features"
+        name="features"
         label="Features">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2314,15 +3271,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2331,10 +3279,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-releng"
+        name="releng"
         label="Releng">
       <setupTask
           xsi:type="projects:ProjectsImportTask"
@@ -2357,15 +3407,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2374,11 +3415,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <description>Tools, dependencies, and sources for development of the main Papyrus components.  Required for any Papyrus development.</description>
   </project>
-  <project name="papyrus-extras"
+  <project name="extras"
       label="Extras">
     <setupTask
         xsi:type="setup:VariableTask"
@@ -2411,8 +3554,7 @@
       </targlet>
     </setupTask>
     <setupTask
-        xsi:type="projects:ProjectsImportTask"
-        id="papyrus.cdo.sources">
+        xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${papyrus.git.clone.location/extraplugins}/${papyrus.extraplugins.folder}"/>
       <sourceLocator
@@ -2461,7 +3603,7 @@
       </workingSet>
     </setupTask>
     <project
-        name="papyrus-cdo"
+        name="cdo"
         label="CDO Integration">
       <setupTask
           xsi:type="setup.targlets:TargletTask">
@@ -2487,15 +3629,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="dep.cdo.repo"
             value="R20140610-0212"/>
         <setupTask
@@ -2508,10 +3641,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-cdt"
+        name="cpp"
         label="C/C++ Codegen">
       <setupTask
           xsi:type="setup.targlets:TargletTask">
@@ -2554,15 +3789,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="dep.cdt.repo"
             value="luna/milestones"/>
         <setupTask
@@ -2579,10 +3805,112 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
     </project>
     <project
-        name="papyrus-diagramtemplate"
+        name="diagramtemplate"
         label="Diagram Template">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2594,15 +3922,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2611,11 +3930,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-dsml.validation"
+        name="dsml.validation"
         label="DSML Validation">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2627,15 +4048,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2644,11 +4056,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-eastadl"
+        name="eastadl"
         label="East-ADL">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2660,15 +4174,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2677,11 +4182,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-java"
+        name="java"
         label="Java">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2716,15 +4323,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2733,11 +4331,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-layers"
+        name="layers"
         label="Layers">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2754,15 +4454,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2771,11 +4462,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-marte"
+        name="marte"
         label="MARTE">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2787,15 +4580,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2804,11 +4588,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-moka"
+        name="moka"
         label="Moka">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2820,15 +4706,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2837,11 +4714,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-robotml"
+        name="robotml"
         label="RobotML">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2853,15 +4832,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2870,11 +4840,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-tablemigration"
+        name="tablemigration"
         label="Table Migration">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2891,15 +4963,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2908,11 +4971,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-umlcompare"
+        name="umlcompare"
         label="UML Compare">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2929,15 +5094,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2946,11 +5102,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-umlexport"
+        name="umlexport"
         label="UML Export">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -2967,15 +5225,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -2984,11 +5233,113 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <project
-        name="papyrus-umlrt"
+        name="umlrt"
         label="UML-RT">
       <setupTask
           xsi:type="setup:VariableTask"
@@ -3000,15 +5351,6 @@
           label="master (Luna/1.0.x)">
         <setupTask
             xsi:type="setup:VariableTask"
-            name="tp.materialization.url"
-            value="${base.downloads.url}/releases/luna"
-            storePromptedValue="false"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.nattable.repo"
-            value="releases/1.1.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
             value="updates/nightly/luna"
             storePromptedValue="false"/>
@@ -3017,16 +5359,117 @@
             name="papyrus.bugzilla.version"
             value="1.0.0"
             storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
       </stream>
       <description></description>
     </project>
     <description>Select sub-projects to import dependencies and sources for Papyrus extra components.</description>
   </project>
-  <project name="papyrus-dev"
+  <project name="dev"
       label="Developer">
     <setupTask
-        xsi:type="projects:ProjectsImportTask"
-        id="papyrus.main.sources">
+        xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${papyrus.git.clone.location/plugins/developer}">
         <predicate
@@ -3057,7 +5500,7 @@
         xsi:type="setup.workingsets:WorkingSetTask">
       <workingSet
           name="Papyrus Developer Tools"
-          id="Developer">
+          id="papyrus-dev">
         <predicate
             xsi:type="predicates:OrPredicate">
           <operand
@@ -3072,18 +5515,18 @@
         </predicate>
       </workingSet>
     </setupTask>
+    <setupTask
+        xsi:type="setup.targlets:TargletTask">
+      <targlet
+          name="Papyrus Developer Tools Dependencies"
+          activeRepositoryList="">
+        <requirement
+            id="org.eclipse.gmf.tooling.codegen.xtend2.feature.group"/>
+      </targlet>
+    </setupTask>
     <stream
         name="master"
         label="master (Luna/1.0.x)">
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="tp.materialization.url"
-          value="${base.downloads.url}/releases/luna"
-          storePromptedValue="false"/>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="dep.nattable.repo"
-          value="releases/1.1.0"/>
       <setupTask
           xsi:type="setup:VariableTask"
           name="papyrus.nightly.repo"
@@ -3094,6 +5537,108 @@
           name="papyrus.bugzilla.version"
           value="1.0.0"
           storePromptedValue="false"/>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="Dependency versions">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.eclipse.repo"
+            value="4.4"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.orbit.repo"
+            value="R20140525021250"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.emf.repo"
+            value="releases"
+            defaultValue=""/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.emftransaction.repo"
+            value="releases"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.emfvalidation.repo"
+            value="releases"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.emfquery.repo"
+            value="releases"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.gef.repo"
+            value="releases"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.gmfruntime.repo"
+            value="releases"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.gmfnotation.repo"
+            value="releases"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.gmftooling.repo"
+            value="releases"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.birt.repo"
+            value="4.4"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.atl.repo"
+            value="releases/3.5"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.mwe.repo"
+            value="releases/R201405200714"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.qvto.repo"
+            value="releases/3.4.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.acceleo.repo"
+            value="releases/3.5"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.ocl.repo"
+            value="releases/5.0.1"
+            defaultValue=""/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.uml2.repo"
+            value="5.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.mylyn.repo"
+            value="releases/3.12"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.xpand.repo"
+            value="releases/R201406030414"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.xtext.repo"
+            value="releases/head/R201405210727"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.emfcompare.repo"
+            value="releases/3.0"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.subversive.repo"
+            value="2.0/luna-site"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.wtp.repo"
+            value="R3.6.0/R-3.6.0-20140602160322"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.nattable.repo"
+            value="releases/1.1.0"/>
+      </setupTask>
     </stream>
     <description>Sources and tools required for working on the Papyrus developer tools (not part of the product).</description>
   </project>
