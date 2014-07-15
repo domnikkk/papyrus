@@ -63,93 +63,86 @@ public class TestClassDiagramTopNodeGen extends CreateNodeFromPaletteTest {
 	 */
 	@Test
 	public void testChildNodePrimitiveTypeEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(PrimitiveTypeEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component InformationItem.
 	 */
 	@Test
 	public void testChildNodeInformationItemEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(InformationItemEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(InformationItemEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Constraint.
 	 */
 	@Test
 	public void testChildNodeConstraintEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ConstraintEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ConstraintEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Model.
 	 */
 	@Test
 	public void testChildNodeModelEditPartTN() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ModelEditPartTN.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ModelEditPartTN.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Package.
 	 */
 	@Test
 	public void testChildNodePackageEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Signal.
 	 */
 	@Test
 	public void testChildNodeSignalEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(SignalEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(SignalEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Comment.
 	 */
 	@Test
 	public void testChildNodeCommentEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(CommentEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(CommentEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Enumeration.
 	 */
 	@Test
 	public void testChildNodeEnumerationEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(EnumerationEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(EnumerationEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Component.
 	 */
 	@Test
 	public void testChildNodeComponentEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ComponentEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ComponentEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component Class.
 	 */
 	@Test
 	public void testChildNodeClassEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(ClassEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(ClassEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component DataType.
 	 */
 	@Test
 	public void testChildNodeDataTypeEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(DataTypeEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(DataTypeEditPart.VISUAL_ID), true);
 	}
 	/**
 	 * Test to manage component InstanceSpecification.
 	 */
 	@Test
 	public void testChildNodeInstanceSpecificationEditPart() {
-		testCreateNodeFromPalette(UMLElementTypes.getElementType(InstanceSpecificationEditPart.VISUAL_ID), UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID));
+		testCreateNodeFromPalette(UMLElementTypes.getElementType(InstanceSpecificationEditPart.VISUAL_ID), true);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override 
-	protected CreateViewRequest createViewRequestShapeContainer() {
-		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.getElementType(PackageEditPart.VISUAL_ID), getDiagramEditPart().getDiagramPreferencesHint());
-	}
 	
 	@Override
 	public DiagramUpdater getDiagramUpdater() {

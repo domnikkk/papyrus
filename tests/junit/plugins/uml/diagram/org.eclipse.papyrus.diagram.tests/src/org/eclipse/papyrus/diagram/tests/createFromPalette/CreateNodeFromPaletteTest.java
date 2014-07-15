@@ -16,7 +16,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.gef.EditPart;
@@ -31,12 +30,10 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ResizableCompartmentEditPart
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
-import org.eclipse.papyrus.uml.diagram.common.editparts.UMLCompartmentEditPart;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Element;
 import org.junit.Assert;
@@ -53,6 +50,11 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.diag
 	/** command computed on the ui thread */
 	protected Command command;
 
+	/** container editpart**/
+	protected GraphicalEditPart containerEditpart;
+
+	private int comaprtmentNB;
+
 	/**
 	 * @see org.eclipse.papyrus.diagram.clazz.test.canonical.AbstractPapyrusTestCase#setUp()
 	 *
@@ -65,6 +67,34 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.diag
 		testSemantic = isSemanticTest();
 	}
 
+
+	/**
+	 * Test to create a node.
+	 *
+	 * @param type
+	 *        the type
+	 */
+	public GraphicalEditPart createANode(IElementType type, final GraphicalEditPart containerEditPart) {
+
+		//CREATION
+		final CreateViewRequest requestcreation = CreateViewRequestFactory.getCreateShapeRequest(type, containerEditPart.getDiagramPreferencesHint());
+		Display.getDefault().syncExec(new Runnable() {
+
+			public void run() {
+				command = containerEditPart.getTargetEditPart(requestcreation).getCommand(requestcreation);
+			}
+		});
+		assertNotNull("the command must not be null", command);
+		assertTrue("the command must be executable", command.canExecute()); //$NON-NLS-1$
+		// execute the creation
+		executeOnUIThread(command);
+
+
+		GraphicalEditPart createdEditPart= (GraphicalEditPart)containerEditPart.getChildren().get((containerEditPart.getChildren().size()-1));
+		Assert.assertNotNull("The editpart must be created", createdEditPart); //$NON-NLS-1$
+		return  createdEditPart;
+
+	}
 	/**
 	 * Returns <code>true</code> if semantic tests should be also performed
 	 *
@@ -89,9 +119,9 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.diag
 	/**
 	 * Returns the container edit part
 	 */
-	
+
 	protected IGraphicalEditPart getContainerEditPart() {
-		return getDiagramEditPart();
+		return containerEditpart;
 	}
 
 
@@ -103,12 +133,23 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.diag
 	 * @param containerType
 	 *        the container type
 	 */
-	public void testCreateNodeFromPalette(IElementType type, int numberSemanticChildreen) {
+	public void testCreateNodeFromPalette(IElementType type, int numberSemanticChildreen, boolean mustSuceed) {
 		// create a node
-		testCreateElementFromPalette(type, 0, 0, 1, 1,  numberSemanticChildreen);
-		
+		testCreateElementFromPalette(type, 0, 0, 1, 1,  numberSemanticChildreen, mustSuceed);
+
 	}
 
+
+	/**
+	 * Test to manage child node from diagram
+	 *
+	 * @param type
+	 *        the type
+	 */
+	public void testCreateNodeFromPalette(IElementType type, boolean mustSuceed) {
+		containerEditpart=getDiagramEditPart();
+		testCreateNodeFromPalette(type,0, mustSuceed);
+	}
 	/**
 	 * Test to manage child node.
 	 *
@@ -117,14 +158,50 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.diag
 	 * @param containerType
 	 *        the container type
 	 */
-	public void testCreateNodeFromPalette(IElementType type, IElementType containerType) {
-		testCreateNodeFromPalette(type,0);
+	public void testCreateNodeFromPalette(IElementType type, IElementType containerType, boolean mustSuceed) {
+		containerEditpart=createANode(containerType, getDiagramEditPart());
+		comaprtmentNB=countCompartmentEdipart();
+
+		testCreateNodeFromPalette(type,0, mustSuceed);
 	}
 
 
-	
+	protected int countCompartmentEdipart() {
+		int index = 0;
+		int compartmentEditpartNB=0;
+		while( index < containerEditpart.getChildren().size()) {
+			if((containerEditpart.getChildren().get(index)) instanceof ResizableCompartmentEditPart) {
+				compartmentEditpartNB++;
+			}
+			index++;
+		}
+		return compartmentEditpartNB;
+	}
 
-	
+	protected void testSizeCompartment(int expectedGraphicalChildren){
+		if (comaprtmentNB==0){
+			assertEquals(CREATION + INITIALIZATION_TEST, expectedGraphicalChildren, containerEditpart.getNotationView().getChildren().size());
+		}
+		if (comaprtmentNB==1){
+			assertEquals(CREATION + INITIALIZATION_TEST, expectedGraphicalChildren, ((GraphicalEditPart)containerEditpart.getChildren().get(0)).getNotationView().getChildren().size());
+		}
+		if(comaprtmentNB>1){
+			boolean foundCompartment=false;
+			for(Object compartment : containerEditpart.getChildren()) {
+				if(compartment instanceof ResizableCompartmentEditPart) {
+					if(((ResizableCompartmentEditPart)compartment).getNotationView().getChildren().size()==expectedGraphicalChildren){
+						foundCompartment=true;
+					}
+				}
+			}
+			Assert.assertTrue("The compartment has not good size", foundCompartment);
+		}
+
+	}
+
+
+
+
 
 	/**
 	 * Test to create a node.
@@ -132,11 +209,12 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.diag
 	 * @param type
 	 *        the type
 	 */
-	public void testCreateElementFromPalette(IElementType type, int expectedGraphicalChildren, int expectedSemanticChildren, int addedGraphicalChildren, int addedSemanticChildren,  int numberSemanticChildreen) {
+	public void testCreateElementFromPalette(IElementType type, int expectedGraphicalChildren, int expectedSemanticChildren, int addedGraphicalChildren, int addedSemanticChildren,  int numberSemanticChildreen,  boolean mustSuceed) {
 		command = null;
 		//CREATION
-		assertEquals(CREATION + INITIALIZATION_TEST, expectedGraphicalChildren, getRootView().getChildren().size());
-		Element root = getRootSemanticModel();
+		//
+		testSizeCompartment(expectedGraphicalChildren);
+		Element root = (Element)getContainerEditPart().resolveSemanticElement();
 		List<Element> ownedElements = root.getOwnedElements();
 		if( isSemanticTest()){
 			assertEquals(CREATION + INITIALIZATION_TEST, expectedSemanticChildren, ownedElements.size());
@@ -145,55 +223,60 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.diag
 		Display.getDefault().syncExec(new Runnable() {
 
 			public void run() {
-				command = getContainerEditPart().getCommand(requestcreation);
+				command = getContainerEditPart().getTargetEditPart(requestcreation).getCommand(requestcreation);
 			}
 		});
 		assertNotNull(CREATION + COMMAND_NULL, command);
-		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute()); //$NON-NLS-1$
-		// execute the creation
-		executeOnUIThread(command);
-		assertEquals(CREATION + TEST_THE_EXECUTION, expectedGraphicalChildren + addedGraphicalChildren, getRootView().getChildren().size());
-		if(addedGraphicalChildren>=1){
-			Assert.assertTrue("Node must be  org.eclipse.gmf.runtime.notation.Shape",getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1) instanceof Shape); //$NON-NLS-1$
+		if(!mustSuceed){
+			assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command.equals(UnexecutableCommand.INSTANCE));
 		}
-
-		if(testSemantic) {
-			assertEquals(CREATION + TEST_THE_EXECUTION, expectedSemanticChildren + addedSemanticChildren, getRootSemanticModel().getOwnedElements().size());
-		}
-		// undo the creation
-		undoOnUIThread();
-		assertEquals(CREATION + TEST_THE_UNDO, expectedGraphicalChildren, getRootView().getChildren().size());
-		if(testSemantic) {
-			assertEquals(CREATION + TEST_THE_UNDO, expectedSemanticChildren, getRootSemanticModel().getOwnedElements().size());
-		}
-		// redo the creation test
-		redoOnUIThread();
-		assertEquals(CREATION + TEST_THE_REDO, expectedGraphicalChildren + addedGraphicalChildren, getRootView().getChildren().size());
-		if(testSemantic) {
-			assertEquals(CREATION + TEST_THE_REDO, expectedSemanticChildren + addedSemanticChildren, getRootSemanticModel().getOwnedElements().size());
-		}
-
-		EditPart createdEditPart= (EditPart)getContainerEditPart().getChildren().get((getContainerEditPart().getChildren().size()-1));
-		Assert.assertNotNull("The editpart must be created", createdEditPart); //$NON-NLS-1$
-
-
-		// test diagram updater
-		if(getDiagramUpdater()!=null){
-			Assert.assertNotEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(getRootView()).size()); //$NON-NLS-1$
-			Assert.assertEquals("Diagram updater must detect that no link has been created",0,getDiagramUpdater().getContainedLinks(getRootView()).size()); //$NON-NLS-1$
-			Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
-			Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
-			Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",numberSemanticChildreen,getDiagramUpdater().getSemanticChildren((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
-			Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
-		}
-		createdEditPart.getChildren();
-		for(Iterator<?> iteratorEditPart = createdEditPart.getChildren().iterator(); iteratorEditPart.hasNext();) {
-			Object subEditPart = iteratorEditPart.next();
-			if( subEditPart instanceof UMLCompartmentEditPart){
-				Assert.assertEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(((CompartmentEditPart)subEditPart).getNotationView()).size()); //$NON-NLS-1$
+		else{
+			assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED,(! command.equals( UnexecutableCommand.INSTANCE)));
+			assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute()); //$NON-NLS-1$
+			// execute the creation
+			executeOnUIThread(command);
+			testSizeCompartment(expectedGraphicalChildren+addedSemanticChildren);
+			//		if(addedGraphicalChildren>=1){
+			//			Assert.assertTrue("Node must be  org.eclipse.gmf.runtime.notation.Shape",getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1) instanceof Shape); //$NON-NLS-1$
+			//		}
+			//
+			if(testSemantic) {
+				assertEquals(CREATION + TEST_THE_EXECUTION, expectedSemanticChildren + addedSemanticChildren, ownedElements.size());
+			}
+			// undo the creation
+			undoOnUIThread();
+			testSizeCompartment(expectedGraphicalChildren);
+			if(testSemantic) {
+				assertEquals(CREATION + TEST_THE_UNDO, expectedSemanticChildren, ownedElements.size());
+			}
+			// redo the creation test
+			redoOnUIThread();
+			//		assertEquals(CREATION + TEST_THE_REDO, expectedGraphicalChildren + addedGraphicalChildren, getRootView().getChildren().size());
+			if(testSemantic) {
+				assertEquals(CREATION + TEST_THE_REDO, expectedSemanticChildren + addedSemanticChildren, getRootSemanticModel().getOwnedElements().size());
 			}
 
+			//		EditPart createdEditPart= (EditPart)getContainerEditPart().getChildren().get((getContainerEditPart().getChildren().size()-1));
+			//		Assert.assertNotNull("The editpart must be created", createdEditPart); //$NON-NLS-1$
+			//
+			//
+			//		// test diagram updater
+			//		if(getDiagramUpdater()!=null){
+			//			Assert.assertNotEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(getRootView()).size()); //$NON-NLS-1$
+			//			Assert.assertEquals("Diagram updater must detect that no link has been created",0,getDiagramUpdater().getContainedLinks(getRootView()).size()); //$NON-NLS-1$
+			//			Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
+			//			Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
+			//			Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",numberSemanticChildreen,getDiagramUpdater().getSemanticChildren((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
+			//			Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks((View)getRootView().getChildren().get(expectedGraphicalChildren + addedGraphicalChildren-1)).size()); //$NON-NLS-1$
+			//		}
+			//		createdEditPart.getChildren();
+			//		for(Iterator<?> iteratorEditPart = createdEditPart.getChildren().iterator(); iteratorEditPart.hasNext();) {
+			//			Object subEditPart = iteratorEditPart.next();
+			//			if( subEditPart instanceof UMLCompartmentEditPart){
+			//				Assert.assertEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(((CompartmentEditPart)subEditPart).getNotationView()).size()); //$NON-NLS-1$
+			//			}
+			//
+			//		}
 		}
 	}
 
@@ -237,10 +320,8 @@ public abstract class CreateNodeFromPaletteTest extends org.eclipse.papyrus.diag
 				Assert.assertTrue("namelabelEditpart must be editable",((CompartmentEditPart)namedEditPart).isEditModeEnabled());} //$NON-NLS-1$
 			else{
 				Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof LabelEditPart); //$NON-NLS-1$
-
 			}
 		}
 	}
 
-	protected abstract CreateViewRequest createViewRequestShapeContainer();
 }
