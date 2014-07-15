@@ -16,7 +16,6 @@ package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.util.Geometry;
@@ -65,9 +64,6 @@ import org.eclipse.ui.internal.dnd.IDropTarget;
  */
 @SuppressWarnings("restriction")
 public class TabFolderPart extends AbstractTabFolderPart implements IFolder {
-
-	/** Log object */
-	Logger log = Logger.getLogger(getClass().getName());
 
 	/** Interface to the model */
 	protected ITabFolderModel partModel;

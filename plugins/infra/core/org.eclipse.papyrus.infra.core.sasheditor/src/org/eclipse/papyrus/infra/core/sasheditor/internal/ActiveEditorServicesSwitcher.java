@@ -13,9 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.actionbarcontributor.IMultiPageEditorActionBarContributor;
@@ -52,9 +51,6 @@ import org.eclipse.ui.services.IServiceLocator;
  * 
  */
 public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListener {
-
-	/** Log object */
-	Logger log = Logger.getLogger(getClass().getName());
 
 	/** The currently active editor */
 	protected PagePart activeEditor;
@@ -168,12 +164,10 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 					MultiPageSelectionProvider provider = (MultiPageSelectionProvider)outerProvider;
 					provider.fireSelectionChanged(event);
 					provider.firePostSelectionChanged(event);
-				} else {
-					if(log.isLoggable(Level.WARNING)) {
-						log.warning(this.getClass().getSimpleName()
+				} else {		
+					Activator.log.warn(this.getClass().getSimpleName()
 								+ " did not propogate selection for " //$NON-NLS-1$
-								+ editorPart.getTitle());
-					}
+								+ editorPart.getTitle());			
 				}
 			}
 		}

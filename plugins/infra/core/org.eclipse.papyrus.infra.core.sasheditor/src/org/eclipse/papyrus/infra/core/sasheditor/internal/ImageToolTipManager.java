@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
-import java.util.logging.Logger;
 
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageImageUtils;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.preferences.ITabTooltipPreferences;
@@ -37,9 +36,6 @@ import org.eclipse.swt.widgets.Shell;
  * @author dumoulin
  */
 public class ImageToolTipManager {
-
-	/** Log object */
-	Logger log = Logger.getLogger(getClass().getName());
 
 	protected ITabTooltipPreferences settings = new TabTooltipPreferences();
 	

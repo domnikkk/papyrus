@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
-import java.util.logging.Logger;
 
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IAbstractPanelModel;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashPanelModel;
@@ -39,9 +38,6 @@ import org.eclipse.ui.internal.dnd.IDropTarget;
  */
 @SuppressWarnings({ "restriction" })
 public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
-
-	/** Log object */
-	Logger log = Logger.getLogger(getClass().getName());
 
 	/** Interface to the model */
 	protected ISashPanelModel model;
