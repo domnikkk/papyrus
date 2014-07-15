@@ -1540,17 +1540,17 @@
           name="papyrus-trunk-extra-nightly-tests"/>
     </setupTask>
   </setupTask>
+  <setupTask
+      xsi:type="projects:ProjectsImportTask">
+    <sourceLocator
+        rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="org\.eclipse\.papyrus\.junit\.utils"/>
+    </sourceLocator>
+  </setupTask>
   <project name="main"
       label="Main">
-    <setupTask
-        xsi:type="projects:ProjectsImportTask">
-      <sourceLocator
-          rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="org\.eclipse\.papyrus\.junit\.utils"/>
-      </sourceLocator>
-    </setupTask>
     <setupTask
         xsi:type="setup.targlets:TargletTask">
       <targlet
@@ -3571,12 +3571,6 @@
             xsi:type="predicates:NamePredicate"
             pattern="org\.eclipse\.papyrus\.${papyrus.extratestsfeature}\.feature"/>
       </sourceLocator>
-      <sourceLocator
-          rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="org\.eclipse\.papyrus\.junit\.utils"/>
-      </sourceLocator>
     </setupTask>
     <setupTask
         xsi:type="setup.workingsets:WorkingSetTask">
@@ -5523,6 +5517,11 @@
         <requirement
             id="org.eclipse.gmf.tooling.codegen.xtend2.feature.group"/>
       </targlet>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task">
+      <requirement
+          id="org.eclipse.xtend.sdk.feature.group"/>
     </setupTask>
     <stream
         name="master"
