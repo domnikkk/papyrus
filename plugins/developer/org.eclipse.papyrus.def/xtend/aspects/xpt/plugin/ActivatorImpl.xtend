@@ -20,142 +20,109 @@ import xpt.expressions.getExpression
 	@Inject getExpression xptExpr;
 	
 	override ActivatorImpl(GenPlugin it)'''
-		ï¾«copyright(editorGen)ï¾»
-		package ï¾«xptActivator.packageName(it)ï¾»;
+		«copyright(editorGen)»
+		package «xptActivator.packageName(it)»;
 
-		ï¾«generatedClassCommentï¾»
-		public class ï¾«xptActivator.className(it)ï¾» extends org.eclipse.ui.plugin.AbstractUIPlugin {
+		«generatedClassComment»
+		public class «xptActivator.className(it)» extends org.eclipse.ui.plugin.AbstractUIPlugin {
 
-		ï¾«attrs(it)ï¾»
-		ï¾«constructor(it)ï¾»
-		ï¾«start(it)ï¾»
-		ï¾«stop(editorGen)ï¾»
-		ï¾«getInstance(it)ï¾»
+		«attrs(it)»
+		«constructor(it)»
+		«start(it)»
+		«stop(editorGen)»
+		«getInstance(it)»
 		
-		ï¾«getPreferenceStoreï¾»
+		«getPreferenceStore»
 
-		ï¾«getItemProvidersAdaptorFactory(it)ï¾»
-		ï¾«getItemImageDescriptor(it)ï¾»
-		ï¾«getBundleDescriptorImage(it)ï¾»
-		ï¾«findImageDescriptor(it)ï¾»
-		ï¾«getBundleImage(it)ï¾»
-		ï¾«getString(it)ï¾»
-		ï¾«documentProviderGetter(editorGen.diagram)ï¾»
-		ï¾«linkConstraint(editorGen.diagram)ï¾»
-		ï¾«initializerGetter(editorGen.diagram)ï¾»
-		ï¾«initializerSetter(editorGen.diagram)ï¾»
-		ï¾«providersAccessMethods(it)ï¾»
-		ï¾«logError(it)ï¾»
-		ï¾«logInfo(it)ï¾»
-		ï¾«getLogError(it)ï¾»
-		ï¾«additions(it)ï¾»
+		«getItemProvidersAdaptorFactory(it)»
+		«getItemImageDescriptor(it)»
+		«getBundleDescriptorImage(it)»
+		«findImageDescriptor(it)»
+		«getBundleImage(it)»
+		«getString(it)»
+		«documentProviderGetter(editorGen.diagram)»
+		«linkConstraint(editorGen.diagram)»
+		«initializerGetter(editorGen.diagram)»
+		«initializerSetter(editorGen.diagram)»
+		«providersAccessMethods(it)»
+		«logError(it)»
+		«logInfo(it)»
+		«getLogError(it)»
+		«additions(it)»
 	}
 '''
 
 override attrs(GenPlugin it)'''
-	ï¾«generatedMemberCommentï¾»
-	public static final String ID = "ï¾«IDï¾»"; //$NON-NLS-1$
+	«generatedMemberComment»
+	public static final String ID = "«ID»"; //$NON-NLS-1$
 
-	ï¾«generatedMemberCommentï¾»
+	«generatedMemberComment»
 	private org.eclipse.papyrus.infra.core.log.LogHelper myLogHelper;
 
-	ï¾«generatedMemberCommentï¾»
+	«generatedMemberComment»
 	public static final org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint DIAGRAM_PREFERENCES_HINT =
 			new org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint(ID);
 
-	ï¾«generatedMemberCommentï¾»
-	private static ï¾«xptActivator.className(it)ï¾» instance;
+	«generatedMemberComment»
+	private static «xptActivator.className(it)» instance;
 
-	ï¾«generatedMemberCommentï¾»
-	private org.eclipse.emf.edit.provider.ComposedAdapterFactory adapterFactory;	
-
-	ï¾«generatedMemberCommentï¾»
-	private ï¾«xptDocProvider.qualifiedClassName(editorGen.diagram)ï¾» documentProvider;
-
-	ï¾«IF editorGen.diagram.links.exists(l| !l.sansDomain)ï¾»
-		ï¾«generatedMemberCommentï¾»
-		private ï¾«editorGen.diagram.getLinkCreationConstraintsQualifiedClassName()ï¾» linkConstraints;
-	ï¾«ENDIFï¾»
-
-	ï¾«generatedMemberCommentï¾»
-	private ï¾«xptElementInitializers.qualifiedClassName(editorGen.diagram)ï¾» initializers;
-
-	ï¾«IF it.editorGen.expressionProviders != nullï¾»
-		ï¾«FOR p : it.editorGen.expressionProviders.providers.filter(typeof(GenExpressionInterpreter))ï¾»
-			ï¾«generatedMemberCommentï¾»
-			private ï¾«xptExpr.getExpressionInterpriterQualifiedClassName(p)ï¾» ï¾«p.languageï¾»Factory;
-		ï¾«ENDFORï¾»
-	ï¾«ENDIFï¾»
-'''
-
-override attrs(GenPlugin it)'''
-    ï¾«generatedMemberCommentï¾»
-    public static final String ID = "ï¾«IDï¾»"; //$NON-NLS-1$
-
-    ï¾«generatedMemberCommentï¾»
-    public static final org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint DIAGRAM_PREFERENCES_HINT =
-            new org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint(ID);
-
-    ï¾«generatedMemberCommentï¾»
-    private static ï¾«xptActivator.className(it)ï¾» instance;
-
-    ï¾«generatedMemberCommentï¾»
+	«generatedMemberComment»
     private org.eclipse.emf.common.notify.AdapterFactory adapterFactory;    
 
-    ï¾«generatedMemberCommentï¾»
-    private ï¾«xptDocProvider.qualifiedClassName(editorGen.diagram)ï¾» documentProvider;
+	«generatedMemberComment»
+	private «xptDocProvider.qualifiedClassName(editorGen.diagram)» documentProvider;
 
-    ï¾«IF editorGen.diagram.links.exists(l| !l.sansDomain)ï¾»
-        ï¾«generatedMemberCommentï¾»
-        private ï¾«editorGen.diagram.getLinkCreationConstraintsQualifiedClassName()ï¾» linkConstraints;
-    ï¾«ENDIFï¾»
+	«IF editorGen.diagram.links.exists(l| !l.sansDomain)»
+		«generatedMemberComment»
+		private «editorGen.diagram.getLinkCreationConstraintsQualifiedClassName()» linkConstraints;
+	«ENDIF»
 
-    ï¾«generatedMemberCommentï¾»
-    private ï¾«xptElementInitializers.qualifiedClassName(editorGen.diagram)ï¾» initializers;
+	«generatedMemberComment»
+	private «xptElementInitializers.qualifiedClassName(editorGen.diagram)» initializers;
 
-    ï¾«IF it.editorGen.expressionProviders != nullï¾»
-        ï¾«FOR p : it.editorGen.expressionProviders.providers.filter(typeof(GenExpressionInterpreter))ï¾»
-            ï¾«generatedMemberCommentï¾»
-            private ï¾«xptExpr.getExpressionInterpriterQualifiedClassName(p)ï¾» ï¾«p.languageï¾»Factory;
-        ï¾«ENDFORï¾»
-    ï¾«ENDIFï¾»
+	«IF it.editorGen.expressionProviders != null»
+		«FOR p : it.editorGen.expressionProviders.providers.filter(typeof(GenExpressionInterpreter))»
+			«generatedMemberComment»
+			private «xptExpr.getExpressionInterpriterQualifiedClassName(p)» «p.language»Factory;
+		«ENDFOR»
+	«ENDIF»
 '''
 
 
 override start(GenPlugin it)'''
-	ï¾«generatedMemberCommentï¾»
+	«generatedMemberComment»
 	public void start(org.osgi.framework.BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
 		myLogHelper = new org.eclipse.papyrus.infra.core.log.LogHelper(this);
 		org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = org.eclipse.papyrus.infra.gmfdiag.common.Activator.getInstance().getItemProvidersAdapterFactory();
-		ï¾«it.editorGen.diagram.preferencesPackageNameï¾».DiagramPreferenceInitializer diagramPreferenceInitializer = new ï¾«it.editorGen.diagram.preferencesPackageNameï¾».DiagramPreferenceInitializer();
+		«it.editorGen.diagram.preferencesPackageName».DiagramPreferenceInitializer diagramPreferenceInitializer = new «it.editorGen.diagram.preferencesPackageName».DiagramPreferenceInitializer();
 		diagramPreferenceInitializer.initializeDefaultPreferences();
 		
 	}
 '''
 
 override stop(GenEditorGenerator it)'''
-    ï¾«generatedMemberCommentï¾»
+    «generatedMemberComment»
     public void stop(org.osgi.framework.BundleContext context) throws Exception {
         adapterFactory = null;
-        ï¾«IF diagram.links.exists(l| !l.sansDomain)ï¾»
+        «IF diagram.links.exists(l| !l.sansDomain)»
             linkConstraints = null;
-        ï¾«ENDIFï¾»
+        «ENDIF»
         initializers = null;
-        ï¾«IF expressionProviders != nullï¾»
-            ï¾«FOR p : expressionProviders.providers.filter(typeof(GenExpressionInterpreter))ï¾»
-                ï¾«p.languageï¾»Factory = null;
-            ï¾«ENDFORï¾»
-        ï¾«ENDIFï¾»
+        «IF expressionProviders != null»
+            «FOR p : expressionProviders.providers.filter(typeof(GenExpressionInterpreter))»
+                «p.language»Factory = null;
+            «ENDFOR»
+        «ENDIF»
         instance = null;
         super.stop(context);
     }
 '''
 
 def getPreferenceStore()'''
-	ï¾«generatedMemberCommentï¾»
+	«generatedMemberComment»
 	 public org.eclipse.jface.preference.IPreferenceStore getPreferenceStore() {
 	 	org.eclipse.jface.preference.IPreferenceStore store=org.eclipse.papyrus.infra.gmfdiag.preferences.Activator.getDefault().getPreferenceStore();
 	     return store;
@@ -164,31 +131,31 @@ def getPreferenceStore()'''
 '''
 
 	override logError(GenPlugin it) '''
-		ï¾«generatedMemberCommentï¾»
+		«generatedMemberComment»
 		public void logError(String error) {
 			getLogHelper().warn(error);
 		}
 		
-		ï¾«generatedMemberCommentï¾»
+		«generatedMemberComment»
 		public void logError(String error, Throwable throwable) {
 			getLogHelper().error(error, throwable);
 		}
 	'''
 
 	override logInfo(GenPlugin it) '''
-		ï¾«generatedMemberCommentï¾»
+		«generatedMemberComment»
 		public void logInfo(String message) {
 			getLogHelper().info(message);
 		}
 		
-		ï¾«generatedMemberCommentï¾»
+		«generatedMemberComment»
 		public void logInfo(String message, Throwable throwable) {
 			getLogHelper().error(message, throwable);
 		}
 	'''
 
 	override getLogError(GenPlugin it) '''
-		ï¾«generatedMemberCommentï¾»
+		«generatedMemberComment»
 		public org.eclipse.papyrus.infra.core.log.LogHelper getLogHelper() {
 			return myLogHelper;
 		}
