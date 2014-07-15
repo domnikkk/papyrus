@@ -1,0 +1,101 @@
+=Papyrus Testing Framework=
+
+== Framework Goals==
+* Automate the  development of test cases for Papyrus
+* Set the bases for a model-based testing approach
+* Ease the transition towards test-driven development
+
+== How to generate tests for UML diagrams==
+Currently, the framework supports the generation of unit tests for a diagram editor, taking as input an input .gmfgen.
+
+==Testing diagram editors== 
+# Create tests plug-in, if it doesn't exist already. As a requirement, following the Papyrus development guidelines an Eclipse plug-in project must be created to contain the tests. Example: org.eclipse.papyrus.uml.diagram.component.tests.
+# Add the dependency in the plug-in manifest towards the testing framework: org.eclipse.papyrus.tests.framework.
+# Create the QVTO script for your diagram editor, detailing the name of the generated package of tests and the desired edit parts to test, as they are described in the gmfgen (See example below). 
+# Create the generation launcher (either Xtend-based or Java-based) in an appropiate package, for instance org.eclipse.papyrus.uml.diagram.component.test.generation, in a file such as ComponentDiagramGenerateTestsWorkflow.xtend. Copy the example launcher below and replace with the values for the generation parameters for your own diagram editor. The parameters are:
+#* gmfgenUri: URI for the input GMFGen file
+#* testSrcGenLocation: Folder in the project where the launcher is located where the test code will be generated, for instance ''test-gen''.
+#* qvtoScriptUri: URI for the QVTO script
+#* testModelUri: URI where the UML-UTP intermediate model will be generated. After launching the generation, this model provides an overview of all the generated test artifacts.
+# Launch the main method as a normal Java class.
+
+The intermediate model and the JUnit code are generated.
+
+==Example: Generation for the UML Component diagram==
+Here is an example (componentdiagramtest.qvto):
+<pre>
+import canonicalTests;
+
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+
+transformation componentdiagramtest(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML) extends canonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+main() {
+	topContainerEditPart := "PackageEditPart";
+	topNodesToTest := Set{
+		"PackageEditPart", 
+		"ModelEditPart", 
+		"ComponentEditPart", 
+		"InterfaceEditPart", 
+		"CommentEditPart", 
+		"ConstraintEditPart"
+	} ;
+	childNodesToTest := Set{
+		"ModelEditPartCN", 
+		"PackageEditPartCN",
+		"RectangleInterfaceEditPartCN" 
+		"ComponentEditPartCN", 
+		"ComponentEditPartPCN", 
+		"CommentEditPartPCN", 
+		"ConstraintEditPartPCN",
+		"InterfaceEditPartPCN"
+	};
+	linksToTest := Set{
+		"UsageEditPart",
+		"InterfaceRealizationEditPart",
+		"ManifestationEditPart",
+		"ComponentRealizationEditPart",
+		"AbstractionEditPart",
+		"DependencyEditPart"
+	};
+	linksOwnedBySourceToTest := Set{
+		"GeneralizationEditPart"
+	};
+	gmfgenUml.rootObjects()[UML::Model]->map gmfgen2papyrusTest("org.eclipse.papyrus.uml.diagram.component.test");
+}
+
+</pre>
+
+
+Here is an example for the workflow launcher:
+
+<pre>
+package org.eclipse.papyrus.uml.diagram.component.test.generation
+
+import org.eclipse.emf.mwe2.runtime.workflow.WorkflowContextImpl
+import org.eclipse.papyrus.tests.framework.mwe.GenerateTestsWorkflow
+
+class ComponentDiagramGenerateTestsWorkflow {
+
+	
+	def static void main(String[] args) {
+		val workflow = new GenerateTestsWorkflow()
+		workflow.uriPrefix = "platform:/resource"
+		runWorkflow(workflow);
+	}
+
+	def static void runWorkflow(GenerateTestsWorkflow workflow) {
+		workflow.gmfgenUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component/model/ComponentDiagram.gmfgen'
+		workflow.testSrcGenLocation = 'test-gen-15072014'
+		workflow.qvtoScriptUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component.tests/qvto/componentdiagramtest.qvto'
+		workflow.testModelUri = workflow.uriPrefix + '/org.eclipse.papyrus.uml.diagram.component.tests/model/ComponentDiagramTest.uml'
+		workflow.run(new WorkflowContextImpl());
+	}
+
+}
+</pre>
+
+
+
+
+

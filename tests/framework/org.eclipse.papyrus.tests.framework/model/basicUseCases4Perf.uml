@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:utp="http://utp_1-2.profile.uml" xsi:schemaLocation="http://utp_1-2.profile.uml platform:/plugin/org.omg.utp/utp_1-2.profile.uml#_bgefUFXiEeOIvfWlaSfWrQ">
+  <uml:Model xmi:id="_dUZUAFXiEeOIvfWlaSfWrQ" name="Papyrus Performance Tests">
+    <packagedElement xmi:type="uml:Model" xmi:id="_dUZUAVXiEeOIvfWlaSfWrQ" name="Test Behavior">
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUA1XiEeOIvfWlaSfWrQ" name="testRefreshModelExplorerActivity" specification="_dUZUF1XiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUBFXiEeOIvfWlaSfWrQ" name="testOpenNDiagramsActivity" specification="_dUZUGlXiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUBVXiEeOIvfWlaSfWrQ" name="testRefreshOutlineActivity" specification="_dUZUG1XiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUBlXiEeOIvfWlaSfWrQ" name="testSaveModelActivity" specification="_dUZUGVXiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUB1XiEeOIvfWlaSfWrQ" name="testControlModeActivity" specification="_dUZUFVXiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUCFXiEeOIvfWlaSfWrQ" name="testCreateElementActivity" specification="_dUZUE1XiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUCVXiEeOIvfWlaSfWrQ" name="testDeleteElementActivity" specification="_dUZUElXiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUClXiEeOIvfWlaSfWrQ" name="testLoadModelActivity" specification="_dUZUGFXiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUC1XiEeOIvfWlaSfWrQ" name="testMoveElementActivity" specification="_dUZUHVXiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUDFXiEeOIvfWlaSfWrQ" name="testLoadEditorActivity" specification="_dUZUFFXiEeOIvfWlaSfWrQ"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_dUZUDVXiEeOIvfWlaSfWrQ" name="testOpenOneDiagramActivity" specification="_dUZUFlXiEeOIvfWlaSfWrQ"/>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_dUZUDlXiEeOIvfWlaSfWrQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dUZUD1XiEeOIvfWlaSfWrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="../../org.omg.utp/utp_1-2.profile.uml#_bgefUFXiEeOIvfWlaSfWrQ"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="../../org.omg.utp/utp_1-2.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_dUZUEFXiEeOIvfWlaSfWrQ" name="Test Structure">
+      <packagedElement xmi:type="uml:Class" xmi:id="_dUZUEVXiEeOIvfWlaSfWrQ" name="BasicPerfTestCases">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUElXiEeOIvfWlaSfWrQ" name="testDeleteElement" method="_dUZUCVXiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUE1XiEeOIvfWlaSfWrQ" name="testCreateElement" method="_dUZUCFXiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUFFXiEeOIvfWlaSfWrQ" name="testLoadEditor" method="_dUZUDFXiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUFVXiEeOIvfWlaSfWrQ" name="testControlMode" method="_dUZUB1XiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUFlXiEeOIvfWlaSfWrQ" name="testOpenOneDiagram" method="_dUZUDVXiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUF1XiEeOIvfWlaSfWrQ" name="testRefreshModelExplorer" method="_dUZUA1XiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUGFXiEeOIvfWlaSfWrQ" name="testLoadModel" method="_dUZUClXiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUGVXiEeOIvfWlaSfWrQ" name="testSaveModel" method="_dUZUBlXiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUGlXiEeOIvfWlaSfWrQ" name="testOpenNDiagrams" method="_dUZUBFXiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUG1XiEeOIvfWlaSfWrQ" name="testRefreshOutline" method="_dUZUBVXiEeOIvfWlaSfWrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUHFXiEeOIvfWlaSfWrQ" name="testSelectElement"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dUZUHVXiEeOIvfWlaSfWrQ" name="testMoveElement" method="_dUZUC1XiEeOIvfWlaSfWrQ"/>
+      </packagedElement>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_dUZUHlXiEeOIvfWlaSfWrQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dUZUH1XiEeOIvfWlaSfWrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="../../org.omg.utp/utp_1-2.profile.uml#_bgefUFXiEeOIvfWlaSfWrQ"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="../../org.omg.utp/utp_1-2.profile.uml#_iCl4wOVMEeG84fBOY39c0g"/>
+      </profileApplication>
+    </packagedElement>
+  </uml:Model>
+  <utp:TestContext xmi:id="_dUZUIFXiEeOIvfWlaSfWrQ" base_BehavioredClassifier="_dUZUEVXiEeOIvfWlaSfWrQ" base_StructuredClassifier="_dUZUEVXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZUIVXiEeOIvfWlaSfWrQ" base_Operation="_dUZUElXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZUIlXiEeOIvfWlaSfWrQ" base_Operation="_dUZUE1XiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7EFXiEeOIvfWlaSfWrQ" base_Operation="_dUZUFFXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7EVXiEeOIvfWlaSfWrQ" base_Operation="_dUZUFVXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7ElXiEeOIvfWlaSfWrQ" base_Operation="_dUZUFlXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7E1XiEeOIvfWlaSfWrQ" base_Operation="_dUZUF1XiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7FFXiEeOIvfWlaSfWrQ" base_Operation="_dUZUGFXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7FVXiEeOIvfWlaSfWrQ" base_Operation="_dUZUGVXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7FlXiEeOIvfWlaSfWrQ" base_Operation="_dUZUGlXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7F1XiEeOIvfWlaSfWrQ" base_Operation="_dUZUG1XiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7GFXiEeOIvfWlaSfWrQ" base_Operation="_dUZUHFXiEeOIvfWlaSfWrQ"/>
+  <utp:TestCase xmi:id="_dUZ7GVXiEeOIvfWlaSfWrQ" base_Operation="_dUZUHVXiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7G1XiEeOIvfWlaSfWrQ" base_Behavior="_dUZUA1XiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7HFXiEeOIvfWlaSfWrQ" base_Behavior="_dUZUBVXiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7HVXiEeOIvfWlaSfWrQ" base_Behavior="_dUZUBFXiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7HlXiEeOIvfWlaSfWrQ" executionAt="Mon Nov 25 16:43:03 CET 2013" duration="1448ms" base_Behavior="_dUZUBlXiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7H1XiEeOIvfWlaSfWrQ" base_Behavior="_dUZUB1XiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7IFXiEeOIvfWlaSfWrQ" base_Behavior="_dUZUCFXiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7IVXiEeOIvfWlaSfWrQ" base_Behavior="_dUZUCVXiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7IlXiEeOIvfWlaSfWrQ" executionAt="Mon Nov 25 16:42:58 CET 2013" duration="5078ms" base_Behavior="_dUZUClXiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7I1XiEeOIvfWlaSfWrQ" base_Behavior="_dUZUC1XiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7JFXiEeOIvfWlaSfWrQ" base_Behavior="_dUZUDFXiEeOIvfWlaSfWrQ"/>
+  <utp:TestLog xmi:id="_dUZ7JVXiEeOIvfWlaSfWrQ" base_Behavior="_dUZUDVXiEeOIvfWlaSfWrQ"/>
+</xmi:XMI>

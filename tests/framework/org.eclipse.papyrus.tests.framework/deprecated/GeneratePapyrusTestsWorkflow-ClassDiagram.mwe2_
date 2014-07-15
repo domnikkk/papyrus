@@ -1,0 +1,184 @@
+module org.eclipse.papyrus.tests.framework.xtend.GeneratePapyrusTestsWorkflow
+
+import java.util.ArrayList
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+
+Workflow {
+	bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+		platformUri = '../../../../..'	
+		/*
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.papyrus.uml.diagram.clazz/model/classdiagram.gmfgen.uml'
+			to = 'platform:/resource/org.eclipse.papyrus.uml.diagram.clazz/model/classdiagram.gmfgen.uml'
+		}
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.papyrus.tests.framework/model/gmfgen.uml'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/gmfgen.uml'
+		}
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml'
+		}
+		uriMap = {
+			from = 'platform:/plugin/org.omg.utp/model/utp_1-2.profile.uml' 
+			to = 'platform:/resource/org.omg.utp/model/utp_1-2.profile.uml'
+		}
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/GenModel.ecore'
+		}
+		 */
+		uriMap = {
+			from = 'pathmap://UML_METAMODELS/UML.metamodel.uml'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/UML.metamodel.uml'
+		}
+		/*
+		uriMap = {
+			from = 'pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/UMLPrimitiveTypes.library.uml'
+		}
+		 */
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/UML.genmodel'
+		}
+		/*
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/Ecore.genmodel'
+		}
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel'
+			to = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/Types.genmodel'
+		}
+		 */
+		uriMap = {
+			from = 'platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore'
+			to = 'platform:/resource/org.eclipse.gmf.codegen/models/gmfgen.ecore'
+		}
+		scanClassPath = true
+		registerGeneratedEPackage = 'org.eclipse.uml2.uml.UMLPackage'
+		registerGeneratedEPackage = 'org.eclipse.uml2.codegen.ecore.genmodel.GenModelPackage'
+		registerGeneratedEPackage = 'org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage'
+	}
+	
+	//1. Transform GMFGen file to UML
+	
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/UML.genmodel'
+		modelSlot = 'genmodelUml'
+		useSingleGlobalResourceSet = true
+	}
+	 
+	 
+	 
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.clazz/model/classdiagram.gmfgen'
+		modelSlot = 'inputGmfgen'
+		firstElementOnly = true
+		useSingleGlobalResourceSet = true
+	}
+	
+	/*
+	component = org.eclipse.papyrus.tests.framework.m2t.xtend.ResolveProxies{
+		modelSlot = 'inputGmfgen'
+	}
+	 */
+	
+	
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/ecore.uml'
+		modelSlot = 'genmodeluml'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/ecore.profile.uml'
+		modelSlot = 'ecoreprofile'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.papyrus.mwe.utils.components.RegisterUmlProfile {
+		profileSlot = 'ecoreprofile'
+	} 
+		
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/genmodel.uml'
+		modelSlot = 'genmodeluml'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/gmfgen.uml'
+		modelSlot = 'gmfgenUmlMetamodel'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.papyrus.mwe.utils.components.QvtoTransformationWorkflowComponent {
+		inputSlots = 'inputGmfgen'
+		inputSlots = 'gmfgenUmlMetamodel'
+		transformationURI = 'platform:/resource/org.eclipse.papyrus.tests.framework/qvto/gmfgen2uml-instances.qvto'
+		outputSlot = 'inputGmfgenUml'
+	}
+	 
+	component = org.eclipse.emf.mwe.utils.Writer{
+		modelSlot = 'inputGmfgenUml'
+		uri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.clazz/model/ClassDiagram.gmfgen.uml'
+		useSingleGlobalResourceSet = true
+	}	
+	
+	//2. Generate Test specification model from QVTO script
+	/*
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.clazz/model/ClassDiagram.gmfgen.uml'
+		modelSlot = 'inputGmfgenUml'
+	}
+	 */
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.tests.framework/model/testingFrameworkBase.uml'
+		modelSlot = 'frameworkBase'
+		useSingleGlobalResourceSet = true
+	}
+	
+	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.utp/model/utp_1-2.profile.uml'
+		modelSlot = 'utp'
+		useSingleGlobalResourceSet = true
+	}
+	component = org.eclipse.papyrus.mwe.utils.components.RegisterUmlProfile {
+		profileSlot = 'utp'
+	} 
+	component = org.eclipse.emf.mwe.utils.FileCopy{
+		sourceFile = '../../../../../org.eclipse.papyrus.tests.framework/qvto/canonicalTests.qvto'
+		targetFile = 'qvto/canonicalTests.qvto'
+	}
+	component = org.eclipse.papyrus.mwe.utils.components.QvtoTransformationWorkflowComponent {
+		inputSlots = 'inputGmfgenUml'
+		inputSlots = 'gmfgenUmlMetamodel'
+		inputSlots = 'frameworkBase'
+		inputSlots = 'utp'
+		transformationURI = 'platform:/resource/org.eclipse.papyrus.uml.diagram.clazz.tests/qvto/classdiagramtest.qvto'
+		outputSlot = 'papyrusTestModel'
+	}
+	component = org.eclipse.papyrus.tests.framework.m2t.xtend.DeleteFile{
+		uri = 'qvto/canonicalTests.qvto'
+	}
+	component = org.eclipse.emf.mwe.utils.Writer{
+		modelSlot = 'papyrusTestModel'		
+		uri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.clazz.tests/model/ClassDiagramTest.uml'
+		useSingleGlobalResourceSet = true
+	}
+
+	//3. Generate Test code
+	/*
+ 	component = org.eclipse.emf.mwe.utils.Reader {
+		uri = 'platform:/resource/org.eclipse.papyrus.uml.diagram.clazz.tests/model/ClassDiagramTest.uml'
+		modelSlot = 'papyrusTestModel'
+	}
+	 */
+	component = org.eclipse.papyrus.tests.framework.m2t.xtend.CodeGeneratorComponent {
+		tempSrcPath = 'src-gen/'
+		modelSlot = 'papyrusTestModel'
+	}
+}

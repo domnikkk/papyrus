@@ -1,0 +1,358 @@
+modeltype UML uses uml('http://www.eclipse.org/uml2/5.0.0/UML');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation canonicalTests(in gmfgenUml : UML, in gmfgenMm : UML, in frameworkBase : UML, in utp : UML, out testModel : UML);
+
+//Properties to be overriden by the .qvto for each diagram type
+property topNodesToTest : Set(String);
+property childNodesToTest : Set(String);
+property linksToTest : Set(String);
+property linksOwnedBySourceToTest : Set(String);
+property topContainerEditPart : String;
+
+mapping Model::gmfgen2papyrusTest(modelName : String) : Model {
+	name := modelName;
+	var topNodeTestDiagramClass : Class := self.createTopNodeTestClass();
+	var childNodeTestDiagramClasses : Set(Class) := self.createChildNodeTestClass();
+	var linkTestDiagramClass : Class := self.createLinkTestClass();
+	var linksOwnedBySourceTestDiagramClass : Class := self.createLinksOwnedBySourceTestDiagramClass();
+	var testClasses : Set(Class) := Set{topNodeTestDiagramClass, 
+		linkTestDiagramClass, linksOwnedBySourceTestDiagramClass};
+	testClasses := testClasses->union(childNodeTestDiagramClasses);
+	packagedElement := testClasses;
+
+	var profile : Profile = utp.rootObjects()[Profile]->any(true);
+	var applicationResult : Set(EObject) := result.applyProfile(profile);
+	var testContextStereotype := testClasses->collectOne(getApplicableStereotype("utp::TestContext"));
+	testClasses.applyStereotype(testContextStereotype);
+	testClasses.ownedAttribute.applySutStereotype();
+	var testCaseStereotype := testClasses.ownedOperation->collectOne(getApplicableStereotype("utp::TestCase"));
+	testClasses.ownedOperation.applyStereotype(testCaseStereotype);
+	//testClasses.ownedBehavior.applyStereotype(testCaseStereotype);
+}
+
+helper Model::createTopNodeTestClass() : Class {
+	var topNodeEditPartIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenTopLevelNode") and topNodesToTest->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "TopNodeGen";
+		ownedAttribute := topNodeEditPartIs->createEditPartNodesIs2Property("GenTopLevelNode")
+			->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property())
+			->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property())
+			->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + topContainerEditPart).containerDerivedProperty())
+			;
+		
+		generalization := object Generalization{ general := frameworkBase.rootObjects()[Model]->any(true).getUmlClassifier("CreateNodeFromPaletteTest") };
+		ownedBehavior := topNodeEditPartIs.createCallTestNodeOperationActivity("TestTopNode");
+		elementImport := self.computeImports(topNodesToTest->including(topContainerEditPart));
+	};
+	var testBehaviors : Set(Activity) := topNodeEditPartIs.createCallTestNodeOperationActivity("TestChildNode")->asSet();
+	testClass.ownedBehavior := testBehaviors;
+	testClass.ownedOperation := topNodeEditPartIs->collect(is | is.createEditPartNodesIs2NodeTestCaseOperation("GenChildNode", testBehaviors->selectOne(name = is.getSlotStringValue("editPartClassName").toFirstLowerCase() + 'TestCase')));
+	
+	
+	testClass.ownedAttribute := testClass.ownedAttribute->including(testClass.createSelfProperty());
+	return testClass;
+}
+
+helper Model::computeImports( classNames : Set(String)) : Set(ElementImport){
+	return classNames->collect(name | object ElementImport{
+		alias := name
+	})->asSet()
+}
+
+helper Model::createChildNodeTestClass() : Set(Class) {
+
+	var childNodeTestClasses : Set(Class) := topNodesToTest->collect(containerToTest : String | 
+		
+		self.childNodeTestForContainer(containerToTest)
+	)->asSet();
+	return childNodeTestClasses;
+}
+
+helper Model::childNodeTestForContainer(containerToTest : String) : Class{
+	var childNodeEditPartIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenChildNode") and childNodesToTest->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "ChildNodeIn"+ containerToTest + "Gen";
+		ownedAttribute := childNodeEditPartIs->createEditPartNodesIs2Property("GenChildNode")
+			->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property())
+			->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property())
+			->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + containerToTest).containerDerivedProperty())
+			;
+		generalization := object Generalization{ general := frameworkBase.rootObjects()[Model]->any(true).getUmlClassifier("CreateNodeFromPaletteTest") };
+		elementImport := self.computeImports(childNodesToTest->including(containerToTest));
+	};
+	testClass.ownedAttribute := testClass.ownedAttribute->including(testClass.createSelfProperty());
+	var testBehaviors : Set(Activity) := childNodeEditPartIs.createCallTestNodeOperationActivity("TestChildNode")->asSet();
+	testClass.ownedBehavior := testBehaviors;
+	testClass.ownedOperation := childNodeEditPartIs->collect(is | is.createEditPartNodesIs2NodeTestCaseOperation("GenChildNode", testBehaviors->selectOne(name = is.getSlotStringValue("editPartClassName").toFirstLowerCase() + 'TestCase')));
+	return testClass;
+}
+
+helper Model::createLinkTestClass() : Class{
+	var linkEditPartIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenLink") and linksToTest->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "LinkGen";
+		ownedOperation := self.packagedElement[InstanceSpecification]->map editPartNodesIs2LinkTestCaseOperation()->flatten()->asOrderedSet();
+		ownedAttribute := linkEditPartIs->createEditPartNodesIs2Property("GenLink")
+			->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property())
+			->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property())
+			->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + topContainerEditPart).containerDerivedProperty())
+			;
+		generalization := object Generalization{ general := frameworkBase.rootObjects()[Model]->any(true).getUmlClassifier("CreateLinkFromPaletteTest") };
+		elementImport := self.computeImports(linksToTest->union(topNodesToTest)->including(topContainerEditPart));
+	};
+	
+	testClass.ownedAttribute := testClass.ownedAttribute->including(testClass.createSelfProperty());
+	testClass.ownedBehavior := testClass.ownedOperation.method;
+	return testClass;
+}
+
+helper Model::createLinksOwnedBySourceTestDiagramClass() : Class{
+	var linkOwnedBySourceEditPartIs := self.packagedElement[InstanceSpecification]
+				->select(is | is.classifier->collectOne(name = "GenLink") and linksOwnedBySourceToTest->exists(s | s = is.getSlotStringValue("editPartClassName")));
+	var testClass := object Class{
+		name := "Test" + self.getDiagramName() + "LinkOwnedBySourceGen";
+		ownedOperation := linkOwnedBySourceEditPartIs->map editPartNodesIs2LinkOwnedBySourceTestCaseOperation()->flatten()->asOrderedSet();
+		ownedAttribute := linkOwnedBySourceEditPartIs->createEditPartNodesIs2Property("GenLinkOwnedBySource")
+			->including(self.getInstanceSpecification("GenDiagram").diagramIs2Property())
+			->including(self.getInstanceSpecification("GenEditorGenerator").editorGeneratorIs2Property())
+			->including(self.packagedElement[InstanceSpecification]->any(name = "GenTopLevelNode_" + topContainerEditPart).containerDerivedProperty())
+			;
+		generalization := object Generalization{ general := frameworkBase.rootObjects()[Model]->any(true).getUmlClassifier("CreateLinkOwnedBySourceFromPaletteTest") };
+		elementImport := self.computeImports(linksOwnedBySourceToTest->union(topNodesToTest)->including(topContainerEditPart));
+	};
+	
+	testClass.ownedAttribute := testClass.ownedAttribute->including(testClass.createSelfProperty());
+	testClass.ownedBehavior := testClass.ownedOperation.method;
+	return testClass;
+}
+
+helper InstanceSpecification::createEditPartNodesIs2Property(nodeType : String) : Property
+{
+	
+	var propertyName : String := self.name.substringAfter('_');
+	return object Property{
+		name := propertyName.toFirstLowerCase(); 
+		type := gmfgenMm.rootObjects()[Model]->any(true).getUmlClassifier(self.classifier->any(true).name);
+		defaultValue := object InstanceValue { instance := self; };
+	}
+}
+
+helper InstanceSpecification::createEditPartNodesIs2NodeTestCaseOperation(nodeType : String, testBehavior : Behavior) : Operation
+	/*
+	when {
+		self.classifier->any(true).name = nodeType and
+		if nodeType = "GenTopLevelNode" then topNodesToTest else 
+		if nodeType = "GenChildNode" then childNodesToTest 
+		endif endif
+			->exists(s : String | self.getSlotStringValue("editPartClassName") = s)
+	}
+	*/
+{
+	var propertyName : String := self.name.substringAfter('_');
+	var testPrefix := if nodeType = "GenTopLevelNode" then "TestTopNode" else "TestChildNode" endif;
+	return object Operation{
+		name :=  testPrefix.toFirstLowerCase() + propertyName; 
+		ownedParameter := object Parameter{defaultValue := object InstanceValue{instance := self}};
+		method := testBehavior;
+	}
+}
+
+mapping InstanceSpecification::editPartNodesIs2LinkTestCaseOperation() : Set(Operation)
+	when{
+		linksToTest->exists(s : String | self.getSlotStringValue("editPartClassName") = s)
+	}
+{
+	init{
+		result := topNodesToTest->collect(source | 
+			topNodesToTest->collect(target | 
+				object Operation{
+					var propertyName : String := self.name.substringAfter('_');
+					name :=  "testLink" + propertyName.replace("EditPart", "") + "From" + source.replace("EditPart", "") + "To" + target.replace("EditPart", ""); 
+					method := self.map callTestLinkOperationActivity(source, target);
+					ownedParameter := object Parameter{defaultValue := object InstanceValue{instance := self}};
+				}
+		))->flatten()->asSet();
+	}
+}
+
+mapping InstanceSpecification::editPartNodesIs2LinkOwnedBySourceTestCaseOperation() : Set(Operation)
+	when{
+		linksOwnedBySourceToTest->exists(s : String | self.getSlotStringValue("editPartClassName") = s)
+	}
+{
+	init{
+		result := topNodesToTest->collect(source | 
+			topNodesToTest->collect(target | 
+				object Operation{
+					var propertyName : String := self.name.substringAfter('_');
+					name :=  "testLinkOwnedBySource" + propertyName.replace("EditPart", "") + "From" + source.replace("EditPart", "") + "To" + target.replace("EditPart", ""); 
+					method := self.map callTestLinkOperationActivity(source, target);
+					ownedParameter := object Parameter{defaultValue := object InstanceValue{instance := self}};
+				}
+		))->flatten()->asSet();
+	}
+}
+
+
+helper InstanceSpecification::createCallTestNodeOperationActivity(abstractTestClassName : String) : Activity
+	/*
+	when {
+		if abstractTestClassName = "TestTopNode" then 
+			topNodesToTest 
+		else 
+		if abstractTestClassName = "TestChildNode" then childNodesToTest 
+		endif endif 
+			->exists(s : String | self.getSlotStringValue("editPartClassName") = s)
+	}
+	*/
+	{
+	return object Activity{
+		
+		name :=  self.getSlotStringValue("editPartClassName").toFirstLowerCase() + 'TestCase'; 
+		ownedNode := object CallOperationAction{
+			operation := frameworkBase.rootObjects()[Model]->collectOne(getUmlClassifier(abstractTestClassName)[Class]->collectOne(getAllOperations()->any(true))); 
+			argument := Set{
+				object ValuePin{
+					value := object InstanceValue{
+						instance := self;
+						name := self.name;
+					};
+					name := "node"
+				}
+			}
+		}
+	}
+}
+
+mapping InstanceSpecification::callTestLinkOperationActivity(source : String, target : String) : Activity
+	when{
+		linksToTest->union(linksOwnedBySourceToTest)->exists(s : String | self.getSlotStringValue("editPartClassName") = s)
+	}
+{
+	name :=  self.getSlotStringValue("editPartClassName").replace("EditPart", "").toFirstLowerCase() + "From" + source.replace("EditPart", "") + "To" + target.replace("EditPart", "") + 'TestCase'; 
+	ownedNode := object CallOperationAction{
+		operation := frameworkBase.rootObjects()[Model]->collectOne(getUmlClassifier('AbstractCreateLinkFromPaletteTest')[Class]->collectOne(getAllOperations()->any(true))); 
+		argument := Set{
+			object ValuePin{
+				value := object InstanceValue{
+					instance := self;
+					name := self.name;
+				};
+				name := "link"
+			},
+			object ValuePin{
+				value := object InstanceValue{
+					var sourceInstance := self.container().oclAsType(Model).getInstanceSpecificationByName("GenTopLevelNode_" + source);
+					instance := sourceInstance;
+					name := sourceInstance.name;
+				};
+				name := "source"
+			},
+			object ValuePin{
+				value := object InstanceValue{
+					var targetInstance := self.container().oclAsType(Model).getInstanceSpecificationByName("GenTopLevelNode_" + target);
+					instance := targetInstance;
+					name := targetInstance.name;
+				};
+				name := "target"
+			}
+		}
+	}
+}
+
+helper InstanceSpecification::diagramIs2Property() : Property
+{
+	var propertyName : String := 'diagram';
+	return object Property{
+		name :=  propertyName.toFirstLowerCase(); 
+		type := gmfgenMm.rootObjects()[Model]->collectOne(getUmlClassifier(self.name.substringBefore('_')));
+		defaultValue := object InstanceValue { instance := self; };
+	}
+}
+
+helper InstanceSpecification::editorGeneratorIs2Property() : Property
+{
+	var propertyName : String := 'generator';
+	return object Property{
+		name :=  propertyName.toFirstLowerCase(); 
+		type := gmfgenMm.rootObjects()[Model]->collectOne(getUmlClassifier("GenEditorGenerator"));
+		defaultValue := object InstanceValue {instance := self } ;
+	}
+}
+
+helper InstanceSpecification::containerDerivedProperty() : Property
+{
+	//var derivedFrom : Property := self.resolveIn(InstanceSpecification::editPartNodesIs2Property, Property)
+//		if self.name.startsWith("GenTopLevelNode") then
+//			self.resolveIn(InstanceSpecification::editPartNodesIs2Property, Property)
+//		else if self.name.startsWith("GenChildNode") then
+//			self.resolveIn(InstanceSpecification::editPartNodesIs2Property, Property)
+//		else if self.name.startsWith("GenLink") then
+//			self.resolveIn(InstanceSpecification::editPartNodesIs2Property, Property)
+//		else null endif endif endif
+		//->any(true);
+	return object Property{
+		name := "containerEditPart";
+		isDerived := true;
+		//redefinedProperty := derivedFrom;
+		type := redefinedProperty->collectOne(type);
+		defaultValue := object InstanceValue {instance := self };
+	}
+}
+
+helper Property::applySutStereotype() : Property
+{
+	if self.isDerived = false then
+		if self.type.name = 'GenTopLevelNode' or 
+			self.type.name = 'GenChildNode' or 
+			self.type.name = 'GenLink' or
+			self.type.name = 'GenLinkOwnedBySource' then 
+			self.applyStereotype(self.getApplicableStereotype("utp::SUT"))
+		endif
+	endif;
+	return self;
+}
+
+helper Class::createSelfProperty() : Property{
+	var selfProperty : Property := object Property{
+		name := "self";
+		type := self
+	};
+	return selfProperty;
+}
+
+query Model::getDiagramName() : String{
+	return self.getInstanceSpecification("GenEditorGenerator").getSlotStringValue("modelID").replace("PapyrusUML", "");
+}
+
+query Model::getUmlClassifier(name : String) : Classifier{
+	var classifiers : Collection(Classifier) := self.packagedElement->selectByKind(Classifier);
+	return classifiers->any(classifier : Classifier | classifier.name = name);
+} 	
+
+query Model::getInstanceSpecification(classifierName: String) : InstanceSpecification{
+	return self.packagedElement[InstanceSpecification]->any(classifier->collectOne(name) = classifierName);
+}
+
+query Model::getInstanceSpecificationByName(searchedName: String) : InstanceSpecification{
+	return self.packagedElement[InstanceSpecification]->any(name = searchedName);
+}
+
+query InstanceSpecification::getSlotStringValue(slotName : String) : String
+{
+	return self.getSlot(slotName).value->oclAsType(LiteralString).value->any(true)
+}
+
+query InstanceSpecification::getSlot(slotName : String) : Slot
+{
+	return self.slot->select(slot : Slot | slot.definingFeature.name = slotName)->any(true)
+}
+
+helper String::toFirstLowerCase() : String
+{
+	return self.at(1).toLower() + self.substring(2, self.size());
+}

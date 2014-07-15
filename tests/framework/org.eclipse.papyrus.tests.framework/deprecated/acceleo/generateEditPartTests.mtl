@@ -1,0 +1,114 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module.
+ */]
+[module generateEditPartTests('http://www.eclipse.org/uml2/4.0.0/UML') /]
+ 
+
+[template public generateNodeTestsFromUMLPapyrusTesting(model : Model)]
+	 
+	[comment @main /] 
+	[for (clazz : Class | model.packagedElement.oclAsType(Class)->select(c : Class | hasStereotype(c, 'utp::TestContext')) )]
+  
+	[file (model.name.replaceAll('\\.', '/').concat('/canonical/').concat(clazz.name.concat('.java')), false, 'UTF-8')]
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * This file has been generated automatically in the Papyrus Test Framework.
+ *
+ *****************************************************************************/
+package [packageRootName(clazz)/].test.canonical;
+
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
+import org.eclipse.papyrus.commands.ICreationCommand;
+
+import [packageRootName(clazz)/].test.I[getDiagramName(clazz)/]TestsConstants;
+import org.eclipse.papyrus.diagram.tests.canonical.TestTopNode;
+import [packageRootName(clazz)/].Create[getDiagramName(clazz) /]Command;
+import [packageRootName(clazz)/].providers.UMLElementTypes;
+[for (topLevelNode : InstanceSpecification | clazz.ownedAttribute->select(p : Property | hasStereotype(p, 'utp::SUT')).defaultValue.oclAsType(InstanceValue).instance->asSet() )]
+import [packageRootName(clazz)/].edit.parts.[getStringSlotValue(topLevelNode, 'editPartClassName')/];
+[/for]
+import org.eclipse.uml2.uml.UMLPackage;
+import org.junit.Test;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class [clazz.name/].
+ */
+public class [clazz.name/]Gen extends TestTopNode {
+	
+	
+	@Override
+	protected ICreationCommand getDiagramCommandCreation() {
+		return new Create[getDiagramName(clazz)/]Command();
+	}
+	 
+	@Override
+	protected String getProjectName() {
+		return I[getDiagramName(clazz)/]TestsConstants.PROJECT_NAME;
+	}
+
+	@Override
+	protected String getFileName() {
+		return I[getDiagramName(clazz)/]TestsConstants.FILE_NAME;
+	}
+
+	[for (testCaseOperation : Operation | clazz.ownedOperation->select(o : Operation | hasStereotype(o, 'utp::TestCase')))]
+	/**
+	 * Test to manage component [componentName(topLevelNode)/].
+	 */
+	@Test
+	public void [testCaseOperation.name/]( testCaseOper actio) {
+		[testCaseOperation.method.name/]
+		[if (clazz.name.endsWith('NodeGen'))]
+		[testToManageNode(topLevelNode, clazz)/]
+		[elseif(clazz.name.endsWith('LinkGen'))]
+		[testToManageLink(topLevelNode, clazz)/]
+		[/if]
+	}
+	[/for]
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override 
+	protected CreateViewRequest createViewRequestShapeContainer() {
+		return CreateViewRequestFactory.getCreateShapeRequest(UMLElementTypes.getElementType([ getStringSlotValue(getDefaultValueInstanceSpecification(clazz, 'containerEditPart'), 'editPartClassName') /].VISUAL_ID), getDiagramEditPart().getDiagramPreferencesHint());
+	}
+	
+}
+	[/file]
+[/for]
+
+
+[/template]
+
+[template public testToManageNode (node : InstanceSpecification, clazz : Class) ]
+testToManageNode(UMLElementTypes.getElementType([getStringSlotValue(node, 'editPartClassName')/].VISUAL_ID), [UMLPackageElementType()/], UMLElementTypes.getElementType([ getStringSlotValue(getDefaultValueInstanceSpecification(clazz, 'containerEditPart'), 'editPartClassName') /].VISUAL_ID), true);
+[/template]
+
+[template public testToManageLink (link : InstanceSpecification, clazz : Class) ]
+testToManageLink(UMLElementTypes.getElementType([getStringSlotValue(topLevelNode, 'editPartClassName')/].VISUAL_ID), [UMLPackageElementType()/], UMLElementTypes.getElementType([ getStringSlotValue(getDefaultValueInstanceSpecification(clazz, 'containerEditPart'), 'editPartClassName') /].VISUAL_ID), true);
+[/template]
+
+[query public componentName (topLevelNode : InstanceSpecification) : String = getStringSlotValue(getInstanceSlotValue(topLevelNode, 'elementType'), 'displayName')/]
+[query public getDiagramName(clazz : Class) : String = getStringSlotValue(getDefaultValueInstanceSpecification(clazz, 'generator'), 'modelID').replace('PapyrusUML', '') /]
+[query public packageRootName (clazz : Class) : String = getStringSlotValue(getDefaultValueInstanceSpecification(clazz, 'generator'), 'packageNamePrefix') /]
+[query public getDefaultValueInstanceSpecification(clazz : Class, propertyName : String) : InstanceSpecification = invoke('org.eclipse.papyrus.tests.framework.m2t.Queries', 'getDefaultValueInstanceSpecification(org.eclipse.uml2.uml.Class, java.lang.String)', Sequence{clazz, propertyName}) /]
+[query public getStringSlotValue(instanceSpecification : InstanceSpecification, slotName : String) : String = invoke('org.eclipse.papyrus.tests.framework.m2t.Queries', 'getStringSlotValue(org.eclipse.uml2.uml.InstanceSpecification, java.lang.String)', Sequence{instanceSpecification, slotName}) /]
+[query public getInstanceSlotValue(instanceSpecification : InstanceSpecification, slotName : String) : InstanceSpecification = invoke('org.eclipse.papyrus.tests.framework.m2t.Queries', 'getInstanceSlotValue(org.eclipse.uml2.uml.InstanceSpecification, java.lang.String)', Sequence{instanceSpecification, slotName}) /]
+
+[template public UMLPackageElementType (topLevelNode : InstanceSpecification) ]
+[if (componentName(topLevelNode) = 'Class')]UMLPackage.eINSTANCE.get[componentName(topLevelNode) + '_'/]()[else]UMLPackage.eINSTANCE.get[componentName(topLevelNode)/]()[/if]
+[/template]
+
+[query public hasStereotype(e : Element, stereotypeName : String) : Boolean = (not self.getAppliedStereotype(stereotypeName).oclIsUndefined()) /]
+[query public stereotypePropertyValue(e : Element, stereotypeName : String, propertyName : String) : String = e.getValue(e.getAppliedStereotype(stereotypeName), propertyName)/]

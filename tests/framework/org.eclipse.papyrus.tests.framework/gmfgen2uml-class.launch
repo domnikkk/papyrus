@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.m2m.qvt.oml.QvtTransformation">
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents1" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents2" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents3" value="true"/>
+<mapAttribute key="org.eclipse.m2m.qvt.oml.interpreter.configurationProperties"/>
+<intAttribute key="org.eclipse.m2m.qvt.oml.interpreter.elemCount" value="3"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName1" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName2" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName3" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.module" value="platform:/resource/org.eclipse.papyrus.tests.framework/qvto/gmfgen2uml-instances.qvto"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel1" value="platform:/resource/org.eclipse.papyrus.uml.diagram.clazz/model/classdiagram.gmfgen"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel2" value="platform:/resource/org.eclipse.gmf.codegen/models/gmfgen.uml"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel3" value="platform:/resource/org.eclipse.papyrus.uml.diagram.clazz/model/ClassDiagram.gmfgen.uml"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType1" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType2" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType3" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.traceFile" value="platform:/resource/org.eclipse.papyrus.uml.diagram.clazz/model/classdiagram.gmfgen.uml.qvtotrace"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.useTraceFile" value="false"/>
+</launchConfiguration>
