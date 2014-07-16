@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 439725
+ *   
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.util;
 
@@ -101,7 +103,8 @@ public class JobWaiter {
 				// actual implementation in the JobManager is not
 				new JobFinishListener(targetJob).await();
 			} else {
-				Job.getJobManager().join(targetFamily, null);
+				// On some platforms, cancellation of a family join is not reliable
+				new FamilyFinishListener(targetFamily).await();
 			}
 
 			result = true;
@@ -134,6 +137,7 @@ public class JobWaiter {
 
 		private final AtomicBoolean timedOut = new AtomicBoolean();
 
+		@Override
 		public void run() {
 			if(!cancelled.get()) {
 				timedOut.set(true);
@@ -150,35 +154,80 @@ public class JobWaiter {
 		}
 	}
 
-	private static final class JobFinishListener extends JobChangeAdapter {
-
-		private final Job job;
+	private static abstract class FinishListener extends JobChangeAdapter {
 
 		private boolean done;
 
-		JobFinishListener(Job job) {
+		FinishListener() {
 			super();
 
-			this.job = job;
 			Job.getJobManager().addJobChangeListener(this);
 		}
 
-		synchronized void await() throws InterruptedException {
-			for(;;) {
-				// check running state because it may have finished already before we got here
-				if(done || (job.getState() != Job.RUNNING)) {
-					break;
-				}
+		void dispose() {
+			Job.getJobManager().removeJobChangeListener(this);
+		}
 
-				wait();
+		synchronized void await() throws InterruptedException {
+			try {
+				for(;;) {
+					// Check done condition because our job/family may have finished already before we got here
+					if(done || checkDone()) {
+						break;
+					}
+
+					wait();
+				}
+			} finally {
+				// Can only wait on me once
+				dispose();
 			}
 		}
 
 		@Override
 		public synchronized void done(IJobChangeEvent event) {
-			done = true;
+			if(checkDone()) {
+				try {
+					done = true;
+					dispose();
+				} finally {
+					notifyAll();
+				}
+			}
+		}
 
-			notifyAll();
+		protected abstract boolean checkDone();
+	}
+
+	private static final class JobFinishListener extends FinishListener {
+
+		private final Job job;
+
+		JobFinishListener(Job job) {
+			super();
+
+			this.job = job;
+		}
+
+		@Override
+		protected boolean checkDone() {
+			return job.getState() != Job.RUNNING;
+		}
+	}
+
+	private static final class FamilyFinishListener extends FinishListener {
+
+		private final Object family;
+
+		FamilyFinishListener(Object family) {
+			super();
+
+			this.family = family;
+		}
+
+		@Override
+		protected boolean checkDone() {
+			return Job.getJobManager().find(family).length == 0;
 		}
 	}
 }
