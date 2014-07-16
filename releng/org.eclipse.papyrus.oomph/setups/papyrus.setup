@@ -1575,8 +1575,7 @@
         name="infra"
         label="Infra">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/infra}">
           <predicate
@@ -1853,8 +1852,7 @@
         name="views"
         label="Views">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/views}"/>
         <sourceLocator
@@ -2002,12 +2000,37 @@
         name="uml"
         label="UML">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
-            rootFolder="${papyrus.git.clone.location/plugins/uml}"/>
+            rootFolder="${papyrus.git.clone.location/plugins/uml}">
+          <predicate
+              xsi:type="predicates:NotPredicate">
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+            </operand>
+          </predicate>
+        </sourceLocator>
         <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/uml}"/>
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/uml}">
+          <predicate
+              xsi:type="predicates:NotPredicate">
+            <operand
+                xsi:type="predicates:OrPredicate">
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
+              <operand
+                  xsi:type="predicates:NamePredicate"
+                  pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+            </operand>
+          </predicate>
+        </sourceLocator>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -2021,7 +2044,7 @@
                 pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
             <operand
                 xsi:type="workingsets:ExclusionPredicate"
-                excludedWorkingSet="//@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.4 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.3 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.5 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.2"/>
+                excludedWorkingSet="//@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.1 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.2 //@projects[name='main']/@projects[name='uml']/@setupTasks.1/@workingSets.3"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -2038,19 +2061,6 @@
           </predicate>
         </workingSet>
         <workingSet
-            name="Papyrus UML Text Editors"
-            id="papyrus-uml-text">
-          <predicate
-              xsi:type="predicates:AndPredicate">
-            <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.uml\.textedit.*"/>
-          </predicate>
-        </workingSet>
-        <workingSet
             name="Papyrus UML Tables"
             id="papyrus-uml-table">
           <predicate
@@ -2061,19 +2071,6 @@
             <operand
                 xsi:type="predicates:NamePredicate"
                 pattern="org\.eclipse\.papyrus\.uml\.nattable.*"/>
-          </predicate>
-        </workingSet>
-        <workingSet
-            name="Papyrus UML ALF"
-            id="papyrus-uml-alf">
-          <predicate
-              xsi:type="predicates:AndPredicate">
-            <operand
-                xsi:type="predicates:LocationPredicate"
-                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.uml\.alf.*"/>
           </predicate>
         </workingSet>
         <workingSet
@@ -2202,11 +2199,312 @@
       </stream>
     </project>
     <project
+        name="uml-alf"
+        label="UML ALF">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/uml}">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/uml}">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus UML ALF"
+            id="papyrus-uml-alf">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.uml\.alf($|\..+)"/>
+          </predicate>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
+      </stream>
+    </project>
+    <project
+        name="uml-text"
+        label="UML Text Editors">
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/plugins/uml}">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/uml}">
+          <predicate
+              xsi:type="predicates:NamePredicate"
+              pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.workingsets:WorkingSetTask">
+        <workingSet
+            name="Papyrus UML Text Editors"
+            id="papyrus-uml-text">
+          <predicate
+              xsi:type="predicates:AndPredicate">
+            <operand
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/uml/.*}"/>
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="org\.eclipse\.papyrus\.uml\.textedit($|\..+)"/>
+          </predicate>
+        </workingSet>
+      </setupTask>
+      <stream
+          name="master"
+          label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.nightly.repo"
+            value="updates/nightly/luna"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="papyrus.bugzilla.version"
+            value="1.0.0"
+            storePromptedValue="false"/>
+        <setupTask
+            xsi:type="setup:CompoundTask"
+            name="Dependency versions">
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.eclipse.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.orbit.repo"
+              value="R20140525021250"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emf.repo"
+              value="releases"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emftransaction.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfvalidation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfquery.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gef.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfruntime.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmfnotation.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.gmftooling.repo"
+              value="releases"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.birt.repo"
+              value="4.4"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.atl.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mwe.repo"
+              value="releases/R201405200714"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.qvto.repo"
+              value="releases/3.4.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.acceleo.repo"
+              value="releases/3.5"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.ocl.repo"
+              value="releases/5.0.1"
+              defaultValue=""/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.uml2.repo"
+              value="5.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.mylyn.repo"
+              value="releases/3.12"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xpand.repo"
+              value="releases/R201406030414"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.xtext.repo"
+              value="releases/head/R201405210727"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.emfcompare.repo"
+              value="releases/3.0"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.subversive.repo"
+              value="2.0/luna-site"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.wtp.repo"
+              value="R3.6.0/R-3.6.0-20140602160322"/>
+          <setupTask
+              xsi:type="setup:VariableTask"
+              name="dep.nattable.repo"
+              value="releases/1.1.0"/>
+        </setupTask>
+      </stream>
+    </project>
+    <project
         name="sysml"
         label="SysML">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/sysml}"/>
         <sourceLocator
@@ -2382,8 +2680,7 @@
         name="emffacet"
         label="EMF Facet">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/facet}">
           <predicate
@@ -2530,8 +2827,7 @@
         name="customization"
         label="Customization">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/customization}"/>
         <sourceLocator
@@ -2677,8 +2973,7 @@
         name="doc"
         label="Documentation">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/doc}"/>
       </setupTask>
@@ -2813,8 +3108,7 @@
         name="integrationtests"
         label="Integration Tests">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/integration/plugins}"/>
       </setupTask>
@@ -2949,8 +3243,7 @@
         name="alltests"
         label="All Tests">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
           <predicate
@@ -3092,8 +3385,7 @@
         name="misc"
         label="Others">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/plugins/team}"/>
       </setupTask>
@@ -3103,22 +3395,10 @@
             name="Papyrus Others"
             id="papyrus-others">
           <predicate
-              xsi:type="predicates:AndPredicate">
+              xsi:type="predicates:OrPredicate">
             <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\..*"/>
-            <operand
-                xsi:type="predicates:NotPredicate">
-              <operand
-                  xsi:type="predicates:OrPredicate">
-                <operand
-                    xsi:type="predicates:LocationPredicate"
-                    pattern="${papyrus.git.clone.location/(?:tests/.*/)?extraplugins/.*}"/>
-                <operand
-                    xsi:type="predicates:LocationPredicate"
-                    pattern="${papyrus.git.clone.location/features/.*-extra-features/.*}"/>
-              </operand>
-            </operand>
+                xsi:type="predicates:LocationPredicate"
+                pattern="${papyrus.git.clone.location/plugins/team/.*}"/>
           </predicate>
         </workingSet>
       </setupTask>
@@ -3243,8 +3523,7 @@
         name="features"
         label="Features">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/features/papyrus-main-features}"/>
         <sourceLocator
@@ -3387,8 +3666,7 @@
         name="releng"
         label="Releng">
       <setupTask
-          xsi:type="projects:ProjectsImportTask"
-          id="papyrus.main.sources">
+          xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/releng}"/>
       </setupTask>
