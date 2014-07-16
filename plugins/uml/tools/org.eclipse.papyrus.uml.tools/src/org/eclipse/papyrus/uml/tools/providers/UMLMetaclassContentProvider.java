@@ -19,6 +19,7 @@ import java.util.List;
 
 import org.eclipse.papyrus.infra.widgets.providers.AbstractFilteredContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
+import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 
