@@ -19,7 +19,6 @@ import java.util.List;
 
 import org.eclipse.papyrus.infra.widgets.providers.AbstractFilteredContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
-import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 
@@ -41,7 +40,7 @@ public class UMLMetaclassContentProvider extends AbstractFilteredContentProvider
 	 * Constructor.
 	 * 
 	 * @param element
-	 *        the element used to find the available metaclasses
+	 *            the element used to find the available metaclasses
 	 */
 	public UMLMetaclassContentProvider(final Element element) {
 		this.possibleMetaclasses = ElementUtil.getPossibleMetaclasses(element);
@@ -57,7 +56,11 @@ public class UMLMetaclassContentProvider extends AbstractFilteredContentProvider
 			public int compare(Class firstClass, Class secondClass) {
 
 				// Use default lexicographically sorter of String based on Class name
-				return firstClass.getName().compareTo(secondClass.getName());
+				String firstName = firstClass.getName();
+				if (firstName == null) {
+					return 0;
+				}
+				return firstName.compareTo(secondClass.getName());
 
 			}
 		});
