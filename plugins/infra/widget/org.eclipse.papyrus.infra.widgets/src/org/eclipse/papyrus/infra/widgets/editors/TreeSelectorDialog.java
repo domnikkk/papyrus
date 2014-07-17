@@ -63,7 +63,7 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 	private Object input = null;
 
 	private final Set<ICommitListener> commitListeners = new HashSet<ICommitListener>();
-
+	
 	/**
 	 * 
 	 * Constructor.
@@ -207,6 +207,7 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 		getButton(OK).setFocus();
 		getShell().setImage(Activator.getDefault().getImage("/icons/papyrus.png")); //$NON-NLS-1$
 		getShell().pack();
+		
 	}
 
 	/**

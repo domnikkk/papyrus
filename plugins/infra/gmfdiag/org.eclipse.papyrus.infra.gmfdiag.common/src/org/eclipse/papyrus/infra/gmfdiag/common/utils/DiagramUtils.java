@@ -9,14 +9,24 @@
  *
  * Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *
+ *  Mathieu Velten (Atos Origin) mathieu.velten@atosorigin.com - Initial API and implementation
+ *  Benoit Maggi    (Cea)        benoit.maggi@cea.fr - Add utility to get the containing diagram
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.utils;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Style;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.core.resource.ModelSet;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView;
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
@@ -143,4 +153,82 @@ public class DiagramUtils {
 			pvs.setConfiguration(prototype.getConfiguration());
 		}
 	}
+
+
+	/**
+	 * Gets the diagrams associated to element.
+	 * 
+	 * @param element
+	 * @param resourceSet
+	 *        can be null, it will then try to retrieve it from the element.
+	 * @return the list of diagrams associated with the given element
+	 */
+	public static List<Diagram> getAssociatedDiagrams(EObject element, ResourceSet resourceSet) {
+		if(resourceSet == null) {
+			if(element != null && element.eResource() != null) {
+				resourceSet = element.eResource().getResourceSet();
+			}
+		}
+
+		if(resourceSet instanceof ModelSet) {
+			Resource notationResource = NotationUtils.getNotationResource((ModelSet)resourceSet);
+			return getAssociatedDiagramsFromNotationResource(element, notationResource);
+		}
+
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Gets the diagrams associated to element.
+	 * 
+	 * @param element
+	 * @param notationResource
+	 *        the notation resource where to look for diagrams
+	 * @return the list of diagrams associated with the given element
+	 */
+	public static List<Diagram> getAssociatedDiagramsFromNotationResource(EObject element, Resource notationResource) {
+		if(notationResource != null) {
+			LinkedList<Diagram> diagrams = new LinkedList<Diagram>();
+			for(EObject eObj : notationResource.getContents()) {
+				if(eObj instanceof Diagram) {
+					Diagram diagram = (Diagram)eObj;
+					if(element.equals(diagram.getElement())) {
+						diagrams.add(diagram);
+					}
+				}
+			}
+			return diagrams;
+		}
+		return Collections.emptyList();
+	}
+
+	
+	/**
+	 * Return the diagram containing this view
+	 * @param view
+	 * @return
+	 */
+	public static Diagram getContainingDiagram(final View view) {
+		if(view instanceof Diagram) {
+			return (Diagram)view;
+		}
+		final EObject eContainer = view.eContainer();
+		if(eContainer instanceof View) {
+			return getContainingDiagram((View)eContainer);
+		}
+		return null;
+	}	
+	
+	/**
+	 * Return the type of the diagram containing this view
+	 * @param view
+	 * @return
+	 */
+	public static String getContainingDiagramType(final View view) {
+		Diagram containingDiagram = getContainingDiagram(view);
+		if (containingDiagram != null){
+			return containingDiagram.getType();
+		}
+		return null;
+	}	
 }
