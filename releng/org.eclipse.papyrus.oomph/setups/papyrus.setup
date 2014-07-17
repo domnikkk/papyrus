@@ -1429,8 +1429,6 @@
           id="org.eclipse.sdk.feature.group"/>
       <requirement
           id="org.eclipse.acceleo.feature.group"/>
-      <requirement
-          id="org.eclipse.team.svn.feature.group"/>
       <repositoryList
           name="Papyrus Main Dependencies">
         <repository
@@ -1475,8 +1473,6 @@
             url="${base.downloads.url}/modeling/tmf/xtext/updates/${dep.xtext.repo}/"/>
         <repository
             url="${base.downloads.url}/modeling/emf/compare/updates/${dep.emfcompare.repo}"/>
-        <repository
-            url="${base.downloads.url}/technology/subversive/${dep.subversive.repo}/"/>
         <repository
             url="${base.downloads.url}/webtools/downloads/drops/${dep.wtp.repo}/repository"/>
         <repository
@@ -1868,10 +1864,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -2014,10 +2006,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -2218,10 +2206,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -2369,10 +2353,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -2518,10 +2498,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -2696,10 +2672,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -2843,10 +2815,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -2859,6 +2827,11 @@
     <project
         name="customization"
         label="Customization">
+      <setupTask
+          xsi:type="setup.p2:P2Task">
+        <requirement
+            id="org.eclipse.m2m.qvt.oml.sdk.feature.group"/>
+      </setupTask>
       <setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
@@ -2987,10 +2960,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -3124,10 +3093,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -3257,10 +3222,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -3401,10 +3362,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -3435,9 +3392,39 @@
           </predicate>
         </workingSet>
       </setupTask>
+      <setupTask
+          xsi:type="setup.targlets:TargletTask">
+        <targlet
+            name="Papyrus Other Dependencies"
+            activeRepositoryList="">
+          <requirement
+              id="org.eclipse.team.svn.feature.group"/>
+          <requirement
+              id="org.polarion.eclipse.team.svn.connector.svnkit18.feature.group"/>
+          <repositoryList>
+            <repository
+                url="${base.downloads.url}/technology/subversive/${dep.subversive.repo}/"/>
+            <repository
+                url="http://community.polarion.com/projects/subversive/download/eclipse/${dep.svnconnector.repo}/update-site/"/>
+          </repositoryList>
+        </targlet>
+        <description>
+          Additional dependencies, e.g. for Subversive (SVN team integration), including
+          an SVN connector from Polarion to prevent the connector dialog appearing at
+          run-time, especially as it interferes with JUnit test execution.
+        </description>
+      </setupTask>
       <stream
           name="master"
           label="master (Luna/1.0.x)">
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.subversive.repo"
+            value="2.0/luna-site"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            name="dep.svnconnector.repo"
+            value="4.0"/>
         <setupTask
             xsi:type="setup:VariableTask"
             name="papyrus.nightly.repo"
@@ -3537,10 +3524,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -3682,10 +3665,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -3815,10 +3794,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -4037,10 +4012,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -4201,10 +4172,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -4324,10 +4291,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -4452,10 +4415,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -4576,10 +4535,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -4727,10 +4682,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -4858,10 +4809,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -4982,10 +4929,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -5110,10 +5053,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -5234,10 +5173,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -5367,10 +5302,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -5496,10 +5427,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -5629,10 +5556,6 @@
               value="releases/3.0"/>
           <setupTask
               xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
               value="R3.6.0/R-3.6.0-20140602160322"/>
           <setupTask
@@ -5753,10 +5676,6 @@
               xsi:type="setup:VariableTask"
               name="dep.emfcompare.repo"
               value="releases/3.0"/>
-          <setupTask
-              xsi:type="setup:VariableTask"
-              name="dep.subversive.repo"
-              value="2.0/luna-site"/>
           <setupTask
               xsi:type="setup:VariableTask"
               name="dep.wtp.repo"
@@ -5936,10 +5855,6 @@
             xsi:type="setup:VariableTask"
             name="dep.emfcompare.repo"
             value="releases/3.0"/>
-        <setupTask
-            xsi:type="setup:VariableTask"
-            name="dep.subversive.repo"
-            value="2.0/luna-site"/>
         <setupTask
             xsi:type="setup:VariableTask"
             name="dep.wtp.repo"
