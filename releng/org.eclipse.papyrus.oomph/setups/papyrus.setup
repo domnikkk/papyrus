@@ -17,7 +17,8 @@
     name="papyrus"
     label="Papyrus">
   <setupTask
-      xsi:type="setup.p2:P2Task">
+      xsi:type="setup.p2:P2Task"
+      label="Core Development Tools">
     <requirement
         id="org.eclipse.emf.sdk.feature.group"/>
     <requirement
@@ -75,6 +76,25 @@
         url="http://download.eclipse.org/modeling/emft/ecoretools/updates/1.2/201306071421"/>
     <repository
         url="http://download.eclipse.org/technology/swtbot/snapshots"/>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.p2:P2Task"
+      label="Code Quality Tools">
+    <requirement
+        id="com.mountainminds.eclemma.feature.feature.group"
+        optional="true"/>
+    <requirement
+        id="net.sf.eclipsecs.feature.group"
+        optional="true"/>
+    <requirement
+        id="edu.umd.cs.findbugs.plugin.eclipse.feature.group"
+        optional="true"/>
+    <repository
+        url="http://update.eclemma.org/"/>
+    <repository
+        url="http://eclipse-cs.sourceforge.net/update/"/>
+    <repository
+        url="http://findbugs.cs.umd.edu/eclipse"/>
   </setupTask>
   <setupTask
       xsi:type="setup:EclipseIniTask"
@@ -1472,6 +1492,19 @@
           name="Papyrus Nightly Build">
         <repository
             url="${base.downloads.url}/modeling/mdt/papyrus/${papyrus.nightly.repo}"/>
+      </repositoryList>
+    </targlet>
+    <targlet
+        name="Diagnostic/Debug Tools"
+        activeRepositoryList=""
+        includeSources="false">
+      <requirement
+          id="org.eclipse.swt.tools"
+          optional="true"/>
+      <repositoryList
+          name="">
+        <repository
+            url="http://www.eclipse.org/swt/updates/${dep.eclipse.repo}"/>
       </repositoryList>
     </targlet>
   </setupTask>
