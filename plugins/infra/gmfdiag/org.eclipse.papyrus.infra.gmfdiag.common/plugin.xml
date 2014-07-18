@@ -305,4 +305,106 @@
          class="org.eclipse.papyrus.infra.gmfdiag.common.preferences.PastePreferenceInitializer">
    </initializer>
 </extension>
+<extension
+      point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
+   <paletteProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DefaultPaletteProvider">
+      <Priority
+            name="Lowest">
+      </Priority>
+      <contribution
+            factoryClass="org.eclipse.papyrus.infra.gmfdiag.common.selection.SelectionToolPaletteFactory">
+         <entry
+               description="All Selection Tool of type Included"
+               id="includedStack"
+               kind="stack"
+               label="Included Selection Stack"
+               large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+               path="/standardGroup"
+               small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+         </entry>
+         <entry
+               description="Rubberband Stack "
+               id="rubberbandStack"
+               kind="stack"
+               label="Rubberband Selection Stack"
+               large_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
+               path="/standardGroup"
+               small_icon="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif">
+         </entry>
+         <entry
+               description="Select the elements intersecting and including the marquee rectangle"
+               id="selectionRubberband"
+               kind="tool"
+               label="Intersection Selection"
+               large_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/TouchedAll24.gif"
+               path="/standardGroup/rubberbandStack"
+               small_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/TouchedAll16.gif">
+         </entry>
+         <entry
+               description="Select Nodes intersected by the Marquee rectangle"
+               id="selectionRubberbandNodeOnly"
+               kind="tool"
+               label="Nodes only (intersection)"
+               large_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/TouchedNode24.gif"
+               path="/standardGroup/rubberbandStack"
+               small_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/TouchedNode16.gif">
+         </entry>
+         <entry
+               description="Select Labels intersected by the Marquee rectangle"
+               id="selectionRubberbandLabelOnly"
+               kind="tool"
+               label="Labels only (intersection)"
+               large_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/TouchedLabelT24.gif"
+               path="/standardGroup/rubberbandStack"
+               small_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/TouchedLabelT16.gif">
+         </entry>
+         <entry
+               description="Select Connections intersected by the Marquee rectangle"
+               id="selectionRubberbandConnectionOnly"
+               kind="tool"
+               label="Connections only (intersection)"
+               large_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/TouchedConnection24.gif"
+               path="/standardGroup/rubberbandStack"
+               small_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/TouchedConnection16.gif">
+         </entry>
+         <entry
+               description="This tool select the items completely included into the rectangle area"
+               id="selectionInside"
+               kind="tool"
+               label="Standard Marquee Selection"
+               large_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/IncludeAll24.gif"
+               path="/standardGroup/includedStack"
+               small_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/IncludeAll16.gif">
+         </entry>
+         <entry
+               description="Select Nodes included in the Marquee rectangle"
+               id="selectionInsideNodeOnly"
+               kind="tool"
+               label="Nodes only "
+               large_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/IncludeNode24.gif"
+               path="/standardGroup/includedStack"
+               small_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/IncludeNode16.gif">
+         </entry>
+         <entry
+               description="Select Labels included in the Marquee rectangle"
+               id="selectionInsideLabelOnly"
+               kind="tool"
+               label="Labels only "
+               large_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/IncludeLabelT24.gif"
+               path="/standardGroup/includedStack"
+               small_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/IncludeLabelT16.gif">
+         </entry>
+         <entry
+               description="Select Connections included in the Marquee rectangle"
+               id="selectionInsideConnectionOnly"
+               kind="tool"
+               label="Connections only "
+               large_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/IncludeConnection24.gif"
+               path="/standardGroup/includedStack"
+               small_icon="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/icons/IncludeConnection16.gif">
+         </entry>
+      </contribution>
+   </paletteProvider>
+</extension>
 </plugin>
