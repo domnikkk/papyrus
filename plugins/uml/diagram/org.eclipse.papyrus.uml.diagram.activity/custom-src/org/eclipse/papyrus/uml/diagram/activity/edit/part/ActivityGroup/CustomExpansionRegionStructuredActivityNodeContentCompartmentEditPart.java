@@ -14,10 +14,16 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.activity.edit.part.ActivityGroup;
 
+import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExpansionRegionStructuredActivityNodeContentCompartmentEditPart;
+import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.papyrus.uml.diagram.common.service.AspectUnspecifiedTypeCreationTool;
 
 /**
  * Set in order to have Generation Gap Pattern.
@@ -49,5 +55,29 @@ public class CustomExpansionRegionStructuredActivityNodeContentCompartmentEditPa
 	@Override
 	public boolean isSelectable() {
 		return false;
+	}
+	
+	@Override
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof AspectUnspecifiedTypeCreationTool.CreateAspectUnspecifiedTypeRequest) {
+			List<?> createElementsTypes = ((AspectUnspecifiedTypeCreationTool.CreateAspectUnspecifiedTypeRequest) request).getElementTypes();
+			if (areAllNodesAffixed(createElementsTypes)) {
+				return getParent();
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+	
+	private boolean areAllNodesAffixed(List<?> types) {
+		for(Object type : types) {
+			if (!isAffixedNodeType(type)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private boolean isAffixedNodeType(Object type) {
+		return UMLElementTypes.ExpansionNode_3074.equals(type) || UMLElementTypes.ExpansionNode_3075.equals(type);
 	}
 }
