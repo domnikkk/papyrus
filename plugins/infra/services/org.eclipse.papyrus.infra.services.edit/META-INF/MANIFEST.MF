@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.infra.services.edit,
  org.eclipse.papyrus.infra.services.edit.commands,
  org.eclipse.papyrus.infra.services.edit.internal;x-internal:=true,
+ org.eclipse.papyrus.infra.services.edit.internal.advice;x-internal:=true,
  org.eclipse.papyrus.infra.services.edit.internal.context;x-internal:=true,
  org.eclipse.papyrus.infra.services.edit.internal.matcher;x-internal:=true,
  org.eclipse.papyrus.infra.services.edit.messages,
@@ -13,7 +14,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.emf.type.core;bundle-version="1.4.0",
  org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.0"
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.services.markerlistener;bundle-version="1.0.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier

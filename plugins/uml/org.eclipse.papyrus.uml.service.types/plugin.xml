@@ -1981,6 +1981,12 @@
 <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
 
 	<metamodel nsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+    
+    <!-- Helper advice for Activity -->
+    <adviceBinding id="org.eclipse.papyrus.uml.advice.ContainmentSubsetRemoval"
+        class="org.eclipse.papyrus.uml.service.types.helper.advice.ContainmentSubsetRemovalAdvice"
+        inheritance="all" typeId="org.eclipse.papyrus.uml.Element">
+    </adviceBinding>
 	
 	<!-- Helper advice for Classifier -->
 	<adviceBinding id="org.eclipse.papyrus.uml.advice.Classifier"
@@ -2388,6 +2394,8 @@
 		<elementType ref="org.eclipse.papyrus.uml.Association" />
 		<elementType ref="org.eclipse.papyrus.uml.Trace" />
 		<elementType ref="org.eclipse.papyrus.uml.Refine" />
+		
+        <advice ref="org.eclipse.papyrus.uml.advice.ContainmentSubsetRemoval" />
 		<advice ref="org.eclipse.papyrus.uml.advice.Classifier" />
 		<advice ref="org.eclipse.papyrus.uml.advice.Collaboration" />
 		<advice ref="org.eclipse.papyrus.uml.advice.CollaborationUse" />

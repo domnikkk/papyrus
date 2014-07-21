@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 431618
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.tests.canonical;
@@ -282,7 +283,7 @@ public abstract class AbstractTestNode extends org.eclipse.papyrus.diagram.tests
 		redoOnUIThread();
 		assertEquals(DESTROY_DELETION + TEST_THE_REDO, expectedGraphicalChildren - removedGraphicalChildren,getRootView().getChildren().size());
 		if(testSemantic) {
-			assertEquals(DESTROY_DELETION + TEST_THE_UNDO, expectedSemanticChildren - removedSemanticChildren, getRootSemanticModel().getOwnedElements().size());
+			assertEquals(DESTROY_DELETION + TEST_THE_REDO, expectedSemanticChildren - removedSemanticChildren, getRootSemanticModel().getOwnedElements().size());
 		}
 	}
 
