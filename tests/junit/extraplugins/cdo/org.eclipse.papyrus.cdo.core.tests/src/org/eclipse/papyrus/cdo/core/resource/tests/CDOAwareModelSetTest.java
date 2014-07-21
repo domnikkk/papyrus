@@ -27,18 +27,27 @@ import static org.junit.Assume.assumeThat;
 
 import java.util.Collections;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.cdo.transaction.CDOTransaction;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.net4j.util.lifecycle.LifecycleException;
 import org.eclipse.papyrus.cdo.core.resource.CDOAwareModelSet;
 import org.eclipse.papyrus.cdo.core.resource.CDOAwareTransactionalEditingDomain;
 import org.eclipse.papyrus.cdo.core.resource.PapyrusCDOResourceFactory;
 import org.eclipse.papyrus.cdo.core.tests.AbstractPapyrusCDOTest;
+import org.eclipse.papyrus.cdo.internal.core.PapyrusRepositoryManager;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
@@ -46,6 +55,10 @@ import org.eclipse.papyrus.infra.core.services.ExtensionServicesRegistry;
 import org.eclipse.papyrus.infra.core.services.ServiceMultiException;
 import org.eclipse.papyrus.infra.core.services.ServiceNotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
+import org.eclipse.papyrus.junit.utils.ModelUtils;
+import org.eclipse.papyrus.junit.utils.resources.EcoreModel;
+import org.eclipse.papyrus.junit.utils.resources.WorkspaceModificationAssertion;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -165,6 +178,126 @@ public class CDOAwareModelSetTest extends AbstractPapyrusCDOTest {
 		assertThat(imported.getName(), equalTo("model1"));
 	}
 
+	/**
+	 * Tests that only modified workspace resources are saved, where we have only one model (no referenced libraries).
+	 */
+	@Test
+	public void testSave_onlyModifiedWorkspaceResources1() throws Exception {
+		final TransactionalEditingDomain domain = fixture.getTransactionalEditingDomain();
+
+		EcoreModel model = new EcoreModel();
+
+		fixture.registerModel(model);
+
+		IProject p = houseKeeper.createProject(houseKeeper.getTestName());
+
+		final IFile modelFile = p.getFile("ecore1." + model.getModelFileExtension());
+		final URI modelURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+
+		final WorkspaceModificationAssertion mods = new WorkspaceModificationAssertion(houseKeeper);
+
+		fixture.createModels(modelURI);
+		mods.save(fixture);
+
+		assertThat("workspace resource not created", modelFile.exists(), is(true));
+
+		assertThat("EMF resource is null", model.getResource(), notNullValue());
+		assertThat("EMF resource not created", model.getResource().getContents().isEmpty(), is(false));
+
+		EPackage ePackage = model.getRoot();
+		domain.getCommandStack().execute(SetCommand.create(domain, ePackage, EcorePackage.Literals.ENAMED_ELEMENT__NAME, "newname"));
+
+		mods.requireChange(modelURI);
+		mods.save(fixture);
+
+		// Saving again should have no effect on the workspace
+		mods.requireNoChange(modelURI);
+		mods.save(fixture);
+	}
+
+	/**
+	 * Tests that only modified workspace resources are saved, where we have multiple models (referenced libraries).
+	 */
+	@Test
+	public void testSave_onlyModifiedWorkspaceResources2() throws Exception {
+		final TransactionalEditingDomain domain = fixture.getTransactionalEditingDomain();
+
+		final EcoreModel model = new EcoreModel();
+
+		fixture.registerModel(model);
+
+		IProject p = houseKeeper.createProject(houseKeeper.getTestName());
+
+		final IFile modelFile1 = p.getFile("ecore1." + model.getModelFileExtension());
+		final URI modelURI1 = URI.createPlatformResourceURI(modelFile1.getFullPath().toString(), true);
+
+		final IFile modelFile2 = p.getFile("ecore2." + model.getModelFileExtension());
+		final URI modelURI2 = URI.createPlatformResourceURI(modelFile2.getFullPath().toString(), true);
+
+		final WorkspaceModificationAssertion mods = new WorkspaceModificationAssertion(houseKeeper);
+
+		fixture.createModels(modelURI1);
+
+		// Set up a second model and a dependency from the first
+		final Resource res2 = fixture.createResource(modelURI2, EcorePackage.eCONTENT_TYPE);
+		TransactionHelper.run(domain, new Runnable() {
+
+			@Override
+			public void run() {
+				EPackage ePackage = EcoreFactory.eINSTANCE.createEPackage();
+				ePackage.setName("library");
+				ePackage.setNsPrefix("lib");
+				ePackage.setNsURI("http://www.eclipse.org/papyrus/test/fakemodel/ecore/library");
+				res2.getContents().add(ePackage);
+
+				// A class in the library model
+				EClass foo = EcoreFactory.eINSTANCE.createEClass();
+				foo.setName("Foo");
+				ePackage.getEClassifiers().add(foo);
+
+				// A class in the main model
+				EClass thing = EcoreFactory.eINSTANCE.createEClass();
+				thing.setName("Thing");
+				model.getRoot().getEClassifiers().add(thing);
+
+				EReference reference = EcoreFactory.eINSTANCE.createEReference();
+				reference.setName("foo");
+				reference.setEType(foo);
+				thing.getEStructuralFeatures().add(reference);
+			}
+		});
+
+		// We need this referenced model to be writable in order to save it
+		ModelUtils.makeReferencedModelsWritable(fixture, modelURI2);
+		mods.save(fixture);
+
+		assertThat("workspace resource not created", modelFile1.exists(), is(true));
+		assertThat("workspace resource not created", modelFile2.exists(), is(true));
+
+		assertThat("EMF resource is null", model.getResource(), notNullValue());
+		assertThat("EMF resource not created", model.getResource().getContents().isEmpty(), is(false));
+		assertThat("EMF resource not created", res2.getContents().isEmpty(), is(false));
+
+		// Change the referenced resource's URI.  This should make the resource and its dependents dirty
+		final URI modelURI2New = modelURI2.trimSegments(1).appendSegment("library1").appendFileExtension(model.getModelFileExtension());
+		res2.setURI(modelURI2New);
+
+		ModelUtils.makeReferencedModelsWritable(fixture, modelURI2New);
+		mods.requireChange(modelURI1); // Thanks to the ProxyModificationTrackingAdapter
+		mods.requireChange(modelURI2New);
+		mods.requireNoChange(modelURI2); // No longer an interesting URI
+		mods.save(fixture);
+
+		EPackage ePackage = model.getRoot();
+		domain.getCommandStack().execute(SetCommand.create(domain, ePackage, EcorePackage.Literals.ENAMED_ELEMENT__NAME, "newname"));
+
+		// Saving this should have no effect on the second resource
+		mods.requireChange(modelURI1);
+		mods.requireNoChange(modelURI2New);
+		mods.requireNoChange(modelURI2);
+		mods.save(fixture);
+	}
+
 	//
 	// Test framework
 	//
@@ -174,6 +307,9 @@ public class CDOAwareModelSetTest extends AbstractPapyrusCDOTest {
 		services = new ExtensionServicesRegistry(Activator.PLUGIN_ID);
 
 		try {
+			// Ensure that the CDOAwareModelSet is the ModelSet service implementation
+			services.add(ModelSet.class, Integer.MAX_VALUE, new CDOAwareModelSet(PapyrusRepositoryManager.INSTANCE));
+
 			// start the ModelSet and its dependencies
 			services.startServicesByClassKeys(ModelSet.class, TransactionalEditingDomain.class);
 		} catch (ServiceMultiException e) {
@@ -183,6 +319,7 @@ public class CDOAwareModelSetTest extends AbstractPapyrusCDOTest {
 		}
 
 		fixture = services.getService(ModelSet.class);
+		assertThat(fixture, instanceOf(CDOAwareModelSet.class));
 
 		// pre-emptively get the editing domain to avoid lock contention later
 		services.getService(TransactionalEditingDomain.class);

@@ -9,12 +9,13 @@
  * Contributors:
  *  Mathieu Velten (Atos) mathieu.velten@atos.net - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 432753
+ *  Christian W. Damus (CEA) - bug 437052
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -25,7 +26,6 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.papyrus.infra.core.utils.EMFHelper;
 
 /**
  * This adapter handles "modified" flag of resources for tricky cases :
@@ -44,6 +44,20 @@ import org.eclipse.papyrus.infra.core.utils.EMFHelper;
  */
 public class ProxyModificationTrackingAdapter extends EContentAdapter {
 
+	/**
+	 * Queries whether a {@code resource} tracked by me is either known to be or assumed to be needing to be saved.
+	 * Generally this is true for resources that have been modified since the last save and that are saveable
+	 * (not read-only and correctly and completely loaded in the first place).
+	 * 
+	 * @param resource
+	 *        a resource that I track
+	 * 
+	 * @return whether the {@code resource} should be saved
+	 */
+	public boolean shouldSave(Resource resource) {
+		return !resource.isTrackingModification() || resource.isModified();
+	}
+	
 	@Override
 	protected void setTarget(Resource target) {
 		basicSetTarget(target);
@@ -81,7 +95,7 @@ public class ProxyModificationTrackingAdapter extends EContentAdapter {
 				}
 
 			} else {
-				List objects = new ArrayList();
+				List<?> objects;
 
 				switch(n.getEventType()) {
 				case Notification.ADD_MANY:
@@ -91,10 +105,13 @@ public class ProxyModificationTrackingAdapter extends EContentAdapter {
 					objects = (List<?>)n.getOldValue();
 					break;
 				case Notification.ADD:
-					objects.add(n.getNewValue());
+					objects = Collections.singletonList(n.getNewValue());
 					break;
 				case Notification.REMOVE:
-					objects.add(n.getOldValue());
+					objects = Collections.singletonList(n.getOldValue());
+					break;
+				default:
+					objects = Collections.emptyList();
 					break;
 				}
 
@@ -122,7 +139,7 @@ public class ProxyModificationTrackingAdapter extends EContentAdapter {
 	}
 
 	protected void setReferencingResourcesAsModified(EObject eObj) {
-		Collection<Setting> references = EMFHelper.getUsages(eObj);
+		Collection<Setting> references = org.eclipse.papyrus.infra.core.utils.EMFHelper.getUsages(eObj);
 		for (Setting setting : references) {
 			EStructuralFeature f = setting.getEStructuralFeature();
 			if(setting.getEObject() != null && !f.isDerived() && !f.isTransient()) {

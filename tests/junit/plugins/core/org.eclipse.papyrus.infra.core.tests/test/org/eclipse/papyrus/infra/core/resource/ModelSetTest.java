@@ -10,13 +10,17 @@
  *  LIFL - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
  *  Christian W. Damus (CEA) - bug 436047
+ *  Christian W. Damus (CEA) - bug 437052
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
@@ -29,9 +33,20 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.edit.command.SetCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.papyrus.infra.core.resource.additional.AdditionalResourcesModel;
+import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
+import org.eclipse.papyrus.junit.utils.ModelUtils;
+import org.eclipse.papyrus.junit.utils.resources.EcoreModel;
+import org.eclipse.papyrus.junit.utils.resources.WorkspaceModificationAssertion;
 import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.junit.After;
@@ -55,7 +70,7 @@ public class ModelSetTest extends AbstractPapyrusTest {
 
 	@Rule
 	public final HouseKeeper houseKeeper = new HouseKeeper();
-	
+
 	/**
 	 *
 	 * @throws Exception
@@ -213,6 +228,129 @@ public class ModelSetTest extends AbstractPapyrusTest {
 		//
 		assertNotNull("resource created", model1.getResource());
 		assertNotNull("resource created", model2.getResource());
+	}
+
+	/**
+	 * Tests that only modified resources are saved, where we have only one model (no referenced libraries).
+	 */
+	@Test
+	public void testSave_onlyModifiedResources1() throws Exception {
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
+		TransactionalEditingDomain domain = houseKeeper.cleanUpLater(mngr.getTransactionalEditingDomain());
+
+		EcoreModel model = new EcoreModel();
+
+		mngr.registerModel(model);
+		mngr.registerModel(new AdditionalResourcesModel());
+
+		IProject p = houseKeeper.createProject(houseKeeper.getTestName());
+
+		final IFile modelFile = p.getFile("model1." + model.getModelFileExtension());
+		final URI modelURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+
+		final WorkspaceModificationAssertion mods = new WorkspaceModificationAssertion(houseKeeper);
+
+		mngr.createModels(modelURI);
+		mods.save(mngr);
+
+		assertThat("workspace resource not created", modelFile.exists(), is(true));
+
+		assertThat("EMF resource is null", model.getResource(), notNullValue());
+		assertThat("EMF resource not created", model.getResource().getContents().isEmpty(), is(false));
+
+		EPackage ePackage = model.getRoot();
+		domain.getCommandStack().execute(SetCommand.create(domain, ePackage, EcorePackage.Literals.ENAMED_ELEMENT__NAME, "newname"));
+
+		mods.requireChange(modelURI);
+		mods.save(mngr);
+
+		// Saving again should have no effect on the workspace
+		mods.requireNoChange(modelURI);
+		mods.save(mngr);
+	}
+
+	/**
+	 * Tests that only modified resources are saved, where we have multiple models (referenced libraries).
+	 */
+	@Test
+	public void testSave_onlyModifiedResources2() throws Exception {
+		ModelSet mngr = houseKeeper.cleanUpLater(new ModelSet());
+		TransactionalEditingDomain domain = houseKeeper.cleanUpLater(mngr.getTransactionalEditingDomain());
+
+		final EcoreModel model = new EcoreModel();
+
+		mngr.registerModel(model);
+		mngr.registerModel(new AdditionalResourcesModel());
+
+		IProject p = houseKeeper.createProject(houseKeeper.getTestName());
+
+		final IFile modelFile1 = p.getFile("model1." + model.getModelFileExtension());
+		final URI modelURI1 = URI.createPlatformResourceURI(modelFile1.getFullPath().toString(), true);
+
+		final IFile modelFile2 = p.getFile("model2." + model.getModelFileExtension());
+		final URI modelURI2 = URI.createPlatformResourceURI(modelFile2.getFullPath().toString(), true);
+
+		final WorkspaceModificationAssertion mods = new WorkspaceModificationAssertion(houseKeeper);
+
+		mngr.createModels(modelURI1);
+
+		// Set up a second model and a dependency from the first
+		final Resource res2 = mngr.createResource(modelURI2, EcorePackage.eCONTENT_TYPE);
+		TransactionHelper.run(domain, new Runnable() {
+
+			public void run() {
+				EPackage ePackage = EcoreFactory.eINSTANCE.createEPackage();
+				ePackage.setName("library");
+				ePackage.setNsPrefix("lib");
+				ePackage.setNsURI("http://www.eclipse.org/papyrus/test/fakemodel/ecore/library");
+				res2.getContents().add(ePackage);
+
+				// A class in the library model
+				EClass foo = EcoreFactory.eINSTANCE.createEClass();
+				foo.setName("Foo");
+				ePackage.getEClassifiers().add(foo);
+
+				// A class in the main model
+				EClass thing = EcoreFactory.eINSTANCE.createEClass();
+				thing.setName("Thing");
+				model.getRoot().getEClassifiers().add(thing);
+
+				EReference reference = EcoreFactory.eINSTANCE.createEReference();
+				reference.setName("foo");
+				reference.setEType(foo);
+				thing.getEStructuralFeatures().add(reference);
+			}
+		});
+		
+		// We need this referenced model to be writable in order to save it
+		ModelUtils.makeReferencedModelsWritable(mngr, modelURI2 );
+		mods.save(mngr);
+
+		assertThat("workspace resource not created", modelFile1.exists(), is(true));
+		assertThat("workspace resource not created", modelFile2.exists(), is(true));
+
+		assertThat("EMF resource is null", model.getResource(), notNullValue());
+		assertThat("EMF resource not created", model.getResource().getContents().isEmpty(), is(false));
+		assertThat("EMF resource not created", res2.getContents().isEmpty(), is(false));
+
+		// Change the referenced resource's URI.  This should make the resource and its dependents dirty
+		final URI modelURI2New = modelURI2.trimSegments(1).appendSegment("library1").appendFileExtension(model.getModelFileExtension());
+		res2.setURI(modelURI2New);
+
+		ModelUtils.makeReferencedModelsWritable(mngr, modelURI2New);
+		mods.requireChange(modelURI1); // Thanks to the ProxyModificationTrackingAdapter
+		mods.requireChange(modelURI2New);
+		mods.requireNoChange(modelURI2); // No longer an interesting URI
+		mods.save(mngr);
+
+		EPackage ePackage = model.getRoot();
+		domain.getCommandStack().execute(SetCommand.create(domain, ePackage, EcorePackage.Literals.ENAMED_ELEMENT__NAME, "newname"));
+
+		// Saving this should have no effect on the second resource
+		mods.requireChange(modelURI1);
+		mods.requireNoChange(modelURI2New);
+		mods.requireNoChange(modelURI2);
+		mods.save(mngr);
 	}
 
 	/**
@@ -502,6 +640,4 @@ public class ModelSetTest extends AbstractPapyrusTest {
 
 
 	}
-
-
 }

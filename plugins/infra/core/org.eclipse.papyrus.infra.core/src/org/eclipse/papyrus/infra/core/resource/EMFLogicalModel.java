@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 437052
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
@@ -52,8 +54,10 @@ public abstract class EMFLogicalModel extends AbstractBaseModel implements IEMFM
 
 	@Override
 	public void saveModel() throws IOException {
+		final ModelSet set = getModelManager();
+		
 		for(Resource resource : getResources()) {
-			if(!getModelManager().getTransactionalEditingDomain().isReadOnly(resource) && !ModelUtils.resourceFailedOnLoad(resource)) {
+			if(set.shouldSave(resource)) {
 				try {
 					resource.save(null);
 				} catch (IOException ex) {

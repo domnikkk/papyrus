@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010, 2013 Atos Origin, CEA LIST, and others.
+ * Copyright (c) 2010, 2014 Atos Origin, CEA LIST, and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -11,6 +11,7 @@
  *  Emilien Perico emilien.perico@atosorigin.com - manage loading strategies
  *  Christian W. Damus (CEA) - manage models by URI, not IFile (CDO)
  *  Christian W. Damus (CEA LIST) - support control mode in CDO resources
+ *  Christian W. Damus (CEA) - bug 437052
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource.additional;
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.eclipse.papyrus.infra.core.resource.AbstractModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
-import org.eclipse.papyrus.infra.core.resource.ModelUtils;
 
 public class AdditionalResourcesModel extends AbstractModel implements IModel {
 
@@ -80,10 +80,10 @@ public class AdditionalResourcesModel extends AbstractModel implements IModel {
 			if(isAdditionalResource(getModelManager(), r.getURI())) {
 				// only save referenced models not
 				// read-only and either platform or file
-				if(!modelSet.getTransactionalEditingDomain().isReadOnly(r) && modelSet.isUserModelResource(r.getURI()) && !ModelUtils.resourceFailedOnLoad(r)) {
-					if(r instanceof XMIResource){
+				if(modelSet.shouldSave(r) && modelSet.isUserModelResource(r.getURI())) {
+					if(r instanceof XMIResource) {
 						r.save(Collections.singletonMap(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl.PlatformSchemeAware()));
-					}else {
+					} else {
 						r.save(Collections.EMPTY_MAP);
 					}
 
@@ -136,7 +136,7 @@ public class AdditionalResourcesModel extends AbstractModel implements IModel {
 		Set<URI> res = new HashSet<URI>();
 		for(Resource r : modelSet.getResources()) {
 			if(isAdditionalResource(getModelManager(), r.getURI())) {
-				if (!r.isTrackingModification() || r.isModified()) {
+				if(!r.isTrackingModification() || r.isModified()) {
 					res.add(r.getURI());
 				}
 			}
