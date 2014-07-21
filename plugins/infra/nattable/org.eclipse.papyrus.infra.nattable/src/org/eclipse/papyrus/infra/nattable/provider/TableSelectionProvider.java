@@ -16,6 +16,7 @@ package org.eclipse.papyrus.infra.nattable.provider;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,10 +30,7 @@ import org.eclipse.nebula.widgets.nattable.layer.ILayerListener;
 import org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell;
 import org.eclipse.nebula.widgets.nattable.layer.event.ILayerEvent;
 import org.eclipse.nebula.widgets.nattable.selection.SelectionLayer;
-import org.eclipse.nebula.widgets.nattable.selection.event.CellSelectionEvent;
-import org.eclipse.nebula.widgets.nattable.selection.event.ColumnSelectionEvent;
 import org.eclipse.nebula.widgets.nattable.selection.event.ISelectionEvent;
-import org.eclipse.nebula.widgets.nattable.selection.event.RowSelectionEvent;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.utils.AxisUtils;
 import org.eclipse.papyrus.infra.nattable.utils.TableSelectionWrapper;
@@ -83,8 +81,9 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 		this.selectionLayer = selectionLayer;
 		this.selectionListener = new ILayerListener() {
 
+			@Override
 			public void handleLayerEvent(final ILayerEvent event) {
-				if (event instanceof ISelectionEvent) {
+				if(event instanceof ISelectionEvent) {
 					calculateAndStoreNewSelection(event);
 				}
 			}
@@ -101,6 +100,7 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 	 * 
 	 * @param listener
 	 */
+	@Override
 	public void addSelectionChangedListener(final ISelectionChangedListener listener) {
 		this.listeners.add(listener);
 	}
@@ -111,6 +111,7 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 	 * 
 	 * @return
 	 */
+	@Override
 	public synchronized ISelection getSelection() {
 		return this.currentSelection;
 	}
@@ -121,6 +122,7 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 	 * 
 	 * @param listener
 	 */
+	@Override
 	public void removeSelectionChangedListener(final ISelectionChangedListener listener) {
 		this.listeners.remove(listener);
 	}
@@ -131,6 +133,7 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 	 * 
 	 * @param selection
 	 */
+	@Override
 	public synchronized void setSelection(final ISelection selection) {
 		if(this.currentSelection.equals(selection)) {
 			return;
@@ -142,21 +145,52 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 		}
 	}
 
+	/**
+	 * 
+	 * @param event
+	 *        an event
+	 */
 	protected/* synchronized */void calculateAndStoreNewSelection(final ILayerEvent event) {
 		//the list of the selected elements
-		final List<Object> selection = new ArrayList<Object>();
+		final Collection<Object> selection = new HashSet<Object>();
 		final ISelection newSelection;
 		if(event instanceof ISelectionEvent) {
-			//add the cell selection
+			//we are not able to distinguish the 2 ways to select a full axis : 
+			//- first way : clicking on axis header
+			//- second way : clicking on first cell of the axis, Pressing SHIFT, clicking on the last cell of the axis (or selecting each cell of the axis pressing CTRL)
+			//so we are not able to know if the user want to select the element represented by the axis OR all values displayed on the axis, without the element represented by the axis
+			//we decided to implements this behavior for all kind of selection event : 
+			// 1- we add in the selection elements represented by fully selected rows
+			// 2- we add in the selection elements represented by fully selected columns
+			// 3- we add in the selection the contents of selected cell which are not included in the fully selected axis
+
 			final Collection<PositionCoordinate> selectedCells = Arrays.asList(this.selectionLayer.getSelectedCellPositions());
 			final TableSelectionWrapper wrapper = new TableSelectionWrapper(selectedCells);
 
-			//we returns the contents of the last selected cell
-			//we could returns the contents of all selected cells if its required
-			if(event instanceof CellSelectionEvent) {
-				for(final PositionCoordinate current1 : this.selectionLayer.getSelectedCellPositions()) {
-					final int colPos = current1.getColumnPosition();
-					final int rowPos = current1.getRowPosition();
+
+			final List<Integer> selectedRowsIndexes = new ArrayList<Integer>();
+			for(int i : this.selectionLayer.getFullySelectedRowPositions()) {
+				selectedRowsIndexes.add(new Integer(i));
+				Object el = this.manager.getRowElement(i);
+				if(el != null) {
+					el = AxisUtils.getRepresentedElement(el);
+					selection.add(el);
+				}
+			}
+			final List<Integer> selectedColumnsIndexes = new ArrayList<Integer>();
+			for(int i : this.selectionLayer.getFullySelectedColumnPositions()) {
+				selectedColumnsIndexes.add(new Integer(i));
+				Object el = this.manager.getColumnElement(i);
+				if(el != null) {
+					el = AxisUtils.getRepresentedElement(el);
+					selection.add(el);
+				}
+			}
+
+			for(final PositionCoordinate cellLocation : selectedCells) {
+				final int colPos = cellLocation.getColumnPosition();
+				final int rowPos = cellLocation.getRowPosition();
+				if(!selectedColumnsIndexes.contains(new Integer(colPos)) && !selectedRowsIndexes.contains(new Integer(rowPos))) {
 					final ILayerCell cell = this.selectionLayer.getCellByPosition(colPos, rowPos);
 					if(cell != null) {
 						final Object value = cell.getDataValue();
@@ -173,29 +207,8 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 						}
 					}
 				}
-
-			} else if(event instanceof RowSelectionEvent) {
-				this.selectionLayer.getFullySelectedRowPositions();
-				int[] rows = this.selectionLayer.getFullySelectedRowPositions();
-				for(int i : rows) {
-					Object el = this.manager.getRowElement(i);
-					if(el != null) {
-						el = AxisUtils.getRepresentedElement(el);
-						selection.add(el);
-					}
-				}
-
-			} else if(event instanceof ColumnSelectionEvent) {
-				int[] selectedColumn = this.selectionLayer.getFullySelectedColumnPositions();
-				for(int i : selectedColumn) {
-					Object el = this.manager.getColumnElement(i);
-					if(el != null) {
-						el = AxisUtils.getRepresentedElement(el);
-						selection.add(el);
-					}
-				}
 			}
-			newSelection = new TableStructuredSelection(selection, wrapper);
+			newSelection = new TableStructuredSelection(selection.toArray(), wrapper);
 		} else {
 			newSelection = new StructuredSelection();
 		}
@@ -203,12 +216,12 @@ public class TableSelectionProvider implements ISelectionProvider, IDisposable {
 	}
 
 
-
 	/**
 	 * 
 	 * @see org.eclipse.ui.services.IDisposable#dispose()
 	 * 
 	 */
+	@Override
 	public void dispose() {
 		this.selectionLayer.removeLayerListener(this.selectionListener);
 		this.selectionLayer = null;
