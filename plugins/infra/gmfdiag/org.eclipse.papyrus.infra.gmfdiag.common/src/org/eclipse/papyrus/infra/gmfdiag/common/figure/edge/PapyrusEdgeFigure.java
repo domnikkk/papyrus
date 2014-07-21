@@ -13,12 +13,14 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.figure.edge;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.eclipse.draw2d.Connection;
@@ -36,6 +38,7 @@ import org.eclipse.gmf.runtime.common.ui.services.editor.EditorService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.eclipse.gmf.runtime.draw2d.ui.geometry.LineSeg;
 import org.eclipse.papyrus.infra.core.editor.CoreMultiDiagramEditor;
 import org.eclipse.papyrus.infra.tools.util.EditorHelper;
 import org.eclipse.ui.IEditorPart;
@@ -52,7 +55,7 @@ import org.eclipse.ui.PlatformUI;
 public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 
 	/**
-	 * Diameter to use for the bendpoints
+	 * Diameter to use for the bendpoitns
 	 */
 	private int bendpointDiameter;
 
@@ -73,9 +76,10 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 	 * 
 	 * @param g
 	 */
+	@Override
 	protected void outlineShape(Graphics g) {
 		super.outlineShape(g);
-		drawConnectionPoint(g);
+		drawCommonbendpoints(g);
 	}
 
 	/**
@@ -84,115 +88,254 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 	public void resetStyle() {
 
 	}
+	/**
+	 * 
+	 * @return
+	 *         the common bendpoints to draw (see bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=424099)
+	 */
+	@SuppressWarnings("unchecked")
+	public Collection<Point> getCommonBendpointsToDraw() {
+		final Collection<Point> commonBendpointsToDraw = new HashSet<Point>();
+		final PointList bendPoints = getPoints();
+
+		final Map<?, ?> visualPartMap = getVisualPartMap(this);
+		if(visualPartMap != null) {
+			final EditPart currentEditPart = (EditPart)visualPartMap.get(this);
+			//1. find the uml eClass of the current link
+			EClass eClass = null;
+			if(currentEditPart instanceof IGraphicalEditPart) {
+				final EObject el = ((IGraphicalEditPart)currentEditPart).resolveSemanticElement();
+				if(el != null) {
+					eClass = el.eClass();
+				}
+			}
+
+			//2. find all connections editpart with same source AND/OR same target than the current one
+			if(currentEditPart instanceof ConnectionEditPart && eClass != null) {
+				final EditPart sourceEP = ((ConnectionEditPart)currentEditPart).getSource();
+				final EditPart targetEP = ((ConnectionEditPart)currentEditPart).getTarget();
+				final Set<Object> allConnectionsEP = new HashSet<Object>();
+				//2.1. get all potential editpart connections
+				if(sourceEP instanceof AbstractGraphicalEditPart && targetEP instanceof AbstractGraphicalEditPart) {
+					allConnectionsEP.addAll(((AbstractGraphicalEditPart)sourceEP).getSourceConnections());
+					allConnectionsEP.addAll(((AbstractGraphicalEditPart)targetEP).getSourceConnections());
+					allConnectionsEP.addAll(((AbstractGraphicalEditPart)sourceEP).getTargetConnections());
+					allConnectionsEP.addAll(((AbstractGraphicalEditPart)targetEP).getTargetConnections());
+					allConnectionsEP.remove(currentEditPart);
+				}
+
+				//2.2 get the figure for these connections and keep only figure when its editpart has the same kind than the current one
+				final Set<Connection> allConnections = new HashSet<Connection>();
+				if(allConnectionsEP.size() > 0) {
+					for(final Object current : allConnectionsEP) {
+						//the editpart be instance of the same class
+						if(current.getClass().isInstance(currentEditPart) && currentEditPart.getClass().isInstance(current) && current instanceof IGraphicalEditPart) {
+							final EObject resolvedElement = ((IGraphicalEditPart)current).resolveSemanticElement();
+							if(resolvedElement != null && eClass != null && resolvedElement.eClass() != eClass) {
+								continue;//we draw ben point only for elements which have the same eClass, when this eClass is not null
+							}
+							final IFigure currentFig = ((IGraphicalEditPart)current).getFigure();
+							if(currentFig instanceof Connection) {
+								allConnections.add((Connection)currentFig);
+							}
+						}
+					}
+				}
+
+				//3. Create the list of the LineSeg of the current figure
+				final List<LineSeg> refs = new ArrayList<LineSeg>();
+				for(int i = 0; i < bendPoints.size() - 1; i++) {
+					LineSeg seg = new LineSeg(bendPoints.getPoint(i), bendPoints.getPoint(i + 1));
+					refs.add(seg);
+				}
+
+
+				//4. find common segments between the current figure and each others link
+				//we need to associate each common segment to the concerned link
+				final Map<Connection, Map<LineSeg, List<LineSeg>>> segs = new HashMap<Connection, Map<LineSeg, List<LineSeg>>>();
+				for(Connection currentConn : allConnections) {
+					final PointList currentPoints = currentConn.getPoints();
+					final Map<LineSeg, List<LineSeg>> mapSegs = new HashMap<LineSeg, List<LineSeg>>();
+					segs.put(currentConn, mapSegs);
+					for(LineSeg refSeg : refs) {
+						final List<LineSeg> commonSubSegs = new ArrayList<LineSeg>();
+						mapSegs.put(refSeg, commonSubSegs);
+						for(int i = 0; i < currentPoints.size() - 1; i++) {
+							LineSeg tmp = new LineSeg(currentPoints.getPoint(i), currentPoints.getPoint(i + 1));
+							PointList intersection = getCommonSegment(refSeg, tmp);
+							if(intersection.size() == 2) {
+								if(!intersection.getFirstPoint().equals(intersection.getLastPoint())) {
+									double distanceFromFirst = refSeg.getOrigin().getDistance(intersection.getFirstPoint());
+									double distanceFromSecond = refSeg.getOrigin().getDistance(intersection.getLastPoint());
+									final LineSeg commonSeg;
+									//we arrange the 2 points in order to have the first point nearest of the start of the current segment
+									if(distanceFromFirst < distanceFromSecond) {
+										commonSeg = new LineSeg(intersection.getFirstPoint(), intersection.getLastPoint());
+									} else {
+										commonSeg = new LineSeg(intersection.getLastPoint(), intersection.getFirstPoint());
+									}
+									commonSubSegs.add(commonSeg);
+								}
+							}
+						}
+					}
+				}
+
+				//5. we look for the bendpoints crossing existing link on the model, then crossing their common segment with the current figure, to find bendpoints to draw
+				for(Entry<Connection, Map<LineSeg, List<LineSeg>>> entry : segs.entrySet()) {
+					final Map<LineSeg, List<LineSeg>> commonSegMap = entry.getValue();
+					for(int i = 0; i < refs.size(); i++) { //we iterate on the segments of the current figure
+
+
+						//5.1 find required values to find bendpoints to draw
+						final LineSeg currentFigureSeg = refs.get(i);
+						//final List<LineSeg> currentCommonSegs = segs.get(currentFigureSeg);
+						final List<LineSeg> currentCommonSegs = commonSegMap.get(currentFigureSeg);
+
+						final LineSeg previousSeg;
+						final List<LineSeg> previousCommonSegs;
+
+						final LineSeg nextSeg;
+						final List<LineSeg> nextCommonSegs;
+
+						//obtain previous segs of the current figure
+						if(i != 0) {
+							previousSeg = refs.get(i - 1);
+							previousCommonSegs = commonSegMap.get(previousSeg);
+						} else {
+							previousSeg = null;
+							previousCommonSegs = null;
+						}
+
+						//obtain next segs of the current figure
+						if(i != refs.size() - 1) {
+							nextSeg = refs.get(i + 1);
+							nextCommonSegs = commonSegMap.get(nextSeg);
+						} else {
+							nextSeg = null;
+							nextCommonSegs = null;
+						}
+
+
+						LineSeg previousCommonSeg = null;
+						LineSeg nextCommonSeg = null;
+
+						//we iterate on the common subsegment shared with others link with the current figure
+						for(int a = 0; a < currentCommonSegs.size(); a++) {
+							final LineSeg curr = currentCommonSegs.get(a);
+							final Point first = curr.getOrigin();
+							final Point second = curr.getTerminus();
+							//obtain previous common seg
+							if(a == 0) {
+								if(previousCommonSegs != null && previousCommonSegs.size() > 0) {
+									previousCommonSeg = previousCommonSegs.get(previousCommonSegs.size() - 1);
+								} else {
+									previousCommonSeg = null;
+								}
+							} else {
+								previousCommonSeg = currentCommonSegs.get(a - 1);
+							}
+
+							//obtain next common seg
+							if(a == currentCommonSegs.size() - 1) {
+								if(nextCommonSegs != null && nextCommonSegs.size() > 0) {
+									nextCommonSeg = nextCommonSegs.get(0);
+								} else {
+									nextCommonSeg = null;
+								}
+							} else {
+								nextCommonSeg = currentCommonSegs.get(a + 1);
+							}
+
+							//5.2 calculates bendpoints visibility 
+
+							//determining if we draw first point : 
+							if(previousCommonSeg == null) {
+								if(i == 0) {//first segment of the figure
+									if(!bendPoints.getFirstPoint().equals(first)) {
+										//we draw the point when it is not the first anchor of the figure
+										commonBendpointsToDraw.add(first);
+									}
+								} else {
+									commonBendpointsToDraw.add(first);
+								}
+							} else if(!previousCommonSeg.getTerminus().equals(first)) {
+								//the previous common seg doesn't share this point with the current segment
+								//we draw the first point
+								commonBendpointsToDraw.add(first);
+							}
+
+							//determining if we draw the second point
+							if(nextCommonSeg == null) {
+								if(i == refs.size() - 1) {
+									if(!bendPoints.getLastPoint().equals(second)) {
+										//we draw the point when it is not the first anchor of the figure
+										commonBendpointsToDraw.add(second);
+									}
+								} else {
+									commonBendpointsToDraw.add(second);
+								}
+							} else if(!nextCommonSeg.getOrigin().equals(second)) {
+								//the next common seg doesn't share this point with the current segment
+								//we draw the second point
+								commonBendpointsToDraw.add(second);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return commonBendpointsToDraw;
+	}
+
+	/**
+	 * 
+	 * @param g
+	 *        graphics
+	 * @param pointsToDraw
+	 *        the list of the points to draw
+	 */
+	public void drawCommonBendpoints(final Graphics g, final Collection<Point> bendPoints) {
+		final int diameter = getBendPointDiameter();
+		if(getDrawBendpointPreferenceValue() && bendPoints.size() > 0 && diameter > 1) {
+			//initialize the graphics
+			if(getBackgroundColor() != null) {
+				g.setForegroundColor(getBackgroundColor());
+			}
+			if(getForegroundColor() != null) {
+				g.setBackgroundColor(getForegroundColor());
+			}
+
+			for(final Point point : bendPoints) {
+				g.fillOval(point.x - (diameter - 1) / 2, point.y - (diameter - 1) / 2, diameter, diameter);
+			}
+
+			//reset the graphics
+			if(getBackgroundColor() != null) {
+				g.setBackgroundColor(getBackgroundColor());
+			}
+			if(getForegroundColor() != null) {
+				g.setForegroundColor(getForegroundColor());
+			}
+		}
+	}
+
+
 
 	/**
 	 * 
 	 * @param g
 	 * 
 	 */
-	@SuppressWarnings("unchecked")
-	protected void drawConnectionPoint(final Graphics g) {
-		final PointList bendPoints = getPoints();
-		if(getDrawBendpointPreferenceValue() && bendPoints.size() > 2 && getBendPointDiameter() > 1) {
-			final Map<?, ?> visualPartMap = getVisualPartMap(this);
-			if(visualPartMap != null) {
-				final EditPart currentEditPart = (EditPart)visualPartMap.get(this);
-				EClass eClass = null;
-				if(currentEditPart instanceof IGraphicalEditPart) {
-					final EObject el = ((IGraphicalEditPart)currentEditPart).resolveSemanticElement();
-					if(el != null) {
-						eClass = el.eClass();
-					}
-				}
-				if(currentEditPart instanceof ConnectionEditPart && eClass != null) {
-					final EditPart sourceEP = ((ConnectionEditPart)currentEditPart).getSource();
-					final EditPart targetEP = ((ConnectionEditPart)currentEditPart).getTarget();
-					final Set<Object> allConnectionsEP = new HashSet<Object>();
-					//1. get all potential editpart connections
-					if(sourceEP instanceof AbstractGraphicalEditPart && targetEP instanceof AbstractGraphicalEditPart) {
-						allConnectionsEP.addAll(((AbstractGraphicalEditPart)sourceEP).getSourceConnections());
-						allConnectionsEP.addAll(((AbstractGraphicalEditPart)targetEP).getSourceConnections());
-						allConnectionsEP.addAll(((AbstractGraphicalEditPart)sourceEP).getTargetConnections());
-						allConnectionsEP.addAll(((AbstractGraphicalEditPart)targetEP).getTargetConnections());
-						allConnectionsEP.remove(currentEditPart);
-					}
-
-					//2. get the figure for these connections
-					final Set<Connection> allConnections = new HashSet<Connection>();
-					if(allConnectionsEP.size() > 0) {
-						for(final Object current : allConnectionsEP) {
-							//the editpart be instance of the same class
-							if(current.getClass().isInstance(currentEditPart) && currentEditPart.getClass().isInstance(current) && current instanceof IGraphicalEditPart) {
-								final EObject resolvedElement = ((IGraphicalEditPart)current).resolveSemanticElement();
-								if(resolvedElement != null && eClass != null && resolvedElement.eClass() != eClass) {
-									continue;//we draw ben point only for elements which have the same eClass, when this eClass is not null
-								}
-								final IFigure currentFig = ((IGraphicalEditPart)current).getFigure();
-								if(currentFig instanceof Connection) {
-									allConnections.add((Connection)currentFig);
-								}
-							}
-						}
-					}
-
-					//3. find and draw big bendpoints
-					if(allConnections.size() > 0) {
-						final Map<Point, Boolean> visibility = new HashMap<Point, Boolean>();
-						visibility.put(bendPoints.getFirstPoint(), Boolean.FALSE);
-						visibility.put(bendPoints.getLastPoint(), Boolean.FALSE);
-						for(int i = 1; i < bendPoints.size() - 1; i++) {
-							final Point currentPt = bendPoints.getPoint(i);
-							visibility.put(currentPt, isACommonBendpoint(this, i, allConnections));
-						}
-
-						//clear the map : remove all unnecessary true value
-						//01110 -> 01010
-						int indexFirstOne = -1;
-						for(int i = 0; i < bendPoints.size(); i++) {
-							boolean first = visibility.get(bendPoints.getPoint(i));
-							if(first && indexFirstOne < 0) {
-								indexFirstOne = i;
-							}
-							if((!first) && indexFirstOne >= 0) {
-								for(int j = (indexFirstOne + 1); j < i - 1; j++) {
-									visibility.put(bendPoints.getPoint(j), false);
-								}
-								indexFirstOne = -1;
-							}
-						}
-
-
-						//initialize the graphics
-						if(getBackgroundColor() != null) {
-							g.setForegroundColor(getBackgroundColor());
-						}
-						if(getForegroundColor() != null) {
-							g.setBackgroundColor(getForegroundColor());
-						}
-
-						//paint the connection points
-						//we don't allow to draw connection point on the start AND on the end of the figure (even if this case is possible in case of 2 full lines fully superimposed
-						final int diameter = getBendPointDiameter();
-						for(int i = 1; i < bendPoints.size() - 1; i++) {
-							final Point currentPt = bendPoints.getPoint(i);
-							if(visibility.get(currentPt)) {
-								g.fillOval(currentPt.x - ((diameter - 1) / 2), currentPt.y - ((diameter - 1) / 2), diameter, diameter);
-							}
-						}
-						//reset the graphics
-						if(getBackgroundColor() != null) {
-							g.setBackgroundColor(getBackgroundColor());
-						}
-						if(getForegroundColor() != null) {
-							g.setForegroundColor(getForegroundColor());
-						}
-					}
-				}
-
-			}
+	protected void drawCommonbendpoints(final Graphics g) {
+		if(getPoints().size() > 2 && getDrawBendpointPreferenceValue()) {
+			final Collection<Point> commonPoints = getCommonBendpointsToDraw();
+			drawCommonBendpoints(g, commonPoints);
 		}
-
 	}
+
+
 
 	/**
 	 * 
@@ -249,87 +392,34 @@ public abstract class PapyrusEdgeFigure extends PolylineConnectionEx {
 
 	/**
 	 * 
-	 * @param figure
-	 *        the figure owning this point
-	 * @param indexOfTheTestedPoint
-	 * @param connections
-	 *        the collection of others connections which could share the bendpoint
+	 * @param seg1
+	 *        the first segment
+	 * @param seg2
+	 *        the secong segment
 	 * @return
-	 *         true if the tested point is common with others connections
 	 */
-	public boolean isACommonBendpoint(final Connection figure, final int indexOfTheTestedPoint, final Collection<Connection> connections) {
-		final PointList list = ((Connection)figure).getPoints();
-		final Point thePoint = list.getPoint(indexOfTheTestedPoint);
-		//we need to verify if this point is a common bendpoint with another one
+	public static final PointList getCommonSegment(final LineSeg seg1, final LineSeg seg2) {
+		final List<Point> list = new ArrayList<Point>();
+		list.add(seg1.getOrigin());
+		list.add(seg2.getOrigin());
+		list.add(seg1.getTerminus());
+		list.add(seg2.getTerminus());
 
-		for(final Connection current : connections) {
-			//to be a common bendpoints, the point AND (the point Before it OR the point After it) MUST be on the same segment
-			final PointList localList = ((Connection)current).getPoints();
-			for(int i = 0; i < localList.size() - 1; i++) {
-				final Point tmp1 = localList.getPoint(i);
-				final Point tmp2 = localList.getPoint(i + 1);
-
-				boolean isOnSegment = isOnSegment(thePoint, tmp1, tmp2);
-				if(isOnSegment) {
-					boolean isOnSegment2 = isOnSegment(list.getPoint(indexOfTheTestedPoint + 1), tmp1, tmp2);
-					if(isOnSegment2) {
-						return true;
-					}
-
-					isOnSegment2 = isOnSegment(list.getPoint(indexOfTheTestedPoint - 1), tmp1, tmp2);
-					if(isOnSegment2) {
-						return true;
-					}
+		List<Point> commonPoints = new ArrayList<Point>();
+		for(Point point : list) {
+			if(!commonPoints.contains(point)) {
+				if(seg1.containsPoint(point, 0) && seg2.containsPoint(point, 0)) {
+					commonPoints.add(point);
 				}
 			}
 		}
-		return false;
-	}
 
-
-	/**
-	 * 
-	 * @param pt
-	 *        a point to test
-	 * @param pt1
-	 *        the first point of a segment
-	 * @param pt2
-	 *        the second point of a segment
-	 * @return
-	 *         true if the point pt is on the segment [pt1, pt2]
-	 */
-	public static final boolean isOnSegment(final Point pt, final Point pt1, final Point pt2) {
-		final Point first;
-		final Point second;
-		if(pt1.x < pt2.x) {
-			first = pt1;
-			second = pt2;
-		} else {
-			first = pt2;
-			second = pt1;
+		final PointList result = new PointList();
+		for(final Point point : commonPoints) {
+			result.addPoint(point);
 		}
-		if(pt.x >= first.x && pt.x <= second.x) {
-			if((pt.y <= first.y && pt.y >= second.y) || (pt.y >= first.y && pt.y <= second.y)) {
-				//y = ax+b;
-				//we determine a;
-				double firstX = first.preciseX();
-				double secondX = second.preciseX();
-				double firstY = first.preciseY();
-				double secondY = second.preciseY();
-				if(secondX == firstX) {
-					return pt.preciseX() == secondX;
-				}
-				double a = (secondY - firstY) / (secondX - firstX);
-
-				//we determine b;
-				double b = firstY - a * firstX;
-
-				return pt.preciseY() == a * pt.preciseX() + b;
-			}
-		}
-		return false;
+		return result;
 	}
-
 
 	/**
 	 * Calculate the best diameter and set the diameter value
