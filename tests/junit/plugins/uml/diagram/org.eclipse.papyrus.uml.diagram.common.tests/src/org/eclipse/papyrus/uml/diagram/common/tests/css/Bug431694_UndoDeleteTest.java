@@ -9,7 +9,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.diagram.common.tests.css;
+package org.eclipse.papyrus.uml.diagram.common.tests.css;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;

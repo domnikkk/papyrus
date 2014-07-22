@@ -10,7 +10,7 @@
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.diagram.common.tests.parser;
+package org.eclipse.papyrus.uml.diagram.common.tests.parser;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;

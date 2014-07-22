@@ -14,12 +14,15 @@
 package org.eclipse.papyrus.uml.diagram.common.tests.tests;
 
 
+import org.eclipse.papyrus.uml.diagram.common.tests.css.Bug431694_UndoDeleteTest;
+import org.eclipse.papyrus.uml.diagram.common.tests.parser.HTMLCleanerTestCase;
+import org.eclipse.papyrus.uml.diagram.common.tests.parser.HTMLCornerBentFigureTestCase;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ CommonBendpointsTest.class })
+@SuiteClasses({ CommonBendpointsTest.class ,HTMLCleanerTestCase.class, HTMLCornerBentFigureTestCase.class, Bug431694_UndoDeleteTest.class})
 public class AllTests {
 	// JUnit 4 test suite
 }

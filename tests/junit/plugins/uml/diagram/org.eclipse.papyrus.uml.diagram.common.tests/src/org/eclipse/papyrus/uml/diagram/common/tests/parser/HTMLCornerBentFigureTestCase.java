@@ -11,7 +11,7 @@
  *  Christian W. Damus (CEA) - skip tests on Mac that use unavailable fonts
  *  
  *****************************************************************************/
-package org.eclipse.papyrus.diagram.common.tests.parser;
+package org.eclipse.papyrus.uml.diagram.common.tests.parser;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.draw2d.Figure;
