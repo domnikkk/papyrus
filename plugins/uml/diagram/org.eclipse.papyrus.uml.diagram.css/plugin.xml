@@ -8,4 +8,19 @@
             order="50">
       </factory>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.gmfdiag.css.theme">
+      <themeContribution
+            id="org.eclipse.papyrus.css.blacknwhite_theme">
+         <stylesheet
+               stylesheetPath="theme/uml.css">
+         </stylesheet>
+      </themeContribution>
+      <themeContribution
+            id="org.eclipse.papyrus.css.papyrus_theme">
+         <stylesheet
+               stylesheetPath="theme/uml.css">
+         </stylesheet>
+      </themeContribution>
+   </extension>
 </plugin>

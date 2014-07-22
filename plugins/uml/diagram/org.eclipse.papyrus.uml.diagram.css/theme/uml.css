@@ -1,0 +1,13 @@
+/* Hide the name label for most links */
+
+Dependency > Label:name,
+Usage > Label:name,
+Realization > Label:name,
+InterfaceRealization > Label:name,
+Abstraction > Label:name,
+Substitution > Label:name,
+Connector > Label:name,
+InformationFlow > Label:name
+{
+	visible: false;
+}
