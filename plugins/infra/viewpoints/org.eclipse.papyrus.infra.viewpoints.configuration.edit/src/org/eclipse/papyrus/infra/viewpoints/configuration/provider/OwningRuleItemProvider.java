@@ -16,6 +16,7 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -27,6 +28,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.EClassPropertyDescriptor;
 import org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.StereotypePropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule} object.
@@ -67,6 +69,8 @@ public class OwningRuleItemProvider
 	 * This adds a property descriptor for the Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
@@ -88,11 +92,12 @@ public class OwningRuleItemProvider
 	 * This adds a property descriptor for the Stereotypes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
 	protected void addStereotypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new StereotypePropertyDescriptor(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_OwningRule_stereotypes_feature"),
@@ -103,7 +108,7 @@ public class OwningRuleItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null)));
 	}
 
 	/**

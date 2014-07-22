@@ -81,6 +81,8 @@ public class PathElementItemProvider
 	 * This adds a property descriptor for the Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	protected void addFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add

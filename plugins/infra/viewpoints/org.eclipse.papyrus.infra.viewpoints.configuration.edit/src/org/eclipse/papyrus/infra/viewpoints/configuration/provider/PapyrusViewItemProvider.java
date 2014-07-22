@@ -16,6 +16,7 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -29,6 +30,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ProfilePropertyDescriptor;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.provider.ModelKindItemProvider;
 
 /**
@@ -117,11 +119,12 @@ public class PapyrusViewItemProvider
 	 * This adds a property descriptor for the Profiles feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
 	protected void addProfilesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ProfilePropertyDescriptor(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_PapyrusView_profiles_feature"),
@@ -132,7 +135,7 @@ public class PapyrusViewItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null)));
 	}
 
 	/**

@@ -13,6 +13,7 @@
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 422257
+ *  Christian W. Damus (CEA) - bug 415639
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.readonly;
@@ -36,6 +37,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.NotificationFilter;
@@ -97,9 +100,24 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 				if(!NotificationFilter.READ.matches(notification)) {
 					// Check whether we are modifying a read-only object
 					assertNotReadOnly(notification.getNotifier());
+				} else {
+					// Maybe we resolved a cross-resource containment proxy
+					handleCrossResourceContainmentProxy(notification);
 				}
 			}
 		};
+	}
+	
+	protected void handleCrossResourceContainmentProxy(Notification notification) {
+		if(notification.getEventType() == Notification.RESOLVE) {
+			EReference reference = (EReference)notification.getFeature();
+			if(reference.isContainment()) {
+				InternalEObject newValue = (InternalEObject)notification.getNewValue();
+				if(newValue.eDirectResource() != null) {
+					ControlledResourceTracker.getInstance(this).handleCrossResourceContainment(newValue);
+				}
+			}
+		}
 	}
 
 	protected void assertNotReadOnly(Object object) {
