@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST.
- *
+ * Copyright (c) 2014 CEA LIST and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,12 +8,15 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 425270
+ *  
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.tools.providers;
 
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.papyrus.infra.emf.providers.EMFLabelProvider;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
@@ -34,7 +36,6 @@ import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.OperationTemplateParameter;
-import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.PackageMerge;
 import org.eclipse.uml2.uml.Parameter;
@@ -53,6 +54,8 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 
 	/** icon for metaclass */
 	public static final String ICON_METACLASS = "/icons/Metaclass.gif";//$NON-NLS-1$
+
+	private IItemLabelProvider labelProvider = new DelegatingItemLabelProvider(DelegatingItemLabelProvider.SHOW_LABEL | DelegatingItemLabelProvider.SHOW_METACLASS);
 
 	/**
 	 * 
@@ -172,19 +175,11 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 
 			return imageName + " : " + location; //$NON-NLS-1$
 		} else if(element instanceof PackageImport) {
-			Package importedPackage = ((PackageImport)element).getImportedPackage();
-			if(importedPackage == null) {
-				return "<Package Import>";
-			} else {
-				return "<Package Import> " + importedPackage.getName();
-			}
+			return labelProvider.getText(element);
 		} else if(element instanceof ElementImport) {
-			NamedElement importedElement = ((ElementImport)element).getImportedElement();
-			if(importedElement == null) {
-				return "<Element Import>";
-			} else {
-				return "<Element Import> " + importedElement.getName();
-			}
+			return labelProvider.getText(element);
+		} else if(element instanceof PackageMerge) {
+			return labelProvider.getText(element);
 		} else if(element instanceof NamedElement) {
 			if(element instanceof ValueSpecification) { // Format : [name=]value
 				String value = null;
@@ -215,24 +210,13 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 					}
 				}
 			} else {
-				return ((NamedElement)element).getName();
+				return labelProvider.getText(element);
 			}
 		} else if(element instanceof Comment) {
 			Comment comment = (Comment)element;
 			return getText(comment);
 		} else if(element instanceof PackageMerge) {
-			String label = "PackageMerge";
-			PackageMerge packageMerge = (PackageMerge)element;
-			Package mergedPackage = packageMerge.getMergedPackage();
-
-			if(mergedPackage != null) {
-				if(mergedPackage.eIsProxy()) {
-					label += " <<Package not found>>";
-				} else {
-					label += " " + mergedPackage.getName(); //$NON-NLS-1$
-				}
-			}
-			return label;
+			return labelProvider.getText(element);
 		}
 		// TODO: Temporary solution for template parameters
 		// Note: In the class diagram, for template parameters, 
@@ -290,9 +274,7 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 		}
 		// END TODO
 		else if(element instanceof Element) {
-			// when the element is not a NamedElement, we return its Type name
-			String className = element.eClass().getName();
-			return className;
+			return labelProvider.getText(element);
 		}
 
 		return super.getText(element);

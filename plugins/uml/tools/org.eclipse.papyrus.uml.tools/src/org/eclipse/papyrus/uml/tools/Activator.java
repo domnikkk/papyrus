@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST.
+ * Copyright (c) 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,8 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 425270
+ *  
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.tools;
 
@@ -16,7 +18,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.papyrus.infra.core.log.LogHelper;
@@ -47,6 +51,8 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static LogHelper log;
 
+	private ComposedAdapterFactory adapterFactory;
+
 	/**
 	 * The constructor
 	 */
@@ -63,6 +69,7 @@ public class Activator extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 		log = new LogHelper(this);
+		adapterFactory = createAdapterFactory();
 	}
 
 	/*
@@ -72,6 +79,9 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	@Override
 	public void stop(BundleContext context) throws Exception {
+		adapterFactory.dispose();
+		adapterFactory = null;
+		log = null;
 		plugin = null;
 		super.stop(context);
 	}
@@ -83,6 +93,14 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static Activator getDefault() {
 		return plugin;
+	}
+
+	protected ComposedAdapterFactory createAdapterFactory() {
+		return new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+	}
+
+	public AdapterFactory getItemProviderAdapterFactory() {
+		return adapterFactory;
 	}
 
 

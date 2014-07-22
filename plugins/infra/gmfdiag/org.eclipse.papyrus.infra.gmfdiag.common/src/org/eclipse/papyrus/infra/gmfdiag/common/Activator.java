@@ -10,6 +10,7 @@
  * Contributors:
  *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 410346
+ *  Christian W. Damus (CEA) - bug 425270
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common;
@@ -20,7 +21,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
@@ -38,8 +38,6 @@ public class Activator extends AbstractUIPlugin {
 
 	private static Activator instance;
 
-	private ComposedAdapterFactory adapterFactory;
-
 	public Activator() {
 	}
 
@@ -53,13 +51,10 @@ public class Activator extends AbstractUIPlugin {
 		// register the login helper
 		log = new LogHelper(this);
 		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
-		adapterFactory = createAdapterFactory();
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		adapterFactory.dispose();
-		adapterFactory = null;
 		log = null;
 		instance = null;
 		super.stop(context);
@@ -69,16 +64,12 @@ public class Activator extends AbstractUIPlugin {
 		return instance;
 	}
 
-	protected ComposedAdapterFactory createAdapterFactory() {
-		return new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-	}
-
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return adapterFactory;
+		return org.eclipse.papyrus.uml.tools.Activator.getDefault().getItemProviderAdapterFactory();
 	}
 
 	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider)adapterFactory.adapt(item, IItemLabelProvider.class);
+		IItemLabelProvider labelProvider = (IItemLabelProvider)getItemProvidersAdapterFactory().adapt(item, IItemLabelProvider.class);
 		if(labelProvider != null) {
 			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
