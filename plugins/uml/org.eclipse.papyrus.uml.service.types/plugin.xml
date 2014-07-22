@@ -720,7 +720,8 @@
 	<metamodelType id="org.eclipse.papyrus.uml.ExpansionNode" name="UML::ExpansionNode"
 		eclass="ExpansionNode"
 		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionNode.gif"
-		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
+		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" 
+		edithelper="org.eclipse.papyrus.uml.service.types.helper.ExpansionNodeHelper">
 			<param name="semanticHint" value="UML::ExpansionNode"/>
 	</metamodelType>
 	
@@ -728,7 +729,8 @@
 	<metamodelType id="org.eclipse.papyrus.uml.ExpansionRegion" name="UML::ExpansionRegion"
 		eclass="ExpansionRegion"
 		icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif"
-		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" >
+		kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType" 
+		edithelper="org.eclipse.papyrus.uml.service.types.helper.ExpansionRegionHelper">
 			<param name="semanticHint" value="UML::ExpansionRegion"/>
 	</metamodelType>
 	
