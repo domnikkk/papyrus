@@ -14,6 +14,8 @@
 package org.eclipse.papyrus.uml.diagram.activity.tests;
 
 import org.eclipse.papyrus.uml.diagram.activity.tests.canonical.AllCanonicalTests;
+import org.eclipse.papyrus.uml.diagram.activity.tests.edit.helper.ExpansionRegionHelperTest;
+import org.eclipse.papyrus.uml.diagram.activity.tests.edit.part.ExpansionRegionCompartmentEPTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -25,6 +27,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
 	// canonical
 AllCanonicalTests.class,
+ExpansionRegionHelperTest.class,
+ExpansionRegionCompartmentEPTest.class
 
 })
 public class AllTests {

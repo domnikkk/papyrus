@@ -1,10 +1,19 @@
-/**
+/*****************************************************************************
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
- */
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.editor;
 
-import java.util.logging.Logger;
 
+import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.SashWindowsContainer;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IPropertyListener;
@@ -24,11 +33,6 @@ import org.eclipse.ui.IWorkbenchPart;
  *
  */
 public class SashTabDecorationSynchronizer {
-
-	/**
-	 * Logger for debug purpose.
-	 */
-	Logger log = Logger.getLogger(this.getClass().getName() );
 	
 	/**
 	 * The container to synchronize.
@@ -123,7 +127,7 @@ public class SashTabDecorationSynchronizer {
 	protected void attachPage(IPage page) {
 		if( page instanceof IEditorPage )
 		{
-			log.fine("attachPage( " + page + " )");
+			Activator.log.debug("attachPage( " + page + " )");
 			IEditorPage editorPage = (IEditorPage)page;
 			editorPage.getIEditorPart().addPropertyListener(editorPartPropertyListener);
 		}

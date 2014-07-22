@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.editor.actionbarcontributor;
 
-import java.util.logging.Logger;
 
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IMultiPageEditorPart;
 import org.eclipse.ui.IEditorPart;
@@ -29,9 +28,6 @@ import org.eclipse.ui.part.EditorActionBarContributor;
  * This class is copied from {@link org.eclipse.ui.part.MultiPageEditorActionBarContributor}
  */
 public abstract class MultiPageEditorActionBarContributor extends EditorActionBarContributor implements IMultiPageEditorActionBarContributor {
-
-	/** Log object */
-	Logger log = Logger.getLogger(getClass().getName());
 
 	/**
 	 * Creates a multi-page editor action contributor.

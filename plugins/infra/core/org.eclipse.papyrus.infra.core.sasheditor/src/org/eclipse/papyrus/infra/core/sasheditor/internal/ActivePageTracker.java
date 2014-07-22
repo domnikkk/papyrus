@@ -15,7 +15,7 @@ package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+
 
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageChangedListener;
 
@@ -40,9 +40,6 @@ import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageChangedListener;
  * 
  */
 public class ActivePageTracker {
-
-	/** Log object */
-	Logger log = Logger.getLogger(getClass().getName());
 
 	/** List of listeners */
 	private List<IActiveEditorChangedListener> activeEditorChangedListeners = new ArrayList<IActiveEditorChangedListener>();

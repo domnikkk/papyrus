@@ -1,10 +1,18 @@
-/**
+/*****************************************************************************
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
- */
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.editor.actionbarcontributor;
 
-import java.util.logging.Level;
-
+import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.ui.IEditorActionBarContributor;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.part.EditorActionBarContributor;
@@ -70,8 +78,8 @@ public class ComposedActionBarContributor extends MultiPageEditorActionBarContri
 		if(activeEditor == activeNestedEditor)
 			return;
 
-		if(log.isLoggable(Level.FINE)) {
-			log.fine("setActivePage(" + activeEditor + " " + ")");
+		if(Activator.log.isDebugEnabled()) {
+			Activator.log.debug("setActivePage(" + activeEditor + " " + ")");
 		}
 
 		activeNestedEditor = activeEditor;
@@ -102,8 +110,8 @@ public class ComposedActionBarContributor extends MultiPageEditorActionBarContri
 	 *        the new target editor
 	 */
 	public void setActiveEditor(IEditorPart part) {
-		if(log.isLoggable(Level.FINE)) {
-			log.fine("setActiveEditor(" + part + " " + ")");
+		if(Activator.log.isDebugEnabled()) {
+			Activator.log.debug("setActiveEditor(" + part + " " + ")");
 		}
 
 		// Switch the editor and activeContributor.

@@ -16,10 +16,9 @@ package org.eclipse.papyrus.infra.core.sasheditor.multipage.editor;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IAbstractPanelModel;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IComponentModel;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel;
@@ -51,9 +50,6 @@ import org.eclipse.ui.part.MultiPageEditorPart;
  * @author dumoulin
  */
 public abstract class MultiPageEditor extends MultiPageEditorPart {
-
-	/** Log object */
-	protected Logger log = Logger.getLogger(getClass().getName());
 
 	/** The pageProvider */
 	private ISashWindowsContentProvider pageProvider;
@@ -362,8 +358,8 @@ public abstract class MultiPageEditor extends MultiPageEditorPart {
 	private void addEditor(IPageModel tabItem) {
 		// Check if an editor already exists
 		if(tabExistsFor(tabItem)) {
-			if(log.isLoggable(Level.FINE))
-				log.fine("Editor already exists for '" + tabItem + "'");
+			if(Activator.log.isDebugEnabled())
+				Activator.log.debug("Editor already exists for '" + tabItem + "'");
 			return;
 		}
 
