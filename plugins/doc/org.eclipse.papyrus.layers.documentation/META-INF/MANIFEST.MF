@@ -5,3 +5,4 @@ Bundle-SymbolicName: org.eclipse.papyrus.layers.documentation;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.help
 Bundle-Vendor: %providerName
+Bundle-Localization: plugin
