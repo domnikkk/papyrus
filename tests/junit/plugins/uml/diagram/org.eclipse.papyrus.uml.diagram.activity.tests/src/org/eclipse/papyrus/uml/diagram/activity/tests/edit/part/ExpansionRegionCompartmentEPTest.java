@@ -1,9 +1,10 @@
 package org.eclipse.papyrus.uml.diagram.activity.tests.edit.part;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.util.Arrays;
 import java.util.List;
-
-import junit.framework.TestCase;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
@@ -11,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.diagram.activity.edit.part.ActivityGroup.CustomExpansionRegionStructuredActivityNodeContentCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.papyrus.uml.diagram.activity.edit.parts.ExpansionRegionStructuredActivityNodeContentCompartmentEditPart;
@@ -18,21 +20,18 @@ import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.service.AspectUnspecifiedTypeCreationTool;
 import org.eclipse.papyrus.uml.diagram.common.service.AspectUnspecifiedTypeCreationTool.CreateAspectUnspecifiedTypeRequest;
 import org.eclipse.uml2.uml.UMLFactory;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
-public class ExpansionRegionCompartmentEPTest extends TestCase {
+public class ExpansionRegionCompartmentEPTest extends AbstractPapyrusTest {
 
 	private MockExpansionRegionEditPart myParentEP;
 
 	private MockCustomExpansionRegionCompartmentEditPart myCompartmentEP;
 
-	public ExpansionRegionCompartmentEPTest(String name) {
-		super(name);
-	}
-
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
+	@Before
+	public void setUp() throws Exception {
 		myParentEP = createParentEditPart();
 		myCompartmentEP = createCompartmentEP(myParentEP);
 		myParentEP.createDefaultEditPolicies();
@@ -77,11 +76,10 @@ public class ExpansionRegionCompartmentEPTest extends TestCase {
 		return myCompartmentEP.getTargetEditPart(req);
 	}
 
-	@Override
-	protected void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 		myCompartmentEP = null;
 		myParentEP = null;
-		super.tearDown();
 	}
 
 	private static class MockCustomExpansionRegionCompartmentEditPart extends CustomExpansionRegionStructuredActivityNodeContentCompartmentEditPart {

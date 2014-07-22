@@ -1,11 +1,13 @@
 package org.eclipse.papyrus.uml.diagram.activity.tests.edit.helper;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.rmi.UnexpectedException;
 import java.util.Iterator;
-
-import junit.framework.TestCase;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -17,6 +19,7 @@ import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.service.types.command.CreateEditBasedElementCommand;
 import org.eclipse.papyrus.uml.service.types.helper.ExpansionNodeHelper;
@@ -24,9 +27,12 @@ import org.eclipse.papyrus.uml.service.types.helper.ExpansionRegionHelper;
 import org.eclipse.uml2.uml.ExpansionRegion;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.editor.presentation.UMLEditor;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 
-public class ExpansionRegionHelperTest extends TestCase {
+public class ExpansionRegionHelperTest extends AbstractPapyrusTest {
 
 	public final static String TEST_UML_MODEL = "platform:/plugin/org.eclipse.papyrus.uml.diagram.activity.tests/content/UMLActivityTestModel.uml";
 
@@ -36,13 +42,8 @@ public class ExpansionRegionHelperTest extends TestCase {
 
 	private TransactionalEditingDomain myEditingDomain;
 
-	public ExpansionRegionHelperTest(String name) {
-		super(name);
-	}
-
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
+	@Before
+	public void setUp() throws Exception {
 		myHelperInstance = new MockExpansionRegionHelper();
 		myUMLEditor = new UMLEditor();
 		myEditingDomain = new TransactionalEditingDomainImpl(myUMLEditor.getAdapterFactory()) {
@@ -54,6 +55,7 @@ public class ExpansionRegionHelperTest extends TestCase {
 		};
 	}
 
+	@Test
 	public void testExpansionNodeCreateCommand() throws Exception {
 		CreateElementRequest expansionNodeCreateRequest = initCreateElementRequest(UMLElementTypes.ExpansionNode_3074, UMLPackage.eINSTANCE.getExpansionRegion_InputElement());
 		ICommand command = myHelperInstance.getCreateCommand(expansionNodeCreateRequest);
@@ -67,6 +69,7 @@ public class ExpansionRegionHelperTest extends TestCase {
 		assertEquals(changedRequest.getParameter(ExpansionNodeHelper.EXPANSION_REGION_FEATURE), UMLPackage.eINSTANCE.getExpansionRegion_InputElement());
 	}
 
+	@Test
 	public void testExpansionRegionContainmentChildCreateCommand() throws Exception {
 		CreateElementRequest expansionRegionContainmentCreateRequest = initCreateElementRequest(UMLElementTypes.StructuredActivityNode_3065, UMLPackage.eINSTANCE.getStructuredActivityNode_Node());
 		ICommand command = myHelperInstance.getCreateCommand(expansionRegionContainmentCreateRequest);
@@ -75,6 +78,7 @@ public class ExpansionRegionHelperTest extends TestCase {
 		assertEquals(expansionRegionContainmentCreateRequest, createCommand.getCreateRequest());
 	}
 
+	@Test
 	public void testExpansionRegionBadCreateCommand() throws Exception {
 		CreateElementRequest badCreateCommandRequest = initCreateElementRequest(UMLElementTypes.ExpansionNode_3074, UMLPackage.eINSTANCE.getStructuredActivityNode_Edge());
 		ICommand command = myHelperInstance.getCreateCommand(badCreateCommandRequest);
@@ -107,12 +111,11 @@ public class ExpansionRegionHelperTest extends TestCase {
 		throw new UnexpectedException("ExpansionRegion element was not fount in " + TEST_UML_MODEL);
 	}
 
-	@Override
-	protected void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 		myEditingDomain = null;
 		myUMLEditor = null;
 		myHelperInstance = null;
-		super.tearDown();
 	}
 
 	private static class MockExpansionRegionHelper extends ExpansionRegionHelper {
