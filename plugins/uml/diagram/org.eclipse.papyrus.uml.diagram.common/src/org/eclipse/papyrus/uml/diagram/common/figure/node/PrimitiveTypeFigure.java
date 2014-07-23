@@ -22,7 +22,7 @@ import org.eclipse.draw2d.IFigure;
 /**
  * Represents a Primitive Type
  */
-public class PrimitiveTypeFigure extends CompartmentFigure {
+public class PrimitiveTypeFigure extends RoundedCompartmentFigure {
 
 	/** Attribute Compartment */
 	private final static String ATTRIBUTE_COMPARTMENT = "attributeCompartment";
@@ -33,7 +33,7 @@ public class PrimitiveTypeFigure extends CompartmentFigure {
 	/** List of compartment */
 	private final static List<String> COMPARTMENT = new ArrayList<String>() {
 
-		private static final long serialVersionUID =  -6373359195626265958L;
+		private static final long serialVersionUID = -6373359195626265958L;
 
 		{
 			add(ATTRIBUTE_COMPARTMENT);

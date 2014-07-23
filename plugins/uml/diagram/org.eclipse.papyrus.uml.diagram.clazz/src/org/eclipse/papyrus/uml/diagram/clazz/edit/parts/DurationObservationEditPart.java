@@ -15,6 +15,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -28,6 +30,7 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -36,23 +39,23 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.IPapyrusNodeFigure;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.SelectableBorderedNodeFigure;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.AbstractObservationEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.figure.DurationObservationNodeFigure;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ObservationLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.itemsemantic.CustomDurationObservationItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.DurationObservationItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeIconlDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.QualifiedNameDisplayEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideCompartmentEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ShowHideLabelEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class DurationObservationEditPart extends AbstractObservationEditPart {
+public class DurationObservationEditPart extends RoundedCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -79,13 +82,13 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DurationObservationItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeIconlDisplayEditPolicy());
 		installEditPolicy(QualifiedNameDisplayEditPolicy.QUALIFIED_NAME_POLICY, new QualifiedNameDisplayEditPolicy());
-		installEditPolicy(EditPolicy.LAYOUT_ROLE, new ObservationLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDurationObservationItemSemanticEditPolicy());
 		installEditPolicy(ShowHideLabelEditPolicy.SHOW_HIDE_LABEL_ROLE, new ShowHideLabelEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
@@ -101,7 +104,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View)child.getModel();
 				switch(UMLVisualIDRegistry.getVisualID(childView)) {
-				case DurationObservationNameEditPart.VISUAL_ID:
+				case DurationObservationFloatingNameEditPart.VISUAL_ID:
 				case DurationObservationStereotypeLabelEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
@@ -135,6 +138,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	 *
 	 * @generated
 	 **/
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		/*
 		 * when a node have external node labels, the methods refreshChildren() remove the EditPart corresponding to the Label from the EditPart
@@ -155,25 +159,29 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new DurationObservationNodeFigure();
+		return primaryShape = new RoundedCompartmentFigure();
 	}
 
 	/**
-	 * org.eclipse.papyrus.uml.diagram.clazz.custom.figure.DurationObservationNodeFigure
+	 * org.eclipse.papyrus.uml.diagram.clazz.custom.figure.nodes.DurationObservationNodeFigure
 	 * 
 	 * @generated
 	 */
-	public DurationObservationNodeFigure getPrimaryShape() {
-		return (DurationObservationNodeFigure)primaryShape;
+	@Override
+	public RoundedCompartmentFigure getPrimaryShape() {
+		return (RoundedCompartmentFigure)primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if(borderItemEditPart instanceof DurationObservationNameEditPart) {
-			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
+		if(borderItemEditPart instanceof DurationObservationFloatingNameEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else if(borderItemEditPart instanceof DurationObservationStereotypeLabelEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
@@ -186,6 +194,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
@@ -199,6 +208,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	 * 
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createMainFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
 	}
@@ -211,6 +221,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	 *        instance of generated figure class
 	 * @generated
 	 */
+	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		return nodeShape; // use nodeShape itself as contentPane
 	}
@@ -218,6 +229,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure getContentPane() {
 		if(contentPane != null) {
 			return contentPane;
@@ -228,6 +240,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setForegroundColor(Color color) {
 		if(primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -237,6 +250,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineWidth(int width) {
 		super.setLineWidth(width);
 	}
@@ -244,6 +258,7 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineType(int style) {
 		if(primaryShape instanceof IPapyrusNodeFigure) {
 			((IPapyrusNodeFigure)primaryShape).setLineStyle(style);
@@ -253,7 +268,8 @@ public class DurationObservationEditPart extends AbstractObservationEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(DurationObservationNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(DurationObservationFloatingNameEditPart.VISUAL_ID));
 	}
 }

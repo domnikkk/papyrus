@@ -88,4 +88,28 @@
       </Priority>
    </shapeProvider>
 </extension>
+<extension
+      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
+   <shapeProvider
+         class="org.eclipse.papyrus.uml.diagram.symbols.provider.TimeObservationShapeProvider"
+         description="Provides the shapes for UML::TimeObservation or elements typed by a TimeObservation"
+         id="org.eclipse.papyrus.uml.diagram.symbols.timeobservationshapeprovider"
+         name="TimeObservation Shape Provider">
+      <Priority
+            name="Lowest">
+      </Priority>
+   </shapeProvider>
+</extension>
+<extension
+      point="org.eclipse.papyrus.infra.gmfdiag.common.shapeProvider">
+   <shapeProvider
+         class="org.eclipse.papyrus.uml.diagram.symbols.provider.DurationObservationShapeProvider"
+         description="Provides the shapes for UML::DurationObservation or elements typed by a DurationObservation"
+         id="org.eclipse.papyrus.uml.diagram.symbols.durationobservationshapeprovider"
+         name="DurationObservation Shape Provider">
+      <Priority
+            name="Lowest">
+      </Priority>
+   </shapeProvider>
+</extension>
 </plugin>

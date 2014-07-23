@@ -19,7 +19,7 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.papyrus.uml.diagram.common.figure.node.CompartmentFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.swt.graphics.Image;
 
@@ -27,7 +27,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * Figure for Composite representation of Class.
  */
-public class CompositeFigure extends CompartmentFigure {
+public class CompositeFigure extends RoundedCompartmentFigure {
 
 	/* to present the class as an active class */
 	/** The active. Default value is false */

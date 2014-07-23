@@ -39,9 +39,9 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 
 	public static final String FIGURE_VIEWMAP_PATH = "org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"; //$NON-NLS-1$
 
-	public static final String STEREOTYPE_LABEL_POLICY_KEY = "org.eclipse.papyrus.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY"; //$NON-NLS-1$
+	public static final String LABEL_POLICY_CLASS = "org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy"; //$NON-NLS-1$
 
-	public static final String STEREOTYPE_LABEL_POLICY_CLASS = "org.eclipse.papyrus.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy"; //$NON-NLS-1$
+	public static final String LABEL_POLICY_KEY = "org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE"; //$NON-NLS-1$
 
 	public static final String DEFAULT_GETTER_NAME = "getFloatingNameLabel"; //$NON-NLS-1$
 
@@ -141,6 +141,9 @@ public class AddExternalNodeFloatingNameDisplayBehavior extends Action {
 		// Attach created element one to another in the model
 		label.setViewmap(viewmap);
 		label.setModelFacet(facet);
+
+		//Add custom Policy to have feedback
+		addCustomBehavior(label, LABEL_POLICY_KEY, LABEL_POLICY_CLASS);
 
 		eObject.getLabels().add(label);
 	}

@@ -569,6 +569,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "AssociationClass");
 		Node label5066 = createLabel(node, UMLVisualIDRegistry.getType(AssociationClassNameEditPart.VISUAL_ID));
+		Node label8504 = createLabel(node, UMLVisualIDRegistry.getType(AssociationClassFloatingNameEditPart.VISUAL_ID));
+		label8504.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8504 = (Location)label8504.getLayoutConstraint();
+		location8504.setX(0);
+		location8504.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassAttributeCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassOperationCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassNestedClassifierCompartmentEditPart.VISUAL_ID), true, true, true, true);
@@ -606,6 +611,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "InstanceSpecification");
 		Node label5002 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationNameEditPart.VISUAL_ID));
+		Node label8505 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationFloatingNameEditPart.VISUAL_ID));
+		label8505.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8505 = (Location)label8505.getLayoutConstraint();
+		location8505.setX(0);
+		location8505.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlotCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "InstanceSpecification");
 		return node;
@@ -651,6 +661,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Signal");
 		Node label5008 = createLabel(node, UMLVisualIDRegistry.getType(SignalNameEditPart.VISUAL_ID));
+		Node label8506 = createLabel(node, UMLVisualIDRegistry.getType(SignalFloatingNameEditPart.VISUAL_ID));
+		label8506.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8506 = (Location)label8506.getLayoutConstraint();
+		location8506.setX(0);
+		location8506.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(SignalAttributeCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "Signal");
 		return node;
@@ -670,6 +685,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Interface");
 		Node label5011 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceNameEditPart.VISUAL_ID));
+		Node label8507 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceFloatingNameEditPart.VISUAL_ID));
+		label8507.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8507 = (Location)label8507.getLayoutConstraint();
+		location8507.setX(0);
+		location8507.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(InterfaceAttributeCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(InterfaceOperationCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(InterfaceNestedClassifierCompartmentEditPart.VISUAL_ID), true, true, true, true);
@@ -710,6 +730,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Enumeration");
 		Node label5023 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationNameEditPart.VISUAL_ID));
+		Node label8508 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationFloatingNameEditPart.VISUAL_ID));
+		label8508.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8508 = (Location)label8508.getLayoutConstraint();
+		location8508.setX(0);
+		location8508.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(EnumerationEnumerationLiteralCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "Enumeration");
 		return node;
@@ -748,6 +773,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "InformationItem");
 		Node label5161 = createLabel(node, UMLVisualIDRegistry.getType(InformationItemNameEditPart.VISUAL_ID));
+		Node label8512 = createLabel(node, UMLVisualIDRegistry.getType(InformationItemFloatingNameEditPart.VISUAL_ID));
+		label8512.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8512 = (Location)label8512.getLayoutConstraint();
+		location8512.setX(0);
+		location8512.setY(5);
 		return node;
 	}
 
@@ -765,6 +795,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Class");
 		Node label5029 = createLabel(node, UMLVisualIDRegistry.getType(ClassNameEditPart.VISUAL_ID));
+		Node label8510 = createLabel(node, UMLVisualIDRegistry.getType(ClassFloatingNameEditPart.VISUAL_ID));
+		label8510.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8510 = (Location)label8510.getLayoutConstraint();
+		location8510.setX(0);
+		location8510.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(ClassAttributeCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(ClassOperationCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(ClassNestedClassifierCompartmentEditPart.VISUAL_ID), true, true, true, true);
@@ -786,6 +821,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "PrimitiveType");
 		Node label5032 = createLabel(node, UMLVisualIDRegistry.getType(PrimitiveTypeNameEditPart.VISUAL_ID));
+		Node label8511 = createLabel(node, UMLVisualIDRegistry.getType(PrimitiveTypeFloatingNameEditPart.VISUAL_ID));
+		label8511.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8511 = (Location)label8511.getLayoutConstraint();
+		location8511.setX(0);
+		location8511.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeAttributeCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeOperationCompartmentEditPart.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "PrimitiveType");
@@ -886,11 +926,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "DurationObservation");
-		Node label5155 = createLabel(node, UMLVisualIDRegistry.getType(DurationObservationNameEditPart.VISUAL_ID));
+		Node label5155 = createLabel(node, UMLVisualIDRegistry.getType(DurationObservationFloatingNameEditPart.VISUAL_ID));
 		label5155.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5155 = (Location)label5155.getLayoutConstraint();
-		location5155.setX(25);
-		location5155.setY(3);
+		location5155.setX(0);
+		location5155.setY(5);
 		Node label5156 = createLabel(node, UMLVisualIDRegistry.getType(DurationObservationStereotypeLabelEditPart.VISUAL_ID));
 		label5156.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5156 = (Location)label5156.getLayoutConstraint();
@@ -912,11 +952,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "TimeObservation");
-		Node label5153 = createLabel(node, UMLVisualIDRegistry.getType(TimeObservationNameEditPart.VISUAL_ID));
+		Node label5153 = createLabel(node, UMLVisualIDRegistry.getType(TimeObservationFloatingNameEditPart.VISUAL_ID));
 		label5153.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5153 = (Location)label5153.getLayoutConstraint();
-		location5153.setX(25);
-		location5153.setY(3);
+		location5153.setX(0);
+		location5153.setY(5);
 		Node label5154 = createLabel(node, UMLVisualIDRegistry.getType(TimeObservationStereotypeLabelEditPart.VISUAL_ID));
 		label5154.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5154 = (Location)label5154.getLayoutConstraint();
@@ -1312,6 +1352,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "InstanceSpecification");
 		Node label5040 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationNameEditPartCN.VISUAL_ID));
+		Node label8509 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationFloatingNameEditPartCN.VISUAL_ID));
+		label8509.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8509 = (Location)label8509.getLayoutConstraint();
+		location8509.setX(0);
+		location8509.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlotCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "InstanceSpecification");
 		return node;
@@ -1330,6 +1375,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Component");
 		Node label5043 = createLabel(node, UMLVisualIDRegistry.getType(ComponentNameEditPartCN.VISUAL_ID));
+		Node label8513 = createLabel(node, UMLVisualIDRegistry.getType(ComponentFloatingNameEditPartCN.VISUAL_ID));
+		label8513.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8513 = (Location)label8513.getLayoutConstraint();
+		location8513.setX(0);
+		location8513.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(ComponentAttributeCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(ComponentOperationCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(ComponentNestedClassifierCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
@@ -1350,6 +1400,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Signal");
 		Node label5046 = createLabel(node, UMLVisualIDRegistry.getType(SignalNameEditPartCN.VISUAL_ID));
+		Node label8514 = createLabel(node, UMLVisualIDRegistry.getType(SignalFloatingNameEditPartCN.VISUAL_ID));
+		label8514.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8514 = (Location)label8514.getLayoutConstraint();
+		location8514.setX(0);
+		location8514.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(SignalAttributeCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "Signal");
 		return node;
@@ -1368,6 +1423,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Interface");
 		Node label5049 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceNameEditPartCN.VISUAL_ID));
+		Node label8515 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceFloatingNameEditPartCN.VISUAL_ID));
+		label8515.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8515 = (Location)label8515.getLayoutConstraint();
+		location8515.setX(0);
+		location8515.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(InterfaceAttributeCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(InterfaceOperationCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(InterfaceNestedClassifierCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
@@ -1406,6 +1466,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Enumeration");
 		Node label5055 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationNameEditPartCN.VISUAL_ID));
+		Node label8516 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationFloatingNameEditPartCN.VISUAL_ID));
+		label8516.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8516 = (Location)label8516.getLayoutConstraint();
+		location8516.setX(0);
+		location8516.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(EnumerationEnumerationLiteralCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "Enumeration");
 		return node;
@@ -1442,6 +1507,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "InformationItem");
 		Node label5162 = createLabel(node, UMLVisualIDRegistry.getType(InformationItemNameEditPartCN.VISUAL_ID));
+		Node label8517 = createLabel(node, UMLVisualIDRegistry.getType(InformationItemFloatingNameEditPartCN.VISUAL_ID));
+		label8517.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8517 = (Location)label8517.getLayoutConstraint();
+		location8517.setX(0);
+		location8517.setY(5);
 		return node;
 	}
 
@@ -1458,6 +1528,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "Class");
 		Node label5014 = createLabel(node, UMLVisualIDRegistry.getType(ClassNameEditPartCN.VISUAL_ID));
+		Node label8518 = createLabel(node, UMLVisualIDRegistry.getType(ClassFloatingNameEditPartCN.VISUAL_ID));
+		label8518.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8518 = (Location)label8518.getLayoutConstraint();
+		location8518.setX(0);
+		location8518.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(ClassAttributeCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(ClassOperationCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(ClassNestedClassifierCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
@@ -1478,6 +1553,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "PrimitiveType");
 		Node label5058 = createLabel(node, UMLVisualIDRegistry.getType(PrimitiveTypeNameEditPartCN.VISUAL_ID));
+		Node label8519 = createLabel(node, UMLVisualIDRegistry.getType(PrimitiveTypeFloatingNameEditPartCN.VISUAL_ID));
+		label8519.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8519 = (Location)label8519.getLayoutConstraint();
+		location8519.setX(0);
+		location8519.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeAttributeCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeOperationCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "PrimitiveType");
@@ -1497,6 +1577,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "DataType");
 		Node label5061 = createLabel(node, UMLVisualIDRegistry.getType(DataTypeNameEditPartCN.VISUAL_ID));
+		Node label8520 = createLabel(node, UMLVisualIDRegistry.getType(DataTypeFloatingNameEditPartCN.VISUAL_ID));
+		label8520.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location8520 = (Location)label8520.getLayoutConstraint();
+		location8520.setX(0);
+		location8520.setY(5);
 		createCompartment(node, UMLVisualIDRegistry.getType(DataTypeAttributeCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		createCompartment(node, UMLVisualIDRegistry.getType(DataTypeOperationCompartmentEditPartCN.VISUAL_ID), true, true, true, true);
 		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, "DataType");

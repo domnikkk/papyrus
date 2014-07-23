@@ -20,11 +20,13 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * The Class FloatingNameEditPart.
  */
-public class FloatingNameEditPart extends LabelEditPart {
+public class FloatingLabelEditPart extends LabelEditPart {
 
 	/** The Constant DISPLAY_FLOATING_NAME. */
-	private static final String DISPLAY_FLOATING_NAME = "displayFloatingName";
+	private static final String DISPLAY_FLOATING_LABEL = "displayFloatingLabel";
 
+
+	/** The Constant DEFAULT_LABEL_DISPLAYED. */
 	private static final boolean DEFAULT_LABEL_DISPLAYED = false;
 
 	/**
@@ -33,7 +35,7 @@ public class FloatingNameEditPart extends LabelEditPart {
 	 * @param view
 	 *        the view
 	 */
-	public FloatingNameEditPart(View view) {
+	public FloatingLabelEditPart(View view) {
 		super(view);
 	}
 
@@ -45,7 +47,7 @@ public class FloatingNameEditPart extends LabelEditPart {
 	protected void refreshVisibility() {
 		super.refreshVisibility();
 		//get the value of the CSS property
-		BooleanValueStyle isLabelDisplayedValue = (BooleanValueStyle)((View)((View)getModel()).eContainer()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), DISPLAY_FLOATING_NAME);
+		BooleanValueStyle isLabelDisplayedValue = (BooleanValueStyle)((View)((View)getModel()).eContainer()).getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), getDisplayFloatingLabel());
 
 		//if the property exist set the visibility of the floating name
 		boolean isLabelDisplayed;
@@ -64,6 +66,15 @@ public class FloatingNameEditPart extends LabelEditPart {
 	 */
 	protected boolean getDefaultLabelDisplayedValue() {
 		return DEFAULT_LABEL_DISPLAYED;
+	}
+
+	/**
+	 * Gets the display floating label.
+	 *
+	 * @return the display floating label
+	 */
+	public static String getDisplayFloatingLabel() {
+		return DISPLAY_FLOATING_LABEL;
 	}
 
 }

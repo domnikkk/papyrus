@@ -10,8 +10,8 @@ package org.eclipse.papyrus.uml.diagram.timing.custom.locator;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.common.locator.ExternalLabelPositionLocator;
-import org.eclipse.papyrus.uml.diagram.timing.custom.utils.FigureUtils;
 
 /**
  * Lets the user move a Label anywhere inside its containing compartment, but don't let the label stick out of the

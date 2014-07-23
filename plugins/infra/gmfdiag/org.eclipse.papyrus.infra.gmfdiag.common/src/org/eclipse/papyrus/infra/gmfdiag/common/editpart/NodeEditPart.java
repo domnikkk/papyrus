@@ -10,6 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Style implementation
+ *  Micka�l ADAM (ALL4TEC) mickael.adam@all4tec.net - Add condition to set SVG Path
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.editpart;
@@ -67,20 +68,26 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 		return createNodeFigure();
 	}
 
+	/**
+	 * Refresh the SVG Path for anchorable elements
+	 */
 	protected void refreshSVGPath() {
 		View view = getNotationView();
+		
 		if(svgNodePlate != null) {
 			BooleanValueStyle followStyle = (BooleanValueStyle)view.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), FollowSVGSymbolEditPolicy.FOLLOW_SVG_SYMBOL);
+			//follow SVG is set to true
 			if(followStyle != null && followStyle.isBooleanValue()) {
 				if(ShapeService.getInstance().hasShapeToDisplay(getNotationView())) {
 					List<SVGDocument> svgToDisplay = ShapeService.getInstance().getSVGDocumentToDisplay(getNotationView());
 					int documentNumber = svgToDisplay.size();
-					SVGDocument svgdoc = null;
-					if(documentNumber > 0) {
-						svgdoc = svgToDisplay.get(documentNumber - 1);
+					//If there is more than one element we don't follow the SVG path.
+					if(documentNumber == 1) {
+						//Set the SVG document of the SVGNodePlate to the document to display
+						svgNodePlate.setSVGDocument(svgToDisplay.get(0));
+					} else {
+						svgNodePlate.setSVGDocument(null);
 					}
-
-					svgNodePlate.setSVGDocument(svgdoc);
 				} else {
 					svgNodePlate.setSVGDocument(null);
 				}
@@ -300,7 +307,7 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	public DragTracker getDragTracker(final Request request) {
 		return new PapyrusDragEditPartsTrackerEx(this, true, false, false);
 	}
-	
+
 	/**
 	 * TODO : remove this override when the bug will be fixed
 	 * See Bug 424943 ResizableEditPolicy#getResizeCommand duplicates request ignoring some request values
@@ -309,6 +316,7 @@ public abstract class NodeEditPart extends AbstractBorderedShapeEditPart impleme
 	 * 
 	 * @return
 	 */
+	@Override
 	public EditPolicy getPrimaryDragEditPolicy() {
 		EditPolicy policy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		return policy != null ? policy : new PapyrusResizableShapeEditPolicy();

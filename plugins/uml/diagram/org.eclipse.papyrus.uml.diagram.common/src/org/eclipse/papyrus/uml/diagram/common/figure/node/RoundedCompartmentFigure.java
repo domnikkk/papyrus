@@ -39,10 +39,11 @@ public class RoundedCompartmentFigure extends NodeNamedElementFigure implements 
 	/** The corner dimension. */
 	private Dimension cornerDimension = new Dimension();
 
+	/** The is oval. */
 	private boolean isOval;
 
+	/** The is label constrained. */
 	private boolean isLabelConstrained;
-
 
 	private Dimension floatingNameOffset = new Dimension();
 

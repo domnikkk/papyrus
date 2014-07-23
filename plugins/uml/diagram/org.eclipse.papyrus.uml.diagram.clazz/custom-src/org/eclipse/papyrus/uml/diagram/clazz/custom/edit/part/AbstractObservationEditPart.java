@@ -13,21 +13,17 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part;
 
-import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gef.GraphicalEditPart;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.editparts.IUMLNamedElementEditPart;
-import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.RoundedCompartmentEditPart;
 
 /**
  * 
  * 
  */
-public abstract class AbstractObservationEditPart extends NamedElementEditPart implements IUMLNamedElementEditPart {
+//TODO to delete
+public abstract class AbstractObservationEditPart extends RoundedCompartmentEditPart implements IUMLNamedElementEditPart {
 
 	public AbstractObservationEditPart(View view) {
 		super(view);
@@ -37,23 +33,27 @@ public abstract class AbstractObservationEditPart extends NamedElementEditPart i
 	 * 
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected void refreshBounds() {
-		int width = 20;
-		int height = 20;
-		Dimension size = new Dimension(width, height);
-		int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
-		Point loc = new Point(x, y);
-		((GraphicalEditPart)getParent()).setLayoutConstraint(this, getFigure(), new Rectangle(loc, size));
+		//used to forbid resize
+		//		int width = 20;
+		//		int height = 20;
+		//		Dimension size = new Dimension(width, height);
+		//		int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		//		int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		//		Point loc = new Point(x, y);
+		//		((GraphicalEditPart)getParent()).setLayoutConstraint(this, getFigure(), new Rectangle(loc, size));
+		super.refreshBounds();
 	}
 
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 		// set the figure active when the feature of the of a class is true
-		if(resolveSemanticElement() != null) {
-			refreshFontColor();
-			// To adapt the display of the container to the icon!
-			refreshBounds();
-		}
+		//		if(resolveSemanticElement() != null) {
+		//			refreshFontColor();
+		//			// To adapt the display of the container to the icon!
+		//			refreshBounds();
+		//		}
 	}
 }

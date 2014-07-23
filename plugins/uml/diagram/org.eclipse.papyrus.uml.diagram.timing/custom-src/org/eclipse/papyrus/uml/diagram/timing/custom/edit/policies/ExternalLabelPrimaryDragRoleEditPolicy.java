@@ -30,9 +30,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableLabelEditPoli
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.commands.RefreshCommandForDo;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.commands.RefreshCommandForUndo;
-import org.eclipse.papyrus.uml.diagram.timing.custom.utils.FigureUtils;
 
 /**
  * This policy provides the selection handles, feedback and move command for an external node label. The expected

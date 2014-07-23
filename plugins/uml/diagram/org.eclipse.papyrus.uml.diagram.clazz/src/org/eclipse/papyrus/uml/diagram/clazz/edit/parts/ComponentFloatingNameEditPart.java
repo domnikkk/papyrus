@@ -60,6 +60,7 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
@@ -67,7 +68,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
-import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingNameEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.swt.SWT;
@@ -83,7 +84,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class ComponentFloatingNameEditPart extends FloatingNameEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class ComponentFloatingNameEditPart extends FloatingLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -133,7 +134,7 @@ public class ComponentFloatingNameEditPart extends FloatingNameEditPart implemen
 	/**
 	 * @generated
 	 */
-	public ComponentFloatingNameEditPart(org.eclipse.gmf.runtime.notation.View view) {
+	public ComponentFloatingNameEditPart(View view) {
 		super(view);
 	}
 
@@ -144,6 +145,7 @@ public class ComponentFloatingNameEditPart extends FloatingNameEditPart implemen
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ExternalLabelPrimaryDragRoleEditPolicy());
 	}
 
 	/**
@@ -631,7 +633,7 @@ public class ComponentFloatingNameEditPart extends FloatingNameEditPart implemen
 	/**
 	 * @generated
 	 */
-	private org.eclipse.gmf.runtime.notation.View getFontStyleOwnerView() {
+	private View getFontStyleOwnerView() {
 		return getPrimaryView();
 	}
 

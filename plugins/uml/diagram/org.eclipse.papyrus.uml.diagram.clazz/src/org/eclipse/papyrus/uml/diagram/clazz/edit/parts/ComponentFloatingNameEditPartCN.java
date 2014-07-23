@@ -35,7 +35,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
@@ -61,6 +60,7 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalLabelPrimaryDragRoleEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
@@ -68,6 +68,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.papyrus.uml.diagram.common.directedit.MultilineLabelDirectEditManager;
+import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.IDirectEdition;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure;
 import org.eclipse.swt.SWT;
@@ -83,12 +84,12 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class TimeObservationNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class ComponentFloatingNameEditPartCN extends FloatingLabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5153;
+	public static final int VISUAL_ID = 8513;
 
 	/**
 	 * @generated
@@ -127,13 +128,13 @@ public class TimeObservationNameEditPart extends LabelEditPart implements ITextA
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationNameEditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentFloatingNameEditPartCN.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public TimeObservationNameEditPart(View view) {
+	public ComponentFloatingNameEditPartCN(View view) {
 		super(view);
 	}
 
@@ -144,6 +145,7 @@ public class TimeObservationNameEditPart extends LabelEditPart implements ITextA
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ExternalLabelPrimaryDragRoleEditPolicy());
 	}
 
 	/**
@@ -364,7 +366,7 @@ public class TimeObservationNameEditPart extends LabelEditPart implements ITextA
 	 */
 	public IParser getParser() {
 		if(parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.TimeObservation_2096, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.clazz.edit.parts.TimeObservationNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Component_3021, getParserElement(), UMLVisualIDRegistry.getType(org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentFloatingNameEditPartCN.VISUAL_ID));
 		}
 		return parser;
 	}

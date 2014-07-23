@@ -11,17 +11,17 @@
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.uml.diagram.clazz.custom.figure;
+package org.eclipse.papyrus.uml.diagram.clazz.custom.figure.nodes;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.uml.diagram.common.figure.node.CompartmentFigure;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.RoundedCompartmentFigure;
 
 /**
  * Figure for Composite representation of InformationItem.
  */
-public class InformationItemFigure extends CompartmentFigure {
+public class InformationItemFigure extends RoundedCompartmentFigure {
 
 	/** Value of the textual tag added to the figure. */
 	private static String TAG_LABEL = "Information"; //$NON-NLS-1$

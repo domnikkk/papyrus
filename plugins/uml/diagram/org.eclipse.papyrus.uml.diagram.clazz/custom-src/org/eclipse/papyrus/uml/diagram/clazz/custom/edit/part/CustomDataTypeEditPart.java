@@ -16,20 +16,24 @@ package org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.GetChildLayoutEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.node.RoundedRectangleNodePlateFigure;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart;
-import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingNameEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editparts.FloatingLabelEditPart;
 import org.eclipse.papyrus.uml.diagram.common.locator.RoundedRectangleLabelPositionLocator;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class CDataTypeEditPart.
  */
-public class CDataTypeEditPart extends DataTypeEditPart {
+public class CustomDataTypeEditPart extends DataTypeEditPart {
+
+
 
 	/**
 	 * Instantiates a new c data type edit part.
@@ -37,8 +41,19 @@ public class CDataTypeEditPart extends DataTypeEditPart {
 	 * @param view
 	 *        the view
 	 */
-	public CDataTypeEditPart(View view) {
+	public CustomDataTypeEditPart(View view) {
 		super(view);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart#createDefaultEditPolicies()
+	 *
+	 *      //
+	 */
+	@Override
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new GetChildLayoutEditPolicy());
 	}
 
 	/**
@@ -47,6 +62,7 @@ public class CDataTypeEditPart extends DataTypeEditPart {
 	 * @return the node figure
 	 * @see org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart#createNodePlate()
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		//Use custom node plate
 		DefaultSizeNodeFigure result = new RoundedRectangleNodePlateFigure(100, 100);
@@ -63,9 +79,10 @@ public class CDataTypeEditPart extends DataTypeEditPart {
 	 * @see org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart#addBorderItem(org.eclipse.draw2d.IFigure,
 	 *      org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart)
 	 */
+	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
 		//if it's a floating name
-		if(borderItemEditPart instanceof FloatingNameEditPart) {
+		if(borderItemEditPart instanceof FloatingLabelEditPart) {
 			//Create specific locator
 			RoundedRectangleLabelPositionLocator locator = new RoundedRectangleLabelPositionLocator(getMainFigure(), PositionConstants.SOUTH);
 			//Offset from the parent for the constraint case

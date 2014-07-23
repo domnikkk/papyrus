@@ -165,7 +165,7 @@ public class RoundedRectangleLabelPositionLocator implements IBorderItemLocator 
 
 	public void setConstraint(Rectangle theConstraint) {
 		this.constraint = theConstraint;
-		if(!isLabelConstraint())
+		if(!isLabelConstrained())
 			if(theConstraint.getTopLeft().x == 0 || theConstraint.getTopLeft().y == 0)
 				setCurrentSideOfParent(getPreferredSideOfParent());
 	}
@@ -224,7 +224,7 @@ public class RoundedRectangleLabelPositionLocator implements IBorderItemLocator 
 		int y = parentFigureY;
 		Dimension borderItemSize = getSize(borderItem);
 
-		if(!isLabelConstraint()) {
+		if(!isLabelConstrained()) {
 			//position if the label is free, taking into account of the offset
 			x = parentFigureX + getFloatingItemOffset().width;
 			y = parentFigureY + getFloatingItemOffset().height;
@@ -472,7 +472,7 @@ public class RoundedRectangleLabelPositionLocator implements IBorderItemLocator 
 	 */
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 		Rectangle realLocation = new Rectangle(proposedLocation);
-		if(!isLabelConstraint())
+		if(!isLabelConstrained())
 			return realLocation;
 		int side = findClosestSideOfParent(proposedLocation, getParentBorder());
 		Point newTopLeft = locateOnBorder(realLocation.getTopLeft(), side, 0, borderItem);
@@ -485,7 +485,7 @@ public class RoundedRectangleLabelPositionLocator implements IBorderItemLocator 
 	 *
 	 * @return true, if the label is constrained
 	 */
-	public boolean isLabelConstraint() {
+	public boolean isLabelConstrained() {
 		if(getParentFigure().getChildren().get(0) instanceof IRoundedRectangleFigure)
 			return ((IRoundedRectangleFigure)((IFigure)getParentFigure().getChildren().get(0))).isFloatingNameConstrained();
 		return false;
@@ -555,7 +555,7 @@ public class RoundedRectangleLabelPositionLocator implements IBorderItemLocator 
 		Dimension size = getSize(target);
 
 		//set the  position of the floating label by setting the bounds
-		if(!isLabelConstraint()) {
+		if(!isLabelConstrained()) {
 			//If you want to fix the label use this code
 			//			Rectangle proposedBounds = constraint.getCopy();//To block the Label
 			//			proposedBounds.setLocation((parentFigure.getBounds().getTopLeft().translate(getFloatingItemOffset())));//To block the Label
@@ -638,7 +638,7 @@ public class RoundedRectangleLabelPositionLocator implements IBorderItemLocator 
 	 * @return
 	 */
 	public int getCurrentSideOfParent() {
-		if(!isLabelConstraint())
+		if(!isLabelConstrained())
 			return PositionConstants.NONE;
 		return currentSide;
 	}

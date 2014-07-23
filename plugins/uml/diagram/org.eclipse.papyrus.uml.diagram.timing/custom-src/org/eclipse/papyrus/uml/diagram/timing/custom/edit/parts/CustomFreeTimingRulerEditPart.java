@@ -15,9 +15,9 @@ import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ShapeCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.figures.TimingRulerFigure;
 import org.eclipse.papyrus.uml.diagram.timing.custom.layouts.FillLayout;
-import org.eclipse.papyrus.uml.diagram.timing.custom.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.FreeTimingRulerEditPartCN;
 
 public class CustomFreeTimingRulerEditPart extends FreeTimingRulerEditPartCN {

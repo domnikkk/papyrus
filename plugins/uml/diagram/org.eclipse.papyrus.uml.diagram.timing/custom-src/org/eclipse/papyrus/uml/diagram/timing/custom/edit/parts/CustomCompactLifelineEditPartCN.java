@@ -26,10 +26,10 @@ import org.eclipse.gef.requests.LocationRequest;
 import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.figures.CompactLifelineFigure;
 import org.eclipse.papyrus.uml.diagram.timing.custom.parts.FloatingMessageAnchor;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.Constants;
-import org.eclipse.papyrus.uml.diagram.timing.custom.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.MessageUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.CompactLifelineEditPartCN;
 

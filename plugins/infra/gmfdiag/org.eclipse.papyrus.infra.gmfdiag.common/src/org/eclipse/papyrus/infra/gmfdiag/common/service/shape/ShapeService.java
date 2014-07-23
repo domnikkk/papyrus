@@ -28,6 +28,9 @@ import org.eclipse.gmf.runtime.common.ui.services.util.ActivityFilterProviderDes
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.draw2d.ui.render.RenderedImage;
+import org.eclipse.gmf.runtime.notation.IntValueStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
 import org.w3c.dom.svg.SVGDocument;
 
@@ -35,6 +38,11 @@ import org.w3c.dom.svg.SVGDocument;
  * Service that manages shape.
  */
 public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Service {
+
+	/**
+	 * 
+	 */
+	private static final String MAX_NUMBER_OF_SYMBOL = "maxNumberOfSymbol";
 
 	/** singleton instance */
 	private static ShapeService instance;
@@ -73,7 +81,18 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 				images.addAll(listOfImages);
 			}
 		}
-		return images;
+		//
+		int nbImagesToDisplay = getMaxNumberOfSymbolToDisplay(view);
+		//the list of image to display
+		List<RenderedImage> imagesToDisplay = new ArrayList<RenderedImage>();
+		//get the nbImagesToDisplay highest images from the list
+		for(int i = 0; i < nbImagesToDisplay; i++) {
+			if(images.size() - nbImagesToDisplay + i >= 0) {
+				//get the last images of the list
+				imagesToDisplay.add(images.get(images.size() - nbImagesToDisplay + i));
+			}
+		}
+		return imagesToDisplay;
 	}
 
 
@@ -87,13 +106,46 @@ public class ShapeService extends org.eclipse.gmf.runtime.common.core.service.Se
 	public List<SVGDocument> getSVGDocumentToDisplay(EObject view) {
 		@SuppressWarnings("unchecked")
 		List<List<SVGDocument>> listOfListOfImages = execute(ExecutionStrategy.REVERSE, new GetSVGDocumentForViewOperation(view));
+		//lists of images are sort by priority from the lowest to the highest
 		List<SVGDocument> images = new ArrayList<SVGDocument>();
 		for(List<SVGDocument> listOfImages : listOfListOfImages) {
 			if(listOfImages != null && !listOfImages.isEmpty()) {
 				images.addAll(listOfImages);
 			}
 		}
-		return images;
+
+		int nbImagesToDisplay = getMaxNumberOfSymbolToDisplay(view);
+
+		//the list of image to display
+		List<SVGDocument> imagesToDisplay = new ArrayList<SVGDocument>();
+		//For nbImagesToDisplay
+		for(int i = 0; i < nbImagesToDisplay; i++) {
+			if(images.size() - nbImagesToDisplay + i >= 0) {
+				//get the last images of the list
+				imagesToDisplay.add(images.get(images.size() - nbImagesToDisplay + i));
+			}
+		}
+		return imagesToDisplay;
+	}
+
+	/**
+	 * Get the maximum number of images to be displayed
+	 * 
+	 * @param view
+	 * @return
+	 */
+	private int getMaxNumberOfSymbolToDisplay(EObject view) {
+		//get the nbImagesToDisplay highest images from the list
+		IntValueStyle maxNbImages = (IntValueStyle)((View)view).getNamedStyle(NotationPackage.eINSTANCE.getIntValueStyle(), MAX_NUMBER_OF_SYMBOL);
+		int nbImagesToDisplay = maxNbImages != null ? maxNbImages.getIntValue() : getDefaultMaxNumberOfSymbol();
+		return nbImagesToDisplay;
+	}
+
+	/**
+	 * @return
+	 */
+	private int getDefaultMaxNumberOfSymbol() {
+		return 10;
 	}
 
 	/**

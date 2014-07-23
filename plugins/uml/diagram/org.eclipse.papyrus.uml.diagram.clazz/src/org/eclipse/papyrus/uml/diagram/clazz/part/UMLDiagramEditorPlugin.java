@@ -11,11 +11,17 @@
  */
 package org.eclipse.papyrus.uml.diagram.clazz.part;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -28,6 +34,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.preferences.DiagramPreferenceInitia
 import org.eclipse.papyrus.uml.diagram.clazz.providers.ElementInitializers;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
 /**

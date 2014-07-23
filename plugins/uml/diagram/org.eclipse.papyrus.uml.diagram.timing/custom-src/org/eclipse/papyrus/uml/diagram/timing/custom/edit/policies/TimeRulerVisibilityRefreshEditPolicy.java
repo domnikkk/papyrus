@@ -18,8 +18,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.figures.LifelineFigure;
-import org.eclipse.papyrus.uml.diagram.timing.custom.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.ViewUtils;
 
 /**

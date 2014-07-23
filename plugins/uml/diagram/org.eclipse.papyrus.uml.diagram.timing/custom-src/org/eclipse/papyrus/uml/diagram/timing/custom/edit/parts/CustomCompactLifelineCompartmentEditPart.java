@@ -20,6 +20,7 @@ import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.layout.FreeFormLayoutEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.figures.CompactStateFigure;
 import org.eclipse.papyrus.uml.diagram.timing.custom.figures.CrossFigure;
 import org.eclipse.papyrus.uml.diagram.timing.custom.figures.DimensioningArrowFigure;
@@ -28,7 +29,6 @@ import org.eclipse.papyrus.uml.diagram.timing.custom.figures.SmallSquareFigure;
 import org.eclipse.papyrus.uml.diagram.timing.custom.figures.VerticalMarkFigure;
 import org.eclipse.papyrus.uml.diagram.timing.custom.layouts.FillLayout;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.Constants;
-import org.eclipse.papyrus.uml.diagram.timing.custom.utils.FigureUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.CompactLifelineCompartmentEditPartCN;
 
 public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCompartmentEditPartCN {
