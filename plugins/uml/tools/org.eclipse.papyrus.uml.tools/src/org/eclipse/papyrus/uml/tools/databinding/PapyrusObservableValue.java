@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
+ *  Christian W. Damus (CEA) - bug 440108
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.databinding;
 
@@ -23,6 +25,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.emf.databinding.EMFObservableValue;
@@ -106,7 +109,7 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 					cc.add(provider.getEditCommand(new DestroyElementRequest((TransactionalEditingDomain)domain, (EObject)oldValue, false)));
 				}
 
-				cc.add(provider.getEditCommand(new SetRequest((TransactionalEditingDomain)domain, eObject, eStructuralFeature, value)));
+				cc.add(provider.getEditCommand(createSetRequest((TransactionalEditingDomain)domain, eObject, eStructuralFeature, value)));
 
 				return new GMFtoEMFCommandWrapper(cc);
 			}
@@ -115,6 +118,10 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 		}
 
 		return UnexecutableCommand.INSTANCE;
+	}
+	
+	protected IEditCommandRequest createSetRequest(TransactionalEditingDomain domain, EObject owner, EStructuralFeature feature, Object value) {
+		return new SetRequest(domain, owner, feature, value);
 	}
 
 	/**

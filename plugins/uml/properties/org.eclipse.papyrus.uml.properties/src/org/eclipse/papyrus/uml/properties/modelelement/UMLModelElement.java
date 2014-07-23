@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
+ *  Christian W. Damus (CEA) - bug 440108
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
@@ -52,6 +53,7 @@ import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableList;
 import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableValue;
 import org.eclipse.papyrus.uml.tools.databinding.ProvidedInterfaceObservableList;
 import org.eclipse.papyrus.uml.tools.databinding.RequiredInterfaceObservableList;
+import org.eclipse.papyrus.uml.tools.databinding.UnsettableStringValue;
 import org.eclipse.papyrus.uml.tools.providers.ConstrainedElementContentProvider;
 import org.eclipse.papyrus.uml.tools.providers.UMLContainerContentProvider;
 import org.eclipse.papyrus.uml.tools.providers.UMLContentProvider;
@@ -127,6 +129,11 @@ public class UMLModelElement extends EMFModelElement {
 			return list;
 		}
 
+		if((feature == UMLPackage.Literals.NAMED_ELEMENT__NAME) && (domain != null)) {
+			// Empty string as a name is not useful, so we unset instead
+			return new UnsettableStringValue(getSource(featurePath), feature, domain);
+		}
+		
 		IObservableValue value = domain == null ? EMFProperties.value(featurePath).observe(source) : new PapyrusObservableValue(getSource(featurePath), feature, domain);
 		return value;
 	}

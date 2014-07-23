@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_KDi_EBKHEeShYZf612l-_w" name="operations">
+  <packageImport xmi:id="_cxcooBKHEeShYZf612l-_w">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MubQ8BKHEeShYZf612l-_w" name="Foo">
+    <ownedOperation xmi:id="_PQtAcBKHEeShYZf612l-_w" name="nameMe"/>
+    <ownedOperation xmi:id="_RBIcQBKHEeShYZf612l-_w" name="doIt">
+      <ownedParameter xmi:id="_SPFdIBKHEeShYZf612l-_w" name="now">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+</uml:Model>
