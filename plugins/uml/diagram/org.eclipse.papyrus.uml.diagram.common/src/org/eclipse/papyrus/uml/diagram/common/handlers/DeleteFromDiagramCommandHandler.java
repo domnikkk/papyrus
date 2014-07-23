@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,6 @@ package org.eclipse.papyrus.uml.diagram.common.handlers;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.emf.ecore.EObject;
@@ -33,12 +32,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.dialogs.IDialogConstants;
-import org.eclipse.jface.dialogs.MessageDialogWithToggle;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.swt.widgets.Display;
 
 /**
  * Command handler for delete from diagram
@@ -46,9 +40,9 @@ import org.eclipse.swt.widgets.Display;
 public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler implements IHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return the deletion command
 	 * @throws ExecutionException
 	 */
@@ -132,45 +126,6 @@ public class DeleteFromDiagramCommandHandler extends GraphicalCommandHandler imp
 		return false;
 	}
 
-	/**
-	 * 
-	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
-	 * @param event
-	 * @return
-	 * @throws ExecutionException
-	 */
-	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(canDoAction()) {//the key binding for Delete and Hide action changed, so we display a message for the users
-			return super.execute(event);
-		}
-		return null;
-	}
-
 	private static final String DISPLAY_MESSAGE_FOR_HIDE_ACTION_PREFERENCE_KEY = "displayMessageForHideActionPreferenceKey";
 
-	/**
-	 * 
-	 * @return
-	 *         <code>true</code> if the action can be done
-	 */
-	private boolean canDoAction() {
-		final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		boolean contains = store.contains(DISPLAY_MESSAGE_FOR_HIDE_ACTION_PREFERENCE_KEY);
-		if(!contains) {
-			store.setValue(DISPLAY_MESSAGE_FOR_HIDE_ACTION_PREFERENCE_KEY, MessageDialogWithToggle.NEVER);
-			store.setDefault(DISPLAY_MESSAGE_FOR_HIDE_ACTION_PREFERENCE_KEY, MessageDialogWithToggle.NEVER);
-		}
-		final String hideValue = store.getString(DISPLAY_MESSAGE_FOR_HIDE_ACTION_PREFERENCE_KEY);
-		if(!hideValue.equals(MessageDialogWithToggle.ALWAYS)) {
-
-			final MessageDialogWithToggle toggle = MessageDialogWithToggle.openYesNoQuestion(Display.getDefault().getActiveShell(), "Hide Action", "WARNING! The Shorcuts for Hide and Delete actions have changed. \n \n Do you really want to hide an element of the diagram?", "Don't show this dialog the next time", false, store, DISPLAY_MESSAGE_FOR_HIDE_ACTION_PREFERENCE_KEY);
-			int returnCode = toggle.getReturnCode();
-			if(returnCode != IDialogConstants.YES_ID) {
-				return false;
-			}
-		}
-		return true;
-	}
 }

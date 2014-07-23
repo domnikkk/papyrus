@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,8 +18,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -35,16 +33,11 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.dialogs.IDialogConstants;
-import org.eclipse.jface.dialogs.MessageDialogWithToggle;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.papyrus.infra.emf.readonly.ReadOnlyManager;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.helper.NotationHelper;
-import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.swt.widgets.Display;
 
 import com.google.common.base.Optional;
 
@@ -129,46 +122,4 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 		return true;
 	}
 
-	/**
-	 * 
-	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
-	 * @param event
-	 * @return
-	 * @throws ExecutionException
-	 */
-	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(canDoAction()) {//the key binding for Delete and Hide action changed, so we display a message for the users. TODO: Remove for Luna
-			return super.execute(event);
-		}
-		return null;
-	}
-
-	private static final String DISPLAY_MESSAGE_FOR_DELETE_ACTION_PREFERENCE_KEY = "displayMessageForDeleteActionPreferenceKey";
-
-	/**
-	 * 
-	 * @return
-	 *         <code>true</code> if the action can be done
-	 */
-	//TODO: Remove for Luna
-	protected boolean canDoAction() {
-		final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		boolean contains = store.contains(DISPLAY_MESSAGE_FOR_DELETE_ACTION_PREFERENCE_KEY);
-		if(!contains) {
-			store.setValue(DISPLAY_MESSAGE_FOR_DELETE_ACTION_PREFERENCE_KEY, MessageDialogWithToggle.NEVER);
-			store.setDefault(DISPLAY_MESSAGE_FOR_DELETE_ACTION_PREFERENCE_KEY, MessageDialogWithToggle.NEVER);
-		}
-		final String hideValue = store.getString(DISPLAY_MESSAGE_FOR_DELETE_ACTION_PREFERENCE_KEY);
-		if(!hideValue.equals(MessageDialogWithToggle.ALWAYS)) {
-
-			final MessageDialogWithToggle toggle = MessageDialogWithToggle.openYesNoQuestion(Display.getDefault().getActiveShell(), "Delete Action", "WARNING! The Shorcuts for Hide and Delete actions have changed. \n \n Do you really want to delete an element of the model?", "Don't show this dialog the next time", false, store, DISPLAY_MESSAGE_FOR_DELETE_ACTION_PREFERENCE_KEY);
-			int returnCode = toggle.getReturnCode();
-			if(returnCode != IDialogConstants.YES_ID) {
-				return false;
-			}
-		}
-		return true;
-	}
 }
