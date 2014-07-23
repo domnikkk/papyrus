@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,9 +55,9 @@ import org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter;
 
 /**
  * This command is used to define a profile
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class DefineProfileCommand extends AbstractTransactionalCommand {
 
@@ -74,9 +74,9 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 	private boolean saveConstraint;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @param papyrusAnnotation
 	 * @param rootProfile
@@ -92,7 +92,7 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Define this package if it is a profile and its sub-profiles
-	 * 
+	 *
 	 * @param thePackage
 	 *        the package to define (if it is a profile)
 	 */
@@ -121,7 +121,9 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 		//
 
 		options.put(Profile2EPackageConverter.OPTION__COMMENTS, UMLUtil.OPTION__IGNORE);
-		options.put(Profile2EPackageConverter.OPTION__FOREIGN_DEFINITIONS, UMLUtil.OPTION__IGNORE);
+		options.put(Profile2EPackageConverter.OPTION__FOREIGN_DEFINITIONS, UMLUtil.OPTION__PROCESS);
+
+		options.put(Profile2EPackageConverter.OPTION__UNTYPED_PROPERTIES, UMLUtil.OPTION__PROCESS); //Closer to the UML semantics of untyped properties
 
 		List<EPackage> result = new LinkedList<EPackage>();
 
@@ -142,11 +144,11 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
 	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -227,9 +229,9 @@ public class DefineProfileCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#getAffectedFiles()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

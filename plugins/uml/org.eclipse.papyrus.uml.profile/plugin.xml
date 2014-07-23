@@ -53,24 +53,6 @@
                </target>
             </constraint>
             <constraint
-                  class="org.eclipse.papyrus.uml.profile.constraints.PropertyHasTypeConstraint"
-                  id="com.cea.papyrus.profile.constraints.PropertyHasTypeID"
-                  lang="Java"
-                  mode="Batch"
-                  name="%property_has_type.name"
-                  severity="ERROR"
-                  statusCode="0">
-               <message>
-                  %property_has_type.msg
-               </message>
-               <description>
-                  %property_has_type.desc
-               </description>
-               <target
-                     class="uml.Property">
-               </target>
-            </constraint>
-            <constraint
                   class="org.eclipse.papyrus.uml.profile.constraints.PropertyHasDefaultValueConstraint"
                   id="com.cea.papyrus.profile.constraints.PropertyHasDefaultID"
                   lang="Java"

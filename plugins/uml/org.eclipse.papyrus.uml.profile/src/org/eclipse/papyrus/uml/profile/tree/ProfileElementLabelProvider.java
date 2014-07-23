@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,6 +43,7 @@ import org.eclipse.papyrus.uml.profile.tree.objects.UserPrimitiveTypeValueTreeOb
 import org.eclipse.papyrus.uml.profile.tree.objects.ValueTreeObject;
 import org.eclipse.papyrus.uml.profile.utils.Util;
 import org.eclipse.papyrus.uml.tools.utils.ProfileUtil;
+import org.eclipse.papyrus.uml.tools.utils.TypeUtil;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
@@ -88,10 +89,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Gets the image.
-	 * 
+	 *
 	 * @param object
 	 *        the object
-	 * 
+	 *
 	 * @return the image
 	 */
 	@Override
@@ -128,10 +129,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Gets the text.
-	 * 
+	 *
 	 * @param object
 	 *        the object
-	 * 
+	 *
 	 * @return the text
 	 */
 	@Override
@@ -177,14 +178,14 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Returns the label to show for a property.
-	 * 
+	 *
 	 * @param currentPropType
 	 *        current property type
 	 * @param currentProp
 	 *        current property
 	 * @param currentPropValue
 	 *        current property value
-	 * 
+	 *
 	 * @return the String label
 	 */
 	private String getPropLabel(Property currentProp, Type currentPropType, Object currentPropValue) {
@@ -218,14 +219,14 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Returns the label to show for a property with type that is a Enumeration.
-	 * 
+	 *
 	 * @param currentPropType
 	 *        current property type
 	 * @param currentProp
 	 *        current property
 	 * @param currentPropValue
 	 *        current property value
-	 * 
+	 *
 	 * @return the String label
 	 */
 	private String getPropEnumerationLabel(Property currentProp, Type currentPropType, Object currentPropValue) {
@@ -250,14 +251,14 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Returns the label to show for a property with type that is a Stereotype.
-	 * 
+	 *
 	 * @param currentPropType
 	 *        current property type
 	 * @param currentProp
 	 *        current property
 	 * @param currentPropValue
 	 *        current property value
-	 * 
+	 *
 	 * @return the String label
 	 */
 	private String getPropStereotypeLabel(Property currentProp, Type currentPropType, Object currentPropValue) {
@@ -293,14 +294,14 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Returns the label to show for a property with type that is a Metaclass or Composite.
-	 * 
+	 *
 	 * @param currentPropType
 	 *        current property type
 	 * @param currentProp
 	 *        current property
 	 * @param currentPropValue
 	 *        current property value
-	 * 
+	 *
 	 * @return the String label
 	 */
 	private String getPropClassLabel(Property currentProp, Type currentPropType, Object currentPropValue) {
@@ -330,12 +331,12 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Returns the label to show for a property with type that is neither Metaclass / Composite / Enumeration / Stereotype.
-	 * 
+	 *
 	 * @param currentProp
 	 *        current property
 	 * @param currentPropValue
 	 *        current property value
-	 * 
+	 *
 	 * @return the String label
 	 */
 	private String getPropDefaultLabel(Property currentProp, Object currentPropValue) {
@@ -350,10 +351,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Creates the label based on type + multiplicity for the selected property.
-	 * 
+	 *
 	 * @param property
 	 *        the property
-	 * 
+	 *
 	 * @return the property short label
 	 */
 	private String getPropertyShortLabel(Property property) {
@@ -369,7 +370,7 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 		Type type = property.getType();
 
-		String typeName = type.getName();
+		String typeName = type == null ? TypeUtil.UNDEFINED_TYPE_NAME : type.getName();
 		String name = property.getName();
 
 		if(upper != -1) {
@@ -383,10 +384,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Gets the label.
-	 * 
+	 *
 	 * @param object
 	 *        the object
-	 * 
+	 *
 	 * @return the label
 	 */
 	private String getLabel(ValueTreeObject object) {
@@ -407,10 +408,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Gets the label.
-	 * 
+	 *
 	 * @param object
 	 *        the object
-	 * 
+	 *
 	 * @return the label
 	 */
 	private String getLabel(PrimitiveTypeValueTreeObject object) {
@@ -425,10 +426,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Gets the label.
-	 * 
+	 *
 	 * @param object
 	 *        the object
-	 * 
+	 *
 	 * @return the label
 	 */
 	private String getLabel(DataTypeValueTreeObject object) {
@@ -443,10 +444,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Gets the label.
-	 * 
+	 *
 	 * @param object
 	 *        the object
-	 * 
+	 *
 	 * @return the label
 	 */
 	private String getLabel(EnumerationValueTreeObject object) {
@@ -488,10 +489,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Gets the label.
-	 * 
+	 *
 	 * @param object
 	 *        the object
-	 * 
+	 *
 	 * @return the label
 	 */
 	private String getLabel(StereotypeValueTreeObject object) {
@@ -530,10 +531,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 	/**
 	 * Gets the label.
-	 * 
+	 *
 	 * @param object
 	 *        the object
-	 * 
+	 *
 	 * @return the label
 	 */
 	private String getLabel(MetaclassValueTreeObject object) {
