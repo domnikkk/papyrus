@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IEditorPage;
+import org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPart.GarbageState;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.eclipsecopy.IMultiPageEditorSite;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.eclipsecopy.MultiPageEditorSite;
 import org.eclipse.swt.SWT;
@@ -53,7 +54,7 @@ import org.eclipse.ui.part.IWorkbenchPartOrientation;
 /**
  * This is a controler/part for an Editor. It is associated to a {@link IEditorModel}.
  * This Part encapsulate an Eclipse Editor implementing {@link IEditorPart}.
- * 
+ *
  * @author dumoulin
  * @author <a href="mailto:thomas.szadel@atosorigin.com">Thomas SZADEL</a> Improve the error text (avoid NPE)
  */
@@ -101,9 +102,10 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 		/**
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
 		 */
+		@Override
 		public void handleEvent(Event event) {
 			//			Point globalPos = new Point(event.x, event.y);
 			//			System.out.println(this.getClass().getSimpleName() + ".handleEvent(" + eventName(event.type) + ", " + globalPos + ")");
@@ -113,7 +115,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * Listener on widget disposed event. When the widget is disposed, the associated IEditor dispose()
 	 * method is called.
-	 * 
+	 *
 	 */
 	private DisposeListener widgetDisposedListener = new DisposeListener() {
 
@@ -122,6 +124,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 		 * @see SashWindowsContainer#dispose()
 		 * @param e
 		 */
+		@Override
 		public void widgetDisposed(DisposeEvent e) {
 			// We dispose the associated editor.
 			disposeEditorPart();
@@ -156,7 +159,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param editorModel
 	 *        The model of the editor.
 	 */
@@ -171,7 +174,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Create the control of this part.
 	 * For a this implementations, also create the children's controls.
 	 * This method forward to {@link createPartControl(Composite)}.
-	 * 
+	 *
 	 * @param parent
 	 *        TODO remove ?
 	 */
@@ -182,7 +185,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 	/**
 	 * Create the control of this Part, and children's controls.
-	 * 
+	 *
 	 * @param parent
 	 *        The SWT parent of this EditorPart. This is usually the {@link TabFolderPart}'s control.
 	 */
@@ -212,7 +215,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 	/**
 	 * Create a Control showing the error.
-	 * 
+	 *
 	 * @param parent
 	 *        Parent Control to which the Created Control should be attached
 	 * @param e
@@ -239,7 +242,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * Create an EditorPart showing the Exception.
 	 * This is used when the creation of the regular IEditorPart failed.
-	 * 
+	 *
 	 * @param e
 	 */
 	private void createErrorEditorPart(Composite parent, Exception e) {
@@ -262,7 +265,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 	/**
 	 * Create the editor associated to this TabPart.
-	 * 
+	 *
 	 * @return
 	 * @throws PartInitException
 	 */
@@ -274,7 +277,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * Create the controls required by the editor.
 	 * Init the editor.
-	 * 
+	 *
 	 * @param viewer
 	 * @param editorInput
 	 * @param model
@@ -294,6 +297,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 		editor.createPartControl(editorParent);
 		editor.addPropertyListener(new IPropertyListener() {
 
+			@Override
 			public void propertyChanged(Object source, int propertyId) {
 				EditorPart.this.handlePropertyChange(propertyId);
 			}
@@ -309,10 +313,10 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 */
 	private void attachListeners(Control theControl, boolean recursive) {
 
-		// All following methods listen to the same event. 
+		// All following methods listen to the same event.
 		// So use only one of them
 		//		theControl.addListener(SWT.MouseEnter, mouseEnterListener);
-		//		
+		//
 		//		theControl.addListener(SWT.FocusIn, mouseEnterListener);
 		//		theControl.addListener(SWT.MouseMove, mouseEnterListener);
 		//		theControl.addListener(SWT.MouseHover, mouseEnterListener);
@@ -367,7 +371,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * <p>
 	 * Subclasses may extend or reimplement this method.
 	 * </p>
-	 * 
+	 *
 	 * @param propertyId
 	 *        the id of the property that changed
 	 */
@@ -379,7 +383,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Creates the site for the given nested editor. The <code>MultiPageEditorPart</code> implementation
 	 * of this method creates an instance of <code>MultiPageEditorSite</code>. Subclasses may
 	 * reimplement to create more specialized sites.
-	 * 
+	 *
 	 * @param editor
 	 *        the nested editor
 	 * @return the editor site
@@ -393,7 +397,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * Create the EditorActionBarContributor requested by the editor.
 	 * Creation is done by delegating to the IMultiEditorNestedPartManager.
-	 * 
+	 *
 	 * @return
 	 */
 	private EditorActionBarContributor createEditorActionBarContributor() {
@@ -403,7 +407,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 	/**
 	 * Get the orientation of the editor.
-	 * 
+	 *
 	 * @param editor
 	 * @return int the orientation flag
 	 * @see SWT#RIGHT_TO_LEFT
@@ -419,7 +423,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 	/**
 	 * Get the nested part manager.
-	 * 
+	 *
 	 * @return
 	 */
 	private IMultiEditorManager getIMultiEditorManager() {
@@ -452,7 +456,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Dispose this part and all its children.
 	 * The method is called recursively on children of the part. <br/>
 	 * SWT resources have already been disposed. We don't need to dispose them again.
-	 * 
+	 *
 	 */
 	@Override
 	public void disposeThisAndChildren() {
@@ -470,7 +474,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * Disposes the associated editor and its site.
 	 * Do not dispose it twice.
-	 * 
+	 *
 	 * @param part
 	 *        The part to dispose; must not be <code>null</code>.
 	 * @copy copied from org.eclipse.ui.part.MultiPageEditorPart.disposePart(IWorkbenchPart) v3.8
@@ -487,6 +491,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 		SafeRunner.run(new ISafeRunnable() {
 
+			@Override
 			public void run() {
 				IWorkbenchPartSite partSite = part.getSite();
 				part.dispose();
@@ -495,6 +500,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 				}
 			}
 
+			@Override
 			public void handleException(Throwable e) {
 				// Exception has already being logged by Core. Do nothing.
 			}
@@ -505,7 +511,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * As we are a final Tile, we should be the requested part.
 	 * Return this TilePart.
-	 * 
+	 *
 	 * @param toFind
 	 * @return
 	 */
@@ -515,7 +521,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 	/**
 	 * Locates the part that intersects the given point and that have the expected type
-	 * 
+	 *
 	 * @param toFind
 	 * @return
 	 */
@@ -549,16 +555,17 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * <p>
 	 * Subclasses should not override this method
 	 * </p>
-	 * 
+	 *
 	 * @return the active nested editor, or <code>null</code> if none
 	 */
+	@Override
 	public IEditorPart getIEditorPart() {
 		return editorPart;
 	}
 
 	/**
 	 * Get associated SWT Control.
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -570,7 +577,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * This is a container method. Not necessary in Leaf Tile.
 	 * TODO: change the interface.
-	 * 
+	 *
 	 * @param draggedObject
 	 * @param sourcePart
 	 * @param position
@@ -593,9 +600,9 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * Is the associated editor dirty ?
 	 * Delegate to {@link IEditorPart.isDirty()}
-	 * 
+	 *
 	 * @return true if the associated editor is dirty.
-	 * 
+	 *
 	 * @unused
 	 */
 	public boolean isDirty() {
@@ -608,7 +615,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Change the parent of the Tile. The parent is changed, and the control is
 	 * attached to the parent control. Change garbage state to {@link GarbageState.REPARENTED}.
 	 * Do not detach the Tile from its old parent.
-	 * 
+	 *
 	 * @param newParent
 	 *        The tilePart that should be used as part parent.
 	 * @param compositeParent
@@ -656,7 +663,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * parent).
 	 * Do nothing in this implementation, as we are a final leaf, and there is nothing to synchronize
 	 * with the underlying model.
-	 * 
+	 *
 	 * @param partMap
 	 */
 	public void synchronize2(PartLists partMap) {
@@ -671,7 +678,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * from its parent. <br>
 	 * This method is called by the sashwindows garbage mechanism after the Part has been marked as ORPHANED.
 	 * All resources associated to this part can be disposed.
-	 * 
+	 *
 	 */
 	@Override
 	public void garbage() {
@@ -684,7 +691,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * Accept the provided visitor.
 	 * Call the corresponding accept method in the visitor.
-	 * 
+	 *
 	 * @param visitor
 	 * @return
 	 */
@@ -696,7 +703,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * Visit the children of this Tile.
 	 * There is no child, so do nothing.
-	 * 
+	 *
 	 * @param visitor
 	 */
 	public boolean visitChildren(IPartVisitor visitor) {
@@ -708,7 +715,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Show item status.
 	 */
 	protected void showStatus() {
-		//		System.out.println( "EditorTile: " 
+		//		System.out.println( "EditorTile: "
 		//				+ " disposed=" + editorControl.isDisposed()
 		//				+ ", visible=" + editorControl.isVisible()
 		//				+ ", garbState=" + garbageState
@@ -724,7 +731,12 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 */
 	@Override
 	public String getPageTitle() {
-		return editorModel.getTabTitle();
+		try {
+			return editorModel.getTabTitle();
+		} catch (Exception ex) {
+			Activator.log.error(ex);
+			return "Error";
+		}
 	}
 
 	/**
@@ -732,6 +744,11 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 */
 	@Override
 	public Image getPageIcon() {
-		return editorModel.getTabIcon();
+		try {
+			return editorModel.getTabIcon();
+		} catch (Exception ex) {
+			Activator.log.error(ex);
+			return null;
+		}
 	}
 }

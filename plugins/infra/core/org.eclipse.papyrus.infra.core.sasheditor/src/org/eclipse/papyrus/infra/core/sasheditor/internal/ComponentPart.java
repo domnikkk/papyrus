@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IComponentModel;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IComponentPage;
+import org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPart.GarbageState;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
@@ -30,9 +31,9 @@ import org.eclipse.ui.internal.dnd.IDropTarget;
 /**
  * This is a controler/part for an SWT Control. It is associated to a {@link IComponentModel}.
  * This Part encapsulate a SWT Control.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class ComponentPart extends PagePart implements IComponentPage {
@@ -49,7 +50,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param partModel
 	 *        The model of the editor.
 	 */
@@ -60,7 +61,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 
 	/**
 	 * Create the control of this Part, and children's controls.
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -79,7 +80,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	/**
 	 * Create the controls required by the editor.
 	 * Init the editor.
-	 * 
+	 *
 	 * @param viewer
 	 * @param editorInput
 	 * @param model
@@ -113,7 +114,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * Dispose this part and all its children.
 	 * The method is called recursively on children of the part. <br/>
 	 * SWT resources have already been disposed. We don't need to dispose them again.
-	 * 
+	 *
 	 */
 	@Override
 	public void disposeThisAndChildren() {
@@ -126,7 +127,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	/**
 	 * As we are a final Tile, we should be the requested part.
 	 * Return this TilePart.
-	 * 
+	 *
 	 * @param toFind
 	 * @return
 	 */
@@ -136,7 +137,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 
 	/**
 	 * Locates the part that intersects the given point and that have the expected type
-	 * 
+	 *
 	 * @param toFind
 	 * @return
 	 */
@@ -167,7 +168,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 
 	/**
 	 * Get associated SWT Control.
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -179,7 +180,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	/**
 	 * This is a container method. Not necessary in Leaf Tile.
 	 * TODO: change the interface.
-	 * 
+	 *
 	 * @param draggedObject
 	 * @param sourcePart
 	 * @param position
@@ -194,7 +195,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * Change the parent of the Tile. The parent is changed, and the control is
 	 * attached to the parent control. Change garbage state to {@link GarbageState.REPARENTED}.
 	 * Do not detach the Tile from its old parent.
-	 * 
+	 *
 	 * @param newParent
 	 *        The tilePart that should be used as part parent.
 	 * @param compositeParent
@@ -237,7 +238,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * parent).
 	 * Do nothing in this implementation, as we are a final leaf, and there is nothing to synchronize
 	 * with the underlying model.
-	 * 
+	 *
 	 * @param partMap
 	 */
 	public void synchronize2(PartLists partMap) {
@@ -249,7 +250,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * Garbage this part.
 	 * The part is already marked as ORPHANED. It is not used anymore. It is already detached
 	 * from its parent.
-	 * 
+	 *
 	 */
 	@Override
 	public void garbage() {
@@ -262,7 +263,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	/**
 	 * Accept the provided visitor.
 	 * Call the corresponding accept method in the visitor.
-	 * 
+	 *
 	 * @param visitor
 	 * @return
 	 */
@@ -274,7 +275,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	/**
 	 * Visit the children of this Tile.
 	 * There is no child, so do nothing.
-	 * 
+	 *
 	 * @param visitor
 	 */
 	public boolean visitChildren(IPartVisitor visitor) {
@@ -286,7 +287,7 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 * Show item status.
 	 */
 	protected void showStatus() {
-		//		System.out.println( "EditorTile: " 
+		//		System.out.println( "EditorTile: "
 		//				+ " disposed=" + editorControl.isDisposed()
 		//				+ ", visible=" + editorControl.isVisible()
 		//				+ ", garbState=" + garbageState
@@ -302,7 +303,12 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 */
 	@Override
 	public String getPageTitle() {
-		return partModel.getTabTitle();
+		try {
+			return partModel.getTabTitle();
+		} catch (Exception ex) {
+			Activator.log.error(ex);
+			return "Error";
+		}
 	}
 
 	/**
@@ -310,6 +316,11 @@ public class ComponentPart extends PagePart implements IComponentPage {
 	 */
 	@Override
 	public Image getPageIcon() {
-		return partModel.getTabIcon();
+		try {
+			return partModel.getTabIcon();
+		} catch (Exception ex) {
+			Activator.log.error(ex);
+			return null;
+		}
 	}
 }
