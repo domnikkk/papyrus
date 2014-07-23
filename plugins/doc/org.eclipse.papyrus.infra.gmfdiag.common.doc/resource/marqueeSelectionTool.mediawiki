@@ -1,0 +1,78 @@
+<!--
+ Copyright (c) 2014 CEA LIST.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+  Céline Janssens (ALL4TEC) celine.janssens@all4tec.net  - Initial Documentation
+-->
+
+
+= Marquee Selection Tools =
+
+== Introduction ==
+
+In order to enlarge the default selection tool available in the Palette, additionnal marquee selection tools have been added into Papyrus.<br/>
+[[Image:images/Palette1.JPG]]
+<br/>
+A marquee selection is a multi-selection that allows to select several elements through a rectangle area.
+
+Two types of marquee selections are available:
+*''Standard selection'' : Select all elements included inside of the drawn marquee.
+[[Image:images/Palette2-Include.JPG]]
+*''Rubberband selection'' : Select all elements intersecting the marquee in addition with all elements included in the marquee.<br/>
+[[Image:images/Palette3-Rubberband.JPG]]
+<br/>
+
+A demonstration of this tool is available on the Papyrus Channel :
+[https://www.youtube.com/watch?v=sRSKYJ1mKBk Marquee Selection Tool Demonstration]
+
+== Standard Marquee Selection ==
+
+The Standard Marquee selection tool comes in a variety of 4 options:
+* Select All
+* Nodes Only
+* Labels Only
+* Connections Only
+
+=== Select All ===
+Select blocks, labels and connections inside of the marquee area.
+[[Image:images/SelectAllInclude.JPG]]
+
+=== Select Nodes Only ===
+Select only the blocks inside of the marquee area.
+[[Image:images/SelectNodeInclude.JPG]]
+
+=== Select Connections Only ===
+Select only the connectors inside of the marquee area.
+[[Image:images/SelectConnectionInclude.JPG]]
+
+=== Select Labels Only ===
+Select only the floating labels inside of the marquee area.
+[[Image:images/SelectLabelInclude.JPG]]
+
+== Rubberband Marquee Selection ==
+
+The Rubberband Marquee selection tool comes in a variety of 4 options:
+* Select All
+* Nodes Only
+* Labels Only
+* Connections Only
+
+=== Select All ===
+Select the blocks, the labels and the connectors intersecting the marquee area or included inside of the marquee area.
+[[Image:images/SelectAllTouched.JPG]]
+=== Select Nodes Only ===
+Select only the blocks intersecting the marquee area or included inside of the marquee area.
+[[Image:images/SelectNodeTouched.JPG]]
+=== Select Connections Only ===
+Select only the connectors intersecting the marquee area or included inside of the marquee area.
+[[Image:images/SelectConnectionTouched.JPG]]
+=== Select Labels Only ===
+Select only the labels intersecting the marquee area or included inside of the marquee area.
+[[Image:images/SelectLabelTouched.JPG]]
+
+----
+

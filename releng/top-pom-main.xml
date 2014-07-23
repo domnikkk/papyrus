@@ -44,7 +44,6 @@
 		<module>../features/papyrus-main-features/org.eclipse.papyrus.xwt.feature</module>
 		<module>../plugins/doc/org.eclipse.papyrus.cdo.ui.doc</module>
 		<module>../plugins/doc/org.eclipse.papyrus.copypaste.ui.doc</module>
-		<module>../plugins/doc/org.eclipse.papyrus.moka.doc</module>
 		<module>../plugins/doc/org.eclipse.papyrus.infra.services.controlmode.doc</module>
 		<module>../plugins/doc/org.eclipse.papyrus.layers.documentation</module>
 		<module>../plugins/customization/org.eclipse.papyrus.customization.palette</module>
@@ -114,6 +113,7 @@
 		<module>../plugins/infra/org.eclipse.papyrus.infra.extendedtypes.emf</module>
 		<module>../plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.commands</module>
 		<module>../plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common</module>
+		<module>../plugins/doc/org.eclipse.papyrus.infra.gmfdiag.common.doc</module>
 		<module>../plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.controlmode</module>
 		<module>../plugins/infra/gmfdiag/css/org.eclipse.papyrus.infra.gmfdiag.css</module>
 		<module>../plugins/infra/gmfdiag/css/org.eclipse.papyrus.infra.gmfdiag.css.configuration</module>
@@ -178,6 +178,7 @@
 		<module>../plugins/infra/viewpoints/org.eclipse.papyrus.infra.viewpoints.preferences</module>
 		<module>../plugins/infra/widget/org.eclipse.papyrus.infra.widgets</module>
 		<module>../plugins/infra/widget/org.eclipse.papyrus.infra.widgets.toolbox</module>
+		<module>../plugins/doc/org.eclipse.papyrus.moka.doc</module>
 		<module>../plugins/sysml/org.eclipse.papyrus.sysml</module>
 		<module>../plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.blockdefinition</module>
 		<module>../plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.common</module>

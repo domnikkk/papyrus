@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="Tool" topic="resource/marqueeSelectionTool.html">
+	<topic href="resource/marqueeSelectionTool.html" label="Marquee Selection Tools">
+		<topic href="resource/marqueeSelectionTool.html#Introduction" label="Introduction"></topic>
+		<topic href="resource/marqueeSelectionTool.html#Standard_Marquee_Selection" label="Standard Marquee Selection">
+			<topic href="resource/marqueeSelectionTool.html#Select_All" label="Select All"></topic>
+			<topic href="resource/marqueeSelectionTool.html#Select_Nodes_Only" label="Select Nodes Only"></topic>
+			<topic href="resource/marqueeSelectionTool.html#Select_Connections_Only" label="Select Connections Only"></topic>
+			<topic href="resource/marqueeSelectionTool.html#Select_Labels_Only" label="Select Labels Only"></topic>
+		</topic>
+		<topic href="resource/marqueeSelectionTool.html#Rubberband_Marquee_Selection" label="Rubberband Marquee Selection">
+			<topic href="resource/marqueeSelectionTool.html#Select_All_2" label="Select All"></topic>
+			<topic href="resource/marqueeSelectionTool.html#Select_Nodes_Only_2" label="Select Nodes Only"></topic>
+			<topic href="resource/marqueeSelectionTool.html#Select_Connections_Only_2" label="Select Connections Only"></topic>
+			<topic href="resource/marqueeSelectionTool.html#Select_Labels_Only_2" label="Select Labels Only"></topic>
+		</topic>
+	</topic>
+</toc>
