@@ -16,27 +16,16 @@ package org.eclipse.papyrus.uml.service.types.helper.advice;
 
 import java.util.HashSet;
 
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
-import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityNode;
-import org.eclipse.uml2.uml.UMLPackage;
-
 import com.google.common.collect.Sets;
 
 /**
@@ -49,21 +38,21 @@ import com.google.common.collect.Sets;
  */
 public class ActivityNodeHelperAdvice extends AbstractEditHelperAdvice {
 
-//	@Override
-//	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
-//		CompositeCommand cc = new CompositeCommand("Before Command for an Activity Node");////$NON-NLS-1$
-//		/*
-//		 * Destroy edge
-//		 */
-//		ICommand destroyEdgeCommand = getDestroyActivityEdgeCommand(request);
-//		if(destroyEdgeCommand != null) {
-//			cc.compose(destroyEdgeCommand);
-//		}
-//		if(cc != null && !cc.isEmpty()) {
-//			return cc;
-//		}
-//		return super.getBeforeDestroyDependentsCommand(request);
-//	}
+	@Override
+	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
+		CompositeCommand cc = new CompositeCommand("Before Command for an Activity Node");////$NON-NLS-1$
+		/*
+		 * Destroy edge
+		 */
+		ICommand destroyEdgeCommand = getDestroyActivityEdgeCommand(request);
+		if(destroyEdgeCommand != null) {
+			cc.compose(destroyEdgeCommand);
+		}
+		if(cc != null && !cc.isEmpty()) {
+			return cc;
+		}
+		return super.getBeforeDestroyDependentsCommand(request);
+	}
 //
 //	@Override
 //	protected ICommand getAfterDestroyDependentsCommand(DestroyDependentsRequest request) {
@@ -118,40 +107,40 @@ public class ActivityNodeHelperAdvice extends AbstractEditHelperAdvice {
 //		return null;
 //	}
 //
-//	/**
-//	 * When an activity node is deleted than all activity edge starting/ending from/to it should be deleted
-//	 * 
-//	 * @param request
-//	 * @return
-//	 */
-//	protected ICommand getDestroyActivityEdgeCommand(DestroyDependentsRequest request) {
-//		EObject eObject = request.getElementToDestroy();
-//		if(eObject instanceof ActivityNode) {
-//			/*
-//			 * Destroy Activity Edge
-//			 */
-//			ActivityNode activityNode = (ActivityNode)eObject;
-//			EList<ActivityEdge> incomings = activityNode.getIncomings();
-//			EList<ActivityEdge> outgoings = activityNode.getOutgoings();
-//			HashSet<ActivityEdge> edges = Sets.newHashSet();
-//			if(incomings != null && !incomings.isEmpty()) {
-//				edges.addAll(incomings);
-//			}
-//			if(outgoings != null && !outgoings.isEmpty()) {
-//				edges.addAll(outgoings);
-//			}
-//			if(!edges.isEmpty()) {
-//				CompositeCommand cc = new CompositeCommand("Detele Incomings and outgoings edges from activity node");////$NON-NLS-1$
-//				for(ActivityEdge e : edges) {
-//					DestroyElementRequest destroyRequest = new DestroyElementRequest(e, false);
-//					DestroyElementPapyrusCommand destroyCommand = new DestroyElementPapyrusCommand(destroyRequest);
-//					if(destroyCommand != null && destroyCommand.canExecute()) {
-//						cc.compose(destroyCommand);
-//					}
-//				}
-//				return cc;
-//			}
-//		}
-//		return null;
-//	}
+	/**
+	 * When an activity node is deleted than all activity edge starting/ending from/to it should be deleted
+	 * 
+	 * @param request
+	 * @return
+	 */
+	protected ICommand getDestroyActivityEdgeCommand(DestroyDependentsRequest request) {
+		EObject eObject = request.getElementToDestroy();
+		if(eObject instanceof ActivityNode) {
+			/*
+			 * Destroy Activity Edge
+			 */
+			ActivityNode activityNode = (ActivityNode)eObject;
+			EList<ActivityEdge> incomings = activityNode.getIncomings();
+			EList<ActivityEdge> outgoings = activityNode.getOutgoings();
+			HashSet<ActivityEdge> edges = Sets.newHashSet();
+			if(incomings != null && !incomings.isEmpty()) {
+				edges.addAll(incomings);
+			}
+			if(outgoings != null && !outgoings.isEmpty()) {
+				edges.addAll(outgoings);
+			}
+			if(!edges.isEmpty()) {
+				CompositeCommand cc = new CompositeCommand("Detele Incomings and outgoings edges from activity node");////$NON-NLS-1$
+				for(ActivityEdge e : edges) {
+					DestroyElementRequest destroyRequest = new DestroyElementRequest(e, false);
+					DestroyElementPapyrusCommand destroyCommand = new DestroyElementPapyrusCommand(destroyRequest);
+					if(destroyCommand != null && destroyCommand.canExecute()) {
+						cc.compose(destroyCommand);
+					}
+				}
+				return cc;
+			}
+		}
+		return null;
+	}
 }
