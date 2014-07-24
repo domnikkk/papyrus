@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.util;
 
@@ -88,20 +94,16 @@ public class UMLRealTimeAdapterFactory extends AdapterFactoryImpl {
 				return createRTConnectorAdapter();
 			}
 			@Override
-			public Adapter caseProtocolPackage(ProtocolPackage object) {
-				return createProtocolPackageAdapter();
+			public Adapter caseProtocolContainer(ProtocolContainer object) {
+				return createProtocolContainerAdapter();
 			}
 			@Override
 			public Adapter caseRTRExcludedElement(RTRExcludedElement object) {
 				return createRTRExcludedElementAdapter();
 			}
 			@Override
-			public Adapter caseMessageSet(MessageSet object) {
-				return createMessageSetAdapter();
-			}
-			@Override
-			public Adapter caseTriggerEvent(TriggerEvent object) {
-				return createTriggerEventAdapter();
+			public Adapter caseRTMessageSet(RTMessageSet object) {
+				return createRTMessageSetAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -194,16 +196,16 @@ public class UMLRealTimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolPackage <em>Protocol Package</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer <em>Protocol Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolPackage
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer
 	 * @generated
 	 */
-	public Adapter createProtocolPackageAdapter() {
+	public Adapter createProtocolContainerAdapter() {
 		return null;
 	}
 
@@ -222,30 +224,16 @@ public class UMLRealTimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.MessageSet <em>Message Set</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet <em>RT Message Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.MessageSet
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet
 	 * @generated
 	 */
-	public Adapter createMessageSetAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.TriggerEvent <em>Trigger Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.TriggerEvent
-	 * @generated
-	 */
-	public Adapter createTriggerEventAdapter() {
+	public Adapter createRTMessageSetAdapter() {
 		return null;
 	}
 

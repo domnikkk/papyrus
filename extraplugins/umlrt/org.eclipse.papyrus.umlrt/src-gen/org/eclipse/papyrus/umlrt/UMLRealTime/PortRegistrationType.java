@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime;
 
@@ -26,7 +32,7 @@ public enum PortRegistrationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AUTOMATIC(0, "Automatic", "Automatic"),
+	AUTOMATIC(0, "Automatic", "Automatic"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>Application</b></em>' literal object.
@@ -36,7 +42,7 @@ public enum PortRegistrationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	APPLICATION(1, "Application", "Application"),
+	APPLICATION(1, "Application", "Application"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>Application Locked</b></em>' literal object.
@@ -46,7 +52,7 @@ public enum PortRegistrationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	APPLICATION_LOCKED(2, "ApplicationLocked", "ApplicationLocked");
+	APPLICATION_LOCKED(2, "ApplicationLocked", "ApplicationLocked"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>Automatic</b></em>' literal value.

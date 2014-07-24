@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.impl;
 
@@ -138,7 +144,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REGISTRATION_OVERRIDE_EDEFAULT = "";
+	protected static final String REGISTRATION_OVERRIDE_EDEFAULT = ""; //$NON-NLS-1$
 
 	/**
 	 * The cached value of the '{@link #getRegistrationOverride() <em>Registration Override</em>}' attribute.
@@ -339,7 +345,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.RT_PORT__AWIREDPORTCANNOTPUBLISHITSNAME,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Awiredportcannotpublishitsname", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Awiredportcannotpublishitsname", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -364,7 +370,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.RT_PORT__APUBLICPORTMUSTBEDEFINEDASASERVICEPORT,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Apublicportmustbedefinedasaserviceport", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Apublicportmustbedefinedasaserviceport", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -389,7 +395,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.RT_PORT__ASA_PUNWIREDUNPUBLISHEDMUSTHAVEPROTECTEDVISIBILITY,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ASAPunwiredunpublishedmusthaveprotectedvisibility", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ASAPunwiredunpublishedmusthaveprotectedvisibility", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -414,7 +420,7 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.RT_PORT__AN_SP_PUNWIREDANDPUBLISHEDMUSTHAVEPUBLICVISIBILITY,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AnSPPunwiredandpublishedmusthavepublicvisibility", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AnSPPunwiredandpublishedmusthavepublicvisibility", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -562,15 +568,15 @@ public class RTPortImpl extends MinimalEObjectImpl.Container implements RTPort {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isNotification: ");
+		result.append(" (isNotification: "); //$NON-NLS-1$
 		result.append(isNotification);
-		result.append(", isPublish: ");
+		result.append(", isPublish: "); //$NON-NLS-1$
 		result.append(isPublish);
-		result.append(", isWired: ");
+		result.append(", isWired: "); //$NON-NLS-1$
 		result.append(isWired);
-		result.append(", registration: ");
+		result.append(", registration: "); //$NON-NLS-1$
 		result.append(registration);
-		result.append(", registrationOverride: ");
+		result.append(", registrationOverride: "); //$NON-NLS-1$
 		result.append(registrationOverride);
 		result.append(')');
 		return result.toString();

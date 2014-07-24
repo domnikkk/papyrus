@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.util;
 
@@ -37,7 +43,7 @@ public class UMLRealTimeStateMachValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach";
+	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach"; //$NON-NLS-1$
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'An RTstatemachinehasexactlyoneregion' of 'RT State Machine'.
