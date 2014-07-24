@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 440284
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests;
@@ -18,6 +19,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.tests.bug.BugTests2;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.bug.m7.BugTest_m7;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.bug.pro20130916.AllTests_20130916;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.canonical.AllCanonicalTests;
+import org.junit.ClassRule;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -28,4 +30,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({ AllCanonicalTests.class, BugTests.class, BugTests2.class, BugTest_m7.class, AllTests_20130916.class })
 public class AllTests {
+
+	@ClassRule
+	public static final HideViewRule hideOutline = new HideViewRule("org.eclipse.ui.views.ContentOutline");
+
 }
