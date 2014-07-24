@@ -7,6 +7,7 @@ Export-Package: org.eclipse.papyrus.infra.emf,
  org.eclipse.papyrus.infra.emf.dialog,
  org.eclipse.papyrus.infra.emf.providers,
  org.eclipse.papyrus.infra.emf.providers.strategy,
+ org.eclipse.papyrus.infra.emf.requests,
  org.eclipse.papyrus.infra.emf.resource,
  org.eclipse.papyrus.infra.emf.utils
 Require-Bundle: org.eclipse.ui,

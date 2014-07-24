@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -7,6 +7,8 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
+ *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 440108
  *
  *****************************************************************************/
 
@@ -49,13 +51,33 @@ public class NamedElementValidator extends AbstractUMLValidator {
 		}
 
 		if(this.source instanceof NamedElement) {
-			Namespace ns = ((NamedElement)this.source).getNamespace();
+			final NamedElement self = (NamedElement)this.source;
+			final Namespace ns = self.getNamespace();
+			
 			if(ns != null) {
-				EList<NamedElement> listElement = ns.getMembers();
-				for(NamedElement namedElement : listElement) {
-					if(this.source != namedElement && string.equals(namedElement.getName())) {
-						return warning("A NamedElement with the same name exists in the Namespace");
+				final boolean deliver = self.eDeliver();
+				final boolean wasSet = self.isSetName();
+				final String oldName = self.getName();
+				
+				try {
+					// Set up the prospective name
+					self.eSetDeliver(false);
+					self.setName(string);
+					
+					EList<NamedElement> listElement = ns.getMembers();
+					for(NamedElement namedElement : listElement) {
+						if((self != namedElement) && !self.isDistinguishableFrom(namedElement, ns)) {
+							return warning("Name is indistinguishable from another element in the Namespace");
+						}
 					}
+				} finally {
+					// Restore the current name
+					if(wasSet) {
+						self.setName(oldName);
+					} else {
+						self.unsetName();
+					}
+					self.eSetDeliver(deliver);
 				}
 			}
 
