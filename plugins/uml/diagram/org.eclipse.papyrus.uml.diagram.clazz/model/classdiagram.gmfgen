@@ -7950,7 +7950,7 @@
           xsi:type="gmfgen:GenJavaExpressionProvider"
           injectExpressionBody="true">
         <expressions
-            body="return org.eclipse.papyrus.uml.tools.utils.NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());"/>
+            body="return org.eclipse.papyrus.uml.tools.utils.NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());"/>
         <expressions
             body="org.eclipse.uml2.uml.LiteralString literalString=org.eclipse.uml2.uml.UMLFactory.eINSTANCE.createLiteralString();&#xD;&#xA;literalString.setValue(&quot;&quot;);&#xD;&#xA;return literalString;"/>
         <expressions

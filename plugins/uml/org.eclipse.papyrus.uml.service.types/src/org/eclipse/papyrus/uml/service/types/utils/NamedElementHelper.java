@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008 CEA LIST.
+ * Copyright (c) 2008, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 440263
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.utils;
@@ -16,18 +17,18 @@ package org.eclipse.papyrus.uml.service.types.utils;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
+import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
 
 /**
  * This singleton is used to find a new element name with
  * no duplication in the same workspace.
  * 
- * Copied in current plug-in to avoid dependencies with oep.diagram.common.
+ * @deprecated Use the {@link NamedElementUtil} API, instead.
  */
+@Deprecated
 public class NamedElementHelper {
 
 	/** Singleton instance */
@@ -78,29 +79,6 @@ public class NamedElementHelper {
 	@Deprecated
 	public String getNewUMLElementName(Element umlParent, String baseString) {
 		return getDefaultNameWithIncrementFromBase(baseString, umlParent.eContents());
-		//		this.setBaseString(baseString);
-		//		String name = ""; //$NON-NLS-1$
-		//
-		//		boolean found = false;
-		//		// i <10000: avoid infinite loops
-		//		for(int i = 1; i < 5; i++) {
-		//			found = false;
-		//			name = getBaseString() + i;
-		//			
-		//			Iterator<?> it = umlParent.getOwnedElements().iterator();
-		//			while(it.hasNext() && !found) {
-		//				Object o = it.next();
-		//				if(o instanceof NamedElement) {
-		//					if(name.equals(((NamedElement)o).getName())) {
-		//						found = true;
-		//					}
-		//				}
-		//			}
-		//			if(!found) {
-		//				return name;
-		//			}
-		//		}
-		//		return getBaseString() + "X"; //$NON-NLS-1$
 	}
 
 	/**
@@ -128,41 +106,6 @@ public class NamedElementHelper {
 	}
 
 	public static String getDefaultNameWithIncrementFromBase(String base, Collection<?> contents, EObject elementToRename, String separator) {
-		// Not change the name if elementToRename already present in the contents collection and already have a name
-		if (contents.contains(elementToRename) && EMFCoreUtil.getName(elementToRename) != null) {
-			if (elementToRename instanceof ENamedElement) {
-				return ((ENamedElement)elementToRename).getName();
-			}
-			// UML specific
-			if (elementToRename instanceof NamedElement) {
-				return ((NamedElement)elementToRename).getName();
-			}
-		}
-		
-		if("property".equalsIgnoreCase(base)) {
-			base = "Attribute";
-		}
-		int nextNumber = 0;
-
-		for(Object o : contents) {
-			if(o instanceof EObject && o != elementToRename) {
-				String name = EMFCoreUtil.getName((EObject)o);
-				if(name != null && name.startsWith(base)) {
-					String end = name.substring(base.length());
-					int nextNumberTmp = 1;
-
-					try {
-						nextNumberTmp = Integer.parseInt(end) + 1;
-					} catch (NumberFormatException ex) {
-					}
-
-					if(nextNumberTmp > nextNumber) {
-						nextNumber = nextNumberTmp;
-					}
-				}
-			}
-		}
-
-		return nextNumber > 0 ? base + separator + nextNumber : base;
+		return NamedElementUtil.getDefaultNameWithIncrementFromBase(base, contents, elementToRename, separator);
 	}
 }

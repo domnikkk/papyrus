@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 440263
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.usecase.tests.canonical;
@@ -62,11 +62,11 @@ public class TestUseCaseLink extends TestLink {
 	}
 	@Test
 	public void testToManageAssociationUseCase_UseCase() {
-		testToManageLink(UMLElementTypes.UseCase_2013,UMLElementTypes.UseCase_2013,UMLElementTypes.Association_4011,UMLElementTypes.Package_2016,true,"A_usecase1_usecase");
+		testToManageLink(UMLElementTypes.UseCase_2013,UMLElementTypes.UseCase_2013,UMLElementTypes.Association_4011,UMLElementTypes.Package_2016,true);
 	}
 	@Test
 	public void testToManageAssociationUseCase_Actor() {
-		testToManageLink(UMLElementTypes.UseCase_2013,UMLElementTypes.Actor_2011,UMLElementTypes.Association_4011,UMLElementTypes.Package_2016,true,"A_usecase1_actor");
+		testToManageLink(UMLElementTypes.UseCase_2013,UMLElementTypes.Actor_2011,UMLElementTypes.Association_4011,UMLElementTypes.Package_2016,true);
 	}
 	
 	@Test

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2008 CEA LIST.
+ * Copyright (c) 2008, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 440263
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.helper;
@@ -68,28 +69,6 @@ public class NamedElementHelper {
 	@Deprecated
 	public String getNewUMLElementName(Element umlParent, String baseString) {
 		return NamedElementUtil.getDefaultNameWithIncrementFromBase(baseString, umlParent.eContents());
-		//		this.setBaseString(baseString);
-		//		String name = ""; //$NON-NLS-1$
-		//
-		//		boolean found = false;
-		//		// i <10000: avoid infinite loops
-		//		for(int i = 0; i < 10001; i++) {
-		//			found = false;
-		//			name = getBaseString() + i;
-		//			Iterator it = umlParent.getOwnedElements().iterator();
-		//			while(it.hasNext() && !found) {
-		//				Object o = it.next();
-		//				if(o instanceof NamedElement) {
-		//					if(name.equals(((NamedElement)o).getName())) {
-		//						found = true;
-		//					}
-		//				}
-		//			}
-		//			if(!found) {
-		//				return name;
-		//			}
-		//		}
-		//		return getBaseString() + "X"; //$NON-NLS-1$
 	}
 
 	/**
