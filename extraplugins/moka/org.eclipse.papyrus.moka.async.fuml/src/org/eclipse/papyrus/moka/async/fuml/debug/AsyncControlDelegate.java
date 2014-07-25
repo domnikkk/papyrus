@@ -40,6 +40,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.AcceptEve
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ObjectActivation;
@@ -208,11 +209,21 @@ public class AsyncControlDelegate extends ControlDelegate {
 				AnimationUtils.getInstance().removeAnimationMarker(o);
 			}
 		}
-		for(ObjectActivation activation : objectActivations) {
-			if(activation != null /* && ((AsyncObjectActivation)activation).getCurrentState() == ObjectActivationState.WAITING */) {
-				activation.send(new TerminateSignalInstance());
+		/**********/
+		// 439639: [Moka] oepm.async.fuml.debug.AsyncControlDelegate.terminate shall send a TerminateSignalInstance to all objects in the execution locus
+		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=439639
+		for (ExtensionalValue v :FUMLExecutionEngine.eInstance.getLocus().extensionalValues) {
+			if (v instanceof Object_) {
+				((Object_)v).send(new TerminateSignalInstance()) ;
 			}
 		}
+//		for(ObjectActivation activation : objectActivations) {
+//			if(activation != null /* && ((AsyncObjectActivation)activation).getCurrentState() == ObjectActivationState.WAITING */) {
+//				//activation.send(new TerminateSignalInstance());
+//				activation.object.send(new TerminateSignalInstance()) ;
+//			}
+//		}
+		/***********/
 		for(Object lock : this.locks.values()) {
 			synchronized(lock) {
 				lock.notify();
