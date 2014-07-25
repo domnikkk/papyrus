@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.infra.gmfdiag.common;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -26,10 +27,13 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
@@ -44,18 +48,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.window.Window;
+import org.eclipse.papyrus.commands.CheckedOperationHistory;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.commands.OpenDiagramCommand;
-import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
+import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModelUtils;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.emf.readonly.ReadOnlyManager;
+import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResource;
 import org.eclipse.papyrus.infra.gmfdiag.common.messages.Messages;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationModel;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
-import org.eclipse.papyrus.infra.services.edit.Activator;
 import org.eclipse.papyrus.infra.services.edit.internal.context.TypeContext;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
@@ -65,6 +73,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.statushandlers.StatusManager;
 
 /**
  * Command creating a new GMF diagram in Papyrus. This command is intended to be used in eclipse
@@ -113,18 +122,21 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 			this.name = name;
 		}
 
-		private Diagram createDiagram() throws ServiceException {
+		private CommandResult createDiagram() throws ServiceException {
 			Resource modelResource = UmlUtils.getUmlResource(modelSet);
-			Resource notationResource = NotationUtils.getNotationResource(modelSet);
+			Resource notationResource = getNotationResource(modelSet, owner, element);
+			if(notationResource == null) {
+				return CommandResult.newErrorCommandResult("Cannot create a diagram on the selected element (ReadOnly?)");
+			}
 			Resource diResource = DiModelUtils.getDiResource(modelSet);
 
-			if (owner == null) {
+			if(owner == null) {
 				owner = getRootElement(modelResource);
 				attachModelToResource(owner, modelResource);
 			}
 
 			service = ElementEditServiceUtils.getCommandProvider(owner);
-			if (service == null) {
+			if(service == null) {
 				// Something isn't right ...
 				return null;
 			}
@@ -134,28 +146,28 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 			} catch (ServiceException e) {
 				Activator.log.error(e);
 			}
-			if (clientContext == null) {
+			if(clientContext == null) {
 				// Something isn't right ...
 				return null;
 			}
 
 			rule = PolicyChecker.getCurrent().getOwningRuleFor(prototype, owner);
-			if (rule == null) {
+			if(rule == null) {
 				// Something isn't right ...
 				return null;
 			}
 
 			element = owner;
-			if (rule.getNewModelPath() != null) {
+			if(rule.getNewModelPath() != null) {
 				// We have a path for the root auto-creation
-				for (ModelAutoCreate auto : rule.getNewModelPath()) {
+				for(ModelAutoCreate auto : rule.getNewModelPath()) {
 					EReference ref = auto.getFeature();
 					String type = auto.getCreationType();
-					if (ref.isMany()) {
+					if(ref.isMany()) {
 						element = create(element, ref, type);
 					} else {
-						EObject temp = (EObject) element.eGet(ref);
-						if (temp != null) {
+						EObject temp = (EObject)element.eGet(ref);
+						if(temp != null) {
 							element = temp;
 						} else {
 							element = create(element, ref, type);
@@ -164,12 +176,12 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 				}
 			}
 
-			if (name == null) {
+			if(name == null) {
 				name = openDiagramNameDialog(prototype.isNatural() ? getDefaultDiagramName() : "New" + prototype.getLabel().replace(" ", ""));
 			}
 			// canceled
-			if (name == null) {
-				return null;
+			if(name == null) {
+				return CommandResult.newCancelledCommandResult();
 			}
 
 			Diagram diagram = doCreateDiagram(notationResource, owner, element, prototype, name);
@@ -177,9 +189,10 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 			if(diagram != null) {
 				IPageManager pageManager = ServiceUtilsForResource.getInstance().getIPageManager(diResource);
 				pageManager.addPage(diagram);
-
+				return CommandResult.newOKCommandResult(diagram);
 			}
-			return diagram;
+
+			return CommandResult.newCancelledCommandResult();
 		}
 
 		private EObject create(EObject origin, EReference reference, String typeID) {
@@ -192,13 +205,47 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 			} catch (ExecutionException e) {
 				return null;
 			}
-			if (!status.isOK())
+			if(!status.isOK()) {
 				return null;
+			}
 			CommandResult result = command.getCommandResult();
-			if (result == null)
+			if(result == null) {
 				return null;
-			return (EObject) result.getReturnValue();
+			}
+			return (EObject)result.getReturnValue();
 		}
+	}
+
+	protected Resource getNotationResource(ModelSet modelSet, EObject owner, EObject element) {
+		URI uriWithoutExtension = element.eResource().getURI().trimFileExtension();
+
+		URI notationURI = uriWithoutExtension.appendFileExtension(NotationModel.NOTATION_FILE_EXTENSION);
+		Resource notationResource = modelSet.getResource(notationURI, false);
+
+		//The resource doesn't exist. Maybe we're trying to create a
+		//diagram on a pure-UML library. Try to create a new resource
+		if(notationResource == null) {
+			notationResource = modelSet.createResource(notationURI);
+			if(notationResource == null) {
+				modelSet.getResources().remove(notationResource);
+				return null;
+			}
+
+			EditingDomain editingDomain = EMFHelper.resolveEditingDomain(element);
+
+			if(EMFHelper.isReadOnly(notationResource, editingDomain)) {
+				//Check whether the resource can be made writable
+				IReadOnlyHandler2 roHandler = ReadOnlyManager.getReadOnlyHandler(editingDomain);
+				if(roHandler.canMakeWritable(ReadOnlyAxis.anyAxis(), new URI[]{ notationResource.getURI() }).or(false)) {
+					return notationResource; //The read-only manager will eventually ask for a user confirmation
+				} else {
+					modelSet.getResources().remove(notationResource);
+					return null; //The resource can't be made writable; don't go further
+				}
+			}
+		}
+
+		return notationResource;
 	}
 
 
@@ -278,7 +325,29 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 		CompositeCommand cmd = new CompositeCommand("Create diagram");
 		cmd.add(createCmd);
 		cmd.add(new OpenDiagramCommand(dom, createCmd));
-		dom.getCommandStack().execute(new GMFtoEMFCommandWrapper(cmd));
+
+		try {
+
+			IStatus status = CheckedOperationHistory.getInstance().execute(cmd, new NullProgressMonitor(), null);
+			if(status.isOK()) {
+				CommandResult result = cmd.getCommandResult();
+				Object returnValue = result.getReturnValue();
+
+				//CompositeCommands should always return a collection
+				if(returnValue instanceof Collection<?>) {
+					for(Object returnElement : (Collection<?>)returnValue) {
+						if(returnElement instanceof Diagram) {
+							return (Diagram)returnElement;
+						}
+					}
+				}
+			} else if(status.getSeverity() != IStatus.CANCEL) {
+				StatusManager.getManager().handle(status, StatusManager.SHOW);
+			}
+		} catch (ExecutionException ex) {
+			Activator.log.error(ex);
+		}
+
 		return null;
 	}
 
@@ -330,13 +399,15 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				Creator creator = new Creator(modelSet, owner, element, prototype, name);
 				try {
-					diagram = creator.createDiagram();
-					if(diagram == null) {
-						return CommandResult.newCancelledCommandResult();
+					CommandResult commandResult = creator.createDiagram();
+					if(!commandResult.getStatus().isOK()) {
+						return commandResult;
 					}
+
+					diagram = (Diagram)commandResult.getReturnValue();
 					diagramElement = diagram.getElement();
 					diagramOwner = DiagramUtils.getOwner(diagram);
-					return CommandResult.newOKCommandResult(diagram);
+					return commandResult;
 				} catch (ServiceException e) {
 					Activator.log.error(e);
 				}
@@ -438,6 +509,6 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 	 *        the created diagram
 	 */
 	protected void initializeDiagram(EObject diagram) {
-
-	};
+		//Subclasses may override
+	}
 }
