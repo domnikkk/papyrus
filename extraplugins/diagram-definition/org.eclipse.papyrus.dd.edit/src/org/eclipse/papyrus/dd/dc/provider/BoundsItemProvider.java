@@ -39,11 +39,10 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dc.Bounds} object.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
+ * 
  * @generated
  */
-public class BoundsItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class BoundsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
@@ -63,9 +62,8 @@ public class BoundsItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
-
 			addXPropertyDescriptor(object);
 			addYPropertyDescriptor(object);
 			addWidthPropertyDescriptor(object);
@@ -78,44 +76,22 @@ public class BoundsItemProvider extends ItemProviderAdapter implements
 	 * This adds a property descriptor for the X feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addXPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Bounds_x_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Bounds_x_feature", "_UI_Bounds_type"),
-				 DCPackage.Literals.BOUNDS__X,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Bounds_x_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Bounds_x_feature", "_UI_Bounds_type"), DCPackage.Literals.BOUNDS__X, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Y feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addYPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Bounds_y_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Bounds_y_feature", "_UI_Bounds_type"),
-				 DCPackage.Literals.BOUNDS__Y,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Bounds_y_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Bounds_y_feature", "_UI_Bounds_type"), DCPackage.Literals.BOUNDS__Y, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -125,19 +101,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addWidthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Bounds_width_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Bounds_width_feature", "_UI_Bounds_type"),
-				 DCPackage.Literals.BOUNDS__WIDTH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Bounds_width_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Bounds_width_feature", "_UI_Bounds_type"), DCPackage.Literals.BOUNDS__WIDTH, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -147,24 +111,13 @@ public class BoundsItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addHeightPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Bounds_height_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Bounds_height_feature", "_UI_Bounds_type"),
-				 DCPackage.Literals.BOUNDS__HEIGHT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Bounds_height_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Bounds_height_feature", "_UI_Bounds_type"), DCPackage.Literals.BOUNDS__HEIGHT, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns Bounds.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -180,10 +133,8 @@ public class BoundsItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public String getText(Object object) {
-		Bounds bounds = (Bounds) object;
-		return getString("_UI_Bounds_type") + " " + bounds.getX() + ", "
-				+ bounds.getY() + ", " + bounds.getWidth() + ", "
-				+ bounds.getHeight();
+		Bounds bounds = (Bounds)object;
+		return getString("_UI_Bounds_type") + " " + bounds.getX() + ", " + bounds.getY() + ", " + bounds.getWidth() + ", " + bounds.getHeight();
 	}
 
 	/**
@@ -191,19 +142,19 @@ public class BoundsItemProvider extends ItemProviderAdapter implements
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Bounds.class)) {
-			case DCPackage.BOUNDS__X:
-			case DCPackage.BOUNDS__Y:
-			case DCPackage.BOUNDS__WIDTH:
-			case DCPackage.BOUNDS__HEIGHT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch(notification.getFeatureID(Bounds.class)) {
+		case DCPackage.BOUNDS__X:
+		case DCPackage.BOUNDS__Y:
+		case DCPackage.BOUNDS__WIDTH:
+		case DCPackage.BOUNDS__HEIGHT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -216,8 +167,7 @@ public class BoundsItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -231,5 +181,4 @@ public class BoundsItemProvider extends ItemProviderAdapter implements
 	public ResourceLocator getResourceLocator() {
 		return DDEditPlugin.INSTANCE;
 	}
-
 }

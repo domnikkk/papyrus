@@ -14,25 +14,25 @@ package org.eclipse.papyrus.dd.dg;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Line To</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Line To</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * LineTo is a kind of path command that draw a straight line from the current point to a new point.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.LineTo#getPoint <em>Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.LineTo#getPoint <em>Point</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getLineTo()
  * @model
  * @generated
  */
 public interface LineTo extends PathCommand {
+
 	/**
 	 * Returns the value of the '<em><b>Point</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a
@@ -51,10 +51,11 @@ public interface LineTo extends PathCommand {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.LineTo#getPoint <em>Point</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Point</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Point</em>' containment reference.
 	 * @see #getPoint()
 	 * @generated
 	 */
 	void setPoint(Point value);
-
 } // LineTo

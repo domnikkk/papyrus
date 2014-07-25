@@ -16,14 +16,19 @@ import java.awt.Color;
 import org.eclipse.papyrus.dd.dc.DCFactory;
 import org.eclipse.papyrus.dd.dc.DCPackage;
 
+/**
+ * A utility library of black-box operations used in the umldi2dg QVTO
+ * transformation
+ */
 public class UtilitiesLibrary {
-	
+
 	public UtilitiesLibrary() {
 		super();
 	}
 
 	public Color createColor(String colorStr) {
-		return (Color)DCFactory.eINSTANCE.createFromString(DCPackage.eINSTANCE.getColor(), colorStr);
+		return (Color) DCFactory.eINSTANCE.createFromString(
+				DCPackage.eINSTANCE.getColor(), colorStr);
 	}
-	
+
 }

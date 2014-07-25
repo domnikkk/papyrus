@@ -17,27 +17,27 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Radial Gradient</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Radial Gradient</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * RadialGradient is a kind of gradient that fills a graphical element by smoothly changing color values in a circle.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.RadialGradient#getCenter <em>Center</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.RadialGradient#getFocus <em>Focus</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.RadialGradient#getRadius <em>Radius</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.RadialGradient#getCenter <em>Center</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.RadialGradient#getFocus <em>Focus</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.RadialGradient#getRadius <em>Radius</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getRadialGradient()
  * @model
  * @generated
  */
 public interface RadialGradient extends Gradient {
+
 	/**
 	 * Returns the value of the '<em><b>Center</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a
@@ -56,7 +56,9 @@ public interface RadialGradient extends Gradient {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.RadialGradient#getCenter <em>Center</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Center</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Center</em>' containment reference.
 	 * @see #getCenter()
 	 * @generated
 	 */
@@ -79,7 +81,9 @@ public interface RadialGradient extends Gradient {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.RadialGradient#getFocus <em>Focus</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Focus</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Focus</em>' containment reference.
 	 * @see #getFocus()
 	 * @generated
 	 */
@@ -102,13 +106,12 @@ public interface RadialGradient extends Gradient {
 	double getRadius();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.RadialGradient#getRadius
+	 * Sets the value of the ' {@link org.eclipse.papyrus.dd.dg.RadialGradient#getRadius
 	 * <em>Radius</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Radius</em>' attribute.
+	 *        the new value of the '<em>Radius</em>' attribute.
 	 * @see #getRadius()
 	 * @generated
 	 */
@@ -119,46 +122,43 @@ public interface RadialGradient extends Gradient {
 	 * the center point coordinates must be between 0 and 1
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='centerX>=0 and centerX<=1 and centerY>=0 and centerY<=1'"
 	 * @generated
 	 */
-	boolean validCenterPoint(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
+	boolean validCenterPoint(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * the focus point coordinates must be between 0 and 1
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='focusX>=0 and focusX<=1 and focusY>=0 and focusY<=1'"
 	 * @generated
 	 */
-	boolean validFocusPoint(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
+	boolean validFocusPoint(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * the radius must be between 0 and 1
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='radius>=0 and radius<=1'"
 	 * @generated
 	 */
 	boolean validRadius(DiagnosticChain diagnostics, Map<Object, Object> context);
-
 } // RadialGradient

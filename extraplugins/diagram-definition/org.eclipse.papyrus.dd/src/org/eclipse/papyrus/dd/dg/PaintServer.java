@@ -14,29 +14,28 @@ package org.eclipse.papyrus.dd.dg;
 import org.eclipse.emf.common.util.EList;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Paint Server</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Paint Server</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * PaintServer is the abstract super class of all paint servers, like gradients and patterns
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.PaintServer#getTransforms <em>Transform</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.PaintServer#getTransforms <em>Transform</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getPaintServer()
  * @model abstract="true"
  * @generated
  */
 public interface PaintServer extends Definition {
+
 	/**
 	 * Returns the value of the '<em><b>Transform</b></em>' containment
-	 * reference list. The list contents are of type
-	 * {@link org.eclipse.papyrus.dd.dg.Transform}. <!-- begin-user-doc --> <!--
+	 * reference list. The list contents are of type {@link org.eclipse.papyrus.dd.dg.Transform}. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> A set of transforms that apply
 	 * to this paint server. <!-- end-model-doc -->
 	 * 
@@ -46,5 +45,4 @@ public interface PaintServer extends Definition {
 	 * @generated
 	 */
 	EList<Transform> getTransforms();
-
 } // PaintServer

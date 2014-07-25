@@ -307,7 +307,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				svg.setAttribute(SVG_HEIGHT_ATTRIBUTE,
 						convertDoubleToString(bounds.getHeight()));
 		}
-		
+
 		return super.caseCanvas(object);
 	}
 
@@ -533,9 +533,10 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				}
 				element.setAttribute(SVG_TRANSFORM_ATTRIBUTE, transforms);
 			}
-			
+
 			if (object.getLayoutData() != null)
-				element.setAttribute(SVG_LAYOUT_DATA_ATTRIBUTE, object.getLayoutData());
+				element.setAttribute(SVG_LAYOUT_DATA_ATTRIBUTE,
+						object.getLayoutData());
 		}
 
 		return super.caseGraphicalElement(object);
@@ -550,7 +551,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 					svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_G_TAG));
 			getParentElement(object).appendChild(g);
 		}
-		
+
 		if (object.getLayout() != null)
 			g.setAttribute(SVG_LAYOUT_ATTRIBUTE, object.getLayout());
 
@@ -975,7 +976,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 		svg.setAttribute(XMLNS_PREFIX, SVG_NAMESPACE_URI);
 		svg.setAttribute(XMLNS_PREFIX + ":" + XLINK_PREFIX, XLINK_NAMESPACE_URI);
 		svg.setAttribute(SVG_ONLOAD_ATTRIBUTE, "validate(evt.target)");
-		
+
 		if (object.eIsSet(DGPackage.Literals.ROOT_CANVAS__BACKGROUND_COLOR)) {
 			String background = convertColorToString(object
 					.getBackgroundColor());
@@ -990,18 +991,20 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 					target, data);
 			svgDocument.insertBefore(pi, svgDocument.getDocumentElement());
 		}
-		
+
 		for (String s : object.getScripts()) {
 			try {
 				URL url = FileLocator.toFileURL(new URL(s));
-				Element script = svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_SCRIPT_TAG);
-				script.setAttributeNS(XLINK_NAMESPACE_URI, XLINK_HREF_QNAME, url.toString());
+				Element script = svgDocument.createElementNS(SVG_NAMESPACE_URI,
+						SVG_SCRIPT_TAG);
+				script.setAttributeNS(XLINK_NAMESPACE_URI, XLINK_HREF_QNAME,
+						url.toString());
 				svg.appendChild(script);
 			} catch (IOException e) {
 				DDEditorPlugin.getPlugin().log(e);
 			}
 		}
-		
+
 		if (object.getDefinitions() != null) {
 			doSwitch(object.getDefinitions());
 		}
@@ -1262,7 +1265,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				text.setAttribute(SVG_Y_ATTRIBUTE,
 						convertDoubleToString(position.getY()));
 		}
-		
+
 		if (object.getAnchor() != null) {
 			TextAnchor ta = object.getAnchor();
 			String value = null;

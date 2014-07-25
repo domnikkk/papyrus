@@ -16,25 +16,24 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Style Sheet</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Style Sheet</b></em>'. <!-- end-user-doc -->
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.StyleSheet#getRules <em>Rule</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.StyleSheet#getRules <em>Rule</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleSheet()
  * @model
  * @generated
  */
 public interface StyleSheet extends EObject {
+
 	/**
 	 * Returns the value of the '<em><b>Rule</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.eclipse.papyrus.dd.dg.StyleRule}. <!-- begin-user-doc --> <!--
+	 * list. The list contents are of type {@link org.eclipse.papyrus.dd.dg.StyleRule}. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> A list of style rules that
 	 * apply to graphical elements. <!-- end-model-doc -->
 	 * 
@@ -44,5 +43,4 @@ public interface StyleSheet extends EObject {
 	 * @generated
 	 */
 	EList<StyleRule> getRules();
-
 } // StyleSheet

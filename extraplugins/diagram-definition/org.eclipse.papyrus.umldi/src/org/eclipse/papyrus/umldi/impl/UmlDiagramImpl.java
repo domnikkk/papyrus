@@ -26,19 +26,21 @@ import org.eclipse.papyrus.umldi.UmlDiagram;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getDocumentation <em>Documentation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getResolution <em>Resolution</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl#getResolution <em>Resolution</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -59,6 +62,7 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -69,6 +73,7 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -79,6 +84,7 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	 * The default value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -89,6 +95,7 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	 * The cached value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -98,6 +105,7 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected UmlDiagramImpl() {
@@ -107,6 +115,7 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -117,6 +126,7 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -126,18 +136,20 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__NAME, oldName, name));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDocumentation() {
@@ -147,18 +159,20 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDocumentation(String newDocumentation) {
 		String oldDocumentation = documentation;
 		documentation = newDocumentation;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__DOCUMENTATION, oldDocumentation, documentation));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getResolution() {
@@ -168,29 +182,31 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setResolution(double newResolution) {
 		double oldResolution = resolution;
 		resolution = newResolution;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM__RESOLUTION, oldResolution, resolution));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM__NAME:
-				return getName();
-			case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
-				return getDocumentation();
-			case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
-				return getResolution();
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM__NAME:
+			return getName();
+		case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
+			return getDocumentation();
+		case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
+			return getResolution();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -198,20 +214,21 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM__NAME:
-				setName((String)newValue);
-				return;
-			case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
-				setDocumentation((String)newValue);
-				return;
-			case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
-				setResolution((Double)newValue);
-				return;
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM__NAME:
+			setName((String)newValue);
+			return;
+		case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
+			setDocumentation((String)newValue);
+			return;
+		case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
+			setResolution((Double)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -219,20 +236,21 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
-				setDocumentation(DOCUMENTATION_EDEFAULT);
-				return;
-			case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
-				setResolution(RESOLUTION_EDEFAULT);
-				return;
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
+			setDocumentation(DOCUMENTATION_EDEFAULT);
+			return;
+		case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
+			setResolution(RESOLUTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -240,17 +258,18 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
-				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
-			case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
-				return resolution != RESOLUTION_EDEFAULT;
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
+			return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
+		case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
+			return resolution != RESOLUTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -258,16 +277,21 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Diagram.class) {
-			switch (derivedFeatureID) {
-				case UMLDIPackage.UML_DIAGRAM__NAME: return DIPackage.DIAGRAM__NAME;
-				case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION: return DIPackage.DIAGRAM__DOCUMENTATION;
-				case UMLDIPackage.UML_DIAGRAM__RESOLUTION: return DIPackage.DIAGRAM__RESOLUTION;
-				default: return -1;
+		if(baseClass == Diagram.class) {
+			switch(derivedFeatureID) {
+			case UMLDIPackage.UML_DIAGRAM__NAME:
+				return DIPackage.DIAGRAM__NAME;
+			case UMLDIPackage.UML_DIAGRAM__DOCUMENTATION:
+				return DIPackage.DIAGRAM__DOCUMENTATION;
+			case UMLDIPackage.UML_DIAGRAM__RESOLUTION:
+				return DIPackage.DIAGRAM__RESOLUTION;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -276,16 +300,21 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Diagram.class) {
-			switch (baseFeatureID) {
-				case DIPackage.DIAGRAM__NAME: return UMLDIPackage.UML_DIAGRAM__NAME;
-				case DIPackage.DIAGRAM__DOCUMENTATION: return UMLDIPackage.UML_DIAGRAM__DOCUMENTATION;
-				case DIPackage.DIAGRAM__RESOLUTION: return UMLDIPackage.UML_DIAGRAM__RESOLUTION;
-				default: return -1;
+		if(baseClass == Diagram.class) {
+			switch(baseFeatureID) {
+			case DIPackage.DIAGRAM__NAME:
+				return UMLDIPackage.UML_DIAGRAM__NAME;
+			case DIPackage.DIAGRAM__DOCUMENTATION:
+				return UMLDIPackage.UML_DIAGRAM__DOCUMENTATION;
+			case DIPackage.DIAGRAM__RESOLUTION:
+				return UMLDIPackage.UML_DIAGRAM__RESOLUTION;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -294,12 +323,13 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
+		if(eIsProxy())
+			return super.toString();
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
@@ -310,5 +340,4 @@ public class UmlDiagramImpl extends UmlShapeImpl implements UmlDiagram {
 		result.append(')');
 		return result.toString();
 	}
-
 } //UmlDiagramImpl

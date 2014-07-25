@@ -23,21 +23,22 @@ import org.eclipse.papyrus.dd.dg.Gradient;
 import org.eclipse.papyrus.dd.dg.GradientStop;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Gradient</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Gradient</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.GradientImpl#getStops <em>Stop</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.GradientImpl#getStops <em>Stop</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class GradientImpl extends PaintServerImpl implements Gradient {
+
 	/**
 	 * The cached value of the '{@link #getStops() <em>Stop</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getStops()
 	 * @generated
 	 * @ordered
@@ -46,6 +47,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GradientImpl() {
@@ -54,6 +56,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,10 +66,11 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<GradientStop> getStops() {
-		if (stops == null) {
+		if(stops == null) {
 			stops = new EObjectContainmentEList<GradientStop>(GradientStop.class, this, DGPackage.GRADIENT__STOP);
 		}
 		return stops;
@@ -74,72 +78,75 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DGPackage.GRADIENT__STOP:
-				return ((InternalEList<?>)getStops()).basicRemove(otherEnd, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch(featureID) {
+		case DGPackage.GRADIENT__STOP:
+			return ((InternalEList<?>)getStops()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DGPackage.GRADIENT__STOP:
-				return getStops();
+		switch(featureID) {
+		case DGPackage.GRADIENT__STOP:
+			return getStops();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DGPackage.GRADIENT__STOP:
-				getStops().clear();
-				getStops().addAll((Collection<? extends GradientStop>)newValue);
-				return;
+		switch(featureID) {
+		case DGPackage.GRADIENT__STOP:
+			getStops().clear();
+			getStops().addAll((Collection<? extends GradientStop>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DGPackage.GRADIENT__STOP:
-				getStops().clear();
-				return;
+		switch(featureID) {
+		case DGPackage.GRADIENT__STOP:
+			getStops().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DGPackage.GRADIENT__STOP:
-				return stops != null && !stops.isEmpty();
+		switch(featureID) {
+		case DGPackage.GRADIENT__STOP:
+			return stops != null && !stops.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
-
 } // GradientImpl

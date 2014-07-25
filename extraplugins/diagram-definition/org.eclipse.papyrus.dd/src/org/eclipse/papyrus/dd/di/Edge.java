@@ -16,22 +16,22 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Edge</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Edge</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
- * Edge is a diagram element that renders as a polyline, connecting a source diagram element to a target diagram element, and is positioned relative to the origin of the diagram.
+ * Edge is a diagram element that renders as a polyline, connecting a source diagram element to a target diagram element, and is positioned relative
+ * to the origin of the diagram.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.di.Edge#getSourceDiagramElement <em>Source Diagram Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.di.Edge#getWaypoint <em>Waypoint</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.di.Edge#getTargetDiagramElement <em>Target Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.di.Edge#getSourceDiagramElement <em>Source Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.di.Edge#getWaypoint <em>Waypoint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.di.Edge#getTargetDiagramElement <em>Target Diagram Element</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.di.DIPackage#getEdge()
  * @model abstract="true"
  * @generated
@@ -47,6 +47,7 @@ public interface Edge extends DiagramElement {
 	 * <!-- begin-model-doc -->
 	 * the edge's source diagram element, i.e. where the edge starts from.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Source Diagram Element</em>' reference.
 	 * @see org.eclipse.papyrus.dd.di.DIPackage#getEdge_SourceDiagramElement()
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getSourceEdge
@@ -57,8 +58,7 @@ public interface Edge extends DiagramElement {
 
 	/**
 	 * Returns the value of the '<em><b>Waypoint</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.eclipse.papyrus.dd.dc.Point}. <!-- begin-user-doc --> <!--
+	 * list. The list contents are of type {@link org.eclipse.papyrus.dd.dc.Point}. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> an optional list of points
 	 * relative to the origin of the nesting diagram that specifies the
 	 * connected line segments of the edge <!-- end-model-doc -->
@@ -79,6 +79,7 @@ public interface Edge extends DiagramElement {
 	 * <!-- begin-model-doc -->
 	 * the edge's target diagram element, i.e. where the edge ends at.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Target Diagram Element</em>' reference.
 	 * @see org.eclipse.papyrus.dd.di.DIPackage#getEdge_TargetDiagramElement()
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getTargetEdge
@@ -86,5 +87,4 @@ public interface Edge extends DiagramElement {
 	 * @generated
 	 */
 	DiagramElement getTargetDiagramElement();
-
 } // Edge

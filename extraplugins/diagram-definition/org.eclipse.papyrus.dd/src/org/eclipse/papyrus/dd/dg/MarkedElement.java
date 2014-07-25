@@ -15,27 +15,27 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Marked Element</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Marked Element</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * MarkedElement is a graphic element that can be decorated at its vertices with markers (e.g. arrowheads).
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.MarkedElement#getEndMarker <em>End Marker</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.MarkedElement#getMidMarker <em>Mid Marker</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.MarkedElement#getStartMarker <em>Start Marker</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.MarkedElement#getEndMarker <em>End Marker</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.MarkedElement#getMidMarker <em>Mid Marker</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.MarkedElement#getStartMarker <em>Start Marker</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getMarkedElement()
  * @model abstract="true"
  * @generated
  */
 public interface MarkedElement extends GraphicalElement {
+
 	/**
 	 * Returns the value of the '<em><b>End Marker</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> an
@@ -54,7 +54,9 @@ public interface MarkedElement extends GraphicalElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.MarkedElement#getEndMarker <em>End Marker</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>End Marker</em>' reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>End Marker</em>' reference.
 	 * @see #getEndMarker()
 	 * @generated
 	 */
@@ -78,7 +80,9 @@ public interface MarkedElement extends GraphicalElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.MarkedElement#getMidMarker <em>Mid Marker</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Mid Marker</em>' reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Mid Marker</em>' reference.
 	 * @see #getMidMarker()
 	 * @generated
 	 */
@@ -102,7 +106,9 @@ public interface MarkedElement extends GraphicalElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.MarkedElement#getStartMarker <em>Start Marker</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Start Marker</em>' reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Start Marker</em>' reference.
 	 * @see #getStartMarker()
 	 * @generated
 	 */
@@ -112,45 +118,41 @@ public interface MarkedElement extends GraphicalElement {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='startMarker->notEmpty() implies startMarker.id->notEmpty()'"
 	 * @generated
 	 */
-	boolean referencedStartMarkerHasId(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
+	boolean referencedStartMarkerHasId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='midMarker->notEmpty() implies midMarker.id->notEmpty()'"
 	 * @generated
 	 */
-	boolean referencedMidMarkerHasId(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
+	boolean referencedMidMarkerHasId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='endMarker->notEmpty() implies endMarker.id->notEmpty()'"
 	 * @generated
 	 */
-	boolean referencedEndMarkerHasId(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
-
+	boolean referencedEndMarkerHasId(DiagnosticChain diagnostics, Map<Object, Object> context);
 } // MarkedElement

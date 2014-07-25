@@ -32,18 +32,17 @@ import org.eclipse.papyrus.dd.dc.DCPackage;
 import org.eclipse.papyrus.dd.dc.util.DCValidator;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Bounds</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Bounds</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl#getX <em>X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl#getY <em>Y</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl#getWidth <em>Width</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl#getHeight <em>Height</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl#getX <em>X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl#getY <em>Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl#getWidth <em>Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl#getHeight <em>Height</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
@@ -72,6 +71,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 * This is true if the X attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -101,6 +101,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 * This is true if the Y attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -109,6 +110,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -118,6 +120,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	/**
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -128,6 +131,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 * This is true if the Width attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -136,6 +140,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	/**
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -145,6 +150,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	/**
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -155,6 +161,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	 * This is true if the Height attribute has been set.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -162,6 +169,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BoundsImpl() {
@@ -170,6 +178,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -179,6 +188,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getX() {
@@ -187,6 +197,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setX(double newX) {
@@ -194,12 +205,13 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		x = newX;
 		boolean oldXESet = xESet;
 		xESet = true;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.BOUNDS__X, oldX, x, !oldXESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetX() {
@@ -207,12 +219,13 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		boolean oldXESet = xESet;
 		x = X_EDEFAULT;
 		xESet = false;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.BOUNDS__X, oldX, X_EDEFAULT, oldXESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetX() {
@@ -221,6 +234,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getY() {
@@ -229,6 +243,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setY(double newY) {
@@ -236,12 +251,13 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		y = newY;
 		boolean oldYESet = yESet;
 		yESet = true;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.BOUNDS__Y, oldY, y, !oldYESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetY() {
@@ -249,12 +265,13 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		boolean oldYESet = yESet;
 		y = Y_EDEFAULT;
 		yESet = false;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.BOUNDS__Y, oldY, Y_EDEFAULT, oldYESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetY() {
@@ -263,6 +280,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getWidth() {
@@ -271,6 +289,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWidth(double newWidth) {
@@ -278,12 +297,13 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		width = newWidth;
 		boolean oldWidthESet = widthESet;
 		widthESet = true;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.BOUNDS__WIDTH, oldWidth, width, !oldWidthESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetWidth() {
@@ -291,12 +311,13 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		boolean oldWidthESet = widthESet;
 		width = WIDTH_EDEFAULT;
 		widthESet = false;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.BOUNDS__WIDTH, oldWidth, WIDTH_EDEFAULT, oldWidthESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetWidth() {
@@ -305,6 +326,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getHeight() {
@@ -313,6 +335,7 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setHeight(double newHeight) {
@@ -320,12 +343,13 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		height = newHeight;
 		boolean oldHeightESet = heightESet;
 		heightESet = true;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.BOUNDS__HEIGHT, oldHeight, height, !oldHeightESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetHeight() {
@@ -333,12 +357,13 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 		boolean oldHeightESet = heightESet;
 		height = HEIGHT_EDEFAULT;
 		heightESet = false;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.BOUNDS__HEIGHT, oldHeight, HEIGHT_EDEFAULT, oldHeightESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetHeight() {
@@ -346,9 +371,11 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	}
 
 	/**
-	 * The cached validation expression for the '{@link #nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Non Negative Width</em>}' invariant operation.
+	 * The cached validation expression for the '{@link #nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Non Negative Width</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @see #nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -357,28 +384,19 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean nonNegativeWidth(DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return
-			DCValidator.validate
-				(DCPackage.Literals.BOUNDS,
-				 this,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 DCPackage.Literals.BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP,
-				 NON_NEGATIVE_WIDTH_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DCValidator.DIAGNOSTIC_SOURCE,
-				 DCValidator.BOUNDS__NON_NEGATIVE_WIDTH);
+	public boolean nonNegativeWidth(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return DCValidator.validate(DCPackage.Literals.BOUNDS, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_WIDTH_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.BOUNDS__NON_NEGATIVE_WIDTH);
 	}
 
 	/**
-	 * The cached validation expression for the '{@link #nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Non Negative Height</em>}' invariant operation.
+	 * The cached validation expression for the '{@link #nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * <em>Non Negative Height</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @see #nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -387,144 +405,149 @@ public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean nonNegativeHeight(DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return
-			DCValidator.validate
-				(DCPackage.Literals.BOUNDS,
-				 this,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 DCPackage.Literals.BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP,
-				 NON_NEGATIVE_HEIGHT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DCValidator.DIAGNOSTIC_SOURCE,
-				 DCValidator.BOUNDS__NON_NEGATIVE_HEIGHT);
+	public boolean nonNegativeHeight(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return DCValidator.validate(DCPackage.Literals.BOUNDS, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DCPackage.Literals.BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP, NON_NEGATIVE_HEIGHT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DCValidator.DIAGNOSTIC_SOURCE, DCValidator.BOUNDS__NON_NEGATIVE_HEIGHT);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DCPackage.BOUNDS__X:
-				return getX();
-			case DCPackage.BOUNDS__Y:
-				return getY();
-			case DCPackage.BOUNDS__WIDTH:
-				return getWidth();
-			case DCPackage.BOUNDS__HEIGHT:
-				return getHeight();
+		switch(featureID) {
+		case DCPackage.BOUNDS__X:
+			return getX();
+		case DCPackage.BOUNDS__Y:
+			return getY();
+		case DCPackage.BOUNDS__WIDTH:
+			return getWidth();
+		case DCPackage.BOUNDS__HEIGHT:
+			return getHeight();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DCPackage.BOUNDS__X:
-				setX((Double)newValue);
-				return;
-			case DCPackage.BOUNDS__Y:
-				setY((Double)newValue);
-				return;
-			case DCPackage.BOUNDS__WIDTH:
-				setWidth((Double)newValue);
-				return;
-			case DCPackage.BOUNDS__HEIGHT:
-				setHeight((Double)newValue);
-				return;
+		switch(featureID) {
+		case DCPackage.BOUNDS__X:
+			setX((Double)newValue);
+			return;
+		case DCPackage.BOUNDS__Y:
+			setY((Double)newValue);
+			return;
+		case DCPackage.BOUNDS__WIDTH:
+			setWidth((Double)newValue);
+			return;
+		case DCPackage.BOUNDS__HEIGHT:
+			setHeight((Double)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DCPackage.BOUNDS__X:
-				unsetX();
-				return;
-			case DCPackage.BOUNDS__Y:
-				unsetY();
-				return;
-			case DCPackage.BOUNDS__WIDTH:
-				unsetWidth();
-				return;
-			case DCPackage.BOUNDS__HEIGHT:
-				unsetHeight();
-				return;
+		switch(featureID) {
+		case DCPackage.BOUNDS__X:
+			unsetX();
+			return;
+		case DCPackage.BOUNDS__Y:
+			unsetY();
+			return;
+		case DCPackage.BOUNDS__WIDTH:
+			unsetWidth();
+			return;
+		case DCPackage.BOUNDS__HEIGHT:
+			unsetHeight();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DCPackage.BOUNDS__X:
-				return isSetX();
-			case DCPackage.BOUNDS__Y:
-				return isSetY();
-			case DCPackage.BOUNDS__WIDTH:
-				return isSetWidth();
-			case DCPackage.BOUNDS__HEIGHT:
-				return isSetHeight();
+		switch(featureID) {
+		case DCPackage.BOUNDS__X:
+			return isSetX();
+		case DCPackage.BOUNDS__Y:
+			return isSetY();
+		case DCPackage.BOUNDS__WIDTH:
+			return isSetWidth();
+		case DCPackage.BOUNDS__HEIGHT:
+			return isSetHeight();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
-		switch (operationID) {
-			case DCPackage.BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP:
-				return nonNegativeWidth((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case DCPackage.BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP:
-				return nonNegativeHeight((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch(operationID) {
+		case DCPackage.BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP:
+			return nonNegativeWidth((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		case DCPackage.BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP:
+			return nonNegativeHeight((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
+		if(eIsProxy())
+			return super.toString();
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (x: ");
-		if (xESet) result.append(x); else result.append("<unset>");
+		if(xESet)
+			result.append(x);
+		else
+			result.append("<unset>");
 		result.append(", y: ");
-		if (yESet) result.append(y); else result.append("<unset>");
+		if(yESet)
+			result.append(y);
+		else
+			result.append("<unset>");
 		result.append(", width: ");
-		if (widthESet) result.append(width); else result.append("<unset>");
+		if(widthESet)
+			result.append(width);
+		else
+			result.append("<unset>");
 		result.append(", height: ");
-		if (heightESet) result.append(height); else result.append("<unset>");
+		if(heightESet)
+			result.append(height);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
-
 } // BoundsImpl

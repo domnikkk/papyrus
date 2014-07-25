@@ -29,22 +29,27 @@ import org.eclipse.papyrus.umldi.*;
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.umldi.UMLDIPackage
  * @generated
  */
 public class UMLDIValidator extends EObjectValidator {
+
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final UMLDIValidator INSTANCE = new UMLDIValidator();
 
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
+	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
@@ -55,6 +60,7 @@ public class UMLDIValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Fontsize Positive' of 'Uml Style'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final int UML_STYLE__FONTSIZE_POSITIVE = 1;
@@ -63,6 +69,7 @@ public class UMLDIValidator extends EObjectValidator {
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
@@ -71,6 +78,7 @@ public class UMLDIValidator extends EObjectValidator {
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
@@ -79,6 +87,7 @@ public class UMLDIValidator extends EObjectValidator {
 	 * Delegates evaluation of the given invariant expression against the object in the given context.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context, String validationDelegate, EOperation invariant, String expression, int severity, String source, int code) {
@@ -89,6 +98,7 @@ public class UMLDIValidator extends EObjectValidator {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UMLDIValidator() {
@@ -99,48 +109,51 @@ public class UMLDIValidator extends EObjectValidator {
 	 * Returns the package of this validator switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return UMLDIPackage.eINSTANCE;
+		return UMLDIPackage.eINSTANCE;
 	}
 
 	/**
 	 * Calls <code>validateXXX</code> for the corresponding classifier of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID) {
-			case UMLDIPackage.UML_DIAGRAM:
-				return validateUmlDiagram((UmlDiagram)value, diagnostics, context);
-			case UMLDIPackage.UML_SHAPE:
-				return validateUmlShape((UmlShape)value, diagnostics, context);
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT:
-				return validateUmlDiagramElement((UmlDiagramElement)value, diagnostics, context);
-			case UMLDIPackage.UML_STYLE:
-				return validateUmlStyle((UmlStyle)value, diagnostics, context);
-			case UMLDIPackage.UML_EDGE:
-				return validateUmlEdge((UmlEdge)value, diagnostics, context);
-			case UMLDIPackage.UML_COMPARTMENT:
-				return validateUmlCompartment((UmlCompartment)value, diagnostics, context);
-			case UMLDIPackage.UML_LABEL:
-				return validateUmlLabel((UmlLabel)value, diagnostics, context);
-			case UMLDIPackage.UML_COMPARTMENT_KIND:
-				return validateUmlCompartmentKind((UmlCompartmentKind)value, diagnostics, context);
-			case UMLDIPackage.UML_LABEL_KIND:
-				return validateUmlLabelKind((UmlLabelKind)value, diagnostics, context);
-			default:
-				return true;
+		switch(classifierID) {
+		case UMLDIPackage.UML_DIAGRAM:
+			return validateUmlDiagram((UmlDiagram)value, diagnostics, context);
+		case UMLDIPackage.UML_SHAPE:
+			return validateUmlShape((UmlShape)value, diagnostics, context);
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT:
+			return validateUmlDiagramElement((UmlDiagramElement)value, diagnostics, context);
+		case UMLDIPackage.UML_STYLE:
+			return validateUmlStyle((UmlStyle)value, diagnostics, context);
+		case UMLDIPackage.UML_EDGE:
+			return validateUmlEdge((UmlEdge)value, diagnostics, context);
+		case UMLDIPackage.UML_COMPARTMENT:
+			return validateUmlCompartment((UmlCompartment)value, diagnostics, context);
+		case UMLDIPackage.UML_LABEL:
+			return validateUmlLabel((UmlLabel)value, diagnostics, context);
+		case UMLDIPackage.UML_COMPARTMENT_KIND:
+			return validateUmlCompartmentKind((UmlCompartmentKind)value, diagnostics, context);
+		case UMLDIPackage.UML_LABEL_KIND:
+			return validateUmlLabelKind((UmlLabelKind)value, diagnostics, context);
+		default:
+			return true;
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlDiagram(UmlDiagram umlDiagram, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -150,6 +163,7 @@ public class UMLDIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlDiagramElement(UmlDiagramElement umlDiagramElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -159,19 +173,29 @@ public class UMLDIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlStyle(UmlStyle umlStyle, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(umlStyle, diagnostics, context)) return false;
+		if(!validate_NoCircularContainment(umlStyle, diagnostics, context))
+			return false;
 		boolean result = validate_EveryMultiplicityConforms(umlStyle, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(umlStyle, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(umlStyle, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(umlStyle, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(umlStyle, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(umlStyle, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(umlStyle, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(umlStyle, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUmlStyle_fontsizePositive(umlStyle, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(umlStyle, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(umlStyle, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(umlStyle, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryProxyResolves(umlStyle, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_UniqueID(umlStyle, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryKeyUnique(umlStyle, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(umlStyle, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validateUmlStyle_fontsizePositive(umlStyle, diagnostics, context);
 		return result;
 	}
 
@@ -179,6 +203,7 @@ public class UMLDIValidator extends EObjectValidator {
 	 * Validates the fontsizePositive constraint of '<em>Uml Style</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlStyle_fontsizePositive(UmlStyle umlStyle, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -188,6 +213,7 @@ public class UMLDIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlEdge(UmlEdge umlEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -197,6 +223,7 @@ public class UMLDIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlCompartment(UmlCompartment umlCompartment, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -206,6 +233,7 @@ public class UMLDIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlLabel(UmlLabel umlLabel, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -215,6 +243,7 @@ public class UMLDIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlCompartmentKind(UmlCompartmentKind umlCompartmentKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -224,6 +253,7 @@ public class UMLDIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlLabelKind(UmlLabelKind umlLabelKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -233,6 +263,7 @@ public class UMLDIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean validateUmlShape(UmlShape umlShape, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -243,6 +274,7 @@ public class UMLDIValidator extends EObjectValidator {
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -252,5 +284,4 @@ public class UMLDIValidator extends EObjectValidator {
 		// Ensure that you remove @generated or mark it @generated NOT
 		return super.getResourceLocator();
 	}
-
 } //UMLDIValidator

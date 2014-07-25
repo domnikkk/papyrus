@@ -21,22 +21,23 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Skew;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Skew</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Skew</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.SkewImpl#getAngleX <em>Angle X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.SkewImpl#getAngleY <em>Angle Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.SkewImpl#getAngleX <em>Angle X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.SkewImpl#getAngleY <em>Angle Y</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class SkewImpl extends TransformImpl implements Skew {
+
 	/**
 	 * The default value of the '{@link #getAngleX() <em>Angle X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getAngleX()
 	 * @generated
 	 * @ordered
@@ -46,6 +47,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 	/**
 	 * The cached value of the '{@link #getAngleX() <em>Angle X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getAngleX()
 	 * @generated
 	 * @ordered
@@ -55,6 +57,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 	/**
 	 * The default value of the '{@link #getAngleY() <em>Angle Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getAngleY()
 	 * @generated
 	 * @ordered
@@ -64,6 +67,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 	/**
 	 * The cached value of the '{@link #getAngleY() <em>Angle Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getAngleY()
 	 * @generated
 	 * @ordered
@@ -72,6 +76,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SkewImpl() {
@@ -80,6 +85,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,6 +95,7 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getAngleX() {
@@ -97,17 +104,19 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setAngleX(double newAngleX) {
 		double oldAngleX = angleX;
 		angleX = newAngleX;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.SKEW__ANGLE_X, oldAngleX, angleX));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getAngleY() {
@@ -116,87 +125,93 @@ public class SkewImpl extends TransformImpl implements Skew {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setAngleY(double newAngleY) {
 		double oldAngleY = angleY;
 		angleY = newAngleY;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.SKEW__ANGLE_Y, oldAngleY, angleY));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DGPackage.SKEW__ANGLE_X:
-				return getAngleX();
-			case DGPackage.SKEW__ANGLE_Y:
-				return getAngleY();
+		switch(featureID) {
+		case DGPackage.SKEW__ANGLE_X:
+			return getAngleX();
+		case DGPackage.SKEW__ANGLE_Y:
+			return getAngleY();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DGPackage.SKEW__ANGLE_X:
-				setAngleX((Double)newValue);
-				return;
-			case DGPackage.SKEW__ANGLE_Y:
-				setAngleY((Double)newValue);
-				return;
+		switch(featureID) {
+		case DGPackage.SKEW__ANGLE_X:
+			setAngleX((Double)newValue);
+			return;
+		case DGPackage.SKEW__ANGLE_Y:
+			setAngleY((Double)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DGPackage.SKEW__ANGLE_X:
-				setAngleX(ANGLE_X_EDEFAULT);
-				return;
-			case DGPackage.SKEW__ANGLE_Y:
-				setAngleY(ANGLE_Y_EDEFAULT);
-				return;
+		switch(featureID) {
+		case DGPackage.SKEW__ANGLE_X:
+			setAngleX(ANGLE_X_EDEFAULT);
+			return;
+		case DGPackage.SKEW__ANGLE_Y:
+			setAngleY(ANGLE_Y_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DGPackage.SKEW__ANGLE_X:
-				return angleX != ANGLE_X_EDEFAULT;
-			case DGPackage.SKEW__ANGLE_Y:
-				return angleY != ANGLE_Y_EDEFAULT;
+		switch(featureID) {
+		case DGPackage.SKEW__ANGLE_X:
+			return angleX != ANGLE_X_EDEFAULT;
+		case DGPackage.SKEW__ANGLE_Y:
+			return angleY != ANGLE_Y_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
+		if(eIsProxy())
+			return super.toString();
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (angleX: ");
 		result.append(angleX);
@@ -205,5 +220,4 @@ public class SkewImpl extends TransformImpl implements Skew {
 		result.append(')');
 		return result.toString();
 	}
-
 } // SkewImpl

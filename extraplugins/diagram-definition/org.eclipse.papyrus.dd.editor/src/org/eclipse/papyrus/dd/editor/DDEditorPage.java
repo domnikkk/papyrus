@@ -128,24 +128,27 @@ public abstract class DDEditorPage extends FormPage {
 	/**
 	 * Adds actions to the page's toolbar
 	 * 
-	 * @param manager The page's toolbar manager
+	 * @param manager
+	 *            The page's toolbar manager
 	 */
 	public void setupActions(IToolBarManager manager) {
 		manager.add(new Separator("Page"));
 		manager.add(new Separator("Common"));
 
 		Action action;
-		
+
 		action = new Action("Help") {
 			public void run() {
-				PlatformUI.getWorkbench().getHelpSystem().displayHelp(getPageHelpId());
+				PlatformUI.getWorkbench().getHelpSystem()
+						.displayHelp(getPageHelpId());
 			}
 		};
 		action.setToolTipText("Show help");
-		action.setImageDescriptor(DDEditorPlugin.getImageDescriptor(DDEditorPlugin.IMAGE_HELP));
+		action.setImageDescriptor(DDEditorPlugin
+				.getImageDescriptor(DDEditorPlugin.IMAGE_HELP));
 		manager.appendToGroup("Common", action);
 	}
-	
+
 	/**
 	 * Get the help id associated with this page
 	 * 
@@ -154,5 +157,5 @@ public abstract class DDEditorPage extends FormPage {
 	protected String getPageHelpId() {
 		return "";
 	}
-	
+
 }

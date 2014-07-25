@@ -11,7 +11,6 @@
  */
 package org.eclipse.papyrus.umldi.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -42,22 +41,16 @@ import org.eclipse.papyrus.umldi.UmlEdge;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.umldi.UmlEdge} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class UmlEdgeItemProvider
-	extends UmlDiagramElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		IItemColorProvider,
-		IItemFontProvider {
+public class UmlEdgeItemProvider extends UmlDiagramElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlEdgeItemProvider(AdapterFactory adapterFactory) {
@@ -68,13 +61,13 @@ public class UmlEdgeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
-
 			addSourceUmlDiagramElementPropertyDescriptor(object);
 			addTargetUmlDiagramElementPropertyDescriptor(object);
 		}
@@ -85,44 +78,22 @@ public class UmlEdgeItemProvider
 	 * This adds a property descriptor for the Source Uml Diagram Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addSourceUmlDiagramElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UmlEdge_sourceUmlDiagramElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UmlEdge_sourceUmlDiagramElement_feature", "_UI_UmlEdge_type"),
-				 UMLDIPackage.Literals.UML_EDGE__SOURCE_UML_DIAGRAM_ELEMENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlEdge_sourceUmlDiagramElement_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlEdge_sourceUmlDiagramElement_feature", "_UI_UmlEdge_type"), UMLDIPackage.Literals.UML_EDGE__SOURCE_UML_DIAGRAM_ELEMENT, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Target Uml Diagram Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addTargetUmlDiagramElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UmlEdge_targetUmlDiagramElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UmlEdge_targetUmlDiagramElement_feature", "_UI_UmlEdge_type"),
-				 UMLDIPackage.Literals.UML_EDGE__TARGET_UML_DIAGRAM_ELEMENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlEdge_targetUmlDiagramElement_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlEdge_targetUmlDiagramElement_feature", "_UI_UmlEdge_type"), UMLDIPackage.Literals.UML_EDGE__TARGET_UML_DIAGRAM_ELEMENT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -131,11 +102,12 @@ public class UmlEdgeItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DIPackage.Literals.EDGE__WAYPOINT);
 		}
@@ -145,13 +117,13 @@ public class UmlEdgeItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
-
 		return super.getChildFeature(object, child);
 	}
 
@@ -159,6 +131,7 @@ public class UmlEdgeItemProvider
 	 * This returns UmlEdge.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -170,6 +143,7 @@ public class UmlEdgeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,16 +156,16 @@ public class UmlEdgeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(UmlEdge.class)) {
-			case UMLDIPackage.UML_EDGE__WAYPOINT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch(notification.getFeatureID(UmlEdge.class)) {
+		case UMLDIPackage.UML_EDGE__WAYPOINT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -201,16 +175,12 @@ public class UmlEdgeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DIPackage.Literals.EDGE__WAYPOINT,
-				 DCFactory.eINSTANCE.createPoint()));
+		newChildDescriptors.add(createChildParameter(DIPackage.Literals.EDGE__WAYPOINT, DCFactory.eINSTANCE.createPoint()));
 	}
-
 }

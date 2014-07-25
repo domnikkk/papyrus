@@ -15,26 +15,26 @@ import org.eclipse.papyrus.dd.dc.Dimension;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Marker</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Marker</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Marker is a kind of group that is used as a decoration (e.g. an arrowhead) for the vertices of a marked graphical element.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Marker#getSize <em>Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Marker#getReference <em>Reference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Marker#getSize <em>Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Marker#getReference <em>Reference</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getMarker()
  * @model
  * @generated
  */
 public interface Marker extends Group {
+
 	/**
 	 * Returns the value of the '<em><b>Size</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
@@ -52,7 +52,9 @@ public interface Marker extends Group {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Marker#getSize <em>Size</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Size</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Size</em>' containment reference.
 	 * @see #getSize()
 	 * @generated
 	 */
@@ -75,10 +77,11 @@ public interface Marker extends Group {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Marker#getReference <em>Reference</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Reference</em>' containment reference.
 	 * @see #getReference()
 	 * @generated
 	 */
 	void setReference(Point value);
-
 } // Marker

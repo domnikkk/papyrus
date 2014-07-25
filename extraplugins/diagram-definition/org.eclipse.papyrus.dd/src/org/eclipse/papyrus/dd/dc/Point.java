@@ -14,21 +14,20 @@ package org.eclipse.papyrus.dd.dc;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Point</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Point</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * A Point specifies an location in some x-y coordinate system.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dc.Point#getX <em>X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dc.Point#getY <em>Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.Point#getX <em>X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.Point#getY <em>Y</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dc.DCPackage#getPoint()
  * @model
  * @generated
@@ -53,7 +52,9 @@ public interface Point extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Point#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>X</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>X</em>' attribute.
 	 * @see #isSetX()
 	 * @see #unsetX()
 	 * @see #getX()
@@ -64,6 +65,7 @@ public interface Point extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Point#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSetX()
 	 * @see #getX()
 	 * @see #setX(double)
@@ -74,6 +76,7 @@ public interface Point extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Point#getX <em>X</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>X</em>' attribute is set.
 	 * @see #unsetX()
 	 * @see #getX()
@@ -100,7 +103,9 @@ public interface Point extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Point#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Y</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Y</em>' attribute.
 	 * @see #isSetY()
 	 * @see #unsetY()
 	 * @see #getY()
@@ -111,6 +116,7 @@ public interface Point extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Point#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSetY()
 	 * @see #getY()
 	 * @see #setY(double)
@@ -121,6 +127,7 @@ public interface Point extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Point#getY <em>Y</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Y</em>' attribute is set.
 	 * @see #unsetY()
 	 * @see #getY()
@@ -128,5 +135,4 @@ public interface Point extends EObject {
 	 * @generated
 	 */
 	boolean isSetY();
-
 } // Point

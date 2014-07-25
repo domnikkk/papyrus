@@ -42,12 +42,11 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Definitions} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class DefinitionsItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-		IItemColorProvider, IItemFontProvider {
+public class DefinitionsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -66,9 +65,8 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
-
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,12 +76,12 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
-		if (childrenFeatures == null) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if(childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.DEFINITIONS__DEFNITION);
 			childrenFeatures.add(DGPackage.Literals.DEFINITIONS__STYLE_SHEET);
@@ -93,13 +91,13 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
-
 		return super.getChildFeature(object, child);
 	}
 
@@ -118,6 +116,7 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,17 +129,17 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Definitions.class)) {
-			case DGPackage.DEFINITIONS__DEFNITION:
-			case DGPackage.DEFINITIONS__STYLE_SHEET:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch(notification.getFeatureID(Definitions.class)) {
+		case DGPackage.DEFINITIONS__DEFNITION:
+		case DGPackage.DEFINITIONS__STYLE_SHEET:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -153,104 +152,27 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createGroup()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createCanvas()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createClipPath()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createCircle()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createEllipse()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createImage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createLine()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createMarker()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createLinearGradient()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createPath()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createPolygon()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createPolyline()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createRadialGradient()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createRectangle()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createRootCanvas()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__DEFNITION,
-				 DGFactory.eINSTANCE.createUse()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DGPackage.Literals.DEFINITIONS__STYLE_SHEET,
-				 DGFactory.eINSTANCE.createStyleSheet()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createGroup()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createCanvas()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createClipPath()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createCircle()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createEllipse()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createImage()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createLine()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createMarker()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createLinearGradient()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createPath()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createPattern()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createPolygon()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createPolyline()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createRadialGradient()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createRectangle()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createRootCanvas()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createText()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__DEFNITION, DGFactory.eINSTANCE.createUse()));
+		newChildDescriptors.add(createChildParameter(DGPackage.Literals.DEFINITIONS__STYLE_SHEET, DGFactory.eINSTANCE.createStyleSheet()));
 	}
 
 	/**
@@ -263,5 +185,4 @@ public class DefinitionsItemProvider extends ItemProviderAdapter implements
 	public ResourceLocator getResourceLocator() {
 		return DDEditPlugin.INSTANCE;
 	}
-
 }

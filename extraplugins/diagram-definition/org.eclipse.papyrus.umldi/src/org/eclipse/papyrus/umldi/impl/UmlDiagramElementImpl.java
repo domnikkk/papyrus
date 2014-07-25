@@ -52,30 +52,32 @@ import org.eclipse.uml2.uml.Element;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getModelElement <em>Model Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getSharedStyle <em>Shared Style</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getLocalStyle <em>Local Style</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getOwningDiagramElement <em>Owning Diagram Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getOwnedDiagramElement <em>Owned Diagram Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getTargetEdge <em>Target Edge</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getSourceEdge <em>Source Edge</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getUmlModelElement <em>Uml Model Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getSharedUmlStyle <em>Shared Uml Style</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getLocalUmlStyle <em>Local Uml Style</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getOwningUmlDiagramElement <em>Owning Uml Diagram Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getOwnedUmlDiagramElement <em>Owned Uml Diagram Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getTargetUmlEdge <em>Target Uml Edge</em>}</li>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getSourceUmlEdge <em>Source Uml Edge</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getModelElement <em>Model Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getSharedStyle <em>Shared Style</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getLocalStyle <em>Local Style</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getOwningDiagramElement <em>Owning Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getOwnedDiagramElement <em>Owned Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getTargetEdge <em>Target Edge</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getSourceEdge <em>Source Edge</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getUmlModelElement <em>Uml Model Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getSharedUmlStyle <em>Shared Uml Style</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getLocalUmlStyle <em>Local Uml Style</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getOwningUmlDiagramElement <em>Owning Uml Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getOwnedUmlDiagramElement <em>Owned Uml Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getTargetUmlEdge <em>Target Uml Edge</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl#getSourceUmlEdge <em>Source Uml Edge</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class UmlDiagramElementImpl extends DiagramElementImpl implements UmlDiagramElement {
+
 	/**
 	 * The cached value of the '{@link #getUmlModelElement() <em>Uml Model Element</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUmlModelElement()
 	 * @generated
 	 * @ordered
@@ -86,6 +88,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The cached value of the '{@link #getSharedUmlStyle() <em>Shared Uml Style</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSharedUmlStyle()
 	 * @generated
 	 * @ordered
@@ -96,6 +99,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The cached value of the '{@link #getLocalUmlStyle() <em>Local Uml Style</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLocalUmlStyle()
 	 * @generated
 	 * @ordered
@@ -106,6 +110,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The cached value of the '{@link #getOwnedUmlDiagramElement() <em>Owned Uml Diagram Element</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOwnedUmlDiagramElement()
 	 * @generated
 	 * @ordered
@@ -116,6 +121,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The cached value of the '{@link #getTargetUmlEdge() <em>Target Uml Edge</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTargetUmlEdge()
 	 * @generated
 	 * @ordered
@@ -126,6 +132,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The cached value of the '{@link #getSourceUmlEdge() <em>Source Uml Edge</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSourceUmlEdge()
 	 * @generated
 	 * @ordered
@@ -135,6 +142,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected UmlDiagramElementImpl() {
@@ -144,6 +152,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -154,6 +163,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -165,15 +175,17 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The array of subset feature identifiers for the '{@link #getModelElement() <em>Model Element</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModelElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] MODEL_ELEMENT_ESUBSETS = new int[] {UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT};
+	protected static final int[] MODEL_ELEMENT_ESUBSETS = new int[]{ UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -185,11 +197,12 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Style basicGetSharedStyle() {
-		if (eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE)) {
+		if(eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE)) {
 			return basicGetSharedUmlStyle();
 		}
 		return super.basicGetSharedStyle();
@@ -198,6 +211,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -209,11 +223,12 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Style basicGetLocalStyle() {
-		if (eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE)) {
+		if(eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE)) {
 			return getLocalUmlStyle();
 		}
 		return super.basicGetLocalStyle();
@@ -222,6 +237,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -233,12 +249,13 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public DiagramElement basicGetOwningDiagramElement() {
-		UmlDiagramElement owningUmlDiagramElement = getOwningUmlDiagramElement();			
-		if (owningUmlDiagramElement != null) {
+		UmlDiagramElement owningUmlDiagramElement = getOwningUmlDiagramElement();
+		if(owningUmlDiagramElement != null) {
 			return owningUmlDiagramElement;
 		}
 		return super.basicGetOwningDiagramElement();
@@ -247,6 +264,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -258,15 +276,17 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The array of subset feature identifiers for the '{@link #getOwnedDiagramElement() <em>Owned Diagram Element</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOwnedDiagramElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_DIAGRAM_ELEMENT_ESUBSETS = new int[] {UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT};
+	protected static final int[] OWNED_DIAGRAM_ELEMENT_ESUBSETS = new int[]{ UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -278,15 +298,17 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The array of subset feature identifiers for the '{@link #getTargetEdge() <em>Target Edge</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTargetEdge()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] TARGET_EDGE_ESUBSETS = new int[] {UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE};
+	protected static final int[] TARGET_EDGE_ESUBSETS = new int[]{ UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -298,19 +320,21 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	 * The array of subset feature identifiers for the '{@link #getSourceEdge() <em>Source Edge</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSourceEdge()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] SOURCE_EDGE_ESUBSETS = new int[] {UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE};
+	protected static final int[] SOURCE_EDGE_ESUBSETS = new int[]{ UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Element> getUmlModelElement() {
-		if (umlModelElement == null) {
+		if(umlModelElement == null) {
 			umlModelElement = new EObjectResolvingEList<Element>(Element.class, this, UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT);
 		}
 		return umlModelElement;
@@ -319,14 +343,15 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlStyle getSharedUmlStyle() {
-		if (sharedUmlStyle != null && sharedUmlStyle.eIsProxy()) {
+		if(sharedUmlStyle != null && sharedUmlStyle.eIsProxy()) {
 			InternalEObject oldSharedUmlStyle = (InternalEObject)sharedUmlStyle;
 			sharedUmlStyle = (UmlStyle)eResolveProxy(oldSharedUmlStyle);
-			if (sharedUmlStyle != oldSharedUmlStyle) {
-				if (eNotificationRequired())
+			if(sharedUmlStyle != oldSharedUmlStyle) {
+				if(eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE, oldSharedUmlStyle, sharedUmlStyle));
 			}
 		}
@@ -336,6 +361,7 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlStyle basicGetSharedUmlStyle() {
@@ -345,18 +371,20 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSharedUmlStyle(UmlStyle newSharedUmlStyle) {
 		UmlStyle oldSharedUmlStyle = sharedUmlStyle;
 		sharedUmlStyle = newSharedUmlStyle;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE, oldSharedUmlStyle, sharedUmlStyle));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlStyle getLocalUmlStyle() {
@@ -366,14 +394,18 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetLocalUmlStyle(UmlStyle newLocalUmlStyle, NotificationChain msgs) {
 		UmlStyle oldLocalUmlStyle = localUmlStyle;
 		localUmlStyle = newLocalUmlStyle;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE, oldLocalUmlStyle, newLocalUmlStyle);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -381,35 +413,39 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLocalUmlStyle(UmlStyle newLocalUmlStyle) {
-		if (newLocalUmlStyle != localUmlStyle) {
+		if(newLocalUmlStyle != localUmlStyle) {
 			NotificationChain msgs = null;
-			if (localUmlStyle != null)
+			if(localUmlStyle != null)
 				msgs = ((InternalEObject)localUmlStyle).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE, null, msgs);
-			if (newLocalUmlStyle != null)
+			if(newLocalUmlStyle != null)
 				msgs = ((InternalEObject)newLocalUmlStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE, null, msgs);
 			msgs = basicSetLocalUmlStyle(newLocalUmlStyle, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE, newLocalUmlStyle, newLocalUmlStyle));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlDiagramElement getOwningUmlDiagramElement() {
-		if (eContainerFeatureID() != UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT) return null;
+		if(eContainerFeatureID() != UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT)
+			return null;
 		return (UmlDiagramElement)eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetOwningUmlDiagramElement(UmlDiagramElement newOwningUmlDiagramElement, NotificationChain msgs) {
@@ -420,31 +456,33 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setOwningUmlDiagramElement(UmlDiagramElement newOwningUmlDiagramElement) {
-		if (newOwningUmlDiagramElement != eInternalContainer() || (eContainerFeatureID() != UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT && newOwningUmlDiagramElement != null)) {
-			if (EcoreUtil.isAncestor(this, newOwningUmlDiagramElement))
+		if(newOwningUmlDiagramElement != eInternalContainer() || (eContainerFeatureID() != UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT && newOwningUmlDiagramElement != null)) {
+			if(EcoreUtil.isAncestor(this, newOwningUmlDiagramElement))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if(eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newOwningUmlDiagramElement != null)
+			if(newOwningUmlDiagramElement != null)
 				msgs = ((InternalEObject)newOwningUmlDiagramElement).eInverseAdd(this, UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UmlDiagramElement.class, msgs);
 			msgs = basicSetOwningUmlDiagramElement(newOwningUmlDiagramElement, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT, newOwningUmlDiagramElement, newOwningUmlDiagramElement));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<UmlDiagramElement> getOwnedUmlDiagramElement() {
-		if (ownedUmlDiagramElement == null) {
+		if(ownedUmlDiagramElement == null) {
 			ownedUmlDiagramElement = new EObjectContainmentWithInverseEList<UmlDiagramElement>(UmlDiagramElement.class, this, UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT);
 		}
 		return ownedUmlDiagramElement;
@@ -453,10 +491,11 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<UmlEdge> getTargetUmlEdge() {
-		if (targetUmlEdge == null) {
+		if(targetUmlEdge == null) {
 			targetUmlEdge = new EObjectWithInverseResolvingEList<UmlEdge>(UmlEdge.class, this, UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE, UMLDIPackage.UML_EDGE__TARGET_UML_DIAGRAM_ELEMENT);
 		}
 		return targetUmlEdge;
@@ -465,10 +504,11 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<UmlEdge> getSourceUmlEdge() {
-		if (sourceUmlEdge == null) {
+		if(sourceUmlEdge == null) {
 			sourceUmlEdge = new EObjectWithInverseResolvingEList<UmlEdge>(UmlEdge.class, this, UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE, UMLDIPackage.UML_EDGE__SOURCE_UML_DIAGRAM_ELEMENT);
 		}
 		return sourceUmlEdge;
@@ -477,22 +517,23 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetOwningUmlDiagramElement((UmlDiagramElement)otherEnd, msgs);
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedUmlDiagramElement()).basicAdd(otherEnd, msgs);
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTargetUmlEdge()).basicAdd(otherEnd, msgs);
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSourceUmlEdge()).basicAdd(otherEnd, msgs);
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
+			if(eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetOwningUmlDiagramElement((UmlDiagramElement)otherEnd, msgs);
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedUmlDiagramElement()).basicAdd(otherEnd, msgs);
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getTargetUmlEdge()).basicAdd(otherEnd, msgs);
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getSourceUmlEdge()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -500,21 +541,22 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
-				return basicSetLocalUmlStyle(null, msgs);
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
-				return basicSetOwningUmlDiagramElement(null, msgs);
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
-				return ((InternalEList<?>)getOwnedUmlDiagramElement()).basicRemove(otherEnd, msgs);
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
-				return ((InternalEList<?>)getTargetUmlEdge()).basicRemove(otherEnd, msgs);
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
-				return ((InternalEList<?>)getSourceUmlEdge()).basicRemove(otherEnd, msgs);
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
+			return basicSetLocalUmlStyle(null, msgs);
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
+			return basicSetOwningUmlDiagramElement(null, msgs);
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
+			return ((InternalEList<?>)getOwnedUmlDiagramElement()).basicRemove(otherEnd, msgs);
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
+			return ((InternalEList<?>)getTargetUmlEdge()).basicRemove(otherEnd, msgs);
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
+			return ((InternalEList<?>)getSourceUmlEdge()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -522,13 +564,14 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
-				return eInternalContainer().eInverseRemove(this, UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UmlDiagramElement.class, msgs);
+		switch(eContainerFeatureID()) {
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
+			return eInternalContainer().eInverseRemove(this, UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT, UmlDiagramElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -536,26 +579,28 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT:
-				return getUmlModelElement();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE:
-				if (resolve) return getSharedUmlStyle();
-				return basicGetSharedUmlStyle();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
-				return getLocalUmlStyle();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
-				return getOwningUmlDiagramElement();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
-				return getOwnedUmlDiagramElement();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
-				return getTargetUmlEdge();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
-				return getSourceUmlEdge();
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT:
+			return getUmlModelElement();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE:
+			if(resolve)
+				return getSharedUmlStyle();
+			return basicGetSharedUmlStyle();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
+			return getLocalUmlStyle();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
+			return getOwningUmlDiagramElement();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
+			return getOwnedUmlDiagramElement();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
+			return getTargetUmlEdge();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
+			return getSourceUmlEdge();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -563,37 +608,38 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT:
-				getUmlModelElement().clear();
-				getUmlModelElement().addAll((Collection<? extends Element>)newValue);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE:
-				setSharedUmlStyle((UmlStyle)newValue);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
-				setLocalUmlStyle((UmlStyle)newValue);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
-				setOwningUmlDiagramElement((UmlDiagramElement)newValue);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
-				getOwnedUmlDiagramElement().clear();
-				getOwnedUmlDiagramElement().addAll((Collection<? extends UmlDiagramElement>)newValue);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
-				getTargetUmlEdge().clear();
-				getTargetUmlEdge().addAll((Collection<? extends UmlEdge>)newValue);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
-				getSourceUmlEdge().clear();
-				getSourceUmlEdge().addAll((Collection<? extends UmlEdge>)newValue);
-				return;
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT:
+			getUmlModelElement().clear();
+			getUmlModelElement().addAll((Collection<? extends Element>)newValue);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE:
+			setSharedUmlStyle((UmlStyle)newValue);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
+			setLocalUmlStyle((UmlStyle)newValue);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
+			setOwningUmlDiagramElement((UmlDiagramElement)newValue);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
+			getOwnedUmlDiagramElement().clear();
+			getOwnedUmlDiagramElement().addAll((Collection<? extends UmlDiagramElement>)newValue);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
+			getTargetUmlEdge().clear();
+			getTargetUmlEdge().addAll((Collection<? extends UmlEdge>)newValue);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
+			getSourceUmlEdge().clear();
+			getSourceUmlEdge().addAll((Collection<? extends UmlEdge>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -601,32 +647,33 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT:
-				getUmlModelElement().clear();
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE:
-				setSharedUmlStyle((UmlStyle)null);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
-				setLocalUmlStyle((UmlStyle)null);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
-				setOwningUmlDiagramElement((UmlDiagramElement)null);
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
-				getOwnedUmlDiagramElement().clear();
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
-				getTargetUmlEdge().clear();
-				return;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
-				getSourceUmlEdge().clear();
-				return;
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT:
+			getUmlModelElement().clear();
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE:
+			setSharedUmlStyle((UmlStyle)null);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
+			setLocalUmlStyle((UmlStyle)null);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
+			setOwningUmlDiagramElement((UmlDiagramElement)null);
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
+			getOwnedUmlDiagramElement().clear();
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
+			getTargetUmlEdge().clear();
+			return;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
+			getSourceUmlEdge().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -634,39 +681,40 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__MODEL_ELEMENT:
-				return isSetModelElement();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_STYLE:
-				return isSetSharedStyle();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_STYLE:
-				return isSetLocalStyle();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT:
-				return isSetOwningDiagramElement();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT:
-				return isSetOwnedDiagramElement();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_EDGE:
-				return isSetTargetEdge();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_EDGE:
-				return isSetSourceEdge();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT:
-				return umlModelElement != null && !umlModelElement.isEmpty();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE:
-				return sharedUmlStyle != null;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
-				return localUmlStyle != null;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
-				return getOwningUmlDiagramElement() != null;
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
-				return ownedUmlDiagramElement != null && !ownedUmlDiagramElement.isEmpty();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
-				return targetUmlEdge != null && !targetUmlEdge.isEmpty();
-			case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
-				return sourceUmlEdge != null && !sourceUmlEdge.isEmpty();
+		switch(featureID) {
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__MODEL_ELEMENT:
+			return isSetModelElement();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_STYLE:
+			return isSetSharedStyle();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_STYLE:
+			return isSetLocalStyle();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT:
+			return isSetOwningDiagramElement();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT:
+			return isSetOwnedDiagramElement();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_EDGE:
+			return isSetTargetEdge();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_EDGE:
+			return isSetSourceEdge();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT:
+			return umlModelElement != null && !umlModelElement.isEmpty();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE:
+			return sharedUmlStyle != null;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE:
+			return localUmlStyle != null;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT:
+			return getOwningUmlDiagramElement() != null;
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT:
+			return ownedUmlDiagramElement != null && !ownedUmlDiagramElement.isEmpty();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE:
+			return targetUmlEdge != null && !targetUmlEdge.isEmpty();
+		case UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE:
+			return sourceUmlEdge != null && !sourceUmlEdge.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -674,78 +722,77 @@ public abstract class UmlDiagramElementImpl extends DiagramElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSetModelElement() {
-		return super.isSetModelElement()
-			|| eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT);
+		return super.isSetModelElement() || eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSetSharedStyle() {
-		return super.isSetSharedStyle()
-			|| eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE);
+		return super.isSetSharedStyle() || eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSetLocalStyle() {
-		return super.isSetLocalStyle()
-			|| eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE);
+		return super.isSetLocalStyle() || eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSetOwningDiagramElement() {
-		return super.isSetOwningDiagramElement()
-			|| eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT);
+		return super.isSetOwningDiagramElement() || eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSetOwnedDiagramElement() {
-		return super.isSetOwnedDiagramElement()
-			|| eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT);
+		return super.isSetOwnedDiagramElement() || eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSetTargetEdge() {
-		return super.isSetTargetEdge()
-			|| eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE);
+		return super.isSetTargetEdge() || eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSetSourceEdge() {
-		return super.isSetSourceEdge()
-			|| eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE);
+		return super.isSetSourceEdge() || eIsSet(UMLDIPackage.UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE);
 	}
-
 } //UmlDiagramElementImpl

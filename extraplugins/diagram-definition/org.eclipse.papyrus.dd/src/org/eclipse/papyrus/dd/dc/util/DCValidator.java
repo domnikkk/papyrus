@@ -39,13 +39,16 @@ public class DCValidator extends EObjectValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final DCValidator INSTANCE = new DCValidator();
 
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
+	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
@@ -56,6 +59,7 @@ public class DCValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Non Negative Width' of 'Dimension'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final int DIMENSION__NON_NEGATIVE_WIDTH = 1;
@@ -64,6 +68,7 @@ public class DCValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Non Negative Height' of 'Dimension'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final int DIMENSION__NON_NEGATIVE_HEIGHT = 2;
@@ -72,6 +77,7 @@ public class DCValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Non Negative Width' of 'Bounds'.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final int BOUNDS__NON_NEGATIVE_WIDTH = 3;
@@ -80,6 +86,7 @@ public class DCValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Non Negative Height' of 'Bounds'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final int BOUNDS__NON_NEGATIVE_HEIGHT = 4;
@@ -88,6 +95,7 @@ public class DCValidator extends EObjectValidator {
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
@@ -96,6 +104,7 @@ public class DCValidator extends EObjectValidator {
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
@@ -103,12 +112,10 @@ public class DCValidator extends EObjectValidator {
 	/**
 	 * Delegates evaluation of the given invariant expression against the object in the given context.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public static boolean validate(EClass eClass, EObject eObject,
-			DiagnosticChain diagnostics, Map<Object, Object> context,
-			String validationDelegate, EOperation invariant, String expression,
-			int severity, String source, int code) {
+	public static boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context, String validationDelegate, EOperation invariant, String expression, int severity, String source, int code) {
 		return EObjectValidator.validate(eClass, eObject, diagnostics, context, validationDelegate, invariant, expression, severity, source, code);
 	}
 
@@ -116,6 +123,7 @@ public class DCValidator extends EObjectValidator {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DCValidator() {
@@ -126,71 +134,82 @@ public class DCValidator extends EObjectValidator {
 	 * Returns the package of this validator switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return DCPackage.eINSTANCE;
+		return DCPackage.eINSTANCE;
 	}
 
 	/**
 	 * Calls <code>validateXXX</code> for the corresponding classifier of the model.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	protected boolean validate(int classifierID, Object value,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID) {
-			case DCPackage.POINT:
-				return validatePoint((Point)value, diagnostics, context);
-			case DCPackage.DIMENSION:
-				return validateDimension((Dimension)value, diagnostics, context);
-			case DCPackage.BOUNDS:
-				return validateBounds((Bounds)value, diagnostics, context);
-			case DCPackage.KNOWN_COLOR:
-				return validateKnownColor((KnownColor)value, diagnostics, context);
-			case DCPackage.BOOLEAN:
-				return validateBoolean((Boolean)value, diagnostics, context);
-			case DCPackage.INTEGER:
-				return validateInteger((Integer)value, diagnostics, context);
-			case DCPackage.REAL:
-				return validateReal((Double)value, diagnostics, context);
-			case DCPackage.STRING:
-				return validateString((String)value, diagnostics, context);
-			case DCPackage.COLOR:
-				return validateColor((Color)value, diagnostics, context);
-			default:
-				return true;
+	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		switch(classifierID) {
+		case DCPackage.POINT:
+			return validatePoint((Point)value, diagnostics, context);
+		case DCPackage.DIMENSION:
+			return validateDimension((Dimension)value, diagnostics, context);
+		case DCPackage.BOUNDS:
+			return validateBounds((Bounds)value, diagnostics, context);
+		case DCPackage.KNOWN_COLOR:
+			return validateKnownColor((KnownColor)value, diagnostics, context);
+		case DCPackage.BOOLEAN:
+			return validateBoolean((Boolean)value, diagnostics, context);
+		case DCPackage.INTEGER:
+			return validateInteger((Integer)value, diagnostics, context);
+		case DCPackage.REAL:
+			return validateReal((Double)value, diagnostics, context);
+		case DCPackage.STRING:
+			return validateString((String)value, diagnostics, context);
+		case DCPackage.COLOR:
+			return validateColor((Color)value, diagnostics, context);
+		default:
+			return true;
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validatePoint(Point point, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validatePoint(Point point, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(point, diagnostics, context);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validateDimension(Dimension dimension,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(dimension, diagnostics, context)) return false;
+	public boolean validateDimension(Dimension dimension, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if(!validate_NoCircularContainment(dimension, diagnostics, context))
+			return false;
 		boolean result = validate_EveryMultiplicityConforms(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDimension_nonNegativeWidth(dimension, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDimension_nonNegativeHeight(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryProxyResolves(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_UniqueID(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryKeyUnique(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validateDimension_nonNegativeWidth(dimension, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validateDimension_nonNegativeHeight(dimension, diagnostics, context);
 		return result;
 	}
 
@@ -200,8 +219,7 @@ public class DCValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateDimension_nonNegativeWidth(Dimension dimension,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDimension_nonNegativeWidth(Dimension dimension, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return dimension.nonNegativeWidth(diagnostics, context);
 	}
 
@@ -211,28 +229,37 @@ public class DCValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateDimension_nonNegativeHeight(Dimension dimension,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDimension_nonNegativeHeight(Dimension dimension, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return dimension.nonNegativeHeight(diagnostics, context);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validateBounds(Bounds bounds, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(bounds, diagnostics, context)) return false;
+	public boolean validateBounds(Bounds bounds, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if(!validate_NoCircularContainment(bounds, diagnostics, context))
+			return false;
 		boolean result = validate_EveryMultiplicityConforms(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validateBounds_nonNegativeWidth(bounds, diagnostics, context);
-		if (result || diagnostics != null) result &= validateBounds_nonNegativeHeight(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryProxyResolves(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_UniqueID(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryKeyUnique(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validateBounds_nonNegativeWidth(bounds, diagnostics, context);
+		if(result || diagnostics != null)
+			result &= validateBounds_nonNegativeHeight(bounds, diagnostics, context);
 		return result;
 	}
 
@@ -242,8 +269,7 @@ public class DCValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateBounds_nonNegativeWidth(Bounds bounds,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateBounds_nonNegativeWidth(Bounds bounds, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return bounds.nonNegativeWidth(diagnostics, context);
 	}
 
@@ -253,68 +279,68 @@ public class DCValidator extends EObjectValidator {
 	 * 
 	 * @generated
 	 */
-	public boolean validateBounds_nonNegativeHeight(Bounds bounds,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateBounds_nonNegativeHeight(Bounds bounds, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return bounds.nonNegativeHeight(diagnostics, context);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validateKnownColor(KnownColor knownColor,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateKnownColor(KnownColor knownColor, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validateBoolean(boolean boolean_,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateBoolean(boolean boolean_, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validateInteger(int integer, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateInteger(int integer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validateReal(double real, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateReal(double real, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validateString(String string, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateString(String string, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean validateColor(Color color, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateColor(Color color, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
 	/**
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -324,5 +350,4 @@ public class DCValidator extends EObjectValidator {
 		// Ensure that you remove @generated or mark it @generated NOT
 		return super.getResourceLocator();
 	}
-
 } // DCValidator

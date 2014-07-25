@@ -17,12 +17,12 @@ import org.eclipse.papyrus.dd.di.Shape;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Uml Shape</b></em>'.
  * <!-- end-user-doc -->
- *
+ * 
  * <!-- begin-model-doc -->
  * The most general class for UML diagram elements that are not rendered as lines.
  * <!-- end-model-doc -->
- *
- *
+ * 
+ * 
  * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlShape()
  * @model
  * @generated

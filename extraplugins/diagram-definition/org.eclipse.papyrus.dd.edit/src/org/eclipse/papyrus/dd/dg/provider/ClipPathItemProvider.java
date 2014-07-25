@@ -32,12 +32,11 @@ import org.eclipse.papyrus.dd.dg.ClipPath;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.ClipPath} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class ClipPathItemProvider extends GroupItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-		IItemColorProvider, IItemFontProvider {
+public class ClipPathItemProvider extends GroupItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -56,9 +55,8 @@ public class ClipPathItemProvider extends GroupItemProvider implements
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
-
 		}
 		return itemPropertyDescriptors;
 	}
@@ -66,6 +64,7 @@ public class ClipPathItemProvider extends GroupItemProvider implements
 	/**
 	 * This returns ClipPath.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,14 +76,13 @@ public class ClipPathItemProvider extends GroupItemProvider implements
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((ClipPath)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ClipPath_type") :
-			getString("_UI_ClipPath_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ClipPath_type") : getString("_UI_ClipPath_type") + " " + label;
 	}
 
 	/**
@@ -92,6 +90,7 @@ public class ClipPathItemProvider extends GroupItemProvider implements
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,9 +107,7 @@ public class ClipPathItemProvider extends GroupItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
-
 }

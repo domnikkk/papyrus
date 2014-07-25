@@ -19,18 +19,17 @@ import org.eclipse.papyrus.dd.di.DIPackage;
 import org.eclipse.papyrus.dd.di.Style;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Style</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Style</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- *
+ * 
  * @generated
  */
-public abstract class StyleImpl extends MinimalEObjectImpl.Container implements
-		Style {
+public abstract class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StyleImpl() {
@@ -39,11 +38,11 @@ public abstract class StyleImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return DIPackage.Literals.STYLE;
 	}
-
 } // StyleImpl

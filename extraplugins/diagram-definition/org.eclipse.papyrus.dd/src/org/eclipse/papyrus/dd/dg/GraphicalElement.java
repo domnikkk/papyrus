@@ -16,30 +16,30 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Graphical Element</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Graphical Element</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * GraphicalElement is the abstract superclass of all graphical elements that can be nested in a canvas.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath <em>Clip Path</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses <em>Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle <em>Style</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms <em>Transform</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getLayoutData <em>Layout Data</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath <em>Clip Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses <em>Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms <em>Transform</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getLayoutData <em>Layout Data</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getGraphicalElement()
  * @model abstract="true"
  * @generated
  */
 public interface GraphicalElement extends Definition {
+
 	/**
 	 * Returns the value of the '<em><b>Clip Path</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> A clip
@@ -55,13 +55,12 @@ public interface GraphicalElement extends Definition {
 	ClipPath getClipPath();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath
+	 * Sets the value of the ' {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath
 	 * <em>Clip Path</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Clip Path</em>' reference.
+	 *        the new value of the '<em>Clip Path</em>' reference.
 	 * @see #getClipPath()
 	 * @generated
 	 */
@@ -69,8 +68,7 @@ public interface GraphicalElement extends Definition {
 
 	/**
 	 * Returns the value of the '<em><b>Group</b></em>' container reference. It
-	 * is bidirectional and its opposite is '
-	 * {@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}'. <!--
+	 * is bidirectional and its opposite is ' {@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The
 	 * group that owns this graphical element. <!-- end-model-doc -->
 	 * 
@@ -87,7 +85,9 @@ public interface GraphicalElement extends Definition {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup <em>Group</em>}' container reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Group</em>' container reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Group</em>' container reference.
 	 * @see #getGroup()
 	 * @generated
 	 */
@@ -124,7 +124,9 @@ public interface GraphicalElement extends Definition {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle <em>Style</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Style</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
@@ -132,8 +134,7 @@ public interface GraphicalElement extends Definition {
 
 	/**
 	 * Returns the value of the '<em><b>Transform</b></em>' containment
-	 * reference list. The list contents are of type
-	 * {@link org.eclipse.papyrus.dd.dg.Transform}. <!-- begin-user-doc --> <!--
+	 * reference list. The list contents are of type {@link org.eclipse.papyrus.dd.dg.Transform}. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> A list of transforms that apply
 	 * to this graphical element. <!-- end-model-doc -->
 	 * 
@@ -148,10 +149,10 @@ public interface GraphicalElement extends Definition {
 	 * Returns the value of the '<em><b>Layout Data</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layout Data</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layout Data</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Layout Data</em>' attribute.
 	 * @see #setLayoutData(String)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGraphicalElement_LayoutData()
@@ -164,7 +165,9 @@ public interface GraphicalElement extends Definition {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getLayoutData <em>Layout Data</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layout Data</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Layout Data</em>' attribute.
 	 * @see #getLayoutData()
 	 * @generated
 	 */
@@ -174,15 +177,13 @@ public interface GraphicalElement extends Definition {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='clipPath->notEmpty() implies clipPath.id->notEmpty()'"
 	 * @generated
 	 */
-	boolean referencedClippathHasId(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
-
+	boolean referencedClippathHasId(DiagnosticChain diagnostics, Map<Object, Object> context);
 } // GraphicalElement

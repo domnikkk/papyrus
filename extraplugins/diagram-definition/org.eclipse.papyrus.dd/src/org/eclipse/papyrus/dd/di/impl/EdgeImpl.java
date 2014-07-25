@@ -24,17 +24,16 @@ import org.eclipse.papyrus.dd.di.DiagramElement;
 import org.eclipse.papyrus.dd.di.Edge;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Edge</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Edge</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.di.impl.EdgeImpl#getSourceDiagramElement <em>Source Diagram Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.di.impl.EdgeImpl#getTargetDiagramElement <em>Target Diagram Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.di.impl.EdgeImpl#getWaypoint <em>Waypoint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.di.impl.EdgeImpl#getSourceDiagramElement <em>Source Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.di.impl.EdgeImpl#getTargetDiagramElement <em>Target Diagram Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.di.impl.EdgeImpl#getWaypoint <em>Waypoint</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
@@ -42,6 +41,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	/**
 	 * The cached value of the '{@link #getWaypoint() <em>Waypoint</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getWaypoint()
 	 * @generated
 	 * @ordered
@@ -50,6 +50,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EdgeImpl() {
@@ -58,6 +59,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,6 +70,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramElement getSourceDiagramElement() {
@@ -78,6 +81,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramElement basicGetSourceDiagramElement() {
@@ -87,6 +91,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramElement getTargetDiagramElement() {
@@ -97,6 +102,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramElement basicGetTargetDiagramElement() {
@@ -105,10 +111,11 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Point> getWaypoint() {
-		if (waypoint == null) {
+		if(waypoint == null) {
 			waypoint = new EObjectContainmentEList<Point>(Point.class, this, DIPackage.EDGE__WAYPOINT);
 		}
 		return waypoint;
@@ -116,80 +123,86 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DIPackage.EDGE__WAYPOINT:
-				return ((InternalEList<?>)getWaypoint()).basicRemove(otherEnd, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch(featureID) {
+		case DIPackage.EDGE__WAYPOINT:
+			return ((InternalEList<?>)getWaypoint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DIPackage.EDGE__SOURCE_DIAGRAM_ELEMENT:
-				if (resolve) return getSourceDiagramElement();
-				return basicGetSourceDiagramElement();
-			case DIPackage.EDGE__TARGET_DIAGRAM_ELEMENT:
-				if (resolve) return getTargetDiagramElement();
-				return basicGetTargetDiagramElement();
-			case DIPackage.EDGE__WAYPOINT:
-				return getWaypoint();
+		switch(featureID) {
+		case DIPackage.EDGE__SOURCE_DIAGRAM_ELEMENT:
+			if(resolve)
+				return getSourceDiagramElement();
+			return basicGetSourceDiagramElement();
+		case DIPackage.EDGE__TARGET_DIAGRAM_ELEMENT:
+			if(resolve)
+				return getTargetDiagramElement();
+			return basicGetTargetDiagramElement();
+		case DIPackage.EDGE__WAYPOINT:
+			return getWaypoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DIPackage.EDGE__WAYPOINT:
-				getWaypoint().clear();
-				getWaypoint().addAll((Collection<? extends Point>)newValue);
-				return;
+		switch(featureID) {
+		case DIPackage.EDGE__WAYPOINT:
+			getWaypoint().clear();
+			getWaypoint().addAll((Collection<? extends Point>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DIPackage.EDGE__WAYPOINT:
-				getWaypoint().clear();
-				return;
+		switch(featureID) {
+		case DIPackage.EDGE__WAYPOINT:
+			getWaypoint().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DIPackage.EDGE__SOURCE_DIAGRAM_ELEMENT:
-				return isSetSourceDiagramElement();
-			case DIPackage.EDGE__TARGET_DIAGRAM_ELEMENT:
-				return isSetTargetDiagramElement();
-			case DIPackage.EDGE__WAYPOINT:
-				return waypoint != null && !waypoint.isEmpty();
+		switch(featureID) {
+		case DIPackage.EDGE__SOURCE_DIAGRAM_ELEMENT:
+			return isSetSourceDiagramElement();
+		case DIPackage.EDGE__TARGET_DIAGRAM_ELEMENT:
+			return isSetTargetDiagramElement();
+		case DIPackage.EDGE__WAYPOINT:
+			return waypoint != null && !waypoint.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -197,6 +210,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetSourceDiagramElement() {
@@ -206,10 +220,10 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetTargetDiagramElement() {
 		return false;
 	}
-
 } // EdgeImpl

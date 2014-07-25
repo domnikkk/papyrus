@@ -14,26 +14,26 @@ package org.eclipse.papyrus.dd.dg;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Line</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Line</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Line is a marked element that defines a shape consisting of one straight line between two points.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Line#getStart <em>Start</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Line#getEnd <em>End</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Line#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Line#getEnd <em>End</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getLine()
  * @model
  * @generated
  */
 public interface Line extends MarkedElement {
+
 	/**
 	 * Returns the value of the '<em><b>Start</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
@@ -52,7 +52,9 @@ public interface Line extends MarkedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Line#getStart <em>Start</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>Start</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Start</em>' containment reference.
 	 * @see #getStart()
 	 * @generated
 	 */
@@ -76,10 +78,11 @@ public interface Line extends MarkedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Line#getEnd <em>End</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * @param value the new value of the '<em>End</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>End</em>' containment reference.
 	 * @see #getEnd()
 	 * @generated
 	 */
 	void setEnd(Point value);
-
 } // Line

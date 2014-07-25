@@ -14,30 +14,31 @@ package org.eclipse.papyrus.dd.dg;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Cubic Curve To</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Cubic Curve To</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
- * CubicCurveTo is a kind of path command that draws a cubic b?zier curve from the current point to a new point using a start and an end control points.
+ * CubicCurveTo is a kind of path command that draws a cubic b?zier curve from the current point to a new point using a start and an end control
+ * points.
  * Definitions nests definitions that are commonly referenced in the containing canvas. It can also nest an embedded stylesheet.
  * EllipticalArcTo is a kind of path command that draws an elliptical arc from the current point to a new point in the coordinate system.
  * QuadraticCurveTo is a kind of path command that draws a quadratic b?zier curve from the current point to a new point using a single control point.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getStartControl <em>Start Control</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getEndControl <em>End Control</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getPoint <em>Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getStartControl <em>Start Control</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getEndControl <em>End Control</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getPoint <em>Point</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getCubicCurveTo()
  * @model
  * @generated
  */
 public interface CubicCurveTo extends PathCommand {
+
 	/**
 	 * Returns the value of the '<em><b>Point</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a
@@ -55,7 +56,9 @@ public interface CubicCurveTo extends PathCommand {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getPoint <em>Point</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Point</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Point</em>' containment reference.
 	 * @see #getPoint()
 	 * @generated
 	 */
@@ -79,7 +82,9 @@ public interface CubicCurveTo extends PathCommand {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getStartControl <em>Start Control</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start Control</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Start Control</em>' containment reference.
 	 * @see #getStartControl()
 	 * @generated
 	 */
@@ -103,10 +108,11 @@ public interface CubicCurveTo extends PathCommand {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getEndControl <em>End Control</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>End Control</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>End Control</em>' containment reference.
 	 * @see #getEndControl()
 	 * @generated
 	 */
 	void setEndControl(Point value);
-
 } // CubicCurveTo

@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Text Anchor</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getTextAnchor()
  * @model
  * @generated
@@ -31,26 +32,27 @@ public enum TextAnchor implements Enumerator {
 	 * The '<em><b>Start</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #START_VALUE
 	 * @generated
 	 * @ordered
 	 */
 	START(0, "start", "start"),
-
 	/**
 	 * The '<em><b>Middle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MIDDLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
 	MIDDLE(1, "middle", "middle"),
-
 	/**
 	 * The '<em><b>End</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #END_VALUE
 	 * @generated
 	 * @ordered
@@ -61,10 +63,10 @@ public enum TextAnchor implements Enumerator {
 	 * The '<em><b>Start</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Start</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Start</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #START
 	 * @model name="start"
 	 * @generated
@@ -76,10 +78,10 @@ public enum TextAnchor implements Enumerator {
 	 * The '<em><b>Middle</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Middle</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Middle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MIDDLE
 	 * @model name="middle"
 	 * @generated
@@ -91,10 +93,10 @@ public enum TextAnchor implements Enumerator {
 	 * The '<em><b>End</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>End</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>End</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #END
 	 * @model name="end"
 	 * @generated
@@ -106,19 +108,16 @@ public enum TextAnchor implements Enumerator {
 	 * An array of all the '<em><b>Text Anchor</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final TextAnchor[] VALUES_ARRAY =
-		new TextAnchor[] {
-			START,
-			MIDDLE,
-			END,
-		};
+	private static final TextAnchor[] VALUES_ARRAY = new TextAnchor[]{ START, MIDDLE, END, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Text Anchor</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<TextAnchor> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -127,12 +126,13 @@ public enum TextAnchor implements Enumerator {
 	 * Returns the '<em><b>Text Anchor</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TextAnchor get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			TextAnchor result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -143,12 +143,13 @@ public enum TextAnchor implements Enumerator {
 	 * Returns the '<em><b>Text Anchor</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TextAnchor getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			TextAnchor result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -159,13 +160,17 @@ public enum TextAnchor implements Enumerator {
 	 * Returns the '<em><b>Text Anchor</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TextAnchor get(int value) {
-		switch (value) {
-			case START_VALUE: return START;
-			case MIDDLE_VALUE: return MIDDLE;
-			case END_VALUE: return END;
+		switch(value) {
+		case START_VALUE:
+			return START;
+		case MIDDLE_VALUE:
+			return MIDDLE;
+		case END_VALUE:
+			return END;
 		}
 		return null;
 	}
@@ -173,6 +178,7 @@ public enum TextAnchor implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -180,6 +186,7 @@ public enum TextAnchor implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -187,6 +194,7 @@ public enum TextAnchor implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -195,6 +203,7 @@ public enum TextAnchor implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private TextAnchor(int value, String name, String literal) {
@@ -206,39 +215,42 @@ public enum TextAnchor implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
 } //TextAnchor

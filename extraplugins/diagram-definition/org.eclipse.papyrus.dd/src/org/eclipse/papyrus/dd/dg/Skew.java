@@ -12,26 +12,26 @@
 package org.eclipse.papyrus.dd.dg;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Skew</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Skew</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Skew is a kind of transform that skews (deforms) a graphical element by given angles in the x-y coordinate system.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Skew#getAngleX <em>Angle X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Skew#getAngleY <em>Angle Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Skew#getAngleX <em>Angle X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Skew#getAngleY <em>Angle Y</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getSkew()
  * @model
  * @generated
  */
 public interface Skew extends Transform {
+
 	/**
 	 * Returns the value of the '<em><b>Angle X</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a real
@@ -54,7 +54,7 @@ public interface Skew extends Transform {
 	 * -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Angle X</em>' attribute.
+	 *        the new value of the '<em>Angle X</em>' attribute.
 	 * @see #getAngleX()
 	 * @generated
 	 */
@@ -82,10 +82,9 @@ public interface Skew extends Transform {
 	 * -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Angle Y</em>' attribute.
+	 *        the new value of the '<em>Angle Y</em>' attribute.
 	 * @see #getAngleY()
 	 * @generated
 	 */
 	void setAngleY(double value);
-
 } // Skew

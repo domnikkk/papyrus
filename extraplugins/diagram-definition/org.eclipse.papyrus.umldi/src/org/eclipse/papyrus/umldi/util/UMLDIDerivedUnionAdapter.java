@@ -32,14 +32,17 @@ import org.eclipse.papyrus.umldi.UmlShape;
  * <!-- begin-user-doc -->
  * An adapter that propagates notifications for derived unions.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.umldi.UMLDIPackage
  * @generated
  */
 public class UMLDIDerivedUnionAdapter extends AdapterImpl {
+
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static UMLDIPackage modelPackage;
@@ -48,10 +51,11 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Creates an instance of the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UMLDIDerivedUnionAdapter() {
-		if (modelPackage == null) {
+		if(modelPackage == null) {
 			modelPackage = UMLDIPackage.eINSTANCE;
 		}
 	}
@@ -60,14 +64,16 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Calls <code>notifyChanged</code> with the appropriate model class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
+	 * 
+	 * @param notification
+	 *        a description of the change.
 	 * @generated
 	 */
 	public void notifyChanged(Notification notification) {
 		Object notifier = notification.getNotifier();
-		if (notifier instanceof EObject) {
+		if(notifier instanceof EObject) {
 			EClass eClass = ((EObject)notifier).eClass();
-			if (eClass.eContainer() == modelPackage) {
+			if(eClass.eContainer() == modelPackage) {
 				notifyChanged(notification, eClass);
 			}
 		}
@@ -77,27 +83,30 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Calls <code>notifyXXXChanged</code> for the corresponding class of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
+	 * 
+	 * @param notification
+	 *        a description of the change.
+	 * @param eClass
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyChanged(Notification notification, EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case UMLDIPackage.UML_DIAGRAM:
-				notifyUmlDiagramChanged(notification, eClass);
-				break;
-			case UMLDIPackage.UML_SHAPE:
-				notifyUmlShapeChanged(notification, eClass);
-				break;
-			case UMLDIPackage.UML_EDGE:
-				notifyUmlEdgeChanged(notification, eClass);
-				break;
-			case UMLDIPackage.UML_COMPARTMENT:
-				notifyUmlCompartmentChanged(notification, eClass);
-				break;
-			case UMLDIPackage.UML_LABEL:
-				notifyUmlLabelChanged(notification, eClass);
-				break;
+		switch(eClass.getClassifierID()) {
+		case UMLDIPackage.UML_DIAGRAM:
+			notifyUmlDiagramChanged(notification, eClass);
+			break;
+		case UMLDIPackage.UML_SHAPE:
+			notifyUmlShapeChanged(notification, eClass);
+			break;
+		case UMLDIPackage.UML_EDGE:
+			notifyUmlEdgeChanged(notification, eClass);
+			break;
+		case UMLDIPackage.UML_COMPARTMENT:
+			notifyUmlCompartmentChanged(notification, eClass);
+			break;
+		case UMLDIPackage.UML_LABEL:
+			notifyUmlLabelChanged(notification, eClass);
+			break;
 		}
 	}
 
@@ -105,9 +114,13 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Does nothing; clients may override so that it does something.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
-	 * @param derivedUnion the derived union affected by the change.
+	 * 
+	 * @param notification
+	 *        a description of the change.
+	 * @param eClass
+	 *        the Ecore class of the notifier.
+	 * @param derivedUnion
+	 *        the derived union affected by the change.
 	 * @generated
 	 */
 	public void notifyChanged(Notification notification, EClass eClass, EStructuralFeature derivedUnion) {
@@ -118,33 +131,36 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Calls <code>notifyChanged</code> for each affected derived union.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
+	 * 
+	 * @param notification
+	 *        a description of the change.
+	 * @param eClass
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlDiagramChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlDiagram.class)) {
-			case UMLDIPackage.UML_DIAGRAM__UML_MODEL_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
-				break;
-			case UMLDIPackage.UML_DIAGRAM__SHARED_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
-				break;
-			case UMLDIPackage.UML_DIAGRAM__LOCAL_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
-				break;
-			case UMLDIPackage.UML_DIAGRAM__OWNING_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_DIAGRAM__OWNED_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_DIAGRAM__TARGET_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
-				break;
-			case UMLDIPackage.UML_DIAGRAM__SOURCE_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
-				break;
+		switch(notification.getFeatureID(UmlDiagram.class)) {
+		case UMLDIPackage.UML_DIAGRAM__UML_MODEL_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
+			break;
+		case UMLDIPackage.UML_DIAGRAM__SHARED_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
+			break;
+		case UMLDIPackage.UML_DIAGRAM__LOCAL_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
+			break;
+		case UMLDIPackage.UML_DIAGRAM__OWNING_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_DIAGRAM__OWNED_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_DIAGRAM__TARGET_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
+			break;
+		case UMLDIPackage.UML_DIAGRAM__SOURCE_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
+			break;
 		}
 	}
 
@@ -152,39 +168,42 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Calls <code>notifyChanged</code> for each affected derived union.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
+	 * 
+	 * @param notification
+	 *        a description of the change.
+	 * @param eClass
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlEdgeChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlEdge.class)) {
-			case UMLDIPackage.UML_EDGE__UML_MODEL_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
-				break;
-			case UMLDIPackage.UML_EDGE__SHARED_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
-				break;
-			case UMLDIPackage.UML_EDGE__LOCAL_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
-				break;
-			case UMLDIPackage.UML_EDGE__OWNING_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_EDGE__OWNED_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_EDGE__TARGET_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
-				break;
-			case UMLDIPackage.UML_EDGE__SOURCE_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
-				break;
-			case UMLDIPackage.UML_EDGE__SOURCE_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.EDGE__SOURCE_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_EDGE__TARGET_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.EDGE__TARGET_DIAGRAM_ELEMENT);
-				break;
+		switch(notification.getFeatureID(UmlEdge.class)) {
+		case UMLDIPackage.UML_EDGE__UML_MODEL_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
+			break;
+		case UMLDIPackage.UML_EDGE__SHARED_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
+			break;
+		case UMLDIPackage.UML_EDGE__LOCAL_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
+			break;
+		case UMLDIPackage.UML_EDGE__OWNING_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_EDGE__OWNED_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_EDGE__TARGET_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
+			break;
+		case UMLDIPackage.UML_EDGE__SOURCE_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
+			break;
+		case UMLDIPackage.UML_EDGE__SOURCE_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.EDGE__SOURCE_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_EDGE__TARGET_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.EDGE__TARGET_DIAGRAM_ELEMENT);
+			break;
 		}
 	}
 
@@ -192,33 +211,36 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Calls <code>notifyChanged</code> for each affected derived union.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
+	 * 
+	 * @param notification
+	 *        a description of the change.
+	 * @param eClass
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlCompartmentChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlCompartment.class)) {
-			case UMLDIPackage.UML_COMPARTMENT__UML_MODEL_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
-				break;
-			case UMLDIPackage.UML_COMPARTMENT__SHARED_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
-				break;
-			case UMLDIPackage.UML_COMPARTMENT__LOCAL_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
-				break;
-			case UMLDIPackage.UML_COMPARTMENT__OWNING_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_COMPARTMENT__OWNED_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_COMPARTMENT__TARGET_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
-				break;
-			case UMLDIPackage.UML_COMPARTMENT__SOURCE_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
-				break;
+		switch(notification.getFeatureID(UmlCompartment.class)) {
+		case UMLDIPackage.UML_COMPARTMENT__UML_MODEL_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
+			break;
+		case UMLDIPackage.UML_COMPARTMENT__SHARED_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
+			break;
+		case UMLDIPackage.UML_COMPARTMENT__LOCAL_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
+			break;
+		case UMLDIPackage.UML_COMPARTMENT__OWNING_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_COMPARTMENT__OWNED_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_COMPARTMENT__TARGET_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
+			break;
+		case UMLDIPackage.UML_COMPARTMENT__SOURCE_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
+			break;
 		}
 	}
 
@@ -226,33 +248,36 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Calls <code>notifyChanged</code> for each affected derived union.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
+	 * 
+	 * @param notification
+	 *        a description of the change.
+	 * @param eClass
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlLabelChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlLabel.class)) {
-			case UMLDIPackage.UML_LABEL__UML_MODEL_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
-				break;
-			case UMLDIPackage.UML_LABEL__SHARED_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
-				break;
-			case UMLDIPackage.UML_LABEL__LOCAL_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
-				break;
-			case UMLDIPackage.UML_LABEL__OWNING_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_LABEL__OWNED_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_LABEL__TARGET_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
-				break;
-			case UMLDIPackage.UML_LABEL__SOURCE_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
-				break;
+		switch(notification.getFeatureID(UmlLabel.class)) {
+		case UMLDIPackage.UML_LABEL__UML_MODEL_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
+			break;
+		case UMLDIPackage.UML_LABEL__SHARED_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
+			break;
+		case UMLDIPackage.UML_LABEL__LOCAL_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
+			break;
+		case UMLDIPackage.UML_LABEL__OWNING_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_LABEL__OWNED_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_LABEL__TARGET_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
+			break;
+		case UMLDIPackage.UML_LABEL__SOURCE_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
+			break;
 		}
 	}
 
@@ -260,34 +285,36 @@ public class UMLDIDerivedUnionAdapter extends AdapterImpl {
 	 * Calls <code>notifyChanged</code> for each affected derived union.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
+	 * 
+	 * @param notification
+	 *        a description of the change.
+	 * @param eClass
+	 *        the Ecore class of the notifier.
 	 * @generated
 	 */
 	protected void notifyUmlShapeChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(UmlShape.class)) {
-			case UMLDIPackage.UML_SHAPE__UML_MODEL_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
-				break;
-			case UMLDIPackage.UML_SHAPE__SHARED_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
-				break;
-			case UMLDIPackage.UML_SHAPE__LOCAL_UML_STYLE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
-				break;
-			case UMLDIPackage.UML_SHAPE__OWNING_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_SHAPE__OWNED_UML_DIAGRAM_ELEMENT:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
-				break;
-			case UMLDIPackage.UML_SHAPE__TARGET_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
-				break;
-			case UMLDIPackage.UML_SHAPE__SOURCE_UML_EDGE:
-				notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
-				break;
+		switch(notification.getFeatureID(UmlShape.class)) {
+		case UMLDIPackage.UML_SHAPE__UML_MODEL_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT);
+			break;
+		case UMLDIPackage.UML_SHAPE__SHARED_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SHARED_STYLE);
+			break;
+		case UMLDIPackage.UML_SHAPE__LOCAL_UML_STYLE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__LOCAL_STYLE);
+			break;
+		case UMLDIPackage.UML_SHAPE__OWNING_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_SHAPE__OWNED_UML_DIAGRAM_ELEMENT:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT);
+			break;
+		case UMLDIPackage.UML_SHAPE__TARGET_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__TARGET_EDGE);
+			break;
+		case UMLDIPackage.UML_SHAPE__SOURCE_UML_EDGE:
+			notifyChanged(notification, eClass, DIPackage.Literals.DIAGRAM_ELEMENT__SOURCE_EDGE);
+			break;
 		}
 	}
-
 } //UMLDIDerivedUnionAdapter

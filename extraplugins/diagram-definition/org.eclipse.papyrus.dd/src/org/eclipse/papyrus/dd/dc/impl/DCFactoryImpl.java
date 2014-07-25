@@ -27,6 +27,7 @@ import org.eclipse.papyrus.dd.dc.*;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
+ * 
  * @generated
  */
 public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
@@ -35,16 +36,16 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static DCFactory init() {
 		try {
 			DCFactory theDCFactory = (DCFactory)EPackage.Registry.INSTANCE.getEFactory(DCPackage.eNS_URI);
-			if (theDCFactory != null) {
+			if(theDCFactory != null) {
 				return theDCFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DCFactoryImpl();
@@ -54,6 +55,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DCFactoryImpl() {
@@ -62,69 +64,76 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case DCPackage.POINT: return createPoint();
-			case DCPackage.DIMENSION: return createDimension();
-			case DCPackage.BOUNDS: return createBounds();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch(eClass.getClassifierID()) {
+		case DCPackage.POINT:
+			return createPoint();
+		case DCPackage.DIMENSION:
+			return createDimension();
+		case DCPackage.BOUNDS:
+			return createBounds();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case DCPackage.KNOWN_COLOR:
-				return createKnownColorFromString(eDataType, initialValue);
-			case DCPackage.BOOLEAN:
-				return createBooleanFromString(eDataType, initialValue);
-			case DCPackage.INTEGER:
-				return createIntegerFromString(eDataType, initialValue);
-			case DCPackage.REAL:
-				return createRealFromString(eDataType, initialValue);
-			case DCPackage.STRING:
-				return createStringFromString(eDataType, initialValue);
-			case DCPackage.COLOR:
-				return createColorFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch(eDataType.getClassifierID()) {
+		case DCPackage.KNOWN_COLOR:
+			return createKnownColorFromString(eDataType, initialValue);
+		case DCPackage.BOOLEAN:
+			return createBooleanFromString(eDataType, initialValue);
+		case DCPackage.INTEGER:
+			return createIntegerFromString(eDataType, initialValue);
+		case DCPackage.REAL:
+			return createRealFromString(eDataType, initialValue);
+		case DCPackage.STRING:
+			return createStringFromString(eDataType, initialValue);
+		case DCPackage.COLOR:
+			return createColorFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case DCPackage.KNOWN_COLOR:
-				return convertKnownColorToString(eDataType, instanceValue);
-			case DCPackage.BOOLEAN:
-				return convertBooleanToString(eDataType, instanceValue);
-			case DCPackage.INTEGER:
-				return convertIntegerToString(eDataType, instanceValue);
-			case DCPackage.REAL:
-				return convertRealToString(eDataType, instanceValue);
-			case DCPackage.STRING:
-				return convertStringToString(eDataType, instanceValue);
-			case DCPackage.COLOR:
-				return convertColorToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch(eDataType.getClassifierID()) {
+		case DCPackage.KNOWN_COLOR:
+			return convertKnownColorToString(eDataType, instanceValue);
+		case DCPackage.BOOLEAN:
+			return convertBooleanToString(eDataType, instanceValue);
+		case DCPackage.INTEGER:
+			return convertIntegerToString(eDataType, instanceValue);
+		case DCPackage.REAL:
+			return convertRealToString(eDataType, instanceValue);
+		case DCPackage.STRING:
+			return convertStringToString(eDataType, instanceValue);
+		case DCPackage.COLOR:
+			return convertColorToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Point createPoint() {
@@ -134,6 +143,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Dimension createDimension() {
@@ -143,6 +153,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Bounds createBounds() {
@@ -152,62 +163,64 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public KnownColor createKnownColorFromString(EDataType eDataType,
-			String initialValue) {
+	public KnownColor createKnownColorFromString(EDataType eDataType, String initialValue) {
 		KnownColor result = KnownColor.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if(result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertKnownColorToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertKnownColorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public Boolean createBooleanFromString(EDataType eDataType,
-			String initialValue) {
+	public Boolean createBooleanFromString(EDataType eDataType, String initialValue) {
 		return (Boolean)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertBooleanToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertBooleanToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public Integer createIntegerFromString(EDataType eDataType,
-			String initialValue) {
+	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
 		return (Integer)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertIntegerToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Double createRealFromString(EDataType eDataType, String initialValue) {
@@ -216,6 +229,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertRealToString(EDataType eDataType, Object instanceValue) {
@@ -224,19 +238,19 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String createStringFromString(EDataType eDataType,
-			String initialValue) {
+	public String createStringFromString(EDataType eDataType, String initialValue) {
 		return (String)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public String convertStringToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertStringToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
@@ -246,7 +260,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * @generated NOT
 	 */
 	public Color createColorFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null || initialValue.isEmpty())
+		if(initialValue == null || initialValue.isEmpty())
 			return null;
 		return Color.decode(initialValue);
 	}
@@ -257,15 +271,15 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	 * @generated NOT
 	 */
 	public String convertColorToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null)
+		if(instanceValue == null)
 			return null;
-		Color c = (Color) instanceValue;
-		return String.format("#%02X%02X%02X", c.getRed(), c.getGreen(),
-				c.getBlue());
+		Color c = (Color)instanceValue;
+		return String.format("#%02X%02X%02X", c.getRed(), c.getGreen(), c.getBlue());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DCPackage getDCPackage() {
@@ -274,6 +288,7 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -281,5 +296,4 @@ public class DCFactoryImpl extends EFactoryImpl implements DCFactory {
 	public static DCPackage getPackage() {
 		return DCPackage.eINSTANCE;
 	}
-
 } // DCFactoryImpl
