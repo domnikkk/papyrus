@@ -15,19 +15,25 @@
 package org.eclipse.papyrus.infra.nattable.common.modelresource;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationModel;
+import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.infra.nattable.common.Activator;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 
 
 
 /**
  * A model used to save data from the {@link DefaultNattableEditor}
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class PapyrusNattableModel extends AbstractModelWithSharedResource<Table> implements IModel {
 
@@ -42,9 +48,9 @@ public class PapyrusNattableModel extends AbstractModelWithSharedResource<Table>
 	public static final String TABLE_MODEL_FILE_EXTENSION = NotationModel.NOTATION_FILE_EXTENSION;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public PapyrusNattableModel() {
 
@@ -59,9 +65,9 @@ public class PapyrusNattableModel extends AbstractModelWithSharedResource<Table>
 
 	/**
 	 * Get the file extension used for this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getModelFileExtension()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -71,9 +77,9 @@ public class PapyrusNattableModel extends AbstractModelWithSharedResource<Table>
 
 	/**
 	 * Get the identifier used to register this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getIdentifier()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -84,17 +90,23 @@ public class PapyrusNattableModel extends AbstractModelWithSharedResource<Table>
 
 	/**
 	 * Add a new initialized {@link PapyrusTableInstance} to the model.
-	 * 
+	 *
 	 * @param tableInstance
 	 *        The tableInstance to add.
 	 */
 	public void addPapyrusTable(Table tableInstance) {
-		getResource().getContents().add(tableInstance);
+		try {
+			TransactionalEditingDomain editingDomain = ServiceUtilsForResourceSet.getInstance().getTransactionalEditingDomain(modelSet);
+			Resource notationResource = NotationUtils.getNotationResourceForDiagram(tableInstance.getContext(), editingDomain);
+			notationResource.getContents().add(tableInstance);
+		} catch (ServiceException ex) {
+			Activator.log.error(ex);
+		}
 	}
 
 	/**
 	 * Add a new initialized {@link PapyrusTableInstance} to the model.
-	 * 
+	 *
 	 * @param tableInstance
 	 *        The tableInstance to add.
 	 */
@@ -103,9 +115,9 @@ public class PapyrusNattableModel extends AbstractModelWithSharedResource<Table>
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource#isModelRoot(org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
