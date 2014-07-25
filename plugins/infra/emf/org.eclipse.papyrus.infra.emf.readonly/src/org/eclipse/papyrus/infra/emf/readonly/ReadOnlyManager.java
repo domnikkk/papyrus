@@ -13,6 +13,7 @@
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 422257
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.readonly;
@@ -38,30 +39,39 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.papyrus.infra.core.Activator;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.editor.IReloadableEditor;
+import org.eclipse.papyrus.infra.core.editor.reload.EditorReloadEvent;
+import org.eclipse.papyrus.infra.core.editor.reload.IEditorReloadListener;
+import org.eclipse.papyrus.infra.core.editor.reload.IReloadContextProvider;
 import org.eclipse.papyrus.infra.core.resource.AbstractReadOnlyHandler;
 import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler;
 import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2;
 import org.eclipse.papyrus.infra.core.resource.IReadOnlyListener;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyEvent;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
+import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.MapMaker;
+import com.google.common.collect.Maps;
 
 
-public class ReadOnlyManager implements IReadOnlyHandler2 {
+public class ReadOnlyManager implements IReadOnlyHandler2, IEditorReloadListener {
 
 	// Use weak values because the values otherwise retain the keys (indirectly)
 	protected static final ConcurrentMap<EditingDomain, IReadOnlyHandler2> roHandlers = new MapMaker().weakKeys().weakValues().makeMap();
 
 	private final CopyOnWriteArrayList<IReadOnlyListener> listeners = new CopyOnWriteArrayList<IReadOnlyListener>();
-	
+
 	private IReadOnlyListener forwardingListener;
-	
+
 	public static IReadOnlyHandler2 getReadOnlyHandler(EditingDomain editingDomain) {
 		IReadOnlyHandler2 roHandler = IReadOnlyHandler2.NULL;
-		
+
 		if(editingDomain != null) {
 			roHandler = roHandlers.get(editingDomain);
 			if(roHandler == null) {
@@ -73,7 +83,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 				}
 			}
 		}
-		
+
 		return roHandler;
 	}
 
@@ -82,7 +92,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 		public Class<?> handlerClass;
 
 		public int priority;
-		
+
 		public Set<ReadOnlyAxis> axes;
 
 		public int compareTo(HandlerPriorityPair o) {
@@ -112,18 +122,18 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 					handlerPriorityPair.handlerClass = Platform.getBundle(elem.getContributor().getName()).loadClass(className);
 
 					handlerPriorityPair.priority = Integer.parseInt(elem.getAttribute("priority"));
-					
+
 					IConfigurationElement[] affinities = elem.getChildren("affinity");
-					if ((affinities == null) || (affinities.length == 0)) {
+					if((affinities == null) || (affinities.length == 0)) {
 						// implicit affinity is with any axis
 						handlerPriorityPair.axes = ReadOnlyAxis.anyAxis();
 					} else {
 						handlerPriorityPair.axes = EnumSet.noneOf(ReadOnlyAxis.class);
-						for (IConfigurationElement next : affinities) {
+						for(IConfigurationElement next : affinities) {
 							handlerPriorityPair.axes.add(ReadOnlyAxis.valueOf(next.getAttribute("axis").toUpperCase()));
 						}
 					}
-					
+
 					String id = elem.getAttribute("id");
 					if(id != null) {
 						//if any then the handler could be overrided by another registration
@@ -199,10 +209,10 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 			IReadOnlyHandler2 h = create(roClass.getKey(), editingDomain);
 			if(h != null) {
 				h.addReadOnlyListener(getForwardingListener());
-				
-				for (ReadOnlyAxis axis : roClass.getValue()) {
+
+				for(ReadOnlyAxis axis : roClass.getValue()) {
 					List<IReadOnlyHandler2> list = handlers.get(axis);
-					if (list == null) {
+					if(list == null) {
 						list = new ArrayList<IReadOnlyHandler2>();
 						handlers.put(axis, list);
 					}
@@ -210,7 +220,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 				}
 			}
 		}
-		
+
 		// Iterate the enumeration to make sure all axes are represented (even if only by an empty array)
 		orderedHandlersByAxis = new EnumMap<ReadOnlyAxis, IReadOnlyHandler2[]>(ReadOnlyAxis.class);
 		for(ReadOnlyAxis axis : ReadOnlyAxis.values()) {
@@ -220,6 +230,19 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 			} else {
 				orderedHandlersByAxis.put(axis, list.toArray(new IReadOnlyHandler2[list.size()]));
 			}
+		}
+
+		// Is this editing domain associated with an editor?
+		try {
+			IMultiDiagramEditor editor = ServiceUtilsForResourceSet.getInstance().getService(IMultiDiagramEditor.class, editingDomain.getResourceSet());
+			if(editor != null) {
+				IReloadableEditor reloadable = IReloadableEditor.Adapter.getAdapter(editor);
+				if(reloadable != null) {
+					reloadable.addEditorReloadListener(this);
+				}
+			}
+		} catch (ServiceException e) {
+			// That's OK.  We're not in the context of an editor
 		}
 	}
 
@@ -404,15 +427,15 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 
 		return result;
 	}
-	
+
 	public void addReadOnlyListener(IReadOnlyListener listener) {
 		listeners.addIfAbsent(listener);
 	}
-	
+
 	public void removeReadOnlyListener(IReadOnlyListener listener) {
 		listeners.remove(listener);
 	}
-	
+
 	private IReadOnlyListener getForwardingListener() {
 		if(forwardingListener == null) {
 			forwardingListener = new IReadOnlyListener() {
@@ -436,7 +459,7 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 
 		return forwardingListener;
 	}
-	
+
 	protected void notifyReadOnlyStateChanged(ReadOnlyEvent event) {
 		if(!listeners.isEmpty()) {
 			for(IReadOnlyListener next : listeners) {
@@ -448,31 +471,80 @@ public class ReadOnlyManager implements IReadOnlyHandler2 {
 			}
 		}
 	}
-	
+
+	public void editorAboutToReload(EditorReloadEvent event) {
+		Map<Class<? extends IReadOnlyHandler2>, Object> reloadContexts = Maps.newHashMap();
+
+		for(IReadOnlyHandler2[] partition : orderedHandlersByAxis.values()) {
+			for(IReadOnlyHandler2 next : partition) {
+				if(!reloadContexts.containsKey(next.getClass())) {
+					IReloadContextProvider provider = AdapterUtils.adapt(next, IReloadContextProvider.class, null);
+					if(provider != null) {
+						reloadContexts.put(next.getClass(), provider.createReloadContext());
+					}
+				}
+			}
+		}
+
+		if(!reloadContexts.isEmpty()) {
+			event.putContext(reloadContexts);
+		}
+	}
+
+	public void editorReloaded(EditorReloadEvent event) {
+		// I will have been replaced by a new read-only manager
+		ReadOnlyManager manager = this;
+		try {
+			manager = (ReadOnlyManager)getReadOnlyHandler(event.getEditor().getServicesRegistry().getService(TransactionalEditingDomain.class));
+			IReloadableEditor reloadable = IReloadableEditor.Adapter.getAdapter(event.getEditor());
+			reloadable.removeEditorReloadListener(this);
+			reloadable.addEditorReloadListener(manager);
+		} catch (ServiceException e) {
+			Activator.log.error(e);
+		}
+
+		Object context = event.getContext();
+		if(context instanceof Map<?, ?>) {
+			@SuppressWarnings("unchecked")
+			Map<Class<? extends IReadOnlyHandler2>, Object> reloadContexts = (Map<Class<? extends IReadOnlyHandler2>, Object>)context;
+			for(IReadOnlyHandler2[] partition : manager.orderedHandlersByAxis.values()) {
+				for(IReadOnlyHandler2 next : partition) {
+					Object reloadContext = reloadContexts.get(next.getClass());
+					if(reloadContext != null) {
+						IReloadContextProvider provider = AdapterUtils.adapt(next, IReloadContextProvider.class, null);
+						if(provider != null) {
+							provider.restore(reloadContext);
+						}
+					}
+				}
+			}
+		}
+	}
+
 	//
 	// Deprecated API
 	//
-	
+
 	@Deprecated
 	public Optional<Boolean> anyReadOnly(URI[] uris) {
 		return anyReadOnly(permissionAxes(), uris);
 	}
-	
+
 	@Deprecated
 	public Optional<Boolean> isReadOnly(EObject eObject) {
 		return isReadOnly(permissionAxes(), eObject);
 	}
-	
+
 	@Deprecated
 	public Optional<Boolean> makeWritable(URI[] uris) {
 		return makeWritable(permissionAxes(), uris);
 	}
-	
+
 	@Deprecated
 	public Optional<Boolean> makeWritable(EObject eObject) {
 		return makeWritable(permissionAxes(), eObject);
 	}
-	
+
 	//
 	// Legacy adapters
 	//

@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.papyrus.infra.core.editor.reload.IReloadContextProvider;
 import org.eclipse.papyrus.infra.core.resource.AbstractReadOnlyHandler;
 import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
@@ -35,16 +36,16 @@ import com.google.common.base.Optional;
 
 /**
  * A {@linkplain IReadOnlyHandler2 read-only handler} for objects in referenced models, which by default shouldn't be editable in the context of the
- * model referencing them.  This is a discretion-based handler.
+ * model referencing them. This is a discretion-based handler.
  */
-public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
+public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler implements IReloadContextProvider {
 
 	private final ControlledResourceTracker controlledResourceTracker;
 
-	private final Set<URI> readableReferencedModels = new HashSet<URI>();
+	private final Set<URI> writableReferencedModels = new HashSet<URI>();
 
 	private boolean interactive = true;
-	
+
 	public ReferencedModelReadOnlyHandler(EditingDomain editingDomain) {
 		super(editingDomain);
 
@@ -59,7 +60,7 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
 	public boolean isInteractive() {
 		return interactive;
 	}
-	
+
 	/**
 	 * Sets whether I interact with the user to confirm making resources writable.
 	 * 
@@ -69,26 +70,26 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
 	public void setInteractive(boolean interactive) {
 		this.interactive = interactive;
 	}
-	
+
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
 		Optional<Boolean> result = Optional.absent();
 
 		if(axes.contains(ReadOnlyAxis.DISCRETION)) {
 			final URIConverter converter = getEditingDomain().getResourceSet().getURIConverter();
-			
+
 			for(int i = 0; i < uris.length; i++) {
 				// Clients may pass object URIs (including fragments), so trim to a resource URI because we operate on the resource level
 				URI next = uris[i].trimFragment();
-				
+
 				// If the resource doesn't exist, then it can't be opened in some other editor, so
 				// we needn't be concerned about editing it in the context of a referencing model
-				if(!readableReferencedModels.contains(next.trimFileExtension()) && isNotModelSetMainModel(next) && converter.exists(next, null)) {
+				if(!writableReferencedModels.contains(next.trimFileExtension()) && isNotModelSetMainModel(next) && converter.exists(next, null)) {
 					result = Optional.of(true);
 					break;
 				}
 			}
 		}
-		
+
 		return result;
 	}
 
@@ -100,7 +101,7 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
 			for(int i = 0; i < uris.length; i++) {
 				// Clients may pass object URIs (including fragments), so trim to a resource URI because we operate on the resource level
 				URI next = uris[i].trimFragment();
-				
+
 				if(isNotModelSetMainModel(next)) {
 					result = Optional.of(true);
 				} else {
@@ -110,7 +111,7 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
 				}
 			}
 		}
-		
+
 		return result;
 	}
 
@@ -119,26 +120,26 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
 
 		if(axes.contains(ReadOnlyAxis.DISCRETION)) {
 			final List<URI> toMakeWritable = new ArrayList<URI>(uris.length);
-	
+
 			for(int i = 0; i < uris.length; i++) {
 				// Clients may pass object URIs (including fragments), so trim to a resource URI because we operate on the resource level
 				URI next = uris[i].trimFragment();
-	
+
 				if(isNotModelSetMainModel(next)) {
 					toMakeWritable.add(next);
 				}
 			}
-	
+
 			if(!toMakeWritable.isEmpty()) {
 				final boolean[] enableWrite = { !isInteractive() };
-				
+
 				if(isInteractive()) {
-					Display currentDisplay=Display.getCurrent();
-					if(currentDisplay==null){
-						currentDisplay=Display.getDefault();
+					Display currentDisplay = Display.getCurrent();
+					if(currentDisplay == null) {
+						currentDisplay = Display.getDefault();
 					}
 					currentDisplay.syncExec(new Runnable() {
-	
+
 						public void run() {
 							StringBuilder message = new StringBuilder(Messages.ReferencedModelReadOnlyHandler_promptMsg);
 							for(URI uri : toMakeWritable) {
@@ -150,7 +151,7 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
 								} else {
 									path = uri.toString();
 								}
-	
+
 								message.append(path);
 								message.append("\n"); //$NON-NLS-1$
 							}
@@ -158,18 +159,18 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
 						}
 					});
 				}
-	
+
 				if(enableWrite[0]) {
 					for(URI next : toMakeWritable) {
-						readableReferencedModels.add(next.trimFileExtension());
+						writableReferencedModels.add(next.trimFileExtension());
 						fireReadOnlyStateChanged(ReadOnlyAxis.DISCRETION, next, true);
 					}
 				}
-	
+
 				result = Optional.of(enableWrite[0]);
 			}
 		}
-		
+
 		return result;
 	}
 
@@ -202,4 +203,12 @@ public class ReferencedModelReadOnlyHandler extends AbstractReadOnlyHandler {
 		return controlledResourceTracker.getRootResourceURI(uri);
 	}
 
+	public Object createReloadContext() {
+		return writableReferencedModels;
+	}
+
+	@SuppressWarnings("unchecked")
+	public void restore(Object reloadContext) {
+		writableReferencedModels.addAll((Set<URI>)reloadContext);
+	}
 }
