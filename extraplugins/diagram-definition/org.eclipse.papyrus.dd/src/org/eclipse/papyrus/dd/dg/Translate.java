@@ -12,26 +12,26 @@
 package org.eclipse.papyrus.dd.dg;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Translate</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Translate</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Translate is a kind of transform that translates (moves) a graphical element by a given delta along the x-y coordinate system.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Translate#getDeltaX <em>Delta X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Translate#getDeltaY <em>Delta Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Translate#getDeltaX <em>Delta X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Translate#getDeltaY <em>Delta Y</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getTranslate()
  * @model
  * @generated
  */
 public interface Translate extends Transform {
+
 	/**
 	 * Returns the value of the '<em><b>Delta X</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> a real
@@ -50,7 +50,9 @@ public interface Translate extends Transform {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Translate#getDeltaX <em>Delta X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Delta X</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Delta X</em>' attribute.
 	 * @see #getDeltaX()
 	 * @generated
 	 */
@@ -74,10 +76,11 @@ public interface Translate extends Transform {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Translate#getDeltaY <em>Delta Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Delta Y</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Delta Y</em>' attribute.
 	 * @see #getDeltaY()
 	 * @generated
 	 */
 	void setDeltaY(double value);
-
 } // Translate

@@ -21,23 +21,23 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Matrix;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Matrix</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Matrix</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getA <em>A</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getB <em>B</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getC <em>C</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getD <em>D</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getE <em>E</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getF <em>F</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getA <em>A</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getB <em>B</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getC <em>C</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getD <em>D</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getE <em>E</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getF <em>F</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class MatrixImpl extends TransformImpl implements Matrix {
+
 	/**
 	 * The default value of the '{@link #getA() <em>A</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -160,6 +160,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MatrixImpl() {
@@ -168,6 +169,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,6 +179,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getA() {
@@ -185,17 +188,19 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setA(double newA) {
 		double oldA = a;
 		a = newA;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__A, oldA, a));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getB() {
@@ -204,17 +209,19 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setB(double newB) {
 		double oldB = b;
 		b = newB;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__B, oldB, b));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getC() {
@@ -223,17 +230,19 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setC(double newC) {
 		double oldC = c;
 		c = newC;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__C, oldC, c));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getD() {
@@ -242,17 +251,19 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setD(double newD) {
 		double oldD = d;
 		d = newD;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__D, oldD, d));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getE() {
@@ -261,17 +272,19 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setE(double newE) {
 		double oldE = e;
 		e = newE;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__E, oldE, e));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getF() {
@@ -280,127 +293,133 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setF(double newF) {
 		double oldF = f;
 		f = newF;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__F, oldF, f));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DGPackage.MATRIX__A:
-				return getA();
-			case DGPackage.MATRIX__B:
-				return getB();
-			case DGPackage.MATRIX__C:
-				return getC();
-			case DGPackage.MATRIX__D:
-				return getD();
-			case DGPackage.MATRIX__E:
-				return getE();
-			case DGPackage.MATRIX__F:
-				return getF();
+		switch(featureID) {
+		case DGPackage.MATRIX__A:
+			return getA();
+		case DGPackage.MATRIX__B:
+			return getB();
+		case DGPackage.MATRIX__C:
+			return getC();
+		case DGPackage.MATRIX__D:
+			return getD();
+		case DGPackage.MATRIX__E:
+			return getE();
+		case DGPackage.MATRIX__F:
+			return getF();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DGPackage.MATRIX__A:
-				setA((Double)newValue);
-				return;
-			case DGPackage.MATRIX__B:
-				setB((Double)newValue);
-				return;
-			case DGPackage.MATRIX__C:
-				setC((Double)newValue);
-				return;
-			case DGPackage.MATRIX__D:
-				setD((Double)newValue);
-				return;
-			case DGPackage.MATRIX__E:
-				setE((Double)newValue);
-				return;
-			case DGPackage.MATRIX__F:
-				setF((Double)newValue);
-				return;
+		switch(featureID) {
+		case DGPackage.MATRIX__A:
+			setA((Double)newValue);
+			return;
+		case DGPackage.MATRIX__B:
+			setB((Double)newValue);
+			return;
+		case DGPackage.MATRIX__C:
+			setC((Double)newValue);
+			return;
+		case DGPackage.MATRIX__D:
+			setD((Double)newValue);
+			return;
+		case DGPackage.MATRIX__E:
+			setE((Double)newValue);
+			return;
+		case DGPackage.MATRIX__F:
+			setF((Double)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DGPackage.MATRIX__A:
-				setA(A_EDEFAULT);
-				return;
-			case DGPackage.MATRIX__B:
-				setB(B_EDEFAULT);
-				return;
-			case DGPackage.MATRIX__C:
-				setC(C_EDEFAULT);
-				return;
-			case DGPackage.MATRIX__D:
-				setD(D_EDEFAULT);
-				return;
-			case DGPackage.MATRIX__E:
-				setE(E_EDEFAULT);
-				return;
-			case DGPackage.MATRIX__F:
-				setF(F_EDEFAULT);
-				return;
+		switch(featureID) {
+		case DGPackage.MATRIX__A:
+			setA(A_EDEFAULT);
+			return;
+		case DGPackage.MATRIX__B:
+			setB(B_EDEFAULT);
+			return;
+		case DGPackage.MATRIX__C:
+			setC(C_EDEFAULT);
+			return;
+		case DGPackage.MATRIX__D:
+			setD(D_EDEFAULT);
+			return;
+		case DGPackage.MATRIX__E:
+			setE(E_EDEFAULT);
+			return;
+		case DGPackage.MATRIX__F:
+			setF(F_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DGPackage.MATRIX__A:
-				return a != A_EDEFAULT;
-			case DGPackage.MATRIX__B:
-				return b != B_EDEFAULT;
-			case DGPackage.MATRIX__C:
-				return c != C_EDEFAULT;
-			case DGPackage.MATRIX__D:
-				return d != D_EDEFAULT;
-			case DGPackage.MATRIX__E:
-				return e != E_EDEFAULT;
-			case DGPackage.MATRIX__F:
-				return f != F_EDEFAULT;
+		switch(featureID) {
+		case DGPackage.MATRIX__A:
+			return a != A_EDEFAULT;
+		case DGPackage.MATRIX__B:
+			return b != B_EDEFAULT;
+		case DGPackage.MATRIX__C:
+			return c != C_EDEFAULT;
+		case DGPackage.MATRIX__D:
+			return d != D_EDEFAULT;
+		case DGPackage.MATRIX__E:
+			return e != E_EDEFAULT;
+		case DGPackage.MATRIX__F:
+			return f != F_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
+		if(eIsProxy())
+			return super.toString();
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (a: ");
 		result.append(a);
@@ -417,5 +436,4 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 		result.append(')');
 		return result.toString();
 	}
-
 } // MatrixImpl

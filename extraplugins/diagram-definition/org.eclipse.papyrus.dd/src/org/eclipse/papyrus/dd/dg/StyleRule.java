@@ -16,26 +16,25 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Style Rule</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Style Rule</b></em>'. <!-- end-user-doc -->
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getSelectors <em>Selector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getSelectors <em>Selector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleRule()
  * @model
  * @generated
  */
 public interface StyleRule extends EObject {
+
 	/**
 	 * Returns the value of the '<em><b>Selector</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector}. <!-- begin-user-doc -->
+	 * list. The list contents are of type {@link org.eclipse.papyrus.dd.dg.StyleSelector}. <!-- begin-user-doc -->
 	 * <!-- end-user-doc --> <!-- begin-model-doc --> A set of selectors for
 	 * graphical elements to apply the rule to. <!-- end-model-doc -->
 	 * 
@@ -63,10 +62,11 @@ public interface StyleRule extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Style</em>' containment reference.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
 	void setStyle(Style value);
-
 } // StyleRule

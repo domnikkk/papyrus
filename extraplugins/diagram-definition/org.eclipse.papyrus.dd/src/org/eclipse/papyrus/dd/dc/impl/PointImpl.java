@@ -22,16 +22,15 @@ import org.eclipse.papyrus.dd.dc.DCPackage;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Point</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Point</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dc.impl.PointImpl#getX <em>X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dc.impl.PointImpl#getY <em>Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.impl.PointImpl#getX <em>X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.impl.PointImpl#getY <em>Y</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PointImpl extends MinimalEObjectImpl.Container implements Point {
@@ -60,6 +59,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * This is true if the X attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -89,6 +89,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * This is true if the Y attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -96,6 +97,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PointImpl() {
@@ -104,6 +106,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -113,6 +116,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getX() {
@@ -121,6 +125,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setX(double newX) {
@@ -128,12 +133,13 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		x = newX;
 		boolean oldXESet = xESet;
 		xESet = true;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.POINT__X, oldX, x, !oldXESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetX() {
@@ -141,12 +147,13 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		boolean oldXESet = xESet;
 		x = X_EDEFAULT;
 		xESet = false;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.POINT__X, oldX, X_EDEFAULT, oldXESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetX() {
@@ -155,6 +162,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getY() {
@@ -163,6 +171,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setY(double newY) {
@@ -170,12 +179,13 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		y = newY;
 		boolean oldYESet = yESet;
 		yESet = true;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DCPackage.POINT__Y, oldY, y, !oldYESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetY() {
@@ -183,12 +193,13 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		boolean oldYESet = yESet;
 		y = Y_EDEFAULT;
 		yESet = false;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.UNSET, DCPackage.POINT__Y, oldY, Y_EDEFAULT, oldYESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetY() {
@@ -197,83 +208,93 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DCPackage.POINT__X:
-				return getX();
-			case DCPackage.POINT__Y:
-				return getY();
+		switch(featureID) {
+		case DCPackage.POINT__X:
+			return getX();
+		case DCPackage.POINT__Y:
+			return getY();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DCPackage.POINT__X:
-				setX((Double)newValue);
-				return;
-			case DCPackage.POINT__Y:
-				setY((Double)newValue);
-				return;
+		switch(featureID) {
+		case DCPackage.POINT__X:
+			setX((Double)newValue);
+			return;
+		case DCPackage.POINT__Y:
+			setY((Double)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DCPackage.POINT__X:
-				unsetX();
-				return;
-			case DCPackage.POINT__Y:
-				unsetY();
-				return;
+		switch(featureID) {
+		case DCPackage.POINT__X:
+			unsetX();
+			return;
+		case DCPackage.POINT__Y:
+			unsetY();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DCPackage.POINT__X:
-				return isSetX();
-			case DCPackage.POINT__Y:
-				return isSetY();
+		switch(featureID) {
+		case DCPackage.POINT__X:
+			return isSetX();
+		case DCPackage.POINT__Y:
+			return isSetY();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
+		if(eIsProxy())
+			return super.toString();
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (x: ");
-		if (xESet) result.append(x); else result.append("<unset>");
+		if(xESet)
+			result.append(x);
+		else
+			result.append("<unset>");
 		result.append(", y: ");
-		if (yESet) result.append(y); else result.append("<unset>");
+		if(yESet)
+			result.append(y);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
-
 } // PointImpl

@@ -29,21 +29,22 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Polyline;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Polyline</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Polyline</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.PolylineImpl#getPoints <em>Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.PolylineImpl#getPoints <em>Point</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PolylineImpl extends MarkedElementImpl implements Polyline {
+
 	/**
 	 * The cached value of the '{@link #getPoints() <em>Point</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getPoints()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PolylineImpl() {
@@ -60,6 +62,7 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,10 +72,11 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Point> getPoints() {
-		if (points == null) {
+		if(points == null) {
 			points = new EObjectContainmentEList<Point>(Point.class, this, DGPackage.POLYLINE__POINT);
 		}
 		return points;
@@ -80,72 +84,75 @@ public class PolylineImpl extends MarkedElementImpl implements Polyline {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DGPackage.POLYLINE__POINT:
-				return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch(featureID) {
+		case DGPackage.POLYLINE__POINT:
+			return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DGPackage.POLYLINE__POINT:
-				return getPoints();
+		switch(featureID) {
+		case DGPackage.POLYLINE__POINT:
+			return getPoints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DGPackage.POLYLINE__POINT:
-				getPoints().clear();
-				getPoints().addAll((Collection<? extends Point>)newValue);
-				return;
+		switch(featureID) {
+		case DGPackage.POLYLINE__POINT:
+			getPoints().clear();
+			getPoints().addAll((Collection<? extends Point>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DGPackage.POLYLINE__POINT:
-				getPoints().clear();
-				return;
+		switch(featureID) {
+		case DGPackage.POLYLINE__POINT:
+			getPoints().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DGPackage.POLYLINE__POINT:
-				return points != null && !points.isEmpty();
+		switch(featureID) {
+		case DGPackage.POLYLINE__POINT:
+			return points != null && !points.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
-
 } // PolylineImpl

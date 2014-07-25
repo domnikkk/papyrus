@@ -20,27 +20,27 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Gradient Stop</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Gradient Stop</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * GradientStop defines a color transition along the distance from a gradient's start to its end offsets.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity <em>Opacity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity <em>Opacity</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getGradientStop()
  * @model
  * @generated
  */
 public interface GradientStop extends EObject {
+
 	/**
 	 * Returns the value of the '<em><b>Color</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> the
@@ -60,7 +60,9 @@ public interface GradientStop extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Color</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Color</em>' attribute.
 	 * @see #isSetColor()
 	 * @see #unsetColor()
 	 * @see #getColor()
@@ -71,6 +73,7 @@ public interface GradientStop extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSetColor()
 	 * @see #getColor()
 	 * @see #setColor(Color)
@@ -81,6 +84,7 @@ public interface GradientStop extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Color</em>' attribute is set.
 	 * @see #unsetColor()
 	 * @see #getColor()
@@ -110,7 +114,9 @@ public interface GradientStop extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Offset</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Offset</em>' attribute.
 	 * @see #isSetOffset()
 	 * @see #unsetOffset()
 	 * @see #getOffset()
@@ -121,6 +127,7 @@ public interface GradientStop extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSetOffset()
 	 * @see #getOffset()
 	 * @see #setOffset(double)
@@ -131,6 +138,7 @@ public interface GradientStop extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Offset</em>' attribute is set.
 	 * @see #unsetOffset()
 	 * @see #getOffset()
@@ -158,13 +166,12 @@ public interface GradientStop extends EObject {
 	double getOpacity();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity
+	 * Sets the value of the ' {@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity
 	 * <em>Opacity</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Opacity</em>' attribute.
+	 *        the new value of the '<em>Opacity</em>' attribute.
 	 * @see #isSetOpacity()
 	 * @see #unsetOpacity()
 	 * @see #getOpacity()
@@ -173,8 +180,7 @@ public interface GradientStop extends EObject {
 	void setOpacity(double value);
 
 	/**
-	 * Unsets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity
+	 * Unsets the value of the ' {@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity
 	 * <em>Opacity</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
@@ -189,6 +195,7 @@ public interface GradientStop extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity <em>Opacity</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Opacity</em>' attribute is set.
 	 * @see #unsetOpacity()
 	 * @see #getOpacity()
@@ -202,10 +209,10 @@ public interface GradientStop extends EObject {
 	 * the offset must be between 0 and 1.
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='offset>=0 and offset<=1'"
 	 * @generated
@@ -217,15 +224,13 @@ public interface GradientStop extends EObject {
 	 * the opacity must be between 0 and 1.
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/Ecore/OCL body='opacity>=0 and opacity<=1'"
 	 * @generated
 	 */
-	boolean validOpacity(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
-
+	boolean validOpacity(DiagnosticChain diagnostics, Map<Object, Object> context);
 } // GradientStop

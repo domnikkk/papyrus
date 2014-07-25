@@ -42,12 +42,11 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.StyleSelector} object.
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class StyleSelectorItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-		IItemColorProvider, IItemFontProvider {
+public class StyleSelectorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -66,9 +65,8 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
-
 			addKindPropertyDescriptor(object);
 			addClassPropertyDescriptor(object);
 		}
@@ -79,22 +77,11 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements
 	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StyleSelector_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StyleSelector_kind_feature", "_UI_StyleSelector_type"),
-				 DGPackage.Literals.STYLE_SELECTOR__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_StyleSelector_kind_feature"), getString("_UI_PropertyDescriptor_description", "_UI_StyleSelector_kind_feature", "_UI_StyleSelector_type"), DGPackage.Literals.STYLE_SELECTOR__KIND, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -104,19 +91,7 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StyleSelector_class_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StyleSelector_class_feature", "_UI_StyleSelector_type"),
-				 DGPackage.Literals.STYLE_SELECTOR__CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_StyleSelector_class_feature"), getString("_UI_PropertyDescriptor_description", "_UI_StyleSelector_class_feature", "_UI_StyleSelector_type"), DGPackage.Literals.STYLE_SELECTOR__CLASS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -134,15 +109,14 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		ElementKind labelValue = ((StyleSelector)object).getKind();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_StyleSelector_type") :
-			getString("_UI_StyleSelector_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_StyleSelector_type") : getString("_UI_StyleSelector_type") + " " + label;
 	}
 
 	/**
@@ -150,17 +124,17 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(StyleSelector.class)) {
-			case DGPackage.STYLE_SELECTOR__KIND:
-			case DGPackage.STYLE_SELECTOR__CLASS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch(notification.getFeatureID(StyleSelector.class)) {
+		case DGPackage.STYLE_SELECTOR__KIND:
+		case DGPackage.STYLE_SELECTOR__CLASS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -173,8 +147,7 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -188,5 +161,4 @@ public class StyleSelectorItemProvider extends ItemProviderAdapter implements
 	public ResourceLocator getResourceLocator() {
 		return DDEditPlugin.INSTANCE;
 	}
-
 }

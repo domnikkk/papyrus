@@ -26,23 +26,25 @@ import org.eclipse.papyrus.umldi.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
+
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static UMLDIFactory init() {
 		try {
 			UMLDIFactory theUMLDIFactory = (UMLDIFactory)EPackage.Registry.INSTANCE.getEFactory(UMLDIPackage.eNS_URI);
-			if (theUMLDIFactory != null) {
+			if(theUMLDIFactory != null) {
 				return theUMLDIFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new UMLDIFactoryImpl();
@@ -52,6 +54,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UMLDIFactoryImpl() {
@@ -61,59 +64,69 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case UMLDIPackage.UML_DIAGRAM: return createUmlDiagram();
-			case UMLDIPackage.UML_SHAPE: return createUmlShape();
-			case UMLDIPackage.UML_STYLE: return createUmlStyle();
-			case UMLDIPackage.UML_EDGE: return createUmlEdge();
-			case UMLDIPackage.UML_COMPARTMENT: return createUmlCompartment();
-			case UMLDIPackage.UML_LABEL: return createUmlLabel();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch(eClass.getClassifierID()) {
+		case UMLDIPackage.UML_DIAGRAM:
+			return createUmlDiagram();
+		case UMLDIPackage.UML_SHAPE:
+			return createUmlShape();
+		case UMLDIPackage.UML_STYLE:
+			return createUmlStyle();
+		case UMLDIPackage.UML_EDGE:
+			return createUmlEdge();
+		case UMLDIPackage.UML_COMPARTMENT:
+			return createUmlCompartment();
+		case UMLDIPackage.UML_LABEL:
+			return createUmlLabel();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case UMLDIPackage.UML_COMPARTMENT_KIND:
-				return createUmlCompartmentKindFromString(eDataType, initialValue);
-			case UMLDIPackage.UML_LABEL_KIND:
-				return createUmlLabelKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch(eDataType.getClassifierID()) {
+		case UMLDIPackage.UML_COMPARTMENT_KIND:
+			return createUmlCompartmentKindFromString(eDataType, initialValue);
+		case UMLDIPackage.UML_LABEL_KIND:
+			return createUmlLabelKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case UMLDIPackage.UML_COMPARTMENT_KIND:
-				return convertUmlCompartmentKindToString(eDataType, instanceValue);
-			case UMLDIPackage.UML_LABEL_KIND:
-				return convertUmlLabelKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch(eDataType.getClassifierID()) {
+		case UMLDIPackage.UML_COMPARTMENT_KIND:
+			return convertUmlCompartmentKindToString(eDataType, instanceValue);
+		case UMLDIPackage.UML_LABEL_KIND:
+			return convertUmlLabelKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlDiagram createUmlDiagram() {
@@ -124,6 +137,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlStyle createUmlStyle() {
@@ -134,6 +148,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlEdge createUmlEdge() {
@@ -144,6 +159,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlCompartment createUmlCompartment() {
@@ -154,6 +170,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlLabel createUmlLabel() {
@@ -164,17 +181,20 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlCompartmentKind createUmlCompartmentKindFromString(EDataType eDataType, String initialValue) {
 		UmlCompartmentKind result = UmlCompartmentKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if(result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertUmlCompartmentKindToString(EDataType eDataType, Object instanceValue) {
@@ -184,17 +204,20 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlLabelKind createUmlLabelKindFromString(EDataType eDataType, String initialValue) {
 		UmlLabelKind result = UmlLabelKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if(result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertUmlLabelKindToString(EDataType eDataType, Object instanceValue) {
@@ -204,6 +227,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlShape createUmlShape() {
@@ -214,6 +238,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UMLDIPackage getUMLDIPackage() {
@@ -223,6 +248,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -230,5 +256,4 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	public static UMLDIPackage getPackage() {
 		return UMLDIPackage.eINSTANCE;
 	}
-
 } //UMLDIFactoryImpl

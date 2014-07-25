@@ -25,7 +25,7 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 public final class DDEditorPlugin extends EMFPlugin {
 
 	public static final String IMAGE_HELP = "Help";
-	
+
 	/**
 	 * Keep track of the singleton.
 	 */
@@ -81,9 +81,11 @@ public final class DDEditorPlugin extends EMFPlugin {
 		@Override
 		protected void initializeImageRegistry(ImageRegistry reg) {
 			super.initializeImageRegistry(reg);
-			reg.put(IMAGE_HELP, ImageDescriptor.createFromURL(getBundle().getEntry("icons/help.gif")));
+			reg.put(IMAGE_HELP,
+					ImageDescriptor.createFromURL(getBundle().getEntry(
+							"icons/help.gif")));
 		}
-		
+
 	}
 
 	public static ImageDescriptor getImageDescriptor(String id) {

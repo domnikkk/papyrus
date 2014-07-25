@@ -18,14 +18,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.umldi.UMLDIPackage
  * @generated
  */
 public interface UMLDIFactory extends EFactory {
+
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	UMLDIFactory eINSTANCE = org.eclipse.papyrus.umldi.impl.UMLDIFactoryImpl.init();
@@ -34,6 +37,7 @@ public interface UMLDIFactory extends EFactory {
 	 * Returns a new object of class '<em>Uml Diagram</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Uml Diagram</em>'.
 	 * @generated
 	 */
@@ -43,6 +47,7 @@ public interface UMLDIFactory extends EFactory {
 	 * Returns a new object of class '<em>Uml Style</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Uml Style</em>'.
 	 * @generated
 	 */
@@ -52,6 +57,7 @@ public interface UMLDIFactory extends EFactory {
 	 * Returns a new object of class '<em>Uml Edge</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Uml Edge</em>'.
 	 * @generated
 	 */
@@ -61,6 +67,7 @@ public interface UMLDIFactory extends EFactory {
 	 * Returns a new object of class '<em>Uml Compartment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Uml Compartment</em>'.
 	 * @generated
 	 */
@@ -70,6 +77,7 @@ public interface UMLDIFactory extends EFactory {
 	 * Returns a new object of class '<em>Uml Label</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Uml Label</em>'.
 	 * @generated
 	 */
@@ -79,6 +87,7 @@ public interface UMLDIFactory extends EFactory {
 	 * Returns a new object of class '<em>Uml Shape</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Uml Shape</em>'.
 	 * @generated
 	 */
@@ -88,9 +97,9 @@ public interface UMLDIFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	UMLDIPackage getUMLDIPackage();
-
 } //UMLDIFactory

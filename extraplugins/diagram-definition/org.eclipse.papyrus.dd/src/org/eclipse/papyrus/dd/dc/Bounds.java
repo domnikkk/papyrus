@@ -18,23 +18,22 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Bounds</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Bounds</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Bounds specifies a rectangular area in some x-y coordinate system that is defined by a location (x and y) and a size (width and height).
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dc.DCPackage#getBounds()
  * @model
  * @generated
@@ -59,7 +58,9 @@ public interface Bounds extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>X</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>X</em>' attribute.
 	 * @see #isSetX()
 	 * @see #unsetX()
 	 * @see #getX()
@@ -70,6 +71,7 @@ public interface Bounds extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSetX()
 	 * @see #getX()
 	 * @see #setX(double)
@@ -80,6 +82,7 @@ public interface Bounds extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>X</em>' attribute is set.
 	 * @see #unsetX()
 	 * @see #getX()
@@ -106,7 +109,9 @@ public interface Bounds extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Y</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Y</em>' attribute.
 	 * @see #isSetY()
 	 * @see #unsetY()
 	 * @see #getY()
@@ -117,6 +122,7 @@ public interface Bounds extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSetY()
 	 * @see #getY()
 	 * @see #setY(double)
@@ -127,6 +133,7 @@ public interface Bounds extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Y</em>' attribute is set.
 	 * @see #unsetY()
 	 * @see #getY()
@@ -153,7 +160,9 @@ public interface Bounds extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Width</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Width</em>' attribute.
 	 * @see #isSetWidth()
 	 * @see #unsetWidth()
 	 * @see #getWidth()
@@ -164,6 +173,7 @@ public interface Bounds extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSetWidth()
 	 * @see #getWidth()
 	 * @see #setWidth(double)
@@ -174,6 +184,7 @@ public interface Bounds extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Width</em>' attribute is set.
 	 * @see #unsetWidth()
 	 * @see #getWidth()
@@ -203,7 +214,7 @@ public interface Bounds extends EObject {
 	 * -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Height</em>' attribute.
+	 *        the new value of the '<em>Height</em>' attribute.
 	 * @see #getHeight()
 	 * @generated
 	 */
@@ -212,6 +223,7 @@ public interface Bounds extends EObject {
 	/**
 	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isSetHeight()
 	 * @see #getHeight()
 	 * @see #setHeight(double)
@@ -222,6 +234,7 @@ public interface Bounds extends EObject {
 	/**
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}' attribute is set.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Height</em>' attribute is set.
 	 * @see #unsetHeight()
 	 * @see #getHeight()
@@ -235,31 +248,28 @@ public interface Bounds extends EObject {
 	 * the width of bounds cannot be negative
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
-	 * @model 
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
+	 * @model
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='width >= 0'"
 	 * @generated
 	 */
-	boolean nonNegativeWidth(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
+	boolean nonNegativeWidth(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * the height of bounds cannot be negative
 	 * 
 	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
+	 *        The chain of diagnostics to which problems are to be appended.
 	 * @param context
-	 *            The cache of context-specific information. <!-- end-model-doc
-	 *            -->
-	 * @model 
+	 *        The cache of context-specific information. <!-- end-model-doc
+	 *        -->
+	 * @model
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='height >=0'"
 	 * @generated
 	 */
-	boolean nonNegativeHeight(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
-
+	boolean nonNegativeHeight(DiagnosticChain diagnostics, Map<Object, Object> context);
 } // Bounds

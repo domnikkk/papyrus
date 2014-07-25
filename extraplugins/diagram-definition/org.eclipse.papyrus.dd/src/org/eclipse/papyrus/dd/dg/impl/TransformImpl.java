@@ -19,17 +19,17 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Transform;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Transform</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Transform</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- *
+ * 
  * @generated
  */
-public abstract class TransformImpl extends MinimalEObjectImpl.Container
-		implements Transform {
+public abstract class TransformImpl extends MinimalEObjectImpl.Container implements Transform {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TransformImpl() {
@@ -38,11 +38,11 @@ public abstract class TransformImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return DGPackage.Literals.TRANSFORM;
 	}
-
 } // TransformImpl

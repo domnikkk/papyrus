@@ -14,14 +14,13 @@ package org.eclipse.papyrus.dd.dg;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Transform</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Transform</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Transform defines an operation that changes the geometry of a graphical element in a specific way.
  * <!-- end-model-doc -->
- *
- *
+ * 
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getTransform()
  * @model abstract="true"
  * @generated

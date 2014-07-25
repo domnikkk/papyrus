@@ -17,16 +17,17 @@ import org.eclipse.papyrus.dd.dg.ClipPath;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Clip Path</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Clip Path</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- *
+ * 
  * @generated
  */
 public class ClipPathImpl extends GroupImpl implements ClipPath {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ClipPathImpl() {
@@ -35,11 +36,11 @@ public class ClipPathImpl extends GroupImpl implements ClipPath {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
 		return DGPackage.Literals.CLIP_PATH;
 	}
-
 } // ClipPathImpl

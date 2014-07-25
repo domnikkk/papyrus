@@ -48,29 +48,36 @@ public class UMLDIModelPage extends DDModelPage {
 	@Override
 	public void setupActions(IToolBarManager manager) {
 		super.setupActions(manager);
-		
+
 		Action action;
-		
+
 		action = new Action("Transform to DG") {
 			public void run() {
 				EditingDomain editingDomain = getDDEditor().getEditingDomain();
-				Resource inResource = editingDomain.getResourceSet().getResources().get(0);
+				Resource inResource = editingDomain.getResourceSet()
+						.getResources().get(0);
 				EList<EObject> inObjects = inResource.getContents();
 
-				ModelExtent input = new BasicModelExtent(inObjects);		
+				ModelExtent input = new BasicModelExtent(inObjects);
 				ModelExtent output = new BasicModelExtent();
 
 				ExecutionContextImpl context = new ExecutionContextImpl();
 				context.setConfigProperty("keepModeling", true);
 
-				URI transformationURI = URI.createURI("platform:/plugin/org.eclipse.papyrus.umldi2dg/transforms/umldi2dg.qvto");
-				TransformationExecutor executor = new TransformationExecutor(transformationURI);
-				ExecutionDiagnostic result = executor.execute(context, input, output);
-				if(result.getSeverity() == Diagnostic.OK) {
+				URI transformationURI = URI
+						.createURI("platform:/plugin/org.eclipse.papyrus.umldi2dg/transforms/umldi2dg.qvto");
+				TransformationExecutor executor = new TransformationExecutor(
+						transformationURI);
+				ExecutionDiagnostic result = executor.execute(context, input,
+						output);
+				if (result.getSeverity() == Diagnostic.OK) {
 					try {
 						List<EObject> outObjects = output.getContents();
-					    ResourceSet outResourceSet = new ResourceSetImpl();
-						Resource outResource = outResourceSet.createResource(inResource.getURI().trimFileExtension().appendFileExtension("dg"));
+						ResourceSet outResourceSet = new ResourceSetImpl();
+						Resource outResource = outResourceSet
+								.createResource(inResource.getURI()
+										.trimFileExtension()
+										.appendFileExtension("dg"));
 						outResource.getContents().addAll(outObjects);
 						outResource.save(Collections.emptyMap());
 					} catch (IOException e) {
@@ -79,14 +86,15 @@ public class UMLDIModelPage extends DDModelPage {
 				} else {
 					IStatus status = BasicDiagnostic.toIStatus(result);
 					UMLDIEditorPlugin.getPlugin().getLog().log(status);
-					StatusManager.getManager().handle(status, StatusManager.BLOCK);
-				}			
+					StatusManager.getManager().handle(status,
+							StatusManager.BLOCK);
+				}
 			}
 		};
 		action.setToolTipText("Transform to DG");
-		action.setImageDescriptor(UMLDIEditorPlugin.getImageDescriptor(UMLDIEditorPlugin.IMAGE_TRANSFORM));
+		action.setImageDescriptor(UMLDIEditorPlugin
+				.getImageDescriptor(UMLDIEditorPlugin.IMAGE_TRANSFORM));
 		manager.appendToGroup("Page", action);
 	}
 
-	
 }

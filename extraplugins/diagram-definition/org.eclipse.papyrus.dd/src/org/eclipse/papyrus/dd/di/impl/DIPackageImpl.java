@@ -32,49 +32,52 @@ import org.eclipse.papyrus.dd.di.Style;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
  * end-user-doc -->
+ * 
  * @generated
  */
 public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass diagramElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass styleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass edgeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass diagramEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass shapeEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
 	 * package package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static factory
-	 * method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
+	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.dd.di.DIPackage#eNS_URI
@@ -87,6 +90,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -96,10 +100,8 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	 * and for any others upon which it depends.
 	 * 
 	 * <p>
-	 * This method is used to initialize {@link DIPackage#eINSTANCE} when that
-	 * field is accessed. Clients should not invoke it directly. Instead, they
-	 * should simply access that field to obtain the package. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * This method is used to initialize {@link DIPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they
+	 * should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
@@ -107,27 +109,20 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	 * @generated
 	 */
 	public static DIPackage init() {
-		if (isInited) return (DIPackage)EPackage.Registry.INSTANCE.getEPackage(DIPackage.eNS_URI);
-
+		if(isInited)
+			return (DIPackage)EPackage.Registry.INSTANCE.getEPackage(DIPackage.eNS_URI);
 		// Obtain or create and register package
 		DIPackageImpl theDIPackage = (DIPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DIPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DIPackageImpl());
-
 		isInited = true;
-
 		// Initialize simple dependencies
 		DCPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
-
 		// Create package meta-data objects
 		theDIPackage.createPackageContents();
-
 		// Initialize created meta-data
 		theDIPackage.initializePackageContents();
-
 		// Mark meta-data to indicate it can't be changed
 		theDIPackage.freeze();
-
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DIPackage.eNS_URI, theDIPackage);
 		return theDIPackage;
@@ -135,6 +130,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getDiagramElement() {
@@ -143,6 +139,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramElement_ModelElement() {
@@ -152,6 +149,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramElement_OwningDiagramElement() {
@@ -161,6 +159,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramElement_OwnedDiagramElement() {
@@ -169,6 +168,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramElement_LocalStyle() {
@@ -177,6 +177,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramElement_SharedStyle() {
@@ -186,6 +187,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramElement_TargetEdge() {
@@ -195,6 +197,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramElement_SourceEdge() {
@@ -203,6 +206,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getStyle() {
@@ -211,6 +215,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getEdge() {
@@ -220,6 +225,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getEdge_SourceDiagramElement() {
@@ -228,6 +234,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getEdge_Waypoint() {
@@ -237,6 +244,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getEdge_TargetDiagramElement() {
@@ -245,6 +253,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getDiagram() {
@@ -253,6 +262,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDiagram_Name() {
@@ -261,6 +271,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDiagram_Documentation() {
@@ -269,6 +280,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDiagram_Resolution() {
@@ -277,6 +289,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getShape() {
@@ -285,6 +298,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getShape_Bounds() {
@@ -293,6 +307,7 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DIFactory getDIFactory() {
@@ -301,21 +316,23 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if(isCreated)
+			return;
 		isCreated = true;
-
 		// Create classes and their features
 		diagramElementEClass = createEClass(DIAGRAM_ELEMENT);
 		createEReference(diagramElementEClass, DIAGRAM_ELEMENT__MODEL_ELEMENT);
@@ -325,25 +342,22 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 		createEReference(diagramElementEClass, DIAGRAM_ELEMENT__SHARED_STYLE);
 		createEReference(diagramElementEClass, DIAGRAM_ELEMENT__TARGET_EDGE);
 		createEReference(diagramElementEClass, DIAGRAM_ELEMENT__SOURCE_EDGE);
-
 		styleEClass = createEClass(STYLE);
-
 		edgeEClass = createEClass(EDGE);
 		createEReference(edgeEClass, EDGE__SOURCE_DIAGRAM_ELEMENT);
 		createEReference(edgeEClass, EDGE__WAYPOINT);
 		createEReference(edgeEClass, EDGE__TARGET_DIAGRAM_ELEMENT);
-
 		diagramEClass = createEClass(DIAGRAM);
 		createEAttribute(diagramEClass, DIAGRAM__NAME);
 		createEAttribute(diagramEClass, DIAGRAM__DOCUMENTATION);
 		createEAttribute(diagramEClass, DIAGRAM__RESOLUTION);
-
 		shapeEClass = createEClass(SHAPE);
 		createEReference(shapeEClass, SHAPE__BOUNDS);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -356,27 +370,22 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if(isInitialized)
+			return;
 		isInitialized = true;
-
 		// Initialize package
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
-
 		// Obtain other dependent packages
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		DCPackage theDCPackage = (DCPackage)EPackage.Registry.INSTANCE.getEPackage(DCPackage.eNS_URI);
-
 		// Create type parameters
-
 		// Set bounds for type parameters
-
 		// Add supertypes to classes
 		edgeEClass.getESuperTypes().add(this.getDiagramElement());
 		diagramEClass.getESuperTypes().add(this.getShape());
 		shapeEClass.getESuperTypes().add(this.getDiagramElement());
-
 		// Initialize classes, features, and operations; add parameters
 		initEClass(diagramElementEClass, DiagramElement.class, "DiagramElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiagramElement_ModelElement(), theEcorePackage.getEObject(), null, "modelElement", null, 0, -1, DiagramElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -386,25 +395,19 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 		initEReference(getDiagramElement_SharedStyle(), this.getStyle(), null, "sharedStyle", null, 0, 1, DiagramElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getDiagramElement_TargetEdge(), this.getEdge(), this.getEdge_TargetDiagramElement(), "targetEdge", null, 0, -1, DiagramElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramElement_SourceEdge(), this.getEdge(), this.getEdge_SourceDiagramElement(), "sourceEdge", null, 0, -1, DiagramElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
 		initEClass(styleEClass, Style.class, "Style", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(edgeEClass, Edge.class, "Edge", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEdge_SourceDiagramElement(), this.getDiagramElement(), this.getDiagramElement_SourceEdge(), "sourceDiagramElement", null, 1, 1, Edge.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getEdge_Waypoint(), theDCPackage.getPoint(), null, "waypoint", null, 0, -1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEdge_TargetDiagramElement(), this.getDiagramElement(), this.getDiagramElement_TargetEdge(), "targetDiagramElement", null, 1, 1, Edge.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-
 		initEClass(diagramEClass, Diagram.class, "Diagram", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDiagram_Name(), theDCPackage.getString(), "name", "", 1, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDiagram_Documentation(), theDCPackage.getString(), "documentation", "", 1, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDiagram_Resolution(), theDCPackage.getReal(), "resolution", "300", 1, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(shapeEClass, Shape.class, "Shape", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getShape_Bounds(), theDCPackage.getBounds(), null, "bounds", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		// Create resource
 		createResource(eNS_URI);
-
 		// Create annotations
 		// union
 		createUnionAnnotations();
@@ -414,55 +417,19 @@ public class DIPackageImpl extends EPackageImpl implements DIPackage {
 	 * Initializes the annotations for <b>union</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void createUnionAnnotations() {
-		String source = "union";					
-		addAnnotation
-		  (getDiagramElement_ModelElement(), 
-		   source, 
-		   new String[] {
-		   });			
-		addAnnotation
-		  (getDiagramElement_OwningDiagramElement(), 
-		   source, 
-		   new String[] {
-		   });			
-		addAnnotation
-		  (getDiagramElement_OwnedDiagramElement(), 
-		   source, 
-		   new String[] {
-		   });			
-		addAnnotation
-		  (getDiagramElement_LocalStyle(), 
-		   source, 
-		   new String[] {
-		   });			
-		addAnnotation
-		  (getDiagramElement_SharedStyle(), 
-		   source, 
-		   new String[] {
-		   });			
-		addAnnotation
-		  (getDiagramElement_TargetEdge(), 
-		   source, 
-		   new String[] {
-		   });			
-		addAnnotation
-		  (getDiagramElement_SourceEdge(), 
-		   source, 
-		   new String[] {
-		   });					
-		addAnnotation
-		  (getEdge_SourceDiagramElement(), 
-		   source, 
-		   new String[] {
-		   });				
-		addAnnotation
-		  (getEdge_TargetDiagramElement(), 
-		   source, 
-		   new String[] {
-		   });						
+		String source = "union";
+		addAnnotation(getDiagramElement_ModelElement(), source, new String[]{});
+		addAnnotation(getDiagramElement_OwningDiagramElement(), source, new String[]{});
+		addAnnotation(getDiagramElement_OwnedDiagramElement(), source, new String[]{});
+		addAnnotation(getDiagramElement_LocalStyle(), source, new String[]{});
+		addAnnotation(getDiagramElement_SharedStyle(), source, new String[]{});
+		addAnnotation(getDiagramElement_TargetEdge(), source, new String[]{});
+		addAnnotation(getDiagramElement_SourceEdge(), source, new String[]{});
+		addAnnotation(getEdge_SourceDiagramElement(), source, new String[]{});
+		addAnnotation(getEdge_TargetDiagramElement(), source, new String[]{});
 	}
-
 } // DIPackageImpl

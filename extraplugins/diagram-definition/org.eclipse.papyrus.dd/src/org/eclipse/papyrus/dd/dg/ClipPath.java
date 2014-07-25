@@ -12,14 +12,13 @@
 package org.eclipse.papyrus.dd.dg;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Clip Path</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Clip Path</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * ClipPath is a kind of group whose members collectively define a painting mask for its referencing graphical elements.
  * <!-- end-model-doc -->
- *
- *
+ * 
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getClipPath()
  * @model
  * @generated

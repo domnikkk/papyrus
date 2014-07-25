@@ -41,12 +41,11 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Definition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class DefinitionItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-		IItemColorProvider, IItemFontProvider {
+public class DefinitionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -65,9 +64,8 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
-
 			addIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -77,36 +75,24 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements
 	 * This adds a property descriptor for the Id feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Definition_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Definition_id_feature", "_UI_Definition_type"),
-				 DGPackage.Literals.DEFINITION__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Definition_id_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Definition_id_feature", "_UI_Definition_type"), DGPackage.Literals.DEFINITION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Definition)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Definition_type") :
-			getString("_UI_Definition_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Definition_type") : getString("_UI_Definition_type") + " " + label;
 	}
 
 	/**
@@ -114,16 +100,16 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Definition.class)) {
-			case DGPackage.DEFINITION__ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch(notification.getFeatureID(Definition.class)) {
+		case DGPackage.DEFINITION__ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -136,8 +122,7 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -151,5 +136,4 @@ public class DefinitionItemProvider extends ItemProviderAdapter implements
 	public ResourceLocator getResourceLocator() {
 		return DDEditPlugin.INSTANCE;
 	}
-
 }

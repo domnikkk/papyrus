@@ -12,14 +12,14 @@
 package org.eclipse.papyrus.dd.dg;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Close Path</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Close Path</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
- * ClosePath is a kind of path command that ends the current subpath and causes an automatic straight line to be drawn from the current point to the initial point of the current subpath.
+ * ClosePath is a kind of path command that ends the current subpath and causes an automatic straight line to be drawn from the current point to the
+ * initial point of the current subpath.
  * <!-- end-model-doc -->
- *
- *
+ * 
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getClosePath()
  * @model
  * @generated

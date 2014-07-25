@@ -28,17 +28,19 @@ import org.eclipse.papyrus.umldi.UmlCompartmentKind;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
+
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -58,6 +61,7 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected UmlCompartmentImpl() {
@@ -67,6 +71,7 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,6 +82,7 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlCompartmentKind getKind() {
@@ -86,25 +92,27 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setKind(UmlCompartmentKind newKind) {
 		UmlCompartmentKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_COMPARTMENT__KIND, oldKind, kind));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case UMLDIPackage.UML_COMPARTMENT__KIND:
-				return getKind();
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__KIND:
+			return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,14 +120,15 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case UMLDIPackage.UML_COMPARTMENT__KIND:
-				setKind((UmlCompartmentKind)newValue);
-				return;
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__KIND:
+			setKind((UmlCompartmentKind)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -127,14 +136,15 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case UMLDIPackage.UML_COMPARTMENT__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,13 +152,14 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case UMLDIPackage.UML_COMPARTMENT__KIND:
-				return kind != KIND_EDEFAULT;
+		switch(featureID) {
+		case UMLDIPackage.UML_COMPARTMENT__KIND:
+			return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,17 +167,17 @@ public class UmlCompartmentImpl extends UmlShapeImpl implements UmlCompartment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
+		if(eIsProxy())
+			return super.toString();
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
 		result.append(kind);
 		result.append(')');
 		return result.toString();
 	}
-
 } //UmlCompartmentImpl

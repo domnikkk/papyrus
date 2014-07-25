@@ -21,50 +21,45 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 import org.eclipse.uml2.uml.edit.UMLEditPlugin;
 
 /**
- * This is the central singleton for the UMLDI editor plugin.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is the central singleton for the UMLDI editor plugin. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
+ * 
  * @generated
  */
 public final class UMLDIEditorPlugin extends EMFPlugin {
-	
+
 	public static final String IMAGE_TRANSFORM = "Transform";
-	
+
 	/**
-	 * Keep track of the singleton.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Keep track of the singleton. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
 	 * @generated
 	 */
 	public static final UMLDIEditorPlugin INSTANCE = new UMLDIEditorPlugin();
-	
+
 	/**
-	 * Keep track of the singleton.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Keep track of the singleton. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
 	 * @generated
 	 */
 	private static Implementation plugin;
 
 	/**
-	 * Create the instance.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Create the instance. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UMLDIEditorPlugin() {
-		super
-			(new ResourceLocator [] {
-				DDEditPlugin.INSTANCE,
-				EcoreEditPlugin.INSTANCE,
-				UMLEditPlugin.INSTANCE,
-			});
+		super(new ResourceLocator[] { DDEditPlugin.INSTANCE,
+				EcoreEditPlugin.INSTANCE, UMLEditPlugin.INSTANCE, });
 	}
 
 	/**
-	 * Returns the singleton instance of the Eclipse plugin.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the singleton instance of the Eclipse plugin. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -72,34 +67,33 @@ public final class UMLDIEditorPlugin extends EMFPlugin {
 	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
-	
+
 	/**
-	 * Returns the singleton instance of the Eclipse plugin.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the singleton instance of the Eclipse plugin. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
 	 * @return the singleton instance.
 	 * @generated
 	 */
 	public static Implementation getPlugin() {
 		return plugin;
 	}
-	
+
 	/**
-	 * The actual implementation of the Eclipse <b>Plugin</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The actual implementation of the Eclipse <b>Plugin</b>. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static class Implementation extends EclipseUIPlugin {
 		/**
-		 * Creates an instance.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * Creates an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		public Implementation() {
 			super();
-	
+
 			// Remember the static instance.
 			//
 			plugin = this;
@@ -108,9 +102,11 @@ public final class UMLDIEditorPlugin extends EMFPlugin {
 		@Override
 		protected void initializeImageRegistry(ImageRegistry reg) {
 			super.initializeImageRegistry(reg);
-			reg.put(IMAGE_TRANSFORM, ImageDescriptor.createFromURL(getBundle().getEntry("icons/Transform.png")));
+			reg.put(IMAGE_TRANSFORM,
+					ImageDescriptor.createFromURL(getBundle().getEntry(
+							"icons/Transform.png")));
 		}
-		
+
 	}
 
 	public static ImageDescriptor getImageDescriptor(String id) {

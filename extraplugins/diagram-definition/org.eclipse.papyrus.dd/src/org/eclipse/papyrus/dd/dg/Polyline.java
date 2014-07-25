@@ -16,29 +16,28 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Polyline</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Polyline</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Polyline is a marked element that defines a shape consisting of a sequence of connected straight line segments.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Polyline#getPoints <em>Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Polyline#getPoints <em>Point</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getPolyline()
  * @model
  * @generated
  */
 public interface Polyline extends MarkedElement {
+
 	/**
 	 * Returns the value of the '<em><b>Point</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.eclipse.papyrus.dd.dc.Point}. <!-- begin-user-doc --> <!--
+	 * list. The list contents are of type {@link org.eclipse.papyrus.dd.dc.Point}. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> a list of 2 or more points
 	 * making up the polyline. <!-- end-model-doc -->
 	 * 
@@ -48,5 +47,4 @@ public interface Polyline extends MarkedElement {
 	 * @generated
 	 */
 	EList<Point> getPoints();
-
 } // Polyline

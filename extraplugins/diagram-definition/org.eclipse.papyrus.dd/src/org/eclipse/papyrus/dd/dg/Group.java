@@ -14,32 +14,30 @@ package org.eclipse.papyrus.dd.dg;
 import org.eclipse.emf.common.util.EList;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Group</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Group</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Group defines a group of graphical elements that can be styled, clipped and/or transformed together.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Group#getLayout <em>Layout</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Group#getLayout <em>Layout</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getGroup()
  * @model
  * @generated
  */
 public interface Group extends GraphicalElement {
+
 	/**
 	 * Returns the value of the '<em><b>Member</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement}. It is bidirectional
-	 * and its opposite is '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup
+	 * list. The list contents are of type {@link org.eclipse.papyrus.dd.dg.GraphicalElement}. It is bidirectional
+	 * and its opposite is ' {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup
 	 * <em>Group</em>}'. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> A list of graphical elements that are members of this
 	 * group. <!-- end-model-doc -->
@@ -56,10 +54,10 @@ public interface Group extends GraphicalElement {
 	 * Returns the value of the '<em><b>Layout</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layout</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layout</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Layout</em>' attribute.
 	 * @see #setLayout(String)
 	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGroup_Layout()
@@ -72,10 +70,11 @@ public interface Group extends GraphicalElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Group#getLayout <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layout</em>' attribute.
+	 * 
+	 * @param value
+	 *        the new value of the '<em>Layout</em>' attribute.
 	 * @see #getLayout()
 	 * @generated
 	 */
 	void setLayout(String value);
-
 } // Group

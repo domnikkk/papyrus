@@ -41,6 +41,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "di";
@@ -48,6 +49,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.omg.org/spec/DD/20110901/DI";
@@ -55,6 +57,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "di";
@@ -63,6 +66,7 @@ public interface DIPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	DIPackage eINSTANCE = org.eclipse.papyrus.dd.di.impl.DIPackageImpl.init();
@@ -71,6 +75,7 @@ public interface DIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.di.impl.DiagramElementImpl <em>Diagram Element</em>}' class.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.dd.di.impl.DiagramElementImpl
 	 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getDiagramElement()
 	 * @generated
@@ -90,6 +95,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -99,6 +105,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -107,6 +114,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -125,6 +133,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -134,6 +143,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -142,6 +152,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Diagram Element</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -159,6 +170,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.di.impl.StyleImpl <em>Style</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.dd.di.impl.StyleImpl
 	 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getStyle()
 	 * @generated
@@ -186,6 +198,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.di.impl.EdgeImpl <em>Edge</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.dd.di.impl.EdgeImpl
 	 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getEdge()
 	 * @generated
@@ -205,6 +218,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -214,6 +228,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -222,6 +237,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -240,6 +256,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -249,6 +266,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -258,6 +276,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -266,6 +285,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Waypoint</b></em>' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -275,6 +295,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -301,6 +322,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.di.impl.ShapeImpl <em>Shape</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.dd.di.impl.ShapeImpl
 	 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getShape()
 	 * @generated
@@ -320,6 +342,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -329,6 +352,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -337,6 +361,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -355,6 +380,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -364,6 +390,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -372,6 +399,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -398,6 +426,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.dd.di.impl.DiagramImpl <em>Diagram</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.dd.di.impl.DiagramImpl
 	 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getDiagram()
 	 * @generated
@@ -417,6 +446,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -426,6 +456,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -434,6 +465,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -452,6 +484,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -461,6 +494,7 @@ public interface DIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -469,6 +503,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -522,6 +557,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.di.DiagramElement <em>Diagram Element</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement
 	 * @generated
@@ -531,6 +567,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.dd.di.DiagramElement#getModelElement <em>Model Element</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Model Element</em>'.
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getModelElement()
 	 * @see #getDiagramElement()
@@ -539,9 +576,11 @@ public interface DIPackage extends EPackage {
 	EReference getDiagramElement_ModelElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.di.DiagramElement#getOwningDiagramElement <em>Owning Diagram Element</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.di.DiagramElement#getOwningDiagramElement
+	 * <em>Owning Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Owning Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getOwningDiagramElement()
 	 * @see #getDiagramElement()
@@ -550,9 +589,11 @@ public interface DIPackage extends EPackage {
 	EReference getDiagramElement_OwningDiagramElement();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.dd.di.DiagramElement#getOwnedDiagramElement <em>Owned Diagram Element</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.dd.di.DiagramElement#getOwnedDiagramElement
+	 * <em>Owned Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Owned Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getOwnedDiagramElement()
 	 * @see #getDiagramElement()
@@ -563,6 +604,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.di.DiagramElement#getLocalStyle <em>Local Style</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Local Style</em>'.
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getLocalStyle()
 	 * @see #getDiagramElement()
@@ -573,6 +615,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.di.DiagramElement#getSharedStyle <em>Shared Style</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Shared Style</em>'.
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getSharedStyle()
 	 * @see #getDiagramElement()
@@ -584,6 +627,7 @@ public interface DIPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.dd.di.DiagramElement#getTargetEdge <em>Target Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Target Edge</em>'.
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getTargetEdge()
 	 * @see #getDiagramElement()
@@ -595,6 +639,7 @@ public interface DIPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.dd.di.DiagramElement#getSourceEdge <em>Source Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Source Edge</em>'.
 	 * @see org.eclipse.papyrus.dd.di.DiagramElement#getSourceEdge()
 	 * @see #getDiagramElement()
@@ -603,8 +648,7 @@ public interface DIPackage extends EPackage {
 	EReference getDiagramElement_SourceEdge();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.di.Style <em>Style</em>}'. <!--
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.dd.di.Style <em>Style</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Style</em>'.
@@ -616,6 +660,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.di.Edge <em>Edge</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Edge</em>'.
 	 * @see org.eclipse.papyrus.dd.di.Edge
 	 * @generated
@@ -626,6 +671,7 @@ public interface DIPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.di.Edge#getSourceDiagramElement <em>Source Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Source Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.dd.di.Edge#getSourceDiagramElement()
 	 * @see #getEdge()
@@ -636,6 +682,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.dd.di.Edge#getWaypoint <em>Waypoint</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Waypoint</em>'.
 	 * @see org.eclipse.papyrus.dd.di.Edge#getWaypoint()
 	 * @see #getEdge()
@@ -647,6 +694,7 @@ public interface DIPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.di.Edge#getTargetDiagramElement <em>Target Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Target Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.dd.di.Edge#getTargetDiagramElement()
 	 * @see #getEdge()
@@ -655,8 +703,7 @@ public interface DIPackage extends EPackage {
 	EReference getEdge_TargetDiagramElement();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.di.Diagram <em>Diagram</em>}'. <!--
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.dd.di.Diagram <em>Diagram</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Diagram</em>'.
@@ -666,8 +713,7 @@ public interface DIPackage extends EPackage {
 	EClass getDiagram();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.di.Diagram#getName <em>Name</em>}'. <!--
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.dd.di.Diagram#getName <em>Name</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
@@ -680,6 +726,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.di.Diagram#getDocumentation <em>Documentation</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Documentation</em>'.
 	 * @see org.eclipse.papyrus.dd.di.Diagram#getDocumentation()
 	 * @see #getDiagram()
@@ -690,6 +737,7 @@ public interface DIPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.di.Diagram#getResolution <em>Resolution</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Resolution</em>'.
 	 * @see org.eclipse.papyrus.dd.di.Diagram#getResolution()
 	 * @see #getDiagram()
@@ -698,8 +746,7 @@ public interface DIPackage extends EPackage {
 	EAttribute getDiagram_Resolution();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.di.Shape <em>Shape</em>}'. <!--
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.dd.di.Shape <em>Shape</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Shape</em>'.
@@ -709,8 +756,7 @@ public interface DIPackage extends EPackage {
 	EClass getShape();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.di.Shape#getBounds <em>Bounds</em>}'. <!--
+	 * Returns the meta object for the containment reference ' {@link org.eclipse.papyrus.dd.di.Shape#getBounds <em>Bounds</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference '<em>Bounds</em>'.
@@ -740,6 +786,7 @@ public interface DIPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -748,6 +795,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.di.impl.DiagramElementImpl <em>Diagram Element</em>}' class.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.dd.di.impl.DiagramElementImpl
 		 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getDiagramElement()
 		 * @generated
@@ -757,6 +805,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Model Element</b></em>' reference list feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DIAGRAM_ELEMENT__MODEL_ELEMENT = eINSTANCE.getDiagramElement_ModelElement();
@@ -765,6 +814,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owning Diagram Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DIAGRAM_ELEMENT__OWNING_DIAGRAM_ELEMENT = eINSTANCE.getDiagramElement_OwningDiagramElement();
@@ -773,6 +823,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owned Diagram Element</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DIAGRAM_ELEMENT__OWNED_DIAGRAM_ELEMENT = eINSTANCE.getDiagramElement_OwnedDiagramElement();
@@ -781,6 +832,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Local Style</b></em>' reference feature.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DIAGRAM_ELEMENT__LOCAL_STYLE = eINSTANCE.getDiagramElement_LocalStyle();
@@ -788,6 +840,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Shared Style</b></em>' reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DIAGRAM_ELEMENT__SHARED_STYLE = eINSTANCE.getDiagramElement_SharedStyle();
@@ -796,6 +849,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target Edge</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DIAGRAM_ELEMENT__TARGET_EDGE = eINSTANCE.getDiagramElement_TargetEdge();
@@ -804,6 +858,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source Edge</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DIAGRAM_ELEMENT__SOURCE_EDGE = eINSTANCE.getDiagramElement_SourceEdge();
@@ -811,6 +866,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.di.impl.StyleImpl <em>Style</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.dd.di.impl.StyleImpl
 		 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getStyle()
 		 * @generated
@@ -820,6 +876,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.di.impl.EdgeImpl <em>Edge</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.dd.di.impl.EdgeImpl
 		 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getEdge()
 		 * @generated
@@ -830,6 +887,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source Diagram Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference EDGE__SOURCE_DIAGRAM_ELEMENT = eINSTANCE.getEdge_SourceDiagramElement();
@@ -838,6 +896,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Waypoint</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference EDGE__WAYPOINT = eINSTANCE.getEdge_Waypoint();
@@ -846,6 +905,7 @@ public interface DIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target Diagram Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference EDGE__TARGET_DIAGRAM_ELEMENT = eINSTANCE.getEdge_TargetDiagramElement();
@@ -853,6 +913,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.di.impl.DiagramImpl <em>Diagram</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.dd.di.impl.DiagramImpl
 		 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getDiagram()
 		 * @generated
@@ -862,6 +923,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DIAGRAM__NAME = eINSTANCE.getDiagram_Name();
@@ -869,6 +931,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DIAGRAM__DOCUMENTATION = eINSTANCE.getDiagram_Documentation();
@@ -876,6 +939,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Resolution</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DIAGRAM__RESOLUTION = eINSTANCE.getDiagram_Resolution();
@@ -883,6 +947,7 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.di.impl.ShapeImpl <em>Shape</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.dd.di.impl.ShapeImpl
 		 * @see org.eclipse.papyrus.dd.di.impl.DIPackageImpl#getShape()
 		 * @generated
@@ -892,10 +957,9 @@ public interface DIPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Bounds</b></em>' containment reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference SHAPE__BOUNDS = eINSTANCE.getShape_Bounds();
-
 	}
-
 } // DIPackage

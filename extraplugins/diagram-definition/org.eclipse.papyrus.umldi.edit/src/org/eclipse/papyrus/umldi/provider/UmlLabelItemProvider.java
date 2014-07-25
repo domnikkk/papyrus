@@ -11,7 +11,6 @@
  */
 package org.eclipse.papyrus.umldi.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -38,22 +37,16 @@ import org.eclipse.papyrus.umldi.UmlLabelKind;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.umldi.UmlLabel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class UmlLabelItemProvider
-	extends UmlShapeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		IItemColorProvider,
-		IItemFontProvider {
+public class UmlLabelItemProvider extends UmlShapeItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UmlLabelItemProvider(AdapterFactory adapterFactory) {
@@ -64,13 +57,13 @@ public class UmlLabelItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if(itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
-
 			addKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -80,28 +73,18 @@ public class UmlLabelItemProvider
 	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UmlLabel_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UmlLabel_kind_feature", "_UI_UmlLabel_type"),
-				 UMLDIPackage.Literals.UML_LABEL__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_UmlLabel_kind_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UmlLabel_kind_feature", "_UI_UmlLabel_type"), UMLDIPackage.Literals.UML_LABEL__KIND, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns UmlLabel.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -113,15 +96,14 @@ public class UmlLabelItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		UmlLabelKind labelValue = ((UmlLabel)object).getKind();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_UmlLabel_type") :
-			getString("_UI_UmlLabel_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_UmlLabel_type") : getString("_UI_UmlLabel_type") + " " + label;
 	}
 
 	/**
@@ -129,16 +111,16 @@ public class UmlLabelItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(UmlLabel.class)) {
-			case UMLDIPackage.UML_LABEL__KIND:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch(notification.getFeatureID(UmlLabel.class)) {
+		case UMLDIPackage.UML_LABEL__KIND:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -148,11 +130,11 @@ public class UmlLabelItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
-
 }

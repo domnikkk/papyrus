@@ -26,22 +26,23 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.Ellipse;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Ellipse</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Ellipse</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl#getCenter <em>Center</em>}</li>
- *   <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl#getRadii <em>Radii</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl#getCenter <em>Center</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl#getRadii <em>Radii</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
+
 	/**
 	 * The cached value of the '{@link #getCenter() <em>Center</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCenter()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 	/**
 	 * The cached value of the '{@link #getRadii() <em>Radii</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getRadii()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EllipseImpl() {
@@ -67,6 +70,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,6 +80,7 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Point getCenter() {
@@ -84,39 +89,44 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public NotificationChain basicSetCenter(Point newCenter,
-			NotificationChain msgs) {
+	public NotificationChain basicSetCenter(Point newCenter, NotificationChain msgs) {
 		Point oldCenter = center;
 		center = newCenter;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPSE__CENTER, oldCenter, newCenter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCenter(Point newCenter) {
-		if (newCenter != center) {
+		if(newCenter != center) {
 			NotificationChain msgs = null;
-			if (center != null)
+			if(center != null)
 				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPSE__CENTER, null, msgs);
-			if (newCenter != null)
+			if(newCenter != null)
 				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPSE__CENTER, null, msgs);
 			msgs = basicSetCenter(newCenter, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPSE__CENTER, newCenter, newCenter));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Dimension getRadii() {
@@ -125,115 +135,122 @@ public class EllipseImpl extends GraphicalElementImpl implements Ellipse {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public NotificationChain basicSetRadii(Dimension newRadii,
-			NotificationChain msgs) {
+	public NotificationChain basicSetRadii(Dimension newRadii, NotificationChain msgs) {
 		Dimension oldRadii = radii;
 		radii = newRadii;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPSE__RADII, oldRadii, newRadii);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRadii(Dimension newRadii) {
-		if (newRadii != radii) {
+		if(newRadii != radii) {
 			NotificationChain msgs = null;
-			if (radii != null)
+			if(radii != null)
 				msgs = ((InternalEObject)radii).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPSE__RADII, null, msgs);
-			if (newRadii != null)
+			if(newRadii != null)
 				msgs = ((InternalEObject)newRadii).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.ELLIPSE__RADII, null, msgs);
 			msgs = basicSetRadii(newRadii, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.ELLIPSE__RADII, newRadii, newRadii));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DGPackage.ELLIPSE__CENTER:
-				return basicSetCenter(null, msgs);
-			case DGPackage.ELLIPSE__RADII:
-				return basicSetRadii(null, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch(featureID) {
+		case DGPackage.ELLIPSE__CENTER:
+			return basicSetCenter(null, msgs);
+		case DGPackage.ELLIPSE__RADII:
+			return basicSetRadii(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DGPackage.ELLIPSE__CENTER:
-				return getCenter();
-			case DGPackage.ELLIPSE__RADII:
-				return getRadii();
+		switch(featureID) {
+		case DGPackage.ELLIPSE__CENTER:
+			return getCenter();
+		case DGPackage.ELLIPSE__RADII:
+			return getRadii();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DGPackage.ELLIPSE__CENTER:
-				setCenter((Point)newValue);
-				return;
-			case DGPackage.ELLIPSE__RADII:
-				setRadii((Dimension)newValue);
-				return;
+		switch(featureID) {
+		case DGPackage.ELLIPSE__CENTER:
+			setCenter((Point)newValue);
+			return;
+		case DGPackage.ELLIPSE__RADII:
+			setRadii((Dimension)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DGPackage.ELLIPSE__CENTER:
-				setCenter((Point)null);
-				return;
-			case DGPackage.ELLIPSE__RADII:
-				setRadii((Dimension)null);
-				return;
+		switch(featureID) {
+		case DGPackage.ELLIPSE__CENTER:
+			setCenter((Point)null);
+			return;
+		case DGPackage.ELLIPSE__RADII:
+			setRadii((Dimension)null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DGPackage.ELLIPSE__CENTER:
-				return center != null;
-			case DGPackage.ELLIPSE__RADII:
-				return radii != null;
+		switch(featureID) {
+		case DGPackage.ELLIPSE__CENTER:
+			return center != null;
+		case DGPackage.ELLIPSE__RADII:
+			return radii != null;
 		}
 		return super.eIsSet(featureID);
 	}
-
 } // EllipseImpl

@@ -16,29 +16,28 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.dd.dc.Point;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>Polygon</b></em>'. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>Polygon</b></em>'. <!-- end-user-doc -->
+ * 
  * <!-- begin-model-doc -->
  * Polygon is a marked element that defines a closed shape consisting of a sequence of connected straight line segments.
  * <!-- end-model-doc -->
- *
+ * 
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.dd.dg.Polygon#getPoints <em>Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.dd.dg.Polygon#getPoints <em>Point</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getPolygon()
  * @model
  * @generated
  */
 public interface Polygon extends MarkedElement {
+
 	/**
 	 * Returns the value of the '<em><b>Point</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.eclipse.papyrus.dd.dc.Point}. <!-- begin-user-doc --> <!--
+	 * list. The list contents are of type {@link org.eclipse.papyrus.dd.dc.Point}. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> a list of 3 or more points
 	 * making up the polygon. <!-- end-model-doc -->
 	 * 
@@ -48,5 +47,4 @@ public interface Polygon extends MarkedElement {
 	 * @generated
 	 */
 	EList<Point> getPoints();
-
 } // Polygon
