@@ -21,13 +21,12 @@ import org.eclipse.papyrus.dd.dg.DGPackage;
  * <em><b>Clip Path</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class ClipPathImpl extends GroupImpl implements ClipPath {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ClipPathImpl() {
@@ -36,7 +35,6 @@ public class ClipPathImpl extends GroupImpl implements ClipPath {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

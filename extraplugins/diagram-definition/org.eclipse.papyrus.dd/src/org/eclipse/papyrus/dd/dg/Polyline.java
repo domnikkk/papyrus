@@ -18,18 +18,18 @@ import org.eclipse.papyrus.dd.dc.Point;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Polyline</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Polyline is a marked element that defines a shape
- * consisting of a sequence of connected straight line segments. <!--
- * end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Polyline is a marked element that defines a shape consisting of a sequence of connected straight line segments.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Polyline#getPoints <em>Point</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Polyline#getPoints <em>Point</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getPolyline()
  * @model
  * @generated

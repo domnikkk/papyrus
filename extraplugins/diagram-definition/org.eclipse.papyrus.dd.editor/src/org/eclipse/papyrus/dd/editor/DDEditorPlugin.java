@@ -12,13 +12,11 @@
 package org.eclipse.papyrus.dd.editor;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.papyrus.dd.edit.DDEditPlugin;
 
 /**
@@ -26,6 +24,8 @@ import org.eclipse.papyrus.dd.edit.DDEditPlugin;
  */
 public final class DDEditorPlugin extends EMFPlugin {
 
+	public static final String IMAGE_HELP = "Help";
+	
 	/**
 	 * Keep track of the singleton.
 	 */
@@ -77,6 +77,17 @@ public final class DDEditorPlugin extends EMFPlugin {
 			// Remember the static instance.
 			plugin = this;
 		}
+
+		@Override
+		protected void initializeImageRegistry(ImageRegistry reg) {
+			super.initializeImageRegistry(reg);
+			reg.put(IMAGE_HELP, ImageDescriptor.createFromURL(getBundle().getEntry("icons/help.gif")));
+		}
+		
+	}
+
+	public static ImageDescriptor getImageDescriptor(String id) {
+		return getPlugin().getImageRegistry().getDescriptor(id);
 	}
 
 }

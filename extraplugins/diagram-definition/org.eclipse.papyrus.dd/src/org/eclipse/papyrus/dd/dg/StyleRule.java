@@ -18,16 +18,15 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Style Rule</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getSelectors <em>Selector
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getSelectors <em>Selector</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleRule()
  * @model
  * @generated
@@ -62,12 +61,9 @@ public interface StyleRule extends EObject {
 	Style getStyle();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}'
-	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */

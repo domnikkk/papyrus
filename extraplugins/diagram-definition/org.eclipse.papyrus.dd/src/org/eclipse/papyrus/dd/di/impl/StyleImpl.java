@@ -23,7 +23,7 @@ import org.eclipse.papyrus.dd.di.Style;
  * <em><b>Style</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class StyleImpl extends MinimalEObjectImpl.Container implements
@@ -31,7 +31,6 @@ public abstract class StyleImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StyleImpl() {
@@ -40,7 +39,6 @@ public abstract class StyleImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

@@ -14,22 +14,23 @@ package org.eclipse.papyrus.dd.dg;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Matrix</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Matrix is a kind of transform that represents any
- * transform operation with a 3x3 transformation matrix. <!-- end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Matrix is a kind of transform that represents any transform operation with a 3x3 transformation matrix.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getA <em>A</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getB <em>B</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getC <em>C</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getD <em>D</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getE <em>E</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getF <em>F</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getA <em>A</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getB <em>B</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getC <em>C</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getD <em>D</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getE <em>E</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Matrix#getF <em>F</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getMatrix()
  * @model
  * @generated
@@ -50,11 +51,9 @@ public interface Matrix extends Transform {
 	double getA();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getA
-	 * <em>A</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>A</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getA <em>A</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>A</em>' attribute.
 	 * @see #getA()
 	 * @generated
 	 */
@@ -75,11 +74,9 @@ public interface Matrix extends Transform {
 	double getB();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getB
-	 * <em>B</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>B</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getB <em>B</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>B</em>' attribute.
 	 * @see #getB()
 	 * @generated
 	 */
@@ -100,11 +97,9 @@ public interface Matrix extends Transform {
 	double getC();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getC
-	 * <em>C</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>C</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getC <em>C</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>C</em>' attribute.
 	 * @see #getC()
 	 * @generated
 	 */
@@ -125,11 +120,9 @@ public interface Matrix extends Transform {
 	double getD();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getD
-	 * <em>D</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>D</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getD <em>D</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>D</em>' attribute.
 	 * @see #getD()
 	 * @generated
 	 */
@@ -150,11 +143,9 @@ public interface Matrix extends Transform {
 	double getE();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getE
-	 * <em>E</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>E</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getE <em>E</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>E</em>' attribute.
 	 * @see #getE()
 	 * @generated
 	 */
@@ -175,11 +166,9 @@ public interface Matrix extends Transform {
 	double getF();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getF
-	 * <em>F</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>F</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Matrix#getF <em>F</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>F</em>' attribute.
 	 * @see #getF()
 	 * @generated
 	 */

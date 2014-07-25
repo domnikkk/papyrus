@@ -23,14 +23,13 @@ import org.eclipse.papyrus.dd.dg.Transform;
  * <em><b>Transform</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class TransformImpl extends MinimalEObjectImpl.Container
 		implements Transform {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected TransformImpl() {
@@ -39,7 +38,6 @@ public abstract class TransformImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

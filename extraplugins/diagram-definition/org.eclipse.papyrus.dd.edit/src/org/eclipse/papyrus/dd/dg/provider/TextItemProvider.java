@@ -68,6 +68,7 @@ public class TextItemProvider extends GraphicalElementItemProvider implements
 			super.getPropertyDescriptors(object);
 
 			addDataPropertyDescriptor(object);
+			addAnchorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,28 @@ public class TextItemProvider extends GraphicalElementItemProvider implements
 				 getString("_UI_Text_data_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Text_data_feature", "_UI_Text_type"),
 				 DGPackage.Literals.TEXT__DATA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Anchor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnchorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Text_anchor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Text_anchor_feature", "_UI_Text_type"),
+				 DGPackage.Literals.TEXT__ANCHOR,
 				 true,
 				 false,
 				 false,
@@ -160,6 +183,7 @@ public class TextItemProvider extends GraphicalElementItemProvider implements
 
 		switch (notification.getFeatureID(Text.class)) {
 			case DGPackage.TEXT__DATA:
+			case DGPackage.TEXT__ANCHOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DGPackage.TEXT__POSITION:

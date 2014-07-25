@@ -30,19 +30,17 @@ import org.eclipse.papyrus.dd.di.Shape;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.di.impl.ShapeImpl#getBounds <em>Bounds
- * </em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.di.impl.ShapeImpl#getBounds <em>Bounds</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 
 	/**
-	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}'
-	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -51,7 +49,6 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ShapeImpl() {
@@ -60,7 +57,6 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,7 +66,6 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Bounds getBounds() {
@@ -79,7 +74,6 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBounds(Bounds newBounds,
@@ -87,110 +81,94 @@ public abstract class ShapeImpl extends DiagramElementImpl implements Shape {
 		Bounds oldBounds = bounds;
 		bounds = newBounds;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, DIPackage.SHAPE__BOUNDS, oldBounds,
-					newBounds);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DIPackage.SHAPE__BOUNDS, oldBounds, newBounds);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setBounds(Bounds newBounds) {
 		if (newBounds != bounds) {
 			NotificationChain msgs = null;
 			if (bounds != null)
-				msgs = ((InternalEObject) bounds).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DIPackage.SHAPE__BOUNDS, null,
-						msgs);
+				msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DIPackage.SHAPE__BOUNDS, null, msgs);
 			if (newBounds != null)
-				msgs = ((InternalEObject) newBounds).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DIPackage.SHAPE__BOUNDS, null,
-						msgs);
+				msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DIPackage.SHAPE__BOUNDS, null, msgs);
 			msgs = basicSetBounds(newBounds, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DIPackage.SHAPE__BOUNDS, newBounds, newBounds));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DIPackage.SHAPE__BOUNDS, newBounds, newBounds));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DIPackage.SHAPE__BOUNDS:
-			return basicSetBounds(null, msgs);
+			case DIPackage.SHAPE__BOUNDS:
+				return basicSetBounds(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DIPackage.SHAPE__BOUNDS:
-			return getBounds();
+			case DIPackage.SHAPE__BOUNDS:
+				return getBounds();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DIPackage.SHAPE__BOUNDS:
-			setBounds((Bounds) newValue);
-			return;
+			case DIPackage.SHAPE__BOUNDS:
+				setBounds((Bounds)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DIPackage.SHAPE__BOUNDS:
-			setBounds((Bounds) null);
-			return;
+			case DIPackage.SHAPE__BOUNDS:
+				setBounds((Bounds)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DIPackage.SHAPE__BOUNDS:
-			return bounds != null;
+			case DIPackage.SHAPE__BOUNDS:
+				return bounds != null;
 		}
 		return super.eIsSet(featureID);
 	}

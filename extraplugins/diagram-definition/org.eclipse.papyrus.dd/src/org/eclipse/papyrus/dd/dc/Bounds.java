@@ -20,21 +20,21 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Bounds</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Bounds specifies a rectangular area in some x-y
- * coordinate system that is defined by a location (x and y) and a size (width
- * and height). <!-- end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Bounds specifies a rectangular area in some x-y coordinate system that is defined by a location (x and y) and a size (width and height).
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dc.DCPackage#getBounds()
  * @model
  * @generated
@@ -57,11 +57,9 @@ public interface Bounds extends EObject {
 	double getX();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getX
-	 * <em>X</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>X</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>X</em>' attribute.
 	 * @see #isSetX()
 	 * @see #unsetX()
 	 * @see #getX()
@@ -70,9 +68,8 @@ public interface Bounds extends EObject {
 	void setX(double value);
 
 	/**
-	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getX
-	 * <em>X</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSetX()
 	 * @see #getX()
 	 * @see #setX(double)
@@ -81,10 +78,8 @@ public interface Bounds extends EObject {
 	void unsetX();
 
 	/**
-	 * Returns whether the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}' attribute is
-	 * set. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getX <em>X</em>}' attribute is set.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return whether the value of the '<em>X</em>' attribute is set.
 	 * @see #unsetX()
 	 * @see #getX()
@@ -109,11 +104,9 @@ public interface Bounds extends EObject {
 	double getY();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getY
-	 * <em>Y</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Y</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Y</em>' attribute.
 	 * @see #isSetY()
 	 * @see #unsetY()
 	 * @see #getY()
@@ -122,9 +115,8 @@ public interface Bounds extends EObject {
 	void setY(double value);
 
 	/**
-	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getY
-	 * <em>Y</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSetY()
 	 * @see #getY()
 	 * @see #setY(double)
@@ -133,10 +125,8 @@ public interface Bounds extends EObject {
 	void unsetY();
 
 	/**
-	 * Returns whether the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}' attribute is
-	 * set. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getY <em>Y</em>}' attribute is set.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Y</em>' attribute is set.
 	 * @see #unsetY()
 	 * @see #getY()
@@ -161,11 +151,9 @@ public interface Bounds extends EObject {
 	double getWidth();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth
-	 * <em>Width</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Width</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Width</em>' attribute.
 	 * @see #isSetWidth()
 	 * @see #unsetWidth()
 	 * @see #getWidth()
@@ -174,10 +162,8 @@ public interface Bounds extends EObject {
 	void setWidth(double value);
 
 	/**
-	 * Unsets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSetWidth()
 	 * @see #getWidth()
 	 * @see #setWidth(double)
@@ -186,10 +172,8 @@ public interface Bounds extends EObject {
 	void unsetWidth();
 
 	/**
-	 * Returns whether the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}'
-	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getWidth <em>Width</em>}' attribute is set.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Width</em>' attribute is set.
 	 * @see #unsetWidth()
 	 * @see #getWidth()
@@ -226,10 +210,8 @@ public interface Bounds extends EObject {
 	void setHeight(double value);
 
 	/**
-	 * Unsets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSetHeight()
 	 * @see #getHeight()
 	 * @see #setHeight(double)
@@ -238,10 +220,8 @@ public interface Bounds extends EObject {
 	void unsetHeight();
 
 	/**
-	 * Returns whether the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}'
-	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Bounds#getHeight <em>Height</em>}' attribute is set.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Height</em>' attribute is set.
 	 * @see #unsetHeight()
 	 * @see #getHeight()

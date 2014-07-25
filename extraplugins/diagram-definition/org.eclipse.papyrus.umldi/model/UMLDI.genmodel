@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    copyrightText="Copyright (c) 2014 CEA LIST.&#xA; &#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA; &#xD;&#xA;Contributors:&#xD;&#xA; CEA LIST - Initial API and implementation"
+    modelDirectory="/org.eclipse.papyrus.umldi/src" creationSubmenus="true" modelPluginID="org.eclipse.papyrus.umldi"
+    modelName="UMLDI" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="7.0" copyrightFields="false"
+    colorProviders="true" fontProviders="true" usedGenPackages="../../org.eclipse.papyrus.dd/model/DC.genmodel#//dc ../../org.eclipse.papyrus.dd/model/DI.genmodel#//di ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
+    <details key="SUBSETTING_PROPERTIES" value="PROCESS"/>
+    <details key="VALIDATION_DELEGATES" value="PROCESS"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
+    <details key="INVOCATION_DELEGATES" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="CAMEL_CASE_NAMES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+  </genAnnotations>
+  <foreignModel>UMLDI.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="UMLDI" basePackage="org.eclipse.papyrus"
+      resource="XML" disposableProviderFactory="true" ecorePackage="UMLDI.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLDI.ecore#//UmlCompartmentKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlCompartmentKind/attributes"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlCompartmentKind/operations"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="UMLDI.ecore#//UmlLabelKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="UMLDI.ecore#//UmlLabelKind/name"/>
+    </genEnums>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlDiagram"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlShape"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="UMLDI.ecore#//UmlDiagramElement">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/umlModelElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/sharedUmlStyle"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/localUmlStyle"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/owningUmlDiagramElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/ownedUmlDiagramElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/targetUmlEdge"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlDiagramElement/sourceUmlEdge"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlStyle/fontName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlStyle/fontSize"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="UMLDI.ecore#//UmlStyle/fontsizePositive">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLDI.ecore#//UmlStyle/fontsizePositive/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="UMLDI.ecore#//UmlStyle/fontsizePositive/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlEdge">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlEdge/sourceUmlDiagramElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference UMLDI.ecore#//UmlEdge/targetUmlDiagramElement"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlCompartment">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlCompartment/kind"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="UMLDI.ecore#//UmlLabel">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute UMLDI.ecore#//UmlLabel/kind"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

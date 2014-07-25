@@ -40,13 +40,14 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.eclipse.papyrus.dd.dg.editor,
  org.eclipse.papyrus.dd.editor
-Require-Bundle: org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.papyrus.dd.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
- org.eclipse.ui.forms;bundle-version="3.6.1",
- org.eclipse.jface.text;bundle-version="3.8.101"
+ org.eclipse.ui.forms;bundle-version="3.6.1";visibility:=reexport,
+ org.eclipse.jface.text;bundle-version="3.8.101";visibility:=reexport,
+ org.eclipse.help;bundle-version="3.6.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

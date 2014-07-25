@@ -1,0 +1,136 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ */
+import umldefinitions;
+
+modeltype DC uses "http://www.omg.org/spec/DD/20110901/DC";
+modeltype DG uses "http://www.omg.org/spec/DD/20110901/DG";
+modeltype DI uses "http://www.omg.org/spec/DD/20110901/DI";
+modeltype UMLDI uses "http://www.omg.org/spec/UML/20131001/UMLDI";
+modeltype UML uses "http://www.eclipse.org/uml2/4.0.0/UML";
+	
+transformation umldi2dg(in umldi : UMLDI, out DG);
+
+main() {
+	umldi.rootObjects()[UMLDI::UmlDiagram]->map diagram2Canvas();
+}
+
+abstract mapping UMLDI::UmlDiagramElement::diagramElement2GraphicalElement() : DG::GraphicalElement {
+	style := self.localUmlStyle.umlStyle2Style();
+}
+
+mapping UMLDI::UmlDiagram::diagram2Canvas() : DG::RootCanvas 
+	inherits UMLDI::UmlDiagramElement::diagramElement2GraphicalElement
+{
+	definitions := umlDefinitions;
+	
+	script += "platform:/plugin/org.eclipse.papyrus.umldi2dg/scripts/umllayouts.js";
+	
+	layout := "xyLayout(parent)";
+	member += self.ownedDiagramElement[UMLDI::UmlShape]->map allUmlShape2Canvas();
+	member += self.ownedDiagramElement[UMLDI::UmlEdge]->map allUmlEdge2Group();
+}
+
+mapping UMLDI::UmlShape::allUmlShape2Canvas() : DG::Canvas
+	disjuncts UMLDI::UmlShape::classShape2Canvas
+{
+}
+
+mapping UMLDI::UmlEdge::allUmlEdge2Group() : DG::Group
+	disjuncts UMLDI::UmlEdge::generalizationEdge2Group
+{	
+}
+
+abstract mapping UMLDI::UmlShape::umlShape2Canvas() : DG::Canvas 
+	inherits UMLDI::UmlDiagramElement::diagramElement2GraphicalElement
+{
+	bounds := self.bounds.clone().oclAsType(DC::Bounds);
+}
+
+mapping UMLDI::UmlShape::classShape2Canvas() : DG::Canvas
+	inherits UMLDI::UmlShape::umlShape2Canvas
+	when { self.umlModelElement->at(1).oclIsKindOf(UML::Class) }
+{
+	layout := "stackLayout(parent)";	
+	member += object DG::Rectangle {};
+	member += object DG::Group {
+		layout := "flowLayout(parent, false, 0)";
+		member += self.ownedUmlDiagramElement[UMLDI::UmlLabel]->map umlLabel2Text();
+		member += self.ownedUmlDiagramElement[UMLDI::UmlCompartment]->map umlCompartment2Group();
+	}
+}
+
+abstract mapping UMLDI::UmlEdge::umlEdge2Group() : DG::Group 
+	inherits UMLDI::UmlDiagramElement::diagramElement2GraphicalElement
+{
+	member += object DG::Path {
+		command += object DG::MoveTo { point := self.waypoint->first().clone().oclAsType(DC::Point) };
+		self.waypoint->excluding(self.waypoint->first())->forEach(p) {
+			command +=  object DG::LineTo { point := p.clone().oclAsType(DC::Point) };
+		};
+	};
+}
+
+mapping UMLDI::UmlEdge::generalizationEdge2Group() : DG::Group
+	inherits UMLDI::UmlEdge::umlEdge2Group
+	when { self.umlModelElement->at(1).oclIsKindOf(UML::Generalization) }
+{
+	var path : DG::Path = member->any(oclIsKindOf(DG::Path)).oclAsType(DG::Path);
+	path.endMarker := closedArrow;		
+}
+
+mapping UMLDI::UmlLabel::umlLabel2Text() : DG::Text
+	inherits UMLDI::UmlDiagramElement::diagramElement2GraphicalElement
+{
+	init {
+		var umlElement = self.umlModelElement->at(1).oclAsType(UML::Element);
+		result := umlElement.map umlLabel2Text(self);
+	}
+	position := object Point { x := self.bounds.x; y := self.bounds.y; };
+}
+
+mapping UMLDI::UmlCompartment::umlCompartment2Group() : DG::Group
+	inherits UMLDI::UmlDiagramElement::diagramElement2GraphicalElement
+{
+	var umlElement = self.umlModelElement->at(1).oclAsType(UML::Element);
+	layout := "stackLayout(parent)";	
+	member += object DG::Rectangle {};
+	member += umlElement.map umlCompartment2Group(self);
+}
+
+helper UMLDI::UmlStyle::umlStyle2Style() : DG::Style {
+	return object DG::Style {
+		fontName := self.fontName;
+		fontSize := self.fontSize;
+	}
+}
+
+abstract mapping UML::Element::umlLabel2Text(label : UMLDI::UmlLabel) : DG::Text;
+
+mapping UML::NamedElement::umlLabel2Text(label : UMLDI::UmlLabel) : DG::Text 
+	inherits UML::Element::umlLabel2Text
+{
+	if 	(label.kind = UmlLabelKind::name) then {
+		data := self.name;
+		anchor := TextAnchor::middle; 
+	} endif;
+}
+
+abstract mapping UML::Element::umlCompartment2Group(compartment : UMLDI::UmlCompartment) : DG::Group;
+
+mapping UML::StructuredClassifier::umlCompartment2Group(compartment : UMLDI::UmlCompartment) : DG::Group
+	inherits UML::Element::umlCompartment2Group
+{
+	if 	(compartment.kind = UmlCompartmentKind::attributes) then {
+		layout := "flowLayout(parent, false, 0)";
+		member += compartment.ownedUmlDiagramElement[UMLDI::UmlLabel]->map umlLabel2Text(); 
+	} endif;
+}

@@ -11,10 +11,14 @@
  */
 package org.eclipse.papyrus.dd.editor;
 
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.editor.FormPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -72,7 +76,9 @@ public abstract class DDEditorPage extends FormPage {
 		form.setText(getTitle());
 		Composite body = form.getBody();
 		body.setLayout(new FillLayout());
-		viewer = createViewer(body);
+		this.viewer = createViewer(body);
+		setupActions(form.getToolBarManager());
+		form.updateToolBar();
 	}
 
 	/**
@@ -119,4 +125,34 @@ public abstract class DDEditorPage extends FormPage {
 		// no default implementation
 	}
 
+	/**
+	 * Adds actions to the page's toolbar
+	 * 
+	 * @param manager The page's toolbar manager
+	 */
+	public void setupActions(IToolBarManager manager) {
+		manager.add(new Separator("Page"));
+		manager.add(new Separator("Common"));
+
+		Action action;
+		
+		action = new Action("Help") {
+			public void run() {
+				PlatformUI.getWorkbench().getHelpSystem().displayHelp(getPageHelpId());
+			}
+		};
+		action.setToolTipText("Show help");
+		action.setImageDescriptor(DDEditorPlugin.getImageDescriptor(DDEditorPlugin.IMAGE_HELP));
+		manager.appendToGroup("Common", action);
+	}
+	
+	/**
+	 * Get the help id associated with this page
+	 * 
+	 * @return String the id of the help page
+	 */
+	protected String getPageHelpId() {
+		return "";
+	}
+	
 }

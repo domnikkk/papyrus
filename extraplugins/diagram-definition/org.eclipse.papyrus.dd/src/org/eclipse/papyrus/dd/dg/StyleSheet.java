@@ -18,14 +18,14 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Style Sheet</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleSheet#getRules <em>Rule</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.StyleSheet#getRules <em>Rule</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleSheet()
  * @model
  * @generated

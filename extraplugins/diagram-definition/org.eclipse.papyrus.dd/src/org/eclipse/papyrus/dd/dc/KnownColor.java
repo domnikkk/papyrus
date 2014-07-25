@@ -29,9 +29,9 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum KnownColor implements Enumerator {
 	/**
-	 * The '<em><b>Maroon</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Maroon</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #MAROON_VALUE
 	 * @generated
 	 * @ordered
@@ -39,9 +39,9 @@ public enum KnownColor implements Enumerator {
 	MAROON(0, "maroon", "#800000"),
 
 	/**
-	 * The '<em><b>Red</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Red</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #RED_VALUE
 	 * @generated
 	 * @ordered
@@ -49,9 +49,9 @@ public enum KnownColor implements Enumerator {
 	RED(1, "red", "#FF0000"),
 
 	/**
-	 * The '<em><b>Orange</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Orange</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #ORANGE_VALUE
 	 * @generated
 	 * @ordered
@@ -59,9 +59,9 @@ public enum KnownColor implements Enumerator {
 	ORANGE(2, "orange", "#FFA500"),
 
 	/**
-	 * The '<em><b>Yellow</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Yellow</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #YELLOW_VALUE
 	 * @generated
 	 * @ordered
@@ -69,9 +69,9 @@ public enum KnownColor implements Enumerator {
 	YELLOW(3, "yellow", "#FFFF00"),
 
 	/**
-	 * The '<em><b>Olive</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Olive</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #OLIVE_VALUE
 	 * @generated
 	 * @ordered
@@ -79,9 +79,9 @@ public enum KnownColor implements Enumerator {
 	OLIVE(4, "olive", "#808000"),
 
 	/**
-	 * The '<em><b>Purple</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Purple</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #PURPLE_VALUE
 	 * @generated
 	 * @ordered
@@ -89,9 +89,9 @@ public enum KnownColor implements Enumerator {
 	PURPLE(5, "purple", "#800080"),
 
 	/**
-	 * The '<em><b>Fuchsia</b></em>' literal object. <!-- begin-user-doc -->
+	 * The '<em><b>Fuchsia</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #FUCHSIA_VALUE
 	 * @generated
 	 * @ordered
@@ -99,9 +99,9 @@ public enum KnownColor implements Enumerator {
 	FUCHSIA(6, "fuchsia", "#FF00FF"),
 
 	/**
-	 * The '<em><b>White</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>White</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #WHITE_VALUE
 	 * @generated
 	 * @ordered
@@ -109,9 +109,9 @@ public enum KnownColor implements Enumerator {
 	WHITE(7, "white", "#FFFFFF"),
 
 	/**
-	 * The '<em><b>Lime</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Lime</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #LIME_VALUE
 	 * @generated
 	 * @ordered
@@ -119,9 +119,9 @@ public enum KnownColor implements Enumerator {
 	LIME(8, "lime", "#00FF00"),
 
 	/**
-	 * The '<em><b>Green</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Green</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #GREEN_VALUE
 	 * @generated
 	 * @ordered
@@ -129,9 +129,9 @@ public enum KnownColor implements Enumerator {
 	GREEN(9, "green", "#008000"),
 
 	/**
-	 * The '<em><b>Navy</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Navy</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #NAVY_VALUE
 	 * @generated
 	 * @ordered
@@ -139,9 +139,9 @@ public enum KnownColor implements Enumerator {
 	NAVY(10, "navy", "#000080"),
 
 	/**
-	 * The '<em><b>Blue</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Blue</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #BLUE_VALUE
 	 * @generated
 	 * @ordered
@@ -149,9 +149,9 @@ public enum KnownColor implements Enumerator {
 	BLUE(11, "blue", "#0000FF"),
 
 	/**
-	 * The '<em><b>Aqua</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Aqua</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #AQUA_VALUE
 	 * @generated
 	 * @ordered
@@ -159,9 +159,9 @@ public enum KnownColor implements Enumerator {
 	AQUA(12, "aqua", "#00FFFF"),
 
 	/**
-	 * The '<em><b>Teal</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Teal</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #TEAL_VALUE
 	 * @generated
 	 * @ordered
@@ -169,9 +169,9 @@ public enum KnownColor implements Enumerator {
 	TEAL(13, "teal", "#008080"),
 
 	/**
-	 * The '<em><b>Black</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Black</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #BLACK_VALUE
 	 * @generated
 	 * @ordered
@@ -179,9 +179,9 @@ public enum KnownColor implements Enumerator {
 	BLACK(14, "black", "#000000"),
 
 	/**
-	 * The '<em><b>Silver</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Silver</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #SILVER_VALUE
 	 * @generated
 	 * @ordered
@@ -189,9 +189,9 @@ public enum KnownColor implements Enumerator {
 	SILVER(15, "silver", "#C0C0C0"),
 
 	/**
-	 * The '<em><b>Gray</b></em>' literal object. <!-- begin-user-doc --> <!--
+	 * The '<em><b>Gray</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #GRAY_VALUE
 	 * @generated
 	 * @ordered
@@ -408,23 +408,36 @@ public enum KnownColor implements Enumerator {
 	 * 
 	 * @generated
 	 */
-	private static final KnownColor[] VALUES_ARRAY = new KnownColor[] { MAROON,
-			RED, ORANGE, YELLOW, OLIVE, PURPLE, FUCHSIA, WHITE, LIME, GREEN,
-			NAVY, BLUE, AQUA, TEAL, BLACK, SILVER, GRAY, };
+	private static final KnownColor[] VALUES_ARRAY = new KnownColor[] {
+			MAROON,
+			RED,
+			ORANGE,
+			YELLOW,
+			OLIVE,
+			PURPLE,
+			FUCHSIA,
+			WHITE,
+			LIME,
+			GREEN,
+			NAVY,
+			BLUE,
+			AQUA,
+			TEAL,
+			BLACK,
+			SILVER,
+			GRAY,
+		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Known Color</b></em>'
-	 * enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * A public read-only list of all the '<em><b>Known Color</b></em>' enumerators.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<KnownColor> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<KnownColor> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Known Color</b></em>' literal with the specified
-	 * literal value. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the '<em><b>Known Color</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static KnownColor get(String literal) {
@@ -438,9 +451,8 @@ public enum KnownColor implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Known Color</b></em>' literal with the specified
-	 * name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the '<em><b>Known Color</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static KnownColor getByName(String name) {
@@ -454,76 +466,55 @@ public enum KnownColor implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Known Color</b></em>' literal with the specified
-	 * integer value. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the '<em><b>Known Color</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static KnownColor get(int value) {
 		switch (value) {
-		case MAROON_VALUE:
-			return MAROON;
-		case RED_VALUE:
-			return RED;
-		case ORANGE_VALUE:
-			return ORANGE;
-		case YELLOW_VALUE:
-			return YELLOW;
-		case OLIVE_VALUE:
-			return OLIVE;
-		case PURPLE_VALUE:
-			return PURPLE;
-		case FUCHSIA_VALUE:
-			return FUCHSIA;
-		case WHITE_VALUE:
-			return WHITE;
-		case LIME_VALUE:
-			return LIME;
-		case GREEN_VALUE:
-			return GREEN;
-		case NAVY_VALUE:
-			return NAVY;
-		case BLUE_VALUE:
-			return BLUE;
-		case AQUA_VALUE:
-			return AQUA;
-		case TEAL_VALUE:
-			return TEAL;
-		case BLACK_VALUE:
-			return BLACK;
-		case SILVER_VALUE:
-			return SILVER;
-		case GRAY_VALUE:
-			return GRAY;
+			case MAROON_VALUE: return MAROON;
+			case RED_VALUE: return RED;
+			case ORANGE_VALUE: return ORANGE;
+			case YELLOW_VALUE: return YELLOW;
+			case OLIVE_VALUE: return OLIVE;
+			case PURPLE_VALUE: return PURPLE;
+			case FUCHSIA_VALUE: return FUCHSIA;
+			case WHITE_VALUE: return WHITE;
+			case LIME_VALUE: return LIME;
+			case GREEN_VALUE: return GREEN;
+			case NAVY_VALUE: return NAVY;
+			case BLUE_VALUE: return BLUE;
+			case AQUA_VALUE: return AQUA;
+			case TEAL_VALUE: return TEAL;
+			case BLACK_VALUE: return BLACK;
+			case SILVER_VALUE: return SILVER;
+			case GRAY_VALUE: return GRAY;
 		}
 		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private final String literal;
 
 	/**
-	 * Only this class can construct instances. <!-- begin-user-doc --> <!--
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private KnownColor(int value, String name, String literal) {
@@ -534,35 +525,31 @@ public enum KnownColor implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**
-	 * Returns the literal value of the enumerator, which is its string
-	 * representation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

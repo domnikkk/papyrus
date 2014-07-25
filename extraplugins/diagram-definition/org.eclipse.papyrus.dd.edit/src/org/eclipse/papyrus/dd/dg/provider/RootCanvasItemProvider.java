@@ -68,6 +68,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 
 			addBackgroundColorPropertyDescriptor(object);
 			addExternalStyleSheetPropertyDescriptor(object);
+			addScriptPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Script feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScriptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RootCanvas_script_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RootCanvas_script_feature", "_UI_RootCanvas_type"),
+				 DGPackage.Literals.ROOT_CANVAS__SCRIPT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -182,6 +205,7 @@ public class RootCanvasItemProvider extends CanvasItemProvider implements
 
 		switch (notification.getFeatureID(RootCanvas.class)) {
 			case DGPackage.ROOT_CANVAS__BACKGROUND_COLOR:
+			case DGPackage.ROOT_CANVAS__SCRIPT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DGPackage.ROOT_CANVAS__DEFINITIONS:

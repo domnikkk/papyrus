@@ -43,39 +43,37 @@ import org.eclipse.emf.ecore.EReference;
  */
 public interface DGPackage extends EPackage {
 	/**
-	 * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package name.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNAME = "dg";
 
 	/**
-	 * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package namespace URI.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_URI = "http://www.omg.org/spec/DD/20110901/DG";
 
 	/**
-	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package namespace name.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_PREFIX = "dg";
 
 	/**
-	 * The singleton instance of the package. <!-- begin-user-doc --> <!--
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	DGPackage eINSTANCE = org.eclipse.papyrus.dd.dg.impl.DGPackageImpl.init();
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.DefinitionImpl <em>Definition</em>}
-	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.DefinitionImpl <em>Definition</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.DefinitionImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getDefinition()
 	 * @generated
@@ -94,7 +92,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Definition</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -119,11 +116,9 @@ public interface DGPackage extends EPackage {
 	int DEFINITION_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl
-	 * <em>Graphical Element</em>}' class. <!-- begin-user-doc --> <!--
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl <em>Graphical Element</em>}' class.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getGraphicalElement()
 	 * @generated
@@ -169,29 +164,35 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int GRAPHICAL_ELEMENT__STYLE = DEFINITION_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int GRAPHICAL_ELEMENT__TRANSFORM = DEFINITION_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Graphical Element</em>'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHICAL_ELEMENT_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 5;
+	int GRAPHICAL_ELEMENT__LAYOUT_DATA = DEFINITION_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Graphical Element</em>' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHICAL_ELEMENT_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
@@ -205,7 +206,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -221,10 +221,8 @@ public interface DGPackage extends EPackage {
 	int GRAPHICAL_ELEMENT_OPERATION_COUNT = DEFINITION_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.GroupImpl <em>Group</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.GroupImpl <em>Group</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.GroupImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getGroup()
 	 * @generated
@@ -270,29 +268,44 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int GROUP__STYLE = GRAPHICAL_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int GROUP__TRANSFORM = GRAPHICAL_ELEMENT__TRANSFORM;
 
 	/**
-	 * The feature id for the '<em><b>Member</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__LAYOUT_DATA = GRAPHICAL_ELEMENT__LAYOUT_DATA;
+
+	/**
+	 * The feature id for the '<em><b>Member</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int GROUP__MEMBER = GRAPHICAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Layout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__LAYOUT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Group</em>' class. <!--
@@ -301,7 +314,7 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 1;
+	int GROUP_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
@@ -315,7 +328,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -331,10 +343,8 @@ public interface DGPackage extends EPackage {
 	int GROUP_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.CanvasImpl <em>Canvas</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.CanvasImpl <em>Canvas</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.CanvasImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getCanvas()
 	 * @generated
@@ -380,34 +390,48 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CANVAS__STYLE = GROUP__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CANVAS__TRANSFORM = GROUP__TRANSFORM;
 
 	/**
-	 * The feature id for the '<em><b>Member</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CANVAS__LAYOUT_DATA = GROUP__LAYOUT_DATA;
+
+	/**
+	 * The feature id for the '<em><b>Member</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CANVAS__MEMBER = GROUP__MEMBER;
 
 	/**
+	 * The feature id for the '<em><b>Layout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CANVAS__LAYOUT = GROUP__LAYOUT;
+
+	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -434,16 +458,14 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CANVAS___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GROUP___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Canvas Cannot Have Transforms</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Canvas Cannot Have Transforms</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -482,7 +504,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Path Command</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -498,10 +519,8 @@ public interface DGPackage extends EPackage {
 	int PATH_COMMAND_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.MoveToImpl <em>Move To</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.MoveToImpl <em>Move To</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.MoveToImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getMoveTo()
 	 * @generated
@@ -520,7 +539,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Point</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -545,10 +563,8 @@ public interface DGPackage extends EPackage {
 	int MOVE_TO_OPERATION_COUNT = PATH_COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.ClipPathImpl <em>Clip Path</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.ClipPathImpl <em>Clip Path</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.ClipPathImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getClipPath()
 	 * @generated
@@ -594,29 +610,44 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CLIP_PATH__STYLE = GROUP__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CLIP_PATH__TRANSFORM = GROUP__TRANSFORM;
 
 	/**
-	 * The feature id for the '<em><b>Member</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLIP_PATH__LAYOUT_DATA = GROUP__LAYOUT_DATA;
+
+	/**
+	 * The feature id for the '<em><b>Member</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CLIP_PATH__MEMBER = GROUP__MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Layout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLIP_PATH__LAYOUT = GROUP__LAYOUT;
 
 	/**
 	 * The number of structural features of the '<em>Clip Path</em>' class. <!--
@@ -639,7 +670,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -655,10 +685,8 @@ public interface DGPackage extends EPackage {
 	int CLIP_PATH_OPERATION_COUNT = GROUP_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.StyleImpl <em>Style</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.StyleImpl <em>Style</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.StyleImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getStyle()
 	 * @generated
@@ -686,7 +714,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -711,9 +738,8 @@ public interface DGPackage extends EPackage {
 	int STYLE__STROKE_OPACITY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Stroke Dash Length</b></em>' attribute
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Stroke Dash Length</b></em>' attribute list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -803,7 +829,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Valid Dash Length Size</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -828,10 +853,8 @@ public interface DGPackage extends EPackage {
 	int STYLE_OPERATION_COUNT = 5;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.PaintImpl <em>Paint</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.PaintImpl <em>Paint</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.PaintImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPaint()
 	 * @generated
@@ -866,9 +889,8 @@ public interface DGPackage extends EPackage {
 	int PAINT_FEATURE_COUNT = 2;
 
 	/**
-	 * The operation id for the '<em>Referenced Paint Server Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Paint Server Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -905,9 +927,8 @@ public interface DGPackage extends EPackage {
 	int PAINT_SERVER__ID = DEFINITION__ID;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -916,7 +937,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Paint Server</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -941,10 +961,8 @@ public interface DGPackage extends EPackage {
 	int PAINT_SERVER_OPERATION_COUNT = DEFINITION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.TransformImpl <em>Transform</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.TransformImpl <em>Transform</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.TransformImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getTransform()
 	 * @generated
@@ -970,10 +988,8 @@ public interface DGPackage extends EPackage {
 	int TRANSFORM_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.CircleImpl <em>Circle</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.CircleImpl <em>Circle</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.CircleImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getCircle()
 	 * @generated
@@ -1019,25 +1035,31 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int CIRCLE__STYLE = GRAPHICAL_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CIRCLE__TRANSFORM = GRAPHICAL_ELEMENT__TRANSFORM;
 
 	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CIRCLE__LAYOUT_DATA = GRAPHICAL_ELEMENT__LAYOUT_DATA;
+
+	/**
 	 * The feature id for the '<em><b>Center</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1073,7 +1095,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1098,10 +1119,8 @@ public interface DGPackage extends EPackage {
 	int CIRCLE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.ClosePathImpl <em>Close Path</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.ClosePathImpl <em>Close Path</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.ClosePathImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getClosePath()
 	 * @generated
@@ -1120,7 +1139,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Close Path</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1136,11 +1154,9 @@ public interface DGPackage extends EPackage {
 	int CLOSE_PATH_OPERATION_COUNT = PATH_COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl
-	 * <em>Cubic Curve To</em>}' class. <!-- begin-user-doc --> <!--
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl <em>Cubic Curve To</em>}' class.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getCubicCurveTo()
 	 * @generated
@@ -1157,18 +1173,16 @@ public interface DGPackage extends EPackage {
 	int CUBIC_CURVE_TO__IS_RELATIVE = PATH_COMMAND__IS_RELATIVE;
 
 	/**
-	 * The feature id for the '<em><b>Start Control</b></em>' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Start Control</b></em>' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CUBIC_CURVE_TO__START_CONTROL = PATH_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>End Control</b></em>' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>End Control</b></em>' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1177,7 +1191,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Point</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1186,7 +1199,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Cubic Curve To</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1214,18 +1226,16 @@ public interface DGPackage extends EPackage {
 	int DEFINITIONS = 14;
 
 	/**
-	 * The feature id for the '<em><b>Defnition</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Defnition</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DEFINITIONS__DEFNITION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Style Sheet</b></em>' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Style Sheet</b></em>' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1234,7 +1244,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Definitions</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1264,7 +1273,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Rule</b></em>' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1273,7 +1281,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Style Sheet</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1289,10 +1296,8 @@ public interface DGPackage extends EPackage {
 	int STYLE_SHEET_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl <em>Style Rule</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl <em>Style Rule</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getStyleRule()
 	 * @generated
@@ -1300,9 +1305,8 @@ public interface DGPackage extends EPackage {
 	int STYLE_RULE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Selector</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Selector</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1311,7 +1315,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1320,7 +1323,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Style Rule</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1336,11 +1338,9 @@ public interface DGPackage extends EPackage {
 	int STYLE_RULE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.StyleSelectorImpl
-	 * <em>Style Selector</em>}' class. <!-- begin-user-doc --> <!--
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.StyleSelectorImpl <em>Style Selector</em>}' class.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.StyleSelectorImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getStyleSelector()
 	 * @generated
@@ -1368,7 +1368,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Style Selector</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1384,10 +1383,8 @@ public interface DGPackage extends EPackage {
 	int STYLE_SELECTOR_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl <em>Ellipse</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl <em>Ellipse</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.EllipseImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getEllipse()
 	 * @generated
@@ -1433,25 +1430,31 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ELLIPSE__STYLE = GRAPHICAL_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ELLIPSE__TRANSFORM = GRAPHICAL_ELEMENT__TRANSFORM;
 
 	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELLIPSE__LAYOUT_DATA = GRAPHICAL_ELEMENT__LAYOUT_DATA;
+
+	/**
 	 * The feature id for the '<em><b>Center</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1460,7 +1463,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Radii</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1487,7 +1489,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1503,11 +1504,9 @@ public interface DGPackage extends EPackage {
 	int ELLIPSE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl
-	 * <em>Elliptical Arc To</em>}' class. <!-- begin-user-doc --> <!--
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl <em>Elliptical Arc To</em>}' class.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getEllipticalArcTo()
 	 * @generated
@@ -1526,7 +1525,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Radii</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1562,16 +1560,14 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Point</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ELLIPTICAL_ARC_TO__POINT = PATH_COMMAND_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Elliptical Arc To</em>'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Elliptical Arc To</em>' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1587,11 +1583,9 @@ public interface DGPackage extends EPackage {
 	int ELLIPTICAL_ARC_TO_OPERATION_COUNT = PATH_COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl
-	 * <em>Quadratic Curve To</em>}' class. <!-- begin-user-doc --> <!--
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl <em>Quadratic Curve To</em>}' class.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getQuadraticCurveTo()
 	 * @generated
@@ -1610,7 +1604,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Control</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1619,16 +1612,14 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Point</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int QUADRATIC_CURVE_TO__POINT = PATH_COMMAND_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Quadratic Curve To</em>'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Quadratic Curve To</em>' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1644,10 +1635,8 @@ public interface DGPackage extends EPackage {
 	int QUADRATIC_CURVE_TO_OPERATION_COUNT = PATH_COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.GradientImpl <em>Gradient</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.GradientImpl <em>Gradient</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.GradientImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getGradient()
 	 * @generated
@@ -1664,9 +1653,8 @@ public interface DGPackage extends EPackage {
 	int GRADIENT__ID = PAINT_SERVER__ID;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1675,7 +1663,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Stop</b></em>' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1750,7 +1737,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Gradient Stop</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1784,10 +1770,8 @@ public interface DGPackage extends EPackage {
 	int GRADIENT_STOP_OPERATION_COUNT = 2;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.ImageImpl <em>Image</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.ImageImpl <em>Image</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.ImageImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getImage()
 	 * @generated
@@ -1833,20 +1817,27 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int IMAGE__STYLE = GRAPHICAL_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int IMAGE__TRANSFORM = GRAPHICAL_ELEMENT__TRANSFORM;
+
+	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__LAYOUT_DATA = GRAPHICAL_ELEMENT__LAYOUT_DATA;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' attribute. <!--
@@ -1860,16 +1851,14 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int IMAGE__BOUNDS = GRAPHICAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Is Aspect Ratio Preserved</b></em>'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Is Aspect Ratio Preserved</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -1896,7 +1885,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1905,7 +1893,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Source Cannot Be Empty</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1921,11 +1908,9 @@ public interface DGPackage extends EPackage {
 	int IMAGE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.MarkedElementImpl
-	 * <em>Marked Element</em>}' class. <!-- begin-user-doc --> <!--
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.MarkedElementImpl <em>Marked Element</em>}' class.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.MarkedElementImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getMarkedElement()
 	 * @generated
@@ -1971,20 +1956,27 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MARKED_ELEMENT__STYLE = GRAPHICAL_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int MARKED_ELEMENT__TRANSFORM = GRAPHICAL_ELEMENT__TRANSFORM;
+
+	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKED_ELEMENT__LAYOUT_DATA = GRAPHICAL_ELEMENT__LAYOUT_DATA;
 
 	/**
 	 * The feature id for the '<em><b>End Marker</b></em>' reference. <!--
@@ -2016,7 +2008,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Marked Element</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2034,34 +2025,30 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2077,10 +2064,8 @@ public interface DGPackage extends EPackage {
 	int MARKED_ELEMENT_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.LineImpl <em>Line</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.LineImpl <em>Line</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.LineImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getLine()
 	 * @generated
@@ -2126,20 +2111,27 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int LINE__STYLE = MARKED_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int LINE__TRANSFORM = MARKED_ELEMENT__TRANSFORM;
+
+	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINE__LAYOUT_DATA = MARKED_ELEMENT__LAYOUT_DATA;
 
 	/**
 	 * The feature id for the '<em><b>End Marker</b></em>' reference. <!--
@@ -2171,7 +2163,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2207,34 +2198,30 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int LINE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int LINE___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int LINE___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2250,10 +2237,8 @@ public interface DGPackage extends EPackage {
 	int LINE_OPERATION_COUNT = MARKED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.MarkerImpl <em>Marker</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.MarkerImpl <em>Marker</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.MarkerImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getMarker()
 	 * @generated
@@ -2299,29 +2284,44 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MARKER__STYLE = GROUP__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int MARKER__TRANSFORM = GROUP__TRANSFORM;
 
 	/**
-	 * The feature id for the '<em><b>Member</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKER__LAYOUT_DATA = GROUP__LAYOUT_DATA;
+
+	/**
+	 * The feature id for the '<em><b>Member</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int MARKER__MEMBER = GROUP__MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Layout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKER__LAYOUT = GROUP__LAYOUT;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' containment reference. <!--
@@ -2335,7 +2335,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2362,7 +2361,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2378,11 +2376,9 @@ public interface DGPackage extends EPackage {
 	int MARKER_OPERATION_COUNT = GROUP_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl
-	 * <em>Linear Gradient</em>}' class. <!-- begin-user-doc --> <!--
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl <em>Linear Gradient</em>}' class.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getLinearGradient()
 	 * @generated
@@ -2399,9 +2395,8 @@ public interface DGPackage extends EPackage {
 	int LINEAR_GRADIENT__ID = GRADIENT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2410,7 +2405,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Stop</b></em>' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2419,7 +2413,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2435,9 +2428,8 @@ public interface DGPackage extends EPackage {
 	int LINEAR_GRADIENT__END = GRADIENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Linear Gradient</em>'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Linear Gradient</em>' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2471,10 +2463,8 @@ public interface DGPackage extends EPackage {
 	int LINEAR_GRADIENT_OPERATION_COUNT = GRADIENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.LineToImpl <em>Line To</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.LineToImpl <em>Line To</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.LineToImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getLineTo()
 	 * @generated
@@ -2493,7 +2483,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Point</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2518,10 +2507,8 @@ public interface DGPackage extends EPackage {
 	int LINE_TO_OPERATION_COUNT = PATH_COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl <em>Matrix</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl <em>Matrix</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.MatrixImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getMatrix()
 	 * @generated
@@ -2529,54 +2516,54 @@ public interface DGPackage extends EPackage {
 	int MATRIX = 29;
 
 	/**
-	 * The feature id for the '<em><b>A</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>A</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MATRIX__A = TRANSFORM_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>B</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>B</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MATRIX__B = TRANSFORM_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>C</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>C</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MATRIX__C = TRANSFORM_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>D</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>D</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MATRIX__D = TRANSFORM_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>E</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>E</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MATRIX__E = TRANSFORM_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>F</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>F</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2601,10 +2588,8 @@ public interface DGPackage extends EPackage {
 	int MATRIX_OPERATION_COUNT = TRANSFORM_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.PathImpl <em>Path</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.PathImpl <em>Path</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.PathImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPath()
 	 * @generated
@@ -2650,20 +2635,27 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int PATH__STYLE = MARKED_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int PATH__TRANSFORM = MARKED_ELEMENT__TRANSFORM;
+
+	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH__LAYOUT_DATA = MARKED_ELEMENT__LAYOUT_DATA;
 
 	/**
 	 * The feature id for the '<em><b>End Marker</b></em>' reference. <!--
@@ -2693,9 +2685,8 @@ public interface DGPackage extends EPackage {
 	int PATH__START_MARKER = MARKED_ELEMENT__START_MARKER;
 
 	/**
-	 * The feature id for the '<em><b>Command</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2722,34 +2713,30 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int PATH___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int PATH___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int PATH___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2758,7 +2745,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>First Command Must Be Move</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2774,10 +2760,8 @@ public interface DGPackage extends EPackage {
 	int PATH_OPERATION_COUNT = MARKED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.PatternImpl <em>Pattern</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.PatternImpl <em>Pattern</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.PatternImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPattern()
 	 * @generated
@@ -2794,9 +2778,8 @@ public interface DGPackage extends EPackage {
 	int PATTERN__ID = PAINT_SERVER__ID;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2805,7 +2788,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2848,10 +2830,8 @@ public interface DGPackage extends EPackage {
 	int PATTERN_OPERATION_COUNT = PAINT_SERVER_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.PolygonImpl <em>Polygon</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.PolygonImpl <em>Polygon</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.PolygonImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPolygon()
 	 * @generated
@@ -2897,20 +2877,27 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int POLYGON__STYLE = MARKED_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int POLYGON__TRANSFORM = MARKED_ELEMENT__TRANSFORM;
+
+	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYGON__LAYOUT_DATA = MARKED_ELEMENT__LAYOUT_DATA;
 
 	/**
 	 * The feature id for the '<em><b>End Marker</b></em>' reference. <!--
@@ -2940,9 +2927,8 @@ public interface DGPackage extends EPackage {
 	int POLYGON__START_MARKER = MARKED_ELEMENT__START_MARKER;
 
 	/**
-	 * The feature id for the '<em><b>Point</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Point</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -2969,34 +2955,30 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int POLYGON___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int POLYGON___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int POLYGON___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -3012,10 +2994,8 @@ public interface DGPackage extends EPackage {
 	int POLYGON_OPERATION_COUNT = MARKED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.PolylineImpl <em>Polyline</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.PolylineImpl <em>Polyline</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.PolylineImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPolyline()
 	 * @generated
@@ -3061,20 +3041,27 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int POLYLINE__STYLE = MARKED_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int POLYLINE__TRANSFORM = MARKED_ELEMENT__TRANSFORM;
+
+	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYLINE__LAYOUT_DATA = MARKED_ELEMENT__LAYOUT_DATA;
 
 	/**
 	 * The feature id for the '<em><b>End Marker</b></em>' reference. <!--
@@ -3104,9 +3091,8 @@ public interface DGPackage extends EPackage {
 	int POLYLINE__START_MARKER = MARKED_ELEMENT__START_MARKER;
 
 	/**
-	 * The feature id for the '<em><b>Point</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Point</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -3133,34 +3119,30 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int POLYLINE___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Start Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Start Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int POLYLINE___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced Mid Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int POLYLINE___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Referenced End Marker Has Id</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Referenced End Marker Has Id</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -3176,11 +3158,9 @@ public interface DGPackage extends EPackage {
 	int POLYLINE_OPERATION_COUNT = MARKED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.RadialGradientImpl
-	 * <em>Radial Gradient</em>}' class. <!-- begin-user-doc --> <!--
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.RadialGradientImpl <em>Radial Gradient</em>}' class.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.RadialGradientImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getRadialGradient()
 	 * @generated
@@ -3197,9 +3177,8 @@ public interface DGPackage extends EPackage {
 	int RADIAL_GRADIENT__ID = GRADIENT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -3208,7 +3187,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Stop</b></em>' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3217,7 +3195,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Center</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3226,7 +3203,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Focus</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3242,9 +3218,8 @@ public interface DGPackage extends EPackage {
 	int RADIAL_GRADIENT__RADIUS = GRADIENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Radial Gradient</em>'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The number of structural features of the '<em>Radial Gradient</em>' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -3296,10 +3271,8 @@ public interface DGPackage extends EPackage {
 	int RADIAL_GRADIENT_OPERATION_COUNT = GRADIENT_OPERATION_COUNT + 3;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.RectangleImpl <em>Rectangle</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.RectangleImpl <em>Rectangle</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.RectangleImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getRectangle()
 	 * @generated
@@ -3345,25 +3318,31 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int RECTANGLE__STYLE = GRAPHICAL_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int RECTANGLE__TRANSFORM = GRAPHICAL_ELEMENT__TRANSFORM;
 
 	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECTANGLE__LAYOUT_DATA = GRAPHICAL_ELEMENT__LAYOUT_DATA;
+
+	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3399,7 +3378,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3408,7 +3386,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Non Negative Corner Radius</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3474,34 +3451,48 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ROOT_CANVAS__STYLE = CANVAS__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ROOT_CANVAS__TRANSFORM = CANVAS__TRANSFORM;
 
 	/**
-	 * The feature id for the '<em><b>Member</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_CANVAS__LAYOUT_DATA = CANVAS__LAYOUT_DATA;
+
+	/**
+	 * The feature id for the '<em><b>Member</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ROOT_CANVAS__MEMBER = CANVAS__MEMBER;
 
 	/**
+	 * The feature id for the '<em><b>Layout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_CANVAS__LAYOUT = CANVAS__LAYOUT;
+
+	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3517,31 +3508,37 @@ public interface DGPackage extends EPackage {
 	int ROOT_CANVAS__BACKGROUND_COLOR = CANVAS_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Definitions</b></em>' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Definitions</b></em>' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ROOT_CANVAS__DEFINITIONS = CANVAS_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>External Style Sheet</b></em>' reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>External Style Sheet</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ROOT_CANVAS__EXTERNAL_STYLE_SHEET = CANVAS_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Root Canvas</em>' class.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Script</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_CANVAS_FEATURE_COUNT = CANVAS_FEATURE_COUNT + 3;
+	int ROOT_CANVAS__SCRIPT = CANVAS_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Root Canvas</em>' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_CANVAS_FEATURE_COUNT = CANVAS_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
@@ -3555,16 +3552,14 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int ROOT_CANVAS___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = CANVAS___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Canvas Cannot Have Transforms</em>'
-	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The operation id for the '<em>Canvas Cannot Have Transforms</em>' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -3580,10 +3575,8 @@ public interface DGPackage extends EPackage {
 	int ROOT_CANVAS_OPERATION_COUNT = CANVAS_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.RotateImpl <em>Rotate</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.RotateImpl <em>Rotate</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.RotateImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getRotate()
 	 * @generated
@@ -3602,7 +3595,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Center</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3627,10 +3619,8 @@ public interface DGPackage extends EPackage {
 	int ROTATE_OPERATION_COUNT = TRANSFORM_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.ScaleImpl <em>Scale</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.ScaleImpl <em>Scale</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.ScaleImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getScale()
 	 * @generated
@@ -3683,10 +3673,8 @@ public interface DGPackage extends EPackage {
 	int SCALE_OPERATION_COUNT = TRANSFORM_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.SkewImpl <em>Skew</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.SkewImpl <em>Skew</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.SkewImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getSkew()
 	 * @generated
@@ -3730,10 +3718,8 @@ public interface DGPackage extends EPackage {
 	int SKEW_OPERATION_COUNT = TRANSFORM_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.TextImpl <em>Text</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.TextImpl <em>Text</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dg.impl.TextImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getText()
 	 * @generated
@@ -3779,20 +3765,27 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int TEXT__STYLE = GRAPHICAL_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int TEXT__TRANSFORM = GRAPHICAL_ELEMENT__TRANSFORM;
+
+	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__LAYOUT_DATA = GRAPHICAL_ELEMENT__LAYOUT_DATA;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' attribute. <!--
@@ -3806,11 +3799,19 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Position</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int TEXT__POSITION = GRAPHICAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Anchor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__ANCHOR = GRAPHICAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Text</em>' class. <!--
@@ -3819,7 +3820,7 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 2;
+	int TEXT_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Id Cannot Be Empty</em>' operation. <!--
@@ -3833,7 +3834,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3858,10 +3858,8 @@ public interface DGPackage extends EPackage {
 	int TEXT_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.impl.TranslateImpl <em>Translate</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.impl.TranslateImpl <em>Translate</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.impl.TranslateImpl
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getTranslate()
 	 * @generated
@@ -3954,25 +3952,31 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int USE__STYLE = GRAPHICAL_ELEMENT__STYLE;
 
 	/**
-	 * The feature id for the '<em><b>Transform</b></em>' containment reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Transform</b></em>' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int USE__TRANSFORM = GRAPHICAL_ELEMENT__TRANSFORM;
 
 	/**
+	 * The feature id for the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USE__LAYOUT_DATA = GRAPHICAL_ELEMENT__LAYOUT_DATA;
+
+	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -3981,7 +3985,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Referenced Element</b></em>' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -4008,7 +4011,6 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Clippath Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -4017,26 +4019,23 @@ public interface DGPackage extends EPackage {
 	/**
 	 * The operation id for the '<em>Referenced Element Has Id</em>' operation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP = GRAPHICAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Use</em>' class. <!-- begin-user-doc
+	 * The number of operations of the '<em>Use</em>' class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int USE_OPERATION_COUNT = GRAPHICAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dg.FontDecoration <em>Font Decoration</em>}
-	 * ' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.FontDecoration <em>Font Decoration</em>}' enum.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dg.FontDecoration
 	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getFontDecoration()
 	 * @generated
@@ -4053,6 +4052,16 @@ public interface DGPackage extends EPackage {
 	 * @generated
 	 */
 	int ELEMENT_KIND = 44;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dg.TextAnchor <em>Text Anchor</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.dd.dg.TextAnchor
+	 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getTextAnchor()
+	 * @generated
+	 */
+	int TEXT_ANCHOR = 45;
 
 	/**
 	 * Returns the meta object for class '
@@ -4078,15 +4087,11 @@ public interface DGPackage extends EPackage {
 	EReference getCanvas_Bounds();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Canvas#canvasCannotHaveTransforms(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Canvas Cannot Have Transforms</em>}' operation. <!-- begin-user-doc
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Canvas#canvasCannotHaveTransforms(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Canvas Cannot Have Transforms</em>}' operation.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Canvas Cannot Have Transforms</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Canvas#canvasCannotHaveTransforms(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Canvas Cannot Have Transforms</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Canvas#canvasCannotHaveTransforms(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getCanvas__CanvasCannotHaveTransforms__DiagnosticChain_Map();
@@ -4116,6 +4121,17 @@ public interface DGPackage extends EPackage {
 	EReference getGroup_Member();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Group#getLayout <em>Layout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Layout</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.Group#getLayout()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EAttribute getGroup_Layout();
+
+	/**
 	 * Returns the meta object for class '
 	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement
 	 * <em>Graphical Element</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
@@ -4128,10 +4144,8 @@ public interface DGPackage extends EPackage {
 	EClass getGraphicalElement();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath
-	 * <em>Clip Path</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath <em>Clip Path</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Clip Path</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath()
 	 * @see #getGraphicalElement()
@@ -4140,10 +4154,8 @@ public interface DGPackage extends EPackage {
 	EReference getGraphicalElement_ClipPath();
 
 	/**
-	 * Returns the meta object for the container reference '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup
-	 * <em>Group</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup()
 	 * @see #getGraphicalElement()
@@ -4152,10 +4164,8 @@ public interface DGPackage extends EPackage {
 	EReference getGraphicalElement_Group();
 
 	/**
-	 * Returns the meta object for the attribute list '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses
-	 * <em>Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses <em>Class</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Class</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses()
 	 * @see #getGraphicalElement()
@@ -4164,10 +4174,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getGraphicalElement_Class();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle
-	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle <em>Style</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Style</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle()
 	 * @see #getGraphicalElement()
@@ -4176,12 +4184,9 @@ public interface DGPackage extends EPackage {
 	EReference getGraphicalElement_Style();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms
-	 * <em>Transform</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference list '
-	 *         <em>Transform</em>'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms <em>Transform</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Transform</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms()
 	 * @see #getGraphicalElement()
 	 * @generated
@@ -4189,15 +4194,22 @@ public interface DGPackage extends EPackage {
 	EReference getGraphicalElement_Transform();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#referencedClippathHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Referenced Clippath Has Id</em>}' operation. <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getLayoutData <em>Layout Data</em>}'.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Referenced Clippath Has Id</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#referencedClippathHasId(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the attribute '<em>Layout Data</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#getLayoutData()
+	 * @see #getGraphicalElement()
+	 * @generated
+	 */
+	EAttribute getGraphicalElement_LayoutData();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#referencedClippathHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Referenced Clippath Has Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Referenced Clippath Has Id</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement#referencedClippathHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getGraphicalElement__ReferencedClippathHasId__DiagnosticChain_Map();
@@ -4226,14 +4238,11 @@ public interface DGPackage extends EPackage {
 	EAttribute getDefinition_Id();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Definition#idCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Id Cannot Be Empty</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Definition#idCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Id Cannot Be Empty</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Id Cannot Be Empty</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.Definition#idCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.Definition#idCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getDefinition__IdCannotBeEmpty__DiagnosticChain_Map();
@@ -4262,10 +4271,8 @@ public interface DGPackage extends EPackage {
 	EReference getMoveTo_Point();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.PathCommand <em>Path Command</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.PathCommand <em>Path Command</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Path Command</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.PathCommand
 	 * @generated
@@ -4273,10 +4280,8 @@ public interface DGPackage extends EPackage {
 	EClass getPathCommand();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.PathCommand#isRelative
-	 * <em>Is Relative</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.PathCommand#isRelative <em>Is Relative</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Relative</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.PathCommand#isRelative()
 	 * @see #getPathCommand()
@@ -4319,10 +4324,8 @@ public interface DGPackage extends EPackage {
 	EReference getStyle_Fill();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getFillOpacity
-	 * <em>Fill Opacity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Style#getFillOpacity <em>Fill Opacity</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Fill Opacity</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Style#getFillOpacity()
 	 * @see #getStyle()
@@ -4343,10 +4346,8 @@ public interface DGPackage extends EPackage {
 	EReference getStyle_Stroke();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getStrokeWidth
-	 * <em>Stroke Width</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Style#getStrokeWidth <em>Stroke Width</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Stroke Width</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Style#getStrokeWidth()
 	 * @see #getStyle()
@@ -4355,10 +4356,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getStyle_StrokeWidth();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getStrokeOpacity
-	 * <em>Stroke Opacity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Style#getStrokeOpacity <em>Stroke Opacity</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Stroke Opacity</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Style#getStrokeOpacity()
 	 * @see #getStyle()
@@ -4381,10 +4380,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getStyle_StrokeDashLength();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getFontSize <em>Font Size</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Style#getFontSize <em>Font Size</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Font Size</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Style#getFontSize()
 	 * @see #getStyle()
@@ -4393,10 +4390,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getStyle_FontSize();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getFontName <em>Font Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Style#getFontName <em>Font Name</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Font Name</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Style#getFontName()
 	 * @see #getStyle()
@@ -4405,10 +4400,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getStyle_FontName();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#isFontItalic <em>Font Italic</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Style#isFontItalic <em>Font Italic</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Font Italic</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Style#isFontItalic()
 	 * @see #getStyle()
@@ -4417,10 +4410,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getStyle_FontItalic();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#isFontBold <em>Font Bold</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Style#isFontBold <em>Font Bold</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Font Bold</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Style#isFontBold()
 	 * @see #getStyle()
@@ -4429,10 +4420,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getStyle_FontBold();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#getFontDecoration
-	 * <em>Font Decoration</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Style#getFontDecoration <em>Font Decoration</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Font Decoration</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Style#getFontDecoration()
 	 * @see #getStyle()
@@ -4441,68 +4430,51 @@ public interface DGPackage extends EPackage {
 	EAttribute getStyle_FontDecoration();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#validFontSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Font Size</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Style#validFontSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Font Size</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Valid Font Size</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.Style#validFontSize(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.Style#validFontSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getStyle__ValidFontSize__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#validFillOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Fill Opacity</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Style#validFillOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Fill Opacity</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Valid Fill Opacity</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.Style#validFillOpacity(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.Style#validFillOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getStyle__ValidFillOpacity__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#validStrokeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Stroke Width</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Style#validStrokeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Stroke Width</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Valid Stroke Width</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.Style#validStrokeWidth(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.Style#validStrokeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getStyle__ValidStrokeWidth__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#validDashLengthSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Dash Length Size</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Style#validDashLengthSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Dash Length Size</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Valid Dash Length Size</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Style#validDashLengthSize(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Valid Dash Length Size</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Style#validDashLengthSize(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getStyle__ValidDashLengthSize__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Style#validStrokeOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Stroke Opacity</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Style#validStrokeOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Stroke Opacity</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Valid Stroke Opacity</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Style#validStrokeOpacity(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Valid Stroke Opacity</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Style#validStrokeOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getStyle__ValidStrokeOpacity__DiagnosticChain_Map();
@@ -4531,10 +4503,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getPaint_Color();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.dd.dg.Paint#getPaintServer
-	 * <em>Paint Server</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.dg.Paint#getPaintServer <em>Paint Server</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Paint Server</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Paint#getPaintServer()
 	 * @see #getPaint()
@@ -4543,24 +4513,18 @@ public interface DGPackage extends EPackage {
 	EReference getPaint_PaintServer();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Paint#referencedPaintServerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Referenced Paint Server Has Id</em>}' operation. <!-- begin-user-doc
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Paint#referencedPaintServerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Referenced Paint Server Has Id</em>}' operation.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Referenced Paint Server Has Id</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Paint#referencedPaintServerHasId(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Referenced Paint Server Has Id</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Paint#referencedPaintServerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getPaint__ReferencedPaintServerHasId__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.PaintServer <em>Paint Server</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.PaintServer <em>Paint Server</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Paint Server</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.PaintServer
 	 * @generated
@@ -4568,12 +4532,9 @@ public interface DGPackage extends EPackage {
 	EClass getPaintServer();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.PaintServer#getTransforms
-	 * <em>Transform</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference list '
-	 *         <em>Transform</em>'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.dd.dg.PaintServer#getTransforms <em>Transform</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Transform</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.PaintServer#getTransforms()
 	 * @see #getPaintServer()
 	 * @generated
@@ -4627,14 +4588,11 @@ public interface DGPackage extends EPackage {
 	EAttribute getCircle_Radius();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Circle#nonNegativeRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Non Negative Radius</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Circle#nonNegativeRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Non Negative Radius</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Non Negative Radius</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.Circle#nonNegativeRadius(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.Circle#nonNegativeRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getCircle__NonNegativeRadius__DiagnosticChain_Map();
@@ -4651,10 +4609,8 @@ public interface DGPackage extends EPackage {
 	EClass getClosePath();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.CubicCurveTo <em>Cubic Curve To</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.CubicCurveTo <em>Cubic Curve To</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Cubic Curve To</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.CubicCurveTo
 	 * @generated
@@ -4662,10 +4618,8 @@ public interface DGPackage extends EPackage {
 	EClass getCubicCurveTo();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getPoint <em>Point</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getPoint <em>Point</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference '<em>Point</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.CubicCurveTo#getPoint()
 	 * @see #getCubicCurveTo()
@@ -4674,12 +4628,9 @@ public interface DGPackage extends EPackage {
 	EReference getCubicCurveTo_Point();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getStartControl
-	 * <em>Start Control</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference '
-	 *         <em>Start Control</em>'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getStartControl <em>Start Control</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Start Control</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.CubicCurveTo#getStartControl()
 	 * @see #getCubicCurveTo()
 	 * @generated
@@ -4687,12 +4638,9 @@ public interface DGPackage extends EPackage {
 	EReference getCubicCurveTo_StartControl();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getEndControl
-	 * <em>End Control</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference '
-	 *         <em>End Control</em>'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.CubicCurveTo#getEndControl <em>End Control</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>End Control</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.CubicCurveTo#getEndControl()
 	 * @see #getCubicCurveTo()
 	 * @generated
@@ -4711,12 +4659,9 @@ public interface DGPackage extends EPackage {
 	EClass getDefinitions();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Definitions#getDefnitions
-	 * <em>Defnition</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference list '
-	 *         <em>Defnition</em>'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.dd.dg.Definitions#getDefnitions <em>Defnition</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Defnition</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Definitions#getDefnitions()
 	 * @see #getDefinitions()
 	 * @generated
@@ -4724,12 +4669,9 @@ public interface DGPackage extends EPackage {
 	EReference getDefinitions_Defnition();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet
-	 * <em>Style Sheet</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference '
-	 *         <em>Style Sheet</em>'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet <em>Style Sheet</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Style Sheet</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet()
 	 * @see #getDefinitions()
 	 * @generated
@@ -4748,12 +4690,9 @@ public interface DGPackage extends EPackage {
 	EClass getStyleSheet();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSheet#getRules <em>Rule</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.dd.dg.StyleSheet#getRules <em>Rule</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference list '<em>Rule</em>
-	 *         '.
+	 * @return the meta object for the containment reference list '<em>Rule</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.StyleSheet#getRules()
 	 * @see #getStyleSheet()
 	 * @generated
@@ -4772,12 +4711,9 @@ public interface DGPackage extends EPackage {
 	EClass getStyleRule();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleRule#getSelectors
-	 * <em>Selector</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference list '
-	 *         <em>Selector</em>'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.dd.dg.StyleRule#getSelectors <em>Selector</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Selector</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.StyleRule#getSelectors()
 	 * @see #getStyleRule()
 	 * @generated
@@ -4785,10 +4721,8 @@ public interface DGPackage extends EPackage {
 	EReference getStyleRule_Selector();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.StyleRule#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference '<em>Style</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.StyleRule#getStyle()
 	 * @see #getStyleRule()
@@ -4797,10 +4731,8 @@ public interface DGPackage extends EPackage {
 	EReference getStyleRule_Style();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector <em>Style Selector</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.StyleSelector <em>Style Selector</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Style Selector</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.StyleSelector
 	 * @generated
@@ -4808,10 +4740,8 @@ public interface DGPackage extends EPackage {
 	EClass getStyleSelector();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.StyleSelector#getKind()
 	 * @see #getStyleSelector()
@@ -4820,10 +4750,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getStyleSelector_Kind();
 
 	/**
-	 * Returns the meta object for the attribute list '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getClasses <em>Class</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.dd.dg.StyleSelector#getClasses <em>Class</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Class</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.StyleSelector#getClasses()
 	 * @see #getStyleSelector()
@@ -4843,10 +4771,8 @@ public interface DGPackage extends EPackage {
 	EClass getEllipse();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.Ellipse#getCenter <em>Center</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.Ellipse#getCenter <em>Center</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference '<em>Center</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Ellipse#getCenter()
 	 * @see #getEllipse()
@@ -4879,10 +4805,8 @@ public interface DGPackage extends EPackage {
 	EClass getEllipticalArcTo();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getPoint <em>Point</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getPoint <em>Point</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Point</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#getPoint()
 	 * @see #getEllipticalArcTo()
@@ -4891,10 +4815,8 @@ public interface DGPackage extends EPackage {
 	EReference getEllipticalArcTo_Point();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRadii <em>Radii</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRadii <em>Radii</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Radii</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRadii()
 	 * @see #getEllipticalArcTo()
@@ -4903,10 +4825,8 @@ public interface DGPackage extends EPackage {
 	EReference getEllipticalArcTo_Radii();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRotation
-	 * <em>Rotation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRotation <em>Rotation</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Rotation</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#getRotation()
 	 * @see #getEllipticalArcTo()
@@ -4915,10 +4835,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getEllipticalArcTo_Rotation();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isLargeArc
-	 * <em>Is Large Arc</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isLargeArc <em>Is Large Arc</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Large Arc</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#isLargeArc()
 	 * @see #getEllipticalArcTo()
@@ -4927,10 +4845,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getEllipticalArcTo_IsLargeArc();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isSweep
-	 * <em>Is Sweep</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.EllipticalArcTo#isSweep <em>Is Sweep</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Sweep</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo#isSweep()
 	 * @see #getEllipticalArcTo()
@@ -4951,10 +4867,8 @@ public interface DGPackage extends EPackage {
 	EClass getQuadraticCurveTo();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getPoint
-	 * <em>Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getPoint <em>Point</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Point</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getPoint()
 	 * @see #getQuadraticCurveTo()
@@ -4963,10 +4877,8 @@ public interface DGPackage extends EPackage {
 	EReference getQuadraticCurveTo_Point();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getControl
-	 * <em>Control</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getControl <em>Control</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Control</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.QuadraticCurveTo#getControl()
 	 * @see #getQuadraticCurveTo()
@@ -4999,10 +4911,8 @@ public interface DGPackage extends EPackage {
 	EReference getGradient_Stop();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.GradientStop <em>Gradient Stop</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.GradientStop <em>Gradient Stop</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Gradient Stop</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GradientStop
 	 * @generated
@@ -5010,10 +4920,8 @@ public interface DGPackage extends EPackage {
 	EClass getGradientStop();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.GradientStop#getColor <em>Color</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Color</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GradientStop#getColor()
 	 * @see #getGradientStop()
@@ -5022,10 +4930,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getGradientStop_Color();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.GradientStop#getOffset <em>Offset</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Offset</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GradientStop#getOffset()
 	 * @see #getGradientStop()
@@ -5034,10 +4940,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getGradientStop_Offset();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity
-	 * <em>Opacity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.GradientStop#getOpacity <em>Opacity</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Opacity</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.GradientStop#getOpacity()
 	 * @see #getGradientStop()
@@ -5046,27 +4950,21 @@ public interface DGPackage extends EPackage {
 	EAttribute getGradientStop_Opacity();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#validOffset(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Offset</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.GradientStop#validOffset(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Offset</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Valid Offset</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.GradientStop#validOffset(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.GradientStop#validOffset(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getGradientStop__ValidOffset__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.GradientStop#validOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Opacity</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.GradientStop#validOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Opacity</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Valid Opacity</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.GradientStop#validOpacity(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.GradientStop#validOpacity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getGradientStop__ValidOpacity__DiagnosticChain_Map();
@@ -5107,13 +5005,10 @@ public interface DGPackage extends EPackage {
 	EReference getImage_Bounds();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Image#isAspectRatioPreserved
-	 * <em>Is Aspect Ratio Preserved</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Image#isAspectRatioPreserved <em>Is Aspect Ratio Preserved</em>}'.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '
-	 *         <em>Is Aspect Ratio Preserved</em>'.
+	 * @return the meta object for the attribute '<em>Is Aspect Ratio Preserved</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Image#isAspectRatioPreserved()
 	 * @see #getImage()
 	 * @generated
@@ -5121,23 +5016,18 @@ public interface DGPackage extends EPackage {
 	EAttribute getImage_IsAspectRatioPreserved();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Image#sourceCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Source Cannot Be Empty</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Image#sourceCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Cannot Be Empty</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Source Cannot Be Empty</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Image#sourceCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Source Cannot Be Empty</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Image#sourceCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getImage__SourceCannotBeEmpty__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Line
-	 * <em>Line</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Line <em>Line</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Line</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Line
 	 * @generated
@@ -5169,10 +5059,8 @@ public interface DGPackage extends EPackage {
 	EReference getLine_End();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement <em>Marked Element</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.MarkedElement <em>Marked Element</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for class '<em>Marked Element</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.MarkedElement
 	 * @generated
@@ -5180,10 +5068,8 @@ public interface DGPackage extends EPackage {
 	EClass getMarkedElement();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#getEndMarker
-	 * <em>End Marker</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.dg.MarkedElement#getEndMarker <em>End Marker</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>End Marker</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#getEndMarker()
 	 * @see #getMarkedElement()
@@ -5192,10 +5078,8 @@ public interface DGPackage extends EPackage {
 	EReference getMarkedElement_EndMarker();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#getMidMarker
-	 * <em>Mid Marker</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.dg.MarkedElement#getMidMarker <em>Mid Marker</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Mid Marker</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#getMidMarker()
 	 * @see #getMarkedElement()
@@ -5204,10 +5088,8 @@ public interface DGPackage extends EPackage {
 	EReference getMarkedElement_MidMarker();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#getStartMarker
-	 * <em>Start Marker</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.dd.dg.MarkedElement#getStartMarker <em>Start Marker</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Start Marker</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#getStartMarker()
 	 * @see #getMarkedElement()
@@ -5216,43 +5098,31 @@ public interface DGPackage extends EPackage {
 	EReference getMarkedElement_StartMarker();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Referenced Start Marker Has Id</em>}' operation. <!-- begin-user-doc
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Referenced Start Marker Has Id</em>}' operation.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Referenced Start Marker Has Id</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Referenced Start Marker Has Id</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedStartMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getMarkedElement__ReferencedStartMarkerHasId__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Referenced Mid Marker Has Id</em>}' operation. <!-- begin-user-doc
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Referenced Mid Marker Has Id</em>}' operation.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Referenced Mid Marker Has Id</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Referenced Mid Marker Has Id</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedMidMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getMarkedElement__ReferencedMidMarkerHasId__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Referenced End Marker Has Id</em>}' operation. <!-- begin-user-doc
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.MarkedElement#referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Referenced End Marker Has Id</em>}' operation.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Referenced End Marker Has Id</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Referenced End Marker Has Id</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.MarkedElement#referencedEndMarkerHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getMarkedElement__ReferencedEndMarkerHasId__DiagnosticChain_Map();
@@ -5281,12 +5151,9 @@ public interface DGPackage extends EPackage {
 	EReference getMarker_Size();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.Marker#getReference <em>Reference</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference '<em>Reference</em>
-	 *         '.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.Marker#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Reference</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Marker#getReference()
 	 * @see #getMarker()
 	 * @generated
@@ -5294,10 +5161,8 @@ public interface DGPackage extends EPackage {
 	EReference getMarker_Reference();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.LinearGradient <em>Linear Gradient</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.LinearGradient <em>Linear Gradient</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Linear Gradient</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.LinearGradient
 	 * @generated
@@ -5305,10 +5170,8 @@ public interface DGPackage extends EPackage {
 	EClass getLinearGradient();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.LinearGradient#getStart <em>Start</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.LinearGradient#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.LinearGradient#getStart()
 	 * @see #getLinearGradient()
@@ -5317,10 +5180,8 @@ public interface DGPackage extends EPackage {
 	EReference getLinearGradient_Start();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.LinearGradient#getEnd <em>End</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.LinearGradient#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference '<em>End</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.LinearGradient#getEnd()
 	 * @see #getLinearGradient()
@@ -5329,15 +5190,11 @@ public interface DGPackage extends EPackage {
 	EReference getLinearGradient_End();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.LinearGradient#validGradientVector(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Gradient Vector</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.LinearGradient#validGradientVector(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Gradient Vector</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Valid Gradient Vector</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.LinearGradient#validGradientVector(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Valid Gradient Vector</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.LinearGradient#validGradientVector(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getLinearGradient__ValidGradientVector__DiagnosticChain_Map();
@@ -5449,9 +5306,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getMatrix_F();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Path
-	 * <em>Path</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Path <em>Path</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Path
 	 * @generated
@@ -5459,12 +5315,9 @@ public interface DGPackage extends EPackage {
 	EClass getPath();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Path#getCommands <em>Command</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.dd.dg.Path#getCommands <em>Command</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference list '
-	 *         <em>Command</em>'.
+	 * @return the meta object for the containment reference list '<em>Command</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Path#getCommands()
 	 * @see #getPath()
 	 * @generated
@@ -5472,15 +5325,11 @@ public interface DGPackage extends EPackage {
 	EReference getPath_Command();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Path#firstCommandMustBeMove(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>First Command Must Be Move</em>}' operation. <!-- begin-user-doc -->
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Path#firstCommandMustBeMove(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>First Command Must Be Move</em>}' operation.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>First Command Must Be Move</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Path#firstCommandMustBeMove(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>First Command Must Be Move</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Path#firstCommandMustBeMove(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getPath__FirstCommandMustBeMove__DiagnosticChain_Map();
@@ -5497,10 +5346,8 @@ public interface DGPackage extends EPackage {
 	EClass getPattern();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.Pattern#getBounds <em>Bounds</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.Pattern#getBounds <em>Bounds</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference '<em>Bounds</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Pattern#getBounds()
 	 * @see #getPattern()
@@ -5556,12 +5403,9 @@ public interface DGPackage extends EPackage {
 	EClass getPolyline();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.Polyline#getPoints <em>Point</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.dd.dg.Polyline#getPoints <em>Point</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference list '
-	 *         <em>Point</em>'.
+	 * @return the meta object for the containment reference list '<em>Point</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Polyline#getPoints()
 	 * @see #getPolyline()
 	 * @generated
@@ -5569,10 +5413,8 @@ public interface DGPackage extends EPackage {
 	EReference getPolyline_Point();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.dd.dg.RadialGradient <em>Radial Gradient</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.RadialGradient <em>Radial Gradient</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Radial Gradient</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.RadialGradient
 	 * @generated
@@ -5580,10 +5422,8 @@ public interface DGPackage extends EPackage {
 	EClass getRadialGradient();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.RadialGradient#getCenter
-	 * <em>Center</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.RadialGradient#getCenter <em>Center</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Center</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#getCenter()
 	 * @see #getRadialGradient()
@@ -5592,10 +5432,8 @@ public interface DGPackage extends EPackage {
 	EReference getRadialGradient_Center();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.RadialGradient#getFocus <em>Focus</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.RadialGradient#getFocus <em>Focus</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Focus</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#getFocus()
 	 * @see #getRadialGradient()
@@ -5604,10 +5442,8 @@ public interface DGPackage extends EPackage {
 	EReference getRadialGradient_Focus();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.RadialGradient#getRadius
-	 * <em>Radius</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.RadialGradient#getRadius <em>Radius</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Radius</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#getRadius()
 	 * @see #getRadialGradient()
@@ -5616,40 +5452,31 @@ public interface DGPackage extends EPackage {
 	EAttribute getRadialGradient_Radius();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.RadialGradient#validCenterPoint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Center Point</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.RadialGradient#validCenterPoint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Center Point</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Valid Center Point</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#validCenterPoint(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#validCenterPoint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getRadialGradient__ValidCenterPoint__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.RadialGradient#validFocusPoint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Focus Point</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.RadialGradient#validFocusPoint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Focus Point</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Valid Focus Point</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#validFocusPoint(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#validFocusPoint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getRadialGradient__ValidFocusPoint__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.RadialGradient#validRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Radius</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.RadialGradient#validRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Radius</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Valid Radius</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#validRadius(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.RadialGradient#validRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getRadialGradient__ValidRadius__DiagnosticChain_Map();
@@ -5666,10 +5493,8 @@ public interface DGPackage extends EPackage {
 	EClass getRectangle();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.Rectangle#getBounds <em>Bounds</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.Rectangle#getBounds <em>Bounds</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the containment reference '<em>Bounds</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Rectangle#getBounds()
 	 * @see #getRectangle()
@@ -5678,10 +5503,8 @@ public interface DGPackage extends EPackage {
 	EReference getRectangle_Bounds();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Rectangle#getCornerRadius
-	 * <em>Corner Radius</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Rectangle#getCornerRadius <em>Corner Radius</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Corner Radius</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Rectangle#getCornerRadius()
 	 * @see #getRectangle()
@@ -5690,15 +5513,11 @@ public interface DGPackage extends EPackage {
 	EAttribute getRectangle_CornerRadius();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Rectangle#nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Non Negative Corner Radius</em>}' operation. <!-- begin-user-doc -->
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Rectangle#nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Non Negative Corner Radius</em>}' operation.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Non Negative Corner Radius</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Rectangle#nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Non Negative Corner Radius</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Rectangle#nonNegativeCornerRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getRectangle__NonNegativeCornerRadius__DiagnosticChain_Map();
@@ -5728,12 +5547,9 @@ public interface DGPackage extends EPackage {
 	EAttribute getRootCanvas_BackgroundColor();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.RootCanvas#getDefinitions
-	 * <em>Definitions</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference '
-	 *         <em>Definitions</em>'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.RootCanvas#getDefinitions <em>Definitions</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Definitions</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.RootCanvas#getDefinitions()
 	 * @see #getRootCanvas()
 	 * @generated
@@ -5741,18 +5557,26 @@ public interface DGPackage extends EPackage {
 	EReference getRootCanvas_Definitions();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.papyrus.dd.dg.RootCanvas#getExternalStyleSheets
-	 * <em>External Style Sheet</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.dd.dg.RootCanvas#getExternalStyleSheets <em>External Style Sheet</em>}'.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the reference list '
-	 *         <em>External Style Sheet</em>'.
+	 * @return the meta object for the reference list '<em>External Style Sheet</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.RootCanvas#getExternalStyleSheets()
 	 * @see #getRootCanvas()
 	 * @generated
 	 */
 	EReference getRootCanvas_ExternalStyleSheet();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.dd.dg.RootCanvas#getScripts <em>Script</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Script</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.RootCanvas#getScripts()
+	 * @see #getRootCanvas()
+	 * @generated
+	 */
+	EAttribute getRootCanvas_Script();
 
 	/**
 	 * Returns the meta object for class '
@@ -5801,10 +5625,8 @@ public interface DGPackage extends EPackage {
 	EClass getScale();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Scale#getFactorX <em>Factor X</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Scale#getFactorX <em>Factor X</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Factor X</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Scale#getFactorX()
 	 * @see #getScale()
@@ -5813,10 +5635,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getScale_FactorX();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Scale#getFactorY <em>Factor Y</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Scale#getFactorY <em>Factor Y</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Factor Y</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Scale#getFactorY()
 	 * @see #getScale()
@@ -5825,22 +5645,18 @@ public interface DGPackage extends EPackage {
 	EAttribute getScale_FactorY();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Scale#nonnegativescale(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Nonnegativescale</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Scale#nonnegativescale(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Nonnegativescale</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Nonnegativescale</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dg.Scale#nonnegativescale(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dg.Scale#nonnegativescale(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getScale__Nonnegativescale__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Skew
-	 * <em>Skew</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Skew <em>Skew</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Skew</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Skew
 	 * @generated
@@ -5872,9 +5688,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getSkew_AngleY();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Text
-	 * <em>Text</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Text <em>Text</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Text</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Text
 	 * @generated
@@ -5894,12 +5709,9 @@ public interface DGPackage extends EPackage {
 	EAttribute getText_Data();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.papyrus.dd.dg.Text#getPosition <em>Position</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.dd.dg.Text#getPosition <em>Position</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference '<em>Position</em>
-	 *         '.
+	 * @return the meta object for the containment reference '<em>Position</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Text#getPosition()
 	 * @see #getText()
 	 * @generated
@@ -5907,15 +5719,22 @@ public interface DGPackage extends EPackage {
 	EReference getText_Position();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Text#dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Data Cannot Be Empty</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Text#getAnchor <em>Anchor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Anchor</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.Text#getAnchor()
+	 * @see #getText()
+	 * @generated
+	 */
+	EAttribute getText_Anchor();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Text#dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Data Cannot Be Empty</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Data Cannot Be Empty</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Text#dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Data Cannot Be Empty</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Text#dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getText__DataCannotBeEmpty__DiagnosticChain_Map();
@@ -5932,10 +5751,8 @@ public interface DGPackage extends EPackage {
 	EClass getTranslate();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Translate#getDeltaX <em>Delta X</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Translate#getDeltaX <em>Delta X</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Delta X</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Translate#getDeltaX()
 	 * @see #getTranslate()
@@ -5944,10 +5761,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getTranslate_DeltaX();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dg.Translate#getDeltaY <em>Delta Y</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dg.Translate#getDeltaY <em>Delta Y</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Delta Y</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Translate#getDeltaY()
 	 * @see #getTranslate()
@@ -5956,9 +5771,8 @@ public interface DGPackage extends EPackage {
 	EAttribute getTranslate_DeltaY();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Use
-	 * <em>Use</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.dd.dg.Use <em>Use</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Use</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.Use
 	 * @generated
@@ -5991,24 +5805,18 @@ public interface DGPackage extends EPackage {
 	EReference getUse_ReferencedElement();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dg.Use#referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Referenced Element Has Id</em>}' operation. <!-- begin-user-doc -->
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dg.Use#referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Referenced Element Has Id</em>}' operation.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the '<em>Referenced Element Has Id</em>'
-	 *         operation.
-	 * @see org.eclipse.papyrus.dd.dg.Use#referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @return the meta object for the '<em>Referenced Element Has Id</em>' operation.
+	 * @see org.eclipse.papyrus.dd.dg.Use#referencedElementHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getUse__ReferencedElementHasId__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for enum '
-	 * {@link org.eclipse.papyrus.dd.dg.FontDecoration <em>Font Decoration</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.dd.dg.FontDecoration <em>Font Decoration</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for enum '<em>Font Decoration</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.FontDecoration
 	 * @generated
@@ -6016,15 +5824,23 @@ public interface DGPackage extends EPackage {
 	EEnum getFontDecoration();
 
 	/**
-	 * Returns the meta object for enum '
-	 * {@link org.eclipse.papyrus.dd.dg.ElementKind <em>Element Kind</em>}'.
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.dd.dg.ElementKind <em>Element Kind</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for enum '<em>Element Kind</em>'.
 	 * @see org.eclipse.papyrus.dd.dg.ElementKind
 	 * @generated
 	 */
 	EEnum getElementKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.dd.dg.TextAnchor <em>Text Anchor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Text Anchor</em>'.
+	 * @see org.eclipse.papyrus.dd.dg.TextAnchor
+	 * @generated
+	 */
+	EEnum getTextAnchor();
 
 	/**
 	 * Returns the factory that creates the instances of the model. <!--
@@ -6046,15 +5862,12 @@ public interface DGPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.CanvasImpl <em>Canvas</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.CanvasImpl <em>Canvas</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.CanvasImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getCanvas()
 		 * @generated
@@ -6062,9 +5875,8 @@ public interface DGPackage extends EPackage {
 		EClass CANVAS = eINSTANCE.getCanvas();
 
 		/**
-		 * The meta object literal for the '<em><b>Bounds</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Bounds</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CANVAS__BOUNDS = eINSTANCE.getCanvas_Bounds();
@@ -6076,14 +5888,11 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getCanvas__CanvasCannotHaveTransforms__DiagnosticChain_Map();
+		EOperation CANVAS___CANVAS_CANNOT_HAVE_TRANSFORMS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCanvas__CanvasCannotHaveTransforms__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.GroupImpl <em>Group</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.GroupImpl <em>Group</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.GroupImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getGroup()
 		 * @generated
@@ -6091,19 +5900,24 @@ public interface DGPackage extends EPackage {
 		EClass GROUP = eINSTANCE.getGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Member</b></em>' containment
-		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Member</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference GROUP__MEMBER = eINSTANCE.getGroup_Member();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl
-		 * <em>Graphical Element</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Layout</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP__LAYOUT = eINSTANCE.getGroup_Layout();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl <em>Graphical Element</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.GraphicalElementImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getGraphicalElement()
 		 * @generated
@@ -6111,50 +5925,48 @@ public interface DGPackage extends EPackage {
 		EClass GRAPHICAL_ELEMENT = eINSTANCE.getGraphicalElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Clip Path</b></em>' reference
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Clip Path</b></em>' reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GRAPHICAL_ELEMENT__CLIP_PATH = eINSTANCE
-				.getGraphicalElement_ClipPath();
+		EReference GRAPHICAL_ELEMENT__CLIP_PATH = eINSTANCE.getGraphicalElement_ClipPath();
 
 		/**
-		 * The meta object literal for the '<em><b>Group</b></em>' container
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Group</b></em>' container reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GRAPHICAL_ELEMENT__GROUP = eINSTANCE
-				.getGraphicalElement_Group();
+		EReference GRAPHICAL_ELEMENT__GROUP = eINSTANCE.getGraphicalElement_Group();
 
 		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' attribute
-		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GRAPHICAL_ELEMENT__CLASS = eINSTANCE
-				.getGraphicalElement_Class();
+		EAttribute GRAPHICAL_ELEMENT__CLASS = eINSTANCE.getGraphicalElement_Class();
 
 		/**
-		 * The meta object literal for the '<em><b>Style</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GRAPHICAL_ELEMENT__STYLE = eINSTANCE
-				.getGraphicalElement_Style();
+		EReference GRAPHICAL_ELEMENT__STYLE = eINSTANCE.getGraphicalElement_Style();
 
 		/**
-		 * The meta object literal for the '<em><b>Transform</b></em>'
-		 * containment reference list feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Transform</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference GRAPHICAL_ELEMENT__TRANSFORM = eINSTANCE
-				.getGraphicalElement_Transform();
+		EReference GRAPHICAL_ELEMENT__TRANSFORM = eINSTANCE.getGraphicalElement_Transform();
+
+		/**
+		 * The meta object literal for the '<em><b>Layout Data</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GRAPHICAL_ELEMENT__LAYOUT_DATA = eINSTANCE.getGraphicalElement_LayoutData();
 
 		/**
 		 * The meta object literal for the '
@@ -6163,15 +5975,12 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getGraphicalElement__ReferencedClippathHasId__DiagnosticChain_Map();
+		EOperation GRAPHICAL_ELEMENT___REFERENCED_CLIPPATH_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getGraphicalElement__ReferencedClippathHasId__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.DefinitionImpl
-		 * <em>Definition</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.DefinitionImpl <em>Definition</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.DefinitionImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getDefinition()
 		 * @generated
@@ -6179,27 +5988,22 @@ public interface DGPackage extends EPackage {
 		EClass DEFINITION = eINSTANCE.getDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute DEFINITION__ID = eINSTANCE.getDefinition_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Id Cannot Be Empty</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Id Cannot Be Empty</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getDefinition__IdCannotBeEmpty__DiagnosticChain_Map();
+		EOperation DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDefinition__IdCannotBeEmpty__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.MoveToImpl <em>Move To</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.MoveToImpl <em>Move To</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.MoveToImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getMoveTo()
 		 * @generated
@@ -6207,19 +6011,16 @@ public interface DGPackage extends EPackage {
 		EClass MOVE_TO = eINSTANCE.getMoveTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Point</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Point</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference MOVE_TO__POINT = eINSTANCE.getMoveTo_Point();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.PathCommandImpl
-		 * <em>Path Command</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.PathCommandImpl <em>Path Command</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.PathCommandImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPathCommand()
 		 * @generated
@@ -6227,13 +6028,11 @@ public interface DGPackage extends EPackage {
 		EClass PATH_COMMAND = eINSTANCE.getPathCommand();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Relative</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Is Relative</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PATH_COMMAND__IS_RELATIVE = eINSTANCE
-				.getPathCommand_IsRelative();
+		EAttribute PATH_COMMAND__IS_RELATIVE = eINSTANCE.getPathCommand_IsRelative();
 
 		/**
 		 * The meta object literal for the '
@@ -6248,10 +6047,8 @@ public interface DGPackage extends EPackage {
 		EClass CLIP_PATH = eINSTANCE.getClipPath();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.StyleImpl <em>Style</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.StyleImpl <em>Style</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.StyleImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getStyle()
 		 * @generated
@@ -6259,120 +6056,102 @@ public interface DGPackage extends EPackage {
 		EClass STYLE = eINSTANCE.getStyle();
 
 		/**
-		 * The meta object literal for the '<em><b>Fill</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Fill</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STYLE__FILL = eINSTANCE.getStyle_Fill();
 
 		/**
-		 * The meta object literal for the '<em><b>Fill Opacity</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Fill Opacity</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE__FILL_OPACITY = eINSTANCE.getStyle_FillOpacity();
 
 		/**
-		 * The meta object literal for the '<em><b>Stroke</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Stroke</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STYLE__STROKE = eINSTANCE.getStyle_Stroke();
 
 		/**
-		 * The meta object literal for the '<em><b>Stroke Width</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Stroke Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE__STROKE_WIDTH = eINSTANCE.getStyle_StrokeWidth();
 
 		/**
-		 * The meta object literal for the '<em><b>Stroke Opacity</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Stroke Opacity</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE__STROKE_OPACITY = eINSTANCE.getStyle_StrokeOpacity();
 
 		/**
-		 * The meta object literal for the '<em><b>Stroke Dash Length</b></em>'
-		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Stroke Dash Length</b></em>' attribute list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STYLE__STROKE_DASH_LENGTH = eINSTANCE
-				.getStyle_StrokeDashLength();
+		EAttribute STYLE__STROKE_DASH_LENGTH = eINSTANCE.getStyle_StrokeDashLength();
 
 		/**
-		 * The meta object literal for the '<em><b>Font Size</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Font Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE__FONT_SIZE = eINSTANCE.getStyle_FontSize();
 
 		/**
-		 * The meta object literal for the '<em><b>Font Name</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Font Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE__FONT_NAME = eINSTANCE.getStyle_FontName();
 
 		/**
-		 * The meta object literal for the '<em><b>Font Italic</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Font Italic</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE__FONT_ITALIC = eINSTANCE.getStyle_FontItalic();
 
 		/**
-		 * The meta object literal for the '<em><b>Font Bold</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Font Bold</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE__FONT_BOLD = eINSTANCE.getStyle_FontBold();
 
 		/**
-		 * The meta object literal for the '<em><b>Font Decoration</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Font Decoration</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE__FONT_DECORATION = eINSTANCE.getStyle_FontDecoration();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Font Size</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Font Size</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation STYLE___VALID_FONT_SIZE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getStyle__ValidFontSize__DiagnosticChain_Map();
+		EOperation STYLE___VALID_FONT_SIZE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getStyle__ValidFontSize__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Fill Opacity</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Fill Opacity</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation STYLE___VALID_FILL_OPACITY__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getStyle__ValidFillOpacity__DiagnosticChain_Map();
+		EOperation STYLE___VALID_FILL_OPACITY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getStyle__ValidFillOpacity__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Stroke Width</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Stroke Width</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation STYLE___VALID_STROKE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getStyle__ValidStrokeWidth__DiagnosticChain_Map();
+		EOperation STYLE___VALID_STROKE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE.getStyle__ValidStrokeWidth__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -6381,23 +6160,18 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation STYLE___VALID_DASH_LENGTH_SIZE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getStyle__ValidDashLengthSize__DiagnosticChain_Map();
+		EOperation STYLE___VALID_DASH_LENGTH_SIZE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getStyle__ValidDashLengthSize__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Stroke Opacity</b></em>
-		 * ' operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Stroke Opacity</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation STYLE___VALID_STROKE_OPACITY__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getStyle__ValidStrokeOpacity__DiagnosticChain_Map();
+		EOperation STYLE___VALID_STROKE_OPACITY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getStyle__ValidStrokeOpacity__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.PaintImpl <em>Paint</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.PaintImpl <em>Paint</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.PaintImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPaint()
 		 * @generated
@@ -6405,17 +6179,15 @@ public interface DGPackage extends EPackage {
 		EClass PAINT = eINSTANCE.getPaint();
 
 		/**
-		 * The meta object literal for the '<em><b>Color</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute PAINT__COLOR = eINSTANCE.getPaint_Color();
 
 		/**
-		 * The meta object literal for the '<em><b>Paint Server</b></em>'
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Paint Server</b></em>' reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PAINT__PAINT_SERVER = eINSTANCE.getPaint_PaintServer();
@@ -6427,15 +6199,12 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation PAINT___REFERENCED_PAINT_SERVER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getPaint__ReferencedPaintServerHasId__DiagnosticChain_Map();
+		EOperation PAINT___REFERENCED_PAINT_SERVER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getPaint__ReferencedPaintServerHasId__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.PaintServerImpl
-		 * <em>Paint Server</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.PaintServerImpl <em>Paint Server</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.PaintServerImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPaintServer()
 		 * @generated
@@ -6443,14 +6212,12 @@ public interface DGPackage extends EPackage {
 		EClass PAINT_SERVER = eINSTANCE.getPaintServer();
 
 		/**
-		 * The meta object literal for the '<em><b>Transform</b></em>'
-		 * containment reference list feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Transform</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference PAINT_SERVER__TRANSFORM = eINSTANCE
-				.getPaintServer_Transform();
+		EReference PAINT_SERVER__TRANSFORM = eINSTANCE.getPaintServer_Transform();
 
 		/**
 		 * The meta object literal for the '
@@ -6465,10 +6232,8 @@ public interface DGPackage extends EPackage {
 		EClass TRANSFORM = eINSTANCE.getTransform();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.CircleImpl <em>Circle</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.CircleImpl <em>Circle</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.CircleImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getCircle()
 		 * @generated
@@ -6476,36 +6241,30 @@ public interface DGPackage extends EPackage {
 		EClass CIRCLE = eINSTANCE.getCircle();
 
 		/**
-		 * The meta object literal for the '<em><b>Center</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Center</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CIRCLE__CENTER = eINSTANCE.getCircle_Center();
 
 		/**
-		 * The meta object literal for the '<em><b>Radius</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Radius</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute CIRCLE__RADIUS = eINSTANCE.getCircle_Radius();
 
 		/**
-		 * The meta object literal for the '<em><b>Non Negative Radius</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Non Negative Radius</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CIRCLE___NON_NEGATIVE_RADIUS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getCircle__NonNegativeRadius__DiagnosticChain_Map();
+		EOperation CIRCLE___NON_NEGATIVE_RADIUS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCircle__NonNegativeRadius__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.ClosePathImpl
-		 * <em>Close Path</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.ClosePathImpl <em>Close Path</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.ClosePathImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getClosePath()
 		 * @generated
@@ -6513,11 +6272,9 @@ public interface DGPackage extends EPackage {
 		EClass CLOSE_PATH = eINSTANCE.getClosePath();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl
-		 * <em>Cubic Curve To</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl <em>Cubic Curve To</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.CubicCurveToImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getCubicCurveTo()
 		 * @generated
@@ -6525,39 +6282,32 @@ public interface DGPackage extends EPackage {
 		EClass CUBIC_CURVE_TO = eINSTANCE.getCubicCurveTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Point</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Point</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CUBIC_CURVE_TO__POINT = eINSTANCE.getCubicCurveTo_Point();
 
 		/**
-		 * The meta object literal for the '<em><b>Start Control</b></em>'
-		 * containment reference feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Start Control</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference CUBIC_CURVE_TO__START_CONTROL = eINSTANCE
-				.getCubicCurveTo_StartControl();
+		EReference CUBIC_CURVE_TO__START_CONTROL = eINSTANCE.getCubicCurveTo_StartControl();
 
 		/**
-		 * The meta object literal for the '<em><b>End Control</b></em>'
-		 * containment reference feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>End Control</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference CUBIC_CURVE_TO__END_CONTROL = eINSTANCE
-				.getCubicCurveTo_EndControl();
+		EReference CUBIC_CURVE_TO__END_CONTROL = eINSTANCE.getCubicCurveTo_EndControl();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl
-		 * <em>Definitions</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl <em>Definitions</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.DefinitionsImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getDefinitions()
 		 * @generated
@@ -6565,31 +6315,25 @@ public interface DGPackage extends EPackage {
 		EClass DEFINITIONS = eINSTANCE.getDefinitions();
 
 		/**
-		 * The meta object literal for the '<em><b>Defnition</b></em>'
-		 * containment reference list feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Defnition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference DEFINITIONS__DEFNITION = eINSTANCE
-				.getDefinitions_Defnition();
+		EReference DEFINITIONS__DEFNITION = eINSTANCE.getDefinitions_Defnition();
 
 		/**
-		 * The meta object literal for the '<em><b>Style Sheet</b></em>'
-		 * containment reference feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Style Sheet</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference DEFINITIONS__STYLE_SHEET = eINSTANCE
-				.getDefinitions_StyleSheet();
+		EReference DEFINITIONS__STYLE_SHEET = eINSTANCE.getDefinitions_StyleSheet();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl
-		 * <em>Style Sheet</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl <em>Style Sheet</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getStyleSheet()
 		 * @generated
@@ -6597,19 +6341,16 @@ public interface DGPackage extends EPackage {
 		EClass STYLE_SHEET = eINSTANCE.getStyleSheet();
 
 		/**
-		 * The meta object literal for the '<em><b>Rule</b></em>' containment
-		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Rule</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STYLE_SHEET__RULE = eINSTANCE.getStyleSheet_Rule();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl
-		 * <em>Style Rule</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl <em>Style Rule</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getStyleRule()
 		 * @generated
@@ -6617,28 +6358,24 @@ public interface DGPackage extends EPackage {
 		EClass STYLE_RULE = eINSTANCE.getStyleRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Selector</b></em>'
-		 * containment reference list feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Selector</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference STYLE_RULE__SELECTOR = eINSTANCE.getStyleRule_Selector();
 
 		/**
-		 * The meta object literal for the '<em><b>Style</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STYLE_RULE__STYLE = eINSTANCE.getStyleRule_Style();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.StyleSelectorImpl
-		 * <em>Style Selector</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.StyleSelectorImpl <em>Style Selector</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.StyleSelectorImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getStyleSelector()
 		 * @generated
@@ -6646,26 +6383,22 @@ public interface DGPackage extends EPackage {
 		EClass STYLE_SELECTOR = eINSTANCE.getStyleSelector();
 
 		/**
-		 * The meta object literal for the '<em><b>Kind</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE_SELECTOR__KIND = eINSTANCE.getStyleSelector_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' attribute
-		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute STYLE_SELECTOR__CLASS = eINSTANCE.getStyleSelector_Class();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl <em>Ellipse</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.EllipseImpl <em>Ellipse</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.EllipseImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getEllipse()
 		 * @generated
@@ -6673,27 +6406,23 @@ public interface DGPackage extends EPackage {
 		EClass ELLIPSE = eINSTANCE.getEllipse();
 
 		/**
-		 * The meta object literal for the '<em><b>Center</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Center</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ELLIPSE__CENTER = eINSTANCE.getEllipse_Center();
 
 		/**
-		 * The meta object literal for the '<em><b>Radii</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Radii</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ELLIPSE__RADII = eINSTANCE.getEllipse_Radii();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl
-		 * <em>Elliptical Arc To</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl <em>Elliptical Arc To</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.EllipticalArcToImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getEllipticalArcTo()
 		 * @generated
@@ -6701,56 +6430,44 @@ public interface DGPackage extends EPackage {
 		EClass ELLIPTICAL_ARC_TO = eINSTANCE.getEllipticalArcTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Point</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Point</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ELLIPTICAL_ARC_TO__POINT = eINSTANCE
-				.getEllipticalArcTo_Point();
+		EReference ELLIPTICAL_ARC_TO__POINT = eINSTANCE.getEllipticalArcTo_Point();
 
 		/**
-		 * The meta object literal for the '<em><b>Radii</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Radii</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ELLIPTICAL_ARC_TO__RADII = eINSTANCE
-				.getEllipticalArcTo_Radii();
+		EReference ELLIPTICAL_ARC_TO__RADII = eINSTANCE.getEllipticalArcTo_Radii();
 
 		/**
-		 * The meta object literal for the '<em><b>Rotation</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Rotation</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ELLIPTICAL_ARC_TO__ROTATION = eINSTANCE
-				.getEllipticalArcTo_Rotation();
+		EAttribute ELLIPTICAL_ARC_TO__ROTATION = eINSTANCE.getEllipticalArcTo_Rotation();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Large Arc</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Is Large Arc</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ELLIPTICAL_ARC_TO__IS_LARGE_ARC = eINSTANCE
-				.getEllipticalArcTo_IsLargeArc();
+		EAttribute ELLIPTICAL_ARC_TO__IS_LARGE_ARC = eINSTANCE.getEllipticalArcTo_IsLargeArc();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Sweep</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Is Sweep</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ELLIPTICAL_ARC_TO__IS_SWEEP = eINSTANCE
-				.getEllipticalArcTo_IsSweep();
+		EAttribute ELLIPTICAL_ARC_TO__IS_SWEEP = eINSTANCE.getEllipticalArcTo_IsSweep();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl
-		 * <em>Quadratic Curve To</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl <em>Quadratic Curve To</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.QuadraticCurveToImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getQuadraticCurveTo()
 		 * @generated
@@ -6758,28 +6475,22 @@ public interface DGPackage extends EPackage {
 		EClass QUADRATIC_CURVE_TO = eINSTANCE.getQuadraticCurveTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Point</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Point</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUADRATIC_CURVE_TO__POINT = eINSTANCE
-				.getQuadraticCurveTo_Point();
+		EReference QUADRATIC_CURVE_TO__POINT = eINSTANCE.getQuadraticCurveTo_Point();
 
 		/**
-		 * The meta object literal for the '<em><b>Control</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Control</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUADRATIC_CURVE_TO__CONTROL = eINSTANCE
-				.getQuadraticCurveTo_Control();
+		EReference QUADRATIC_CURVE_TO__CONTROL = eINSTANCE.getQuadraticCurveTo_Control();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.GradientImpl <em>Gradient</em>}
-		 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.GradientImpl <em>Gradient</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.GradientImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getGradient()
 		 * @generated
@@ -6787,19 +6498,16 @@ public interface DGPackage extends EPackage {
 		EClass GRADIENT = eINSTANCE.getGradient();
 
 		/**
-		 * The meta object literal for the '<em><b>Stop</b></em>' containment
-		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Stop</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference GRADIENT__STOP = eINSTANCE.getGradient_Stop();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.GradientStopImpl
-		 * <em>Gradient Stop</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.GradientStopImpl <em>Gradient Stop</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.GradientStopImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getGradientStop()
 		 * @generated
@@ -6807,52 +6515,43 @@ public interface DGPackage extends EPackage {
 		EClass GRADIENT_STOP = eINSTANCE.getGradientStop();
 
 		/**
-		 * The meta object literal for the '<em><b>Color</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute GRADIENT_STOP__COLOR = eINSTANCE.getGradientStop_Color();
 
 		/**
-		 * The meta object literal for the '<em><b>Offset</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute GRADIENT_STOP__OFFSET = eINSTANCE.getGradientStop_Offset();
 
 		/**
-		 * The meta object literal for the '<em><b>Opacity</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Opacity</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute GRADIENT_STOP__OPACITY = eINSTANCE.getGradientStop_Opacity();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Offset</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Offset</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GRADIENT_STOP___VALID_OFFSET__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getGradientStop__ValidOffset__DiagnosticChain_Map();
+		EOperation GRADIENT_STOP___VALID_OFFSET__DIAGNOSTICCHAIN_MAP = eINSTANCE.getGradientStop__ValidOffset__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Opacity</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Opacity</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GRADIENT_STOP___VALID_OPACITY__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getGradientStop__ValidOpacity__DiagnosticChain_Map();
+		EOperation GRADIENT_STOP___VALID_OPACITY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getGradientStop__ValidOpacity__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.ImageImpl <em>Image</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.ImageImpl <em>Image</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.ImageImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getImage()
 		 * @generated
@@ -6860,17 +6559,15 @@ public interface DGPackage extends EPackage {
 		EClass IMAGE = eINSTANCE.getImage();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute IMAGE__SOURCE = eINSTANCE.getImage_Source();
 
 		/**
-		 * The meta object literal for the '<em><b>Bounds</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Bounds</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference IMAGE__BOUNDS = eINSTANCE.getImage_Bounds();
@@ -6882,8 +6579,7 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute IMAGE__IS_ASPECT_RATIO_PRESERVED = eINSTANCE
-				.getImage_IsAspectRatioPreserved();
+		EAttribute IMAGE__IS_ASPECT_RATIO_PRESERVED = eINSTANCE.getImage_IsAspectRatioPreserved();
 
 		/**
 		 * The meta object literal for the '
@@ -6892,14 +6588,11 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation IMAGE___SOURCE_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getImage__SourceCannotBeEmpty__DiagnosticChain_Map();
+		EOperation IMAGE___SOURCE_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getImage__SourceCannotBeEmpty__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.LineImpl <em>Line</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.LineImpl <em>Line</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.LineImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getLine()
 		 * @generated
@@ -6907,27 +6600,23 @@ public interface DGPackage extends EPackage {
 		EClass LINE = eINSTANCE.getLine();
 
 		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LINE__START = eINSTANCE.getLine_Start();
 
 		/**
-		 * The meta object literal for the '<em><b>End</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>End</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LINE__END = eINSTANCE.getLine_End();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.MarkedElementImpl
-		 * <em>Marked Element</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.MarkedElementImpl <em>Marked Element</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.MarkedElementImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getMarkedElement()
 		 * @generated
@@ -6935,31 +6624,25 @@ public interface DGPackage extends EPackage {
 		EClass MARKED_ELEMENT = eINSTANCE.getMarkedElement();
 
 		/**
-		 * The meta object literal for the '<em><b>End Marker</b></em>'
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>End Marker</b></em>' reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MARKED_ELEMENT__END_MARKER = eINSTANCE
-				.getMarkedElement_EndMarker();
+		EReference MARKED_ELEMENT__END_MARKER = eINSTANCE.getMarkedElement_EndMarker();
 
 		/**
-		 * The meta object literal for the '<em><b>Mid Marker</b></em>'
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Mid Marker</b></em>' reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MARKED_ELEMENT__MID_MARKER = eINSTANCE
-				.getMarkedElement_MidMarker();
+		EReference MARKED_ELEMENT__MID_MARKER = eINSTANCE.getMarkedElement_MidMarker();
 
 		/**
-		 * The meta object literal for the '<em><b>Start Marker</b></em>'
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Start Marker</b></em>' reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MARKED_ELEMENT__START_MARKER = eINSTANCE
-				.getMarkedElement_StartMarker();
+		EReference MARKED_ELEMENT__START_MARKER = eINSTANCE.getMarkedElement_StartMarker();
 
 		/**
 		 * The meta object literal for the '
@@ -6968,8 +6651,7 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getMarkedElement__ReferencedStartMarkerHasId__DiagnosticChain_Map();
+		EOperation MARKED_ELEMENT___REFERENCED_START_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMarkedElement__ReferencedStartMarkerHasId__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -6978,8 +6660,7 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getMarkedElement__ReferencedMidMarkerHasId__DiagnosticChain_Map();
+		EOperation MARKED_ELEMENT___REFERENCED_MID_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMarkedElement__ReferencedMidMarkerHasId__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -6988,14 +6669,11 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getMarkedElement__ReferencedEndMarkerHasId__DiagnosticChain_Map();
+		EOperation MARKED_ELEMENT___REFERENCED_END_MARKER_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMarkedElement__ReferencedEndMarkerHasId__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.MarkerImpl <em>Marker</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.MarkerImpl <em>Marker</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.MarkerImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getMarker()
 		 * @generated
@@ -7003,28 +6681,24 @@ public interface DGPackage extends EPackage {
 		EClass MARKER = eINSTANCE.getMarker();
 
 		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference MARKER__SIZE = eINSTANCE.getMarker_Size();
 
 		/**
-		 * The meta object literal for the '<em><b>Reference</b></em>'
-		 * containment reference feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference MARKER__REFERENCE = eINSTANCE.getMarker_Reference();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl
-		 * <em>Linear Gradient</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl <em>Linear Gradient</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getLinearGradient()
 		 * @generated
@@ -7032,36 +6706,30 @@ public interface DGPackage extends EPackage {
 		EClass LINEAR_GRADIENT = eINSTANCE.getLinearGradient();
 
 		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LINEAR_GRADIENT__START = eINSTANCE.getLinearGradient_Start();
 
 		/**
-		 * The meta object literal for the '<em><b>End</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>End</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LINEAR_GRADIENT__END = eINSTANCE.getLinearGradient_End();
 
 		/**
-		 * The meta object literal for the '
-		 * <em><b>Valid Gradient Vector</b></em>' operation. <!-- begin-user-doc
+		 * The meta object literal for the '<em><b>Valid Gradient Vector</b></em>' operation.
+		 * <!-- begin-user-doc
 		 * --> <!-- end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EOperation LINEAR_GRADIENT___VALID_GRADIENT_VECTOR__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getLinearGradient__ValidGradientVector__DiagnosticChain_Map();
+		EOperation LINEAR_GRADIENT___VALID_GRADIENT_VECTOR__DIAGNOSTICCHAIN_MAP = eINSTANCE.getLinearGradient__ValidGradientVector__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.LineToImpl <em>Line To</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.LineToImpl <em>Line To</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.LineToImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getLineTo()
 		 * @generated
@@ -7069,18 +6737,15 @@ public interface DGPackage extends EPackage {
 		EClass LINE_TO = eINSTANCE.getLineTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Point</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Point</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LINE_TO__POINT = eINSTANCE.getLineTo_Point();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl <em>Matrix</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl <em>Matrix</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.MatrixImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getMatrix()
 		 * @generated
@@ -7088,58 +6753,50 @@ public interface DGPackage extends EPackage {
 		EClass MATRIX = eINSTANCE.getMatrix();
 
 		/**
-		 * The meta object literal for the '<em><b>A</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>A</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MATRIX__A = eINSTANCE.getMatrix_A();
 
 		/**
-		 * The meta object literal for the '<em><b>B</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>B</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MATRIX__B = eINSTANCE.getMatrix_B();
 
 		/**
-		 * The meta object literal for the '<em><b>C</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>C</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MATRIX__C = eINSTANCE.getMatrix_C();
 
 		/**
-		 * The meta object literal for the '<em><b>D</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>D</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MATRIX__D = eINSTANCE.getMatrix_D();
 
 		/**
-		 * The meta object literal for the '<em><b>E</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>E</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MATRIX__E = eINSTANCE.getMatrix_E();
 
 		/**
-		 * The meta object literal for the '<em><b>F</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>F</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MATRIX__F = eINSTANCE.getMatrix_F();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.PathImpl <em>Path</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.PathImpl <em>Path</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.PathImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPath()
 		 * @generated
@@ -7147,9 +6804,8 @@ public interface DGPackage extends EPackage {
 		EClass PATH = eINSTANCE.getPath();
 
 		/**
-		 * The meta object literal for the '<em><b>Command</b></em>' containment
-		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PATH__COMMAND = eINSTANCE.getPath_Command();
@@ -7161,14 +6817,11 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation PATH___FIRST_COMMAND_MUST_BE_MOVE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getPath__FirstCommandMustBeMove__DiagnosticChain_Map();
+		EOperation PATH___FIRST_COMMAND_MUST_BE_MOVE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getPath__FirstCommandMustBeMove__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.PatternImpl <em>Pattern</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.PatternImpl <em>Pattern</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.PatternImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPattern()
 		 * @generated
@@ -7176,26 +6829,22 @@ public interface DGPackage extends EPackage {
 		EClass PATTERN = eINSTANCE.getPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Bounds</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Bounds</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PATTERN__BOUNDS = eINSTANCE.getPattern_Bounds();
 
 		/**
-		 * The meta object literal for the '<em><b>Tile</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Tile</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PATTERN__TILE = eINSTANCE.getPattern_Tile();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.PolygonImpl <em>Polygon</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.PolygonImpl <em>Polygon</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.PolygonImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPolygon()
 		 * @generated
@@ -7203,18 +6852,15 @@ public interface DGPackage extends EPackage {
 		EClass POLYGON = eINSTANCE.getPolygon();
 
 		/**
-		 * The meta object literal for the '<em><b>Point</b></em>' containment
-		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Point</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference POLYGON__POINT = eINSTANCE.getPolygon_Point();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.PolylineImpl <em>Polyline</em>}
-		 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.PolylineImpl <em>Polyline</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.PolylineImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getPolyline()
 		 * @generated
@@ -7222,19 +6868,16 @@ public interface DGPackage extends EPackage {
 		EClass POLYLINE = eINSTANCE.getPolyline();
 
 		/**
-		 * The meta object literal for the '<em><b>Point</b></em>' containment
-		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Point</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference POLYLINE__POINT = eINSTANCE.getPolyline_Point();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.RadialGradientImpl
-		 * <em>Radial Gradient</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.RadialGradientImpl <em>Radial Gradient</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.RadialGradientImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getRadialGradient()
 		 * @generated
@@ -7242,57 +6885,46 @@ public interface DGPackage extends EPackage {
 		EClass RADIAL_GRADIENT = eINSTANCE.getRadialGradient();
 
 		/**
-		 * The meta object literal for the '<em><b>Center</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Center</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RADIAL_GRADIENT__CENTER = eINSTANCE
-				.getRadialGradient_Center();
+		EReference RADIAL_GRADIENT__CENTER = eINSTANCE.getRadialGradient_Center();
 
 		/**
-		 * The meta object literal for the '<em><b>Focus</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Focus</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference RADIAL_GRADIENT__FOCUS = eINSTANCE.getRadialGradient_Focus();
 
 		/**
-		 * The meta object literal for the '<em><b>Radius</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Radius</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RADIAL_GRADIENT__RADIUS = eINSTANCE
-				.getRadialGradient_Radius();
+		EAttribute RADIAL_GRADIENT__RADIUS = eINSTANCE.getRadialGradient_Radius();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Center Point</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Center Point</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RADIAL_GRADIENT___VALID_CENTER_POINT__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getRadialGradient__ValidCenterPoint__DiagnosticChain_Map();
+		EOperation RADIAL_GRADIENT___VALID_CENTER_POINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRadialGradient__ValidCenterPoint__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Focus Point</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Focus Point</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RADIAL_GRADIENT___VALID_FOCUS_POINT__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getRadialGradient__ValidFocusPoint__DiagnosticChain_Map();
+		EOperation RADIAL_GRADIENT___VALID_FOCUS_POINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRadialGradient__ValidFocusPoint__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Valid Radius</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Valid Radius</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RADIAL_GRADIENT___VALID_RADIUS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getRadialGradient__ValidRadius__DiagnosticChain_Map();
+		EOperation RADIAL_GRADIENT___VALID_RADIUS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRadialGradient__ValidRadius__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -7307,21 +6939,18 @@ public interface DGPackage extends EPackage {
 		EClass RECTANGLE = eINSTANCE.getRectangle();
 
 		/**
-		 * The meta object literal for the '<em><b>Bounds</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Bounds</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference RECTANGLE__BOUNDS = eINSTANCE.getRectangle_Bounds();
 
 		/**
-		 * The meta object literal for the '<em><b>Corner Radius</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Corner Radius</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RECTANGLE__CORNER_RADIUS = eINSTANCE
-				.getRectangle_CornerRadius();
+		EAttribute RECTANGLE__CORNER_RADIUS = eINSTANCE.getRectangle_CornerRadius();
 
 		/**
 		 * The meta object literal for the '
@@ -7330,15 +6959,12 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getRectangle__NonNegativeCornerRadius__DiagnosticChain_Map();
+		EOperation RECTANGLE___NON_NEGATIVE_CORNER_RADIUS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRectangle__NonNegativeCornerRadius__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.RootCanvasImpl
-		 * <em>Root Canvas</em>}' class. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.RootCanvasImpl <em>Root Canvas</em>}' class.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.RootCanvasImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getRootCanvas()
 		 * @generated
@@ -7346,23 +6972,19 @@ public interface DGPackage extends EPackage {
 		EClass ROOT_CANVAS = eINSTANCE.getRootCanvas();
 
 		/**
-		 * The meta object literal for the '<em><b>Background Color</b></em>'
-		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Background Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROOT_CANVAS__BACKGROUND_COLOR = eINSTANCE
-				.getRootCanvas_BackgroundColor();
+		EAttribute ROOT_CANVAS__BACKGROUND_COLOR = eINSTANCE.getRootCanvas_BackgroundColor();
 
 		/**
-		 * The meta object literal for the '<em><b>Definitions</b></em>'
-		 * containment reference feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Definitions</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
-		EReference ROOT_CANVAS__DEFINITIONS = eINSTANCE
-				.getRootCanvas_Definitions();
+		EReference ROOT_CANVAS__DEFINITIONS = eINSTANCE.getRootCanvas_Definitions();
 
 		/**
 		 * The meta object literal for the '<em><b>External Style Sheet</b></em>
@@ -7371,14 +6993,19 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference ROOT_CANVAS__EXTERNAL_STYLE_SHEET = eINSTANCE
-				.getRootCanvas_ExternalStyleSheet();
+		EReference ROOT_CANVAS__EXTERNAL_STYLE_SHEET = eINSTANCE.getRootCanvas_ExternalStyleSheet();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.RotateImpl <em>Rotate</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Script</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOT_CANVAS__SCRIPT = eINSTANCE.getRootCanvas_Script();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.RotateImpl <em>Rotate</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.RotateImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getRotate()
 		 * @generated
@@ -7386,26 +7013,22 @@ public interface DGPackage extends EPackage {
 		EClass ROTATE = eINSTANCE.getRotate();
 
 		/**
-		 * The meta object literal for the '<em><b>Angle</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Angle</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ROTATE__ANGLE = eINSTANCE.getRotate_Angle();
 
 		/**
-		 * The meta object literal for the '<em><b>Center</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Center</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ROTATE__CENTER = eINSTANCE.getRotate_Center();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.ScaleImpl <em>Scale</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.ScaleImpl <em>Scale</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.impl.ScaleImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getScale()
 		 * @generated
@@ -7413,35 +7036,29 @@ public interface DGPackage extends EPackage {
 		EClass SCALE = eINSTANCE.getScale();
 
 		/**
-		 * The meta object literal for the '<em><b>Factor X</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Factor X</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SCALE__FACTOR_X = eINSTANCE.getScale_FactorX();
 
 		/**
-		 * The meta object literal for the '<em><b>Factor Y</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Factor Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SCALE__FACTOR_Y = eINSTANCE.getScale_FactorY();
 
 		/**
-		 * The meta object literal for the '<em><b>Nonnegativescale</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Nonnegativescale</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation SCALE___NONNEGATIVESCALE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getScale__Nonnegativescale__DiagnosticChain_Map();
+		EOperation SCALE___NONNEGATIVESCALE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getScale__Nonnegativescale__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.SkewImpl <em>Skew</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.SkewImpl <em>Skew</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.SkewImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getSkew()
 		 * @generated
@@ -7449,26 +7066,22 @@ public interface DGPackage extends EPackage {
 		EClass SKEW = eINSTANCE.getSkew();
 
 		/**
-		 * The meta object literal for the '<em><b>Angle X</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Angle X</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SKEW__ANGLE_X = eINSTANCE.getSkew_AngleX();
 
 		/**
-		 * The meta object literal for the '<em><b>Angle Y</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Angle Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SKEW__ANGLE_Y = eINSTANCE.getSkew_AngleY();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.TextImpl <em>Text</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.TextImpl <em>Text</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.TextImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getText()
 		 * @generated
@@ -7476,30 +7089,34 @@ public interface DGPackage extends EPackage {
 		EClass TEXT = eINSTANCE.getText();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute TEXT__DATA = eINSTANCE.getText_Data();
 
 		/**
-		 * The meta object literal for the '<em><b>Position</b></em>'
-		 * containment reference feature. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '<em><b>Position</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @generated
 		 */
 		EReference TEXT__POSITION = eINSTANCE.getText_Position();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Cannot Be Empty</b></em>
-		 * ' operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Anchor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getText__DataCannotBeEmpty__DiagnosticChain_Map();
+		EAttribute TEXT__ANCHOR = eINSTANCE.getText_Anchor();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Cannot Be Empty</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getText__DataCannotBeEmpty__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -7514,26 +7131,22 @@ public interface DGPackage extends EPackage {
 		EClass TRANSLATE = eINSTANCE.getTranslate();
 
 		/**
-		 * The meta object literal for the '<em><b>Delta X</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Delta X</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute TRANSLATE__DELTA_X = eINSTANCE.getTranslate_DeltaX();
 
 		/**
-		 * The meta object literal for the '<em><b>Delta Y</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Delta Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute TRANSLATE__DELTA_Y = eINSTANCE.getTranslate_DeltaY();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.impl.UseImpl <em>Use</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.impl.UseImpl <em>Use</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.impl.UseImpl
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getUse()
 		 * @generated
@@ -7541,21 +7154,18 @@ public interface DGPackage extends EPackage {
 		EClass USE = eINSTANCE.getUse();
 
 		/**
-		 * The meta object literal for the '<em><b>Bounds</b></em>' containment
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Bounds</b></em>' containment reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference USE__BOUNDS = eINSTANCE.getUse_Bounds();
 
 		/**
-		 * The meta object literal for the '<em><b>Referenced Element</b></em>'
-		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Referenced Element</b></em>' reference feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference USE__REFERENCED_ELEMENT = eINSTANCE
-				.getUse_ReferencedElement();
+		EReference USE__REFERENCED_ELEMENT = eINSTANCE.getUse_ReferencedElement();
 
 		/**
 		 * The meta object literal for the '
@@ -7564,15 +7174,12 @@ public interface DGPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getUse__ReferencedElementHasId__DiagnosticChain_Map();
+		EOperation USE___REFERENCED_ELEMENT_HAS_ID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getUse__ReferencedElementHasId__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.FontDecoration
-		 * <em>Font Decoration</em>}' enum. <!-- begin-user-doc --> <!--
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.FontDecoration <em>Font Decoration</em>}' enum.
+		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
 		 * @see org.eclipse.papyrus.dd.dg.FontDecoration
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getFontDecoration()
 		 * @generated
@@ -7580,15 +7187,23 @@ public interface DGPackage extends EPackage {
 		EEnum FONT_DECORATION = eINSTANCE.getFontDecoration();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dg.ElementKind <em>Element Kind</em>}'
-		 * enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.ElementKind <em>Element Kind</em>}' enum.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dg.ElementKind
 		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getElementKind()
 		 * @generated
 		 */
 		EEnum ELEMENT_KIND = eINSTANCE.getElementKind();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dg.TextAnchor <em>Text Anchor</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.dd.dg.TextAnchor
+		 * @see org.eclipse.papyrus.dd.dg.impl.DGPackageImpl#getTextAnchor()
+		 * @generated
+		 */
+		EEnum TEXT_ANCHOR = eINSTANCE.getTextAnchor();
 
 	}
 

@@ -16,17 +16,19 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Group</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Group defines a group of graphical elements that can
- * be styled, clipped and/or transformed together. <!-- end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Group defines a group of graphical elements that can be styled, clipped and/or transformed together.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Group#getMembers <em>Member</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Group#getLayout <em>Layout</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getGroup()
  * @model
  * @generated
@@ -49,5 +51,31 @@ public interface Group extends GraphicalElement {
 	 * @generated
 	 */
 	EList<GraphicalElement> getMembers();
+
+	/**
+	 * Returns the value of the '<em><b>Layout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Layout</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Layout</em>' attribute.
+	 * @see #setLayout(String)
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGroup_Layout()
+	 * @model dataType="org.eclipse.papyrus.dd.dc.String" ordered="false"
+	 * @generated
+	 */
+	String getLayout();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Group#getLayout <em>Layout</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Layout</em>' attribute.
+	 * @see #getLayout()
+	 * @generated
+	 */
+	void setLayout(String value);
 
 } // Group

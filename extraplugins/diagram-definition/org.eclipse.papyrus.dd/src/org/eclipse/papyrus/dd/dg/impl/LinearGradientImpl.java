@@ -39,20 +39,17 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl#getStart <em>
- * Start</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl#getEnd <em>End
- * </em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.impl.LinearGradientImpl#getEnd <em>End</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 	/**
-	 * The cached value of the '{@link #getStart() <em>Start</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -60,9 +57,8 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 	protected Point start;
 
 	/**
-	 * The cached value of the '{@link #getEnd() <em>End</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
@@ -71,7 +67,6 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected LinearGradientImpl() {
@@ -80,7 +75,6 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +84,6 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Point getStart() {
@@ -99,7 +92,6 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStart(Point newStart,
@@ -107,44 +99,32 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 		Point oldStart = start;
 		start = newStart;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, DGPackage.LINEAR_GRADIENT__START,
-					oldStart, newStart);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.LINEAR_GRADIENT__START, oldStart, newStart);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setStart(Point newStart) {
 		if (newStart != start) {
 			NotificationChain msgs = null;
 			if (start != null)
-				msgs = ((InternalEObject) start).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE
-								- DGPackage.LINEAR_GRADIENT__START, null, msgs);
+				msgs = ((InternalEObject)start).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.LINEAR_GRADIENT__START, null, msgs);
 			if (newStart != null)
-				msgs = ((InternalEObject) newStart).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE
-								- DGPackage.LINEAR_GRADIENT__START, null, msgs);
+				msgs = ((InternalEObject)newStart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.LINEAR_GRADIENT__START, null, msgs);
 			msgs = basicSetStart(newStart, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.LINEAR_GRADIENT__START, newStart, newStart));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.LINEAR_GRADIENT__START, newStart, newStart));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Point getEnd() {
@@ -153,56 +133,41 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetEnd(Point newEnd, NotificationChain msgs) {
 		Point oldEnd = end;
 		end = newEnd;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, DGPackage.LINEAR_GRADIENT__END, oldEnd,
-					newEnd);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.LINEAR_GRADIENT__END, oldEnd, newEnd);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setEnd(Point newEnd) {
 		if (newEnd != end) {
 			NotificationChain msgs = null;
 			if (end != null)
-				msgs = ((InternalEObject) end)
-						.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-								- DGPackage.LINEAR_GRADIENT__END, null, msgs);
+				msgs = ((InternalEObject)end).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.LINEAR_GRADIENT__END, null, msgs);
 			if (newEnd != null)
-				msgs = ((InternalEObject) newEnd)
-						.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-								- DGPackage.LINEAR_GRADIENT__END, null, msgs);
+				msgs = ((InternalEObject)newEnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.LINEAR_GRADIENT__END, null, msgs);
 			msgs = basicSetEnd(newEnd, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.LINEAR_GRADIENT__END, newEnd, newEnd));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.LINEAR_GRADIENT__END, newEnd, newEnd));
 	}
 
 	/**
-	 * The cached validation expression for the '
-	 * {@link #validGradientVector(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Valid Gradient Vector</em>}' invariant operation. <!-- begin-user-doc
+	 * The cached validation expression for the '{@link #validGradientVector(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Gradient Vector</em>}' invariant operation.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
-	 * @see #validGradientVector(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see #validGradientVector(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
@@ -210,112 +175,106 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validGradientVector(DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return DGValidator
-				.validate(
-						DGPackage.Literals.LINEAR_GRADIENT,
-						this,
-						diagnostics,
-						context,
-						"http://www.eclipse.org/emf/2002/Ecore/OCL",
-						DGPackage.Literals.LINEAR_GRADIENT___VALID_GRADIENT_VECTOR__DIAGNOSTICCHAIN_MAP,
-						VALID_GRADIENT_VECTOR_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
-						Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE,
-						DGValidator.LINEAR_GRADIENT__VALID_GRADIENT_VECTOR);
+		return
+			DGValidator.validate
+				(DGPackage.Literals.LINEAR_GRADIENT,
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 DGPackage.Literals.LINEAR_GRADIENT___VALID_GRADIENT_VECTOR__DIAGNOSTICCHAIN_MAP,
+				 VALID_GRADIENT_VECTOR_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DGValidator.DIAGNOSTIC_SOURCE,
+				 DGValidator.LINEAR_GRADIENT__VALID_GRADIENT_VECTOR);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DGPackage.LINEAR_GRADIENT__START:
-			return basicSetStart(null, msgs);
-		case DGPackage.LINEAR_GRADIENT__END:
-			return basicSetEnd(null, msgs);
+			case DGPackage.LINEAR_GRADIENT__START:
+				return basicSetStart(null, msgs);
+			case DGPackage.LINEAR_GRADIENT__END:
+				return basicSetEnd(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DGPackage.LINEAR_GRADIENT__START:
-			return getStart();
-		case DGPackage.LINEAR_GRADIENT__END:
-			return getEnd();
+			case DGPackage.LINEAR_GRADIENT__START:
+				return getStart();
+			case DGPackage.LINEAR_GRADIENT__END:
+				return getEnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DGPackage.LINEAR_GRADIENT__START:
-			setStart((Point) newValue);
-			return;
-		case DGPackage.LINEAR_GRADIENT__END:
-			setEnd((Point) newValue);
-			return;
+			case DGPackage.LINEAR_GRADIENT__START:
+				setStart((Point)newValue);
+				return;
+			case DGPackage.LINEAR_GRADIENT__END:
+				setEnd((Point)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DGPackage.LINEAR_GRADIENT__START:
-			setStart((Point) null);
-			return;
-		case DGPackage.LINEAR_GRADIENT__END:
-			setEnd((Point) null);
-			return;
+			case DGPackage.LINEAR_GRADIENT__START:
+				setStart((Point)null);
+				return;
+			case DGPackage.LINEAR_GRADIENT__END:
+				setEnd((Point)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DGPackage.LINEAR_GRADIENT__START:
-			return start != null;
-		case DGPackage.LINEAR_GRADIENT__END:
-			return end != null;
+			case DGPackage.LINEAR_GRADIENT__START:
+				return start != null;
+			case DGPackage.LINEAR_GRADIENT__END:
+				return end != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -323,9 +282,8 @@ public class LinearGradientImpl extends GradientImpl implements LinearGradient {
 	public Object eInvoke(int operationID, EList<?> arguments)
 			throws InvocationTargetException {
 		switch (operationID) {
-		case DGPackage.LINEAR_GRADIENT___VALID_GRADIENT_VECTOR__DIAGNOSTICCHAIN_MAP:
-			return validGradientVector((DiagnosticChain) arguments.get(0),
-					(Map<Object, Object>) arguments.get(1));
+			case DGPackage.LINEAR_GRADIENT___VALID_GRADIENT_VECTOR__DIAGNOSTICCHAIN_MAP:
+				return validGradientVector((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

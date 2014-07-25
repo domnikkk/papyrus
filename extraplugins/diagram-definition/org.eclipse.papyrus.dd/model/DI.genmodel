@@ -2,10 +2,11 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
     copyrightText="Copyright (c) 2014 CEA LIST.&#xA; &#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA; &#xD;&#xA;Contributors:&#xD;&#xA; CEA LIST - Initial API and implementation"
-    modelDirectory="/org.eclipse.papyrus.dd/src" modelPluginID="org.eclipse.papyrus.dd"
+    modelDirectory="/org.eclipse.papyrus.dd/src" creationSubmenus="true" modelPluginID="org.eclipse.papyrus.dd"
     modelName="DI" editPluginClass="org.eclipse.papyrus.dd.edit.DDEditPlugin" editorPluginClass="org.eclipse.papyrus.dd.editor.DDEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.uml2.uml.ecore.importer"
-    complianceLevel="7.0" copyrightFields="false" usedGenPackages="DC.genmodel#//dc ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    complianceLevel="7.0" copyrightFields="false" colorProviders="true" fontProviders="true"
+    usedGenPackages="DC.genmodel#//dc ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
@@ -27,29 +28,33 @@
     <details key="CAMEL_CASE_NAMES" value="PROCESS"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
   </genAnnotations>
-  <foreignModel>DI.cmof</foreignModel>
+  <foreignModel>DI.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="DI" basePackage="org.eclipse.papyrus.dd"
       disposableProviderFactory="true" ecorePackage="DI.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="DI.ecore#//DiagramElement">
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/modelElement"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/owningElement"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/ownedElement"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/localStyle"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/sharedStyle"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/modelElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/owningDiagramElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/ownedDiagramElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/localStyle"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/sharedStyle"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/targetEdge"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//DiagramElement/sourceEdge"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="DI.ecore#//Style"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="DI.ecore#//Edge">
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference DI.ecore#//Edge/source"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference DI.ecore#//Edge/target"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//Edge/sourceDiagramElement"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference DI.ecore#//Edge/waypoint"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference DI.ecore#//Edge/targetDiagramElement"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="DI.ecore#//Diagram">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DI.ecore#//Diagram/name"/>

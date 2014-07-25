@@ -12,11 +12,14 @@
 package org.eclipse.papyrus.dd.dg.editor;
 
 import java.awt.Color;
+import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.batik.dom.svg.SVGDOMImplementation;
 import org.apache.batik.svggen.SVGSyntax;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -68,10 +71,12 @@ import org.eclipse.papyrus.dd.dg.StyleRule;
 import org.eclipse.papyrus.dd.dg.StyleSelector;
 import org.eclipse.papyrus.dd.dg.StyleSheet;
 import org.eclipse.papyrus.dd.dg.Text;
+import org.eclipse.papyrus.dd.dg.TextAnchor;
 import org.eclipse.papyrus.dd.dg.Transform;
 import org.eclipse.papyrus.dd.dg.Translate;
 import org.eclipse.papyrus.dd.dg.Use;
 import org.eclipse.papyrus.dd.dg.util.DGSwitch;
+import org.eclipse.papyrus.dd.editor.DDEditorPlugin;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -106,6 +111,16 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 	 * This is the CSS marker-end property
 	 */
 	public static final String SVG_MARKER_END_ATTRIBUTE = "marker-end";
+
+	/**
+	 * This is the layout property
+	 */
+	public static final String SVG_LAYOUT_ATTRIBUTE = "layout";
+
+	/**
+	 * This is the layout data property
+	 */
+	public static final String SVG_LAYOUT_DATA_ATTRIBUTE = "layoutData";
 
 	/**
 	 * This is the DG model resource
@@ -149,7 +164,6 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				SVG_SVG_TAG, null);
 
 		// establish a base URL for the SVG document to resolve relative links
-		// URL url = DDEditorPlugin.getPlugin().getBundle().getEntry("/svg");
 		svgDocument.setDocumentURI(resource.getURI().toString());
 
 		// iterate over all contents and convert them
@@ -293,7 +307,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				svg.setAttribute(SVG_HEIGHT_ATTRIBUTE,
 						convertDoubleToString(bounds.getHeight()));
 		}
-
+		
 		return super.caseCanvas(object);
 	}
 
@@ -519,6 +533,9 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 				}
 				element.setAttribute(SVG_TRANSFORM_ATTRIBUTE, transforms);
 			}
+			
+			if (object.getLayoutData() != null)
+				element.setAttribute(SVG_LAYOUT_DATA_ATTRIBUTE, object.getLayoutData());
 		}
 
 		return super.caseGraphicalElement(object);
@@ -533,6 +550,9 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 					svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_G_TAG));
 			getParentElement(object).appendChild(g);
 		}
+		
+		if (object.getLayout() != null)
+			g.setAttribute(SVG_LAYOUT_ATTRIBUTE, object.getLayout());
 
 		return super.caseGroup(object);
 	}
@@ -954,6 +974,13 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 		Element svg = map(object, svgDocument.getDocumentElement());
 		svg.setAttribute(XMLNS_PREFIX, SVG_NAMESPACE_URI);
 		svg.setAttribute(XMLNS_PREFIX + ":" + XLINK_PREFIX, XLINK_NAMESPACE_URI);
+		svg.setAttribute(SVG_ONLOAD_ATTRIBUTE, "validate(evt.target)");
+		
+		if (object.eIsSet(DGPackage.Literals.ROOT_CANVAS__BACKGROUND_COLOR)) {
+			String background = convertColorToString(object
+					.getBackgroundColor());
+			svg.setAttribute(SVG_BACKGROUND_COLOR_ATTRIBUTE, background);
+		}
 
 		for (StyleSheet styleSheet : object.getExternalStyleSheets()) {
 			String target = "xml-stylesheet";
@@ -963,13 +990,18 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 					target, data);
 			svgDocument.insertBefore(pi, svgDocument.getDocumentElement());
 		}
-
-		if (object.eIsSet(DGPackage.Literals.ROOT_CANVAS__BACKGROUND_COLOR)) {
-			String background = convertColorToString(object
-					.getBackgroundColor());
-			svg.setAttribute(SVG_BACKGROUND_COLOR_ATTRIBUTE, background);
+		
+		for (String s : object.getScripts()) {
+			try {
+				URL url = FileLocator.toFileURL(new URL(s));
+				Element script = svgDocument.createElementNS(SVG_NAMESPACE_URI, SVG_SCRIPT_TAG);
+				script.setAttributeNS(XLINK_NAMESPACE_URI, XLINK_HREF_QNAME, url.toString());
+				svg.appendChild(script);
+			} catch (IOException e) {
+				DDEditorPlugin.getPlugin().log(e);
+			}
 		}
-
+		
 		if (object.getDefinitions() != null) {
 			doSwitch(object.getDefinitions());
 		}
@@ -1206,8 +1238,7 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			sb.append("\n\t\t\t" + (String) doSwitch(rule));
 		}
 		styleSheet.setAttribute(SVG_TYPE_ATTRIBUTE, "text/css");
-		styleSheet.appendChild(svgDocument.createCDATASection(sb.toString()
-				+ "\n\t\t"));
+		styleSheet.appendChild(svgDocument.createCDATASection(sb.toString()));
 
 		return super.caseStyleSheet(object);
 	}
@@ -1230,6 +1261,18 @@ public class DGToSVGConverter extends DGSwitch<Object> implements SVGSyntax {
 			if (position.eIsSet(DCPackage.Literals.POINT__Y))
 				text.setAttribute(SVG_Y_ATTRIBUTE,
 						convertDoubleToString(position.getY()));
+		}
+		
+		if (object.getAnchor() != null) {
+			TextAnchor ta = object.getAnchor();
+			String value = null;
+			if (ta.equals(TextAnchor.START))
+				value = "start";
+			else if (ta.equals(TextAnchor.MIDDLE))
+				value = "middle";
+			else if (ta.equals(TextAnchor.END))
+				value = "end";
+			text.setAttribute(SVG_TEXT_ANCHOR_ATTRIBUTE, value);
 		}
 
 		return super.caseText(object);

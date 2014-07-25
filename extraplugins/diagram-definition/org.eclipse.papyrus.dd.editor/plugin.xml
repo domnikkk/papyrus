@@ -21,7 +21,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.eclipse.papyrus.dd.dg.presentation.DGModelWizardID"
+            id="org.eclipse.papyrus.dd.dg.editor.DGModelWizard"
             name="%_UI_DGModelWizard_label"
             class="org.eclipse.papyrus.dd.dg.editor.DGModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -34,7 +34,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated DG -->
       <editor
-            id="org.eclipse.papyrus.dd.dg.presentation.DGEditorID"
+            id="org.eclipse.papyrus.dd.dg.editor.DGEditor"
             name="%_UI_DGEditor_label"
             icon="icons/full/obj16/DGModelFile.gif"
             extensions="dg"

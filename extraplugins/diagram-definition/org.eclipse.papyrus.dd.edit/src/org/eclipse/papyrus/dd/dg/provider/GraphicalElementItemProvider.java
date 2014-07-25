@@ -16,9 +16,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -30,7 +28,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.dd.dg.DGFactory;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 import org.eclipse.papyrus.dd.dg.GraphicalElement;
@@ -69,6 +66,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 
 			addClipPathPropertyDescriptor(object);
 			addClassPropertyDescriptor(object);
+			addLayoutDataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -118,6 +116,28 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Layout Data feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLayoutDataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GraphicalElement_layoutData_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GraphicalElement_layoutData_feature", "_UI_GraphicalElement_type"),
+				 DGPackage.Literals.GRAPHICAL_ELEMENT__LAYOUT_DATA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -151,16 +171,44 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GraphicalElement)object).getId();
+		String label = getLabel((GraphicalElement)object);
 		return label == null || label.length() == 0 ?
 			getString("_UI_GraphicalElement_type") :
 			getString("_UI_GraphicalElement_type") + " " + label;
 	}
 
+	/**
+	 * Get the label of the given graphical element
+	 * 
+	 * @param element The graphical element
+	 * @return String label of the graphical element
+	 */
+	protected String getLabel(GraphicalElement element) {
+		String label = "";
+		
+		if (element.getId() != null)
+			label += "id="+element.getId();
+			
+		if (!element.getClasses().isEmpty()) {
+			if (label.length()>0)
+				label += ", ";
+			label += joinString("class", element.getClasses(), ",");
+		}
+		
+		return (label.length()>0) ? "["+label+"]" : "";
+	}
+	
+	private String joinString(String key, Collection<String> values, String sep) {
+		String s = "";
+		for (String v : values)
+			s += (s.length()>0) ? ", "+v : v;
+		return key+"="+s;
+	}
+	
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
@@ -174,6 +222,7 @@ public class GraphicalElementItemProvider extends DefinitionItemProvider
 
 		switch (notification.getFeatureID(GraphicalElement.class)) {
 			case DGPackage.GRAPHICAL_ELEMENT__CLASS:
+			case DGPackage.GRAPHICAL_ELEMENT__LAYOUT_DATA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DGPackage.GRAPHICAL_ELEMENT__STYLE:

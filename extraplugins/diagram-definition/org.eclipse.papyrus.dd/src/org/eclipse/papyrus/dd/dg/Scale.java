@@ -18,19 +18,19 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Scale</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Scale is a kind of transform that scales (resizes) a
- * graphical element by a given factor in the x-y coordinate system. <!--
- * end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Scale is a kind of transform that scales (resizes) a graphical element by a given factor in the x-y coordinate system.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Scale#getFactorX <em>Factor X</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Scale#getFactorY <em>Factor Y</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Scale#getFactorX <em>Factor X</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Scale#getFactorY <em>Factor Y</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getScale()
  * @model
  * @generated

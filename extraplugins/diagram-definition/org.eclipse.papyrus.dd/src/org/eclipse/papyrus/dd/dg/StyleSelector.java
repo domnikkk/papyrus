@@ -17,16 +17,15 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Style Selector</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.StyleSelector#getClasses <em>Class</em>}
- * </li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.StyleSelector#getClasses <em>Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getStyleSelector()
  * @model
  * @generated
@@ -50,12 +49,9 @@ public interface StyleSelector extends EObject {
 	ElementKind getKind();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Kind</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.dd.dg.ElementKind
 	 * @see #isSetKind()
 	 * @see #unsetKind()
@@ -65,10 +61,8 @@ public interface StyleSelector extends EObject {
 	void setKind(ElementKind value);
 
 	/**
-	 * Unsets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSetKind()
 	 * @see #getKind()
 	 * @see #setKind(ElementKind)
@@ -77,10 +71,8 @@ public interface StyleSelector extends EObject {
 	void unsetKind();
 
 	/**
-	 * Returns whether the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}'
-	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dg.StyleSelector#getKind <em>Kind</em>}' attribute is set.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Kind</em>' attribute is set.
 	 * @see #unsetKind()
 	 * @see #getKind()

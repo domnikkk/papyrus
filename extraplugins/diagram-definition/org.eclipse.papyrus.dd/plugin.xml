@@ -39,4 +39,11 @@
             genModel="model/DI.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+          source="pathmap://DIAGRAM_DEFINITION/"
+          target="platform:/plugin/org.eclipse.papyrus.dd/model/">
+      </mapping>
+   </extension>
+
 </plugin>
