@@ -1,7 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 Soyatec, CEA, and others.
  *
- *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +9,7 @@
  * Contributors:
  *   Soyatec - Initial API and implementation
  *   Christian W. Damus (CEA) - fix lost message so that it doesn't get bent out of shape
+ *   Christian W. Damus (CEA) - bug 440284
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests.bug.pro20130916;
@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.diagram.core.commands.SetPropertyCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
+import org.eclipse.papyrus.junit.utils.rules.RuleUtil;
+import org.eclipse.papyrus.junit.utils.rules.ShowViewRule;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractExecutionSpecificationEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractMessageEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentCombinedFragmentCompartmentEditPart;
@@ -95,7 +97,15 @@ public class Fixbug_LifelineManagement_417365 extends BaseStereotypesTest {
 	@Override
 	public void setUp() throws Exception {
 		super.setUp();
-		prepareDiagram();
+
+		// Show the outline view while we're creating the diagram, because it seems to be necessary to create
+		// a properly horizontal message6 from a gate to lifeline4
+		RuleUtil.runWith(new Runnable() {
+
+			public void run() {
+				prepareDiagram();
+			}
+		}, new ShowViewRule("org.eclipse.ui.views.ContentOutline"));
 	}
 
 	/**

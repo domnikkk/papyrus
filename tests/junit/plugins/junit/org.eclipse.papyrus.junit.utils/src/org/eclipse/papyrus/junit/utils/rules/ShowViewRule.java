@@ -11,7 +11,7 @@
  *   
  *****************************************************************************/
 
-package org.eclipse.papyrus.uml.diagram.sequence.tests;
+package org.eclipse.papyrus.junit.utils.rules;
 
 import static org.junit.Assert.fail;
 
@@ -26,15 +26,15 @@ import org.junit.runner.Description;
 
 
 /**
- * A rule that hides a view for the duration of a test.
+ * A rule that ensures a view is showing for the duration of a test.
  */
-public class HideViewRule extends TestWatcher {
+public class ShowViewRule extends TestWatcher {
 
 	private final String viewID;
 
-	private IWorkbenchPage page;
+	private IViewPart view;
 
-	public HideViewRule(String viewID) {
+	public ShowViewRule(String viewID) {
 		super();
 
 		this.viewID = viewID;
@@ -49,24 +49,24 @@ public class HideViewRule extends TestWatcher {
 		}
 
 		IWorkbenchPage page = window.getActivePage();
-		IViewPart viewPart = page.findView(viewID);
+		view = page.findView(viewID);
 
-		if(viewPart != null) {
-			this.page = page;
-			page.hideView(viewPart);
+		if(view == null) {
+			try {
+				view = page.showView(viewID);
+			} catch (PartInitException e) {
+				fail(String.format("Failed to show view %s: %s", viewID, e.getLocalizedMessage()));
+			}
 		}
 	}
 
 	@Override
 	protected void finished(Description description) {
-		if(page != null) {
-			try {
-				page.showView(viewID);
-			} catch (PartInitException e) {
-				fail(String.format("Failed to restore view %s: %s", viewID, e.getLocalizedMessage()));
-			}
+		if(view != null) {
+			// Hide it again, because we showed it in the first place
+			view.getSite().getPage().hideView(view);
 		}
 
-		page = null;
+		view = null;
 	}
 }

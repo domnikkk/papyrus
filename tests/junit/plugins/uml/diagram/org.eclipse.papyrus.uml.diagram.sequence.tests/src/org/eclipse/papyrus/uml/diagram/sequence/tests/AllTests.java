@@ -14,6 +14,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.tests;
 
+import org.eclipse.papyrus.junit.utils.rules.HideViewRule;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.bug.BugTests;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.bug.BugTests2;
 import org.eclipse.papyrus.uml.diagram.sequence.tests.bug.m7.BugTest_m7;
