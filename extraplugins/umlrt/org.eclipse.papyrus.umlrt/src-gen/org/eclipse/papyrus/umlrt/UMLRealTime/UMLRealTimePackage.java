@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime;
 
@@ -32,7 +38,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "UMLRealTime";
+	String eNAME = "UMLRealTime"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace URI.
@@ -40,7 +46,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.eclipse.org/papyrus/umlrt";
+	String eNS_URI = "http:///UMLRealTime.ecore"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace name.
@@ -48,7 +54,7 @@ public interface UMLRealTimePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "umlrt";
+	String eNS_PREFIX = "UMLRealTime"; //$NON-NLS-1$
 
 	/**
 	 * The singleton instance of the package.
@@ -224,13 +230,13 @@ public interface UMLRealTimePackage extends EPackage {
 	int PROTOCOL = 2;
 
 	/**
-	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * The feature id for the '<em><b>Base Collaboration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL__BASE_CLASS = 0;
+	int PROTOCOL__BASE_COLLABORATION = 0;
 
 	/**
 	 * The number of structural features of the '<em>Protocol</em>' class.
@@ -242,13 +248,13 @@ public interface UMLRealTimePackage extends EPackage {
 	int PROTOCOL_FEATURE_COUNT = 1;
 
 	/**
-	 * The operation id for the '<em>Protocolclassescanhaveatmostonegeneralization</em>' operation.
+	 * The operation id for the '<em>Protocolscanhaveatmostonegeneralization</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL___PROTOCOLCLASSESCANHAVEATMOSTONEGENERALIZATION__DIAGNOSTICCHAIN_MAP = 0;
+	int PROTOCOL___PROTOCOLSCANHAVEATMOSTONEGENERALIZATION__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Protocol</em>' class.
@@ -424,14 +430,14 @@ public interface UMLRealTimePackage extends EPackage {
 	int RT_CONNECTOR_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolPackageImpl <em>Protocol Package</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl <em>Protocol Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolPackageImpl
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getProtocolPackage()
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getProtocolContainer()
 	 * @generated
 	 */
-	int PROTOCOL_PACKAGE = 5;
+	int PROTOCOL_CONTAINER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
@@ -440,25 +446,25 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_PACKAGE__BASE_PACKAGE = 0;
+	int PROTOCOL_CONTAINER__BASE_PACKAGE = 0;
 
 	/**
-	 * The number of structural features of the '<em>Protocol Package</em>' class.
+	 * The number of structural features of the '<em>Protocol Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_PACKAGE_FEATURE_COUNT = 1;
+	int PROTOCOL_CONTAINER_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Protocol Package</em>' class.
+	 * The number of operations of the '<em>Protocol Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_PACKAGE_OPERATION_COUNT = 0;
+	int PROTOCOL_CONTAINER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRExcludedElementImpl <em>RTR Excluded Element</em>}' class.
@@ -507,14 +513,14 @@ public interface UMLRealTimePackage extends EPackage {
 	int RTR_EXCLUDED_ELEMENT_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.MessageSetImpl <em>Message Set</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTMessageSetImpl <em>RT Message Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.MessageSetImpl
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getMessageSet()
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTMessageSetImpl
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTMessageSet()
 	 * @generated
 	 */
-	int MESSAGE_SET = 7;
+	int RT_MESSAGE_SET = 7;
 
 	/**
 	 * The feature id for the '<em><b>Base Interface</b></em>' reference.
@@ -523,80 +529,34 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_SET__BASE_INTERFACE = 0;
+	int RT_MESSAGE_SET__BASE_INTERFACE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Incoming</b></em>' attribute.
+	 * The feature id for the '<em><b>Rt Msg Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_SET__IS_INCOMING = 1;
+	int RT_MESSAGE_SET__RT_MSG_KIND = 1;
 
 	/**
-	 * The number of structural features of the '<em>Message Set</em>' class.
+	 * The number of structural features of the '<em>RT Message Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_SET_FEATURE_COUNT = 2;
+	int RT_MESSAGE_SET_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Message Set</em>' class.
+	 * The number of operations of the '<em>RT Message Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_SET_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.TriggerEventImpl <em>Trigger Event</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.TriggerEventImpl
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getTriggerEvent()
-	 * @generated
-	 */
-	int TRIGGER_EVENT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Ev Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIGGER_EVENT__EV_TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Base Signal Event</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIGGER_EVENT__BASE_SIGNAL_EVENT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Trigger Event</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIGGER_EVENT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Trigger Event</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIGGER_EVENT_OPERATION_COUNT = 0;
+	int RT_MESSAGE_SET_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType <em>Port Registration Type</em>}' enum.
@@ -606,17 +566,17 @@ public interface UMLRealTimePackage extends EPackage {
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getPortRegistrationType()
 	 * @generated
 	 */
-	int PORT_REGISTRATION_TYPE = 9;
+	int PORT_REGISTRATION_TYPE = 8;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.EventType <em>Event Type</em>}' enum.
+	 * The meta object id for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind <em>RT Message Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.EventType
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getEventType()
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTMessageKind()
 	 * @generated
 	 */
-	int EVENT_TYPE = 10;
+	int RT_MESSAGE_KIND = 9;
 
 
 	/**
@@ -762,25 +722,25 @@ public interface UMLRealTimePackage extends EPackage {
 	EClass getProtocol();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#getBase_Class <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#getBase_Collaboration <em>Base Collaboration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Class</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#getBase_Class()
+	 * @return the meta object for the reference '<em>Base Collaboration</em>'.
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#getBase_Collaboration()
 	 * @see #getProtocol()
 	 * @generated
 	 */
-	EReference getProtocol_Base_Class();
+	EReference getProtocol_Base_Collaboration();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#Protocolclassescanhaveatmostonegeneralization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Protocolclassescanhaveatmostonegeneralization</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#Protocolscanhaveatmostonegeneralization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Protocolscanhaveatmostonegeneralization</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Protocolclassescanhaveatmostonegeneralization</em>' operation.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#Protocolclassescanhaveatmostonegeneralization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Protocolscanhaveatmostonegeneralization</em>' operation.
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.Protocol#Protocolscanhaveatmostonegeneralization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getProtocol__Protocolclassescanhaveatmostonegeneralization__DiagnosticChain_Map();
+	EOperation getProtocol__Protocolscanhaveatmostonegeneralization__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTPort <em>RT Port</em>}'.
@@ -930,25 +890,25 @@ public interface UMLRealTimePackage extends EPackage {
 	EOperation getRTConnector__Onlybinaryconnectorsareallowed__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolPackage <em>Protocol Package</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer <em>Protocol Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Protocol Package</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolPackage
+	 * @return the meta object for class '<em>Protocol Container</em>'.
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer
 	 * @generated
 	 */
-	EClass getProtocolPackage();
+	EClass getProtocolContainer();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolPackage#getBase_Package <em>Base Package</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Package</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolPackage#getBase_Package()
-	 * @see #getProtocolPackage()
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer#getBase_Package()
+	 * @see #getProtocolContainer()
 	 * @generated
 	 */
-	EReference getProtocolPackage_Base_Package();
+	EReference getProtocolContainer_Base_Package();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTRExcludedElement <em>RTR Excluded Element</em>}'.
@@ -982,68 +942,36 @@ public interface UMLRealTimePackage extends EPackage {
 	EOperation getRTRExcludedElement__ExclusioncanonlybeappliedtosomeUMLRTmodelelements__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.MessageSet <em>Message Set</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet <em>RT Message Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Message Set</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.MessageSet
+	 * @return the meta object for class '<em>RT Message Set</em>'.
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet
 	 * @generated
 	 */
-	EClass getMessageSet();
+	EClass getRTMessageSet();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.MessageSet#getBase_Interface <em>Base Interface</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getBase_Interface <em>Base Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Interface</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.MessageSet#getBase_Interface()
-	 * @see #getMessageSet()
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getBase_Interface()
+	 * @see #getRTMessageSet()
 	 * @generated
 	 */
-	EReference getMessageSet_Base_Interface();
+	EReference getRTMessageSet_Base_Interface();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.MessageSet#isIncoming <em>Is Incoming</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getRtMsgKind <em>Rt Msg Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Incoming</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.MessageSet#isIncoming()
-	 * @see #getMessageSet()
+	 * @return the meta object for the attribute '<em>Rt Msg Kind</em>'.
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageSet#getRtMsgKind()
+	 * @see #getRTMessageSet()
 	 * @generated
 	 */
-	EAttribute getMessageSet_IsIncoming();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.umlrt.UMLRealTime.TriggerEvent <em>Trigger Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Trigger Event</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.TriggerEvent
-	 * @generated
-	 */
-	EClass getTriggerEvent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umlrt.UMLRealTime.TriggerEvent#getEvType <em>Ev Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ev Type</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.TriggerEvent#getEvType()
-	 * @see #getTriggerEvent()
-	 * @generated
-	 */
-	EAttribute getTriggerEvent_EvType();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umlrt.UMLRealTime.TriggerEvent#getBase_SignalEvent <em>Base Signal Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Signal Event</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.TriggerEvent#getBase_SignalEvent()
-	 * @see #getTriggerEvent()
-	 * @generated
-	 */
-	EReference getTriggerEvent_Base_SignalEvent();
+	EAttribute getRTMessageSet_RtMsgKind();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType <em>Port Registration Type</em>}'.
@@ -1056,14 +984,14 @@ public interface UMLRealTimePackage extends EPackage {
 	EEnum getPortRegistrationType();
 
 	/**
-	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umlrt.UMLRealTime.EventType <em>Event Type</em>}'.
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind <em>RT Message Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Event Type</em>'.
-	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.EventType
+	 * @return the meta object for enum '<em>RT Message Kind</em>'.
+	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
 	 * @generated
 	 */
-	EEnum getEventType();
+	EEnum getRTMessageKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1207,20 +1135,20 @@ public interface UMLRealTimePackage extends EPackage {
 		EClass PROTOCOL = eINSTANCE.getProtocol();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Base Collaboration</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROTOCOL__BASE_CLASS = eINSTANCE.getProtocol_Base_Class();
+		EReference PROTOCOL__BASE_COLLABORATION = eINSTANCE.getProtocol_Base_Collaboration();
 
 		/**
-		 * The meta object literal for the '<em><b>Protocolclassescanhaveatmostonegeneralization</b></em>' operation.
+		 * The meta object literal for the '<em><b>Protocolscanhaveatmostonegeneralization</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation PROTOCOL___PROTOCOLCLASSESCANHAVEATMOSTONEGENERALIZATION__DIAGNOSTICCHAIN_MAP = eINSTANCE.getProtocol__Protocolclassescanhaveatmostonegeneralization__DiagnosticChain_Map();
+		EOperation PROTOCOL___PROTOCOLSCANHAVEATMOSTONEGENERALIZATION__DIAGNOSTICCHAIN_MAP = eINSTANCE.getProtocol__Protocolscanhaveatmostonegeneralization__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTPortImpl <em>RT Port</em>}' class.
@@ -1339,14 +1267,14 @@ public interface UMLRealTimePackage extends EPackage {
 		EOperation RT_CONNECTOR___ONLYBINARYCONNECTORSAREALLOWED__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRTConnector__Onlybinaryconnectorsareallowed__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolPackageImpl <em>Protocol Package</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl <em>Protocol Container</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolPackageImpl
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getProtocolPackage()
+		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl
+		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getProtocolContainer()
 		 * @generated
 		 */
-		EClass PROTOCOL_PACKAGE = eINSTANCE.getProtocolPackage();
+		EClass PROTOCOL_CONTAINER = eINSTANCE.getProtocolContainer();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
@@ -1354,7 +1282,7 @@ public interface UMLRealTimePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROTOCOL_PACKAGE__BASE_PACKAGE = eINSTANCE.getProtocolPackage_Base_Package();
+		EReference PROTOCOL_CONTAINER__BASE_PACKAGE = eINSTANCE.getProtocolContainer_Base_Package();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRExcludedElementImpl <em>RTR Excluded Element</em>}' class.
@@ -1383,14 +1311,14 @@ public interface UMLRealTimePackage extends EPackage {
 		EOperation RTR_EXCLUDED_ELEMENT___EXCLUSIONCANONLYBEAPPLIEDTOSOME_UMLR_TMODELELEMENTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRTRExcludedElement__ExclusioncanonlybeappliedtosomeUMLRTmodelelements__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.MessageSetImpl <em>Message Set</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTMessageSetImpl <em>RT Message Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.MessageSetImpl
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getMessageSet()
+		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTMessageSetImpl
+		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTMessageSet()
 		 * @generated
 		 */
-		EClass MESSAGE_SET = eINSTANCE.getMessageSet();
+		EClass RT_MESSAGE_SET = eINSTANCE.getRTMessageSet();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Interface</b></em>' reference feature.
@@ -1398,41 +1326,15 @@ public interface UMLRealTimePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MESSAGE_SET__BASE_INTERFACE = eINSTANCE.getMessageSet_Base_Interface();
+		EReference RT_MESSAGE_SET__BASE_INTERFACE = eINSTANCE.getRTMessageSet_Base_Interface();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Incoming</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Rt Msg Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE_SET__IS_INCOMING = eINSTANCE.getMessageSet_IsIncoming();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.TriggerEventImpl <em>Trigger Event</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.TriggerEventImpl
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getTriggerEvent()
-		 * @generated
-		 */
-		EClass TRIGGER_EVENT = eINSTANCE.getTriggerEvent();
-
-		/**
-		 * The meta object literal for the '<em><b>Ev Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRIGGER_EVENT__EV_TYPE = eINSTANCE.getTriggerEvent_EvType();
-
-		/**
-		 * The meta object literal for the '<em><b>Base Signal Event</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRIGGER_EVENT__BASE_SIGNAL_EVENT = eINSTANCE.getTriggerEvent_Base_SignalEvent();
+		EAttribute RT_MESSAGE_SET__RT_MSG_KIND = eINSTANCE.getRTMessageSet_RtMsgKind();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.PortRegistrationType <em>Port Registration Type</em>}' enum.
@@ -1445,14 +1347,14 @@ public interface UMLRealTimePackage extends EPackage {
 		EEnum PORT_REGISTRATION_TYPE = eINSTANCE.getPortRegistrationType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.EventType <em>Event Type</em>}' enum.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind <em>RT Message Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.EventType
-		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getEventType()
+		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.RTMessageKind
+		 * @see org.eclipse.papyrus.umlrt.UMLRealTime.impl.UMLRealTimePackageImpl#getRTMessageKind()
 		 * @generated
 		 */
-		EEnum EVENT_TYPE = eINSTANCE.getEventType();
+		EEnum RT_MESSAGE_KIND = eINSTANCE.getRTMessageKind();
 
 	}
 

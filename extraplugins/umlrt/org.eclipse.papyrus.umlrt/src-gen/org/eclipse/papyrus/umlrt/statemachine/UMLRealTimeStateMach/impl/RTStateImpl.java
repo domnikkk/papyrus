@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl;
 
@@ -128,7 +134,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE__ACOMPOSTE_RTSTATEHASEXACTLYONEREGION,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcomposteRTstatehasexactlyoneregion", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcomposteRTstatehasexactlyoneregion", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -153,7 +159,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE__RTDOESNOTSUPPORTSUBMACHINESTATES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTdoesnotsupportsubmachinestates", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTdoesnotsupportsubmachinestates", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -178,7 +184,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE__RTSTATEMACHINESDONOTSUPPORTDOACTIVITIES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesdonotsupportdoactivities", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesdonotsupportdoactivities", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -203,7 +209,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE__RTSTATEMACHINESCANNOTHAVEANYDEFERREDTRIGGERS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinescannothaveanydeferredtriggers", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinescannothaveanydeferredtriggers", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -228,7 +234,7 @@ public class RTStateImpl extends MinimalEObjectImpl.Container implements RTState
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE__CONSTRAINT5,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Constraint5", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Constraint5", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;

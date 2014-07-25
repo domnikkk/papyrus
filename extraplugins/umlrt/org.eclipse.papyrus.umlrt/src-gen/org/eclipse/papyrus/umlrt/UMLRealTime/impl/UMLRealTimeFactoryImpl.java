@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.impl;
 
@@ -62,12 +68,11 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 			case UMLRealTimePackage.PROTOCOL: return createProtocol();
 			case UMLRealTimePackage.RT_PORT: return createRTPort();
 			case UMLRealTimePackage.RT_CONNECTOR: return createRTConnector();
-			case UMLRealTimePackage.PROTOCOL_PACKAGE: return createProtocolPackage();
+			case UMLRealTimePackage.PROTOCOL_CONTAINER: return createProtocolContainer();
 			case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT: return createRTRExcludedElement();
-			case UMLRealTimePackage.MESSAGE_SET: return createMessageSet();
-			case UMLRealTimePackage.TRIGGER_EVENT: return createTriggerEvent();
+			case UMLRealTimePackage.RT_MESSAGE_SET: return createRTMessageSet();
 			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -81,10 +86,10 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 		switch (eDataType.getClassifierID()) {
 			case UMLRealTimePackage.PORT_REGISTRATION_TYPE:
 				return createPortRegistrationTypeFromString(eDataType, initialValue);
-			case UMLRealTimePackage.EVENT_TYPE:
-				return createEventTypeFromString(eDataType, initialValue);
+			case UMLRealTimePackage.RT_MESSAGE_KIND:
+				return createRTMessageKindFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -98,10 +103,10 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 		switch (eDataType.getClassifierID()) {
 			case UMLRealTimePackage.PORT_REGISTRATION_TYPE:
 				return convertPortRegistrationTypeToString(eDataType, instanceValue);
-			case UMLRealTimePackage.EVENT_TYPE:
-				return convertEventTypeToString(eDataType, instanceValue);
+			case UMLRealTimePackage.RT_MESSAGE_KIND:
+				return convertRTMessageKindToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -160,9 +165,9 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProtocolPackage createProtocolPackage() {
-		ProtocolPackageImpl protocolPackage = new ProtocolPackageImpl();
-		return protocolPackage;
+	public ProtocolContainer createProtocolContainer() {
+		ProtocolContainerImpl protocolContainer = new ProtocolContainerImpl();
+		return protocolContainer;
 	}
 
 	/**
@@ -180,19 +185,9 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageSet createMessageSet() {
-		MessageSetImpl messageSet = new MessageSetImpl();
-		return messageSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TriggerEvent createTriggerEvent() {
-		TriggerEventImpl triggerEvent = new TriggerEventImpl();
-		return triggerEvent;
+	public RTMessageSet createRTMessageSet() {
+		RTMessageSetImpl rtMessageSet = new RTMessageSetImpl();
+		return rtMessageSet;
 	}
 
 	/**
@@ -202,7 +197,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 */
 	public PortRegistrationType createPortRegistrationTypeFromString(EDataType eDataType, String initialValue) {
 		PortRegistrationType result = PortRegistrationType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -220,9 +215,9 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventType createEventTypeFromString(EDataType eDataType, String initialValue) {
-		EventType result = EventType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	public RTMessageKind createRTMessageKindFromString(EDataType eDataType, String initialValue) {
+		RTMessageKind result = RTMessageKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -231,7 +226,7 @@ public class UMLRealTimeFactoryImpl extends EFactoryImpl implements UMLRealTimeF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEventTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertRTMessageKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

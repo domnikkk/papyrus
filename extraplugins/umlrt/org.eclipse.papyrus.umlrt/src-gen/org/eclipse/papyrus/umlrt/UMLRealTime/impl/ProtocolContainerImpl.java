@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.impl;
 
@@ -10,23 +16,23 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolPackage;
+import org.eclipse.papyrus.umlrt.UMLRealTime.ProtocolContainer;
 import org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Protocol Package</b></em>'.
+ * An implementation of the model object '<em><b>Protocol Container</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolPackageImpl#getBase_Package <em>Base Package</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.ProtocolContainerImpl#getBase_Package <em>Base Package</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements ProtocolPackage {
+public class ProtocolContainerImpl extends MinimalEObjectImpl.Container implements ProtocolContainer {
 	/**
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -42,7 +48,7 @@ public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProtocolPackageImpl() {
+	protected ProtocolContainerImpl() {
 		super();
 	}
 
@@ -53,7 +59,7 @@ public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UMLRealTimePackage.Literals.PROTOCOL_PACKAGE;
+		return UMLRealTimePackage.Literals.PROTOCOL_CONTAINER;
 	}
 
 	/**
@@ -67,7 +73,7 @@ public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements
 			base_Package = (org.eclipse.uml2.uml.Package)eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLRealTimePackage.PROTOCOL_PACKAGE__BASE_PACKAGE, oldBase_Package, base_Package));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLRealTimePackage.PROTOCOL_CONTAINER__BASE_PACKAGE, oldBase_Package, base_Package));
 			}
 		}
 		return base_Package;
@@ -91,7 +97,7 @@ public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UMLRealTimePackage.PROTOCOL_PACKAGE__BASE_PACKAGE, oldBase_Package, base_Package));
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLRealTimePackage.PROTOCOL_CONTAINER__BASE_PACKAGE, oldBase_Package, base_Package));
 	}
 
 	/**
@@ -102,7 +108,7 @@ public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UMLRealTimePackage.PROTOCOL_PACKAGE__BASE_PACKAGE:
+			case UMLRealTimePackage.PROTOCOL_CONTAINER__BASE_PACKAGE:
 				if (resolve) return getBase_Package();
 				return basicGetBase_Package();
 		}
@@ -117,7 +123,7 @@ public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UMLRealTimePackage.PROTOCOL_PACKAGE__BASE_PACKAGE:
+			case UMLRealTimePackage.PROTOCOL_CONTAINER__BASE_PACKAGE:
 				setBase_Package((org.eclipse.uml2.uml.Package)newValue);
 				return;
 		}
@@ -132,7 +138,7 @@ public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UMLRealTimePackage.PROTOCOL_PACKAGE__BASE_PACKAGE:
+			case UMLRealTimePackage.PROTOCOL_CONTAINER__BASE_PACKAGE:
 				setBase_Package((org.eclipse.uml2.uml.Package)null);
 				return;
 		}
@@ -147,10 +153,10 @@ public class ProtocolPackageImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UMLRealTimePackage.PROTOCOL_PACKAGE__BASE_PACKAGE:
+			case UMLRealTimePackage.PROTOCOL_CONTAINER__BASE_PACKAGE:
 				return base_Package != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ProtocolPackageImpl
+} //ProtocolContainerImpl

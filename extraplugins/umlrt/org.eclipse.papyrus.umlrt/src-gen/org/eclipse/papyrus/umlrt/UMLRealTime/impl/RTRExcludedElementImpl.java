@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.impl;
 
@@ -128,7 +134,7 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.RTR_EXCLUDED_ELEMENT__EXCLUSIONCANONLYBEAPPLIEDTOSOME_UMLR_TMODELELEMENTS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ExclusioncanonlybeappliedtosomeUMLRTmodelelements", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ExclusioncanonlybeappliedtosomeUMLRTmodelelements", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;

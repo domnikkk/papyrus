@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl;
 
@@ -439,129 +445,129 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(rtStateMachineEClass, RTStateMachine.class, "RTStateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRTStateMachine_Base_StateMachine(), theUMLPackage.getStateMachine(), null, "base_StateMachine", null, 1, 1, RTStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRTStateMachine_IsPassive(), theTypesPackage.getBoolean(), "isPassive", "false", 1, 1, RTStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(rtStateMachineEClass, RTStateMachine.class, "RTStateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getRTStateMachine_Base_StateMachine(), theUMLPackage.getStateMachine(), null, "base_StateMachine", null, 1, 1, RTStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getRTStateMachine_IsPassive(), theTypesPackage.getBoolean(), "isPassive", "false", 1, 1, RTStateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
-		EOperation op = initEOperation(getRTStateMachine__AnRTstatemachinehasexactlyoneregion__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AnRTstatemachinehasexactlyoneregion", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getRTStateMachine__AnRTstatemachinehasexactlyoneregion__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AnRTstatemachinehasexactlyoneregion", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTStateMachine__AnRTstatemachineisneverreentrant__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AnRTstatemachineisneverreentrant", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTStateMachine__AnRTstatemachineisneverreentrant__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AnRTstatemachineisneverreentrant", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTStateMachine__RTstatemachinesdonothaveparametersorparametersets__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinesdonothaveparametersorparametersets", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTStateMachine__RTstatemachinesdonothaveparametersorparametersets__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinesdonothaveparametersorparametersets", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTStateMachine__RTstatemachinesmusthaveacontextanditmustbeaClass__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinesmusthaveacontextanditmustbeaClass", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTStateMachine__RTstatemachinesmusthaveacontextanditmustbeaClass__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinesmusthaveacontextanditmustbeaClass", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTStateMachine__Passivestatemachineareonlyallowedonpassivedataclasses__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "Passivestatemachineareonlyallowedonpassivedataclasses", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTStateMachine__Passivestatemachineareonlyallowedonpassivedataclasses__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "Passivestatemachineareonlyallowedonpassivedataclasses", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(rtRegionEClass, RTRegion.class, "RTRegion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRTRegion_Base_Region(), theUMLPackage.getRegion(), null, "base_Region", null, 1, 1, RTRegion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(rtRegionEClass, RTRegion.class, "RTRegion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getRTRegion_Base_Region(), theUMLPackage.getRegion(), null, "base_Region", null, 1, 1, RTRegion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTRegion__RegionsinRTstatemachinescannothaveafinalstate__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RegionsinRTstatemachinescannothaveafinalstate", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTRegion__RegionsinRTstatemachinescannothaveafinalstate__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RegionsinRTstatemachinescannothaveafinalstate", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(rtStateEClass, RTState.class, "RTState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRTState_Base_State(), theUMLPackage.getState(), null, "base_State", null, 1, 1, RTState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(rtStateEClass, RTState.class, "RTState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getRTState_Base_State(), theUMLPackage.getState(), null, "base_State", null, 1, 1, RTState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTState__AcomposteRTstatehasexactlyoneregion__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AcomposteRTstatehasexactlyoneregion", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTState__AcomposteRTstatehasexactlyoneregion__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AcomposteRTstatehasexactlyoneregion", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTState__RTdoesnotsupportsubmachinestates__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTdoesnotsupportsubmachinestates", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTState__RTdoesnotsupportsubmachinestates__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTdoesnotsupportsubmachinestates", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTState__RTstatemachinesdonotsupportdoactivities__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinesdonotsupportdoactivities", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTState__RTstatemachinesdonotsupportdoactivities__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinesdonotsupportdoactivities", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTState__RTstatemachinescannothaveanydeferredtriggers__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinescannothaveanydeferredtriggers", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTState__RTstatemachinescannothaveanydeferredtriggers__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinescannothaveanydeferredtriggers", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTState__Constraint5__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "Constraint5", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTState__Constraint5__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "Constraint5", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(rtPseudostateEClass, RTPseudostate.class, "RTPseudostate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRTPseudostate_Base_Pseudostate(), theUMLPackage.getPseudostate(), null, "base_Pseudostate", null, 1, 1, RTPseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(rtPseudostateEClass, RTPseudostate.class, "RTPseudostate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getRTPseudostate_Base_Pseudostate(), theUMLPackage.getPseudostate(), null, "base_Pseudostate", null, 1, 1, RTPseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getRTPseudostate__RTstatemachinesdonotsupportconcurrencyorshallowhistory__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinesdonotsupportconcurrencyorshallowhistory", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRTPseudostate__RTstatemachinesdonotsupportconcurrencyorshallowhistory__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RTstatemachinesdonotsupportconcurrencyorshallowhistory", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(rtTriggerEClass, RTTrigger.class, "RTTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRTTrigger_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, RTTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(rtTriggerEClass, RTTrigger.class, "RTTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getRTTrigger_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, RTTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);
@@ -578,72 +584,72 @@ public class UMLRealTimeStateMachPackageImpl extends EPackageImpl implements UML
 	 * @generated
 	 */
 	protected void createUMLAnnotations() {
-		String source = "http://www.eclipse.org/uml2/2.0.0/UML";	
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$	
 		addAnnotation
 		  (getRTStateMachine__AnRTstatemachinehasexactlyoneregion__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "An RT state machine has exactly one region"
+			 "originalName", "An RT state machine has exactly one region" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTStateMachine__AnRTstatemachineisneverreentrant__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "An RT state machine is never re-entrant"
+			 "originalName", "An RT state machine is never re-entrant" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTStateMachine__RTstatemachinesdonothaveparametersorparametersets__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "RT state machines do not have parameters or parameter sets"
+			 "originalName", "RT state machines do not have parameters or parameter sets" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTStateMachine__RTstatemachinesmusthaveacontextanditmustbeaClass__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "RT state machines must have a context and it must be a Class"
+			 "originalName", "RT state machines must have a context and it must be a Class" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTStateMachine__Passivestatemachineareonlyallowedonpassivedataclasses__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "Passive state machine are only allowed on passive data classes"
+			 "originalName", "Passive state machine are only allowed on passive data classes" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTRegion__RegionsinRTstatemachinescannothaveafinalstate__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "Regions in RT state machines cannot have a final state"
+			 "originalName", "Regions in RT state machines cannot have a final state" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTState__AcomposteRTstatehasexactlyoneregion__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "A composte RT state has exactly one region"
+			 "originalName", "A composte RT state has exactly one region" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTState__RTdoesnotsupportsubmachinestates__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "RT does not support submachine states"
+			 "originalName", "RT does not support submachine states" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTState__RTstatemachinesdonotsupportdoactivities__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "RT state machines do not support \"do\" activities"
+			 "originalName", "RT state machines do not support \"do\" activities" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		   });	
 		addAnnotation
 		  (getRTState__RTstatemachinescannothaveanydeferredtriggers__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "RT state machines cannot have any deferred triggers "
+			 "originalName", "RT state machines cannot have any deferred triggers " //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 		addAnnotation
 		  (getRTPseudostate__RTstatemachinesdonotsupportconcurrencyorshallowhistory__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "originalName", "RT state machines do not support concurrency or shallow history"
+			 "originalName", "RT state machines do not support concurrency or shallow history" //$NON-NLS-1$ //$NON-NLS-2$
 		   });
 	}
 

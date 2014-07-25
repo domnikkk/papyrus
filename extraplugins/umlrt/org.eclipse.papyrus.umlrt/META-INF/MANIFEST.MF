@@ -20,4 +20,4 @@ Export-Package: org.eclipse.papyrus.umlrt.UMLRealTime,
  org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach,
  org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl,
  org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.util
-
+Bundle-Description: Contains uml-rt profile, the uml-rt StateMachine addendum and the Uml-rt ServiceModelLibrary

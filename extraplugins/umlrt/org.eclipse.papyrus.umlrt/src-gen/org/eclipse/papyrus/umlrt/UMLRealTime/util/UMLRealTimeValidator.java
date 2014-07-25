@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.util;
 
@@ -37,7 +43,7 @@ public class UMLRealTimeValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.papyrus.umlrt.UMLRealTime";
+	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.papyrus.umlrt.UMLRealTime"; //$NON-NLS-1$
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Capsulesarealwaysactive' of 'Capsule'.
@@ -112,12 +118,12 @@ public class UMLRealTimeValidator extends EObjectValidator {
 	public static final int CAPSULE__ALLOPERATIONSOFACAPSULEARESEQUENTIAL = 9;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Protocolclassescanhaveatmostonegeneralization' of 'Protocol'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Protocolscanhaveatmostonegeneralization' of 'Protocol'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROTOCOL__PROTOCOLCLASSESCANHAVEATMOSTONEGENERALIZATION = 10;
+	public static final int PROTOCOL__PROTOCOLSCANHAVEATMOSTONEGENERALIZATION = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Awiredportcannotpublishitsname' of 'RT Port'.
@@ -223,18 +229,16 @@ public class UMLRealTimeValidator extends EObjectValidator {
 				return validateRTPort((RTPort)value, diagnostics, context);
 			case UMLRealTimePackage.RT_CONNECTOR:
 				return validateRTConnector((RTConnector)value, diagnostics, context);
-			case UMLRealTimePackage.PROTOCOL_PACKAGE:
-				return validateProtocolPackage((ProtocolPackage)value, diagnostics, context);
+			case UMLRealTimePackage.PROTOCOL_CONTAINER:
+				return validateProtocolContainer((ProtocolContainer)value, diagnostics, context);
 			case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT:
 				return validateRTRExcludedElement((RTRExcludedElement)value, diagnostics, context);
-			case UMLRealTimePackage.MESSAGE_SET:
-				return validateMessageSet((MessageSet)value, diagnostics, context);
-			case UMLRealTimePackage.TRIGGER_EVENT:
-				return validateTriggerEvent((TriggerEvent)value, diagnostics, context);
+			case UMLRealTimePackage.RT_MESSAGE_SET:
+				return validateRTMessageSet((RTMessageSet)value, diagnostics, context);
 			case UMLRealTimePackage.PORT_REGISTRATION_TYPE:
 				return validatePortRegistrationType((PortRegistrationType)value, diagnostics, context);
-			case UMLRealTimePackage.EVENT_TYPE:
-				return validateEventType((EventType)value, diagnostics, context);
+			case UMLRealTimePackage.RT_MESSAGE_KIND:
+				return validateRTMessageKind((RTMessageKind)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -381,18 +385,18 @@ public class UMLRealTimeValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(protocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(protocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(protocol, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProtocol_Protocolclassescanhaveatmostonegeneralization(protocol, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProtocol_Protocolscanhaveatmostonegeneralization(protocol, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the Protocolclassescanhaveatmostonegeneralization constraint of '<em>Protocol</em>'.
+	 * Validates the Protocolscanhaveatmostonegeneralization constraint of '<em>Protocol</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProtocol_Protocolclassescanhaveatmostonegeneralization(Protocol protocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return protocol.Protocolclassescanhaveatmostonegeneralization(diagnostics, context);
+	public boolean validateProtocol_Protocolscanhaveatmostonegeneralization(Protocol protocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return protocol.Protocolscanhaveatmostonegeneralization(diagnostics, context);
 	}
 
 	/**
@@ -491,8 +495,8 @@ public class UMLRealTimeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProtocolPackage(ProtocolPackage protocolPackage, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(protocolPackage, diagnostics, context);
+	public boolean validateProtocolContainer(ProtocolContainer protocolContainer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(protocolContainer, diagnostics, context);
 	}
 
 	/**
@@ -529,17 +533,8 @@ public class UMLRealTimeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMessageSet(MessageSet messageSet, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(messageSet, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTriggerEvent(TriggerEvent triggerEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(triggerEvent, diagnostics, context);
+	public boolean validateRTMessageSet(RTMessageSet rtMessageSet, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(rtMessageSet, diagnostics, context);
 	}
 
 	/**
@@ -556,7 +551,7 @@ public class UMLRealTimeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEventType(EventType eventType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRTMessageKind(RTMessageKind rtMessageKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

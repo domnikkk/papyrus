@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach;
 
@@ -31,7 +37,7 @@ public interface UMLRealTimeStateMachPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "UMLRealTimeStateMach";
+	String eNAME = "UMLRealTimeStateMach"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace URI.
@@ -39,7 +45,7 @@ public interface UMLRealTimeStateMachPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.eclipse.org/papyrus/umlrt/statemachine";
+	String eNS_URI = "http:///UMLRealTimeStateMach.ecore"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace name.
@@ -47,7 +53,7 @@ public interface UMLRealTimeStateMachPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "umlrtsm";
+	String eNS_PREFIX = "UMLRealTimeStateMach"; //$NON-NLS-1$
 
 	/**
 	 * The singleton instance of the package.

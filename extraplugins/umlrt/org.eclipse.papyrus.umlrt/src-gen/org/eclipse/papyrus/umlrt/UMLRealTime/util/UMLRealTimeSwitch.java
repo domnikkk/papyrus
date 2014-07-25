@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.util;
 
@@ -96,9 +102,9 @@ public class UMLRealTimeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UMLRealTimePackage.PROTOCOL_PACKAGE: {
-				ProtocolPackage protocolPackage = (ProtocolPackage)theEObject;
-				T result = caseProtocolPackage(protocolPackage);
+			case UMLRealTimePackage.PROTOCOL_CONTAINER: {
+				ProtocolContainer protocolContainer = (ProtocolContainer)theEObject;
+				T result = caseProtocolContainer(protocolContainer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -108,15 +114,9 @@ public class UMLRealTimeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UMLRealTimePackage.MESSAGE_SET: {
-				MessageSet messageSet = (MessageSet)theEObject;
-				T result = caseMessageSet(messageSet);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case UMLRealTimePackage.TRIGGER_EVENT: {
-				TriggerEvent triggerEvent = (TriggerEvent)theEObject;
-				T result = caseTriggerEvent(triggerEvent);
+			case UMLRealTimePackage.RT_MESSAGE_SET: {
+				RTMessageSet rtMessageSet = (RTMessageSet)theEObject;
+				T result = caseRTMessageSet(rtMessageSet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -200,17 +200,17 @@ public class UMLRealTimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Protocol Package</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Protocol Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Protocol Package</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Protocol Container</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProtocolPackage(ProtocolPackage object) {
+	public T caseProtocolContainer(ProtocolContainer object) {
 		return null;
 	}
 
@@ -230,32 +230,17 @@ public class UMLRealTimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message Set</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>RT Message Set</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message Set</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>RT Message Set</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMessageSet(MessageSet object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Trigger Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Trigger Event</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTriggerEvent(TriggerEvent object) {
+	public T caseRTMessageSet(RTMessageSet object) {
 		return null;
 	}
 

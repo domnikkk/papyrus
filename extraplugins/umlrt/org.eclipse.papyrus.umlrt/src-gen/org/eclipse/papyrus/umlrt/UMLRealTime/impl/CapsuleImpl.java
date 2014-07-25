@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime.impl;
 
@@ -126,7 +132,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__CAPSULESAREALWAYSACTIVE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Capsulesarealwaysactive", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Capsulesarealwaysactive", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -151,7 +157,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__ACAPSULECANNOTHAVE_RECEPTIONFEATURES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcapsulecannothaveReceptionfeatures", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcapsulecannothaveReceptionfeatures", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -176,7 +182,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__ACAPSULECLASSCANALWAYSBESUBCLASSED,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsuleclasscanalwaysbesubclassed", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsuleclasscanalwaysbesubclassed", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -201,7 +207,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__ACAPSULECANHAVEATMOSTONESUPERCLASS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsulecanhaveatmostonesuperclass", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsulecanhaveatmostonesuperclass", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -226,7 +232,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__CAPSULECLASSESAREALWAYSSUBSTITUTABLE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Capsuleclassesarealwayssubstitutable", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Capsuleclassesarealwayssubstitutable", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -251,7 +257,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__ALLATTRIBUTESOFACAPSULECLASSHAVEEXACTLYONETYPE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Allattributesofacapsuleclasshaveexactlyonetype", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Allattributesofacapsuleclasshaveexactlyonetype", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -276,7 +282,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__PRIVATEVISIBILITYISNOTSUPPORTEDONCAPSULEFEATURES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Privatevisibilityisnotsupportedoncapsulefeatures", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Privatevisibilityisnotsupportedoncapsulefeatures", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -301,7 +307,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__ACAPSULECLASSCANNOTHAVENESTEDCLASSIFIERS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsuleclasscannothavenestedclassifiers", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsuleclasscannothavenestedclassifiers", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -326,7 +332,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 						(Diagnostic.ERROR,
 						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeValidator.CAPSULE__ALLOPERATIONSOFACAPSULEARESEQUENTIAL,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Alloperationsofacapsulearesequential", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Alloperationsofacapsulearesequential", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;

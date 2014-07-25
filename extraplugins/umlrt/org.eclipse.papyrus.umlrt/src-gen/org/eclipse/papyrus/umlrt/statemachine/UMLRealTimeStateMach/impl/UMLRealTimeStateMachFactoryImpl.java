@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl;
 
@@ -62,7 +68,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 			case UMLRealTimeStateMachPackage.RT_PSEUDOSTATE: return createRTPseudostate();
 			case UMLRealTimeStateMachPackage.RT_TRIGGER: return createRTTrigger();
 			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

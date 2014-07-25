@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.impl;
 
@@ -170,7 +176,7 @@ public class RTStateMachineImpl extends MinimalEObjectImpl.Container implements 
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE_MACHINE__AN_RTSTATEMACHINEHASEXACTLYONEREGION,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AnRTstatemachinehasexactlyoneregion", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AnRTstatemachinehasexactlyoneregion", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -195,7 +201,7 @@ public class RTStateMachineImpl extends MinimalEObjectImpl.Container implements 
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE_MACHINE__AN_RTSTATEMACHINEISNEVERREENTRANT,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AnRTstatemachineisneverreentrant", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AnRTstatemachineisneverreentrant", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -220,7 +226,7 @@ public class RTStateMachineImpl extends MinimalEObjectImpl.Container implements 
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE_MACHINE__RTSTATEMACHINESDONOTHAVEPARAMETERSORPARAMETERSETS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesdonothaveparametersorparametersets", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesdonothaveparametersorparametersets", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -245,7 +251,7 @@ public class RTStateMachineImpl extends MinimalEObjectImpl.Container implements 
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE_MACHINE__RTSTATEMACHINESMUSTHAVEACONTEXTANDITMUSTBEA_CLASS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesmusthaveacontextanditmustbeaClass", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "RTstatemachinesmusthaveacontextanditmustbeaClass", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -270,7 +276,7 @@ public class RTStateMachineImpl extends MinimalEObjectImpl.Container implements 
 						(Diagnostic.ERROR,
 						 UMLRealTimeStateMachValidator.DIAGNOSTIC_SOURCE,
 						 UMLRealTimeStateMachValidator.RT_STATE_MACHINE__PASSIVESTATEMACHINEAREONLYALLOWEDONPASSIVEDATACLASSES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Passivestatemachineareonlyallowedonpassivedataclasses", EObjectValidator.getObjectLabel(this, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Passivestatemachineareonlyallowedonpassivedataclasses", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
 						 new Object [] { this }));
 			}
 			return false;
@@ -380,7 +386,7 @@ public class RTStateMachineImpl extends MinimalEObjectImpl.Container implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isPassive: ");
+		result.append(" (isPassive: "); //$NON-NLS-1$
 		result.append(isPassive);
 		result.append(')');
 		return result.toString();

@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
  */
 package org.eclipse.papyrus.umlrt.UMLRealTime;
 
@@ -67,13 +73,13 @@ public interface UMLRealTimeFactory extends EFactory {
 	RTConnector createRTConnector();
 
 	/**
-	 * Returns a new object of class '<em>Protocol Package</em>'.
+	 * Returns a new object of class '<em>Protocol Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Protocol Package</em>'.
+	 * @return a new object of class '<em>Protocol Container</em>'.
 	 * @generated
 	 */
-	ProtocolPackage createProtocolPackage();
+	ProtocolContainer createProtocolContainer();
 
 	/**
 	 * Returns a new object of class '<em>RTR Excluded Element</em>'.
@@ -85,22 +91,13 @@ public interface UMLRealTimeFactory extends EFactory {
 	RTRExcludedElement createRTRExcludedElement();
 
 	/**
-	 * Returns a new object of class '<em>Message Set</em>'.
+	 * Returns a new object of class '<em>RT Message Set</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Message Set</em>'.
+	 * @return a new object of class '<em>RT Message Set</em>'.
 	 * @generated
 	 */
-	MessageSet createMessageSet();
-
-	/**
-	 * Returns a new object of class '<em>Trigger Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Trigger Event</em>'.
-	 * @generated
-	 */
-	TriggerEvent createTriggerEvent();
+	RTMessageSet createRTMessageSet();
 
 	/**
 	 * Returns the package supported by this factory.
