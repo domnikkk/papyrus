@@ -133,6 +133,13 @@
             type="org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.IOpenable">
       </adapter>
    </factory>
+   <factory
+         adaptableType="org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor$DiagramOutlinePage"
+         class="org.eclipse.papyrus.infra.gmfdiag.common.adapter.DiagramOutlineAdapterFactory">
+      <adapter
+            type="org.eclipse.papyrus.infra.core.editor.reload.IReloadContextProvider">
+      </adapter>
+   </factory>
 </extension>
 
 <!-- ElementType bindings for diagram duplication with paste command -->

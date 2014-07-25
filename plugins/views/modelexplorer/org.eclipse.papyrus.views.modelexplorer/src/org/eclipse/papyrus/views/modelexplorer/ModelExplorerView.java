@@ -12,6 +12,7 @@
  *  Christian W. Damus (CEA) - post refreshes for transaction commit asynchronously (CDO)
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 434635
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer;
@@ -53,6 +54,10 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerColumn;
 import org.eclipse.jface.window.ToolTip;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.editor.IReloadableEditor;
+import org.eclipse.papyrus.infra.core.editor.reload.EditorReloadAdapter;
+import org.eclipse.papyrus.infra.core.editor.reload.EditorReloadEvent;
+import org.eclipse.papyrus.infra.core.editor.reload.TreeViewerContext;
 import org.eclipse.papyrus.infra.core.lifecycleevents.IEditorInputChangedListener;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService;
 import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2;
@@ -127,7 +132,7 @@ import com.google.common.collect.Lists;
 public class ModelExplorerView extends CommonNavigator implements IRevealSemanticElement, IEditingDomainProvider, IPageLifeCycleEventsListener {
 
 	private SharedModelExplorerState sharedState;
-	
+
 	private SharedModelExplorerState.StateChangedListener sharedStateListener;
 
 	/**
@@ -138,16 +143,10 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	public static final String LABEL_PROVIDER_SERVICE_CONTEXT = "org.eclipse.papyrus.views.modelexplorer.labelProvider.context";
 
 	/**
-	 * The associated EditorPart
-	 * The View is associated to the ServicesRegistry rather than to an editor.
-	 * */
-	//	private IMultiDiagramEditor editorPart;
-
-	/**
 	 * The {@link ServicesRegistry} associated to the Editor. This view is associated to the
 	 * ServicesRegistry rather than to the EditorPart.
 	 */
-	private final ServicesRegistry serviceRegistry;
+	private ServicesRegistry serviceRegistry;
 
 	/** The save aservice associated to the editor. */
 	private ISaveAndDirtyService saveAndDirtyService;
@@ -217,10 +216,37 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			throw new IllegalArgumentException("A part should be provided.");
 		}
 
+		init(part);
+
+		IReloadableEditor.Adapter.getAdapter(part).addEditorReloadListener(new EditorReloadAdapter() {
+
+			@Override
+			public void editorAboutToReload(EditorReloadEvent event) {
+				// Stash expansion and selection state of the common viewer
+				event.putContext(new ModelExplorerTreeViewerContext(getCommonViewer()));
+
+				deactivate();
+			}
+
+			@Override
+			public void editorReloaded(EditorReloadEvent event) {
+				init(event.getEditor());
+
+				activate();
+
+				initCommonViewer(getCommonViewer());
+
+				// Restore expansion and selection state of the common viewer
+				((TreeViewerContext<?>)event.getContext()).restore(getCommonViewer());
+			}
+		});
+	}
+
+	private void init(IMultiDiagramEditor editor) {
 		// Try to get the ServicesRegistry
-		serviceRegistry = part.getServicesRegistry();
+		serviceRegistry = editor.getServicesRegistry();
 		if(serviceRegistry == null) {
-			throw new IllegalArgumentException("The part should have a ServiceRegistry.");
+			throw new IllegalArgumentException("The editor should have a ServiceRegistry.");
 		}
 
 		// Get required services from ServicesRegistry
@@ -228,7 +254,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			saveAndDirtyService = serviceRegistry.getService(ISaveAndDirtyService.class);
 			undoContext = serviceRegistry.getService(IUndoContext.class);
 		} catch (ServiceException e) {
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 	}
 
@@ -341,6 +367,41 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	@Override
 	protected CommonViewer createCommonViewerObject(Composite aParent) {
 		CommonViewer viewer = new CustomCommonViewer(getViewSite().getId(), aParent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+
+		initCommonViewer(viewer);
+
+		viewer.getNavigatorContentService().getActivationService().addExtensionActivationListener(new IExtensionActivationListener() {
+
+			public void onExtensionActivation(String aViewerId, String[] theNavigatorExtensionIds, boolean isActive) {
+				sharedState.updateNavigatorContentExtensions(theNavigatorExtensionIds, isActive);
+			}
+		});
+
+		ColumnViewerToolTipSupport.enableFor(viewer, ToolTip.NO_RECREATE);
+
+		return viewer;
+	}
+
+	private void installEMFFacetTreePainter(Tree tree) {
+		// Install the EMFFacet Custom Tree Painter
+		//org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager().installCustomPainter(tree);
+
+		// The EMF Facet MeasureItem Listener is incompatible with the NavigatorDecoratingLabelProvider. Remove it.
+		// Symptoms: ModelElementItems with an EMF Facet Overlay have a small selection size
+		// Removal also fixes bug 400012: no scrollbar although tree is larger than visible area
+		Collection<Listener> listenersToRemove = new LinkedList<Listener>();
+		for(Listener listener : tree.getListeners(SWT.MeasureItem)) {
+			if(listener.getClass().getName().contains("org.eclipse.papyrus.emf.facet.infra.browser.uicore.internal.CustomTreePainter")) {
+				listenersToRemove.add(listener);
+			}
+		}
+
+		for(Listener listener : listenersToRemove) {
+			tree.removeListener(SWT.MeasureItem, listener);
+		}
+	}
+
+	private void initCommonViewer(CommonViewer viewer) {
 		// enable tool-tips
 		// workaround for bug 311827: the Common Viewer always uses NavigatorDecoratingLabelProvider
 		// as a wrapper for the LabelProvider provided by the application. The NavigatorDecoratingLabelProvider
@@ -375,36 +436,6 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			}
 		}
 		contentService.dispose(); // No longer need this
-		
-		viewer.getNavigatorContentService().getActivationService().addExtensionActivationListener(new IExtensionActivationListener() {
-			
-			public void onExtensionActivation(String aViewerId, String[] theNavigatorExtensionIds, boolean isActive) {
-				sharedState.updateNavigatorContentExtensions(theNavigatorExtensionIds, isActive);
-			}
-		});
-		
-		ColumnViewerToolTipSupport.enableFor(viewer, ToolTip.NO_RECREATE);
-
-		return viewer;
-	}
-
-	private void installEMFFacetTreePainter(Tree tree) {
-		// Install the EMFFacet Custom Tree Painter
-		//org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager().installCustomPainter(tree);
-
-		// The EMF Facet MeasureItem Listener is incompatible with the NavigatorDecoratingLabelProvider. Remove it.
-		// Symptoms: ModelElementItems with an EMF Facet Overlay have a small selection size
-		// Removal also fixes bug 400012: no scrollbar although tree is larger than visible area
-		Collection<Listener> listenersToRemove = new LinkedList<Listener>();
-		for(Listener listener : tree.getListeners(SWT.MeasureItem)) {
-			if(listener.getClass().getName().contains("org.eclipse.papyrus.emf.facet.infra.browser.uicore.internal.CustomTreePainter")) {
-				listenersToRemove.add(listener);
-			}
-		}
-
-		for(Listener listener : listenersToRemove) {
-			tree.removeListener(SWT.MeasureItem, listener);
-		}
 	}
 
 	@Override
@@ -625,6 +656,19 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		super.init(site, aMemento);
 
 		activate();
+
+		// Self-listen for property changes
+		addPropertyListener(new IPropertyListener() {
+
+			public void propertyChanged(Object source, int propId) {
+				switch(propId) {
+				case IS_LINKING_ENABLED_PROPERTY:
+					// Propagate to other instances
+					sharedState.setLinkingEnabled(isLinkingEnabled());
+					break;
+				}
+			}
+		});
 	}
 
 	/**
@@ -753,8 +797,6 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 * Activate specified Part.
 	 */
 	private void activate() {
-
-
 		try {
 			this.editingDomain = ServiceUtils.getInstance().getTransactionalEditingDomain(serviceRegistry);
 
@@ -777,19 +819,6 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		if(this.getCommonViewer() != null) {
 			syncRefresh();
 		}
-
-		// Self-listen for property changes
-		addPropertyListener(new IPropertyListener() {
-
-			public void propertyChanged(Object source, int propId) {
-				switch(propId) {
-				case IS_LINKING_ENABLED_PROPERTY:
-					// Propagate to other instances
-					sharedState.setLinkingEnabled(isLinkingEnabled());
-					break;
-				}
-			}
-		});
 	}
 
 	/**
@@ -799,6 +828,15 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		// deactivate global handler
 		if(Activator.log.isDebugEnabled()) {
 			Activator.log.debug("deactivate ModelExplorerView"); //$NON-NLS-1$
+		}
+
+		try {
+			ISashWindowsContainer sashWindowsContainer = serviceRegistry.getService(ISashWindowsContainer.class);
+			if(sashWindowsContainer != null) {
+				sashWindowsContainer.removePageLifeCycleListener(this);
+			}
+		} catch (ServiceException ex) {
+			//Ignore
 		}
 
 		// Stop listening on change events
@@ -811,6 +849,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			editingDomain = null;
 		}
 
+		saveAndDirtyService = null;
+		undoContext = null;
+		editingDomain = null;
+		editingDomain = null;
+		lastTrans = null;
 	}
 
 	/**
@@ -828,23 +871,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			sharedState.removeListener(sharedStateListener);
 		}
 
-		try {
-			ISashWindowsContainer sashWindowsContainer = serviceRegistry.getService(ISashWindowsContainer.class);
-			if(sashWindowsContainer != null) {
-				sashWindowsContainer.removePageLifeCycleListener(this);
-			}
-		} catch (ServiceException ex) {
-			//Ignore
+		if(getSite() != null) {
+			getSite().getPage().removeSelectionListener(pageSelectionListener);
 		}
 
 		deactivate();
-
-		saveAndDirtyService = null;
-		undoContext = null;
-		editingDomain = null;
-		pageSelectionListener = null;
-		editingDomain = null;
-		lastTrans = null;
 
 		for(IPropertySheetPage propertySheetPage : this.propertySheetPages) {
 			propertySheetPage.dispose();
@@ -852,7 +883,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 		propertySheetPages.clear();
 
-
+		pageSelectionListener = null;
 
 		super.dispose();
 

@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
- *
+ * Copyright (c) 2009, 2014 LIFL, CEA LIST, and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
@@ -284,7 +284,13 @@ public class SashWindowsContainer implements ISashWindowsContainer {
 		// End disposing children's SWT controls.
 		// It is possible to recall the dispose() method on a Widget, even if we are called by the dispose event.
 		// Recalling the dispose method will continue disposing SWT children's.
-		container.dispose();
+		
+		// DO NOT dispose the container composite, as we did not create it!
+		if(container != null) {
+			for(Control next : container.getChildren()) {
+				next.dispose();
+			}
+		}
 
 		// dispose part children
 		if(rootPart!=null) {

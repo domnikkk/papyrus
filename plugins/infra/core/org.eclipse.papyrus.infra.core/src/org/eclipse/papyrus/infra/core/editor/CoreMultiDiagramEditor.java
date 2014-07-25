@@ -12,6 +12,7 @@
  *  Christian W. Damus (CEA) - manage models by URI, not IFile (CDO)
  *  Christian W. Damus (CEA) - bug 410346
  *  Christian W. Damus (CEA) - bug 431953 (pre-requisite refactoring of ModelSet service start-up)
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 
@@ -22,10 +23,14 @@ import static org.eclipse.papyrus.infra.core.Activator.log;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
@@ -41,10 +46,13 @@ import org.eclipse.gef.ui.actions.ActionRegistry;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.contentoutline.ContentOutlineRegistry;
+import org.eclipse.papyrus.infra.core.editor.reload.EditorReloadEvent;
+import org.eclipse.papyrus.infra.core.editor.reload.IEditorReloadListener;
 import org.eclipse.papyrus.infra.core.lifecycleevents.DoSaveEvent;
 import org.eclipse.papyrus.infra.core.lifecycleevents.IEditorInputChangedListener;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService;
@@ -86,10 +94,14 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
+import org.eclipse.ui.statushandlers.StatusManager;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+
+import com.google.common.collect.ImmutableList;
 
 /**
  * Multi diagram editor allowing to plug various kind of editors. Editors are
@@ -194,7 +206,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		}
 	}
 
-	protected EditorInputChangedListener editorInputChangedListener = new EditorInputChangedListener(this);
+	protected EditorInputChangedListener editorInputChangedListener;
 
 	private TransactionalEditingDomain transactionalEditingDomain;
 
@@ -222,7 +234,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	/**
 	 * A listener on model change events.
 	 */
-	private ContentChangedListener contentChangedListener = new ContentChangedListener();
+	private ContentChangedListener contentChangedListener;
 
 	/**
 	 * Undo context used to have the same undo context in all Papyrus related
@@ -231,6 +243,22 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 * attached Resources (==> linked to ModelSet ?)
 	 */
 	private IUndoContext undoContext;
+
+	/**
+	 * Editor reload listeners.
+	 */
+	private CopyOnWriteArrayList<IEditorReloadListener> reloadListeners = new CopyOnWriteArrayList<IEditorReloadListener>();
+
+	/**
+	 * Whether a re-load is currently pending (awaiting next activation of the editor).
+	 */
+	private boolean reloadPending;
+
+	public CoreMultiDiagramEditor() {
+		super();
+
+		addSelfReloadListener();
+	}
 
 	/**
 	 * Get the contentOutlineRegistry. Create it if needed.
@@ -431,6 +459,10 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			return getSite().getSelectionProvider().getSelection();
 		}
 
+		if(adapter == IReloadableEditor.class) {
+			return createReloadAdapter();
+		}
+
 		return super.getAdapter(adapter);
 	}
 
@@ -445,8 +477,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		// Set editor name
 		setPartName(input.getName());
 
-		loadModelAndServices();
-		loadNestedEditors();
+		initContents();
 	}
 
 	@Override
@@ -610,6 +641,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 
 
 		// Listen on input changed from the ISaveAndDirtyService
+		editorInputChangedListener = new EditorInputChangedListener(this);
 		saveAndDirtyService.addInputChangedListener(editorInputChangedListener);
 		getLifecycleManager().firePostInit(this);
 	}
@@ -642,6 +674,9 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		setContentProvider(contentProvider);
 
 		// Listen on contentProvider changes
+		if(contentChangedListener == null) {
+			contentChangedListener = new ContentChangedListener();
+		}
 		sashModelMngr.getSashModelContentChangedProvider().addListener(contentChangedListener);
 
 		IEditorInput input = getEditorInput();
@@ -680,8 +715,8 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 */
 	@Override
 	protected void activate() {
-		// TODO Auto-generated method stub
 		super.activate();
+
 		initFolderTabMenus();
 
 		try {
@@ -739,17 +774,77 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 */
 	@Override
 	public void dispose() {
+		for(IPropertySheetPage propertiesPage : this.propertiesPages) {
+			propertiesPage.dispose();
+		}
+		propertiesPages.clear();
+
+		super.dispose();
+	}
+
+	private IReloadableEditor createReloadAdapter() {
+		return new IReloadableEditor() {
+
+			@Override
+			public void reloadEditor(boolean save) throws CoreException {
+				reloadPending = true;
+
+				if(save) {
+					try {
+						((IWorkbenchSiteProgressService)getSite().getService(IWorkbenchSiteProgressService.class)).busyCursorWhile(new IRunnableWithProgress() {
+
+							@Override
+							public void run(IProgressMonitor monitor) {
+								doSave(monitor);
+							}
+						});
+					} catch (Exception e) {
+						throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Save before re-load failed.", e)); //$NON-NLS-1$
+					}
+				}
+
+				// If I am already active, then re-load now
+				IWorkbenchPage page = getSite().getPage();
+				if(page.getActiveEditor() == CoreMultiDiagramEditor.this) {
+					doReload();
+				}
+			}
+
+			@Override
+			public void addEditorReloadListener(IEditorReloadListener listener) {
+				reloadListeners.addIfAbsent(listener);
+			}
+
+			@Override
+			public void removeEditorReloadListener(IEditorReloadListener listener) {
+				reloadListeners.remove(listener);
+			}
+		};
+	}
+
+	private void addSelfReloadListener() {
+		createReloadAdapter().addEditorReloadListener(new IEditorReloadListener() {
+
+			@Override
+			public void editorAboutToReload(EditorReloadEvent event) {
+				event.putContext(new MultiDiagramEditorSelectionContext(event.getEditor()));
+			}
+
+			@Override
+			public void editorReloaded(EditorReloadEvent event) {
+				((MultiDiagramEditorSelectionContext)event.getContext()).restore(event.getEditor());
+			}
+		});
+	}
+
+	@Override
+	protected void deactivate() {
 		getLifecycleManager().fireBeforeClose(this);
 		if(sashModelMngr != null) {
 			sashModelMngr.getSashModelContentChangedProvider().removeListener(contentChangedListener);
 		}
 
-		// Avoid memory leak
-		// This call is done from the ServicesRegistry when it is disposed.
-		// Don't need to do it there.
-		// if(resourceSet != null) {
-		// resourceSet.unload();
-		// }
+		super.deactivate();
 
 		// dispose available service
 		if(servicesRegistry != null) {
@@ -781,13 +876,66 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 		undoContext = null;
 		saveAndDirtyService = null;
 		sashModelMngr = null;
+	}
 
-		for(IPropertySheetPage propertiesPage : this.propertiesPages) {
-			propertiesPage.dispose();
+	void initContents() throws PartInitException {
+		loadModelAndServices();
+		loadNestedEditors();
+	}
+
+	@Override
+	public void setFocus() {
+		super.setFocus();
+
+		if(isReloadPending()) {
+			doReload();
 		}
-		propertiesPages.clear();
+	}
 
-		super.dispose();
+	boolean isReloadPending() {
+		return reloadPending;
+	}
+
+	private void doReload() {
+		reloadPending = false;
+
+		final IWorkbenchPage page = getSite().getPage();
+		final IWorkbenchPart activePart = page.getActivePart();
+		final IEditorPart activeEditor = page.getActiveEditor();
+
+		final Iterable<? extends IEditorReloadListener> listeners = ImmutableList.copyOf(reloadListeners);
+		final EditorReloadEvent event = new EditorReloadEvent(CoreMultiDiagramEditor.this);
+
+		try {
+			event.dispatchEditorAboutToReload(listeners);
+
+			deactivate();
+
+			initContents();
+
+			activate();
+
+			// My self-listener will be first, to ensure that the pages are all restored before dependents run
+			event.dispatchEditorReloaded(listeners);
+		} catch (CoreException e) {
+			// Failed to properly unload/load in place, so just close
+			page.closeEditor(CoreMultiDiagramEditor.this, false);
+
+			StatusManager.getManager().handle(e.getStatus(), StatusManager.LOG | StatusManager.SHOW);
+		} finally {
+			event.dispose();
+
+			// Ensure that the editor previously active is active again (if it still exists)
+			if((activeEditor != null) && page.isPartVisible(activeEditor)) {
+				page.activate(activeEditor);
+			}
+
+			// Ensure that the part previously active is active again (if it still exists and is not the active editor)
+			if((activePart != null) && (activePart != activeEditor) && page.isPartVisible(activePart)) {
+				page.activate(activePart);
+			}
+		}
+
 	}
 
 	/**

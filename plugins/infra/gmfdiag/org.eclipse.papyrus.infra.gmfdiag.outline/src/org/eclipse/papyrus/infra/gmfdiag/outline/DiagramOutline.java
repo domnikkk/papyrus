@@ -1,5 +1,5 @@
 /***********************************************************************
- * Copyright (c) 2008, 2009 Anyware Technologies, Obeo, CEA LIST
+ * Copyright (c) 2008, 2014 Anyware Technologies, Obeo, CEA LIST, and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -10,10 +10,13 @@
  *    Anyware Technologies - initial API and implementation
  *    Obeo
  *    CEA LIST - synchronization between selection and outline content
+ *    Christian W. Damus (CEA) - bug 437217
  *
  **********************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.outline;
 
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.GraphicalViewer;
@@ -31,6 +34,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.papyrus.infra.core.contentoutline.IPapyrusContentOutlinePage;
 import org.eclipse.papyrus.infra.core.editor.BackboneException;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.editor.reload.IReloadContextProvider;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.gmfdiag.outline.internal.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.outline.internal.Messages;
@@ -56,7 +60,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  */
 //FIXME: The outline is broken in Eclipse 4.2. #createControl(Composite) is never called.
 //See #refresh()
-public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, ISelectionListener {
+public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, ISelectionListener, IAdaptable {
 
 	private final class ShowAllAction extends Action {
 
@@ -450,5 +454,53 @@ public class DiagramOutline extends Page implements IPapyrusContentOutlinePage, 
 		}
 
 		return showActionMode;
+	}
+
+	private void setShowActionMode(int showAction) {
+		switch(showAction) {
+		case SHOW_TREE:
+			showTreeItem.getAction().setChecked(true);
+			break;
+		case SHOW_OVERVIEW:
+			showOverviewItem.getAction().setChecked(true);
+			break;
+		case SHOW_BOTH:
+			showAllItem.getAction().setChecked(true);
+			break;
+		default:
+			throw new IllegalArgumentException("showAction"); //$NON-NLS-1$
+		}
+
+		performShowAction();
+	}
+
+	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
+		if(adapter == IReloadContextProvider.class) {
+			return new IReloadContextProvider() {
+
+				public Object createReloadContext() {
+					return new ReloadContext(DiagramOutline.this);
+				}
+
+				public void restore(Object reloadContext) {
+					((ReloadContext)reloadContext).restore(DiagramOutline.this);
+				}
+			};
+		}
+
+		return Platform.getAdapterManager().getAdapter(this, adapter);
+	}
+
+	private static class ReloadContext {
+
+		private final int showAction;
+
+		ReloadContext(DiagramOutline outline) {
+			this.showAction = outline.getShowActionMode();
+		}
+
+		void restore(DiagramOutline outline) {
+			outline.setShowActionMode(showAction);
+		}
 	}
 }

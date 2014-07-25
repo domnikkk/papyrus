@@ -9,6 +9,7 @@
  * Contributors:
  *  Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 431953 (pre-requisite refactoring of ModelSet service start-up)
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.sasheditor.editor;
@@ -33,6 +34,9 @@ import org.eclipse.ui.part.EditorPart;
  */
 public abstract class AbstractMultiPageSashEditor extends EditorPart implements IMultiPageEditorPart, IMultiEditorManager {
 
+	/** The parent composite of my sash container. */
+	private Composite parentComposite;
+	
 	/** The pageProvider */
 	private ISashWindowsContentProvider pageProvider;
 
@@ -116,7 +120,6 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		setSite(site);
 		setInput(input);
-		site.setSelectionProvider(new MultiPageSelectionProvider(this));
 	}
 
 	/**
@@ -124,15 +127,10 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	 */
 	@Override
 	public void createPartControl(Composite parent) {
-
-		// Create and intialize sash windows
-		sashContainer = new SashWindowsContainer(this);
-		sashContainer.setContentProvider(getContentProvider());
-		sashContainer.createPartControl(parent);
-
-		// Add double click menu
-		tabMouseEventListener = new TabMouseEventListener(sashContainer, getSite());
-
+		parentComposite = parent;
+		
+		getSite().setSelectionProvider(new MultiPageSelectionProvider(this));
+		
 		activate();
 	}
 
@@ -142,6 +140,14 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	 * To be implemented by subclasses. Default implementation do nothing.
 	 */
 	protected void activate() {
+
+		// Create and initialize sash windows
+		sashContainer = new SashWindowsContainer(this);
+		sashContainer.setContentProvider(getContentProvider());
+		sashContainer.createPartControl(parentComposite);
+
+		// Add double click menu
+		tabMouseEventListener = new TabMouseEventListener(sashContainer, getSite());
 
 		tabsSynchronizer = new SashTabDecorationSynchronizer(sashContainer);
 	}
@@ -160,6 +166,16 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 		}
 		tabsSynchronizer.dispose();
 		tabsSynchronizer = null;
+
+		if(tabMouseEventListener != null) {
+			tabMouseEventListener.dispose(sashContainer);
+			tabMouseEventListener = null;
+		}
+		
+		if(sashContainer != null) {
+			sashContainer.dispose();
+		}
+		pageProvider = null;
 	}
 
 	/**
@@ -171,18 +187,9 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	@Override
 	public void dispose() {
 		deactivate();
-
-		if(tabMouseEventListener != null) {
-			tabMouseEventListener.dispose(sashContainer);
-			tabMouseEventListener = null;
-		}
-
+		
 		//The selection provider keeps a reference to "this". It is not disposed.
 		getSite().setSelectionProvider(null);
-		if(sashContainer != null) {
-			sashContainer.dispose();
-		}
-		pageProvider = null;
 
 		super.dispose();
 	}

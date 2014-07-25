@@ -19,7 +19,7 @@ import java.lang.annotation.Target;
 
 
 /**
- * Annotation indicating the classpath-relative path to a resource from which to load the test model of an {@link AbstractModelFixture}.
+ * Annotation indicating the classpath-relative path to one or more resources from which to load the test model of an {@link AbstractModelFixture}.
  * 
  * @see AbstractModelFixture
  * @see PluginResource
@@ -28,5 +28,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JavaResource {
 
-	String value();
+	String[] value();
 }

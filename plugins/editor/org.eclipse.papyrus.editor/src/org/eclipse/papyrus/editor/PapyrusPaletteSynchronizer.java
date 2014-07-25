@@ -1,3 +1,16 @@
+/*****************************************************************************
+ * Copyright (c) 2014 Montages AG, CEA, and others.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Montages AG - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 437217
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.editor;
 
 import org.eclipse.gef.ui.views.palette.PaletteView;
@@ -20,27 +33,15 @@ import org.eclipse.ui.IWorkbenchPage;
 
 	public PapyrusPaletteSynchronizer(PapyrusMultiDiagramEditor multiEditor) {
 		myMultiDiagramEditor = multiEditor;
+		
+		// Handle the initial page selection
+		synchronizePaletteView(multiEditor.getISashWindowsContainer().getActiveSashWindowsPage());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.papyrus.infra.core.sasheditor.internal.ActivePageTracker.IActiveEditorChangedListener
-	 * #activeEditorChanged(org.eclipse.papyrus.infra.core.sasheditor.internal.PagePart,
-	 * org.eclipse.papyrus.infra.core.sasheditor.internal.PagePart)
-	 */
 	public void activeEditorChanged(PagePart oldEditor, PagePart newEditor) {
 		synchronizePaletteView(newEditor);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.papyrus.infra.core.sasheditor.editor.IPageChangedListener#pageChanged(org.eclipse
-	 * .papyrus.infra.core.sasheditor.editor.IPage)
-	 */
 	public void pageChanged(IPage newPage) {
 		synchronizePaletteView(newPage);
 	}
@@ -50,21 +51,21 @@ import org.eclipse.ui.IWorkbenchPage;
 	 * inner page
 	 * 
 	 * @param activePage
-	 *            inner page to synchronize palette view with
+	 *        inner page to synchronize palette view with
 	 */
 	private void synchronizePaletteView(IPage activePage) {
 		PaletteView paletteView = findPaletteView();
-		if (paletteView == null) {
+		if(paletteView == null) {
 			return;
 		}
 
 		// IEditorPage is not granted, it may be, e.g ErrorComponentPart
-		IEditorPart activePart = activePage instanceof IEditorPage ? ((IEditorPage) activePage).getIEditorPart() : null;
-		if (activePart == myLastActivePart) {
+		IEditorPart activePart = activePage instanceof IEditorPage ? ((IEditorPage)activePage).getIEditorPart() : null;
+		if(activePart == myLastActivePart) {
 			return;
 		}
-		
-		if (activePart == null) {
+
+		if(activePart == null) {
 			paletteView.partClosed(myLastActivePart);
 		} else {
 			// multi-editor may be activated outside of this code
@@ -80,15 +81,15 @@ import org.eclipse.ui.IWorkbenchPage;
 	 * Called when host editor is disposed, cleans up
 	 */
 	public void dispose() {
-		if (myLastActivePart == null) {
-			// nothing to do
-			return;
-		}
 		PaletteView paletteView = findPaletteView();
-		if (paletteView == null) {
+		if(paletteView == null) {
 			return;
 		}
-		paletteView.partClosed(myLastActivePart);
+		if(myLastActivePart != null) {
+			paletteView.partClosed(myLastActivePart);
+		} else {
+			paletteView.partClosed(myMultiDiagramEditor);
+		}
 	}
 
 	/**
@@ -98,7 +99,7 @@ import org.eclipse.ui.IWorkbenchPage;
 	 */
 	private PaletteView findPaletteView() {
 		IWorkbenchPage samePage = myMultiDiagramEditor.getSite().getPage();
-		return (PaletteView) samePage.findView(PaletteView.ID);
+		return (PaletteView)samePage.findView(PaletteView.ID);
 	}
 
 }

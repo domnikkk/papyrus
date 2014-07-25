@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common;
@@ -21,11 +22,14 @@ import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.commands.CommandStack;
+import org.eclipse.gef.ui.palette.PaletteViewer;
+import org.eclipse.gef.ui.views.palette.PalettePage;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
@@ -41,6 +45,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.papyrus.commands.CheckedDiagramCommandStack;
+import org.eclipse.papyrus.infra.core.editor.reload.IReloadContextProvider;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.reconciler.DiagramReconciler;
 import org.eclipse.papyrus.infra.gmfdiag.common.reconciler.DiagramReconcilersReader;
@@ -50,9 +55,18 @@ import org.eclipse.papyrus.infra.gmfdiag.common.utils.GMFUnsafe;
 import org.eclipse.papyrus.infra.tools.util.EclipseCommandUtils;
 import org.eclipse.papyrus.infra.widgets.util.IRevealSemanticElement;
 import org.eclipse.papyrus.infra.widgets.util.NavigationTarget;
+import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
+import org.eclipse.ui.part.IPageSite;
+
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
 /**
  * 
@@ -65,6 +79,10 @@ import org.eclipse.ui.commands.ICommandService;
 @SuppressWarnings("restriction")
 //suppress the warning for WorkspaceViewerProperties
 public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implements IRevealSemanticElement, NavigationTarget {
+
+	private Collection<PalettePageWrapper> palettePages;
+	
+	private Object palettePageState;
 
 	public SynchronizableGmfDiagramEditor(boolean hasFlyoutPalette) {
 		super(hasFlyoutPalette);
@@ -151,9 +169,48 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 		if(type == Diagram.class) {
 			return getDiagram();
 		}
+		if(type == IReloadContextProvider.class) {
+			return new DiagramReloadContextProvider(this);
+		}
+		if(type == PalettePage.class) {
+			if(palettePages == null) {
+				palettePages = Lists.newArrayListWithExpectedSize(1);
+			} else {
+				cleanUpPalettePages();
+				if(!palettePages.isEmpty()) {
+					// Make the new page look just like the last one (for continuity of the UI when the
+					// PapyrusPaletteSynchronizer causes a new page to be created)
+					Iterables.getLast(palettePages, null).saveState();
+				}
+			}
+			PalettePageWrapper result = new PalettePageWrapper((CustomPalettePage)super.getAdapter(type));
+			palettePages.add(result);
+			return result;
+		}
 		return super.getAdapter(type);
 	}
 
+	Collection<? extends PalettePage> getPalettePages() {
+		if(palettePages == null) {
+			return Collections.emptyList();
+		} else {
+			cleanUpPalettePages();
+			return Collections.unmodifiableCollection(palettePages);
+		}
+	}
+	
+	void setDeferredPalettePageReloadContext(Object reloadContext) {
+		palettePageState = reloadContext;
+	}
+	
+	private void cleanUpPalettePages() {
+		for(Iterator<PalettePageWrapper> iter = palettePages.iterator(); iter.hasNext();) {
+			if(iter.next().isDisposed()) {
+				iter.remove();
+			}
+		}
+	}
+	
 	/**
 	 * Configures my diagram edit domain with its command stack.
 	 * This method has been completely overridden in order to use a proxy stack.
@@ -357,6 +414,109 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 		}
 	}
 	
+	protected class PalettePageWrapper implements PalettePage, IAdaptable {
 
+		private final CustomPalettePage delegate;
+		
+		private boolean disposed;
+
+		protected PalettePageWrapper(CustomPalettePage delegate) {
+			this.delegate = delegate;
+		}
+
+		public void createControl(Composite parent) {
+			Control existing = getControl();
+			if((existing != null) && !existing.isDisposed()) {
+				// Attempting to creating the page controls again? Bail
+				return;
+			}
+			
+			delegate.createControl(parent);
+
+			delegate.getControl().addDisposeListener(new DisposeListener() {
+
+				@Override
+				public void widgetDisposed(DisposeEvent e) {
+					disposed = true;
+					
+					SynchronizableGmfDiagramEditor.this.palettePages.remove(PalettePageWrapper.this);
+				}
+			});
+
+			if(palettePageState != null) {
+				// We're re-creating the palette page after having closed it, either for editor re-load
+				// or the PapyrusPaletteSynchronizer forcing a palette refresh. Reinitialize from the
+				// last saved state
+				PaletteViewerReloadContextProvider.getInstance(getPaletteViewer()).restore(palettePageState);
+				palettePageState = null;
+			}
+		}
+
+		public void dispose() {
+			// Save current state for potential re-opening later
+			saveState();
+			delegate.dispose();
+		}
+		
+		public boolean isDisposed() {
+			return disposed;
+		}
+		
+		void saveState() {
+			PaletteViewer palette = getPaletteViewer();
+			if(palette != null) {
+				palettePageState = PaletteViewerReloadContextProvider.getInstance(palette).createReloadContext();
+			}
+		}
+
+		public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
+			if(adapter == IReloadContextProvider.class) {
+				return new IReloadContextProvider() {
+
+					@Override
+					public Object createReloadContext() {
+						return (getPaletteViewer() != null) ? PaletteViewerReloadContextProvider.getInstance(getPaletteViewer()).createReloadContext() : null;
+					}
+
+					@Override
+					public void restore(Object reloadContext) {
+						if(getPaletteViewer() != null) {
+							PaletteViewerReloadContextProvider.getInstance(getPaletteViewer()).restore(reloadContext);
+						} else {
+							// We'll defer this until the page control is created
+							palettePageState = reloadContext;
+						}
+					}
+				};
+			}
+			return delegate.getAdapter(adapter);
+		}
+
+		public Control getControl() {
+			// CustomPalettePage will NPE if asked for the control before the PaletteViewer is created
+			return (delegate.getPaletteViewer() == null) ? null : delegate.getControl();
+		}
+
+		public void setFocus() {
+			delegate.setFocus();
+		}
+
+		public void setActionBars(IActionBars actionBars) {
+			delegate.setActionBars(actionBars);
+		}
+
+		public void init(IPageSite pageSite) {
+			delegate.init(pageSite);
+		}
+
+		public IPageSite getSite() {
+			return delegate.getSite();
+		}
+
+		public PaletteViewer getPaletteViewer() {
+			return delegate.getPaletteViewer();
+		}
+
+	}
 
 }

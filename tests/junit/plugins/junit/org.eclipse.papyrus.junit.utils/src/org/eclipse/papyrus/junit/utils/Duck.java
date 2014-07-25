@@ -159,7 +159,7 @@ public class Duck {
 		Method[] scope = target.getClass().getMethods();
 		for(int i = 0; (result == null) && (i < scope.length); i++) {
 			Method next = scope[i];
-			if(next.getName().equals(methodName) && (returning == null) && match(next, signature)) {
+			if(next.getName().equals(methodName) && matchReturn(next.getReturnType(), returning) && match(next, signature)) {
 				result = next;
 			}
 		}

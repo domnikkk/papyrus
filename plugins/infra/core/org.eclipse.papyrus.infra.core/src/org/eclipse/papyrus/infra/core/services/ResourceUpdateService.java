@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA LIST.
+ * Copyright (c) 2013, 2014 CEA LIST and others.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,12 +9,14 @@
  *
  * Contributors:
  *  Camille Letavernier (camille.letavernier@cea.fr) - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.services;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.concurrent.ConcurrentMap;
 
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -23,14 +25,21 @@ import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
+import org.eclipse.papyrus.infra.core.editor.IReloadableEditor;
 import org.eclipse.papyrus.infra.core.lifecycleevents.DoSaveEvent;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ILifeCycleEventsProvider;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService;
@@ -38,12 +47,14 @@ import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveEventListener;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.IWorkbenchPartSite;
+import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
+import org.eclipse.ui.progress.UIJob;
+
+import com.google.common.collect.Maps;
 
 /**
  * A Service to check workspace modifications on current resources
@@ -60,6 +71,8 @@ public class ResourceUpdateService implements IService, IPartListener {
 	static int[] handledTypes = new int[]{ IResourceChangeEvent.POST_CHANGE, IResourceChangeEvent.PRE_DELETE, IResourceChangeEvent.PRE_CLOSE };
 
 	protected boolean isSaving;
+
+	protected ConcurrentMap<IMultiDiagramEditor, Job> pendingEditorCloseJobs = Maps.newConcurrentMap();
 
 	/**
 	 * Update isSaving flag asynchronously to avoid race conditions, see bug 411574
@@ -129,38 +142,49 @@ public class ResourceUpdateService implements IService, IPartListener {
 			}
 			final IMultiDiagramEditor editor = registry.getService(IMultiDiagramEditor.class);
 			if(editor != null) {
-				Runnable closeEditorRunnable = new Runnable() {
+				final IWorkbenchPartSite site = editor.getSite();
+				UIJob closeEditorJob = new UIJob(site.getShell().getDisplay(), NLS.bind("Reload editor {0}", editor.getTitle())) {
 
 					@Override
-					public void run() {
-						final IWorkbenchPage page = editor.getSite().getPage();
-						final IEditorInput currentInput = editor.getEditorInput();
+					public IStatus runInUIThread(IProgressMonitor monitor) {
+						// Remove the pending job
+						pendingEditorCloseJobs.remove(editor);
 
+						IStatus result = Status.OK_STATUS;
+						monitor = SubMonitor.convert(monitor, IProgressMonitor.UNKNOWN);
 
-						final String editorId = editor.getSite().getId();
-
-						if(save) {
-							editor.doSave(new NullProgressMonitor());
-						}
-						page.closeEditor(editor, save);
-						if(reopen) {
-							Display.getCurrent().asyncExec(new Runnable() {
-
-								@Override
-								public void run() {
-									try {
-										IDE.openEditor(page, currentInput, editorId);
-									} catch (PartInitException ex) {
-										Activator.log.error(ex);
-									}
+						try {
+							if(reopen) {
+								try {
+									IReloadableEditor.Adapter.getAdapter(editor).reloadEditor(save);
+								} catch (CoreException e) {
+									result = e.getStatus();
 								}
-							});
+							} else {
+								// Just close it
+
+								if(save) {
+									editor.doSave(new NullProgressMonitor());
+								}
+
+								final IWorkbenchPage page = editor.getSite().getPage();
+								page.closeEditor(editor, save);
+							}
+						} finally {
+							monitor.done();
 						}
+
+						return result;
 					}
 				};
 
-				//Async execution to avoid lock conflicts on the Workspace (Probably owned by this thread, and not the UI thread)
-				editor.getSite().getShell().getDisplay().asyncExec(closeEditorRunnable);
+				// We are notified usually of at least three resources (*.di, *.notation, *.uml) that are unloaded, but
+				// there's no need to close and re-open the same editor three times
+				if(pendingEditorCloseJobs.putIfAbsent(editor, closeEditorJob) == null) {
+					//Async execution to avoid lock conflicts on the Workspace (Probably owned by this thread, and not the UI thread)
+					IWorkbenchSiteProgressService progressService = (IWorkbenchSiteProgressService)site.getService(IWorkbenchSiteProgressService.class);
+					progressService.schedule(closeEditorJob);
+				}
 			}
 
 		} catch (ServiceException ex) {

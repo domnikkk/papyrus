@@ -24,6 +24,7 @@ import java.net.URL;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
@@ -55,6 +56,7 @@ import org.osgi.framework.FrameworkUtil;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.common.io.ByteStreams;
 
 
@@ -86,6 +88,8 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 	private Package model;
 
 	private Class<?> testClass;
+
+	private Iterable<URI> initialResourceURIs;
 
 	public AbstractModelFixture() {
 		super();
@@ -146,15 +150,44 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 	@Override
 	protected void starting(Description description) {
 		domain = createEditingDomain();
-		model = (Package)initModelResource(description).getContents().get(0);
+		model = (Package)Iterables.getFirst(initModelResources(description), null).getContents().get(0);
+		
+		// We have finished initializing
+		initialResourceURIs = null;
 	}
 
-	protected Resource initModelResource(Description description) {
-		Annotation resourceAnnotation = getResourceAnnotation(description);
-		ResourceKind kind = ResourceKind.getResourceKind(resourceAnnotation);
+	protected Iterable<Resource> initModelResources(Description description) {
+		List<Resource> result;
 
-		IPath resourcePath = new Path(kind.getResourcePath(resourceAnnotation));
+		// Don't initialize the resources more than once (subclasses such as PapyrusEditorFixture can repeat this)
+		if(initialResourceURIs == null) {
+			Annotation resourceAnnotation = getResourceAnnotation(description);
+			ResourceKind kind = ResourceKind.getResourceKind(resourceAnnotation);
 
+			final String[] paths = kind.getResourcePaths(resourceAnnotation);
+			result = Lists.newArrayListWithCapacity(paths.length);
+
+			for(String path : paths) {
+				result.add(initModelResource(new Path(path), kind));
+			}
+
+			List<URI> uris = Lists.newArrayListWithCapacity(result.size());
+			for(Resource next : result) {
+				uris.add(next.getURI());
+			}
+			initialResourceURIs = uris;
+		} else {
+			ResourceSet rset = getResourceSet();
+			result = Lists.newArrayList();
+			for(URI next : initialResourceURIs) {
+				result.add(rset.getResource(next, true));
+			}
+		}
+
+		return result;
+	}
+
+	private Resource initModelResource(IPath resourcePath, ResourceKind kind) {
 		String targetResourceName = "model";
 		if(isDIModel(resourcePath)) {
 			// We will be initializing all three resources, and they have cross-references, so must not change
@@ -309,6 +342,7 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 	protected void finished(Description description) {
 		final ResourceSet resourceSet = getResourceSet();
 
+		initialResourceURIs = null;
 		model = null;
 
 		if(domain instanceof TransactionalEditingDomain) {
@@ -359,7 +393,7 @@ public abstract class AbstractModelFixture<T extends EditingDomain> extends Test
 			return (resourceAnnotation instanceof JavaResource) ? JAVA : (resourceAnnotation instanceof PluginResource) ? BUNDLE : null;
 		}
 
-		String getResourcePath(Annotation resourceAnnotation) {
+		String[] getResourcePaths(Annotation resourceAnnotation) {
 			switch(this) {
 			case JAVA:
 				return ((JavaResource)resourceAnnotation).value();
