@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2014 CEA LIST.
+  
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+  
+ Contributors:
+  CEA LIST - Initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated UMLDI -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.papyrus.umldi.editor.UMLDIModelWizard"
+            name="%_UI_UMLDIModelWizard_label"
+            class="org.eclipse.papyrus.umldi.editor.UMLDIModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UMLDIModelFile.gif">
+         <description>%_UI_UMLDIModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated UMLDI -->
+      <editor
+            id="org.eclipse.papyrus.umldi.editor.UMLDIEditor"
+            name="%_UI_UMLDIEditor_label"
+            icon="icons/full/obj16/UMLDIModelFile.gif"
+            extensions="umldi"
+            class="org.eclipse.papyrus.umldi.editor.UMLDIEditor"
+            contributorClass="org.eclipse.papyrus.umldi.editor.UMLDIActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

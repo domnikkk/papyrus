@@ -20,18 +20,19 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Dimension</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Dimension specifies two lengths (width and height)
- * along the x and y axes in some x-y coordinate system. <!-- end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Dimension specifies two lengths (width and height) along the x and y axes in some x-y coordinate system.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dc.DCPackage#getDimension()
  * @model
  * @generated
@@ -54,12 +55,9 @@ public interface Dimension extends EObject {
 	double getWidth();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Width</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Width</em>' attribute.
 	 * @see #isSetWidth()
 	 * @see #unsetWidth()
 	 * @see #getWidth()
@@ -68,10 +66,8 @@ public interface Dimension extends EObject {
 	void setWidth(double value);
 
 	/**
-	 * Unsets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSetWidth()
 	 * @see #getWidth()
 	 * @see #setWidth(double)
@@ -80,10 +76,8 @@ public interface Dimension extends EObject {
 	void unsetWidth();
 
 	/**
-	 * Returns whether the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}'
-	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}' attribute is set.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Width</em>' attribute is set.
 	 * @see #unsetWidth()
 	 * @see #getWidth()
@@ -108,12 +102,9 @@ public interface Dimension extends EObject {
 	double getHeight();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Height</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Height</em>' attribute.
 	 * @see #isSetHeight()
 	 * @see #unsetHeight()
 	 * @see #getHeight()
@@ -122,10 +113,8 @@ public interface Dimension extends EObject {
 	void setHeight(double value);
 
 	/**
-	 * Unsets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Unsets the value of the '{@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSetHeight()
 	 * @see #getHeight()
 	 * @see #setHeight(double)
@@ -134,10 +123,8 @@ public interface Dimension extends EObject {
 	void unsetHeight();
 
 	/**
-	 * Returns whether the value of the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}'
-	 * attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns whether the value of the '{@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}' attribute is set.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Height</em>' attribute is set.
 	 * @see #unsetHeight()
 	 * @see #getHeight()

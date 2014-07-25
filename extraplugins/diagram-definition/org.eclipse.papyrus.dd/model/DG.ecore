@@ -47,6 +47,8 @@
         <details key="documentation" value="A list of graphical elements that are members of this group."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" ordered="false"
+        eType="ecore:EDataType DC.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphicalElement" abstract="true" eSuperTypes="#//Definition">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -101,6 +103,8 @@
         <details key="documentation" value="A list of transforms that apply to this graphical element."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutData" ordered="false"
+        eType="ecore:EDataType DC.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Definition" abstract="true">
     <eOperations name="idCannotBeEmpty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1132,6 +1136,8 @@
         <details key="documentation" value="A list of external style sheets that are imported by the canvas."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="script" ordered="false"
+        upperBound="-1" eType="ecore:EDataType DC.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rotate" eSuperTypes="#//Transform">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1241,6 +1247,13 @@
         <details key="documentation" value="the bounds inside which the text is rendered (possibly wrapped into multiple lines)"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anchor" ordered="false"
+        eType="#//TextAnchor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TextAnchor">
+    <eLiterals name="start"/>
+    <eLiterals name="middle" value="1"/>
+    <eLiterals name="end" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Translate" eSuperTypes="#//Transform">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

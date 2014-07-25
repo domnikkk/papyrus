@@ -16,18 +16,18 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Paint Server</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> PaintServer is the abstract super class of all paint
- * servers, like gradients and patterns <!-- end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * PaintServer is the abstract super class of all paint servers, like gradients and patterns
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.PaintServer#getTransforms <em>Transform
- * </em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.PaintServer#getTransforms <em>Transform</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getPaintServer()
  * @model abstract="true"
  * @generated

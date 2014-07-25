@@ -16,18 +16,19 @@ import org.eclipse.papyrus.dd.dc.Point;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Move To</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> MoveTo is a kind of path command that establishes a
- * new current point in the coordinate system. Definition is an object with an
- * id that can be nested under Definitions. <!-- end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * MoveTo is a kind of path command that establishes a new current point in the coordinate system.
+ * Definition is an object with an id that can be nested under Definitions.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.MoveTo#getPoint <em>Point</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.MoveTo#getPoint <em>Point</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getMoveTo()
  * @model
  * @generated
@@ -47,12 +48,10 @@ public interface MoveTo extends PathCommand {
 	Point getPoint();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.MoveTo#getPoint
-	 * <em>Point</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.MoveTo#getPoint <em>Point</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Point</em>' containment reference.
+	 * @param value the new value of the '<em>Point</em>' containment reference.
 	 * @see #getPoint()
 	 * @generated
 	 */

@@ -18,17 +18,15 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Definitions</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getDefnitions <em>Defnition
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet <em>Style
- * Sheet</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getDefnitions <em>Defnition</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet <em>Style Sheet</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getDefinitions()
  * @model
  * @generated
@@ -64,14 +62,10 @@ public interface Definitions extends EObject {
 	StyleSheet getStyleSheet();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet
-	 * <em>Style Sheet</em>}' containment reference. <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.Definitions#getStyleSheet <em>Style Sheet</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Style Sheet</em>' containment
-	 *            reference.
+	 * @param value the new value of the '<em>Style Sheet</em>' containment reference.
 	 * @see #getStyleSheet()
 	 * @generated
 	 */

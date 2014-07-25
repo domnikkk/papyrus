@@ -18,18 +18,18 @@ import org.eclipse.papyrus.dd.dc.Point;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Polygon</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Polygon is a marked element that defines a closed
- * shape consisting of a sequence of connected straight line segments. <!--
- * end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Polygon is a marked element that defines a closed shape consisting of a sequence of connected straight line segments.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Polygon#getPoints <em>Point</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Polygon#getPoints <em>Point</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getPolygon()
  * @model
  * @generated

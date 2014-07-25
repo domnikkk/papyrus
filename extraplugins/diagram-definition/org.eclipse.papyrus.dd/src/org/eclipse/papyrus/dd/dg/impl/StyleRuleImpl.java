@@ -38,21 +38,18 @@ import org.eclipse.papyrus.dd.dg.StyleSelector;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl#getSelectors <em>
- * Selector</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl#getStyle <em>Style
- * </em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl#getSelectors <em>Selector</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleRuleImpl#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 		StyleRule {
 	/**
-	 * The cached value of the '{@link #getSelectors() <em>Selector</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getSelectors() <em>Selector</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSelectors()
 	 * @generated
 	 * @ordered
@@ -60,9 +57,8 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 	protected EList<StyleSelector> selectors;
 
 	/**
-	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -71,7 +67,6 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StyleRuleImpl() {
@@ -80,7 +75,6 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,20 +84,17 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<StyleSelector> getSelectors() {
 		if (selectors == null) {
-			selectors = new EObjectContainmentEList<StyleSelector>(
-					StyleSelector.class, this, DGPackage.STYLE_RULE__SELECTOR);
+			selectors = new EObjectContainmentEList<StyleSelector>(StyleSelector.class, this, DGPackage.STYLE_RULE__SELECTOR);
 		}
 		return selectors;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Style getStyle() {
@@ -112,7 +103,6 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(Style newStyle,
@@ -120,126 +110,108 @@ public class StyleRuleImpl extends MinimalEObjectImpl.Container implements
 		Style oldStyle = style;
 		style = newStyle;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, DGPackage.STYLE_RULE__STYLE, oldStyle,
-					newStyle);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.STYLE_RULE__STYLE, oldStyle, newStyle);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setStyle(Style newStyle) {
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null)
-				msgs = ((InternalEObject) style).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DGPackage.STYLE_RULE__STYLE,
-						null, msgs);
+				msgs = ((InternalEObject)style).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.STYLE_RULE__STYLE, null, msgs);
 			if (newStyle != null)
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DGPackage.STYLE_RULE__STYLE,
-						null, msgs);
+				msgs = ((InternalEObject)newStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.STYLE_RULE__STYLE, null, msgs);
 			msgs = basicSetStyle(newStyle, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DGPackage.STYLE_RULE__STYLE, newStyle, newStyle));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.STYLE_RULE__STYLE, newStyle, newStyle));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DGPackage.STYLE_RULE__SELECTOR:
-			return ((InternalEList<?>) getSelectors()).basicRemove(otherEnd,
-					msgs);
-		case DGPackage.STYLE_RULE__STYLE:
-			return basicSetStyle(null, msgs);
+			case DGPackage.STYLE_RULE__SELECTOR:
+				return ((InternalEList<?>)getSelectors()).basicRemove(otherEnd, msgs);
+			case DGPackage.STYLE_RULE__STYLE:
+				return basicSetStyle(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DGPackage.STYLE_RULE__SELECTOR:
-			return getSelectors();
-		case DGPackage.STYLE_RULE__STYLE:
-			return getStyle();
+			case DGPackage.STYLE_RULE__SELECTOR:
+				return getSelectors();
+			case DGPackage.STYLE_RULE__STYLE:
+				return getStyle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DGPackage.STYLE_RULE__SELECTOR:
-			getSelectors().clear();
-			getSelectors().addAll(
-					(Collection<? extends StyleSelector>) newValue);
-			return;
-		case DGPackage.STYLE_RULE__STYLE:
-			setStyle((Style) newValue);
-			return;
+			case DGPackage.STYLE_RULE__SELECTOR:
+				getSelectors().clear();
+				getSelectors().addAll((Collection<? extends StyleSelector>)newValue);
+				return;
+			case DGPackage.STYLE_RULE__STYLE:
+				setStyle((Style)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DGPackage.STYLE_RULE__SELECTOR:
-			getSelectors().clear();
-			return;
-		case DGPackage.STYLE_RULE__STYLE:
-			setStyle((Style) null);
-			return;
+			case DGPackage.STYLE_RULE__SELECTOR:
+				getSelectors().clear();
+				return;
+			case DGPackage.STYLE_RULE__STYLE:
+				setStyle((Style)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DGPackage.STYLE_RULE__SELECTOR:
-			return selectors != null && !selectors.isEmpty();
-		case DGPackage.STYLE_RULE__STYLE:
-			return style != null;
+			case DGPackage.STYLE_RULE__SELECTOR:
+				return selectors != null && !selectors.isEmpty();
+			case DGPackage.STYLE_RULE__STYLE:
+				return style != null;
 		}
 		return super.eIsSet(featureID);
 	}

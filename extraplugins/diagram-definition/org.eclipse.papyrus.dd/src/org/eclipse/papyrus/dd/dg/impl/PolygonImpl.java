@@ -34,18 +34,16 @@ import org.eclipse.papyrus.dd.dg.Polygon;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.PolygonImpl#getPoints <em>Point
- * </em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.impl.PolygonImpl#getPoints <em>Point</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PolygonImpl extends MarkedElementImpl implements Polygon {
 	/**
-	 * The cached value of the '{@link #getPoints() <em>Point</em>}' containment
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getPoints() <em>Point</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPoints()
 	 * @generated
 	 * @ordered
@@ -54,7 +52,6 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected PolygonImpl() {
@@ -63,7 +60,6 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,88 +69,81 @@ public class PolygonImpl extends MarkedElementImpl implements Polygon {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<Point> getPoints() {
 		if (points == null) {
-			points = new EObjectContainmentEList<Point>(Point.class, this,
-					DGPackage.POLYGON__POINT);
+			points = new EObjectContainmentEList<Point>(Point.class, this, DGPackage.POLYGON__POINT);
 		}
 		return points;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DGPackage.POLYGON__POINT:
-			return ((InternalEList<?>) getPoints()).basicRemove(otherEnd, msgs);
+			case DGPackage.POLYGON__POINT:
+				return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DGPackage.POLYGON__POINT:
-			return getPoints();
+			case DGPackage.POLYGON__POINT:
+				return getPoints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DGPackage.POLYGON__POINT:
-			getPoints().clear();
-			getPoints().addAll((Collection<? extends Point>) newValue);
-			return;
+			case DGPackage.POLYGON__POINT:
+				getPoints().clear();
+				getPoints().addAll((Collection<? extends Point>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DGPackage.POLYGON__POINT:
-			getPoints().clear();
-			return;
+			case DGPackage.POLYGON__POINT:
+				getPoints().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DGPackage.POLYGON__POINT:
-			return points != null && !points.isEmpty();
+			case DGPackage.POLYGON__POINT:
+				return points != null && !points.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://www.omg.org/spec/DD/20110901/DC" targetURI="platform:/resource/org.eclipse.papyrus.dd/model/DC.ecore"/>
+  <mapping sourceURI="http://www.omg.org/spec/DD/20110901/DG" targetURI="platform:/resource/org.eclipse.papyrus.dd/model/DG.ecore"/>
+  <mapping sourceURI="http://www.omg.org/spec/DD/20110901/DI" targetURI="platform:/resource/org.eclipse.papyrus.dd/model/DI.ecore"/>
+  <mapping sourceURI="http://www.omg.org/spec/UML/20131001/UMLDI" targetURI="platform:/resource/org.eclipse.papyrus.umldi/model/UMLDI.ecore"/>
+</uriMap:MappingContainer>

@@ -16,18 +16,18 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Gradient</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Gradient is a kind of paint server that serves a
- * continuously smooth color transition along the gradient range from one color
- * to the next. <!-- end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Gradient is a kind of paint server that serves a continuously smooth color transition along the gradient range from one color to the next.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.Gradient#getStops <em>Stop</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.Gradient#getStops <em>Stop</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getGradient()
  * @model abstract="true"
  * @generated

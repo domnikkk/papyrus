@@ -40,39 +40,37 @@ import org.eclipse.emf.ecore.EPackage;
 public interface DCPackage extends EPackage {
 
 	/**
-	 * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package name.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNAME = "dc";
 
 	/**
-	 * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package namespace URI.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_URI = "http://www.omg.org/spec/DD/20110901/DC";
 
 	/**
-	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The package namespace name.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_PREFIX = "dc";
 
 	/**
-	 * The singleton instance of the package. <!-- begin-user-doc --> <!--
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	DCPackage eINSTANCE = org.eclipse.papyrus.dd.dc.impl.DCPackageImpl.init();
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dc.impl.PointImpl <em>Point</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dc.impl.PointImpl <em>Point</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.PointImpl
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getPoint()
 	 * @generated
@@ -80,18 +78,18 @@ public interface DCPackage extends EPackage {
 	int POINT = 0;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int POINT__X = 0;
 
 	/**
-	 * The feature id for the '<em><b>Y</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -116,10 +114,8 @@ public interface DCPackage extends EPackage {
 	int POINT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dc.impl.DimensionImpl <em>Dimension</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dc.impl.DimensionImpl <em>Dimension</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.papyrus.dd.dc.impl.DimensionImpl
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getDimension()
 	 * @generated
@@ -181,10 +177,8 @@ public interface DCPackage extends EPackage {
 	int DIMENSION_OPERATION_COUNT = 2;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl <em>Bounds</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl <em>Bounds</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.BoundsImpl
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getBounds()
 	 * @generated
@@ -192,18 +186,18 @@ public interface DCPackage extends EPackage {
 	int BOUNDS = 2;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int BOUNDS__X = 0;
 
 	/**
-	 * The feature id for the '<em><b>Y</b></em>' attribute. <!-- begin-user-doc
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -293,9 +287,9 @@ public interface DCPackage extends EPackage {
 	int INTEGER = 5;
 
 	/**
-	 * The meta object id for the '<em>Real</em>' data type. <!-- begin-user-doc
+	 * The meta object id for the '<em>Real</em>' data type.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getReal()
 	 * @generated
 	 */
@@ -368,10 +362,8 @@ public interface DCPackage extends EPackage {
 	EClass getDimension();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dc.Dimension#getWidth <em>Width</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Width</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Dimension#getWidth()
 	 * @see #getDimension()
@@ -380,10 +372,8 @@ public interface DCPackage extends EPackage {
 	EAttribute getDimension_Width();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.dd.dc.Dimension#getHeight <em>Height</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @return the meta object for the attribute '<em>Height</em>'.
 	 * @see org.eclipse.papyrus.dd.dc.Dimension#getHeight()
 	 * @see #getDimension()
@@ -392,27 +382,21 @@ public interface DCPackage extends EPackage {
 	EAttribute getDimension_Height();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Non Negative Width</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Non Negative Width</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Non Negative Width</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getDimension__NonNegativeWidth__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Non Negative Height</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Non Negative Height</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Non Negative Height</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dc.Dimension#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getDimension__NonNegativeHeight__DiagnosticChain_Map();
@@ -477,27 +461,21 @@ public interface DCPackage extends EPackage {
 	EAttribute getBounds_Height();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Non Negative Width</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Non Negative Width</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Non Negative Width</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeWidth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getBounds__NonNegativeWidth__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Non Negative Height</em>}' operation. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Non Negative Height</em>}' operation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @return the meta object for the '<em>Non Negative Height</em>' operation.
-	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain,
-	 *      java.util.Map)
+	 * @see org.eclipse.papyrus.dd.dc.Bounds#nonNegativeHeight(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	EOperation getBounds__NonNegativeHeight__DiagnosticChain_Map();
@@ -544,9 +522,8 @@ public interface DCPackage extends EPackage {
 	EDataType getReal();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.String
-	 * <em>String</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>String</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -555,9 +532,8 @@ public interface DCPackage extends EPackage {
 	EDataType getString();
 
 	/**
-	 * Returns the meta object for data type '{@link java.awt.Color
-	 * <em>Color</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the meta object for data type '{@link java.awt.Color <em>Color</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Color</em>'.
 	 * @see java.awt.Color
 	 * @model instanceClass="java.awt.Color"
@@ -585,16 +561,13 @@ public interface DCPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	interface Literals {
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dc.impl.PointImpl <em>Point</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dc.impl.PointImpl <em>Point</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dc.impl.PointImpl
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getPoint()
 		 * @generated
@@ -602,17 +575,15 @@ public interface DCPackage extends EPackage {
 		EClass POINT = eINSTANCE.getPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>X</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute POINT__X = eINSTANCE.getPoint_X();
 
 		/**
-		 * The meta object literal for the '<em><b>Y</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute POINT__Y = eINSTANCE.getPoint_Y();
@@ -630,44 +601,36 @@ public interface DCPackage extends EPackage {
 		EClass DIMENSION = eINSTANCE.getDimension();
 
 		/**
-		 * The meta object literal for the '<em><b>Width</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute DIMENSION__WIDTH = eINSTANCE.getDimension_Width();
 
 		/**
-		 * The meta object literal for the '<em><b>Height</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute DIMENSION__HEIGHT = eINSTANCE.getDimension_Height();
 
 		/**
-		 * The meta object literal for the '<em><b>Non Negative Width</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Non Negative Width</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getDimension__NonNegativeWidth__DiagnosticChain_Map();
+		EOperation DIMENSION___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDimension__NonNegativeWidth__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Non Negative Height</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Non Negative Height</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getDimension__NonNegativeHeight__DiagnosticChain_Map();
+		EOperation DIMENSION___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDimension__NonNegativeHeight__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl <em>Bounds</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dc.impl.BoundsImpl <em>Bounds</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dc.impl.BoundsImpl
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getBounds()
 		 * @generated
@@ -675,60 +638,50 @@ public interface DCPackage extends EPackage {
 		EClass BOUNDS = eINSTANCE.getBounds();
 
 		/**
-		 * The meta object literal for the '<em><b>X</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute BOUNDS__X = eINSTANCE.getBounds_X();
 
 		/**
-		 * The meta object literal for the '<em><b>Y</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute BOUNDS__Y = eINSTANCE.getBounds_Y();
 
 		/**
-		 * The meta object literal for the '<em><b>Width</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute BOUNDS__WIDTH = eINSTANCE.getBounds_Width();
 
 		/**
-		 * The meta object literal for the '<em><b>Height</b></em>' attribute
-		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute BOUNDS__HEIGHT = eINSTANCE.getBounds_Height();
 
 		/**
-		 * The meta object literal for the '<em><b>Non Negative Width</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Non Negative Width</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getBounds__NonNegativeWidth__DiagnosticChain_Map();
+		EOperation BOUNDS___NON_NEGATIVE_WIDTH__DIAGNOSTICCHAIN_MAP = eINSTANCE.getBounds__NonNegativeWidth__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Non Negative Height</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '<em><b>Non Negative Height</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getBounds__NonNegativeHeight__DiagnosticChain_Map();
+		EOperation BOUNDS___NON_NEGATIVE_HEIGHT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getBounds__NonNegativeHeight__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.dd.dc.KnownColor <em>Known Color</em>}'
-		 * enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 * The meta object literal for the '{@link org.eclipse.papyrus.dd.dc.KnownColor <em>Known Color</em>}' enum.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.eclipse.papyrus.dd.dc.KnownColor
 		 * @see org.eclipse.papyrus.dd.dc.impl.DCPackageImpl#getKnownColor()
 		 * @generated

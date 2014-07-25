@@ -26,7 +26,7 @@
     <details key="CAMEL_CASE_NAMES" value="PROCESS"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
   </genAnnotations>
-  <foreignModel>DC.cmof</foreignModel>
+  <foreignModel>DC.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="DC" basePackage="org.eclipse.papyrus.dd"
       disposableProviderFactory="true" ecorePackage="DC.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="DC.ecore#//KnownColor">

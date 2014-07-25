@@ -25,33 +25,32 @@ import org.eclipse.papyrus.dd.dg.*;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 	/**
-	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static DGFactory init() {
 		try {
-			DGFactory theDGFactory = (DGFactory) EPackage.Registry.INSTANCE
-					.getEFactory(DGPackage.eNS_URI);
+			DGFactory theDGFactory = (DGFactory)EPackage.Registry.INSTANCE.getEFactory(DGPackage.eNS_URI);
 			if (theDGFactory != null) {
 				return theDGFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DGFactoryImpl();
 	}
 
 	/**
-	 * Creates an instance of the factory. <!-- begin-user-doc --> <!--
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DGFactoryImpl() {
@@ -60,129 +59,90 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case DGPackage.CANVAS:
-			return createCanvas();
-		case DGPackage.GROUP:
-			return createGroup();
-		case DGPackage.MOVE_TO:
-			return createMoveTo();
-		case DGPackage.CLIP_PATH:
-			return createClipPath();
-		case DGPackage.STYLE:
-			return createStyle();
-		case DGPackage.PAINT:
-			return createPaint();
-		case DGPackage.CIRCLE:
-			return createCircle();
-		case DGPackage.CLOSE_PATH:
-			return createClosePath();
-		case DGPackage.CUBIC_CURVE_TO:
-			return createCubicCurveTo();
-		case DGPackage.DEFINITIONS:
-			return createDefinitions();
-		case DGPackage.STYLE_SHEET:
-			return createStyleSheet();
-		case DGPackage.STYLE_RULE:
-			return createStyleRule();
-		case DGPackage.STYLE_SELECTOR:
-			return createStyleSelector();
-		case DGPackage.ELLIPSE:
-			return createEllipse();
-		case DGPackage.ELLIPTICAL_ARC_TO:
-			return createEllipticalArcTo();
-		case DGPackage.QUADRATIC_CURVE_TO:
-			return createQuadraticCurveTo();
-		case DGPackage.GRADIENT_STOP:
-			return createGradientStop();
-		case DGPackage.IMAGE:
-			return createImage();
-		case DGPackage.LINE:
-			return createLine();
-		case DGPackage.MARKER:
-			return createMarker();
-		case DGPackage.LINEAR_GRADIENT:
-			return createLinearGradient();
-		case DGPackage.LINE_TO:
-			return createLineTo();
-		case DGPackage.MATRIX:
-			return createMatrix();
-		case DGPackage.PATH:
-			return createPath();
-		case DGPackage.PATTERN:
-			return createPattern();
-		case DGPackage.POLYGON:
-			return createPolygon();
-		case DGPackage.POLYLINE:
-			return createPolyline();
-		case DGPackage.RADIAL_GRADIENT:
-			return createRadialGradient();
-		case DGPackage.RECTANGLE:
-			return createRectangle();
-		case DGPackage.ROOT_CANVAS:
-			return createRootCanvas();
-		case DGPackage.ROTATE:
-			return createRotate();
-		case DGPackage.SCALE:
-			return createScale();
-		case DGPackage.SKEW:
-			return createSkew();
-		case DGPackage.TEXT:
-			return createText();
-		case DGPackage.TRANSLATE:
-			return createTranslate();
-		case DGPackage.USE:
-			return createUse();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			case DGPackage.CANVAS: return createCanvas();
+			case DGPackage.GROUP: return createGroup();
+			case DGPackage.MOVE_TO: return createMoveTo();
+			case DGPackage.CLIP_PATH: return createClipPath();
+			case DGPackage.STYLE: return createStyle();
+			case DGPackage.PAINT: return createPaint();
+			case DGPackage.CIRCLE: return createCircle();
+			case DGPackage.CLOSE_PATH: return createClosePath();
+			case DGPackage.CUBIC_CURVE_TO: return createCubicCurveTo();
+			case DGPackage.DEFINITIONS: return createDefinitions();
+			case DGPackage.STYLE_SHEET: return createStyleSheet();
+			case DGPackage.STYLE_RULE: return createStyleRule();
+			case DGPackage.STYLE_SELECTOR: return createStyleSelector();
+			case DGPackage.ELLIPSE: return createEllipse();
+			case DGPackage.ELLIPTICAL_ARC_TO: return createEllipticalArcTo();
+			case DGPackage.QUADRATIC_CURVE_TO: return createQuadraticCurveTo();
+			case DGPackage.GRADIENT_STOP: return createGradientStop();
+			case DGPackage.IMAGE: return createImage();
+			case DGPackage.LINE: return createLine();
+			case DGPackage.MARKER: return createMarker();
+			case DGPackage.LINEAR_GRADIENT: return createLinearGradient();
+			case DGPackage.LINE_TO: return createLineTo();
+			case DGPackage.MATRIX: return createMatrix();
+			case DGPackage.PATH: return createPath();
+			case DGPackage.PATTERN: return createPattern();
+			case DGPackage.POLYGON: return createPolygon();
+			case DGPackage.POLYLINE: return createPolyline();
+			case DGPackage.RADIAL_GRADIENT: return createRadialGradient();
+			case DGPackage.RECTANGLE: return createRectangle();
+			case DGPackage.ROOT_CANVAS: return createRootCanvas();
+			case DGPackage.ROTATE: return createRotate();
+			case DGPackage.SCALE: return createScale();
+			case DGPackage.SKEW: return createSkew();
+			case DGPackage.TEXT: return createText();
+			case DGPackage.TRANSLATE: return createTranslate();
+			case DGPackage.USE: return createUse();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case DGPackage.FONT_DECORATION:
-			return createFontDecorationFromString(eDataType, initialValue);
-		case DGPackage.ELEMENT_KIND:
-			return createElementKindFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			case DGPackage.FONT_DECORATION:
+				return createFontDecorationFromString(eDataType, initialValue);
+			case DGPackage.ELEMENT_KIND:
+				return createElementKindFromString(eDataType, initialValue);
+			case DGPackage.TEXT_ANCHOR:
+				return createTextAnchorFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case DGPackage.FONT_DECORATION:
-			return convertFontDecorationToString(eDataType, instanceValue);
-		case DGPackage.ELEMENT_KIND:
-			return convertElementKindToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			case DGPackage.FONT_DECORATION:
+				return convertFontDecorationToString(eDataType, instanceValue);
+			case DGPackage.ELEMENT_KIND:
+				return convertElementKindToString(eDataType, instanceValue);
+			case DGPackage.TEXT_ANCHOR:
+				return convertTextAnchorToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Canvas createCanvas() {
@@ -192,7 +152,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Group createGroup() {
@@ -202,7 +161,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public MoveTo createMoveTo() {
@@ -212,7 +170,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ClipPath createClipPath() {
@@ -222,7 +179,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Style createStyle() {
@@ -232,7 +188,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Paint createPaint() {
@@ -242,7 +197,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Circle createCircle() {
@@ -252,7 +206,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ClosePath createClosePath() {
@@ -262,7 +215,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CubicCurveTo createCubicCurveTo() {
@@ -272,7 +224,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Definitions createDefinitions() {
@@ -282,7 +233,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StyleSheet createStyleSheet() {
@@ -292,7 +242,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StyleRule createStyleRule() {
@@ -302,7 +251,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StyleSelector createStyleSelector() {
@@ -312,7 +260,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Ellipse createEllipse() {
@@ -322,7 +269,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EllipticalArcTo createEllipticalArcTo() {
@@ -332,7 +278,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public QuadraticCurveTo createQuadraticCurveTo() {
@@ -342,7 +287,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GradientStop createGradientStop() {
@@ -352,7 +296,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Image createImage() {
@@ -362,7 +305,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Line createLine() {
@@ -372,7 +314,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Marker createMarker() {
@@ -382,7 +323,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public LinearGradient createLinearGradient() {
@@ -392,7 +332,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public LineTo createLineTo() {
@@ -402,7 +341,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Matrix createMatrix() {
@@ -412,7 +350,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Path createPath() {
@@ -422,7 +359,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Pattern createPattern() {
@@ -432,7 +368,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Polygon createPolygon() {
@@ -442,7 +377,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Polyline createPolyline() {
@@ -452,7 +386,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public RadialGradient createRadialGradient() {
@@ -462,7 +395,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Rectangle createRectangle() {
@@ -472,7 +404,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public RootCanvas createRootCanvas() {
@@ -482,7 +413,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Rotate createRotate() {
@@ -492,7 +422,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Scale createScale() {
@@ -502,7 +431,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Skew createSkew() {
@@ -512,7 +440,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Text createText() {
@@ -522,7 +449,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Translate createTranslate() {
@@ -532,7 +458,6 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Use createUse() {
@@ -542,22 +467,17 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FontDecoration createFontDecorationFromString(EDataType eDataType,
 			String initialValue) {
 		FontDecoration result = FontDecoration.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertFontDecorationToString(EDataType eDataType,
@@ -567,22 +487,17 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ElementKind createElementKindFromString(EDataType eDataType,
 			String initialValue) {
 		ElementKind result = ElementKind.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertElementKindToString(EDataType eDataType,
@@ -591,17 +506,35 @@ public class DGFactoryImpl extends EFactoryImpl implements DGFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DGPackage getDGPackage() {
-		return (DGPackage) getEPackage();
+	public TextAnchor createTextAnchorFromString(EDataType eDataType, String initialValue) {
+		TextAnchor result = TextAnchor.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTextAnchorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * @generated
+	 */
+	public DGPackage getDGPackage() {
+		return (DGPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */

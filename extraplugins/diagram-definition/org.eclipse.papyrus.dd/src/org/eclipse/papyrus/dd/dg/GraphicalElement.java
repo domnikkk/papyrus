@@ -18,26 +18,23 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Graphical Element</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> GraphicalElement is the abstract superclass of all
- * graphical elements that can be nested in a canvas. <!-- end-model-doc -->
- * 
+ *
+ * <!-- begin-model-doc -->
+ * GraphicalElement is the abstract superclass of all graphical elements that can be nested in a canvas.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath <em>Clip
- * Path</em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup <em>Group
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses <em>Class
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle <em>Style
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms <em>
- * Transform</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClipPath <em>Clip Path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup <em>Group</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getClasses <em>Class</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getTransforms <em>Transform</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getLayoutData <em>Layout Data</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getGraphicalElement()
  * @model abstract="true"
  * @generated
@@ -87,13 +84,10 @@ public interface GraphicalElement extends Definition {
 	Group getGroup();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup
-	 * <em>Group</em>}' container reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getGroup <em>Group</em>}' container reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Group</em>' container reference.
+	 * @param value the new value of the '<em>Group</em>' container reference.
 	 * @see #getGroup()
 	 * @generated
 	 */
@@ -127,13 +121,10 @@ public interface GraphicalElement extends Definition {
 	Style getStyle();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle
-	 * <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
@@ -152,6 +143,32 @@ public interface GraphicalElement extends Definition {
 	 * @generated
 	 */
 	EList<Transform> getTransforms();
+
+	/**
+	 * Returns the value of the '<em><b>Layout Data</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Layout Data</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Layout Data</em>' attribute.
+	 * @see #setLayoutData(String)
+	 * @see org.eclipse.papyrus.dd.dg.DGPackage#getGraphicalElement_LayoutData()
+	 * @model dataType="org.eclipse.papyrus.dd.dc.String" ordered="false"
+	 * @generated
+	 */
+	String getLayoutData();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.dd.dg.GraphicalElement#getLayoutData <em>Layout Data</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Layout Data</em>' attribute.
+	 * @see #getLayoutData()
+	 * @generated
+	 */
+	void setLayoutData(String value);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->

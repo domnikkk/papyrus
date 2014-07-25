@@ -35,19 +35,17 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl#getRules <em>Rule
- * </em>}</li>
+ *   <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl#getRules <em>Rule</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 		StyleSheet {
 	/**
-	 * The cached value of the '{@link #getRules() <em>Rule</em>}' containment
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getRules() <em>Rule</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getRules()
 	 * @generated
 	 * @ordered
@@ -56,7 +54,6 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StyleSheetImpl() {
@@ -65,7 +62,6 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -75,88 +71,81 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<StyleRule> getRules() {
 		if (rules == null) {
-			rules = new EObjectContainmentEList<StyleRule>(StyleRule.class,
-					this, DGPackage.STYLE_SHEET__RULE);
+			rules = new EObjectContainmentEList<StyleRule>(StyleRule.class, this, DGPackage.STYLE_SHEET__RULE);
 		}
 		return rules;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DGPackage.STYLE_SHEET__RULE:
-			return ((InternalEList<?>) getRules()).basicRemove(otherEnd, msgs);
+			case DGPackage.STYLE_SHEET__RULE:
+				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DGPackage.STYLE_SHEET__RULE:
-			return getRules();
+			case DGPackage.STYLE_SHEET__RULE:
+				return getRules();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DGPackage.STYLE_SHEET__RULE:
-			getRules().clear();
-			getRules().addAll((Collection<? extends StyleRule>) newValue);
-			return;
+			case DGPackage.STYLE_SHEET__RULE:
+				getRules().clear();
+				getRules().addAll((Collection<? extends StyleRule>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DGPackage.STYLE_SHEET__RULE:
-			getRules().clear();
-			return;
+			case DGPackage.STYLE_SHEET__RULE:
+				getRules().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DGPackage.STYLE_SHEET__RULE:
-			return rules != null && !rules.isEmpty();
+			case DGPackage.STYLE_SHEET__RULE:
+				return rules != null && !rules.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

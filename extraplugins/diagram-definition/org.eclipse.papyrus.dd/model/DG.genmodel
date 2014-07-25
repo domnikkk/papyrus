@@ -28,7 +28,7 @@
     <details key="CAMEL_CASE_NAMES" value="PROCESS"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
   </genAnnotations>
-  <foreignModel>DG.cmof</foreignModel>
+  <foreignModel>DG.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="DG" basePackage="org.eclipse.papyrus.dd"
       disposableProviderFactory="true" ecorePackage="DG.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="DG.ecore#//FontDecoration">
@@ -52,6 +52,11 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DG.ecore#//ElementKind/text"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DG.ecore#//ElementKind/use"/>
     </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="DG.ecore#//TextAnchor">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DG.ecore#//TextAnchor/start"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DG.ecore#//TextAnchor/middle"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="DG.ecore#//TextAnchor/end"/>
+    </genEnums>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="DG.ecore#//Canvas">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference DG.ecore#//Canvas/bounds"/>
@@ -63,6 +68,7 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="DG.ecore#//Group">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference DG.ecore#//Group/member"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DG.ecore#//Group/layout"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="DG.ecore#//GraphicalElement">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -74,6 +80,7 @@
           createChild="true" ecoreFeature="ecore:EReference DG.ecore#//GraphicalElement/style"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference DG.ecore#//GraphicalElement/transform"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DG.ecore#//GraphicalElement/layoutData"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DG.ecore#//GraphicalElement/referencedClippathHasId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DG.ecore#//GraphicalElement/referencedClippathHasId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DG.ecore#//GraphicalElement/referencedClippathHasId/context"/>
@@ -339,6 +346,7 @@
           createChild="true" ecoreFeature="ecore:EReference DG.ecore#//RootCanvas/definitions"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference DG.ecore#//RootCanvas/externalStyleSheet"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DG.ecore#//RootCanvas/script"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="DG.ecore#//Rotate">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DG.ecore#//Rotate/angle"/>
@@ -361,6 +369,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DG.ecore#//Text/data"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference DG.ecore#//Text/position"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute DG.ecore#//Text/anchor"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="DG.ecore#//Text/dataCannotBeEmpty">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DG.ecore#//Text/dataCannotBeEmpty/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="DG.ecore#//Text/dataCannotBeEmpty/context"/>

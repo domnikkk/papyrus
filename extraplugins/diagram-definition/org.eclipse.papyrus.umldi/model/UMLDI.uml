@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Package xmi:id="_0" name="UMLDI" URI="http://www.omg.org/spec/UML/20131001/UMLDI">
+    <packagedElement xmi:type="uml:Class" xmi:id="UMLDiagram" name="UmlDiagram">
+      <ownedComment xmi:type="uml:Comment" xmi:id="UMLDiagram-_ownedComment.0" annotatedElement="UMLDiagram">
+        <body>The most general class for UML diagrams.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLDiagram-_generalization.0">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.dd/model/DI.uml#Diagram"/>
+      </generalization>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLDiagram-_generalization.2" general="UMLShape"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="UMLDiagramElement" name="UmlDiagramElement" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="UMLDiagramElement-_ownedComment.0" annotatedElement="UMLDiagramElement">
+        <body>The most general class for UML diagram interchange.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLDiagramElement-_generalization.0">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.dd/model/DI.uml#DiagramElement"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLDiagramElement-modelElement" name="umlModelElement" isOrdered="true" association="A_UMLDiagramElement_modelElement_umlDiagramElement">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLDiagramElement-modelElement-_ownedComment.0" annotatedElement="UMLDiagramElement-modelElement">
+          <body>Restricts UMLDiagramElements to show UML Elements, rather than other language elements. </body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UMLDiagramElement-modelElement-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="UMLDiagramElement-modelElement-_upperValue" value="*"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#DiagramElement-modelElement"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLDiagramElement-sharedStyle" name="sharedUmlStyle" type="UMLStyle" association="A_UMLDiagramElement_sharedStyle_styledElement">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLDiagramElement-sharedStyle-_ownedComment.0" annotatedElement="UMLDiagramElement-sharedStyle">
+          <body>Restricts shared styles to UMLStyles.</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UMLDiagramElement-sharedStyle-_lowerValue"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#DiagramElement-sharedStyle"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLDiagramElement-localStyle" name="localUmlStyle" type="UMLStyle" aggregation="composite" association="A_UMLDiagramElement_localStyle_styledElement">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLDiagramElement-localStyle-_ownedComment.0" annotatedElement="UMLDiagramElement-localStyle">
+          <body>Restricts owned styles to UMLStyles.</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UMLDiagramElement-localStyle-_lowerValue"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#DiagramElement-localStyle"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLDiagramElement-owningElement" name="owningUmlDiagramElement" type="UMLDiagramElement" association="A_UMLDiagramElement_ownedElement_owningElement">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLDiagramElement-owningElement-_ownedComment.0" annotatedElement="UMLDiagramElement-owningElement">
+          <body>Restricts UMLDiagramElements to be owned by only UMLDiagramElements.</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UMLDiagramElement-owningElement-_lowerValue"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#DiagramElement-owningElement"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLDiagramElement-ownedElement" name="ownedUmlDiagramElement" type="UMLDiagramElement" isOrdered="true" aggregation="composite" association="A_UMLDiagramElement_ownedElement_owningElement">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLDiagramElement-ownedElement-_ownedComment.0" annotatedElement="UMLDiagramElement-ownedElement">
+          <body>Restricts UMLDiagramElements to own only UMLDiagramElements.</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UMLDiagramElement-ownedElement-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="UMLDiagramElement-ownedElement-_upperValue" value="*"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#DiagramElement-ownedElement"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="A_UMLEdge_target_targetEdge-targetEdge" name="targetUmlEdge" type="UMLEdge" isOrdered="true" association="A_UMLEdge_target_targetEdge">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="A_UMLEdge_target_targetEdge-targetEdge-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="A_UMLEdge_target_targetEdge-targetEdge-_upperValue" value="*"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#A_target_targetEdge-targetEdge"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="A_UMLEdge_source_sourceEdge-sourceEdge" name="sourceUmlEdge" type="UMLEdge" isOrdered="true" association="A_UMLEdge_source_sourceEdge">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="A_UMLEdge_source_sourceEdge-sourceEdge-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="A_UMLEdge_source_sourceEdge-sourceEdge-_upperValue" value="*"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#A_source_sourceEdge-sourceEdge"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="UMLEdge" name="UmlEdge">
+      <ownedComment xmi:type="uml:Comment" xmi:id="UMLEdge-_ownedComment.0" annotatedElement="UMLEdge">
+        <body>The most general class for UML diagram elements that are rendered as lines.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLEdge-_generalization.0">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.dd/model/DI.uml#Edge"/>
+      </generalization>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLEdge-_generalization.1" general="UMLDiagramElement"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLEdge-source" name="sourceUmlDiagramElement" type="UMLDiagramElement" association="A_UMLEdge_source_sourceEdge">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLEdge-source-_ownedComment.0" annotatedElement="UMLEdge-source">
+          <body>Restricts the sources of UMLEdges to UMLDiagramElements.</body>
+        </ownedComment>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#Edge-source"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLEdge-target" name="targetUmlDiagramElement" type="UMLDiagramElement" association="A_UMLEdge_target_targetEdge">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLEdge-target-_ownedComment.0" annotatedElement="UMLEdge-target">
+          <body>Restricts the targets of UMLEdges to UMLDiagramElements.</body>
+        </ownedComment>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#Edge-target"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="UMLShape" name="UmlShape">
+      <ownedComment xmi:type="uml:Comment" xmi:id="UMLShape-_ownedComment.0" annotatedElement="UMLShape">
+        <body>The most general class for UML diagram elements that are not rendered as lines.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLShape-_generalization.0">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.dd/model/DI.uml#Shape"/>
+      </generalization>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLShape-_generalization.1" general="UMLDiagramElement"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="UMLStyle" name="UmlStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="UMLStyle-_ownedComment.0" annotatedElement="UMLStyle">
+        <body>The most general class for Styles in UML.</body>
+      </ownedComment>
+      <ownedRule xmi:type="uml:Constraint" xmi:id="UMLStyle-fontsize_positive" name="fontsize_positive" constrainedElement="UMLStyle">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLStyle-fontsize_positive-_ownedComment.0" annotatedElement="UMLStyle-fontsize_positive">
+          <body>fontSize must be greater than zero.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="UMLStyle-fontsize_positive-_specification">
+          <language>OCL</language>
+          <body>fontSize > 0</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:type="uml:Generalization" xmi:id="UMLStyle-_generalization.0">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.dd/model/DI.uml#Style"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLStyle-fontName" name="fontName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLStyle-fontName-_ownedComment.0" annotatedElement="UMLStyle-fontName">
+          <body>Name of a font used to render strings.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="../../org.eclipse.papyrus.dd/model/DC.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UMLStyle-fontName-_lowerValue"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="UMLStyle-fontSize" name="fontSize">
+        <ownedComment xmi:type="uml:Comment" xmi:id="UMLStyle-fontSize-_ownedComment.0" annotatedElement="UMLStyle-fontSize">
+          <body>Size of a font for rendering strings, given in typographical points.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="../../org.eclipse.papyrus.dd/model/DC.uml#Real"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UMLStyle-fontSize-_lowerValue"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="A_UMLEdge_source_sourceEdge" name="A_sourceUmlDiagramElement_sourceUmlEdge" memberEnd="UMLEdge-source A_UMLEdge_source_sourceEdge-sourceEdge"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="A_UMLEdge_target_targetEdge" name="A_targetUmlDiagramElement_targetUmlEdge" memberEnd="UMLEdge-target A_UMLEdge_target_targetEdge-targetEdge"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="A_UMLDiagramElement_modelElement_umlDiagramElement" name="A_umlModelElement_umlDiagramElement" memberEnd="UMLDiagramElement-modelElement A_UMLDiagramElement_modelElement_umlDiagramElement-umlDiagramElement">
+      <ownedEnd xmi:type="uml:Property" xmi:id="A_UMLDiagramElement_modelElement_umlDiagramElement-umlDiagramElement" name="umlDiagramElement" type="UMLDiagramElement" association="A_UMLDiagramElement_modelElement_umlDiagramElement">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="A_UMLDiagramElement_modelElement_umlDiagramElement-umlDiagramElement-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="A_UMLDiagramElement_modelElement_umlDiagramElement-umlDiagramElement-_upperValue" value="*"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#A_modelElement_diagramElement-diagramElement"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="A_UMLDiagramElement_localStyle_styledElement" name="A_localUmlStyle_styledUmlDiagramElement" memberEnd="UMLDiagramElement-localStyle A_UMLDiagramElement_localStyle_styledElement-styledElement">
+      <ownedEnd xmi:type="uml:Property" xmi:id="A_UMLDiagramElement_localStyle_styledElement-styledElement" name="styledUmlDiagramElement" type="UMLDiagramElement" association="A_UMLDiagramElement_localStyle_styledElement">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="A_UMLDiagramElement_localStyle_styledElement-styledElement-_lowerValue"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#A_sharedStyle_styledElement-styledElement"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="A_UMLDiagramElement_sharedStyle_styledElement" name="A_sharedUmlStyle_styledUMLDiagramElement" memberEnd="UMLDiagramElement-sharedStyle A_UMLDiagramElement_sharedStyle_styledElement-styledElement">
+      <ownedEnd xmi:type="uml:Property" xmi:id="A_UMLDiagramElement_sharedStyle_styledElement-styledElement" name="styledUmlDiagramElement" type="UMLDiagramElement" association="A_UMLDiagramElement_sharedStyle_styledElement">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="A_UMLDiagramElement_sharedStyle_styledElement-styledElement-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="A_UMLDiagramElement_sharedStyle_styledElement-styledElement-_upperValue" value="*"/>
+        <subsettedProperty xmi:type="uml:Property" href="../../org.eclipse.papyrus.dd/model/DI.uml#A_sharedStyle_styledElement-styledElement"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="A_UMLDiagramElement_ownedElement_owningElement" name="A_ownedUmlDiagramElement_owningUmlDiagramElement" memberEnd="UMLDiagramElement-ownedElement UMLDiagramElement-owningElement"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bdk0MBO_EeSXerk-XJQMGw" name="UmlCompartment">
+      <generalization xmi:type="uml:Generalization" xmi:id="_zIr-oBO_EeSXerk-XJQMGw" general="UMLShape"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yCxC8BPAEeSXerk-XJQMGw" name="kind" visibility="public" type="_dtjdUBPAEeSXerk-XJQMGw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ySPpYBPAEeSXerk-XJQMGw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ySQQcBPAEeSXerk-XJQMGw" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ySQ3gBPAEeSXerk-XJQMGw">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RqpFEBPAEeSXerk-XJQMGw" name="UmlLabel">
+      <generalization xmi:type="uml:Generalization" xmi:id="_XTSIkBPAEeSXerk-XJQMGw" general="UMLShape"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_v1SewBPAEeSXerk-XJQMGw" name="kind" visibility="public" type="_mku5YBPAEeSXerk-XJQMGw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wM2qMBPAEeSXerk-XJQMGw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wM3RQBPAEeSXerk-XJQMGw" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_wM34UBPAEeSXerk-XJQMGw">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dtjdUBPAEeSXerk-XJQMGw" name="UmlCompartmentKind">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_fyphkBPAEeSXerk-XJQMGw" name="attributes"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hUu_YBPAEeSXerk-XJQMGw" name="operations"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_mku5YBPAEeSXerk-XJQMGw" name="UmlLabelKind">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rrySwBPAEeSXerk-XJQMGw" name="name"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_eGYR4Po2EeOw_Nx9vOEGaA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eGYR4fo2EeOw_Nx9vOEGaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Package>
+  <Ecore:EPackage xmi:id="_ffMe8Po2EeOw_Nx9vOEGaA" base_Package="_0" packageName="umldi" nsPrefix="umldi" basePackage="org.eclipse.papyrus" prefix="UMLDI"/>
+</xmi:XMI>

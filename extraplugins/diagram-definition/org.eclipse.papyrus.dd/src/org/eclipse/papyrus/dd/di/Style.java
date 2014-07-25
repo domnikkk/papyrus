@@ -16,12 +16,12 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Style</b></em>'. <!-- end-user-doc -->
- * 
- * <!-- begin-model-doc --> Style contains formatting properties that affect the
- * appearance or style of diagram elements, including diagram themselves. <!--
- * end-model-doc -->
- * 
- * 
+ *
+ * <!-- begin-model-doc -->
+ * Style contains formatting properties that affect the appearance or style of diagram elements, including diagram themselves.
+ * <!-- end-model-doc -->
+ *
+ *
  * @see org.eclipse.papyrus.dd.di.DIPackage#getStyle()
  * @model abstract="true"
  * @generated
