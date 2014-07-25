@@ -217,6 +217,9 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 	}
 
 	protected Resource getNotationResource(ModelSet modelSet, EObject owner, EObject element) {
+		if(element == null) { //If the element is null, the root element of the main model will be used. Return the main notation resource
+			return NotationUtils.getNotationResource(modelSet);
+		}
 		URI uriWithoutExtension = element.eResource().getURI().trimFileExtension();
 
 		URI notationURI = uriWithoutExtension.appendFileExtension(NotationModel.NOTATION_FILE_EXTENSION);
@@ -299,7 +302,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.commands.ICreationCommand#createDiagram(org.eclipse.emf.ecore.resource.Resource, org.eclipse.emf.ecore.EObject,
 	 * java.lang.String)
 	 */
@@ -314,7 +317,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.commands.ICreationCommand#createDiagram(org.eclipse.emf.ecore.resource.Resource, org.eclipse.emf.ecore.EObject,
 	 * org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype, java.lang.String)
 	 */
@@ -353,7 +356,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.commands.ICreationCommand#getCreateDiagramCommand(org.eclipse.papyrus.infra.core.resource.ModelSet,
 	 * org.eclipse.emf.ecore.EObject, java.lang.String)
 	 */
@@ -368,7 +371,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.commands.ICreationCommand#getCreateDiagramCommand(org.eclipse.papyrus.infra.core.resource.ModelSet,
 	 * org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype,
 	 * java.lang.String)
@@ -437,7 +440,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.commands.ICreationCommand#getCreatedDiagramType()
 	 */
 	@Override
@@ -447,7 +450,7 @@ public abstract class AbstractPapyrusGmfCreateDiagramCommandHandler extends Abst
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.commands.ICreationCommand#isParentReassignable()
 	 */
 	@Override
