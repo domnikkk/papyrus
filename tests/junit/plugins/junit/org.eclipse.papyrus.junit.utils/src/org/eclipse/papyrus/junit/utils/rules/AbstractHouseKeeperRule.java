@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -113,7 +113,7 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Obtains the test name (may as well provide it, since we are a test rule).
-	 * 
+	 *
 	 * @return the current test name
 	 */
 	public final String getTestName() {
@@ -122,14 +122,14 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Adds an {@code object} to clean up later, with a {@code disposer} method that is invoked reflectively to do the cleaning up.
-	 * 
+	 *
 	 * @param object
 	 *        an object to dispose after the test has completed
 	 * @param disposer
 	 *        the disposal method name
 	 * @param arg
 	 *        arguments (if any) to the {@code disposer} method
-	 * 
+	 *
 	 * @return the {@code object}, for convenience
 	 */
 	public <T> T cleanUpLater(T object, String disposer, Object... arg) {
@@ -139,12 +139,12 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Adds an {@code object} to clean up later, with a {@code disposer} that does the cleaning up.
-	 * 
+	 *
 	 * @param object
 	 *        an object to dispose after the test has completed
 	 * @param disposer
 	 *        the disposal behaviour
-	 * 
+	 *
 	 * @return the {@code object}, for convenience
 	 */
 	public <T> T cleanUpLater(T object, Disposer<? super T> disposer) {
@@ -160,10 +160,10 @@ public abstract class AbstractHouseKeeperRule {
 	/**
 	 * Adds an {@code object} to clean up later, using the appropriate built-in disposer.
 	 * Fails if the {@code object} does not have a corresponding built-in disposer.
-	 * 
+	 *
 	 * @param object
 	 *        an object to dispose after the test has completed
-	 * 
+	 *
 	 * @return the {@code object}, for convenience
 	 */
 	public <T> T cleanUpLater(T object) {
@@ -175,7 +175,7 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Obtains a new resource set that will be disposed of automatically after the test completes.
-	 * 
+	 *
 	 * @return the new resource set
 	 */
 	public ResourceSet createResourceSet() {
@@ -184,7 +184,7 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Creates a new editing domain that will be disposed of automatically after the test completes.
-	 * 
+	 *
 	 * @return the editing domain
 	 */
 	public TransactionalEditingDomain createSimpleEditingDomain() {
@@ -193,10 +193,10 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Creates a new editing domain that will be disposed of automatically after the test completes.
-	 * 
+	 *
 	 * @param resourceSet
 	 *        the resource set on which to create the editing domain (or {@code null} to create a default one)
-	 * 
+	 *
 	 * @return the editing domain
 	 */
 	public TransactionalEditingDomain createSimpleEditingDomain(ResourceSet resourceSet) {
@@ -209,10 +209,10 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Creates a project that will be disposed of automatically after the test completes.
-	 * 
+	 *
 	 * @param name
 	 *        the name of the project
-	 * 
+	 *
 	 * @return the project
 	 */
 	public IProject createProject(String name) {
@@ -227,21 +227,21 @@ public abstract class AbstractHouseKeeperRule {
 	/**
 	 * Creates a file in the specified {@code project} with the given {@code fileName}, initialized by copying a
 	 * template resource from the test class's originating bundle.
-	 * 
+	 *
 	 * @param project
 	 *        the test project in which to create the file
 	 * @param fileName
 	 *        the name of the file to create
 	 * @param templatePath
 	 *        the path in the test bundle of the template file to copy
-	 * 
+	 *
 	 * @return the new file
 	 */
 	public IFile createFile(IProject project, String fileName, String templatePath) {
 		Class<?> testClass = (test instanceof Class<?>) ? (Class<?>)test : test.getClass();
 
 		try {
-			return cleanUpLater(PapyrusProjectUtils.copyIFile("/resource/TestPureUMLModel.uml", FrameworkUtil.getBundle(testClass), project, fileName), //
+			return cleanUpLater(PapyrusProjectUtils.copyIFile(templatePath, FrameworkUtil.getBundle(testClass), project, fileName), //
 				WorkspaceResourceDisposer.INSTANCE);
 		} catch (Exception e) {
 			fail(e.getMessage());
@@ -251,10 +251,10 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Opens the default editor on the given {@code file} and ensures that it will be closed after the test terminates.
-	 * 
+	 *
 	 * @param file
 	 *        the file to open in its editor
-	 * 
+	 *
 	 * @return the editor
 	 */
 	public IEditorPart openEditor(final IFile file) {
@@ -276,10 +276,10 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Opens the Papyrus editor on the given {@code file} and ensures that it will be closed after the test terminates.
-	 * 
+	 *
 	 * @param file
 	 *        the file to open in the Papyrus editor
-	 * 
+	 *
 	 * @return the editor
 	 */
 	public IMultiDiagramEditor openPapyrusEditor(final IFile file) {
@@ -301,10 +301,10 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Obtains the value of the named field of the test instance and ensures that it will be automatically cleared after the test completes.
-	 * 
+	 *
 	 * @param fieldName
 	 *        the field to access now and clear later
-	 * 
+	 *
 	 * @return the value of the field
 	 */
 	public <T> T getField(String fieldName) {
@@ -346,12 +346,12 @@ public abstract class AbstractHouseKeeperRule {
 
 	/**
 	 * Sets the value of the named field of the test instance and ensures that it will be automatically cleared after the test completes.
-	 * 
+	 *
 	 * @param fieldName
 	 *        the field to access now and clear later
 	 * @param value
 	 *        the value to set
-	 * 
+	 *
 	 * @return the new value of the field
 	 */
 	public <T> T setField(String fieldName, T value) {
@@ -490,7 +490,7 @@ public abstract class AbstractHouseKeeperRule {
 		}
 
 		public void dispose(ResourceSet object) {
-			if (object instanceof ModelSet) {
+			if(object instanceof ModelSet) {
 				((ModelSet)object).unload();
 			}
 

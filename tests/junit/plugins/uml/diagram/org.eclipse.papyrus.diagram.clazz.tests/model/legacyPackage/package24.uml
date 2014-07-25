@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_yzyZABM4EeSW8ufHPtpJcQ" name="model">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_4UdzUBM4EeSW8ufHPtpJcQ" annotatedElement="_24m5UBM4EeSW8ufHPtpJcQ">
+    <body> </body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1JXwUBM4EeSW8ufHPtpJcQ" clientDependency="_1tPSYBM4EeSW8ufHPtpJcQ" name="Package1">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_1tPSYBM4EeSW8ufHPtpJcQ" name="Dependency1" client="_1JXwUBM4EeSW8ufHPtpJcQ" supplier="_1YJMIBM4EeSW8ufHPtpJcQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1YJMIBM4EeSW8ufHPtpJcQ" name="Package2"/>
+  <packagedElement xmi:type="uml:Model" xmi:id="_2Sq6sBM4EeSW8ufHPtpJcQ" name="Model1">
+    <packagedElement xmi:type="uml:Package" xmi:id="_2v0wwBM4EeSW8ufHPtpJcQ" clientDependency="_3nIzQBM4EeSW8ufHPtpJcQ" name="Package1">
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_5NPOYBM4EeSW8ufHPtpJcQ" importedPackage="_1JXwUBM4EeSW8ufHPtpJcQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_3nIzQBM4EeSW8ufHPtpJcQ" name="Dependency1" client="_2v0wwBM4EeSW8ufHPtpJcQ" supplier="_1YJMIBM4EeSW8ufHPtpJcQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_24m5UBM4EeSW8ufHPtpJcQ" clientDependency="_AAJFkBM5EeSW8ufHPtpJcQ" name="Package2">
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_AAJFkBM5EeSW8ufHPtpJcQ" name="Abstraction1" client="_24m5UBM4EeSW8ufHPtpJcQ" supplier="_2v0wwBM4EeSW8ufHPtpJcQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_7iZH4BM4EeSW8ufHPtpJcQ" name="Constraint1">
+    <specification xmi:type="uml:LiteralString" xmi:id="_7iaWABM4EeSW8ufHPtpJcQ" value=""/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_D1dKQBM5EeSW8ufHPtpJcQ" name="Package3"/>
+  <packagedElement xmi:type="uml:Model" xmi:id="_EZMwgBM5EeSW8ufHPtpJcQ" clientDependency="_HGQzsBM5EeSW8ufHPtpJcQ" name="Model2">
+    <packagedElement xmi:type="uml:Package" xmi:id="_D6Sm8BM5EeSW8ufHPtpJcQ" clientDependency="_GAmMIBM5EeSW8ufHPtpJcQ" name="Package4">
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_GAmMIBM5EeSW8ufHPtpJcQ" name="Abstraction1" client="_D6Sm8BM5EeSW8ufHPtpJcQ" supplier="_D1dKQBM5EeSW8ufHPtpJcQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_HGQzsBM5EeSW8ufHPtpJcQ" name="Dependency1" client="_EZMwgBM5EeSW8ufHPtpJcQ" supplier="_D1dKQBM5EeSW8ufHPtpJcQ"/>
+  </packagedElement>
+</uml:Model>
