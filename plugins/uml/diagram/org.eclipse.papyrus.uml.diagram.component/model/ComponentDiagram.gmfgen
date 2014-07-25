@@ -3072,7 +3072,7 @@
           xsi:type="gmfgen:GenJavaExpressionProvider"
           injectExpressionBody="true">
         <expressions
-            body="return org.eclipse.papyrus.uml.tools.utils.NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());"/>
+            body="return org.eclipse.papyrus.uml.tools.utils.NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());"/>
         <expressions
             body="// Constraint specification init&#xD;&#xA;org.eclipse.uml2.uml.LiteralString value = org.eclipse.uml2.uml.UMLFactory.eINSTANCE.createLiteralString();&#xD;&#xA;value.setValue(&quot;&quot;);&#xD;&#xA;return value;"/>
         <expressions

@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
- *
+ * Copyright (c) 2010. 2014 CEA LIST and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,7 +8,8 @@
  *
  * Contributors:
  * 
- * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ * 	Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 440263
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.helper.advice;
@@ -22,8 +22,9 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
-import org.eclipse.papyrus.uml.service.types.utils.NamedElementHelper;
+import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
 
 /**
  * <pre>
@@ -48,8 +49,10 @@ public class NamedElementInitializerHelperAdvice extends AbstractEditHelperAdvic
 				NamedElement element = (NamedElement)request.getElementToConfigure();
 
 				// Initialize the element name based on the created IElementType
-				String initializedName = NamedElementHelper.getDefaultNameWithIncrementFromBase(element.eClass().getName(), element.eContainer().eContents());
-				element.setName(initializedName);
+				String initializedName = NamedElementUtil.getDefaultNameWithIncrement(element, element.eContainer().eContents());
+				if(initializedName != null) {
+					element.setName(initializedName);
+				}
 
 				return CommandResult.newOKCommandResult(element);
 			}

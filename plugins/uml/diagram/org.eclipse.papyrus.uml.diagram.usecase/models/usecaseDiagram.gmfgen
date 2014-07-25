@@ -2844,7 +2844,7 @@
           throwException="false"
           injectExpressionBody="true">
         <expressions
-            body="return org.eclipse.papyrus.uml.tools.utils.NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());"/>
+            body="return org.eclipse.papyrus.uml.tools.utils.NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());"/>
         <expressions
             xsi:type="gmfgen:GenConstraint"
             body="if( (source instanceof org.eclipse.uml2.uml.Class)||(source instanceof org.eclipse.uml2.uml.Component)||(source instanceof org.eclipse.uml2.uml.Actor)||(source instanceof org.eclipse.uml2.uml.UseCase)){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if((target instanceof org.eclipse.uml2.uml.Class)||(target instanceof org.eclipse.uml2.uml.Component)||(target instanceof org.eclipse.uml2.uml.Actor)||(target instanceof org.eclipse.uml2.uml.UseCase)){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if( (source instanceof org.eclipse.uml2.uml.UseCase)&amp;&amp;(target instanceof org.eclipse.uml2.uml.UseCase)){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return (Collections.disjoint(((org.eclipse.uml2.uml.UseCase) source).getSubjects(),((org.eclipse.uml2.uml.UseCase) target).getSubjects()));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return true;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;else{return false;}"/>

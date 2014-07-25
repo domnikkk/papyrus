@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
- *
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 440263
  *
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.tests.canonical;
@@ -23,6 +23,7 @@ import java.util.Iterator;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.ConnectionEditPart;
 import org.eclipse.gef.EditPart;
@@ -51,6 +52,7 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
+import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.uml2.uml.Element;
@@ -305,17 +307,19 @@ public abstract class TestLink extends AbstractPapyrusTestCase {
 	}
 
 	protected void testNameLabel(ITextAwareEditPart namedEditPart, String initialName) {
-		Assert.assertTrue("the primary editpart must be the namelabelEditpart",namedEditPart instanceof GraphicalEditPart); //$NON-NLS-1$
-		String name=((GraphicalEditPart)namedEditPart).resolveSemanticElement().eClass().getName();
-		if( initialName!=null){
-			name=initialName;
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart", namedEditPart instanceof GraphicalEditPart); //$NON-NLS-1$
+		EObject element = ((GraphicalEditPart)namedEditPart).resolveSemanticElement();
+		String name = NamedElementUtil.isAutoNamed(element) ? element.eClass().getName() : null;
+		if(initialName != null) {
+			name = initialName;
 		}
-		if(name.length()<((ITextAwareEditPart)namedEditPart).getEditText().length()){
-			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0,name.length())); //$NON-NLS-1$
-		}
-		else{
-			//not the same it sure but display the mistake is important
-			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)namedEditPart).getEditText()); //$NON-NLS-1$
+		if(name != null) {
+			if(name.length() < ((ITextAwareEditPart)namedEditPart).getEditText().length()) {
+				Assert.assertEquals(" the name must contain the name of the metaclass", name, ((ITextAwareEditPart)namedEditPart).getEditText().substring(0, name.length())); //$NON-NLS-1$
+			} else {
+				//not the same it sure but display the mistake is important
+				Assert.assertEquals(" the name must contain the name of the metaclass", name, ((ITextAwareEditPart)namedEditPart).getEditText()); //$NON-NLS-1$
+			}
 		}
 	}
 

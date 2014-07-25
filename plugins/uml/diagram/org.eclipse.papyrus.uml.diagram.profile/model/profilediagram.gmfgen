@@ -3579,7 +3579,7 @@
         <expressions
             body="return it.getBody();"/>
         <expressions
-            body="return org.eclipse.papyrus.uml.tools.utils.NamedElementUtil.getDefaultNameWithIncrementFromBase(it.eClass().getName(), it.getOwner().eContents());"/>
+            body="return org.eclipse.papyrus.uml.tools.utils.NamedElementUtil.getDefaultNameWithIncrement(it, it.getOwner().eContents());"/>
         <expressions
             body="//isAbstract = true&#xD;&#xA;return true;"/>
         <expressions
