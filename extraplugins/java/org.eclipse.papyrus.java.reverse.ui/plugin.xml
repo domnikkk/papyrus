@@ -105,5 +105,10 @@
             name="Create Association From Property">
       </command>
    </extension>
-
+	<extension
+         point="org.eclipse.papyrus.infra.gmfdiag.dnd.dropStrategy">
+      <strategy
+            strategy="org.eclipse.papyrus.java.reverse.ui.dnd.DropReverseStrategy">
+      </strategy>
+   </extension>
 </plugin>
