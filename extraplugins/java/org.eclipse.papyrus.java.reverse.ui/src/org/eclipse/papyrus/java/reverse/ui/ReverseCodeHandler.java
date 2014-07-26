@@ -15,6 +15,10 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -26,11 +30,11 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
-import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
 import org.eclipse.papyrus.java.reverse.ui.dialog.ReverseCodeDialog;
+import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
@@ -95,7 +99,7 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
 
 		// Execute the reverse with provided parameters
-		TransactionalEditingDomain editingDomain;
+		final TransactionalEditingDomain editingDomain;
 		try {
 			editingDomain = getEditingDomain();
 		} catch (ServiceException e) {
@@ -104,17 +108,37 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 			throw new ExecutionException(e.getMessage());
 		}
 		
+		// Get current selection
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+		final ISelection selection = page.getSelection();
+		
 		final String pname = generationPackageName;
-		RecordingCommand command = new RecordingCommand(editingDomain, "Reverse Java Code") {
+		
+		// Instantiate a new Eclipse Job to run reverse
+		Job job = new Job("Reverse Java Code") {
 
 			@Override
-			protected void doExecute() {
-				executeCodeReverse(umlResource, pname, searchPaths);
+			protected IStatus run(final IProgressMonitor monitor) {
+				// Instantiate the reverse.
+				RecordingCommand command = new RecordingCommand(editingDomain, "Reverse Java Code") {
+
+					@Override
+					protected void doExecute() {				
+						executeCodeReverse(umlResource, pname, searchPaths, selection, monitor);
+					}
+
+				};
+
+				// Run the reverse.
+				editingDomain.getCommandStack().execute(command);
+				
+				return new Status(Status.OK, Activator.PLUGIN_ID, "Reverse done.");
 			}
-
 		};
-
-		editingDomain.getCommandStack().execute(command);
+		
+		// Run the reverse Job
+		job.setUser(true);
+		job.schedule();
 
 
 		return null;
@@ -125,15 +149,18 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 	 * 
 	 * @param generationPackageName
 	 * @param searchPaths
+	 * @param monitor the monitor progress bar from Eclipse Task
 	 */
-	private void executeCodeReverse(Resource umlResource, String generationPackageName, List<String> searchPaths) {
+	private void executeCodeReverse(Resource umlResource, String generationPackageName, List<String> searchPaths, ISelection selection, IProgressMonitor monitor) {
 		System.out.println("executeCodeReverse()");
 		JavaCodeReverse codeReverse = new JavaCodeReverse(getRootPackage(umlResource), generationPackageName, searchPaths);
-		// Get current selection
-		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		ISelection selection = page.getSelection();
-
+		
 		TreeSelection treeSelection = (TreeSelection)selection;
+		
+		// Notify to Eclipse that the job's began
+		monitor.beginTask("Reverse Java Code", treeSelection.size());
+		int workNumber = 0;
+		
 		//        String filename = treeSelection.
 		@SuppressWarnings("rawtypes")
 		Iterator iter = treeSelection.iterator();
@@ -186,10 +213,15 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 					e.printStackTrace();
 				}
 			}
+         	
+         	// Notify Eclipse that the work's in progress.
+         	monitor.worked(workNumber);
+         	workNumber++;
 		}
 
+		// Notify that the Eclipse job's done.
     	System.out.println("reverse done");
-
+    	monitor.done();
 	}
 
 
