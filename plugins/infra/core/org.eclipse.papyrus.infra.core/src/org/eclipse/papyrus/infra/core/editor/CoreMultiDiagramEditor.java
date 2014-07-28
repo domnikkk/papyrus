@@ -778,6 +778,9 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			propertiesPage.dispose();
 		}
 		propertiesPages.clear();
+		
+		// Forget the outline page(s)
+		contentOutlineRegistry = null;
 
 		super.dispose();
 	}
@@ -870,7 +873,6 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			gefAdaptorDelegate = null;
 		}
 
-		contentOutlineRegistry = null;
 		transactionalEditingDomain = null;
 		resourceSet = null;
 		undoContext = null;
