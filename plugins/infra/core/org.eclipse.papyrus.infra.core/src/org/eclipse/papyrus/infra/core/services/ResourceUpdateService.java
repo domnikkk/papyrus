@@ -74,18 +74,6 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 	protected ConcurrentMap<IMultiDiagramEditor, Job> pendingEditorCloseJobs = Maps.newConcurrentMap();
 
-	/**
-	 * Update isSaving flag asynchronously to avoid race conditions, see bug 411574
-	 */
-	Runnable postSaveRunnable = new Runnable() {
-
-		@Override
-		public void run() {
-			isSaving = false;
-		}
-
-	};
-
 	private final ISaveEventListener preSaveListener = new ISaveEventListener() {
 
 		@Override
@@ -103,12 +91,12 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 		@Override
 		public void doSaveAs(DoSaveEvent event) {
-			Display.getDefault().asyncExec(postSaveRunnable);
+			isSaving = false;
 		}
 
 		@Override
 		public void doSave(DoSaveEvent event) {
-			Display.getDefault().asyncExec(postSaveRunnable);
+			isSaving = false;
 		}
 	};
 
