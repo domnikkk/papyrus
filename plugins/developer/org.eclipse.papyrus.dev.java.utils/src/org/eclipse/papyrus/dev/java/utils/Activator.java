@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - fix PLUGIN_ID to match bundle symbolic name
  *
  *****************************************************************************/
 package org.eclipse.papyrus.dev.java.utils;
@@ -22,7 +23,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.eclipse.papyrus.eclipse.utils"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.eclipse.papyrus.dev.java.utils"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;

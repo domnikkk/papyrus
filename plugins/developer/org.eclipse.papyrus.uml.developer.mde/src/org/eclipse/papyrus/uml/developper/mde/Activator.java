@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST.
- *
+ * Copyright (c) 2014 CEA LIST and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - fix PLUGIN_ID to match bundle symbolic name
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.developper.mde;
@@ -22,7 +22,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	/** The plug-in ID**/
-	public static final String PLUGIN_ID = "org.eclipse.papyrus.uml.developper.idm"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.eclipse.papyrus.uml.developer.mde"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;

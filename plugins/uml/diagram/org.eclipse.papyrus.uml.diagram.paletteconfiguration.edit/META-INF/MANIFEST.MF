@@ -19,8 +19,7 @@ Bundle-ClassPath: .
 Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
-Bundle-Activator: org.eclipse.papyrus.uml.diagram.paletteconfiguration
- .edit.provider.PaletteConfigurationEditPlugin$Implementation
+Bundle-Activator: org.eclipse.papyrus.uml.diagram.paletteconfiguration.provider.PaletteConfigurationEditPlugin$Implementation
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.paletteconfigurat
  ion.edit;singleton:=true
