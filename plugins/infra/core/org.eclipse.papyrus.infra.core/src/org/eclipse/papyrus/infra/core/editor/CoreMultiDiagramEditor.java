@@ -99,7 +99,6 @@ import org.eclipse.ui.statushandlers.StatusManager;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 import com.google.common.collect.ImmutableList;
 
@@ -763,7 +762,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	 * @see org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor#getPropertySheetPage()
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
-		IPropertySheetPage propertiesPage = new TabbedPropertySheetPage(this);
+		IPropertySheetPage propertiesPage = new MultiDiagramPropertySheetPage(this);
 		propertiesPages.add(propertiesPage);
 		return propertiesPage;
 	}
