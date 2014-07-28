@@ -14,11 +14,13 @@ package org.eclipse.papyrus.editor.integration.tests.tests;
 
 import static org.eclipse.papyrus.junit.matchers.DiagramMatchers.collapsedIn;
 import static org.eclipse.papyrus.junit.matchers.DiagramMatchers.editPartSelected;
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -41,6 +43,8 @@ import org.eclipse.gef.ui.palette.PaletteViewer;
 import org.eclipse.gef.ui.views.palette.PaletteView;
 import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.IService;
@@ -59,19 +63,26 @@ import org.eclipse.swt.widgets.Item;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.navigator.CommonViewer;
+import org.eclipse.ui.part.IPage;
+import org.eclipse.ui.part.PageBookView;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueAction;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.VisibilityKind;
+import org.eclipse.uml2.uml.resource.UMLResource;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
 import com.google.common.base.Splitter;
+import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -86,6 +97,8 @@ import com.google.common.collect.Sets;
 @ExpensiveTest
 @PluginResource({ EditorReloadTest.EMPLOYMENT_MODEL, EditorReloadTest.BANKING_MODEL, EditorReloadTest.LIBRARY_MODEL })
 public class EditorReloadTest extends AbstractPapyrusTest {
+
+	static final String PROPERTY_SHEET_VIEW_ID = "org.eclipse.ui.views.PropertySheet";
 
 	static final String EMPLOYMENT_MODEL = "model/reload/employment.di";
 
@@ -255,27 +268,9 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 
 		editorFixture.activate(employmentEditor);
 
-		CommonViewer explorer = editorFixture.getModelExplorerView().getCommonViewer();
 		Set<String> selectedLabels = ImmutableSet.of("employment::Company", "types::Name::firstName");
-		explorer.getTree().setSelection(getItems(explorer, selectedLabels));
-		Set<URI> selectedObjects = Sets.newHashSet();
-		for(Object next : ((IStructuredSelection)explorer.getSelection()).toList()) {
-			EObject object = EMFHelper.getEObject(next);
-			selectedObjects.add(EcoreUtil.getURI(object));
-		}
 
-		pokeLibraryModel();
-		reload.save(libraryEditor);
-
-		editorFixture.activate(employmentEditor);
-
-		explorer = editorFixture.getModelExplorerView().getCommonViewer();
-		Set<URI> selectedAgain = Sets.newHashSet();
-		for(Object next : ((IStructuredSelection)explorer.getSelection()).toList()) {
-			EObject object = EMFHelper.getEObject(next);
-			selectedAgain.add(EcoreUtil.getURI(object));
-		}
-		assertThat(selectedAgain, is(selectedObjects));
+		reload.verifySelection(modelExplorerSupplier(), selectedLabels);
 	}
 
 	@ShowView(value = ModelExplorerPageBookView.VIEW_ID, location = Location.LEFT)
@@ -285,29 +280,58 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 
 		editorFixture.activate(employmentEditor);
 
-		CommonViewer explorer = editorFixture.getModelExplorerView().getCommonViewer();
 		Set<String> expandedLabels = ImmutableSet.of("employment::A_company_person_1", "types::UML Primitive Types::PrimitiveTypes::Real");
-		for(TreeItem next : getItems(explorer, expandedLabels)) {
-			next.setExpanded(true);
-		}
-		Set<URI> expandedObjects = Sets.newHashSet();
-		for(Object next : explorer.getExpandedElements()) {
-			EObject object = EMFHelper.getEObject(next);
-			expandedObjects.add(EcoreUtil.getURI(object));
-		}
 
-		pokeLibraryModel();
-		reload.save(libraryEditor);
+		reload.verifyExpansion(modelExplorerSupplier(), expandedLabels);
+	}
+
+	@ShowView(value = ModelExplorerPageBookView.VIEW_ID, location = Location.LEFT)
+	@Test
+	public void testModelExplorerReferencedLibrariesRestored() {
+		final ReloadAssertion reload = new ReloadAssertion(employmentEditor);
 
 		editorFixture.activate(employmentEditor);
 
-		explorer = editorFixture.getModelExplorerView().getCommonViewer();
-		Set<URI> expandedAgain = Sets.newHashSet();
-		for(Object next : explorer.getExpandedElements()) {
-			EObject object = EMFHelper.getEObject(next);
-			expandedAgain.add(EcoreUtil.getURI(object));
-		}
-		assertThat(expandedAgain, is(expandedObjects));
+		// Load something we haven't loaded before
+		editorFixture.getModelSet(employmentEditor).getResource(URI.createURI(UMLResource.JAVA_PRIMITIVE_TYPES_LIBRARY_URI), true);
+		editorFixture.flushDisplayEvents();
+
+		Set<String> selectedLabels = ImmutableSet.of("Java Primitive Types::Long");
+
+		reload.verifySelection(modelExplorerSupplier(), selectedLabels);
+	}
+
+	@ShowView(value = { ModelExplorerPageBookView.VIEW_ID, PROPERTY_SHEET_VIEW_ID }, location = { Location.LEFT, Location.BELOW })
+	@Test
+	public void testPropertySheetRestoredShowingCorrectInput() {
+		final ReloadAssertion reload = new ReloadAssertion(employmentEditor);
+
+		pokeLibraryModel();
+		pokeEmploymentModel(); // And this one, too!
+		
+		EditPart companyClassEP = editorFixture.activateDiagram(employmentEditor, "classes").findEditPart("Company", org.eclipse.uml2.uml.Class.class);
+		assertThat(companyClassEP, notNullValue());
+		editorFixture.select(companyClassEP);
+		editorFixture.flushDisplayEvents();
+
+		EObject propertySheetSelection = getPropertySheetSelection();
+		assertThat(propertySheetSelection, is(EMFHelper.getEObject(companyClassEP)));
+
+		editorFixture.activate(editorFixture.getView(ModelExplorerPageBookView.VIEW_ID, false));
+		Set<String> selectedLabels = ImmutableSet.of("employment::Person");
+		reload.select(modelExplorerSupplier(), selectedLabels);
+		editorFixture.flushDisplayEvents();
+
+		editorFixture.saveAll();
+
+		reload.assertReloaded(); // The editor is reloaded immediately because it is already active
+
+		editorFixture.flushDisplayEvents();
+
+		// The property sheet still has the Person class selected, not Company
+		propertySheetSelection = getPropertySheetSelection();
+		assertThat(propertySheetSelection, instanceOf(org.eclipse.uml2.uml.Class.class));
+		assertThat(((org.eclipse.uml2.uml.Class)propertySheetSelection).getName(), is("Person"));
 	}
 
 	//
@@ -332,6 +356,16 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 		Type ssn = library.getOwnedType("SSN");
 		EditingDomain domain = editorFixture.getEditingDomain(libraryEditor);
 		domain.getCommandStack().execute(domain.createCommand(SetCommand.class, new CommandParameter(ssn, UMLPackage.Literals.NAMED_ELEMENT__NAME, "SocialSecurityNumber")));
+	}
+
+	void pokeEmploymentModel() {
+		// First, make sure that the library editor is active (user can't edit it, otherwise!)
+		editorFixture.activate(employmentEditor);
+
+		Package employment = editorFixture.getModel(employmentEditor);
+		Type person = employment.getOwnedType("Person");
+		EditingDomain domain = editorFixture.getEditingDomain(employmentEditor);
+		domain.getCommandStack().execute(domain.createCommand(SetCommand.class, new CommandParameter(person, UMLPackage.Literals.NAMED_ELEMENT__VISIBILITY, VisibilityKind.PUBLIC_LITERAL)));
 	}
 
 	<P extends PaletteEntry> P find(PaletteContainer container, String label, Class<P> type) {
@@ -418,6 +452,37 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 		return result;
 	}
 
+	Supplier<CommonViewer> modelExplorerSupplier() {
+		return new Supplier<CommonViewer>() {
+
+			public CommonViewer get() {
+				return editorFixture.getModelExplorerView().getCommonViewer();
+			}
+		};
+	}
+
+	EObject getPropertySheetSelection() {
+		IViewPart propertySheet = editorFixture.getView(PROPERTY_SHEET_VIEW_ID, true);
+		assertThat(propertySheet, instanceOf(PageBookView.class));
+		IPage currentPage = ((PageBookView)propertySheet).getCurrentPage();
+		assertThat(currentPage, instanceOf(TabbedPropertySheetPage.class));
+		TabbedPropertySheetPage tabbed = (TabbedPropertySheetPage)currentPage;
+
+		IStructuredSelection result = null;
+
+		try {
+			Method getCurrentSelection = TabbedPropertySheetPage.class.getDeclaredMethod("getCurrentSelection");
+			getCurrentSelection.setAccessible(true);
+			result = (IStructuredSelection)getCurrentSelection.invoke(tabbed);
+			assertThat("Nothing selected in property sheet", (result == null) || result.isEmpty(), is(false));
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("Failed to get property sheet selection: " + e.getLocalizedMessage());
+		}
+
+		return EMFHelper.getEObject(result.getFirstElement());
+	}
+
 	private class ReloadAssertion {
 
 		private final Set<IMultiDiagramEditor> editors;
@@ -466,6 +531,76 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 
 				editorFixture.flushDisplayEvents();
 			}
+		}
+
+		void verifySelection(Supplier<? extends org.eclipse.jface.viewers.TreeViewer> viewerSupplier, Set<String> selectedLabels) {
+			assertThat("Must have exactly one dependent editor registered for test.", editors.size(), is(1));
+
+			final IMultiDiagramEditor dependent = Iterables.getOnlyElement(editors);
+
+			Set<URI> selectedObjects = select(viewerSupplier, selectedLabels);
+
+			editorFixture.activate(dependent);
+
+			Set<URI> selectedAgain = getSelection(viewerSupplier);
+
+			assertThat(selectedAgain, is(selectedObjects));
+		}
+
+		Set<URI> select(Supplier<? extends org.eclipse.jface.viewers.TreeViewer> viewerSupplier, Set<String> selectedLabels) {
+			org.eclipse.jface.viewers.TreeViewer viewer = viewerSupplier.get();
+
+			Set<URI> result = Sets.newHashSet();
+			List<Object> selection = Lists.newArrayListWithCapacity(selectedLabels.size());
+			for(TreeItem item : getItems(viewer, selectedLabels)) {
+				selection.add(item.getData());
+				EObject object = EMFHelper.getEObject(item.getData());
+				result.add(EcoreUtil.getURI(object));
+			}
+
+			viewer.setSelection(new StructuredSelection(selection));
+
+			return result;
+		}
+
+		Set<URI> getSelection(Supplier<? extends org.eclipse.jface.viewers.TreeViewer> viewerSupplier) {
+			org.eclipse.jface.viewers.TreeViewer viewer = viewerSupplier.get();
+			Set<URI> result = Sets.newHashSet();
+			for(Object next : ((IStructuredSelection)viewer.getSelection()).toList()) {
+				EObject object = EMFHelper.getEObject(next);
+				result.add(EcoreUtil.getURI(object));
+			}
+			return result;
+		}
+
+		void verifyExpansion(Supplier<? extends TreeViewer> viewerSupplier, Set<String> expandedLabels) {
+			assertThat("Must have exactly one dependent editor registered for test.", editors.size(), is(1));
+
+			final IMultiDiagramEditor dependent = Iterables.getOnlyElement(editors);
+			org.eclipse.jface.viewers.TreeViewer viewer = viewerSupplier.get();
+
+			for(TreeItem next : getItems(viewer, expandedLabels)) {
+				next.setExpanded(true);
+			}
+			Set<URI> expandedObjects = Sets.newHashSet();
+			for(Object next : viewer.getExpandedElements()) {
+				EObject object = EMFHelper.getEObject(next);
+				expandedObjects.add(EcoreUtil.getURI(object));
+			}
+
+			pokeLibraryModel();
+			save(libraryEditor);
+
+			editorFixture.activate(dependent);
+
+			viewer = viewerSupplier.get();
+			Set<URI> expandedAgain = Sets.newHashSet();
+			for(Object next : viewer.getExpandedElements()) {
+				EObject object = EMFHelper.getEObject(next);
+				expandedAgain.add(EcoreUtil.getURI(object));
+			}
+			assertThat(expandedAgain, is(expandedObjects));
+
 		}
 
 		void assertUnloaded() {
