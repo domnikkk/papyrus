@@ -15,11 +15,15 @@ package org.eclipse.papyrus.infra.core.editor;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.editor.reload.CompositeReloadContext;
 import org.eclipse.papyrus.infra.core.editor.reload.DelegatingReloadContext;
 import org.eclipse.papyrus.infra.core.editor.reload.EMFSelectionContext;
@@ -43,10 +47,14 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 
 	private ISashWindowsContainer sashContainer;
 
+	private final List<URI> resourcesToLoad;
+
 	MultiDiagramEditorSelectionContext(IMultiDiagramEditor editor) {
 		super();
 
 		init(editor);
+
+		resourcesToLoad = computeResourcesToLoad(editor);
 
 		ActivePageSelectionProvider activePageSelectionProvider = new ActivePageSelectionProvider();
 		IPage active = sashContainer.getActiveSashWindowsPage();
@@ -108,10 +116,58 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 	void restore(IMultiDiagramEditor editor) {
 		init(editor);
 
+		// Forcibly re-load all previously loaded resources to that
+		// (a) we don't lose imports that weren't yet used, and
+		// (b) we can restore selections in resources that wouldn't be loaded until proxies resolve later
+		reloadResources(editor);
+
 		ISelectionProvider selectionProvider = new ActivePageSelectionProvider();
 		for(DiagramPageContext next : getReloadContexts(DiagramPageContext.class)) {
 			next.restore(selectionProvider);
 		}
+	}
+
+	protected List<URI> computeResourcesToLoad(IMultiDiagramEditor editor) {
+		List<URI> result = null;
+
+		ResourceSet rset = getResourceSet(editor);
+		if(rset != null) {
+			result = Lists.newArrayListWithCapacity(rset.getResources().size());
+
+			for(Resource next : rset.getResources()) {
+				if(next.isLoaded()) {
+					result.add(next.getURI());
+				}
+			}
+		}
+
+		return result;
+	}
+
+	protected void reloadResources(IMultiDiagramEditor editor) {
+		if(resourcesToLoad != null) {
+			ResourceSet rset = getResourceSet(editor);
+			if(rset != null) {
+				for(URI next : resourcesToLoad) {
+					try {
+						rset.getResource(next, true);
+					} catch (Exception e) {
+						Activator.log.error("Failed to restore loaded resource: " + next, e); //$NON-NLS-1$
+					}
+				}
+			}
+		}
+	}
+
+	protected final ResourceSet getResourceSet(IMultiDiagramEditor editor) {
+		ResourceSet result = null;
+
+		EditingDomain editingDomain = (EditingDomain)editor.getAdapter(EditingDomain.class);
+		if(editingDomain != null) {
+			result = editingDomain.getResourceSet();
+		}
+
+		return result;
 	}
 
 	//
