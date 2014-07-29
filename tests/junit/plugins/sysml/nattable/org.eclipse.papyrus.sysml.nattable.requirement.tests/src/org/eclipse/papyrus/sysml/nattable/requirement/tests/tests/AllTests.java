@@ -18,7 +18,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({ TableCreationInSysMLModelTest.class, OpenTableTest.class, TableCreationInUMLModel.class
+@SuiteClasses({ TableCreationInSysMLModelTest.class, OpenTableTest.class, TableCreationInUMLModel.class, RevealRequirementTableTest.class
 
 })
 public class AllTests {

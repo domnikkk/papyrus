@@ -55,7 +55,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.diagram.profile.tests;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.services.controlmode.tests;bundle-version="1.0.0",
  org.eclipse.papyrus.junit.utils;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.nattable.tests;bundle-version="1.0.0"
+ org.eclipse.papyrus.infra.nattable.tests;bundle-version="1.0.0",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.0.0",
+ org.eclipse.papyrus.sysml.nattable.allocation.tests;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.nattable.views.tests;bundle-version="1.0.0",
+ org.eclipse.papyrus.uml.nattable.generic.tests;bundle-version="1.0.0"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier

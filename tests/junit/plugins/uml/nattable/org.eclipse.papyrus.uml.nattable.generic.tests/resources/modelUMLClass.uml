@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_IbRcdAKNEeSZ5cZUOQKWkw" name="Model">
+  <packagedElement xmi:type="uml:Package" xmi:id="_RkviIAKNEeSZ5cZUOQKWkw" name="Package1">
+    <packagedElement xmi:type="uml:Class" xmi:id="_PYK84AKNEeSZ5cZUOQKWkw" name="Class1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VlkTQAKNEeSZ5cZUOQKWkw" name="class2" type="_P-y4AAKNEeSZ5cZUOQKWkw" association="_VlkTQwKNEeSZ5cZUOQKWkw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VlkTQQKNEeSZ5cZUOQKWkw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VlkTQgKNEeSZ5cZUOQKWkw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_P-y4AAKNEeSZ5cZUOQKWkw" name="Class2">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_qU6QIAKNEeSZ5cZUOQKWkw" name="Attribute2.1" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qg758AKNEeSZ5cZUOQKWkw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qhCAkAKNEeSZ5cZUOQKWkw" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_qhCAkQKNEeSZ5cZUOQKWkw">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_VlkTQwKNEeSZ5cZUOQKWkw" name="class1_class2_1" memberEnd="_VlkTRAKNEeSZ5cZUOQKWkw _VlkTQAKNEeSZ5cZUOQKWkw">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_VlkTRAKNEeSZ5cZUOQKWkw" name="class1" type="_PYK84AKNEeSZ5cZUOQKWkw" association="_VlkTQwKNEeSZ5cZUOQKWkw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VlkTRQKNEeSZ5cZUOQKWkw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VlkTRgKNEeSZ5cZUOQKWkw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UdqQAAKNEeSZ5cZUOQKWkw" name="Class3">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pq7fAAKNEeSZ5cZUOQKWkw" name="Attribute3.1" visibility="public">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p4ZTQAKNEeSZ5cZUOQKWkw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p4ZTQQKNEeSZ5cZUOQKWkw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_p4fZ4AKNEeSZ5cZUOQKWkw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Model>
