@@ -21,20 +21,22 @@ package org.eclipse.papyrus.infra.core.editor;
 import static org.eclipse.papyrus.infra.core.Activator.log;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicReference;
 
 import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
@@ -46,7 +48,6 @@ import org.eclipse.gef.ui.actions.ActionRegistry;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.infra.core.Activator;
@@ -94,13 +95,13 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 
 /**
  * Multi diagram editor allowing to plug various kind of editors. Editors are
@@ -249,9 +250,9 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	private CopyOnWriteArrayList<IEditorReloadListener> reloadListeners = new CopyOnWriteArrayList<IEditorReloadListener>();
 
 	/**
-	 * Whether a re-load is currently pending (awaiting next activation of the editor).
+	 * A pending reload operation (awaiting next activation of the editor).
 	 */
-	private boolean reloadPending;
+	private final AtomicReference<DeferredReload> pendingReload = new AtomicReference<DeferredReload>();
 
 	public CoreMultiDiagramEditor() {
 		super();
@@ -777,7 +778,7 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 			propertiesPage.dispose();
 		}
 		propertiesPages.clear();
-		
+
 		// Forget the outline page(s)
 		contentOutlineRegistry = null;
 
@@ -785,30 +786,18 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	}
 
 	private IReloadableEditor createReloadAdapter() {
+
 		return new IReloadableEditor() {
 
 			@Override
-			public void reloadEditor(boolean save) throws CoreException {
-				reloadPending = true;
-
-				if(save) {
-					try {
-						((IWorkbenchSiteProgressService)getSite().getService(IWorkbenchSiteProgressService.class)).busyCursorWhile(new IRunnableWithProgress() {
-
-							@Override
-							public void run(IProgressMonitor monitor) {
-								doSave(monitor);
-							}
-						});
-					} catch (Exception e) {
-						throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Save before re-load failed.", e)); //$NON-NLS-1$
-					}
-				}
+			public void reloadEditor(Collection<? extends Resource> triggeringResources, ReloadReason reason, DirtyPolicy dirtyPolicy) throws CoreException {
+				// Attempt to re-load, later
+				pendingReload.set(new DeferredReload(triggeringResources, reason, dirtyPolicy));
 
 				// If I am already active, then re-load now
 				IWorkbenchPage page = getSite().getPage();
 				if(page.getActiveEditor() == CoreMultiDiagramEditor.this) {
-					doReload();
+					pendingReload.get().reload();
 				}
 			}
 
@@ -888,18 +877,13 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	public void setFocus() {
 		super.setFocus();
 
-		if(isReloadPending()) {
-			doReload();
+		DeferredReload reload = pendingReload.get();
+		if(reload != null) {
+			reload.reload();
 		}
 	}
 
-	boolean isReloadPending() {
-		return reloadPending;
-	}
-
-	private void doReload() {
-		reloadPending = false;
-
+	private void doReload() throws CoreException {
 		final IWorkbenchPage page = getSite().getPage();
 		final IWorkbenchPart activePart = page.getActivePart();
 		final IEditorPart activeEditor = page.getActiveEditor();
@@ -918,11 +902,6 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 
 			// My self-listener will be first, to ensure that the pages are all restored before dependents run
 			event.dispatchEditorReloaded(listeners);
-		} catch (CoreException e) {
-			// Failed to properly unload/load in place, so just close
-			page.closeEditor(CoreMultiDiagramEditor.this, false);
-
-			StatusManager.getManager().handle(e.getStatus(), StatusManager.LOG | StatusManager.SHOW);
 		} finally {
 			event.dispose();
 
@@ -1148,5 +1127,64 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 	public synchronized IEditorPart getActiveEditor() {
 		refreshTabs();
 		return super.getActiveEditor();
+	}
+
+	private final class DeferredReload extends IReloadableEditor.Adapter {
+
+		private final Collection<? extends Resource> triggeringResources;
+
+		private final ReloadReason reason;
+
+		private final DirtyPolicy dirtyPolicy;
+
+		DeferredReload(Collection<? extends Resource> triggeringResources, ReloadReason reason, DirtyPolicy dirtyPolicy) {
+			super(CoreMultiDiagramEditor.this);
+
+			this.triggeringResources = ImmutableSet.copyOf(triggeringResources);
+			this.reason = reason;
+			this.dirtyPolicy = dirtyPolicy;
+		}
+
+		void reload() {
+			try {
+				reloadEditor(triggeringResources, reason, dirtyPolicy);
+			} catch (CoreException e) {
+				// Failed to properly unload/load in place, so just close
+				getSite().getPage().closeEditor(CoreMultiDiagramEditor.this, false);
+
+				StatusManager.getManager().handle(e.getStatus(), StatusManager.LOG | StatusManager.SHOW);
+			}
+		}
+
+		@Override
+		public void reloadEditor(Collection<? extends Resource> triggeringResources, ReloadReason reason, DirtyPolicy dirtyPolicy) throws CoreException {
+			if(!pendingReload.compareAndSet(this, null)) {
+				return;
+			}
+
+			final DirtyPolicy action = dirtyPolicy.resolve(CoreMultiDiagramEditor.this, triggeringResources, reason);
+
+			if((action == DirtyPolicy.SAVE) && isDirty()) {
+				doSave(new NullProgressMonitor());
+			}
+
+			switch(action) {
+			case SAVE:
+			case DO_NOT_SAVE:
+				if(reason.shouldReload(triggeringResources)) {
+					// Attempt to re-load
+					doReload();
+				} else {
+					// Just close 'er down
+					getSite().getPage().closeEditor(CoreMultiDiagramEditor.this, false);
+				}
+				break;
+			case IGNORE:
+				// Pass
+				break;
+			default:
+				throw new IllegalArgumentException("Invalid resolution of editor re-load dirty policy: " + action); //$NON-NLS-1$
+			}
+		}
 	}
 }
