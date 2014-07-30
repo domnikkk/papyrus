@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 Atos Origin.
- *
+ * Copyright (c) 2010, 2014 Atos Origin, CEA, and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,11 +8,11 @@
  *
  * Contributors:
  *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 437217
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.resourceloading.impl;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -30,7 +29,7 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
-import org.eclipse.papyrus.infra.core.resource.sasheditor.SashModel;
+import org.eclipse.papyrus.infra.core.resource.sasheditor.DiModel;
 import org.eclipse.papyrus.infra.services.resourceloading.Activator;
 import org.eclipse.papyrus.infra.services.resourceloading.HistoryRoutingManager;
 import org.eclipse.papyrus.infra.services.resourceloading.ILoadingStrategy;
@@ -143,13 +142,13 @@ public class ProxyManager implements IProxyManager {
 				String fileExtension = uri.fileExtension();
 				Resource diResource = null;
 				String resourceName = "";
-				if(SashModel.MODEL_FILE_EXTENSION.equals(fileExtension)) {
+				if(DiModel.MODEL_FILE_EXTENSION.equals(fileExtension)) {
 					// proxy is in DI resource
 					diResource = modelSet.getResource(trimFragment, loadOnDemand);
 					resourceName = trimFragment.toString();
 				} else {
 					// retrieve the DI resource from the uri to get the history
-					URI newURI = trimFragment.trimFileExtension().appendFileExtension(SashModel.MODEL_FILE_EXTENSION);
+					URI newURI = trimFragment.trimFileExtension().appendFileExtension(DiModel.MODEL_FILE_EXTENSION);
 					try {
 						diResource = modelSet.getResource(newURI.trimFragment(), loadOnDemand);
 					}
@@ -163,11 +162,7 @@ public class ProxyManager implements IProxyManager {
 					// call the HistoryRoutingManager to get the EObject
 					// we assume di/notation are at the same level in folder hierarchy
 					EObject eobject = routeManager.getEObject(modelSet, uri.lastSegment().toString(), fragment);
-					if(eobject == null) {
-						throw new MissingResourceException(CommonPlugin.INSTANCE.getString("_UI_StringResourceNotFound_exception", new Object[]{ resourceName }), getClass().getName(), resourceName);
-					}
 					return eobject;
-
 				} else {
 					// resource di not found
 					// warn the user, ask him to select the resource
