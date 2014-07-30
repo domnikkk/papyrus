@@ -47,9 +47,11 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
+import org.eclipse.papyrus.infra.core.sasheditor.editor.ISashWindowsContainer;
 import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.junit.utils.Duck;
 import org.eclipse.papyrus.junit.utils.classification.ExpensiveTest;
@@ -308,7 +310,7 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 
 		pokeLibraryModel();
 		pokeEmploymentModel(); // And this one, too!
-		
+
 		EditPart companyClassEP = editorFixture.activateDiagram(employmentEditor, "classes").findEditPart("Company", org.eclipse.uml2.uml.Class.class);
 		assertThat(companyClassEP, notNullValue());
 		editorFixture.select(companyClassEP);
@@ -334,6 +336,45 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 		assertThat(((org.eclipse.uml2.uml.Class)propertySheetSelection).getName(), is("Person"));
 	}
 
+	/**
+	 * Verifies that where an editor is organized with multiple sash folders, the correct tab is active overall <em>and</em> the
+	 * correct tab in each sash pane is visible (not just the last tab in each pane).
+	 */
+	@PluginResource({ "model/reload/employment_sashes.di", EditorReloadTest.LIBRARY_MODEL })
+	@Test
+	public void testSashFoldersRestored() {
+		employmentEditor = editorFixture.getEditor("model/reload/employment_sashes.di");
+		final ReloadAssertion reload = new ReloadAssertion(employmentEditor);
+
+		ISashWindowsContainer sashContainer = AdapterUtils.adapt(employmentEditor, ISashWindowsContainer.class, null);
+
+		// On opening, the table is visible because it's the last tab in its folder
+		Set<String> visible = getVisiblePages(sashContainer);
+		assertThat(visible, is((Set<String>)ImmutableSet.of("classes", "classes_table")));
+
+		// So, activate the activity diagram
+		editorFixture.activateDiagram(employmentEditor, "activity");
+
+		// Then activate the class diagram again so that being the active diagram isn't the reason why the activity
+		// diagram is restored to visible state
+		editorFixture.activateDiagram(employmentEditor, "classes");
+
+		pokeLibraryModel();
+		editorFixture.activate(employmentEditor);
+		editorFixture.saveAll();
+		reload.assertReloaded(); // The editor is reloaded immediately because it is already active
+		editorFixture.flushDisplayEvents();
+
+		sashContainer = AdapterUtils.adapt(employmentEditor, ISashWindowsContainer.class, null);
+
+		// After re-load, the activity diagram is the visible one in its folder
+		visible = getVisiblePages(sashContainer);
+		assertThat(visible, is((Set<String>)ImmutableSet.of("classes", "activity")));
+
+		// But the activity diagram isn't visible because it's the active page
+		assertThat(sashContainer.getActiveSashWindowsPage().getPageTitle(), is("classes"));
+	}
+
 	//
 	// Test framework
 	//
@@ -344,8 +385,11 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 		bankingEditor = editorFixture.getEditor(BANKING_MODEL);
 		libraryEditor = editorFixture.getEditor(LIBRARY_MODEL);
 
-		// Move the banking editor into its own part of the editor area
-		editorFixture.splitEditorArea(bankingEditor, false);
+		// Non-standard test cases will not have one of these
+		if((employmentEditor != null) && (bankingEditor != null) && (libraryEditor != null)) {
+			// Move the banking editor into its own part of the editor area
+			editorFixture.splitEditorArea(bankingEditor, false);
+		}
 	}
 
 	void pokeLibraryModel() {
@@ -481,6 +525,16 @@ public class EditorReloadTest extends AbstractPapyrusTest {
 		}
 
 		return EMFHelper.getEObject(result.getFirstElement());
+	}
+
+	Set<String> getVisiblePages(ISashWindowsContainer sashContainer) {
+		Set<String> result = Sets.newHashSet();
+
+		for(org.eclipse.papyrus.infra.core.sasheditor.editor.IPage page : sashContainer.getVisiblePages()) {
+			result.add(page.getPageTitle());
+		}
+
+		return result;
 	}
 
 	private class ReloadAssertion {
