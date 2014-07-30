@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.service.ui;
 
@@ -19,9 +20,8 @@ import java.util.Map;
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.papyrus.uml.profile.providers.AppliedProfileContentProvider;
-import org.eclipse.papyrus.uml.profile.providers.AppliedProfileLabelProvider;
-import org.eclipse.papyrus.uml.tools.utils.ProfileUtil;
+import org.eclipse.papyrus.uml.profile.providers.ProfileApplicationContentProvider;
+import org.eclipse.papyrus.uml.profile.providers.ProfileApplicationLabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.TreeEditor;
 import org.eclipse.swt.events.SelectionEvent;
@@ -37,6 +37,7 @@ import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.ProfileApplication;
 
 public class RefreshProfileDialog extends SelectionDialog {
 
@@ -76,9 +77,17 @@ public class RefreshProfileDialog extends SelectionDialog {
 		propertyColumn.setText("Package");
 		layout.addColumnData(new ColumnWeightData(30, 300, true));
 
+		TreeColumn propertyVersionColumn = new TreeColumn(tree, SWT.CENTER);
+		propertyVersionColumn.setText("Version");
+		layout.addColumnData(new ColumnWeightData(30, 100, true));
+
 		TreeColumn ownerColumn = new TreeColumn(tree, SWT.CENTER);
 		ownerColumn.setText("Profile");
 		layout.addColumnData(new ColumnWeightData(60, 150, true));
+
+		TreeColumn ownerVersionColumn = new TreeColumn(tree, SWT.CENTER);
+		ownerVersionColumn.setText("Version");
+		layout.addColumnData(new ColumnWeightData(30, 100, true));
 
 		TreeColumn checkColumn = new TreeColumn(tree, SWT.CENTER);
 		checkColumn.setText("Reapply");
@@ -87,8 +96,8 @@ public class RefreshProfileDialog extends SelectionDialog {
 		tree.setLayout(layout);
 		tree.setHeaderVisible(true);
 
-		viewer.setContentProvider(new AppliedProfileContentProvider(rootPackage));
-		viewer.setLabelProvider(new AppliedProfileLabelProvider());
+		viewer.setContentProvider(new ProfileApplicationContentProvider(rootPackage));
+		viewer.setLabelProvider(new ProfileApplicationLabelProvider());
 
 		viewer.setInput(new Object());
 
@@ -106,46 +115,46 @@ public class RefreshProfileDialog extends SelectionDialog {
 		}
 	}
 
-	protected void installEditors(TreeItem treeItem, final Package parentPackage) {
-		Package currentPackage = (Package)treeItem.getData();
-		if(currentPackage instanceof Profile) {
+	protected void installEditors(TreeItem treeItem, final Object parentPackage) {
+		Object currentDataItem = treeItem.getData();
+		if(currentDataItem instanceof ProfileApplication) {
 
-			final Profile profile = (Profile)currentPackage;
+			final ProfileApplication profileApplication = (ProfileApplication)currentDataItem;
 
-			if(ProfileUtil.isDirty(parentPackage, profile)) {
-				Tree tree = treeItem.getParent();
+			Tree tree = treeItem.getParent();
 
-				final Button checkbox = new Button(tree, SWT.CHECK);
+			final Button checkbox = new Button(tree, SWT.CHECK);
 
-				checkbox.setSelection(true);
-				getProfilesToReapply(parentPackage).add(profile);
+			checkbox.setSelection(true);
 
-				checkbox.addSelectionListener(new SelectionListener() {
+			getProfilesToReapply((Package)profileApplication.getOwner()).add(profileApplication.getAppliedProfile());
 
-					public void widgetSelected(SelectionEvent e) {
-						if(checkbox.getSelection()) {
-							getProfilesToReapply(parentPackage).add(profile);
-						} else {
-							getProfilesToReapply(parentPackage).remove(profile);
-						}
+			checkbox.addSelectionListener(new SelectionListener() {
+
+				public void widgetSelected(SelectionEvent e) {
+					if(checkbox.getSelection()) {
+						getProfilesToReapply((Package)profileApplication.getOwner()).add(profileApplication.getAppliedProfile());
+					} else {
+						getProfilesToReapply((Package)profileApplication.getOwner()).remove(profileApplication.getAppliedProfile());
 					}
+				}
 
-					public void widgetDefaultSelected(SelectionEvent e) {
-						//Nothing
-					}
+				public void widgetDefaultSelected(SelectionEvent e) {
+					//Nothing
+				}
 
-				});
+			});
 
-				TreeEditor editor = new TreeEditor(tree);
-				editor.horizontalAlignment = SWT.CENTER;
-				editor.grabHorizontal = true;
+			TreeEditor editor = new TreeEditor(tree);
+			editor.horizontalAlignment = SWT.CENTER;
+			editor.grabHorizontal = true;
 
-				editor.setEditor(checkbox, treeItem, 2);
-			}
+			editor.setEditor(checkbox, treeItem, 4);
 		}
 
+
 		for(TreeItem subitem : treeItem.getItems()) {
-			installEditors(subitem, currentPackage);
+			installEditors(subitem, currentDataItem);
 		}
 	}
 

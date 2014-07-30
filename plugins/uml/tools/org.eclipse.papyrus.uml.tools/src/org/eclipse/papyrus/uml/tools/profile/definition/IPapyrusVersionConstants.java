@@ -12,40 +12,29 @@
  *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - modification
  *
  *****************************************************************************/
-package org.eclipse.papyrus.uml.profile.definition;
+package org.eclipse.papyrus.uml.tools.profile.definition;
 
 /**
  * Constant fields for papyrus profile version
- * 
- * 
- * @deprecated API was moved to the plugin org.eclipse.papyrus.uml.tools for Bug 435995.
- *             It was preserved for standard releases of Papyrus 1.0.0
- * @see org.eclipse.papyrus.uml.tools.profile.definition.IPapyrusVersionConstants
  */
-@Deprecated
-public interface IPapyrusVersionConstants extends org.eclipse.papyrus.uml.tools.profile.definition.IPapyrusVersionConstants {
+public interface IPapyrusVersionConstants {
 
 	/** source for eAnnotation that qualifies the profile definition */
-	@Deprecated
 	public final String PAPYRUS_EANNOTATION_SOURCE = "PapyrusVersion";
 
 	/** key for version detail */
-	@Deprecated
 	public final String PAPYRUS_VERSION_KEY = "Version";
 
 	/** key for author detail */
-	@Deprecated
 	public final String PAPYRUS_AUTHOR_KEY = "Author";
 
 	/** key for copyright detail */
-	@Deprecated
 	public final String PAPYRUS_COPYRIGHT_KEY = "Copyright";
 
 	/** key for date detail */
-	@Deprecated
 	public final String PAPYRUS_DATE_KEY = "Date";
 
 	/** key for comment detail */
-	@Deprecated
 	public final String PAPYRUS_COMMENT_KEY = "Comment";
+
 }

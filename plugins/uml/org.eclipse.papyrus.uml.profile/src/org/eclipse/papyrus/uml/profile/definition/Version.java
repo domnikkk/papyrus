@@ -14,118 +14,53 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.profile.definition;
 
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
+
+
 
 /**
  * Representation of the version number for a profile
+ * 
+ * @deprecated API was moved to the plugin org.eclipse.papyrus.uml.tools for Bug 435995.
+ *             It was preserved for standard releases of Papyrus 1.0.0
+ * @see org.eclipse.papyrus.uml.tools.profile.definition.Version
  */
-public class Version {
+@Deprecated
+public class Version extends org.eclipse.papyrus.uml.tools.profile.definition.Version {
 
-	/** major version number */
-	protected int major;
-
-	/** minor version number */
-	protected int minor;
-
-	/** micro version number */
-	protected int micro;
-
-	/** separator for the version string */
-	private final static String SEPARATOR = ".";
 
 	/** The empty version "0.0.0". Equivalent to calling <code>new Version(0,0,0)</code> */
+	@Deprecated
 	public static final Version emptyVersion = new Version(0, 0, 0);
 
 	/**
-	 * Creates a new Version
-	 * 
+	 * Instantiates a new version.
+	 *
 	 * @param major
-	 *        the major version value (should be positive)
+	 *        the major
 	 * @param minor
-	 *        the minor version value (should be positive)
+	 *        the minor
 	 * @param micro
-	 *        the micro version value (should be positive)
+	 *        the micro
 	 */
 	public Version(int major, int minor, int micro) {
-		this.major = major;
-		this.minor = minor;
-		this.micro = micro;
+		super(major, minor, micro);
 	}
 
+	/** Copy constructor for legacy support. */ 
+	Version(org.eclipse.papyrus.uml.tools.profile.definition.Version version) {
+		this(version.getMajor(), version.getMinor(), version.getMicro());
+	}
+	
 	/**
-	 * Creates a new Version, parsing a string value
-	 * 
+	 * Instantiates a new version.
+	 *
 	 * @param value
-	 *        the string representing the version
+	 *        the value
 	 */
-	public Version(String value) throws IllegalArgumentException {
-		try {
-			StringTokenizer st = new StringTokenizer(value, SEPARATOR, true);
-			major = Integer.parseInt(st.nextToken());
-
-			if(st.hasMoreTokens()) {
-				st.nextToken(); // consume delimiter
-				minor = Integer.parseInt(st.nextToken());
-
-				if(st.hasMoreTokens()) {
-					st.nextToken(); // consume delimiter
-					micro = Integer.parseInt(st.nextToken());
-
-					if(st.hasMoreTokens()) {
-						throw new IllegalArgumentException("invalid format");
-					}
-				}
-			}
-		} catch (NoSuchElementException e) {
-			throw new IllegalArgumentException("invalid format");
-		}
+	public Version(String value) {
+		super(value);
 	}
 
-	/**
-	 * Returns the major version number
-	 * 
-	 * @return The major version number
-	 */
-	public int getMajor() {
-		return major;
-	}
-
-	/**
-	 * Returns the minor version number
-	 * 
-	 * @return The minor version number
-	 */
-	public int getMinor() {
-		return minor;
-	}
-
-	/**
-	 * Returns the micro version number
-	 * 
-	 * @return The micro version number
-	 */
-	public int getMicro() {
-		return micro;
-	}
-
-	/**
-	 * Updates the version numbers
-	 * 
-	 * @param major
-	 *        the new major value
-	 * @param minor
-	 *        the new minor value
-	 * @param micro
-	 *        the new micro value
-	 */
-	public void updateVersion(int major, int minor, int micro) {
-		this.major = major;
-		this.minor = minor;
-		this.micro = micro;
-	}
-
-	// org.osgi.framework.Version
 	/**
 	 * Creates a version given the specific String
 	 * 
@@ -133,23 +68,13 @@ public class Version {
 	 *        the string to parse
 	 * @return the version value corresponding to the String
 	 */
+	@Deprecated
 	public static Version parseVersion(String version) throws IllegalArgumentException {
-		if(version == null) {
-			return emptyVersion;
-		}
-
-		version = version.trim();
-		if(version.length() == 0) {
-			return emptyVersion;
-		}
-		return new Version(version);
+		return new Version(org.eclipse.papyrus.uml.tools.profile.definition.Version.parseVersion(version));
 	}
 
-	/**
-	 * Returns the string corresponding to the version
-	 */
-	@Override
-	public String toString() {
-		return major + SEPARATOR + minor + SEPARATOR + micro;
-	}
+
+
+
+
 }
