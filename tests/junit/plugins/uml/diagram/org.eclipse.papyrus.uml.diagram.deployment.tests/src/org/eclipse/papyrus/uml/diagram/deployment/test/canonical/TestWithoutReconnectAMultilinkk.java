@@ -30,8 +30,8 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
-import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
 import org.eclipse.papyrus.uml.diagram.deployment.part.UMLDiagramUpdater;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
 import org.eclipse.uml2.uml.Element;
 
 public abstract class TestWithoutReconnectAMultilinkk extends TestLink {

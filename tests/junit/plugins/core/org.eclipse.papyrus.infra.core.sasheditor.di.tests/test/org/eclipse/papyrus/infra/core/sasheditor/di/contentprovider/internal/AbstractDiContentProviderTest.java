@@ -32,7 +32,7 @@ import org.eclipse.papyrus.infra.core.sasheditor.di.sashmodel.query.QueryExcepti
 import org.eclipse.papyrus.infra.core.sasheditor.di.sashmodel.query.SashModelQuery;
 import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
 import org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.swt.SWT;
 import org.junit.Test;
 

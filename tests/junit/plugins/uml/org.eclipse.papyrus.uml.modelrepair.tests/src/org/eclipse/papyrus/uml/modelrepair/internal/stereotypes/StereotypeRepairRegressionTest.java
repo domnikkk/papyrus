@@ -21,10 +21,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
-import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
-import org.eclipse.papyrus.junit.utils.rules.ModelSetFixture;
-import org.eclipse.papyrus.junit.utils.rules.PluginResource;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;

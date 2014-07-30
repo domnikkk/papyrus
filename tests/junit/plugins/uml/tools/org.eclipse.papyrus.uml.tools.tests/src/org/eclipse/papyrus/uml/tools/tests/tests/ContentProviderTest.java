@@ -32,8 +32,7 @@ import org.eclipse.papyrus.infra.emf.providers.strategy.SemanticEMFContentProvid
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.widgets.providers.IAdaptableContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IHierarchicContentProvider;
-import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.uml.tools.tests.Activator;
 import org.junit.Assert;
 import org.junit.Before;

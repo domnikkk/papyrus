@@ -26,7 +26,6 @@ import org.eclipse.papyrus.infra.core.services.ServiceStartKind;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.emf.readonly.PapyrusROTransactionalEditingDomain;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResourceSet;
-import org.eclipse.papyrus.junit.utils.rules.AbstractModelFixture;
 import org.junit.runner.Description;
 
 

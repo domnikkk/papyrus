@@ -15,7 +15,6 @@
 package org.eclipse.papyrus.sysml.diagram.internalblock.tests.creation.link.connector.encapsulated;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.notation.View;

@@ -36,8 +36,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customizatio
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.additional.AdditionalResourcesModel;
-import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.Activator;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.utils.EditorUtils;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerPageBookView;

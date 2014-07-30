@@ -32,7 +32,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.EditPartUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.StateDefinitionUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.StateInvariantUtils;

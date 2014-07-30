@@ -14,6 +14,7 @@
 
 package org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal;
 
+import org.eclipse.papyrus.infra.core.sasheditor.di.sashmodel.query.IQueryTerm;
 import org.eclipse.papyrus.infra.core.sasheditor.pagesmodel.AbstractSash;
 import org.eclipse.papyrus.infra.core.sasheditor.pagesmodel.Folder;
 import org.eclipse.papyrus.infra.core.sasheditor.pagesmodel.HSash;
@@ -24,6 +25,7 @@ import org.eclipse.papyrus.infra.core.sasheditor.pagesmodel.VSash;
 import org.eclipse.papyrus.infra.core.sasheditor.pagesmodel.WindowTerm;
 import org.eclipse.papyrus.infra.core.sashwindows.di.DiFactory;
 import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
+import org.eclipse.papyrus.infra.core.sashwindows.di.SashModel;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel;
 import org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder;
 import org.eclipse.papyrus.infra.core.sashwindows.di.Window;

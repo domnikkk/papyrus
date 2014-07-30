@@ -22,8 +22,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.junit.utils.classification.NotImplemented;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.NotImplemented;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.pde.internal.core.feature.Feature;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;

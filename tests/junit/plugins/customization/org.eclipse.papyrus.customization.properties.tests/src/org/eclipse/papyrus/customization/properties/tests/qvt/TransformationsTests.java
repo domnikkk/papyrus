@@ -35,8 +35,7 @@ import org.eclipse.papyrus.customization.properties.generation.generators.IGener
 import org.eclipse.papyrus.customization.properties.generation.generators.ProfileGenerator;
 import org.eclipse.papyrus.customization.properties.model.xwt.resource.XWTResource;
 import org.eclipse.papyrus.customization.properties.tests.Activator;
-import org.eclipse.papyrus.junit.utils.ProjectUtils;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.views.properties.contexts.Context;
 import org.eclipse.papyrus.views.properties.root.PropertiesRoot;
 import org.eclipse.papyrus.views.properties.runtime.ConfigurationManager;

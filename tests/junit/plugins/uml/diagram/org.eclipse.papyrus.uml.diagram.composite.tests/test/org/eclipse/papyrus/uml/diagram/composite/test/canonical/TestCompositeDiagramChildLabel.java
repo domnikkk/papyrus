@@ -15,7 +15,7 @@ package org.eclipse.papyrus.uml.diagram.composite.test.canonical;
 
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.composite.CreateCompositeDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.DataTypeAttributeCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.DataTypeOperationCompartmentEditPart;

@@ -35,8 +35,6 @@ import org.eclipse.papyrus.infra.gmfdiag.css.preferences.ThemePreferences;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StyleSheetReference;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsFactory;
 import org.eclipse.papyrus.infra.gmfdiag.css.tests.Activator;
-import org.eclipse.papyrus.junit.utils.FilesUtils;
-import org.eclipse.papyrus.junit.utils.ProjectUtils;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;

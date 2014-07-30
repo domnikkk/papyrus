@@ -15,7 +15,6 @@ package org.eclipse.papyrus.infra.emf.readonly.tests;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.infra.emf.readonly.PapyrusROTransactionalEditingDomain;
 import org.eclipse.papyrus.infra.emf.readonly.PapyrusROTransactionalEditingDomainProvider;
-import org.eclipse.papyrus.junit.utils.rules.AbstractModelFixture;
 
 
 /**

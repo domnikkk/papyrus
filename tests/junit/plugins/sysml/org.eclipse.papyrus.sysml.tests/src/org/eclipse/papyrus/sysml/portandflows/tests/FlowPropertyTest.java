@@ -16,8 +16,7 @@ package org.eclipse.papyrus.sysml.portandflows.tests;
 
 import static org.junit.Assert.fail;
 
-import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.portandflows.FlowDirection;
 import org.eclipse.papyrus.sysml.portandflows.FlowProperty;
 import org.eclipse.papyrus.sysml.portandflows.PortandflowsFactory;

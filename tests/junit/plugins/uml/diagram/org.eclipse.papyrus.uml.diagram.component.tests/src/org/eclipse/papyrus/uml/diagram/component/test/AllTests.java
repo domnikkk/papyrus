@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.uml.diagram.component.test;
 
 import org.eclipse.papyrus.uml.diagram.component.test.canonical.AllCanonicalTests;
-import org.eclipse.papyrus.uml.diagram.component.test.load.LoadTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;

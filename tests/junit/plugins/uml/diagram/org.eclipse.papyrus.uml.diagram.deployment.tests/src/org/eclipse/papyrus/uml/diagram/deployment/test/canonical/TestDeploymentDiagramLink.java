@@ -14,12 +14,12 @@ package org.eclipse.papyrus.uml.diagram.deployment.test.canonical;
 
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.deployment.CreateDeploymentDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.deployment.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.deployment.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.deployment.test.IDeploymentDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
 import org.junit.Test;
 
 /**

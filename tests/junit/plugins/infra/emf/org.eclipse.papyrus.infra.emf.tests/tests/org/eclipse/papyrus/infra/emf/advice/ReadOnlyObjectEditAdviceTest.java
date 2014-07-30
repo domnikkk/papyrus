@@ -70,10 +70,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.junit.utils.rules.Condition;
-import org.eclipse.papyrus.junit.utils.rules.ConditionRule;
-import org.eclipse.papyrus.junit.utils.rules.Conditional;
-import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
+import org.eclipse.papyrus.junit.framework.classification.rules.Condition;
+import org.eclipse.papyrus.junit.framework.classification.rules.ConditionRule;
+import org.eclipse.papyrus.junit.framework.classification.rules.Conditional;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Dependency;

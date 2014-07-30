@@ -15,12 +15,12 @@ package org.eclipse.papyrus.uml.diagram.composite.test.canonical;
 
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
-import org.eclipse.papyrus.junit.utils.classification.InteractiveTest;
+import org.eclipse.papyrus.junit.framework.classification.InteractiveTest;
 import org.eclipse.papyrus.uml.diagram.composite.CreateCompositeDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.composite.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.composite.test.ICompositeDiagramTestsConstants;
+import org.eclipse.papyrus.uml.diagram.tests.canonical.TestLink;
 import org.junit.Test;
 
 /**

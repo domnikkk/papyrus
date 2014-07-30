@@ -14,19 +14,10 @@
 package org.eclipse.papyrus.uml.diagram.clazz.test.canonical;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
-import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
-import org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.test.IClassDiagramTestsConstants;
-import org.eclipse.papyrus.uml.diagram.tests.appearance.AppearanceNodeTest;
-import org.eclipse.papyrus.uml.diagram.tests.canonical.TestTopNode;
-import org.eclipse.papyrus.uml.diagram.tests.edition.EditableNodeTest;
-import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Test;
 
 /**

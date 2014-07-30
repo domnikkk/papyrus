@@ -16,9 +16,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import org.eclipse.papyrus.infra.emf.readonly.tests.PapyrusROEditingDomainFixture;
-import org.eclipse.papyrus.junit.utils.rules.JavaResource;
-import org.eclipse.papyrus.junit.utils.rules.ProjectFixture;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.uml2.uml.Type;
 import org.junit.After;
 import org.junit.Before;

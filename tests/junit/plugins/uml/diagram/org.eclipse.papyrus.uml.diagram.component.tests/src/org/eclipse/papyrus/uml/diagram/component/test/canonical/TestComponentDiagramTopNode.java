@@ -22,7 +22,6 @@ import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.component.test.IComponentDiagramTestsConstants;
 import org.eclipse.papyrus.uml.diagram.tests.canonical.TestTopNode;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.junit.Assert;
 import org.junit.Test;
 
 /**

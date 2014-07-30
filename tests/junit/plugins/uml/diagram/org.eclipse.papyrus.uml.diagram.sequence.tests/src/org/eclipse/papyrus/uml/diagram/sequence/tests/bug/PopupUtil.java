@@ -17,7 +17,6 @@ package org.eclipse.papyrus.uml.diagram.sequence.tests.bug;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.junit.utils.rules.AbstractHouseKeeperRule;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;

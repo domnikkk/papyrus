@@ -34,7 +34,7 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashWindowsMngr;
 import org.eclipse.papyrus.infra.core.sashwindows.di.impl.TabFolderImpl;
 import org.eclipse.papyrus.infra.core.sashwindows.di.util.DiUtils;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.swt.SWT;
 import org.junit.Before;
 import org.junit.Test;

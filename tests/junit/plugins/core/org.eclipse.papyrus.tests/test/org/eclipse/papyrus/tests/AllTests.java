@@ -21,8 +21,8 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.papyrus.junit.utils.classification.ClassificationConfig;
-import org.eclipse.papyrus.junit.utils.classification.TestCategory;
+import org.eclipse.papyrus.junit.framework.classification.ClassificationConfig;
+import org.eclipse.papyrus.junit.framework.classification.TestCategory;
 import org.eclipse.papyrus.tests.launcher.FragmentTestSuiteClass;
 import org.eclipse.papyrus.tests.launcher.ITestSuiteClass;
 import org.eclipse.papyrus.tests.launcher.PluginTestSuiteClass;

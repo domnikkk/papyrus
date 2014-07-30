@@ -12,8 +12,6 @@
  */
 package org.eclipse.papyrus.editor.integration.tests.tests;
 
-import static org.eclipse.papyrus.junit.matchers.DiagramMatchers.collapsedIn;
-import static org.eclipse.papyrus.junit.matchers.DiagramMatchers.editPartSelected;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -53,13 +51,8 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
-import org.eclipse.papyrus.junit.utils.Duck;
-import org.eclipse.papyrus.junit.utils.classification.ExpensiveTest;
-import org.eclipse.papyrus.junit.utils.rules.PapyrusEditorFixture;
-import org.eclipse.papyrus.junit.utils.rules.PluginResource;
-import org.eclipse.papyrus.junit.utils.rules.ShowView;
-import org.eclipse.papyrus.junit.utils.rules.ShowView.Location;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.ExpensiveTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerPageBookView;
 import org.eclipse.swt.widgets.Item;
 import org.eclipse.swt.widgets.TreeItem;

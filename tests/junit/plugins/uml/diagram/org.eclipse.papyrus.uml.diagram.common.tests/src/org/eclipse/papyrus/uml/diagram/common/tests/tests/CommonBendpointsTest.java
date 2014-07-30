@@ -31,7 +31,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.edge.PapyrusEdgeFigure;
 import org.eclipse.papyrus.infra.widgets.util.IRevealSemanticElement;
-import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.eclipse.papyrus.uml.diagram.common.tests.Activator;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.PlatformUI;

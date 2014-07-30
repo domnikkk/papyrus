@@ -12,28 +12,24 @@
  *****************************************************************************/
 package org.eclipse.papyrus.diagram.clazz.test.createFromPalette;
 
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.CommentEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.EnumerationEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InformationItemEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartTN;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.test.IClassDiagramTestsConstants;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ComponentEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPartTN;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.CommentEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.DataTypeEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.EnumerationEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ConstraintEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.InformationItemEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPart;
-import org.eclipse.papyrus.uml.diagram.tests.createFromPalette.CreateNodeFromPaletteTest;
-import org.eclipse.uml2.uml.UMLPackage;
 import org.junit.Test;
 
 // TODO: Auto-generated Javadoc

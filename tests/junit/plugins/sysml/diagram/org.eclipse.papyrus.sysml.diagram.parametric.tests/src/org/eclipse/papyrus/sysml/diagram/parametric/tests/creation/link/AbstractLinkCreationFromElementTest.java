@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.sysml.diagram.parametric.tests.creation.link.AbstractLinkPrepareTest;
 import org.eclipse.uml2.uml.Property;
 import org.junit.BeforeClass;
 import org.junit.Test;

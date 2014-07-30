@@ -32,7 +32,6 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.SashModel;
 import org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel;
 import org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder;
 import org.eclipse.papyrus.infra.core.sashwindows.di.Window;
-import org.eclipse.swt.SWT;
 
 /**
  * A base implementation of {@link IPagesModelVisitor} to visit conjointly SashPagesModel and 

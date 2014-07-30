@@ -27,8 +27,6 @@ import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramEditDomain;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
-import org.eclipse.papyrus.junit.utils.Duck;
-import org.eclipse.papyrus.junit.utils.rules.PapyrusEditorFixture;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.part.ISetSelectionTarget;

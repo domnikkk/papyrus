@@ -24,7 +24,7 @@ import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.EditPartUtils;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.StateInvariantUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.CompactLifelineCompartmentEditPartCN;

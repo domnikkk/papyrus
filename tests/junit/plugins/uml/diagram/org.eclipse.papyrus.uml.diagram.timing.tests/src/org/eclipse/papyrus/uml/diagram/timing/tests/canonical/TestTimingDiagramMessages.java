@@ -8,7 +8,7 @@
  *******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.timing.tests.canonical;
 
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.swt.widgets.Text;
 import org.junit.Test;
 

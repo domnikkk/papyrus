@@ -15,7 +15,6 @@ package org.eclipse.papyrus.uml.tools.utils.tests.tests;
 
 import java.util.List;
 
-import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.eclipse.papyrus.uml.tools.utils.NameResolutionHelper;
 import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.papyrus.uml.tools.utils.tests.Activator;

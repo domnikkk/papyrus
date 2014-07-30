@@ -21,8 +21,6 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.IStrategy;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.PasteStrategyManager;
-import org.eclipse.papyrus.junit.utils.HandlerUtils;
-import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.eclipse.papyrus.sysml.diagram.common.strategy.paste.PartPasteStrategy;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.Activator;
 import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;

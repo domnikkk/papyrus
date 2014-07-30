@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.swt.widgets.Display;
 import org.hamcrest.Matcher;
 import org.junit.After;

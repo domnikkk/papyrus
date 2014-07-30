@@ -22,6 +22,7 @@ import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProviderFacade;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel;
+import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.simple.SimpleSashWindowsContentProvider;
 import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.IPageModelFactory;
 import org.eclipse.papyrus.infra.core.sasheditor.di.sashmodel.query.QueryException;
 import org.eclipse.papyrus.infra.core.sasheditor.pagesmodel.BadNameException;

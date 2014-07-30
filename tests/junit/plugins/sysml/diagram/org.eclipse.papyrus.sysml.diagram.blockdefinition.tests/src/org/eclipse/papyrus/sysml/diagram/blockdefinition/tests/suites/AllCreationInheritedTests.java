@@ -13,11 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.suites;
 
-import org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.inherited.TestNodeCreationOnComment;
-import org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.inherited.TestNodeCreationOnCommentCN;
-import org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.inherited.TestNodeCreationOnConstraint;
-import org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.inherited.TestNodeCreationOnConstraintCN;
-import org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.inherited.TestNodeCreationOnInstanceSpecification;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.inherited.TestNodeCreationOnInstanceSpecificationCN;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.inherited.TestNodeCreationOnInstanceSpecificationCompartment;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.creation.inherited.TestNodeCreationOnInstanceSpecificationCompartmentCN;

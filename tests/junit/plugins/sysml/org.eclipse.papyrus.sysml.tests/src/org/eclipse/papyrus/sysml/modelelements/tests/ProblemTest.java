@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.modelelements.tests;
 
-import org.eclipse.papyrus.junit.utils.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.sysml.modelelements.ModelelementsFactory;
 import org.eclipse.papyrus.sysml.modelelements.Problem;
 import org.junit.After;

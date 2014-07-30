@@ -21,7 +21,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Activity;

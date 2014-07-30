@@ -4,7 +4,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.nattable.model.editor;bundle-version="1.0.0",
  org.junit;bundle-version="4.11.0",
- org.eclipse.papyrus.junit.utils;bundle-version="1.0.0",
+ org.eclipse.papyrus.junit.framework;bundle-version="1.0.0",
  org.eclipse.emf.transaction
 Export-Package: org.eclipse.papyrus.infra.nattable.model.editor.tests,
  org.eclipse.papyrus.infra.nattable.model.editor.tests.tests

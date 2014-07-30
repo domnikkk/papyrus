@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.junit.utils.classification.FailingTest;
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.EditPartUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.InteractionEditPartTN;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.InteractionNameEditPart;

@@ -34,7 +34,6 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.SignalEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.clazz.test.IClassDiagramTestsConstants;
-import org.eclipse.papyrus.uml.diagram.tests.createFromPalette.CreateLinkFromPaletteTest;
 import org.junit.Test;
 
 // TODO: Auto-generated Javadoc

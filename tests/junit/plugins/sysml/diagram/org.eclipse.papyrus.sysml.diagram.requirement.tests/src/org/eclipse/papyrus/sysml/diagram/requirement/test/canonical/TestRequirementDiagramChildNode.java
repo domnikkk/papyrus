@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.eclipse.papyrus.commands.ICreationCommand;
-import org.eclipse.papyrus.junit.utils.classification.InvalidTest;
+import org.eclipse.papyrus.junit.framework.classification.InvalidTest;
 import org.eclipse.papyrus.sysml.diagram.requirement.RequirementDiagramCreateCommand;
 import org.eclipse.papyrus.sysml.diagram.requirement.provider.ElementTypes;
 import org.eclipse.papyrus.sysml.diagram.requirement.test.IRequirementDiagramTestsConstants;
