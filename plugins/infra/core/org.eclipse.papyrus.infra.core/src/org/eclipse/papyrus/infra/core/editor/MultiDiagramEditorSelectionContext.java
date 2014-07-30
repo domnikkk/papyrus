@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.infra.core.editor;
 
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -36,6 +37,7 @@ import org.eclipse.papyrus.infra.core.sasheditor.editor.ISashWindowsContainer;
 import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
 
 /**
@@ -56,24 +58,33 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 
 		resourcesToLoad = computeResourcesToLoad(editor);
 
-		ActivePageSelectionProvider activePageSelectionProvider = new ActivePageSelectionProvider();
 		IPage active = sashContainer.getActiveSashWindowsPage();
 		DiagramPageContext activePage = null;
 
-		List<IPage> visible = getAllPages(sashContainer);
+		Set<IPage> visiblePages = Sets.newIdentityHashSet();
+		visiblePages.addAll(sashContainer.getVisiblePages());
 
-		for(IPage page : visible) {
+		List<IPage> allPages = getAllPages(sashContainer);
+
+		for(IPage page : allPages) {
 			final DelegatingReloadContext delegator = (page instanceof IEditorPage) ? add(new DelegatingReloadContext(((IEditorPage)page).getIEditorPart())) : null;
 			DiagramPageContext context;
 
 			if(page == active) {
 				// This one will have the selection of the active page
-				context = new DiagramPageContext(activePageSelectionProvider, page, delegator);
+				context = new DiagramPageContext(new VisiblePageSelectionProvider(page), page, delegator);
 				activePage = context;
 			} else {
+				if(visiblePages.contains(page)) {
+					// This one must be selected in its folder in order to make it visible again
+					context = new DiagramPageContext(new VisiblePageSelectionProvider(page), page, delegator);
+				} else {
+					context = new DiagramPageContext(EmptySelectionProvider.INSTANCE, page, delegator);
+				}
+
 				// We make sure always to restore the active page last
-				// so that its selection is certain to be set properly
-				context = new DiagramPageContext(EmptySelectionProvider.INSTANCE, page, delegator);
+				// so that it will not only be visible but also the
+				// over-all active page
 				add(context);
 			}
 		}
@@ -121,7 +132,7 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 		// (b) we can restore selections in resources that wouldn't be loaded until proxies resolve later
 		reloadResources(editor);
 
-		ISelectionProvider selectionProvider = new ActivePageSelectionProvider();
+		ISelectionProvider selectionProvider = new VisiblePageSelectionProvider();
 		for(DiagramPageContext next : getReloadContexts(DiagramPageContext.class)) {
 			next.restore(selectionProvider);
 		}
@@ -239,17 +250,23 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 
 	}
 
-	private class ActivePageSelectionProvider implements ISelectionProvider {
+	private class VisiblePageSelectionProvider implements ISelectionProvider {
 
-		ActivePageSelectionProvider() {
+		private final IStructuredSelection selection;
+
+		VisiblePageSelectionProvider() {
+			this(null);
+		}
+
+		VisiblePageSelectionProvider(IPage visible) {
 			super();
+
+			this.selection = (visible == null) ? StructuredSelection.EMPTY : new StructuredSelection(visible);
 		}
 
 		@Override
 		public ISelection getSelection() {
-			IPage active = sashContainer.getActiveSashWindowsPage();
-
-			return (active == null) ? StructuredSelection.EMPTY : new StructuredSelection(active);
+			return selection;
 		}
 
 		@Override
