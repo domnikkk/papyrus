@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.presentation.NattableaxisconfigurationEditor;
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.presentation.NattableconfigurationEditor;
 import org.eclipse.papyrus.infra.nattable.model.nattable.presentation.NattableEditorPlugin;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
