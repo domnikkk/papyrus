@@ -20,6 +20,7 @@ package org.eclipse.papyrus.infra.nattable.common.editor;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -43,6 +44,7 @@ import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.manager.table.NattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.NattableconfigurationPackage;
+import org.eclipse.papyrus.infra.widgets.util.NavigationTarget;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorInput;
@@ -57,7 +59,7 @@ import org.eclipse.ui.part.EditorPart;
  * 
  * 
  */
-public abstract class AbstractEMFNattableEditor extends EditorPart {
+public abstract class AbstractEMFNattableEditor extends EditorPart implements NavigationTarget {
 
 	/** the service registry */
 	protected ServicesRegistry servicesRegistry;
@@ -319,7 +321,7 @@ public abstract class AbstractEMFNattableEditor extends EditorPart {
 			papyrusTable.eAdapters().add(this.tableNameListener);
 		}
 	}
-	
+
 	private static class EMFNattableModelManager extends NattableModelManager {
 
 		EMFNattableModelManager(Table rawModel) {
@@ -329,6 +331,7 @@ public abstract class AbstractEMFNattableEditor extends EditorPart {
 		@Override
 		protected NatTableDropListener createDropListener() {
 			return new NatTableDropListener(this) {
+
 				@Override
 				protected Collection<?> extractSelectedObjects(IStructuredSelection structuredSelection) {
 					List<EObject> result = new ArrayList<EObject>(structuredSelection.size());
@@ -344,5 +347,28 @@ public abstract class AbstractEMFNattableEditor extends EditorPart {
 				}
 			};
 		}
+	}
+
+	/**
+	 * 
+	 * used to link the selection between the model explorer and the table
+	 * 
+	 * @param element
+	 */
+	public boolean revealElement(Object element) {
+		return revealElement(Collections.singleton(element));
+	}
+
+	/**
+	 * 
+	 * used to link the selection between the model explorer and the table
+	 * 
+	 * @param elements
+	 */
+	public boolean revealElement(Collection<?> elements) {
+		if(tableManager instanceof NavigationTarget) {
+			return ((NavigationTarget)tableManager).revealElement(elements);
+		}
+		return false;
 	}
 }

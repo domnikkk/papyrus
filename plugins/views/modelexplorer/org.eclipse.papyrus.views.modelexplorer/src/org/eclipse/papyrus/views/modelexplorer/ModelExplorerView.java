@@ -115,6 +115,8 @@ import org.eclipse.ui.navigator.CommonNavigator;
 import org.eclipse.ui.navigator.CommonViewer;
 import org.eclipse.ui.navigator.CommonViewerSorter;
 import org.eclipse.ui.navigator.IExtensionActivationListener;
+import org.eclipse.ui.navigator.ILinkHelper;
+import org.eclipse.ui.navigator.LinkHelperService;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
@@ -283,6 +285,20 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 				}
 
+			}
+
+			// Selections from the Model Explorer result in a part from the ModelExplorerPageBookView instance which is not an IEditorPart
+			if(part instanceof ModelExplorerPageBookView && !selection.isEmpty()) {
+				if(selection instanceof IStructuredSelection) {
+					// Extracted from org.eclipse.ui.internal.navigator.actions.LinkEditorAction activateEditorJob
+					// 	the problem was that multi-element selections were disabled as only selections of 1 could clear the condition size()==1
+					IStructuredSelection sSelection = (IStructuredSelection)selection;
+					LinkHelperService linkService = getLinkHelperService();
+					ILinkHelper[] helpers = linkService.getLinkHelpersFor(sSelection.getFirstElement()); // LinkHelper in org.eclipse.papyrus.views.modelexplorer
+					if(helpers.length > 0) {
+						helpers[0].activateEditor(part.getSite().getPage(), sSelection);
+					}
+				}
 			}
 		}
 	}

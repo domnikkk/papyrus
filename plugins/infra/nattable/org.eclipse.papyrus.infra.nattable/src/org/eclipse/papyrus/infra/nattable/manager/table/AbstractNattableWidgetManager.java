@@ -15,6 +15,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.manager.table;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -50,7 +53,10 @@ import org.eclipse.nebula.widgets.nattable.print.command.TurnViewportOnCommand;
 import org.eclipse.nebula.widgets.nattable.print.config.DefaultPrintBindings;
 import org.eclipse.nebula.widgets.nattable.reorder.ColumnReorderLayer;
 import org.eclipse.nebula.widgets.nattable.reorder.event.ColumnReorderEvent;
+import org.eclipse.nebula.widgets.nattable.selection.SelectionLayer;
 import org.eclipse.nebula.widgets.nattable.selection.command.SelectAllCommand;
+import org.eclipse.nebula.widgets.nattable.selection.command.SelectColumnCommand;
+import org.eclipse.nebula.widgets.nattable.selection.command.SelectRowsCommand;
 import org.eclipse.nebula.widgets.nattable.style.DisplayMode;
 import org.eclipse.nebula.widgets.nattable.ui.binding.UiBindingRegistry;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -76,10 +82,12 @@ import org.eclipse.papyrus.infra.nattable.provider.PapyrusNatTableToolTipProvide
 import org.eclipse.papyrus.infra.nattable.provider.TableSelectionProvider;
 import org.eclipse.papyrus.infra.nattable.sort.ColumnSortModel;
 import org.eclipse.papyrus.infra.nattable.sort.IPapyrusSortModel;
+import org.eclipse.papyrus.infra.nattable.utils.AxisUtils;
 import org.eclipse.papyrus.infra.nattable.utils.LocationValue;
 import org.eclipse.papyrus.infra.nattable.utils.NattableConfigAttributes;
 import org.eclipse.papyrus.infra.nattable.utils.TableGridRegion;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.infra.widgets.util.NavigationTarget;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DropTarget;
 import org.eclipse.swt.dnd.Transfer;
@@ -94,7 +102,7 @@ import org.eclipse.ui.IWorkbenchPartSite;
  * This class allows to create, configure and manipulate the NatTable Widget
  * 
  */
-public abstract class AbstractNattableWidgetManager implements INattableModelManager {
+public abstract class AbstractNattableWidgetManager implements INattableModelManager, NavigationTarget {
 
 	/**
 	 * the managed table
@@ -281,7 +289,7 @@ public abstract class AbstractNattableWidgetManager implements INattableModelMan
 		final NatTableDropListener dropListener = createDropListener();
 		target.addDropListener(dropListener);
 	}
-	
+
 	protected NatTableDropListener createDropListener() {
 		return new NatTableDropListener(this);
 	}
@@ -491,4 +499,66 @@ public abstract class AbstractNattableWidgetManager implements INattableModelMan
 			configRegistry.registerConfigAttribute(EditConfigAttributes.CELL_EDITOR, null, DisplayMode.EDIT, ""); //$NON-NLS-1$
 		}
 	}
+
+	/**
+	 * 
+	 * handles the selections from the model explorer to the table when the link is activated
+	 * 
+	 * @see org.eclipse.papyrus.infra.nattable.utils.AxisUtils
+	 * @see org.eclipse.nebula.widgets.nattable.selection.SelectionLayer
+	 * 
+	 * @param elementList
+	 */
+	@Override
+	public boolean revealElement(Object element) {
+
+		return revealElement(Collections.singleton(element));
+	}
+
+	@Override
+	public boolean revealElement(Collection<?> elements) {
+
+		boolean selectObject = false;
+		SelectionLayer selectionLayer = bodyLayerStack.getSelectionLayer();
+		List<Object> rowObjects = getRowElementsList();
+		List<Object> columnObjects = getColumnElementsList();
+
+		// clear the selectionLayer to avoid the previous selections to mess with the current
+		selectionLayer.clear();
+
+		for(int rowIndex = 0; rowIndex < rowObjects.size(); rowIndex++) {
+			List<?> toFind = new ArrayList<Object>(elements);
+			Object currentAxisObject = rowObjects.get(rowIndex);
+			Object currentRealObject = AxisUtils.getRepresentedElement(currentAxisObject);
+			if(toFind.contains(currentRealObject)) {
+				selectionLayer.doCommand(new SelectRowsCommand(selectionLayer, 0, rowIndex, false, true));
+				//we remove the found object from the cloned elementList as they are already selected
+				toFind.remove(currentRealObject);
+				selectObject = true;
+			}
+			if(toFind.isEmpty()) {
+				// all objects are selected
+				return selectObject;
+			}
+		}
+
+		for(int columnIndex = 0; columnIndex < columnObjects.size(); columnIndex++) {
+			List<?> toFind = new ArrayList<Object>(elements);
+			Object currentAxisObject = columnObjects.get(columnIndex);
+			Object currentRealObject = AxisUtils.getRepresentedElement(currentAxisObject);
+			if(toFind.contains(currentRealObject)) {
+				selectionLayer.doCommand(new SelectColumnCommand(selectionLayer, columnIndex, 0, false, true));
+				//we remove the found object from the cloned elementList as they are already selected
+				toFind.remove(currentRealObject);
+				selectObject = true;
+			}
+			if(toFind.isEmpty()) {
+				// all objects are selected
+				return selectObject;
+			}
+		}
+
+		return selectObject;
+	}
+
 }

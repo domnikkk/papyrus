@@ -24,6 +24,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForWorkbenchPage;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.widgets.util.IRevealSemanticElement;
+import org.eclipse.papyrus.infra.widgets.util.NavigationTarget;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionService;
@@ -76,13 +77,29 @@ public class LinkHelper implements ILinkHelper {
 							ArrayList<Object> semanticElementList = new ArrayList<Object>();
 							while(selectionIterator.hasNext()) {
 								Object currentSelection = selectionIterator.next();
-									Object semanticElement = EMFHelper.getEObject(currentSelection);
-									if(semanticElement != null) {
-										semanticElementList.add(semanticElement);
-									}
+								Object semanticElement = EMFHelper.getEObject(currentSelection);
+								if(semanticElement != null) {
+									semanticElementList.add(semanticElement);
+								}
 
 							}
 							((IRevealSemanticElement)diagramEditor).revealSemanticElement(semanticElementList);
+						}
+					}
+
+					if(diagramEditor instanceof NavigationTarget) {
+						if(aSelection instanceof IStructuredSelection) {
+							Iterator<?> selectionIterator = aSelection.iterator();
+							ArrayList<Object> semanticElementList = new ArrayList<Object>();
+							while(selectionIterator.hasNext()) {
+								Object currentSelection = selectionIterator.next();
+								Object semanticElement = EMFHelper.getEObject(currentSelection);
+								if(semanticElement != null) {
+									semanticElementList.add(semanticElement);
+								}
+							}
+
+							((NavigationTarget)diagramEditor).revealElement(semanticElementList);
 						}
 					}
 				}
