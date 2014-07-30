@@ -1,5 +1,6 @@
 /*******************************************************************************
- * Copyright (c) 2011 Mia-Software.
+ * Copyright (c) 2011, 2014 Mia-Software, CEA, and others.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +13,8 @@
  *    Nicolas Guyomar (Mia-Software) - Bug 346465 - [EMF Facet Table] Remove line does not remove obsolete column
  *    Gregoire Dupe (Mia-Software) - Bug 350700 - TableWidget: Wrong cell label in multi-valued facet reference columns
  *    Gregoire Dupe (Mia-Software) - Bug 345730 - Deleting an element in the model breaks the table
+ *    Christian W. Damus (CEA) - bug 440795
+ *    
  *******************************************************************************/
 package org.eclipse.papyrus.uml.modelexplorer.tests;
 
@@ -25,10 +28,10 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ 
-	DeleteModelExplorerTest.class, RenameHandlerTest.class, ModelExplorerViewTests.class, CutPasteModelExplorerTest.class, CopyPasteModelExplorerTest.class,
-	DiagramCopyPasteModelExplorerTest.class,TableCopyPasteModelExplorerTest.class
-})
+@SuiteClasses({ //
+DeleteModelExplorerTest.class, RenameHandlerTest.class, ModelExplorerViewTests.class, CutPasteModelExplorerTest.class, CopyPasteModelExplorerTest.class, //
+DiagramCopyPasteModelExplorerTest.class, TableCopyPasteModelExplorerTest.class, //
+AdvancedModeTest.class })
 public class AllTests {
 	// JUnit for test suite
 }
