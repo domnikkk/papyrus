@@ -17,6 +17,7 @@ package org.eclipse.papyrus.sysml.modelelements.tests;
 import static org.junit.Assert.fail;
 
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.sysml.modelelements.ModelelementsFactory;
 import org.eclipse.papyrus.sysml.modelelements.ModelelementsPackage;
 import org.eclipse.papyrus.sysml.modelelements.View;

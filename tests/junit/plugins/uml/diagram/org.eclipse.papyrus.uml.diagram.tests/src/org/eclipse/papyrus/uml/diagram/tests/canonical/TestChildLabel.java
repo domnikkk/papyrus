@@ -26,7 +26,9 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.GroupRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
@@ -34,8 +36,12 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.uml2.uml.Element;
+import org.junit.Assert;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -44,47 +50,49 @@ import org.eclipse.uml2.uml.Element;
 public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase {
 
 	/** The Constant CREATION. */
-	protected static final String CREATION = "CREATION:";
+	protected static final String CREATION = "CREATION:"; //$NON-NLS-1$
 
 	/** The Constant CONTAINER_CREATION. */
-	protected static final String CONTAINER_CREATION = "CONTAINER CREATION: ";
+	protected static final String CONTAINER_CREATION = "CONTAINER CREATION: "; //$NON-NLS-1$
 
 	/** The Constant DROP. */
-	protected static final String DROP = "DROP: ";
+	protected static final String DROP = "DROP: "; //$NON-NLS-1$
 
 	/** The Constant DESTROY_DELETION. */
-	protected static final String DESTROY_DELETION = "DESTROY DELETION: ";
+	protected static final String DESTROY_DELETION = "DESTROY DELETION: "; //$NON-NLS-1$
 
 	/** The Constant COMMAND_NULL. */
-	protected static final String COMMAND_NULL = " command null";
+	protected static final String COMMAND_NULL = " command null"; //$NON-NLS-1$
 
 	/** The Constant VIEW_DELETION. */
-	protected static final String VIEW_DELETION = "VIEW DELETION: ";
+	protected static final String VIEW_DELETION = "VIEW DELETION: "; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_REDO. */
-	protected static final String TEST_THE_REDO = "test the redo";
+	protected static final String TEST_THE_REDO = "test the redo"; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_UNDO. */
-	protected static final String TEST_THE_UNDO = "test the undo";
+	protected static final String TEST_THE_UNDO = "test the undo"; //$NON-NLS-1$
 
 	/** The Constant TEST_THE_EXECUTION. */
-	protected static final String TEST_THE_EXECUTION = "test the execution";
+	protected static final String TEST_THE_EXECUTION = "test the execution"; //$NON-NLS-1$
 
 	/** The Constant TEST_IF_THE_COMMAND_CAN_BE_EXECUTED. */
-	protected static final String TEST_IF_THE_COMMAND_CAN_BE_EXECUTED = "test if the command can be executed";
+	protected static final String TEST_IF_THE_COMMAND_CAN_BE_EXECUTED = "test if the command can be executed"; //$NON-NLS-1$
 
 	/** The Constant TEST_IF_THE_COMMAND_IS_CREATED. */
-	protected static final String TEST_IF_THE_COMMAND_IS_CREATED = "test if the command is created";
+	protected static final String TEST_IF_THE_COMMAND_IS_CREATED = "test if the command is created"; //$NON-NLS-1$
 
 	/** The Constant INITIALIZATION_TEST. */
-	protected static final String INITIALIZATION_TEST = "Intitial State";
+	protected static final String INITIALIZATION_TEST = "Intitial State"; //$NON-NLS-1$
 
 	/** The Constant CHANGE_CONTAINER. */
-	protected static final String CHANGE_CONTAINER = "CHANGE CONTAINER";
+	protected static final String CHANGE_CONTAINER = "CHANGE CONTAINER"; //$NON-NLS-1$
 
 	/** The top node. */
 	protected GraphicalEditPart topNode;
 
+	public abstract DiagramUpdater getDiagramUpdater();
+	
 	/**
 	 * Test view deletion.
 	 *
@@ -97,12 +105,12 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tes
 		ListCompartmentEditPart compartment = null;
 		int index = 0;
 		while(compartment == null && index < getTopEditPart().getChildren().size()) {
-			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) {
+			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) { //$NON-NLS-1$
 				compartment = (ListCompartmentEditPart)(getTopEditPart().getChildren().get(index));
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		//DELETION OF THE VIEW
 		assertTrue(VIEW_DELETION + INITIALIZATION_TEST, compartment.getChildren().size() == 1);
 		assertTrue(VIEW_DELETION + INITIALIZATION_TEST, ((Element)((View)getTopEditPart().getModel()).getElement()).getOwnedElements().size() == 1);
@@ -134,12 +142,12 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tes
 		ListCompartmentEditPart compartment = null;
 		int index = 0;
 		while(compartment == null && index < getTopEditPart().getChildren().size()) {
-			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) {
+			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) { //$NON-NLS-1$
 				compartment = (ListCompartmentEditPart)(getTopEditPart().getChildren().get(index));
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		//DESTROY SEMANTIC+ VIEW
 		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, compartment.getChildren().size() == 1);
 		assertTrue(DESTROY_DELETION + INITIALIZATION_TEST, ((Element)((View)getTopEditPart().getModel()).getElement()).getOwnedElements().size() == 1);
@@ -171,12 +179,12 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tes
 		ListCompartmentEditPart compartment = null;
 		int index = 0;
 		while(compartment == null && index < getTopEditPart().getChildren().size()) {
-			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) {
+			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) { //$NON-NLS-1$
 				compartment = (ListCompartmentEditPart)(getTopEditPart().getChildren().get(index));
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		//DROP
 		assertTrue(DROP + INITIALIZATION_TEST, compartment.getChildren().size() == 0);
 		assertTrue(DROP + INITIALIZATION_TEST, ((Element)((View)getTopEditPart().getModel()).getElement()).getOwnedElements().size() == 1);
@@ -214,12 +222,12 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tes
 		ListCompartmentEditPart compartment = null;
 		int index = 0;
 		while(compartment == null && index < getTopEditPart().getChildren().size()) {
-			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) {
+			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) { //$NON-NLS-1$
 				compartment = (ListCompartmentEditPart)(getTopEditPart().getChildren().get(index));
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		//CHANGE CONTAINER
 		assertTrue(CHANGE_CONTAINER + INITIALIZATION_TEST, compartment.getChildren().size() == 1);
 		assertTrue(CHANGE_CONTAINER + INITIALIZATION_TEST, ((Element)((View)getTopEditPart().getModel()).getElement()).getOwnedElements().size() == 1);
@@ -237,12 +245,12 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tes
 		ListCompartmentEditPart newCompartment = null;
 		index = 0;
 		while(newCompartment == null && index < newContainerEditPart.getChildren().size()) {
-			if((newContainerEditPart.getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) {
+			if((newContainerEditPart.getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) { //$NON-NLS-1$
 				newCompartment = (ListCompartmentEditPart)(newContainerEditPart.getChildren().get(index));
 			}
 			index++;
 		}
-		assertTrue("NewContainer not found", newCompartment != null);
+		assertTrue("NewContainer not found", newCompartment != null); //$NON-NLS-1$
 		command = newCompartment.getCommand(changeBoundsRequest);
 		assertNotNull(CHANGE_CONTAINER, command);
 		assertTrue(CHANGE_CONTAINER + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
@@ -268,17 +276,18 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tes
 	 *        the type
 	 * @param containerType
 	 *        the container type
+	 * @param maskmanaged used to test if the editpart must have a mask managed edit policy
 	 */
-	public void testToCreateANode(IElementType type, int containerType) {
+	public void testToCreateANode(IElementType type, int containerType, boolean maskmanaged, String initialName) {
 		ListCompartmentEditPart compartment = null;
 		int index = 0;
 		while(compartment == null && index < getTopEditPart().getChildren().size()) {
-			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) {
+			if((getTopEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) { //$NON-NLS-1$
 				compartment = (ListCompartmentEditPart)(getTopEditPart().getChildren().get(index));
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		//CREATION
 		assertTrue(CREATION + INITIALIZATION_TEST, compartment.getChildren().size() == 0);
 		assertTrue(CREATION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == 0);
@@ -286,14 +295,53 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tes
 		Command command = compartment.getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		assertTrue(CREATION + TEST_THE_EXECUTION, compartment.getChildren().size() == 1);
+		Assert.assertTrue("Node must be org.eclipse.gmf.runtime.notation.Shape",((EditPart)compartment.getChildren().get(0)).getModel() instanceof Shape); //$NON-NLS-1$
+		EditPart createdEditPart= (EditPart)compartment.getChildren().get(0);
+		testNodeEditPart(maskmanaged, createdEditPart, initialName);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		assertTrue(CREATION + TEST_THE_UNDO, compartment.getChildren().size() == 0);
 		assertTrue(CREATION + TEST_THE_UNDO, ((Element)((View)getTopEditPart().getModel()).getElement()).getOwnedElements().size() == 0);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
-		assertTrue("CREATION: " + TEST_THE_REDO, compartment.getChildren().size() == 1);
+		assertTrue("CREATION: " + TEST_THE_REDO, compartment.getChildren().size() == 1); //$NON-NLS-1$
+		
+		Assert.assertNotEquals("Diagram updater must detect that children has been created",0,getDiagramUpdater().getSemanticChildren(getRootView()).size()); //$NON-NLS-1$
+		Assert.assertEquals("Diagram updater must detect that no link has been created",0,getDiagramUpdater().getContainedLinks(getRootView()).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link are incoming",0,getDiagramUpdater().getIncomingLinks(((GraphicalEditPart) compartment.getChildren().get(0)).getNotationView()).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link are outgoing",0,getDiagramUpdater().getOutgoingLinks(((GraphicalEditPart) compartment.getChildren().get(0)).getNotationView()).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no children has ben created in the new element",0,getDiagramUpdater().getSemanticChildren(((GraphicalEditPart) compartment.getChildren().get(0)).getNotationView()).size()); //$NON-NLS-1$
+		Assert.assertEquals ("Diagram updater must detect that no link has been created in the new element",0,getDiagramUpdater().getContainedLinks(((GraphicalEditPart) compartment.getChildren().get(0)).getNotationView()).size()); //$NON-NLS-1$
+		
+		
+		
+	}
+	/**
+	 * this method is used to test the created editpart
+	 * @param maskmanaged
+	 * @param createdEditPart
+	 */
+	protected void testNodeEditPart(boolean maskmanaged, EditPart createdEditPart, String initialName) {
+		Assert.assertNotNull("The editpart must be created", createdEditPart); //$NON-NLS-1$
+		if( maskmanaged){
+			Assert.assertNotNull("the created editpolicy must have as MASK_MANAGED_LABEL_EDIT_POLICY", createdEditPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY)); //$NON-NLS-1$
+		}
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart",createdEditPart instanceof ITextAwareEditPart); //$NON-NLS-1$
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart",createdEditPart instanceof GraphicalEditPart); //$NON-NLS-1$
+		String name=((GraphicalEditPart)createdEditPart).resolveSemanticElement().eClass().getName();
+		if(initialName!=null){
+			name= initialName;
+		}
+		if(name.length()<((ITextAwareEditPart)createdEditPart).getEditText().length()){
+			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)createdEditPart).getEditText().substring(0,name.length())); //$NON-NLS-1$
+		}
+		else{
+			//not the same it sure but display the mistake is important
+			Assert.assertEquals(" the name must contain the name of the metaclass",name, ((ITextAwareEditPart)createdEditPart).getEditText()); //$NON-NLS-1$
+		}
+		Assert.assertTrue("the primary editpart must be the namelabelEditpart",createdEditPart instanceof CompartmentEditPart); //$NON-NLS-1$
+		Assert.assertTrue("namelabelEditpart must be editable",((CompartmentEditPart)createdEditPart).isEditModeEnabled()); //$NON-NLS-1$
 	}
 
 	/**
@@ -346,9 +394,43 @@ public abstract class TestChildLabel extends org.eclipse.papyrus.uml.diagram.tes
 	 * @param containerType
 	 *        the container type
 	 */
-	public void testToManageTopNode(IElementType topNodeType, IElementType type, int containerType) {
+	public void testToManageTopNode(IElementType topNodeType, IElementType type, int containerType,String initialName) {
 		testToCreateATopNode(topNodeType);
-		testToCreateANode(type, containerType);
+		testToCreateANode(type, containerType, false, initialName);
+		testDestroy(type, containerType);
+		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
+		testViewDeletion(type, containerType);
+		testDrop(type, containerType);
+		testChangeContainer(topNodeType, type, containerType);
+	}
+	
+	/**
+	 * Test to manage top node.
+	 *
+	 * @param topNodeType
+	 *        the top node type
+	 * @param type
+	 *        the type
+	 * @param containerType
+	 *        the container type
+	 */
+	public void testToManageTopNode(IElementType topNodeType, IElementType type, int containerType) {
+		testToManageTopNode(topNodeType, type, containerType, null);
+	}
+
+	/**
+	 * Test to manage top node and test if an editpolicy mask managed is applied.
+	 *
+	 * @param topNodeType
+	 *        the top node type
+	 * @param type
+	 *        the type
+	 * @param containerType
+	 *        the container type
+	 */
+	public void testToManageTopNodeWithMask(IElementType topNodeType, IElementType type, int containerType,String initialName) {
+		testToCreateATopNode(topNodeType);
+		testToCreateANode(type, containerType, true, initialName);
 		testDestroy(type, containerType);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		testViewDeletion(type, containerType);

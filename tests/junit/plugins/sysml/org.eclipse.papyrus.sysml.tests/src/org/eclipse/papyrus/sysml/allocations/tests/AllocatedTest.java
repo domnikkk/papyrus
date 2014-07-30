@@ -17,6 +17,7 @@ package org.eclipse.papyrus.sysml.allocations.tests;
 import static org.junit.Assert.fail;
 
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.sysml.allocations.Allocated;
 import org.eclipse.papyrus.sysml.allocations.AllocationsFactory;
 import org.eclipse.papyrus.sysml.allocations.AllocationsPackage;

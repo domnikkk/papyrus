@@ -38,6 +38,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Class;
@@ -57,7 +59,7 @@ public class CreatePureUMLElementTest extends AbstractPapyrusTest {
 
 	@ClassRule
 	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
-	
+
 	private static IProject createProject;
 
 	private static IFile copyPapyrusModel;

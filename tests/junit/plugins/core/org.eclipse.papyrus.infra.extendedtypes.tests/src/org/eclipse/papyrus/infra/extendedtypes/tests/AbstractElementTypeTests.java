@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,8 +27,10 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.ModelUtils;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
-import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.infra.services.edit.internal.context.TypeContext;
+import org.eclipse.papyrus.junit.utils.EditorUtils;
+import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.swt.widgets.Display;
@@ -46,9 +48,9 @@ import org.osgi.framework.Bundle;
 /**
  * Abstract class for element types tests
  */
-public abstract class AbstractElementTypeTests implements ITestConstants  {
-	
-	
+public abstract class AbstractElementTypeTests implements ITestConstants {
+
+
 	@ClassRule
 	public static HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
 
@@ -75,14 +77,14 @@ public abstract class AbstractElementTypeTests implements ITestConstants  {
 	protected static IClientContext papyrusContext;
 
 	protected static Package otherPackageWithComponents;
-	
+
 	protected static Component component1_packageWithComponents;
-	
+
 	protected static Component component1_otherPackageWithComponents;
-	
+
 	protected static Component component1_packageWithAllElements;
-	
-	
+
+
 	/**
 	 * Init test class
 	 */
@@ -118,14 +120,14 @@ public abstract class AbstractElementTypeTests implements ITestConstants  {
 			}
 		});
 
-		transactionalEditingDomain = (TransactionalEditingDomain) openPapyrusEditor.getAdapter(TransactionalEditingDomain.class);
+		transactionalEditingDomain = (TransactionalEditingDomain)openPapyrusEditor.getAdapter(TransactionalEditingDomain.class);
 		assertTrue("Impossible to init editing domain", transactionalEditingDomain instanceof TransactionalEditingDomain);
 
 		// retrieve UML model from this editor
 		try {
 			modelset = ModelUtils.getModelSetChecked(openPapyrusEditor.getServicesRegistry());
 			umlIModel = UmlUtils.getUmlModel(modelset);
-			rootModel = (Model) umlIModel.lookupRoot();
+			rootModel = (Model)umlIModel.lookupRoot();
 
 			Assert.assertNotNull("root model should not be null", rootModel);
 
@@ -141,7 +143,7 @@ public abstract class AbstractElementTypeTests implements ITestConstants  {
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
-		
+
 		try {
 			papyrusContext = TypeContext.getContext();
 		} catch (ServiceException e) {
@@ -155,27 +157,27 @@ public abstract class AbstractElementTypeTests implements ITestConstants  {
 	 */
 	protected static void initExistingElements() throws Exception {
 		packageWithComponents = rootModel.getNestedPackage(PACKAGE_WITH_COMPONENTS);
-		Assert.assertNotNull(PACKAGE_WITH_COMPONENTS+" should not be null", packageWithComponents);
-		Assert.assertTrue(PACKAGE_WITH_COMPONENTS+" should be a Package", packageWithComponents instanceof Package);
+		Assert.assertNotNull(PACKAGE_WITH_COMPONENTS + " should not be null", packageWithComponents);
+		Assert.assertTrue(PACKAGE_WITH_COMPONENTS + " should be a Package", packageWithComponents instanceof Package);
 
 		packageWithAllElements = rootModel.getNestedPackage(PACKAGE_WITH_ALL_ELEMENTS);
-		Assert.assertNotNull(PACKAGE_WITH_ALL_ELEMENTS+" should not be null", packageWithAllElements);
-		Assert.assertTrue(PACKAGE_WITH_ALL_ELEMENTS+" should be a Package", packageWithAllElements instanceof Package);
-		
+		Assert.assertNotNull(PACKAGE_WITH_ALL_ELEMENTS + " should not be null", packageWithAllElements);
+		Assert.assertTrue(PACKAGE_WITH_ALL_ELEMENTS + " should be a Package", packageWithAllElements instanceof Package);
+
 		otherPackageWithComponents = rootModel.getNestedPackage(OTHER_PACKAGE_WITH_COMPONENTS);
-		Assert.assertNotNull(OTHER_PACKAGE_WITH_COMPONENTS+" should not be null", otherPackageWithComponents);
-		Assert.assertTrue(OTHER_PACKAGE_WITH_COMPONENTS+" should be a Package", otherPackageWithComponents instanceof Package);
-		
+		Assert.assertNotNull(OTHER_PACKAGE_WITH_COMPONENTS + " should not be null", otherPackageWithComponents);
+		Assert.assertTrue(OTHER_PACKAGE_WITH_COMPONENTS + " should be a Package", otherPackageWithComponents instanceof Package);
+
 		// init components
 		component1_packageWithComponents = (Component)packageWithComponents.getPackagedElement(COMPONENT_NAME);
-		Assert.assertNotNull(COMPONENT_NAME+" should not be null", component1_packageWithComponents);
-		
+		Assert.assertNotNull(COMPONENT_NAME + " should not be null", component1_packageWithComponents);
+
 		component1_otherPackageWithComponents = (Component)otherPackageWithComponents.getPackagedElement(COMPONENT_NAME);
-		Assert.assertNotNull(COMPONENT_NAME+" should not be null", component1_otherPackageWithComponents);
-		
-		component1_packageWithAllElements= (Component)packageWithAllElements.getPackagedElement(COMPONENT_NAME);
-		Assert.assertNotNull(COMPONENT_NAME+" should not be null", component1_packageWithAllElements);
-		
+		Assert.assertNotNull(COMPONENT_NAME + " should not be null", component1_otherPackageWithComponents);
+
+		component1_packageWithAllElements = (Component)packageWithAllElements.getPackagedElement(COMPONENT_NAME);
+		Assert.assertNotNull(COMPONENT_NAME + " should not be null", component1_packageWithAllElements);
+
 	}
 
 	/**
@@ -191,6 +193,6 @@ public abstract class AbstractElementTypeTests implements ITestConstants  {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
-	
+
+
 }

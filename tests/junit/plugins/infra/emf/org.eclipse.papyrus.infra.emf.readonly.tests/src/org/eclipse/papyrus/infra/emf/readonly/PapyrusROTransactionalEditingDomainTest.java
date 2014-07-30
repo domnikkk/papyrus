@@ -47,6 +47,7 @@ import org.eclipse.papyrus.infra.core.resource.RollbackStatus;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.rules.ProjectFixture;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Model;

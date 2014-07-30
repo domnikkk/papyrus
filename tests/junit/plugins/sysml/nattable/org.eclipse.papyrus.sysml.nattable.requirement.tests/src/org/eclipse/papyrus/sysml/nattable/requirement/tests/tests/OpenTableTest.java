@@ -24,6 +24,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.infra.nattable.common.editor.NatTableEditor;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
+import org.eclipse.papyrus.junit.utils.GenericUtils;
 import org.eclipse.ui.IEditorPart;
 import org.junit.AfterClass;
 import org.junit.Assert;

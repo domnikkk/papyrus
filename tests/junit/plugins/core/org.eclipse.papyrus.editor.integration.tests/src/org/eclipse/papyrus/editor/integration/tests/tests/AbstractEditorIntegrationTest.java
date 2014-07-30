@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.editor.integration.tests.tests;
 
 import org.eclipse.papyrus.editor.integration.tests.Activator;
+import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.osgi.framework.Bundle;
 
 

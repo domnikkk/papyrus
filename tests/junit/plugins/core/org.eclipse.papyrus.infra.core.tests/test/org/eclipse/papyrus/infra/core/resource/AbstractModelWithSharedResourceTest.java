@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource.ModelKind;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

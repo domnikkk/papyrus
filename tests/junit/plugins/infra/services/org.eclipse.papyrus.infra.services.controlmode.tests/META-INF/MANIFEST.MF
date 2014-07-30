@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.106.0",
  org.eclipse.swtbot.eclipse.finder;bundle-version="2.2.1",
  org.eclipse.swtbot.junit4_x;bundle-version="2.2.1",
  org.eclipse.emf.transaction,
- org.eclipse.papyrus.infra.services.resourceloading.preferences;bundle-version="1.0.0"
+ org.eclipse.papyrus.infra.services.resourceloading.preferences;bundle-version="1.0.0",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.infra.services.controlmode.tests,

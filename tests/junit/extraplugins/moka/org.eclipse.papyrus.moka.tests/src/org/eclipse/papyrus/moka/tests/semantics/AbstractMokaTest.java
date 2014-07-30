@@ -25,6 +25,7 @@ import org.eclipse.debug.core.Launch;
 import org.eclipse.papyrus.infra.core.resource.AbstractBaseModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.launch.MokaLaunchDelegate;
 import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;

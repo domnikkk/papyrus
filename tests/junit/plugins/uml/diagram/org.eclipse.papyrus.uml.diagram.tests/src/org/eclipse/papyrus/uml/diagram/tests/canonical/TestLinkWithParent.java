@@ -160,7 +160,7 @@ public abstract class TestLinkWithParent extends TestLink {
 	@Override
 	public void testToManageLink(IElementType sourceType, IElementType targetType, IElementType linkType, IElementType containerType, boolean allowedOntheSame) {
 		installEnvironment(sourceType, targetType);
-		testToCreateALink(linkType);
+		testToCreateALink(linkType,null);
 		testDestroy(linkType);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		testViewDeletion(linkType);
@@ -197,7 +197,7 @@ public abstract class TestLinkWithParent extends TestLink {
 	 */
 
 	@Override
-	public void testToCreateALink(IElementType linkType) {
+	public void testToCreateALink(IElementType linkType, String initialName) {
 		assertEquals(CREATION + INITIALIZATION_TEST, beginDiagramEditPartChildrenSize, getDiagramEditPart().getChildren().size());
 		assertTrue(CREATION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == beginRootSemanticOwnedElementSize);
 		assertTrue(CREATION + INITIALIZATION_TEST, source.getSourceConnections().size() == beginSourceConnectionsSize);
@@ -236,6 +236,7 @@ public abstract class TestLinkWithParent extends TestLink {
 		assertNotNull(DESTROY_DELETION + COMMAND_NULL, command);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
 		assertTrue(DESTROY_DELETION + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		testEnableForDeleteFromModel();
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		assertTrue(DESTROY_DELETION + TEST_THE_EXECUTION, ((Diagram)getRootView()).getEdges().size() == beginRootEdgeSize);
 		assertTrue(DESTROY_DELETION + TEST_THE_EXECUTION, source.getSourceConnections().size() == beginSourceConnectionsSize);

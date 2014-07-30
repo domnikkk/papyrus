@@ -38,6 +38,12 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.DisplayUtils;
+import org.eclipse.papyrus.junit.utils.GenericUtils;
+import org.eclipse.papyrus.junit.utils.ModelExplorerUtils;
+import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
+import org.eclipse.papyrus.junit.utils.ProjectUtils;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.sysml.nattable.requirement.tests.Activator;
 import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 import org.eclipse.papyrus.views.modelexplorer.ModelExplorerView;
@@ -58,7 +64,7 @@ public class TableCreationInSysMLModelTest extends AbstractPapyrusTest {
 
 	@ClassRule
 	public static final HouseKeeper.Static houseKeeper = new HouseKeeper.Static();
-	
+
 	private static Class class_;
 
 	private static Class requirement1;
@@ -113,7 +119,7 @@ public class TableCreationInSysMLModelTest extends AbstractPapyrusTest {
 			@Override
 			public void run() {
 				papyrusEditor = houseKeeper.openPapyrusEditor(file);
-				
+
 				try {
 					TableCreationInSysMLModelTest.view = ModelExplorerUtils.openModelExplorerView();
 				} catch (PartInitException e) {

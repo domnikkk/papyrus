@@ -30,6 +30,10 @@ import org.eclipse.papyrus.infra.nattable.model.editor.customeditors.CustomNatta
 import org.eclipse.papyrus.infra.nattable.model.editor.customeditors.CustomNattabletesterEditor;
 import org.eclipse.papyrus.infra.nattable.model.editor.tests.Activator;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.EditorUtils;
+import org.eclipse.papyrus.junit.utils.GenericUtils;
+import org.eclipse.papyrus.junit.utils.PapyrusProjectUtils;
+import org.eclipse.papyrus.junit.utils.ProjectUtils;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.junit.After;

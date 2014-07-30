@@ -19,6 +19,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.papyrus.infra.emf.readonly.tests.PapyrusModelSetFixture;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.rules.JavaResource;
+import org.eclipse.papyrus.junit.utils.rules.ProjectFixture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

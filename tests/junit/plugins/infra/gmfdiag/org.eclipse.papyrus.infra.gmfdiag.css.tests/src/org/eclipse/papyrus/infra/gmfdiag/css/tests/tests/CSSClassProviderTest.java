@@ -31,6 +31,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.provider.CSSClassContentProvider;
 import org.eclipse.papyrus.infra.gmfdiag.css.tests.Activator;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

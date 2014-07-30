@@ -34,7 +34,7 @@ import org.eclipse.papyrus.infra.services.markerlistener.MarkersMonitorService;
 import org.eclipse.papyrus.infra.services.validation.EcoreDiagnostician;
 import org.eclipse.papyrus.infra.services.validation.commands.ValidateDelMarkersFromModelCommand;
 import org.eclipse.papyrus.infra.services.validation.commands.ValidateModelCommand;
-import org.eclipse.papyrus.junit.utils.rules.MemoryLeakRule;
+import org.eclipse.papyrus.junit.framework.classification.rules.MemoryLeakRule;
 import org.eclipse.ui.PartInitException;
 import org.junit.After;
 import org.junit.Before;

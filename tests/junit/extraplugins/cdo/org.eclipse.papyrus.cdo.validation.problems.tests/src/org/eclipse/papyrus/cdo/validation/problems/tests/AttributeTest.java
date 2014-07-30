@@ -14,7 +14,6 @@ package org.eclipse.papyrus.cdo.validation.problems.tests;
 import java.util.Map;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.cdo.validation.problems.ProblemsFactory;

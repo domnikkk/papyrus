@@ -81,6 +81,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.papyrus.uml.diagram.common.command.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.uml.diagram.common.commands.CreateUMLModelCommand;
 import org.eclipse.papyrus.uml.diagram.common.part.UmlGmfDiagramEditor;
@@ -109,7 +110,7 @@ public abstract class AbstractPapyrusTestCase extends AbstractPapyrusTest {
 
 	@Rule
 	public final HouseKeeper houseKeeper = new HouseKeeper();
-	
+
 	protected PapyrusMultiDiagramEditor papyrusEditor;
 
 	protected DiResourceSet diResourceSet;

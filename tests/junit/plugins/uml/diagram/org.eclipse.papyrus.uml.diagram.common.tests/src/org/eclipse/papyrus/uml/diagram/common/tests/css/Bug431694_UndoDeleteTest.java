@@ -26,8 +26,9 @@ import org.eclipse.gmf.runtime.notation.GradientStyle;
 import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
-import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 import org.eclipse.papyrus.infra.gmfdiag.css.helper.CSSHelper;
+import org.eclipse.papyrus.junit.utils.DiagramUtils;
+import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
 import org.eclipse.papyrus.uml.diagram.tests.canonical.AbstractPapyrusTestCase;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Package;
@@ -150,7 +151,7 @@ public class Bug431694_UndoDeleteTest extends AbstractEditorTest {
 		// default style: papyrus theme
 		Assert.assertEquals("Invalid Fill color (Default): " + DiagramUtils.integerToRGBString(classNamedStyleFontView.getFillColor()), DiagramUtils.rgb(195, 215, 221), classNamedStyleFontView.getFillColor()); // Papyrus Theme =
 		Assert.assertEquals("Gradient should be default (vertical)", classNamedStyleFontView.getGradient().getGradientStyle(), GradientStyle.VERTICAL); // Papyrus Theme =
-		Assert.assertEquals("Invalid Gradient Color (Default)", DiagramUtils.rgb(255, 255, 255), classNamedStyleFontView.getGradient().getGradientColor1()); // Papyrus Theme = 
+		Assert.assertEquals("Invalid Gradient Color (Default)", DiagramUtils.rgb(255, 255, 255), classNamedStyleFontView.getGradient().getGradientColor1()); // Papyrus Theme =
 
 		// named style: font color is white
 		Assert.assertEquals("Invalid Font Color", DiagramUtils.rgb(255, 255, 255), classNamedStyleFontView.getFontColor()); // White font by the named style
@@ -184,6 +185,7 @@ public class Bug431694_UndoDeleteTest extends AbstractEditorTest {
 	protected void executeOnUIThread(final Command command) {
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				execute(command);
 			}
@@ -194,6 +196,7 @@ public class Bug431694_UndoDeleteTest extends AbstractEditorTest {
 	protected void undoOnUIThread() {
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				undo();
 			}
@@ -204,6 +207,7 @@ public class Bug431694_UndoDeleteTest extends AbstractEditorTest {
 	protected void redoOnUIThread() {
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				redo();
 			}

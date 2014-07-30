@@ -45,6 +45,10 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.core.resource.additional.AdditionalResourcesModel;
 import org.eclipse.papyrus.infra.core.utils.TransactionHelper;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.ModelUtils;
+import org.eclipse.papyrus.junit.utils.resources.EcoreModel;
+import org.eclipse.papyrus.junit.utils.resources.WorkspaceModificationAssertion;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -317,9 +321,9 @@ public class ModelSetTest extends AbstractPapyrusTest {
 				thing.getEStructuralFeatures().add(reference);
 			}
 		});
-		
+
 		// We need this referenced model to be writable in order to save it
-		ModelUtils.makeReferencedModelsWritable(mngr, modelURI2 );
+		ModelUtils.makeReferencedModelsWritable(mngr, modelURI2);
 		mods.save(mngr);
 
 		assertThat("workspace resource not created", modelFile1.exists(), is(true));

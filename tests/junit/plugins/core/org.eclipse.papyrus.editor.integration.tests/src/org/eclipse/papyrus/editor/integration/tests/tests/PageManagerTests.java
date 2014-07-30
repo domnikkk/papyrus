@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 433371
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.editor.integration.tests.tests;
 
@@ -47,10 +47,10 @@ import org.eclipse.papyrus.infra.core.services.ExtensionServicesRegistry;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.DiResourceSet;
-import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
+import org.eclipse.papyrus.junit.utils.EditorUtils;
 import org.eclipse.papyrus.uml.diagram.clazz.CreateClassDiagramCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.UmlClassDiagramForMultiEditor;
 import org.eclipse.papyrus.uml.diagram.common.commands.CreateUMLModelCommand;
@@ -313,10 +313,10 @@ public class PageManagerTests extends AbstractEditorIntegrationTest {
 		initModel("bug433371", "delete_sash_page", getBundle());
 		ModelSet modelSet = getModelSet();
 		final Diagram diagram = (Diagram)NotationUtils.getNotationModel(modelSet).getResource().getContents().get(1);
-		
+
 		IPageManager pageManager = editor.getServicesRegistry().getService(IPageManager.class);
 		pageManager.selectPage(diagram); // Make sure the one we want deleted is active
-		
+
 		testPageDeletion(diagram.getElement(), diagram, UmlSequenceDiagramForMultiEditor.class);
 	}
 

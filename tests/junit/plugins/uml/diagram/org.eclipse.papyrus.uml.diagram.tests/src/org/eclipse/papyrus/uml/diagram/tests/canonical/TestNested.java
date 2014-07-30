@@ -47,12 +47,12 @@ public abstract class TestNested extends org.eclipse.papyrus.uml.diagram.tests.c
 		ListCompartmentEditPart compartment = null;
 		int index = 0;
 		while(compartment == null && index < getChildEditPart().getChildren().size()) {
-			if((getChildEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getChildEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) {
+			if((getChildEditPart().getChildren().get(index)) instanceof ListCompartmentEditPart && (((View)((ListCompartmentEditPart)(getChildEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) { //$NON-NLS-1$
 				compartment = (ListCompartmentEditPart)(getChildEditPart().getChildren().get(index));
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		//CREATION
 		assertTrue(CREATION + INITIALIZATION_TEST, compartment.getChildren().size() == 0);
 		assertTrue(CREATION + INITIALIZATION_TEST, getRootSemanticModelchild().getOwnedElements().size() == 0);
@@ -60,14 +60,14 @@ public abstract class TestNested extends org.eclipse.papyrus.uml.diagram.tests.c
 		Command command = compartment.getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		assertTrue(CREATION + TEST_THE_EXECUTION, compartment.getChildren().size() == 1);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		assertTrue(CREATION + TEST_THE_UNDO, compartment.getChildren().size() == 0);
 		assertTrue(CREATION + TEST_THE_UNDO, ((Element)((View)getChildEditPart().getModel()).getElement()).getOwnedElements().size() == 0);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
-		assertTrue("CREATION: " + TEST_THE_REDO, compartment.getChildren().size() == 1);
+		assertTrue("CREATION: " + TEST_THE_REDO, compartment.getChildren().size() == 1); //$NON-NLS-1$
 	}
 
 	/**
@@ -83,13 +83,13 @@ public abstract class TestNested extends org.eclipse.papyrus.uml.diagram.tests.c
 		int index = 0;
 		while(compartment == null && index < getTopEditPart().getChildren().size()) {
 			if((getTopEditPart().getChildren().get(index)) instanceof ResizableCompartmentEditPart) {
-				if((((View)((ResizableCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) {
+				if((((View)((ResizableCompartmentEditPart)(getTopEditPart().getChildren().get(index))).getModel()).getType().equals("" + containerType))) { //$NON-NLS-1$
 					compartment = (ResizableCompartmentEditPart)(getTopEditPart().getChildren().get(index));
 				}
 			}
 			index++;
 		}
-		assertTrue("Container not found", compartment != null);
+		assertTrue("Container not found", compartment != null); //$NON-NLS-1$
 		//CREATION
 		assertTrue(CREATION + INITIALIZATION_TEST, compartment.getChildren().size() == 0);
 		assertTrue(CREATION + INITIALIZATION_TEST, getRootSemanticModel().getOwnedElements().size() == 0);
@@ -97,14 +97,14 @@ public abstract class TestNested extends org.eclipse.papyrus.uml.diagram.tests.c
 		Command command = compartment.getCommand(requestcreation);
 		assertNotNull(CREATION + COMMAND_NULL, command);
 		assertTrue(CREATION + TEST_IF_THE_COMMAND_IS_CREATED, command != UnexecutableCommand.INSTANCE);
-		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true);
+		assertTrue("CREATION: " + TEST_IF_THE_COMMAND_CAN_BE_EXECUTED, command.canExecute() == true); //$NON-NLS-1$
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().execute(command);
 		assertTrue(CREATION + TEST_THE_EXECUTION, compartment.getChildren().size() == 1);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().undo();
 		assertTrue(CREATION + TEST_THE_UNDO, compartment.getChildren().size() == 0);
 		assertTrue(CREATION + TEST_THE_UNDO, ((Element)((View)getTopEditPart().getModel()).getElement()).getOwnedElements().size() == 0);
 		diagramEditor.getDiagramEditDomain().getDiagramCommandStack().redo();
-		assertTrue("CREATION: " + TEST_THE_REDO, compartment.getChildren().size() == 1);
+		assertTrue("CREATION: " + TEST_THE_REDO, compartment.getChildren().size() == 1); //$NON-NLS-1$
 		childNode = (GraphicalEditPart)compartment.getChildren().get(0);
 	}
 
