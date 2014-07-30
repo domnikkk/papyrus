@@ -18,8 +18,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.AbstractExecutorService;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
@@ -63,6 +65,72 @@ public class UIUtil {
 	 */
 	public static IMemento createLocalMemento() {
 		return LocalMemento.createMemento("__anonymous__", null); //$NON-NLS-1$
+	}
+
+	/**
+	 * Synchronously invokes a {@code callable} on the given {@code display}'s thread.
+	 * 
+	 * @param display
+	 *        a display
+	 * @param callable
+	 *        a callable to invoke
+	 * @return the callable's result (which, because this method is synchronous, will be ready)
+	 * 
+	 * @see #asyncCall(Display, Callable)
+	 * @see #createUIExecutor(Display)
+	 */
+	public static <V> Future<V> syncCall(Display display, Callable<V> callable) {
+		final FutureTask<V> result = new FutureTask<V>(callable);
+		display.syncExec(result);
+		return result;
+	}
+
+	/**
+	 * Synchronously invokes a {@code callable} on the default display thread.
+	 * 
+	 * @param callable
+	 *        a callable to invoke
+	 * @return the callable's result (which, because this method is synchronous, will be ready)
+	 * 
+	 * @see #syncCall(Display, Callable)
+	 * @see #asyncCall(Callable)
+	 * @see #createUIExecutor(Display)
+	 */
+	public static <V> Future<V> syncCall(Callable<V> callable) {
+		return syncCall(Display.getDefault(), callable);
+	}
+
+	/**
+	 * Asynchronously invokes a {@code callable} on the given {@code display}'s thread.
+	 * 
+	 * @param display
+	 *        a display
+	 * @param callable
+	 *        a callable to invoke
+	 * @return the callable's result
+	 * 
+	 * @see #syncCall(Display, Callable)
+	 * @see #createUIExecutor(Display)
+	 */
+	public static <V> Future<V> asyncCall(Display display, Callable<V> callable) {
+		final FutureTask<V> result = new FutureTask<V>(callable);
+		display.asyncExec(result);
+		return result;
+	}
+
+	/**
+	 * Asynchronously invokes a {@code callable} on the default display thread.
+	 * 
+	 * @param callable
+	 *        a callable to invoke
+	 * @return the callable's result
+	 * 
+	 * @see #asyncCall(Display, Callable)
+	 * @see #syncCall(Callable)
+	 * @see #createUIExecutor(Display)
+	 */
+	public static <V> Future<V> asyncCall(Callable<V> callable) {
+		return asyncCall(Display.getDefault(), callable);
 	}
 
 	//

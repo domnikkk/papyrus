@@ -16,6 +16,7 @@ package org.eclipse.papyrus.infra.core.services;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.concurrent.ConcurrentMap;
 
 import org.eclipse.core.resources.IResource;
@@ -27,28 +28,20 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.editor.IReloadableEditor;
 import org.eclipse.papyrus.infra.core.lifecycleevents.DoSaveEvent;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ILifeCycleEventsProvider;
-import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveAndDirtyService;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveEventListener;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IPartListener;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
@@ -120,14 +113,15 @@ public class ResourceUpdateService implements IService, IPartListener {
 	}
 
 	protected void closeEditor() {
-		closeEditor(false, false);
+		closeEditor(Collections.<Resource>emptyList(), false);
 	}
 
-	protected void closeEditor(final boolean save, final boolean reopen) {
+	protected void closeEditor(final Collection<? extends Resource> triggeringResources, final boolean reopen) {
 		try {
 			if(!reopen) {
 				registry.remove(SaveLayoutBeforeClose.class.getName());
 			}
+			
 			final IMultiDiagramEditor editor = registry.getService(IMultiDiagramEditor.class);
 			if(editor != null) {
 				final IWorkbenchPartSite site = editor.getSite();
@@ -142,21 +136,11 @@ public class ResourceUpdateService implements IService, IPartListener {
 						monitor = SubMonitor.convert(monitor, IProgressMonitor.UNKNOWN);
 
 						try {
-							if(reopen) {
-								try {
-									IReloadableEditor.Adapter.getAdapter(editor).reloadEditor(save);
-								} catch (CoreException e) {
-									result = e.getStatus();
-								}
-							} else {
-								// Just close it
-
-								if(save) {
-									editor.doSave(new NullProgressMonitor());
-								}
-
-								final IWorkbenchPage page = editor.getSite().getPage();
-								page.closeEditor(editor, save);
+							IReloadableEditor.ReloadReason reason = reopen ? IReloadableEditor.ReloadReason.RESOURCES_CHANGED : IReloadableEditor.ReloadReason.RESOURCES_DELETED;
+							try {
+								IReloadableEditor.Adapter.getAdapter(editor).reloadEditor(triggeringResources, reason, IReloadableEditor.DirtyPolicy.getDefault());
+							} catch (CoreException e) {
+								result = e.getStatus();
 							}
 						} finally {
 							monitor.done();
@@ -174,133 +158,17 @@ public class ResourceUpdateService implements IService, IPartListener {
 					progressService.schedule(closeEditorJob);
 				}
 			}
-
 		} catch (ServiceException ex) {
 			//Nothing
 		}
 	}
 
 	protected void handleResourcesRemoved(Collection<Resource> emfResources) {
-		try {
-			if(!registry.getService(ISaveAndDirtyService.class).isDirty()) {
-				closeEditor();
-				return;
-			}
-
-		} catch (ServiceException ex) {
-			//Ignored
-		}
-
-		if(isAllReadOnly(emfResources)) {
-			//Only read-only models have changed. We (most likely) won't save them within this current editor. As they are already loaded, we can just continue.
-			Display.getDefault().syncExec(new Runnable() {
-
-				@Override
-				public void run() {
-					Shell parentShell = Display.getCurrent().getActiveShell();
-					MessageDialog dialog = new MessageDialog(parentShell, "Resources changed", null, "Some resources used by '" + modelSet.getURIWithoutExtension().lastSegment() + "' have been removed. Note: all these resources are loaded in read-only mode and won't be overriden if you choose to save. Unsaved changes will be lost.", MessageDialog.QUESTION, new String[]{ "Close editor", "Save and close", "Ignore" }, 1);
-
-					switch(dialog.open()) {
-					case 0: //Close editor
-						closeEditor(false, false);
-						break;
-					case 1: //Save & close
-						closeEditor(true, false);
-						break;
-					case 2: //Ignore;
-						break; //Do nothing
-					}
-
-				}
-			});
-
-		} else {
-			//At least one read-write resource has changed. Potential conflicts.
-			Display.getDefault().syncExec(new Runnable() {
-
-				@Override
-				public void run() {
-					if(MessageDialog.openConfirm(Display.getCurrent().getActiveShell(), "Resources removed", "Some resources used by '" + modelSet.getURIWithoutExtension().lastSegment() + "' have been removed. Do you wish to close the current editor? Unsaved changes will be lost.")) {
-						closeEditor();
-					}
-				}
-			});
-		}
-
-		return;
+		closeEditor(emfResources, false);
 	}
-
-	protected boolean isAllReadOnly(Collection<Resource> resources) {
-		for(Resource resource : resources) {
-			EditingDomain domain = TransactionUtil.getEditingDomain(resource);
-			if(domain == null) {
-				return false;
-			}
-			if(!domain.isReadOnly(resource)) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	//ID for Close (or reopen) without save
-	protected static final int CLOSE_WITHOUT_SAVE = 0;
-
-	//ID for Save and close (or reopen)
-	protected static final int SAVE_AND_CLOSE = 1;
-
-	//ID for ignoring the modifications
-	protected static final int IGNORE = 2;
 
 	protected void handleResourceChanged(Collection<Resource> emfResources) {
-		try {
-			if(!registry.getService(ISaveAndDirtyService.class).isDirty()) {
-				closeEditor(false, true);
-				return;
-			}
-		} catch (ServiceException ex) {
-			//Ignored
-		}
-
-		boolean allReadOnly = isAllReadOnly(emfResources);
-
-		if(allReadOnly) {
-			//Only read-only models have changed. We (most likely) won't save them within this current editor. As they are already loaded, we can just continue.
-			Display.getDefault().syncExec(new Runnable() {
-
-				@Override
-				public void run() {
-					Shell parentShell = Display.getCurrent().getActiveShell();
-					MessageDialog dialog = new MessageDialog(parentShell, "Resources changed", null, "Some resources used by '" + modelSet.getURIWithoutExtension().lastSegment() + "' have changed. Note: all these resources are loaded in read-only mode and won't be overriden if you choose to save. Unsaved changes will be lost.", MessageDialog.WARNING, new String[]{ "Reopen editor", "Save and reopen", "Ignore" }, 1);
-
-					switch(dialog.open()) {
-					case CLOSE_WITHOUT_SAVE:
-						closeEditor(false, true);
-						break;
-					case SAVE_AND_CLOSE:
-						closeEditor(true, true);
-						break;
-					case IGNORE:
-						break; //Do nothing
-					}
-
-				}
-			});
-
-		} else {
-			//At least one read-write resource has changed. Potential conflicts.
-			Display.getDefault().syncExec(new Runnable() {
-
-				@Override
-				public void run() {
-					final Shell parentShell = Display.getCurrent().getActiveShell();
-					if(MessageDialog.openConfirm(parentShell, "Resources changed", "Some resources used by the model '" + modelSet.getURIWithoutExtension().lastSegment() + "' have changed. Do you want to reopen the current editor? Unsaved changes will be lost.")) {
-						closeEditor(false, true);
-					}
-				}
-			});
-		}
+		closeEditor(emfResources, true);
 	}
 
 	//Copied from org.eclipse.emf.ecore.presentation.EcoreEditor
