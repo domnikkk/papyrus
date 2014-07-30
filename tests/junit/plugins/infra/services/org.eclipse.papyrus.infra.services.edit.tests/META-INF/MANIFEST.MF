@@ -16,4 +16,12 @@ Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.tests
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.eclipse.papyrus.infra.services.edit.tests,
+ org.eclipse.papyrus.infra.services.edit.tests.commands,
+ org.eclipse.papyrus.infra.services.edit.tests.context,
+ org.eclipse.papyrus.infra.services.edit.tests.edit.advice,
+ org.eclipse.papyrus.infra.services.edit.tests.edit.helper,
+ org.eclipse.papyrus.infra.services.edit.tests.service,
+ org.eclipse.papyrus.infra.services.edit.tests.suites,
+ org.eclipse.papyrus.infra.services.edit.tests.utils
 

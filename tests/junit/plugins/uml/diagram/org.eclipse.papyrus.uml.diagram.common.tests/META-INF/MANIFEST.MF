@@ -25,4 +25,7 @@ Bundle-Vendor: %Bundle-Vendor
 Bundle-Name: %Bundle-Name
 Bundle-Localization: plugin
 Bundle-Description: This plugin provides tests for the papyrus plugin UML Diagram Common
-Export-Package: org.eclipse.papyrus.uml.diagram.common.tests.tests
+Export-Package: org.eclipse.papyrus.uml.diagram.common.tests,
+ org.eclipse.papyrus.uml.diagram.common.tests.css,
+ org.eclipse.papyrus.uml.diagram.common.tests.parser,
+ org.eclipse.papyrus.uml.diagram.common.tests.tests

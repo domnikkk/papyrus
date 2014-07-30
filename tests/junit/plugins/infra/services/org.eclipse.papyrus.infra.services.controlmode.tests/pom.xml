@@ -9,7 +9,7 @@
     <relativePath>../../../../../../releng/top-pom-main-tests.xml</relativePath>
   </parent>
   <groupId>org.eclipse.papyrus</groupId>
-  <artifactId>org.eclipse.papyrus.infra.nattable.views.editor.tests</artifactId>
+  <artifactId>org.eclipse.papyrus.infra.services.controlmode.tests</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-test-plugin</packaging>
 </project>

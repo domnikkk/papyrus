@@ -3,12 +3,23 @@ Require-Bundle: org.eclipse.ui.editors;bundle-version="3.8.0",
  org.eclipse.jface.text;bundle-version="3.8.0",
  org.eclipse.ui.ide;bundle-version="3.8.0",
  org.eclipse.core.resources;bundle-version="3.8.0",
- org.junit;bundle-version="4.10.0"
+ org.junit;bundle-version="4.10.0",
+ org.eclipse.papyrus.infra.core.sasheditor;bundle-version="1.0.0",
+ org.eclipse.ui;bundle-version="3.106.0",
+ org.eclipse.ui.workbench.texteditor;bundle-version="3.9.0",
+ org.eclipse.core.runtime;bundle-version="3.10.0"
 Export-Package: org.eclipse.papyrus.infra.core.sasheditor.contentprovider,
- org.eclipse.papyrus.infra.core.sasheditor.pagesmodel
+ org.eclipse.papyrus.infra.core.sasheditor.contentprovider.simple,
+ org.eclipse.papyrus.infra.core.sasheditor.editor,
+ org.eclipse.papyrus.infra.core.sasheditor.internal,
+ org.eclipse.papyrus.infra.core.sasheditor.pagesmodel,
+ org.eclipse.papyrus.infra.core.sasheditor.tests,
+ org.eclipse.papyrus.infra.core.sasheditor.tests.texteditor,
+ org.eclipse.papyrus.infra.core.sasheditor.tests.utils,
+ org.eclipse.papyrus.infra.core.sasheditor.tests.utils.memoryleak,
+ org.eclipse.papyrus.infra.core.sasheditor.tests.utils.trace,
+ org.eclipse.papyrus.infra.core.sasheditor.utils
 Bundle-Vendor: %providerName
-Fragment-Host: org.eclipse.papyrus.infra.core.sasheditor;bundle-versio
- n="0.10.0"
 Bundle-Version: 1.0.0.qualifier
 Bundle-Name: %pluginName
 Bundle-Localization: fragment

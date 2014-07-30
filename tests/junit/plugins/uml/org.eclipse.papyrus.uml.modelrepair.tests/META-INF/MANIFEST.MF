@@ -10,3 +10,5 @@ Bundle-Localization: fragment
 Require-Bundle: org.junit;bundle-version="4.10.0",
  org.eclipse.papyrus.junit.framework;bundle-version="1.0.0",
  org.eclipse.papyrus.junit.utils;bundle-version="1.0.0"
+Export-Package: org.eclipse.papyrus.uml.modelrepair.internal.stereotypes,
+ org.eclipse.papyrus.uml.modelrepair.tests

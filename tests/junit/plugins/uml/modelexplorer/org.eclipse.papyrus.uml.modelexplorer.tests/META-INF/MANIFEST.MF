@@ -25,7 +25,7 @@ Export-Package: org.eclipse.papyrus.uml.modelexplorer.tests,
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Name: %pluginNam
+Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.uml.modelexplorer.tests.Activato

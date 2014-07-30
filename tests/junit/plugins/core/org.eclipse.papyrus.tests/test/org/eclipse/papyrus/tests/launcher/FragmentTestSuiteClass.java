@@ -42,6 +42,7 @@ public class FragmentTestSuiteClass implements ITestSuiteClass {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Class<?> getMainTestSuiteClass() {
 		Bundle bundle = Platform.getBundle(hostBundleId);
 		if(bundle == null) {

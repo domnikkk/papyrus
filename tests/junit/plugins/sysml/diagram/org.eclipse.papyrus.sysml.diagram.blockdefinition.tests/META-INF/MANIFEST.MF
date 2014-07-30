@@ -12,4 +12,5 @@ Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.sysml.diagram.blockdefinition
  .tests
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.eclipse.papyrus.sysml.diagram.blockdefinition.tests.suites
 

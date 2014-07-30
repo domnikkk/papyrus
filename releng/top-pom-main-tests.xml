@@ -8,12 +8,11 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.build.feature</module>
+		<module>../tests/junit/plugins/core/org.eclipse.papyrus.tests</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.core.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.nattable.feature</module>
-	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.queries.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.infra.services.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.sysml.diagram.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.sysml.feature</module>
@@ -23,7 +22,6 @@
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.nattable.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.uml.tools.feature</module>
 	    <module>../features/papyrus-tests-features/org.eclipse.papyrus.tests.views.feature</module>
-		<module>../tests/junit/plugins/core/org.eclipse.papyrus.tests</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.editor.integration.tests</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.di.tests</module>
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.core.sasheditor.tests</module>
@@ -31,13 +29,15 @@
 		<module>../tests/junit/plugins/core/org.eclipse.papyrus.infra.extendedtypes.tests</module>
 		<module>../tests/junit/plugins/customization/org.eclipse.papyrus.customization.properties.tests</module>
 		<module>../tests/junit/plugins/developer/org.eclipse.papyrus.bundles.tests</module>
+		<module>../tests/junit/plugins/infra/org.eclipse.papyrus.infra.tools.tests</module>
 		<module>../tests/junit/plugins/infra/emf/org.eclipse.papyrus.infra.emf.readonly.tests</module>
 		<module>../tests/junit/plugins/infra/emf/org.eclipse.papyrus.infra.emf.tests</module>
 		<module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.commands.tests</module>
 		<module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.common.tests</module>
 		<module>../tests/junit/plugins/infra/gmfdiag/org.eclipse.papyrus.infra.gmfdiag.css.tests</module>
 		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.model.editor.tests</module>
-		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.editor.tests</module>
+		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.tests</module>
+		<module>../tests/junit/plugins/infra/nattable/org.eclipse.papyrus.infra.nattable.views.tests</module>
 		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.edit.tests</module>
 		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.labelprovider.tests</module>
 		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.resourceloading.tests</module>
@@ -48,30 +48,36 @@
 		<module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.parametric.tests</module>
 		<module>../tests/junit/plugins/sysml/diagram/org.eclipse.papyrus.sysml.diagram.requirement.tests</module>
 		<module>../tests/junit/plugins/sysml/nattable/org.eclipse.papyrus.sysml.nattable.requirement.tests</module>
+		<module>../tests/junit/plugins/sysml/nattable/org.eclipse.papyrus.sysml.nattable.allocation.tests</module>
 		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.modelexplorer.tests</module>
 		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.service.types.tests</module>
 		<module>../tests/junit/plugins/sysml/org.eclipse.papyrus.sysml.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.activity.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.clazz.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.statemachine.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.stereotypeproperty.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.common.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.component.tests</module>
+		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.communication.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.composite.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.deployment.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.dnd.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.interactionoverview.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.profile.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.sequence.tests</module>
-		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.stereotypeproperty.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.timing.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.usecase.tests</module>
 		<module>../tests/junit/plugins/uml/diagram/org.eclipse.papyrus.uml.diagram.wizards.tests</module>
 		<module>../tests/junit/plugins/uml/modelexplorer/org.eclipse.papyrus.uml.modelexplorer.tests</module>
 		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.tests</module>
+		<module>../tests/junit/plugins/uml/nattable/org.eclipse.papyrus.uml.nattable.generic.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.search.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.modelrepair.tests</module>
 		<module>../tests/junit/plugins/uml/org.eclipse.papyrus.uml.service.types.tests</module>
+		<module>../tests/junit/plugins/infra/services/org.eclipse.papyrus.infra.services.controlmode.tests</module>
 		<module>../tests/junit/plugins/uml/tools/org.eclipse.papyrus.uml.tools.tests</module>
+		<module>../tests/junit/plugins/uml/tools/org.eclipse.papyrus.uml.tools.utils.tests</module>
 		<module>../tests/junit/plugins/views/modelexplorer/org.eclipse.papyrus.views.modelexplorer.tests</module>
 	</modules>
 	<properties>
@@ -98,11 +104,6 @@
 			<id>emf</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/emf/updates/</url>
-		</repository>
-		<repository>
-			<id>emf-cdo</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/cdo/drops/S20140312-0256</url>
 		</repository>
 		<repository>
 			<id>emf-compare</id>
@@ -214,6 +215,11 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/S-3.6.0M6-20140310170306/repository/</url>
 		</repository>
+		<repository>
+			<id>swtbot</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/technology/swtbot/snapshots</url>
+		</repository>
 	</repositories>
 	<build>
 		<plugins>
@@ -269,21 +275,10 @@
 					<testSuite>org.eclipse.papyrus.tests</testSuite>
 					<testClass>org.eclipse.papyrus.tests.AllTests</testClass>
 					<useUIHarness>true</useUIHarness>
-					<!-- testRuntime>p2Installed</testRuntime-->
-					<argLine>-Xms512m -Xmx4096m -XX:MaxPermSize=512M</argLine>
-					<product>org.eclipse.platform.ide</product>
-					<dependencies>
-			            <dependency>
-			              <type>p2-installable-unit</type>
-			              <artifactId>org.eclipse.sdk.feature.group</artifactId>
-			              <version>${platform-version}</version>
-			            </dependency>
-			            <dependency>
-			              <type>p2-installable-unit</type>
-			              <artifactId>org.eclipse.papyrus.sdk.feature.feature.group</artifactId>
-			              <version>0.0.0</version>
-			            </dependency>
-			          </dependencies>
+					<useUIThread>true</useUIThread>
+					<testFailureIgnore>true</testFailureIgnore>
+					<argLine>-Xms512m -Xmx20486m -XX:MaxPermSize=512M</argLine>
+					<product>org.eclipse.sdk.ide</product>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -58,7 +58,7 @@ public class AllTests {
 
 		/* core */
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.core.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.core.tests.AllTests"));
-		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.core.sasheditor.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.core.sasheditor.tests.AllTests"));
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.infra.core.sasheditor.tests.AllTests.class));
 		suiteClasses.add(new FragmentTestSuiteClass("org.eclipse.papyrus.infra.core.sasheditor.di", "org.eclipse.papyrus.infra.core.sasheditor.di.tests.AllTests"));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.infra.services.resourceloading.Activator.PLUGIN_ID, "org.eclipse.papyrus.infra.services.resourceloading.tests.AllTests"));
 
@@ -95,7 +95,7 @@ public class AllTests {
 		}
 
 		/* uml */
-		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.uml.diagram.common.Activator.ID, "org.eclipse.papyrus.uml.diagram.common.tests.AllTests"));
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.diagram.common.tests.tests.AllTests.class));
 		suiteClasses.add(new FragmentTestSuiteClass(org.eclipse.papyrus.uml.service.types.Activator.PLUGIN_ID, "org.eclipse.papyrus.uml.service.types.tests.suites.AllTests"));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.modelexplorer.tests.AllTests.class));
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.uml.diagram.dnd.tests.tests.AllTests.class));
@@ -150,16 +150,11 @@ public class AllTests {
 			super(clazz, getSuites());
 
 			for(String arg : Platform.getApplicationArgs()) {
-				System.out.println("Arg = " + arg);
 				if(arg.contains("-testConfig=")) {
-					System.out.println("Found testConfig: " + arg);
 					String configName = arg.substring("-testConfig=".length());
-					System.out.println("ConfigName = " + configName);
 					Set<TestCategory> testsConfig = availableConfigs.get(configName);
 					if(testsConfig != null) {
 						ClassificationConfig.setTestsConfiguration(testsConfig);
-					} else {
-						System.out.println("Invalid configName");
 					}
 					break;
 				}

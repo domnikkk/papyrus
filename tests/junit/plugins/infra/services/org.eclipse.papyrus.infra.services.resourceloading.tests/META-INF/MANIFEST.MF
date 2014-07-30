@@ -14,4 +14,7 @@ Bundle-Localization: fragment
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.infra.services.resourceloading.tests
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.eclipse.papyrus.infra.services.resourceloading.tests,
+ org.eclipse.papyrus.infra.services.resourceloading.tests.testModel1,
+ org.eclipse.papyrus.infra.services.resourceloading.tests.testModel2
 

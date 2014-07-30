@@ -30,4 +30,10 @@ Bundle-Activator: org.eclipse.papyrus.sysml.modelexplorer.tests.Activato
  r
 Bundle-SymbolicName: org.eclipse.papyrus.sysml.modelexplorer.tests
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.eclipse.papyrus.sysml.modelexplorer.tests,
+ org.eclipse.papyrus.sysml.modelexplorer.tests.common,
+ org.eclipse.papyrus.sysml.modelexplorer.tests.copypaste,
+ org.eclipse.papyrus.sysml.modelexplorer.tests.dragdrop,
+ org.eclipse.papyrus.sysml.modelexplorer.tests.suites,
+ org.eclipse.papyrus.sysml.modelexplorer.tests.utils
 

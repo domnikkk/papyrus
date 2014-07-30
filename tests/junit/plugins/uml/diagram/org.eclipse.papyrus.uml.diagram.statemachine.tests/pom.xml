@@ -6,10 +6,10 @@
     <groupId>org.eclipse.papyrus</groupId>
     <artifactId>org.eclipse.papyrus</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../../../releng/top-pom-main-tests.xml</relativePath>
+    <relativePath>../../../../../../releng/top-pom-main-tests.xml</relativePath>
   </parent>
   <groupId>org.eclipse.papyrus</groupId>
-  <artifactId>org.eclipse.papyrus.tests.build.feature</artifactId>
+  <artifactId>org.eclipse.papyrus.uml.diagram.statemachine.tests</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>eclipse-feature</packaging>
+  <packaging>eclipse-test-plugin</packaging>
 </project>
