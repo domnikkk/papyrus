@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST.
+ * Copyright (c) 2009, 2014 CEA LIST and others.
  *
  *    
  * All rights reserved. This program and the accompanying materials
@@ -10,11 +10,13 @@
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *  Nizar GUEDIDI (CEA LIST) - update getUMLElement()
+ *  Christian W. Damus (CEA) - bug 440197
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.editpolicies;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,26 +26,30 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.DynamicEObjectImpl;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.core.listenerservice.IPapyrusListener;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.GMFUnsafe;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
 import org.eclipse.papyrus.uml.appearance.helper.AppliedStereotypeHelper;
 import org.eclipse.papyrus.uml.appearance.helper.UMLVisualInformationPapyrusConstant;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
+import org.eclipse.papyrus.uml.modelrepair.service.IStereotypeRepairService;
 import org.eclipse.papyrus.uml.tools.listeners.PapyrusStereotypeListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+
+import com.google.common.collect.Lists;
 
 /**
  * Specific edit policy for label displaying stereotypes and their properties
@@ -69,15 +75,55 @@ public abstract class AbstractAppliedStereotypeDisplayEditPolicy extends Graphic
 	 * at the activation of this class
 	 */
 	protected void cleanStereotypeDisplayInEAnnotation() {
+		// Resolve the UML element first, to trigger stereotype repair
+		final Element umlElement = getUMLElement();
+		Collection<String> missingStereotypes = null;
+
 		String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View)getHost().getModel());
 		StringTokenizer strQualifiedName = new StringTokenizer(stereotypesToDisplay, ",");
 		while(strQualifiedName.hasMoreElements()) {
 			String currentStereotype = strQualifiedName.nextToken();
 			// check if current stereotype is applied
-			final Element umlElement = getUMLElement();
+			Stereotype stereotype = umlElement.getAppliedStereotype(currentStereotype);
+			if(stereotype == null) {
+				if(missingStereotypes == null) {
+					missingStereotypes = Lists.newArrayListWithExpectedSize(1);
+				}
+				missingStereotypes.add(currentStereotype);
+			}
+		}
+
+		if(missingStereotypes != null) {
+			final Collection<String> _missingStereotypes = missingStereotypes;
+			Runnable cleanStereotypesOperation = new Runnable() {
+
+				@Override
+				public void run() {
+					doCleanStereotypeDisplay(umlElement, _missingStereotypes);
+				}
+			};
+
+			try {
+				// In case there are stereotypes being repaired, we should postpone cleaning up stereotype display until after
+				// the repair has finished, because the stereotypes we find missing may not be missing, after all
+				IStereotypeRepairService repair = ServiceUtilsForEditPart.getInstance().getService(IStereotypeRepairService.class, getHost());
+				repair.getPostRepairExecutor().execute(cleanStereotypesOperation);
+			} catch (ServiceException e) {
+				// Fine. No service? Then we're not repairing anything, obviously
+				cleanStereotypesOperation.run();
+			}
+		}
+	}
+
+	protected void doCleanStereotypeDisplay(Element umlElement, Collection<String> missingStereotypes) {
+		for(String currentStereotype : missingStereotypes) {
+			// check if current stereotype is applied (stereotype repair may have restored it)
 			Stereotype stereotype = umlElement.getAppliedStereotype(currentStereotype);
 			if(stereotype == null) {
 				removeEAnnotationAboutStereotype(currentStereotype);
+			} else {
+				// The stereotype was repaired, so refresh
+				refreshDisplay();
 			}
 		}
 	}
@@ -183,8 +229,25 @@ public abstract class AbstractAppliedStereotypeDisplayEditPolicy extends Graphic
 								public void run() {
 									if(getView() != null && editingDomain != null) {
 										String presentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(getView());
-										RecordingCommand command = AppliedStereotypeHelper.getRemoveAppliedStereotypeCommand(editingDomain, getView(), stereotypeQN, presentationKind);
-										editingDomain.getCommandStack().execute(command);
+										final RecordingCommand command = AppliedStereotypeHelper.getRemoveAppliedStereotypeCommand(editingDomain, getView(), stereotypeQN, presentationKind);
+
+										// This repair operation shouldn't go on the undo history because the user didn't initiate it.
+										// Also, we don't want to prompt the user for write access to a read-only diagram because it
+										// won't matter whether the change can't be saved: we'll just clean up again the next time
+										try {
+											GMFUnsafe.write(editingDomain, new Runnable() {
+
+												@Override
+												public void run() {
+													command.execute();
+												}
+											});
+										} catch (RollbackException e) {
+											// This really shouldn't happen because it's just too simple a command
+											Activator.log.error(e);
+										} catch (InterruptedException e) {
+											Activator.log.error(e);
+										}
 									}
 								}
 							});

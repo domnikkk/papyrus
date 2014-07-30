@@ -14,6 +14,7 @@ package org.eclipse.papyrus.uml.modelrepair.internal.stereotypes;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.AbstractExecutorService;
 import java.util.concurrent.ExecutorService;
@@ -24,6 +25,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -33,6 +35,7 @@ import org.eclipse.papyrus.uml.modelrepair.service.IStereotypeRepairService;
 import org.eclipse.swt.widgets.Display;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
 
@@ -45,7 +48,7 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 
 	private static final Condition finishedRepairCond = lock.newCondition();
 
-	private static final Set<ModelSet> modelSetsInRepair = Sets.newHashSet();
+	private static final Map<ModelSet, Set<Resource>> modelSetsInRepair = Maps.newIdentityHashMap();
 
 	private static final Set<PostRepairExecutor> pending = Sets.newLinkedHashSet();
 
@@ -104,26 +107,37 @@ public class StereotypeRepairService implements IStereotypeRepairService, IServi
 	static boolean isInRepair(ModelSet modelSet) {
 		lock.lock();
 		try {
-			return modelSetsInRepair.contains(modelSet);
+			return modelSetsInRepair.containsKey(modelSet);
 		} finally {
 			lock.unlock();
 		}
 	}
 
-	static void startedRepairing(ModelSet modelSet) {
+	static void startedRepairing(ModelSet modelSet, Resource resource) {
 		lock.lock();
 		try {
-			modelSetsInRepair.add(modelSet);
+			Set<Resource> resources = modelSetsInRepair.get(modelSet);
+			if(resources == null) {
+				resources = Sets.newIdentityHashSet();
+				modelSetsInRepair.put(modelSet, resources);
+			}
+			resources.add(resource);
 		} finally {
 			lock.unlock();
 		}
 	}
 
-	static void finishedRepairing(ModelSet modelSet) {
+	static void finishedRepairing(ModelSet modelSet, Resource resource) {
 		lock.lock();
 		try {
-			modelSetsInRepair.remove(modelSet);
-			finishedRepairCond.signalAll();
+			Set<Resource> resources = modelSetsInRepair.get(modelSet);
+			if(resources != null) {
+				resources.remove(resource);
+				if(resources.isEmpty()) {
+					modelSetsInRepair.remove(modelSet);
+					finishedRepairCond.signalAll();
+				}
+			}
 		} finally {
 			lock.unlock();
 		}

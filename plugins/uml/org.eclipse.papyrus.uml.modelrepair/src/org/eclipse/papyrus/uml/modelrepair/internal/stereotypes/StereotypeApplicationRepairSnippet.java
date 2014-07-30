@@ -110,10 +110,10 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 		return result;
 	}
 
-	protected void handleResourceLoaded(Resource resource) {
+	protected void handleResourceLoaded(final Resource resource) {
 		final ModelSet modelSet = (ModelSet)resource.getResourceSet();
 
-		StereotypeRepairService.startedRepairing(modelSet);
+		StereotypeRepairService.startedRepairing(modelSet, resource);
 		boolean presented = false;
 
 		try {
@@ -124,15 +124,14 @@ public class StereotypeApplicationRepairSnippet implements IModelSetSnippet {
 				presenter.onPendingDone(new Runnable() {
 
 					public void run() {
-						StereotypeRepairService.finishedRepairing(modelSet);
+						StereotypeRepairService.finishedRepairing(modelSet, resource);
 					}
 				});
+				presented = true;
 			}
-
-			presented = (presenter != null) && presenter.isPending();
 		} finally {
 			if(!presented) {
-				StereotypeRepairService.finishedRepairing(modelSet);
+				StereotypeRepairService.finishedRepairing(modelSet, resource);
 			}
 		}
 	}
