@@ -121,8 +121,12 @@ public class ApplyProfileCommand extends RecordingCommand {
 			// Save version of applied profile if necessary
 			if(saveProfileApplicationVersion) {
 				ProfileApplication profileApplication = umlPackage.getProfileApplication(profile);
+
+				// Get version annotation in case it is a Papyrus profile
 				EAnnotation versionAnnotation = profile.getDefinition().getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
-				profileApplication.getEAnnotations().add(0, EcoreUtil.copy(versionAnnotation));
+				if(versionAnnotation != null) {
+					profileApplication.getEAnnotations().add(0, EcoreUtil.copy(versionAnnotation));
+				}
 			}
 		}
 	}
