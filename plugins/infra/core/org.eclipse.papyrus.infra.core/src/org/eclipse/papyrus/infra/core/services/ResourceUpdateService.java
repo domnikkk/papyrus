@@ -37,6 +37,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.editor.IReloadableEditor;
+import org.eclipse.papyrus.infra.core.editor.IReloadableEditor.DirtyPolicy;
 import org.eclipse.papyrus.infra.core.lifecycleevents.DoSaveEvent;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ILifeCycleEventsProvider;
 import org.eclipse.papyrus.infra.core.lifecycleevents.ISaveEventListener;
@@ -113,7 +114,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 	}
 
 	protected void closeEditor() {
-		closeEditor(Collections.<Resource>emptyList(), false);
+		closeEditor(Collections.<Resource> emptyList(), false);
 	}
 
 	protected void closeEditor(final Collection<? extends Resource> triggeringResources, final boolean reopen) {
@@ -121,7 +122,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 			if(!reopen) {
 				registry.remove(SaveLayoutBeforeClose.class.getName());
 			}
-			
+
 			final IMultiDiagramEditor editor = registry.getService(IMultiDiagramEditor.class);
 			if(editor != null) {
 				final IWorkbenchPartSite site = editor.getSite();
@@ -137,8 +138,21 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 						try {
 							IReloadableEditor.ReloadReason reason = reopen ? IReloadableEditor.ReloadReason.RESOURCES_CHANGED : IReloadableEditor.ReloadReason.RESOURCES_DELETED;
+
+							DirtyPolicy dirtyPolicy = DirtyPolicy.getDefault();
+							if(!reopen && !editor.isDirty()) {
+								// Check whether we're deleting one of our own resources. If so, just close
+								URI principalURI = modelSet.getURIWithoutExtension();
+								for(Resource next : triggeringResources) {
+									if(next.getURI().trimFileExtension().equals(principalURI)) {
+										dirtyPolicy = DirtyPolicy.DO_NOT_SAVE;
+										break;
+									}
+								}
+							}
+
 							try {
-								IReloadableEditor.Adapter.getAdapter(editor).reloadEditor(triggeringResources, reason, IReloadableEditor.DirtyPolicy.getDefault());
+								IReloadableEditor.Adapter.getAdapter(editor).reloadEditor(triggeringResources, reason, dirtyPolicy);
 							} catch (CoreException e) {
 								result = e.getStatus();
 							}

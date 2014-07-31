@@ -21,6 +21,8 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -38,6 +40,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IURIEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.IDE;
@@ -118,9 +121,14 @@ public interface IReloadableEditor {
 			public DirtyPolicy resolve(IEditorPart editor, final Collection<? extends Resource> triggeringResources, final ReloadReason reason) throws CoreException {
 				final boolean dirty = editor.isDirty();
 
-				if(!dirty && reason.shouldReload(triggeringResources)) {
-					// Just re-open it. Simple
-					return DO_NOT_SAVE;
+				if(!dirty) {
+					if(reason.shouldReload(triggeringResources)) {
+						// Just re-load it. Simple
+						return DO_NOT_SAVE;
+					} else if(isPrincipalResourceAffected(editor, triggeringResources)) {
+						// Just close it. Also simple
+						return DO_NOT_SAVE;
+					}
 				}
 
 				final String editorName = getEditorName(editor);
@@ -262,16 +270,59 @@ public interface IReloadableEditor {
 		}
 
 		String getEditorName(IEditorPart editor) {
-			String result = editor.getTitle();
+			ModelSet modelSet = getModelSet(editor);
+			return (modelSet == null) ? editor.getTitle() : modelSet.getURIWithoutExtension().lastSegment();
+		}
+
+		private ModelSet getModelSet(IEditorPart editor) {
+			ModelSet result = null;
 
 			if(editor instanceof IMultiDiagramEditor) {
 				try {
-					ModelSet modelSet = ((IMultiDiagramEditor)editor).getServicesRegistry().getService(ModelSet.class);
-					result = modelSet.getURIWithoutExtension().lastSegment();
+					result = ((IMultiDiagramEditor)editor).getServicesRegistry().getService(ModelSet.class);
 				} catch (ServiceException e) {
 					// No problem.  We have a fall-back
 					Activator.log.error(e);
 				}
+			}
+
+			return result;
+		}
+
+		boolean isPrincipalResourceAffected(IEditorPart editor, Collection<? extends Resource> triggeringResources) {
+			boolean result = false;
+
+			ModelSet modelSet = getModelSet(editor);
+			if(modelSet != null) {
+				URI principalURI = modelSet.getURIWithoutExtension();
+				for(Resource next : triggeringResources) {
+					if(next.getURI().trimFileExtension().equals(principalURI)) {
+						result = true;
+						break;
+					}
+				}
+			} else {
+				URI principalURI = getURI(editor.getEditorInput());
+				if(principalURI != null) {
+					for(Resource next : triggeringResources) {
+						if(next.getURI().equals(principalURI)) {
+							result = true;
+							break;
+						}
+					}
+				}
+			}
+
+			return result;
+		}
+
+		private URI getURI(IEditorInput input) {
+			URI result = null;
+
+			if(input instanceof URIEditorInput) {
+				result = ((URIEditorInput)input).getURI();
+			} else if(input instanceof IURIEditorInput) {
+				result = URI.createURI(((IURIEditorInput)input).getURI().toString());
 			}
 
 			return result;

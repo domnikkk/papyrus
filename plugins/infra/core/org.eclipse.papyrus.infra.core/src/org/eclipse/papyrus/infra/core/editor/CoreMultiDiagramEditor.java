@@ -794,9 +794,9 @@ public class CoreMultiDiagramEditor extends AbstractMultiPageSashEditor implemen
 				// Attempt to re-load, later
 				pendingReload.set(new DeferredReload(triggeringResources, reason, dirtyPolicy));
 
-				// If I am already active, then re-load now
+				// If I am already active, then do it now. Or, if we're not going to ask the user about it, also do it now
 				IWorkbenchPage page = getSite().getPage();
-				if(page.getActiveEditor() == CoreMultiDiagramEditor.this) {
+				if((page.getActiveEditor() == CoreMultiDiagramEditor.this) || (dirtyPolicy != DirtyPolicy.PROMPT_TO_SAVE)) {
 					pendingReload.get().reload();
 				}
 			}
