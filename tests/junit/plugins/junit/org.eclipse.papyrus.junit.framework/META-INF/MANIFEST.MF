@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Conditional Junit Annotations (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.junit.framework
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: Eclipse Modeling Framework
+Bundle-Vendor: Eclipse Modeling Project
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.papyrus.junit.framework.classification,
  org.eclipse.papyrus.junit.framework.classification.rules,
