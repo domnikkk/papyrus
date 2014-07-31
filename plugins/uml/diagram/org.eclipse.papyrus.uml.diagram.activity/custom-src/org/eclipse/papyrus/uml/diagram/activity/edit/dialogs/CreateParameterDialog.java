@@ -13,11 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.activity.edit.dialogs;
 
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
@@ -30,10 +27,8 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
-import org.eclipse.papyrus.infra.core.modelsetquery.ModelSetQuery;
 import org.eclipse.papyrus.infra.core.utils.EditorUtils;
 import org.eclipse.papyrus.uml.diagram.activity.part.CustomMessages;
-import org.eclipse.papyrus.uml.diagram.activity.part.Messages;
 import org.eclipse.papyrus.uml.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.actions.LabelHelper;
@@ -53,7 +48,6 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -315,12 +309,8 @@ public class CreateParameterDialog extends FormDialog {
 	 * 
 	 */
 	private void handleChooseType() {
-		Set<Object> types = getPossibleTypes();
-		ElementListSelectionDialog dialog = new ElementListSelectionDialog(getShell(), labelProvider);
-		dialog.setMessage(Messages.UMLModelingAssistantProviderMessage);
-		dialog.setTitle(Messages.UMLModelingAssistantProviderTitle);
-		dialog.setMultipleSelection(false);
-		dialog.setElements(types.toArray());
+		GetObjectsOfTypeListSelectionDialog dialog = new GetObjectsOfTypeListSelectionDialog(getShell(), labelProvider, parameterOwner, true);
+		dialog.addElementsOfType(UMLPackage.eINSTANCE.getTypedElement_Type().getEType());
 		if(dialog.open() == Window.OK) {
 			Object firstResult = dialog.getFirstResult();
 			if(firstResult instanceof EObject) {
@@ -363,19 +353,6 @@ public class CreateParameterDialog extends FormDialog {
 		// Let the command find the relation on its own.
 		Command addCmd = AddCommand.create(editingdomain, parameterOwner, null, Collections.singleton(createdParameter));
 		addCmd.execute();
-	}
-
-	/**
-	 * Gets the possible types for the parameter
-	 * 
-	 * @return the possible types
-	 */
-	private Set<Object> getPossibleTypes() {
-		Collection<EObject> types = ModelSetQuery.getObjectsOfType(parameterOwner, UMLPackage.eINSTANCE.getTypedElement_Type().getEType());
-		Set<Object> result = new HashSet<Object>();
-		result.add("");
-		result.addAll(types);
-		return result;
 	}
 
 	/**
