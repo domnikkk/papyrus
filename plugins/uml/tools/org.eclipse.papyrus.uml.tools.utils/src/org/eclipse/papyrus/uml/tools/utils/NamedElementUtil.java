@@ -249,9 +249,11 @@ public class NamedElementUtil {
 
 		int nextNumber = 1;
 		
-		// specific value for properties. default name is attribute
+		// specific value for properties. default name is Attribute. 
+		// Note: That could be set in a specific advice rather than the default initializer. 
+		// Note2: The name of operations / properties could be set by default with a first lower case letter.
 		if ("property".equalsIgnoreCase(base)) {
-			base = "attribute";
+			base = "Attribute";
 		}
 		
 		for (Object o : contents) {
