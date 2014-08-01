@@ -51,22 +51,22 @@ public class NamedElementUtil {
 	private final static String PACKAGE_STRING = "~";
 
 	private static final UMLSwitch<Boolean> IS_AUTONAMED = getIsAutoNamedSwitch();
-	
+
 	/**
 	 * A helper method to calculate the max depth of an element
 	 * 
 	 * @param the
-	 *        named element
+	 *            named element
 	 * @return the maximum depth found in qualified name
 	 */
 	public static int getQualifiedNameMaxDepth(NamedElement namedElement) {
 		int d = 0;
 		String s = namedElement.getQualifiedName();
-		if(s == null) {
+		if (s == null) {
 			return 0;
 		}
 		int n = 0;
-		while((n = s.indexOf(QUALIFIED_NAME_SEPARATOR, n)) != -1) {
+		while ((n = s.indexOf(QUALIFIED_NAME_SEPARATOR, n)) != -1) {
 			n += 2;
 			d++;
 		}
@@ -81,7 +81,7 @@ public class NamedElementUtil {
 	 * @return
 	 */
 	public static String getDefaultNameWithIncrement(EObject newElement) {
-		if(newElement.eContainer() != null) {
+		if (newElement.eContainer() != null) {
 			return getDefaultNameWithIncrement(newElement, newElement.eContainer().eContents());
 		}
 		return null;
@@ -101,11 +101,11 @@ public class NamedElementUtil {
 	public static String getDefaultCopyNameWithIncrement(NamedElement namedElement, Collection<?> contents) {
 		// A NamedElement with empty string for a name is logically unnamed, so any copy of it should also be unnamed
 		String rootName = Strings.emptyToNull(namedElement.getName());
-		if(rootName != null) {
-			for(Object o : contents) {
-				if(o instanceof EObject) {
-					String name = EMFCoreUtil.getName((EObject)o);
-					if(rootName.equals(name)) {
+		if (rootName != null) {
+			for (Object o : contents) {
+				if (o instanceof EObject) {
+					String name = EMFCoreUtil.getName((EObject) o);
+					if (rootName.equals(name)) {
 						String newName = NLS.bind(COPY_OF + "_{0}_", rootName);
 						return NamedElementUtil.getDefaultNameWithIncrementFromBase(newName, contents);
 					}
@@ -116,7 +116,7 @@ public class NamedElementUtil {
 	}
 
 	public static String getDefaultNameWithIncrement(String prefix, EObject newElement, Collection<?> contents) {
-		if(prefix == null) {
+		if (prefix == null) {
 			prefix = "";
 		}
 		return getDefaultNameWithIncrementFromBase(prefix + newElement.eClass().getName(), contents, newElement, "");
@@ -128,7 +128,7 @@ public class NamedElementUtil {
 
 	public static String getDefaultNameWithIncrementFromBase(String base, Collection<?> contents, EObject elementToRename, String separator) {
 		return (elementToRename != null) ? //
-		getDefaultNameSwitch(base, contents, separator).doSwitch(elementToRename).orNull() : //
+		getDefaultNameSwitch(base, contents, separator).doSwitch(elementToRename).orNull(): //
 		computeDefaultNameWithIncrementFromBase(base, contents, elementToRename, separator);
 	}
 
@@ -139,15 +139,15 @@ public class NamedElementUtil {
 			public Optional<String> defaultCase(EObject object) {
 				return Optional.fromNullable(computeDefaultNameWithIncrementFromBase(base, contents, object, separator));
 			}
-			
+
 			@Override
 			public Optional<String> casePseudostate(Pseudostate object) {
 				String base = object.getKind().getLiteral();
 				base = base.substring(0, 1).toUpperCase() + base.substring(1);
-				
+
 				return Optional.fromNullable(computeDefaultNameWithIncrementFromBase(base, contents, object, separator));
 			}
-			
+
 			@Override
 			public Optional<String> caseRelationship(Relationship object) {
 				return Optional.absent();
@@ -157,21 +157,21 @@ public class NamedElementUtil {
 			public Optional<String> caseAssociation(Association object) {
 				return Optional.absent();
 			}
-			
+
 			public Optional<String> caseAssociationClass(AssociationClass object) {
 				return defaultCase(object);
 			}
-			
+
 			@Override
 			public Optional<String> caseActivityEdge(ActivityEdge object) {
 				return Optional.absent();
 			}
-			
+
 			@Override
 			public Optional<String> caseTransition(Transition object) {
 				return Optional.absent();
 			}
-			
+
 			@Override
 			public Optional<String> caseGeneralOrdering(GeneralOrdering object) {
 				return Optional.absent();
@@ -186,7 +186,7 @@ public class NamedElementUtil {
 			public Boolean defaultCase(EObject object) {
 				return Boolean.TRUE;
 			}
-			
+
 			@Override
 			public Boolean caseRelationship(Relationship object) {
 				return Boolean.FALSE;
@@ -196,21 +196,21 @@ public class NamedElementUtil {
 			public Boolean caseAssociation(Association object) {
 				return Boolean.FALSE;
 			}
-			
+
 			public Boolean caseAssociationClass(AssociationClass object) {
 				return Boolean.TRUE;
 			}
-			
+
 			@Override
 			public Boolean caseActivityEdge(ActivityEdge object) {
 				return Boolean.FALSE;
 			}
-			
+
 			@Override
 			public Boolean caseTransition(Transition object) {
 				return Boolean.FALSE;
 			}
-			
+
 			@Override
 			public Boolean caseGeneralOrdering(GeneralOrdering object) {
 				return Boolean.FALSE;
@@ -221,41 +221,43 @@ public class NamedElementUtil {
 	public static boolean isAutoNamed(EObject element) {
 		return IS_AUTONAMED.doSwitch(element);
 	}
-	
+
 	static String computeDefaultNameWithIncrementFromBase(String base, Collection<?> contents, EObject elementToRename, String separator) {
-		if(elementToRename != null) {
+		if (elementToRename != null) {
 			// Is this even an element that we should auto-name?
-			if(!isAutoNamed(elementToRename)) {
+			if (!isAutoNamed(elementToRename)) {
 				return null;
 			}
-			
+
 			// Do not change the name if it's already present in the contents collection and already has a name
-			if(contents.contains(elementToRename)) {
-				if(elementToRename instanceof ENamedElement) {
-					ENamedElement eNamedElement = (ENamedElement)elementToRename;
-					if(eNamedElement.getName() != null) {
+			if (contents.contains(elementToRename)) {
+				if (elementToRename instanceof ENamedElement) {
+					ENamedElement eNamedElement = (ENamedElement) elementToRename;
+					if (eNamedElement.getName() != null) {
 						return eNamedElement.getName();
 					}
 				}
 				// UML specific
-				if(elementToRename instanceof NamedElement) {
-					NamedElement namedElement = (NamedElement)elementToRename;
-					if(namedElement.getName() != null) {
+				if (elementToRename instanceof NamedElement) {
+					NamedElement namedElement = (NamedElement) elementToRename;
+					if (namedElement.getName() != null) {
 						return namedElement.getName();
 					}
 				}
 			}
 		}
 
-		if("property".equalsIgnoreCase(base)) {
-			base = "Attribute";
-		}
 		int nextNumber = 1;
-
-		for(Object o : contents) {
-			if(o instanceof EObject && o != elementToRename) {
-				String name = EMFCoreUtil.getName((EObject)o);
-				if(name != null && name.startsWith(base)) {
+		
+		// specific value for properties. default name is attribute
+		if ("property".equalsIgnoreCase(base)) {
+			base = "attribute";
+		}
+		
+		for (Object o : contents) {
+			if (o instanceof EObject && o != elementToRename) {
+				String name = EMFCoreUtil.getName((EObject) o);
+				if (name != null && name.startsWith(base)) {
 					String end = name.substring(base.length());
 					int nextNumberTmp = 1;
 
@@ -264,7 +266,7 @@ public class NamedElementUtil {
 					} catch (NumberFormatException ex) {
 					}
 
-					if(nextNumberTmp > nextNumber) {
+					if (nextNumberTmp > nextNumber) {
 						nextNumber = nextNumberTmp;
 					}
 				}
@@ -288,7 +290,7 @@ public class NamedElementUtil {
 	public static String getVisibilityAsSign(NamedElement element) {
 		String vKindValue = "";
 
-		switch(element.getVisibility().getValue()) {
+		switch (element.getVisibility().getValue()) {
 		case org.eclipse.uml2.uml.VisibilityKind.PUBLIC:
 			vKindValue = PUBLIC_STRING;
 			break;
@@ -309,7 +311,7 @@ public class NamedElementUtil {
 	 * Returns the name of an element, given its qualified name
 	 * 
 	 * @param qualifiedName
-	 *        the qualified name of the element
+	 *            the qualified name of the element
 	 * @return the name of the element. It shall never be <code>null</code>.
 	 */
 	public static String getNameFromQualifiedName(String qualifiedName) {
@@ -320,7 +322,7 @@ public class NamedElementUtil {
 	/**
 	 * 
 	 * @param childQualifiedName
-	 *        the qualifiedName of an element
+	 *            the qualifiedName of an element
 	 * @return
 	 *         the qualified name of its parent
 	 */
@@ -332,7 +334,7 @@ public class NamedElementUtil {
 
 
 	public static String getName(NamedElement element) {
-		if(element.getName() != null) {
+		if (element.getName() != null) {
 			return element.getName();
 		} else {
 			return (NamedElementUtil.getDefaultNameWithIncrement(element));

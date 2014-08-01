@@ -2038,12 +2038,6 @@
 		inheritance="all" typeId="org.eclipse.papyrus.uml.ExecutionSpecification">
 	</adviceBinding>
 	
-	<!-- Helper advice for Feature name initialization -->
-	<adviceBinding id="org.eclipse.papyrus.uml.advice.FeatureNameInitializer"
-		class="org.eclipse.papyrus.uml.service.types.helper.advice.FeatureNameInitializerHelperAdvice"
-		inheritance="all" typeId="org.eclipse.papyrus.uml.Feature">
-	</adviceBinding>
-	
 	<!-- Helper advice for Lifeline -->
 	<adviceBinding id="org.eclipse.papyrus.uml.advice.Lifeline"
 		class="org.eclipse.papyrus.uml.service.types.helper.advice.LifelineHelperAdvice"
