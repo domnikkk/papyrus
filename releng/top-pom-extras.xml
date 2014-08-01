@@ -102,6 +102,7 @@
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.composites</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.composites.utils</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml</module>
+		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml.activeobjectcontrollerlibrary</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml.assertionlibrary</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml.standardlibrary</module>
 		<module>../extraplugins/moka/org.eclipse.papyrus.moka.fuml.validation</module>
