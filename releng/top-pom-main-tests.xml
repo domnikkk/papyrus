@@ -279,6 +279,19 @@
 					<testFailureIgnore>true</testFailureIgnore>
 					<argLine>-Xms512m -Xmx20486m -XX:MaxPermSize=512M</argLine>
 					<product>org.eclipse.sdk.ide</product>
+					
+					<dependencies>
+			            <dependency>
+			              <type>p2-installable-unit</type>
+			              <artifactId>org.eclipse.sdk.feature.group</artifactId>
+			              <version>0.0.0</version>
+			            </dependency>
+			            <dependency>
+			              <type>p2-installable-unit</type>
+			              <artifactId>org.eclipse.papyrus.sdk.feature.feature.group</artifactId>
+			              <version>0.0.0</version>
+			            </dependency>
+		            </dependencies>
 				</configuration>
 			</plugin>
 		</plugins>
