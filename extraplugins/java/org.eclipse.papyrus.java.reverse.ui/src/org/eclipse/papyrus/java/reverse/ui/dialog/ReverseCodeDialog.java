@@ -38,7 +38,7 @@ public class ReverseCodeDialog extends InputDialog {
 	private String SEARCHPATHS_UID = ":searchpaths";
 	private String CREATIONPATHS_UID = ":creationpaths";
 	private static String DEFAULT_PACKAGE_NAME_UID = ":defaultpackagename";
-	private String MODEL_UID = "nomodeluid";
+	protected String MODEL_UID = "nomodeluid";
 
 	private static String textMsg = "Default creation package.";
 	@SuppressWarnings("unused")
@@ -205,6 +205,7 @@ public class ReverseCodeDialog extends InputDialog {
 		settings.put(MODEL_UID + CREATIONPATHS_UID, creationPaths);
 		settings.put(MODEL_UID + DEFAULT_PACKAGE_NAME_UID, getValue());
 
+		
 		super.okPressed();
 	}
 	

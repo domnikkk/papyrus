@@ -23,6 +23,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.java.reverse.ui.DndReverseCodeHandler;
 import org.eclipse.papyrus.java.reverse.ui.ReverseCodeHandler;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
@@ -78,7 +79,7 @@ public class DropReverseCommand extends Command {
 
 	@Override
 	public void execute() {
-		ReverseCodeHandler reverse = new ReverseCodeHandler();
+		DndReverseCodeHandler reverse = new DndReverseCodeHandler();
 		try {
 			reverse.execute(null);
 		} catch (ExecutionException e) {

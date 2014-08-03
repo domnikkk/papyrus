@@ -8,6 +8,7 @@ import japa.parser.ParseException;
 import japa.parser.ast.CompilationUnit;
 
 import java.io.StringReader;
+import java.util.Iterator;
 import java.util.List;
 
 import javagen.umlparser.CompilationUnitAnalyser;
@@ -18,10 +19,16 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.ITypeRoot;
+import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.TreeSelection;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Package;
 
 /**
@@ -203,5 +210,76 @@ public class JavaCodeReverse {
 		javaAnalyser.processCompilationUnit(cu);
 	}
 
+	/**
+	 * Real Implementation of the command.
+	 * 
+	 * @param generationPackageName
+	 * @param searchPaths
+	 */
+	public void executeCodeReverse(Resource umlResource, String generationPackageName, List<String> searchPaths) {
+		System.out.println("executeCodeReverse()");
+		
+		// Get current selection
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+		ISelection selection = page.getSelection();
+
+		TreeSelection treeSelection = (TreeSelection)selection;
+		//        String filename = treeSelection.
+		@SuppressWarnings("rawtypes")
+		Iterator iter = treeSelection.iterator();
+		while(iter.hasNext()) {
+			Object obj = iter.next();
+			// Translate java ICompilationUnit to Iresource
+			if(obj instanceof ICompilationUnit) {
+				ICompilationUnit u = (ICompilationUnit)obj;
+				try {
+					obj = u.getCorrespondingResource();
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+        	if(obj instanceof IPackageFragment)
+        	{
+				IPackageFragment u = (IPackageFragment)obj;
+				try {
+					IResource res = u.getCorrespondingResource();
+					if(res != null)
+						obj = res;
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+        	// This happen when selection is an element from a jar
+        	if(obj instanceof IJavaElement)
+        	{
+        		IJavaElement u = (IJavaElement)obj;
+				try {
+        			
+				reverseJavaElement(u);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+        	}
+        	// This is a regular java file
+         	if(obj instanceof IResource )
+        	{
+        		try {
+					reverseResource((IResource)obj);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+
+    	System.out.println("reverse done");
+
+	}
 
 }

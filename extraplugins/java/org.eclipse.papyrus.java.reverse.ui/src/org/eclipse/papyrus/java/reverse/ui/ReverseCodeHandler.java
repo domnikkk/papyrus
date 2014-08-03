@@ -3,31 +3,16 @@
  */
 package org.eclipse.papyrus.java.reverse.ui;
 
-import japa.parser.ParseException;
-
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.jdt.core.ICompilationUnit;
-import org.eclipse.jdt.core.IJavaElement;
-import org.eclipse.jdt.core.IPackageFragment;
-import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -36,7 +21,6 @@ import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
 import org.eclipse.papyrus.java.reverse.ui.dialog.ReverseCodeDialog;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Package;
 
@@ -47,7 +31,7 @@ import org.eclipse.uml2.uml.Package;
  */
 public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
-	private static String DefaultGenerationPackageName = "generated";
+	private static String DefaultGenerationModeleName = "generated";
 
 	/**
 	 * Method called when button is pressed.
@@ -59,19 +43,13 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 		final Resource umlResource = getUmlResource();
 		//        String rootModelName = getRootModelName(umlResource);
 
-		// Try to compute a uid identifying the model. Used to store user settings.
-		String modelUid = umlResource.getURI().toPlatformString(true);
-		if( modelUid == null)
-		{
-			System.err.println("Can't compute relatif model uid. Use absolute one");
-			modelUid = umlResource.getURI().path();
-		}
+		String modelUid = getModelUid(umlResource);
 		System.out.println("Model uid :" + modelUid);
 		
 		// Get reverse parameters from a dialog
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart().getSite().getShell();
 		//    	ReverseCodeDialog dialog = new ReverseCodeDialog(shell, DefaultGenerationPackageName, Arrays.asList("generated") );
-		ReverseCodeDialog dialog = new ReverseCodeDialog(shell, modelUid, null, null);
+		final ReverseCodeDialog dialog = getDialog(shell, modelUid);
 
 		int res = dialog.open();
 		//    	System.out.println("dialog result =" + res);
@@ -79,27 +57,9 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 			System.out.println("Canceled by user.");
 			return null;
 		}
-		// Get returned name
-		String generationPackageName = dialog.getValue();
-		if(generationPackageName == null || generationPackageName.length() == 0) {
-			generationPackageName = DefaultGenerationPackageName;
-		}
-
-		// Adjust name
-		//    	generationPackageName = rootModelName + "/" + generationPackageName;
-		// Create searchpaths. Add the rootmodelname as prefix.
-		final List<String> searchPaths = Arrays.asList(dialog.getSearchPath());
-		//       	final List<String> searchPaths = new ArrayList<String>();
-		//    	for(String path : dialog.getSearchPath())
-		//    	{
-		//    		searchPaths.add( rootModelName + "/" + path);
-		//    	}
-
-		// Create revers object
-
 
 		// Execute the reverse with provided parameters
-		final TransactionalEditingDomain editingDomain;
+		TransactionalEditingDomain editingDomain;
 		try {
 			editingDomain = getEditingDomain();
 		} catch (ServiceException e) {
@@ -108,129 +68,84 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 			throw new ExecutionException(e.getMessage());
 		}
 		
-		// Get current selection
-		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		final ISelection selection = page.getSelection();
-		
-		final String pname = generationPackageName;
-		
-		// Instantiate a new Eclipse Job to run reverse
-		Job job = new Job("Reverse Java Code") {
+		RecordingCommand command = new RecordingCommand(editingDomain, "Reverse Java Code") {
 
 			@Override
-			protected IStatus run(final IProgressMonitor monitor) {
-				// Instantiate the reverse.
-				RecordingCommand command = new RecordingCommand(editingDomain, "Reverse Java Code") {
-
-					@Override
-					protected void doExecute() {				
-						executeCodeReverse(umlResource, pname, searchPaths, selection, monitor);
-					}
-
-				};
-
-				// Run the reverse.
-				editingDomain.getCommandStack().execute(command);
-				
-				return new Status(Status.OK, Activator.PLUGIN_ID, "Reverse done.");
+			protected void doExecute() {
+				ReverseCodeHandler.this.doExecute(dialog);
 			}
+
 		};
-		
-		// Run the reverse Job
-		job.setUser(true);
-		job.schedule();
+
+		editingDomain.getCommandStack().execute(command);
 
 
 		return null;
 	}
 
 	/**
-	 * Real Implementation of the command.
+	 * Find the modelUid name contains into umlResource taken in parameter
 	 * 
-	 * @param generationPackageName
-	 * @param searchPaths
-	 * @param monitor the monitor progress bar from Eclipse Task
+	 * @param umlResource
+	 * @return the modelUid name
 	 */
-	private void executeCodeReverse(Resource umlResource, String generationPackageName, List<String> searchPaths, ISelection selection, IProgressMonitor monitor) {
-		System.out.println("executeCodeReverse()");
-		JavaCodeReverse codeReverse = new JavaCodeReverse(getRootPackage(umlResource), generationPackageName, searchPaths);
-		
-		TreeSelection treeSelection = (TreeSelection)selection;
-		
-		// Notify to Eclipse that the job's began
-		monitor.beginTask("Reverse Java Code", treeSelection.size());
-		int workNumber = 0;
-		
-		//        String filename = treeSelection.
-		@SuppressWarnings("rawtypes")
-		Iterator iter = treeSelection.iterator();
-		while(iter.hasNext()) {
-			Object obj = iter.next();
-			// Translate java ICompilationUnit to Iresource
-			if(obj instanceof ICompilationUnit) {
-				ICompilationUnit u = (ICompilationUnit)obj;
-				try {
-					obj = u.getCorrespondingResource();
-				} catch (JavaModelException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-        	if(obj instanceof IPackageFragment)
-        	{
-				IPackageFragment u = (IPackageFragment)obj;
-				try {
-					IResource res = u.getCorrespondingResource();
-					if(res != null)
-						obj = res;
-				} catch (JavaModelException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-        	// This happen when selection is an element from a jar
-        	if(obj instanceof IJavaElement)
-        	{
-        		IJavaElement u = (IJavaElement)obj;
-				try {
-        			
-				codeReverse.reverseJavaElement(u);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-        	}
-        	// This is a regular java file
-         	if(obj instanceof IResource )
-        	{
-        		try {
-					codeReverse.reverseResource((IResource)obj);
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-         	
-         	// Notify Eclipse that the work's in progress.
-         	monitor.worked(workNumber);
-         	workNumber++;
+	private String getModelUid(Resource umlResource) {
+		// Try to compute a uid identifying the model. Used to store user settings.
+		String modelUid = umlResource.getURI().toPlatformString(true);
+		if(modelUid == null) {
+			System.err.println("Can't compute relatif model uid. Use absolute one");
+			modelUid = umlResource.getURI().path();
 		}
-
-		// Notify that the Eclipse job's done.
-    	System.out.println("reverse done");
-    	monitor.done();
+		return modelUid;
 	}
 
+	/**
+	 * Command ran in a RecordingCommand, after the dialog
+	 * Run the @link{JavaCodeReverse.executeCodeReverse}
+	 * Shall be override to change command behavior
+	 */
+	protected void doExecute(ReverseCodeDialog dialog) {
+		// Create searchpaths. Add the rootmodelname as prefix.
+		final List<String> searchPaths = Arrays.asList(dialog.getSearchPath());
+		Resource umlResource = getUmlResource();
+		String packageName = getPackageName(dialog);
+		JavaCodeReverse reverse = new JavaCodeReverse(getRootPackage(umlResource), packageName, searchPaths);
+		reverse.executeCodeReverse(umlResource, packageName, searchPaths);
+	}
+
+	/**
+	 * The dialog used for user.
+	 * 
+	 * @param shell
+	 * @param modelUid
+	 * @return the dialog to show to user
+	 */
+	protected ReverseCodeDialog getDialog(Shell shell, String modelUid) {
+		return new ReverseCodeDialog(shell, modelUid, null, null);
+	}
+
+	/**
+	 * Find the name of the model provided by the dialog
+	 * 
+	 * @param dialog
+	 *        opened dialog to user
+	 * @return the name of the model. If the user has changed this name, return the name provided by the user; return the default model name
+	 *         otherwise.
+	 */
+	protected String getPackageName(ReverseCodeDialog dialog) {
+		String generationPackageName = dialog.getValue();
+		if(generationPackageName == null || generationPackageName.length() == 0) {
+			generationPackageName = DefaultGenerationModeleName;
+		}
+		return generationPackageName;
+	}
 
 	/**
 	 * Get the uml resource used by the model.
 	 * 
-	 * @return
+	 * @return the Uml Resource
 	 */
-	private Resource getUmlResource() {
+	protected Resource getUmlResource() {
 		Resource umlResource = UmlUtils.getUmlModel().getResource();
 		return umlResource;
 	}
@@ -240,7 +155,7 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 	 * 
 	 * @return
 	 */
-	private Package getRootPackage(Resource umlResource) {
+	protected Package getRootPackage(Resource umlResource) {
 		Package rootPackage = (Package)umlResource.getContents().get(0);
 		return rootPackage;
 	}
