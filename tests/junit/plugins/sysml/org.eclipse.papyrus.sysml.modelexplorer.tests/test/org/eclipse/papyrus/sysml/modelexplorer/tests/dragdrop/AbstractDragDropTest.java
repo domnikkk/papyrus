@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -27,6 +27,7 @@ import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ViewerDropAdapter;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.common.AbstractModelExplorerTest;
 import org.eclipse.papyrus.sysml.modelexplorer.tests.utils.EditorUtils;
 import org.eclipse.papyrus.views.modelexplorer.CustomCommonViewer;
@@ -49,7 +50,7 @@ public class AbstractDragDropTest extends AbstractModelExplorerTest {
 
 	/**
 	 * prepare the copy
-	 * 
+	 *
 	 * @throws Exception
 	 *         exception thrown in case of problems
 	 */
@@ -145,6 +146,39 @@ public class AbstractDragDropTest extends AbstractModelExplorerTest {
 		// undo to go to previous state
 		getEditingDomain().getCommandStack().undo();
 		Assert.assertEquals("Context of the diagram should be the initial value: " + printElement(initialDiagramContainer), initialDiagramContainer, sourceElement.getElement()); //$NON-NLS-1$
+
+		Assert.assertFalse("Editor should not be dirty at the end of the test", EditorUtils.getEditor().isDirty()); //$NON-NLS-1$
+	}
+
+	public void testExecutableGraphicalMoveOfDiagram(Diagram sourceElement, EObject targetElement) throws Exception {
+		Assert.assertFalse("Editor should not be dirty at the beginning of the test", EditorUtils.getEditor().isDirty()); //$NON-NLS-1$
+		EObject initialDiagramContainer = sourceElement.getElement();
+		// find command for the drag / drop (source, target)
+		List<CompoundCommand> dropCommands = getListOfDropCommands(sourceElement, targetElement);
+		// create only one compound command
+		CompoundCommand executableCommand = new CompoundCommand();
+		for(CompoundCommand cc : dropCommands) {
+			executableCommand.append(cc);
+		}
+		getEditingDomain().getCommandStack().execute(executableCommand);
+		// check results
+		Assert.assertEquals("Context of the diagram should be the initial value", initialDiagramContainer, sourceElement.getElement()); //$NON-NLS-1$
+		Assert.assertEquals("Owner of the diagram should be the target element", targetElement, DiagramUtils.getOwner(sourceElement)); //$NON-NLS-1$
+		Assert.assertNotNull("diagram should still be contained in a resource", sourceElement.eResource()); //$NON-NLS-1$
+		// try to undo
+		getEditingDomain().getCommandStack().undo();
+		Assert.assertEquals("Context of the diagram should be the initial value: " + printElement(initialDiagramContainer), initialDiagramContainer, sourceElement.getElement()); //$NON-NLS-1$
+		Assert.assertEquals("Owner of the diagram should be the initial value", initialDiagramContainer, DiagramUtils.getOwner(sourceElement)); //$NON-NLS-1$
+		// try to redo
+		getEditingDomain().getCommandStack().redo();
+		// check results
+		Assert.assertEquals("Context of the diagram should be the initial value", initialDiagramContainer, sourceElement.getElement()); //$NON-NLS-1$
+		Assert.assertEquals("Owner of the diagram should be the target element", targetElement, DiagramUtils.getOwner(sourceElement)); //$NON-NLS-1$
+		Assert.assertNotNull("diagram should still be contained in a resource", sourceElement.eResource()); //$NON-NLS-1$
+		// undo to go to previous state
+		getEditingDomain().getCommandStack().undo();
+		Assert.assertEquals("Context of the diagram should be the initial value: " + printElement(initialDiagramContainer), initialDiagramContainer, sourceElement.getElement()); //$NON-NLS-1$
+		Assert.assertEquals("Owner of the diagram should be the initial value", initialDiagramContainer, DiagramUtils.getOwner(sourceElement)); //$NON-NLS-1$
 
 		Assert.assertFalse("Editor should not be dirty at the end of the test", EditorUtils.getEditor().isDirty()); //$NON-NLS-1$
 	}

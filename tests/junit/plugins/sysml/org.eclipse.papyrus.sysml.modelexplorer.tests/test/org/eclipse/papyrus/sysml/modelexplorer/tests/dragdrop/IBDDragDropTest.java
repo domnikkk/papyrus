@@ -7,12 +7,13 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.modelexplorer.tests.dragdrop;
 
+import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.junit.Test;
 
 /**
@@ -26,15 +27,16 @@ public class IBDDragDropTest extends AbstractDragDropTest {
 	@Test
 	public void testDragDropIBDonItself() throws Exception {
 		testUnexecutableDropOfDiagram(iBD_B1_Diagram, iBD_B1_Diagram);
-		
+
 	}
 
 	/**
 	 * Test on itself. Should do nothing
 	 */
+	@FailingTest("Drop can't be undone: Bug 441087")
 	@Test
 	public void testDragDropBDDonBlock() throws Exception {
-		testUnexecutableDropOfDiagram(bDD_Main_Diagram, b1_EObject);
+		testExecutableGraphicalMoveOfDiagram(bDD_Main_Diagram, b1_EObject); //Expected result: graphical move to B1
 	}
-	
+
 }
