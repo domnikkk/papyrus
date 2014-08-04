@@ -19,7 +19,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,11 +28,8 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -42,10 +38,12 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.services.resourceloading.OnDemandLoadingModelSetServiceFactory;
 import org.eclipse.papyrus.infra.services.resourceloading.preferences.StrategyChooser;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
+import org.eclipse.papyrus.junit.utils.rules.HouseKeeper;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 
@@ -58,6 +56,9 @@ import org.junit.Test;
  *
  */
 public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusTest {
+
+	@Rule
+	public final HouseKeeper houseKeeper = new HouseKeeper();
 
 	public static final String INITIAL_PATH = "resources/TestModel2/";
 
@@ -99,7 +100,9 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 		if(project != null && !project.exists()) {
 			project.create(monitor);
 		}
+
 		project.open(monitor);
+
 		for(String res : resources) {
 			for(String s : extensions) {
 				IFile file = project.getFile(INITIAL_PATH + res + s);
@@ -107,11 +110,9 @@ public abstract class AbstractResourceLoadingTestModel2 extends AbstractPapyrusT
 				if(!file.exists()) {
 					createFolder(project, "resources/");
 					createFolder(project, INITIAL_PATH);
-					URL url = FileLocator.find(Platform.getBundle(ITestConstants.FRAGMENT_ID), new Path(INITIAL_PATH + res + s), null);
-					URL newFile = FileLocator.resolve(url);
 
-					// encode the URI for spaces in the path
-					file.createLink(new URL(newFile.toString().replaceAll(" ", "%20")).toURI(), IResource.REPLACE, monitor);
+					String sourcePath = INITIAL_PATH + res + s;
+					houseKeeper.createFile(project, sourcePath, sourcePath);
 				}
 			}
 		}
