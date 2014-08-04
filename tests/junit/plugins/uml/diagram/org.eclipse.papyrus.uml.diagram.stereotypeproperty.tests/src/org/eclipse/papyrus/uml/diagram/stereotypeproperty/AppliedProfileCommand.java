@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,19 +29,19 @@ import org.eclipse.uml2.uml.Profile;
 public class AppliedProfileCommand extends AbstractTransactionalCommand {
 
 	private Profile profile;
+
 	private Package model;
 
 	public AppliedProfileCommand(TransactionalEditingDomain domain, Package model, Profile profile) {
 		super(domain, "Apply profile", Collections.EMPTY_LIST);
-		this.model=model;
-		this.profile=profile;
-		
+		this.model = model;
+		this.profile = profile;
+
 	}
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		PackageUtil.applyProfile(model, profile, false);
-		System.out.println("test");
 		return null;
 	}
 }

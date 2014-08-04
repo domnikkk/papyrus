@@ -99,7 +99,6 @@ public class CSSSupportTest extends AbstractPapyrusTest {
 					if(NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(feature.getEContainingClass())) {
 						//For non-CSS models, this method should always return true (i.e. the value is never computed)
 						Assert.assertTrue(ForceValueHelper.isSet(child, feature, null));
-						System.out.println("Test");
 					}
 				}
 			}
