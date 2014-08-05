@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.sysml.modelexplorer.tests.dragdrop;
 
-import org.eclipse.papyrus.junit.framework.classification.FailingTest;
 import org.junit.Test;
 
 /**
@@ -33,7 +32,6 @@ public class IBDDragDropTest extends AbstractDragDropTest {
 	/**
 	 * Test on itself. Should do nothing
 	 */
-	@FailingTest("Drop can't be undone: Bug 441087")
 	@Test
 	public void testDragDropBDDonBlock() throws Exception {
 		testExecutableGraphicalMoveOfDiagram(bDD_Main_Diagram, b1_EObject); //Expected result: graphical move to B1
