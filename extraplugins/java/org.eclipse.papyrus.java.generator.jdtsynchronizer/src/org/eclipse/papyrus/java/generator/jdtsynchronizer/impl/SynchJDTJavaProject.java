@@ -82,23 +82,26 @@ public class SynchJDTJavaProject implements JDTVisitor {
 		// search IJavaProject				
 		//IProject projet =  iroot.getProject(project.getElementName());
 		IJavaProject ijavaProjet = ijm.getJavaProject(project.getElementName());
+		IProject proj;
 
 		// if ijavaProjet don't exist, create this!
 		if(!ijavaProjet.exists()) {
-			//			System.out.println("create the project " + project.getElementName());
-			IProject proj = iroot.getProject(project.getElementName());
-
 			try {
-				proj.create(null);
-				proj.open(null);
+				proj = iroot.getProject(project.getElementName());
+				if(!proj.exists()) {
+					proj.create(null);
+					proj.open(null);
+				} else if(!proj.isOpen()) {
+					proj.open(null);
+				}
 
 				// Specifies type of project
 				IProjectDescription description = proj.getDescription();
 				description.setNatureIds(new String[]{ JavaCore.NATURE_ID });
 				proj.setDescription(description, null);
 			} catch (CoreException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				throw new JDTVisitorException(e.getMessage());
 			}
 
 			ijavaProjet = JavaCore.create(proj);

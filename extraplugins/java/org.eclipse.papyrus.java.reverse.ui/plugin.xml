@@ -6,6 +6,14 @@
       <handler
             class="org.eclipse.papyrus.java.reverse.ui.ReverseCodeHandler"
             commandId="org.eclipse.papyrus.java.reverse.ui.reverseCodeCommand">
+         <enabledWhen>
+            <with
+                  variable="activeEditorId">
+			<equals
+         			value="org.eclipse.papyrus.infra.core.papyrusEditor">
+			</equals>
+            </with>
+         </enabledWhen>
       </handler>
       <handler
             class="org.eclipse.papyrus.java.reverse.ui.handlers.CreateAssociationFromPropertyHandler"
@@ -88,6 +96,38 @@
                   icon="icons/associationFromProperty.gif"
                   label="Create Association From Property"
                   style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <menu
+               id="org.eclipse.papyrus.java.reverse.ui.javaMenu"
+               label="Java">
+            <command
+                  commandId="org.eclipse.papyrus.java.reverse.ui.reverseCodeCommand"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                 <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        ifEmpty="false"
+                        operator="or">
+                     <adapt
+                           type="org.eclipse.jdt.core.IJavaElement">
+                       <and>
+               			<not>
+                       		<adapt
+                                  type="org.eclipse.jdt.core.IJavaProject">
+                            </adapt>
+                       	</not>
+                       </and>
+                     </adapt>
+                  </iterate>
+               </with>
+               </visibleWhen>
             </command>
          </menu>
       </menuContribution>

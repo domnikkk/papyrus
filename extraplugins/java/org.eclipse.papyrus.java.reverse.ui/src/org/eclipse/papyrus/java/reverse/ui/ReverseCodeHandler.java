@@ -10,9 +10,11 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -22,6 +24,7 @@ import org.eclipse.papyrus.java.reverse.ui.dialog.ReverseCodeDialog;
 import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.uml2.uml.Package;
 
 
@@ -37,11 +40,19 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 	 * Method called when button is pressed.
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-
-
-
-		final Resource umlResource = getUmlResource();
-		//        String rootModelName = getRootModelName(umlResource);
+		// Try to find uml resource
+		final Resource umlResource;
+		try {
+			umlResource = getUmlResource();
+		} catch(NullPointerException e)  {
+			// No uml resource available. User must open a model. We open an error dialog with an explicit message to advice user. 
+			Shell shell = HandlerUtil.getActiveShell(event);
+			Status errorStatus = new Status(Status.ERROR, Activator.PLUGIN_ID, Messages.ReverseCodeHandler_NoModelError_Title);
+			ErrorDialog.openError(shell, "", Messages.ReverseCodeHandler_NoModelError_Message, errorStatus);
+			
+			// Stop the reverse execution.
+			return null;
+		};
 
 		String modelUid = getModelUid(umlResource);
 		System.out.println("Model uid :" + modelUid);
