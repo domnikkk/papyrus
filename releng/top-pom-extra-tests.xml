@@ -254,7 +254,7 @@
 					<useUIHarness>true</useUIHarness>
 					<useUIThread>true</useUIThread>
 					<testFailureIgnore>true</testFailureIgnore>
-					<argLine>-Xms512m -Xmx20486m -XX:MaxPermSize=512M</argLine>
+					<argLine>-Xms512m -Xmx2048m -XX:MaxPermSize=512M</argLine>
 					<product>org.eclipse.sdk.ide</product>
 					
 					<dependencies>

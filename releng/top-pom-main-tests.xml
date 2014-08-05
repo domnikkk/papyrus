@@ -83,6 +83,7 @@
 	<properties>
 		<tycho-version>0.20.0</tycho-version>
 		<tychoExtrasVersion>0.20.0</tychoExtrasVersion>
+		<testConfig>CI_TESTS_CONFIG</testConfig> <!-- See org.eclipse.papyrus.junit.framework.classification.ClassificationConfig -->
 	</properties>
 	<repositories>
 		<repository>
@@ -302,7 +303,7 @@
 					<useUIHarness>true</useUIHarness>
 					<useUIThread>true</useUIThread>
 					<testFailureIgnore>true</testFailureIgnore>
-					<argLine>-Xms512m -Xmx20486m -XX:MaxPermSize=512M</argLine>
+					<argLine>-Xms512m -Xmx2048m -XX:MaxPermSize=512M</argLine>
 					<product>org.eclipse.sdk.ide</product>
 					
 					<dependencies>
