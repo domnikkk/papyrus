@@ -69,8 +69,12 @@ public class TableViewPrototype extends ViewPrototype {
 				table.setOwner(target);
 			}
 			@Override
-			public void redo() {
+			public void undo() {
 				table.setOwner(previous);
+			}
+			@Override
+			public void redo() {
+				table.setOwner(target);
 			}
 			@Override
 			protected boolean prepare() { return true; }
@@ -87,8 +91,12 @@ public class TableViewPrototype extends ViewPrototype {
 				table.setContext(target);
 			}
 			@Override
-			public void redo() {
+			public void undo() {
 				table.setContext(previous);
+			}
+			@Override
+			public void redo() {
+				table.setContext(target);
 			}
 			@Override
 			protected boolean prepare() { return true; }

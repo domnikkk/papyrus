@@ -82,8 +82,12 @@ public class DiagramPrototype extends ViewPrototype {
 				DiagramUtils.setOwner(diagram, target);
 			}
 			@Override
-			public void redo() {
+			public void undo() {
 				DiagramUtils.setOwner(diagram, previous);
+			}
+			@Override
+			public void redo() {
+				DiagramUtils.setOwner(diagram, target);
 			}
 			@Override
 			protected boolean prepare() { return true; }
@@ -100,8 +104,12 @@ public class DiagramPrototype extends ViewPrototype {
 				diagram.setElement(target);
 			}
 			@Override
-			public void redo() {
+			public void undo() {
 				diagram.setElement(previous);
+			}
+			@Override
+			public void redo() {
+				diagram.setElement(target);
 			}
 			@Override
 			protected boolean prepare() { return true; }
