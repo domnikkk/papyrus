@@ -22,7 +22,7 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DuplicateRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.DuplicatePasteEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.PasteEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
 
 
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
  *
  * @see bug 375041
  */
-public class CustomDuplicatePasteEditPolicy extends DuplicatePasteEditPolicy {
+public class CustomDuplicatePasteEditPolicy extends PasteEditPolicy {
 
 	/**
 	 * {@inheritDoc}

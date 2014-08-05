@@ -27,7 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.DuplicatePasteEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.PasteEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.policies.CustomFullLifelineStateDefinitionCompartmentCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.policies.CustomFullLifelineStateDefinitionCompartmentLayoutEditPolicy;
@@ -87,7 +87,7 @@ public class FullLifelineStateDefinitionCompartmentEditPartCN extends ListCompar
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new FullLifelineStateDefinitionCompartmentItemSemanticEditPolicyCN());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new PapyrusCreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
+		installEditPolicy(PasteEditPolicy.PASTE_ROLE, new PasteEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CustomFullLifelineStateDefinitionCompartmentCreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new TimingDiagramDragDropEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new CustomFullLifelineStateDefinitionCompartmentLayoutEditPolicy());

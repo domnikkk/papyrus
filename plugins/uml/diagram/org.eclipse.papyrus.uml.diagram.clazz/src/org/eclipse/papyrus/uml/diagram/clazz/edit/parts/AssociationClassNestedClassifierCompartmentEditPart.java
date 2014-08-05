@@ -31,7 +31,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.NestedClazzCompartm
 import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.RemoveOrphanViewPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.AssociationClassNestedClassifierCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.clazz.part.Messages;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.DuplicatePasteEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.PasteEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 
 /**
@@ -77,7 +77,7 @@ public class AssociationClassNestedClassifierCompartmentEditPart extends ListCom
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssociationClassNestedClassifierCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new PapyrusCreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(DuplicatePasteEditPolicy.PASTE_ROLE, new DuplicatePasteEditPolicy());
+		installEditPolicy(PasteEditPolicy.PASTE_ROLE, new PasteEditPolicy());
 		// in Papyrus diagrams are not strongly synchronised
 		// installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new org.eclipse.papyrus.uml.diagram.clazz.edit.policies.AssociationClassNestedClassifierCompartmentCanonicalEditPolicy());
 
