@@ -304,6 +304,7 @@
 					<useUIThread>true</useUIThread>
 					<testFailureIgnore>true</testFailureIgnore>
 					<argLine>-Xms512m -Xmx2048m -XX:MaxPermSize=512M</argLine>
+					<appArgLine>-testConfig=${testConfig}</appArgLine>
 					<product>org.eclipse.sdk.ide</product>
 					
 					<dependencies>
