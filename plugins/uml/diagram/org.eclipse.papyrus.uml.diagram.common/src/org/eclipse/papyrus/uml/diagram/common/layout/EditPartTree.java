@@ -223,11 +223,13 @@ public abstract class EditPartTree extends DefaultMutableTreeNode {
 	}
 
 	/**
-	 * Gets the child level.
+	 * Get all the children of a specific level.
 	 *
 	 * @param level
 	 *            the level
 	 * @return the child level
+	 *        the level we wants children
+	 * @return the children of the specific level
 	 */
 	public List<EditPartTree> getChildLevel(int level) {
 		List<EditPartTree> epList = new ArrayList<EditPartTree>();
@@ -278,6 +280,7 @@ public abstract class EditPartTree extends DefaultMutableTreeNode {
 	public int getLevelForFirstSelectedElement() {
 		// We search the first level in the tree
 		TreeNode[] path = this.getPath();
+		
 		if (path.length > 1) {
 			EditPartTree result = getSelectedFirstEditPart((EditPartTree) path[1]);
 			if (result != null) {

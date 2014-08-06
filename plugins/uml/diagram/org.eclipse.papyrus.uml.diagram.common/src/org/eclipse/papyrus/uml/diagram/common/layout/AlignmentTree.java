@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010- 2014 CEA LIST.
  *
  *
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Céline Janssens (All4TEC) celine.Janssens@all4tec.net - Bug 440224: Label Alignment
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.layout;
@@ -18,7 +19,10 @@ import java.util.List;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gef.tools.ToolUtilities;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 
 /**
  *
@@ -89,13 +93,32 @@ public class AlignmentTree extends EditPartTree {
 
 			// shift between the two positions
 			Point shift = newParentLocation.getTranslated(oldParentLocation.getNegated());
-
+			PrecisionRectangle oldContainerBounds;
 			// we want know the final position for the container
-			PrecisionRectangle oldContainerBounds = LayoutUtils.getAbsolutePosition(this.getEditPart().getParent());
+			if (getEditPart().getParent() instanceof AbstractBorderItemEditPart) {
+				// in case of Port Label the container is the grand grand parent
+				oldContainerBounds = LayoutUtils.getAbsolutePosition(getEditPart().getParent().getParent().getParent());
+			}else if (getEditPart().getParent() instanceof AbstractConnectionEditPart){
+				// in case of edge label the container is the grand parent
+				oldContainerBounds = LayoutUtils.getAbsolutePosition(getEditPart().getParent().getParent());
+			}else{
+				// in all the case the container is the direct parent
+				oldContainerBounds = LayoutUtils.getAbsolutePosition(getEditPart().getParent());
+			}
 			newContainerBounds = new PrecisionRectangle(oldContainerBounds);
 			newContainerBounds.translate(shift);
 		} else {// treeParent is the root of the tree
-			EditPart containerEditPart = this.getEditPart().getParent();
+			
+			EditPart containerEditPart;
+			// in case of a label, the container is the grand-parent
+			if (getEditPart().getParent() instanceof AbstractConnectionEditPart ) {
+				containerEditPart = getEditPart().getParent().getParent();
+			} else if (getEditPart().getParent() instanceof AbstractBorderItemEditPart) {
+				containerEditPart = getEditPart().getParent().getParent().getParent();
+			} else {
+				containerEditPart = getEditPart().getParent();
+			}
+				
 			newContainerBounds = LayoutUtils.getAbsolutePosition(containerEditPart);
 		}
 		return newContainerBounds;
@@ -109,11 +132,22 @@ public class AlignmentTree extends EditPartTree {
 	 *         moved, and the editpart hasn't moved
 	 */
 	public PrecisionRectangle getAbsolutePositionInTheNewContainerPosition() {
-		PrecisionRectangle newPosition = new PrecisionRectangle(LayoutUtils.getAbsolutePosition(getEditPart()));
+		EditPart editPart = getEditPart();
+		EditPart parent = editPart.getParent();
+		PrecisionRectangle oldContainerPosition;
+		PrecisionRectangle newPosition = new PrecisionRectangle(LayoutUtils.getAbsolutePosition(editPart));
 		PrecisionRectangle newContainerPosition = getNewContainerBounds();
-		PrecisionRectangle oldContainerPosition = LayoutUtils.getAbsolutePosition(getEditPart().getParent());
-		PrecisionRectangle distance = (PrecisionRectangle) newContainerPosition.translate(oldContainerPosition.getLocation().getNegated());
-		return (PrecisionRectangle) newPosition.translate(distance.getLocation());
+			
+		if (parent instanceof AbstractConnectionEditPart){
+			oldContainerPosition = LayoutUtils.getAbsolutePosition(parent.getParent());
+		}else if (parent instanceof AbstractBorderItemEditPart){
+			oldContainerPosition = LayoutUtils.getAbsolutePosition(parent.getParent().getParent());
+		}else {
+			oldContainerPosition = LayoutUtils.getAbsolutePosition(parent);
+		}
+		
+		PrecisionRectangle absoluteNewContainer = (PrecisionRectangle)newContainerPosition.translate(oldContainerPosition.getLocation().getNegated());
+		return (PrecisionRectangle)newPosition.translate(absoluteNewContainer.getLocation());
 	}
 
 	/**

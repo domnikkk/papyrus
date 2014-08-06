@@ -32,6 +32,7 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.ModelEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.ModelEditPartCN;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.PackageEditPartCN;
+import org.eclipse.papyrus.uml.diagram.component.edit.parts.PortNameEditPart;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.UMLEditPartFactory;
 import org.eclipse.papyrus.uml.diagram.component.edit.parts.UsageEditPart;
 import org.eclipse.papyrus.uml.diagram.component.part.UMLVisualIDRegistry;
@@ -69,6 +70,8 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 				return new CustomDependencyNodeEditPart(view);
 			case DependencyBranchEditPart.VISUAL_ID:
 				return new CustomDependencyBranchEditPart(view);
+			case PortNameEditPart.VISUAL_ID:
+				return new CustomPortNameEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

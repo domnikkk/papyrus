@@ -41,6 +41,8 @@ public class CustomEditPartFactory extends UMLEditPartFactory {
 				return new CustomConnectorMultiplicityTargetEditPart(view);
 			case ConstraintEditPartCN.VISUAL_ID:
 				return new CustomConstraintEditPartCN(view);
+			case CustomPortNameEditPart.VISUAL_ID:
+				return new CustomPortNameEditPart(view);
 
 			}
 		}

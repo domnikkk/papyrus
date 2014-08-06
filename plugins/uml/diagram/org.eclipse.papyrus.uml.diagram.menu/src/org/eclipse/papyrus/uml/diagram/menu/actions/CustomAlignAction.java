@@ -8,17 +8,18 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr 		- Initial API and implementation
+ *  C�line Janssens (ALL4TEC)  celine.janssens@all4tec.net 	- Code refractor and documentation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.menu.actions;
 
-import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -26,7 +27,6 @@ import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gef.requests.AlignmentRequest;
 import org.eclipse.gef.tools.ToolUtilities;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
@@ -63,16 +63,21 @@ public class CustomAlignAction {
 	 */
 	private AlignmentTree rootTree;
 
+
 	/** The alignment. */
 	private int alignment;
-
 	/** the selected elements */
 	private List<IGraphicalEditPart> selectedElements;
+	/** List of selected edit Parts*/
+	private List<EditPart> editparts;
+	
+	/** Helper for specific treatment*/
+	private AlignActionHelper helper = new AlignActionHelper(this);
 
 	/**
-	 *
+	 * 
 	 * Constructor.
-	 *
+	 * 
 	 * @param alignment
 	 * @param selectedElements
 	 */
@@ -81,7 +86,6 @@ public class CustomAlignAction {
 		this.selectedElements = selectedElements;
 	}
 
-
 	/**
 	 * Returns the command for this action
 	 *
@@ -89,41 +93,67 @@ public class CustomAlignAction {
 	 *         the command for this action
 	 */
 	public Command getCommand() {
-		List<EditPart> editparts = new ArrayList<EditPart>();
-		for (IGraphicalEditPart current : this.selectedElements) {
-			editparts.add(current);
+		
+		editparts = helper.getEditPartList();
+		Command cmd = null;
+		
+		// In case of alignment not allowed no command is returned.
+		if (!helper.isAlignAllowed(editparts)){
+			cmd =  UnexecutableCommand.INSTANCE;
 		}
-		if (!isMixedSelection(editparts)) {// if selection contains links and nodes, we do nothing
-			if (isLinkSelection(editparts)) {
-				AlignmentLinkHelper helper = new AlignmentLinkHelper(editparts, alignment);
-				return helper.createCommand();
-			}
 
+		// In case of only Edges selected, a specific alignment is done
+		if(helper.isLinkSelection(editparts)) {
+			// Align Source and target Nodes of the edge depending on the alignment type
+			AlignmentLinkHelper helper = new AlignmentLinkHelper(editparts, alignment);
+			cmd =  helper.createCommand();
+		}
+		
+ 	// If only 1 Nodes is selected no Alignment is possible
+		if(editparts.size() < 2) {
+			cmd =  UnexecutableCommand.INSTANCE;
 
-			if (editparts.size() >= 2) {
-				rootTree = new AlignmentTree(editparts);
+		}else{
 
-				createRequests(editparts);
+			rootTree = new AlignmentTree(editparts);
+			// create the alignment requests
+			createRequests();
+			// return the associated command
+			cmd =  getAlignmentCommand();
+		}
+	
+		return cmd;
+	}
 
-				CompoundCommand command = new CompoundCommand("Alignment Command"); //$NON-NLS-1$
-				Enumeration eptEnum = rootTree.breadthFirstEnumeration();
-				while (eptEnum.hasMoreElements()) {
-					EditPartTree ept = (EditPartTree) eptEnum.nextElement();
-					if (ept.getEditPart() != null) {
-						AlignmentRequest currentReq = (AlignmentRequest) ept.getRequest();
-						if (currentReq != null) {
-							Command curCommand = null;
-							curCommand = ept.getEditPart().getCommand(currentReq);
-							if (curCommand != null) {
-								command.add(curCommand);
-							}
-						}
+	/**
+	 * Get the Alignment Commands of selected editParts
+	 * @return
+	 * 			the Command related to the selected editParts and the Alignment Request
+	 */
+	private Command getAlignmentCommand() {
+
+		CompoundCommand commands = new CompoundCommand("Alignment Commands"); //$NON-NLS-1$
+		// Create a enumeration with the sub tree element ordered by breadth
+		Enumeration<?> eptEnum = rootTree.breadthFirstEnumeration();
+		while(eptEnum.hasMoreElements()) {//for each selected element
+			// Create an EditPartTree - hierarchy between selected editparts
+			EditPartTree ept = (EditPartTree)eptEnum.nextElement();
+
+			if(ept.getEditPart() != null) {
+				// get the alignment request associated to the EditPartTree
+				AlignmentRequest currentReq = (AlignmentRequest)ept.getRequest();
+				if(currentReq != null) {
+					Command curCommand = null;
+					// if this request is not null, get the associated command for this editPart
+					curCommand = ept.getEditPart().getCommand(currentReq);
+					if(curCommand != null) {
+						// Add it to the compound command
+						commands.add(curCommand);
 					}
 				}
-				return command.isEmpty() ? UnexecutableCommand.INSTANCE : (Command) command;
 			}
 		}
-		return UnexecutableCommand.INSTANCE;
+			return commands.isEmpty() ? UnexecutableCommand.INSTANCE : (Command)commands;
 	}
 
 	/**
@@ -137,215 +167,93 @@ public class CustomAlignAction {
 	 * @param request
 	 *            the initial request
 	 */
-	protected void createRequests(List<?> editparts) {
+	protected void createRequests() {
 
-		EditPart refEP = (EditPart) editparts.get(editparts.size() - 1);
+		// The reference EP is the last selected
+		EditPart refEP = (EditPart)editparts.get(editparts.size() - 1);
+		// Get absolute bounds of the Ref EP
 		PrecisionRectangle boundsRef = LayoutUtils.getAbsolutePosition(refEP);
 
+		// Get the depth of the Align Tree
 		int depth = this.rootTree.getDepth();
-		for (int i = 1; i <= depth; i++) {// we iterate by level in the rootTree
+		for(int i = 1; i <= depth; i++) {//we iterate by level in the rootTree
 			List<EditPartTree> epTrees = rootTree.getChildLevel(i);
-
-
-			for (EditPartTree ept : epTrees) {// we create the request for each children
-				List<EditPart> nodeChild = new ArrayList<EditPart>();
-
-				// used to calculate the shift between each element!
-				Enumeration vectorisedChildren = ((EditPartTree) ept.getPath()[1]).breadthFirstEnumeration();
-				while (vectorisedChildren.hasMoreElements()) {
-					nodeChild.add(((EditPartTree) vectorisedChildren.nextElement()).getEditPart());
-				}
-
+			for(EditPartTree ept : epTrees) {
+				List<EditPart> nodeChild = helper.getPathRootEditPartList(ept);
+				
 				if (ept.isSelected()) {// the edit part is selected
 					if (ept.getEditPart() != refEP && (!ept.existsUnselectedChild())) {
-						/*
-						 * calculus of the shift
-						 *
-						 * the shift is the first selected element when the reference is not a child of the editpart
-						 * the shift is the number of levels between the current editpart and the reference if this reference is a child
-						 */
-						int level = ept.getLevelForFirstSelectedElement();
-						if (ToolUtilities.isAncestorContainedIn(nodeChild, refEP)) {
-							level = rootTree.getTree(refEP).getLevel();
-							int currentLevel = ept.getLevel();
-							level = level - currentLevel + 1;
-						}
+						
 
-						/* collection used to test if the ept.getEditPart() contains the refEP */
-						List<EditPart> coll = new ArrayList<EditPart>(1);
-						coll.add(ept.getEditPart());
-
-						/* the reference used for the alignment */
+						// the reference used for the alignment
 						PrecisionRectangle alignRef = new PrecisionRectangle(boundsRef);
+					    PrecisionRectangle containerBounds = ((AlignmentTree)ept).getNewContainerBounds();
 
-						PrecisionRectangle containerBounds = ((AlignmentTree) ept).getNewContainerBounds();
-
-
-						if (!containerBounds.equals(LayoutUtils.getAbsolutePosition(ept.getEditPart().getRoot()))) {
-							containerBounds.setX(containerBounds.preciseX + LayoutUtils.scrollBarSize);
-							containerBounds.setY(containerBounds.preciseY + LayoutUtils.scrollBarSize);
-							containerBounds.setWidth(containerBounds.preciseWidth - 2 * LayoutUtils.scrollBarSize);
-							containerBounds.setHeight(containerBounds.preciseHeight - 2 * LayoutUtils.scrollBarSize);
+						// if container bounds is not the same as diagram then take the scrollbar width into account
+						if(!containerBounds.equals(LayoutUtils.getAbsolutePosition(ept.getEditPart().getRoot()))) {
+							helper.addScrollBar(containerBounds);
 						}
 
-						switch (this.alignment) {
-						case PositionConstants.LEFT:
-							alignRef.setX(boundsRef.preciseX - ((level - 1) * LayoutUtils.scrollBarSize));
-							alignRef.setWidth(boundsRef.preciseWidth + 2 * ((level - 1) * LayoutUtils.scrollBarSize));
+						// Adjust Ref Bounds with scrollbar, labels and compartment height
+						helper.adjustAlignRefBounds(alignRef, boundsRef, ept , refEP );
 
-							break;
-						case PositionConstants.CENTER:// Useful?
-							// alignRef.setX(boundsRef.preciseX - ((level - 1) * LayoutUtils.scrollBarSize));
-							// alignRef.setWidth(boundsRef.preciseWidth + 2 * ((level - 1) * LayoutUtils.scrollBarSize));
-							break;
-						case PositionConstants.RIGHT:
-
-							alignRef.setX(boundsRef.preciseX + ((-level + 1) * LayoutUtils.scrollBarSize));
-							alignRef.setWidth(boundsRef.preciseWidth - 2 * ((-level + 1) * LayoutUtils.scrollBarSize));
-							break;
-
-						case PositionConstants.BOTTOM:
-							alignRef.setY(boundsRef.preciseY + ((-level + 1) * LayoutUtils.scrollBarSize));
-							alignRef.setHeight(boundsRef.preciseHeight - 2 * ((-level + 1) * LayoutUtils.scrollBarSize));
-							break;
-						case PositionConstants.MIDDLE:// here we can have a problem with the label for the element inheriting from Package
-
-							// useful?
-							// alignRef.setY(boundsRef.preciseY - ((level - 1) * LayoutUtils.scrollBarSize));
-							// alignRef.setHeight(boundsRef.preciseHeight + 2 * ((level - 1) * LayoutUtils.scrollBarSize));
-
-							/*
-							 * we don't want that the scrollbar appears
-							 * with the top alignment, we need to consider the label of the container element
-							 */
-
-
-							/* obtain the size of the highest child */
-							double heightMax = 0;
-							Enumeration children = ept.children();
-							while (children.hasMoreElements()) {
-								EditPartTree currentChild = (EditPartTree) children.nextElement();
-								double height = LayoutUtils.getAbsolutePosition(currentChild.getEditPart()).preciseHeight();
-								heightMax = (height > heightMax) ? height : heightMax;
-							}
-
-
-							/* obtain the size of the compartment for this figure! */
-							List childrenEP = ept.getEditPart().getChildren();
-							double compartmentHeight = 0;
-							for (int iter = 0; iter < childrenEP.size(); iter++) {
-								if (childrenEP.get(iter) instanceof CompartmentEditPart) {
-									CompartmentEditPart child = (CompartmentEditPart) childrenEP.get(iter);
-									EditPolicy policy = child.getEditPolicy(EditPolicy.LAYOUT_ROLE);
-									if (policy != null) {
-										compartmentHeight = LayoutUtils.getAbsolutePosition(child).preciseHeight();
-										break;
-									}
-								}
-							}
-
-							double heightToRemove = getLabelHeightToRemove(ept);
-							// test to know if the initial alignment is possible without seeing the scrollbar
-							if (compartmentHeight < (heightMax + LayoutUtils.scrollBarSize + heightToRemove)) {
-								alignRef.setY(alignRef.preciseY - heightToRemove);
-								alignRef.setHeight(alignRef.preciseHeight + heightToRemove);
-							}
-
-							break;
-						case PositionConstants.TOP: // here we can have a problem with the label for the element inheriting from Package
-							alignRef.setY(boundsRef.preciseY - ((level - 1) * LayoutUtils.scrollBarSize));
-							alignRef.setHeight(boundsRef.preciseHeight + 2 * ((level - 1) * LayoutUtils.scrollBarSize));
-							/*
-							 * we don't want that the scrollbar appears
-							 * with the top alignment, we need to consider the label of the container element
-							 */
-							if (ept.children().hasMoreElements()) {
-								double dist = getLabelHeightToRemove(ept);
-								alignRef.setY(alignRef.preciseY() - dist);
-							}
-							break;
-						default:
-							break;
-						}
-
+						// create the request
 						createConstrainedRequest(alignRef, containerBounds, null, (AlignmentTree) ept);
 
+						//The current editPart has not selected child
+					} else if(ept.getEditPart() != refEP && (ept.existsUnselectedChild())) {
 
-					} else if (ept.getEditPart() != refEP && (ept.existsUnselectedChild())) {
-						List<EditPart> parent = new ArrayList<EditPart>(1);
-						parent.add(ept.getEditPart());
+						
 
-						int distance = ept.getDistanceWithTheFirstUnselectedChild();
-						EditPartTree unselectedTree = ept.getFirstUnselectedChild();
-
-						PrecisionRectangle boundsLimit = null;
-						// we needn't correct unselected element location when the reference is not inside them
-						if (ToolUtilities.isAncestorContainedIn(parent, refEP)) {
-							boundsLimit = new PrecisionRectangle(LayoutUtils.getAbsolutePosition(unselectedTree.getEditPart()));
-							// we increase the size of the child, to avoid scrollbar in its parent
-							boundsLimit.setX(boundsLimit.preciseX - (distance * LayoutUtils.scrollBarSize));
-							boundsLimit.setY(boundsLimit.preciseY - (distance * LayoutUtils.scrollBarSize));
-							boundsLimit.setWidth(boundsLimit.width + (2 * distance * LayoutUtils.scrollBarSize));
-							boundsLimit.setHeight(boundsLimit.height + (2 * distance * LayoutUtils.scrollBarSize));
-							if (this.alignment == PositionConstants.TOP) {
-								double dist = getLabelHeightToRemove(ept);
-								boundsLimit.setY(boundsLimit.preciseY() - dist);
-							}
-						}
-
+						PrecisionRectangle boundsLimit = helper.getUnselectedChildNewBounds(ept , refEP);
 						PrecisionRectangle containerBounds = ((AlignmentTree) ept).getNewContainerBounds();
 
-						if (!containerBounds.equals(LayoutUtils.getAbsolutePosition(ept.getEditPart().getRoot()))) {
-							// we reduce the container bounds used to avoid scrollbar
-							containerBounds.setX(containerBounds.preciseX + LayoutUtils.scrollBarSize);
-							containerBounds.setY(containerBounds.preciseY + LayoutUtils.scrollBarSize);
-							containerBounds.setWidth(containerBounds.width - 2 * LayoutUtils.scrollBarSize);
-							containerBounds.setHeight(containerBounds.height - 2 * LayoutUtils.scrollBarSize);
+						if(!containerBounds.equals(LayoutUtils.getAbsolutePosition(ept.getEditPart().getRoot()))) {
+							//we reduce the container bounds used to avoid scrollbar
+							helper.addScrollBar(containerBounds);
 						}
 
 						createConstrainedRequest(boundsRef, containerBounds, boundsLimit, (AlignmentTree) ept);
 
-					} else if (ept.getEditPart() == refEP && ToolUtilities.isAncestorContainedIn(nodeChild, refEP)) {
-						if (!((EditPartTree) ept.getParent()).isSelected()) {
-							// nothing to do
-						} else {
+				
+					} else if(ept.getEditPart() == refEP && ToolUtilities.isAncestorContainedIn(nodeChild, refEP)) {
 
+						if(((EditPartTree)ept.getParent()).isSelected()) {
+						
 							/*
 							 * we need to create a command for the reference, only if
 							 * its direct parent is selected.
 							 * If the reference has ancestor in the selection and if this ancestor is not selected, itn's not necessary to move the
 							 * reference, because it's the ancestor which must move.
 							 */
-							PrecisionRectangle containerBounds = ((AlignmentTree) ept).getNewContainerBounds();
-							containerBounds.setX(containerBounds.preciseX + LayoutUtils.scrollBarSize);
-							containerBounds.setY(containerBounds.preciseY + LayoutUtils.scrollBarSize);
-							containerBounds.setWidth(containerBounds.width - 2 * LayoutUtils.scrollBarSize);
-							containerBounds.setHeight(containerBounds.height - 2 * LayoutUtils.scrollBarSize);
-							createConstrainedRequest(LayoutUtils.getAbsolutePosition(refEP), containerBounds, null, (AlignmentTree) ept);
+							PrecisionRectangle containerBounds = ((AlignmentTree)ept).getNewContainerBounds();
+							containerBounds.setPreciseX(containerBounds.x + LayoutUtils.scrollBarSize);
+							containerBounds.setPreciseY(containerBounds.y + LayoutUtils.scrollBarSize);
+							containerBounds.setPreciseWidth(containerBounds.width - 2 * LayoutUtils.scrollBarSize);
+							containerBounds.setPreciseHeight(containerBounds.height - 2 * LayoutUtils.scrollBarSize);
+							createConstrainedRequest(LayoutUtils.getAbsolutePosition(refEP), containerBounds, null, (AlignmentTree)ept);
 						}
-					} else if (ept.getEditPart() == refEP && (!ToolUtilities.isAncestorContainedIn(nodeChild, refEP))) {
-						// nothing to do
-					}
-				} else {// the editpart is not selected! We need to maintain its location
+				
+					} 
+					
+				} else {//the Edit Part is not selected! We need to maintain its location 
 
-					PrecisionRectangle containerBounds = ((AlignmentTree) ept).getNewContainerBounds();
-					containerBounds.setX(containerBounds.preciseX + LayoutUtils.scrollBarSize);
-					containerBounds.setY(containerBounds.preciseY + LayoutUtils.scrollBarSize);
-					containerBounds.setWidth(containerBounds.width - 2 * LayoutUtils.scrollBarSize);
-					containerBounds.setHeight(containerBounds.height - 2 * LayoutUtils.scrollBarSize);
+					PrecisionRectangle containerBounds = ((AlignmentTree)ept).getNewContainerBounds();
+					containerBounds.setPreciseX(containerBounds.x + LayoutUtils.scrollBarSize);
+					containerBounds.setPreciseY(containerBounds.y + LayoutUtils.scrollBarSize);
+					containerBounds.setPreciseWidth(containerBounds.width - 2 * LayoutUtils.scrollBarSize);
+					containerBounds.setPreciseHeight(containerBounds.height - 2 * LayoutUtils.scrollBarSize);
 
-					createConstrainedRequest(LayoutUtils.getAbsolutePosition(ept.getEditPart()), containerBounds, null, (AlignmentTree) ept);
+					createConstrainedRequest(LayoutUtils.getAbsolutePosition(ept.getEditPart()), containerBounds, null, (AlignmentTree)ept);
 
 				}
 			}
 		}
-
-
-
+		
 	}
 
+
 	/**
-	 *
 	 * <ul>
 	 * <li>Completes the {@link EditPartTree} with the correct new position for the object</li>
 	 * <li>Adds the created request to the {@link EditPartTree}</li>
@@ -361,281 +269,245 @@ public class CustomAlignAction {
 	 *            the tree for which we create the request
 	 */
 
-
 	protected void createConstrainedRequest(PrecisionRectangle ref, PrecisionRectangle containerBounds, PrecisionRectangle dontCross, AlignmentTree tree) {
 
-		// variables used to write the request
-		double xMinForObject = 0;
-		double xMaxForObject = 0;
-		double yMinForObject = 0;
-		double yMaxForObject = 0;
-
 		PrecisionRectangle editpartBounds = LayoutUtils.getAbsolutePosition(tree.getEditPart());
-
-
-		PrecisionRectangle newPosition = new PrecisionRectangle(editpartBounds);
-
-		// 1-we determine the bounds!
-		if (dontCross == null && containerBounds.equals(LayoutUtils.getAbsolutePosition(tree.getEditPart().getRoot()))) {
+	PrecisionRectangle newPosition = new PrecisionRectangle(editpartBounds);	
+	
+		//Nominal Case
+		if(dontCross == null && containerBounds.equals(LayoutUtils.getAbsolutePosition(tree.getEditPart().getRoot()))) {
+	
 			AlignmentRequest newRequest = new AlignmentRequest(RequestConstants.REQ_ALIGN);
 			PrecisionRectangle newPrecisionRectangle = new PrecisionRectangle(ref);
 			newRequest.setAlignment(this.alignment);
 			newRequest.setAlignmentRectangle(newPrecisionRectangle);
 			double pos = 0;
-			switch (this.alignment) {
+			switch(this.alignment) {
 			case PositionConstants.LEFT:
-				newPosition.setX(ref.preciseX());
+				newPosition.setPreciseX(ref.x());
 				break;
 			case PositionConstants.CENTER:
-				pos = ref.getTop().preciseX() - (editpartBounds.preciseWidth() / 2.0);
-				newPosition.setX(pos);
+				pos = ref.getTop().x() - (editpartBounds.preciseWidth() / 2.0);
+				newPosition.setPreciseX(pos);
 				break;
 			case PositionConstants.RIGHT:
-				pos = ref.getRight().preciseX() - editpartBounds.preciseWidth();
-				newPosition.setX(pos);
+				pos = ref.getRight().x() - editpartBounds.preciseWidth();
+				newPosition.setPreciseX(pos);
 				break;
 			case PositionConstants.TOP:
-				pos = ref.getTop().preciseY();
-				newPosition.setY(pos);
+				pos = ref.getTop().y();
+				newPosition.setPreciseY(pos);
 				break;
 			case PositionConstants.MIDDLE:
-				pos = ref.getLeft().preciseY() - (editpartBounds.preciseHeight / 2.0);
-				newPosition.setY(pos);
+				pos = ref.getLeft().y() - (editpartBounds.preciseHeight() / 2.0);
+				newPosition.setPreciseY(pos);
 				break;
 			case PositionConstants.BOTTOM:
-				pos = ref.getBottom().preciseY() - editpartBounds.preciseHeight();
-				newPosition.setY(pos);
+				pos = ref.getBottom().y() - editpartBounds.preciseHeight();
+				newPosition.setPreciseY(pos);
 				break;
 			default:
 				break;
 			}
-
-
 			tree.setNewPosition(newPosition);
 			tree.setRequest(newRequest);
 			return;
-		} else if (dontCross == null && (!containerBounds.equals(LayoutUtils.getAbsolutePosition(tree.getEditPart().getRoot())))) {
-			xMinForObject = containerBounds.preciseX;
-			xMaxForObject = containerBounds.getRight().preciseX() - editpartBounds.preciseWidth();
-			yMinForObject = containerBounds.preciseY;
-			yMaxForObject = containerBounds.getBottom().preciseY() - editpartBounds.preciseHeight();
+		
+
+		//Not nominal Cases
+		} else {
+
+			//variables used to write the request
+			PrecisionPoint minPoint = new PrecisionPoint();
+			PrecisionPoint maxPoint = new PrecisionPoint();
+			
+			// Container bigger than Editor
+			if(dontCross == null && (!containerBounds.equals(LayoutUtils.getAbsolutePosition(tree.getEditPart().getRoot())))) {
+
+				minPoint.setPreciseX(containerBounds.x);
+				maxPoint.setPreciseX(containerBounds.getRight().x() - editpartBounds.preciseWidth());
+				minPoint.setPreciseY(containerBounds.y);
+				maxPoint.setPreciseY(containerBounds.getBottom().y() - editpartBounds.preciseHeight());
+
+			// Bounds limits in case of unselected child
+			} else if(dontCross != null) {
+
+	
+				minPoint.setPreciseX(dontCross.getRight().x() - editpartBounds.preciseWidth());
+				maxPoint.setPreciseX(dontCross.x);
+				minPoint.setPreciseY(dontCross.getBottom().y() - editpartBounds.preciseHeight());
+				maxPoint.setPreciseY(dontCross.y);
+
+			if(!containerBounds.equals(LayoutUtils.getAbsolutePosition(tree.getEditPart().getRoot()))) {
+					//container's limits
+					double xMinContainerLimit = containerBounds.x;
+					double xMaxContainerLimit = containerBounds.getRight().x() - editpartBounds.preciseWidth();
+					double yMinContainerLimit = containerBounds.y;
+					double yMaxContainerLimit = containerBounds.getBottom().y() - editpartBounds.preciseHeight();
 
 
-		} else if (dontCross != null) {
-			xMinForObject = dontCross.getRight().preciseX() - editpartBounds.preciseWidth;
-			xMaxForObject = dontCross.preciseX;
-			yMinForObject = dontCross.getBottom().preciseY() - editpartBounds.preciseHeight;
-			yMaxForObject = dontCross.preciseY;
-
-			if (!containerBounds.equals(LayoutUtils.getAbsolutePosition(tree.getEditPart().getRoot()))) {
-				// container's limits
-				double xMinContainerLimit = containerBounds.preciseX;
-				double xMaxContainerLimit = containerBounds.getRight().preciseX() - editpartBounds.preciseWidth();
-				double yMinContainerLimit = containerBounds.preciseY;
-				double yMaxContainerLimit = containerBounds.getBottom().preciseY() - editpartBounds.preciseHeight();
-
-
-				xMinForObject = (xMinForObject > xMinContainerLimit) ? xMinForObject : xMinContainerLimit;
-				xMaxForObject = (xMaxForObject > xMaxContainerLimit) ? xMaxContainerLimit : xMaxForObject;
-				yMinForObject = (yMinForObject > yMinContainerLimit) ? yMinForObject : yMinContainerLimit;
-				yMaxForObject = (yMaxForObject > yMaxContainerLimit) ? yMaxContainerLimit : yMaxForObject;
+					minPoint.setPreciseX(Math.max(minPoint.x() , xMinContainerLimit));
+					maxPoint.setPreciseX(Math.min(maxPoint.x() , xMaxContainerLimit));
+					minPoint.setPreciseY(Math.max(minPoint.y() , yMinContainerLimit));
+					maxPoint.setPreciseY(Math.min(maxPoint.y() , yMaxContainerLimit));
+				}
 			}
+
+
+			/* rectangle used to do the alignment */
+			PrecisionRectangle myAlignRectangle = new PrecisionRectangle(editpartBounds);
+
+			/* the distance between the editpart in the new container position and its alignment reference */
+			PrecisionPoint offset = getOffset(minPoint, maxPoint, ref, editpartBounds, tree);
+			
+
+			myAlignRectangle.setPreciseX(LayoutUtils.getAbsolutePosition(tree.getEditPart()).x + offset.x());
+			myAlignRectangle.setPreciseY(LayoutUtils.getAbsolutePosition(tree.getEditPart()).y + offset.y());
+
+			/* the point use to translate the editpart */
+			Point translationPoint = new PrecisionPoint(0.0,0.0);
+
+			/* the new request */
+			AlignmentRequest newRequest = new AlignmentRequest(RequestConstants.REQ_ALIGN);
+			newRequest.setAlignment(this.alignment);
+
+			
+
+			newRequest.setAlignmentRectangle(myAlignRectangle);
+			newPosition = (PrecisionRectangle)tree.getAbsolutePositionInTheNewContainerPosition().translate(translationPoint);
+			tree.setNewPosition(newPosition);
+			tree.setRequest(newRequest);
+			return;
 		}
 
+	}
 
-		/* rectangle used to do the alignment */
-		PrecisionRectangle myAlignRectangle = new PrecisionRectangle(editpartBounds);
-
+	/**
+	 * Get the offset distance between the editpart and the alignement position.
+	 * 
+	 * If the alignment Position is out of the calculated Bounds (min and max Points), 
+	 * the offset is the distance between the EditPart and the nearest allowed bounds.
+	 * 
+	 * @param minPoint Minimum allowed position for the editpart
+	 * @param maxPoint Maximum allowed position for the editpart
+	 * @param ref Reference rectangle of the alignment request
+	 * @param editpartBounds edit Part Bounds rectangle
+	 * @param tree current Alignment Tree
+	 * @return
+	 */
+	private PrecisionPoint getOffset(PrecisionPoint minPoint,
+			PrecisionPoint maxPoint, PrecisionRectangle ref,
+			PrecisionRectangle editpartBounds, AlignmentTree tree) {
+		
+		PrecisionPoint distance = new PrecisionPoint (0.0,0.0);
 		/* the editpart's position in its container, after the shift of the container */
 		PrecisionRectangle newTmpPosition = tree.getAbsolutePositionInTheNewContainerPosition();
-
-		/* the distance between the editpart in the new container position and its alignment reference */
-		double distance = 0;
-
-		/* the point use to translate the editpart */
-		Point translationPoint = null;
-
-		/* the new request */
-		AlignmentRequest newRequest = new AlignmentRequest(RequestConstants.REQ_ALIGN);
-		newRequest.setAlignment(this.alignment);
+		
 		switch (alignment) {
 		case PositionConstants.LEFT:
 
-			if ((ref.preciseX >= xMinForObject) && (ref.preciseX <= xMaxForObject)) {
-				distance = ref.preciseX - newTmpPosition.preciseX;
-			} else if (ref.preciseX < xMinForObject) {
-				distance = xMinForObject - newTmpPosition.preciseX;
-			} else if (ref.preciseX > xMaxForObject) {
-				distance = xMaxForObject - newTmpPosition.preciseX;
-			}
-			myAlignRectangle.setX(LayoutUtils.getAbsolutePosition(tree.getEditPart()).preciseX + distance);
-			translationPoint = new Point(distance, 0);
+		
+			if((ref.x >= minPoint.x()) && (ref.x <= maxPoint.x())) {
+				distance.setPreciseX(ref.x - newTmpPosition.x);
+			} else if(ref.x < minPoint.x()) {
+				distance.setPreciseX(minPoint.x() - newTmpPosition.x);
+			} else if(ref.x > maxPoint.x()) {
+				distance.setPreciseX(maxPoint.x() - newTmpPosition.x);
+			} 
 
 			break;
-		case PositionConstants.CENTER:// un alignement central fait de cette faÃ§on : tous les packages alignÃ© sur un Ã©lÃ©ment extÃ©rieur ne marche pas du tout!
+			
+		case PositionConstants.CENTER:// un alignement central  fait de cette facon : tous les packages alignes sur un element exterieur ne marche pas du tout!
 
-			double minCenter = xMinForObject + (editpartBounds.preciseWidth / 2.0);
-			double maxCenter = xMaxForObject + (editpartBounds.preciseWidth / 2.0);
-			if ((ref.getTop().preciseX() >= minCenter) && (ref.getTop().preciseX() <= maxCenter)) {
-				distance = (ref.preciseX + (ref.preciseWidth / 2.0) - (newTmpPosition.preciseX + (newTmpPosition.preciseWidth / 2.0)));
-			} else if (ref.getTop().preciseX() < minCenter) {
-				distance = minCenter - (newTmpPosition.preciseX + (newTmpPosition.preciseWidth / 2.0));
-			} else if (ref.getTop().preciseX() > maxCenter) {
+		
+			double minCenter = minPoint.x() + (editpartBounds.preciseWidth() / 2.0);
+			double maxCenter = maxPoint.x() + (editpartBounds.preciseWidth() / 2.0);
+			if((ref.getTop().x() >= minCenter) && (ref.getTop().x() <= maxCenter)) {
+				distance.setPreciseX(ref.x + (ref.preciseWidth() / 2.0) - (newTmpPosition.x + (newTmpPosition.preciseWidth() / 2.0)));
+			} else if(ref.getTop().x() < minCenter) {
+				distance.setPreciseX(minCenter - (newTmpPosition.x + (newTmpPosition.preciseWidth() / 2.0)));
+			} else if(ref.getTop().x() > maxCenter) {
 
-				distance = maxCenter - (newTmpPosition.preciseX + ((newTmpPosition.preciseWidth) / 2.0));
-
-			}
-			myAlignRectangle.setX(LayoutUtils.getAbsolutePosition(tree.getEditPart()).preciseX + distance);
-			translationPoint = new Point(distance, 0);
-
+				distance.setPreciseX(maxCenter - (newTmpPosition.x + ((newTmpPosition.preciseWidth()) / 2.0)));
+			} 
+			
 			break;
+			
 		case PositionConstants.RIGHT:
-			double minRight = xMinForObject + editpartBounds.preciseWidth;
-			double maxRight = xMaxForObject + editpartBounds.preciseWidth;
-			if ((ref.getRight().preciseX() >= minRight) && (ref.getRight().preciseX() <= maxRight)) {
-				distance = (ref.preciseX + ref.preciseWidth) - (newTmpPosition.preciseX + newTmpPosition.preciseWidth);
-			} else if (ref.getRight().preciseX() < minRight) {
-				distance = minRight - (newTmpPosition.preciseX + newTmpPosition.preciseWidth);
-			} else if (ref.getRight().preciseX() > maxRight) {
-				distance = maxRight - (newTmpPosition.preciseX + newTmpPosition.preciseWidth);
-			}
-			myAlignRectangle.setX(LayoutUtils.getAbsolutePosition(tree.getEditPart()).preciseX + distance);
-			translationPoint = new Point(distance, 0);
+	
+			double minRight = minPoint.x() + editpartBounds.preciseWidth();
+			double maxRight = maxPoint.x() + editpartBounds.preciseWidth();
+			if((ref.getRight().x() >= minRight) && (ref.getRight().x() <= maxRight)) {
+				distance.setPreciseX((ref.x + ref.preciseWidth()) - (newTmpPosition.x + newTmpPosition.preciseWidth()));
+			} else if(ref.getRight().x() < minRight) {
+				distance.setPreciseX( minRight - (newTmpPosition.x + newTmpPosition.preciseWidth()));
+			} else if(ref.getRight().x() > maxRight) {
+				distance.setPreciseX( maxRight - (newTmpPosition.x + newTmpPosition.preciseWidth()));
+			} 
 
 			break;
+			
+			
 		case PositionConstants.BOTTOM:
-			double minBottom = yMinForObject + editpartBounds.preciseHeight;
-			double maxBottom = yMaxForObject + editpartBounds.preciseHeight;
-			if (((ref.getBottom().preciseY()) >= minBottom) && ((ref.getBottom().preciseY()) <= maxBottom)) {
-				distance = (ref.preciseY + ref.preciseHeight) - (newTmpPosition.preciseY + newTmpPosition.preciseHeight);
-			} else if ((ref.getBottom().preciseY()) < minBottom) {
-				distance = minBottom - (newTmpPosition.preciseY + newTmpPosition.preciseHeight);
-			} else if ((ref.getBottom().preciseY()) > maxBottom) {
-				distance = maxBottom - (newTmpPosition.preciseY + newTmpPosition.preciseHeight);
-			}
-			translationPoint = new Point(0, distance);
-			myAlignRectangle.setY(LayoutUtils.getAbsolutePosition(tree.getEditPart()).preciseY + distance);
+			
+			double minBottom = minPoint.y() + editpartBounds.preciseHeight();
+			double maxBottom = maxPoint.y() + editpartBounds.preciseHeight();
+			if(((ref.getBottom().y()) >= minBottom) && ((ref.getBottom().y()) <= maxBottom)) {
+				distance.setPreciseY( (ref.y + ref.preciseHeight()) - (newTmpPosition.y + newTmpPosition.preciseHeight()));
+			} else if((ref.getBottom().y()) < minBottom) {
+				distance.setPreciseY(  minBottom - (newTmpPosition.y + newTmpPosition.preciseHeight()));
+			} else if((ref.getBottom().y()) > maxBottom) {
+				distance.setPreciseY(  maxBottom - (newTmpPosition.y + newTmpPosition.preciseHeight()));
+			} 
 			break;
 
 		case PositionConstants.MIDDLE:
-			double minMiddle = yMinForObject + (editpartBounds.preciseHeight / 2.0);
-			double maxMiddle = yMaxForObject + (editpartBounds.preciseHeight / 2.0);
-			if (((ref.preciseY + (ref.preciseHeight / 2.0)) >= minMiddle) && ((ref.preciseY + (ref.preciseHeight / 2.0)) <= maxMiddle)) {
-				distance = (ref.preciseY + (ref.preciseHeight / 2.0) - (newTmpPosition.preciseY + (newTmpPosition.preciseHeight / 2.0)));
-				;
-			} else if ((ref.preciseY + (ref.height / 2.0)) < minMiddle) {
-				distance = minMiddle - (newTmpPosition.preciseY + (newTmpPosition.preciseHeight / 2.0));
-			} else if ((ref.preciseY + (ref.height / 2.0)) > maxMiddle) {
-				distance = maxMiddle - (newTmpPosition.preciseY + (newTmpPosition.preciseHeight / 2.0));
-			}
-			translationPoint = new Point(0, distance);
-			myAlignRectangle.setY(LayoutUtils.getAbsolutePosition(tree.getEditPart()).preciseY + distance);
+			
+			double minMiddle = minPoint.y() + (editpartBounds.preciseHeight() / 2.0);
+			double maxMiddle = maxPoint.y() + (editpartBounds.preciseHeight() / 2.0);
+			if(((ref.y + (ref.preciseHeight() / 2.0)) >= minMiddle) && ((ref.y + (ref.preciseHeight() / 2.0)) <= maxMiddle)) {
+				distance .setPreciseY(  (ref.y + (ref.preciseHeight() / 2.0) - (newTmpPosition.y + (newTmpPosition.preciseHeight() / 2.0))));
+			} else if((ref.y + (ref.height / 2.0)) < minMiddle) {
+				distance .setPreciseY(  minMiddle - (newTmpPosition.y + (newTmpPosition.preciseHeight() / 2.0)));
+			} else if((ref.y + (ref.height / 2.0)) > maxMiddle) {
+				distance .setPreciseY(  maxMiddle - (newTmpPosition.y + (newTmpPosition.preciseHeight() / 2.0)));
+			} 
 			break;
+			
 		case PositionConstants.TOP:
-			if ((ref.preciseY >= yMinForObject) && (ref.preciseY <= yMaxForObject)) {
-				distance = ref.preciseY - newTmpPosition.preciseY;
-			} else if (ref.preciseY < yMinForObject) {
-				distance = yMinForObject - newTmpPosition.preciseY;
-			} else if (ref.preciseY > yMaxForObject) {
-				distance = yMaxForObject - newTmpPosition.preciseY;
-			}
-			translationPoint = new Point(0, distance);
-			myAlignRectangle.setY(LayoutUtils.getAbsolutePosition(tree.getEditPart()).preciseY + distance);
+		
+			if((ref.y >= minPoint.y()) && (ref.y <= maxPoint.y())) {
+				distance .setPreciseY(  ref.y - newTmpPosition.y);
+			} else if(ref.y < minPoint.y()) {
+				distance .setPreciseY(  minPoint.y() - newTmpPosition.y);
+			} else if(ref.y > maxPoint.y()) {
+				distance.setPreciseY(  maxPoint.y() - newTmpPosition.y);
+			} 
 			break;
 		default:
 			break;
 		}
-
-
-		newRequest.setAlignmentRectangle(myAlignRectangle);
-		newPosition = (PrecisionRectangle) tree.getAbsolutePositionInTheNewContainerPosition().translate(translationPoint);
-		tree.setNewPosition(newPosition);
-		tree.setRequest(newRequest);
-		return;
+		
+		return distance;
 	}
 
-	/**
-	 * Returns the height of the label for the current editpart contained in {@code ept}, more the height of the children's label
-	 *
-	 * @param ept
-	 *            The {@link EditPartTree} containing the {@link EditPart} used to calculate height
-	 * @return
-	 *         The height of the label for the current editpart, more the height of the children's label
-	 *
-	 */
-	protected double getLabelHeightToRemove(EditPartTree ept) {
-		double dist = 0;
-		List children = ept.getEditPart().getChildren();
-		// we search the correct compartment
-		for (int iter = 0; iter < children.size(); iter++) {
-			if (children.get(iter) instanceof CompartmentEditPart) {
-				CompartmentEditPart child = (CompartmentEditPart) children.get(iter);
-				EditPolicy policy = child.getEditPolicy(EditPolicy.LAYOUT_ROLE);
-				if (policy != null) {
-					PrecisionRectangle cptSize = LayoutUtils.getAbsolutePosition(child);
-					dist += cptSize.preciseY() - LayoutUtils.getAbsolutePosition(ept.getEditPart()).preciseY();
-					break;
-				}
-			}
-		}
-		Enumeration eptChildren = ept.children();
-		double max = 0;
-		while (eptChildren.hasMoreElements()) {
-			EditPartTree currentElement = (EditPartTree) eptChildren.nextElement();
-			if (currentElement.isSelected() && (!currentElement.isReference())) {
-				double tmp = getLabelHeightToRemove(currentElement);
-				max = (tmp > max) ? tmp : max;
-			}
-		}
-		dist += max;
-		return dist;
+	/** Get current root Tree. */
+	public AlignmentTree getRootTree() {
+		return rootTree;
 	}
 
-	/**
-	 * Tests the selection (nodes and links)
-	 *
-	 * @param editparts
-	 *
-	 * @return
-	 *         <ul>
-	 *         <li> {@code true}</li> if the selection contains links and nodes
-	 *         <li> {@code false}</li> if not
-	 *         </ul>
-	 *
-	 */
-	protected boolean isMixedSelection(List<?> editparts) {
-		boolean node = false;
-		boolean link = false;
-		for (Object editPart : editparts) {
-			if (editPart instanceof AbstractConnectionEditPart) {
-				link = true;
-			} else {
-				node = true;
-			}
-		}
-		return !(((node == true) && (link == true))) ? false : true;
+	/** Get list of Edit Parts. */
+	public List<EditPart> getEditparts() {
+		return editparts;
+	}
+	/** Get the Alignment type. */
+	public int getAlignment() {
+		return alignment;
 	}
 
-	/**
-	 * Tests if all the selected elements are instance of {@linkplain AbstractConnectionEditPart}
-	 *
-	 * @param editparts
-	 *            the editparts list to test
-	 * @return
-	 *         <ul>
-	 *         <li> {@code true}</li> if all the editparts represents a link
-	 *         <li>{@code false}</li> if not
-	 *         </ul>
-	 */
-	protected boolean isLinkSelection(List<?> editparts) {
-		if (editparts.size() == 0) {
-			return false;
-		}
-		for (Object object : editparts) {
-			if (!(object instanceof AbstractConnectionEditPart)) {
-				return false;
-			}
-		}
-		return true;
+	/** Get list of selected Elements */
+	public List<IGraphicalEditPart> getSelectedElements() {
+		return selectedElements;
 	}
+
 }
