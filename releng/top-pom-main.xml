@@ -544,4 +544,33 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+      <profile>
+        <id>sign</id>
+        <build>
+          <plugins>
+            <plugin>
+              <groupId>org.eclipse.cbi.maven.plugins</groupId>
+              <artifactId>eclipse-jarsigner-plugin</artifactId>
+              <version>1.0.5</version>
+              <executions>
+                <execution>
+                  <id>sign</id>
+                  <phase>verify</phase>
+                  <goals>
+                    <goal>sign</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+          </plugins>
+        </build>
+        <activation>
+        	<property>
+        		<name>SIGN</name>
+        		<value>true</value>
+        	</property>
+        </activation>
+      </profile>
+    </profiles>
 </project>
