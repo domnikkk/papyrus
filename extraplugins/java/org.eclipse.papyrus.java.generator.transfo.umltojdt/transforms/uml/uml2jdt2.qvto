@@ -21,12 +21,13 @@ import Strings;
 */
 modeltype UMLmm uses "http://www.eclipse.org/uml2/3.0.0/UML";
 modeltype JDTmm uses 'http:///jdtmm.ecore';
+modeltype GeneratorOptionsMM uses 'http:///GeneratorOptionsMM.ecore';
 modeltype JavaProfile uses java('http://www.eclipse.org/papyrus/JAVA/1');
 
 /**
  *
  */
-transformation uml2jdt2( in uml: UMLmm, out jdt: JDTmm)
+transformation uml2jdt2( in uml: UMLmm, in options : GeneratorOptionsMM, out jdt: JDTmm)
   extends stereotypeUtil;
 
 /** Root of java stereotypes */
@@ -79,7 +80,7 @@ main() {
   uml.NO_PACKAGE := null;
   
   // Default names
-  uml.GENERATION_DEFAULT_SRC_NAME := "generated";
+  uml.GENERATION_DEFAULT_SRC_NAME := options.objectsOfType(GeneratorOptionsMM::Options)->asSequence()->first().defaultSourceFolder;
   uml.GENERATION_DEFAULT_PROJECT_NAME := "defaultProject";
   
   // Select only object that we want to generate
