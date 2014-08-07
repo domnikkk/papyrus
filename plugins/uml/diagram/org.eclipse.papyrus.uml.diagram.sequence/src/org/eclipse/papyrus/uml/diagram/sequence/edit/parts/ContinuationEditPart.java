@@ -258,6 +258,16 @@ public class ContinuationEditPart extends AbstractBorderItemEditPart {
 	 */
 	@Override
 	protected void setLineWidth(int width) {
+		/**
+		 * Bug 437605 - Export Sequence Diagram to Images
+		 * 
+		 * Guard against negative line width
+		 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ResizableCompartmentEditPart#setLineWidth(int width)
+		 */
+		if (width < 0) {
+			width = 1;
+		}
+		
 		if(primaryShape instanceof Shape) {
 			((Shape)primaryShape).setLineWidth(width);
 		}
