@@ -10,6 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
+ *  Gabriel Pascual (ALL4TEC) - Bug 441195
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies;
@@ -60,9 +61,19 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 	 */
 	@Override
 	protected Element getUMLElement() {
-		return (Element)((View)getView().eContainer()).getElement();
-	}
+		Element element = null;
 
+		View view = getView();
+		if(view != null) {
+
+			EObject container = view.eContainer();
+			if(container instanceof View) {
+				element = (Element)((View)container).getElement();
+			}
+		}
+
+		return element;
+	}
 
 	/**
 	 * 
@@ -72,7 +83,17 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 	 */
 	@Override
 	protected View getView() {
-		return (View)((EObject)getHost().getModel()).eContainer();
+		View view = null;
+
+		Object model = getHost().getModel();
+		if(model instanceof View) {
+
+			EObject container = ((View)model).eContainer();
+			if(container instanceof View) {
+				view = (View)container;
+			}
+		}
+		return view;
 	}
 
 
