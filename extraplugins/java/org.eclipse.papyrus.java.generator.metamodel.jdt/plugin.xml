@@ -22,7 +22,7 @@
       <package
             uri="http:///GeneratorOptionsMM.ecore"
             class="org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmPackage"
-            genModel="model/generatorOptions/generatorOptionsMM.genmodel"/>
+            genModel="model/generatorOptions/generatoroptionsmm.genmodel"/>
    </extension>
 
 </plugin>
