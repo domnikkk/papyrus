@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,18 +9,19 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.modelelement;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.core.databinding.observable.ChangeEvent;
 import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.validation.IValidator;
+import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory;
@@ -50,8 +51,10 @@ import org.eclipse.papyrus.views.properties.contexts.View;
  */
 public class DataSource implements IChangeListener {
 
-	private Set<IChangeListener> changeListeners = new HashSet<IChangeListener>();
+	private final ListenerList changeListeners = new ListenerList(ListenerList.IDENTITY);
 
+	private final ListenerList dataSourceListeners = new ListenerList(ListenerList.IDENTITY);
+	
 	private View view;
 
 	private IStructuredSelection selection;
@@ -61,6 +64,7 @@ public class DataSource implements IChangeListener {
 	/**
 	 * Constructs a new DataSource from the given view and selection
 	 * 
+	 * @param realm
 	 * @param view
 	 * @param selection
 	 * 
@@ -189,13 +193,37 @@ public class DataSource implements IChangeListener {
 	public void removeChangeListener(IChangeListener listener) {
 		changeListeners.remove(listener);
 	}
+	
+	public void addDataSourceListener(IDataSourceListener listener) {
+		dataSourceListeners.add(listener);
+	}
+	
+	public void removeDataSourceListener(IDataSourceListener listener) {
+		dataSourceListeners.remove(listener);
+	}
 
 	public void handleChange(ChangeEvent event) {
-		//The set of listeners may change during the update.
-		Set<IChangeListener> listeners = new HashSet<IChangeListener>(changeListeners);
-
-		for(IChangeListener listener : listeners) {
-			listener.handleChange(event);
+		Object[] listeners = changeListeners.getListeners();
+		for(int i = 0; i < listeners.length; i++) {
+			try {
+				((IChangeListener)listeners[i]).handleChange(event);
+			} catch (Exception e) {
+				Activator.log.error("Uncaught exception in observable change listener.", e); //$NON-NLS-1$
+			}
+		}
+	}
+	
+	protected void fireDataSourceChanged() {
+		Object[] listeners = dataSourceListeners.getListeners();
+		if(listeners.length > 0) {
+			DataSourceChangedEvent event = new DataSourceChangedEvent(this);
+			for(int i = 0; i < listeners.length; i++) {
+				try {
+					((IDataSourceListener)listeners[i]).dataSourceChanged(event);
+				} catch (Exception e) {
+					Activator.log.error("Uncaught exception in data-source listener.", e); //$NON-NLS-1$
+				}
+			}
 		}
 	}
 
@@ -211,6 +239,17 @@ public class DataSource implements IChangeListener {
 	 */
 	public IStructuredSelection getSelection() {
 		return selection;
+	}
+	
+	/**
+	 * @param selection the selection to set
+	 */
+	public void setSelection(IStructuredSelection selection) {
+		if(!selection.equals(this.selection)) {
+			this.selection = selection;
+
+			fireDataSourceChanged();
+		}
 	}
 
 	/**

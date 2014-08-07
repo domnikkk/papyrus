@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 435420
+ *  Christian W. Damus (CEA) - bug 417409
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.xwt;
@@ -116,15 +117,18 @@ public class XWTSection extends AbstractPropertySection implements IChangeListen
 	}
 
 	private void setSource(DataSource source) {
-		if(this.source != null) {
-			this.source.removeChangeListener(this);
-			this.source.dispose();
-		}
+		final DataSource oldSource = this.source;
 
-		this.source = source;
+		if(oldSource != source) {
+			if(oldSource != null) {
+				oldSource.removeChangeListener(this);
+			}
 
-		if(section.getConstraints().size() > 0) {
-			source.addChangeListener(this);
+			this.source = source;
+
+			if(section.getConstraints().size() > 0) {
+				source.addChangeListener(this);
+			}
 		}
 	}
 

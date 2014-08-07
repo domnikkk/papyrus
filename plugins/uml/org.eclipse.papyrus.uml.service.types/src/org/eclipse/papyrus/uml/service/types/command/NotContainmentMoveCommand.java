@@ -10,19 +10,24 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.MoveElementsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 
 /**
- * All ActivityPartition semantic children containment Activity. 
- * Standard command cannot move ActivityPartition children to Activity or
- * Activity children to ActivityPartition because command move children 
- * only from one parent to another.
- * 
+ * This command handles the move of the elements from the graphical containers different from 
+ * semantic containers. Examples are {@link ActivityPartition} or 
+ * {@link InterruptibleActivityRegion} which both graphically contains nodes semantically 
+ * contained in {@link Activity}.
+ * <p/>
+ * Standard {@link MoveElementsCommand} does not work for these cases because it moves children 
+ * only from one semantic container to another.
+ * <p/>
+ * So the main purpose of this command is to override useless check of different source and target 
+ * semantic containers in {@link #canExecute()} method. 
  */
-public class PartitionMoveCommand extends MoveElementsCommand {
+public class NotContainmentMoveCommand extends MoveElementsCommand {
 
 	/**
 	 * Default constructor
 	 * @param request
 	 */
-	public PartitionMoveCommand(MoveRequest request) {
+	public NotContainmentMoveCommand(MoveRequest request) {
 		super(request);
 	}
 	

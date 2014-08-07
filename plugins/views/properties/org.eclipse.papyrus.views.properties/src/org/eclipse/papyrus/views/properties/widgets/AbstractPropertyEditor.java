@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,8 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.widgets;
 
@@ -27,6 +29,8 @@ import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.Context;
 import org.eclipse.papyrus.views.properties.contexts.Property;
 import org.eclipse.papyrus.views.properties.modelelement.DataSource;
+import org.eclipse.papyrus.views.properties.modelelement.DataSourceChangedEvent;
+import org.eclipse.papyrus.views.properties.modelelement.IDataSourceListener;
 import org.eclipse.papyrus.views.properties.runtime.ConfigurationManager;
 import org.eclipse.papyrus.views.properties.util.PropertiesUtil;
 import org.eclipse.swt.events.DisposeEvent;
@@ -52,6 +56,8 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * The DataSource representing the semantic objects
 	 */
 	protected DataSource input;
+	
+	private IDataSourceListener dataSourceListener;
 
 	protected boolean readOnly = false;
 
@@ -83,6 +89,7 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	protected IValidator modelValidator;
 	
 	protected IConverter targetToModelConverter;
+	
 	/**
 	 * Indicates if the editor's label should be displayed
 	 */
@@ -299,8 +306,22 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 	 * @param input
 	 */
 	public void setInput(DataSource input) {
-		this.input = input;
-		checkInput();
+		final DataSource oldInput = this.input;
+		if(input != oldInput) {
+			if(oldInput != null) {
+				oldInput.removeDataSourceListener(getDataSourceListener());
+			}
+			
+			this.input = input;
+
+			if(input != null) {
+				input.addDataSourceListener(getDataSourceListener());
+			}
+			
+			// Only do this after attaching our listener so that it will be ahead of
+			// any ModelElements created for properties
+			checkInput();
+		}
 	}
 
 	/**
@@ -565,4 +586,36 @@ public abstract class AbstractPropertyEditor implements IChangeListener, Customi
 		return modelValidator;
 	}
 	
+	private IDataSourceListener getDataSourceListener() {
+		if(dataSourceListener == null) {
+			dataSourceListener = new IDataSourceListener() {
+
+				public void dataSourceChanged(DataSourceChangedEvent event) {
+					// The data source's selection changed. Update my validator or clear it if now there is none
+					IObservableValue observable = AbstractPropertyEditor.this.observableValue;
+
+					if((observable != null) && (modelValidator != null) && (valueEditor != null) && !valueEditor.isDisposed()) {
+						modelValidator = null;
+						
+						// First, clear the validator to disable validation
+						valueEditor.setStrategies();
+						valueEditor.setModelValidator(null);
+
+						// Then re-enable to later when ready for user input
+						observable.getRealm().asyncExec(new Runnable() {
+
+							public void run() {
+								if((valueEditor != null) && !valueEditor.isDisposed()) {
+									valueEditor.setStrategies();
+									valueEditor.setModelValidator(getValidator());
+								}
+							}
+						});
+					}
+				}
+			};
+		}
+		
+		return dataSourceListener;
+	}
 }

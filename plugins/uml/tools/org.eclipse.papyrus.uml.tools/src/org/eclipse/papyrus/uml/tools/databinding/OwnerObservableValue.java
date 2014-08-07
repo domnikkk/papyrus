@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - 402525
+ *  Christian W. Damus (CEA) - bug 417409
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.databinding;
@@ -22,7 +23,6 @@ import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.observable.IObserving;
 import org.eclipse.core.databinding.observable.list.IObservableList;
-import org.eclipse.core.databinding.observable.value.AbstractObservableValue;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.util.EList;
@@ -36,6 +36,7 @@ import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.infra.tools.databinding.AggregatedObservable;
+import org.eclipse.papyrus.infra.tools.databinding.ReferenceCountedObservable;
 import org.eclipse.papyrus.uml.tools.Activator;
 import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.Association;
@@ -60,7 +61,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * 
  * @author Camille Letavernier
  */
-public class OwnerObservableValue extends AbstractObservableValue implements IChangeListener, AggregatedObservable, CommandBasedObservableValue, IObserving {
+public class OwnerObservableValue extends ReferenceCountedObservable.Value implements IChangeListener, AggregatedObservable, CommandBasedObservableValue, IObserving {
 
 	private Property memberEnd;
 

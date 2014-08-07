@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.infra.tools.databinding;
 
@@ -18,7 +20,6 @@ import java.util.List;
 import org.eclipse.core.databinding.observable.ChangeEvent;
 import org.eclipse.core.databinding.observable.IChangeListener;
 import org.eclipse.core.databinding.observable.IObservable;
-import org.eclipse.core.databinding.observable.value.AbstractObservableValue;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.ValueDiff;
 
@@ -32,7 +33,7 @@ import org.eclipse.core.databinding.observable.value.ValueDiff;
  * All sub-elements will be edited at the same time, with the same value.
  */
 //TODO : Add listeners on sub-observables, and remove them on dispose
-public class MultipleObservableValue extends AbstractObservableValue implements AggregatedObservable, IChangeListener {
+public class MultipleObservableValue extends ReferenceCountedObservable.Value implements AggregatedObservable, IChangeListener {
 
 	/**
 	 * 
@@ -98,6 +99,7 @@ public class MultipleObservableValue extends AbstractObservableValue implements 
 
 	public AggregatedObservable aggregate(IObservable observable) {
 		if(observable instanceof IObservableValue) {
+			ReferenceCountedObservable.Util.retain(observable);
 			observableValues.add((IObservableValue)observable);
 			observable.addChangeListener(this);
 			return this;
@@ -128,8 +130,12 @@ public class MultipleObservableValue extends AbstractObservableValue implements 
 		super.dispose();
 		for(IObservableValue observable : observableValues) {
 			observable.removeChangeListener(this);
-			observable.dispose();
+
+			// I don't own my observables, so I just release them
+			ReferenceCountedObservable.Util.release(observable);
 		}
+
+		observableValues.clear();
 	}
 
 	/**

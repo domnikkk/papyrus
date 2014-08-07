@@ -9,6 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
+ *  Christian W. Damus (CEA) - bug 417409
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
@@ -36,7 +37,6 @@ import org.eclipse.papyrus.infra.widgets.providers.StaticContentProvider;
 import org.eclipse.papyrus.uml.properties.Activator;
 import org.eclipse.papyrus.uml.properties.databinding.StereotypeAppearanceObservableValue;
 import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -48,7 +48,7 @@ import org.eclipse.uml2.uml.Element;
  * @author Camille Letavernier
  * 
  */
-public class StereotypeAppearanceModelElement extends AbstractModelElement implements ModelElement {
+public class StereotypeAppearanceModelElement extends AbstractModelElement {
 
 	/**
 	 * The current UML Element

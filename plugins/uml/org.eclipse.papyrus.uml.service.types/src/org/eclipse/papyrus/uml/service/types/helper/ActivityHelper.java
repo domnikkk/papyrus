@@ -15,14 +15,14 @@ package org.eclipse.papyrus.uml.service.types.helper;
 
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
-import org.eclipse.papyrus.uml.service.types.command.PartitionMoveCommand;
+import org.eclipse.papyrus.uml.service.types.command.NotContainmentMoveCommand;
 
 
 public class ActivityHelper extends ElementEditHelper {
 
 	@Override
 	protected ICommand getMoveCommand(MoveRequest req) {
-		return new PartitionMoveCommand(req);
+		return new NotContainmentMoveCommand(req);
 	}
 	
 //	{

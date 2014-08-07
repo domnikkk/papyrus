@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2011 CEA LIST.
+ * Copyright (c) 2011, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,8 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -16,8 +18,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.properties.Activator;
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFactory;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Image;
 
@@ -27,9 +28,10 @@ import org.eclipse.uml2.uml.Image;
  * @author Camille Letavernier
  * 
  */
-public class CustomImageModelElementFactory implements ModelElementFactory {
+public class CustomImageModelElementFactory extends AbstractModelElementFactory<CustomImageModelElement> {
 
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	@Override
+	protected CustomImageModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		Element umlSource = UMLUtil.resolveUMLElement(sourceElement);
 		if(umlSource == null) {
 			Activator.log.warn("Unable to resolve the selected element to a UML Element"); //$NON-NLS-1$
@@ -45,4 +47,13 @@ public class CustomImageModelElementFactory implements ModelElementFactory {
 		return null;
 	}
 
+	@Override
+	protected void updateModelElement(CustomImageModelElement modelElement, Object newSourceElement) {
+		Element element = UMLUtil.resolveUMLElement(newSourceElement);
+		if(!(element instanceof Image)) {
+			throw new IllegalArgumentException("Cannot resolve UML Image selection: " + newSourceElement);
+		}
+		modelElement.image = (Image)element;
+		modelElement.editingDomain = EMFHelper.resolveEditingDomain(element);
+	}
 }

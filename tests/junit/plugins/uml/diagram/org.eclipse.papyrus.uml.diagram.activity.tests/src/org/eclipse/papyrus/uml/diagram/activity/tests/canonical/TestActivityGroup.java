@@ -56,12 +56,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * This class test graphical and semantic part of {@link ActivityGroup} elements: {@link StructuredActivityNode} {@link ConditionalNode}
- * {@link ExpansionRegion} {@link LoopNode} {@link SequenceNode} {@link InterruptibleActivityRegion} {@link ActivityPartition}
+ * This class test graphical and semantic part of {@link ActivityGroup} elements: 
+ * {@link StructuredActivityNode}
+ * {@link ConditionalNode}
+ * {@link ExpansionRegion}
+ * {@link LoopNode}
+ * {@link SequenceNode}
+ * {@link InterruptibleActivityRegion}
+ * {@link ActivityPartition}
  *
  * For each {@link ActivityGroup} elements test:
- * 1) created child {@link ActivityNode} in {@link ActivityGroup} and drag-drop child to {@link Activity} 2) created child {@link ActivityNode} in
- * {@link Activity} and drag-drop child to {@link ActivityGroup} element
+ * 1) created child {@link ActivityNode} in {@link ActivityGroup} and drag-drop child to {@link Activity}
+ * 2) created child {@link ActivityNode} in {@link Activity} and drag-drop child to {@link ActivityGroup} element
  */
 public class TestActivityGroup extends AbstractPapyrusTestCase {
 
@@ -103,7 +109,6 @@ public class TestActivityGroup extends AbstractPapyrusTestCase {
 		return findChildBySemanticHint(activityEP, ActivityActivityContentCompartmentEditPart.VISUAL_ID);
 	}
 
-	@FailingTest("Bug 440239")
 	@Test
 	public void testFromInterruptibleActivityRegionToActivity() {
 		IGraphicalEditPart regionEP = createChild(InterruptibleActivityRegionEditPart.VISUAL_ID, getActivityCompartmentEditPart());
@@ -114,7 +119,6 @@ public class TestActivityGroup extends AbstractPapyrusTestCase {
 		dd.doTest();
 	}
 
-	@FailingTest("Bug 440239")
 	@Test
 	public void testFromActivityToInterruptibleActivityRegion() {
 		IGraphicalEditPart regionEP = createChild(InterruptibleActivityRegionEditPart.VISUAL_ID, getActivityCompartmentEditPart());

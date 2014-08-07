@@ -11,6 +11,7 @@
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 402525
  *  Mickaël ADAM (ALL4TEC) mickael.adam@all4tec.net - bug 435415
+ *  Christian W. Damus (CEA) - bug 417409
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
@@ -217,13 +218,19 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 
 			@Override
 			public void handleValueChange(ValueChangeEvent event) {
-				//Check if the widget is disposed before isReadOnly() to avoid NPE
-				if(!AbstractValueEditor.this.isDisposed() && !isReadOnly()) { //Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
-					IStatus status = (IStatus)binding.getValidationStatus().getValue(); //Bug 435415 : Update the status only if the widget isn't disposed
-					updateStatus(status);
-					changeColorField();
+				// Don't handle validation changes if we don't have a validator, because then it could only be green and it isn't useful.
+				// Also, if we're showing in a dialog, then our widget may have been disposed already if we're validating a change applied
+				// by hitting the OK button
+				if((modelValidator) != null) {
+					//Check if the widget is disposed before isReadOnly() to avoid NPE
+					if(!AbstractValueEditor.this.isDisposed() && !isReadOnly()) { //Bug 434787 : Shouldn't not execute the timer thread if the widget is disposed
+						IStatus status = (IStatus)binding.getValidationStatus().getValue(); //Bug 435415 : Update the status only if the widget isn't disposed
+						updateStatus(status);
+						changeColorField();
+					}
 				}
 			}
+
 		});
 	}
 
@@ -248,11 +255,9 @@ public abstract class AbstractValueEditor extends AbstractEditor {
 	 * @param modelValidator
 	 */
 	public void setModelValidator(IValidator targetToModelValidator) {
-		if(targetToModelValidator != null) {
 			this.modelValidator = targetToModelValidator;
 			targetToModelStrategy.setBeforeSetValidator(targetToModelValidator);
 			modelToTargetStrategy.setAfterGetValidator(targetToModelValidator);
-		}
 	}
 
 	/**

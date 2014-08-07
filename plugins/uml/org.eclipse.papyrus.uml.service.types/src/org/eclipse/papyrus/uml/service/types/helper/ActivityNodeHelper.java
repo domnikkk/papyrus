@@ -33,7 +33,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
-import org.eclipse.papyrus.uml.service.types.command.PartitionMoveCommand;
+import org.eclipse.papyrus.uml.service.types.command.NotContainmentMoveCommand;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ActivityPartition;
@@ -52,6 +52,8 @@ public class ActivityNodeHelper extends ElementEditHelper {
 	 */
 	public static final String IN_PARTITION = "IN_PARTITION";
 	
+	public static final String IN_INTERRUPTIBLE_ACTIVITY_REGION = "IN_INTERRUPTIBLE_ACTIVITY_REGION";
+	
 	@Override
 	protected ICommand getBasicDestroyElementCommand(DestroyElementRequest req) {
 		ICommand result =  new DestroyActivityNode(req);
@@ -65,7 +67,7 @@ public class ActivityNodeHelper extends ElementEditHelper {
 			if (req.getTargetContainer() instanceof ActivityPartition) {
 				ActivityPartition partition = (ActivityPartition)req.getTargetContainer();
 				CompositeCommand result = new CompositeCommand("Move elements in Partition");
-				MoveElementsCommand moveCommand = new PartitionMoveCommand(createMoveToPartitionRequest(req));
+				MoveElementsCommand moveCommand = new NotContainmentMoveCommand(createMoveToPartitionRequest(req));
 				result.add(moveCommand);
 				for (Object o: req.getElementsToMove().keySet()) {
 					result.add(new SetValueCommand(new SetRequest(partition, UMLPackage.eINSTANCE.getActivityPartition_Node(), o)));
@@ -125,6 +127,14 @@ public class ActivityNodeHelper extends ElementEditHelper {
 			return UMLPackage.eINSTANCE.getActivity_StructuredNode();
 		}
 		return UMLPackage.eINSTANCE.getActivity_OwnedNode();
+	}
+	
+	@Override
+	protected ICommand getConfigureCommand(ConfigureRequest req) {
+		if (req.getParameter(IN_INTERRUPTIBLE_ACTIVITY_REGION) != null) {
+			return new SetValueCommand(new SetRequest((EObject)req.getParameter(IN_INTERRUPTIBLE_ACTIVITY_REGION),UMLPackage.eINSTANCE.getInterruptibleActivityRegion_Node(), req.getElementToConfigure()));
+		}
+		return super.getConfigureCommand(req);
 	}
 	
 	/**

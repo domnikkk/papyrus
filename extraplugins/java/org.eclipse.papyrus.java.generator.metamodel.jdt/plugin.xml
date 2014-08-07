@@ -17,4 +17,12 @@
             genModel="model/jdtmm.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generatorOptionsMM -->
+      <package
+            uri="http:///GeneratorOptionsMM.ecore"
+            class="org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmPackage"
+            genModel="model/generatorOptions/generatoroptionsmm.genmodel"/>
+   </extension>
+
 </plugin>

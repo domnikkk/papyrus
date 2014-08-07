@@ -34,4 +34,8 @@ public class PreferenceConstants {
 	public static final String P_GENERIC_CLASS_FOR_MULTIVALUE = "genericClassForMultiValue";
 
 	public static final String P_STOP_ON_FIRST_ERROR = "stopOnFirstError";
+
+	public static final String P_DEFAULT_SOURCE_FOLDER_NAME = "defaultSourceFolderName";
+
+	public static final String LABEL_DEFAULT_SOURCE_FOLDER_NAME = "Default source folder name";
 }

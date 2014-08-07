@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2014 CEA LIST.
+ * Copyright (c) 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -7,7 +7,9 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *	Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.gmfdiag.css.properties.modelelement;
@@ -17,8 +19,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AbstractEMFModelElementFactory;
 
 
 /**
@@ -28,7 +29,7 @@ import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
  * @author gpascual
  *
  */
-public class CSSThemesModelElementFactory implements ModelElementFactory {
+public class CSSThemesModelElementFactory extends AbstractEMFModelElementFactory<CSSThemesModelElement> {
 
 
 	/**
@@ -39,15 +40,8 @@ public class CSSThemesModelElementFactory implements ModelElementFactory {
 		super();
 	}
 
-	/**
-	 * @see org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory#createFromSource(java.lang.Object,
-	 *      org.eclipse.papyrus.views.properties.contexts.DataContextElement)
-	 *
-	 * @param sourceElement
-	 * @param context
-	 * @return
-	 */
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	@Override
+	protected CSSThemesModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 
 		EObject source = EMFHelper.getEObject(sourceElement);
 		if(source == null) {

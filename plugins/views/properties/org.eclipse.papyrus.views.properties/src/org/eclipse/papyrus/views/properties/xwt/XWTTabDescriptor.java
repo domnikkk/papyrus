@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2010 CEA LIST.
+ * Copyright (c) 2010, 2014 CEA LIST and others.
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,8 +8,12 @@
  *
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 417409
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.xwt;
+
+import java.util.List;
 
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.Section;
@@ -103,5 +107,38 @@ public class XWTTabDescriptor extends AbstractTabDescriptor {
 	 */
 	public int getPriority() {
 		return tab.getPriority();
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		List<?> sectionDescriptors = getSectionDescriptors();
+		result = prime * result + ((tab == null) ? 0 : tab.hashCode());
+		result = prime * result + ((sectionDescriptors == null) ? 0 : sectionDescriptors.hashCode());
+		return result;
+	}
+
+	/**
+	 * XWT tab descriptors are equal if they have the same ID and an equal list (in order) of section descriptors.
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		boolean result;
+
+		if(this == obj) {
+			result = true;
+		} else if((obj == null) || (obj.getClass() != this.getClass())) {
+			result = false;
+		} else {
+			XWTTabDescriptor other = (XWTTabDescriptor)obj;
+
+			result = (other.getId() == null) ? this.getId() == null : (other.getId().equals(this.getId()));
+			if(result) {
+				result = (other.getSectionDescriptors() == null) ? this.getSectionDescriptors() == null : other.getSectionDescriptors().equals(this.getSectionDescriptors());
+			}
+		}
+
+		return result;
 	}
 }

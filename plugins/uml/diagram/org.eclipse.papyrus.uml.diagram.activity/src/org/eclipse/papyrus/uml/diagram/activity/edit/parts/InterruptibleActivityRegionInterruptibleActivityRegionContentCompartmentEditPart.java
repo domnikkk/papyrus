@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.uml.diagram.activity.activitygroup.editpolicy.InterruptibleActivityRegionCompartmentCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ActivityGroupCustomDragAndDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.CustomInterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentItemSemanticEditPolicy;
@@ -92,6 +93,7 @@ public class InterruptibleActivityRegionInterruptibleActivityRegionContentCompar
 		installEditPolicy("RemoveOrphanView", new RemoveOrphanViewPolicy()); //$NON-NLS-1$
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new CustomContainerEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new InterruptibleActivityRegionCompartmentCreationEditPolicy());
 	}
 
 	/**

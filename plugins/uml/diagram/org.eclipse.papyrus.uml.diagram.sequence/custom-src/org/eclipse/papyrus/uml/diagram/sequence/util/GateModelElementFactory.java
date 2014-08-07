@@ -1,6 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2013 CEA
- *
+ * Copyright (c) 2013, 2014 CEA and others.
  *    
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +8,7 @@
  *
  * Contributors:
  *   Soyatec - Initial API and implementation
+ *   Christian W. Damus (CEA) - bug 417409
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.sequence.util;
@@ -27,25 +27,17 @@ import org.eclipse.papyrus.infra.gmfdiag.common.helper.NotationHelper;
 import org.eclipse.papyrus.views.properties.Activator;
 import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
 import org.eclipse.papyrus.views.properties.modelelement.AnnotationModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElement;
-import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
+import org.eclipse.papyrus.views.properties.modelelement.AnnotationModelElementFactory;
 
 /**
  * @author Jin Liu (jin.liu@soyatec.com)
  */
-public class GateModelElementFactory implements ModelElementFactory {
+public class GateModelElementFactory extends AnnotationModelElementFactory {
 
 	private static final String GATE_SHOW_NAME = "showName";
 
-	/**
-	 * @see org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory#createFromSource(java.lang.Object,
-	 *      org.eclipse.papyrus.views.properties.contexts.DataContextElement)
-	 * 
-	 * @param sourceElement
-	 * @param context
-	 * @return
-	 */
-	public ModelElement createFromSource(Object sourceElement, DataContextElement context) {
+	@Override
+	protected AnnotationModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		View source = NotationHelper.findView(sourceElement);
 		if(source == null) {
 			Activator.log.warn("Unable to resolve the selected element to an EObject"); //$NON-NLS-1$
