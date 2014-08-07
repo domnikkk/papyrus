@@ -13,8 +13,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.viewpoints.policy;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
 
 
 /**
@@ -131,5 +135,15 @@ public class UnavailableViewPrototype extends ViewPrototype {
 	@Override
 	public EObject getRootOf(EObject view) {
 		return null;
+	}
+	
+	/**
+	 * @see org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype#getCategories()
+	 *
+	 * @return
+	 */
+	@Override
+	public Collection<Category> getCategories() {
+		return Collections.emptyList();
 	}
 }
