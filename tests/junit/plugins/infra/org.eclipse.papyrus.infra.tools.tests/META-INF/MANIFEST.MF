@@ -13,7 +13,8 @@ Require-Bundle: org.junit;bundle-version="4.10.0",
  org.eclipse.core.databinding;bundle-version="1.4.0",
  org.eclipse.core.databinding.beans;bundle-version="1.2.0",
  org.eclipse.core.databinding.property;bundle-version="1.4.0",
- com.google.guava;bundle-version="11.0.0"
+ com.google.guava;bundle-version="11.0.0",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.0.0"
 Export-Package: org.eclipse.papyrus.infra.tools.databinding,
  org.eclipse.papyrus.infra.tools.tests,
  org.eclipse.papyrus.infra.tools.util

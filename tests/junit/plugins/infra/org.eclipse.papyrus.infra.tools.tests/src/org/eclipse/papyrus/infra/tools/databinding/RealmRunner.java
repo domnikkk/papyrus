@@ -25,7 +25,7 @@ import java.util.concurrent.ThreadFactory;
 import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.observable.ObservableTracker;
 import org.eclipse.core.databinding.observable.Realm;
-import org.eclipse.papyrus.junit.utils.classification.ClassificationRunner;
+import org.eclipse.papyrus.junit.framework.classification.ClassificationRunner;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
