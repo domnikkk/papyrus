@@ -20,6 +20,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.jdt.internal.ui.preferences.TypeFilterInputDialog;
+import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.preference.ListEditor;
 import org.eclipse.swt.widgets.Composite;
 
@@ -56,6 +57,10 @@ public class PackageListEditor extends ListEditor {
 		d.open();
 		Object pack = d.getResult();
 
+		// Return null if user clicked on "cancel" button, to not add ampty package on the list
+		if(d.getReturnCode() == InputDialog.CANCEL) {
+			return null;
+		}
 		return pack.toString();
 	}
 
