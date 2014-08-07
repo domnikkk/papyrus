@@ -13,9 +13,18 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.helper.advice;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest;
+import org.eclipse.papyrus.uml.diagram.common.helper.DurationConstraintHelper;
+import org.eclipse.papyrus.uml.diagram.common.helper.DurationObservationHelper;
+import org.eclipse.papyrus.uml.diagram.common.helper.TimeConstraintHelper;
+import org.eclipse.papyrus.uml.diagram.common.helper.TimeObservationHelper;
+import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 /**
  * Helper advice for all {@link OccurrenceSpecification} elements.
@@ -25,7 +34,6 @@ public class OccurrenceSpecificationHelperAdvice extends AbstractEditHelperAdvic
 	/**
 	 * <pre>
 	 * Add a command to destroy :
-	 * - {@link Event} referenced by the {@link OccurrenceSpecification} to delete if unused
 	 * - related time elements
 	 * - linked general ordering
 	 * </pre>
@@ -38,30 +46,28 @@ public class OccurrenceSpecificationHelperAdvice extends AbstractEditHelperAdvic
 	 */
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
-		//FIXME : change for UML 2.4
-//		List<EObject> dependentsToDestroy = new ArrayList<EObject>();
-//
-//		OccurrenceSpecification os = (OccurrenceSpecification)request.getElementToDestroy();
-//		Event event = os.getEvent();
-//
-//		// Delete referenced event if it is not referenced itself by another element.
-//		if((event != null) && (PapyrusEcoreUtils.isOnlyUsage(event, os))) {
-//			dependentsToDestroy.add(event);
-//		}
-//
-//		// delete linked time elements
-//		dependentsToDestroy.addAll(TimeObservationHelper.getTimeObservations(os));
-//		dependentsToDestroy.addAll(TimeConstraintHelper.getTimeConstraintsOn(os));
-//		dependentsToDestroy.addAll(DurationObservationHelper.getDurationObservationsOn(os));
-//		dependentsToDestroy.addAll(DurationConstraintHelper.getDurationConstraintsOn(os));
-//
-//		// delete linked general ordering
-//		dependentsToDestroy.addAll(os.getToBefores());
-//		dependentsToDestroy.addAll(os.getToAfters());
-//
-//		if(!dependentsToDestroy.isEmpty()) {
-//			return request.getDestroyDependentsCommand(dependentsToDestroy);
-//		}
+		List<EObject> dependentsToDestroy = new ArrayList<EObject>();
+
+		OccurrenceSpecification os = (OccurrenceSpecification)request.getElementToDestroy();
+
+		// delete linked time elements
+		dependentsToDestroy.addAll(TimeObservationHelper.getTimeObservations(os));
+		dependentsToDestroy.addAll(TimeConstraintHelper.getTimeConstraintsOn(os));
+		dependentsToDestroy.addAll(DurationObservationHelper.getDurationObservationsOn(os));
+		dependentsToDestroy.addAll(DurationConstraintHelper.getDurationConstraintsOn(os));
+
+		// delete linked general ordering
+		/**
+		 * Note: GeneralOrdering should be necessarily removed because the opposite
+		 * references 'GeneralOrdering::before[1]' and 'GeneralOrdering::after[1]' which designate 
+		 * this OccurrenceSpecification are mandatory 
+		 */
+		dependentsToDestroy.addAll(os.getToBefores());
+		dependentsToDestroy.addAll(os.getToAfters());
+
+		if(!dependentsToDestroy.isEmpty()) {
+			return request.getDestroyDependentsCommand(dependentsToDestroy);
+		}
 
 		return null;
 	}

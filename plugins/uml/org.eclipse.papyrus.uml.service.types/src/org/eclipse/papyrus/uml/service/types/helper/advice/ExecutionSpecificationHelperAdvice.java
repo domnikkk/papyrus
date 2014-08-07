@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.diagram.common.helper.InteractionFragmentHelper;
+import org.eclipse.uml2.uml.ExecutionOccurrenceSpecification;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.Lifeline;
@@ -43,7 +44,7 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 	 * <pre>
 	 * Add a command to associated {@link OccurrenceSpecification} and {@link Message}.
 	 * This command is only added if the start - finish referenced {@link OccurrenceSpecification} is not 
-	 * referenced by another element.
+	 * referenced by another element or the start/finish references are of type {@link ExecutionOccurrenceSpecification}.
 	 * </pre>
 	 * 
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getBeforeDestroyDependentsCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest)
@@ -59,15 +60,14 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 
 		ExecutionSpecification es = (ExecutionSpecification)request.getElementToDestroy();
 
-		// Add start - finish referenced OccurrenceSpecification to the dependents list
-		// if they are not used by another element.
+		// Check whether start - finish referenced OccurrenceSpecification should be added to the dependents list
 		OccurrenceSpecification osStart = es.getStart();
-		if((osStart != null) && (EMFHelper.isOnlyUsage(osStart, es))) {
+		if(shouldDestroyOccurrenceSpecification(es, osStart)) {
 			dependentsToDestroy.add(osStart);
 		}
 
 		OccurrenceSpecification osFinish = es.getFinish();
-		if((osFinish != null) && (EMFHelper.isOnlyUsage(osFinish, es))) {
+		if(shouldDestroyOccurrenceSpecification(es, osFinish)) {
 			dependentsToDestroy.add(osFinish);
 		}
 
@@ -107,4 +107,26 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 
 		return null;
 	}
+
+	/**
+	 * <pre>
+	 * Check that given {@link OccurrenceSpecification} should be destroyed along with {@link ExecutionSpecification} which references it.
+	 * It should be destroyed in case:
+	 * It is of type {@link ExecutionOccurrenceSpecification} (since the opposite reference 
+	 *   'ExecutionOccurrenceSpecification::execution[1]' which designates given {@link ExecutionSpecification} is mandatory).
+	 *   or
+	 * It is not used by another element.
+	 * </pre>
+	 * 
+	 * @param es
+	 *        {@link ExecutionSpecification} which references {@link OccurrenceSpecification} (by means of #start/#finish references)
+	 * @param os
+	 *        start or finish {@link OccurrenceSpecification} which defines the duration of {@link ExecutionSpecification}
+	 * @return true in case {@link OccurrenceSpecification} should be destroyed 
+	 */
+	private boolean shouldDestroyOccurrenceSpecification(ExecutionSpecification es, OccurrenceSpecification os) {
+		return os instanceof ExecutionOccurrenceSpecification
+				|| (os != null && EMFHelper.isOnlyUsage(os, es));
+	}
+
 }
