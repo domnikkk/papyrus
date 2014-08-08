@@ -129,7 +129,6 @@ public class TestActivityGroup extends AbstractPapyrusTestCase {
 		dd.doTest();
 	}
 
-	@FailingTest("Bug 440276")
 	@Test
 	public void testFromActivityPartitionToActivity() {
 		IGraphicalEditPart partitionEP = createChild(ActivityPartitionEditPart.VISUAL_ID, getActivityCompartmentEditPart());
