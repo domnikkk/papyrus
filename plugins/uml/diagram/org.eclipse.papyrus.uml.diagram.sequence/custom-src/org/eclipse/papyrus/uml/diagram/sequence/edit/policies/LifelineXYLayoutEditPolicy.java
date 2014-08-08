@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -29,6 +30,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gef.requests.AlignmentRequest;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gef.requests.DropRequest;
@@ -603,9 +605,26 @@ public class LifelineXYLayoutEditPolicy extends XYLayoutEditPolicy {
 					Rectangle oldBounds = executionSpecificationEP.getFigure().getBounds().getCopy();
 					Rectangle newBounds = oldBounds.getCopy();
 					// According to the parameters, the new bounds would be the following
-					newBounds.x += request.getMoveDelta().x;
-					newBounds.y += request.getMoveDelta().y;
-					newBounds.height += newSizeDelta.height;
+					if (request instanceof AlignmentRequest) {
+						AlignmentRequest alignmentRequest = (AlignmentRequest)request;
+						// Horizontal-only alignment is not allowed
+						switch(alignmentRequest.getAlignment()) {
+						case PositionConstants.LEFT:
+						case PositionConstants.CENTER:
+						case PositionConstants.RIGHT:
+						case PositionConstants.HORIZONTAL:
+							return UnexecutableCommand.INSTANCE;
+						}					
+						newBounds = alignmentRequest.getAlignmentRectangle().getCopy();	
+						executionSpecificationEP.getFigure().translateToRelative(newBounds);
+						// Remove X component of the alignment
+						newBounds.x = oldBounds.x;
+					}
+					else {
+						newBounds.x += request.getMoveDelta().x;
+						newBounds.y += request.getMoveDelta().y;
+						newBounds.height += newSizeDelta.height;
+					}
 					// Not to check list
 					List<ShapeNodeEditPart> notToCheckExecutionSpecificationList = new BasicEList<ShapeNodeEditPart>();
 					// Affixed ExecutionSpecification List
