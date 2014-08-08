@@ -355,7 +355,7 @@
   -->
 <extension point="org.eclipse.ui.handlers">
 
-	<handler commandId="org.eclipse.papyrus.sysml.diagram.internalblock.command.manage.interfaces" class="org.eclipse.papyrus.sysml.diagram.internalblock.handler.ManageProvidedInterfacesHandler">
+	<handler commandId="org.eclipse.papyrus.sysml.diagram.internalblock.command.manage.interfaces" class="org.eclipse.papyrus.sysml.diagram.internalblock.handler.InternalBlockManageInterfacesHandler">
 		<activeWhen>
 		<and>
 			<with variable="selection">

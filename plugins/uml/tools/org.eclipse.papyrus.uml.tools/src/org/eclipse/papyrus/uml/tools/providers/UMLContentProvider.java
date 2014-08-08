@@ -9,6 +9,8 @@
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.providers;
 
@@ -198,8 +200,7 @@ public class UMLContentProvider extends EncapsulatedContentProvider {
 		}
 
 		if(feature == UMLPackage.eINSTANCE.getPort_Provided() || feature == UMLPackage.eINSTANCE.getPort_Required()) {
-			//TODO : Use a specific content provider here, when it exists
-			return new ServiceEditFilteredContentProvider(source, feature, root);
+			return new PortInterfaceContentProvider(source, feature);
 		} else if(feature == UMLPackage.eINSTANCE.getInstanceValue_Instance()) {
 			return new InstanceValueContentProvider((InstanceValue)source, feature, root);
 		} else {

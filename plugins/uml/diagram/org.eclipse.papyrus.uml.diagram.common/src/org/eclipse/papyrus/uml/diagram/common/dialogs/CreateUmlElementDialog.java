@@ -9,9 +9,9 @@
  *
  * Contributors:
  *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
- *
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.uml.diagram.composite.custom.ui;
+package org.eclipse.papyrus.uml.diagram.common.dialogs;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
@@ -41,7 +41,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
-import org.eclipse.papyrus.uml.diagram.composite.custom.messages.Messages;
+import org.eclipse.papyrus.uml.diagram.common.Messages;
 import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.swt.SWT;
@@ -62,20 +62,28 @@ import org.eclipse.uml2.uml.UMLPackage;
  * This dialog allows to create easily a new element in a UML Model.
  */
 public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
+
 	/** the hinted type of the element to create. */
-	private IHintedType hintedType;
+	private IElementType hintedType;
+
 	/** the parent container of the element to create. */
 	private Object parentContainer;
+
 	/** the type of the element to create. */
 	private String type;
+
 	/** the root of the model. */
 	private Package pack;
+
 	/** the text field used to display the choose the name of the future element. */
 	private Text text;
+
 	/** the editing domain. */
 	private TransactionalEditingDomain domain;
+
 	/** The element to create is represented by this field. */
 	private NewElementRepresentation elementToCreate;
+
 	/** this Set contains names to exclude from the proposed name. */
 	private List<String> forbiddenNames;
 
@@ -83,19 +91,19 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	 * Constructor.
 	 *
 	 * @param parent
-	 *            the parent
+	 *        the parent
 	 * @param domain
-	 *            the domain
+	 *        the domain
 	 * @param labelProvider
-	 *            the label provider
+	 *        the label provider
 	 * @param contentProvider
-	 *            the content provider
+	 *        the content provider
 	 * @param pack
-	 *            the pack
+	 *        the pack
 	 * @param hintedType
-	 *            the hinted type
+	 *        the hinted type
 	 */
-	public CreateUmlElementDialog(Shell parent, TransactionalEditingDomain domain, ILabelProvider labelProvider, ITreeContentProvider contentProvider, Package pack, IHintedType hintedType) {
+	public CreateUmlElementDialog(Shell parent, TransactionalEditingDomain domain, ILabelProvider labelProvider, ITreeContentProvider contentProvider, Package pack, IElementType hintedType) {
 		super(parent, labelProvider, contentProvider);
 		Assert.isNotNull(pack);
 		Assert.isNotNull(hintedType);
@@ -119,7 +127,7 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	 * Sets the forbidden names.
 	 *
 	 * @param forbiddenNames
-	 *            the new forbidden names
+	 *        the new forbidden names
 	 */
 	public void setForbiddenNames(List<String> forbiddenNames) {
 		this.forbiddenNames = forbiddenNames;
@@ -129,18 +137,18 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	 * Creates the dialog area.
 	 *
 	 * @param parent
-	 *            the parent
+	 *        the parent
 	 * @return the control
 	 * @see org.eclipse.ui.dialogs.ElementTreeSelectionDialog#createDialogArea(org.eclipse.swt.widgets.Composite)
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		GridData data = (GridData) parent.getLayoutData();
+		GridData data = (GridData)parent.getLayoutData();
 		data.grabExcessHorizontalSpace = true;
 		data.horizontalSpan = 1;
 		data.horizontalAlignment = SWT.FILL;
 		data.verticalAlignment = SWT.FILL;
-		Composite composite = (Composite) super.createDialogArea(parent);
+		Composite composite = (Composite)super.createDialogArea(parent);
 		composite.setLayout(new GridLayout());
 		GridData dat = new GridData(GridData.FILL_BOTH);
 		composite.setLayoutData(dat);
@@ -152,7 +160,7 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	 * Creates the name section and put it at the top of the composite.
 	 *
 	 * @param parent
-	 *            the composite parent
+	 *        the composite parent
 	 */
 	protected void createNameSection(Composite parent) {
 		Composite nameSection = new Composite(parent, SWT.NONE);
@@ -185,9 +193,9 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 		int max = 0;
 		do {
 			List<Interface> allInterface = ElementUtil.getInstancesFilteredByType(pack, Interface.class, null);
-			for (Object object : allInterface) {
-				String name = NamedElementUtil.getName((NamedElement) object);
-				if (name != null && name.startsWith(type)) {
+			for(Object object : allInterface) {
+				String name = NamedElementUtil.getName((NamedElement)object);
+				if(name != null && name.startsWith(type)) {
 					name = name.substring(type.length());
 					Integer val = null;
 					try {
@@ -195,19 +203,19 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 					} catch (NumberFormatException e) {
 						// Nothing to do
 					}
-					if (val != null) {
+					if(val != null) {
 						max = Math.max(Integer.valueOf(val), max);
 						existsInterface = true;
 					}
 				}
 			}
-			if (existsInterface) {
+			if(existsInterface) {
 				defaultName = type + new Integer(max + 1).toString();
 			} else {
 				defaultName = type + new Integer(max).toString();
 			}
 			max++;
-		} while (!isCorrectName(defaultName));
+		} while(!isCorrectName(defaultName));
 		return defaultName;
 	}
 
@@ -215,12 +223,12 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	 * Tests if the proposed name is not forbidden
 	 *
 	 * @param name
-	 *            a name
+	 *        a name
 	 * @return
 	 *         <code>true</code> if the proposed name is not forbidden
 	 */
 	protected boolean isCorrectName(String name) {
-		if (forbiddenNames == null) {
+		if(forbiddenNames == null) {
 			return true;
 		}
 		return !forbiddenNames.contains(name);
@@ -235,12 +243,13 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	public Command getCommand() {
 		CompositeCommand cmd = new CompositeCommand("Create new element command"); //$NON-NLS-1$
 		// request to create the new Interface
-		if (elementToCreate.getCreateElementRequest() != null) {
-			ICommand command = getCommand(elementToCreate.getCreateElementRequest());
-			if (command.canExecute()) {
+		if(elementToCreate.getCreateElementRequest() != null) {
+			CreateElementRequest request = elementToCreate.getCreateElementRequest();
+			ICommand command = getCommand(request);
+			if(command.canExecute()) {
 				cmd.add(command);
-				SetNameCommand nameCommand = new SetNameCommand(domain, "Set Name Command", null, null, elementToCreate); //$NON-NLS-1$
-				if (nameCommand.canExecute()) {
+				SetNameCommand nameCommand = new SetNameCommand(domain, "Set Name Command", null, request, elementToCreate); //$NON-NLS-1$
+				if(nameCommand.canExecute()) {
 					cmd.add(nameCommand);
 				}
 			}
@@ -270,10 +279,10 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	@Override
 	protected void okPressed() {
 		ISelection selection = getTreeViewer().getSelection();
-		parentContainer = ((IStructuredSelection) selection).getFirstElement();
+		parentContainer = ((IStructuredSelection)selection).getFirstElement();
 		CreateElementRequest request = null;
-		if (parentContainer instanceof EObject) {
-			request = new CreateElementRequest(domain, (EObject) parentContainer, this.hintedType);
+		if(parentContainer instanceof EObject) {
+			request = new CreateElementRequest(domain, (EObject)parentContainer, this.hintedType);
 		}
 		elementToCreate = new NewElementRepresentation(this.text.getText(), parentContainer, hintedType, request);
 		super.okPressed();
@@ -283,16 +292,16 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	 * Returns a command corresponding to this request.
 	 *
 	 * @param request
-	 *            a request
+	 *        a request
 	 * @return the command
 	 *         The command corresponding to this request or an {@link UnexecutableCommand} when the command can not be build
 	 */
 	private ICommand getCommand(IEditCommandRequest request) {
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(UMLPackage.eINSTANCE.getNamedElement());
 		{
-			if (provider != null) {
+			if(provider != null) {
 				ICommand cmd = provider.getEditCommand(request);
-				if (cmd != null && cmd.canExecute()) {
+				if(cmd != null && cmd.canExecute()) {
 					return cmd;
 				}
 			}
@@ -304,6 +313,7 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	 * This command is used to set the chosen name to the new element.
 	 */
 	public class SetNameCommand extends AbstractTransactionalCommand {
+
 		/** the representation that will own the new element when it will be created. */
 		private NewElementRepresentation representation;
 
@@ -311,15 +321,15 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 		 * Constructor.
 		 *
 		 * @param domain
-		 *            the domain
+		 *        the domain
 		 * @param label
-		 *            the label
+		 *        the label
 		 * @param affectedFiles
-		 *            the affected files
+		 *        the affected files
 		 * @param previousRequest
-		 *            the previous request
+		 *        the previous request
 		 * @param representation
-		 *            the representation
+		 *        the representation
 		 */
 		public SetNameCommand(TransactionalEditingDomain domain, String label, List<?> affectedFiles, CreateElementRequest previousRequest, NewElementRepresentation representation) {
 			super(domain, label, affectedFiles);
@@ -330,18 +340,19 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 		 * Do execute with result.
 		 *
 		 * @param monitor
-		 *            the monitor
+		 *        the monitor
 		 * @param info
-		 *            the info
+		 *        the info
 		 * @return the command result
 		 * @throws ExecutionException
-		 *             the execution exception
-		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+		 *         the execution exception
+		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
+		 *      org.eclipse.core.runtime.IAdaptable)
 		 */
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			if (representation.getEObject() instanceof NamedElement) {
-				NamedElement el = (NamedElement) representation.getEObject();
+			if(representation.getEObject() instanceof NamedElement) {
+				NamedElement el = (NamedElement)representation.getEObject();
 				el.setName(representation.getName());
 			}
 			return CommandResult.newOKCommandResult(representation);
@@ -355,6 +366,7 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 	 * executed.
 	 */
 	public class CustomCreateElementCommand extends AbstractTransactionalCommand {
+
 		/** the representation of the element to create. */
 		private NewElementRepresentation elementToCreate;
 
@@ -362,13 +374,13 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 		 * Constructor.
 		 *
 		 * @param domain
-		 *            the domain
+		 *        the domain
 		 * @param label
-		 *            the label
+		 *        the label
 		 * @param affectedFiles
-		 *            the affected files
+		 *        the affected files
 		 * @param elementToCreate
-		 *            the element to create
+		 *        the element to create
 		 */
 		public CustomCreateElementCommand(TransactionalEditingDomain domain, String label, List<?> affectedFiles, NewElementRepresentation elementToCreate) {
 			super(domain, label, affectedFiles);
@@ -379,13 +391,14 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 		 * Do execute with result.
 		 *
 		 * @param monitor
-		 *            the monitor
+		 *        the monitor
 		 * @param info
-		 *            the info
+		 *        the info
 		 * @return the command result
 		 * @throws ExecutionException
-		 *             the execution exception
-		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+		 *         the execution exception
+		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
+		 *      org.eclipse.core.runtime.IAdaptable)
 		 */
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -394,8 +407,8 @@ public class CreateUmlElementDialog extends ElementTreeSelectionDialog {
 			ICommand command = getCommand(request);
 			command.execute(new NullProgressMonitor(), null);
 			EObject newEl = request.getNewElement();
-			if (newEl instanceof NamedElement) {
-				((NamedElement) newEl).setName(elementToCreate.getName());
+			if(newEl instanceof NamedElement) {
+				((NamedElement)newEl).setName(elementToCreate.getName());
 			}
 			elementToCreate.setCreateElement(request.getNewElement());
 			return CommandResult.newOKCommandResult(elementToCreate);

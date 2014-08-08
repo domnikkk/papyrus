@@ -10,6 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 440108
+ *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
  *  
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
@@ -109,14 +110,10 @@ public class UMLModelElement extends EMFModelElement {
 		}
 
 		if(feature == UMLPackage.eINSTANCE.getPort_Provided()) {
-			//TODO : Currently, this is read-only
-			//See #isEditable(String)
 			return new ProvidedInterfaceObservableList((Port)source, domain);
 		}
 
 		if(feature == UMLPackage.eINSTANCE.getPort_Required()) {
-			//TODO : Currently, this is read-only
-			//See #isEditable(String)
 			return new RequiredInterfaceObservableList((Port)source, domain);
 		}
 
@@ -147,14 +144,12 @@ public class UMLModelElement extends EMFModelElement {
 		if(feature == UMLPackage.eINSTANCE.getExtension_IsRequired()) {
 			return true;
 		}
-		if(feature == UMLPackage.eINSTANCE.getPort_Provided()) {
-			return false;
-			//return true; //TODO : Unsupported yet
+		if(feature == UMLPackage.eINSTANCE.getPort_Provided() || feature == UMLPackage.eINSTANCE.getPort_Required()) {
+			if(source instanceof Port) {
+				return ((Port)source).getType() != null;
+			}
 		}
-		if(feature == UMLPackage.eINSTANCE.getPort_Required()) {
-			return false;
-			//return true; //TODO : Unsupported yet
-		}
+
 		return super.isFeatureEditable(propertyPath);
 	}
 
