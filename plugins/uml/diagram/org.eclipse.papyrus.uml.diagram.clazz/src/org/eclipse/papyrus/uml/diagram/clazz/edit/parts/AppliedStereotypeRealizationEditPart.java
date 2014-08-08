@@ -59,6 +59,7 @@ import org.eclipse.papyrus.extensionpoints.editors.ui.ILabelEditorDialog;
 import org.eclipse.papyrus.extensionpoints.editors.ui.IPopupEditorHelper;
 import org.eclipse.papyrus.extensionpoints.editors.utils.DirectEditorsUtil;
 import org.eclipse.papyrus.extensionpoints.editors.utils.IDirectEditorsIds;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IControlParserForDirectEdit;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpart.PapyrusLabelEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IndirectMaskLabelEditPolicy;
@@ -82,7 +83,7 @@ import org.eclipse.uml2.uml.Feature;
 /**
  * @generated
  */
-public class AppliedStereotypeRealizationEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart {
+public class AppliedStereotypeRealizationEditPart extends PapyrusLabelEditPart implements ITextAwareEditPart, IControlParserForDirectEdit {
 
 	/**
 	 * @generated

@@ -7750,6 +7750,13 @@
               genLinks="/0/@diagram/@links.22"/>
           <entries
               xsi:type="gmfgen:ToolEntry"
+              title="ContextLink"
+              description="Creation of a context link for a Constraint"
+              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
+              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
+              genLinks="/0/@diagram/@links.26"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
               title="Dependency"
               description="Create a dependency"
               largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Dependency.gif"
@@ -7864,14 +7871,6 @@
               genLinks="/0/@diagram/@links.6"/>
           <entries
               xsi:type="gmfgen:ToolEntry"
-              title="Usage"
-              description="Create an Usage"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif"
-              id="&quot;clazz.tool.usage&quot;"
-              genLinks="/0/@diagram/@links.9"/>
-          <entries
-              xsi:type="gmfgen:ToolEntry"
               title="TemplateBinding"
               description="Create a TemplateBinding"
               largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/TemplateBinding.gif"
@@ -7880,11 +7879,12 @@
               genLinks="/0/@diagram/@links.18"/>
           <entries
               xsi:type="gmfgen:ToolEntry"
-              title="ContextLink"
-              description="Creation of a context link for a Constraint"
-              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
-              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
-              genLinks="/0/@diagram/@links.26"/>
+              title="Usage"
+              description="Create an Usage"
+              largeIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif"
+              smallIconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif"
+              id="&quot;clazz.tool.usage&quot;"
+              genLinks="/0/@diagram/@links.9"/>
         </groups>
       </palette>
       <preferencePages

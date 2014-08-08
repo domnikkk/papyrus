@@ -51,20 +51,20 @@ public class ContainmentSubLinkEditPart extends ConnectionEditPart implements IT
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomContainmentSubLinkItemSemanticEditPolicy());
 	}
 
-	
 	/**
 	 * @generated NOT temporaly
 	 */
 	@Override
 	public Object getAdapter(Class key) {
 		// TODO Auto-generated method stub
-		if( EObject.class.isAssignableFrom(key)){
-			if(getTarget()!=null){
-				return   getTarget().getAdapter(key);
+		if(EObject.class.isAssignableFrom(key)) {
+			if(getTarget() != null) {
+				return getTarget().getAdapter(key);
 			}
 		}
 		return super.getAdapter(key);
 	}
+
 	/**
 	 * Creates figure for this edit part.
 	 * 

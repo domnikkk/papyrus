@@ -584,52 +584,62 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Dependency6CreationTool_title;
+	public static String ContextLink6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Dependency6CreationTool_desc;
+	public static String ContextLink6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DependencyBranch7CreationTool_title;
+	public static String Dependency7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DependencyBranch7CreationTool_desc;
+	public static String Dependency7CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ElementImport8CreationTool_title;
+	public static String DependencyBranch8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ElementImport8CreationTool_desc;
+	public static String DependencyBranch8CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Generalization9CreationTool_title;
+	public static String ElementImport9CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Generalization9CreationTool_desc;
+	public static String ElementImport9CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String GeneralizationSet10CreationTool_title;
+	public static String Generalization10CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String GeneralizationSet10CreationTool_desc;
+	public static String Generalization10CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String GeneralizationSet11CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String GeneralizationSet11CreationTool_desc;
 
 	/**
 	 * @generated
@@ -654,82 +664,72 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String InterfaceRealization13CreationTool_title;
+	public static String InterfaceRealization14CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String InterfaceRealization13CreationTool_desc;
+	public static String InterfaceRealization14CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Link14CreationTool_title;
+	public static String Link15CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Link14CreationTool_desc;
+	public static String Link15CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PackageImport15CreationTool_title;
+	public static String PackageImport16CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PackageImport15CreationTool_desc;
+	public static String PackageImport16CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PackageMerge16CreationTool_title;
+	public static String PackageMerge17CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PackageMerge16CreationTool_desc;
+	public static String PackageMerge17CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ProfileApplication17CreationTool_title;
+	public static String ProfileApplication18CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ProfileApplication17CreationTool_desc;
+	public static String ProfileApplication18CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Realization18CreationTool_title;
+	public static String Realization19CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Realization18CreationTool_desc;
+	public static String Realization19CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Substitution19CreationTool_title;
+	public static String Substitution20CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Substitution19CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Usage20CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Usage20CreationTool_desc;
+	public static String Substitution20CreationTool_desc;
 
 	/**
 	 * @generated
@@ -744,12 +744,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ContextLink22CreationTool_title;
+	public static String Usage22CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ContextLink22CreationTool_desc;
+	public static String Usage22CreationTool_desc;
 
 	/**
 	 * @generated
