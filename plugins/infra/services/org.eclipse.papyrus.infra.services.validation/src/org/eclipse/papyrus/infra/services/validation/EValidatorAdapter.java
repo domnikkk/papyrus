@@ -8,7 +8,7 @@
  * Contributors:
  *   IBM - Initial API and implementation
  *   Christian W. Damus (CEA) - Target EObject must be the diagnostic's first data element
- *   
+ *   Benoit Maggi (CEA LIST)  - Add an unique id as source for diagnostic
  *****************************************************************************/
 
 
@@ -29,7 +29,9 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.model.EvaluationMode;
 import org.eclipse.emf.validation.model.IConstraintStatus;
+import org.eclipse.emf.validation.model.IModelConstraint;
 import org.eclipse.emf.validation.service.IBatchValidator;
+import org.eclipse.emf.validation.service.IConstraintDescriptor;
 import org.eclipse.emf.validation.service.ModelValidationService;
 import org.eclipse.uml2.uml.util.UMLValidator;
 
@@ -181,13 +183,33 @@ public class EValidatorAdapter
 			}
 		} else if (status instanceof IConstraintStatus) {
 			IConstraintStatus constraintStatus = (IConstraintStatus) status;
-			diagnostics.add(new BasicDiagnostic(
-				status.getSeverity(),
-				status.getPlugin(),
-				status.getCode(),
-				status.getMessage(),
-				toArray(constraintStatus.getResultLocus(), constraintStatus.getTarget())));
+			diagnostics.add(createBasicDiagnostic(status, constraintStatus));
 		}
+	}
+
+	/**
+	 * Create a basic diagnostic with an unique id as source
+	 * @param status
+	 * @param constraintStatus
+	 * @return
+	 */
+	protected BasicDiagnostic createBasicDiagnostic(IStatus status,
+			IConstraintStatus constraintStatus) {
+		String source = status.getPlugin();
+		IModelConstraint constraint = constraintStatus.getConstraint();
+		if (constraint != null){
+			IConstraintDescriptor descriptor = constraint.getDescriptor();
+			if (descriptor != null) {
+				source = descriptor.getId();
+			}
+		}
+		
+		return new BasicDiagnostic(
+			status.getSeverity(),
+			source,
+			status.getCode(),
+			status.getMessage(),
+			toArray(constraintStatus.getResultLocus(), constraintStatus.getTarget()));
 	}
 
 	/**

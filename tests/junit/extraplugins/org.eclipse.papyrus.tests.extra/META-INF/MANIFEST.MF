@@ -9,7 +9,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.cdo.uml.ui.tests;bundle-version="1.0.0",
  org.eclipse.papyrus.cdo.validation.problems.tests;bundle-version="1.0.0",
  org.eclipse.papyrus.cpp.codegen.tests;bundle-version="1.0.0",
- org.eclipse.papyrus.moka.tests;bundle-version="1.0.0"
+ org.eclipse.papyrus.moka.tests;bundle-version="1.0.0",
+ org.eclipse.papyrus.umlrt.validation.tests;bundle-version="1.0.0"
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier

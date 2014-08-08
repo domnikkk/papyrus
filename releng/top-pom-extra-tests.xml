@@ -21,6 +21,8 @@
     <module>../tests/junit/extraplugins/codegen/org.eclipse.papyrus.cpp.codegen.tests</module>
     <module>../tests/junit/extraplugins/moka/org.eclipse.papyrus.moka.tests</module>
     <module>../tests/junit/extraplugins/org.eclipse.papyrus.tests.extra</module>
+    <!-- Tests for umlrt -->
+    <module>../tests/junit/extraplugins/umlrt/org.eclipse.papyrus.umlrt.validation.tests</module>
   </modules>
   <properties>
 		<tycho-version>0.20.0</tycho-version>
