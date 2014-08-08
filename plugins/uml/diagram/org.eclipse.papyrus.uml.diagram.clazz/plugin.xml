@@ -1921,6 +1921,16 @@
 					</entry>
 				<entry
 				      defineOnly="true"
+				      description="Creation of a context link for a Constraint"
+				      id="createContextLink6CreationTool"
+				      kind="tool"
+				      label="ContextLink"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
+				      path=""
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif">
+					</entry>
+				<entry
+				      defineOnly="true"
 				      description="Create a dependency"
 				      id="clazz.tool.dependency"
 				      kind="tool"
@@ -2061,16 +2071,6 @@
 					</entry>
 				<entry
 				      defineOnly="true"
-				      description="Create an Usage"
-				      id="clazz.tool.usage"
-				      kind="tool"
-				      label="Usage"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif"
-				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif">
-					</entry>
-				<entry
-				      defineOnly="true"
 				      description="Create a TemplateBinding"
 				      id="clazz.tool.templatebinding"
 				      kind="tool"
@@ -2081,13 +2081,13 @@
 					</entry>
 				<entry
 				      defineOnly="true"
-				      description="Creation of a context link for a Constraint"
-				      id="createContextLink22CreationTool"
+				      description="Create an Usage"
+				      id="clazz.tool.usage"
 				      kind="tool"
-				      label="ContextLink"
-				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif"
+				      label="Usage"
+				      large_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif"
 				      path=""
-				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif">
+				      small_icon="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Usage.gif">
 					</entry>
 				
 				</contribution>
@@ -2258,6 +2258,10 @@
 		        path="/clazz.group.relationships">
 		  </predefinedEntry>
 		<predefinedEntry
+		        id="createContextLink6CreationTool"
+		        path="/clazz.group.relationships">
+		  </predefinedEntry>
+		<predefinedEntry
 		        id="clazz.tool.dependency"
 		        path="/clazz.group.relationships">
 		  </predefinedEntry>
@@ -2314,15 +2318,11 @@
 		        path="/clazz.group.relationships">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="clazz.tool.usage"
-		        path="/clazz.group.relationships">
-		  </predefinedEntry>
-		<predefinedEntry
 		        id="clazz.tool.templatebinding"
 		        path="/clazz.group.relationships">
 		  </predefinedEntry>
 		<predefinedEntry
-		        id="createContextLink22CreationTool"
+		        id="clazz.tool.usage"
 		        path="/clazz.group.relationships">
 		  </predefinedEntry>
 		</contribution>
