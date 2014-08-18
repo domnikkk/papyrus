@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Tests
+Bundle-Name: UML-RT Validation Tests
 Bundle-SymbolicName: org.eclipse.papyrus.umlrt.validation.tests
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.umlrt.validation.tests.Activator
@@ -34,3 +34,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Description: Tests for validation rules of the UmlRT profile
 Export-Package: org.eclipse.papyrus.umlrt.validation.tests
+Bundle-Vendor: Eclipse Modeling Project
