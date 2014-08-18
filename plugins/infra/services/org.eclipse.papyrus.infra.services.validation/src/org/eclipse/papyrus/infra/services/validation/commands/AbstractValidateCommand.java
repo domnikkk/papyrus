@@ -109,6 +109,13 @@ abstract public class AbstractValidateCommand extends AbstractTransactionalComma
 	public void disableUIFeedback() {
 		this.showUIfeedback = false;
 	}
+
+	/**
+	 * @return
+	 */
+	public Diagnostic getDiagnostic() {
+		return diagnostic;
+	}	
 	
 	/**
 	 * @return The resource on which markers should be applied.

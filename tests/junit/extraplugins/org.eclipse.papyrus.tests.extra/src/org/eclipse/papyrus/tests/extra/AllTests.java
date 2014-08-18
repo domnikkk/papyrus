@@ -42,6 +42,9 @@ public class AllTests {
 		/* MOKA COMPOSITES tests */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.moka.tests.AllTests.class));
 
+		/* UmlRT tests */
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.umlrt.validation.AllTests.class));
+		
 		/* UML Compare tests */
 		/**
 		 * UML Compare tests have been temporarily disabled. See:
