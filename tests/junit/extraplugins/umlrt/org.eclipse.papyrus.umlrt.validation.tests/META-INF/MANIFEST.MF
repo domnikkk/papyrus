@@ -33,3 +33,4 @@ Require-Bundle: org.eclipse.papyrus.junit.utils;bundle-version="1.0.0",
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Description: Tests for validation rules of the UmlRT profile
+Export-Package: org.eclipse.papyrus.umlrt.validation.tests

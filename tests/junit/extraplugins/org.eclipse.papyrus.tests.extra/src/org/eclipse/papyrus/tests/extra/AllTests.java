@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.papyrus.cpp.codegen.tests.AllPapyrusCPPCodegenTests;
 import org.eclipse.papyrus.tests.extra.launcher.ITestSuiteClass;
 import org.eclipse.papyrus.tests.extra.launcher.PluginTestSuiteClass;
 import org.junit.runner.RunWith;
@@ -37,14 +36,14 @@ public class AllTests {
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.cdo.tests.AllTests.class));
 
 		/* CPP Codegen tests */
-		suiteClasses.add(new PluginTestSuiteClass(AllPapyrusCPPCodegenTests.class));
-		
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.cpp.codegen.tests.AllPapyrusCPPCodegenTests.class));
+
 		/* MOKA COMPOSITES tests */
 		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.moka.tests.AllTests.class));
 
 		/* UmlRT tests */
-		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.umlrt.validation.AllTests.class));
-		
+		suiteClasses.add(new PluginTestSuiteClass(org.eclipse.papyrus.umlrt.validation.tests.AllTests.class));
+
 		/* UML Compare tests */
 		/**
 		 * UML Compare tests have been temporarily disabled. See:
