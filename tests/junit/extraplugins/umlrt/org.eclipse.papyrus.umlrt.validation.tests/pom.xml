@@ -6,7 +6,7 @@
     <groupId>org.eclipse.papyrus</groupId>
     <artifactId>org.eclipse.papyrus</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../../../../releng/top-pom-extra-tests.xml</relativePath>
+    <relativePath>../../../../../releng/top-pom-extra-tests.xml</relativePath>
   </parent>
   <groupId>org.eclipse.papyrus</groupId>
   <artifactId>org.eclipse.papyrus.umlrt.validation.tests</artifactId>
