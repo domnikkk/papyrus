@@ -67,6 +67,8 @@ import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractExecutionSpec
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.AbstractMessageEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentCombinedFragmentCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentEditPart;
+import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomCombinedFragmentEditPart;
+import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomInteractionOperandEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.GateEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionInteractionCompartmentEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionOperandEditPart;
@@ -789,6 +791,40 @@ public class OperandBoundsComputeHelper {
 		return new ICommandProxy(new MoveOperandBlockCommand(editPart.getEditingDomain(), blockToMove));
 	}
 
+	public static Command getForcedShiftEnclosedFragmentsCommand(InteractionOperandEditPart editPart, int movedY, Set<Object> alreadyMovedItems) {
+		if(editPart == null || movedY == 0) {
+			return null;
+		}
+		// Recursively process children
+		CompoundCommand cc = new CompoundCommand("shift inner CFs' exec blocks"); //$NON-NLS-1$
+		List<?> children = editPart.getChildren();
+		for (int i = 0; i < children.size(); i++) {
+			if (false == children.get(i) instanceof CustomCombinedFragmentEditPart) {
+				continue;
+			}
+			CustomCombinedFragmentEditPart childCF = (CustomCombinedFragmentEditPart)children.get(i);
+			List<CustomInteractionOperandEditPart> childOperands = childCF.getOperandChildrenEditParts();
+			for (CustomInteractionOperandEditPart childOperand : childOperands) {
+				cc.add(getForcedShiftEnclosedFragmentsCommand(childOperand, movedY, alreadyMovedItems));
+			}
+		}
+		
+		List<OperandBlock> operandBlocks = getOperandBlocks(editPart);
+		if(operandBlocks.isEmpty()) {
+			return null;
+		}
+
+		final Map<OperandBlock, Integer> blockToMove = new HashMap<OperandBoundsComputeHelper.OperandBlock, Integer>();
+		for(OperandBlock blk : operandBlocks) {
+			blockToMove.put(blk, movedY);
+		}
+		if(blockToMove.isEmpty()) {
+			return null;
+		}
+		cc.add(new ICommandProxy(new MoveOperandBlockCommand(editPart.getEditingDomain(), blockToMove, alreadyMovedItems)));
+		return cc;
+	}
+
 	private static ICommand getMoveAnchorCommand(int yDelta, Rectangle figureBounds, IdentityAnchor gmfAnchor) {
 		String oldTerminal = gmfAnchor.getId();
 		PrecisionPoint pp = BaseSlidableAnchor.parseTerminalString(oldTerminal);
@@ -1475,6 +1511,7 @@ public class OperandBoundsComputeHelper {
 	private static class MoveOperandBlockCommand extends AbstractTransactionalCommand {
 
 		private Map<OperandBlock, Integer> blockToMove;
+		private Set<Object> alreadyMovedItems;
 
 		/**
 		 * Constructor.
@@ -1486,6 +1523,18 @@ public class OperandBoundsComputeHelper {
 		public MoveOperandBlockCommand(TransactionalEditingDomain domain, Map<OperandBlock, Integer> blockToMove) {
 			super(domain, "move operand blocks", null);
 			this.blockToMove = blockToMove;
+		}
+
+		/**
+		 * Constructor.
+		 * 
+		 * @param domain
+		 * @param label
+		 * @param affectedFiles
+		 */
+		public MoveOperandBlockCommand(TransactionalEditingDomain domain, Map<OperandBlock, Integer> blockToMove, Set<Object> alreadyMovedItems) {
+			this(domain, blockToMove);
+			this.alreadyMovedItems = alreadyMovedItems; 
 		}
 
 		/**
@@ -1544,6 +1593,14 @@ public class OperandBoundsComputeHelper {
 			if (block instanceof ExecutionOperandBlock) {
 				List<ShapeNodeEditPart> children = ((ExecutionOperandBlock) block).getShapeNodeChildren();
 				for (ShapeNodeEditPart child : children) {
+					if (alreadyMovedItems != null) {
+						if (alreadyMovedItems.contains(child)) {
+							continue;
+						}
+						else {
+							alreadyMovedItems.add(child);
+						}						
+					}
 					Bounds bounds = getInteractionOperandEPBounds(child);
 					Rectangle newBounds = fillRectangle(bounds);
 					newBounds.y += moveDelta;

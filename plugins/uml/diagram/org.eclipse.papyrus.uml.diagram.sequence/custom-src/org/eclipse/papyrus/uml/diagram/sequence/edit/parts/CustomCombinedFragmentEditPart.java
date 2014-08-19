@@ -207,6 +207,14 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 		return getContentPane();
 	}
 
+	public InteractionInteractionCompartmentEditPart getParentInteractionCompartmentEditPart() {
+		EditPart part = this;
+		do {
+			part = part.getParent();
+		} while(part != null && !(part instanceof InteractionInteractionCompartmentEditPart));
+		return (InteractionInteractionCompartmentEditPart)part;
+	}
+	
 	public final BorderedNodeFigure getBorderedFigure() {
 		return (BorderedNodeFigure) getFigure();
 	}

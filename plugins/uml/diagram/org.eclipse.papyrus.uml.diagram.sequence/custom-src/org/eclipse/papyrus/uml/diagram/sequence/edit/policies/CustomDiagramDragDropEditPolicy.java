@@ -22,17 +22,22 @@ import java.util.Set;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.ConnectionAnchor;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.diagram.core.commands.AddCommand;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
@@ -48,10 +53,12 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequestFactory;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -78,6 +85,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.Constraint2EditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ContinuationEditPart;
+import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CustomCombinedFragmentEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.DestructionOccurrenceSpecificationEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.DurationConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.DurationConstraintInMessageEditPart;
@@ -103,6 +111,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.TimeObservationEditPa
 import org.eclipse.papyrus.uml.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.papyrus.uml.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes;
+import org.eclipse.papyrus.uml.diagram.sequence.util.CombinedFragmentMoveHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.GateHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.SequenceLinkMappingHelper;
 import org.eclipse.papyrus.uml.diagram.sequence.util.SequenceRequestConstant;
@@ -198,6 +207,102 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 		return elementsVisualId;
 	}
 
+	@Override
+	public Command getCommand(Request request) {
+		Command command = super.getCommand(request);
+		if (false == request instanceof ChangeBoundsRequest) {
+			return command;
+		}
+
+		boolean someCombinedFragment = false;
+        boolean someNonCombinedFragment = false;
+		for (Object part : ((ChangeBoundsRequest)request).getEditParts()) {
+			someCombinedFragment    |=  (part instanceof CustomCombinedFragmentEditPart);
+			someNonCombinedFragment |= !(part instanceof CustomCombinedFragmentEditPart);
+		}
+		
+		if (someCombinedFragment && someNonCombinedFragment) {
+			// Can't Drop CombinedFragment and other nodes at the same time
+			return UnexecutableCommand.INSTANCE;
+		}
+		else if (someNonCombinedFragment) {
+			return command;
+		}
+		else {
+			return getMoveCombinedFragmentCommand((ChangeBoundsRequest)request);
+		}
+	}
+
+	/*
+	 * "In-place" drag-and-drop command for Combined Fragment
+	 *
+	 */
+	protected Command getMoveCombinedFragmentCommand(ChangeBoundsRequest request) {
+        CompoundCommand cc = new CompoundCommand("move CombinedFragments to new parent"); //$NON-NLS-1$
+		
+		Rectangle rectangleDroppedCombined = CombinedFragmentMoveHelper.calcCombinedRect(request);
+		GraphicalEditPart newParentEP = CombinedFragmentMoveHelper.findNewParentEP(request, getHost());
+		
+		// Move the request's CFs models and views
+        for (Object part : ((ChangeBoundsRequest)request).getEditParts()) {
+			CustomCombinedFragmentEditPart combinedFragmentEP = (CustomCombinedFragmentEditPart)part;
+			CombinedFragment combinedFragment = (CombinedFragment)ViewUtil.
+					resolveSemanticElement((View)((IGraphicalEditPart)combinedFragmentEP).getModel());
+		
+			if (combinedFragmentEP.getParent() == newParentEP) {
+				continue; // no change of the parent 
+			}
+			
+			View containerNewParent = (View)newParentEP.getModel();
+			EObject contextNewParent = ViewUtil.resolveSemanticElement(containerNewParent);
+	        TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+	        
+			// Move semantic
+			Command moveSemanticCmd = getHost().getCommand(new EditCommandRequestWrapper(
+					new MoveRequest(editingDomain, contextNewParent, combinedFragment)));
+			if (moveSemanticCmd == null) {
+				return UnexecutableCommand.INSTANCE;
+			}
+			cc.add(moveSemanticCmd);
+
+			// Move view
+			View container = (View)newParentEP.getModel();
+			View view = (View)combinedFragmentEP.getModel();
+			cc.add(new ICommandProxy(new AddCommand(combinedFragmentEP.getEditingDomain(), new EObjectAdapter(container),
+								  new EObjectAdapter(view))));
+        }			
+			
+		// Calc new parent rect
+		Rectangle newParentOldRect = newParentEP.getFigure().getBounds().getCopy();
+		newParentEP.getFigure().translateToAbsolute(newParentOldRect);
+		Rectangle newParentNewRect = new Rectangle(newParentOldRect.getUnion(rectangleDroppedCombined));
+
+		if (getHost().getParent() instanceof CustomCombinedFragmentEditPart) {
+			CombinedFragmentMoveHelper.adjustNewParentOperands(cc, newParentNewRect, newParentOldRect, getHost());
+		}			
+		// TODO: resize parent's parent (and so on)
+		
+		// Move & resize parent CF
+		Point newParentOffsetSW = new Point(newParentNewRect.x - newParentOldRect.x, newParentNewRect.y - newParentOldRect.y);
+		if (newParentEP.getParent().getParent() != null) {
+			final ChangeBoundsRequest moveParentRequest = new ChangeBoundsRequest();
+			moveParentRequest.setType(REQ_MOVE);
+			moveParentRequest.setMoveDelta(newParentOffsetSW);
+			moveParentRequest.setEditParts(newParentEP.getParent().getParent());
+			moveParentRequest.setSizeDelta(new Dimension(newParentNewRect.width - newParentOldRect.width,
+					newParentNewRect.height - newParentOldRect.height));
+			moveParentRequest.setResizeDirection(PositionConstants.SOUTH_WEST);
+			cc.add(newParentEP.getParent().getParent().getCommand(moveParentRequest));
+		}
+		
+        for (Object part : ((ChangeBoundsRequest)request).getEditParts()) {
+			CustomCombinedFragmentEditPart combinedFragmentEP = (CustomCombinedFragmentEditPart)part;
+			CombinedFragmentMoveHelper.moveCombinedFragmentEP(cc, request, combinedFragmentEP, newParentEP, newParentOffsetSW);
+        }
+
+		return cc;
+	}
+	
 	@Override
 	protected IUndoableOperation getDropObjectCommand(DropObjectsRequest dropRequest, final EObject droppedObject) {
 		IUndoableOperation dropObjectCommand = super.getDropObjectCommand(dropRequest, droppedObject);
