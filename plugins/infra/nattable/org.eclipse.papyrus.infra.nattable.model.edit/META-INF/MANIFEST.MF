@@ -3,7 +3,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
- org.eclipse.papyrus.infra.nattable.model;bundle-version="1.0.0"
+ org.eclipse.papyrus.infra.nattable.model;bundle-version="1.0.1"
 Export-Package: org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.provider,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.provider,
  org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.provider,
@@ -16,7 +16,7 @@ Export-Package: org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.p
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.infra.nattable.model.nattable.pr

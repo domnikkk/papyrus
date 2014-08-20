@@ -1,20 +1,21 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.papyrus.umldi;singleton:=true
-Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: .
-Bundle-Vendor: %providerName
-Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.eclipse.papyrus.umldi,
  org.eclipse.papyrus.umldi.impl,
  org.eclipse.papyrus.umldi.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.eclipse.papyrus.dd;visibility:=reexport,
+ org.eclipse.papyrus.dd;bundle-version="1.0.1";visibility:=reexport,
  org.eclipse.uml2.types;visibility:=reexport,
  org.eclipse.uml2.uml;visibility:=reexport,
  org.eclipse.uml2.common;visibility:=reexport
+Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.1.qualifier
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.papyrus.umldi;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

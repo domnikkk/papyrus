@@ -1,24 +1,24 @@
 Manifest-Version: 1.0
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.papyrus.uml.service.types;bundle-version="1.0.0",
+ org.eclipse.papyrus.uml.service.types;bundle-version="1.0.1",
  org.junit;bundle-version="4.10.0",
- org.eclipse.papyrus.junit.framework;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.tools;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.newchild;bundle-version="1.0.0",
- org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
+ org.eclipse.papyrus.junit.framework;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.tools;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.newchild;bundle-version="1.0.1",
+ org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
  org.eclipse.emf.transaction;bundle-version="1.4.0",
  org.eclipse.gmf.runtime.emf.core;bundle-version="1.7.0",
  org.eclipse.gmf.runtime.emf.type.core;bundle-version="1.7.0",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.8.0",
- org.eclipse.papyrus.infra.extendedtypes;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.services.edit;bundle-version="1.0.0",
- org.eclipse.papyrus.junit.utils;bundle-version="1.0.0"
+ org.eclipse.papyrus.infra.extendedtypes;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.services.edit;bundle-version="1.0.1",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.0.1"
 Export-Package: org.eclipse.papyrus.infra.extendedtypes.tests
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Name: %fragmentName
 Bundle-Localization: plugin
 Bundle-ManifestVersion: 2

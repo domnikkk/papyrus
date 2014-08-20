@@ -3,14 +3,14 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.uml2.uml;bundle-version="4.0.0",
  org.eclipse.acceleo.engine;bundle-version="3.2.2",
- org.eclipse.papyrus.fcm.profile;bundle-version="1.0.0",
- org.eclipse.papyrus.acceleo;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.widgets.toolbox;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.emf;bundle-version="1.0.0",
- org.eclipse.papyrus.acceleo.ui;bundle-version="1.0.0"
+ org.eclipse.papyrus.fcm.profile;bundle-version="1.0.1",
+ org.eclipse.papyrus.acceleo;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.widgets.toolbox;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.emf;bundle-version="1.0.1",
+ org.eclipse.papyrus.acceleo.ui;bundle-version="1.0.1"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-Activator: org.eclipse.papyrus.acceleo.debug.Activator

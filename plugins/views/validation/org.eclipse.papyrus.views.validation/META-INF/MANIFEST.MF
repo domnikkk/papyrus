@@ -1,25 +1,25 @@
 Manifest-Version: 1.0
 Export-Package: org.eclipse.papyrus.views.validation.internal
-Bundle-ActivationPolicy: lazy
-Bundle-Name: %pluginName
-Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
- org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.services.markerlistener;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.services.markerlistener;bundle-version="1.0.1",
  org.eclipse.emf.ecore;bundle-version="2.8.0",
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
  org.eclipse.emf.edit.ui;bundle-version="2.8.0",
  org.eclipse.emf.transaction;bundle-version="1.4.0",
- org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.widgets;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.widgets;bundle-version="1.0.1",
  com.google.guava;bundle-version="11.0.0"
 Bundle-Vendor: %providerName
-Bundle-Version: 1.0.0.qualifier
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.1.qualifier
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.views.validation.internal.Activa
  tor
 Bundle-SymbolicName: org.eclipse.papyrus.views.validation;singleton:=t
  rue
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 

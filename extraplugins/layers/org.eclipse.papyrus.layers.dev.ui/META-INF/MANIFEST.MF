@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.papyrus.layers.dev.ui;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.eclipse.papyrus.layers.dev.ui.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.1.qualifier
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.eclipse.papyrus.layers.dev.ui.Activator
+Bundle-SymbolicName: org.eclipse.papyrus.layers.dev.ui;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

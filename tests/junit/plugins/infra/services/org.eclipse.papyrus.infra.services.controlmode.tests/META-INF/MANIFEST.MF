@@ -1,25 +1,28 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: %Bundle-Name
-Bundle-SymbolicName: org.eclipse.papyrus.infra.services.controlmode.tests
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.eclipse.papyrus.infra.services.controlmode.tests.control.Activator
-Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.ui;bundle-version="3.106.0",
  org.junit;bundle-version="4.11.0",
- org.eclipse.papyrus.junit.framework;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.core.log;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.services.controlmode;bundle-version="1.0.0",
- org.eclipse.papyrus.infra.core;bundle-version="1.0.0",
- org.eclipse.papyrus.views.modelexplorer;bundle-version="1.0.0",
+ org.eclipse.papyrus.junit.framework;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.services.controlmode;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.core;bundle-version="1.0.1",
+ org.eclipse.papyrus.views.modelexplorer;bundle-version="1.0.1",
  org.eclipse.uml2.uml;bundle-version="5.0.0",
  org.eclipse.swtbot.eclipse.finder;bundle-version="2.2.1",
  org.eclipse.swtbot.junit4_x;bundle-version="2.2.1",
  org.eclipse.emf.transaction,
- org.eclipse.papyrus.infra.services.resourceloading.preferences;bundle-version="1.0.0",
- org.eclipse.papyrus.junit.utils;bundle-version="1.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ActivationPolicy: lazy
+ org.eclipse.papyrus.infra.services.resourceloading.preferences;bundle-version="1.0.1",
+ org.eclipse.papyrus.junit.utils;bundle-version="1.0.1"
 Export-Package: org.eclipse.papyrus.infra.services.controlmode.tests,
  org.eclipse.papyrus.infra.services.controlmode.tests.control,
  org.eclipse.papyrus.infra.services.controlmode.tests.uncontrol
+Bundle-Vendor: %Bundle-Vendor
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.1.qualifier
+Bundle-Name: %Bundle-Name
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.eclipse.papyrus.infra.services.controlmode.tests
+ .control.Activator
+Bundle-SymbolicName: org.eclipse.papyrus.infra.services.controlmode.te
+ sts
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

@@ -9,7 +9,7 @@ Export-Package: org.eclipse.papyrus.java.profile.java,
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2

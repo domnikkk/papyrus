@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="org.eclipse.papyrus.doc.feature"
-      label="Papyrus Documentation Feature"
-      version="1.0.0.qualifier"
-      provider-name="Eclipse Modeling Project">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.doc.feature" label="Papyrus Documentation Feature" provider-name="Eclipse Modeling Project" version="1.0.1.qualifier">
 
    <copyright url="http://www.eclipse.org/legal/epl-v10.html">
       Copyright (c) 2013 CEA LIST
@@ -18,93 +13,32 @@ http://www.eclipse.org/legal/epl-v10.html
       %license
    </license>
 
-   <plugin
-         id="org.eclipse.papyrus.infra.gmfdiag.css.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.infra.gmfdiag.css.doc" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.uml.search.ui.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.uml.search.ui.doc" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.cdo.ui.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.cdo.ui.doc" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.uml.diagram.common.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.uml.diagram.common.doc" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.uml.diagram.profile.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.uml.diagram.profile.doc" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.dsml.validation.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.dsml.validation.doc" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.uml.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.uml.doc" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.views.properties.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.views.properties.doc" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.copypaste.ui.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.copypaste.ui.doc" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.infra.newchild.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.infra.newchild.doc" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.moka.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.moka.doc" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.infra.services.controlmode.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.infra.services.controlmode.doc" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.layers.documentation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.layers.documentation" install-size="0" version="0.0.0"/>
 
-   <plugin
-         id="org.eclipse.papyrus.infra.gmfdiag.common.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
+   <plugin download-size="0" id="org.eclipse.papyrus.infra.gmfdiag.common.doc" install-size="0" version="0.0.0"/>
 
 </feature>
