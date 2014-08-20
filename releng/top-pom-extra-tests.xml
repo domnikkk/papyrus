@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.eclipse.papyrus</groupId>
   <artifactId>org.eclipse.papyrus</artifactId>
@@ -42,12 +41,8 @@
 		<repository>
 			<id>birt</id>
 			<layout>p2</layout>
+			<!-- updateFrom("BIRT",0) -->
 			<url>http://download.eclipse.org/birt/update-site/4.4/</url>
-		</repository>
-		<repository>
-			<id>cdt</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/tools/cdt/builds/luna/milestones</url>
 		</repository>
 		<repository>
 			<id>emf</id>
@@ -55,99 +50,112 @@
 			<url>http://download.eclipse.org/modeling/emf/updates/</url>
 		</repository>
 		<repository>
-			<id>emf-cdo</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/cdo/drops/R20140610-0212</url>
-		</repository>
-		<repository>
 			<id>emf-compare</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201406111328</url>
+			<!-- updateFrom("EMF COMPARE",0) -->
+			<url>http://download.eclipse.org/modeling/emf/compare/updates/milestones/3.0/S201408191310</url>
 		</repository>
 		<repository>
 			<id>emf-emf</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/emf/updates/milestones/</url>
+			<!-- updateFrom("EMF (Core)",0) -->
+			<url>http://download.eclipse.org/modeling/emf/emf/updates/2.10.x/</url>
 		</repository>
 		<repository>
-			<id>emft-emffacet</id>
+			<id>emft-mwe[0]</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/facet/updates/integration/0.4.0/I201405190853/</url>
+			<!-- updateFrom("EMFT MWE",0) -->
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201408190419/mwe</url>
 		</repository>
 		<repository>
-			<id>emft-mwe</id>
+			<id>emft-mwe[1]</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201405200714/mwe</url>
+			<!-- updateFrom("EMFT MWE",1) -->
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201408190839/mwe2lang</url>
 		</repository>
 		<repository>
 			<id>emf-transaction</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/transaction/updates/milestones</url>
+			<!-- updateFrom("EMF TRANSACTION",0) -->
+			<url>http://download.eclipse.org/modeling/emf/transaction/updates/releases/R201405281451/</url>
 		</repository>
 		<repository>
 			<id>emf-validation</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/validation/updates/milestones</url>
+			<!-- updateFrom("EMF VALIDATION",0) -->
+			<url>http://download.eclipse.org/modeling/emf/validation/updates/releases/R201405281429/</url>
 		</repository>
 		<repository>
 			<id>ep</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.4/R-4.4-201406061215/</url>
+			<!-- updateFrom("Eclipse",0) -->
+			<url>http://download.eclipse.org/eclipse/updates/4.4milestones/M-4.4.1RC1-201408130800/</url>
 		</repository>
 		<repository>
 			<id>gef</id>
 			<layout>p2</layout>
+			<!-- updateFrom("GEF",0) -->
 			<url>http://download.eclipse.org/tools/gef/updates/milestones</url>
 		</repository>
 		<repository>
 			<id>gmp-gmf-notation</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones</url>
+			<!-- updateFrom("GMF Notation",0) -->
+			<url>http://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201405281433/</url>
 		</repository>
 		<repository>
 			<id>gmp-gmf-runtime</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones</url>
+			<!-- updateFrom("GMF Runtime",0) -->
+			<url>http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/maintenance/M201408081400/</url>
 		</repository>
 		<repository>
 			<id>gmf-tooling</id>
 			<layout>p2</layout>
+			<!-- updateFrom("GMF Tooling",0) -->
 			<url>http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/milestones-3.2.RC4a</url>
 		</repository>
 		<repository>
 			<id>m2m-atl</id>
 			<layout>p2</layout>
+			<!-- updateFrom("M2M ATL",0) -->
 			<url>http://download.eclipse.org/mmt/atl/updates/milestones/3.5/</url>
 		</repository>
 		<repository>
 			<id>m2t-acceleo</id>
 			<layout>p2</layout>
+			<!-- updateFrom("M2T ACCELEO",0) -->
 			<url>http://download.eclipse.org/acceleo/updates/milestones/3.5/S201406101309</url>
 		</repository>
 		<repository>
 			<id>m2t-xpand</id>
 			<layout>p2</layout>
+			<!-- updateFrom("M2T XPAND",0) -->
 			<url>http://download.eclipse.org/modeling/m2t/xpand/updates/releases/R201406030414/</url>
 		</repository>
 		<repository>
 			<id>mdt-ocl</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.0</url>
+			<!-- updateFrom("MDT OCL 5.0",0) -->
+			<url>http://download.eclipse.org/modeling/mdt/ocl/updates/maintenance/5.0.2/S201408191529</url>
 		</repository>
 		<repository>
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
+			<!-- updateFrom("MDT UML2",0) -->
 			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>
 			<layout>p2</layout>
+			<!-- updateFrom("QVT Operational",0) -->
 			<url>http://download.eclipse.org/mmt/qvto/updates/milestones/3.4.0/S201406101621</url>
 		</repository>
 		<repository>
 			<id>mylyn</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/mylyn/snapshots/3.12</url>
+			<!-- updateFrom("Mylyn",0) -->
+			<url>http://download.eclipse.org/mylyn/snapshots/3.13</url>
 		</repository>
 		<repository>
 			<id>nattable</id>
@@ -157,21 +165,24 @@
 		<repository>
 			<id>orbit</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20130517111416/repository</url>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository</url>
 		</repository>
 		<repository>
 			<id>subversive</id>
 			<layout>p2</layout>
+			<!-- updateFrom("Subversive",0) -->
 			<url>http://download.eclipse.org/technology/subversive/2.0/luna-site/</url>
 		</repository>
 		<repository>
 			<id>tmf-xtext</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/head/R201405210727/</url>
+			<!-- updateFrom("Xtext, Xtend",0) -->
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/head/S201408190707</url>
 		</repository>
 		<repository>
 			<id>webtools</id>
 			<layout>p2</layout>
+			<!-- updateFrom("WebTools",0) -->
 			<url>http://download.eclipse.org/webtools/downloads/drops/R3.6.0/R-3.6.0-20140602160322/repository/</url>
 		</repository>
 	</repositories>
