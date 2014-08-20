@@ -162,6 +162,12 @@
 			<url>http://download.eclipse.org/tools/cdt/builds/luna/milestones</url>
 		</repository>
 		<repository>
+			<id>emf-cdo</id>
+			<layout>p2</layout>
+			<!-- updateFrom("EMF CDO",0) -->
+			<url>http://download.eclipse.org/modeling/emf/cdo/drops/R20140610-0212</url>
+		</repository>
+		<repository>
 			<id>emf</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/emf/updates/</url>
