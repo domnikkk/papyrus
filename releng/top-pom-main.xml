@@ -315,11 +315,6 @@
 			<url>http://download.eclipse.org/birt/update-site/4.4/</url>
 		</repository>
 		<repository>
-			<id>emf</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/updates/</url>
-		</repository>
-		<repository>
 			<id>emf-compare</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF COMPARE",0) -->

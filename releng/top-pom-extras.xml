@@ -174,11 +174,6 @@
 			<url>http://download.eclipse.org/modeling/emf/cdo/drops/R20140610-0212</url>
 		</repository>
 		<repository>
-			<id>emf</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/updates/</url>
-		</repository>
-		<repository>
 			<id>emf-compare</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF COMPARE",0) -->
