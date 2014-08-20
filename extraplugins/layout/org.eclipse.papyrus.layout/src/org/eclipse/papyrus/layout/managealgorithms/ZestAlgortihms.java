@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,18 +38,16 @@ public class ZestAlgortihms {
 
 	/**
 	 * Gets the registered algorithmes.
-	 * 
+	 *
 	 * @return collection of algorithms registered
 	 */
 	public static Collection<LayoutToolAlgorithms> getRegisteredAlgorithmes() {
-		IConfigurationElement[] elements = Platform.getExtensionRegistry().getConfigurationElementsFor(
-				Constants.EXTENSION_POINT_ID_ALGORITHMS);
+		IConfigurationElement[] elements = Platform.getExtensionRegistry().getConfigurationElementsFor(Constants.EXTENSION_POINT_ID_ALGORITHMS);
 		LinkedList<LayoutToolAlgorithms> algo = new LinkedList<LayoutToolAlgorithms>();
 		for(IConfigurationElement e : elements) {
 			try {
 				LayoutToolAlgorithms algorithm = new LayoutToolAlgorithms();
-				AlgorithmFactory factory = (AlgorithmFactory)e
-						.createExecutableExtension(Constants.EXTENSION_CLASS_ALGORITHMS);
+				AlgorithmFactory factory = (AlgorithmFactory)e.createExecutableExtension(Constants.EXTENSION_CLASS_ALGORITHMS);
 				algorithm.setAlgorithm(factory.createAlgorithm());
 				if(e.getAttribute(Constants.EXTENSION_NAME) != null) {
 					String name = e.getAttribute(Constants.EXTENSION_NAME);
@@ -72,6 +70,7 @@ public class ZestAlgortihms {
 			if(!algo.isEmpty()) {
 				Collections.sort(algo, new Comparator<LayoutToolAlgorithms>() {
 
+					@Override
 					public int compare(LayoutToolAlgorithms arg0, LayoutToolAlgorithms arg1) {
 						int length0 = 0;
 						if(arg0.getPath() != null) {
@@ -86,12 +85,6 @@ public class ZestAlgortihms {
 						if(length1 == length0) {
 							String a = arg0.getPath() + arg0.getName();
 							String b = arg1.getPath() + arg1.getName();
-							if(a == null) {
-								a = "";
-							}
-							if(b == null) {
-								b = "";
-							}
 							return a.compareTo(b);
 						}
 						return length1 - length0;
@@ -105,10 +98,10 @@ public class ZestAlgortihms {
 
 	/**
 	 * Format.
-	 * 
+	 *
 	 * @param name
 	 *        of algorithm
-	 * 
+	 *
 	 * @return name formated
 	 */
 	private static String format(String name) {
@@ -126,12 +119,12 @@ public class ZestAlgortihms {
 
 	/**
 	 * Gets the icon.
-	 * 
+	 *
 	 * @param e
 	 *        IConfigurationElement
 	 * @param attribute
 	 *        name of icon
-	 * 
+	 *
 	 * @return icon of algorithm
 	 */
 	private static Image getIcon(IConfigurationElement e, String attribute) {

@@ -13,5 +13,5 @@ Bundle-Activator: org.eclipse.papyrus.layout.algorithms.horizontaltree
  algorithm.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.layout.algorithms.horizontalT
  reeAlgorithm;singleton:=true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

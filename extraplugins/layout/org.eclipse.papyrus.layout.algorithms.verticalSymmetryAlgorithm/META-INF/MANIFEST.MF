@@ -13,5 +13,5 @@ Bundle-Activator: org.eclipse.papyrus.layout.algorithms.verticalsymmet
  ryalgorithm.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.layout.algorithms.verticalSym
  metryAlgorithm;singleton:=true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

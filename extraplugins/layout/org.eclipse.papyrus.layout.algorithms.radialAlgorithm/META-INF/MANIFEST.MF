@@ -13,5 +13,5 @@ Bundle-Activator: org.eclipse.papyrus.layout.algorithms.radialalgorith
  m.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.layout.algorithms.radialAlgor
  ithm;singleton:=true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
