@@ -54,7 +54,7 @@ public class BundlesTests extends AbstractPapyrusTest {
 
 	private static final String NATTABLE_VERSION = "1.1.0"; //$NON-NLS-1$
 
-	private static final String PAPYRUS_VERSION = "1.0.0"; //$NON-NLS-1$
+	private static final String PAPYRUS_VERSION = BundleTestsUtils.PAPYRUS_VERSION;
 
 	@Test
 	public void featureVersionNumberTest() {

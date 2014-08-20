@@ -16,7 +16,7 @@ import org.osgi.framework.BundleContext;
 public class BundleTestsUtils {
 
 	// This version number should be changed at each release
-	public static final String PAPYRUS_VERSION = "1.0.0"; //$NON-NLS-1$
+	public static final String PAPYRUS_VERSION = "1.0.1"; //$NON-NLS-1$
 
 	public static final String INCUBATION = "(Incubation)"; //$NON-NLS-1$
 
@@ -47,7 +47,7 @@ public class BundleTestsUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the Bundle with a name beginning by {@link #PAPYRUS_PREFIX}
 	 */
 	public static List<Bundle> getPapyrusBundles() {
@@ -65,20 +65,20 @@ public class BundleTestsUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param bundle
 	 *        a bundle
 	 * @return
 	 *         <code>true</code> if the bundle represents a Java Project
 	 */
 	public static boolean isJavaProject(final Bundle bundle) {
-		//we are looking for folders "org/eclipse/papyrus" that contains classes. If not, it is not a Java project 
+		//we are looking for folders "org/eclipse/papyrus" that contains classes. If not, it is not a Java project
 		URL res = bundle.getResource("org/eclipse/papyrus"); //$NON-NLS-1$
 		return res != null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the list of the Papyrus features
 	 */
