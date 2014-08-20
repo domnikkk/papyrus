@@ -87,6 +87,12 @@
 			<url>http://download.eclipse.org/modeling/emft/mwe/updates/milestones/S201408190839/mwe2lang</url>
 		</repository>
 		<repository>
+			<id>emf-query</id>
+			<layout>p2</layout>
+			<!-- updateFrom("EMF Query",0) -->
+			<url>http://download.eclipse.org/modeling/emf/query/updates/releases/R201405281426</url>
+		</repository>
+		<repository>
 			<id>emf-transaction</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF TRANSACTION",0) -->
