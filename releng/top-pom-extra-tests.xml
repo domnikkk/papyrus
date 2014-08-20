@@ -51,6 +51,12 @@
 			<url>http://download.eclipse.org/tools/cdt/builds/luna/milestones</url>
 		</repository>
 		<repository>
+			<id>emft-emffacet</id>
+			<layout>p2</layout>
+			<!-- updateFrom("EMF Facet",0) -->
+			<url>http://download.eclipse.org/facet/updates/integration/0.4.0/I201405190853/</url>
+		</repository>
+		<repository>
 			<id>emf-cdo</id>
 			<layout>p2</layout>
 			<!-- updateFrom("EMF CDO",0) -->
