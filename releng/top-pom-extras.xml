@@ -395,6 +395,9 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<defaultP2Metadata>false</defaultP2Metadata>
+				</configuration>
 			</plugin>
 			<!-- Pack200 -->
 			<plugin>
