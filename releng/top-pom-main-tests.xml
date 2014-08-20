@@ -153,7 +153,7 @@
 			<id>gmp-gmf-runtime</id>
 			<layout>p2</layout>
 			<!-- updateFrom("GMF Runtime",0) -->
-			<url>http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/maintenance/M201408081400/</url>
+			<url>http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/maintenance/M201408201453/</url>
 		</repository>
 		<repository>
 			<id>gmf-tooling</id>
@@ -189,7 +189,7 @@
 			<id>mdt-uml2</id>
 			<layout>p2</layout>
 			<!-- updateFrom("MDT UML2",0) -->
-			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0</url>
+			<url>http://download.eclipse.org/modeling/mdt/uml2/updates/5.0.x</url>
 		</repository>
 		<repository>
 			<id>mmt-qvto</id>
@@ -335,20 +335,6 @@
 			            </dependency>
 		            </dependencies>
 				</configuration>
-			</plugin>
-			<!-- Pack200 -->
-			<plugin>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-pack200b-plugin</artifactId>
-				<version>${tychoExtrasVersion}</version>
-				<executions>
-					<execution>
-						<id>pack200-pack</id>
-						<goals>
-							<goal>pack</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
