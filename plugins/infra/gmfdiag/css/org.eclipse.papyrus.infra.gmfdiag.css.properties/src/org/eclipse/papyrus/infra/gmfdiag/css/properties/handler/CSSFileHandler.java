@@ -23,12 +23,14 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.gmfdiag.css.helper.WorkspaceThemesHelper;
 import org.eclipse.papyrus.infra.gmfdiag.css.properties.dialog.CSSThemeCreationDialog;
 import org.eclipse.papyrus.infra.gmfdiag.css.properties.dialog.CSSThemeEditionDialog;
+import org.eclipse.papyrus.infra.gmfdiag.css.properties.messages.Messages;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.Theme;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.WorkspaceThemes;
@@ -107,10 +109,15 @@ public class CSSFileHandler extends AbstractHandler implements IHandler {
 				}
 
 				// Open a specific dialog to edit existing theme according to selection
-				CSSThemeEditionDialog dialog = new CSSThemeEditionDialog(shell, workspaceThemes, (IStructuredSelection) selection);
-				dialogResult = dialog.open();
+				if (workspaceThemes != null && !workspaceThemes.getThemes().isEmpty()) {
 
-				theme = dialog.getEditedTheme();
+					CSSThemeEditionDialog dialog = new CSSThemeEditionDialog(shell, workspaceThemes, (IStructuredSelection) selection);
+					dialogResult = dialog.open();
+
+					theme = dialog.getEditedTheme();
+				} else {
+					MessageDialog.openWarning(shell, Messages.getString("CSSFileHandler.edition.warning.title"), Messages.getString("CSSFileHandler.edition.warning.message"));
+				}
 
 
 
