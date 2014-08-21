@@ -29,6 +29,7 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ContextLinkEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.DoActivityStateBehaviorStateEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.EntryStateBehaviorEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ExitStateBehaviorEditPart;
@@ -62,6 +63,7 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.FinalState;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Pseudostate;
@@ -601,6 +603,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 		Constraint modelElement = (Constraint)view.getElement();
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_670(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_Context_8500(modelElement));
 		return result;
 	}
 
@@ -665,6 +668,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_19000(modelElement, crossReferencer));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_667(modelElement, crossReferencer));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_670(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_Context_8500(modelElement, crossReferencer));
 		return result;
 	}
 
@@ -677,6 +681,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_667(modelElement, crossReferencer));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_670(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_Context_8500(modelElement, crossReferencer));
 		return result;
 	}
 
@@ -690,6 +695,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_7000(modelElement, crossReferencer));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_667(modelElement, crossReferencer));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_670(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_Context_8500(modelElement, crossReferencer));
 		return result;
 	}
 
@@ -703,6 +709,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_7000(modelElement, crossReferencer));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_667(modelElement, crossReferencer));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_670(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_Context_8500(modelElement, crossReferencer));
 		return result;
 	}
 
@@ -910,6 +917,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_667(modelElement, crossReferencer));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_670(modelElement, crossReferencer));
+		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_Context_8500(modelElement, crossReferencer));
 		return result;
 	}
 
@@ -1089,6 +1097,7 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 		Constraint modelElement = (Constraint)view.getElement();
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_670(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_Context_8500(modelElement));
 		return result;
 	}
 
@@ -1249,6 +1258,20 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 	/**
 	 * @generated
 	 */
+	protected Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Constraint_Context_8500(Namespace target, CrossReferenceAdapter crossReferencer) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferencer.getInverseReferences(target);
+		for(EStructuralFeature.Setting setting : settings) {
+			if(setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getConstraint_Context()) {
+				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.ConstraintContext_8500, ContextLinkEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_Transition_7000(Vertex source) {
 		Region container = null;
 		// Find container element for the link.
@@ -1303,6 +1326,19 @@ public class UMLDiagramUpdater implements DiagramUpdater {
 			Element destination = (Element)destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ConstraintConstrainedElement_670, ConstraintConstrainedElementEditPart.VISUAL_ID));
 		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Constraint_Context_8500(Constraint source) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Namespace destination = source.getContext();
+		if(destination == null) {
+			return result;
+		}
+		result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ConstraintContext_8500, ContextLinkEditPart.VISUAL_ID));
 		return result;
 	}
 }

@@ -38,10 +38,13 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.CommentAnnotat
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.ConstraintConstrainedElementReorientCommand;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.ContextLinkCreateCommand;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.ContextLinkReorientCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ContextLinkEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateChoiceEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateDeepHistoryEditPart;
@@ -280,6 +283,7 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentAnnotatedElementEditPart.VISUAL_ID:
 							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+							case ContextLinkEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
@@ -301,6 +305,7 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentAnnotatedElementEditPart.VISUAL_ID:
 							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+							case ContextLinkEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
@@ -428,6 +433,9 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 		if(UMLElementTypes.ConstraintConstrainedElement_670 == baseElementType) {
 			return null;
 		}
+		if(UMLElementTypes.ConstraintContext_8500 == baseElementType) {
+			return null;
+		}
 		return null;
 	}
 
@@ -463,6 +471,12 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 			}
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if(UMLElementTypes.ConstraintContext_8500 == baseElementType) {
+			if(isExtendedType) {
+				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType)requestElementType);
+			}
+			return getGEFWrapper(new ContextLinkCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -478,6 +492,8 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
+		case ContextLinkEditPart.VISUAL_ID:
+			return getGEFWrapper(new ContextLinkReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

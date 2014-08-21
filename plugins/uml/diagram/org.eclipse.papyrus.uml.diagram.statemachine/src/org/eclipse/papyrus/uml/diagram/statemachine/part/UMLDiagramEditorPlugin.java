@@ -210,7 +210,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	public UMLDocumentProvider getDocumentProvider() {
 		if(documentProvider == null) {
 			documentProvider = new UMLDocumentProvider();
-	}
+		}
 		return documentProvider;
 	}
 

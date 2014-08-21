@@ -120,7 +120,6 @@ public class CustomStateNameEditPart extends StateNameEditPart {
 		if(stateCompartHeight == 0) {
 			// stateCompartHeight is 0 after creation, get height from figure
 			// stateCompartHeight = stateFigure.getStateCompartmentFigure().getBounds().height;
-			// System.err.println("Set state compartment height from fig.");
 		}
 
 		int dx = width - stateWidth;

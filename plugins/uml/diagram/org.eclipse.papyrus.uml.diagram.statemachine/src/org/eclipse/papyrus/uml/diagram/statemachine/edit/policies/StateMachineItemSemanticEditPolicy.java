@@ -41,12 +41,15 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.CommentAnnotat
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.ConstraintConstrainedElementReorientCommand;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.ContextLinkCreateCommand;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.ContextLinkReorientCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.GeneralizationCreateCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.GeneralizationReorientCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.PseudostateEntryPointCreateCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.commands.PseudostateExitPointCreateCommand;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ContextLinkEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.GeneralizationEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateEntryPointEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.PseudostateExitPointEditPart;
@@ -168,6 +171,7 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 							switch(UMLVisualIDRegistry.getVisualID(incomingLink)) {
 							case CommentAnnotatedElementEditPart.VISUAL_ID:
 							case ConstraintConstrainedElementEditPart.VISUAL_ID:
+							case ContextLinkEditPart.VISUAL_ID:
 								DestroyReferenceRequest destroyRefReq = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(destroyRefReq));
 								cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
@@ -272,6 +276,9 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 		if(UMLElementTypes.ConstraintConstrainedElement_670 == baseElementType) {
 			return null;
 		}
+		if(UMLElementTypes.ConstraintContext_8500 == baseElementType) {
+			return null;
+		}
 		return null;
 	}
 
@@ -313,6 +320,12 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 			}
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if(UMLElementTypes.ConstraintContext_8500 == baseElementType) {
+			if(isExtendedType) {
+				return getExtendedCompleteCreateRelationshipCommand(req, (IExtendedHintedElementType)requestElementType);
+			}
+			return getGEFWrapper(new ContextLinkCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -342,6 +355,8 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
+		case ContextLinkEditPart.VISUAL_ID:
+			return getGEFWrapper(new ContextLinkReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
